@@ -3,1260 +3,727 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NBA Career Journey Map</title>
+    <title>NBA Career Map | HoopsHype</title>
     
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1d428a;
-            --secondary: #c8102e;
-            --gold: #fdb927;
-            --dark: #0a0a0a;
-            --light: #f8f9fa;
-            --gray: #6c757d;
+            --red: #d63031;
+            --text: #222;
+            --text-muted: #777;
+            --border: #e5e5e5;
+            --bg: #fff;
+            --bg-gray: #f5f5f5;
+            --green: #27ae60;
+            --blue: #2980b9;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Source Sans 3', sans-serif;
-            background: var(--dark);
-            color: var(--light);
-            min-height: 100vh;
-            overflow-x: hidden;
+            font-family: 'Open Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
         
-        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, #0d2240 100%);
-            padding: 1rem;
-            border-bottom: 3px solid var(--secondary);
+            background: var(--bg);
+            padding: 10px 16px;
+            border-bottom: 2px solid var(--red);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
-        .header-content {
-            max-width: 1400px;
+        .header-inner {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 12px;
         }
         
-        h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            color: var(--light);
+        .logo {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text);
+            white-space: nowrap;
         }
         
-        h1 span {
-            color: var(--gold);
-        }
+        .logo span { color: var(--red); }
         
-        /* Search Container */
-        .search-container {
+        .search-wrap {
+            flex: 1;
+            max-width: 280px;
             position: relative;
-            width: 100%;
-            max-width: 350px;
         }
         
-        #searchInput {
+        #search {
             width: 100%;
-            padding: 0.7rem 1rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 50px;
-            background: rgba(255,255,255,0.95);
-            color: var(--dark);
+            padding: 8px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            border: 1px solid var(--border);
+            border-radius: 4px;
             outline: none;
         }
         
-        #searchInput:focus {
-            box-shadow: 0 0 0 3px var(--gold);
+        #search:focus {
+            border-color: var(--red);
         }
         
-        #suggestions {
+        #results {
             position: absolute;
             top: 100%;
             left: 0;
             right: 0;
-            background: white;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-            max-height: 250px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-top: none;
+            max-height: 240px;
             overflow-y: auto;
-            z-index: 1000;
             display: none;
+            z-index: 999;
         }
         
-        #suggestions.active {
-            display: block;
-        }
+        #results.show { display: block; }
         
-        .suggestion-item {
-            padding: 0.7rem 1rem;
+        .result-item {
+            padding: 8px 12px;
             cursor: pointer;
-            color: var(--dark);
-            border-bottom: 1px solid #eee;
+            font-size: 13px;
+            border-bottom: 1px solid var(--border);
         }
         
-        .suggestion-item:hover, .suggestion-item:active {
-            background: var(--gold);
-        }
+        .result-item:hover { background: var(--bg-gray); }
         
-        /* Main Layout - Mobile First */
-        .main-container {
+        main {
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 70px);
-            height: calc(100dvh - 70px);
+            height: calc(100vh - 50px);
+            height: calc(100dvh - 50px);
         }
         
-        /* Map */
         #map {
-            width: 100%;
-            height: 45%;
-            min-height: 250px;
-            background: #1a1a2e;
-        }
-        
-        /* Sidebar */
-        .sidebar {
-            flex: 1;
-            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
-            padding: 1rem;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .player-info {
-            display: none;
-        }
-        
-        .player-info.active {
-            display: block;
-        }
-        
-        .player-name {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.6rem;
-            letter-spacing: 2px;
-            color: var(--gold);
-            margin-bottom: 0.3rem;
-        }
-        
-        .player-meta {
-            color: var(--gray);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid #333;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .stat-box {
-            background: rgba(255,255,255,0.05);
-            padding: 0.6rem 0.4rem;
-            border-radius: 6px;
-            text-align: center;
-            border: 1px solid #333;
-        }
-        
-        .stat-value {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.4rem;
-            color: var(--gold);
-        }
-        
-        .stat-label {
-            font-size: 0.65rem;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .career-timeline {
-            margin-top: 1rem;
-        }
-        
-        .timeline-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            color: var(--light);
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .timeline-title::before {
-            content: '';
-            width: 4px;
-            height: 18px;
-            background: var(--secondary);
-        }
-        
-        .timeline-item {
-            display: flex;
-            gap: 0.75rem;
+            height: 55%;
+            min-height: 280px;
+            background: #eee;
             position: relative;
-            padding-left: 2.5rem;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin: 0 -1rem;
-            padding-right: 1rem;
         }
         
-        .timeline-item:hover, .timeline-item.highlighted {
-            background: rgba(253, 185, 39, 0.1);
-        }
-        
-        .timeline-item.highlighted {
-            background: rgba(253, 185, 39, 0.2);
-        }
-        
-        .stop-number {
+        .legend {
             position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 22px;
-            height: 22px;
-            background: var(--secondary);
-            border-radius: 50%;
+            top: 8px;
+            right: 8px;
+            background: rgba(255,255,255,0.95);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            z-index: 999;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 0.75rem;
-            color: white;
-            border: 2px solid var(--dark);
-        }
-        
-        .timeline-item:first-child .stop-number {
-            background: var(--gold);
-            color: var(--dark);
-        }
-        
-        .timeline-item:last-child .stop-number {
-            background: var(--primary);
-        }
-        
-        .timeline-content {
-            flex: 1;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #222;
-        }
-        
-        .timeline-item:last-child .timeline-content {
-            border-bottom: none;
-        }
-        
-        .timeline-years {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 0.9rem;
-            color: var(--gold);
-            letter-spacing: 1px;
-        }
-        
-        .timeline-team {
-            font-weight: 600;
-            color: var(--light);
-            margin: 0.2rem 0;
-            text-decoration: underline;
-            text-decoration-color: rgba(255,255,255,0.3);
-            text-underline-offset: 2px;
-        }
-        
-        .timeline-team:hover {
-            color: var(--gold);
-            text-decoration-color: var(--gold);
-        }
-        
-        .timeline-location {
-            font-size: 0.8rem;
-            color: var(--gray);
-        }
-        
-        /* Welcome Message */
-        .welcome-message {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: var(--gray);
-        }
-        
-        .welcome-message h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.3rem;
-            color: var(--light);
-            margin-bottom: 0.75rem;
-        }
-        
-        .welcome-message p {
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-        
-        /* Suggested Players */
-        .suggested-players {
-            margin-top: 1.5rem;
-        }
-        
-        .suggested-players h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1rem;
-            color: var(--gold);
-            margin-bottom: 0.75rem;
-            letter-spacing: 1px;
-        }
-        
-        .player-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .player-chip {
-            background: rgba(255,255,255,0.1);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid #333;
-        }
-        
-        .player-chip:hover, .player-chip:active {
-            background: var(--gold);
-            color: var(--dark);
-            border-color: var(--gold);
-        }
-        
-        /* Team Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.85);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-        
-        .modal-overlay.active {
-            display: flex;
-        }
-        
-        .modal-content {
-            background: #1a1a1a;
-            border-radius: 12px;
-            width: 100%;
-            max-width: 400px;
-            max-height: 80vh;
-            overflow: hidden;
-            border: 2px solid var(--secondary);
-        }
-        
-        .modal-header {
-            background: var(--primary);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .modal-header h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
-        
-        .modal-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0;
-            line-height: 1;
-        }
-        
-        .modal-body {
-            padding: 1rem;
-            max-height: 60vh;
-            overflow-y: auto;
-        }
-        
-        .modal-team-location {
-            color: var(--gray);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid #333;
-        }
-        
-        .modal-player-count {
-            color: var(--gold);
-            font-size: 0.85rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .modal-player-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .modal-player-item {
-            padding: 0.5rem 0.75rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.2s;
-            font-size: 0.9rem;
-        }
-        
-        .modal-player-item:hover {
-            background: rgba(253, 185, 39, 0.2);
-        }
-        
-        .modal-player-years {
-            color: var(--gray);
-            font-size: 0.75rem;
-        }
-        
-        /* Custom Map Markers with Numbers */
-        .numbered-marker {
-            background: var(--secondary);
-            border: 3px solid white;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 12px;
-            color: white;
-        }
-        
-        .numbered-marker.start {
-            background: var(--gold);
-            color: var(--dark);
-        }
-        
-        .numbered-marker.end {
-            background: var(--primary);
-        }
-        
-        .numbered-marker.highlighted {
-            transform: scale(1.3);
-            box-shadow: 0 0 15px var(--gold);
-            z-index: 1000 !important;
-        }
-        
-        /* Map Popup */
-        .leaflet-popup-content-wrapper {
-            background: var(--dark);
-            color: var(--light);
-            border-radius: 8px;
-            border: 2px solid var(--secondary);
-        }
-        
-        .leaflet-popup-tip {
-            background: var(--dark);
-        }
-        
-        .popup-content {
-            padding: 0.3rem;
-        }
-        
-        .popup-stop {
-            font-family: 'Bebas Neue', sans-serif;
-            color: var(--gold);
-            font-size: 0.85rem;
-        }
-        
-        .popup-team {
-            font-weight: 600;
-            margin: 0.2rem 0;
-            font-size: 0.9rem;
-        }
-        
-        .popup-location {
-            font-size: 0.8rem;
-            color: var(--gray);
-        }
-        
-        .popup-years {
-            font-size: 0.8rem;
-            color: var(--secondary);
-            margin-top: 0.2rem;
-        }
-        
-        /* Map Legend */
-        .map-legend {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.8);
-            padding: 0.5rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            z-index: 1000;
-            display: flex;
-            gap: 0.75rem;
+            gap: 10px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
         }
         
         .legend-item {
             display: flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 4px;
+            color: var(--text-muted);
         }
         
         .legend-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            border: 2px solid white;
+            border: 2px solid #fff;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
         
-        .legend-dot.start { background: var(--gold); }
-        .legend-dot.middle { background: var(--secondary); }
-        .legend-dot.end { background: var(--primary); }
+        .legend-dot.first { background: var(--green); }
+        .legend-dot.mid { background: var(--red); }
+        .legend-dot.last { background: var(--blue); }
         
-        /* Desktop */
+        .panel {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .welcome { text-align: center; padding: 16px 0; }
+        .welcome h2 { font-size: 18px; margin-bottom: 6px; }
+        .welcome p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+        
+        .player-section { display: none; }
+        .player-section.active { display: block; }
+        
+        .player-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        
+        .player-span {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .stat {
+            flex: 1;
+            text-align: center;
+            padding: 10px 4px;
+            background: var(--bg-gray);
+            border-radius: 4px;
+        }
+        
+        .stat-num {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--red);
+        }
+        
+        .stat-lbl {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            margin-left: 12px;
+            border-left: 2px solid var(--border);
+            padding-left: 20px;
+        }
+        
+        .stop {
+            position: relative;
+            padding: 10px 0;
+            cursor: pointer;
+            transition: background 0.1s;
+            margin-left: -20px;
+            padding-left: 20px;
+            border-radius: 4px;
+        }
+        
+        .stop:hover, .stop.hl { background: var(--bg-gray); }
+        
+        .stop-num {
+            position: absolute;
+            left: -31px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--red);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .stop:first-child .stop-num { background: var(--green); }
+        .stop:last-child .stop-num { background: var(--blue); }
+        
+        .stop-team {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .stop-team:hover { color: var(--red); text-decoration: underline; }
+        
+        .stop-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .suggestions {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .chip {
+            padding: 5px 10px;
+            background: var(--bg-gray);
+            border-radius: 16px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.1s;
+        }
+        
+        .chip:hover {
+            background: var(--red);
+            color: #fff;
+        }
+        
+        /* Modal */
+        .modal-bg {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        
+        .modal-bg.show { display: flex; }
+        
+        .modal {
+            background: #fff;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 360px;
+            max-height: 75vh;
+            overflow: hidden;
+        }
+        
+        .modal-head {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-head h3 { font-size: 15px; }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+        
+        .modal-body {
+            padding: 12px 16px;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        
+        .modal-loc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        
+        .modal-count {
+            font-size: 11px;
+            color: var(--red);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .modal-row {
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+        
+        .modal-row:hover { background: var(--bg-gray); }
+        
+        .modal-yrs { color: var(--text-muted); font-size: 11px; }
+        
+        /* Map markers */
+        .marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 10px;
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            border: 2px solid #fff;
+        }
+        
+        .leaflet-popup-content-wrapper {
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .leaflet-popup-content { margin: 10px 12px; font-size: 13px; }
+        
+        .popup-team { font-weight: 600; margin-bottom: 3px; }
+        .popup-loc { font-size: 12px; color: var(--text-muted); }
+        .popup-yrs { font-size: 12px; color: var(--red); margin-top: 3px; }
+        
         @media (min-width: 768px) {
-            header {
-                padding: 1.25rem 2rem;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .main-container {
+            main {
                 flex-direction: row;
-                height: calc(100vh - 85px);
-            }
-            
-            .sidebar {
-                width: 380px;
-                min-width: 380px;
-                order: -1;
+                height: calc(100vh - 50px);
             }
             
             #map {
                 flex: 1;
                 height: 100%;
+                order: 2;
             }
             
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .panel {
+                width: 360px;
+                border-right: 1px solid var(--border);
+                order: 1;
             }
             
-            .player-name {
-                font-size: 2rem;
-            }
+            .player-name { font-size: 26px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>NBA <span>CAREER</span> MAP</h1>
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search for a player..." autocomplete="off">
-                <div id="suggestions"></div>
+        <div class="header-inner">
+            <div class="logo">NBA <span>Career Map</span></div>
+            <div class="search-wrap">
+                <input type="text" id="search" placeholder="Search player...">
+                <div id="results"></div>
             </div>
         </div>
     </header>
     
-    <div class="main-container">
+    <main>
         <div id="map">
-            <div class="map-legend">
-                <div class="legend-item"><div class="legend-dot start"></div> First</div>
-                <div class="legend-item"><div class="legend-dot middle"></div> Stop</div>
-                <div class="legend-item"><div class="legend-dot end"></div> Latest</div>
+            <div class="legend">
+                <div class="legend-item"><div class="legend-dot first"></div> Start</div>
+                <div class="legend-item"><div class="legend-dot mid"></div> Stop</div>
+                <div class="legend-item"><div class="legend-dot last"></div> Latest</div>
             </div>
         </div>
         
-        <aside class="sidebar">
-            <div class="welcome-message" id="welcomeMessage">
-                <h2>🏀 Explore Player Journeys</h2>
-                <p>Search for any NBA player to see their career trajectory mapped across the globe.</p>
-                
-                <div class="suggested-players">
-                    <h3>⭐ Suggested Players</h3>
-                    <div class="player-chips" id="suggestedChips"></div>
+        <div class="panel">
+            <div class="welcome" id="welcome">
+                <h2>NBA Career Map</h2>
+                <p>Search any player to see their career journey visualized on the map.</p>
+                <div class="suggestions">
+                    <div class="section-title">Popular Players</div>
+                    <div class="chips" id="welcomeChips"></div>
                 </div>
             </div>
             
-            <div class="player-info" id="playerInfo">
-                <h2 class="player-name" id="playerName"></h2>
-                <p class="player-meta" id="playerMeta"></p>
+            <div class="player-section" id="playerSection">
+                <div class="player-name" id="pName"></div>
+                <div class="player-span" id="pSpan"></div>
                 
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-value" id="statTeams">-</div>
-                        <div class="stat-label">Teams</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="statCountries">-</div>
-                        <div class="stat-label">Countries</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="statYears">-</div>
-                        <div class="stat-label">Years</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="statStops">-</div>
-                        <div class="stat-label">Stops</div>
-                    </div>
+                <div class="stats">
+                    <div class="stat"><div class="stat-num" id="sTeams">-</div><div class="stat-lbl">Teams</div></div>
+                    <div class="stat"><div class="stat-num" id="sCountries">-</div><div class="stat-lbl">Countries</div></div>
+                    <div class="stat"><div class="stat-num" id="sYears">-</div><div class="stat-lbl">Years</div></div>
+                    <div class="stat"><div class="stat-num" id="sStops">-</div><div class="stat-lbl">Stops</div></div>
                 </div>
                 
-                <div class="career-timeline">
-                    <h3 class="timeline-title">Career Timeline</h3>
-                    <div id="timeline"></div>
-                </div>
+                <div class="section-title">Career Timeline</div>
+                <div class="timeline" id="timeline"></div>
                 
-                <div class="suggested-players" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333;">
-                    <h3>🔍 Try Another Player</h3>
-                    <div class="player-chips" id="moreSuggestions"></div>
+                <div class="suggestions">
+                    <div class="section-title">Similar Players</div>
+                    <div class="chips" id="similarChips"></div>
                 </div>
             </div>
-        </aside>
-    </div>
+        </div>
+    </main>
     
-    <!-- Team Modal -->
-    <div class="modal-overlay" id="teamModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTeamName">Team Name</h3>
-                <button class="modal-close" onclick="closeTeamModal()">&times;</button>
+    <div class="modal-bg" id="modal">
+        <div class="modal">
+            <div class="modal-head">
+                <h3 id="mTitle"></h3>
+                <button class="modal-close" onclick="closeModal()">×</button>
             </div>
             <div class="modal-body">
-                <div class="modal-team-location" id="modalTeamLocation"></div>
-                <div class="modal-player-count" id="modalPlayerCount"></div>
-                <div class="modal-player-list" id="modalPlayerList"></div>
+                <div class="modal-loc" id="mLoc"></div>
+                <div class="modal-count" id="mCount"></div>
+                <div id="mList"></div>
             </div>
         </div>
     </div>
     
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
     <script>
-        // Suggested star players (1985+)
-        const SUGGESTED_PLAYERS = [
-            "LeBron James", "Michael Jordan", "Kobe Bryant", "Stephen Curry",
-            "Kevin Durant", "Shaquille O'Neal", "Tim Duncan", "Magic Johnson",
-            "Larry Bird", "Dirk Nowitzki", "Kevin Garnett", "Allen Iverson",
-            "Dwyane Wade", "Chris Paul", "Giannis Antetokounmpo", "Luka Dončić",
-            "Hakeem Olajuwon", "Charles Barkley", "Karl Malone", "John Stockton",
-            "Patrick Ewing", "Scottie Pippen", "Gary Payton", "Jason Kidd",
-            "Steve Nash", "Ray Allen", "Paul Pierce", "Vince Carter",
-            "Tracy McGrady", "Carmelo Anthony", "Russell Westbrook", "James Harden",
-            "Kawhi Leonard", "Anthony Davis", "Nikola Jokić", "Joel Embiid"
-        ];
-        
-        // City coordinates database
-        const CITY_COORDS = {
-            // NBA Cities - USA
-            "New York|New York|USA": [40.7128, -74.0060],
-            "Brooklyn|New York|USA": [40.6782, -73.9442],
-            "Los Angeles|California|USA": [34.0522, -118.2437],
-            "Chicago|Illinois|USA": [41.8781, -87.6298],
-            "Houston|Texas|USA": [29.7604, -95.3698],
-            "Phoenix|Arizona|USA": [33.4484, -112.0740],
-            "Philadelphia|Pennsylvania|USA": [39.9526, -75.1652],
-            "San Antonio|Texas|USA": [29.4241, -98.4936],
-            "San Diego|California|USA": [32.7157, -117.1611],
-            "Dallas|Texas|USA": [32.7767, -96.7970],
-            "Austin|Texas|USA": [30.2672, -97.7431],
-            "Charlotte|North Carolina|USA": [35.2271, -80.8431],
-            "San Francisco|California|USA": [37.7749, -122.4194],
-            "Indianapolis|Indiana|USA": [39.7684, -86.1581],
-            "Seattle|Washington|USA": [47.6062, -122.3321],
-            "Denver|Colorado|USA": [39.7392, -104.9903],
-            "Boston|Massachusetts|USA": [42.3601, -71.0589],
-            "Detroit|Michigan|USA": [42.3314, -83.0458],
-            "Portland|Oregon|USA": [45.5152, -122.6784],
-            "Memphis|Tennessee|USA": [35.1495, -90.0490],
-            "Oklahoma City|Oklahoma|USA": [35.4676, -97.5164],
-            "Milwaukee|Wisconsin|USA": [43.0389, -87.9065],
-            "Atlanta|Georgia|USA": [33.7490, -84.3880],
-            "Sacramento|California|USA": [38.5816, -121.4944],
-            "Miami|Florida|USA": [25.7617, -80.1918],
-            "Orlando|Florida|USA": [28.5383, -81.3792],
-            "Minneapolis|Minnesota|USA": [44.9778, -93.2650],
-            "Cleveland|Ohio|USA": [41.4993, -81.6944],
-            "New Orleans|Louisiana|USA": [29.9511, -90.0715],
-            "Salt Lake City|Utah|USA": [40.7608, -111.8910],
-            "Washington|D.C.|USA": [38.9072, -77.0369],
-            "Baltimore|Maryland|USA": [39.2904, -76.6122],
-            "East Rutherford|New Jersey|USA": [40.8128, -74.0742],
-            "Oakland|California|USA": [37.8044, -122.2712],
-            
-            // G-League & Minor League
-            "Sioux Falls|South Dakota|USA": [43.5446, -96.7311],
-            "Boise|Idaho|USA": [43.6150, -116.2023],
-            "Frisco|Texas|USA": [33.1507, -96.8236],
-            "Edinburg|Texas|USA": [26.3017, -98.1633],
-            "Stockton|California|USA": [37.9577, -121.2908],
-            "Reno|Nevada|USA": [39.5296, -119.8138],
-            "Fort Wayne|Indiana|USA": [41.0793, -85.1394],
-            "Santa Cruz|California|USA": [36.9741, -122.0308],
-            "Grand Rapids|Michigan|USA": [42.9634, -85.6681],
-            "Erie|Pennsylvania|USA": [42.1292, -80.0851],
-            "Canton|Ohio|USA": [40.7989, -81.3784],
-            "Greensboro|North Carolina|USA": [36.0726, -79.7920],
-            "Las Vegas|Nevada|USA": [36.1699, -115.1398],
-            "Rapid City|South Dakota|USA": [44.0805, -103.2310],
-            "Rockford|Illinois|USA": [42.2711, -89.0940],
-            "Albany|New York|USA": [42.6526, -73.7562],
-            "Buffalo|New York|USA": [42.8864, -78.8784],
-            "Kansas City|Missouri|USA": [39.0997, -94.5786],
-            "St. Louis|Missouri|USA": [38.6270, -90.1994],
-            "Louisville|Kentucky|USA": [38.2527, -85.7585],
-            "Columbus|Ohio|USA": [39.9612, -82.9988],
-            "Cincinnati|Ohio|USA": [39.1031, -84.5120],
-            "Pittsburgh|Pennsylvania|USA": [40.4406, -79.9959],
-            "Hartford|Connecticut|USA": [41.7658, -72.6734],
-            
-            // Canada
-            "Toronto|Ontario|Canada": [43.6532, -79.3832],
-            "Vancouver|British Columbia|Canada": [49.2827, -123.1207],
-            "Montreal|Quebec|Canada": [45.5017, -73.5673],
-            
-            // Europe - Spain
-            "Madrid||Spain": [40.4168, -3.7038],
-            "Barcelona||Spain": [41.3851, 2.1734],
-            "Valencia||Spain": [39.4699, -0.3763],
-            "Sevilla||Spain": [37.3891, -5.9845],
-            "Bilbao||Spain": [43.2630, -2.9350],
-            "Málaga||Spain": [36.7213, -4.4214],
-            "Zaragoza||Spain": [41.6488, -0.8891],
-            "Vitoria-Gasteiz||Spain": [42.8467, -2.6716],
-            "Badalona||Spain": [41.4500, 2.2475],
-            "Tenerife||Spain": [28.4636, -16.2518],
-            
-            // Europe - Italy
-            "Rome||Italy": [41.9028, 12.4964],
-            "Roma||Italy": [41.9028, 12.4964],
-            "Milan||Italy": [45.4642, 9.1900],
-            "Milano||Italy": [45.4642, 9.1900],
-            "Bologna||Italy": [44.4949, 11.3426],
-            "Venice||Italy": [45.4408, 12.3155],
-            "Venezia||Italy": [45.4408, 12.3155],
-            "Siena||Italy": [43.3188, 11.3308],
-            "Treviso||Italy": [45.6669, 12.2430],
-            "Cantù||Italy": [45.7390, 9.1322],
-            "Varese||Italy": [45.8206, 8.8257],
-            
-            // Europe - Greece
-            "Athens||Greece": [37.9838, 23.7275],
-            "Piraeus||Greece": [37.9475, 23.6412],
-            "Thessaloniki||Greece": [40.6401, 22.9444],
-            
-            // Europe - Turkey
-            "Istanbul||Turkey": [41.0082, 28.9784],
-            "Ankara||Turkey": [39.9334, 32.8597],
-            "İzmir||Turkey": [38.4237, 27.1428],
-            
-            // Europe - France
-            "Paris||France": [48.8566, 2.3522],
-            "Lyon||France": [45.7640, 4.8357],
-            "Villeurbanne||France": [45.7676, 4.8798],
-            "Limoges||France": [45.8336, 1.2611],
-            
-            // Europe - Germany
-            "Berlin||Germany": [52.5200, 13.4050],
-            "Munich||Germany": [48.1351, 11.5820],
-            "Frankfurt||Germany": [50.1109, 8.6821],
-            "Bamberg||Germany": [49.8988, 10.9028],
-            
-            // Europe - Russia
-            "Moscow||Russia": [55.7558, 37.6173],
-            "Saint Petersburg||Russia": [59.9311, 30.3609],
-            
-            // Europe - Eastern
-            "Belgrade||Serbia": [44.7866, 20.4489],
-            "Zagreb||Croatia": [45.8150, 15.9819],
-            "Ljubljana||Slovenia": [46.0569, 14.5058],
-            "Kaunas||Lithuania": [54.8985, 23.9036],
-            "Vilnius||Lithuania": [54.6872, 25.2797],
-            "Tel Aviv||Israel": [32.0853, 34.7818],
-            
-            // Asia
-            "Beijing||China": [39.9042, 116.4074],
-            "Shanghai||China": [31.2304, 121.4737],
-            "Guangzhou||China": [23.1291, 113.2644],
-            "Tokyo||Japan": [35.6762, 139.6503],
-            "Seoul||South Korea": [37.5665, 126.9780],
-            "Manila||Philippines": [14.5995, 120.9842],
-            "Taipei||Taiwan": [25.0330, 121.5654],
-            
-            // Oceania
-            "Sydney|New South Wales|Australia": [-33.8688, 151.2093],
-            "Melbourne|Victoria|Australia": [-37.8136, 144.9631],
-            "Perth|Western Australia|Australia": [-31.9505, 115.8605],
-            "Auckland||New Zealand": [-36.8509, 174.7645],
-            
-            // Americas
-            "Mexico City||Mexico": [19.4326, -99.1332],
-            "São Paulo||Brazil": [-23.5505, -46.6333],
-            "Buenos Aires||Argentina": [-34.6037, -58.3816],
-            "San Juan||Puerto Rico": [18.4655, -66.1057],
-            "Bayamón||Puerto Rico": [18.3833, -66.1500],
-            "Santo Domingo||Dominican Republic": [18.4861, -69.9312],
+        const ERAS = {
+            "2020s": ["Luka Dončić","Giannis Antetokounmpo","Nikola Jokić","Joel Embiid","Jayson Tatum","Ja Morant","Trae Young","Anthony Edwards","LaMelo Ball","Shai Gilgeous-Alexander"],
+            "2010s": ["LeBron James","Stephen Curry","Kevin Durant","James Harden","Russell Westbrook","Kawhi Leonard","Anthony Davis","Kyrie Irving","Damian Lillard","Paul George"],
+            "2000s": ["Kobe Bryant","Tim Duncan","Dirk Nowitzki","Dwyane Wade","Chris Paul","Carmelo Anthony","Kevin Garnett","Paul Pierce","Steve Nash","Ray Allen"],
+            "1990s": ["Michael Jordan","Shaquille O'Neal","Hakeem Olajuwon","Karl Malone","John Stockton","Charles Barkley","Patrick Ewing","Scottie Pippen","Gary Payton","Reggie Miller"],
+            "1980s": ["Magic Johnson","Larry Bird","Isiah Thomas","Dominique Wilkins","Clyde Drexler","Moses Malone","James Worthy","Robert Parish","Kevin McHale","Julius Erving"]
         };
+        const ALL_STARS = Object.values(ERAS).flat();
         
-        // Country fallback
-        const COUNTRY_COORDS = {
-            "USA": [39.8283, -98.5795],
-            "Canada": [56.1304, -106.3468],
-            "Spain": [40.4637, -3.7492],
-            "Italy": [41.8719, 12.5674],
-            "France": [46.2276, 2.2137],
-            "Germany": [51.1657, 10.4515],
-            "Greece": [39.0742, 21.8243],
-            "Turkey": [38.9637, 35.2433],
-            "Russia": [61.5240, 105.3188],
-            "Serbia": [44.0165, 21.0059],
-            "Croatia": [45.1000, 15.2000],
-            "Slovenia": [46.1512, 14.9955],
-            "Lithuania": [55.1694, 23.8813],
-            "Israel": [31.0461, 34.8516],
-            "China": [35.8617, 104.1954],
-            "Japan": [36.2048, 138.2529],
-            "South Korea": [35.9078, 127.7669],
-            "Philippines": [12.8797, 121.7740],
-            "Australia": [-25.2744, 133.7751],
-            "New Zealand": [-40.9006, 174.8860],
-            "Puerto Rico": [18.2208, -66.5901],
-            "Argentina": [-38.4161, -63.6167],
-            "Brazil": [-14.2350, -51.9253],
-            "Mexico": [23.6345, -102.5528],
-            "Dominican Republic": [18.7357, -70.1627],
-            "Venezuela": [6.4238, -66.5897],
-            "Poland": [51.9194, 19.1451],
-            "Ukraine": [48.3794, 31.1656],
-            "Belgium": [50.5039, 4.4699],
-            "Montenegro": [42.7087, 19.3744],
-            "Lebanon": [33.8547, 35.8623],
-            "UAE": [23.4241, 53.8478],
-            "Iran": [32.4279, 53.6880],
+        const COORDS = {
+            "New York|New York|USA":[40.7128,-74.006],"Brooklyn|New York|USA":[40.6782,-73.9442],"Los Angeles|California|USA":[34.0522,-118.2437],"Chicago|Illinois|USA":[41.8781,-87.6298],"Houston|Texas|USA":[29.7604,-95.3698],"Phoenix|Arizona|USA":[33.4484,-112.074],"Philadelphia|Pennsylvania|USA":[39.9526,-75.1652],"San Antonio|Texas|USA":[29.4241,-98.4936],"Dallas|Texas|USA":[32.7767,-96.797],"San Francisco|California|USA":[37.7749,-122.4194],"Indianapolis|Indiana|USA":[39.7684,-86.1581],"Seattle|Washington|USA":[47.6062,-122.3321],"Denver|Colorado|USA":[39.7392,-104.9903],"Boston|Massachusetts|USA":[42.3601,-71.0589],"Detroit|Michigan|USA":[42.3314,-83.0458],"Portland|Oregon|USA":[45.5152,-122.6784],"Memphis|Tennessee|USA":[35.1495,-90.049],"Oklahoma City|Oklahoma|USA":[35.4676,-97.5164],"Milwaukee|Wisconsin|USA":[43.0389,-87.9065],"Atlanta|Georgia|USA":[33.749,-84.388],"Sacramento|California|USA":[38.5816,-121.4944],"Miami|Florida|USA":[25.7617,-80.1918],"Orlando|Florida|USA":[28.5383,-81.3792],"Minneapolis|Minnesota|USA":[44.9778,-93.265],"Cleveland|Ohio|USA":[41.4993,-81.6944],"New Orleans|Louisiana|USA":[29.9511,-90.0715],"Salt Lake City|Utah|USA":[40.7608,-111.891],"Washington|D.C.|USA":[38.9072,-77.0369],"Charlotte|North Carolina|USA":[35.2271,-80.8431],"Toronto|Ontario|Canada":[43.6532,-79.3832],"Madrid||Spain":[40.4168,-3.7038],"Barcelona||Spain":[41.3851,2.1734],"Bologna||Italy":[44.4949,11.3426],"Milano||Italy":[45.4642,9.19],"Athens||Greece":[37.9838,23.7275],"Istanbul||Turkey":[41.0082,28.9784],"Tel Aviv||Israel":[32.0853,34.7818],"Beijing||China":[39.9042,116.4074],"Shanghai||China":[31.2304,121.4737],"Melbourne|Victoria|Australia":[-37.8136,144.9631],"Sydney|New South Wales|Australia":[-33.8688,151.2093]
         };
+        const FALLBACK = {"USA":[39.8,-98.6],"Canada":[56.1,-106.3],"Spain":[40.5,-3.7],"Italy":[41.9,12.6],"France":[46.2,2.2],"Germany":[51.2,10.5],"Greece":[39.1,21.8],"Turkey":[39,35.2],"Russia":[61.5,105.3],"Serbia":[44,21],"Croatia":[45,15.2],"Slovenia":[46.2,15],"Lithuania":[55.2,23.9],"Israel":[31,34.9],"China":[35.9,104.2],"Japan":[36.2,138.3],"Australia":[-25.3,133.8],"Philippines":[12.9,121.8],"Puerto Rico":[18.2,-66.6],"Argentina":[-38.4,-63.6],"Brazil":[-14.2,-51.9],"Mexico":[23.6,-102.6]};
+        const FLAGS = {"USA":"🇺🇸","Canada":"🇨🇦","Spain":"🇪🇸","Italy":"🇮🇹","France":"🇫🇷","Germany":"🇩🇪","Greece":"🇬🇷","Turkey":"🇹🇷","Russia":"🇷🇺","Serbia":"🇷🇸","Croatia":"🇭🇷","Slovenia":"🇸🇮","Lithuania":"🇱🇹","Israel":"🇮🇱","China":"🇨🇳","Japan":"🇯🇵","South Korea":"🇰🇷","Philippines":"🇵🇭","Australia":"🇦🇺","Puerto Rico":"🇵🇷","Argentina":"🇦🇷","Brazil":"🇧🇷","Mexico":"🇲🇽","Dominican Republic":"🇩🇴","Venezuela":"🇻🇪","Poland":"🇵🇱","Ukraine":"🇺🇦","Belgium":"🇧🇪","Montenegro":"🇲🇪","Lebanon":"🇱🇧","UAE":"🇦🇪","Iran":"🇮🇷","Nigeria":"🇳🇬","Senegal":"🇸🇳","Georgia":"🇬🇪"};
         
-        // Flags
-        const FLAGS = {
-            "USA": "🇺🇸", "Canada": "🇨🇦", "Spain": "🇪🇸", "Italy": "🇮🇹", "France": "🇫🇷",
-            "Germany": "🇩🇪", "Greece": "🇬🇷", "Turkey": "🇹🇷", "Russia": "🇷🇺", "Serbia": "🇷🇸",
-            "Croatia": "🇭🇷", "Slovenia": "🇸🇮", "Lithuania": "🇱🇹", "Latvia": "🇱🇻", "Estonia": "🇪🇪",
-            "Israel": "🇮🇱", "China": "🇨🇳", "Japan": "🇯🇵", "South Korea": "🇰🇷", "Taiwan": "🇹🇼",
-            "Philippines": "🇵🇭", "Australia": "🇦🇺", "New Zealand": "🇳🇿",
-            "Puerto Rico": "🇵🇷", "Argentina": "🇦🇷", "Brazil": "🇧🇷", "Venezuela": "🇻🇪",
-            "Mexico": "🇲🇽", "Poland": "🇵🇱", "Ukraine": "🇺🇦", "Belgium": "🇧🇪",
-            "Netherlands": "🇳🇱", "Portugal": "🇵🇹", "Montenegro": "🇲🇪", "Bosnia": "🇧🇦",
-            "Bulgaria": "🇧🇬", "Romania": "🇷🇴", "Hungary": "🇭🇺", "Czech Republic": "🇨🇿",
-            "Austria": "🇦🇹", "Switzerland": "🇨🇭", "Sweden": "🇸🇪", "Finland": "🇫🇮",
-            "Denmark": "🇩🇰", "Norway": "🇳🇴", "United Kingdom": "🇬🇧", "Ireland": "🇮🇪",
-            "Cyprus": "🇨🇾", "Lebanon": "🇱🇧", "UAE": "🇦🇪", "Saudi Arabia": "🇸🇦",
-            "Kuwait": "🇰🇼", "Qatar": "🇶🇦", "Iran": "🇮🇷",
-            "Dominican Republic": "🇩🇴", "Uruguay": "🇺🇾", "Chile": "🇨🇱", "Colombia": "🇨🇴",
-            "Egypt": "🇪🇬", "Morocco": "🇲🇦", "Nigeria": "🇳🇬", "South Africa": "🇿🇦",
-            "Senegal": "🇸🇳", "Angola": "🇦🇴", "Georgia": "🇬🇪", "Kazakhstan": "🇰🇿",
-        };
-        
-        function getFlag(country) {
-            return FLAGS[country] || '🌍';
-        }
-        
-        function getCoords(city, state, country) {
-            if (!city) return null;
-            
-            const key1 = `${city}|${state || ''}|${country || ''}`;
-            if (CITY_COORDS[key1]) return CITY_COORDS[key1];
-            
-            const key2 = `${city}||${country || ''}`;
-            if (CITY_COORDS[key2]) return CITY_COORDS[key2];
-            
-            if (country && COUNTRY_COORDS[country]) {
-                const base = COUNTRY_COORDS[country];
-                const hash = city.split('').reduce((a, b) => ((a << 5) - a) + b.charCodeAt(0), 0);
-                return [base[0] + ((hash % 100) - 50) / 30, base[1] + (((hash >> 8) % 100) - 50) / 30];
+        const getFlag = c => FLAGS[c] || '🌍';
+        const getCoords = (city,state,country) => {
+            if(!city) return null;
+            let k = `${city}|${state||''}|${country||''}`;
+            if(COORDS[k]) return COORDS[k];
+            k = `${city}||${country||''}`;
+            if(COORDS[k]) return COORDS[k];
+            if(country && FALLBACK[country]) {
+                const b = FALLBACK[country];
+                const h = city.split('').reduce((a,c)=>((a<<5)-a)+c.charCodeAt(0),0);
+                return [b[0]+((h%100)-50)/30, b[1]+(((h>>8)%100)-50)/30];
             }
-            
             return null;
-        }
+        };
         
-        // Map & Data
-        let map, markersLayer, polylineLayer;
-        let playersList = [];
-        let careersData = {};
-        let teamIndex = {}; // team -> [{player, years}]
-        let currentMarkers = [];
+        let map, markersLayer, pathLayer, markers = [];
+        let players = [], data = {}, teamIdx = {}, current = null;
         
         function initMap() {
-            map = L.map('map', {
-                center: [39.8283, -98.5795],
-                zoom: 4,
-                zoomControl: true
-            });
-            
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-                attribution: '©OSM ©CARTO',
-                subdomains: 'abcd',
-                maxZoom: 19
+            map = L.map('map', {center:[39,-98], zoom:4});
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution:'©OSM ©CARTO', subdomains:'abcd', maxZoom:19
             }).addTo(map);
-            
             markersLayer = L.layerGroup().addTo(map);
-            polylineLayer = L.layerGroup().addTo(map);
+            pathLayer = L.layerGroup().addTo(map);
         }
         
         function clearMap() {
             markersLayer.clearLayers();
-            polylineLayer.clearLayers();
-            currentMarkers = [];
+            pathLayer.clearLayers();
+            markers = [];
         }
         
-        function highlightMarker(index) {
-            currentMarkers.forEach((m, i) => {
-                const el = m.getElement();
-                if (el) {
-                    if (i === index) {
-                        el.classList.add('highlighted');
-                    } else {
-                        el.classList.remove('highlighted');
-                    }
-                }
-            });
-        }
-        
-        function displayPlayerOnMap(career) {
+        function draw(career) {
             clearMap();
-            
-            const points = [];
-            const bounds = [];
-            
-            career.forEach((stop, index) => {
-                const coords = getCoords(stop.city, stop.state, stop.country);
-                if (coords) {
-                    points.push({ coords, stop, index });
-                    bounds.push(coords);
-                }
+            const pts = [];
+            career.forEach((s,i) => {
+                const c = getCoords(s.city,s.state,s.country);
+                if(c) pts.push({coords:c, stop:s, idx:i});
             });
+            if(!pts.length) return;
             
-            if (points.length === 0) return;
-            
-            // Draw path
-            if (points.length > 1) {
-                L.polyline(points.map(p => p.coords), {
-                    color: '#fdb927',
-                    weight: 3,
-                    opacity: 0.8,
-                    dashArray: '8, 4'
-                }).addTo(polylineLayer);
+            // Path
+            if(pts.length > 1) {
+                L.polyline(pts.map(p=>p.coords), {
+                    color:'#d63031', weight:2, opacity:0.5, dashArray:'5,5'
+                }).addTo(pathLayer);
             }
             
-            // Add numbered markers
-            points.forEach((point, i) => {
-                const isFirst = i === 0;
-                const isLast = i === points.length - 1;
-                const num = i + 1;
-                
-                let markerClass = 'numbered-marker';
-                let size = 24;
-                if (isFirst) {
-                    markerClass += ' start';
-                    size = 28;
-                } else if (isLast) {
-                    markerClass += ' end';
-                    size = 28;
-                }
+            // Markers
+            pts.forEach((p,i) => {
+                const first = i===0, last = i===pts.length-1;
+                let bg = '#d63031';
+                if(first) bg = '#27ae60';
+                else if(last) bg = '#2980b9';
+                const sz = (first||last) ? 24 : 20;
                 
                 const icon = L.divIcon({
-                    className: markerClass,
-                    html: `<span>${num}</span>`,
-                    iconSize: [size, size],
-                    iconAnchor: [size/2, size/2]
+                    className:'marker',
+                    html:`<div style="width:${sz}px;height:${sz}px;background:${bg};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.3)">${i+1}</div>`,
+                    iconSize:[sz,sz], iconAnchor:[sz/2,sz/2]
                 });
                 
-                const marker = L.marker(point.coords, { icon });
-                marker.addTo(markersLayer);
-                currentMarkers.push(marker);
+                const m = L.marker(p.coords,{icon}).addTo(markersLayer);
+                markers.push({m, idx:p.idx});
                 
-                const stopLabel = isFirst ? '🚀 FIRST STOP' : (isLast ? '🏁 LATEST' : `STOP #${num}`);
-                const location = point.stop.state 
-                    ? `${point.stop.city}, ${point.stop.state}`
-                    : point.stop.city || 'Unknown';
+                const loc = p.stop.state ? `${p.stop.city}, ${p.stop.state}` : p.stop.city||'';
+                m.bindPopup(`<div class="popup-team">${getFlag(p.stop.country)} ${p.stop.team}</div><div class="popup-loc">${loc}${p.stop.country?', '+p.stop.country:''}</div><div class="popup-yrs">${p.stop.years}</div>`,{closeButton:false,offset:[0,-5]});
                 
-                marker.bindPopup(`
-                    <div class="popup-content">
-                        <div class="popup-stop">${stopLabel}</div>
-                        <div class="popup-team">${point.stop.team}</div>
-                        <div class="popup-location">${getFlag(point.stop.country)} ${location}${point.stop.country ? ', ' + point.stop.country : ''}</div>
-                        <div class="popup-years">${point.stop.years}</div>
-                    </div>
-                `, { closeButton: false });
-                
-                // Hover sync
-                marker.on('mouseover', () => {
-                    document.querySelectorAll('.timeline-item').forEach((el, idx) => {
-                        el.classList.toggle('highlighted', idx === point.index);
-                    });
-                });
-                marker.on('mouseout', () => {
-                    document.querySelectorAll('.timeline-item').forEach(el => {
-                        el.classList.remove('highlighted');
-                    });
+                m.on('mouseover',()=>hlTimeline(p.idx));
+                m.on('mouseout',()=>hlTimeline(-1));
+            });
+            
+            map.fitBounds(pts.map(p=>p.coords),{padding:[40,40],maxZoom:5});
+        }
+        
+        function hlTimeline(idx) {
+            document.querySelectorAll('.stop').forEach((el,i)=>{
+                el.classList.toggle('hl',i===idx);
+            });
+        }
+        
+        function hlMarker(idx) {
+            markers.forEach(({m,idx:i})=>{
+                const el = m.getElement();
+                if(el) {
+                    const inner = el.querySelector('div');
+                    if(inner) inner.style.transform = i===idx ? 'scale(1.3)' : '';
+                }
+            });
+        }
+        
+        async function load() {
+            const pRes = await fetch('nba_players_list.csv');
+            players = (await pRes.text()).trim().split('\n').slice(1).map(l=>l.split(',')[0]?.replace(/"/g,'').trim()).filter(Boolean);
+            
+            const cRes = await fetch('nba_players_careers_READY.json');
+            (await cRes.json()).forEach(p=>{
+                data[p.player] = p;
+                if(p.career_history) p.career_history.forEach(s=>{
+                    if(!teamIdx[s.team]) teamIdx[s.team] = {loc:s, players:[]};
+                    teamIdx[s.team].players.push({name:p.player,years:s.years});
                 });
             });
             
-            if (bounds.length > 0) {
-                map.fitBounds(bounds, { padding: [40, 40], maxZoom: 6 });
-            }
+            showWelcome();
         }
         
-        async function loadData() {
-            try {
-                const playersResponse = await fetch('nba_players_list.csv');
-                const playersText = await playersResponse.text();
-                playersList = playersText.trim().split('\n').slice(1).map(line => {
-                    return line.split(',')[0]?.replace(/"/g, '').trim();
-                }).filter(name => name);
-                
-                const careersResponse = await fetch('nba_players_careers_READY.json');
-                const careersArray = await careersResponse.json();
-                
-                careersArray.forEach(p => {
-                    careersData[p.player] = p;
-                    
-                    // Build team index
-                    if (p.career_history) {
-                        p.career_history.forEach(stop => {
-                            if (!teamIndex[stop.team]) {
-                                teamIndex[stop.team] = { players: [], location: stop };
-                            }
-                            teamIndex[stop.team].players.push({
-                                name: p.player,
-                                years: stop.years
-                            });
-                        });
-                    }
+        function showWelcome() {
+            const avail = ALL_STARS.filter(p=>data[p]).sort(()=>Math.random()-0.5).slice(0,12);
+            document.getElementById('welcomeChips').innerHTML = avail.map(p=>`<div class="chip" onclick="show('${p}')">${p}</div>`).join('');
+        }
+        
+        function getSimilar(name) {
+            const p = data[name];
+            if(!p) return [];
+            const career = p.career_history||[];
+            const y1 = parseInt(career[0]?.years?.split('-')[0])||2000;
+            
+            let era = "2010s";
+            if(y1>=2018) era="2020s";
+            else if(y1>=2005) era="2010s";
+            else if(y1>=1995) era="2000s";
+            else if(y1>=1985) era="1990s";
+            else era="1980s";
+            
+            const set = new Set();
+            (ERAS[era]||[]).forEach(x=>{if(x!==name&&data[x])set.add(x);});
+            
+            const teams = new Set(career.map(c=>c.team));
+            teams.forEach(t=>{
+                if(teamIdx[t]) teamIdx[t].players.forEach(x=>{
+                    if(x.name!==name&&data[x.name]&&ALL_STARS.includes(x.name)) set.add(x.name);
                 });
-                
-                // Setup suggested players
-                setupSuggestions();
-                
-            } catch (error) {
-                console.error('Error loading data:', error);
-            }
-        }
-        
-        function setupSuggestions() {
-            const available = SUGGESTED_PLAYERS.filter(p => careersData[p]);
-            const shuffled = available.sort(() => Math.random() - 0.5);
+            });
             
-            const chips1 = shuffled.slice(0, 12);
-            const chips2 = shuffled.slice(12, 20);
-            
-            document.getElementById('suggestedChips').innerHTML = chips1.map(p => 
-                `<div class="player-chip" onclick="displayPlayer('${p}')">${p}</div>`
-            ).join('');
-            
-            document.getElementById('moreSuggestions').innerHTML = chips2.map(p => 
-                `<div class="player-chip" onclick="displayPlayer('${p}')">${p}</div>`
-            ).join('');
+            return [...set].slice(0,8);
         }
         
         // Search
-        const searchInput = document.getElementById('searchInput');
-        const suggestions = document.getElementById('suggestions');
+        const searchEl = document.getElementById('search');
+        const resultsEl = document.getElementById('results');
         
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase().trim();
-            
-            if (query.length < 2) {
-                suggestions.classList.remove('active');
-                return;
-            }
-            
-            const matches = playersList.filter(name => 
-                name.toLowerCase().includes(query)
-            ).slice(0, 8);
-            
-            if (matches.length === 0) {
-                suggestions.classList.remove('active');
-                return;
-            }
-            
-            suggestions.innerHTML = matches.map(name => 
-                `<div class="suggestion-item" data-name="${name}">${name}</div>`
-            ).join('');
-            suggestions.classList.add('active');
+        searchEl.addEventListener('input',function(){
+            const q = this.value.toLowerCase().trim();
+            if(q.length<2){resultsEl.classList.remove('show');return;}
+            const m = players.filter(n=>n.toLowerCase().includes(q)).slice(0,8);
+            if(!m.length){resultsEl.classList.remove('show');return;}
+            resultsEl.innerHTML = m.map(n=>`<div class="result-item" data-n="${n}">${n}</div>`).join('');
+            resultsEl.classList.add('show');
         });
         
-        suggestions.addEventListener('click', function(e) {
-            if (e.target.classList.contains('suggestion-item')) {
-                const name = e.target.dataset.name;
-                searchInput.value = name;
-                suggestions.classList.remove('active');
-                displayPlayer(name);
+        resultsEl.addEventListener('click',e=>{
+            if(e.target.classList.contains('result-item')){
+                searchEl.value = e.target.dataset.n;
+                resultsEl.classList.remove('show');
+                show(e.target.dataset.n);
             }
         });
         
-        document.addEventListener('click', function(e) {
-            if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
-                suggestions.classList.remove('active');
+        document.addEventListener('click',e=>{
+            if(!searchEl.contains(e.target)&&!resultsEl.contains(e.target)) resultsEl.classList.remove('show');
+        });
+        
+        searchEl.addEventListener('keydown',e=>{
+            if(e.key==='Enter'){
+                const f = resultsEl.querySelector('.result-item');
+                if(f){searchEl.value=f.dataset.n;resultsEl.classList.remove('show');show(f.dataset.n);}
             }
         });
         
-        searchInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                const first = suggestions.querySelector('.suggestion-item');
-                if (first) {
-                    searchInput.value = first.dataset.name;
-                    suggestions.classList.remove('active');
-                    displayPlayer(first.dataset.name);
-                }
-            }
-        });
-        
-        // Display player
-        function displayPlayer(name) {
-            const player = careersData[name];
+        function show(name) {
+            const p = data[name];
+            if(!p?.career_history?.length){alert('No data available.');return;}
             
-            if (!player || !player.career_history || player.career_history.length === 0) {
-                alert('No career data available for this player.');
-                return;
-            }
+            current = name;
+            const career = p.career_history;
             
-            const career = player.career_history;
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('playerSection').classList.add('active');
             
-            document.getElementById('welcomeMessage').style.display = 'none';
-            document.getElementById('playerInfo').classList.add('active');
+            document.getElementById('pName').textContent = name;
+            const y1 = career[0].years.split('-')[0];
+            const y2 = career[career.length-1].years.split('-')[1];
+            document.getElementById('pSpan').textContent = `${y1} – ${y2}`;
             
-            document.getElementById('playerName').textContent = name;
+            document.getElementById('sTeams').textContent = new Set(career.map(c=>c.team)).size;
+            document.getElementById('sCountries').textContent = new Set(career.map(c=>c.country).filter(Boolean)).size||1;
+            document.getElementById('sYears').textContent = Math.max(1,parseInt(y2)-parseInt(y1));
+            document.getElementById('sStops').textContent = career.length;
             
-            const firstYear = career[0].years.split('-')[0];
-            const lastYear = career[career.length - 1].years.split('-')[1];
-            document.getElementById('playerMeta').textContent = `${firstYear} - ${lastYear}`;
-            
-            const uniqueTeams = new Set(career.map(c => c.team)).size;
-            const uniqueCountries = new Set(career.map(c => c.country).filter(c => c)).size;
-            const yearsActive = parseInt(lastYear) - parseInt(firstYear);
-            
-            document.getElementById('statTeams').textContent = uniqueTeams;
-            document.getElementById('statCountries').textContent = uniqueCountries || 1;
-            document.getElementById('statYears').textContent = yearsActive > 0 ? yearsActive : 1;
-            document.getElementById('statStops').textContent = career.length;
-            
-            // Timeline with flags and clickable teams
-            const timeline = document.getElementById('timeline');
-            timeline.innerHTML = career.map((stop, idx) => {
-                const location = stop.city 
-                    ? (stop.state ? `${stop.city}, ${stop.state}` : stop.city)
-                    : 'Unknown location';
-                const flag = stop.country ? getFlag(stop.country) : '🌍';
-                const country = stop.country || '';
-                const num = idx + 1;
-                
-                return `
-                    <div class="timeline-item" data-index="${idx}" 
-                         onmouseenter="highlightMarker(${idx})" 
-                         onmouseleave="highlightMarker(-1)">
-                        <div class="stop-number">${num}</div>
-                        <div class="timeline-content">
-                            <div class="timeline-years">${stop.years}</div>
-                            <div class="timeline-team" onclick="showTeamModal('${stop.team.replace(/'/g, "\\'")}')">
-                                ${flag} ${stop.team}
-                            </div>
-                            <div class="timeline-location">
-                                ${location}${country ? `, ${country}` : ''}
-                            </div>
-                        </div>
-                    </div>
-                `;
+            document.getElementById('timeline').innerHTML = career.map((s,i)=>{
+                const loc = s.city?(s.state?`${s.city}, ${s.state}`:s.city):'';
+                return `<div class="stop" data-i="${i}" onmouseenter="hlMarker(${i})" onmouseleave="hlMarker(-1)">
+                    <div class="stop-num">${i+1}</div>
+                    <div class="stop-team" onclick="openModal('${s.team.replace(/'/g,"\\'")}')">${getFlag(s.country)} ${s.team}</div>
+                    <div class="stop-meta">${loc}${s.country?', '+s.country:''} · ${s.years}</div>
+                </div>`;
             }).join('');
             
-            displayPlayerOnMap(career);
+            document.getElementById('similarChips').innerHTML = getSimilar(name).map(x=>`<div class="chip" onclick="show('${x}')">${x}</div>`).join('');
             
-            // Scroll to top on mobile
-            if (window.innerWidth < 768) {
-                document.querySelector('.sidebar').scrollTop = 0;
-            }
+            draw(career);
+            
+            if(window.innerWidth<768) document.querySelector('.panel').scrollTop=0;
         }
         
-        // Team Modal
-        function showTeamModal(teamName) {
-            const team = teamIndex[teamName];
-            if (!team) return;
+        function openModal(team) {
+            const t = teamIdx[team];
+            if(!t) return;
             
-            document.getElementById('modalTeamName').textContent = teamName;
+            document.getElementById('mTitle').textContent = team;
+            const loc = t.loc;
+            document.getElementById('mLoc').textContent = loc.city ? `${getFlag(loc.country)} ${loc.city}${loc.state?', '+loc.state:''}${loc.country?', '+loc.country:''}` : '';
+            document.getElementById('mCount').textContent = `${t.players.length} players`;
             
-            const loc = team.location;
-            const locText = loc.city 
-                ? `${getFlag(loc.country)} ${loc.city}${loc.state ? ', ' + loc.state : ''}${loc.country ? ', ' + loc.country : ''}`
-                : 'Location unknown';
-            document.getElementById('modalTeamLocation').textContent = locText;
+            const sorted = [...t.players].sort((a,b)=>(parseInt(b.years.split('-')[0])||0)-(parseInt(a.years.split('-')[0])||0));
+            document.getElementById('mList').innerHTML = sorted.slice(0,50).map(x=>`<div class="modal-row" onclick="closeModal();show('${x.name.replace(/'/g,"\\'")}')"><span>${x.name}</span><span class="modal-yrs">${x.years}</span></div>`).join('') + (sorted.length>50?`<div style="padding:8px;color:#777;font-size:11px">+${sorted.length-50} more</div>`:'');
             
-            document.getElementById('modalPlayerCount').textContent = `${team.players.length} players in database`;
-            
-            // Sort by year descending
-            const sorted = [...team.players].sort((a, b) => {
-                const yearA = parseInt(a.years.split('-')[0]) || 0;
-                const yearB = parseInt(b.years.split('-')[0]) || 0;
-                return yearB - yearA;
-            });
-            
-            document.getElementById('modalPlayerList').innerHTML = sorted.slice(0, 50).map(p => `
-                <div class="modal-player-item" onclick="closeTeamModal(); displayPlayer('${p.name.replace(/'/g, "\\'")}')">
-                    ${p.name}
-                    <span class="modal-player-years">${p.years}</span>
-                </div>
-            `).join('') + (sorted.length > 50 ? `<div style="color: var(--gray); padding: 0.5rem;">...and ${sorted.length - 50} more</div>` : '');
-            
-            document.getElementById('teamModal').classList.add('active');
+            document.getElementById('modal').classList.add('show');
         }
         
-        function closeTeamModal() {
-            document.getElementById('teamModal').classList.remove('active');
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
         }
         
-        // Close modal on overlay click
-        document.getElementById('teamModal').addEventListener('click', function(e) {
-            if (e.target === this) closeTeamModal();
+        document.getElementById('modal').addEventListener('click',e=>{
+            if(e.target.id==='modal') closeModal();
         });
         
-        // Init
-        document.addEventListener('DOMContentLoaded', function() {
-            initMap();
-            loadData();
-        });
+        document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
     </script>
 </body>
 </html>
