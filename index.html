@@ -408,6 +408,230 @@
             
             .player-name { font-size: 26px; }
         }
+    
+        /* Quiz Mode Styles */
+        .quiz-btn {
+            background: var(--red);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .quiz-btn:hover { background: #c0392b; }
+        
+        .quiz-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .quiz-overlay.show { display: flex; }
+        
+        .quiz-box {
+            background: #fff;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            padding: 24px;
+            text-align: center;
+        }
+        
+        .quiz-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        
+        .quiz-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        
+        .quiz-timer {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+        .quiz-timer.warning { color: #e67e22; }
+        .quiz-timer.danger { animation: pulse 0.5s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+        
+        .quiz-progress {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        
+        .quiz-score-display {
+            font-size: 14px;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .quiz-option {
+            background: var(--bg-gray);
+            border: 2px solid var(--border);
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .quiz-option:hover:not(:disabled) { 
+            border-color: var(--red); 
+            background: #fff;
+        }
+        .quiz-option:disabled { cursor: not-allowed; opacity: 0.7; }
+        .quiz-option.correct { 
+            background: #d4edda; 
+            border-color: var(--green);
+            color: var(--green);
+        }
+        .quiz-option.wrong { 
+            background: #f8d7da; 
+            border-color: var(--red);
+            color: var(--red);
+        }
+        
+        .quiz-result {
+            display: none;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .quiz-result.show { display: block; }
+        .quiz-result.correct { background: #d4edda; color: #155724; }
+        .quiz-result.wrong { background: #f8d7da; color: #721c24; }
+        .quiz-result.timeout { background: #fff3cd; color: #856404; }
+        
+        .quiz-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .quiz-next-btn, .quiz-start-btn {
+            background: var(--red);
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+        .quiz-next-btn:hover, .quiz-start-btn:hover { background: #c0392b; }
+        
+        .quiz-close-btn {
+            background: var(--bg-gray);
+            color: var(--text);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .quiz-close-btn:hover { background: var(--border); }
+        
+        .quiz-final {
+            padding: 20px;
+        }
+        
+        .quiz-final-score {
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 8px;
+        }
+        
+        .quiz-final-label {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        
+        .quiz-breakdown {
+            text-align: left;
+            background: var(--bg-gray);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .quiz-breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .quiz-breakdown-row:last-child { border-bottom: none; }
+        .quiz-breakdown-row .name { font-weight: 600; }
+        .quiz-breakdown-row .pts { color: var(--green); font-weight: 600; }
+        .quiz-breakdown-row .pts.zero { color: var(--red); }
+        
+        .quiz-map-container {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            right: 0;
+            bottom: 200px;
+            z-index: 10000;
+            display: none;
+        }
+        .quiz-map-container.show { display: block; }
+        
+        .quiz-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            z-index: 10001;
+            padding: 16px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            display: none;
+        }
+        .quiz-panel.show { display: block; }
+        
+        @media (min-width: 768px) {
+            .quiz-map-container { bottom: 220px; }
+            .quiz-panel { padding: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -418,6 +642,7 @@
                 <input type="text" id="search" placeholder="Search player...">
                 <div id="results"></div>
             </div>
+            <button class="quiz-btn" onclick="startQuiz()">🎮 Play Quiz</button>
         </div>
     </header>
     
@@ -489,9 +714,13 @@
         
         const COORDS = {"'s-Hertogenbosch||Netherlands":[51.6978,5.3037],"Aalst||Belgium":[50.9378,4.0384],"Aarhus||Denmark":[56.1629,10.2039],"Abadan||Iran":[30.3392,48.3043],"Abidjan||Ivory Coast":[5.36,-4.0083],"Achrafieh||Beirut":[33.8897,35.5178],"Adelaide|South Australia|Australia":[-34.9285,138.6007],"Adelaide||Australia":[-34.9285,138.6007],"Afyonkarahisar||Turkey":[38.7312,30.5387],"Aguada||Puerto Rico":[18.3805,-67.1877],"Aguadilla||Puerto Rico":[18.4274,-67.1541],"Aguascalientes City||Mexico":[21.8853,-102.2916],"Ahvaz||Iran":[31.3183,48.6706],"Aibonito||Puerto Rico":[18.1406,-66.2666],"Akita||Akita":[39.72,140.1025],"Akranes||Iceland":[64.3183,-22.05],"Akron|Ohio|USA":[41.0814,-81.519],"Al-Rayyan||Qatar":[25.2919,51.4244],"Albany|New York|USA":[42.6526,-73.7562],"Albuquerque|New Mexico|USA":[35.0844,-106.6504],"Alexandria||Egypt":[31.2001,29.9187],"Alicante||Valencian Community":[38.3452,-0.481],"Allentown|Pennsylvania|USA":[40.6084,-75.4902],"Alvik||Sweden":[59.3344,17.9803],"Alytus||Lithuania":[54.3963,24.0459],"Amaliada||Greece":[37.7939,21.3517],"Amarillo|Texas|USA":[35.222,-101.8313],"Amchit||Lebanon":[34.1483,35.6381],"Amman||Jordan":[31.9454,35.9284],"Amol||Iran":[36.4686,52.3506],"Amstelveen||Netherlands":[52.3114,4.872],"Amsterdam||Netherlands":[52.3676,4.9041],"Anchorage|Alaska|USA":[61.2181,-149.9003],"Andorra la Vella||Andorra":[42.5063,1.5218],"Andorra||Spain":[42.5063,1.5218],"Ankara||Turkey":[39.9334,32.8597],"Antalya||Turkey":[36.8969,30.7133],"Antibes||France":[43.5808,7.1239],"Antwerp||Belgium":[51.2213,4.4051],"Anyang||South Korea":[37.3943,126.9568],"Arecibo||Puerto Rico":[18.4725,-66.7156],"Ashdod||Israel":[31.7914,34.6494],"Ashkelon||Israel":[31.6658,34.5664],"Astana||Kazakhstan":[51.1694,71.4491],"Athens||Greece":[37.9838,23.7275],"Atlanta|Georgia|USA":[33.749,-84.388],"Auburn Hills|Michigan|USA":[42.6875,-83.2341],"Auckland||New Zealand":[-36.8509,174.7645],"Augusta|Georgia|USA":[33.4735,-81.9748],"Austin|Texas|USA":[30.2672,-97.7431],"Aveiro||Portugal":[40.6405,-8.6538],"Avellino||Italy":[40.9146,14.7906],"Azpeitia||Spain":[43.1833,-2.2667],"Baabda||Lebanon":[33.8333,35.5333],"Babol||Iran":[36.5514,52.6797],"Bad Honnef||Germany":[50.6422,7.2278],"Badalona||Spain":[41.45,2.2475],"Baghdad||Iraq":[33.3128,44.3615],"Bagnolet||France":[48.8683,2.4189],"Bahía Blanca||Argentina":[-38.7196,-62.2724],"Baku||Azerbaijan":[40.4093,49.8671],"Ballerup||Denmark":[55.7317,12.3633],"Baltimore|Maryland|USA":[39.2904,-76.6122],"Balıkesir||Turkey":[39.6484,27.8826],"Bamberg||Germany":[49.8988,10.9028],"Bandar Abbas||Iran":[27.1865,56.2808],"Bandung||Indonesia":[-6.9175,107.6191],"Bandırma||Turkey":[40.3522,27.9768],"Bangkok||Thailand":[13.7563,100.5018],"Banja Luka||Republika":[44.7722,17.191],"Barcellona Pozzo di Gotto||Italy":[38.1458,15.2136],"Barcelona||Catalonia":[41.3851,2.1734],"Barcelona||Spain":[41.3851,2.1734],"Barquisimeto||Venezuela":[10.0678,-69.3467],"Barranquilla||Colombia":[10.9685,-74.7813],"Batangas||Philippines":[13.7565,121.0583],"Baton Rouge|Louisiana|USA":[30.4515,-91.1871],"Baunach||Germany":[49.9847,10.8481],"Bayamón||Puerto Rico":[18.3988,-66.1554],"Bayreuth||Germany":[49.9456,11.5713],"Beijing||China":[39.9042,116.4074],"Beirut||Lebanon":[33.8938,35.5018],"Bela Vista||Brazil":[-22.1086,-56.5214],"Belgrade||Serbia":[44.7866,20.4489],"Belgrade||Serbia and Montenegro":[44.7866,20.4489],"Belle Vue||Manchester":[53.4637,-2.195],"Bellinzona||Switzerland":[46.1958,9.024],"Belo Horizonte||Brazil":[-19.9167,-43.9345],"Bendigo||Victoria":[-36.757,144.2794],"Benghazi||Libya":[32.1167,20.0667],"Berlin||Germany":[52.52,13.405],"Beykoz||Turkey":[41.1167,29.1],"Biella||Italy":[45.5628,8.0511],"Bilbao||Spain":[43.263,-2.935],"Billings|Montana|USA":[45.7833,-108.5007],"Birmingham|Alabama|USA":[33.5186,-86.8104],"Bismarck|North Dakota|USA":[46.8083,-100.7837],"Blois||France":[47.5861,1.3359],"Bodrum||Turkey":[37.0344,27.4305],"Boise|Idaho|USA":[43.615,-116.2023],"Bologna||Italy":[44.4949,11.3426],"Bonn||Germany":[50.7374,7.0982],"Bordeaux||France":[44.8378,-0.5792],"Boston|Massachusetts|USA":[42.3601,-71.0589],"Botevgrad||Bulgaria":[42.9086,23.7906],"Boulazac||France":[45.1858,0.7678],"Boulogne-sur-Mer||France":[50.7264,1.6147],"Bourg-en-Bresse||France":[46.2056,5.2256],"Braine-l'Alleud||Belgium":[50.6839,4.3678],"Brampton||Canada":[43.7315,-79.7624],"Brasília||Brazil":[-15.7942,-47.8822],"Braunschweig||Germany":[52.2689,10.5268],"Bremerhaven||Germany":[53.5396,8.5809],"Brescia||Italy":[45.5416,10.2118],"Brighton||Sussex":[50.8225,-0.1372],"Brindisi||Italy":[40.6327,17.9419],"Brisbane|Queensland|Australia":[-27.4698,153.0251],"Brisbane||Australia":[-27.4698,153.0251],"Brooklyn|New York|USA":[40.6782,-73.9442],"Brussels||Belgium":[50.8503,4.3517],"Bucharest||Romania":[44.4268,26.1025],"București||Romania":[44.4268,26.1025],"Budapest||Hungary":[47.4979,19.0402],"Budućnost||Montenegro":[42.4304,19.2594],"Buenos Aires||Argentina":[-34.6037,-58.3816],"Buffalo|New York|USA":[42.8864,-78.8784],"Bujumbura||Burundi":[-3.3614,29.3599],"Burgos||Spain":[42.344,-3.6969],"Burlington|Vermont|USA":[44.4759,-73.2121],"Bursa||Turkey":[40.1885,29.061],"Busan||South Korea":[35.1796,129.0756],"Byblos||Lebanon":[34.1236,35.6511],"Bydgoszcz||Poland":[53.1235,18.0084],"Büyükçekmece||Turkey":[41.0206,28.585],"Caballito||Buenos":[-34.6186,-58.4425],"Caen||France":[49.1829,-0.3707],"Cagliari||Italy":[39.2238,9.1217],"Caguas||Puerto Rico":[18.2341,-66.0485],"Cairns|Queensland|Australia":[-16.9186,145.7781],"Cairns||Australia":[-16.9186,145.7781],"Calgary||Alberta":[51.0447,-114.0719],"Calgary||Canada":[51.0447,-114.0719],"Canberra||Australia":[-35.2809,149.13],"Canberra||Australian Capital Territory":[-35.2809,149.13],"Cancún||Mexico":[21.1619,-86.8515],"Canton|Ohio|USA":[40.7989,-81.3784],"Cantu||Italy":[45.7372,9.1269],"Cantù||Italy":[45.7372,9.1269],"Capo d'Orlando||Italy":[38.1558,14.7411],"Caracas||Venezuela":[10.4806,-66.9036],"Carolina||Puerto Rico":[18.3808,-65.9574],"Cartagena||Spain":[37.6057,-0.9913],"Casale Monferrato||Italy":[45.1333,8.45],"Caserta||Italy":[41.0726,14.337],"Castellón de la Plana||Spain":[39.9864,-0.0513],"Castro||Chile":[-42.4819,-73.765],"Cedar Rapids|Iowa|USA":[41.9779,-91.6656],"Chalon-sur-Saône||France":[46.7808,4.8572],"Chalon||France":[46.7808,4.8572],"Changchun||China":[43.8171,125.3235],"Changwon||Gyeongsangnam-do":[35.2281,128.6811],"Charleroi||Belgium":[50.4108,4.4446],"Charleville-Mézières||France":[49.7718,4.7179],"Charlottetown||Prince Edward Island":[46.2382,-63.1311],"Charlotte|North Carolina|USA":[35.2271,-80.8431],"Chartres||France":[48.4536,1.4885],"Chemnitz||Germany":[50.8278,12.9214],"Chengdu||China":[30.5723,104.0665],"Cherkasy||Ukraine":[49.4285,32.0621],"Chicago|Illinois|USA":[41.8781,-87.6298],"Chihuahua City||Chihuahua":[28.6353,-106.0889],"Chikuma||Nagano":[36.536,138.1175],"Cholet||France":[47.0603,-0.8784],"Christchurch||New Zealand":[-43.5321,172.6362],"Chía||Colombia":[4.8637,-74.0599],"Cincinnati|Ohio|USA":[39.1031,-84.512],"Ciudad Obregón||Mexico":[27.4827,-109.9305],"Ciudad Victoria||Mexico":[23.7369,-99.1411],"Clermont-Ferrand||France":[45.7772,3.087],"Cleveland|Ohio|USA":[41.4993,-81.6944],"Cluj-Napoca||Romania":[46.7712,23.6236],"Coamo||Puerto Rico":[18.0806,-66.3579],"Collado Villalba||Community of Madrid":[40.6339,-4.0058],"Cologne||Germany":[50.9375,6.9603],"Columbus|Ohio|USA":[39.9612,-82.9988],"Comodoro Rivadavia||Argentina":[-45.8667,-67.5],"Concepción||Chile":[-36.827,-73.0503],"Concordia||Entre Ríos":[-31.3969,-58.0209],"Corpus Christi|Texas|USA":[27.8006,-97.3964],"Corrientes||Argentina":[-27.4692,-58.8306],"Crailsheim||Germany":[49.1346,10.0699],"Cremona||Italy":[45.1333,10.0167],"Culiacán||Mexico":[24.8091,-107.394],"Córdoba||Argentina":[-31.4201,-64.1888],"Daegu||South Korea":[35.8714,128.6014],"Dafni||Greece":[37.95,23.7333],"Dallas|Texas|USA":[32.7767,-96.797],"Damascus||Syria":[33.5138,36.2765],"Dar es Salaam||Tanzania":[-6.7924,39.2083],"Darwin||Northern Territory":[-12.4634,130.8456],"Dayton|Ohio|USA":[39.7589,-84.1916],"Debrecen||Hungary":[47.5316,21.6273],"Denain||France":[50.3306,3.3958],"Denizli||Turkey":[37.7765,29.0864],"Denver|Colorado|USA":[39.7392,-104.9903],"Derby||Derbyshire":[52.9228,-1.4752],"Des Moines|Iowa|USA":[41.5868,-93.625],"Detroit|Michigan|USA":[42.3314,-83.0458],"Dijon||France":[47.322,5.0415],"Diyarbakır||Turkey":[37.9144,40.2306],"Dnipro||Ukraine":[48.4647,35.0462],"Doha||Qatar":[25.2854,51.531],"Domžale||Slovenia":[46.1378,14.5939],"Donetsk||Ukraine":[48.0159,37.8029],"Dongguan||China":[23.0207,113.7518],"Dubai||United Arab Emirates":[25.2048,55.2708],"Dublin||Ireland":[53.3498,-6.2603],"Duluth|Minnesota|USA":[46.7867,-92.1005],"Dunedin||New Zealand":[-45.8788,170.5028],"East Rutherford|New Jersey|USA":[40.8223,-74.0971],"Edmonton||Alberta":[53.5461,-113.4938],"Edmonton||Canada":[53.5461,-113.4938],"Eilat||Israel":[29.5577,34.9519],"El Paso|Texas|USA":[31.7619,-106.485],"El Prat de Llobregat||Spain":[41.3167,2.1],"Ellesmere Port||Cheshire":[53.2793,-2.8974],"Engomi||Cyprus":[35.1667,33.35],"Erie|Pennsylvania|USA":[42.1292,-80.0851],"Esenler||Istanbul":[41.0422,28.8775],"Eskişehir||Turkey":[39.7767,30.5206],"Espoo||Finland":[60.2055,24.6559],"Evansville|Indiana|USA":[37.9716,-87.5711],"Evreux||France":[49.024,1.1508],"Fabriano||Italy":[43.3372,12.9069],"Fabriano||Marche":[43.3372,12.9069],"Fajardo||Puerto Rico":[18.3257,-65.6527],"Fargo|North Dakota|USA":[46.8772,-96.7898],"Ferrara||Italy":[44.8378,11.6197],"Ferrol||Galicia":[43.4917,-8.2381],"Fethiye||Turkey":[36.6514,29.1225],"Flint|Michigan|USA":[43.0125,-83.6875],"Florida||Buenos Aires":[-34.5305,-58.4954],"Forlì||Italy":[44.2225,12.0408],"Formosa||Argentina":[-26.1849,-58.1731],"Fort Lauderdale|Florida|USA":[26.1224,-80.1373],"Fort Wayne|Indiana|USA":[41.0793,-85.1394],"Fort Worth|Texas|USA":[32.7555,-97.3308],"Fortaleza||Brazil":[-3.7172,-38.5431],"Fos-sur-mer||France":[43.4375,4.9444],"Franca||Brazil":[-20.5389,-47.4006],"Frankfurt||Germany":[50.1109,8.6821],"Fredericia||Denmark":[55.5662,9.7524],"Fresnillo||Mexico":[23.1759,-102.8692],"Fribourg||Switzerland":[46.8065,7.162],"Fuenlabrada||Spain":[40.2839,-3.8],"Fukui||Fukui Prefecture":[36.0641,136.2196],"Fukuoka||Fukuoka":[33.5902,130.4017],"Fuladshahr||Iran":[32.4639,51.4078],"Funabashi||Chiba":[35.6947,139.9828],"Funchal||Portugal":[32.6669,-16.9241],"Gan Ner||Israel":[32.4667,35.35],"Gandía||Valencian Community":[38.9667,-0.1833],"Gargždai||Lithuania":[55.7114,21.3886],"Gary|Indiana|USA":[41.5934,-87.3464],"Gaziantep||Turkey":[37.0662,37.3833],"Gdynia||Poland":[54.5189,18.5305],"Geelong||Victoria":[-38.1499,144.3617],"General Pico||La Pampa Province":[-35.6567,-63.7567],"Geneva||Switzerland":[46.2044,6.1432],"Ghent||Belgium":[51.0543,3.7174],"Gießen||Germany":[50.5841,8.6784],"Gijón||Spain":[43.5453,-5.6635],"Giresun||Turkey":[40.9175,38.3869],"Girona||Spain":[41.9794,2.8214],"Giv'at Shmuel||Israel":[32.0772,34.8467],"Giza||Egypt":[30.0131,31.2089],"Gliwice||Poland":[50.2945,18.6714],"Glyfada||Greece":[37.8667,23.75],"Gorgan||Iran":[36.8394,54.4344],"Gorizia||Italy":[45.9411,13.6222],"Gotha||Germany":[50.9495,10.7018],"Goyang||Gyeonggi Province":[37.6564,126.835],"Gran Canaria||Spain":[27.9202,-15.5474],"Granada||Andalusia":[37.1773,-3.5986],"Granada||Spain":[37.1773,-3.5986],"Grand Rapids|Michigan|USA":[42.9634,-85.6681],"Granollers||Spain":[41.6083,2.2875],"Gravelines||France":[50.9872,2.1283],"Great Falls|Montana|USA":[47.5053,-111.3008],"Greater Sudbury||Ontario":[46.4917,-81.0],"Green Bay|Wisconsin|USA":[44.5133,-88.0133],"Greensboro|North Carolina|USA":[36.0726,-79.792],"Guadalajara||Mexico":[20.6597,-103.3496],"Gualala||Honduras":[14.1,-87.1333],"Guangzhou||China":[23.1291,113.2644],"Guasave||Mexico":[25.5667,-108.4667],"Guayama||Puerto Rico":[17.9843,-66.1127],"Guaymas||Sonora":[27.9245,-110.8973],"Guaynabo||Puerto Rico":[18.3585,-66.1107],"Guelph||Canada":[43.5448,-80.2482],"Gugulethu||South Africa":[-33.9833,18.5667],"Guwahati||Assam":[26.1445,91.7362],"Gvat||Israel":[32.6247,35.1494],"Göttingen||Germany":[51.5413,9.9158],"Haarlem||Netherlands":[52.3874,4.6462],"Hagen||Germany":[51.3671,7.4633],"Haifa||Israel":[32.794,34.9896],"Halifax||Nova Scotia":[44.6488,-63.5752],"Hamburg||Germany":[53.5511,9.9937],"Hamilton||Canada":[43.2557,-79.8711],"Hampton|Virginia|USA":[37.0299,-76.3452],"Hangzhou||China":[30.2741,120.1551],"Harrisburg|Pennsylvania|USA":[40.2732,-76.8867],"Hartford|Connecticut|USA":[41.7658,-72.6734],"Hasselt||Belgium":[50.9311,5.3378],"Hefei||China":[31.8206,117.2272],"Heidelberg||Germany":[49.3988,8.6724],"Helsinki||Finland":[60.1699,24.9384],"Heraklion||Greece":[35.3387,25.1442],"Hermosillo||Mexico":[29.0729,-110.9559],"Herzliya||Israel":[32.1653,34.8461],"Ho Chi Minh City||Vietnam":[10.8231,106.6297],"Hobart||Tasmania":[-42.8821,147.3272],"Hod HaSharon||Israel":[32.1536,34.8914],"Holon||Israel":[32.0108,34.7733],"Honolulu|Hawaii|USA":[21.3069,-157.8583],"Houston|Texas|USA":[29.7604,-95.3698],"Huesca||Spain":[42.1401,-0.4089],"Humacao||Puerto Rico":[18.1497,-65.8277],"Ibarra||Ecuador":[0.3517,-78.1223],"Ilisia||Greece":[37.9667,23.7833],"Illescas||Castile-La Mancha":[40.1222,-3.8478],"Imola||Italy":[44.3533,11.7142],"Inca||Balearic Islands":[39.7206,2.9108],"Indianapolis|Indiana|USA":[39.7684,-86.1581],"Inglewood|California|USA":[33.9617,-118.3531],"Ioannina||Greece":[39.665,20.8537],"Irapuato||Mexico":[20.6767,-101.3566],"Isabela||Puerto Rico":[18.5007,-67.0247],"Isfahan||Iran":[32.6546,51.668],"Istanbul||Turkey":[41.0082,28.9784],"Ivano-Frankivsk||Ukraine":[48.9226,24.7111],"Izmir||Turkey":[38.4192,27.1287],"Jaboatão dos Guararapes||Brazil":[-8.1128,-35.0178],"Jacksonville|Florida|USA":[30.3322,-81.6557],"Jackson|Mississippi|USA":[32.2988,-90.1848],"Jakarta||Indonesia":[-6.2088,106.8456],"Jdeihde||Lebanon":[33.8694,35.5381],"Jeddah||Saudi Arabia":[21.4858,39.1925],"Jena||Germany":[50.9271,11.5892],"Jersey City|New Jersey|USA":[40.7178,-74.0431],"Jerusalem||Israel":[31.7683,35.2137],"Jesi||Italy":[43.5231,13.2442],"Jinan||China":[36.6512,116.9972],"Jinjiang||China":[24.7819,118.5519],"Johnstown||Ireland":[52.3056,-6.85],"Juarez||Mexico":[31.6904,-106.4245],"Junín||Argentina":[-34.593,-60.9565],"Jászberény||Hungary":[47.5,19.9167],"Kaarina||Finland":[60.4083,22.3678],"Kadoma||Japan":[34.7438,135.5701],"Kagoshima||Kagoshima":[31.5966,130.5571],"Kaifan||Kuwait":[29.35,47.9667],"Kallang||Singapore":[1.3044,103.8711],"Kallithea||Greece":[37.95,23.7],"Kamianske||Ukraine":[48.5173,34.6137],"Kanazawa||Japan":[36.5944,136.6256],"Kansas City|Missouri|USA":[39.0997,-94.5786],"Kapfenberg||Austria":[47.4417,15.2917],"Kariya||Japan":[34.9897,136.9907],"Kashiwa||Chiba":[35.8676,139.9757],"Kauhajoki||Finland":[62.4319,22.1761],"Kaunas||Lithuania":[54.8985,23.9036],"Kawasaki||Japan":[35.5308,139.703],"Kawasaki||Kanagawa":[35.5308,139.703],"Kazan||Russia":[55.7963,49.1088],"Kesrouan||Lebanon":[33.9833,35.65],"Kfar Blum||Israel":[33.1753,35.6083],"Khimki||Russia":[55.8894,37.4297],"Kifissia||Greece":[38.0747,23.8108],"Killarney||Ireland":[52.0588,-9.5072],"Kinmen||Taiwan":[24.4493,118.3767],"Kispest||Budapest":[47.4581,19.1478],"Kissimmee|Florida|USA":[28.292,-81.4076],"Klaipėda||Lithuania":[55.7033,21.1443],"Klina||Kosovo":[42.6194,20.5667],"Kobe||Hyogo":[34.6901,135.1956],"Koshigaya||Saitama":[35.8911,139.7903],"Koszalin||Poland":[54.1943,16.1714],"Kotka||Finland":[60.4664,26.9458],"Kołobrzeg||Poland":[54.1759,15.5833],"Kragujevac||Serbia":[44.0128,20.9114],"Krasnodar||Russia":[45.0355,38.9753],"Krasnoyarsk||Russia":[56.0097,92.8525],"Kuala Lumpur||Malaysia":[3.139,101.6869],"Kumamoto||Kumamoto":[32.8031,130.7079],"Kunming||China":[25.0389,102.7183],"Kyiv||Ukraine":[50.4501,30.5234],"Kymi||Greece":[38.6333,24.1167],"Kyoto||Kyoto":[35.0116,135.7681],"Köln||Germany":[50.9375,6.9603],"Körmend||Hungary":[47.0103,16.6042],"L'Hospitalet de Llobregat||Spain":[41.3596,2.1006],"La Banda||Argentina":[-27.7341,-64.2451],"La Laguna||Spain":[28.4853,-16.3167],"La Plata||Buenos":[-34.9205,-57.9536],"Lagos||Nigeria":[6.5244,3.3792],"Lakeland|Florida|USA":[28.0395,-81.9498],"Laktaši||Bosnia and Herzegovina":[44.9106,17.3028],"Landover|Maryland|USA":[38.906,-76.8853],"Lappeenranta||Finland":[61.0587,28.1867],"Lapua||Finland":[62.9706,23.0083],"Larissa||Greece":[39.639,22.4191],"Larnaca||Cyprus":[34.9229,33.6233],"Las Palmas||Spain":[28.1235,-15.4363],"Las Rozas de Madrid||Spain":[40.4949,-3.8736],"Las Vegas|Nevada|USA":[36.1699,-115.1398],"Latina||Italy":[41.4676,12.9044],"Laval||Québec":[45.6066,-73.7124],"Laško||Slovenia":[46.1542,15.2358],"Le Havre||France":[49.4944,0.1079],"Le Mans||France":[48.0061,0.1996],"Le Portel||France":[50.7083,1.5722],"Legnano||Italy":[45.5958,8.9122],"Leicester||Leicestershire":[52.6369,-1.1398],"Leiden||Netherlands":[52.1601,4.497],"Leipzig||Germany":[51.3397,12.3731],"Leuven||Belgium":[50.8798,4.7005],"Levallois-Perret||France":[48.8939,2.2878],"Leverkusen||North Rhine-Westphalia":[51.0459,7.0192],"León||Guanajuato":[21.1221,-101.686],"León||Mexico":[21.1221,-101.686],"León||Spain":[42.5987,-5.5671],"Limassol||Cyprus":[34.7071,33.0226],"Limoges||France":[45.8336,1.2611],"Lisbon metropolitan area||Portugal":[38.7223,-9.1393],"Little Rock|Arkansas|USA":[34.7465,-92.2896],"Livorno||Italy":[43.5485,10.3106],"Livorno||Tuscany":[43.5485,10.3106],"Liège||Belgium":[50.6326,5.5797],"Ljubljana||Slovenia":[46.0569,14.5058],"Lleida||Spain":[41.6176,0.62],"Llíria||Valencian Community":[39.6261,-0.5989],"London||England":[51.5074,-0.1278],"London||Ontario":[42.9849,-81.2453],"Long Beach|California|USA":[33.7701,-118.1937],"Lorient||France":[47.75,-3.3667],"Los Angeles|California|USA":[34.0522,-118.2437],"Los Mochis||Mexico":[25.7906,-108.9939],"Louisville|Kentucky|USA":[38.2527,-85.7585],"Luanda||Angola":[8.8368,13.2343],"Lubbock|Texas|USA":[33.5779,-101.8552],"Lublin||Poland":[51.2465,22.5684],"Ludwigsburg||Germany":[48.8975,9.1922],"Lugano||Switzerland":[46.0037,8.9511],"Lugo||Spain":[43.0097,-7.5567],"Luleå||Sweden":[65.5848,22.1547],"Lviv||Ukraine":[49.8397,24.0297],"Lyon||France":[45.764,4.8357],"Macul||Santiago":[-33.4894,-70.5992],"Madison|Wisconsin|USA":[43.0731,-89.4012],"Madrid||Spain":[40.4168,-3.7038],"Magnitogorsk||Russia":[53.407,58.979],"Mahshahr||Iran":[30.4576,49.1821],"Mahón||Illes Balears":[39.8894,4.2661],"Malaga||Spain":[36.7213,-4.4214],"Malang||East Java":[-7.9797,112.6304],"Manara||Lebanon":[33.8997,35.4828],"Manatí||Puerto Rico":[18.4296,-66.4799],"Manchester|New Hampshire|USA":[42.9956,-71.4548],"Manchester||England":[53.4808,-2.2426],"Manila||Philippines":[14.5995,120.9842],"Manisa||Turkey":[38.6191,27.4289],"Manresa||Spain":[41.725,1.8264],"Mantua||Italy":[45.1564,10.7914],"Mar del Plata||Argentina":[-38.0023,-57.5575],"Maracaibo||Venezuela":[10.6666,-71.6124],"Maracay||Venezuela":[10.2469,-67.5958],"Marietta|Georgia|USA":[33.9526,-84.5499],"Mariupol||Ukraine":[47.0958,37.5483],"Maroussi||Greece":[38.05,23.8],"Massagno||Switzerland":[46.015,8.94],"Maturín||Venezuela":[9.7457,-63.183],"Mayagüez||Puerto Rico":[18.2013,-67.1397],"Mayrouba||Lebanon":[33.9833,35.7833],"Mazatlan||Sinaloa":[23.2494,-106.4111],"Mechelen||Belgium":[51.0259,4.4777],"Medan||North Sumatra":[3.5952,98.6722],"Medellín||Colombia":[6.2518,-75.5636],"Melbourne|Victoria|Australia":[-37.8136,144.9631],"Melbourne||Australia":[-37.8136,144.9631],"Melilla||Spain":[35.2923,-2.9381],"Memphis|Tennessee|USA":[35.1495,-90.049],"Mersin||Turkey":[36.8,34.6333],"Messina||Sicily":[38.1938,15.554],"Mestre||Italy":[45.4908,12.2378],"Mexicali||Mexico":[32.6245,-115.4523],"Mexico City||Mexico":[19.4326,-99.1332],"Mezher||Lebanon":[33.9167,35.5667],"Miami|Florida|USA":[25.7617,-80.1918],"Milano||Italy":[45.4642,9.19],"Milan||Italy":[45.4642,9.19],"Milwaukee|Wisconsin|USA":[43.0389,-87.9065],"Minneapolis|Minnesota|USA":[44.9778,-93.265],"Miranda||Venezuela":[10.25,-66.9167],"Mississauga|Ontario|Canada":[43.589,-79.6441],"Mississauga||Canada":[43.589,-79.6441],"Mito||Ibaraki":[36.3659,140.4714],"Mobile|Alabama|USA":[30.6954,-88.0399],"Monaco||Monaco":[43.7384,7.4246],"Moncton||New Brunswick":[46.0878,-64.7782],"Mondragón||Spain":[43.0642,-2.4906],"Mons||Belgium":[50.4542,3.9568],"Montecatini Terme||Tuscany":[43.8833,10.7667],"Montegranaro||Italy":[43.2333,13.6333],"Monterrey||Mexico":[25.6866,-100.3161],"Montevideo||Uruguay":[-34.9011,-56.1645],"Montgomery|Alabama|USA":[32.3792,-86.3077],"Monthey||Switzerland":[46.255,6.955],"Montreal|Quebec|Canada":[45.5017,-73.5673],"Montreal||Canada":[45.5017,-73.5673],"Morelia||Mexico":[19.706,-101.195],"Morioka||Iwate":[39.7036,141.1527],"Moscow||Russia":[55.7558,37.6173],"Mostar||Bosnia and Herzegovina":[43.3438,17.8078],"Mpumalanga||South Africa":[-25.5653,30.5279],"Muharraq||Bahrain":[26.2572,50.6119],"Mulhouse||France":[47.7508,7.3359],"Mumbai||India":[19.076,72.8777],"Munich||Germany":[48.1351,11.582],"Murcia||Spain":[37.9922,-1.1307],"Mykolaiv||Ukraine":[46.975,31.9946],"Myrina||Greece":[39.875,25.0583],"Málaga||Spain":[36.7213,-4.4214],"Nagaoka||Niigata":[37.4483,138.8511],"Nagasaki City||Nagasaki Prefecture":[32.7503,129.8779],"Nagoya||Aichi":[35.1815,136.9066],"Nagoya||Aichi Prefecture":[35.1815,136.9066],"Nahariya||Israel":[33.0056,35.0939],"Nanchang||China":[28.682,115.8579],"Nancy||France":[48.6921,6.1844],"Nanjing||China":[32.0603,118.7969],"Nanterre||France":[48.8924,2.2069],"Nantes||France":[47.2184,-1.5536],"Nanyang||China":[33.0044,112.5283],"Naples||Italy":[40.8518,14.2681],"Napoli||Italy":[40.8518,14.2681],"Nara||Japan":[34.6851,135.8048],"Nashville|Tennessee|USA":[36.1627,-86.7816],"Nea Filadelfeia||Greece":[38.0333,23.7333],"Nea Smyrni||Greece":[37.9439,23.7139],"Neapoli||Greece":[37.9667,23.75],"Ness Ziona||Israel":[31.9289,34.7986],"Netanya||Israel":[32.3286,34.8589],"Neuchâtel||Switzerland":[46.992,6.9311],"New Orleans|Louisiana|USA":[29.9511,-90.0715],"New Taipei City||Taiwan":[25.0119,121.4654],"New York|New York|USA":[40.7128,-74.006],"Newark|New Jersey|USA":[40.7357,-74.1724],"Newcastle upon Tyne||England":[54.9783,-1.6178],"Newcastle||New South Wales":[-32.9283,151.7817],"Nicosia||Cyprus":[35.1856,33.3823],"Nijmegen||Netherlands":[51.8126,5.8372],"Ningbo||China":[29.8683,121.544],"Nizhny Novgorod||Russia":[56.2965,43.9361],"Nokia||Finland":[61.4782,23.5005],"Norfolk|Virginia|USA":[36.8508,-76.2859],"Norrköping||Sweden":[58.5877,16.1924],"Novi Sad||Serbia":[45.2671,19.8335],"Novo Mesto||Slovenia":[45.8042,15.1631],"Novosibirsk||Russia":[55.0084,82.9357],"Nový Jičín||Czech Republic":[49.5944,18.0103],"Nuevo Laredo||Tamaulipas":[27.4861,-99.5167],"Nuremberg||Germany":[49.4521,11.0767],"Nymburk||Czech Republic":[50.1857,15.0408],"Nyon||Switzerland":[46.3819,6.2358],"Núñez||Argentina":[-34.5479,-58.4554],"Oakland|California|USA":[37.8044,-122.2712],"Oberwart||Austria":[47.2906,16.2064],"Ockelbo||Sweden":[60.891,16.7118],"Odesa||Ukraine":[46.4825,30.7233],"Okinawa||Okinawa Prefecture":[26.2124,127.6809],"Oklahoma City|Oklahoma|USA":[35.4676,-97.5164],"Olavarría||Buenos Aires Province":[-36.8932,-60.3232],"Oldenburg||Germany":[53.1435,8.2146],"Omaha|Nebraska|USA":[41.2565,-95.9345],"Opava||Czech Republic":[49.9389,17.9025],"Orangeville||Ontario":[43.92,-80.0942],"Orlando|Florida|USA":[28.5383,-81.3792],"Orleans||France":[47.9029,1.9093],"Orléans||France":[47.9029,1.9093],"Osaka||Japan":[34.6937,135.5023],"Osijek||Croatia":[45.5511,18.6939],"Osorno||Los Lagos Region":[-40.5739,-73.1344],"Ostend||Belgium":[51.2194,2.9264],"Ostrów Wielkopolski||Poland":[51.6528,17.8067],"Ota||Gunma":[36.292,139.3756],"Ottawa|Ontario|Canada":[45.4215,-75.6972],"Ottawa||Canada":[45.4215,-75.6972],"Ourense||Spain":[42.3364,-7.8639],"Ovar||Portugal":[40.8592,-8.625],"PIK||Jakarta":[-6.107,106.7364],"Padua||Italy":[45.4064,11.8768],"Paks||Hungary":[46.6189,18.8553],"Palanga||Lithuania":[55.92,21.0667],"Palermo||Italy":[38.1157,13.3615],"Pamekasan||Madura":[-7.1667,113.4667],"Panevėžys||Lithuania":[55.7348,24.3575],"Papagou||Greece":[37.9833,23.7833],"Paphos||Cyprus":[34.7754,32.4245],"Paraná||Argentina":[-31.7319,-60.5238],"Pardubice||Czech Republic":[50.0343,15.7812],"Paris||France":[48.8566,2.3522],"Patras||Greece":[38.2466,21.7346],"Pau||France":[43.2951,-0.3708],"Pavia||Italy":[45.1847,9.1582],"Pejë||Kosovo":[42.6593,20.2888],"Peoria|Illinois|USA":[40.6936,-89.589],"Pepinster||Belgium":[50.5683,5.8044],"Peristeri||Greece":[38.0167,23.6833],"Perm||Russia":[58.0105,56.2502],"Perth|Western Australia|Australia":[-31.9505,115.8605],"Perth||Australia":[-31.9505,115.8605],"Pesaro||Italy":[43.9098,12.9131],"Philadelphia|Pennsylvania|USA":[39.9526,-75.1652],"Phoenix|Arizona|USA":[33.4484,-112.074],"Piacenza||Italy":[45.0522,9.6928],"Piraeus||Greece":[37.9422,23.6464],"Pistoia||Italy":[43.9333,10.9167],"Pittsburgh|Pennsylvania|USA":[40.4406,-79.9959],"Pivdenne||Ukraine":[48.0478,37.765],"Ploiești||Romania":[44.94,26.0253],"Podgorica||Montenegro":[42.4304,19.2594],"Polzela||Slovenia":[46.2803,15.0656],"Ponce||Puerto Rico":[18.0111,-66.6141],"Pontiac|Michigan|USA":[42.6389,-83.291],"Pontianak||West Kalimantan":[-0.0263,109.3425],"Porlamar||Venezuela":[10.9567,-63.85],"Port Harcourt||Nigeria":[4.7774,7.0134],"Portland|Maine|USA":[43.6591,-70.2568],"Portland|Oregon|USA":[45.5152,-122.6784],"Potosí||Bolivia":[-19.5836,-65.7531],"Poznań||Poland":[52.4064,16.9252],"Prague||Czech Republic":[50.0755,14.4378],"Prienai||Lithuania":[54.6381,23.9467],"Pristina||Kosovo":[42.6629,21.1655],"Providence|Rhode Island|USA":[41.824,-71.4128],"Pruszków||Poland":[52.1708,20.8117],"Puebla City||Mexico":[19.0414,-98.2063],"Puerto La Cruz||Venezuela":[10.2167,-64.6333],"Puerto Ordaz||Venezuela":[8.288,-62.7232],"Qazvin||Iran":[36.2688,50.0041],"Qingdao||China":[36.0671,120.3826],"Qom||Iran":[34.6401,50.8764],"Quakenbrück||Germany":[52.6779,7.9528],"Quebradillas||Puerto Rico":[18.4736,-66.9381],"Querétaro City||Mexico":[20.5888,-100.3899],"Quimper||France":[47.9967,-4.1019],"Radom||Poland":[51.4027,21.1471],"Radès||Tunisia":[36.7667,10.2833],"Rakvere||Estonia":[59.3469,26.3548],"Raleigh|North Carolina|USA":[35.7796,-78.6382],"Ramat Gan||Israel":[32.0833,34.8167],"Ramat HaSharon||Israel":[32.1464,34.8403],"Rapid City|South Dakota|USA":[44.0805,-103.231],"Reading|Pennsylvania|USA":[40.3356,-75.9269],"Reggio Calabria||Italy":[38.1114,15.6467],"Reggio Emilia||Italy":[44.6989,10.6297],"Rethymno||Greece":[35.3656,24.4831],"Revda||Russia":[56.8,59.9333],"Reykjavík||Iceland":[64.1466,-21.9426],"Rhodes||Greece":[36.435,28.2176],"Richfield|Ohio|USA":[41.2367,-81.6376],"Richmond|Virginia|USA":[37.5407,-77.436],"Rieti||Italy":[42.4037,12.8578],"Riga||Latvia":[56.9496,24.1052],"Rimini||Italy":[44.0678,12.5695],"Rishon LeZion||Israel":[31.973,34.7925],"Roanne||France":[46.0355,4.0669],"Rochester|New York|USA":[43.1566,-77.6088],"Rockford|Illinois|USA":[42.2711,-89.094],"Roma||Italy":[41.9028,12.4964],"Rome||Italy":[41.9028,12.4964],"Roseto degli Abruzzi||Italy":[42.6761,14.0153],"Rostock||Germany":[54.0924,12.0991],"Rotterdam||Netherlands":[51.9244,4.4777],"Rouen||France":[49.4432,1.0993],"Rustavi||Georgia":[41.5494,45.0106],"Râmnicu Vâlcea||Romania":[45.0997,24.3693],"Rīga||Latvia":[56.9496,24.1052],"Sacramento|California|USA":[38.5816,-121.4944],"Saga||Saga":[33.2635,130.3009],"Saint John||New Brunswick":[45.2733,-66.0633],"Saint Petersburg||Russia":[59.9311,30.3609],"Sakarya||Turkey":[40.7569,30.3781],"Salamanca||Castile and Lion":[40.9701,-5.6635],"Salt Lake City|Utah|USA":[40.7608,-111.891],"Samara||Russia":[53.1959,50.1002],"San Andrés||Argentina":[-34.5386,-58.5272],"San Antonio|Texas|USA":[29.4241,-98.4936],"San Carlos||Dominican Republic":[18.4722,-69.9889],"San Carlos||Maldonado":[-34.7931,-54.9172],"San Diego|California|USA":[32.7157,-117.1611],"San Francisco|California|USA":[37.7749,-122.4194],"San Germán||Puerto Rico":[18.0827,-67.0463],"San Jose|California|USA":[37.3382,-121.8863],"San Juan||Puerto Rico":[18.4655,-66.1057],"San Luis Potosí City||Mexico":[22.1565,-100.9855],"San Sebastián||Basque Country":[43.3183,-1.9812],"San Sebastián||Spain":[43.3183,-1.9812],"Santa Fe|New Mexico|USA":[35.687,-105.9378],"Santa Fe||Argentina":[-31.6333,-60.7],"Santander||Cantabria":[43.4623,-3.8099],"Santiago de Compostela||Galicia":[42.8782,-8.5448],"Santiago de los Caballeros||Dominican Republic":[19.4517,-70.697],"Santiago del Estero||Argentina":[-27.7951,-64.2615],"Santiago||Chile":[-33.4489,-70.6693],"Santo Domingo||Dominican Republic":[18.4861,-69.9312],"Santurce||Puerto Rico":[18.4486,-66.0696],"Sapporo||Japan":[43.0618,141.3545],"Sarajevo||Bosnia and Herzegovina":[43.8563,18.4131],"Saratov||Russia":[51.533,46.0344],"Saskatoon||Saskatchewan":[52.1332,-106.67],"Sassari||Italy":[40.7259,8.5556],"Savannah|Georgia|USA":[32.0809,-81.0912],"Scafati||Italy":[40.7556,14.5278],"Scranton|Pennsylvania|USA":[41.409,-75.6624],"Seattle|Washington|USA":[47.6062,-122.3321],"Seoul||South Korea":[37.5665,126.978],"Seremban||Negeri Sembilan":[2.726,101.9381],"Sevilla||Spain":[37.3891,-5.9845],"Seville||Andalusia":[37.3891,-5.9845],"Seville||Spain":[37.3891,-5.9845],"Shanghai||China":[31.2304,121.4737],"Sheffield||South Yorkshire":[53.3811,-1.4701],"Shenyang||China":[41.8057,123.4315],"Shenzhen||China":[22.5431,114.0579],"Shibuya||Tokyo":[35.658,139.7016],"Shizuoka||Shizuoka":[34.9756,138.3828],"Shreveport|Louisiana|USA":[32.5252,-93.7502],"Sibiu||Romania":[45.7983,24.1256],"Siena||Italy":[43.3188,11.3308],"Singapore||Singapore":[1.3521,103.8198],"Sioux Falls|South Dakota|USA":[43.5446,-96.7311],"Sitra||Bahrain":[26.1556,50.6139],"Skopje||North":[41.9973,21.428],"Skopje||North Macedonia":[41.9973,21.428],"Sofia||Bulgaria":[42.6977,23.3219],"Sokhumi||Georgia":[43.0033,41.015],"Solna||Sweden":[59.36,18.0],"Sopot||Poland":[54.4418,18.5601],"Sorocaba||Brazil":[-23.5015,-47.4526],"South Bend|Indiana|USA":[41.6764,-86.252],"Split||Croatia":[43.5081,16.4402],"Spokane|Washington|USA":[47.6588,-117.426],"Springfield|Illinois|USA":[39.7817,-89.6501],"Springfield|Massachusetts|USA":[42.1015,-72.5898],"St. Catharines||Ontario":[43.1594,-79.2469],"St. John's||NL":[47.5615,-52.7126],"St. John's||Newfoundland and Labrador":[47.5615,-52.7126],"St. Louis|Missouri|USA":[38.627,-90.1994],"St. Petersburg|Florida|USA":[27.7676,-82.6403],"St. Petersburg||Russia":[59.9311,30.3609],"Stargard||Poland":[53.3365,15.0507],"Starogard Gdański||Poland":[53.9642,18.5278],"Strasbourg||France":[48.5734,7.7521],"Stratford||Greater London":[51.5423,-0.0026],"Strovolos||Cyprus":[35.1333,33.3333],"Sundsvall||Sweden":[62.3908,17.3069],"Surabaya||Indonesia":[-7.2575,112.7521],"Surgut||Russia":[61.254,73.3964],"Suwon||South Korea":[37.2636,127.0286],"Sydney|New South Wales|Australia":[-33.8688,151.2093],"Sydney||Australia":[-33.8688,151.2093],"Syracuse|New York|USA":[43.0481,-76.1474],"Szczecin||Poland":[53.4285,14.5528],"Szolnok||Hungary":[47.1621,20.1825],"Székesfehérvár||Hungary":[47.186,18.4221],"São Paulo||Brazil":[-23.5505,-46.6333],"Södertälje||Sweden":[59.1955,17.6253],"Słupsk||Poland":[54.4641,17.0285],"Tabriz||Iran":[38.08,46.2919],"Tacoma|Washington|USA":[47.2529,-122.4443],"Taichung City||Taiwan":[24.1477,120.6736],"Tainan City||Taiwan":[22.9999,120.2269],"Taipei City||Taiwan":[25.033,121.5654],"Taipei||Taiwan":[25.033,121.5654],"Taiyuan||China":[37.8706,112.5489],"Tallinn||Estonia":[59.437,24.7536],"Tampa|Florida|USA":[27.9506,-82.4572],"Tampico||Mexico":[22.2331,-97.8611],"Taoyuan City||Taiwan":[24.9936,121.301],"Taoyuan||Taiwan":[24.9936,121.301],"Tarragona||Spain":[41.1189,1.2445],"Tarsus||Turkey":[36.918,34.8935],"Tartu||Estonia":[58.3776,26.729],"Tbilisi||Georgia":[41.7151,44.8271],"Tehran||Iran":[35.6892,51.389],"Tel Aviv||Israel":[32.0853,34.7818],"Tendo||Yamagata":[38.3614,140.3786],"Tenerife||Spain":[28.2916,-16.6291],"Teramo||Italy":[42.6591,13.7043],"Ternopil||Ukraine":[49.5535,25.5948],"Thessaloniki||Greece":[40.6401,22.9444],"Thessaloniki||Macedonia":[40.6401,22.9444],"Tianjin||China":[39.3434,117.3616],"Tijuana||Mexico":[32.5149,-117.0382],"Tokyo||Japan":[35.6762,139.6503],"Toledo|Ohio|USA":[41.6528,-83.5379],"Topeka|Kansas|USA":[39.0489,-95.678],"Torino||Italy":[45.0703,7.6869],"Toronto|Ontario|Canada":[43.6532,-79.3832],"Toronto||Canada":[43.6532,-79.3832],"Tortona||Italy":[44.8958,8.8631],"Tortona||Piedmont":[44.8958,8.8631],"Toruń||Poland":[53.0138,18.5984],"Tours||France":[47.3941,0.6848],"Townsville||Queensland":[-19.259,146.8169],"Toyama||Toyama":[36.6959,137.2137],"Trabzon||Turkey":[41.0027,39.7168],"Traiskirchen||Austria":[48.015,16.295],"Trapani||Italy":[38.0175,12.5367],"Trenton|New Jersey|USA":[40.2171,-74.7429],"Trento||Italy":[46.0748,11.1217],"Treviso||Italy":[45.6669,12.242],"Trier||Germany":[49.7597,6.6439],"Trieste||Italy":[45.6495,13.7768],"Trikala||Greece":[39.555,21.7688],"Tripoli||Lebanon":[34.4368,35.8497],"Tripoli||Libya":[32.8872,13.1913],"Tucson|Arizona|USA":[32.2226,-110.9747],"Tulsa|Oklahoma|USA":[36.154,-95.9928],"Turin||Italy":[45.0703,7.6869],"Tuzla||Bosnia and Herzegovina":[44.5384,18.6763],"Târgu Jiu||Romania":[45.0378,23.2744],"Tübingen||Germany":[48.5216,9.0576],"Uberlândia||Brazil":[-18.9186,-48.2772],"Udine||Italy":[46.0711,13.2346],"Ulaanbaatar||Mongolia":[47.8864,106.9057],"Ulm||Germany":[48.4011,9.9876],"Ulsan||South Korea":[35.5384,129.3114],"Uniondale|New York|USA":[40.7004,-73.5926],"Urk||Netherlands":[52.6633,5.5994],"Utena||Lithuania":[55.4981,25.6028],"Utsunomiya||Japan":[36.5551,139.8829],"Uusikaupunki||Finland":[60.8003,21.4067],"Uşak||Turkey":[38.6823,29.4082],"Vacallo||Switzerland":[45.8478,9.0333],"Valdivia||Chile":[-39.8142,-73.2459],"Valencia||Spain":[39.4699,-0.3763],"Valencia||Venezuela":[10.162,-68.0077],"Valjevo||Serbia":[44.275,19.8911],"Valladolid||Castile-León":[41.6523,-4.7245],"Vancouver|British Columbia|Canada":[49.2827,-123.1207],"Vancouver||Canada":[49.2827,-123.1207],"Vantaa||Finland":[60.2934,25.0378],"Varese||Italy":[45.8206,8.8257],"Varna||Bulgaria":[43.2141,27.9147],"Vechta||Germany":[52.7294,8.283],"Velika Gorica||Croatia":[45.7144,16.0758],"Venado Tuerto||Argentina":[-33.7456,-61.9688],"Venezia||Italy":[45.4408,12.3155],"Veracruz||Mexico":[19.1738,-96.1342],"Veroli||Italy":[41.6906,13.4183],"Verona||Italy":[45.4384,10.9916],"Vevey||Switzerland":[46.4628,6.8428],"Vichy||France":[46.1275,3.4269],"Vienna||Austria":[48.2082,16.3738],"Villeurbanne||France":[45.7676,4.88],"Vilnius||Lithuania":[54.6872,25.2797],"Vitoria-Gasteiz||Spain":[42.8467,-2.6716],"Vitoria||Spain":[42.8467,-2.6716],"Vladivostok||Russia":[43.1332,131.9113],"Volgograd||Russia":[48.708,44.5133],"Wan Chai||Hong Kong":[22.2783,114.1747],"Warsaw||Poland":[52.2297,21.0122],"Washington|D.C.|USA":[38.9072,-77.0369],"Weinan||China":[34.4996,109.5097],"Weißenfels||Germany":[51.1988,11.97],"Weißenhorn||Germany":[48.3056,10.1603],"Wellington||New Zealand":[-41.2866,174.7756],"Wels||Austria":[48.1575,14.0286],"West Palm Beach|Florida|USA":[26.7153,-80.0534],"Wevelgem||Belgium":[50.8078,3.1833],"Wichita|Kansas|USA":[37.6872,-97.3301],"Wilmington|Delaware|USA":[39.7391,-75.5398],"Windsor||Ontario":[42.3149,-83.0364],"Winnipeg||Manitoba":[49.8951,-97.1384],"Wollongong|New South Wales|Australia":[-34.4278,150.8931],"Wollongong||Australia":[-34.4278,150.8931],"Wonju||South Korea":[37.3422,127.9201],"Worcester|Massachusetts|USA":[42.2626,-71.8023],"Worcester||Worcestershire":[52.1936,-2.2216],"Wroclaw||Poland":[51.1079,17.0385],"Würzburg||Germany":[49.7913,9.9534],"Włocławek||Poland":[52.6483,19.0678],"Xalapa||Mexico":[19.5438,-96.9102],"Yaba||Nigeria":[6.5095,3.3711],"Yalova||Turkey":[40.65,29.2667],"Yekaterinburg||Russia":[56.8389,60.6057],"Yiwu||China":[29.3065,120.075],"Yokohama||Japan":[35.4437,139.638],"Youngstown|Ohio|USA":[41.0998,-80.6495],"Yuzhno-Sakhalinsk||Russia":[46.9641,142.7285],"Zabok||Croatia":[46.0256,15.9181],"Zacatecas||Mexico":[22.7709,-102.5833],"Zadar||Croatia":[44.1194,15.2314],"Zagreb||Croatia":[45.815,15.9819],"Zahle||Lebanon":[33.8478,35.9028],"Zamboanga City||Philippines":[6.9214,122.079],"Zapopan||Jalisco":[20.7167,-103.4],"Zaporizhzhia||Ukraine":[47.8388,35.1396],"Zaragoza||Spain":[41.6488,-0.8891],"Zenica||Bosnia and Herzegovina":[44.2036,17.9077],"Zgorzelec||Poland":[51.15,15.0167],"Zielona Góra||Poland":[51.9356,15.5062],"Zonguldak||Turkey":[41.4564,31.7987],"Zouk Mosbeh||Lebanon":[33.9578,35.6058],"Zwolle||Netherlands":[52.5168,6.083],"Évreux||France":[49.024,1.1508],"Ílhavo||Portugal":[40.5975,-8.6728],"Ürümqi||China":[43.8256,87.6168],"Čačak||Serbia":[43.8914,20.3497],"İzmir||Turkey":[38.4192,27.1287],"Ōtsu||Shiga":[35.0045,135.8686],"Šabac||Serbia":[44.7561,19.6939],"Šiauliai||Lithuania":[55.9349,23.3137],"Šibenik||Croatia":[43.735,15.8903],"Široki Brijeg||Bosnia and Herzegovina":[43.3828,17.5936]};
         const FALLBACK = {"USA":[39.8,-98.6],"Canada":[56.1,-106.3],"Spain":[40.5,-3.7],"Italy":[41.9,12.6],"France":[46.2,2.2],"Germany":[51.2,10.5],"Greece":[39.1,21.8],"Turkey":[39,35.2],"Russia":[55.8,37.6],"Serbia":[44,21],"Croatia":[45,15.2],"Slovenia":[46.2,15],"Lithuania":[55.2,23.9],"Israel":[31,34.9],"China":[35.9,104.2],"Japan":[36.2,138.3],"Australia":[-25.3,133.8],"Philippines":[14.6,121],"Puerto Rico":[18.2,-66.6],"Argentina":[-34.6,-58.4],"Brazil":[-23.5,-46.6],"Mexico":[19.4,-99.1],"Venezuela":[10.5,-66.9],"Colombia":[4.7,-74.1],"Chile":[-33.4,-70.6],"Uruguay":[-34.9,-56.2],"Poland":[52.2,21],"Ukraine":[50.4,30.5],"Belgium":[50.8,4.4],"Montenegro":[42.4,19.3],"Lebanon":[33.9,35.5],"United Arab Emirates":[25.2,55.3],"Iran":[35.7,51.4],"Nigeria":[6.5,3.4],"Senegal":[14.7,-17.5],"Georgia":[41.7,44.8],"Latvia":[56.9,24.1],"Estonia":[59.4,24.8],"Hungary":[47.5,19.1],"Romania":[44.4,26.1],"Bulgaria":[42.7,23.3],"Czech Republic":[50.1,14.4],"Austria":[48.2,16.4],"Switzerland":[46.9,7.5],"Netherlands":[52.4,4.9],"Denmark":[55.7,12.6],"Sweden":[59.3,18.1],"Finland":[60.2,24.9],"Iceland":[64.1,-21.9],"Portugal":[38.7,-9.1],"Cyprus":[35.2,33.4],"Bosnia and Herzegovina":[43.9,18.4],"North Macedonia":[42,21.4],"Kosovo":[42.7,21.2],"Taiwan":[25,121.5],"South Korea":[37.6,127],"Indonesia":[-6.2,106.8],"Thailand":[13.8,100.5],"Vietnam":[10.8,106.6],"Malaysia":[3.1,101.7],"Singapore":[1.4,103.9],"India":[19.1,72.9],"Saudi Arabia":[24.7,46.7],"Qatar":[25.3,51.5],"Jordan":[31.9,35.9],"Egypt":[30,31.2],"South Africa":[-26,28],"Dominican Republic":[18.5,-70],"Ecuador":[-0.2,-78.5],"Bolivia":[-16.5,-68.2],"Angola":[-8.8,13.2],"Ivory Coast":[5.4,-4],"New Zealand":[-36.9,174.8],"Monaco":[43.7,7.4],"Andorra":[42.5,1.5],"Ireland":[53.3,-6.3],"England":[51.5,-0.1]};
-        const FLAGS = {"USA":"🇺🇸","Canada":"🇨🇦","Spain":"🇪🇸","Italy":"🇮🇹","France":"🇫🇷","Germany":"🇩🇪","Greece":"🇬🇷","Turkey":"🇹🇷","Russia":"🇷🇺","Serbia":"🇷🇸","Croatia":"🇭🇷","Slovenia":"🇸🇮","Lithuania":"🇱🇹","Israel":"🇮🇱","China":"🇨🇳","Japan":"🇯🇵","South Korea":"🇰🇷","Philippines":"🇵🇭","Australia":"🇦🇺","Puerto Rico":"🇵🇷","Argentina":"🇦🇷","Brazil":"🇧🇷","Mexico":"🇲🇽","Dominican Republic":"🇩🇴","Venezuela":"🇻🇪","Poland":"🇵🇱","Ukraine":"🇺🇦","Belgium":"🇧🇪","Montenegro":"🇲🇪","Lebanon":"🇱🇧","United Arab Emirates":"🇦🇪","Iran":"🇮🇷","Nigeria":"🇳🇬","Senegal":"🇸🇳","Georgia":"🇬🇪","Latvia":"🇱🇻","Estonia":"🇪🇪","Hungary":"🇭🇺","Romania":"🇷🇴","Bulgaria":"🇧🇬","Czech Republic":"🇨🇿","Austria":"🇦🇹","Switzerland":"🇨🇭","Netherlands":"🇳🇱","Denmark":"🇩🇰","Sweden":"🇸🇪","Finland":"🇫🇮","Iceland":"🇮🇸","Portugal":"🇵🇹","Cyprus":"🇨🇾","Bosnia and Herzegovina":"🇧🇦","North Macedonia":"🇲🇰","Kosovo":"🇽🇰","Taiwan":"🇹🇼","Indonesia":"🇮🇩","Thailand":"🇹🇭","Vietnam":"🇻🇳","Malaysia":"🇲🇾","Singapore":"🇸🇬","India":"🇮🇳","Saudi Arabia":"🇸🇦","Qatar":"🇶🇦","Jordan":"🇯🇴","Egypt":"🇪🇬","South Africa":"🇿🇦","Colombia":"🇨🇴","Chile":"🇨🇱","Uruguay":"🇺🇾","Ecuador":"🇪🇨","Bolivia":"🇧🇴","Angola":"🇦🇴","Ivory Coast":"🇨🇮","New Zealand":"🇳🇿","Monaco":"🇲🇨","Andorra":"🇦🇩","Ireland":"🇮🇪","England":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","Azerbaijan":"🇦🇿","Kazakhstan":"🇰🇿","Mongolia":"🇲🇳","Syria":"🇸🇾","Iraq":"🇮🇶","Bahrain":"🇧🇭","Kuwait":"🇰🇼","Tunisia":"🇹🇳","Libya":"🇱🇾","Tanzania":"🇹🇿","Burundi":"🇧🇮","Hong Kong":"🇭🇰"};
-        
-        const getFlag = c => FLAGS[c] || '🌍';
+        const FLAGS = {"USA":"US","Canada":"CA","Spain":"ES","Italy":"IT","France":"FR","Germany":"DE","Greece":"GR","Turkey":"TR","Russia":"RU","Serbia":"RS","Croatia":"HR","Slovenia":"SI","Lithuania":"LT","Israel":"IL","China":"CN","Japan":"JP","South Korea":"KR","Philippines":"PH","Australia":"AU","Puerto Rico":"PR","Argentina":"AR","Brazil":"BR","Mexico":"MX","Dominican Republic":"DO","Venezuela":"VE","Poland":"PL","Ukraine":"UA","Belgium":"BE","Montenegro":"ME","Lebanon":"LB","United Arab Emirates":"AE","Iran":"IR","Nigeria":"NG","Senegal":"SN","Georgia":"GE","Latvia":"LV","Estonia":"EE","Hungary":"HU","Romania":"RO","Bulgaria":"BG","Czech Republic":"CZ","Austria":"AT","Switzerland":"CH","Netherlands":"NL","Denmark":"DK","Sweden":"SE","Finland":"FI","Iceland":"IS","Portugal":"PT","Cyprus":"CY","Bosnia and Herzegovina":"BA","North Macedonia":"MK","Kosovo":"XK","Taiwan":"TW","Indonesia":"ID","Thailand":"TH","Vietnam":"VN","Malaysia":"MY","Singapore":"SG","India":"IN","Saudi Arabia":"SA","Qatar":"QA","Jordan":"JO","Egypt":"EG","South Africa":"ZA","Colombia":"CO","Chile":"CL","Uruguay":"UY","Ecuador":"EC","Bolivia":"BO","Angola":"AO","Ivory Coast":"CI","New Zealand":"NZ","Monaco":"MC","Andorra":"AD","Ireland":"IE","England":"GB","Azerbaijan":"AZ","Kazakhstan":"KZ","Mongolia":"MN","Syria":"SY","Iraq":"IQ","Bahrain":"BH","Kuwait":"KW","Tunisia":"TN","Libya":"LY","Tanzania":"TZ","Burundi":"BI","Hong Kong":"HK"};
+        const getFlag = c => {
+            const code = FLAGS[c];
+            if(!code) return '';
+            // Convert 2-letter code to flag emoji
+            return String.fromCodePoint(...[...code.toUpperCase()].map(c => 0x1F1E6 + c.charCodeAt(0) - 65));
+        };
         const getCoords = (city,state,country) => {
             if(!city) return null;
             let k = `${city}|${state||''}|${country||''}`;
@@ -721,7 +950,381 @@
             if(e.target.id==='modal') closeModal();
         });
         
-        document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
+        
+        // ====== QUIZ MODE ======
+        let quizState = {
+            active: false,
+            players: [],
+            currentIdx: 0,
+            score: 0,
+            results: [],
+            timer: null,
+            timeLeft: 15,
+            answered: false,
+            quizMap: null
+        };
+        
+        function getEligiblePlayers() {
+            // Players with 5+ teams, career starting 1990 or later
+            return Object.values(data).filter(p => {
+                if(!p.career_history || p.career_history.length < 5) return false;
+                const y1 = parseInt(p.career_history[0]?.years?.split('-')[0]) || 0;
+                if(y1 < 1990) return false;
+                // Must have valid coordinates for at least 3 stops
+                let validStops = 0;
+                for(const s of p.career_history) {
+                    if(s.city && s.country) validStops++;
+                }
+                return validStops >= 3;
+            });
+        }
+        
+        function shuffleArray(arr) {
+            const a = [...arr];
+            for(let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+        
+        function getWrongOptions(correctPlayer, eligible) {
+            const correct = data[correctPlayer];
+            const correctTeams = correct.career_history?.length || 5;
+            const correctY1 = parseInt(correct.career_history[0]?.years?.split('-')[0]) || 2000;
+            
+            // Get similar players (same era, similar team count)
+            const candidates = eligible.filter(p => {
+                if(p.player === correctPlayer) return false;
+                const teams = p.career_history?.length || 0;
+                const y1 = parseInt(p.career_history[0]?.years?.split('-')[0]) || 2000;
+                // Within 10 years and within 3 teams
+                return Math.abs(y1 - correctY1) <= 12 && Math.abs(teams - correctTeams) <= 4;
+            });
+            
+            // If not enough similar, use any eligible
+            let pool = candidates.length >= 10 ? candidates : eligible.filter(p => p.player !== correctPlayer);
+            
+            return shuffleArray(pool).slice(0, 4).map(p => p.player);
+        }
+        
+        function startQuiz() {
+            document.getElementById('quizOverlay').classList.add('show');
+            document.getElementById('quizIntro').style.display = 'block';
+            document.getElementById('quizFinal').style.display = 'none';
+        }
+        
+        function closeQuiz() {
+            document.getElementById('quizOverlay').classList.remove('show');
+            document.getElementById('quizPanel').classList.remove('show');
+            document.getElementById('quizMapContainer').classList.remove('show');
+            if(quizState.timer) clearInterval(quizState.timer);
+            quizState.active = false;
+            
+            // Restore original map
+            document.getElementById('map').style.display = '';
+        }
+        
+        function beginQuiz() {
+            const eligible = getEligiblePlayers();
+            if(eligible.length < 15) {
+                alert('Not enough eligible players loaded. Please wait for data to load.');
+                return;
+            }
+            
+            // Reset state
+            quizState = {
+                active: true,
+                players: shuffleArray(eligible).slice(0, 10),
+                currentIdx: 0,
+                score: 0,
+                results: [],
+                timer: null,
+                timeLeft: 15,
+                answered: false,
+                quizMap: null
+            };
+            
+            // Hide intro, show game
+            document.getElementById('quizOverlay').classList.remove('show');
+            document.getElementById('quizIntro').style.display = 'none';
+            document.getElementById('quizFinal').style.display = 'none';
+            
+            // Hide original map, show quiz map container
+            document.getElementById('map').style.display = 'none';
+            document.getElementById('quizMapContainer').classList.add('show');
+            document.getElementById('quizPanel').classList.add('show');
+            
+            // Initialize quiz map
+            initQuizMap();
+            
+            showQuestion();
+        }
+        
+        function initQuizMap() {
+            const container = document.getElementById('quizMapContainer');
+            container.innerHTML = '<div id="quizMap" style="width:100%;height:100%"></div>';
+            
+            quizState.quizMap = L.map('quizMap', {center: [39, -98], zoom: 4});
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '', subdomains: 'abcd', maxZoom: 19
+            }).addTo(quizState.quizMap);
+            
+            quizState.markersLayer = L.layerGroup().addTo(quizState.quizMap);
+            quizState.pathLayer = L.layerGroup().addTo(quizState.quizMap);
+        }
+        
+        function drawQuizMap(career) {
+            quizState.markersLayer.clearLayers();
+            quizState.pathLayer.clearLayers();
+            
+            const pts = [];
+            career.forEach((s, i) => {
+                const c = getCoords(s.city, s.state, s.country);
+                if(c) pts.push({coords: c, stop: s, idx: i});
+            });
+            
+            if(pts.length < 2) return;
+            
+            // Draw path
+            L.polyline(pts.map(p => p.coords), {
+                color: '#d63031', weight: 2.5, opacity: 0.6, dashArray: '6,6'
+            }).addTo(quizState.pathLayer);
+            
+            // Draw markers
+            pts.forEach((p, i) => {
+                const first = i === 0, last = i === pts.length - 1;
+                let bg = '#d63031';
+                if(first) bg = '#27ae60';
+                else if(last) bg = '#2980b9';
+                
+                const icon = L.divIcon({
+                    className: '',
+                    html: `<div style="width:24px;height:24px;background:${bg};border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">${i+1}</div>`,
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                });
+                
+                const m = L.marker(p.coords, {icon}).addTo(quizState.markersLayer);
+                // Show team/location but NOT player name
+                const loc = p.stop.city ? (p.stop.state ? `${p.stop.city}, ${p.stop.state}` : p.stop.city) : '';
+                m.bindPopup(`<div style="font-weight:600">${getFlag(p.stop.country)} ${p.stop.team}</div><div style="font-size:12px;color:#777">${loc} · ${p.stop.years}</div>`, {closeButton: false});
+            });
+            
+            quizState.quizMap.fitBounds(pts.map(p => p.coords), {padding: [40, 40], maxZoom: 5});
+        }
+        
+        function showQuestion() {
+            const player = quizState.players[quizState.currentIdx];
+            const career = player.career_history;
+            
+            // Update progress
+            document.getElementById('quizProgress').textContent = `Question ${quizState.currentIdx + 1} of 10`;
+            document.getElementById('quizScoreDisplay').textContent = `Score: ${Math.round(quizState.score)}`;
+            
+            // Draw map
+            drawQuizMap(career);
+            
+            // Generate options
+            const eligible = getEligiblePlayers();
+            const wrongOptions = getWrongOptions(player.player, eligible);
+            const allOptions = shuffleArray([player.player, ...wrongOptions]);
+            
+            document.getElementById('quizOptions').innerHTML = allOptions.map(name => 
+                `<button class="quiz-option" onclick="submitAnswer('${name.replace(/'/g, "\'")}')">${name}</button>`
+            ).join('');
+            
+            // Reset UI
+            document.getElementById('quizResult').classList.remove('show', 'correct', 'wrong', 'timeout');
+            document.getElementById('quizButtons').style.display = 'none';
+            quizState.answered = false;
+            
+            // Start timer
+            quizState.timeLeft = 15;
+            updateTimerDisplay();
+            
+            if(quizState.timer) clearInterval(quizState.timer);
+            quizState.timer = setInterval(() => {
+                quizState.timeLeft -= 0.1;
+                updateTimerDisplay();
+                
+                if(quizState.timeLeft <= 0) {
+                    clearInterval(quizState.timer);
+                    if(!quizState.answered) {
+                        handleTimeout();
+                    }
+                }
+            }, 100);
+        }
+        
+        function updateTimerDisplay() {
+            const el = document.getElementById('quizTimer');
+            const t = Math.max(0, quizState.timeLeft);
+            el.textContent = t.toFixed(1);
+            
+            el.classList.remove('warning', 'danger');
+            if(t <= 3) el.classList.add('danger');
+            else if(t <= 7) el.classList.add('warning');
+        }
+        
+        function submitAnswer(selectedName) {
+            if(quizState.answered) return;
+            quizState.answered = true;
+            clearInterval(quizState.timer);
+            
+            const correctName = quizState.players[quizState.currentIdx].player;
+            const isCorrect = selectedName === correctName;
+            const timeTaken = 15 - quizState.timeLeft;
+            
+            // Calculate score: 15 at 0 sec, 1.5 at 15 sec (linear)
+            let points = 0;
+            if(isCorrect) {
+                points = Math.max(1.5, 15 - (timeTaken * 0.9)); // 0.9 pts per second
+            }
+            
+            quizState.score += points;
+            quizState.results.push({
+                player: correctName,
+                correct: isCorrect,
+                points: points,
+                time: timeTaken
+            });
+            
+            // Update UI
+            const buttons = document.querySelectorAll('.quiz-option');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if(btn.textContent === correctName) btn.classList.add('correct');
+                if(btn.textContent === selectedName && !isCorrect) btn.classList.add('wrong');
+            });
+            
+            const resultEl = document.getElementById('quizResult');
+            if(isCorrect) {
+                resultEl.textContent = `✓ Correct! +${points.toFixed(1)} points (${timeTaken.toFixed(1)}s)`;
+                resultEl.className = 'quiz-result show correct';
+            } else {
+                resultEl.textContent = `✗ Wrong! The answer was ${correctName}`;
+                resultEl.className = 'quiz-result show wrong';
+            }
+            
+            document.getElementById('quizScoreDisplay').textContent = `Score: ${Math.round(quizState.score)}`;
+            
+            // Show next button
+            document.getElementById('quizButtons').style.display = 'flex';
+            document.getElementById('quizNextBtn').textContent = 
+                quizState.currentIdx < 9 ? 'Next Question' : 'See Results';
+        }
+        
+        function handleTimeout() {
+            quizState.answered = true;
+            const correctName = quizState.players[quizState.currentIdx].player;
+            
+            quizState.results.push({
+                player: correctName,
+                correct: false,
+                points: 0,
+                time: 15
+            });
+            
+            // Update UI
+            const buttons = document.querySelectorAll('.quiz-option');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if(btn.textContent === correctName) btn.classList.add('correct');
+            });
+            
+            const resultEl = document.getElementById('quizResult');
+            resultEl.textContent = `⏱ Time's up! The answer was ${correctName}`;
+            resultEl.className = 'quiz-result show timeout';
+            
+            document.getElementById('quizButtons').style.display = 'flex';
+            document.getElementById('quizNextBtn').textContent = 
+                quizState.currentIdx < 9 ? 'Next Question' : 'See Results';
+        }
+        
+        function nextQuestion() {
+            quizState.currentIdx++;
+            
+            if(quizState.currentIdx >= 10) {
+                showFinalResults();
+            } else {
+                showQuestion();
+            }
+        }
+        
+        function showFinalResults() {
+            // Hide game UI
+            document.getElementById('quizPanel').classList.remove('show');
+            document.getElementById('quizMapContainer').classList.remove('show');
+            
+            // Restore original map
+            document.getElementById('map').style.display = '';
+            
+            // Show results overlay
+            document.getElementById('quizOverlay').classList.add('show');
+            document.getElementById('quizIntro').style.display = 'none';
+            document.getElementById('quizFinal').style.display = 'block';
+            
+            document.getElementById('finalScore').textContent = Math.round(quizState.score);
+            
+            // Build breakdown
+            const breakdown = quizState.results.map(r => {
+                const ptsClass = r.points > 0 ? '' : 'zero';
+                return `<div class="quiz-breakdown-row">
+                    <span class="name">${r.correct ? '✓' : '✗'} ${r.player}</span>
+                    <span class="pts ${ptsClass}">${r.points > 0 ? '+' + r.points.toFixed(1) : '0'}</span>
+                </div>`;
+            }).join('');
+            
+            document.getElementById('quizBreakdown').innerHTML = breakdown;
+        }
+
+document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
     </script>
+
+    <!-- Quiz Overlay -->
+    <div class="quiz-overlay" id="quizOverlay">
+        <div class="quiz-box" id="quizIntro">
+            <div class="quiz-title">🏀 Career Map Quiz</div>
+            <div class="quiz-subtitle">Guess the player based on their career journey!</div>
+            <div style="text-align:left;background:var(--bg-gray);border-radius:8px;padding:16px;margin-bottom:20px;font-size:13px;">
+                <p style="margin-bottom:8px"><strong>How to play:</strong></p>
+                <p>• View the career map and guess which NBA player it belongs to</p>
+                <p>• You have <strong>15 seconds</strong> per question</p>
+                <p>• Faster answers = more points (max 15 pts)</p>
+                <p>• Wrong answers = 0 points</p>
+                <p>• 10 questions total, all players from 1990+</p>
+            </div>
+            <button class="quiz-start-btn" onclick="beginQuiz()">Start Quiz</button>
+            <button class="quiz-close-btn" onclick="closeQuiz()" style="margin-left:10px">Cancel</button>
+        </div>
+        
+        <div class="quiz-box" id="quizFinal" style="display:none">
+            <div class="quiz-title">Quiz Complete!</div>
+            <div class="quiz-final">
+                <div class="quiz-final-score" id="finalScore">0</div>
+                <div class="quiz-final-label">out of 150 points</div>
+                <div class="quiz-breakdown" id="quizBreakdown"></div>
+            </div>
+            <button class="quiz-start-btn" onclick="beginQuiz()">Play Again</button>
+            <button class="quiz-close-btn" onclick="closeQuiz()" style="margin-left:10px">Close</button>
+        </div>
+    </div>
+    
+    <!-- Quiz Game Panel (during gameplay) -->
+    <div class="quiz-map-container" id="quizMapContainer"></div>
+    <div class="quiz-panel" id="quizPanel">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div class="quiz-progress" id="quizProgress">Question 1 of 10</div>
+            <div class="quiz-timer" id="quizTimer">15</div>
+            <div class="quiz-score-display" id="quizScoreDisplay">Score: 0</div>
+        </div>
+        <div class="quiz-result" id="quizResult"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-buttons" id="quizButtons" style="display:none">
+            <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()">Next Question</button>
+        </div>
+    </div>
+
 </body>
 </html>
