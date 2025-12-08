@@ -538,7 +538,8 @@
             justify-content: center;
         }
         
-        .quiz-next-btn, .quiz-start-btn {
+        .quiz-next-btn { display: none !important; }
+        .quiz-start-btn {
             background: var(--red);
             color: #fff;
             border: none;
@@ -753,6 +754,27 @@
             markers = [];
         }
         
+        function bezierCurve(p1, p2, offset) {
+            // Create a curved path between two points
+            const midLat = (p1[0] + p2[0]) / 2;
+            const midLng = (p1[1] + p2[1]) / 2;
+            const dx = p2[1] - p1[1];
+            const dy = p2[0] - p1[0];
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            // Perpendicular offset for curve
+            const curveFactor = Math.min(0.3, dist * 0.15);
+            const ctrlLat = midLat + (dx * curveFactor * offset);
+            const ctrlLng = midLng - (dy * curveFactor * offset);
+            
+            const points = [];
+            for(let t = 0; t <= 1; t += 0.05) {
+                const lat = (1-t)*(1-t)*p1[0] + 2*(1-t)*t*ctrlLat + t*t*p2[0];
+                const lng = (1-t)*(1-t)*p1[1] + 2*(1-t)*t*ctrlLng + t*t*p2[1];
+                points.push([lat, lng]);
+            }
+            return points;
+        }
+        
         function draw(career) {
             clearMap();
             const pts = [];
@@ -762,11 +784,31 @@
             });
             if(!pts.length) return;
             
-            // Path
+            // Draw curved paths with arrows
             if(pts.length > 1) {
-                L.polyline(pts.map(p=>p.coords), {
-                    color:'#d63031', weight:2, opacity:0.5, dashArray:'5,5'
-                }).addTo(pathLayer);
+                for(let i = 0; i < pts.length - 1; i++) {
+                    const curveOffset = (i % 2 === 0) ? 1 : -1; // Alternate curve direction
+                    const curvePoints = bezierCurve(pts[i].coords, pts[i+1].coords, curveOffset);
+                    
+                    // Draw the curved line
+                    const line = L.polyline(curvePoints, {
+                        color: '#d63031', weight: 2.5, opacity: 0.6
+                    }).addTo(pathLayer);
+                    
+                    // Add arrow at midpoint
+                    const midIdx = Math.floor(curvePoints.length / 2);
+                    const arrowPos = curvePoints[midIdx];
+                    const nextPos = curvePoints[Math.min(midIdx + 2, curvePoints.length - 1)];
+                    const angle = Math.atan2(nextPos[0] - arrowPos[0], nextPos[1] - arrowPos[1]) * 180 / Math.PI;
+                    
+                    const arrowIcon = L.divIcon({
+                        className: '',
+                        html: `<div style="color:#d63031;font-size:14px;transform:rotate(${-angle + 90}deg);opacity:0.8">➤</div>`,
+                        iconSize: [14, 14],
+                        iconAnchor: [7, 7]
+                    });
+                    L.marker(arrowPos, {icon: arrowIcon, interactive: false}).addTo(pathLayer);
+                }
             }
             
             // Markers
@@ -775,19 +817,25 @@
                 let bg = '#d63031';
                 if(first) bg = '#27ae60';
                 else if(last) bg = '#2980b9';
-                const sz = (first||last) ? 24 : 20;
+                const sz = first ? 32 : (last ? 26 : 22);
+                
+                // First marker gets "START" label
+                let label = first ? 'START' : (i+1).toString();
+                let fontSize = first ? '8px' : '11px';
+                let extraStyle = first ? 'letter-spacing:-0.5px;' : '';
                 
                 const icon = L.divIcon({
                     className:'marker',
-                    html:`<div style="width:${sz}px;height:${sz}px;background:${bg};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.3)">${i+1}</div>`,
+                    html:`<div style="width:${sz}px;height:${sz}px;background:${bg};border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fontSize};font-weight:700;color:#fff;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);${extraStyle}">${label}</div>`,
                     iconSize:[sz,sz], iconAnchor:[sz/2,sz/2]
                 });
                 
-                const m = L.marker(p.coords,{icon}).addTo(markersLayer);
+                const m = L.marker(p.coords,{icon, zIndexOffset: first ? 1000 : (last ? 500 : 0)}).addTo(markersLayer);
                 markers.push({m, idx:p.idx});
                 
                 const loc = p.stop.state ? `${p.stop.city}, ${p.stop.state}` : p.stop.city||'';
-                m.bindPopup(`<div class="popup-team">${getFlag(p.stop.country)} ${p.stop.team}</div><div class="popup-loc">${loc}${p.stop.country?', '+p.stop.country:''}</div><div class="popup-yrs">${p.stop.years}</div>`,{closeButton:false,offset:[0,-5]});
+                const stopLabel = first ? '🟢 First Stop' : (last ? '🔵 Latest Stop' : `Stop #${i+1}`);
+                m.bindPopup(`<div style="font-size:10px;color:#777;margin-bottom:4px">${stopLabel}</div><div class="popup-team">${getFlag(p.stop.country)} ${p.stop.team}</div><div class="popup-loc">${loc}${p.stop.country?', '+p.stop.country:''}</div><div class="popup-yrs">${p.stop.years}</div>`,{closeButton:false,offset:[0,-5]});
                 
                 m.on('mouseover',()=>hlTimeline(p.idx));
                 m.on('mouseout',()=>hlTimeline(-1));
@@ -826,10 +874,20 @@
             });
             
             showWelcome();
+            
+            // Load a random well-known player on startup
+            const startersPool = ['LeBron James', 'Shaquille O\'Neal', 'Vince Carter', 'Kevin Garnett', 
+                'Carmelo Anthony', 'Dwight Howard', 'Paul Pierce', 'Tracy McGrady', 'Jason Kidd',
+                'Ray Allen', 'Gary Payton', 'Rasheed Wallace', 'Chauncey Billups', 'Jamal Crawford'];
+            const availableStarters = startersPool.filter(p => data[p]?.career_history?.length >= 5);
+            if(availableStarters.length > 0) {
+                const randomStarter = availableStarters[Math.floor(Math.random() * availableStarters.length)];
+                setTimeout(() => show(randomStarter), 100);
+            }
         }
         
         function showWelcome() {
-            const avail = ALL_STARS.filter(p=>data[p]).sort(()=>Math.random()-0.5).slice(0,12);
+            const avail = ALL_STARS.filter(p=>data[p]?.career_history?.length >= 5).sort(()=>Math.random()-0.5).slice(0,12);
             document.getElementById('welcomeChips').innerHTML = avail.map(p=>`<div class="chip" onclick="show('${p}')">${p}</div>`).join('');
         }
         
@@ -847,7 +905,7 @@
             else era="1980s";
             
             const set = new Set();
-            (ERAS[era]||[]).forEach(x=>{if(x!==name&&data[x])set.add(x);});
+            (ERAS[era]||[]).forEach(x=>{if(x!==name&&data[x]?.career_history?.length >= 5)set.add(x);});
             
             const teams = new Set(career.map(c=>c.team));
             teams.forEach(t=>{
@@ -902,13 +960,14 @@
             document.getElementById('playerSection').classList.add('active');
             
             document.getElementById('pName').textContent = name;
-            const y1 = career[0].years.split('-')[0];
-            const y2 = career[career.length-1].years.split('-')[1];
-            document.getElementById('pSpan').textContent = `${y1} – ${y2}`;
+            const y1 = parseInt(career[0].years?.split('-')[0]) || 0;
+            const y2 = parseInt(career[career.length-1].years?.split('-')[1] || career[career.length-1].years?.split('-')[0]) || 0;
+            document.getElementById('pSpan').textContent = y1 && y2 ? `${y1} – ${y2}` : (y1 ? `${y1} – present` : '');
             
             document.getElementById('sTeams').textContent = new Set(career.map(c=>c.team)).size;
             document.getElementById('sCountries').textContent = new Set(career.map(c=>c.country).filter(Boolean)).size||1;
-            document.getElementById('sYears').textContent = Math.max(1,parseInt(y2)-parseInt(y1));
+            const yearSpan = (y1 && y2 && y2 >= y1) ? (y2 - y1 + 1) : career.length;
+            document.getElementById('sYears').textContent = Math.max(1, yearSpan);
             document.getElementById('sStops').textContent = career.length;
             
             document.getElementById('timeline').innerHTML = career.map((s,i)=>{
@@ -965,17 +1024,29 @@
         };
         
         function getEligiblePlayers() {
-            // Players with 5+ teams, career starting 1990 or later
+            // Players with 3+ teams, career starting 1990 or later, not too obscure
+            const nbaTeams = ['Lakers', 'Celtics', 'Bulls', 'Heat', 'Warriors', 'Nets', 'Knicks', 'Clippers',
+                'Spurs', 'Mavericks', 'Rockets', 'Suns', 'Nuggets', 'Jazz', 'Blazers', 'Thunder', 'Timberwolves',
+                'Kings', 'Pelicans', 'Grizzlies', 'Hawks', 'Hornets', 'Magic', 'Wizards', 'Pacers', 'Bucks',
+                '76ers', 'Raptors', 'Pistons', 'Cavaliers', 'Supersonics', 'Sonics', 'Bobcats', 'Bullets'];
+            
             return Object.values(data).filter(p => {
-                if(!p.career_history || p.career_history.length < 5) return false;
+                if(!p.career_history || p.career_history.length < 3) return false;
                 const y1 = parseInt(p.career_history[0]?.years?.split('-')[0]) || 0;
                 if(y1 < 1990) return false;
-                // Must have valid coordinates for at least 3 stops
+                
+                // Must have played for at least one recognizable NBA team
+                const hasNBA = p.career_history.some(s => 
+                    s.country === 'USA' && nbaTeams.some(t => s.team?.includes(t))
+                );
+                if(!hasNBA) return false;
+                
+                // Must have valid coordinates for at least 2 stops
                 let validStops = 0;
                 for(const s of p.career_history) {
                     if(s.city && s.country) validStops++;
                 }
-                return validStops >= 3;
+                return validStops >= 2;
             });
         }
         
@@ -1086,10 +1157,29 @@
             
             if(pts.length < 2) return;
             
-            // Draw path
-            L.polyline(pts.map(p => p.coords), {
-                color: '#d63031', weight: 2.5, opacity: 0.6, dashArray: '6,6'
-            }).addTo(quizState.pathLayer);
+            // Draw curved paths with arrows
+            for(let i = 0; i < pts.length - 1; i++) {
+                const curveOffset = (i % 2 === 0) ? 1 : -1;
+                const curvePoints = bezierCurve(pts[i].coords, pts[i+1].coords, curveOffset);
+                
+                L.polyline(curvePoints, {
+                    color: '#d63031', weight: 2.5, opacity: 0.6
+                }).addTo(quizState.pathLayer);
+                
+                // Arrow at midpoint
+                const midIdx = Math.floor(curvePoints.length / 2);
+                const arrowPos = curvePoints[midIdx];
+                const nextPos = curvePoints[Math.min(midIdx + 2, curvePoints.length - 1)];
+                const angle = Math.atan2(nextPos[0] - arrowPos[0], nextPos[1] - arrowPos[1]) * 180 / Math.PI;
+                
+                const arrowIcon = L.divIcon({
+                    className: '',
+                    html: `<div style="color:#d63031;font-size:14px;transform:rotate(${-angle + 90}deg);opacity:0.8">➤</div>`,
+                    iconSize: [14, 14],
+                    iconAnchor: [7, 7]
+                });
+                L.marker(arrowPos, {icon: arrowIcon, interactive: false}).addTo(quizState.pathLayer);
+            }
             
             // Draw markers
             pts.forEach((p, i) => {
@@ -1097,18 +1187,21 @@
                 let bg = '#d63031';
                 if(first) bg = '#27ae60';
                 else if(last) bg = '#2980b9';
+                const sz = first ? 32 : (last ? 26 : 22);
+                const label = first ? 'START' : (i+1).toString();
+                const fontSize = first ? '8px' : '11px';
                 
                 const icon = L.divIcon({
                     className: '',
-                    html: `<div style="width:24px;height:24px;background:${bg};border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">${i+1}</div>`,
-                    iconSize: [24, 24],
-                    iconAnchor: [12, 12]
+                    html: `<div style="width:${sz}px;height:${sz}px;background:${bg};border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:${fontSize};font-weight:700">${label}</div>`,
+                    iconSize: [sz, sz],
+                    iconAnchor: [sz/2, sz/2]
                 });
                 
-                const m = L.marker(p.coords, {icon}).addTo(quizState.markersLayer);
-                // Show team/location but NOT player name
+                const m = L.marker(p.coords, {icon, zIndexOffset: first ? 1000 : (last ? 500 : 0)}).addTo(quizState.markersLayer);
                 const loc = p.stop.city ? (p.stop.state ? `${p.stop.city}, ${p.stop.state}` : p.stop.city) : '';
-                m.bindPopup(`<div style="font-weight:600">${getFlag(p.stop.country)} ${p.stop.team}</div><div style="font-size:12px;color:#777">${loc} · ${p.stop.years}</div>`, {closeButton: false});
+                const stopLabel = first ? '🟢 First Stop' : (last ? '🔵 Latest Stop' : `Stop #${i+1}`);
+                m.bindPopup(`<div style="font-size:10px;color:#777;margin-bottom:4px">${stopLabel}</div><div style="font-weight:600">${getFlag(p.stop.country)} ${p.stop.team}</div><div style="font-size:12px;color:#777">${loc} · ${p.stop.years}</div>`, {closeButton: false});
             });
             
             quizState.quizMap.fitBounds(pts.map(p => p.coords), {padding: [40, 40], maxZoom: 5});
@@ -1120,7 +1213,7 @@
             
             // Update progress
             document.getElementById('quizProgress').textContent = `Question ${quizState.currentIdx + 1} of 10`;
-            document.getElementById('quizScoreDisplay').textContent = `Score: ${Math.round(quizState.score)}`;
+            document.getElementById('quizScoreDisplay').textContent = `Score: ${quizState.score.toFixed(2)}`;
             
             // Draw map
             drawQuizMap(career);
@@ -1145,7 +1238,7 @@
             
             if(quizState.timer) clearInterval(quizState.timer);
             quizState.timer = setInterval(() => {
-                quizState.timeLeft -= 0.1;
+                quizState.timeLeft -= 0.01;
                 updateTimerDisplay();
                 
                 if(quizState.timeLeft <= 0) {
@@ -1154,13 +1247,13 @@
                         handleTimeout();
                     }
                 }
-            }, 100);
+            }, 10);
         }
         
         function updateTimerDisplay() {
             const el = document.getElementById('quizTimer');
             const t = Math.max(0, quizState.timeLeft);
-            el.textContent = t.toFixed(1);
+            el.textContent = t.toFixed(2);
             
             el.classList.remove('warning', 'danger');
             if(t <= 3) el.classList.add('danger');
@@ -1176,10 +1269,12 @@
             const isCorrect = selectedName === correctName;
             const timeTaken = 15 - quizState.timeLeft;
             
-            // Calculate score: 15 at 0 sec, 1.5 at 15 sec (linear)
+            // Calculate score: 15 at 0 sec, 1.5 at 15 sec (linear), -5 for wrong
             let points = 0;
             if(isCorrect) {
                 points = Math.max(1.5, 15 - (timeTaken * 0.9)); // 0.9 pts per second
+            } else {
+                points = -5; // Penalty for wrong answer
             }
             
             quizState.score += points;
@@ -1200,29 +1295,32 @@
             
             const resultEl = document.getElementById('quizResult');
             if(isCorrect) {
-                resultEl.textContent = `✓ Correct! +${points.toFixed(1)} points (${timeTaken.toFixed(1)}s)`;
+                resultEl.textContent = `✓ Correct! +${points.toFixed(2)} points (${timeTaken.toFixed(2)}s)`;
                 resultEl.className = 'quiz-result show correct';
             } else {
-                resultEl.textContent = `✗ Wrong! The answer was ${correctName}`;
+                resultEl.textContent = `✗ Wrong! The answer was ${correctName} (-5 points)`;
                 resultEl.className = 'quiz-result show wrong';
             }
             
-            document.getElementById('quizScoreDisplay').textContent = `Score: ${Math.round(quizState.score)}`;
+            document.getElementById('quizScoreDisplay').textContent = `Score: ${quizState.score.toFixed(2)}`;
             
-            // Show next button
-            document.getElementById('quizButtons').style.display = 'flex';
-            document.getElementById('quizNextBtn').textContent = 
-                quizState.currentIdx < 9 ? 'Next Question' : 'See Results';
+            // Auto-advance after 1.5 seconds
+            setTimeout(() => {
+                if(quizState.active) nextQuestion();
+            }, 1500);
         }
         
         function handleTimeout() {
             quizState.answered = true;
             const correctName = quizState.players[quizState.currentIdx].player;
             
+            const points = -5; // Penalty for timeout
+            quizState.score += points;
+            
             quizState.results.push({
                 player: correctName,
                 correct: false,
-                points: 0,
+                points: points,
                 time: 15
             });
             
@@ -1234,12 +1332,15 @@
             });
             
             const resultEl = document.getElementById('quizResult');
-            resultEl.textContent = `⏱ Time's up! The answer was ${correctName}`;
+            resultEl.textContent = `⏱ Time's up! The answer was ${correctName} (-5 points)`;
             resultEl.className = 'quiz-result show timeout';
             
-            document.getElementById('quizButtons').style.display = 'flex';
-            document.getElementById('quizNextBtn').textContent = 
-                quizState.currentIdx < 9 ? 'Next Question' : 'See Results';
+            document.getElementById('quizScoreDisplay').textContent = `Score: ${quizState.score.toFixed(2)}`;
+            
+            // Auto-advance after 1.5 seconds
+            setTimeout(() => {
+                if(quizState.active) nextQuestion();
+            }, 1500);
         }
         
         function nextQuestion() {
@@ -1265,14 +1366,15 @@
             document.getElementById('quizIntro').style.display = 'none';
             document.getElementById('quizFinal').style.display = 'block';
             
-            document.getElementById('finalScore').textContent = Math.round(quizState.score);
+            document.getElementById('finalScore').textContent = quizState.score.toFixed(2);
             
             // Build breakdown
             const breakdown = quizState.results.map(r => {
                 const ptsClass = r.points > 0 ? '' : 'zero';
+                const ptsStr = r.points > 0 ? '+' + r.points.toFixed(2) : r.points.toFixed(2);
                 return `<div class="quiz-breakdown-row">
                     <span class="name">${r.correct ? '✓' : '✗'} ${r.player}</span>
-                    <span class="pts ${ptsClass}">${r.points > 0 ? '+' + r.points.toFixed(1) : '0'}</span>
+                    <span class="pts ${ptsClass}">${ptsStr}</span>
                 </div>`;
             }).join('');
             
@@ -1292,7 +1394,7 @@ document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
                 <p>• View the career map and guess which NBA player it belongs to</p>
                 <p>• You have <strong>15 seconds</strong> per question</p>
                 <p>• Faster answers = more points (max 15 pts)</p>
-                <p>• Wrong answers = 0 points</p>
+                <p>• Wrong answers or timeout = <strong>-5 points</strong></p>
                 <p>• 10 questions total, all players from 1990+</p>
             </div>
             <button class="quiz-start-btn" onclick="beginQuiz()">Start Quiz</button>
