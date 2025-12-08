@@ -13,11 +13,11 @@
     <style>
         :root {
             --red: #d63031;
-            --text: #222;
-            --text-muted: #777;
-            --border: #e5e5e5;
+            --text: #1a1a1a;
+            --text-muted: #666;
+            --border: #e0e0e0;
             --bg: #fff;
-            --bg-gray: #f5f5f5;
+            --bg-gray: #f8f8f8;
             --green: #27ae60;
             --blue: #2980b9;
         }
@@ -25,21 +25,22 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Open Sans', -apple-system, sans-serif;
-            background: var(--bg);
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
             color: var(--text);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         header {
-            background: var(--bg);
-            padding: 12px 16px;
-            border-bottom: 3px solid var(--red);
+            background: #fff;
+            padding: 14px 20px;
+            border-bottom: none;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
         
         .header-inner {
@@ -51,14 +52,26 @@
         }
         
         .logo {
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
             white-space: nowrap;
-            letter-spacing: -0.5px;
         }
         
-        .logo span { color: var(--red); }
+        .logo-img {
+            height: 32px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            border-left: 2px solid #ddd;
+            padding-left: 10px;
+        }
         
         .search-wrap {
             flex: 1;
@@ -68,22 +81,24 @@
         
         #search {
             width: 100%;
-            padding: 8px 12px;
+            padding: 10px 14px;
             font-size: 14px;
             font-family: inherit;
-            border: 1px solid var(--border);
-            border-radius: 4px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
             outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: all 0.2s ease;
+            background: #f8f8f8;
         }
         
         #search:focus {
             border-color: var(--red);
-            box-shadow: 0 0 0 3px rgba(214, 48, 49, 0.1);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(214, 48, 49, 0.1);
         }
         
         #search::placeholder {
-            color: #aaa;
+            color: #999;
         }
         
         #results {
@@ -170,12 +185,25 @@
         .welcome { text-align: center; padding: 16px 0; }
         
         .quiz-hero {
-            background: linear-gradient(135deg, #d63031 0%, #c0392b 100%);
+            background: linear-gradient(145deg, #d63031 0%, #b71c1c 100%);
             color: #fff;
-            padding: 28px 20px;
+            padding: 32px 24px;
             border-radius: 16px;
             margin-bottom: 24px;
-            box-shadow: 0 4px 20px rgba(214, 48, 49, 0.3);
+            box-shadow: 0 8px 32px rgba(214, 48, 49, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quiz-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            pointer-events: none;
         }
         
         .quiz-hero-icon { font-size: 48px; margin-bottom: 12px; }
@@ -184,46 +212,54 @@
         
         .quiz-hero-btn {
             background: #fff;
-            color: var(--red);
+            color: #d63031;
             border: none;
-            padding: 14px 36px;
-            border-radius: 30px;
+            padding: 16px 48px;
+            border-radius: 50px;
             font-size: 18px;
             font-weight: 700;
             cursor: pointer;
             font-family: inherit;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .quiz-hero-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .quiz-hero-btn:active {
+            transform: translateY(-1px) scale(0.98);
         }
         
         .play-icon { font-size: 14px; }
         
         .quiz-rules {
             text-align: left;
-            background: rgba(0,0,0,0.15);
-            border-radius: 10px;
-            padding: 14px 18px;
-            margin: 16px 0 20px 0;
-            font-size: 13px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 20px 0 24px 0;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
         }
         
         .quiz-rule {
-            padding: 6px 0;
+            padding: 8px 0;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+            font-weight: 500;
         }
         
         .quiz-rule:not(:last-child) {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
         }
         
         .explore-section {
@@ -483,19 +519,25 @@
     
         /* Quiz Mode Styles */
         .quiz-btn {
-            background: var(--red);
+            background: linear-gradient(135deg, #d63031 0%, #c0392b 100%);
             color: #fff;
             border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-family: inherit;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
-            transition: background 0.2s;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(214, 48, 49, 0.3);
         }
-        .quiz-btn:hover { background: #c0392b; }
+        .quiz-btn:hover { 
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(214, 48, 49, 0.4);
+        }
         
         .quiz-overlay {
             position: fixed;
@@ -720,35 +762,93 @@
         }
     
         .quiz-share-section {
-            margin: 16px 0;
+            margin: 20px 0;
         }
         
         .quiz-share-btn {
-            background: #1DA1F2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
             border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-size: 15px;
-            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
             cursor: pointer;
             font-family: inherit;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
         
-        .quiz-share-btn:hover { background: #1a91da; }
+        .quiz-share-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
         
         .quiz-final-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        #shareImageContainer {
+            margin-top: 16px;
+            padding: 16px;
+            background: #f8f8f8;
+            border-radius: 12px;
+        }
+        
+        #shareImage {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .share-actions {
             display: flex;
             gap: 10px;
             justify-content: center;
             margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .share-download-btn, .share-twitter-btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .share-download-btn {
+            background: #333;
+            color: #fff;
+        }
+        
+        .share-download-btn:hover {
+            background: #000;
+        }
+        
+        .share-twitter-btn {
+            background: #1DA1F2;
+            color: #fff;
+        }
+        
+        .share-twitter-btn:hover {
+            background: #0d8ecf;
         }
         
         .share-instructions {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-top: 8px;
+            margin-top: 12px;
         }
         
         #shareImageContainer.show { display: block !important; }
@@ -757,7 +857,10 @@
 <body>
     <header>
         <div class="header-inner">
-            <div class="logo">NBA <span>Career Map</span></div>
+            <div class="logo">
+                <img src="data:image/png;base64,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" alt="HoopsHype" class="logo-img">
+                <span class="logo-text">Career Map</span>
+            </div>
             <div class="search-wrap">
                 <input type="text" id="search" placeholder="Search 5,000+ players..." autocomplete="off">
                 <div id="results"></div>
@@ -1519,113 +1622,144 @@
             const canvas = document.getElementById('shareCanvas');
             const ctx = canvas.getContext('2d');
             
-            // Canvas size optimized for Twitter/social
-            canvas.width = 600;
-            canvas.height = 800;
+            // Square format for Twitter (1080x1080)
+            const size = 1080;
+            canvas.width = size;
+            canvas.height = size;
             
-            // Background gradient
-            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-            gradient.addColorStop(0, '#d63031');
-            gradient.addColorStop(1, '#c0392b');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // Black background
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, size, size);
             
-            // White card background
-            ctx.fillStyle = '#fff';
-            roundRect(ctx, 30, 30, 540, 740, 20);
-            ctx.fill();
-            
-            // Title
-            ctx.fillStyle = '#d63031';
-            ctx.font = 'bold 32px "Open Sans", sans-serif';
-            ctx.textAlign = 'center';
-            ctx.fillText('NBA Career Map Quiz', 300, 80);
-            
-            // Basketball emoji (as text)
-            ctx.font = '48px Arial';
-            ctx.fillText('🏀', 300, 140);
-            
-            // Score
-            ctx.fillStyle = '#222';
-            ctx.font = 'bold 72px "Open Sans", sans-serif';
-            ctx.fillText(quizState.score.toFixed(1), 300, 220);
-            
-            ctx.fillStyle = '#777';
-            ctx.font = '18px "Open Sans", sans-serif';
-            ctx.fillText('points out of 150', 300, 250);
-            
-            // Divider
-            ctx.strokeStyle = '#e5e5e5';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(60, 280);
-            ctx.lineTo(540, 280);
-            ctx.stroke();
-            
-            // Results
-            let y = 320;
-            ctx.font = '14px "Open Sans", sans-serif';
-            ctx.textAlign = 'left';
-            
-            const correct = quizState.results.filter(r => r.correct);
-            const wrong = quizState.results.filter(r => !r.correct);
-            
-            // Correct answers
-            if(correct.length > 0) {
-                ctx.fillStyle = '#27ae60';
-                ctx.font = 'bold 16px "Open Sans", sans-serif';
-                ctx.fillText('✓ Got it right:', 60, y);
-                y += 28;
+            // Load and draw logo
+            const logo = new Image();
+            logo.onload = function() {
+                // Draw logo at top
+                const logoSize = 120;
+                ctx.drawImage(logo, (size - logoSize) / 2, 50, logoSize, logoSize);
                 
-                ctx.fillStyle = '#222';
-                ctx.font = '15px "Open Sans", sans-serif';
-                correct.forEach(r => {
-                    const pts = '+' + r.points.toFixed(1) + ' pts';
-                    ctx.fillText(r.player, 75, y);
-                    ctx.fillStyle = '#27ae60';
-                    ctx.textAlign = 'right';
-                    ctx.fillText(pts, 540, y);
-                    ctx.textAlign = 'left';
-                    ctx.fillStyle = '#222';
-                    y += 26;
-                });
-                y += 10;
-            }
-            
-            // Wrong answers
-            if(wrong.length > 0) {
+                // Title
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 42px "Open Sans", Arial, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('NBA CAREER MAP QUIZ', size/2, 220);
+                
+                // Red accent line
                 ctx.fillStyle = '#d63031';
-                ctx.font = 'bold 16px "Open Sans", sans-serif';
-                ctx.fillText('✗ Missed:', 60, y);
-                y += 28;
+                ctx.fillRect(size/2 - 100, 240, 200, 4);
+                
+                // Score section
+                const scoreNum = quizState.score.toFixed(1);
+                ctx.fillStyle = '#d63031';
+                ctx.font = 'bold 140px "Open Sans", Arial, sans-serif';
+                ctx.fillText(scoreNum, size/2, 380);
+                
+                ctx.fillStyle = '#888';
+                ctx.font = '28px "Open Sans", Arial, sans-serif';
+                ctx.fillText('POINTS', size/2, 420);
+                
+                // Stats row
+                const correct = quizState.results.filter(r => r.correct).length;
+                const wrong = 10 - correct;
                 
                 ctx.fillStyle = '#222';
-                ctx.font = '15px "Open Sans", sans-serif';
-                wrong.forEach(r => {
-                    ctx.fillText(r.player, 75, y);
+                ctx.fillRect(80, 470, size - 160, 100);
+                
+                // Correct count
+                ctx.fillStyle = '#27ae60';
+                ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
+                ctx.fillText(correct.toString(), size/2 - 150, 535);
+                ctx.fillStyle = '#666';
+                ctx.font = '18px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CORRECT', size/2 - 150, 560);
+                
+                // Divider
+                ctx.fillStyle = '#333';
+                ctx.fillRect(size/2, 490, 2, 70);
+                
+                // Wrong count
+                ctx.fillStyle = '#d63031';
+                ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
+                ctx.fillText(wrong.toString(), size/2 + 150, 535);
+                ctx.fillStyle = '#666';
+                ctx.font = '18px "Open Sans", Arial, sans-serif';
+                ctx.fillText('MISSED', size/2 + 150, 560);
+                
+                // Player names - two columns
+                const correctPlayers = quizState.results.filter(r => r.correct);
+                const wrongPlayers = quizState.results.filter(r => !r.correct);
+                
+                let y = 620;
+                ctx.font = '22px "Open Sans", Arial, sans-serif';
+                ctx.textAlign = 'left';
+                
+                // Show up to 5 correct on left
+                if(correctPlayers.length > 0) {
+                    ctx.fillStyle = '#27ae60';
+                    ctx.fillText('✓', 100, y);
+                    ctx.fillStyle = '#aaa';
+                    let names = correctPlayers.slice(0, 5).map(r => r.player.split(' ').pop()).join(', ');
+                    if(correctPlayers.length > 5) names += '...';
+                    ctx.fillText(names, 130, y);
+                }
+                
+                // Show up to 5 wrong on next line
+                if(wrongPlayers.length > 0) {
+                    y += 40;
                     ctx.fillStyle = '#d63031';
-                    ctx.textAlign = 'right';
-                    ctx.fillText('-5 pts', 540, y);
-                    ctx.textAlign = 'left';
-                    ctx.fillStyle = '#222';
-                    y += 26;
-                });
-            }
-            
-            // Call to action
-            ctx.textAlign = 'center';
-            ctx.fillStyle = '#d63031';
-            ctx.font = 'bold 18px "Open Sans", sans-serif';
-            ctx.fillText('Can you beat my score?', 300, 710);
-            
-            ctx.fillStyle = '#777';
-            ctx.font = '14px "Open Sans", sans-serif';
-            ctx.fillText('hoopshype.com/nba-career-map', 300, 735);
-            
-            // Convert to image
-            const img = document.getElementById('shareImage');
-            img.src = canvas.toDataURL('image/png');
-            document.getElementById('shareImageContainer').classList.add('show');
+                    ctx.fillText('✗', 100, y);
+                    ctx.fillStyle = '#aaa';
+                    let names = wrongPlayers.slice(0, 5).map(r => r.player.split(' ').pop()).join(', ');
+                    if(wrongPlayers.length > 5) names += '...';
+                    ctx.fillText(names, 130, y);
+                }
+                
+                // Call to action
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 32px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 780);
+                
+                // Red button-like CTA
+                ctx.fillStyle = '#d63031';
+                roundRect(ctx, size/2 - 180, 810, 360, 60, 30);
+                ctx.fill();
+                
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
+                ctx.fillText('PLAY NOW AT HOOPSHYPE.COM', size/2, 850);
+                
+                // Watermark
+                ctx.fillStyle = '#444';
+                ctx.font = '16px "Open Sans", Arial, sans-serif';
+                ctx.fillText('hoopshype.com/nba-career-map', size/2, 950);
+                
+                // Red corner accents
+                ctx.fillStyle = '#d63031';
+                ctx.fillRect(0, 0, 8, 80);
+                ctx.fillRect(0, 0, 80, 8);
+                ctx.fillRect(size - 8, 0, 8, 80);
+                ctx.fillRect(size - 80, 0, 80, 8);
+                ctx.fillRect(0, size - 80, 8, 80);
+                ctx.fillRect(0, size - 8, 80, 8);
+                ctx.fillRect(size - 8, size - 80, 8, 80);
+                ctx.fillRect(size - 80, size - 8, 80, 8);
+                
+                // Convert to image
+                const dataUrl = canvas.toDataURL('image/png');
+                const img = document.getElementById('shareImage');
+                img.src = dataUrl;
+                
+                // Set download link
+                document.getElementById('downloadLink').href = dataUrl;
+                
+                // Set Twitter share link
+                const tweetText = encodeURIComponent('I scored ' + quizState.score.toFixed(1) + ' points on the NBA Career Map Quiz! Can you beat me? 🏀\n\nPlay now: hoopshype.com/nba-career-map');
+                document.getElementById('twitterShare').href = 'https://twitter.com/intent/tweet?text=' + tweetText;
+                
+                document.getElementById('shareImageContainer').classList.add('show');
+            };
+            logo.src = 'data:image/png;base64,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';
         }
         
         function roundRect(ctx, x, y, w, h, r) {
@@ -1665,17 +1799,25 @@ document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
             </div>
             <div class="quiz-share-section">
                 <button class="quiz-share-btn" onclick="generateShareImage()">
-                    📸 Share Results
+                    <span>📸</span> Create Share Image
                 </button>
+            </div>
+            <canvas id="shareCanvas" style="display:none"></canvas>
+            <div id="shareImageContainer" style="display:none">
+                <img id="shareImage">
+                <div class="share-actions">
+                    <a id="downloadLink" class="share-download-btn" download="hoopshype-quiz-result.png">
+                        ⬇️ Download Image
+                    </a>
+                    <a id="twitterShare" class="share-twitter-btn" target="_blank">
+                        🐦 Share on Twitter
+                    </a>
+                </div>
+                <div class="share-instructions">Save the image and share it on social media!</div>
             </div>
             <div class="quiz-final-buttons">
                 <button class="quiz-start-btn" onclick="beginQuiz()">Play Again</button>
                 <button class="quiz-close-btn" onclick="closeQuiz()">Close</button>
-            </div>
-            <canvas id="shareCanvas" style="display:none"></canvas>
-            <div id="shareImageContainer" style="display:none">
-                <img id="shareImage" style="max-width:100%;border-radius:8px;margin-top:12px">
-                <div class="share-instructions">Long-press or right-click to save image</div>
             </div>
         </div>
     </div>
