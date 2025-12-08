@@ -1662,77 +1662,80 @@
                 const correct = quizState.results.filter(r => r.correct).length;
                 const wrong = 10 - correct;
                 
-                ctx.fillStyle = '#222';
-                ctx.fillRect(80, 470, size - 160, 100);
+                ctx.fillStyle = '#1a1a1a';
+                ctx.fillRect(80, 470, size - 160, 90);
                 
                 // Correct count
                 ctx.fillStyle = '#27ae60';
-                ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
-                ctx.fillText(correct.toString(), size/2 - 150, 535);
-                ctx.fillStyle = '#666';
-                ctx.font = '18px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CORRECT', size/2 - 150, 560);
+                ctx.font = 'bold 42px "Open Sans", Arial, sans-serif';
+                ctx.fillText(correct.toString(), size/2 - 150, 525);
+                ctx.fillStyle = '#888';
+                ctx.font = '16px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CORRECT', size/2 - 150, 550);
                 
                 // Divider
-                ctx.fillStyle = '#333';
-                ctx.fillRect(size/2, 490, 2, 70);
+                ctx.fillStyle = '#444';
+                ctx.fillRect(size/2, 490, 2, 60);
                 
                 // Wrong count
                 ctx.fillStyle = '#d63031';
-                ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
-                ctx.fillText(wrong.toString(), size/2 + 150, 535);
-                ctx.fillStyle = '#666';
-                ctx.font = '18px "Open Sans", Arial, sans-serif';
-                ctx.fillText('MISSED', size/2 + 150, 560);
+                ctx.font = 'bold 42px "Open Sans", Arial, sans-serif';
+                ctx.fillText(wrong.toString(), size/2 + 150, 525);
+                ctx.fillStyle = '#888';
+                ctx.font = '16px "Open Sans", Arial, sans-serif';
+                ctx.fillText('MISSED', size/2 + 150, 550);
                 
-                // Player names - two columns
-                const correctPlayers = quizState.results.filter(r => r.correct);
-                const wrongPlayers = quizState.results.filter(r => !r.correct);
-                
-                let y = 620;
-                ctx.font = '22px "Open Sans", Arial, sans-serif';
+                // Player results - full names with times
+                let y = 590;
                 ctx.textAlign = 'left';
                 
-                // Show up to 5 correct on left
-                if(correctPlayers.length > 0) {
-                    ctx.fillStyle = '#27ae60';
-                    ctx.fillText('✓', 100, y);
-                    ctx.fillStyle = '#aaa';
-                    let names = correctPlayers.slice(0, 5).map(r => r.player.split(' ').pop()).join(', ');
-                    if(correctPlayers.length > 5) names += '...';
-                    ctx.fillText(names, 130, y);
-                }
-                
-                // Show up to 5 wrong on next line
-                if(wrongPlayers.length > 0) {
-                    y += 40;
-                    ctx.fillStyle = '#d63031';
-                    ctx.fillText('✗', 100, y);
-                    ctx.fillStyle = '#aaa';
-                    let names = wrongPlayers.slice(0, 5).map(r => r.player.split(' ').pop()).join(', ');
-                    if(wrongPlayers.length > 5) names += '...';
-                    ctx.fillText(names, 130, y);
-                }
+                // All 10 results
+                quizState.results.forEach((r, i) => {
+                    const isCorrect = r.correct;
+                    const rowY = y + (i * 38);
+                    
+                    // Background stripe for alternating rows
+                    if(i % 2 === 0) {
+                        ctx.fillStyle = 'rgba(255,255,255,0.03)';
+                        ctx.fillRect(60, rowY - 24, size - 120, 36);
+                    }
+                    
+                    // Status icon
+                    ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
+                    ctx.fillStyle = isCorrect ? '#27ae60' : '#d63031';
+                    ctx.fillText(isCorrect ? '✓' : '✗', 80, rowY);
+                    
+                    // Player name
+                    ctx.fillStyle = '#fff';
+                    ctx.font = '20px "Open Sans", Arial, sans-serif';
+                    ctx.fillText(r.player, 115, rowY);
+                    
+                    // Time or penalty
+                    ctx.textAlign = 'right';
+                    if(isCorrect) {
+                        ctx.fillStyle = '#27ae60';
+                        ctx.fillText('+' + r.points.toFixed(1) + ' (' + r.time.toFixed(1) + 's)', size - 80, rowY);
+                    } else {
+                        ctx.fillStyle = '#d63031';
+                        ctx.fillText('-5 pts', size - 80, rowY);
+                    }
+                    ctx.textAlign = 'left';
+                });
                 
                 // Call to action
                 ctx.textAlign = 'center';
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 32px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 780);
+                ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 1000);
                 
                 // Red button-like CTA
                 ctx.fillStyle = '#d63031';
-                roundRect(ctx, size/2 - 180, 810, 360, 60, 30);
+                roundRect(ctx, size/2 - 160, 1025, 320, 50, 25);
                 ctx.fill();
                 
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
-                ctx.fillText('PLAY NOW AT HOOPSHYPE.COM', size/2, 850);
-                
-                // Watermark
-                ctx.fillStyle = '#444';
-                ctx.font = '16px "Open Sans", Arial, sans-serif';
-                ctx.fillText('hoopshype.com/nba-career-map', size/2, 950);
+                ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
+                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 1058);
                 
                 // Red corner accents
                 ctx.fillStyle = '#d63031';
