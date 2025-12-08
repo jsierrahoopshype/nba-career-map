@@ -34,11 +34,12 @@
         
         header {
             background: var(--bg);
-            padding: 10px 16px;
-            border-bottom: 2px solid var(--red);
+            padding: 12px 16px;
+            border-bottom: 3px solid var(--red);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
         .header-inner {
@@ -51,9 +52,10 @@
         
         .logo {
             font-weight: 700;
-            font-size: 16px;
+            font-size: 18px;
             color: var(--text);
             white-space: nowrap;
+            letter-spacing: -0.5px;
         }
         
         .logo span { color: var(--red); }
@@ -204,13 +206,24 @@
         
         .play-icon { font-size: 14px; }
         
-        .quiz-hero-stats {
-            margin-top: 16px;
-            font-size: 12px;
-            color: rgba(255,255,255,0.8);
+        .quiz-rules {
+            text-align: left;
+            background: rgba(0,0,0,0.15);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 16px 0 20px 0;
+            font-size: 13px;
+        }
+        
+        .quiz-rule {
+            padding: 6px 0;
             display: flex;
-            justify-content: center;
+            align-items: center;
             gap: 8px;
+        }
+        
+        .quiz-rule:not(:last-child) {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
         .explore-section {
@@ -516,6 +529,19 @@
             color: var(--text);
         }
         
+        
+        .quiz-ready-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .quiz-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
         .quiz-subtitle {
             font-size: 14px;
             color: var(--text-muted);
@@ -692,6 +718,40 @@
             .quiz-map-container { bottom: 220px; }
             .quiz-panel { padding: 20px; }
         }
+    
+        .quiz-share-section {
+            margin: 16px 0;
+        }
+        
+        .quiz-share-btn {
+            background: #1DA1F2;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+        
+        .quiz-share-btn:hover { background: #1a91da; }
+        
+        .quiz-final-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 16px;
+        }
+        
+        .share-instructions {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        
+        #shareImageContainer.show { display: block !important; }
     </style>
 </head>
 <body>
@@ -721,16 +781,16 @@
                     <div class="quiz-hero-icon">🏀</div>
                     <h2>NBA Career Map Quiz</h2>
                     <p>Can you identify NBA players by their career journey?</p>
+                    <div class="quiz-rules">
+                        <div class="quiz-rule">🗺️ View the career map and guess the player</div>
+                        <div class="quiz-rule">⏱️ 15 seconds per question</div>
+                        <div class="quiz-rule">⚡ Faster answers = more points (max 15 pts)</div>
+                        <div class="quiz-rule">❌ Wrong answer or timeout = -5 points</div>
+                        <div class="quiz-rule">🎯 10 questions total</div>
+                    </div>
                     <button class="quiz-hero-btn" onclick="startQuiz()">
                         <span class="play-icon">▶</span> Play Quiz
                     </button>
-                    <div class="quiz-hero-stats">
-                        <span>10 Questions</span>
-                        <span>•</span>
-                        <span>15 sec each</span>
-                        <span>•</span>
-                        <span>150 max pts</span>
-                    </div>
                 </div>
                 <div class="explore-section">
                     <div class="section-title">Or Explore Players</div>
@@ -1454,24 +1514,146 @@
             document.getElementById('quizBreakdown').innerHTML = breakdown;
         }
 
+
+        function generateShareImage() {
+            const canvas = document.getElementById('shareCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Canvas size optimized for Twitter/social
+            canvas.width = 600;
+            canvas.height = 800;
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#d63031');
+            gradient.addColorStop(1, '#c0392b');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // White card background
+            ctx.fillStyle = '#fff';
+            roundRect(ctx, 30, 30, 540, 740, 20);
+            ctx.fill();
+            
+            // Title
+            ctx.fillStyle = '#d63031';
+            ctx.font = 'bold 32px "Open Sans", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('NBA Career Map Quiz', 300, 80);
+            
+            // Basketball emoji (as text)
+            ctx.font = '48px Arial';
+            ctx.fillText('🏀', 300, 140);
+            
+            // Score
+            ctx.fillStyle = '#222';
+            ctx.font = 'bold 72px "Open Sans", sans-serif';
+            ctx.fillText(quizState.score.toFixed(1), 300, 220);
+            
+            ctx.fillStyle = '#777';
+            ctx.font = '18px "Open Sans", sans-serif';
+            ctx.fillText('points out of 150', 300, 250);
+            
+            // Divider
+            ctx.strokeStyle = '#e5e5e5';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(60, 280);
+            ctx.lineTo(540, 280);
+            ctx.stroke();
+            
+            // Results
+            let y = 320;
+            ctx.font = '14px "Open Sans", sans-serif';
+            ctx.textAlign = 'left';
+            
+            const correct = quizState.results.filter(r => r.correct);
+            const wrong = quizState.results.filter(r => !r.correct);
+            
+            // Correct answers
+            if(correct.length > 0) {
+                ctx.fillStyle = '#27ae60';
+                ctx.font = 'bold 16px "Open Sans", sans-serif';
+                ctx.fillText('✓ Got it right:', 60, y);
+                y += 28;
+                
+                ctx.fillStyle = '#222';
+                ctx.font = '15px "Open Sans", sans-serif';
+                correct.forEach(r => {
+                    const pts = '+' + r.points.toFixed(1) + ' pts';
+                    ctx.fillText(r.player, 75, y);
+                    ctx.fillStyle = '#27ae60';
+                    ctx.textAlign = 'right';
+                    ctx.fillText(pts, 540, y);
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = '#222';
+                    y += 26;
+                });
+                y += 10;
+            }
+            
+            // Wrong answers
+            if(wrong.length > 0) {
+                ctx.fillStyle = '#d63031';
+                ctx.font = 'bold 16px "Open Sans", sans-serif';
+                ctx.fillText('✗ Missed:', 60, y);
+                y += 28;
+                
+                ctx.fillStyle = '#222';
+                ctx.font = '15px "Open Sans", sans-serif';
+                wrong.forEach(r => {
+                    ctx.fillText(r.player, 75, y);
+                    ctx.fillStyle = '#d63031';
+                    ctx.textAlign = 'right';
+                    ctx.fillText('-5 pts', 540, y);
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = '#222';
+                    y += 26;
+                });
+            }
+            
+            // Call to action
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#d63031';
+            ctx.font = 'bold 18px "Open Sans", sans-serif';
+            ctx.fillText('Can you beat my score?', 300, 710);
+            
+            ctx.fillStyle = '#777';
+            ctx.font = '14px "Open Sans", sans-serif';
+            ctx.fillText('hoopshype.com/nba-career-map', 300, 735);
+            
+            // Convert to image
+            const img = document.getElementById('shareImage');
+            img.src = canvas.toDataURL('image/png');
+            document.getElementById('shareImageContainer').classList.add('show');
+        }
+        
+        function roundRect(ctx, x, y, w, h, r) {
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.lineTo(x + w - r, y);
+            ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+            ctx.lineTo(x + w, y + h - r);
+            ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+            ctx.lineTo(x + r, y + h);
+            ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+            ctx.lineTo(x, y + r);
+            ctx.quadraticCurveTo(x, y, x + r, y);
+            ctx.closePath();
+        }
+
 document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
     </script>
 
     <!-- Quiz Overlay -->
     <div class="quiz-overlay" id="quizOverlay">
         <div class="quiz-box" id="quizIntro">
-            <div class="quiz-title">🏀 Career Map Quiz</div>
-            <div class="quiz-subtitle">Guess the player based on their career journey!</div>
-            <div style="text-align:left;background:var(--bg-gray);border-radius:8px;padding:16px;margin-bottom:20px;font-size:13px;">
-                <p style="margin-bottom:8px"><strong>How to play:</strong></p>
-                <p>• View the career map and guess which NBA player it belongs to</p>
-                <p>• You have <strong>15 seconds</strong> per question</p>
-                <p>• Faster answers = more points (max 15 pts)</p>
-                <p>• Wrong answers or timeout = <strong>-5 points</strong></p>
-                <p>• 10 questions total, all players from 1990+</p>
+            <div class="quiz-title">🏀 Ready to Play?</div>
+            <div class="quiz-subtitle">10 questions • 15 seconds each • 150 max points</div>
+            <div class="quiz-ready-buttons">
+                <button class="quiz-start-btn" onclick="beginQuiz()">Start Quiz</button>
+                <button class="quiz-close-btn" onclick="closeQuiz()">Cancel</button>
             </div>
-            <button class="quiz-start-btn" onclick="beginQuiz()">Start Quiz</button>
-            <button class="quiz-close-btn" onclick="closeQuiz()" style="margin-left:10px">Cancel</button>
         </div>
         
         <div class="quiz-box" id="quizFinal" style="display:none">
@@ -1481,8 +1663,20 @@ document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
                 <div class="quiz-final-label">out of 150 points</div>
                 <div class="quiz-breakdown" id="quizBreakdown"></div>
             </div>
-            <button class="quiz-start-btn" onclick="beginQuiz()">Play Again</button>
-            <button class="quiz-close-btn" onclick="closeQuiz()" style="margin-left:10px">Close</button>
+            <div class="quiz-share-section">
+                <button class="quiz-share-btn" onclick="generateShareImage()">
+                    📸 Share Results
+                </button>
+            </div>
+            <div class="quiz-final-buttons">
+                <button class="quiz-start-btn" onclick="beginQuiz()">Play Again</button>
+                <button class="quiz-close-btn" onclick="closeQuiz()">Close</button>
+            </div>
+            <canvas id="shareCanvas" style="display:none"></canvas>
+            <div id="shareImageContainer" style="display:none">
+                <img id="shareImage" style="max-width:100%;border-radius:8px;margin-top:12px">
+                <div class="share-instructions">Long-press or right-click to save image</div>
+            </div>
         </div>
     </div>
     
