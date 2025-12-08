@@ -72,10 +72,16 @@
             border: 1px solid var(--border);
             border-radius: 4px;
             outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
         
         #search:focus {
             border-color: var(--red);
+            box-shadow: 0 0 0 3px rgba(214, 48, 49, 0.1);
+        }
+        
+        #search::placeholder {
+            color: #aaa;
         }
         
         #results {
@@ -85,11 +91,13 @@
             right: 0;
             background: var(--bg);
             border: 1px solid var(--border);
+            border-radius: 0 0 4px 4px;
             border-top: none;
-            max-height: 240px;
+            max-height: 300px;
             overflow-y: auto;
             display: none;
             z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         #results.show { display: block; }
@@ -158,6 +166,57 @@
         }
         
         .welcome { text-align: center; padding: 16px 0; }
+        
+        .quiz-hero {
+            background: linear-gradient(135deg, #d63031 0%, #c0392b 100%);
+            color: #fff;
+            padding: 28px 20px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(214, 48, 49, 0.3);
+        }
+        
+        .quiz-hero-icon { font-size: 48px; margin-bottom: 12px; }
+        .quiz-hero h2 { font-size: 24px; margin-bottom: 8px; color: #fff; }
+        .quiz-hero p { color: rgba(255,255,255,0.9); font-size: 14px; margin-bottom: 20px; }
+        
+        .quiz-hero-btn {
+            background: #fff;
+            color: var(--red);
+            border: none;
+            padding: 14px 36px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .quiz-hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        
+        .play-icon { font-size: 14px; }
+        
+        .quiz-hero-stats {
+            margin-top: 16px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .explore-section {
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
         .welcome h2 { font-size: 18px; margin-bottom: 6px; }
         .welcome p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
         
@@ -640,10 +699,10 @@
         <div class="header-inner">
             <div class="logo">NBA <span>Career Map</span></div>
             <div class="search-wrap">
-                <input type="text" id="search" placeholder="Search player...">
+                <input type="text" id="search" placeholder="Search 5,000+ players..." autocomplete="off">
                 <div id="results"></div>
             </div>
-            <button class="quiz-btn" onclick="startQuiz()">🎮 Play Quiz</button>
+            <button class="quiz-btn" onclick="startQuiz()">🎮 Quiz</button>
         </div>
     </header>
     
@@ -658,10 +717,23 @@
         
         <div class="panel">
             <div class="welcome" id="welcome">
-                <h2>NBA Career Map</h2>
-                <p>Search any player to see their career journey visualized on the map.</p>
-                <div class="suggestions">
-                    <div class="section-title">Popular Players</div>
+                <div class="quiz-hero">
+                    <div class="quiz-hero-icon">🏀</div>
+                    <h2>NBA Career Map Quiz</h2>
+                    <p>Can you identify NBA players by their career journey?</p>
+                    <button class="quiz-hero-btn" onclick="startQuiz()">
+                        <span class="play-icon">▶</span> Play Quiz
+                    </button>
+                    <div class="quiz-hero-stats">
+                        <span>10 Questions</span>
+                        <span>•</span>
+                        <span>15 sec each</span>
+                        <span>•</span>
+                        <span>150 max pts</span>
+                    </div>
+                </div>
+                <div class="explore-section">
+                    <div class="section-title">Or Explore Players</div>
                     <div class="chips" id="welcomeChips"></div>
                 </div>
             </div>
@@ -877,12 +949,8 @@
             
             showWelcome();
             
-            // Load a random top player on startup (from top 500 by games played, with 5+ stops)
-            const availableStarters = STARTUP_PLAYERS.filter(p => data[p]?.career_history?.length >= 5);
-            if(availableStarters.length > 0) {
-                const randomStarter = availableStarters[Math.floor(Math.random() * availableStarters.length)];
-                setTimeout(() => show(randomStarter), 100);
-            }
+            // Don't auto-load - let quiz hero be the focus
+            // User can click chips or search to explore
         }
         
         function showWelcome() {
@@ -922,9 +990,22 @@
         
         searchEl.addEventListener('input',function(){
             const q = this.value.toLowerCase().trim();
-            if(q.length<2){resultsEl.classList.remove('show');return;}
-            const m = players.filter(n=>n.toLowerCase().includes(q)).slice(0,8);
-            if(!m.length){resultsEl.classList.remove('show');return;}
+            if(q.length<2){resultsEl.classList.remove('show');resultsEl.innerHTML='';return;}
+            // Search through loaded data keys (more reliable than CSV)
+            const dataPlayers = Object.keys(data);
+            const m = dataPlayers.filter(n=>n.toLowerCase().includes(q)).sort((a,b)=>{
+                // Prioritize names that START with the query
+                const aStarts = a.toLowerCase().startsWith(q);
+                const bStarts = b.toLowerCase().startsWith(q);
+                if(aStarts && !bStarts) return -1;
+                if(!aStarts && bStarts) return 1;
+                return a.localeCompare(b);
+            }).slice(0,10);
+            if(!m.length){
+                resultsEl.innerHTML='<div class="result-item" style="color:#777">No players found</div>';
+                resultsEl.classList.add('show');
+                return;
+            }
             resultsEl.innerHTML = m.map(n=>`<div class="result-item" data-n="${n}">${n}</div>`).join('');
             resultsEl.classList.add('show');
         });
