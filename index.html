@@ -1648,94 +1648,100 @@
                 ctx.fillStyle = '#d63031';
                 ctx.fillRect(size/2 - 100, 240, 200, 4);
                 
-                // Score section
+                // Score section - slightly smaller to give room to players
                 const scoreNum = quizState.score.toFixed(1);
                 ctx.fillStyle = '#d63031';
-                ctx.font = 'bold 140px "Open Sans", Arial, sans-serif';
-                ctx.fillText(scoreNum, size/2, 380);
+                ctx.font = 'bold 120px "Open Sans", Arial, sans-serif';
+                ctx.fillText(scoreNum, size/2, 360);
                 
-                ctx.fillStyle = '#888';
-                ctx.font = '28px "Open Sans", Arial, sans-serif';
-                ctx.fillText('POINTS', size/2, 420);
+                ctx.fillStyle = '#aaa';
+                ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
+                ctx.fillText('POINTS', size/2, 395);
                 
-                // Stats row
+                // Stats row - more compact
                 const correct = quizState.results.filter(r => r.correct).length;
                 const wrong = 10 - correct;
                 
                 ctx.fillStyle = '#1a1a1a';
-                ctx.fillRect(80, 470, size - 160, 90);
+                ctx.fillRect(80, 440, size - 160, 80);
                 
                 // Correct count
                 ctx.fillStyle = '#27ae60';
-                ctx.font = 'bold 42px "Open Sans", Arial, sans-serif';
-                ctx.fillText(correct.toString(), size/2 - 150, 525);
-                ctx.fillStyle = '#888';
-                ctx.font = '16px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CORRECT', size/2 - 150, 550);
+                ctx.font = 'bold 44px "Open Sans", Arial, sans-serif';
+                ctx.fillText(correct.toString(), size/2 - 150, 490);
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CORRECT', size/2 - 150, 512);
                 
                 // Divider
-                ctx.fillStyle = '#444';
-                ctx.fillRect(size/2, 490, 2, 60);
+                ctx.fillStyle = '#555';
+                ctx.fillRect(size/2, 455, 2, 60);
                 
                 // Wrong count
                 ctx.fillStyle = '#d63031';
-                ctx.font = 'bold 42px "Open Sans", Arial, sans-serif';
-                ctx.fillText(wrong.toString(), size/2 + 150, 525);
-                ctx.fillStyle = '#888';
-                ctx.font = '16px "Open Sans", Arial, sans-serif';
-                ctx.fillText('MISSED', size/2 + 150, 550);
+                ctx.font = 'bold 44px "Open Sans", Arial, sans-serif';
+                ctx.fillText(wrong.toString(), size/2 + 150, 490);
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
+                ctx.fillText('MISSED', size/2 + 150, 512);
                 
-                // Player results - full names with times
+                // Separator line before player list
+                ctx.fillStyle = '#333';
+                ctx.fillRect(60, 545, size - 120, 1);
+                
+                // Player results - full names with times - BIGGER AND MORE VISIBLE
                 let y = 590;
                 ctx.textAlign = 'left';
                 
-                // All 10 results
+                // All 10 results with larger font and spacing
                 quizState.results.forEach((r, i) => {
                     const isCorrect = r.correct;
-                    const rowY = y + (i * 38);
+                    const rowY = y + (i * 44);
                     
                     // Background stripe for alternating rows
                     if(i % 2 === 0) {
-                        ctx.fillStyle = 'rgba(255,255,255,0.03)';
-                        ctx.fillRect(60, rowY - 24, size - 120, 36);
+                        ctx.fillStyle = 'rgba(255,255,255,0.06)';
+                        ctx.fillRect(50, rowY - 28, size - 100, 42);
                     }
                     
-                    // Status icon
-                    ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
+                    // Status icon - LARGER
+                    ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
                     ctx.fillStyle = isCorrect ? '#27ae60' : '#d63031';
-                    ctx.fillText(isCorrect ? '✓' : '✗', 80, rowY);
+                    ctx.fillText(isCorrect ? '✓' : '✗', 70, rowY);
                     
-                    // Player name
-                    ctx.fillStyle = '#fff';
-                    ctx.font = '20px "Open Sans", Arial, sans-serif';
-                    ctx.fillText(r.player, 115, rowY);
+                    // Player name - MUCH BIGGER AND BRIGHTER
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = 'bold 26px "Open Sans", Arial, sans-serif';
+                    ctx.fillText(r.player, 110, rowY);
                     
-                    // Time or penalty
+                    // Time or penalty - LARGER
                     ctx.textAlign = 'right';
                     if(isCorrect) {
                         ctx.fillStyle = '#27ae60';
-                        ctx.fillText('+' + r.points.toFixed(1) + ' (' + r.time.toFixed(1) + 's)', size - 80, rowY);
+                        ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
+                        ctx.fillText('+' + r.points.toFixed(1) + ' (' + r.time.toFixed(1) + 's)', size - 60, rowY);
                     } else {
                         ctx.fillStyle = '#d63031';
-                        ctx.fillText('-5 pts', size - 80, rowY);
+                        ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
+                        ctx.fillText('-5 pts', size - 60, rowY);
                     }
                     ctx.textAlign = 'left';
                 });
                 
-                // Call to action
+                // Call to action - moved down
                 ctx.textAlign = 'center';
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 1000);
+                ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 1040);
                 
                 // Red button-like CTA
                 ctx.fillStyle = '#d63031';
-                roundRect(ctx, size/2 - 160, 1025, 320, 50, 25);
+                roundRect(ctx, size/2 - 140, 1055, 280, 42, 21);
                 ctx.fill();
                 
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
-                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 1058);
+                ctx.font = 'bold 17px "Open Sans", Arial, sans-serif';
+                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 1083);
                 
                 // Red corner accents
                 ctx.fillStyle = '#d63031';
