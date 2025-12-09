@@ -1662,10 +1662,10 @@
             const canvas = document.getElementById('shareCanvas');
             const ctx = canvas.getContext('2d');
             
-            // Square format for Twitter (1080x1080)
+            // Taller format to fit all content (1080x1200)
             const size = 1080;
             canvas.width = size;
-            canvas.height = size;
+            canvas.height = 1200;
             
             // Black background
             ctx.fillStyle = '#000';
@@ -1698,63 +1698,63 @@
                 ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
                 ctx.fillText('POINTS', size/2, 395);
                 
-                // Stats row - more compact
+                // Stats row
                 const correct = quizState.results.filter(r => r.correct).length;
                 const wrong = 10 - correct;
                 
                 ctx.fillStyle = '#1a1a1a';
-                ctx.fillRect(80, 440, size - 160, 80);
+                ctx.fillRect(80, 440, size - 160, 85);
                 
                 // Correct count
                 ctx.fillStyle = '#27ae60';
-                ctx.font = 'bold 44px "Open Sans", Arial, sans-serif';
+                ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
                 ctx.fillText(correct.toString(), size/2 - 150, 490);
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CORRECT', size/2 - 150, 512);
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 16px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CORRECT', size/2 - 150, 515);
                 
                 // Divider
-                ctx.fillStyle = '#555';
-                ctx.fillRect(size/2, 455, 2, 60);
+                ctx.fillStyle = '#444';
+                ctx.fillRect(size/2, 455, 2, 65);
                 
                 // Wrong count
                 ctx.fillStyle = '#d63031';
-                ctx.font = 'bold 44px "Open Sans", Arial, sans-serif';
+                ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
                 ctx.fillText(wrong.toString(), size/2 + 150, 490);
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
-                ctx.fillText('MISSED', size/2 + 150, 512);
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 16px "Open Sans", Arial, sans-serif';
+                ctx.fillText('MISSED', size/2 + 150, 515);
                 
                 // Separator line before player list
                 ctx.fillStyle = '#333';
-                ctx.fillRect(60, 545, size - 120, 1);
+                ctx.fillRect(60, 550, size - 120, 1);
                 
-                // Player results - full names with times - BIGGER AND MORE VISIBLE
-                let y = 590;
+                // Player results - full names with times
+                let y = 600;
                 ctx.textAlign = 'left';
                 
                 // All 10 results with larger font and spacing
                 quizState.results.forEach((r, i) => {
                     const isCorrect = r.correct;
-                    const rowY = y + (i * 44);
+                    const rowY = y + (i * 48);
                     
                     // Background stripe for alternating rows
                     if(i % 2 === 0) {
                         ctx.fillStyle = 'rgba(255,255,255,0.06)';
-                        ctx.fillRect(50, rowY - 28, size - 100, 42);
+                        ctx.fillRect(50, rowY - 30, size - 100, 46);
                     }
                     
-                    // Status icon - LARGER
+                    // Status icon
                     ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
                     ctx.fillStyle = isCorrect ? '#27ae60' : '#d63031';
                     ctx.fillText(isCorrect ? '✓' : '✗', 70, rowY);
                     
-                    // Player name - MUCH BIGGER AND BRIGHTER
+                    // Player name
                     ctx.fillStyle = '#ffffff';
-                    ctx.font = 'bold 26px "Open Sans", Arial, sans-serif';
-                    ctx.fillText(r.player, 110, rowY);
+                    ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
+                    ctx.fillText(r.player, 115, rowY);
                     
-                    // Time or penalty - LARGER
+                    // Time or penalty
                     ctx.textAlign = 'right';
                     if(isCorrect) {
                         ctx.fillStyle = '#27ae60';
@@ -1768,20 +1768,25 @@
                     ctx.textAlign = 'left';
                 });
                 
-                // Call to action - moved down
+                // Call to action
                 ctx.textAlign = 'center';
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 1040);
+                ctx.font = 'bold 26px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 1100);
                 
                 // Red button-like CTA
                 ctx.fillStyle = '#d63031';
-                roundRect(ctx, size/2 - 140, 1055, 280, 42, 21);
+                roundRect(ctx, size/2 - 150, 1115, 300, 48, 24);
                 ctx.fill();
                 
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 17px "Open Sans", Arial, sans-serif';
-                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 1083);
+                ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
+                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 1147);
+                
+                // Long press instruction
+                ctx.fillStyle = '#666';
+                ctx.font = '14px "Open Sans", Arial, sans-serif';
+                ctx.fillText('Long-press or right-click to save image', size/2, 1185);
                 
                 // Red corner accents
                 ctx.fillStyle = '#d63031';
@@ -1789,10 +1794,10 @@
                 ctx.fillRect(0, 0, 80, 8);
                 ctx.fillRect(size - 8, 0, 8, 80);
                 ctx.fillRect(size - 80, 0, 80, 8);
-                ctx.fillRect(0, size - 80, 8, 80);
-                ctx.fillRect(0, size - 8, 80, 8);
-                ctx.fillRect(size - 8, size - 80, 8, 80);
-                ctx.fillRect(size - 80, size - 8, 80, 8);
+                ctx.fillRect(0, 1200 - 80, 8, 80);
+                ctx.fillRect(0, 1200 - 8, 80, 8);
+                ctx.fillRect(size - 8, 1200 - 80, 8, 80);
+                ctx.fillRect(size - 80, 1200 - 8, 80, 8);
                 
                 // Convert to image
                 const dataUrl = canvas.toDataURL('image/png');
