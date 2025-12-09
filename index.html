@@ -1685,14 +1685,17 @@
             }
             
             try {
-                const response = await fetch(SCORE_API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        score: quizState.score,
-                        correct: correct,
-                        missed: missed
-                    })
+                // Use GET with query params to avoid CORS preflight issues
+                const params = new URLSearchParams({
+                    action: 'submit',
+                    score: quizState.score.toFixed(2),
+                    correct: correct,
+                    missed: missed
+                });
+                
+                const response = await fetch(SCORE_API_URL + '?' + params.toString(), {
+                    method: 'GET',
+                    redirect: 'follow'
                 });
                 
                 const data = await response.json();
@@ -1778,39 +1781,42 @@
                     }
                 }
                 
-                // Stats row
+                // Stats row - positioned after percentile
                 const correct = quizState.results.filter(r => r.correct).length;
                 const wrong = 10 - correct;
                 
+                const statsY = (quizState.percentile !== null && quizState.percentile !== undefined) ? 480 : 440;
+                
                 ctx.fillStyle = '#1a1a1a';
-                ctx.fillRect(80, 440, size - 160, 85);
+                ctx.fillRect(80, statsY, size - 160, 85);
                 
                 // Correct count
                 ctx.fillStyle = '#27ae60';
                 ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
-                ctx.fillText(correct.toString(), size/2 - 150, 490);
+                ctx.fillText(correct.toString(), size/2 - 150, statsY + 50);
                 ctx.fillStyle = '#ffffff';
                 ctx.font = 'bold 16px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CORRECT', size/2 - 150, 515);
+                ctx.fillText('CORRECT', size/2 - 150, statsY + 75);
                 
                 // Divider
                 ctx.fillStyle = '#444';
-                ctx.fillRect(size/2, 455, 2, 65);
+                ctx.fillRect(size/2, statsY + 15, 2, 65);
                 
                 // Wrong count
                 ctx.fillStyle = '#d63031';
                 ctx.font = 'bold 48px "Open Sans", Arial, sans-serif';
-                ctx.fillText(wrong.toString(), size/2 + 150, 490);
+                ctx.fillText(wrong.toString(), size/2 + 150, statsY + 50);
                 ctx.fillStyle = '#ffffff';
                 ctx.font = 'bold 16px "Open Sans", Arial, sans-serif';
-                ctx.fillText('MISSED', size/2 + 150, 515);
+                ctx.fillText('MISSED', size/2 + 150, statsY + 75);
                 
                 // Separator line before player list
                 ctx.fillStyle = '#333';
-                ctx.fillRect(60, 550, size - 120, 1);
+                ctx.fillRect(60, statsY + 90, size - 120, 1);
                 
                 // Player results - full names with times
-                let y = 600;
+                const listStartY = (quizState.percentile !== null && quizState.percentile !== undefined) ? 640 : 600;
+                let y = listStartY;
                 ctx.textAlign = 'left';
                 
                 // All 10 results with larger font and spacing
@@ -1849,30 +1855,32 @@
                 });
                 
                 // Call to action
+                const ctaY = (quizState.percentile !== null && quizState.percentile !== undefined) ? 1130 : 1095;
                 ctx.textAlign = 'center';
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 30px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 1095);
+                ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, ctaY);
                 
-                // Red button-like CTA - BIGGER
+                // Red button-like CTA
                 ctx.fillStyle = '#d63031';
-                roundRect(ctx, size/2 - 200, 1115, 400, 60, 30);
+                roundRect(ctx, size/2 - 180, ctaY + 15, 360, 55, 28);
                 ctx.fill();
                 
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
-                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 1155);
+                ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
+                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, ctaY + 52);
                 
                 // Red corner accents
+                const h = 1200;
                 ctx.fillStyle = '#d63031';
                 ctx.fillRect(0, 0, 8, 80);
                 ctx.fillRect(0, 0, 80, 8);
                 ctx.fillRect(size - 8, 0, 8, 80);
                 ctx.fillRect(size - 80, 0, 80, 8);
-                ctx.fillRect(0, 1200 - 80, 8, 80);
-                ctx.fillRect(0, 1200 - 8, 80, 8);
-                ctx.fillRect(size - 8, 1200 - 80, 8, 80);
-                ctx.fillRect(size - 80, 1200 - 8, 80, 8);
+                ctx.fillRect(0, h - 80, 8, 80);
+                ctx.fillRect(0, h - 8, 80, 8);
+                ctx.fillRect(size - 8, h - 80, 8, 80);
+                ctx.fillRect(size - 80, h - 8, 80, 8);
                 
                 // Convert to image
                 const dataUrl = canvas.toDataURL('image/png');
