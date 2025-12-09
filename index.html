@@ -710,27 +710,7 @@
             margin-bottom: 24px;
         }
         
-        .quiz-breakdown {
-            text-align: left;
-            background: var(--bg-gray);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 20px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-        
-        .quiz-breakdown-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 13px;
-        }
-        .quiz-breakdown-row:last-child { border-bottom: none; }
-        .quiz-breakdown-row .name { font-weight: 600; }
-        .quiz-breakdown-row .pts { color: var(--green); font-weight: 600; }
-        .quiz-breakdown-row .pts.zero { color: var(--red); }
+        /* Results list styling is in quiz-results-list */
         
         .quiz-map-container {
             position: fixed;
@@ -800,6 +780,61 @@
             background: #f8f8f8;
             border-radius: 12px;
         }
+        
+        .quiz-box-large {
+            max-width: 550px !important;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .quiz-results-list {
+            text-align: left;
+            margin: 16px 0;
+            max-height: 300px;
+            overflow-y: auto;
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 8px 0;
+        }
+        
+        .quiz-result-row {
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+        
+        .quiz-result-row:last-child {
+            border-bottom: none;
+        }
+        
+        .quiz-result-row:nth-child(odd) {
+            background: #fff;
+        }
+        
+        .quiz-result-icon {
+            width: 24px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .quiz-result-icon.correct { color: var(--green); }
+        .quiz-result-icon.wrong { color: var(--red); }
+        
+        .quiz-result-name {
+            flex: 1;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .quiz-result-points {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .quiz-result-points.correct { color: var(--green); }
+        .quiz-result-points.wrong { color: var(--red); }
         
         #shareImage {
             max-width: 100%;
@@ -1604,17 +1639,22 @@
             
             document.getElementById('finalScore').textContent = quizState.score.toFixed(2);
             
-            // Build breakdown
-            const breakdown = quizState.results.map(r => {
-                const ptsClass = r.points > 0 ? '' : 'zero';
-                const ptsStr = r.points > 0 ? '+' + r.points.toFixed(2) : r.points.toFixed(2);
-                return `<div class="quiz-breakdown-row">
-                    <span class="name">${r.correct ? '✓' : '✗'} ${r.player}</span>
-                    <span class="pts ${ptsClass}">${ptsStr}</span>
+            // Build detailed results list
+            const resultsList = quizState.results.map(r => {
+                const isCorrect = r.correct;
+                const ptsStr = isCorrect ? '+' + r.points.toFixed(2) : r.points.toFixed(2);
+                const timeStr = isCorrect ? ' (' + r.time.toFixed(2) + 's)' : '';
+                return `<div class="quiz-result-row">
+                    <span class="quiz-result-icon ${isCorrect ? 'correct' : 'wrong'}">${isCorrect ? '✓' : '✗'}</span>
+                    <span class="quiz-result-name">${r.player}</span>
+                    <span class="quiz-result-points ${isCorrect ? 'correct' : 'wrong'}">${ptsStr}${timeStr}</span>
                 </div>`;
             }).join('');
             
-            document.getElementById('quizBreakdown').innerHTML = breakdown;
+            document.getElementById('quizResultsList').innerHTML = resultsList;
+            
+            // Auto-generate share image
+            generateShareImage();
         }
 
 
@@ -1799,20 +1839,15 @@ document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
             </div>
         </div>
         
-        <div class="quiz-box" id="quizFinal" style="display:none">
+        <div class="quiz-box quiz-box-large" id="quizFinal" style="display:none">
             <div class="quiz-title">Quiz Complete!</div>
             <div class="quiz-final">
                 <div class="quiz-final-score" id="finalScore">0</div>
                 <div class="quiz-final-label">out of 150 points</div>
-                <div class="quiz-breakdown" id="quizBreakdown"></div>
-            </div>
-            <div class="quiz-share-section">
-                <button class="quiz-share-btn" onclick="generateShareImage()">
-                    <span>📸</span> Create Share Image
-                </button>
+                <div class="quiz-results-list" id="quizResultsList"></div>
             </div>
             <canvas id="shareCanvas" style="display:none"></canvas>
-            <div id="shareImageContainer" style="display:none">
+            <div id="shareImageContainer">
                 <img id="shareImage">
                 <div class="share-actions">
                     <a id="downloadLink" class="share-download-btn" download="hoopshype-quiz-result.png">
