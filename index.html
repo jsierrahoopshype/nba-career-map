@@ -1731,156 +1731,137 @@
             const canvas = document.getElementById('shareCanvas');
             const ctx = canvas.getContext('2d');
             
-            // Taller format to fit all content (1080x1200)
+            // Square format (1080x1080)
             const size = 1080;
             canvas.width = size;
-            canvas.height = 1200;
+            canvas.height = size;
             
-            // Black background
-            ctx.fillStyle = '#000';
+            // Dark gradient background
+            const bgGrad = ctx.createLinearGradient(0, 0, 0, size);
+            bgGrad.addColorStop(0, '#0a0a0a');
+            bgGrad.addColorStop(1, '#1a1a1a');
+            ctx.fillStyle = bgGrad;
             ctx.fillRect(0, 0, size, size);
             
             // Load and draw logo
             const logo = new Image();
             logo.onload = function() {
-                // Draw logo at top
-                const logoSize = 120;
-                ctx.drawImage(logo, (size - logoSize) / 2, 50, logoSize, logoSize);
+                // Draw logo at top - smaller
+                const logoSize = 80;
+                ctx.drawImage(logo, (size - logoSize) / 2, 35, logoSize, logoSize);
                 
-                // Title
+                // Title - smaller
                 ctx.fillStyle = '#fff';
-                ctx.font = 'bold 42px "Open Sans", Arial, sans-serif';
+                ctx.font = 'bold 32px "Open Sans", Arial, sans-serif';
                 ctx.textAlign = 'center';
-                ctx.fillText('NBA CAREER MAP QUIZ', size/2, 220);
+                ctx.fillText('NBA CAREER MAP QUIZ', size/2, 150);
                 
                 // Red accent line
                 ctx.fillStyle = '#d63031';
-                ctx.fillRect(size/2 - 100, 240, 200, 4);
+                ctx.fillRect(size/2 - 80, 165, 160, 3);
                 
-                // Score section
+                // Score section - prominent
                 const scoreNum = quizState.score.toFixed(1);
-                ctx.fillStyle = '#d63031';
-                ctx.font = 'bold 110px "Open Sans", Arial, sans-serif';
-                ctx.fillText(scoreNum, size/2, 350);
+                const scoreColor = quizState.score >= 0 ? '#2ecc71' : '#e74c3c';
+                ctx.fillStyle = scoreColor;
+                ctx.font = 'bold 100px "Open Sans", Arial, sans-serif';
+                ctx.fillText(scoreNum, size/2, 270);
                 
-                ctx.fillStyle = '#aaa';
-                ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
-                ctx.fillText('POINTS', size/2, 380);
+                ctx.fillStyle = '#888';
+                ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
+                ctx.fillText('POINTS', size/2, 295);
                 
-                // Percentile (if available)
-                if (quizState.percentile !== null && quizState.percentile !== undefined) {
-                    ctx.fillStyle = quizState.percentile >= 50 ? '#2ecc71' : '#e74c3c';
-                    ctx.font = 'bold 32px "Open Sans", Arial, sans-serif';
-                    ctx.fillText('Better than ' + quizState.percentile + '% of players', size/2, 415);
-                    
-                    // Show rank - more visible
-                    if (quizState.rank && quizState.totalPlayers) {
-                        ctx.fillStyle = '#ffffff';
-                        ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
-                        ctx.fillText('Rank #' + quizState.rank + ' of ' + quizState.totalPlayers.toLocaleString(), size/2, 450);
-                    }
+                // Rank display (if available) - simple and clear
+                if (quizState.rank && quizState.totalPlayers) {
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
+                    ctx.fillText('Rank #' + quizState.rank + ' of ' + quizState.totalPlayers.toLocaleString() + ' players', size/2, 340);
                 }
                 
-                // Stats row - positioned after percentile
+                // Stats bar
                 const correct = quizState.results.filter(r => r.correct).length;
                 const wrong = 10 - correct;
+                const statsY = 380;
                 
-                const statsY = (quizState.percentile !== null && quizState.percentile !== undefined) ? 490 : 450;
-                
-                ctx.fillStyle = '#1a1a1a';
-                ctx.fillRect(80, statsY, size - 160, 90);
+                ctx.fillStyle = '#111';
+                roundRect(ctx, 60, statsY, size - 120, 70, 10);
+                ctx.fill();
                 
                 // Correct count
                 ctx.fillStyle = '#2ecc71';
-                ctx.font = 'bold 52px "Open Sans", Arial, sans-serif';
-                ctx.fillText(correct.toString(), size/2 - 150, statsY + 55);
-                ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CORRECT', size/2 - 150, statsY + 80);
+                ctx.font = 'bold 36px "Open Sans", Arial, sans-serif';
+                ctx.fillText(correct.toString(), size/2 - 140, statsY + 45);
+                ctx.fillStyle = '#aaa';
+                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CORRECT', size/2 - 140, statsY + 62);
                 
                 // Divider
-                ctx.fillStyle = '#555';
-                ctx.fillRect(size/2, statsY + 15, 2, 65);
+                ctx.fillStyle = '#333';
+                ctx.fillRect(size/2, statsY + 15, 1, 45);
                 
-                // Wrong count
+                // Wrong count  
                 ctx.fillStyle = '#e74c3c';
-                ctx.font = 'bold 52px "Open Sans", Arial, sans-serif';
-                ctx.fillText(wrong.toString(), size/2 + 150, statsY + 55);
-                ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
-                ctx.fillText('MISSED', size/2 + 150, statsY + 80);
+                ctx.font = 'bold 36px "Open Sans", Arial, sans-serif';
+                ctx.fillText(wrong.toString(), size/2 + 140, statsY + 45);
+                ctx.fillStyle = '#aaa';
+                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
+                ctx.fillText('MISSED', size/2 + 140, statsY + 62);
                 
-                // Separator line before player list
-                ctx.fillStyle = '#444';
-                ctx.fillRect(60, statsY + 95, size - 120, 2);
-                
-                // Player results - full names with times
-                const listStartY = (quizState.percentile !== null && quizState.percentile !== undefined) ? 655 : 610;
-                let y = listStartY;
+                // Player results - compact
+                let y = 490;
                 ctx.textAlign = 'left';
                 
-                // All 10 results with larger font and spacing
                 quizState.results.forEach((r, i) => {
                     const isCorrect = r.correct;
-                    const rowY = y + (i * 46);
+                    const rowY = y + (i * 42);
                     
-                    // Background stripe for alternating rows
+                    // Subtle alternating background
                     if(i % 2 === 0) {
-                        ctx.fillStyle = 'rgba(255,255,255,0.07)';
-                        ctx.fillRect(50, rowY - 28, size - 100, 44);
+                        ctx.fillStyle = 'rgba(255,255,255,0.03)';
+                        ctx.fillRect(60, rowY - 25, size - 120, 40);
                     }
                     
                     // Status icon
-                    ctx.font = 'bold 26px "Open Sans", Arial, sans-serif';
+                    ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
                     ctx.fillStyle = isCorrect ? '#2ecc71' : '#e74c3c';
-                    ctx.fillText(isCorrect ? '✓' : '✗', 70, rowY);
+                    ctx.fillText(isCorrect ? '✓' : '✗', 80, rowY);
                     
-                    // Player name - bright white
+                    // Player name
                     ctx.fillStyle = '#ffffff';
-                    ctx.font = 'bold 26px "Open Sans", Arial, sans-serif';
-                    ctx.fillText(r.player, 110, rowY);
+                    ctx.font = '22px "Open Sans", Arial, sans-serif';
+                    ctx.fillText(r.player, 115, rowY);
                     
-                    // Time or penalty
+                    // Points
                     ctx.textAlign = 'right';
+                    ctx.fillStyle = isCorrect ? '#2ecc71' : '#e74c3c';
+                    ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
                     if(isCorrect) {
-                        ctx.fillStyle = '#2ecc71';
-                        ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
-                        ctx.fillText('+' + r.points.toFixed(1) + ' (' + r.time.toFixed(1) + 's)', size - 60, rowY);
+                        ctx.fillText('+' + r.points.toFixed(1), size - 70, rowY);
                     } else {
-                        ctx.fillStyle = '#e74c3c';
-                        ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
-                        ctx.fillText('-5 pts', size - 60, rowY);
+                        ctx.fillText('-5', size - 70, rowY);
                     }
                     ctx.textAlign = 'left';
                 });
                 
-                // Call to action - CAN YOU BEAT MY SCORE
-                const ctaY = (quizState.percentile !== null && quizState.percentile !== undefined) ? 1120 : 1085;
+                // CTA section at bottom
                 ctx.textAlign = 'center';
                 ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 32px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, ctaY);
+                ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
+                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 940);
                 
-                // Red button-like CTA - bigger and bolder
+                // Red button
                 ctx.fillStyle = '#d63031';
-                roundRect(ctx, size/2 - 190, ctaY + 18, 380, 58, 29);
+                roundRect(ctx, size/2 - 170, 960, 340, 50, 25);
                 ctx.fill();
                 
                 ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 24px "Open Sans", Arial, sans-serif';
-                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, ctaY + 56);
+                ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
+                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 993);
                 
-                // Red corner accents
-                const h = 1200;
+                // Subtle top/bottom red lines instead of corner brackets
                 ctx.fillStyle = '#d63031';
-                ctx.fillRect(0, 0, 8, 80);
-                ctx.fillRect(0, 0, 80, 8);
-                ctx.fillRect(size - 8, 0, 8, 80);
-                ctx.fillRect(size - 80, 0, 80, 8);
-                ctx.fillRect(0, h - 80, 8, 80);
-                ctx.fillRect(0, h - 8, 80, 8);
-                ctx.fillRect(size - 8, h - 80, 8, 80);
-                ctx.fillRect(size - 80, h - 8, 80, 8);
+                ctx.fillRect(size/2 - 200, 0, 400, 4);
+                ctx.fillRect(size/2 - 200, size - 4, 400, 4);
                 
                 // Convert to image
                 const dataUrl = canvas.toDataURL('image/png');
