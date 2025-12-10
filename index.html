@@ -649,16 +649,16 @@
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 5px;
             margin-bottom: 0;
         }
         
         .quiz-option {
             background: var(--bg-gray);
             border: 1px solid var(--border);
-            padding: 8px 10px;
-            border-radius: 5px;
-            font-size: 13px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.15s;
@@ -666,8 +666,8 @@
         }
         
         @media (min-width: 768px) {
-            .quiz-options { gap: 6px; margin-bottom: 10px; }
-            .quiz-option { padding: 10px 14px; font-size: 14px; border-width: 2px; }
+            .quiz-options { gap: 8px; }
+            .quiz-option { padding: 12px 16px; font-size: 15px; border-width: 2px; }
         }
         .quiz-option:hover:not(:disabled) { 
             border-color: var(--red); 
@@ -687,15 +687,17 @@
         
         .quiz-result {
             display: none;
-            padding: 6px 10px;
-            border-radius: 5px;
-            margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 12px;
         }
         
         @media (min-width: 768px) {
-            .quiz-result { padding: 10px 14px; margin-bottom: 10px; font-size: 13px; }
+            .quiz-result.show { 
+                display: block;
+                padding: 8px 12px; 
+                margin-bottom: 8px; 
+                font-size: 13px;
+                border-radius: 6px;
+                font-weight: 600;
+            }
         }
         .quiz-result.show { display: block; }
         .quiz-result.correct { background: #d4edda; color: #155724; }
@@ -760,7 +762,7 @@
             top: 50px;
             left: 0;
             right: 0;
-            bottom: 38vh;
+            bottom: 250px;
             z-index: 10000;
             display: none;
         }
@@ -771,22 +773,20 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 38vh;
-            max-height: 300px;
+            height: 250px;
             background: #fff;
             z-index: 10001;
-            padding: 6px 10px;
+            padding: 8px 12px;
             box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
             display: none;
-            overflow-y: auto;
+            overflow: hidden;
         }
         .quiz-panel.show { display: block; }
         
         @media (min-width: 768px) {
-            .quiz-map-container { bottom: 240px; }
+            .quiz-map-container { bottom: 260px; }
             .quiz-panel { 
-                height: auto;
-                max-height: 240px;
+                height: 260px;
                 padding: 12px 20px; 
             }
         }
