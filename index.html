@@ -1425,9 +1425,8 @@
         }
         
         function startQuiz() {
-            document.getElementById('quizOverlay').classList.add('show');
-            document.getElementById('quizIntro').style.display = 'block';
-            document.getElementById('quizFinal').style.display = 'none';
+            // Go straight to playing
+            beginQuiz();
         }
         
         function closeQuiz() {
