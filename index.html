@@ -187,12 +187,16 @@
         .quiz-hero {
             background: linear-gradient(145deg, #d63031 0%, #b71c1c 100%);
             color: #fff;
-            padding: 32px 24px;
-            border-radius: 16px;
-            margin-bottom: 24px;
+            padding: 24px 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
             box-shadow: 0 8px 32px rgba(214, 48, 49, 0.35);
             position: relative;
             overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            .quiz-hero { padding: 32px 24px; border-radius: 16px; }
         }
         
         .quiz-hero::before {
@@ -214,15 +218,15 @@
             background: #fff;
             color: #d63031;
             border: none;
-            padding: 16px 48px;
+            padding: 12px 32px;
             border-radius: 50px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             cursor: pointer;
             font-family: inherit;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 20px rgba(0,0,0,0.25);
             text-transform: uppercase;
@@ -238,28 +242,37 @@
             transform: translateY(-1px) scale(0.98);
         }
         
+        @media (min-width: 768px) {
+            .quiz-hero-btn { padding: 16px 48px; font-size: 18px; }
+        }
+        
         .play-icon { font-size: 14px; }
         
         .quiz-rules {
             text-align: left;
             background: rgba(0,0,0,0.2);
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin: 20px 0 24px 0;
-            font-size: 14px;
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin: 14px 0 18px 0;
+            font-size: 12px;
             backdrop-filter: blur(10px);
         }
         
         .quiz-rule {
-            padding: 8px 0;
+            padding: 6px 0;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             font-weight: 500;
         }
         
         .quiz-rule:not(:last-child) {
             border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        @media (min-width: 768px) {
+            .quiz-rules { padding: 16px 20px; font-size: 14px; margin: 20px 0 24px 0; }
+            .quiz-rule { padding: 8px 0; gap: 12px; }
         }
         
         .explore-section {
@@ -616,20 +629,25 @@
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 6px;
+            margin-bottom: 10px;
         }
         
         .quiz-option {
             background: var(--bg-gray);
             border: 2px solid var(--border);
-            padding: 14px 16px;
-            border-radius: 8px;
-            font-size: 15px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
             font-family: inherit;
+        }
+        
+        @media (min-width: 768px) {
+            .quiz-options { gap: 8px; margin-bottom: 16px; }
+            .quiz-option { padding: 12px 16px; font-size: 15px; }
         }
         .quiz-option:hover:not(:disabled) { 
             border-color: var(--red); 
@@ -649,10 +667,15 @@
         
         .quiz-result {
             display: none;
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
             font-weight: 600;
+            font-size: 13px;
+        }
+        
+        @media (min-width: 768px) {
+            .quiz-result { padding: 14px 16px; margin-bottom: 14px; font-size: 14px; }
         }
         .quiz-result.show { display: block; }
         .quiz-result.correct { background: #d4edda; color: #155724; }
@@ -717,7 +740,7 @@
             top: 50px;
             left: 0;
             right: 0;
-            bottom: 200px;
+            bottom: 45vh;
             z-index: 10000;
             display: none;
         }
@@ -728,17 +751,24 @@
             bottom: 0;
             left: 0;
             right: 0;
+            height: 45vh;
+            max-height: 320px;
             background: #fff;
             z-index: 10001;
-            padding: 16px;
+            padding: 10px 12px;
             box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
             display: none;
+            overflow-y: auto;
         }
         .quiz-panel.show { display: block; }
         
         @media (min-width: 768px) {
-            .quiz-map-container { bottom: 220px; }
-            .quiz-panel { padding: 20px; }
+            .quiz-map-container { bottom: 280px; }
+            .quiz-panel { 
+                height: auto;
+                max-height: 280px;
+                padding: 16px 20px; 
+            }
         }
     
         .quiz-share-section {
@@ -1708,16 +1738,10 @@
                     const percentileEl = document.getElementById('quizPercentile');
                     percentileEl.classList.remove('loading');
                     
-                    // Show exact percentile and rank
-                    percentileEl.innerHTML = `Better than <strong>${data.percentile}%</strong> of players<br><span style="font-size:14px;opacity:0.8">Rank #${data.rank} of ${data.totalPlayers.toLocaleString()}</span>`;
-                    
-                    if (data.percentile >= 50) {
-                        percentileEl.style.color = 'var(--green)';
-                        percentileEl.style.background = 'rgba(39, 174, 96, 0.1)';
-                    } else {
-                        percentileEl.style.color = 'var(--red)';
-                        percentileEl.style.background = 'rgba(214, 48, 49, 0.1)';
-                    }
+                    // Show rank clearly
+                    percentileEl.innerHTML = `Rank <strong>#${data.rank}</strong> of ${data.totalPlayers.toLocaleString()} players`;
+                    percentileEl.style.color = '#fff';
+                    percentileEl.style.background = 'rgba(255,255,255,0.1)';
                 }
             } catch (error) {
                 console.log('Score submission error:', error);
