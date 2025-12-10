@@ -187,16 +187,16 @@
         .quiz-hero {
             background: linear-gradient(145deg, #d63031 0%, #b71c1c 100%);
             color: #fff;
-            padding: 24px 16px;
-            border-radius: 12px;
-            margin-bottom: 20px;
+            padding: 14px 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
             box-shadow: 0 8px 32px rgba(214, 48, 49, 0.35);
             position: relative;
             overflow: hidden;
         }
         
         @media (min-width: 768px) {
-            .quiz-hero { padding: 32px 24px; border-radius: 16px; }
+            .quiz-hero { padding: 28px 24px; border-radius: 14px; margin-bottom: 20px; }
         }
         
         .quiz-hero::before {
@@ -218,15 +218,15 @@
             background: #fff;
             color: #d63031;
             border: none;
-            padding: 12px 32px;
+            padding: 10px 28px;
             border-radius: 50px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             font-family: inherit;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 20px rgba(0,0,0,0.25);
             text-transform: uppercase;
@@ -234,8 +234,8 @@
         }
         
         .quiz-hero-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.3);
         }
         
         .quiz-hero-btn:active {
@@ -243,7 +243,7 @@
         }
         
         @media (min-width: 768px) {
-            .quiz-hero-btn { padding: 16px 48px; font-size: 18px; }
+            .quiz-hero-btn { padding: 14px 40px; font-size: 16px; }
         }
         
         .play-icon { font-size: 14px; }
@@ -251,28 +251,28 @@
         .quiz-rules {
             text-align: left;
             background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            padding: 12px 14px;
-            margin: 14px 0 18px 0;
-            font-size: 12px;
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin: 10px 0 12px 0;
+            font-size: 11px;
             backdrop-filter: blur(10px);
         }
         
         .quiz-rule {
-            padding: 6px 0;
+            padding: 4px 0;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             font-weight: 500;
         }
         
         .quiz-rule:not(:last-child) {
-            border-bottom: 1px solid rgba(255,255,255,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
         }
         
         @media (min-width: 768px) {
-            .quiz-rules { padding: 16px 20px; font-size: 14px; margin: 20px 0 24px 0; }
-            .quiz-rule { padding: 8px 0; gap: 12px; }
+            .quiz-rules { padding: 14px 18px; font-size: 13px; margin: 16px 0 20px 0; }
+            .quiz-rule { padding: 6px 0; gap: 10px; }
         }
         
         .explore-section {
@@ -629,25 +629,25 @@
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            margin-bottom: 10px;
+            gap: 4px;
+            margin-bottom: 0;
         }
         
         .quiz-option {
             background: var(--bg-gray);
-            border: 2px solid var(--border);
-            padding: 10px 12px;
-            border-radius: 6px;
-            font-size: 14px;
+            border: 1px solid var(--border);
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.15s;
             font-family: inherit;
         }
         
         @media (min-width: 768px) {
-            .quiz-options { gap: 8px; margin-bottom: 16px; }
-            .quiz-option { padding: 12px 16px; font-size: 15px; }
+            .quiz-options { gap: 6px; margin-bottom: 10px; }
+            .quiz-option { padding: 10px 14px; font-size: 14px; border-width: 2px; }
         }
         .quiz-option:hover:not(:disabled) { 
             border-color: var(--red); 
@@ -667,15 +667,15 @@
         
         .quiz-result {
             display: none;
-            padding: 10px 12px;
-            border-radius: 6px;
-            margin-bottom: 8px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            margin-bottom: 6px;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
         }
         
         @media (min-width: 768px) {
-            .quiz-result { padding: 14px 16px; margin-bottom: 14px; font-size: 14px; }
+            .quiz-result { padding: 10px 14px; margin-bottom: 10px; font-size: 13px; }
         }
         .quiz-result.show { display: block; }
         .quiz-result.correct { background: #d4edda; color: #155724; }
@@ -740,7 +740,7 @@
             top: 50px;
             left: 0;
             right: 0;
-            bottom: 45vh;
+            bottom: 42vh;
             z-index: 10000;
             display: none;
         }
@@ -751,11 +751,11 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 45vh;
-            max-height: 320px;
+            height: 42vh;
+            max-height: 340px;
             background: #fff;
             z-index: 10001;
-            padding: 10px 12px;
+            padding: 8px 10px;
             box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
             display: none;
             overflow-y: auto;
@@ -763,11 +763,11 @@
         .quiz-panel.show { display: block; }
         
         @media (min-width: 768px) {
-            .quiz-map-container { bottom: 280px; }
+            .quiz-map-container { bottom: 260px; }
             .quiz-panel { 
                 height: auto;
-                max-height: 280px;
-                padding: 16px 20px; 
+                max-height: 260px;
+                padding: 14px 20px; 
             }
         }
     
@@ -1517,7 +1517,7 @@
             
             // Update progress
             document.getElementById('quizProgress').textContent = `Question ${quizState.currentIdx + 1} of 10`;
-            document.getElementById('quizScoreDisplay').textContent = `Score: ${quizState.score.toFixed(2)}`;
+            document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
             
             // Draw map
             drawQuizMap(career);
@@ -1606,7 +1606,7 @@
                 resultEl.className = 'quiz-result show wrong';
             }
             
-            document.getElementById('quizScoreDisplay').textContent = `Score: ${quizState.score.toFixed(2)}`;
+            document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
             
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
@@ -1639,7 +1639,7 @@
             resultEl.textContent = `⏱ Time's up! The answer was ${correctName} (-5 points)`;
             resultEl.className = 'quiz-result show timeout';
             
-            document.getElementById('quizScoreDisplay').textContent = `Score: ${quizState.score.toFixed(2)}`;
+            document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
             
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
@@ -1963,10 +1963,10 @@ document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
     <!-- Quiz Game Panel (during gameplay) -->
     <div class="quiz-map-container" id="quizMapContainer"></div>
     <div class="quiz-panel" id="quizPanel">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-            <div class="quiz-progress" id="quizProgress">Question 1 of 10</div>
-            <div class="quiz-timer" id="quizTimer">15</div>
-            <div class="quiz-score-display" id="quizScoreDisplay">Score: 0</div>
+        <div class="quiz-header">
+            <div class="quiz-progress" id="quizProgress">Q1/10</div>
+            <div class="quiz-timer" id="quizTimer">15.00</div>
+            <div class="quiz-score" id="quizScoreDisplay">0 pts</div>
         </div>
         <div class="quiz-result" id="quizResult"></div>
         <div class="quiz-options" id="quizOptions"></div>
