@@ -1,0 +1,143 @@
+{
+  "_comment": "Maps historical / alternate team names to their MOST RECENT canonical name. Keys are normalized alternates, values are the canonical current name. Teams that no longer exist keep their historical name as canonical (self-map) and are intentionally omitted here. Add new mappings as they are discovered; the updater flags unknown teams in teams_needing_review.json.",
+  "aliases": {
+    "Buffalo Braves": "LA Clippers",
+    "San Diego Clippers": "LA Clippers",
+    "Los Angeles Clippers": "LA Clippers",
+    "New Orleans Hornets": "New Orleans Pelicans",
+    "New Orleans/Oklahoma City Hornets": "New Orleans Pelicans",
+    "Charlotte Bobcats": "Charlotte Hornets",
+    "Seattle SuperSonics": "Oklahoma City Thunder",
+    "New Jersey Nets": "Brooklyn Nets",
+    "Vancouver Grizzlies": "Memphis Grizzlies",
+    "Washington Bullets": "Washington Wizards",
+    "Capital Bullets": "Washington Wizards",
+    "Baltimore Bullets": "Washington Wizards",
+    "Chicago Zephyrs": "Washington Wizards",
+    "Chicago Packers": "Washington Wizards",
+    "Rochester Royals": "Sacramento Kings",
+    "Cincinnati Royals": "Sacramento Kings",
+    "Kansas City-Omaha Kings": "Sacramento Kings",
+    "Kansas City Kings": "Sacramento Kings",
+    "San Diego Rockets": "Houston Rockets",
+    "Philadelphia Warriors": "Golden State Warriors",
+    "San Francisco Warriors": "Golden State Warriors",
+    "Syracuse Nationals": "Philadelphia 76ers",
+    "Fort Wayne Pistons": "Detroit Pistons",
+    "Minneapolis Lakers": "Los Angeles Lakers",
+    "Tri-Cities Blackhawks": "Atlanta Hawks",
+    "Milwaukee Hawks": "Atlanta Hawks",
+    "St. Louis Hawks": "Atlanta Hawks",
+    "New Orleans Jazz": "Utah Jazz",
+    "Denver Rockets": "Denver Nuggets",
+    "New Orleans Buccaneers": "New Orleans Buccaneers",
+    "San Diego Conquistadors": "San Diego Conquistadors",
+
+    "Tau Cerámica": "Baskonia",
+    "Tau Ceramica": "Baskonia",
+    "Saski Baskonia": "Baskonia",
+    "Baskonia Vitoria-Gasteiz": "Baskonia",
+    "Caja Laboral": "Baskonia",
+    "Laboral Kutxa": "Baskonia",
+    "Kirolbet Baskonia": "Baskonia",
+    "Bitci Baskonia": "Baskonia",
+    "Cazoo Baskonia": "Baskonia",
+
+    "Real Madrid Baloncesto": "Real Madrid",
+    "Real Madrid CF (basketball)": "Real Madrid",
+
+    "FC Barcelona Bàsquet": "FC Barcelona",
+    "FC Barcelona Basquet": "FC Barcelona",
+    "Barcelona Lassa": "FC Barcelona",
+    "FC Barcelona Bàsquet Lassa": "FC Barcelona",
+    "Regal FC Barcelona": "FC Barcelona",
+    "Winterthur FC Barcelona": "FC Barcelona",
+
+    "Efes Pilsen": "Anadolu Efes",
+    "Anadolu Efes S.K.": "Anadolu Efes",
+    "Anadolu Efes Istanbul": "Anadolu Efes",
+
+    "Fenerbahçe Ülker": "Fenerbahçe",
+    "Fenerbahçe Ulker": "Fenerbahçe",
+    "Fenerbahçe Beko": "Fenerbahçe",
+    "Fenerbahçe Doğuş": "Fenerbahçe",
+    "Fenerbahçe Istanbul": "Fenerbahçe",
+
+    "Maccabi Elite Tel Aviv": "Maccabi Tel Aviv",
+    "Maccabi Electra Tel Aviv": "Maccabi Tel Aviv",
+    "Maccabi FOX Tel Aviv": "Maccabi Tel Aviv",
+    "Maccabi Playtika Tel Aviv": "Maccabi Tel Aviv",
+    "Maccabi Rapyd Tel Aviv": "Maccabi Tel Aviv",
+
+    "Žalgiris Kaunas": "Žalgiris",
+    "Zalgiris Kaunas": "Žalgiris",
+    "Zalgiris": "Žalgiris",
+    "BC Žalgiris": "Žalgiris",
+
+    "PBC CSKA Moscow": "CSKA Moscow",
+    "CSKA": "CSKA Moscow",
+
+    "Panathinaikos BC": "Panathinaikos",
+    "Panathinaikos Athens": "Panathinaikos",
+    "Panathinaikos Superfoods": "Panathinaikos",
+    "Panathinaikos OPAP": "Panathinaikos",
+    "Panathinaikos AKTOR": "Panathinaikos",
+
+    "Olympiacos BC": "Olympiacos",
+    "Olympiacos Piraeus": "Olympiacos",
+
+    "Emporio Armani Milan": "Olimpia Milano",
+    "Olimpia Milano EA7": "Olimpia Milano",
+    "EA7 Emporio Armani Milan": "Olimpia Milano",
+    "AX Armani Exchange Milan": "Olimpia Milano",
+    "Armani Jeans Milano": "Olimpia Milano",
+    "Pallacanestro Olimpia Milano": "Olimpia Milano",
+    "Olimpia Milan": "Olimpia Milano",
+
+    "Virtus Pallacanestro Bologna": "Virtus Bologna",
+    "Kinder Bologna": "Virtus Bologna",
+    "Segafredo Virtus Bologna": "Virtus Bologna",
+    "Virtus Segafredo Bologna": "Virtus Bologna",
+
+    "Partizan Belgrade": "Partizan",
+    "Partizan NIS": "Partizan",
+    "KK Partizan": "Partizan",
+    "Partizan Mozzart Bet": "Partizan",
+
+    "Crvena zvezda": "Crvena Zvezda",
+    "KK Crvena zvezda": "Crvena Zvezda",
+    "Red Star Belgrade": "Crvena Zvezda",
+    "Crvena Zvezda mts": "Crvena Zvezda",
+    "Crvena Zvezda Meridianbet": "Crvena Zvezda",
+
+    "Unicaja Málaga": "Unicaja",
+    "Unicaja Malaga": "Unicaja",
+
+    "Valencia Basket Club": "Valencia Basket",
+    "Pamesa Valencia": "Valencia Basket",
+    "Power Electronics Valencia": "Valencia Basket",
+
+    "Khimki Moscow Region": "Khimki",
+    "BC Khimki": "Khimki",
+
+    "Lokomotiv Kuban Krasnodar": "Lokomotiv Kuban",
+    "BC Lokomotiv Kuban": "Lokomotiv Kuban",
+
+    "UNICS Kazan": "UNICS",
+
+    "Brose Baskets": "Brose Bamberg",
+    "Brose Bamberg": "Brose Bamberg",
+    "GHP Bamberg": "Brose Bamberg",
+
+    "ALBA Berlin": "Alba Berlin",
+
+    "Bayern Munich (basketball)": "Bayern Munich",
+    "FC Bayern Munich Basketball": "Bayern Munich",
+
+    "ASVEL Lyon-Villeurbanne": "ASVEL",
+    "LDLC ASVEL": "ASVEL",
+    "ASVEL Basket": "ASVEL",
+
+    "Guangdong Hongyuan Southern Tigers": "Guangdong Southern Tigers"
+  }
+}
