@@ -1,3 +1,9 @@
+## 2026-07-03 — cleanup migration
+
+- Removed **56** non-player records (coaches / `Category:` links / high schools) added by the bad run
+- Removed **14** now-orphaned teams
+- Deduped `Brian Shaw (basketball)`; real `Brian Shaw` remains retired
+
 ## 2026-07-03 — incremental run
 
 - Players updated: **56** (56 new)

@@ -34,7 +34,8 @@ scripts/
   wikipedia_api.py             # rate-limited MediaWiki API client
   team_normalizer.py           # applies team_aliases.json
   wiki_parser.py               # parses {{Infobox basketball biography}}
-  rosters.py                   # current NBA rosters from Wikipedia templates
+  rosters.py                   # NBA rosters: parses {{NBA roster/player}} rows
+  geo.py                       # region->country resolution for locations
   player_status.py             # tracking-status classification (see below)
   seed_import.py               # one-time import of existing data into /data
   update_careers.py            # main orchestrator (all modes)
@@ -61,9 +62,14 @@ outcome is stored separately in `parse_status` so the two never collide):
 | `overseas_active` | no longer in the NBA but still playing (overseas league, G League, …) within the recency window |
 | `retired` | no team for 2+ years |
 
-Classification (`scripts/player_status.py`) checks recency **before** the
-NBA-team check, so a player whose most recent team is an NBA franchise but who
-has not played in 2+ years is `retired`, not `nba_active`. A player who leaves
+Roster membership is only a **candidate** signal (who to fetch); it never by
+itself confers `nba_active`, so coaches and staff listed on roster templates
+are not marked active. `nba_active` is confirmed only when the fetched page
+parses as a player with a **current NBA stint** (a recent/"present" stint on an
+NBA franchise). A record with no playing career at all (a pure coach) is
+`retired`. Classification (`scripts/player_status.py`) also checks recency
+**before** the NBA-team check, so a player whose most recent team is an NBA
+franchise but who has not played in 2+ years is `retired`, not `nba_active`. A player who leaves
 an NBA roster but whose Wikipedia shows a current overseas team becomes
 `overseas_active` — so someone like **Patty Mills**, years removed from the NBA,
 keeps getting updated when he changes clubs in Australia.

@@ -40,6 +40,7 @@ from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
 from player_status import (classify_status, NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED)
+from geo import resolve_location
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA, LOGS = ROOT / "data", ROOT / "logs"
@@ -67,6 +68,13 @@ def today() -> str:
     return dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
 
 
+def _is_slash_joined(team: str) -> bool:
+    """True for names like "Sheffield Forgers / Sharks" (slash padded by spaces),
+    which usually means two team names got merged. A slash without surrounding
+    spaces (e.g. "Hapoel Gilboa/Afula") is a legitimate single name."""
+    return bool(re.search(r"\S\s+/\s+\S", team or ""))
+
+
 class Database:
     def __init__(self):
         players = load_json(CAREERS, [])
@@ -86,6 +94,17 @@ class Database:
         """Attach city/state/country to a parsed stint from known locations,
         discovering + flagging unknown teams."""
         team = stint["team"]
+
+        # A slash-joined name (e.g. "Sheffield Forgers / Sharks") is almost
+        # always two historical names run together by a misparse. Flag it for
+        # manual review instead of trying to geolocate it.
+        if _is_slash_joined(team):
+            stint["city"] = stint["state"] = stint["country"] = ""
+            self.review[team] = {"team": team,
+                                 "reason": "slash-joined name — likely misparse of two teams",
+                                 "city": "", "country": ""}
+            return
+
         loc = self.locations.get(team)
         if loc and (loc.get("city") or loc.get("country")):
             stint["city"] = loc.get("city", "")
@@ -117,13 +136,15 @@ class Database:
             extract = None
         if not extract:
             return {"city": "", "state": "", "country": ""}
-        # very light heuristic: "... based in <City>, <Country>"
+        # light heuristic: "... based in <City>, <Region-or-Country>"
         m = re.search(r"based in ([A-Z][\w.\- ]+?)(?:,\s*([A-Z][\w.\- ]+?))?[.,]",
                       extract)
         if m:
             city = m.group(1).strip()
-            country = (m.group(2) or "").strip()
-            return {"city": city, "state": "", "country": country}
+            # resolve region names (Lazio, Subcarpathian Voivodeship, …) to a
+            # country; unknown tokens keep the country blank so review flags it.
+            state, country = resolve_location(m.group(2) or "")
+            return {"city": city, "state": state, "country": country}
         return {"city": "", "state": "", "country": ""}
 
 

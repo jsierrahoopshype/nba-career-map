@@ -53,26 +53,43 @@ def is_nba_team(team: str) -> bool:
 
 def classify_status(record: dict, on_nba_roster: bool, current_year: int,
                     retire_gap: int = 2) -> str:
-    """Classify a player record into one of the three tracking statuses."""
+    """Classify a player record into one of the three tracking statuses.
+
+    Roster membership (``on_nba_roster``) is only a *candidate* signal used to
+    decide who to fetch; it does NOT by itself confer ``nba_active`` — otherwise
+    coaches and staff listed on roster templates would be marked active. The
+    decision is made from the fetched page:
+
+      * A record with no parseable playing career (empty career_history) is a
+        non-player (coach/staff) -> retired, never nba_active.
+      * nba_active requires an actual *current NBA stint*: a recent (within
+        retire_gap years, or open-ended "present") stint whose current team is
+        an NBA franchise.
+      * A recent stint on a non-NBA team -> overseas_active.
+      * Otherwise (gap of retire_gap+ years) -> retired.
+
+    ``on_nba_roster`` is retained in the signature for callers but intentionally
+    not used in the positive decision.
+    """
     current_team = record.get("current_team", "") or ""
     history = record.get("career_history", []) or []
+
+    # A non-player (no career at all) can never be active. This is the guard
+    # that keeps pure coaches / categories / schools out of nba_active.
+    if not history:
+        return RETIRED
+
     ly = last_active_year(history)
 
-    # Being on a current NBA roster is authoritative regardless of parsed years.
-    if on_nba_roster:
-        return NBA_ACTIVE
-
-    # Recency comes before the NBA-team check: a player whose most recent team
-    # is an NBA franchise but who has not played in retire_gap+ years is retired
-    # (their "current team" is merely their last historical team, not proof of
-    # activity). No parseable years at all also counts as retired.
+    # Recency gate first: not played in retire_gap+ years -> retired, even if
+    # their last team was an NBA franchise (a former NBA player now coaching).
     if ly == 0:
         return RETIRED
     if ly != PRESENT and (current_year - ly) >= retire_gap:
         return RETIRED
 
-    # Recently active (or an open-ended "present" stint): NBA franchise as the
-    # current team means still in the NBA, otherwise still playing overseas.
+    # Recently active. NBA franchise as current team = confirmed NBA player;
+    # anything else = still playing, just not in the NBA.
     if is_nba_team(current_team):
         return NBA_ACTIVE
     return OVERSEAS_ACTIVE
