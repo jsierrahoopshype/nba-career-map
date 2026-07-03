@@ -1,3 +1,10 @@
+## 2026-07-03 — single run
+
+- Players updated: **1** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Wikipedia requests: 1
+
 # Career Database Changelog
 
 ## Seed import — initial

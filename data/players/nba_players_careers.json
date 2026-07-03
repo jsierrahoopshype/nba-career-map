@@ -144340,30 +144340,57 @@
   {
     "player": "Jonathan Kuminga",
     "status": "success",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Jonathan_Kuminga",
+    "position": "Power forward / small forward",
+    "number": [
+      "0"
+    ],
+    "birth_date": "2002-10-06",
+    "birth_place": "Goma, DR Congo",
+    "high_school": "* Huntington Prep, (Huntington, West Virginia) * Our Savior New American, (Centereach, New York) * The Patrick School, (Hillside, New Jersey)",
+    "college": "",
+    "draft": {
+      "year": "2021",
+      "round": "1",
+      "pick": "7",
+      "team": "Golden State Warriors"
+    },
+    "current_team": "Atlanta Hawks",
     "career_history": [
       {
-        "years": "2020-2021",
         "team": "NBA G League Ignite",
+        "team_raw": "NBA G League Ignite",
+        "years": "2020–2021",
         "city": "Henderson",
         "state": "Nevada",
         "country": "USA"
       },
       {
-        "years": "2021-2026",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "{{nbay|2021|start}}–{{nbay|2025|end}}",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Santa Cruz Warriors",
+        "team_raw": "Santa Cruz Warriors",
+        "years": "2021",
+        "loan": true,
         "city": "Santa Cruz",
         "state": "California",
         "country": "USA"
+      },
+      {
+        "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "{{nbay|2025|end}}–present",
+        "city": "Atlanta",
+        "state": "Georgia",
+        "country": "USA"
       }
-    ]
+    ],
+    "last_updated": "2026-07-03"
   },
   {
     "player": "Jonathon Simmons",
