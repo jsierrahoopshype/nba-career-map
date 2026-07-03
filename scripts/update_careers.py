@@ -1,14 +1,24 @@
 """Main orchestrator for the automated career-database update.
 
 Modes (see --mode):
-  incremental : default. Add players newly appearing on NBA rosters, then
-                refresh the least-recently-updated active players, within the
-                request budget. Continues where it left off next run.
-  full        : refresh every active player (still bounded by the budget;
-                spills into subsequent runs).
-  single      : refresh one player by name (--player "First Last").
-  review      : try to resolve locations for teams in teams_needing_review.json
-                by reading their Wikipedia lead extract.
+  incremental   : default. Add players newly appearing on NBA rosters; re-check
+                  players who dropped off an NBA roster (they may have moved
+                  overseas rather than retired); re-check ALL overseas_active
+                  players to catch team changes (e.g. Patty Mills in Australia);
+                  then refresh least-recently-updated nba_active players. All
+                  within the request budget; continues next run.
+  full          : refresh every active player (NBA + overseas), budget-bounded.
+  full_overseas : re-check ALL overseas_active players (intended to run monthly
+                  so long-time overseas players stay current even between the
+                  daily incremental passes).
+  single        : refresh one player by name (--player "First Last").
+  review        : try to resolve locations for teams in teams_needing_review.json
+                  by reading their Wikipedia lead extract.
+
+Each player carries a tracking ``status`` (nba_active / overseas_active /
+retired); see player_status.classify_status. A player who leaves an NBA roster
+but whose Wikipedia shows a current overseas team becomes overseas_active (not
+retired); one with no team for 2+ years becomes retired.
 
 Rate limiting: WikipediaClient enforces --delay seconds between requests and a
 hard --max-requests budget per run (roster fetches count toward it).
@@ -28,6 +38,8 @@ from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import TeamNormalizer
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
+from player_status import (classify_status, NBA_ACTIVE, OVERSEAS_ACTIVE,
+                           RETIRED)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA, LOGS = ROOT / "data", ROOT / "logs"
@@ -116,14 +128,18 @@ class Database:
 
 
 def merge_player(db: Database, name: str, client: WikipediaClient,
-                 discovered: dict) -> tuple[dict | None, list[str]]:
-    """Fetch + parse a player, enrich locations, merge into DB. Returns
-    (record, new_teams_discovered)."""
+                 discovered: dict, roster_players: set[str],
+                 current_year: int) -> tuple[dict | None, list[str]]:
+    """Fetch + parse a player, enrich locations, classify tracking status, and
+    merge into DB. Returns (record, new_teams_discovered)."""
     wt = client.get_wikitext(name)
     if not wt:
         return None, []
     rec = parse_player(wt, name, db.normalizer)
     rec.pop("_raw_teams", None)
+    # The parser's "status" is a parse outcome; keep it under parse_status so it
+    # never collides with the tracking status set below.
+    rec["parse_status"] = rec.pop("status", "success")
     new_teams = []
     for stint in rec["career_history"]:
         if stint["team"] not in db.locations or not (
@@ -132,6 +148,8 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
             if stint["team"] not in db.locations:
                 new_teams.append(stint["team"])
         db.enrich_stint(stint, client, discovered)
+    rec["status"] = classify_status(rec, on_nba_roster=name in roster_players,
+                                     current_year=current_year)
     rec["last_updated"] = today()
     db.by_name[name] = rec
     if name not in db.order:
@@ -139,27 +157,52 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     return rec, new_teams
 
 
+def _dedupe(seq) -> list[str]:
+    seen, out = set(), []
+    for x in seq:
+        if x not in seen:
+            seen.add(x); out.append(x)
+    return out
+
+
+def _by_status(db: Database, status: str) -> list[str]:
+    """DB players with the given tracking status, least-recently-updated first."""
+    names = [n for n, r in db.by_name.items() if r.get("status") == status]
+    return sorted(names, key=lambda n: db.by_name[n].get("last_updated", "0000-00-00"))
+
+
 def build_queue(db: Database, mode: str, player: str | None,
                 roster_players: set[str]) -> list[str]:
     if mode == "single":
         return [player] if player else []
-    active = set(load_json(ACTIVE, {}).get("players", []))
+
+    overseas = _by_status(db, OVERSEAS_ACTIVE)
+    if mode == "full_overseas":
+        return overseas
+
+    nba_active = _by_status(db, NBA_ACTIVE)
+    # roster newcomers not yet tracked (rookies / signings)
+    new_players = sorted(roster_players - set(db.by_name))
+    # players we thought were NBA-active but who are no longer on any roster:
+    # re-check to see if they moved overseas (-> overseas_active) or retired.
+    dropped = [n for n in nba_active if n not in roster_players]
+    stale_nba = [n for n in nba_active if n in roster_players]
+
     if mode == "full":
-        pool = sorted(active | roster_players)
+        # every active player (NBA + overseas) plus any roster newcomers
+        pool = new_players + dropped + stale_nba + overseas
     else:  # incremental
-        new_players = sorted(roster_players - set(db.by_name))
-        stale = sorted(
-            (n for n in active if n in db.by_name),
-            key=lambda n: db.by_name[n].get("last_updated", "0000-00-00"))
-        pool = new_players + [n for n in stale if n not in new_players]
-    return pool
+        pool = new_players + dropped + overseas + stale_nba
+    return _dedupe(pool)
 
 
 def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
     db = Database()
     client = WikipediaClient(delay=delay, max_requests=max_requests)
+    current_year = dt.datetime.now(dt.timezone.utc).year
     summary = {"date": today(), "mode": mode, "players_updated": [],
                "new_players": [], "new_teams": [], "team_moves": [],
+               "status_changes": [], "newly_overseas": [], "newly_retired": [],
                "requests": 0, "budget_exhausted": False}
 
     if mode == "review":
@@ -173,10 +216,12 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
         queue = build_queue(db, mode, player, roster_players)
         discovered: dict = {}
         for name in queue:
+            prev = db.by_name.get(name)
+            prev_current = prev.get("current_team") if prev else None
+            prev_status = prev.get("status") if prev else None
             try:
-                prev = db.by_name.get(name)
-                prev_current = prev.get("current_team") if prev else None
-                rec, new_teams = merge_player(db, name, client, discovered)
+                rec, new_teams = merge_player(db, name, client, discovered,
+                                              roster_players, current_year)
             except RequestBudgetExceeded:
                 summary["budget_exhausted"] = True
                 break
@@ -194,6 +239,14 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                 summary["team_moves"].append(
                     {"player": name, "from": prev_current,
                      "to": rec["current_team"]})
+            new_status = rec.get("status")
+            if prev_status and new_status and prev_status != new_status:
+                summary["status_changes"].append(
+                    {"player": name, "from": prev_status, "to": new_status})
+                if new_status == OVERSEAS_ACTIVE:
+                    summary["newly_overseas"].append(name)
+                elif new_status == RETIRED:
+                    summary["newly_retired"].append(name)
 
     summary["requests"] = client.requests_made
     summary["new_teams"] = sorted(set(summary["new_teams"]))
@@ -223,20 +276,18 @@ def _persist(db: Database, summary: dict) -> None:
     write_json(LOCATIONS, dict(sorted(db.locations.items())))
     write_json(REVIEW, dict(sorted(db.review.items())))
 
-    # active/retired refresh from current_team presence in NBA + recency
-    active, retired = [], []
-    nba = set(NBA_TEAMS)
-    for p in players:
-        ct = p.get("current_team", "")
-        recent = _last_year(p.get("career_history", [])) >= 2024
-        (active if (ct in nba or recent) else retired).append(p["player"])
-    write_json(ACTIVE, {"count": len(active), "players": sorted(active)})
-    write_json(RETIRED, {"count": len(retired), "players": sorted(retired)})
+    # active/retired refresh from the stored tracking status
+    nba_active = sorted(p["player"] for p in players if p.get("status") == NBA_ACTIVE)
+    overseas = sorted(p["player"] for p in players if p.get("status") == OVERSEAS_ACTIVE)
+    retired = sorted(p["player"] for p in players if p.get("status") == RETIRED)
+    write_json(ACTIVE, {"count": len(nba_active) + len(overseas),
+                        "nba_active": nba_active, "overseas_active": overseas})
+    write_json(RETIRED, {"count": len(retired), "players": retired})
 
     # keep the map data file in sync (drop non-map metadata for a lean file)
     map_players = []
     for p in players:
-        mp = {"player": p["player"], "status": p.get("status", "success"),
+        mp = {"player": p["player"], "status": p.get("status", ""),
               "career_history": [{"years": s.get("years", ""), "team": s["team"],
                                   "city": s.get("city", ""), "state": s.get("state", ""),
                                   "country": s.get("country", "")}
@@ -247,17 +298,6 @@ def _persist(db: Database, summary: dict) -> None:
     write_json(ROOT_MAP_FILE, map_players)
 
     _append_logs(summary)
-
-
-def _last_year(history: list[dict]) -> int:
-    latest = 0
-    for s in history:
-        yrs = str(s.get("years", ""))
-        if "present" in yrs.lower() or re.search(r"[–\-]\s*$", yrs):
-            return 9999
-        for y in re.findall(r"\d{4}", yrs):
-            latest = max(latest, int(y))
-    return latest
 
 
 def _append_logs(summary: dict) -> None:
@@ -272,6 +312,9 @@ def _append_logs(summary: dict) -> None:
         f" ({len(summary['new_players'])} new)",
         f"- New teams discovered: **{len(summary['new_teams'])}**",
         f"- Team moves detected: **{len(summary['team_moves'])}**",
+        f"- Status changes: **{len(summary.get('status_changes', []))}**"
+        f" ({len(summary.get('newly_overseas', []))} → overseas,"
+        f" {len(summary.get('newly_retired', []))} → retired)",
         f"- Wikipedia requests: {summary['requests']}"
         + ("  ⚠️ budget exhausted — continues next run"
            if summary.get("budget_exhausted") else ""),
@@ -284,6 +327,8 @@ def _append_logs(summary: dict) -> None:
                      + (" …" if len(summary["new_teams"]) > 25 else ""))
     for mv in summary["team_moves"][:25]:
         lines.append(f"  - {mv['player']}: {mv['from']} → {mv['to']}")
+    for sc in summary.get("status_changes", [])[:25]:
+        lines.append(f"  - {sc['player']}: [{sc['from']} → {sc['to']}]")
     lines.append("")
     header = "" if CHANGELOG.exists() else "# Career Database Changelog\n\n"
     existing = CHANGELOG.read_text(encoding="utf-8") if CHANGELOG.exists() else ""
@@ -294,7 +339,9 @@ def _append_logs(summary: dict) -> None:
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Update NBA career database.")
-    ap.add_argument("--mode", choices=["incremental", "full", "single", "review"],
+    ap.add_argument("--mode",
+                    choices=["incremental", "full", "full_overseas", "single",
+                             "review"],
                     default="incremental")
     ap.add_argument("--player", default=None, help="player name for --mode single")
     ap.add_argument("--delay", type=float, default=1.0)
@@ -311,6 +358,9 @@ def main():
     msg = (f"Auto-update: {summary['date']} - "
            f"{len(summary['players_updated'])} players updated, "
            f"{len(summary['new_teams'])} new teams")
+    n_status = len(summary.get("status_changes", []))
+    if n_status:
+        msg += f", {n_status} status changes"
     (LOGS).mkdir(parents=True, exist_ok=True)
     (LOGS / "last_commit_message.txt").write_text(msg + "\n", encoding="utf-8")
     print(msg)

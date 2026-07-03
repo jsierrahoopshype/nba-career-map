@@ -7,20 +7,28 @@ carrying team/city/state/country), then:
   * builds data/players/nba_players_careers.json (canonical database)
   * derives data/teams/team_locations.json (canonical team -> location)
   * flags teams with missing city/country in teams_needing_review.json
-  * splits players into active_players.json / retired_players.json using a
-    last-season heuristic (refined later by the roster step)
+  * assigns each player a tracking status (nba_active / overseas_active /
+    retired) and writes active_players.json (split by NBA vs overseas) and
+    retired_players.json
   * keeps the root nba_players_careers_READY.json in sync so index.html keeps
     working unchanged
+
+The seed classifies with a lenient retirement gap (SEED_RETIRE_GAP) so that
+borderline players still land in the overseas re-check queue instead of being
+stranded as ``retired`` and never revisited; live runs then apply the strict
+2-year rule against fresh Wikipedia data.
 
 Run:  python3 scripts/seed_import.py
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
-import re
 from pathlib import Path
 
 from team_normalizer import TeamNormalizer
+from player_status import (classify_status, is_nba_team, NBA_ACTIVE,
+                           OVERSEAS_ACTIVE, RETIRED)
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "nba_players_careers_READY.json"
@@ -28,25 +36,12 @@ DATA = ROOT / "data"
 PLAYERS_DIR = DATA / "players"
 TEAMS_DIR = DATA / "teams"
 
-# Players whose most recent stint ends in or after this year are treated as
-# still-active candidates (NBA or overseas). Refined by the roster step.
-ACTIVE_SINCE_YEAR = 2024
-
-
-def last_year(career_history: list[dict]) -> int:
-    latest = 0
-    for stint in career_history:
-        yrs = str(stint.get("years", ""))
-        if "present" in yrs.lower():
-            return 9999
-        for y in re.findall(r"\d{4}", yrs):
-            latest = max(latest, int(y))
-        if re.search(r"[–\-]\s*$", yrs):  # open-ended range
-            latest = max(latest, ACTIVE_SINCE_YEAR)
-    return latest
+# Lenient gap for the initial seed (see module docstring). Live runs use 2.
+SEED_RETIRE_GAP = 3
 
 
 def main() -> None:
+    current_year = dt.datetime.now(dt.timezone.utc).year
     players = json.loads(SOURCE.read_text(encoding="utf-8"))
     tn = TeamNormalizer()
 
@@ -81,7 +76,16 @@ def main() -> None:
                             f"{existing.get('city')}|{city}")
 
         np = {k: v for k, v in p.items() if k != "career_history"}
+        # the source "status" is a parse outcome; keep it under parse_status so
+        # it does not collide with the tracking status assigned below.
+        np["parse_status"] = np.pop("status", "success")
         np["career_history"] = new_history
+        # no "present" markers in the seed data, so the most recent stint's team
+        # is the best available "current team".
+        np["current_team"] = new_history[-1]["team"] if new_history else ""
+        np["status"] = classify_status(np, on_nba_roster=False,
+                                       current_year=current_year,
+                                       retire_gap=SEED_RETIRE_GAP)
         normalized_players.append(np)
 
     # locations file
@@ -91,7 +95,7 @@ def main() -> None:
             "city": loc.get("city", ""),
             "state": loc.get("state", ""),
             "country": loc.get("country", ""),
-            "league": "NBA" if (loc.get("country") == "USA" and _looks_nba(team)) else "",
+            "league": "NBA" if (loc.get("country") == "USA" and is_nba_team(team)) else "",
         }
         for team, loc in sorted(locations.items())
     }
@@ -108,20 +112,23 @@ def main() -> None:
         if not info["city"] or not info["country"]
     }
 
-    # active / retired split
-    active, retired = [], []
-    for p in normalized_players:
-        (active if last_year(p.get("career_history", [])) >= ACTIVE_SINCE_YEAR
-         else retired).append(p["player"])
+    # tracking-status split
+    nba_active = sorted(p["player"] for p in normalized_players
+                        if p["status"] == NBA_ACTIVE)
+    overseas = sorted(p["player"] for p in normalized_players
+                      if p["status"] == OVERSEAS_ACTIVE)
+    retired = sorted(p["player"] for p in normalized_players
+                     if p["status"] == RETIRED)
 
     PLAYERS_DIR.mkdir(parents=True, exist_ok=True)
     TEAMS_DIR.mkdir(parents=True, exist_ok=True)
 
     _write(PLAYERS_DIR / "nba_players_careers.json", normalized_players)
     _write(PLAYERS_DIR / "active_players.json",
-           {"count": len(active), "players": sorted(active)})
+           {"count": len(nba_active) + len(overseas),
+            "nba_active": nba_active, "overseas_active": overseas})
     _write(PLAYERS_DIR / "retired_players.json",
-           {"count": len(retired), "players": sorted(retired)})
+           {"count": len(retired), "players": retired})
     _write(TEAMS_DIR / "team_locations.json", locations_out)
     _write(TEAMS_DIR / "teams_needing_review.json", review)
 
@@ -129,27 +136,13 @@ def main() -> None:
     _write(ROOT / "nba_players_careers_READY.json", normalized_players)
 
     print(f"players            : {len(normalized_players)}")
-    print(f"active (heuristic) : {len(active)}")
-    print(f"retired (heuristic): {len(retired)}")
+    print(f"nba_active         : {len(nba_active)}")
+    print(f"overseas_active    : {len(overseas)}")
+    print(f"retired            : {len(retired)}")
     print(f"unique teams       : {len(locations_out)}")
     print(f"teams need review  : {len(review)}")
     print(f"location conflicts : {len(location_conflicts)} "
           f"(logged, first value kept)")
-
-
-def _looks_nba(team: str) -> bool:
-    nba = {
-        "Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets",
-        "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks",
-        "Denver Nuggets", "Detroit Pistons", "Golden State Warriors",
-        "Houston Rockets", "Indiana Pacers", "LA Clippers", "Los Angeles Lakers",
-        "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks",
-        "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks",
-        "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers",
-        "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings",
-        "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards",
-    }
-    return team in nba
 
 
 def _write(path: Path, obj) -> None:

@@ -1,14 +1,17 @@
 name: Update NBA Career Database
 
 # Schedule (all times UTC):
-#   In-season  (October–June): daily at 08:00
-#   Off-season (July–September): weekly on Mondays at 08:00
-# Cron month/day-of-week fields express the seasonal split natively, so no
-# in-job date guard is needed.
+#   In-season  (October–June): daily at 08:00       -> incremental
+#   Off-season (July–September): weekly Mondays 08:00 -> incremental
+#   Monthly (1st of every month 09:00)              -> full_overseas
+# Cron month/day-of-week fields express the seasonal split natively. The run
+# step maps the monthly cron to the full_overseas mode (re-check ALL overseas
+# players); all other scheduled runs use incremental.
 on:
   schedule:
     - cron: "0 8 * 10,11,12,1,2,3,4,5,6 *"   # in-season: every day, Oct–Jun
     - cron: "0 8 * 7,8,9 1"                   # off-season: Mondays, Jul–Sep
+    - cron: "0 9 1 * *"                       # monthly: full overseas re-check
   workflow_dispatch:
     inputs:
       mode:
@@ -16,8 +19,9 @@ on:
         type: choice
         default: incremental
         options:
-          - incremental        # add roster newcomers + refresh stale active players
-          - full               # refresh all active players
+          - incremental        # roster newcomers + dropped + all overseas + stale NBA
+          - full               # refresh all active players (NBA + overseas)
+          - full_overseas      # re-check ALL overseas_active players
           - single             # refresh one player (set 'player')
           - review             # resolve locations for teams_needing_review
       player:
@@ -53,11 +57,27 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run career update
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+          IN_MODE: ${{ github.event.inputs.mode }}
+          IN_PLAYER: ${{ github.event.inputs.player }}
+          IN_MAX: ${{ github.event.inputs.max_requests }}
         run: |
+          # Resolve the run mode: manual dispatch uses the chosen input; the
+          # monthly cron runs full_overseas; every other schedule runs incremental.
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            MODE="${IN_MODE:-incremental}"
+          elif [ "$SCHEDULE" = "0 9 1 * *" ]; then
+            MODE="full_overseas"
+          else
+            MODE="incremental"
+          fi
+          echo "Resolved mode: $MODE (event=$EVENT_NAME schedule='$SCHEDULE')"
           python3 scripts/update_careers.py \
-            --mode "${{ github.event.inputs.mode || 'incremental' }}" \
-            --player "${{ github.event.inputs.player || '' }}" \
-            --max-requests "${{ github.event.inputs.max_requests || '100' }}" \
+            --mode "$MODE" \
+            --player "${IN_PLAYER:-}" \
+            --max-requests "${IN_MAX:-100}" \
             --delay 1.0
 
       - name: Commit and push changes

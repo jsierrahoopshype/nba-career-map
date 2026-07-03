@@ -21,7 +21,7 @@ updater keeps that file in sync automatically, so the map keeps working.
 data/
   players/
     nba_players_careers.json   # canonical career database (source of truth)
-    active_players.json        # current NBA + still-active players
+    active_players.json        # {nba_active:[...], overseas_active:[...]}
     retired_players.json       # no longer playing anywhere
   teams/
     team_aliases.json          # historical/sponsored name -> current name
@@ -35,6 +35,7 @@ scripts/
   team_normalizer.py           # applies team_aliases.json
   wiki_parser.py               # parses {{Infobox basketball biography}}
   rosters.py                   # current NBA rosters from Wikipedia templates
+  player_status.py             # tracking-status classification (see below)
   seed_import.py               # one-time import of existing data into /data
   update_careers.py            # main orchestrator (all modes)
   test_sample.py               # 10-player end-to-end smoke test
@@ -49,6 +50,30 @@ number(s), birth date/place, death date/place (if applicable), high school,
 college, and draft info. Career stints also carry normalized team name plus
 city/state/country for mapping.
 
+## Tracking status
+
+Every player record has a `status` field with one of three values (the parse
+outcome is stored separately in `parse_status` so the two never collide):
+
+| status | meaning |
+|--------|---------|
+| `nba_active` | on a current NBA roster (or Wikipedia lists an NBA franchise as their current team) |
+| `overseas_active` | no longer in the NBA but still playing (overseas league, G League, …) within the recency window |
+| `retired` | no team for 2+ years |
+
+Classification (`scripts/player_status.py`) checks recency **before** the
+NBA-team check, so a player whose most recent team is an NBA franchise but who
+has not played in 2+ years is `retired`, not `nba_active`. A player who leaves
+an NBA roster but whose Wikipedia shows a current overseas team becomes
+`overseas_active` — so someone like **Patty Mills**, years removed from the NBA,
+keeps getting updated when he changes clubs in Australia.
+
+The seed import classifies with a more lenient gap so borderline players still
+enter the overseas re-check queue rather than being stranded as `retired`;
+live runs apply the strict 2-year rule against fresh Wikipedia data. (Once a
+player is `retired` they are only revisited if they reappear on an NBA roster
+or via a manual `single`/`full` run — a documented limitation.)
+
 ## Team-name normalization
 
 `data/teams/team_aliases.json` maps historical and sponsored names to the
@@ -62,15 +87,19 @@ Virtus Roma) keep their historical name. Unknown teams are added to
 
 `.github/workflows/update-careers.yml` runs:
 
-- **In-season (Oct–Jun):** daily at 08:00 UTC
-- **Off-season (Jul–Sep):** Mondays at 08:00 UTC
+- **In-season (Oct–Jun):** daily at 08:00 UTC → `incremental`
+- **Off-season (Jul–Sep):** Mondays at 08:00 UTC → `incremental`
+- **Monthly (1st, 09:00 UTC):** → `full_overseas` (re-check every overseas player)
 
-Each run fetches current NBA rosters, diffs them against the database, then
-fetches + parses Wikipedia pages for new/stale players, normalizes teams,
-updates locations, commits the changes, and appends a changelog entry:
+An `incremental` run fetches current NBA rosters and processes, in priority
+order: roster newcomers, players who dropped off a roster (re-checked so a move
+overseas isn't mistaken for retirement), **all** `overseas_active` players (to
+catch club changes), then the least-recently-updated `nba_active` players — all
+within the request budget, spilling into later runs. Each run normalizes teams,
+updates locations, re-classifies status, commits, and appends a changelog entry:
 
 ```
-Auto-update: YYYY-MM-DD - X players updated, Y new teams
+Auto-update: YYYY-MM-DD - X players updated, Y new teams[, Z status changes]
 ```
 
 ### Rate limiting
@@ -84,8 +113,9 @@ Auto-update: YYYY-MM-DD - X players updated, Y new teams
 
 | Input | Purpose |
 |-------|---------|
-| `mode = incremental` | roster newcomers + least-recently-updated active players (default) |
-| `mode = full` | refresh all active players (bounded by budget, spills across runs) |
+| `mode = incremental` | roster newcomers + dropped players + all overseas + stale NBA (default) |
+| `mode = full` | refresh all active players, NBA + overseas (bounded by budget) |
+| `mode = full_overseas` | re-check **all** `overseas_active` players (runs monthly on schedule) |
 | `mode = single` + `player` | refresh one player by name |
 | `mode = review` | try to resolve locations for `teams_needing_review.json` |
 
@@ -100,6 +130,7 @@ python3 scripts/test_sample.py
 
 # Run an update
 python3 scripts/update_careers.py --mode incremental --max-requests 100
+python3 scripts/update_careers.py --mode full_overseas   # re-check all overseas
 python3 scripts/update_careers.py --mode single --player "LeBron James"
 python3 scripts/update_careers.py --mode review
 ```
