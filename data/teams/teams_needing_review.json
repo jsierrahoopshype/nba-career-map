@@ -563,6 +563,12 @@
     "city": "",
     "country": ""
   },
+  "Anagan Olivar": {
+    "team": "Anagan Olivar",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Anaheim Amigos/Los Angeles Stars": {
     "team": "Anaheim Amigos/Los Angeles Stars",
     "reason": "missing city and/or country",
@@ -1067,6 +1073,12 @@
     "city": "",
     "country": ""
   },
+  "Birmingham/Laketown Squadron": {
+    "team": "Birmingham/Laketown Squadron",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Birra Messina Trapani": {
     "team": "Birra Messina Trapani",
     "reason": "missing city and/or country",
@@ -1268,6 +1280,12 @@
   "CB Mataró": {
     "team": "CB Mataró",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "CBP Huesca": {
+    "team": "CBP Huesca",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2157,6 +2175,12 @@
     "team": "Elecon Desio",
     "reason": "missing city and/or country",
     "city": "",
+    "country": ""
+  },
+  "Elitzur Kiryat Ata": {
+    "team": "Elitzur Kiryat Ata",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Kiryat Ata",
     "country": ""
   },
   "Elitzur Ramla": {
@@ -3415,7 +3439,7 @@
   },
   "Lakeland / Osceola Magic": {
     "team": "Lakeland / Osceola Magic",
-    "reason": "missing city and/or country",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },

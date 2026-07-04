@@ -1,3 +1,13 @@
+## 2026-07-04 — incremental run
+
+- Players updated: **64** (64 new)
+- New teams discovered: **5**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: A. J. Green, A. J. Lawson, AJ Dybantsa, Ace Bailey, Aday Mara, Adou Thiero, Alex Morales, Alijah Martin, Allen Graves, Alperen Şengün, Amari Williams, Asa Newell, Baba Miller, Ben Saraf, Bennett Stirtz, Bez Mbeng, Blake Hinson, Bogoljub Marković, Braden Smith, Brayden Burries, Brooks Barnhizer, Bruce Thornton, Bub Carrington, C. J. Huntley, Caleb Wilson …
+- New teams: Anagan Olivar, Birmingham/Laketown Squadron, CBP Huesca, College Park Skyhawks, Elitzur Kiryat Ata
+
 ## 2026-07-03 — cleanup migration
 
 - Removed **56** non-player records (coaches / `Category:` links / high schools) added by the bad run
