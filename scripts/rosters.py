@@ -48,10 +48,14 @@ NBA_TEAMS = {
     "Washington Wizards": "Washington Wizards roster",
 }
 
-# Template names (normalized: lowercased, underscores->spaces) whose `name=`
-# parameter holds a *player*. Coach rows use a different template and are
-# deliberately excluded so head/assistant coaches never enter the roster set.
-_PLAYER_TEMPLATES = {"nba roster/player", "roster player"}
+# Current NBA roster templates list each player in a {{player2}} row whose name
+# is split across `first`/`last` params with NO wikilink, e.g.:
+#   {{player2 | num=7 | first=Santi | last=Aldama | pos=FC | note=FA | inj=yes }}
+# Older/other templates used a single `name=[[Player]]` wikilink; those are kept
+# as fallbacks. Coach rows, {{NBA roster/header}}, Category: links and high
+# schools are never {{player2}} rows, so they are excluded by construction.
+_PLAYER2_TEMPLATE = {"player2"}
+_LEGACY_PLAYER_TEMPLATES = {"nba roster/player", "roster player"}
 
 # Namespaced / non-person link targets that must never be treated as a player.
 _NON_PERSON_PREFIX = re.compile(
@@ -120,6 +124,25 @@ def _params(body: str) -> dict[str, str]:
     return out
 
 
+def _clean_field(val: str) -> str:
+    """Strip any stray markup from a template field and normalize whitespace."""
+    if not val:
+        return ""
+    v = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", val)
+    v = re.sub(r"<[^>]+>", "", v)
+    v = re.sub(r"\{\{[^}]*\}\}", "", v)
+    return re.sub(r"\s+", " ", v).strip()
+
+
+def _combine_name(params: dict) -> str:
+    """Join first + last into a full name. A suffix carried on the last-name
+    field (e.g. last='Clayton Jr.') is preserved, yielding 'Walter Clayton Jr.'.
+    """
+    first = _clean_field(params.get("first", ""))
+    last = _clean_field(params.get("last", ""))
+    return re.sub(r"\s+", " ", f"{first} {last}").strip()
+
+
 def _player_name_from_value(val: str) -> str:
     """Extract a player's article name from a `name=` value.
 
@@ -144,21 +167,66 @@ def _is_person_name(name: str) -> bool:
     return bool(re.match(r"[^\W\d].*\s+\S", name))
 
 
-def extract_players_from_roster(wikitext: str) -> list[str]:
-    """Return the player names from a roster template.
+def extract_roster_entries(wikitext: str) -> list[dict]:
+    """Parse a roster template into per-player entries with metadata.
 
-    Parses the structured ``{{NBA roster/player|...|name=[[Player]]|...}}`` rows
-    (and the older ``{{Roster player|...}}`` form) rather than scraping every
-    wikilink, so coach rows, ``[[Category:...]]`` tags, and high-school links are
-    never captured.
+    Each entry is ``{"name", "num", "pos", "note", "injured"}``:
+      * name    — full name (first + last, suffix preserved)
+      * num     — jersey number (may be "")
+      * pos     — position code (e.g. "PG", "FC")
+      * note    — roster note, upper-cased: "FA" (free agent / expiring),
+                  "DP" (draft pick), "TW" (two-way), etc. ("" if none)
+      * injured — True when the row carries inj=yes
+
+    Primary format is the current ``{{player2|first=..|last=..|...}}`` row; if a
+    template yields none we fall back to the older ``{{NBA roster/player}}`` /
+    ``{{Roster player}}`` forms (name held in a ``name=[[..]]`` wikilink).
+
+    Free-agent (note=FA) players are INCLUDED: they still appear on the roster
+    template, and their real status is decided later from their own Wikipedia
+    page by the classification guard (a FA with no current NBA stint will not
+    end up nba_active). Excluding them here would instead risk a real player
+    being wrongly treated as "dropped from the roster".
     """
-    names, seen = [], set()
-    for body in _iter_template_bodies(wikitext, _PLAYER_TEMPLATES):
-        name = _player_name_from_value(_params(body).get("name", ""))
-        if _is_person_name(name) and name not in seen:
-            seen.add(name)
-            names.append(name)
-    return names
+    entries, seen = [], set()
+
+    for body in _iter_template_bodies(wikitext, _PLAYER2_TEMPLATE):
+        p = _params(body)
+        name = _combine_name(p)
+        if not _is_person_name(name) or name in seen:
+            continue
+        seen.add(name)
+        entries.append({
+            "name": name,
+            "num": _clean_field(p.get("num", "")),
+            "pos": _clean_field(p.get("pos", "")),
+            "note": _clean_field(p.get("note", "")).upper(),
+            "injured": _clean_field(p.get("inj", "")).lower() in ("y", "yes", "true", "1"),
+        })
+    if entries:
+        return entries
+
+    # fallback: older wikilink-based player rows
+    for body in _iter_template_bodies(wikitext, _LEGACY_PLAYER_TEMPLATES):
+        p = _params(body)
+        name = _player_name_from_value(p.get("name", ""))
+        if not _is_person_name(name) or name in seen:
+            continue
+        seen.add(name)
+        entries.append({
+            "name": name,
+            "num": _clean_field(p.get("num", "")),
+            "pos": _clean_field(p.get("pos", "")),
+            "note": "",
+            "injured": False,
+        })
+    return entries
+
+
+def extract_players_from_roster(wikitext: str) -> list[str]:
+    """Return just the player names from a roster template (primary pipeline
+    output). Metadata is available via :func:`extract_roster_entries`."""
+    return [e["name"] for e in extract_roster_entries(wikitext)]
 
 
 def fetch_all_rosters(client: WikipediaClient) -> dict[str, list[str]]:

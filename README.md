@@ -34,7 +34,7 @@ scripts/
   wikipedia_api.py             # rate-limited MediaWiki API client
   team_normalizer.py           # applies team_aliases.json
   wiki_parser.py               # parses {{Infobox basketball biography}}
-  rosters.py                   # NBA rosters: parses {{NBA roster/player}} rows
+  rosters.py                   # NBA rosters: parses {{player2}} rows (+ metadata)
   geo.py                       # region->country resolution for locations
   player_status.py             # tracking-status classification (see below)
   seed_import.py               # one-time import of existing data into /data
@@ -61,6 +61,16 @@ outcome is stored separately in `parse_status` so the two never collide):
 | `nba_active` | on a current NBA roster (or Wikipedia lists an NBA franchise as their current team) |
 | `overseas_active` | no longer in the NBA but still playing (overseas league, G League, …) within the recency window |
 | `retired` | no team for 2+ years |
+
+Rosters are read from each team's Wikipedia template, which lists players as
+`{{player2 | first=.. | last=.. | num=.. | pos=.. | note=.. | inj=.. }}` rows
+(names split across params, no wikilinks). The parser combines first+last
+(preserving suffixes like "Jaren Jackson Jr."), captures jersey/position/note/
+injury metadata, and ignores the header, coach block, `Category:` links and
+high schools. Players flagged `note=FA` (free agent / expiring) **are included**
+as roster members: they still appear on the template, and their true status is
+decided from their own page by the guard below — excluding them would risk a
+real player being mistaken for "dropped from the roster".
 
 Roster membership is only a **candidate** signal (who to fetch); it never by
 itself confers `nba_active`, so coaches and staff listed on roster templates
