@@ -35,9 +35,11 @@ scripts/
   team_normalizer.py           # applies team_aliases.json
   wiki_parser.py               # parses {{Infobox basketball biography}}
   rosters.py                   # NBA rosters: parses {{player2}} rows (+ metadata)
-  geo.py                       # region->country resolution for locations
+  names.py                     # name normalization + canonical Wikipedia URL
+  geo.py                       # region/US-state -> country resolution
   player_status.py             # tracking-status classification (see below)
   seed_import.py               # one-time import of existing data into /data
+  merge_migration.py           # one-time: merge duplicate player pairs
   update_careers.py            # main orchestrator (all modes)
   test_sample.py               # 10-player end-to-end smoke test
 nba_players_careers_READY.json # map data file (kept in sync by the updater)
@@ -98,6 +100,33 @@ current canonical name, e.g. `Tau Cerámica → Baskonia`,
 `Charlotte Bobcats → Charlotte Hornets`. Teams that no longer exist (e.g.
 Virtus Roma) keep their historical name. Unknown teams are added to
 `teams_needing_review.json` for manual confirmation.
+
+## Deduplication
+
+A player can appear on a roster under a different spelling than the database
+uses — diacritics (Şengün/Sengun), transliteration (Schröder/Schroeder),
+suffixes (Jr./II), disambiguators (`(basketball)`), initial spacing (A. J./AJ),
+or a nickname (Bub/Carlton). Matching is by **canonical Wikipedia article**, not
+by raw name string:
+
+- **Pre-fetch** (`build_queue`): a roster candidate is matched to an existing
+  record by normalized name key (`names.normkey`), so variants aren't queued as
+  newcomers, and their existing record isn't re-fetched as "dropped from roster"
+  every run.
+- **At-fetch** (`merge_player`): the page's canonical title/URL is resolved; if
+  it matches an existing record (catches nicknames and redirects that the name
+  key misses) the data is **merged** into that record rather than inserted as a
+  duplicate.
+- Every record stores `wikipedia_url` (backfilled lazily on fetch); the dropped
+  spelling is kept in `aliases` (which are also indexed, so the variant resolves
+  and the duplicate can't reappear).
+
+**Display names and the map.** The map/quiz (`index.html`, `nba_players_careers_READY.json`)
+key players by `player`, and those keys are ASCII (`PLAYERS_400_GAMES` etc.), so
+the primary `player` key is kept stable. The canonical spelling (e.g.
+`Alperen Şengün`) lives in `display_name`, which is also exported to READY.json
+for the frontend to adopt later; adding it is safe because `index.html` ignores
+unknown fields.
 
 ## Automation
 

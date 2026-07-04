@@ -1,3 +1,18 @@
+## 2026-07-04 — dedupe merge migration
+
+- Merged **8** duplicate player pairs (kept ASCII primary key + canonical `display_name` + old spelling as alias)
+- Backfilled wikipedia_url/display_name on **110** records
+- Expanded leftover `{{nbay}}` year strings on **44** records
+
+  - `Alperen Şengün` → `Alperen Sengun`
+  - `Dennis Schröder` → `Dennis Schroeder`
+  - `Craig Porter Jr.` → `Craig Porter`
+  - `Dereck Lively II` → `Dereck Lively`
+  - `Derrick Jones Jr.` → `Derrick Jones`
+  - `A. J. Green` → `AJ Green`
+  - `A. J. Lawson` → `AJ Lawson`
+  - `Bub Carrington` → `Carlton Carrington`
+
 ## 2026-07-04 — incremental run
 
 - Players updated: **64** (64 new)

@@ -381,6 +381,46 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-07-04",
+      "mode": "merge",
+      "merged_pairs": [
+        {
+          "from": "Alperen Şengün",
+          "into": "Alperen Sengun"
+        },
+        {
+          "from": "Dennis Schröder",
+          "into": "Dennis Schroeder"
+        },
+        {
+          "from": "Craig Porter Jr.",
+          "into": "Craig Porter"
+        },
+        {
+          "from": "Dereck Lively II",
+          "into": "Dereck Lively"
+        },
+        {
+          "from": "Derrick Jones Jr.",
+          "into": "Derrick Jones"
+        },
+        {
+          "from": "A. J. Green",
+          "into": "AJ Green"
+        },
+        {
+          "from": "A. J. Lawson",
+          "into": "AJ Lawson"
+        },
+        {
+          "from": "Bub Carrington",
+          "into": "Carlton Carrington"
+        }
+      ],
+      "url_backfilled": 110,
+      "requests": 0
     }
   ]
 }

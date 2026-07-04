@@ -69,6 +69,15 @@ class WikipediaClient:
 
     def get_wikitext(self, title: str) -> str | None:
         """Return raw wikitext of the current revision, or None if missing."""
+        return self.get_wikitext_and_title(title)[0]
+
+    def get_wikitext_and_title(self, title: str) -> tuple[str | None, str | None]:
+        """Return (wikitext, canonical_title) in a single request.
+
+        The canonical title is the article reached after following redirects and
+        normalization (e.g. "Bub Carrington" -> "Carlton Carrington"), which is
+        what duplicate detection keys on. Either element is None if missing.
+        """
         data = self._get({
             "action": "query",
             "prop": "revisions",
@@ -79,11 +88,13 @@ class WikipediaClient:
         })
         pages = data.get("query", {}).get("pages", [])
         if not pages or pages[0].get("missing"):
-            return None
+            return None, None
+        canonical = pages[0].get("title")
         try:
-            return pages[0]["revisions"][0]["slots"]["main"]["content"]
+            return (pages[0]["revisions"][0]["slots"]["main"]["content"],
+                    canonical)
         except (KeyError, IndexError):
-            return None
+            return None, canonical
 
     def resolve_title(self, title: str) -> str | None:
         """Follow redirects/normalization to the canonical article title."""

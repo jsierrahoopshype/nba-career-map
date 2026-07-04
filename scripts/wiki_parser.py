@@ -86,6 +86,10 @@ def _clean_text(val: str) -> str:
     n = n.replace("'''", "").replace("''", "")
     n = re.sub(r"<br\s*/?>", ", ", n)
     n = re.sub(r"<[^>]+>", "", n)
+    # expand {{nbay|YYYY|start|end}} (NBA season year) to its year argument,
+    # then strip any other leftover templates so raw wikitext never persists.
+    n = re.sub(r"\{\{\s*nbay\s*\|\s*(\d{4})[^{}]*\}\}", r"\1", n, flags=re.IGNORECASE)
+    n = re.sub(r"\{\{[^{}]*\}\}", "", n)
     n = re.sub(r"\s+", " ", n).strip().strip(",").strip()
     return n
 

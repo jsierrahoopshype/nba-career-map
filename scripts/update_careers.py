@@ -41,6 +41,7 @@ from rosters import fetch_all_rosters, NBA_TEAMS
 from player_status import (classify_status, NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED)
 from geo import resolve_location
+from names import normkey, url_key, canonical_url
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA, LOGS = ROOT / "data", ROOT / "logs"
@@ -83,6 +84,35 @@ class Database:
         self.locations = load_json(LOCATIONS, {})
         self.review = load_json(REVIEW, {})
         self.normalizer = TeamNormalizer()
+        # dedupe indexes: normalized name / aliases, and canonical Wikipedia URL
+        self.norm_index: dict[str, str] = {}
+        self.url_index: dict[str, str] = {}
+        for p in players:
+            self._index(p)
+
+    # -- dedupe index -------------------------------------------------------
+
+    def _index(self, rec: dict) -> None:
+        """Register a record's name, aliases and URL in the dedupe indexes."""
+        name = rec["player"]
+        for key in (name, rec.get("display_name", ""), *rec.get("aliases", [])):
+            k = normkey(key)
+            if k:
+                self.norm_index.setdefault(k, name)
+        u = url_key(rec.get("wikipedia_url", ""))
+        if u:
+            self.url_index.setdefault(u, name)
+
+    def resolve_by_name(self, candidate: str) -> str | None:
+        """Existing player matching a candidate by normalized name, else None."""
+        return self.norm_index.get(normkey(candidate))
+
+    def resolve_canonical(self, canonical_title: str) -> str | None:
+        """Existing player matching a resolved Wikipedia article (URL or name)."""
+        if not canonical_title:
+            return None
+        return (self.url_index.get(url_key(canonical_url(canonical_title)))
+                or self.norm_index.get(normkey(canonical_title)))
 
     # -- team locations -----------------------------------------------------
 
@@ -110,22 +140,30 @@ class Database:
             stint["city"] = loc.get("city", "")
             stint["state"] = loc.get("state", "")
             stint["country"] = loc.get("country", "")
-            return
-        # unknown / incomplete team -> try discovery, then flag for review
-        found = discovered.get(team)
-        if found is None:
-            found = self._discover_location(team, client)
-            discovered[team] = found
-        stint["city"] = found.get("city", "")
-        stint["state"] = found.get("state", "")
-        stint["country"] = found.get("country", "")
-        self.locations[team] = {"team": team, **found,
-                                "league": self.locations.get(team, {}).get("league", "")}
-        if not found.get("city") or not found.get("country"):
-            self.review[team] = {"team": team,
-                                 "reason": "auto-added; needs location confirmation",
-                                 "city": found.get("city", ""),
-                                 "country": found.get("country", "")}
+        else:
+            # unknown / incomplete team -> try discovery, then flag for review
+            found = discovered.get(team)
+            if found is None:
+                found = self._discover_location(team, client)
+                discovered[team] = found
+            stint["city"] = found.get("city", "")
+            stint["state"] = found.get("state", "")
+            stint["country"] = found.get("country", "")
+            self.locations[team] = {"team": team, **found,
+                                    "league": self.locations.get(team, {}).get("league", "")}
+            if not found.get("city") or not found.get("country"):
+                self.review[team] = {"team": team,
+                                     "reason": "auto-added; needs location confirmation",
+                                     "city": found.get("city", ""),
+                                     "country": found.get("country", "")}
+
+        # A slash without surrounding spaces (e.g. "Birmingham/Laketown Squadron")
+        # may still be two merged names — flag for verification without discarding
+        # the location we found. (Space-padded slashes are handled above.)
+        if "/" in team:
+            self.review.setdefault(team, {
+                "team": team, "reason": "contains '/', verify not two merged teams",
+                "city": stint.get("city", ""), "country": stint.get("country", "")})
 
     def _discover_location(self, team: str, client: WikipediaClient) -> dict:
         try:
@@ -141,41 +179,101 @@ class Database:
                       extract)
         if m:
             city = m.group(1).strip()
-            # resolve region names (Lazio, Subcarpathian Voivodeship, …) to a
-            # country; unknown tokens keep the country blank so review flags it.
-            state, country = resolve_location(m.group(2) or "")
+            # resolve region/US-state names (Lazio, Georgia, …) to a country,
+            # passing the city so ambiguous "Georgia" disambiguates; unknown
+            # tokens keep the country blank so review flags it.
+            state, country = resolve_location(m.group(2) or "", city)
             return {"city": city, "state": state, "country": country}
         return {"city": "", "state": "", "country": ""}
 
 
+def _richer(a: list, b: list) -> bool:
+    """True if career history `a` is at least as rich as `b` (more stints)."""
+    return len(a or []) >= len(b or [])
+
+
 def merge_player(db: Database, name: str, client: WikipediaClient,
                  discovered: dict, roster_players: set[str],
-                 current_year: int) -> tuple[dict | None, list[str]]:
-    """Fetch + parse a player, enrich locations, classify tracking status, and
-    merge into DB. Returns (record, new_teams_discovered)."""
-    wt = client.get_wikitext(name)
+                 current_year: int) -> tuple[dict | None, list[str], bool]:
+    """Fetch + parse a player, dedupe against existing records by canonical
+    Wikipedia article, enrich locations, classify status, and upsert.
+
+    Returns (record, new_teams, is_new). A candidate that resolves to an
+    existing record (diacritics, suffix, nickname, redirect) is MERGED into it
+    rather than inserted as a duplicate.
+    """
+    wt, canonical_title = client.get_wikitext_and_title(name)
     if not wt:
-        return None, []
-    rec = parse_player(wt, name, db.normalizer)
-    rec.pop("_raw_teams", None)
-    # The parser's "status" is a parse outcome; keep it under parse_status so it
-    # never collides with the tracking status set below.
-    rec["parse_status"] = rec.pop("status", "success")
+        return None, [], False
+    fresh = parse_player(wt, name, db.normalizer)
+    fresh.pop("_raw_teams", None)
+    fresh["parse_status"] = fresh.pop("status", "success")
+    fresh_valid = bool(fresh.get("career_history"))
+    curl = canonical_url(canonical_title) if canonical_title else canonical_url(name)
+
+    # Resolve to an existing record: same key, same canonical article (URL or
+    # normalized title), or same normalized display name.
+    existing_name = (name if name in db.by_name
+                     else db.resolve_canonical(canonical_title)
+                     or db.resolve_by_name(name))
+    is_new = existing_name is None
+    base = db.by_name.get(existing_name, {}) if existing_name else {}
+    prev_status = base.get("status")
+    prev_current = base.get("current_team")
+
+    # Choose the history source: the freshly-fetched page when it parsed and is
+    # at least as rich, otherwise the existing record (so a failed/empty parse
+    # like the "A. J. Green" disambiguation page never clobbers real data).
+    use_fresh = fresh_valid and _richer(fresh.get("career_history"),
+                                        base.get("career_history"))
+    primary = fresh if use_fresh else (base or fresh)
+
+    rec = dict(base)  # start from existing to preserve fields we don't refresh
+    rec["career_history"] = primary.get("career_history", [])
+    rec["current_team"] = primary.get("current_team", "")
+    # scalar fields: prefer the chosen source, fall back to the other
+    for f in ("position", "number", "birth_date", "birth_place", "death_date",
+              "death_place", "high_school", "college", "draft"):
+        val = primary.get(f) or fresh.get(f) or base.get(f)
+        if val:
+            rec[f] = val
+    rec["parse_status"] = fresh.get("parse_status", base.get("parse_status", "success"))
+
+    # primary key + display name + aliases
+    if is_new:
+        key = canonical_title or name
+    else:
+        key = existing_name  # keep existing (frontend-load-bearing) primary key
+    rec["player"] = key
+    rec["display_name"] = canonical_title or rec.get("display_name") or key
+    aliases = set(base.get("aliases", []))
+    for alt in (name, canonical_title, base.get("player")):
+        if alt and alt != key:
+            aliases.add(alt)
+    if aliases:
+        rec["aliases"] = sorted(aliases)
+    rec["wikipedia_url"] = curl or base.get("wikipedia_url", "")
+
+    # locations
     new_teams = []
     for stint in rec["career_history"]:
-        if stint["team"] not in db.locations or not (
-                db.locations[stint["team"]].get("city")
-                or db.locations[stint["team"]].get("country")):
-            if stint["team"] not in db.locations:
-                new_teams.append(stint["team"])
+        if stint["team"] not in db.locations:
+            new_teams.append(stint["team"])
         db.enrich_stint(stint, client, discovered)
-    rec["status"] = classify_status(rec, on_nba_roster=name in roster_players,
-                                     current_year=current_year)
+
+    rec["status"] = classify_status(
+        rec, on_nba_roster=name in roster_players or key in roster_players,
+        current_year=current_year)
     rec["last_updated"] = today()
-    db.by_name[name] = rec
-    if name not in db.order:
-        db.order.append(name)
-    return rec, new_teams
+
+    # upsert: if we merged into a different existing key, drop the queue name
+    if not is_new and key != name and name in db.by_name:
+        db.by_name.pop(name, None)
+    db.by_name[key] = rec
+    if key not in db.order:
+        db.order.append(key)
+    db._index(rec)
+    return rec, new_teams, is_new, prev_status, prev_current
 
 
 def _dedupe(seq) -> list[str]:
@@ -202,12 +300,20 @@ def build_queue(db: Database, mode: str, player: str | None,
         return overseas
 
     nba_active = _by_status(db, NBA_ACTIVE)
+    # Map roster candidates to existing records by canonical name key, so a
+    # roster spelling that differs from the DB spelling (Şengün vs Sengun) is
+    # recognized as the same player rather than a newcomer.
+    on_roster = {db.resolve_by_name(c) for c in roster_players}
+    on_roster.discard(None)
     # roster newcomers not yet tracked (rookies / signings)
-    new_players = sorted(roster_players - set(db.by_name))
-    # players we thought were NBA-active but who are no longer on any roster:
-    # re-check to see if they moved overseas (-> overseas_active) or retired.
-    dropped = [n for n in nba_active if n not in roster_players]
-    stale_nba = [n for n in nba_active if n in roster_players]
+    new_players = _dedupe(sorted(c for c in roster_players
+                                 if db.resolve_by_name(c) is None))
+    # NBA-active players not matched by any roster candidate: re-check whether
+    # they moved overseas (-> overseas_active) or retired. Canonical matching
+    # stops variant-spelling players (Alperen Sengun) being re-fetched as
+    # "dropped" every run while their diacritic spelling is added as "new".
+    dropped = [n for n in nba_active if n not in on_roster]
+    stale_nba = [n for n in nba_active if n in on_roster]
 
     if mode == "full":
         # every active player (NBA + overseas) plus any roster newcomers
@@ -237,12 +343,9 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
         queue = build_queue(db, mode, player, roster_players)
         discovered: dict = {}
         for name in queue:
-            prev = db.by_name.get(name)
-            prev_current = prev.get("current_team") if prev else None
-            prev_status = prev.get("status") if prev else None
             try:
-                rec, new_teams = merge_player(db, name, client, discovered,
-                                              roster_players, current_year)
+                rec, new_teams, is_new, prev_status, prev_current = merge_player(
+                    db, name, client, discovered, roster_players, current_year)
             except RequestBudgetExceeded:
                 summary["budget_exhausted"] = True
                 break
@@ -251,23 +354,24 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                 continue
             if rec is None:
                 continue
-            if prev is None:
-                summary["new_players"].append(name)
-            summary["players_updated"].append(name)
+            key = rec["player"]
+            if is_new:
+                summary["new_players"].append(key)
+            summary["players_updated"].append(key)
             summary["new_teams"].extend(new_teams)
             if prev_current and rec.get("current_team") and \
                     prev_current != rec["current_team"]:
                 summary["team_moves"].append(
-                    {"player": name, "from": prev_current,
+                    {"player": key, "from": prev_current,
                      "to": rec["current_team"]})
             new_status = rec.get("status")
             if prev_status and new_status and prev_status != new_status:
                 summary["status_changes"].append(
-                    {"player": name, "from": prev_status, "to": new_status})
+                    {"player": key, "from": prev_status, "to": new_status})
                 if new_status == OVERSEAS_ACTIVE:
-                    summary["newly_overseas"].append(name)
+                    summary["newly_overseas"].append(key)
                 elif new_status == RETIRED:
-                    summary["newly_retired"].append(name)
+                    summary["newly_retired"].append(key)
 
     summary["requests"] = client.requests_made
     summary["new_teams"] = sorted(set(summary["new_teams"]))
@@ -308,11 +412,17 @@ def _persist(db: Database, summary: dict) -> None:
     # keep the map data file in sync (drop non-map metadata for a lean file)
     map_players = []
     for p in players:
+        # `player` stays the primary key the map/quiz already index on (ASCII,
+        # frontend-load-bearing). display_name carries the canonical spelling
+        # (e.g. diacritics) for the frontend to adopt when ready — index.html
+        # ignores unknown fields, so adding it is safe today.
         mp = {"player": p["player"], "status": p.get("status", ""),
               "career_history": [{"years": s.get("years", ""), "team": s["team"],
                                   "city": s.get("city", ""), "state": s.get("state", ""),
                                   "country": s.get("country", "")}
                                  for s in p.get("career_history", [])]}
+        if p.get("display_name") and p["display_name"] != p["player"]:
+            mp["display_name"] = p["display_name"]
         if p.get("wikipedia_url"):
             mp["wikipedia_url"] = p["wikipedia_url"]
         map_players.append(mp)

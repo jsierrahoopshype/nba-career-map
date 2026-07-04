@@ -56,17 +56,46 @@ REGION_TO_COUNTRY = {
 }
 
 
-def resolve_location(tail: str) -> tuple[str, str]:
-    """Given the token that follows the city in a "based in City, X" phrase,
-    return (state, country).
+# US states + DC (all map to USA). Used to catch American cities whose lead
+# sentence reads "based in <City>, <State>" (e.g. "College Park, Georgia").
+US_STATES = {
+    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
+    "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho",
+    "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine",
+    "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+    "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey",
+    "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+    "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+    "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+    "Washington", "West Virginia", "Wisconsin", "Wyoming",
+    "District of Columbia", "D.C.", "Washington, D.C.",
+}
 
+# Tokens that name both a US state and a sovereign country. Disambiguated by
+# whether the city is a known city of the *country*.
+_AMBIGUOUS = {"Georgia"}
+_GEORGIA_COUNTRY_CITIES = {"Tbilisi", "Batumi", "Kutaisi", "Rustavi", "Zugdidi"}
+
+
+def resolve_location(tail: str, city: str = "") -> tuple[str, str]:
+    """Given the token after the city in "based in City, X", return (state, country).
+
+    - a US state -> (state, "USA"); "Georgia" defaults to the US state unless the
+      city is a known city of the country Georgia
     - a recognized country (or alias) -> ("", country)
-    - a known region -> (region, its country)
-    - anything else -> (tail, "")   [country blank so it is flagged for review]
+    - a known sub-national region -> (region, its country)
+    - anything else -> (tail, "")   [country blank so the team is flagged]
     """
     tail = (tail or "").strip()
+    city = (city or "").strip()
     if not tail:
         return "", ""
+    if tail in _AMBIGUOUS:  # "Georgia": US state unless the city is Georgian
+        if city in _GEORGIA_COUNTRY_CITIES:
+            return "", "Georgia"
+        return tail, "USA"
+    if tail in US_STATES:
+        return tail, "USA"
     alias = COUNTRY_ALIASES.get(tail.lower())
     if alias:
         return "", alias

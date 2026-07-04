@@ -285,7 +285,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/A.W._Holt",
+    "display_name": "A.W. Holt"
   },
   {
     "player": "Aaron Brooks",
@@ -2718,7 +2720,11 @@
       }
     ],
     "current_team": "Wisconsin Herd",
-    "status": "overseas_active"
+    "status": "overseas_active",
+    "display_name": "AJ Green",
+    "aliases": [
+      "A. J. Green"
+    ]
   },
   {
     "player": "AJ Griffin",
@@ -2865,64 +2871,106 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2022",
+        "team": "College Park Skyhawks",
+        "team_raw": "College Park Skyhawks",
+        "years": "2021–2022",
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
+      },
+      {
         "team": "Guelph Nighthawks",
+        "team_raw": "Guelph Nighthawks",
+        "years": "2022",
         "city": "Guelph",
         "state": "",
         "country": "Canada"
       },
       {
+        "team": "College Park Skyhawks",
+        "team_raw": "College Park Skyhawks",
         "years": "2022",
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
+      },
+      {
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2022",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2022",
         "team": "Iowa Wolves",
+        "team_raw": "Iowa Wolves",
+        "years": "2022",
+        "loan": true,
         "city": "Des Moines",
         "state": "Iowa",
         "country": "USA"
       },
       {
-        "years": "2022-2024",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2022–2024",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2022-2024",
         "team": "Texas Legends",
+        "team_raw": "Texas Legends",
+        "years": "2022–2024",
+        "loan": true,
         "city": "Frisco",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2024",
         "team": "Long Island Nets",
+        "team_raw": "Long Island Nets",
+        "years": "2024",
         "city": "Uniondale",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2024–present",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "2024-2026",
         "team": "Raptors 905",
+        "team_raw": "Raptors 905",
+        "years": "2024–present",
+        "loan": true,
         "city": "Mississauga",
         "state": "Ontario",
         "country": "Canada"
       }
     ],
     "current_team": "Raptors 905",
-    "status": "overseas_active"
+    "status": "overseas_active",
+    "display_name": "AJ Lawson",
+    "position": "Shooting guard",
+    "number": [
+      "0"
+    ],
+    "birth_date": "2000-07-15",
+    "birth_place": "Toronto, Ontario, Canada",
+    "high_school": "* St. Marguerite d'Youville, (Brampton, Ontario) * GTA Prep, (Mississauga, Ontario)",
+    "college": "South Carolina (2018–2021)",
+    "draft": {
+      "year": "2022"
+    },
+    "aliases": [
+      "A. J. Lawson"
+    ]
   },
   {
     "player": "AJ Price",
@@ -3659,7 +3707,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Al_Negratti",
+    "display_name": "Al Negratti"
   },
   {
     "player": "Al Roges",
@@ -5145,7 +5195,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alen_Smailagic",
+    "display_name": "Alen Smailagic"
   },
   {
     "player": "Alex Abrines",
@@ -7766,36 +7818,56 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2018-2019",
         "team": "Bandırma Kırmızı",
+        "team_raw": "Bandırma Kırmızı",
+        "years": "2018–2019",
         "city": "Bandırma",
         "state": "",
         "country": "Turkey"
       },
       {
-        "years": "2019-2020",
         "team": "Teksüt Bandırma",
+        "team_raw": "Teksüt Bandırma",
+        "years": "2019–2020",
         "city": "Bandırma",
         "state": "",
         "country": "Turkey"
       },
       {
-        "years": "2020-2021",
         "team": "Beşiktaş",
+        "team_raw": "Beşiktaş",
+        "years": "2020–2021",
         "city": "Istanbul",
         "state": "",
         "country": "Turkey"
       },
       {
-        "years": "2021-2026",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2021–present",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       }
     ],
     "current_team": "Houston Rockets",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Alperen Şengün",
+    "position": "Power forward / Center",
+    "number": [
+      "28"
+    ],
+    "birth_date": "2002-07-25",
+    "birth_place": "Giresun, Turkey",
+    "draft": {
+      "year": "2021",
+      "round": "1",
+      "pick": "16",
+      "team": "Oklahoma City Thunder"
+    },
+    "aliases": [
+      "Alperen Şengün"
+    ]
   },
   {
     "player": "Alphonso Ford",
@@ -7803,7 +7875,9 @@
     "parse_status": "error",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alphonso_Ford",
+    "display_name": "Alphonso Ford"
   },
   {
     "player": "Alton Ford",
@@ -9670,7 +9744,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Andre_Jackson",
+    "display_name": "Andre Jackson"
   },
   {
     "player": "Andre McCarter",
@@ -20759,7 +20835,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Swain",
+    "display_name": "Ben Swain"
   },
   {
     "player": "Ben Uzoh",
@@ -22429,7 +22507,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bill_Hosket",
+    "display_name": "Bill Hosket"
   },
   {
     "player": "Bill Jones",
@@ -24316,7 +24396,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/BJ_Mullens",
+    "display_name": "BJ Mullens"
   },
   {
     "player": "Blackie Towery",
@@ -35001,7 +35083,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bud_Grant",
+    "display_name": "Bud Grant"
   },
   {
     "player": "Bud Koper",
@@ -41752,7 +41836,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Charles_Smith_(1975)",
+    "display_name": "Charles Smith (1975)"
   },
   {
     "player": "Charles Thomas",
@@ -42066,7 +42152,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Charlie_Black",
+    "display_name": "Charlie Black"
   },
   {
     "player": "Charlie Brown",
@@ -48429,7 +48517,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chuck_Connors",
+    "display_name": "Chuck Connors"
   },
   {
     "player": "Chuck Cooper",
@@ -48549,7 +48639,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chuck_Lowery",
+    "display_name": "Chuck Lowery"
   },
   {
     "player": "Chuck Mencel",
@@ -52315,7 +52407,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Connie_Norman",
+    "display_name": "Connie Norman"
   },
   {
     "player": "Connie Rea",
@@ -53469,7 +53563,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Corry_Carr",
+    "display_name": "Corry Carr"
   },
   {
     "player": "Corsley Edwards",
@@ -54978,22 +55074,40 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2023-2026",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2023–present",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Cleveland Charge",
+        "team_raw": "Cleveland Charge",
+        "years": "2024–2025",
+        "loan": true,
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       }
     ],
-    "current_team": "Cleveland Charge",
-    "status": "overseas_active"
+    "current_team": "Cleveland Cavaliers",
+    "status": "nba_active",
+    "display_name": "Craig Porter Jr.",
+    "position": "Point guard",
+    "number": [
+      "9"
+    ],
+    "birth_date": "2000-02-26",
+    "birth_place": "Terre Haute, Indiana, U.S.",
+    "high_school": "South, (Terre Haute, Indiana)",
+    "college": "* Vincennes (2018–2019) * Wichita State (2020–2023)",
+    "draft": {
+      "year": "2023"
+    },
+    "aliases": [
+      "Craig Porter Jr."
+    ]
   },
   {
     "player": "Craig Raymond",
@@ -56610,7 +56724,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dale_Hamilton",
+    "display_name": "Dale Hamilton"
   },
   {
     "player": "Dale Schlueter",
@@ -65306,7 +65422,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/David_Duke",
+    "display_name": "David Duke"
   },
   {
     "player": "David Harrison",
@@ -68279,7 +68397,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Delmer_Beshore",
+    "display_name": "Delmer Beshore"
   },
   {
     "player": "Delon Wright",
@@ -69838,106 +69958,145 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2010-2013",
         "team": "SG Braunschweig",
+        "team_raw": "SG Braunschweig",
+        "years": "2010–2013",
         "city": "Braunschweig",
         "state": "",
         "country": "Germany"
       },
       {
-        "years": "2011-2013",
         "team": "Phantoms Braunschweig",
+        "team_raw": "Phantoms Braunschweig",
+        "years": "2011–2013",
         "city": "Braunschweig",
         "state": "",
         "country": "Germany"
       },
       {
-        "years": "2013-2018",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2013–2017",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2013",
         "team": "Bakersfield Jam",
+        "team_raw": "Bakersfield Jam",
+        "years": "2013",
+        "loan": true,
         "city": "Bakersfield",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2018-2020",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2018–2019",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2020",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2021-2022",
         "team": "Boston Celtics",
+        "team_raw": "Boston Celtics",
+        "years": "2021",
         "city": "Boston",
         "state": "Massachusetts",
         "country": "USA"
       },
       {
-        "years": "2022",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2021",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2022",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2023",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "2024",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "team_raw": "Brooklyn Nets",
+        "years": "2024",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2024",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2025",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2024",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2025",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
+      },
+      {
+        "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2025–present",
+        "city": "Cleveland",
+        "state": "Ohio",
+        "country": "USA"
       }
     ],
-    "current_team": "Sacramento Kings",
-    "status": "nba_active"
+    "current_team": "Cleveland Cavaliers",
+    "status": "nba_active",
+    "display_name": "Dennis Schröder",
+    "position": "Point guard",
+    "number": [
+      "8"
+    ],
+    "birth_date": "1993-09-15",
+    "birth_place": "Braunschweig, Germany",
+    "draft": {
+      "year": "2013",
+      "round": "1",
+      "pick": "17",
+      "team": "Atlanta Hawks"
+    },
+    "aliases": [
+      "Dennis Schröder"
+    ]
   },
   {
     "player": "Dennis Scott",
@@ -70370,15 +70529,34 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2023-2026",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2023–present",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       }
     ],
     "current_team": "Dallas Mavericks",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Dereck Lively II",
+    "position": "Center",
+    "number": [
+      "2"
+    ],
+    "birth_date": "2004-02-12",
+    "birth_place": "Philadelphia, Pennsylvania, U.S.",
+    "high_school": "Westtown School, (West Chester, Pennsylvania)",
+    "college": "Duke (2022–2023)",
+    "draft": {
+      "year": "2023",
+      "round": "1",
+      "pick": "12",
+      "team": "Oklahoma City Thunder"
+    },
+    "aliases": [
+      "Dereck Lively II"
+    ]
   },
   {
     "player": "Derek Anderson",
@@ -71954,64 +72132,88 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2016-2017",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2016–2017",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2016-2017",
         "team": "Northern Arizona Suns",
+        "team_raw": "Northern Arizona Suns",
+        "years": "2016–2017",
+        "loan": true,
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2017-2020",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2017–2019",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2017-2018",
         "team": "Sioux Falls Skyforce",
+        "team_raw": "Sioux Falls Skyforce",
+        "years": "2017–2018",
+        "loan": true,
         "city": "Sioux Falls",
         "state": "South Dakota",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2020",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2021–2022",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2023",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "LA Clippers",
+        "team_raw": "Los Angeles Clippers",
+        "years": "2024–present",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "LA Clippers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Derrick Jones Jr.",
+    "position": "Small forward / power forward",
+    "number": [
+      "5"
+    ],
+    "birth_date": "1997-02-15",
+    "birth_place": "Chester, Pennsylvania, U.S.",
+    "college": "UNLV (2015–2016)",
+    "draft": {
+      "year": "2016"
+    },
+    "aliases": [
+      "Derrick Jones Jr."
+    ]
   },
   {
     "player": "Derrick McKey",
@@ -77275,7 +77477,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/DJ_Carton",
+    "display_name": "DJ Carton"
   },
   {
     "player": "DJ Kennedy",
@@ -77445,7 +77649,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/DJ_Stephens",
+    "display_name": "DJ Stephens"
   },
   {
     "player": "DJ White",
@@ -78669,7 +78875,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Don_Grate",
+    "display_name": "Don Grate"
   },
   {
     "player": "Don Hanrahan",
@@ -81893,7 +82101,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Doyle_Parrack",
+    "display_name": "Doyle Parrack"
   },
   {
     "player": "Dragan Bender",
@@ -86020,7 +86230,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ed_Lawrence",
+    "display_name": "Ed Lawrence"
   },
   {
     "player": "Ed Leede",
@@ -93623,7 +93835,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Fast_Eddie_Johnson",
+    "display_name": "Fast Eddie Johnson"
   },
   {
     "player": "Fat Lever",
@@ -111783,7 +111997,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Herm_Klotz",
+    "display_name": "Herm Klotz"
   },
   {
     "player": "Herm Schaefer",
@@ -113166,7 +113382,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Howie_Schultz",
+    "display_name": "Howie Schultz"
   },
   {
     "player": "Howie Shannon",
@@ -113669,7 +113887,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ibo_Kutluay",
+    "display_name": "Ibo Kutluay"
   },
   {
     "player": "Ibou Badji",
@@ -124022,7 +124242,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/James_Phelan",
+    "display_name": "James Phelan"
   },
   {
     "player": "James Posey",
@@ -124640,7 +124862,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/James_Webb",
+    "display_name": "James Webb"
   },
   {
     "player": "James White",
@@ -137764,7 +137988,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jim_Garvin",
+    "display_name": "Jim Garvin"
   },
   {
     "player": "Jim Grandholm",
@@ -138223,7 +138449,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jim_Luisi",
+    "display_name": "Jim Luisi"
   },
   {
     "player": "Jim Marsh",
@@ -145379,7 +145607,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/John_Lucas",
+    "display_name": "John Lucas"
   },
   {
     "player": "John Lucas III",
@@ -148757,7 +148987,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Johnny_Simmons",
+    "display_name": "Johnny Simmons"
   },
   {
     "player": "Johnny Taylor",
@@ -163229,7 +163461,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kenny_McIntosh",
+    "display_name": "Kenny McIntosh"
   },
   {
     "player": "Kenny Natt",
@@ -197550,7 +197784,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Phelps",
+    "display_name": "Michael Phelps"
   },
   {
     "player": "Michael Porter",
@@ -199371,7 +199607,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Dunleavy",
+    "display_name": "Mike Dunleavy"
   },
   {
     "player": "Mike Dunleavy Sr",
@@ -204624,7 +204862,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/MJ_Walker",
+    "display_name": "MJ Walker"
   },
   {
     "player": "Mo Bamba",
@@ -211555,7 +211795,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Norm_Stewart",
+    "display_name": "Norm Stewart"
   },
   {
     "player": "Norm Swanson",
@@ -215461,7 +215703,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Otto_Schnellbacher",
+    "display_name": "Otto Schnellbacher"
   },
   {
     "player": "Ousmane Dieng",
@@ -222553,7 +222797,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Press_Maravich",
+    "display_name": "Press Maravich"
   },
   {
     "player": "Price Brookfield",
@@ -227772,7 +228018,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ray_McCallum",
+    "display_name": "Ray McCallum"
   },
   {
     "player": "Ray Owes",
@@ -227862,7 +228110,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ray_Ramsey",
+    "display_name": "Ray Ramsey"
   },
   {
     "player": "Ray Scott",
@@ -233785,7 +234035,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Rob_Rose",
+    "display_name": "Rob Rose"
   },
   {
     "player": "Rob Williams",
@@ -233952,7 +234204,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Bishop",
+    "display_name": "Robert Bishop"
   },
   {
     "player": "Robert Churchwell",
@@ -234952,7 +235206,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Woodard",
+    "display_name": "Robert Woodard"
   },
   {
     "player": "Robin Jones",
@@ -235769,7 +236025,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Rodney_Knowles",
+    "display_name": "Rodney Knowles"
   },
   {
     "player": "Rodney McCray",
@@ -238208,7 +238466,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Sobiezczyk",
+    "display_name": "Ron Sobiezczyk"
   },
   {
     "player": "Ron Williams",
@@ -243139,7 +243399,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sam_Siebert",
+    "display_name": "Sam Siebert"
   },
   {
     "player": "Sam Smith",
@@ -243766,7 +244028,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Samuel_Williams",
+    "display_name": "Samuel Williams"
   },
   {
     "player": "Sandro Mamukelashvili",
@@ -255834,7 +256098,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Steve_Hamilton",
+    "display_name": "Steve Hamilton"
   },
   {
     "player": "Steve Harris",
@@ -277095,7 +277361,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Vernon_Carey",
+    "display_name": "Vernon Carey"
   },
   {
     "player": "Vernon Macklin",
@@ -284081,7 +284349,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Will_Frazier",
+    "display_name": "Will Frazier"
   },
   {
     "player": "Will Magnay",
@@ -289385,7 +289655,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Yongxi_Cui",
+    "display_name": "Yongxi Cui"
   },
   {
     "player": "Jaylen Martin",
@@ -290999,15 +291271,34 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2024–present",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       }
     ],
     "current_team": "Washington Wizards",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Carlton Carrington",
+    "position": "Point guard / shooting guard",
+    "number": [
+      "7"
+    ],
+    "birth_date": "2005-07-21",
+    "birth_place": "Baltimore, Maryland, U.S.",
+    "high_school": "Saint Frances {{nowrap|(Baltimore, Maryland)}}",
+    "college": "Pittsburgh (2023–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "14",
+      "team": "Portland Trail Blazers"
+    },
+    "aliases": [
+      "Bub Carrington"
+    ]
   },
   {
     "player": "Kyshawn George",
@@ -291785,7 +292076,9 @@
     "parse_status": "no_career_data",
     "career_history": [],
     "current_team": "",
-    "status": "retired"
+    "status": "retired",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Armel_Traore",
+    "display_name": "Armel Traore"
   },
   {
     "player": "Quincy Olivari",
@@ -292613,116 +292906,6 @@
     "status": "retired"
   },
   {
-    "player": "A. J. Green",
-    "career_history": [],
-    "parse_status": "no_career_data",
-    "status": "retired",
-    "last_updated": "2026-07-04"
-  },
-  {
-    "player": "A. J. Lawson",
-    "position": "Shooting guard",
-    "number": [
-      "0"
-    ],
-    "birth_date": "2000-07-15",
-    "birth_place": "Toronto, Ontario, Canada",
-    "high_school": "* St. Marguerite d'Youville, (Brampton, Ontario) * GTA Prep, (Mississauga, Ontario)",
-    "college": "South Carolina (2018–2021)",
-    "draft": {
-      "year": "2022"
-    },
-    "current_team": "Raptors 905",
-    "career_history": [
-      {
-        "team": "College Park Skyhawks",
-        "team_raw": "College Park Skyhawks",
-        "years": "2021–2022",
-        "city": "College Park",
-        "state": "",
-        "country": "Georgia"
-      },
-      {
-        "team": "Guelph Nighthawks",
-        "team_raw": "Guelph Nighthawks",
-        "years": "2022",
-        "city": "Guelph",
-        "state": "",
-        "country": "Canada"
-      },
-      {
-        "team": "College Park Skyhawks",
-        "team_raw": "College Park Skyhawks",
-        "years": "2022",
-        "city": "College Park",
-        "state": "",
-        "country": "Georgia"
-      },
-      {
-        "team": "Minnesota Timberwolves",
-        "team_raw": "Minnesota Timberwolves",
-        "years": "{{nbay|2022|start}}",
-        "city": "Minneapolis",
-        "state": "Minnesota",
-        "country": "USA"
-      },
-      {
-        "team": "Iowa Wolves",
-        "team_raw": "Iowa Wolves",
-        "years": "2022",
-        "loan": true,
-        "city": "Des Moines",
-        "state": "Iowa",
-        "country": "USA"
-      },
-      {
-        "team": "Dallas Mavericks",
-        "team_raw": "Dallas Mavericks",
-        "years": "{{nbay|2022|start}}–{{nbay|2024|start}}",
-        "city": "Dallas",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "team": "Texas Legends",
-        "team_raw": "Texas Legends",
-        "years": "2022–2024",
-        "loan": true,
-        "city": "Frisco",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "team": "Long Island Nets",
-        "team_raw": "Long Island Nets",
-        "years": "2024",
-        "city": "Uniondale",
-        "state": "New York",
-        "country": "USA"
-      },
-      {
-        "team": "Toronto Raptors",
-        "team_raw": "Toronto Raptors",
-        "years": "{{nbay|2024|start}}–present",
-        "city": "Toronto",
-        "state": "Ontario",
-        "country": "Canada"
-      },
-      {
-        "team": "Raptors 905",
-        "team_raw": "Raptors 905",
-        "years": "2024–present",
-        "loan": true,
-        "city": "Mississauga",
-        "state": "Ontario",
-        "country": "Canada"
-      }
-    ],
-    "parse_status": "success",
-    "status": "overseas_active",
-    "last_updated": "2026-07-04"
-  },
-  {
     "player": "AJ Dybantsa",
     "position": "Small forward",
     "number": [
@@ -292743,7 +292926,7 @@
       {
         "team": "Washington Wizards",
         "team_raw": "Washington Wizards",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
@@ -292751,14 +292934,18 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/AJ_Dybantsa",
+    "display_name": "AJ Dybantsa"
   },
   {
     "player": "Ace Bailey",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ace_Bailey",
+    "display_name": "Ace Bailey"
   },
   {
     "player": "Aday Mara",
@@ -292807,7 +292994,7 @@
       {
         "team": "Oklahoma City Thunder",
         "team_raw": "Oklahoma City Thunder",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
@@ -292815,7 +293002,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Aday_Mara",
+    "display_name": "Aday Mara"
   },
   {
     "player": "Adou Thiero",
@@ -292838,7 +293027,7 @@
       {
         "team": "Los Angeles Lakers",
         "team_raw": "Los Angeles Lakers",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
@@ -292855,7 +293044,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Adou_Thiero",
+    "display_name": "Adou Thiero"
   },
   {
     "player": "Alex Morales",
@@ -292891,7 +293082,7 @@
       {
         "team": "Orlando Magic",
         "team_raw": "Orlando Magic",
-        "years": "{{nbay|2025|end}}–present",
+        "years": "2025–present",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
@@ -292908,7 +293099,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alex_Morales",
+    "display_name": "Alex Morales"
   },
   {
     "player": "Alijah Martin",
@@ -292931,7 +293124,7 @@
       {
         "team": "Toronto Raptors",
         "team_raw": "Toronto Raptors",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
@@ -292948,7 +293141,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alijah_Martin",
+    "display_name": "Alijah Martin"
   },
   {
     "player": "Allen Graves",
@@ -292971,7 +293166,7 @@
       {
         "team": "Toronto Raptors",
         "team_raw": "Toronto Raptors",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
@@ -292979,62 +293174,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
-  },
-  {
-    "player": "Alperen Şengün",
-    "position": "Power forward / Center",
-    "number": [
-      "28"
-    ],
-    "birth_date": "2002-07-25",
-    "birth_place": "Giresun, Turkey",
-    "high_school": "",
-    "college": "",
-    "draft": {
-      "year": "2021",
-      "round": "1",
-      "pick": "16",
-      "team": "Oklahoma City Thunder"
-    },
-    "current_team": "Houston Rockets",
-    "career_history": [
-      {
-        "team": "Bandırma Kırmızı",
-        "team_raw": "Bandırma Kırmızı",
-        "years": "2018–2019",
-        "city": "Bandırma",
-        "state": "",
-        "country": "Turkey"
-      },
-      {
-        "team": "Teksüt Bandırma",
-        "team_raw": "Teksüt Bandırma",
-        "years": "2019–2020",
-        "city": "Bandırma",
-        "state": "",
-        "country": "Turkey"
-      },
-      {
-        "team": "Beşiktaş",
-        "team_raw": "Beşiktaş",
-        "years": "2020–2021",
-        "city": "Istanbul",
-        "state": "",
-        "country": "Turkey"
-      },
-      {
-        "team": "Houston Rockets",
-        "team_raw": "Houston Rockets",
-        "years": "{{nbay|2021|start}}–present",
-        "city": "Houston",
-        "state": "Texas",
-        "country": "USA"
-      }
-    ],
-    "parse_status": "success",
-    "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Allen_Graves",
+    "display_name": "Allen Graves"
   },
   {
     "player": "Amari Williams",
@@ -293057,7 +293199,7 @@
       {
         "team": "Boston Celtics",
         "team_raw": "Boston Celtics",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Boston",
         "state": "Massachusetts",
         "country": "USA"
@@ -293074,7 +293216,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Amari_Williams",
+    "display_name": "Amari Williams"
   },
   {
     "player": "Asa Newell",
@@ -293097,7 +293241,7 @@
       {
         "team": "Atlanta Hawks",
         "team_raw": "Atlanta Hawks",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
@@ -293114,7 +293258,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Asa_Newell",
+    "display_name": "Asa Newell"
   },
   {
     "player": "Baba Miller",
@@ -293143,7 +293289,7 @@
       {
         "team": "LA Clippers",
         "team_raw": "Los Angeles Clippers",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
@@ -293151,7 +293297,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Baba_Miller",
+    "display_name": "Baba Miller"
   },
   {
     "player": "Ben Saraf",
@@ -293198,7 +293346,7 @@
       {
         "team": "Brooklyn Nets",
         "team_raw": "Brooklyn Nets",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "East Rutherford",
         "state": "New Jersey",
         "country": "USA"
@@ -293215,7 +293363,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Saraf",
+    "display_name": "Ben Saraf"
   },
   {
     "player": "Bennett Stirtz",
@@ -293238,7 +293388,7 @@
       {
         "team": "Oklahoma City Thunder",
         "team_raw": "Oklahoma City Thunder",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
@@ -293246,7 +293396,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bennett_Stirtz",
+    "display_name": "Bennett Stirtz"
   },
   {
     "player": "Bez Mbeng",
@@ -293274,7 +293426,7 @@
       {
         "team": "Utah Jazz",
         "team_raw": "Utah Jazz",
-        "years": "{{nbay|2025|end}}–present",
+        "years": "2025–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
@@ -293282,7 +293434,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bez_Mbeng",
+    "display_name": "Bez Mbeng"
   },
   {
     "player": "Blake Hinson",
@@ -293318,7 +293472,7 @@
       {
         "team": "Utah Jazz",
         "team_raw": "Utah Jazz",
-        "years": "{{nbay|2025|end}}–present",
+        "years": "2025–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
@@ -293335,7 +293489,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Blake_Hinson",
+    "display_name": "Blake Hinson"
   },
   {
     "player": "Bogoljub Marković",
@@ -293375,7 +293531,7 @@
       {
         "team": "Milwaukee Bucks",
         "team_raw": "Milwaukee Bucks",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
@@ -293383,14 +293539,18 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bogoljub_Markovi%C4%87",
+    "display_name": "Bogoljub Marković"
   },
   {
     "player": "Braden Smith",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Braden_Smith",
+    "display_name": "Braden Smith"
   },
   {
     "player": "Brayden Burries",
@@ -293413,7 +293573,7 @@
       {
         "team": "Milwaukee Bucks",
         "team_raw": "Milwaukee Bucks",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
@@ -293421,7 +293581,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Brayden_Burries",
+    "display_name": "Brayden Burries"
   },
   {
     "player": "Brooks Barnhizer",
@@ -293444,7 +293606,7 @@
       {
         "team": "Oklahoma City Thunder",
         "team_raw": "Oklahoma City Thunder",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
@@ -293461,45 +293623,18 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Brooks_Barnhizer",
+    "display_name": "Brooks Barnhizer"
   },
   {
     "player": "Bruce Thornton",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
-  },
-  {
-    "player": "Bub Carrington",
-    "position": "Point guard / shooting guard",
-    "number": [
-      "7"
-    ],
-    "birth_date": "2005-07-21",
-    "birth_place": "Baltimore, Maryland, U.S.",
-    "high_school": "Saint Frances {{nowrap|(Baltimore, Maryland)}}",
-    "college": "Pittsburgh (2023–2024)",
-    "draft": {
-      "year": "2024",
-      "round": "1",
-      "pick": "14",
-      "team": "Portland Trail Blazers"
-    },
-    "current_team": "Washington Wizards",
-    "career_history": [
-      {
-        "team": "Washington Wizards",
-        "team_raw": "Washington Wizards",
-        "years": "{{nbay|2024|start}}–present",
-        "city": "Washington",
-        "state": "D.C.",
-        "country": "USA"
-      }
-    ],
-    "parse_status": "success",
-    "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bruce_Thornton",
+    "display_name": "Bruce Thornton"
   },
   {
     "player": "C. J. Huntley",
@@ -293527,7 +293662,7 @@
       {
         "team": "Phoenix Suns",
         "team_raw": "Phoenix Suns",
-        "years": "{{nbay|2025|end}}–present",
+        "years": "2025–present",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
@@ -293544,14 +293679,18 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/C._J._Huntley",
+    "display_name": "C. J. Huntley"
   },
   {
     "player": "Caleb Wilson",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Caleb_Wilson",
+    "display_name": "Caleb Wilson"
   },
   {
     "player": "Cameron Boozer",
@@ -293574,7 +293713,7 @@
       {
         "team": "Memphis Grizzlies",
         "team_raw": "Memphis Grizzlies",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Vancouver",
         "state": "British Columbia",
         "country": "Canada"
@@ -293582,21 +293721,27 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cameron_Boozer",
+    "display_name": "Cameron Boozer"
   },
   {
     "player": "Cameron Carr",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cameron_Carr",
+    "display_name": "Cameron Carr"
   },
   {
     "player": "Carter Bryant",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Carter_Bryant",
+    "display_name": "Carter Bryant"
   },
   {
     "player": "Cedric Coward",
@@ -293619,7 +293764,7 @@
       {
         "team": "Memphis Grizzlies",
         "team_raw": "Memphis Grizzlies",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Vancouver",
         "state": "British Columbia",
         "country": "Canada"
@@ -293627,7 +293772,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cedric_Coward",
+    "display_name": "Cedric Coward"
   },
   {
     "player": "Chaney Johnson",
@@ -293655,7 +293802,7 @@
       {
         "team": "Brooklyn Nets",
         "team_raw": "Brooklyn Nets",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "East Rutherford",
         "state": "New Jersey",
         "country": "USA"
@@ -293672,7 +293819,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chaney_Johnson",
+    "display_name": "Chaney Johnson"
   },
   {
     "player": "Chaz Lanier",
@@ -293695,7 +293844,7 @@
       {
         "team": "Detroit Pistons",
         "team_raw": "Detroit Pistons",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
@@ -293712,7 +293861,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chaz_Lanier",
+    "display_name": "Chaz Lanier"
   },
   {
     "player": "Chris Cenac Jr.",
@@ -293735,7 +293886,7 @@
       {
         "team": "Boston Celtics",
         "team_raw": "Boston Celtics",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Boston",
         "state": "Massachusetts",
         "country": "USA"
@@ -293743,7 +293894,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Cenac_Jr.",
+    "display_name": "Chris Cenac Jr."
   },
   {
     "player": "Chris Mañon",
@@ -293763,7 +293916,7 @@
       {
         "team": "Los Angeles Lakers",
         "team_raw": "Los Angeles Lakers",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
@@ -293780,14 +293933,18 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Ma%C3%B1on",
+    "display_name": "Chris Mañon"
   },
   {
     "player": "Chris Youngblood",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Youngblood",
+    "display_name": "Chris Youngblood"
   },
   {
     "player": "Christian Anderson Jr.",
@@ -293805,7 +293962,7 @@
       {
         "team": "Charlotte Hornets",
         "team_raw": "Charlotte Hornets",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
@@ -293813,7 +293970,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Christian_Anderson_Jr.",
+    "display_name": "Christian Anderson Jr."
   },
   {
     "player": "Chucky Hepburn",
@@ -293833,7 +293992,7 @@
       {
         "team": "Toronto Raptors",
         "team_raw": "Toronto Raptors",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
@@ -293850,7 +294009,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chucky_Hepburn",
+    "display_name": "Chucky Hepburn"
   },
   {
     "player": "Collin Murray-Boyles",
@@ -293873,7 +294034,7 @@
       {
         "team": "Toronto Raptors",
         "team_raw": "Toronto Raptors",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
@@ -293881,7 +294042,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Collin_Murray-Boyles",
+    "display_name": "Collin Murray-Boyles"
   },
   {
     "player": "Cooper Flagg",
@@ -293904,7 +294067,7 @@
       {
         "team": "Dallas Mavericks",
         "team_raw": "Dallas Mavericks",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
@@ -293912,7 +294075,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cooper_Flagg",
+    "display_name": "Cooper Flagg"
   },
   {
     "player": "Cormac Ryan",
@@ -293965,51 +294130,18 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
-  },
-  {
-    "player": "Craig Porter Jr.",
-    "position": "Point guard",
-    "number": [
-      "9"
-    ],
-    "birth_date": "2000-02-26",
-    "birth_place": "Terre Haute, Indiana, U.S.",
-    "high_school": "South, (Terre Haute, Indiana)",
-    "college": "* Vincennes (2018–2019) * Wichita State (2020–2023)",
-    "draft": {
-      "year": "2023"
-    },
-    "current_team": "Cleveland Cavaliers",
-    "career_history": [
-      {
-        "team": "Cleveland Cavaliers",
-        "team_raw": "Cleveland Cavaliers",
-        "years": "{{nbay|2023|start}}–present",
-        "city": "Cleveland",
-        "state": "Ohio",
-        "country": "USA"
-      },
-      {
-        "team": "Cleveland Charge",
-        "team_raw": "Cleveland Charge",
-        "years": "2024–2025",
-        "loan": true,
-        "city": "Cleveland",
-        "state": "Ohio",
-        "country": "USA"
-      }
-    ],
-    "parse_status": "success",
-    "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cormac_Ryan",
+    "display_name": "Cormac Ryan"
   },
   {
     "player": "Curtis Jones",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Curtis_Jones",
+    "display_name": "Curtis Jones"
   },
   {
     "player": "DaRon Holmes II",
@@ -294032,7 +294164,7 @@
       {
         "team": "Denver Nuggets",
         "team_raw": "Denver Nuggets",
-        "years": "{{nbay|2024|start}}–present",
+        "years": "2024–present",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
@@ -294049,7 +294181,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/DaRon_Holmes_II",
+    "display_name": "DaRon Holmes II"
   },
   {
     "player": "Dailyn Swain",
@@ -294067,7 +294201,7 @@
       {
         "team": "Chicago Bulls",
         "team_raw": "Chicago Bulls",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
@@ -294075,7 +294209,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dailyn_Swain",
+    "display_name": "Dailyn Swain"
   },
   {
     "player": "Danny Wolf",
@@ -294098,7 +294234,7 @@
       {
         "team": "Brooklyn Nets",
         "team_raw": "Brooklyn Nets",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "East Rutherford",
         "state": "New Jersey",
         "country": "USA"
@@ -294115,7 +294251,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Danny_Wolf",
+    "display_name": "Danny Wolf"
   },
   {
     "player": "David Jones García",
@@ -294159,7 +294297,7 @@
       {
         "team": "San Antonio Spurs",
         "team_raw": "San Antonio Spurs",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
@@ -294176,182 +294314,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
-  },
-  {
-    "player": "Dennis Schröder",
-    "position": "Point guard",
-    "number": [
-      "8"
-    ],
-    "birth_date": "1993-09-15",
-    "birth_place": "Braunschweig, Germany",
-    "high_school": "",
-    "college": "",
-    "draft": {
-      "year": "2013",
-      "round": "1",
-      "pick": "17",
-      "team": "Atlanta Hawks"
-    },
-    "current_team": "Cleveland Cavaliers",
-    "career_history": [
-      {
-        "team": "SG Braunschweig",
-        "team_raw": "SG Braunschweig",
-        "years": "2010–2013",
-        "city": "Braunschweig",
-        "state": "",
-        "country": "Germany"
-      },
-      {
-        "team": "Phantoms Braunschweig",
-        "team_raw": "Phantoms Braunschweig",
-        "years": "2011–2013",
-        "city": "Braunschweig",
-        "state": "",
-        "country": "Germany"
-      },
-      {
-        "team": "Atlanta Hawks",
-        "team_raw": "Atlanta Hawks",
-        "years": "{{nbay|2013|start}}–{{nbay|2017|end}}",
-        "city": "Atlanta",
-        "state": "Georgia",
-        "country": "USA"
-      },
-      {
-        "team": "Bakersfield Jam",
-        "team_raw": "Bakersfield Jam",
-        "years": "2013",
-        "loan": true,
-        "city": "Bakersfield",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "team": "Oklahoma City Thunder",
-        "team_raw": "Oklahoma City Thunder",
-        "years": "{{nbay|2018|start}}–{{nbay|2019|end}}",
-        "city": "Oklahoma City",
-        "state": "Oklahoma",
-        "country": "USA"
-      },
-      {
-        "team": "Los Angeles Lakers",
-        "team_raw": "Los Angeles Lakers",
-        "years": "{{nbay|2020|full=y}}",
-        "city": "Los Angeles",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "team": "Boston Celtics",
-        "team_raw": "Boston Celtics",
-        "years": "{{nbay|2021|full=y}}",
-        "city": "Boston",
-        "state": "Massachusetts",
-        "country": "USA"
-      },
-      {
-        "team": "Houston Rockets",
-        "team_raw": "Houston Rockets",
-        "years": "{{nbay|2021|end}}",
-        "city": "Houston",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "team": "Los Angeles Lakers",
-        "team_raw": "Los Angeles Lakers",
-        "years": "{{nbay|2022|full=y}}",
-        "city": "Los Angeles",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "team": "Toronto Raptors",
-        "team_raw": "Toronto Raptors",
-        "years": "{{nbay|2023|full=y}}",
-        "city": "Toronto",
-        "state": "Ontario",
-        "country": "Canada"
-      },
-      {
-        "team": "Brooklyn Nets",
-        "team_raw": "Brooklyn Nets",
-        "years": "2024",
-        "city": "East Rutherford",
-        "state": "New Jersey",
-        "country": "USA"
-      },
-      {
-        "team": "Golden State Warriors",
-        "team_raw": "Golden State Warriors",
-        "years": "{{nbay|2024|full=y}}",
-        "city": "San Francisco",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "team": "Detroit Pistons",
-        "team_raw": "Detroit Pistons",
-        "years": "{{nbay|2024|end}}",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "team": "Sacramento Kings",
-        "team_raw": "Sacramento Kings",
-        "years": "{{nbay|2025|full=y}}",
-        "city": "Sacramento",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "team": "Cleveland Cavaliers",
-        "team_raw": "Cleveland Cavaliers",
-        "years": "{{nbay|2025|end}}–present",
-        "city": "Cleveland",
-        "state": "Ohio",
-        "country": "USA"
-      }
-    ],
-    "parse_status": "success",
-    "status": "nba_active",
-    "last_updated": "2026-07-04"
-  },
-  {
-    "player": "Dereck Lively II",
-    "position": "Center",
-    "number": [
-      "2"
-    ],
-    "birth_date": "2004-02-12",
-    "birth_place": "Philadelphia, Pennsylvania, U.S.",
-    "high_school": "Westtown School, (West Chester, Pennsylvania)",
-    "college": "Duke (2022–2023)",
-    "draft": {
-      "year": "2023",
-      "round": "1",
-      "pick": "12",
-      "team": "Oklahoma City Thunder"
-    },
-    "current_team": "Dallas Mavericks",
-    "career_history": [
-      {
-        "team": "Dallas Mavericks",
-        "team_raw": "Dallas Mavericks",
-        "years": "{{nbay|2023|start}}–present",
-        "city": "Dallas",
-        "state": "Texas",
-        "country": "USA"
-      }
-    ],
-    "parse_status": "success",
-    "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/David_Jones_Garc%C3%ADa",
+    "display_name": "David Jones García"
   },
   {
     "player": "Derik Queen",
@@ -294374,7 +294339,7 @@
       {
         "team": "New Orleans Pelicans",
         "team_raw": "New Orleans Pelicans",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
@@ -294382,100 +294347,18 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
-  },
-  {
-    "player": "Derrick Jones Jr.",
-    "position": "Small forward / power forward",
-    "number": [
-      "5"
-    ],
-    "birth_date": "1997-02-15",
-    "birth_place": "Chester, Pennsylvania, U.S.",
-    "high_school": "",
-    "college": "UNLV (2015–2016)",
-    "draft": {
-      "year": "2016"
-    },
-    "current_team": "LA Clippers",
-    "career_history": [
-      {
-        "team": "Phoenix Suns",
-        "team_raw": "Phoenix Suns",
-        "years": "{{nbay|2016|start}}–{{nbay|2017|start}}",
-        "city": "Phoenix",
-        "state": "Arizona",
-        "country": "USA"
-      },
-      {
-        "team": "Northern Arizona Suns",
-        "team_raw": "Northern Arizona Suns",
-        "years": "2016–2017",
-        "loan": true,
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "team": "Miami Heat",
-        "team_raw": "Miami Heat",
-        "years": "{{nbay|2017|start}}–{{nbay|2019|end}}",
-        "city": "Miami",
-        "state": "Florida",
-        "country": "USA"
-      },
-      {
-        "team": "Sioux Falls Skyforce",
-        "team_raw": "Sioux Falls Skyforce",
-        "years": "2017–2018",
-        "loan": true,
-        "city": "Sioux Falls",
-        "state": "South Dakota",
-        "country": "USA"
-      },
-      {
-        "team": "Portland Trail Blazers",
-        "team_raw": "Portland Trail Blazers",
-        "years": "{{nbay|2020|full=y}}",
-        "city": "Portland",
-        "state": "Oregon",
-        "country": "USA"
-      },
-      {
-        "team": "Chicago Bulls",
-        "team_raw": "Chicago Bulls",
-        "years": "{{nbay|2021|start}}–{{nbay|2022|end}}",
-        "city": "Chicago",
-        "state": "Illinois",
-        "country": "USA"
-      },
-      {
-        "team": "Dallas Mavericks",
-        "team_raw": "Dallas Mavericks",
-        "years": "{{nbay|2023|full=y}}",
-        "city": "Dallas",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "team": "LA Clippers",
-        "team_raw": "Los Angeles Clippers",
-        "years": "{{nbay|2024|start}}–present",
-        "city": "Los Angeles",
-        "state": "California",
-        "country": "USA"
-      }
-    ],
-    "parse_status": "success",
-    "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Derik_Queen",
+    "display_name": "Derik Queen"
   },
   {
     "player": "Dillon Mitchell",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dillon_Mitchell",
+    "display_name": "Dillon Mitchell"
   },
   {
     "player": "Drake Powell",
@@ -294498,7 +294381,7 @@
       {
         "team": "Brooklyn Nets",
         "team_raw": "Brooklyn Nets",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "East Rutherford",
         "state": "New Jersey",
         "country": "USA"
@@ -294515,7 +294398,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Drake_Powell",
+    "display_name": "Drake Powell"
   },
   {
     "player": "Dylan Cardwell",
@@ -294535,7 +294420,7 @@
       {
         "team": "Sacramento Kings",
         "team_raw": "Sacramento Kings",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
@@ -294552,7 +294437,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dylan_Cardwell",
+    "display_name": "Dylan Cardwell"
   },
   {
     "player": "Dylan Harper",
@@ -294575,7 +294462,7 @@
       {
         "team": "San Antonio Spurs",
         "team_raw": "San Antonio Spurs",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
@@ -294583,7 +294470,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dylan_Harper",
+    "display_name": "Dylan Harper"
   },
   {
     "player": "Egor Dëmin",
@@ -294614,7 +294503,7 @@
       {
         "team": "Brooklyn Nets",
         "team_raw": "Brooklyn Nets",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "East Rutherford",
         "state": "New Jersey",
         "country": "USA"
@@ -294622,7 +294511,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Egor_D%C3%ABmin",
+    "display_name": "Egor Dëmin"
   },
   {
     "player": "Ernest Udeh Jr.",
@@ -294642,7 +294533,7 @@
       {
         "team": "Cleveland Cavaliers",
         "team_raw": "Cleveland Cavaliers",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
@@ -294659,7 +294550,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ernest_Udeh_Jr.",
+    "display_name": "Ernest Udeh Jr."
   },
   {
     "player": "Ethan Thompson",
@@ -294719,7 +294612,7 @@
       {
         "team": "Indiana Pacers",
         "team_raw": "Indiana Pacers",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
@@ -294736,7 +294629,9 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ethan_Thompson",
+    "display_name": "Ethan Thompson"
   },
   {
     "player": "Felix Okpara",
@@ -294759,7 +294654,7 @@
       {
         "team": "Washington Wizards",
         "team_raw": "Washington Wizards",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
@@ -294767,7 +294662,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Felix_Okpara",
+    "display_name": "Felix Okpara"
   },
   {
     "player": "Hannes Steinbach",
@@ -294793,7 +294690,7 @@
       {
         "team": "Charlotte Hornets",
         "team_raw": "Charlotte Hornets",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
@@ -294801,7 +294698,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hannes_Steinbach",
+    "display_name": "Hannes Steinbach"
   },
   {
     "player": "Hansen Yang",
@@ -294832,7 +294731,7 @@
       {
         "team": "Portland Trail Blazers",
         "team_raw": "Portland Trail Blazers",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
@@ -294849,7 +294748,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hansen_Yang",
+    "display_name": "Hansen Yang"
   },
   {
     "player": "Hayden Gray",
@@ -294877,7 +294778,7 @@
       {
         "team": "Utah Jazz",
         "team_raw": "Utah Jazz",
-        "years": "{{nbay|2025|end}}–present",
+        "years": "2025–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
@@ -294885,7 +294786,9 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hayden_Gray",
+    "display_name": "Hayden Gray"
   },
   {
     "player": "Henri Veesaar",
@@ -294908,7 +294811,7 @@
       {
         "team": "Atlanta Hawks",
         "team_raw": "Atlanta Hawks",
-        "years": "{{nbay|2026|start}}–present",
+        "years": "2026–present",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
@@ -294916,21 +294819,27 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Henri_Veesaar",
+    "display_name": "Henri Veesaar"
   },
   {
     "player": "Herbert Jones",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Herbert_Jones",
+    "display_name": "Herbert Jones"
   },
   {
     "player": "Hugo González",
     "career_history": [],
     "parse_status": "no_career_data",
     "status": "retired",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hugo_Gonz%C3%A1lez",
+    "display_name": "Hugo González"
   },
   {
     "player": "Hunter Dickinson",
@@ -294950,7 +294859,7 @@
       {
         "team": "New Orleans Pelicans",
         "team_raw": "New Orleans Pelicans",
-        "years": "{{nbay|2025|start}}–present",
+        "years": "2025–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
@@ -294967,6 +294876,8 @@
     ],
     "parse_status": "success",
     "status": "overseas_active",
-    "last_updated": "2026-07-04"
+    "last_updated": "2026-07-04",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hunter_Dickinson",
+    "display_name": "Hunter Dickinson"
   }
 ]
