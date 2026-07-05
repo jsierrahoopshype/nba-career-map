@@ -2,6 +2,14 @@
 
 - Players updated: **1** (0 new)
 - New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 1
+
+## 2026-07-05 — single run
+
+- Players updated: **1** (0 new)
+- New teams discovered: **0**
 - Team moves detected: **1**
 - Status changes: **1** (0 → overseas, 0 → retired)
 - Wikipedia requests: 1
