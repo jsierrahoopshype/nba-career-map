@@ -39,7 +39,7 @@ from team_normalizer import TeamNormalizer
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
 from player_status import (classify_status, NBA_ACTIVE, OVERSEAS_ACTIVE,
-                           RETIRED)
+                           RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
 from names import normkey, url_key, canonical_url
 
@@ -370,7 +370,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                     {"player": key, "from": prev_status, "to": new_status})
                 if new_status == OVERSEAS_ACTIVE:
                     summary["newly_overseas"].append(key)
-                elif new_status == RETIRED:
+                elif new_status == RETIRED_STATUS:
                     summary["newly_retired"].append(key)
 
     summary["requests"] = client.requests_made
@@ -404,7 +404,7 @@ def _persist(db: Database, summary: dict) -> None:
     # active/retired refresh from the stored tracking status
     nba_active = sorted(p["player"] for p in players if p.get("status") == NBA_ACTIVE)
     overseas = sorted(p["player"] for p in players if p.get("status") == OVERSEAS_ACTIVE)
-    retired = sorted(p["player"] for p in players if p.get("status") == RETIRED)
+    retired = sorted(p["player"] for p in players if p.get("status") == RETIRED_STATUS)
     write_json(ACTIVE, {"count": len(nba_active) + len(overseas),
                         "nba_active": nba_active, "overseas_active": overseas})
     write_json(RETIRED, {"count": len(retired), "players": retired})

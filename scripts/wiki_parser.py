@@ -77,6 +77,33 @@ def parse_infobox_fields(text: str) -> dict[str, str]:
     return fields
 
 
+_NBAY_RE = re.compile(
+    r"\{\{\s*nbay\s*\|\s*(\d{4})\s*(?:\|\s*([A-Za-z]*))?[^{}]*\}\}",
+    re.IGNORECASE)
+
+
+def _expand_nbay(text: str) -> str:
+    """Expand {{Nbay}} NBA-season templates, per Template:Nbay semantics:
+
+        {{nbay|YYYY|start}} -> "YYYY"        (start year of the YYYY–YY+1 season)
+        {{nbay|YYYY|end}}   -> "YYYY+1"      (end year of that season)
+        {{nbay|YYYY}}       -> "YYYY–YY+1"   (e.g. "2025–26")
+
+    Only the template text is replaced; surrounding text (e.g. "–present") is
+    left untouched.
+    """
+    def repl(m: "re.Match") -> str:
+        year = int(m.group(1))
+        kind = (m.group(2) or "").lower()
+        if kind == "start":
+            return str(year)
+        if kind == "end":
+            return str(year + 1)
+        return f"{year}–{(year + 1) % 100:02d}"  # plain form: "YYYY–YY"
+
+    return _NBAY_RE.sub(repl, text)
+
+
 def _clean_text(val: str) -> str:
     if not val:
         return ""
@@ -86,9 +113,9 @@ def _clean_text(val: str) -> str:
     n = n.replace("'''", "").replace("''", "")
     n = re.sub(r"<br\s*/?>", ", ", n)
     n = re.sub(r"<[^>]+>", "", n)
-    # expand {{nbay|YYYY|start|end}} (NBA season year) to its year argument,
-    # then strip any other leftover templates so raw wikitext never persists.
-    n = re.sub(r"\{\{\s*nbay\s*\|\s*(\d{4})[^{}]*\}\}", r"\1", n, flags=re.IGNORECASE)
+    # expand {{nbay|...}} season templates (preserving surrounding text such as
+    # "–present"), then strip any other leftover templates.
+    n = _expand_nbay(n)
     n = re.sub(r"\{\{[^{}]*\}\}", "", n)
     n = re.sub(r"\s+", " ", n).strip().strip(",").strip()
     return n
