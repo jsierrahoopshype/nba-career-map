@@ -244,6 +244,10 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
         key = canonical_title or name
     else:
         key = existing_name  # keep existing (frontend-load-bearing) primary key
+    # never create/persist a record with an empty name (guards against junk
+    # rows like the blank-name seed artifact)
+    if not str(key or "").strip():
+        return None, [], False
     rec["player"] = key
     rec["display_name"] = canonical_title or rec.get("display_name") or key
     aliases = set(base.get("aliases", []))
@@ -396,7 +400,11 @@ def _run_review(db: Database, client: WikipediaClient, summary: dict) -> None:
 
 
 def _persist(db: Database, summary: dict) -> None:
-    players = [db.by_name[n] for n in db.order]
+    # defensively drop any empty-name record so junk rows never reach disk
+    for empty in [n for n in list(db.order) if not str(n or "").strip()]:
+        db.by_name.pop(empty, None)
+        db.order.remove(empty)
+    players = [db.by_name[n] for n in db.order if str(n or "").strip()]
     write_json(CAREERS, players)
     write_json(LOCATIONS, dict(sorted(db.locations.items())))
     write_json(REVIEW, dict(sorted(db.review.items())))

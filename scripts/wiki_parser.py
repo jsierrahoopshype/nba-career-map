@@ -121,6 +121,27 @@ def _clean_text(val: str) -> str:
     return n
 
 
+def _clean_years(raw: str) -> str:
+    """Clean a career-history year range, guaranteeing the "present" / open-ended
+    marker survives to storage.
+
+    The generic template strip in _clean_text removes any templated separator or
+    word (e.g. {{ndash}}, {{small|present}}), which can silently collapse
+    "YYYY–present" down to "YYYY". Here we detect the "present" (or trailing
+    open-ended dash) signal in the RAW wikitext and reconstruct it after cleaning,
+    so a current stint is never stored as a bare year.
+    """
+    cleaned = _clean_text(raw)
+    if re.search(r"present", raw, re.IGNORECASE):
+        head = re.split(r"present", cleaned, flags=re.IGNORECASE)[0]
+        head = head.rstrip(" –-")  # trim trailing dash/space
+        return f"{head}–present" if head else "present"
+    # open-ended range with no explicit "present" (e.g. "2021–") — keep the dash
+    if re.search(r"[–-]\s*$", raw) and not re.search(r"[–-]\s*$", cleaned):
+        return cleaned.rstrip(" –-") + "–"
+    return cleaned
+
+
 def _parse_date_template(val: str) -> str:
     """Extract YYYY-MM-DD (or partial) from {{birth date...}} / {{death date...}}."""
     if not val:
@@ -159,7 +180,7 @@ def _parse_career_history(fields: dict[str, str], normalizer: TeamNormalizer):
     history, raw_names = [], []
     for i in sorted(idxs):
         team_raw = fields.get(f"team{i}", "")
-        years = _clean_text(fields.get(f"years{i}", ""))
+        years = _clean_years(fields.get(f"years{i}", ""))
         if not team_raw:
             continue
         loan = "→" in team_raw or "(loan)" in team_raw.lower()
