@@ -421,6 +421,33 @@
       ],
       "url_backfilled": 110,
       "requests": 0
+    },
+    {
+      "date": "2026-07-05",
+      "mode": "single",
+      "players_updated": [
+        "Jonathan Kuminga"
+      ],
+      "new_players": [],
+      "new_teams": [],
+      "team_moves": [
+        {
+          "player": "Jonathan Kuminga",
+          "from": "Santa Cruz Warriors",
+          "to": "Atlanta Hawks"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Jonathan Kuminga",
+          "from": "overseas_active",
+          "to": "nba_active"
+        }
+      ],
+      "newly_overseas": [],
+      "newly_retired": [],
+      "requests": 1,
+      "budget_exhausted": false
     }
   ]
 }

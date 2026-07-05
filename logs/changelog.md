@@ -1,3 +1,13 @@
+## 2026-07-05 — single run
+
+- Players updated: **1** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 1
+  - Jonathan Kuminga: Santa Cruz Warriors → Atlanta Hawks
+  - Jonathan Kuminga: [overseas_active → nba_active]
+
 ## 2026-07-04 — dedupe merge migration
 
 - Merged **8** duplicate player pairs (kept ASCII primary key + canonical `display_name` + old spelling as alias)
