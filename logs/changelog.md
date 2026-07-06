@@ -1,5 +1,30 @@
 ## 2026-07-06 — incremental run
 
+- Players updated: **1285** (0 new)
+- New teams discovered: **3**
+- Team moves detected: **14**
+- Status changes: **2** (0 → overseas, 0 → retired)
+- Wikipedia requests: 1558
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder, South Bay / Coachella Valley Lakers
+  - Tim Hardaway Jr: Denver Nuggets → Miami Heat
+  - Giannis Antetokounmpo: Miami Heat --> → Miami Heat
+  - Koby Brea: Valley Suns → Phoenix Suns
+  - Taj Gibson: Charlotte Hornets → Memphis Grizzlies
+  - Trae Young: Atlanta Hawks → Washington Wizards
+  - Tyler Herro: Miami Heat → Milwaukee Bucks
+  - Tyus Jones: Orlando Magic → Denver Nuggets
+  - Vit Krejci: Atlanta Hawks → Portland Trail Blazers
+  - Anfernee Simons: Chicago Bulls → Philadelphia 76ers
+  - Bobby Portis: Milwaukee Bucks → Miami Heat
+  - Dean Wade: Cleveland Cavaliers → Philadelphia 76ers
+  - Jaime Jaquez: Miami Heat → Milwaukee Bucks
+  - Kel'el Ware: Miami Heat → Milwaukee Bucks
+  - Kasparas Jakučionis: Miami Heat → Milwaukee Bucks
+  - Giannis Antetokounmpo: [overseas_active → nba_active]
+  - Koby Brea: [overseas_active → nba_active]
+
+## 2026-07-06 — incremental run
+
 - Players updated: **68** (1 new)
 - New teams discovered: **0**
 - Team moves detected: **3**

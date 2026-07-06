@@ -512,7 +512,7 @@
       {
         "team": "Dallas Mavericks",
         "team_raw": "Dallas Mavericks",
-        "years": "2018",
+        "years": "",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
@@ -13486,9 +13486,17 @@
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
+      },
+      {
+        "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2026–present",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "country": "USA"
       }
     ],
-    "current_team": "Chicago Bulls",
+    "current_team": "Philadelphia 76ers",
     "status": "nba_active",
     "position": "Shooting guard / point guard",
     "birth_date": "1999-06-08",
@@ -13501,7 +13509,10 @@
       "team": "Portland Trail Blazers"
     },
     "display_name": "Anfernee Simons",
-    "last_updated": "2026-07-06"
+    "last_updated": "2026-07-06",
+    "number": [
+      "5"
+    ]
   },
   {
     "player": "Angel Delgado",
@@ -29997,17 +30008,25 @@
       {
         "team": "Milwaukee Bucks",
         "team_raw": "Milwaukee Bucks",
-        "years": "2020–present",
+        "years": "2020–2026",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
+      },
+      {
+        "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2026–present",
+        "city": "Miami",
+        "state": "Florida",
+        "country": "USA"
       }
     ],
-    "current_team": "Milwaukee Bucks",
+    "current_team": "Miami Heat",
     "status": "nba_active",
     "position": "Power forward",
     "number": [
-      "9"
+      "95"
     ],
     "birth_date": "1995-02-10",
     "birth_place": "Little Rock, Arkansas, U.S.",
@@ -35380,7 +35399,7 @@
       "28"
     ],
     "birth_date": "2003-10-30",
-    "birth_place": "Wilton Manors, Florida, U.S.",
+    "birth_place": "Orlando, Florida, U.S.",
     "high_school": "Lake Highland Preparatory, (Orlando, Florida)",
     "college": "Ohio State (2022–2023)",
     "draft": {
@@ -56246,7 +56265,10 @@
       "team": "Cleveland Cavaliers"
     },
     "display_name": "Collin Sexton",
-    "last_updated": "2026-07-06"
+    "last_updated": "2026-07-06",
+    "number": [
+      "18"
+    ]
   },
   {
     "player": "Conner Henry",
@@ -72766,13 +72788,21 @@
         "city": "Canton",
         "state": "Ohio",
         "country": "USA"
+      },
+      {
+        "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2026–present",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "country": "USA"
       }
     ],
-    "current_team": "Cleveland Cavaliers",
+    "current_team": "Philadelphia 76ers",
     "status": "nba_active",
-    "position": "Power forward / Small Forward",
+    "position": "Power forward / small forward",
     "number": [
-      "32"
+      "45"
     ],
     "birth_date": "1996-11-20",
     "birth_place": "Wichita, Kansas, U.S.",
@@ -74218,7 +74248,7 @@
       {
         "team": "Sacramento Kings",
         "team_raw": "Sacramento Kings",
-        "years": "2024–present",
+        "years": "2024–2026",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
@@ -105595,7 +105625,7 @@
       {
         "team": "Phoenix Suns",
         "team_raw": "Phoenix Suns",
-        "years": "2022",
+        "years": "",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
@@ -112270,24 +112300,24 @@
         "country": ""
       },
       {
-        "team": "Milwaukee Bucks <!--",
-        "team_raw": "Milwaukee Bucks <!--",
-        "years": "2013–present",
-        "city": "",
-        "state": "",
-        "country": ""
+        "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2013–2026",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "country": "USA"
       },
       {
-        "team": "Miami Heat -->",
-        "team_raw": "Miami Heat -->",
+        "team": "Miami Heat",
+        "team_raw": "Miami Heat",
         "years": "2026–present",
-        "city": "",
-        "state": "",
-        "country": ""
+        "city": "Miami",
+        "state": "Florida",
+        "country": "USA"
       }
     ],
-    "current_team": "Miami Heat -->",
-    "status": "overseas_active",
+    "current_team": "Miami Heat",
+    "status": "nba_active",
     "position": "Power forward",
     "number": [
       "34"
@@ -130557,17 +130587,25 @@
       {
         "team": "Miami Heat",
         "team_raw": "Miami Heat",
-        "years": "2023–present",
+        "years": "2023–2026",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
+      },
+      {
+        "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2026–present",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "country": "USA"
       }
     ],
-    "current_team": "Miami Heat",
+    "current_team": "Milwaukee Bucks",
     "status": "nba_active",
     "position": "Small forward / shooting guard",
     "number": [
-      "11"
+      "24"
     ],
     "birth_date": "2001-02-18",
     "birth_place": "Irvine, California, U.S.",
@@ -132133,7 +132171,10 @@
     "high_school": "* Aquinas Institute, (Rochester, New York) * SPIRE Academy, (Geneva, Ohio)",
     "college": "* Siena (2018–2021) * Penn State (2021–2023)",
     "display_name": "Jalen Pickett",
-    "last_updated": "2026-07-06"
+    "last_updated": "2026-07-06",
+    "number": [
+      "24"
+    ]
   },
   {
     "player": "Jalen Rose",
@@ -163121,7 +163162,7 @@
       "team": "Golden State Warriors"
     },
     "display_name": "Jonathan Kuminga",
-    "last_updated": "2026-07-05"
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Jonathon Simmons",
@@ -229587,7 +229628,7 @@
     "status": "nba_active",
     "position": "Center",
     "number": [
-      "33"
+      "32"
     ],
     "birth_date": "1999-04-17",
     "birth_place": "Greenville, South Carolina, U.S.",
@@ -243220,36 +243261,56 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2020-2021",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2020–21",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2021–2023",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "2023-2025",
         "team": "New York Knicks",
+        "team_raw": "New York Knicks",
+        "years": "2023–2025",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2025–present",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "Sacramento Kings",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward",
+    "number": [
+      "9"
+    ],
+    "birth_date": "1999-09-19",
+    "birth_place": "Port Harcourt, Rivers State, Nigeria",
+    "high_school": "* Our Saviour Lutheran School, (The Bronx, New York) * St. Benedict's Prep, (Newark, New Jersey) * Montverde Academy, (Montverde, Florida)",
+    "college": "Memphis (2019–2020)",
+    "draft": {
+      "year": "2020",
+      "round": "1",
+      "pick": "20",
+      "team": "Miami Heat"
+    },
+    "display_name": "Precious Achiuwa",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Predrag Drobnjak",
@@ -243847,36 +243908,53 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2024",
         "team": "New York Knicks",
+        "team_raw": "New York Knicks",
+        "years": "2021–2024",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2024",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2024",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2024–25",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2025",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2025–2026",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       }
     ],
     "current_team": "Philadelphia 76ers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard / Small forward",
+    "birth_date": "2000-05-08",
+    "birth_place": "Houston, Texas, U.S.",
+    "high_school": "The Woodlands College Park, (The Woodlands, Texas)",
+    "college": "* Kansas (2018–2019) * Houston (2019–2021)",
+    "draft": {
+      "year": "2021",
+      "round": "1",
+      "pick": "25",
+      "team": "Los Angeles Clippers"
+    },
+    "display_name": "Quentin Grimes",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Quentin Richardson",
@@ -254753,22 +254831,40 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2019-2023",
         "team": "New York Knicks",
+        "team_raw": "New York Knicks",
+        "years": "2019–2023",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2023-2026",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2023–present",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       }
     ],
     "current_team": "Toronto Raptors",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard / small forward",
+    "number": [
+      "9"
+    ],
+    "birth_date": "2000-06-14",
+    "birth_place": "Toronto, Ontario, Canada",
+    "high_school": "* St. Marcellinus, (Mississauga, Ontario) * Montverde Academy, (Montverde, Florida)",
+    "college": "Duke (2018–2019)",
+    "draft": {
+      "year": "2019",
+      "round": "1",
+      "pick": "3",
+      "team": "New York Knicks"
+    },
+    "display_name": "RJ Barrett",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "RJ Hampton",
@@ -256482,8 +256578,8 @@
   },
   {
     "player": "Robert Williams",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Williams_(basketball,_born_1997)",
-    "parse_status": "success",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Williams",
+    "parse_status": "no_career_data",
     "career_history": [
       {
         "years": "2018-2023",
@@ -256508,7 +256604,9 @@
       }
     ],
     "current_team": "Portland Trail Blazers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Robert Williams",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Robert Woodard",
@@ -261576,54 +261674,74 @@
   },
   {
     "player": "Royce O'Neale",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Royce_O%27Neale",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Royce_O'Neale",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2015-2016",
         "team": "Riesen Ludwigsburg",
+        "team_raw": "Riesen Ludwigsburg",
+        "years": "2015–2016",
         "city": "Ludwigsburg",
         "state": "",
         "country": "Germany"
       },
       {
-        "years": "2016-2017",
         "team": "Gran Canaria",
+        "team_raw": "Gran Canaria",
+        "years": "2016–2017",
         "city": "Las Palmas",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2017-2022",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "team_raw": "Utah Jazz",
+        "years": "2017–2022",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
-        "years": "2017",
         "team": "Salt Lake City Stars",
+        "team_raw": "Salt Lake City Stars",
+        "years": "2017",
+        "loan": true,
         "city": "Salt Lake City",
         "state": "Utah",
         "country": "USA"
       },
       {
-        "years": "2022-2024",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "team_raw": "Brooklyn Nets",
+        "years": "2022–2024",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2024–present",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       }
     ],
     "current_team": "Phoenix Suns",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward",
+    "number": [
+      "00"
+    ],
+    "birth_date": "1993-06-05",
+    "birth_place": "Killeen, Texas, U.S.",
+    "high_school": "Harker Heights, (Harker Heights, Texas)",
+    "college": "* Denver (2011–2013) * Baylor (2013–2015)",
+    "draft": {
+      "year": "2015"
+    },
+    "display_name": "Royce O'Neale",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Royce White",
@@ -262216,36 +262334,55 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2011-2013",
         "team": "Cholet",
+        "team_raw": "Cholet",
+        "years": "2011–2013",
         "city": "Cholet",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2013-2022",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "team_raw": "Utah Jazz",
+        "years": "2013–2022",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
-        "years": "2013-2014",
         "team": "Bakersfield Jam",
+        "team_raw": "Bakersfield Jam",
+        "years": "2013–2014",
+        "loan": true,
         "city": "Bakersfield",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2022-2026",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2022–present",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       }
     ],
     "current_team": "Minnesota Timberwolves",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center",
+    "number": [
+      "27"
+    ],
+    "birth_date": "1992-06-26",
+    "birth_place": "Saint-Quentin, France",
+    "draft": {
+      "year": "2013",
+      "round": "1",
+      "pick": "27",
+      "team": "Denver Nuggets"
+    },
+    "display_name": "Rudy Gobert",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Rudy Hackett",
@@ -262858,57 +262995,77 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2008-2019",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2008–2019",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2019–20",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
         "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2020–21",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2021–2023",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "LA Clippers",
+        "team_raw": "Los Angeles Clippers",
+        "years": "2023–2024",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "2024–25",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2025–26",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "Sacramento Kings",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "birth_date": "1988-11-12",
+    "birth_place": "Long Beach, California, U.S.",
+    "high_school": "Leuzinger (Lawndale, California)",
+    "college": "UCLA (2006–2008)",
+    "draft": {
+      "year": "2008",
+      "round": "1",
+      "pick": "4",
+      "team": "Seattle SuperSonics"
+    },
+    "display_name": "Russell Westbrook",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Rusty Larue",
@@ -264131,29 +264288,48 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2020-2023",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2020–2023",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2023–2024",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "New Orleans Pelicans",
+        "team_raw": "New Orleans Pelicans",
+        "years": "2025–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
       }
     ],
     "current_team": "New Orleans Pelicans",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward / shooting guard",
+    "number": [
+      "41"
+    ],
+    "birth_date": "1999-04-09",
+    "birth_place": "Charlotte, North Carolina, U.S.",
+    "high_school": "*DeMatha Catholic, (Hyattsville, Maryland) *Sidwell Friends School, (Washington, D.C.)",
+    "college": "Villanova (2018–2020)",
+    "draft": {
+      "year": "2020",
+      "round": "1",
+      "pick": "19",
+      "team": "Brooklyn Nets"
+    },
+    "display_name": "Saddiq Bey",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Saer Sene",
@@ -264847,50 +265023,74 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2020-2021",
         "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2020–21",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Memphis Hustle",
+        "team_raw": "Memphis Hustle",
+        "years": "2021",
+        "loan": true,
         "city": "Memphis",
         "state": "Tennessee",
         "country": "USA"
       },
       {
-        "years": "2021-2022",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2021–22",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
-        "years": "2021",
         "team": "Memphis Hustle",
+        "team_raw": "Memphis Hustle",
+        "years": "2021",
+        "loan": true,
         "city": "Memphis",
         "state": "Tennessee",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
         "team": "Cleveland Charge",
+        "team_raw": "Cleveland Charge",
+        "years": "2022–2023",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2023-2026",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2023–present",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       }
     ],
     "current_team": "Cleveland Cavaliers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard",
+    "number": [
+      "5"
+    ],
+    "birth_date": "1996-05-15",
+    "birth_place": "Ames, Iowa, U.S.",
+    "high_school": "Bountiful (Bountiful, Utah)",
+    "college": "Utah State (2016–2020)",
+    "draft": {
+      "year": "2020",
+      "round": "2",
+      "pick": "60",
+      "team": "New Orleans Pelicans"
+    },
+    "display_name": "Sam Merrill",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Sam Mitchell",
@@ -265741,43 +265941,63 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2023",
         "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2021–2023",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
         "team": "Wisconsin Herd",
+        "team_raw": "Wisconsin Herd",
+        "years": "2021–2023",
+        "loan": true,
         "city": "Oshkosh",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2023-2025",
         "team": "San Antonio Spurs",
+        "team_raw": "San Antonio Spurs",
+        "years": "2023–2025",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2023",
         "team": "Austin Spurs",
+        "team_raw": "Austin Spurs",
+        "years": "2023",
+        "loan": true,
         "city": "Austin",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2025–26",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       }
     ],
     "current_team": "Toronto Raptors",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward / center",
+    "birth_date": "1999-05-23",
+    "birth_place": "New York City, New York, U.S.",
+    "high_school": "Montverde Academy, (Montverde, Florida)",
+    "college": "Seton Hall (2017–2021)",
+    "draft": {
+      "year": "2021",
+      "round": "2",
+      "pick": "54",
+      "team": "Indiana Pacers"
+    },
+    "display_name": "Sandro Mamukelashvili",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Santiago Aldama",
@@ -266324,22 +266544,33 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2023",
         "team": "NBA G League Ignite",
+        "team_raw": "NBA G League Ignite",
+        "years": "2021–2023",
         "city": "Henderson",
         "state": "Nevada",
         "country": "USA"
       },
       {
-        "years": "2023-2026",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2023–present",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       }
     ],
     "current_team": "Portland Trail Blazers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "00"
+    ],
+    "birth_date": "2004-02-03",
+    "birth_place": "Marietta, Georgia, U.S.",
+    "high_school": "Carlton J. Kell (Marietta, Georgia)",
+    "display_name": "Scoot Henderson",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Scooter McCray",
@@ -267341,15 +267572,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2026",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2021–present",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       }
     ],
     "current_team": "Toronto Raptors",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward / small forward",
+    "number": [
+      "4"
+    ],
+    "birth_date": "2001-08-01",
+    "birth_place": "West Palm Beach, Florida, U.S.",
+    "high_school": "* Cardinal Newman, (West Palm Beach, Florida) * NSU University School, (Fort Lauderdale, Florida) * Montverde Academy, (Montverde, Florida)",
+    "college": "Florida State (2020–2021)",
+    "draft": {
+      "year": "2021",
+      "round": "1",
+      "pick": "4",
+      "team": "Toronto Raptors"
+    },
+    "display_name": "Scottie Barnes",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Scottie Lewis",
@@ -270023,106 +270271,130 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2013-2014",
         "team": "Santa Cruz Warriors",
+        "team_raw": "Santa Cruz Warriors",
+        "years": "2013–2014",
         "city": "Santa Cruz",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2013-2014",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2013–14",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
-        "years": "2014",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2014",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2014-2015",
         "team": "Erie BayHawks",
+        "team_raw": "Erie BayHawks",
+        "years": "2014–2015",
         "city": "Erie",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2015",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2015",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2015-2016",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2015–16",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2016-2018",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2016–2018",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2018-2019",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2018–19",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2019–20",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2020-2022",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2020–2022",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "team_raw": "Brooklyn Nets",
+        "years": "2022–2023",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2023–24",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Charlotte Hornets",
+        "team_raw": "Charlotte Hornets",
+        "years": "2024–2025",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2025–26",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "Golden State Warriors",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard / point guard",
+    "birth_date": "1990-08-23",
+    "birth_place": "Charlotte, North Carolina, U.S.",
+    "high_school": "Charlotte Christian, (Charlotte, North Carolina)",
+    "college": "* Liberty (2008–2009) * Duke (2010–2013)",
+    "draft": {
+      "year": "2013"
+    },
+    "display_name": "Seth Curry",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Seth Lundy",
@@ -270466,15 +270738,31 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2022-2026",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2022–present",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       }
     ],
     "current_team": "Portland Trail Blazers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard",
+    "number": [
+      "17"
+    ],
+    "birth_date": "2003-05-30",
+    "birth_place": "London, Ontario, Canada",
+    "high_school": "* H. B. Beal, (London, Ontario) * Sunrise Christian Academy, (Bel Aire, Kansas) * Dream City Christian, (Glendale, Arizona)",
+    "draft": {
+      "year": "2022",
+      "round": "1",
+      "pick": "7",
+      "team": "Portland Trail Blazers"
+    },
+    "display_name": "Shaedon Sharpe",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Shai Gilgeous-Alexander",
@@ -270482,22 +270770,40 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2018-2019",
         "team": "LA Clippers",
+        "team_raw": "Los Angeles Clippers",
+        "years": "2018–19",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2026",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2019–present",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       }
     ],
     "current_team": "Oklahoma City Thunder",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard / shooting guard",
+    "number": [
+      "2"
+    ],
+    "birth_date": "1998-07-12",
+    "birth_place": "Toronto, Ontario, Canada",
+    "high_school": "* St. Thomas More, (Hamilton, Ontario, Canada) * Sir Allan MacNab, (Hamilton, Ontario, Canada) * Hamilton Heights Christian Academy, (Chattanooga, Tennessee, U.S.)",
+    "college": "Kentucky (2017–2018)",
+    "draft": {
+      "year": "2018",
+      "round": "1",
+      "pick": "11",
+      "team": "Charlotte Hornets"
+    },
+    "display_name": "Shai Gilgeous-Alexander",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Shake Milton",
@@ -273972,71 +274278,92 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2012-2016",
         "team": "Virtus Bologna",
+        "team_raw": "Virtus Bologna",
+        "years": "2012–2016",
         "city": "Bologna",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2016-2019",
         "team": "Olimpia Milano",
+        "team_raw": "Olimpia Milano",
+        "years": "2016–2019",
         "city": "Milan",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2017-2018",
         "team": "Vanoli Cremona",
+        "team_raw": "Vanoli Cremona",
+        "years": "2017–2018",
+        "loan": true,
         "city": "Cremona",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2019-2020",
         "team": "Reggiana",
+        "team_raw": "Reggiana",
+        "years": "2019–2020",
         "city": "Reggio Emilia",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2020-2021",
         "team": "Alba Berlin",
+        "team_raw": "Alba Berlin",
+        "years": "2020–2021",
         "city": "Berlin",
         "state": "",
         "country": "Germany"
       },
       {
-        "years": "2021-2022",
         "team": "Baskonia",
+        "team_raw": "Baskonia",
+        "years": "2021–2022",
         "city": "Vitoria",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2022-2024",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "team_raw": "Utah Jazz",
+        "years": "2022–2024",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2024–2025",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2025–present",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       }
     ],
     "current_team": "Miami Heat",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward",
+    "number": [
+      "0"
+    ],
+    "birth_date": "1995-12-09",
+    "birth_place": "Pescara, Italy",
+    "draft": {
+      "year": "2017"
+    },
+    "display_name": "Simone Fontecchio",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Sindarius Thornwell",
@@ -277354,15 +277681,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2009-2026",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2009–present",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "Golden State Warriors",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "30"
+    ],
+    "birth_date": "1988-03-14",
+    "birth_place": "Akron, Ohio, U.S.",
+    "high_school": "Charlotte Christian, (Charlotte, North Carolina)",
+    "college": "Davidson (2006–2009)",
+    "draft": {
+      "year": "2009",
+      "round": "1",
+      "pick": "7",
+      "team": "Golden State Warriors"
+    },
+    "display_name": "Stephen Curry",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Stephen Graham",
@@ -279780,43 +280124,64 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2011",
         "team": "Wellington Saints",
+        "team_raw": "Wellington Saints",
+        "years": "2011",
         "city": "Wellington",
         "state": "",
         "country": "New Zealand"
       },
       {
-        "years": "2013-2020",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2013–2020",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
         "team": "New Orleans Pelicans",
+        "team_raw": "New Orleans Pelicans",
+        "years": "2020–21",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
       },
       {
-        "years": "2021-2024",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2021–2024",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
-        "years": "2024-2026",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2024–present",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       }
     ],
     "current_team": "Houston Rockets",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center",
+    "number": [
+      "12"
+    ],
+    "birth_date": "1993-07-20",
+    "birth_place": "Rotorua, New Zealand",
+    "high_school": "*Rotorua Lakes, (Rotorua, New Zealand) *Scots College, (Wellington, New Zealand) *Notre Dame Prep, (Fitchburg, Massachusetts)",
+    "college": "Pittsburgh (2012–2013)",
+    "draft": {
+      "year": "2013",
+      "round": "1",
+      "pick": "12",
+      "team": "Oklahoma City Thunder"
+    },
+    "display_name": "Steven Adams",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Steven Hill",
@@ -280679,99 +281044,126 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2012-2014",
         "team": "Cherkaski Mavpy",
+        "team_raw": "Cherkaski Mavpy",
+        "years": "2012–2014",
         "city": "Cherkasy",
         "state": "",
         "country": "Ukraine"
       },
       {
-        "years": "2018-2019",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2018–19",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2018-2019",
         "team": "South Bay Lakers",
+        "team_raw": "South Bay Lakers",
+        "years": "2018–2019",
+        "loan": true,
         "city": "El Segundo",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2021",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2019–2021",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2019",
         "team": "Grand Rapids Drive",
+        "team_raw": "Grand Rapids Drive",
+        "years": "2019",
+        "loan": true,
         "city": "Grand Rapids",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2021",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2021-2022",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2021–22",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "2022",
         "team": "Raptors 905",
+        "team_raw": "Raptors 905",
+        "years": "2022",
+        "loan": true,
         "city": "Mississauga",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "2022-2023",
         "team": "New York Knicks",
+        "team_raw": "New York Knicks",
+        "years": "2022–23",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2022",
         "team": "Westchester Knicks",
+        "team_raw": "Westchester Knicks",
+        "years": "2022",
+        "loan": true,
         "city": "White Plains",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2023",
         "team": "Charlotte Hornets",
+        "team_raw": "Charlotte Hornets",
+        "years": "2023",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Boston Celtics",
+        "team_raw": "Boston Celtics",
+        "years": "2023–24",
         "city": "Boston",
         "state": "Massachusetts",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "team_raw": "Utah Jazz",
+        "years": "2024–present",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
     "current_team": "Utah Jazz",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward / shooting guard",
+    "number": [
+      "10"
+    ],
+    "birth_date": "1997-06-10",
+    "birth_place": "Cherkasy, Ukraine",
+    "high_school": "Cherkasy First City Gymnasia (Cherkasy, Ukraine)",
+    "college": "Kansas (2014–2018)",
+    "display_name": "Sviatoslav Mykhailiuk",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Swede Halbrook",
@@ -281290,64 +281682,96 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2009-2017",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2009–2017",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2017",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2017",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2017-2019",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2017–2019",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2019-2022",
         "team": "New York Knicks",
+        "team_raw": "New York Knicks",
+        "years": "2019–2022",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
         "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2022–23",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "New York Knicks",
+        "team_raw": "New York Knicks",
+        "years": "2023–24",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2024",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2024",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Charlotte Hornets",
+        "team_raw": "Charlotte Hornets",
+        "years": "2024–25",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
+      },
+      {
+        "team": "Memphis Grizzlies",
+        "team_raw": "Memphis Grizzlies",
+        "years": "2026–present",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
-    "current_team": "Charlotte Hornets",
-    "status": "nba_active"
+    "current_team": "Memphis Grizzlies",
+    "status": "nba_active",
+    "position": "Center / power forward",
+    "number": [
+      "67"
+    ],
+    "birth_date": "1985-06-24",
+    "birth_place": "New York City, New York, U.S.",
+    "high_school": "* High School of Telecommunication Arts , and Technology (Brooklyn, New York) * Stoneridge Prep, (Tarzana, California) * Calvary Christian, (San Fernando, California)",
+    "college": "USC (2006–2009)",
+    "draft": {
+      "year": "2009",
+      "round": "1",
+      "pick": "26",
+      "team": "Chicago Bulls"
+    },
+    "display_name": "Taj Gibson",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tal Skinner",
@@ -281737,15 +282161,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2022-2026",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2022–present",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       }
     ],
     "current_team": "Houston Rockets",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward",
+    "number": [
+      "17"
+    ],
+    "birth_date": "2001-05-10",
+    "birth_place": "Portsmouth, Virginia, U.S.",
+    "high_school": "* Garfield, (Seattle, Washington) * Federal Way, (Federal Way, Washington)",
+    "college": "* Cincinnati (2020–2021) * LSU (2021–2022)",
+    "draft": {
+      "year": "2022",
+      "round": "1",
+      "pick": "17",
+      "team": "Houston Rockets"
+    },
+    "display_name": "Tari Eason",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tarik Black",
@@ -282203,57 +282644,81 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2016-2019",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2016–2019",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2016-2017",
         "team": "Long Island Nets",
+        "team_raw": "Long Island Nets",
+        "years": "2016–2017",
+        "loan": true,
         "city": "Uniondale",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2019-2021",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "team_raw": "Brooklyn Nets",
+        "years": "2019–2021",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2021",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2021–2023",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2023–24",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2024–present",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       }
     ],
     "current_team": "Milwaukee Bucks",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward",
+    "number": [
+      "12"
+    ],
+    "birth_date": "1994-03-22",
+    "birth_place": "San Marcos, Texas, U.S.",
+    "high_school": "Earl Warren (San Antonio, Texas)",
+    "college": "Baylor (2012–2016)",
+    "draft": {
+      "year": "2016",
+      "round": "1",
+      "pick": "12",
+      "team": "Utah Jazz"
+    },
+    "display_name": "Taurean Prince",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Taylor Griffin",
@@ -282693,36 +283158,57 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2019-2025",
         "team": "LA Clippers",
+        "team_raw": "Los Angeles Clippers",
+        "years": "2019–2025",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Agua Caliente Clippers",
+        "team_raw": "Agua Caliente Clippers",
+        "years": "2019–2020",
+        "loan": true,
         "city": "Ontario",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2025",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2025",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "team_raw": "Brooklyn Nets",
+        "years": "2025–present",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       }
     ],
     "current_team": "Brooklyn Nets",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard",
+    "number": [
+      "14"
+    ],
+    "birth_date": "1996-10-18",
+    "birth_place": "Brooklyn, New York, U.S.",
+    "high_school": "Tilton School, (Tilton, New Hampshire)",
+    "college": "Florida State (2015–2019)",
+    "draft": {
+      "year": "2019",
+      "round": "2",
+      "pick": "48",
+      "team": "Los Angeles Clippers"
+    },
+    "display_name": "Terance Mann",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Terence Davis",
@@ -285389,64 +285875,89 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2017-2018",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2017–18",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2017-2018",
         "team": "South Bay Lakers",
+        "team_raw": "South Bay Lakers",
+        "years": "2017–2018",
+        "loan": true,
         "city": "El Segundo",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2018-2022",
         "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2018–2022",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2022–23",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023",
         "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "2023",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2023–2024",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Indiana Pacers",
+        "team_raw": "Indiana Pacers",
+        "years": "2024–25",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2025–present",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       }
     ],
     "current_team": "Cleveland Cavaliers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center / power forward",
+    "number": [
+      "3"
+    ],
+    "birth_date": "1997-07-31",
+    "birth_place": "Rochester, New York, U.S.",
+    "high_school": "* Bishop Kearney, (Irondequoit, New York) * Huntington Prep, (Huntington, West Virginia)",
+    "college": "Indiana (2015–2017)",
+    "draft": {
+      "year": "2017",
+      "round": "2",
+      "pick": "42",
+      "team": "Utah Jazz"
+    },
+    "display_name": "Thomas Bryant",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Thomas Gardner",
@@ -286927,9 +287438,17 @@
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
+      },
+      {
+        "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2026–present",
+        "city": "Miami",
+        "state": "Florida",
+        "country": "USA"
       }
     ],
-    "current_team": "Denver Nuggets",
+    "current_team": "Miami Heat",
     "status": "nba_active",
     "position": "Shooting Guard",
     "birth_date": "1992-03-16",
@@ -286946,7 +287465,10 @@
     "aliases": [
       "Tim Hardaway Jr."
     ],
-    "last_updated": "2026-07-06"
+    "last_updated": "2026-07-06",
+    "number": [
+      "10"
+    ]
   },
   {
     "player": "Tim James",
@@ -288334,26 +288856,44 @@
   },
   {
     "player": "TJ McConnell",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/TJ_McConnell",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/T._J._McConnell",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2015-2019",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2015–2019",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2019-2026",
         "team": "Indiana Pacers",
+        "team_raw": "Indiana Pacers",
+        "years": "2019–present",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
       }
     ],
     "current_team": "Indiana Pacers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "9"
+    ],
+    "birth_date": "1992-03-25",
+    "birth_place": "Pittsburgh, Pennsylvania, U.S.",
+    "high_school": "Chartiers Valley, (Bridgeville, Pennsylvania)",
+    "college": "*Duquesne (2010–2012) *Arizona (2013–2015)",
+    "draft": {
+      "year": "2015"
+    },
+    "display_name": "T. J. McConnell",
+    "aliases": [
+      "T. J. McConnell"
+    ],
+    "last_updated": "2026-07-06"
   },
   {
     "player": "TJ Warren",
@@ -288437,50 +288977,69 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2011-2013",
         "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2011–2013",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2013-2016",
         "team": "Orlando Magic",
+        "team_raw": "Orlando Magic",
+        "years": "2013–2016",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2016-2018",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2016–2018",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2018-2019",
         "team": "LA Clippers",
+        "team_raw": "Los Angeles Clippers",
+        "years": "2018–2019",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2024",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2019–2024",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2024–2026",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       }
     ],
     "current_team": "Detroit Pistons",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward / small forward",
+    "birth_date": "1992-07-15",
+    "birth_place": "Islip, New York, U.S.",
+    "high_school": "*Half Hollow Hills West, (Dix Hills, New York) *Long Island Lutheran, (Brookville, New York)",
+    "college": "Tennessee (2010–2011)",
+    "draft": {
+      "year": "2011",
+      "round": "1",
+      "pick": "19",
+      "team": "Charlotte Bobcats"
+    },
+    "display_name": "Tobias Harris",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Toby Bailey",
@@ -291413,14 +291972,14 @@
   },
   {
     "player": "Tony Bradley",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Bradley_(basketball)",
-    "parse_status": "success",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Bradley",
+    "parse_status": "no_career_data",
     "career_history": [
       {
         "years": "2017-2020",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
@@ -291467,7 +292026,9 @@
       }
     ],
     "current_team": "Indiana Pacers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Tony Bradley",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tony Brown",
@@ -294339,15 +294900,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2023-2026",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2023–present",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       }
     ],
     "current_team": "Portland Trail Blazers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward / small forward",
+    "number": [
+      "33"
+    ],
+    "birth_date": "2000-05-08",
+    "birth_place": "Brussels, Belgium",
+    "high_school": "Chaminade–Madonna Prep, (Hollywood, Florida)",
+    "college": "*Georgia (2019–2021) *Dayton (2021–2023)",
+    "draft": {
+      "year": "2023",
+      "round": "2",
+      "pick": "52",
+      "team": "Phoenix Suns"
+    },
+    "display_name": "Toumani Camara",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Toure Murry",
@@ -294813,15 +295391,40 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2018-2026",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2018–2026",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
+      },
+      {
+        "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2026–present",
+        "city": "Washington",
+        "state": "D.C.",
+        "country": "USA"
       }
     ],
-    "current_team": "Atlanta Hawks",
-    "status": "nba_active"
+    "current_team": "Washington Wizards",
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "3"
+    ],
+    "birth_date": "1998-09-19",
+    "birth_place": "Lubbock, Texas, U.S.",
+    "high_school": "Norman North",
+    "college": "Oklahoma (2017–2018)",
+    "draft": {
+      "year": "2018",
+      "round": "1",
+      "pick": "5",
+      "team": "Dallas Mavericks"
+    },
+    "display_name": "Trae Young",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Trajan Langdon",
@@ -295675,29 +296278,49 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2020-2025",
         "team": "San Antonio Spurs",
+        "team_raw": "San Antonio Spurs",
+        "years": "2020–2025",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Austin Spurs",
+        "team_raw": "Austin Spurs",
+        "years": "2021",
+        "loan": true,
         "city": "Austin",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2025–present",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       }
     ],
     "current_team": "Chicago Bulls",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "30"
+    ],
+    "birth_date": "2000-01-08",
+    "birth_place": "Apple Valley, Minnesota, U.S.",
+    "high_school": "Apple Valley, (Apple Valley, Minnesota)",
+    "college": "Duke (2018–2020)",
+    "draft": {
+      "year": "2020",
+      "round": "2",
+      "pick": "41",
+      "team": "San Antonio Spurs"
+    },
+    "display_name": "Tre Jones",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tre Mann",
@@ -295705,29 +296328,49 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2024",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2021–2024",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Oklahoma City Blue",
+        "team_raw": "Oklahoma City Blue",
+        "years": "2021–2023",
+        "loan": true,
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "Charlotte Hornets",
+        "team_raw": "Charlotte Hornets",
+        "years": "2024–present",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
       }
     ],
     "current_team": "Charlotte Hornets",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "23"
+    ],
+    "birth_date": "2001-02-03",
+    "birth_place": "Gainesville, Florida, U.S.",
+    "high_school": "The Villages, (The Villages, Florida)",
+    "college": "Florida (2019–2021)",
+    "draft": {
+      "year": "2021",
+      "round": "1",
+      "pick": "18",
+      "team": "Oklahoma City Thunder"
+    },
+    "display_name": "Tre Mann",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tre Scott",
@@ -296126,29 +296769,42 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2023",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2021–2023",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2023-2025",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "team_raw": "Brooklyn Nets",
+        "years": "2023–2025",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2025–26",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       }
     ],
     "current_team": "Philadelphia 76ers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward / small forward",
+    "birth_date": "2000-11-09",
+    "birth_place": "Birmingham, Alabama, U.S.",
+    "high_school": "Mountain Brook, (Mountain Brook, Alabama)",
+    "college": "LSU (2019–2021)",
+    "draft": {
+      "year": "2021"
+    },
+    "display_name": "Trendon Watford",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Trent Forrest",
@@ -298644,57 +299300,82 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2019-2020",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2019–20",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Northern Arizona Suns",
+        "team_raw": "Northern Arizona Suns",
+        "years": "2019–2020",
+        "loan": true,
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2020-2022",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2020–2022",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Oklahoma City Blue",
+        "team_raw": "Oklahoma City Blue",
+        "years": "2021",
+        "loan": true,
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2022–23",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023-2025",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2023–2025",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2025–present",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "current_team": "Memphis Grizzlies",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard / shooting guard",
+    "number": [
+      "2"
+    ],
+    "birth_date": "1997-07-08",
+    "birth_place": "New York, New York, U.S.",
+    "high_school": "Iona Prep, (New Rochelle, New York)",
+    "college": "Virginia (2016–2019)",
+    "draft": {
+      "year": "2019",
+      "round": "1",
+      "pick": "24",
+      "team": "Philadelphia 76ers"
+    },
+    "display_name": "Ty Jerome",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Ty Lawson",
@@ -299603,15 +300284,40 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2019-2026",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2019–2026",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
+      },
+      {
+        "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2026–present",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "country": "USA"
       }
     ],
-    "current_team": "Miami Heat",
-    "status": "nba_active"
+    "current_team": "Milwaukee Bucks",
+    "status": "nba_active",
+    "position": "Shooting guard",
+    "number": [
+      "42"
+    ],
+    "birth_date": "2000-01-20",
+    "birth_place": "Milwaukee, Wisconsin, U.S.",
+    "high_school": "Whitnall, (Greenfield, Wisconsin)",
+    "college": "Kentucky (2018–2019)",
+    "draft": {
+      "year": "2019",
+      "round": "1",
+      "pick": "13",
+      "team": "Miami Heat"
+    },
+    "display_name": "Tyler Herro",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tyler Honeycutt",
@@ -299996,22 +300702,40 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2020-2022",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2020–2022",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2022-2026",
         "team": "Indiana Pacers",
+        "team_raw": "Indiana Pacers",
+        "years": "2022–present",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
       }
     ],
     "current_team": "Indiana Pacers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "0"
+    ],
+    "birth_date": "2000-02-29",
+    "birth_place": "Oshkosh, Wisconsin, U.S.",
+    "high_school": "Oshkosh North",
+    "college": "Iowa State (2018–2020)",
+    "draft": {
+      "year": "2020",
+      "round": "1",
+      "pick": "12",
+      "team": "Sacramento Kings"
+    },
+    "display_name": "Tyrese Haliburton",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tyrese Martin",
@@ -300100,15 +300824,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2020-2026",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2020–present",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       }
     ],
     "current_team": "Philadelphia 76ers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "0"
+    ],
+    "birth_date": "2000-11-04",
+    "birth_place": "Dallas, Texas, U.S.",
+    "high_school": "South Garland (Garland, Texas)",
+    "college": "Kentucky (2019–2020)",
+    "draft": {
+      "year": "2020",
+      "round": "1",
+      "pick": "21",
+      "team": "Philadelphia 76ers"
+    },
+    "display_name": "Tyrese Maxey",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Tyrone Britt",
@@ -301058,50 +301799,89 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2015-2019",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2015–2019",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2015-2016",
         "team": "Idaho Stampede",
+        "team_raw": "Idaho Stampede",
+        "years": "2015–2016",
+        "loan": true,
         "city": "Boise",
         "state": "Idaho",
         "country": "USA"
       },
       {
-        "years": "2019-2023",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2019–2023",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
-        "years": "2023-2024",
         "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2023–24",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2024–25",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Orlando Magic",
+        "team_raw": "Orlando Magic",
+        "years": "2025–26",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
+      },
+      {
+        "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2026",
+        "city": "Dallas",
+        "state": "Texas",
+        "country": "USA"
+      },
+      {
+        "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "2026–present",
+        "city": "Denver",
+        "state": "Colorado",
+        "country": "USA"
       }
     ],
-    "current_team": "Orlando Magic",
-    "status": "nba_active"
+    "current_team": "Denver Nuggets",
+    "status": "nba_active",
+    "position": "Point guard",
+    "number": [
+      "5"
+    ],
+    "birth_date": "1996-05-10",
+    "birth_place": "Burnsville, Minnesota, U.S.",
+    "high_school": "Apple Valley, (Apple Valley, Minnesota)",
+    "college": "Duke (2014–2015)",
+    "draft": {
+      "year": "2015",
+      "round": "1",
+      "pick": "24",
+      "team": "Cleveland Cavaliers"
+    },
+    "display_name": "Tyus Jones",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Udoka Azubuike",
@@ -302475,43 +303255,63 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2019-2021",
         "team": "Nanterre 92",
+        "team_raw": "Nanterre 92",
+        "years": "2019–2021",
         "city": "Nanterre",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2020-2021",
         "team": "Centre Fédéral",
+        "team_raw": "Centre Fédéral",
+        "years": "2020–2021",
+        "loan": true,
         "city": "Paris",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2021-2022",
         "team": "ASVEL",
+        "team_raw": "ASVEL",
+        "years": "2021–2022",
         "city": "Villeurbanne",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2022-2023",
         "team": "Metropolitans 92",
+        "team_raw": "Metropolitans 92",
+        "years": "2022–2023",
         "city": "Levallois-Perret",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2023-2026",
         "team": "San Antonio Spurs",
+        "team_raw": "San Antonio Spurs",
+        "years": "2023–present",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
       }
     ],
     "current_team": "San Antonio Spurs",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center / power forward",
+    "number": [
+      "1"
+    ],
+    "birth_date": "2004-01-04",
+    "birth_place": "Le Chesnay, France",
+    "draft": {
+      "year": "2023",
+      "round": "1",
+      "pick": "1",
+      "team": "San Antonio Spurs"
+    },
+    "display_name": "Victor Wembanyama",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Viktor Khryapa",
@@ -303498,54 +304298,104 @@
   },
   {
     "player": "Vit Krejci",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Vit_Krejci",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/V%C3%ADt_Krej%C4%8D%C3%AD",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2017-2021",
         "team": "Zaragoza",
+        "team_raw": "Zaragoza",
+        "years": "2017–2021",
         "city": "Zaragoza",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2021-2022",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2021–22",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2022",
         "team": "Oklahoma City Blue",
+        "team_raw": "Oklahoma City Blue",
+        "years": "2022",
+        "loan": true,
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2022–23",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2023",
+        "team": "College Park Skyhawks",
+        "team_raw": "College Park Skyhawks",
+        "years": "2022–2023",
+        "loan": true,
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
+      },
+      {
         "team": "Iowa Wolves",
+        "team_raw": "Iowa Wolves",
+        "years": "2023",
         "city": "Des Moines",
         "state": "Iowa",
         "country": "USA"
       },
       {
-        "years": "2023-2026",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2023–2026",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
+      },
+      {
+        "team": "College Park Skyhawks",
+        "team_raw": "College Park Skyhawks",
+        "years": "2023–2024",
+        "loan": true,
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
+      },
+      {
+        "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2026–present",
+        "city": "Portland",
+        "state": "Oregon",
+        "country": "USA"
       }
     ],
-    "current_team": "Atlanta Hawks",
-    "status": "nba_active"
+    "current_team": "Portland Trail Blazers",
+    "status": "nba_active",
+    "position": "Point guard / shooting guard / small forward",
+    "number": [
+      "27"
+    ],
+    "birth_date": "2000-06-19",
+    "birth_place": "Strakonice, Czech Republic",
+    "draft": {
+      "year": "2020",
+      "round": "2",
+      "pick": "37",
+      "team": "Washington Wizards"
+    },
+    "display_name": "Vít Krejčí",
+    "aliases": [
+      "Vít Krejčí"
+    ],
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Vitaly Potapenko",
@@ -304800,15 +305650,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2022-2026",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "team_raw": "Utah Jazz",
+        "years": "2022–present",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
     "current_team": "Utah Jazz",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center",
+    "number": [
+      "24"
+    ],
+    "birth_date": "2001-07-26",
+    "birth_place": "Atlanta, Georgia, U.S.",
+    "high_school": "Woodward Academy, (College Park, Georgia)",
+    "college": "* North Carolina (2020–2021) * Auburn (2021–2022)",
+    "draft": {
+      "year": "2022",
+      "round": "1",
+      "pick": "22",
+      "team": "Memphis Grizzlies"
+    },
+    "display_name": "Walker Kessler",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Walker Russell",
@@ -307832,26 +308699,47 @@
   },
   {
     "player": "Wendell Carter Jr",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Wendell_Carter_Jr",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wendell_Carter_Jr.",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2018-2021",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2018–2021",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2021-2026",
         "team": "Orlando Magic",
+        "team_raw": "Orlando Magic",
+        "years": "2021–present",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
       }
     ],
     "current_team": "Orlando Magic",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center / power forward",
+    "number": [
+      "34"
+    ],
+    "birth_date": "1999-04-16",
+    "birth_place": "Atlanta, Georgia, U.S.",
+    "high_school": "Pace Academy, (Atlanta, Georgia)",
+    "college": "Duke (2017–2018)",
+    "draft": {
+      "year": "2018",
+      "round": "1",
+      "pick": "7",
+      "team": "Chicago Bulls"
+    },
+    "display_name": "Wendell Carter Jr.",
+    "aliases": [
+      "Wendell Carter Jr."
+    ],
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Wendell Moore",
@@ -313390,36 +314278,57 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2017-2021",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2017–2021",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2021-2025",
         "team": "San Antonio Spurs",
+        "team_raw": "San Antonio Spurs",
+        "years": "2021–2025",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2022",
         "team": "Austin Spurs",
+        "team_raw": "Austin Spurs",
+        "years": "2022",
+        "loan": true,
         "city": "Austin",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2025–present",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       }
     ],
     "current_team": "Chicago Bulls",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center / power forward",
+    "number": [
+      "12"
+    ],
+    "birth_date": "1997-11-19",
+    "birth_place": "Las Vegas, Nevada, U.S.",
+    "high_school": "Bishop Gorman, (Summerlin, Nevada)",
+    "college": "Gonzaga (2016–2017)",
+    "draft": {
+      "year": "2017",
+      "round": "1",
+      "pick": "10",
+      "team": "Sacramento Kings"
+    },
+    "display_name": "Zach Collins",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Zach LaVine",
@@ -313427,29 +314336,48 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2014-2017",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2014–2017",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2017-2025",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2017–2025",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2025–present",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "Sacramento Kings",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard",
+    "number": [
+      "8"
+    ],
+    "birth_date": "1995-03-10",
+    "birth_place": "Renton, Washington, U.S.",
+    "high_school": "Bothell (Bothell, Washington)",
+    "college": "UCLA (2013–2014)",
+    "draft": {
+      "year": "2014",
+      "round": "1",
+      "pick": "13",
+      "team": "Minnesota Timberwolves"
+    },
+    "display_name": "Zach LaVine",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Zach Lofton",
@@ -314127,15 +315055,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2020-2026",
         "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "2020–present",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       }
     ],
     "current_team": "Denver Nuggets",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward / center",
+    "number": [
+      "22"
+    ],
+    "birth_date": "2001-01-09",
+    "birth_place": "Minneapolis, Minnesota, U.S.",
+    "high_school": "* Lakeville North, (Lakeville, Minnesota) * Hopkins, (Minnetonka, Minnesota)",
+    "college": "Arizona (2019–2020)",
+    "draft": {
+      "year": "2020",
+      "round": "1",
+      "pick": "22",
+      "team": "Denver Nuggets"
+    },
+    "display_name": "Zeke Nnaji",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Zeke Sinicola",
@@ -314650,29 +315595,46 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2024",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2021–2024",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
-        "years": "2023",
         "team": "Memphis Hustle",
+        "team_raw": "Memphis Hustle",
+        "years": "2023",
+        "loan": true,
         "city": "Memphis",
         "state": "Tennessee",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "team_raw": "Brooklyn Nets",
+        "years": "2024–2026",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       }
     ],
     "current_team": "Brooklyn Nets",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward / power forward",
+    "birth_date": "2001-09-12",
+    "birth_place": "Lancaster, California, U.S.",
+    "high_school": "* Notre Dame, (Sherman Oaks, California) * Sierra Canyon, (Chatsworth, California)",
+    "college": "Stanford (2020–2021)",
+    "draft": {
+      "year": "2021",
+      "round": "1",
+      "pick": "10",
+      "team": "New Orleans Pelicans"
+    },
+    "display_name": "Ziaire Williams",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Zion Williamson",
@@ -314680,15 +315642,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2019-2026",
         "team": "New Orleans Pelicans",
+        "team_raw": "New Orleans Pelicans",
+        "years": "2019–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
       }
     ],
     "current_team": "New Orleans Pelicans",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Power forward",
+    "number": [
+      "1"
+    ],
+    "birth_date": "2000-07-06",
+    "birth_place": "Salisbury, North Carolina, U.S.",
+    "high_school": "Spartanburg Day School",
+    "college": "Duke (2018–2019)",
+    "draft": {
+      "year": "2019",
+      "round": "1",
+      "pick": "1",
+      "team": "New Orleans Pelicans"
+    },
+    "display_name": "Zion Williamson",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Zoran Dragic",
@@ -316569,8 +317548,8 @@
   },
   {
     "player": "Ron Holland",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Holland_(basketball)",
-    "parse_status": "success",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Holland",
+    "parse_status": "no_career_data",
     "career_history": [
       {
         "years": "2023-2024",
@@ -316588,7 +317567,9 @@
       }
     ],
     "current_team": "Detroit Pistons",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Ron Holland",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Bobi Klintman",
@@ -317194,29 +318175,47 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2024",
         "team": "ASVEL",
+        "team_raw": "LDLC ASVEL",
+        "years": "2021–2024",
         "city": "Villeurbanne",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2023-2024",
         "team": "JL Bourg",
+        "team_raw": "JL Bourg",
+        "years": "2023–2024",
+        "loan": true,
         "city": "Bourg-en-Bresse",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2024-2026",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2024–present",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       }
     ],
     "current_team": "Atlanta Hawks",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward",
+    "number": [
+      "10"
+    ],
+    "birth_date": "2005-04-08",
+    "birth_place": "Málaga, Spain",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "1",
+      "team": "Atlanta Hawks"
+    },
+    "display_name": "Zaccharie Risacher",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Keaton Wallace",
@@ -317224,22 +318223,51 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2023",
         "team": "Agua Caliente / Ontario Clippers",
-        "city": "Agua Caliente",
-        "state": "California",
-        "country": "USA"
+        "team_raw": "Agua Caliente / Ontario Clippers",
+        "years": "2021–2023",
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
-        "years": "2024-2026",
+        "team": "College Park Skyhawks",
+        "team_raw": "College Park Skyhawks",
+        "years": "2023–2024",
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
+      },
+      {
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2024–2026",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
+      },
+      {
+        "team": "College Park Skyhawks",
+        "team_raw": "College Park Skyhawks",
+        "years": "2024–2025",
+        "loan": true,
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
       }
     ],
     "current_team": "Atlanta Hawks",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard / shooting guard",
+    "birth_date": "1999-02-26",
+    "birth_place": "Richardson, Texas, U.S.",
+    "high_school": "Richardson (Richardson, Texas)",
+    "college": "UTSA (2017–2021)",
+    "draft": {
+      "year": "2021"
+    },
+    "display_name": "Keaton Wallace",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Daeqwon Plowden",
@@ -317561,7 +318589,7 @@
       {
         "team": "Miami Heat",
         "team_raw": "Miami Heat",
-        "years": "2024–present",
+        "years": "2024–2026",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
@@ -317574,13 +318602,21 @@
         "city": "Sioux Falls",
         "state": "South Dakota",
         "country": "USA"
+      },
+      {
+        "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2026–present",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "country": "USA"
       }
     ],
-    "current_team": "Miami Heat",
+    "current_team": "Milwaukee Bucks",
     "status": "nba_active",
     "position": "Center",
     "number": [
-      "7"
+      "9"
     ],
     "birth_date": "2004-04-20",
     "birth_place": "North Little Rock, Arkansas, U.S.",
@@ -317754,19 +318790,39 @@
   },
   {
     "player": "Tristan Da Silva",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tristan_Da_Silva",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tristan_da_Silva",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "Orlando Magic",
+        "team_raw": "Orlando Magic",
+        "years": "2024–present",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
       }
     ],
     "current_team": "Orlando Magic",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward",
+    "number": [
+      "23"
+    ],
+    "birth_date": "2001-05-15",
+    "birth_place": "Munich, Germany",
+    "high_school": "Ludwigsgymnasium München, (Munich, Germany)",
+    "college": "Colorado (2020–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "18",
+      "team": "Orlando Magic"
+    },
+    "display_name": "Tristan da Silva",
+    "aliases": [
+      "Tristan da Silva"
+    ],
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Alex Sarr",
@@ -317774,40 +318830,58 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2021-2022",
         "team": "Team Overtime",
+        "team_raw": "Team Overtime",
+        "years": "2021–2022",
         "city": "",
         "state": "",
         "country": ""
       },
       {
-        "years": "2022-2023",
         "team": "YNG Dreamerz",
+        "team_raw": "YNG Dreamerz",
+        "years": "2022–2023",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Perth Wildcats",
+        "team_raw": "Perth Wildcats",
+        "years": "2023–2024",
         "city": "Perth",
         "state": "Western Australia",
         "country": "Australia"
       },
       {
-        "years": "2024-2026",
         "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2024–present",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       }
     ],
     "current_team": "Washington Wizards",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center",
+    "number": [
+      "20"
+    ],
+    "birth_date": "2005-04-26",
+    "birth_place": "Bordeaux, France",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "2",
+      "team": "Washington Wizards"
+    },
+    "display_name": "Alex Sarr",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Carlton Carrington",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Carlton_Carrington",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bub_Carrington",
     "parse_status": "success",
     "career_history": [
       {
@@ -317821,14 +318895,14 @@
     ],
     "current_team": "Washington Wizards",
     "status": "nba_active",
-    "display_name": "Carlton Carrington",
+    "display_name": "Bub Carrington",
     "position": "Point guard / shooting guard",
     "number": [
       "7"
     ],
     "birth_date": "2005-07-21",
     "birth_place": "Baltimore, Maryland, U.S.",
-    "high_school": "Saint Frances {{nowrap|(Baltimore, Maryland)}}",
+    "high_school": "Saint Frances",
     "college": "Pittsburgh (2023–2024)",
     "draft": {
       "year": "2024",
@@ -317838,7 +318912,8 @@
     },
     "aliases": [
       "Bub Carrington"
-    ]
+    ],
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Kyshawn George",
@@ -317846,22 +318921,40 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2022-2023",
         "team": "Élan Chalon",
+        "team_raw": "Élan Chalon",
+        "years": "2022–2023",
         "city": "Chalon-sur-Saône",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2024-2026",
         "team": "Washington Wizards",
+        "team_raw": "Washington Wizards",
+        "years": "2024–present",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       }
     ],
     "current_team": "Washington Wizards",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward",
+    "number": [
+      "18"
+    ],
+    "birth_date": "2003-12-12",
+    "birth_place": "Monthey, Switzerland",
+    "high_school": "Lycée Emiland Gauthey, (Chalon-sur-Saône, France)",
+    "college": "Miami (Florida) (2023–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "24",
+      "team": "New York Knicks"
+    },
+    "display_name": "Kyshawn George",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "PJ Hall",
@@ -318012,7 +319105,10 @@
       "year": "2024"
     },
     "display_name": "Trey Alexander",
-    "last_updated": "2026-07-06"
+    "last_updated": "2026-07-06",
+    "number": [
+      "15"
+    ]
   },
   {
     "player": "Spencer Jones",
@@ -318517,15 +319613,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2024–present",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       }
     ],
     "current_team": "Portland Trail Blazers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center",
+    "number": [
+      "23"
+    ],
+    "birth_date": "2004-02-23",
+    "birth_place": "Bristol, Connecticut, U.S.",
+    "high_school": "Bristol Central, (Bristol, Connecticut)",
+    "college": "UConn (2022–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "7",
+      "team": "Portland Trail Blazers"
+    },
+    "display_name": "Donovan Clingan",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Kyle Filipowski",
@@ -318930,22 +320043,41 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "LA Clippers",
+        "team_raw": "Los Angeles Clippers",
+        "years": "2024–present",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "LA Clippers",
-        "city": "San Diego",
+        "team_raw": "San Diego Clippers",
+        "years": "2024–2025",
+        "loan": true,
+        "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "LA Clippers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Shooting guard",
+    "number": [
+      "24"
+    ],
+    "birth_date": "2005-07-24",
+    "birth_place": "Arlington Heights, Illinois, U.S.",
+    "high_school": "Rolling Meadows, (Rolling Meadows, Illinois)",
+    "college": "Minnesota (2023–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "2",
+      "pick": "46",
+      "team": "Los Angeles Clippers"
+    },
+    "display_name": "Cam Christie",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Trentyn Flowers",
@@ -319024,15 +320156,41 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2024–present",
         "city": "Los Angeles",
+        "state": "California",
+        "country": "USA"
+      },
+      {
+        "team": "South Bay Lakers",
+        "team_raw": "South Bay Lakers",
+        "years": "2025",
+        "loan": true,
+        "city": "El Segundo",
         "state": "California",
         "country": "USA"
       }
     ],
     "current_team": "Los Angeles Lakers",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward / shooting guard",
+    "number": [
+      "4"
+    ],
+    "birth_date": "2001-04-19",
+    "birth_place": "Fargo, North Dakota, U.S.",
+    "high_school": "Prairie View (Henderson, Colorado)",
+    "college": "* Northeastern JC (2019–2021) * Northern Colorado (2021–2023) * Tennessee (2023–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "17",
+      "team": "Los Angeles Lakers"
+    },
+    "display_name": "Dalton Knecht",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Bronny James",
@@ -319142,8 +320300,8 @@
   },
   {
     "player": "Ryan Dunn",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Dunn_(basketball)",
-    "parse_status": "success",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Dunn",
+    "parse_status": "no_career_data",
     "career_history": [
       {
         "years": "2024-2026",
@@ -319154,7 +320312,9 @@
       }
     ],
     "current_team": "Phoenix Suns",
-    "status": "nba_active"
+    "status": "nba_active",
+    "display_name": "Ryan Dunn",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Oso Ighodaro",
@@ -319804,15 +320964,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2024–present",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "current_team": "Memphis Grizzlies",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Small forward",
+    "number": [
+      "0"
+    ],
+    "birth_date": "2003-08-26",
+    "birth_place": "Sacramento, California, U.S.",
+    "high_school": "Folsom, (Folsom, California)",
+    "college": "* Sonoma State (2021–2023) * Washington State (2023–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "2",
+      "pick": "39",
+      "team": "Memphis Grizzlies"
+    },
+    "display_name": "Jaylen Wells",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Zach Edey",
@@ -319820,15 +320997,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Grizzlies",
+        "years": "2024–present",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "current_team": "Memphis Grizzlies",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Centre",
+    "number": [
+      "14"
+    ],
+    "birth_date": "2002-05-14",
+    "birth_place": "Toronto, Ontario, Canada",
+    "high_school": "* Leaside * IMG Academy",
+    "college": "Purdue (2020–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "9",
+      "team": "Memphis Grizzlies"
+    },
+    "display_name": "Zach Edey",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Cam Spencer",
@@ -320019,15 +321213,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "New Orleans Pelicans",
+        "team_raw": "New Orleans Pelicans",
+        "years": "2024–present",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
       }
     ],
     "current_team": "New Orleans Pelicans",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Center",
+    "number": [
+      "21"
+    ],
+    "birth_date": "2004-05-14",
+    "birth_place": "Brussels, Belgium",
+    "high_school": "* West Nottingham Academy, (Colora, Maryland) * Prolific Prep, (Napa, California)",
+    "college": "Baylor (2023–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "21",
+      "team": "New Orleans Pelicans"
+    },
+    "display_name": "Yves Missi",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Karlo Matkovic",
@@ -320225,15 +321436,32 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2024-2026",
         "team": "San Antonio Spurs",
+        "team_raw": "San Antonio Spurs",
+        "years": "2024–present",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
       }
     ],
     "current_team": "San Antonio Spurs",
-    "status": "nba_active"
+    "status": "nba_active",
+    "position": "Point guard / shooting guard",
+    "number": [
+      "5"
+    ],
+    "birth_date": "2004-11-01",
+    "birth_place": "Covington, Georgia, U.S.",
+    "high_school": "Newton (Covington, Georgia)",
+    "college": "UConn (2023–2024)",
+    "draft": {
+      "year": "2024",
+      "round": "1",
+      "pick": "4",
+      "team": "San Antonio Spurs"
+    },
+    "display_name": "Stephon Castle",
+    "last_updated": "2026-07-06"
   },
   {
     "player": "Harrison Ingram",
@@ -320346,7 +321574,7 @@
     ],
     "birth_date": "2007-01-29",
     "birth_place": "Boston, Massachusetts, U.S.",
-    "high_school": "* Saint Sebastian's {{nowrap|(Needham, Massachusetts)}} * Prolific Prep, (Napa, California) * Utah Prep, (Hurricane, Utah)",
+    "high_school": "* Saint Sebastian's * Prolific Prep (Napa, California) * Utah Prep (Hurricane, Utah)",
     "college": "BYU (2025–2026)",
     "draft": {
       "year": "2026",
@@ -320367,7 +321595,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/AJ_Dybantsa",
     "display_name": "AJ Dybantsa"
   },
@@ -320436,7 +321664,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Aday_Mara",
     "display_name": "Aday Mara"
   },
@@ -320478,7 +321706,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Adou_Thiero",
     "display_name": "Adou Thiero"
   },
@@ -320608,7 +321836,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Allen_Graves",
     "display_name": "Allen Graves"
   },
@@ -320641,7 +321869,7 @@
       {
         "team": "Maine Celtics",
         "team_raw": "Maine Celtics",
-        "years": "2025–2026",
+        "years": "2025–present",
         "loan": true,
         "city": "Portland",
         "state": "Maine",
@@ -320650,7 +321878,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Amari_Williams",
     "display_name": "Amari Williams"
   },
@@ -320692,14 +321920,16 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Asa_Newell",
     "display_name": "Asa Newell"
   },
   {
     "player": "Baba Miller",
     "position": "Power forward / small forward",
-    "number": [],
+    "number": [
+      "18"
+    ],
     "birth_date": "2004-02-07",
     "birth_place": "Mallorca, Spain",
     "high_school": "",
@@ -320731,7 +321961,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Baba_Miller",
     "display_name": "Baba Miller"
   },
@@ -320797,7 +322027,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Saraf",
     "display_name": "Ben Saraf"
   },
@@ -320810,7 +322040,7 @@
     "birth_date": "2003-10-03",
     "birth_place": "Liberty, Missouri, U.S.",
     "high_school": "Liberty (Liberty, Missouri)",
-    "college": "*{{nowrap|Northwest Missouri State (2022–2024)}} *Drake (2024–2025) *Iowa (2025–2026)",
+    "college": "* *Drake (2024–2025) *Iowa (2025–2026)",
     "draft": {
       "year": "2026",
       "round": "1",
@@ -320830,7 +322060,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bennett_Stirtz",
     "display_name": "Bennett Stirtz"
   },
@@ -320860,7 +322090,7 @@
       {
         "team": "Utah Jazz",
         "team_raw": "Utah Jazz",
-        "years": "2025–present",
+        "years": "2026",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
@@ -320868,7 +322098,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bez_Mbeng",
     "display_name": "Bez Mbeng"
   },
@@ -320973,7 +322203,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bogoljub_Markovi%C4%87",
     "display_name": "Bogoljub Marković"
   },
@@ -321016,7 +322246,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Brayden_Burries",
     "display_name": "Brayden Burries"
   },
@@ -321158,7 +322388,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cameron_Boozer",
     "display_name": "Cameron Boozer"
   },
@@ -321211,7 +322441,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cedric_Coward",
     "display_name": "Cedric Coward"
   },
@@ -321300,13 +322530,13 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Chaz_Lanier",
     "display_name": "Chaz Lanier"
   },
   {
     "player": "Chris Cenac Jr.",
-    "position": "Power forward / center",
+    "position": "Power forward",
     "number": [
       "12"
     ],
@@ -321333,7 +322563,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Cenac_Jr.",
     "display_name": "Chris Cenac Jr."
   },
@@ -321410,7 +322640,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Christian_Anderson_Jr.",
     "display_name": "Christian Anderson Jr."
   },
@@ -321482,7 +322712,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Collin_Murray-Boyles",
     "display_name": "Collin Murray-Boyles"
   },
@@ -321515,7 +322745,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cooper_Flagg",
     "display_name": "Cooper Flagg"
   },
@@ -321622,7 +322852,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/DaRon_Holmes_II",
     "display_name": "DaRon Holmes II"
   },
@@ -321650,7 +322880,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dailyn_Swain",
     "display_name": "Dailyn Swain"
   },
@@ -321692,7 +322922,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Danny_Wolf",
     "display_name": "Danny Wolf"
   },
@@ -321788,7 +323018,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Derik_Queen",
     "display_name": "Derik Queen"
   },
@@ -321840,7 +323070,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Drake_Powell",
     "display_name": "Drake Powell"
   },
@@ -321870,7 +323100,7 @@
       {
         "team": "Stockton Kings",
         "team_raw": "Stockton Kings",
-        "years": "2025",
+        "years": "2025–2026",
         "loan": true,
         "city": "Stockton",
         "state": "California",
@@ -321879,7 +323109,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dylan_Cardwell",
     "display_name": "Dylan Cardwell"
   },
@@ -321912,7 +323142,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dylan_Harper",
     "display_name": "Dylan Harper"
   },
@@ -321953,7 +323183,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Egor_D%C3%ABmin",
     "display_name": "Egor Dëmin"
   },
@@ -322104,7 +323334,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Felix_Okpara",
     "display_name": "Felix Okpara"
   },
@@ -322140,7 +323370,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hannes_Steinbach",
     "display_name": "Hannes Steinbach"
   },
@@ -322190,9 +323420,12 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Hansen_Yang",
-    "display_name": "Hansen Yang"
+    "last_updated": "2026-07-06",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Yang_Hansen",
+    "display_name": "Yang Hansen",
+    "aliases": [
+      "Yang Hansen"
+    ]
   },
   {
     "player": "Hayden Gray",
@@ -322220,7 +323453,7 @@
       {
         "team": "Utah Jazz",
         "team_raw": "Utah Jazz",
-        "years": "2025–present",
+        "years": "2026",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
@@ -322228,7 +323461,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hayden_Gray",
     "display_name": "Hayden Gray"
   },
@@ -322261,7 +323494,7 @@
     ],
     "parse_status": "success",
     "status": "nba_active",
-    "last_updated": "2026-07-04",
+    "last_updated": "2026-07-06",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Henri_Veesaar",
     "display_name": "Henri Veesaar"
   },
@@ -323159,7 +324392,7 @@
       }
     ],
     "current_team": "Washington Wizards",
-    "position": "Power forward / center",
+    "position": "Power forward",
     "number": [
       "15"
     ],
@@ -323310,7 +324543,7 @@
       {
         "team": "Miami Heat",
         "team_raw": "Miami Heat",
-        "years": "2025–present",
+        "years": "2025–2026",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
@@ -323323,9 +324556,17 @@
         "city": "Sioux Falls",
         "state": "South Dakota",
         "country": "USA"
+      },
+      {
+        "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2026–present",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "country": "USA"
       }
     ],
-    "current_team": "Miami Heat",
+    "current_team": "Milwaukee Bucks",
     "position": "Point guard / shooting guard",
     "number": [
       "25"
@@ -323597,7 +324838,7 @@
       {
         "team": "Phoenix Suns",
         "team_raw": "Phoenix Suns",
-        "years": "2025–26",
+        "years": "2025–present",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
@@ -323605,14 +324846,14 @@
       {
         "team": "Valley Suns",
         "team_raw": "Valley Suns",
-        "years": "2025–2026",
+        "years": "2025–present",
         "loan": true,
         "city": "Tempe",
         "state": "Arizona",
         "country": "USA"
       }
     ],
-    "current_team": "Valley Suns",
+    "current_team": "Phoenix Suns",
     "position": "Shooting guard",
     "birth_date": "2002-11-06",
     "birth_place": "New York City, New York, U.S.",
@@ -323628,8 +324869,11 @@
     "player": "Koby Brea",
     "display_name": "Koby Brea",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Koby_Brea",
-    "status": "overseas_active",
-    "last_updated": "2026-07-06"
+    "status": "nba_active",
+    "last_updated": "2026-07-06",
+    "number": [
+      "14"
+    ]
   },
   {
     "career_history": [
@@ -324230,7 +325474,10 @@
     "display_name": "Nate Ament",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Nate_Ament",
     "status": "nba_active",
-    "last_updated": "2026-07-06"
+    "last_updated": "2026-07-06",
+    "number": [
+      "15"
+    ]
   },
   {
     "career_history": [
@@ -324255,7 +325502,7 @@
     "current_team": "Brooklyn Nets",
     "position": "Center",
     "number": [
-      "33"
+      "32"
     ],
     "birth_date": "1999-04-17",
     "birth_place": "Greenville, South Carolina, U.S.",

@@ -465,7 +465,7 @@
         "country": "USA"
       },
       {
-        "years": "2018",
+        "years": "",
         "team": "Dallas Mavericks",
         "city": "Dallas",
         "state": "Texas",
@@ -12127,6 +12127,13 @@
         "team": "Chicago Bulls",
         "city": "Chicago",
         "state": "Illinois",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Philadelphia 76ers",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
         "country": "USA"
       }
     ],
@@ -27352,10 +27359,17 @@
         "country": "USA"
       },
       {
-        "years": "2020–present",
+        "years": "2020–2026",
         "team": "Milwaukee Bucks",
         "city": "Milwaukee",
         "state": "Wisconsin",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Miami Heat",
+        "city": "Miami",
+        "state": "Florida",
         "country": "USA"
       }
     ],
@@ -65710,6 +65724,13 @@
         "city": "Canton",
         "state": "Ohio",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Philadelphia 76ers",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "country": "USA"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dean_Wade"
@@ -66936,7 +66957,7 @@
         "country": "USA"
       },
       {
-        "years": "2024–present",
+        "years": "2024–2026",
         "team": "Sacramento Kings",
         "city": "Sacramento",
         "state": "California",
@@ -95040,7 +95061,7 @@
         "country": "Russia"
       },
       {
-        "years": "2022",
+        "years": "",
         "team": "Phoenix Suns",
         "city": "Phoenix",
         "state": "Arizona",
@@ -101233,7 +101254,7 @@
   },
   {
     "player": "Giannis Antetokounmpo",
-    "status": "overseas_active",
+    "status": "nba_active",
     "career_history": [
       {
         "years": "2011–2013",
@@ -101243,18 +101264,18 @@
         "country": ""
       },
       {
-        "years": "2013–present",
-        "team": "Milwaukee Bucks <!--",
-        "city": "",
-        "state": "",
-        "country": ""
+        "years": "2013–2026",
+        "team": "Milwaukee Bucks",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "country": "USA"
       },
       {
         "years": "2026–present",
-        "team": "Miami Heat -->",
-        "city": "",
-        "state": "",
-        "country": ""
+        "team": "Miami Heat",
+        "city": "Miami",
+        "state": "Florida",
+        "country": "USA"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Giannis_Antetokounmpo"
@@ -117219,10 +117240,17 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2023–present",
+        "years": "2023–2026",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Milwaukee Bucks",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
         "country": "USA"
       }
     ],
@@ -217389,28 +217417,28 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2020-2021",
+        "years": "2020–21",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Toronto Raptors",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "2023-2025",
+        "years": "2023–2025",
         "team": "New York Knicks",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Sacramento Kings",
         "city": "Sacramento",
         "state": "California",
@@ -217997,7 +218025,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2024",
+        "years": "2021–2024",
         "team": "New York Knicks",
         "city": "New York",
         "state": "New York",
@@ -218011,14 +218039,14 @@
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–25",
         "team": "Dallas Mavericks",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2025",
+        "years": "2025–2026",
         "team": "Philadelphia 76ers",
         "city": "Philadelphia",
         "state": "Pennsylvania",
@@ -228076,14 +228104,14 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2019-2023",
+        "years": "2019–2023",
         "team": "New York Knicks",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2023-2026",
+        "years": "2023–present",
         "team": "Toronto Raptors",
         "city": "Toronto",
         "state": "Ontario",
@@ -229666,7 +229694,7 @@
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Williams_(basketball,_born_1997)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Williams"
   },
   {
     "player": "Robert Woodard",
@@ -234367,24 +234395,24 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2015-2016",
+        "years": "2015–2016",
         "team": "Riesen Ludwigsburg",
         "city": "Ludwigsburg",
         "state": "",
         "country": "Germany"
       },
       {
-        "years": "2016-2017",
+        "years": "2016–2017",
         "team": "Gran Canaria",
         "city": "Las Palmas",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2017-2022",
+        "years": "2017–2022",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
@@ -234395,21 +234423,21 @@
         "country": "USA"
       },
       {
-        "years": "2022-2024",
+        "years": "2022–2024",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Phoenix Suns",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Royce_O%27Neale"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Royce_O'Neale"
   },
   {
     "player": "Royce White",
@@ -234983,28 +235011,28 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2011-2013",
+        "years": "2011–2013",
         "team": "Cholet",
         "city": "Cholet",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2013-2022",
+        "years": "2013–2022",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
-        "years": "2013-2014",
+        "years": "2013–2014",
         "team": "Bakersfield Jam",
         "city": "Bakersfield",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2022-2026",
+        "years": "2022–present",
         "team": "Minnesota Timberwolves",
         "city": "Minneapolis",
         "state": "Minnesota",
@@ -235579,49 +235607,49 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2008-2019",
+        "years": "2008–2019",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
+        "years": "2019–20",
         "team": "Houston Rockets",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
+        "years": "2020–21",
         "team": "Washington Wizards",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Los Angeles Lakers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–2024",
         "team": "LA Clippers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–25",
         "team": "Denver Nuggets",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–26",
         "team": "Sacramento Kings",
         "city": "Sacramento",
         "state": "California",
@@ -236741,21 +236769,21 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2020-2023",
+        "years": "2020–2023",
         "team": "Detroit Pistons",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–2024",
         "team": "Atlanta Hawks",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "New Orleans Pelicans",
         "city": "New Orleans",
         "state": "Louisiana",
@@ -237392,7 +237420,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2020-2021",
+        "years": "2020–21",
         "team": "Milwaukee Bucks",
         "city": "Milwaukee",
         "state": "Wisconsin",
@@ -237406,11 +237434,11 @@
         "country": "USA"
       },
       {
-        "years": "2021-2022",
+        "years": "2021–22",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2021",
@@ -237420,14 +237448,14 @@
         "country": "USA"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–2023",
         "team": "Cleveland Charge",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2023-2026",
+        "years": "2023–present",
         "team": "Cleveland Cavaliers",
         "city": "Cleveland",
         "state": "Ohio",
@@ -238216,21 +238244,21 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Milwaukee Bucks",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Wisconsin Herd",
         "city": "Oshkosh",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2023-2025",
+        "years": "2023–2025",
         "team": "San Antonio Spurs",
         "city": "San Antonio",
         "state": "Texas",
@@ -238244,7 +238272,7 @@
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–26",
         "team": "Toronto Raptors",
         "city": "Toronto",
         "state": "Ontario",
@@ -238756,14 +238784,14 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "NBA G League Ignite",
         "city": "Henderson",
         "state": "Nevada",
         "country": "USA"
       },
       {
-        "years": "2023-2026",
+        "years": "2023–present",
         "team": "Portland Trail Blazers",
         "city": "Portland",
         "state": "Oregon",
@@ -239701,7 +239729,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2026",
+        "years": "2021–present",
         "team": "Toronto Raptors",
         "city": "Toronto",
         "state": "Ontario",
@@ -242089,18 +242117,18 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2013-2014",
+        "years": "2013–2014",
         "team": "Santa Cruz Warriors",
         "city": "Santa Cruz",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2013-2014",
+        "years": "2013–14",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2014",
@@ -242110,7 +242138,7 @@
         "country": "USA"
       },
       {
-        "years": "2014-2015",
+        "years": "2014–2015",
         "team": "Erie BayHawks",
         "city": "Erie",
         "state": "Pennsylvania",
@@ -242124,63 +242152,63 @@
         "country": "USA"
       },
       {
-        "years": "2015-2016",
+        "years": "2015–16",
         "team": "Sacramento Kings",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2016-2018",
+        "years": "2016–2018",
         "team": "Dallas Mavericks",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2018-2019",
+        "years": "2018–19",
         "team": "Portland Trail Blazers",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
+        "years": "2019–20",
         "team": "Dallas Mavericks",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2020-2022",
+        "years": "2020–2022",
         "team": "Philadelphia 76ers",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–2023",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–24",
         "team": "Dallas Mavericks",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–2025",
         "team": "Charlotte Hornets",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–26",
         "team": "Golden State Warriors",
         "city": "San Francisco",
         "state": "California",
@@ -242446,7 +242474,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2022-2026",
+        "years": "2022–present",
         "team": "Portland Trail Blazers",
         "city": "Portland",
         "state": "Oregon",
@@ -242460,14 +242488,14 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2018-2019",
+        "years": "2018–19",
         "team": "LA Clippers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2026",
+        "years": "2019–present",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
@@ -245617,63 +245645,63 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2012-2016",
+        "years": "2012–2016",
         "team": "Virtus Bologna",
         "city": "Bologna",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2016-2019",
+        "years": "2016–2019",
         "team": "Olimpia Milano",
         "city": "Milan",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2017-2018",
+        "years": "2017–2018",
         "team": "Vanoli Cremona",
         "city": "Cremona",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2019-2020",
+        "years": "2019–2020",
         "team": "Reggiana",
         "city": "Reggio Emilia",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2020-2021",
+        "years": "2020–2021",
         "team": "Alba Berlin",
         "city": "Berlin",
         "state": "",
         "country": "Germany"
       },
       {
-        "years": "2021-2022",
+        "years": "2021–2022",
         "team": "Baskonia",
         "city": "Vitoria",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2022-2024",
+        "years": "2022–2024",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–2025",
         "team": "Detroit Pistons",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
@@ -248712,7 +248740,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2009-2026",
+        "years": "2009–present",
         "team": "Golden State Warriors",
         "city": "San Francisco",
         "state": "California",
@@ -251035,28 +251063,28 @@
         "country": "New Zealand"
       },
       {
-        "years": "2013-2020",
+        "years": "2013–2020",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
+        "years": "2020–21",
         "team": "New Orleans Pelicans",
         "city": "New Orleans",
         "state": "Louisiana",
         "country": "USA"
       },
       {
-        "years": "2021-2024",
+        "years": "2021–2024",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Houston Rockets",
         "city": "Houston",
         "state": "Texas",
@@ -251889,28 +251917,28 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2012-2014",
+        "years": "2012–2014",
         "team": "Cherkaski Mavpy",
         "city": "Cherkasy",
         "state": "",
         "country": "Ukraine"
       },
       {
-        "years": "2018-2019",
+        "years": "2018–19",
         "team": "Los Angeles Lakers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2018-2019",
+        "years": "2018–2019",
         "team": "South Bay Lakers",
         "city": "El Segundo",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2021",
+        "years": "2019–2021",
         "team": "Detroit Pistons",
         "city": "Detroit",
         "state": "Michigan",
@@ -251931,7 +251959,7 @@
         "country": "USA"
       },
       {
-        "years": "2021-2022",
+        "years": "2021–22",
         "team": "Toronto Raptors",
         "city": "Toronto",
         "state": "Ontario",
@@ -251945,7 +251973,7 @@
         "country": "Canada"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–23",
         "team": "New York Knicks",
         "city": "New York",
         "state": "New York",
@@ -251966,17 +251994,17 @@
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–24",
         "team": "Boston Celtics",
         "city": "Boston",
         "state": "Massachusetts",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
@@ -252435,7 +252463,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2009-2017",
+        "years": "2009–2017",
         "team": "Chicago Bulls",
         "city": "Chicago",
         "state": "Illinois",
@@ -252449,28 +252477,28 @@
         "country": "USA"
       },
       {
-        "years": "2017-2019",
+        "years": "2017–2019",
         "team": "Minnesota Timberwolves",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2019-2022",
+        "years": "2019–2022",
         "team": "New York Knicks",
         "city": "New York",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–23",
         "team": "Washington Wizards",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–24",
         "team": "New York Knicks",
         "city": "New York",
         "state": "New York",
@@ -252484,11 +252512,18 @@
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–25",
         "team": "Charlotte Hornets",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Memphis Grizzlies",
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Taj_Gibson"
@@ -252848,7 +252883,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2022-2026",
+        "years": "2022–present",
         "team": "Houston Rockets",
         "city": "Houston",
         "state": "Texas",
@@ -253254,24 +253289,24 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2016-2019",
+        "years": "2016–2019",
         "team": "Atlanta Hawks",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2016-2017",
+        "years": "2016–2017",
         "team": "Long Island Nets",
         "city": "Uniondale",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2019-2021",
+        "years": "2019–2021",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -253282,21 +253317,21 @@
         "country": "USA"
       },
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Minnesota Timberwolves",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–24",
         "team": "Los Angeles Lakers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Milwaukee Bucks",
         "city": "Milwaukee",
         "state": "Wisconsin",
@@ -253682,14 +253717,14 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2019-2025",
+        "years": "2019–2025",
         "team": "LA Clippers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
+        "years": "2019–2020",
         "team": "Agua Caliente Clippers",
         "city": "Ontario",
         "state": "California",
@@ -253703,10 +253738,10 @@
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       }
     ],
@@ -256119,28 +256154,28 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2017-2018",
+        "years": "2017–18",
         "team": "Los Angeles Lakers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2017-2018",
+        "years": "2017–2018",
         "team": "South Bay Lakers",
         "city": "El Segundo",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2018-2022",
+        "years": "2018–2022",
         "team": "Washington Wizards",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–23",
         "team": "Los Angeles Lakers",
         "city": "Los Angeles",
         "state": "California",
@@ -256154,21 +256189,21 @@
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–2024",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–25",
         "team": "Indiana Pacers",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Cleveland Cavaliers",
         "city": "Cleveland",
         "state": "Ohio",
@@ -257525,6 +257560,13 @@
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Miami Heat",
+        "city": "Miami",
+        "state": "Florida",
+        "country": "USA"
       }
     ],
     "display_name": "Tim Hardaway Jr.",
@@ -258811,21 +258853,22 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2015-2019",
+        "years": "2015–2019",
         "team": "Philadelphia 76ers",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2019-2026",
+        "years": "2019–present",
         "team": "Indiana Pacers",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/TJ_McConnell"
+    "display_name": "T. J. McConnell",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/T._J._McConnell"
   },
   {
     "player": "TJ Warren",
@@ -258882,42 +258925,42 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2011-2013",
+        "years": "2011–2013",
         "team": "Milwaukee Bucks",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2013-2016",
+        "years": "2013–2016",
         "team": "Orlando Magic",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2016-2018",
+        "years": "2016–2018",
         "team": "Detroit Pistons",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2018-2019",
+        "years": "2018–2019",
         "team": "LA Clippers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2019-2024",
+        "years": "2019–2024",
         "team": "Philadelphia 76ers",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–2026",
         "team": "Detroit Pistons",
         "city": "Detroit",
         "state": "Michigan",
@@ -261678,8 +261721,8 @@
       {
         "years": "2017-2020",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
@@ -261725,7 +261768,7 @@
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Bradley_(basketball)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Bradley"
   },
   {
     "player": "Tony Brown",
@@ -264406,7 +264449,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2023-2026",
+        "years": "2023–present",
         "team": "Portland Trail Blazers",
         "city": "Portland",
         "state": "Oregon",
@@ -264868,10 +264911,17 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2018-2026",
+        "years": "2018–2026",
         "team": "Atlanta Hawks",
         "city": "Atlanta",
         "state": "Georgia",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Washington Wizards",
+        "city": "Washington",
+        "state": "D.C.",
         "country": "USA"
       }
     ],
@@ -265631,7 +265681,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2020-2025",
+        "years": "2020–2025",
         "team": "San Antonio Spurs",
         "city": "San Antonio",
         "state": "Texas",
@@ -265645,7 +265695,7 @@
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Chicago Bulls",
         "city": "Chicago",
         "state": "Illinois",
@@ -265659,21 +265709,21 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2024",
+        "years": "2021–2024",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2021",
+        "years": "2021–2023",
         "team": "Oklahoma City Blue",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Charlotte Hornets",
         "city": "Charlotte",
         "state": "North Carolina",
@@ -266010,21 +266060,21 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Portland Trail Blazers",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2023-2025",
+        "years": "2023–2025",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–26",
         "team": "Philadelphia 76ers",
         "city": "Philadelphia",
         "state": "Pennsylvania",
@@ -268098,21 +268148,21 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2019-2020",
+        "years": "2019–20",
         "team": "Phoenix Suns",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
+        "years": "2019–2020",
         "team": "Northern Arizona Suns",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2020-2022",
+        "years": "2020–2022",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
@@ -268126,25 +268176,25 @@
         "country": "USA"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–23",
         "team": "Golden State Warriors",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023-2025",
+        "years": "2023–2025",
         "team": "Cleveland Cavaliers",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Ty_Jerome"
@@ -268896,10 +268946,17 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2019-2026",
+        "years": "2019–2026",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Milwaukee Bucks",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
         "country": "USA"
       }
     ],
@@ -269253,14 +269310,14 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2020-2022",
+        "years": "2020–2022",
         "team": "Sacramento Kings",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2022-2026",
+        "years": "2022–present",
         "team": "Indiana Pacers",
         "city": "Indianapolis",
         "state": "Indiana",
@@ -269330,7 +269387,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2020-2026",
+        "years": "2020–present",
         "team": "Philadelphia 76ers",
         "city": "Philadelphia",
         "state": "Pennsylvania",
@@ -270206,45 +270263,59 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2015-2019",
+        "years": "2015–2019",
         "team": "Minnesota Timberwolves",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2015-2016",
+        "years": "2015–2016",
         "team": "Idaho Stampede",
         "city": "Boise",
         "state": "Idaho",
         "country": "USA"
       },
       {
-        "years": "2019-2023",
+        "years": "2019–2023",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–24",
         "team": "Washington Wizards",
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–25",
         "team": "Phoenix Suns",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–26",
         "team": "Orlando Magic",
         "city": "Orlando",
         "state": "Florida",
+        "country": "USA"
+      },
+      {
+        "years": "2026",
+        "team": "Dallas Mavericks",
+        "city": "Dallas",
+        "state": "Texas",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Denver Nuggets",
+        "city": "Denver",
+        "state": "Colorado",
         "country": "USA"
       }
     ],
@@ -271411,35 +271482,35 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2019-2021",
+        "years": "2019–2021",
         "team": "Nanterre 92",
         "city": "Nanterre",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2020-2021",
+        "years": "2020–2021",
         "team": "Centre Fédéral",
         "city": "Paris",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2021-2022",
+        "years": "2021–2022",
         "team": "ASVEL",
         "city": "Villeurbanne",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–2023",
         "team": "Metropolitans 92",
         "city": "Levallois-Perret",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2023-2026",
+        "years": "2023–present",
         "team": "San Antonio Spurs",
         "city": "San Antonio",
         "state": "Texas",
@@ -272357,14 +272428,14 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2017-2021",
+        "years": "2017–2021",
         "team": "Zaragoza",
         "city": "Zaragoza",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2021-2022",
+        "years": "2021–22",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
@@ -272378,11 +272449,18 @@
         "country": "USA"
       },
       {
-        "years": "2022-2023",
+        "years": "2022–23",
         "team": "Atlanta Hawks",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
+      },
+      {
+        "years": "2022–2023",
+        "team": "College Park Skyhawks",
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
       },
       {
         "years": "2023",
@@ -272392,14 +272470,29 @@
         "country": "USA"
       },
       {
-        "years": "2023-2026",
+        "years": "2023–2026",
         "team": "Atlanta Hawks",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
+      },
+      {
+        "years": "2023–2024",
+        "team": "College Park Skyhawks",
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
+      },
+      {
+        "years": "2026–present",
+        "team": "Portland Trail Blazers",
+        "city": "Portland",
+        "state": "Oregon",
+        "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Vit_Krejci"
+    "display_name": "Vít Krejčí",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/V%C3%ADt_Krej%C4%8D%C3%AD"
   },
   {
     "player": "Vitaly Potapenko",
@@ -273543,10 +273636,10 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2022-2026",
+        "years": "2022–present",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
@@ -276373,21 +276466,22 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2018-2021",
+        "years": "2018–2021",
         "team": "Chicago Bulls",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2021-2026",
+        "years": "2021–present",
         "team": "Orlando Magic",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Wendell_Carter_Jr"
+    "display_name": "Wendell Carter Jr.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wendell_Carter_Jr."
   },
   {
     "player": "Wendell Moore",
@@ -281239,14 +281333,14 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2017-2021",
+        "years": "2017–2021",
         "team": "Portland Trail Blazers",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2021-2025",
+        "years": "2021–2025",
         "team": "San Antonio Spurs",
         "city": "San Antonio",
         "state": "Texas",
@@ -281260,7 +281354,7 @@
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Chicago Bulls",
         "city": "Chicago",
         "state": "Illinois",
@@ -281274,21 +281368,21 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2014-2017",
+        "years": "2014–2017",
         "team": "Minnesota Timberwolves",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2017-2025",
+        "years": "2017–2025",
         "team": "Chicago Bulls",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Sacramento Kings",
         "city": "Sacramento",
         "state": "California",
@@ -281904,7 +281998,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2020-2026",
+        "years": "2020–present",
         "team": "Denver Nuggets",
         "city": "Denver",
         "state": "Colorado",
@@ -282366,11 +282460,11 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2024",
+        "years": "2021–2024",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2023",
@@ -282380,10 +282474,10 @@
         "country": "USA"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–2026",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       }
     ],
@@ -282394,7 +282488,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2019-2026",
+        "years": "2019–present",
         "team": "New Orleans Pelicans",
         "city": "New Orleans",
         "state": "Louisiana",
@@ -283719,7 +283813,7 @@
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Holland_(basketball)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Holland"
   },
   {
     "player": "Bobi Klintman",
@@ -284140,21 +284234,21 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2024",
+        "years": "2021–2024",
         "team": "ASVEL",
         "city": "Villeurbanne",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–2024",
         "team": "JL Bourg",
         "city": "Bourg-en-Bresse",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Atlanta Hawks",
         "city": "Atlanta",
         "state": "Georgia",
@@ -284168,18 +284262,32 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Agua Caliente / Ontario Clippers",
-        "city": "Agua Caliente",
-        "state": "California",
-        "country": "USA"
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
-        "years": "2024-2026",
+        "years": "2023–2024",
+        "team": "College Park Skyhawks",
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
+      },
+      {
+        "years": "2024–2026",
         "team": "Atlanta Hawks",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
+      },
+      {
+        "years": "2024–2025",
+        "team": "College Park Skyhawks",
+        "city": "College Park",
+        "state": "",
+        "country": "Georgia"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Keaton_Wallace"
@@ -284393,7 +284501,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024–present",
+        "years": "2024–2026",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
@@ -284404,6 +284512,13 @@
         "team": "Sioux Falls Skyforce",
         "city": "Sioux Falls",
         "state": "South Dakota",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Milwaukee Bucks",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
         "country": "USA"
       }
     ],
@@ -284512,42 +284627,43 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Orlando Magic",
         "city": "Orlando",
         "state": "Florida",
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tristan_Da_Silva"
+    "display_name": "Tristan da Silva",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tristan_da_Silva"
   },
   {
     "player": "Alex Sarr",
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021-2022",
+        "years": "2021–2022",
         "team": "Team Overtime",
         "city": "",
         "state": "",
         "country": ""
       },
       {
-        "years": "2022-2023",
+        "years": "2022–2023",
         "team": "YNG Dreamerz",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–2024",
         "team": "Perth Wildcats",
         "city": "Perth",
         "state": "Western Australia",
         "country": "Australia"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Washington Wizards",
         "city": "Washington",
         "state": "D.C.",
@@ -284568,21 +284684,22 @@
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Carlton_Carrington"
+    "display_name": "Bub Carrington",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bub_Carrington"
   },
   {
     "player": "Kyshawn George",
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2022-2023",
+        "years": "2022–2023",
         "team": "Élan Chalon",
         "city": "Chalon-sur-Saône",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Washington Wizards",
         "city": "Washington",
         "state": "D.C.",
@@ -285024,7 +285141,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Portland Trail Blazers",
         "city": "Portland",
         "state": "Oregon",
@@ -285290,16 +285407,16 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "LA Clippers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–2025",
         "team": "LA Clippers",
-        "city": "San Diego",
+        "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       }
@@ -285360,9 +285477,16 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Los Angeles Lakers",
         "city": "Los Angeles",
+        "state": "California",
+        "country": "USA"
+      },
+      {
+        "years": "2025",
+        "team": "South Bay Lakers",
+        "city": "El Segundo",
         "state": "California",
         "country": "USA"
       }
@@ -285443,7 +285567,7 @@
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Dunn_(basketball)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Dunn"
   },
   {
     "player": "Oso Ighodaro",
@@ -285898,11 +286022,11 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Jaylen_Wells"
@@ -285912,11 +286036,11 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Zach_Edey"
@@ -286045,7 +286169,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "New Orleans Pelicans",
         "city": "New Orleans",
         "state": "Louisiana",
@@ -286180,7 +286304,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "San Antonio Spurs",
         "city": "San Antonio",
         "state": "Texas",
@@ -286410,7 +286534,7 @@
         "country": "USA"
       },
       {
-        "years": "2025–2026",
+        "years": "2025–present",
         "team": "Maine Celtics",
         "city": "Portland",
         "state": "Maine",
@@ -286529,7 +286653,7 @@
         "country": "USA"
       },
       {
-        "years": "2025–present",
+        "years": "2026",
         "team": "Utah Jazz",
         "city": "New Orleans",
         "state": "Louisiana",
@@ -287067,7 +287191,7 @@
         "country": "USA"
       },
       {
-        "years": "2025",
+        "years": "2025–2026",
         "team": "Stockton Kings",
         "city": "Stockton",
         "state": "California",
@@ -287249,7 +287373,8 @@
         "country": "USA"
       }
     ],
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Hansen_Yang"
+    "display_name": "Yang Hansen",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Yang_Hansen"
   },
   {
     "player": "Hayden Gray",
@@ -287263,7 +287388,7 @@
         "country": "USA"
       },
       {
-        "years": "2025–present",
+        "years": "2026",
         "team": "Utah Jazz",
         "city": "New Orleans",
         "state": "Louisiana",
@@ -287870,7 +287995,7 @@
         "country": "Spain"
       },
       {
-        "years": "2025–present",
+        "years": "2025–2026",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
@@ -287881,6 +288006,13 @@
         "team": "Sioux Falls Skyforce",
         "city": "Sioux Falls",
         "state": "South Dakota",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Milwaukee Bucks",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
         "country": "USA"
       }
     ],
@@ -288021,17 +288153,17 @@
   },
   {
     "player": "Koby Brea",
-    "status": "overseas_active",
+    "status": "nba_active",
     "career_history": [
       {
-        "years": "2025–26",
+        "years": "2025–present",
         "team": "Phoenix Suns",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2025–2026",
+        "years": "2025–present",
         "team": "Valley Suns",
         "city": "Tempe",
         "state": "Arizona",
