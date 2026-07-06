@@ -13,7 +13,7 @@
   },
   "7bet-Lietkabelis Panevėžys": {
     "team": "7bet-Lietkabelis Panevėžys",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -43,7 +43,7 @@
   },
   "ABBR Opale Sud": {
     "team": "ABBR Opale Sud",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -73,7 +73,13 @@
   },
   "APR": {
     "team": "APR",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "APU Udine": {
+    "team": "APU Udine",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -85,13 +91,13 @@
   },
   "AS Douanes": {
     "team": "AS Douanes",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "ASK Kadeti": {
     "team": "ASK Kadeti",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -109,13 +115,13 @@
   },
   "Acunsa GBC": {
     "team": "Acunsa GBC",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Afyon": {
     "team": "Afyon",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -125,9 +131,21 @@
     "city": "",
     "country": ""
   },
+  "Agua Caliente / Ontario / San Diego Clippers": {
+    "team": "Agua Caliente / Ontario / San Diego Clippers",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
+  "Agua Caliente / Ontario Clippers": {
+    "team": "Agua Caliente / Ontario Clippers",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
   "Aguada": {
     "team": "Aguada",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -158,6 +176,12 @@
   "Aironi Novara": {
     "team": "Aironi Novara",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Aisčiai": {
+    "team": "Aisčiai",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -193,19 +217,19 @@
   },
   "Al Ahly": {
     "team": "Al Ahly",
-    "reason": "missing city and/or country",
-    "city": "",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Cairo",
     "country": ""
   },
   "Al Arabi": {
     "team": "Al Arabi",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Al Arabi SC": {
     "team": "Al Arabi SC",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -229,7 +253,7 @@
   },
   "Al Hilal": {
     "team": "Al Hilal",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -253,7 +277,7 @@
   },
   "Al Muharraq": {
     "team": "Al Muharraq",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -271,7 +295,7 @@
   },
   "Al Nawair": {
     "team": "Al Nawair",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -295,19 +319,19 @@
   },
   "Al Sadd": {
     "team": "Al Sadd",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Al Sadd Doha": {
     "team": "Al Sadd Doha",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Al Salam": {
     "team": "Al Salam",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -331,14 +355,14 @@
   },
   "Al Shurtah": {
     "team": "Al Shurtah",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Al Wahda": {
     "team": "Al Wahda",
-    "reason": "missing city and/or country",
-    "city": "",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Abu Dhabi",
     "country": ""
   },
   "Al Wasl": {
@@ -355,7 +379,7 @@
   },
   "Al-Arabi": {
     "team": "Al-Arabi",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -373,7 +397,7 @@
   },
   "Al-Fateh": {
     "team": "Al-Fateh",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -391,19 +415,19 @@
   },
   "Al-Ittihad Manama": {
     "team": "Al-Ittihad Manama",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Al-Jahra": {
     "team": "Al-Jahra",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Al-Jaish": {
     "team": "Al-Jaish",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -415,7 +439,7 @@
   },
   "Al-Manama": {
     "team": "Al-Manama",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -433,7 +457,7 @@
   },
   "Al-Qurain SC": {
     "team": "Al-Qurain SC",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -457,8 +481,8 @@
   },
   "Al-Seeb Club": {
     "team": "Al-Seeb Club",
-    "reason": "missing city and/or country",
-    "city": "",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Al-Seeb",
     "country": ""
   },
   "Al-Shabab": {
@@ -527,6 +551,12 @@
     "city": "",
     "country": ""
   },
+  "Altiri Chiba": {
+    "team": "Altiri Chiba",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Chiba",
+    "country": ""
+  },
   "Altoona Railroaders": {
     "team": "Altoona Railroaders",
     "reason": "missing city and/or country",
@@ -541,7 +571,7 @@
   },
   "Amicale Steesel": {
     "team": "Amicale Steesel",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -659,6 +689,12 @@
     "city": "",
     "country": ""
   },
+  "Anyang KGCAnyang Jung Kwan Jang Red Boosters": {
+    "team": "Anyang KGCAnyang Jung Kwan Jang Red Boosters",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Anyang SBS Stars": {
     "team": "Anyang SBS Stars",
     "reason": "missing city and/or country",
@@ -673,7 +709,7 @@
   },
   "Apaches de Chihuahua": {
     "team": "Apaches de Chihuahua",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -691,7 +727,7 @@
   },
   "Aquila Trento": {
     "team": "Aquila Trento",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -775,9 +811,15 @@
   },
   "Auckland Tuatara": {
     "team": "Auckland Tuatara",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
+  },
+  "Austin Toros/Spurs": {
+    "team": "Austin Toros/Spurs",
+    "reason": "contains '/', verify not two merged teams",
+    "city": "Austin",
+    "country": "USA"
   },
   "Avala Ada": {
     "team": "Avala Ada",
@@ -794,6 +836,12 @@
   "Ayandez Sazan Tehran": {
     "team": "Ayandez Sazan Tehran",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Azad University Tehran": {
+    "team": "Azad University Tehran",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -829,7 +877,7 @@
   },
   "BCH Garid": {
     "team": "BCH Garid",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -847,7 +895,7 @@
   },
   "BIS Baskets Speyer": {
     "team": "BIS Baskets Speyer",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -907,7 +955,7 @@
   },
   "Baltur Cento": {
     "team": "Baltur Cento",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -943,7 +991,7 @@
   },
   "Barreirense": {
     "team": "Barreirense",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1051,7 +1099,7 @@
   },
   "Bergamo Basket 2014": {
     "team": "Bergamo Basket 2014",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1061,9 +1109,27 @@
     "city": "",
     "country": ""
   },
+  "Beşiktaş Icrypex": {
+    "team": "Beşiktaş Icrypex",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Beşiktaş Sompo Japan": {
+    "team": "Beşiktaş Sompo Japan",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Biguá": {
     "team": "Biguá",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Bilbao": {
+    "team": "Bilbao",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1111,7 +1177,7 @@
   },
   "Bodrumspor": {
     "team": "Bodrumspor",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1123,7 +1189,7 @@
   },
   "Borac Čačak": {
     "team": "Borac Čačak",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1141,7 +1207,7 @@
   },
   "Botafogo de Futebol e Regatas": {
     "team": "Botafogo de Futebol e Regatas",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1165,7 +1231,7 @@
   },
   "Brasilia": {
     "team": "Brasilia",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1225,7 +1291,7 @@
   },
   "Byblos": {
     "team": "Byblos",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1237,7 +1303,7 @@
   },
   "Büyükçekmece": {
     "team": "Büyükçekmece",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1291,7 +1357,13 @@
   },
   "CBet Jonava": {
     "team": "CBet Jonava",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "CFBB": {
+    "team": "CFBB",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1303,7 +1375,7 @@
   },
   "COC Ribeirão Preto": {
     "team": "COC Ribeirão Preto",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1319,9 +1391,15 @@
     "city": "Calamonte",
     "country": ""
   },
+  "CS Antonine": {
+    "team": "CS Antonine",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "CSM Corona Brașov": {
     "team": "CSM Corona Brașov",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1427,9 +1505,33 @@
     "city": "",
     "country": ""
   },
+  "Caneros de La Romana": {
+    "team": "Caneros de La Romana",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Cantabria": {
     "team": "Cantabria",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Canton / Cleveland Charge": {
+    "team": "Canton / Cleveland Charge",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
+  "Cantù": {
+    "team": "Cantù",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Capital City Go-Go-->": {
+    "team": "Capital City Go-Go-->",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1489,19 +1591,19 @@
   },
   "Casale Monferrato": {
     "team": "Casale Monferrato",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Casalpusterlengo": {
     "team": "Casalpusterlengo",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Casey Cavaliers": {
     "team": "Casey Cavaliers",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1525,7 +1627,13 @@
   },
   "Cearense": {
     "team": "Cearense",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Cedevita / Cedevita Olimpija": {
+    "team": "Cedevita / Cedevita Olimpija",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -1549,7 +1657,7 @@
   },
   "Central Club": {
     "team": "Central Club",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1585,19 +1693,25 @@
   },
   "Changsha Bank Guangdong": {
     "team": "Changsha Bank Guangdong",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Changsha Wantian Yongsheng": {
     "team": "Changsha Wantian Yongsheng",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Charleroi": {
     "team": "Charleroi",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Charlotte Bobcats / Hornets": {
+    "team": "Charlotte Bobcats / Hornets",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -1627,7 +1741,7 @@
   },
   "Cherno More": {
     "team": "Cherno More",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1687,7 +1801,7 @@
   },
   "Cimarrones del Choco": {
     "team": "Cimarrones del Choco",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1709,9 +1823,15 @@
     "city": "",
     "country": ""
   },
+  "City Oilers": {
+    "team": "City Oilers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Lugogo",
+    "country": ""
+  },
   "City Reapers": {
     "team": "City Reapers",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1745,6 +1865,12 @@
     "city": "Tunis",
     "country": ""
   },
+  "Club Atlético Peñarol": {
+    "team": "Club Atlético Peñarol",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Montevideo",
+    "country": ""
+  },
   "Club Atlético River Plate": {
     "team": "Club Atlético River Plate",
     "reason": "missing city and/or country",
@@ -1759,7 +1885,7 @@
   },
   "Club Comunicaciones": {
     "team": "Club Comunicaciones",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1771,7 +1897,7 @@
   },
   "Club La Cancha": {
     "team": "Club La Cancha",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1807,8 +1933,14 @@
   },
   "Clínicas Rincón": {
     "team": "Clínicas Rincón",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
+    "country": ""
+  },
+  "Cobra Sport": {
+    "team": "Cobra Sport",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Juba",
     "country": ""
   },
   "Coca-Cola Tigers": {
@@ -1819,7 +1951,7 @@
   },
   "Cocolos": {
     "team": "Cocolos",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1831,7 +1963,7 @@
   },
   "Cold Hearts": {
     "team": "Cold Hearts",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1867,7 +1999,7 @@
   },
   "Coosur Real Betis": {
     "team": "Coosur Real Betis",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1885,13 +2017,13 @@
   },
   "Corinthians": {
     "team": "Corinthians",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Corinthians / Mogi das Cruzes": {
     "team": "Corinthians / Mogi das Cruzes",
-    "reason": "missing city and/or country",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -1903,7 +2035,7 @@
   },
   "Coruña": {
     "team": "Coruña",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1921,7 +2053,7 @@
   },
   "Crn Drim": {
     "team": "Crn Drim",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -1967,6 +2099,18 @@
     "city": "",
     "country": ""
   },
+  "Darüşşafaka Tekfen": {
+    "team": "Darüşşafaka Tekfen",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Delaware 87ers/Blue Coats": {
+    "team": "Delaware 87ers/Blue Coats",
+    "reason": "contains '/', verify not two merged teams",
+    "city": "Delaware",
+    "country": "USA"
+  },
   "Delfines de Miranda": {
     "team": "Delfines de Miranda",
     "reason": "missing city and/or country",
@@ -1993,8 +2137,8 @@
   },
   "Dewa United Banten": {
     "team": "Dewa United Banten",
-    "reason": "missing city and/or country",
-    "city": "",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Serang Regency",
     "country": ""
   },
   "Diablos Rojos del México": {
@@ -2011,7 +2155,13 @@
   },
   "Dijlah Al-Jamiea": {
     "team": "Dijlah Al-Jamiea",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Dijlah University College": {
+    "team": "Dijlah University College",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2029,7 +2179,7 @@
   },
   "Dorados Capital": {
     "team": "Dorados Capital",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2059,13 +2209,13 @@
   },
   "Dubai": {
     "team": "Dubai",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Dubrava": {
     "team": "Dubrava",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2131,7 +2281,7 @@
   },
   "East Side Pirates": {
     "team": "East Side Pirates",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2161,13 +2311,13 @@
   },
   "El Million Yireh": {
     "team": "El Million Yireh",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "El Millón": {
     "team": "El Millón",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2209,7 +2359,7 @@
   },
   "Enriquillo": {
     "team": "Enriquillo",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2221,7 +2371,7 @@
   },
   "Eskişehir": {
     "team": "Eskişehir",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2240,6 +2390,12 @@
   "Espé Basket Châlons-en-Champagne": {
     "team": "Espé Basket Châlons-en-Champagne",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Esteghlal BC": {
+    "team": "Esteghlal BC",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2281,7 +2437,7 @@
   },
   "FAP": {
     "team": "FAP",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2311,7 +2467,7 @@
   },
   "Falcon": {
     "team": "Falcon",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2371,13 +2527,19 @@
   },
   "Filathlitikos": {
     "team": "Filathlitikos",
-    "reason": "missing city and/or country",
-    "city": "",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Zografou",
     "country": ""
   },
   "Firenze": {
     "team": "Firenze",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Flecheros de Matagalpa": {
+    "team": "Flecheros de Matagalpa",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2401,7 +2563,7 @@
   },
   "Forlì": {
     "team": "Forlì",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2413,7 +2575,13 @@
   },
   "Forssan Koripojat": {
     "team": "Forssan Koripojat",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Fort Wayne / Indiana Mad Ants": {
+    "team": "Fort Wayne / Indiana Mad Ants",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -2471,6 +2639,30 @@
     "city": "",
     "country": ""
   },
+  "GSA Udine": {
+    "team": "GSA Udine",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Galatasaray Doğa Sigorta": {
+    "team": "Galatasaray Doğa Sigorta",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Galatasaray Liv Hospital": {
+    "team": "Galatasaray Liv Hospital",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Galatasaray Nef": {
+    "team": "Galatasaray Nef",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Galicia Ferrol": {
     "team": "Galicia Ferrol",
     "reason": "missing city and/or country",
@@ -2505,6 +2697,12 @@
     "team": "Gaz Metan Mediaş",
     "reason": "missing city and/or country",
     "city": "",
+    "country": ""
+  },
+  "GeVi Napoli": {
+    "team": "GeVi Napoli",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Naples",
     "country": ""
   },
   "Gestibérica Vigo": {
@@ -2569,7 +2767,7 @@
   },
   "Glint Manisa Basket": {
     "team": "Glint Manisa Basket",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2581,7 +2779,7 @@
   },
   "Gorica": {
     "team": "Gorica",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2611,7 +2809,7 @@
   },
   "Grindavík": {
     "team": "Grindavík",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2627,9 +2825,15 @@
     "city": "",
     "country": ""
   },
+  "Guangdong Southern Tigers": {
+    "team": "Guangdong Southern Tigers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Guizhou Guwutang Tea": {
     "team": "Guizhou Guwutang Tea",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2653,7 +2857,7 @@
   },
   "HDI Sigorta Afyon Belediye": {
     "team": "HDI Sigorta Afyon Belediye",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2672,6 +2876,12 @@
   "Hamilton Pat Pavers": {
     "team": "Hamilton Pat Pavers",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Hangzhou Jingwei": {
+    "team": "Hangzhou Jingwei",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2699,6 +2909,12 @@
     "city": "",
     "country": ""
   },
+  "Hapoel Kazrin/Galil Elyon": {
+    "team": "Hapoel Kazrin/Galil Elyon",
+    "reason": "contains '/', verify not two merged teams",
+    "city": "Lyon",
+    "country": "France"
+  },
   "Hapoel Lev HaSharon": {
     "team": "Hapoel Lev HaSharon",
     "reason": "missing city and/or country",
@@ -2709,6 +2925,12 @@
     "team": "Hapoel Migdal Ha'emek",
     "reason": "missing city and/or country",
     "city": "Migdal HaEmek",
+    "country": ""
+  },
+  "Hapoel Safed": {
+    "team": "Hapoel Safed",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
     "country": ""
   },
   "Hapoel Tsfat": {
@@ -2743,7 +2965,7 @@
   },
   "Hawthorn Magic": {
     "team": "Hawthorn Magic",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2755,13 +2977,19 @@
   },
   "Hebei Xianglan": {
     "team": "Hebei Xianglan",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
+    "country": ""
+  },
+  "Hebraica Macabi": {
+    "team": "Hebraica Macabi",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Montevideo",
     "country": ""
   },
   "Heidelberg": {
     "team": "Heidelberg",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2863,7 +3091,7 @@
   },
   "Horsens": {
     "team": "Horsens",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2879,9 +3107,27 @@
     "city": "",
     "country": ""
   },
+  "Hsinchu JKO Lioneers": {
+    "team": "Hsinchu JKO Lioneers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Hsinchu County",
+    "country": ""
+  },
+  "Hsinchu Lioneers": {
+    "team": "Hsinchu Lioneers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Hsinchu County",
+    "country": ""
+  },
+  "Hsinchu Toplus Lioneers": {
+    "team": "Hsinchu Toplus Lioneers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Hsinchu County",
+    "country": ""
+  },
   "Hubei Wenlv": {
     "team": "Hubei Wenlv",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2917,7 +3163,7 @@
   },
   "Héroes de Falcón": {
     "team": "Héroes de Falcón",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2941,7 +3187,7 @@
   },
   "Ikaros": {
     "team": "Ikaros",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -2954,6 +3200,18 @@
   "Il Menestrello Modena": {
     "team": "Il Menestrello Modena",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Ilirija": {
+    "team": "Ilirija",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Illawarra Hawks (Waratah)": {
+    "team": "Illawarra Hawks (Waratah)",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3001,7 +3259,7 @@
   },
   "Indiana Mad Ants/Noblesville Boom": {
     "team": "Indiana Mad Ants/Noblesville Boom",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3019,7 +3277,7 @@
   },
   "Indomables de Ciudad Juárez": {
     "team": "Indomables de Ciudad Juárez",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3031,13 +3289,19 @@
   },
   "Instituto ACC": {
     "team": "Instituto ACC",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Inter Club": {
     "team": "Inter Club",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Iowa Energy / Wolves": {
+    "team": "Iowa Energy / Wolves",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -3061,8 +3325,14 @@
   },
   "Ironi Kiryat Ata": {
     "team": "Ironi Kiryat Ata",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
+    "country": ""
+  },
+  "Ironi Kiryat Ata B.C.": {
+    "team": "Ironi Kiryat Ata B.C.",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Kiryat Ata",
     "country": ""
   },
   "Israel Sabras": {
@@ -3087,6 +3357,12 @@
     "team": "Italcable Perugia",
     "reason": "missing city and/or country",
     "city": "",
+    "country": ""
+  },
+  "JA Vichy-Clermont": {
+    "team": "JA Vichy-Clermont",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Vichy",
     "country": ""
   },
   "Jackson Jammers": {
@@ -3149,6 +3425,12 @@
     "city": "",
     "country": ""
   },
+  "Jiaozuo Cultural Tourism": {
+    "team": "Jiaozuo Cultural Tourism",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Johnston C.J.'s": {
     "team": "Johnston C.J.'s",
     "reason": "missing city and/or country",
@@ -3157,7 +3439,7 @@
   },
   "Johor Southern Tigers": {
     "team": "Johor Southern Tigers",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3179,6 +3461,12 @@
     "city": "",
     "country": ""
   },
+  "Juvi Cremona": {
+    "team": "Juvi Cremona",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Jämtland Ambassadors Östersund": {
     "team": "Jämtland Ambassadors Östersund",
     "reason": "missing city and/or country",
@@ -3188,6 +3476,12 @@
   "KAOD": {
     "team": "KAOD",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "KB Rahoveci": {
+    "team": "KB Rahoveci",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3251,6 +3545,30 @@
     "city": "Kansas City",
     "country": ""
   },
+  "Kaohsiung 17LIVE Steelers": {
+    "team": "Kaohsiung 17LIVE Steelers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Kaohsiung",
+    "country": ""
+  },
+  "Kaohsiung Aquas": {
+    "team": "Kaohsiung Aquas",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Kaohsiung City",
+    "country": ""
+  },
+  "Kaohsiung Jeoutai Technology": {
+    "team": "Kaohsiung Jeoutai Technology",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Kaohsiung Steelers": {
+    "team": "Kaohsiung Steelers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Kaohsiung",
+    "country": ""
+  },
   "Karlovac": {
     "team": "Karlovac",
     "reason": "missing city and/or country",
@@ -3259,7 +3577,7 @@
   },
   "Kataja": {
     "team": "Kataja",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3271,19 +3589,19 @@
   },
   "Kaštela": {
     "team": "Kaštela",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Keflavík": {
     "team": "Keflavík",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Keizarmezs": {
     "team": "Keizarmezs",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3299,9 +3617,15 @@
     "city": "",
     "country": ""
   },
+  "Kesatria Bengawan Solo": {
+    "team": "Kesatria Bengawan Solo",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Kia Carnival": {
     "team": "Kia Carnival",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3361,7 +3685,7 @@
   },
   "Koroivos": {
     "team": "Koroivos",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3395,15 +3719,21 @@
     "city": "",
     "country": ""
   },
+  "L'Horta Godella": {
+    "team": "L'Horta Godella",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "L'Hospitalet": {
     "team": "L'Hospitalet",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "LTH Castings": {
     "team": "LTH Castings",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3415,7 +3745,7 @@
   },
   "La Palma": {
     "team": "La Palma",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3451,7 +3781,7 @@
   },
   "Lakeland/Osceola Magic": {
     "team": "Lakeland/Osceola Magic",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3469,7 +3799,7 @@
   },
   "Lanús": {
     "team": "Lanús",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3481,7 +3811,7 @@
   },
   "Las Fieras de La Villa": {
     "team": "Las Fieras de La Villa",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3501,6 +3831,12 @@
     "team": "Lausanne Basket",
     "reason": "missing city and/or country",
     "city": "",
+    "country": ""
+  },
+  "Lavoropiù Fortitudo Bologna": {
+    "team": "Lavoropiù Fortitudo Bologna",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Bologna",
     "country": ""
   },
   "Lavovi 063": {
@@ -3559,7 +3895,7 @@
   },
   "Lhasa Pure Land": {
     "team": "Lhasa Pure Land",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3583,7 +3919,7 @@
   },
   "Lille Métropole": {
     "team": "Lille Métropole",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3595,7 +3931,7 @@
   },
   "Link Tochigi / Utsunomiya Brex": {
     "team": "Link Tochigi / Utsunomiya Brex",
-    "reason": "missing city and/or country",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -3659,6 +3995,12 @@
     "city": "",
     "country": ""
   },
+  "Los Angeles D-Fenders / South Bay Lakers": {
+    "team": "Los Angeles D-Fenders / South Bay Lakers",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
   "Los Angeles Jaguars": {
     "team": "Los Angeles Jaguars",
     "reason": "missing city and/or country",
@@ -3703,7 +4045,7 @@
   },
   "Luoyang Zhonghe": {
     "team": "Luoyang Zhonghe",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3787,7 +4129,7 @@
   },
   "Magnolia Chicken Timplados Hotshots": {
     "team": "Magnolia Chicken Timplados Hotshots",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3811,7 +4153,7 @@
   },
   "Manama Club": {
     "team": "Manama Club",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3829,7 +4171,7 @@
   },
   "Manisa": {
     "team": "Manisa",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3859,7 +4201,7 @@
   },
   "Marinos": {
     "team": "Marinos",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3919,7 +4261,7 @@
   },
   "Mega": {
     "team": "Mega",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3949,8 +4291,14 @@
   },
   "Menorca": {
     "team": "Menorca",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
+    "country": ""
+  },
+  "Mens Sana 1871 Basket": {
+    "team": "Mens Sana 1871 Basket",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Siena",
     "country": ""
   },
   "Meridiano Alicante": {
@@ -3961,7 +4309,7 @@
   },
   "Merkezefendi Basket": {
     "team": "Merkezefendi Basket",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3985,7 +4333,7 @@
   },
   "Metropolitanos de Mauricio Báez": {
     "team": "Metropolitanos de Mauricio Báez",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -3998,6 +4346,12 @@
   "Meysuspor": {
     "team": "Meysuspor",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Miami Heat -->": {
+    "team": "Miami Heat -->",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4016,6 +4370,12 @@
   "Milon": {
     "team": "Milon",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Milwaukee Bucks <!--": {
+    "team": "Milwaukee Bucks <!--",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4081,7 +4441,7 @@
   },
   "Mono Vampire": {
     "team": "Mono Vampire",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4111,7 +4471,7 @@
   },
   "Montegranaro": {
     "team": "Montegranaro",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4141,19 +4501,19 @@
   },
   "Mornar Bar": {
     "team": "Mornar Bar",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Mornar Barsko zlato": {
     "team": "Mornar Barsko zlato",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Mumbai Titans": {
     "team": "Mumbai Titans",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4177,7 +4537,7 @@
   },
   "Mykonos": {
     "team": "Mykonos",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4195,7 +4555,7 @@
   },
   "Nacional": {
     "team": "Nacional",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4214,6 +4574,12 @@
   "Naglis-Adakris": {
     "team": "Naglis-Adakris",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Napoli": {
+    "team": "Napoli",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4237,13 +4603,13 @@
   },
   "Nevėžis": {
     "team": "Nevėžis",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Nevėžis Kėdainiai": {
     "team": "Nevėžis Kėdainiai",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4277,6 +4643,12 @@
     "city": "",
     "country": ""
   },
+  "New Jersey / Brooklyn Nets": {
+    "team": "New Jersey / Brooklyn Nets",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
   "New Jersey Flyers": {
     "team": "New Jersey Flyers",
     "reason": "missing city and/or country",
@@ -4286,6 +4658,12 @@
   "New Jersey Turnpike": {
     "team": "New Jersey Turnpike",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "New Orleans Hornets / Pelicans": {
+    "team": "New Orleans Hornets / Pelicans",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -4327,19 +4705,19 @@
   },
   "North Gold Coast Seahawks": {
     "team": "North Gold Coast Seahawks",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "NorthPort Batang Pier": {
     "team": "NorthPort Batang Pier",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Northern Arizona Suns / Motor City Cruise": {
     "team": "Northern Arizona Suns / Motor City Cruise",
-    "reason": "missing city and/or country",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -4357,7 +4735,7 @@
   },
   "Novipiù Casale Monferrato": {
     "team": "Novipiù Casale Monferrato",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4375,13 +4753,19 @@
   },
   "Nymburk": {
     "team": "Nymburk",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Oakland Blue n' Gold Atlas": {
     "team": "Oakland Blue n' Gold Atlas",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Oberá Tenis Club": {
+    "team": "Oberá Tenis Club",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4417,13 +4801,13 @@
   },
   "Olimpia Kings": {
     "team": "Olimpia Kings",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Olimpija": {
     "team": "Olimpija",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4445,6 +4829,12 @@
     "city": "",
     "country": ""
   },
+  "Olomoucko": {
+    "team": "Olomoucko",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Omonia": {
     "team": "Omonia",
     "reason": "missing city and/or country",
@@ -4459,7 +4849,13 @@
   },
   "Onatra Kinshasa": {
     "team": "Onatra Kinshasa",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Ontario / San Diego Clippers": {
+    "team": "Ontario / San Diego Clippers",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -4547,6 +4943,12 @@
     "city": "Athens",
     "country": ""
   },
+  "Paisas": {
+    "team": "Paisas",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Paisas de Medellín": {
     "team": "Paisas de Medellín",
     "reason": "missing city and/or country",
@@ -4555,7 +4957,7 @@
   },
   "Palencia": {
     "team": "Palencia",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4579,7 +4981,7 @@
   },
   "Pallacanestro Nardò": {
     "team": "Pallacanestro Nardò",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4613,6 +5015,12 @@
     "city": "",
     "country": ""
   },
+  "Panathinaikos B.C.": {
+    "team": "Panathinaikos B.C.",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Panna Firenze": {
     "team": "Panna Firenze",
     "reason": "missing city and/or country",
@@ -4625,9 +5033,15 @@
     "city": "",
     "country": ""
   },
+  "Pardubice": {
+    "team": "Pardubice",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Parma": {
     "team": "Parma",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4639,7 +5053,7 @@
   },
   "Patriots": {
     "team": "Patriots",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4669,19 +5083,19 @@
   },
   "Pazi": {
     "team": "Pazi",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Peixegalego": {
     "team": "Peixegalego",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Peja": {
     "team": "Peja",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4699,13 +5113,13 @@
   },
   "Perlas": {
     "team": "Perlas",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Pertevniyal": {
     "team": "Pertevniyal",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4717,13 +5131,13 @@
   },
   "Petrochimi Imam": {
     "team": "Petrochimi Imam",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Petrol Olimpija": {
     "team": "Petrol Olimpija",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4753,7 +5167,7 @@
   },
   "Phoenix Super LPG Fuel Masters": {
     "team": "Phoenix Super LPG Fuel Masters",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4767,6 +5181,12 @@
     "team": "Pinheiros",
     "reason": "missing city and/or country",
     "city": "São Paulo",
+    "country": ""
+  },
+  "Pioneros Del Avila": {
+    "team": "Pioneros Del Avila",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
     "country": ""
   },
   "Pitt-Altoona Railroaders": {
@@ -4825,7 +5245,7 @@
   },
   "Plaza Valerio": {
     "team": "Plaza Valerio",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4837,13 +5257,19 @@
   },
   "Poitiers": {
     "team": "Poitiers",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Poitiers 86": {
     "team": "Poitiers 86",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Poitiers Basket 86": {
+    "team": "Poitiers Basket 86",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4891,7 +5317,7 @@
   },
   "Prat": {
     "team": "Prat",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4921,13 +5347,13 @@
   },
   "Prienai": {
     "team": "Prienai",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Prishtina": {
     "team": "Prishtina",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4940,6 +5366,12 @@
   "Progresso Castelmaggiore": {
     "team": "Progresso Castelmaggiore",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Prometey": {
+    "team": "Prometey",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5011,7 +5443,7 @@
   },
   "Pôle France": {
     "team": "Pôle France",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5041,20 +5473,26 @@
   },
   "REG": {
     "team": "REG",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "RIG Luleå": {
     "team": "RIG Luleå",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "RIG Mark Kinna": {
     "team": "RIG Mark Kinna",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
+    "country": ""
+  },
+  "RSSB Tigers": {
+    "team": "RSSB Tigers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Kigali",
     "country": ""
   },
   "Racing Club de Avellaneda": {
@@ -5083,7 +5521,7 @@
   },
   "Rahoveci 029": {
     "team": "Rahoveci 029",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5107,7 +5545,7 @@
   },
   "Ravenna": {
     "team": "Ravenna",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5125,7 +5563,7 @@
   },
   "Real Betis Energía Plus": {
     "team": "Real Betis Energía Plus",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5153,15 +5591,27 @@
     "city": "Champagne",
     "country": ""
   },
+  "Reno Bighorns / Stockton Kings": {
+    "team": "Reno Bighorns / Stockton Kings",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
   "Reussbühl Rebels": {
     "team": "Reussbühl Rebels",
     "reason": "missing city and/or country",
     "city": "",
     "country": ""
   },
+  "RheinEnergie Köln / Köln 99ers": {
+    "team": "RheinEnergie Köln / Köln 99ers",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
   "Riachuelo de La Rioja": {
     "team": "Riachuelo de La Rioja",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5261,6 +5711,12 @@
     "city": "",
     "country": ""
   },
+  "Râmnicu Vâlcea": {
+    "team": "Râmnicu Vâlcea",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Rīgas Laiks": {
     "team": "Rīgas Laiks",
     "reason": "missing city and/or country",
@@ -5323,7 +5779,7 @@
   },
   "SSV Lokomotive Bernau": {
     "team": "SSV Lokomotive Bernau",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5351,9 +5807,15 @@
     "city": "",
     "country": ""
   },
+  "Sagesse SC (basketball)": {
+    "team": "Sagesse SC (basketball)",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Beirut",
+    "country": ""
+  },
   "Sagesse Sports Club": {
     "team": "Sagesse Sports Club",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5377,7 +5839,7 @@
   },
   "Sakarya": {
     "team": "Sakarya",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5407,7 +5869,7 @@
   },
   "Samsunspor": {
     "team": "Samsunspor",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5431,7 +5893,7 @@
   },
   "San Martín de Marcos Juárez": {
     "team": "San Martín de Marcos Juárez",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5455,7 +5917,7 @@
   },
   "San Sebastián": {
     "team": "San Sebastián",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5513,9 +5975,15 @@
     "city": "",
     "country": ""
   },
+  "Satria Muda Bandung": {
+    "team": "Satria Muda Bandung",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Savio": {
     "team": "Savio",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5543,6 +6011,24 @@
     "city": "",
     "country": ""
   },
+  "Seattle Super Hawks": {
+    "team": "Seattle Super Hawks",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Seattle SuperSonics / , Oklahoma City Thunder": {
+    "team": "Seattle SuperSonics / , Oklahoma City Thunder",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
+  "Seattle SuperSonics/Oklahoma City Thunder": {
+    "team": "Seattle SuperSonics/Oklahoma City Thunder",
+    "reason": "contains '/', verify not two merged teams",
+    "city": "Oklahoma City",
+    "country": "USA"
+  },
   "Seixal": {
     "team": "Seixal",
     "reason": "missing city and/or country",
@@ -5551,7 +6037,7 @@
   },
   "Selenge Bodons": {
     "team": "Selenge Bodons",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5581,7 +6067,7 @@
   },
   "Shumen": {
     "team": "Shumen",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5609,6 +6095,12 @@
     "city": "",
     "country": ""
   },
+  "Singapore Adroit": {
+    "team": "Singapore Adroit",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Sion Hérens Basket": {
     "team": "Sion Hérens Basket",
     "reason": "missing city and/or country",
@@ -5633,10 +6125,22 @@
     "city": "Tuzla",
     "country": ""
   },
+  "Slodes": {
+    "team": "Slodes",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Slovan": {
     "team": "Slovan",
     "reason": "missing city and/or country",
     "city": "",
+    "country": ""
+  },
+  "Slovan Bratislava": {
+    "team": "Slovan Bratislava",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Bratislava",
     "country": ""
   },
   "Smart Gilas": {
@@ -5647,7 +6151,7 @@
   },
   "Smederevo": {
     "team": "Smederevo",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5675,9 +6179,27 @@
     "city": "",
     "country": ""
   },
+  "South Bay / Coachella Valley Lakers": {
+    "team": "South Bay / Coachella Valley Lakers",
+    "reason": "slash-joined name — likely misparse of two teams",
+    "city": "",
+    "country": ""
+  },
+  "South Bay/Coachella Valley Lakers": {
+    "team": "South Bay/Coachella Valley Lakers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "South California Surf": {
     "team": "South California Surf",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "South China": {
+    "team": "South China",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5689,7 +6211,7 @@
   },
   "South West Metro Pirates": {
     "team": "South West Metro Pirates",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5701,7 +6223,7 @@
   },
   "Southern Districts Spartans": {
     "team": "Southern Districts Spartans",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5713,7 +6235,7 @@
   },
   "Spars": {
     "team": "Spars",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5725,7 +6247,7 @@
   },
   "Spartak Pleven": {
     "team": "Spartak Pleven",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5797,7 +6319,7 @@
   },
   "Star Hotshots": {
     "team": "Star Hotshots",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5833,13 +6355,19 @@
   },
   "Sugar Land Legends": {
     "team": "Sugar Land Legends",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Sugarland Sharks": {
     "team": "Sugarland Sharks",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Suke Lions": {
+    "team": "Suke Lions",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -5885,6 +6413,12 @@
     "city": "",
     "country": ""
   },
+  "Surne Bilbao Basket": {
+    "team": "Surne Bilbao Basket",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Sutjeska": {
     "team": "Sutjeska",
     "reason": "missing city and/or country",
@@ -5927,9 +6461,15 @@
     "city": "English",
     "country": ""
   },
+  "TNT Tropang 5G": {
+    "team": "TNT Tropang 5G",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "TNT Tropang Giga / 5G": {
     "team": "TNT Tropang Giga / 5G",
-    "reason": "missing city and/or country",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -5951,6 +6491,12 @@
     "city": "",
     "country": ""
   },
+  "TSV Quakenbrück": {
+    "team": "TSV Quakenbrück",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "TSV Tröster Breitengüßbach": {
     "team": "TSV Tröster Breitengüßbach",
     "reason": "missing city and/or country",
@@ -5965,13 +6511,13 @@
   },
   "Tabiat Eslamshahr": {
     "team": "Tabiat Eslamshahr",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Tabiat Tehran": {
     "team": "Tabiat Tehran",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6049,13 +6595,13 @@
   },
   "Team OTE": {
     "team": "Team OTE",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Team Overtime": {
     "team": "Team Overtime",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6247,7 +6793,7 @@
   },
   "Trepça": {
     "team": "Trepça",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6284,6 +6830,12 @@
   "TuS Lichterfelde": {
     "team": "TuS Lichterfelde",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Tulsa 66ers / Oklahoma City Blue": {
+    "team": "Tulsa 66ers / Oklahoma City Blue",
+    "reason": "slash-joined name — likely misparse of two teams",
     "city": "",
     "country": ""
   },
@@ -6329,6 +6881,12 @@
     "city": "",
     "country": ""
   },
+  "UCAM Murcia": {
+    "team": "UCAM Murcia",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "UDE Temuco": {
     "team": "UDE Temuco",
     "reason": "missing city and/or country",
@@ -6337,7 +6895,7 @@
   },
   "UEB Gesteco Cividale": {
     "team": "UEB Gesteco Cividale",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6427,7 +6985,7 @@
   },
   "Urupan de Pando": {
     "team": "Urupan de Pando",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6443,9 +7001,15 @@
     "city": "",
     "country": ""
   },
+  "Valencia B": {
+    "team": "Valencia B",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Valencia",
+    "country": ""
+  },
   "Valmiera": {
     "team": "Valmiera",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6455,15 +7019,21 @@
     "city": "",
     "country": ""
   },
+  "Varese": {
+    "team": "Varese",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "Vasco da Gama": {
     "team": "Vasco da Gama",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Vasco da gama": {
     "team": "Vasco da gama",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6493,7 +7063,7 @@
   },
   "Villa Mitre": {
     "team": "Villa Mitre",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6523,7 +7093,7 @@
   },
   "Vojvodina": {
     "team": "Vojvodina",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6542,6 +7112,12 @@
   "Warren Penns / Cleveland White Horses": {
     "team": "Warren Penns / Cleveland White Horses",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Washington Wizards <!--": {
+    "team": "Washington Wizards <!--",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6595,7 +7171,7 @@
   },
   "Wolves Twinsbet": {
     "team": "Wolves Twinsbet",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6607,7 +7183,7 @@
   },
   "Woodville Warriors": {
     "team": "Woodville Warriors",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6625,7 +7201,7 @@
   },
   "Wuhan Kunpeng": {
     "team": "Wuhan Kunpeng",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6647,6 +7223,12 @@
     "city": "",
     "country": ""
   },
+  "Xinjiang Flying Tigers": {
+    "team": "Xinjiang Flying Tigers",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
   "YMCA España": {
     "team": "YMCA España",
     "reason": "missing city and/or country",
@@ -6657,6 +7239,12 @@
     "team": "Yambol",
     "reason": "missing city and/or country",
     "city": "",
+    "country": ""
+  },
+  "Yankey Ark": {
+    "team": "Yankey Ark",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Hsinchu",
     "country": ""
   },
   "Yenisey Krasnoyarsk": {
@@ -6685,7 +7273,7 @@
   },
   "Yukatel Merkezefendi": {
     "team": "Yukatel Merkezefendi",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6698,6 +7286,12 @@
   "Yulon Luxgen Dinos / Yulon": {
     "team": "Yulon Luxgen Dinos / Yulon",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Yulon Luxgen DinosYulon": {
+    "team": "Yulon Luxgen DinosYulon",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -6761,6 +7355,12 @@
     "city": "Macau",
     "country": ""
   },
+  "Zonkeys de Tijuana": {
+    "team": "Zonkeys de Tijuana",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Tijuana",
+    "country": ""
+  },
   "Zrinjski Mostar": {
     "team": "Zrinjski Mostar",
     "reason": "missing city and/or country",
@@ -6769,14 +7369,32 @@
   },
   "Zunder Palencia": {
     "team": "Zunder Palencia",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Álftanes": {
     "team": "Álftanes",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
+    "country": ""
+  },
+  "Élan Béarnais": {
+    "team": "Élan Béarnais",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Pau",
+    "country": ""
+  },
+  "Élan Béarnais Pau-Lacq-Orthez": {
+    "team": "Élan Béarnais Pau-Lacq-Orthez",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Pau",
+    "country": ""
+  },
+  "Élan Béarnais Pau-Orthez": {
+    "team": "Élan Béarnais Pau-Orthez",
+    "reason": "auto-added; needs location confirmation",
+    "city": "Pau",
     "country": ""
   },
   "Ādaži Rīga": {
@@ -6805,13 +7423,19 @@
   },
   "Šiauliai–Casino Admiral": {
     "team": "Šiauliai–Casino Admiral",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
   "Široki Eronet": {
     "team": "Široki Eronet",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
+    "city": "",
+    "country": ""
+  },
+  "Žalgiris -Arvydas Sabonis School": {
+    "team": "Žalgiris -Arvydas Sabonis School",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   }
