@@ -11,8 +11,44 @@ from __future__ import annotations
 
 import re
 from team_normalizer import TeamNormalizer
+from player_status import is_nba_team
 
 INFOBOX_RE = re.compile(r"\{\{\s*Infobox\s+basketball\s+biography", re.IGNORECASE)
+
+
+def _stint_end_year(years: str) -> int:
+    """End-year of a stint for recency comparison. An open-ended / "present"
+    stint sorts as the most recent (sentinel 9999). A blank/unparseable range
+    sorts LAST (-1) so a missing-year stint is never chosen as the current team
+    over a stint with a real end-year."""
+    s = str(years or "").strip()
+    if not s:
+        return -1
+    if "present" in s.lower() or re.search(r"[–-]\s*$", s):
+        return 9999
+    yrs = re.findall(r"\d{4}", s)
+    return int(yrs[-1]) if yrs else -1
+
+
+def _select_current_team(history: list[dict]) -> str:
+    """Pick the current team as the stint with the latest end-year (present =
+    latest), NOT array order — so an NBA stint that outlasts a concurrent
+    G League/affiliate stint wins. Ties prefer an NBA franchise, then the later
+    stint."""
+    if not history:
+        return ""
+    best = 0
+    for i in range(1, len(history)):
+        ey, bey = _stint_end_year(history[i].get("years", "")), \
+            _stint_end_year(history[best].get("years", ""))
+        if ey > bey:
+            best = i
+        elif ey == bey:
+            cur_nba = is_nba_team(history[i]["team"])
+            best_nba = is_nba_team(history[best]["team"])
+            if cur_nba or not best_nba:  # NBA beats non-NBA; else later stint wins
+                best = i
+    return history[best]["team"]
 
 
 def _find_infobox(text: str) -> str | None:
@@ -213,14 +249,7 @@ def parse_player(text: str, player_name: str, normalizer: TeamNormalizer) -> dic
         if fields.get(key):
             draft[key.replace("draft_", "")] = _clean_text(fields[key])
 
-    current_team = ""
-    for entry in reversed(history):
-        yrs = entry.get("years", "")
-        if not yrs or "present" in yrs.lower() or re.search(r"[–\-]\s*$", yrs):
-            current_team = entry["team"]
-            break
-    if not current_team and history:
-        current_team = history[-1]["team"]
+    current_team = _select_current_team(history)
 
     record = {
         "player": player_name,

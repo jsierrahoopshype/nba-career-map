@@ -204,7 +204,10 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     """
     wt, canonical_title = client.get_wikitext_and_title(name)
     if not wt:
-        return None, [], False
+        # page not found (e.g. a "(1990)" disambiguated title with no matching
+        # article/redirect) — skip cleanly. Return the full 5-tuple so the
+        # caller's unpack never raises "expected 5, got 3".
+        return None, [], False, None, None
     fresh = parse_player(wt, name, db.normalizer)
     fresh.pop("_raw_teams", None)
     fresh["parse_status"] = fresh.pop("status", "success")
@@ -247,7 +250,7 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     # never create/persist a record with an empty name (guards against junk
     # rows like the blank-name seed artifact)
     if not str(key or "").strip():
-        return None, [], False
+        return None, [], False, None, None
     rec["player"] = key
     rec["display_name"] = canonical_title or rec.get("display_name") or key
     aliases = set(base.get("aliases", []))
