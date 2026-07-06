@@ -955,7 +955,7 @@
     "status": "nba_active",
     "career_history": [
       {
-        "years": "2021–present",
+        "years": "2021–2026",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
@@ -966,6 +966,13 @@
         "team": "Oklahoma City Blue",
         "city": "Oklahoma City",
         "state": "Oklahoma",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Atlanta Hawks",
+        "city": "Atlanta",
+        "state": "Georgia",
         "country": "USA"
       }
     ],
@@ -112729,10 +112736,17 @@
         "country": "USA"
       },
       {
-        "years": "2022–present",
+        "years": "2022–2026",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Detroit Pistons",
+        "city": "Detroit",
+        "state": "Michigan",
         "country": "USA"
       }
     ],
@@ -155287,11 +155301,18 @@
         "country": "Canada"
       },
       {
-        "years": "2019–present",
+        "years": "2019–2026",
         "team": "LA Clippers",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Toronto Raptors",
+        "city": "Toronto",
+        "state": "Ontario",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kawhi_Leonard"
@@ -289126,5 +289147,26 @@
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Zuby_Ejiofor"
+  },
+  {
+    "player": "AK Okereke",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Los Angeles Lakers",
+        "city": "Los Angeles",
+        "state": "California",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Coachella Valley Lakers",
+        "city": "Thousand Palms",
+        "state": "California",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/AK_Okereke"
   }
 ]

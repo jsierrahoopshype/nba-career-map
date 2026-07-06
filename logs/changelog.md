@@ -1,5 +1,17 @@
 ## 2026-07-06 — incremental run
 
+- Players updated: **68** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **3**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: AK Okereke
+  - Aaron Wiggins: Oklahoma City Thunder → Atlanta Hawks
+  - Isaiah Joe: Oklahoma City Thunder → Detroit Pistons
+  - Kawhi Leonard: LA Clippers → Toronto Raptors
+
+## 2026-07-06 — incremental run
+
 - Players updated: **61** (0 new)
 - New teams discovered: **0**
 - Team moves detected: **0**
