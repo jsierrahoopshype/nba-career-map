@@ -529,24 +529,27 @@
         .popup-loc { font-size: 12px; color: var(--text-muted); }
         .popup-yrs { font-size: 12px; color: var(--red); margin-top: 3px; }
         
-        @media (min-width: 768px) {
+        /* Side-by-side map + panel only on genuinely wide/desktop viewports.
+           Requiring min-height as well keeps landscape phones (wide but short,
+           e.g. ~930x430) stacked, which was the bad-UX case. */
+        @media (min-width: 1024px) and (min-height: 640px) {
             main {
                 flex-direction: row;
                 height: calc(100vh - 50px);
             }
-            
+
             #map {
                 flex: 1;
                 height: 100%;
                 order: 2;
             }
-            
+
             .panel {
                 width: 360px;
                 border-right: 1px solid var(--border);
                 order: 1;
             }
-            
+
             .player-name { font-size: 26px; }
         }
     
@@ -1301,12 +1304,36 @@
             }
         });
         
+        // Display-only ordering of career stints (does NOT mutate stored JSON):
+        // start year ascending, tie-break by duration descending, so a longer
+        // "parent" stint sorts before a shorter overlapping one (loan / G League
+        // assignment) with the same start year — e.g. Baskonia before Gijón,
+        // Utah Jazz before Bakersfield Jam. A "present"/open-ended stint counts
+        // as ongoing (longest). Stable within equal keys (keeps original order).
+        function careerBounds(s) {
+            const yrs = String(s && s.years || '');
+            const nums = yrs.match(/\d{4}/g) || [];
+            const start = nums.length ? parseInt(nums[0], 10) : 9999;
+            let end;
+            if (/present/i.test(yrs) || /[–-]\s*$/.test(yrs)) end = 9999;
+            else end = nums.length > 1 ? parseInt(nums[1], 10) : (nums.length ? parseInt(nums[0], 10) : 9999);
+            return { start, dur: end - start };
+        }
+        function sortCareer(career) {
+            return (career || []).map((s, i) => ({ s, i })).sort((a, b) => {
+                const ka = careerBounds(a.s), kb = careerBounds(b.s);
+                if (ka.start !== kb.start) return ka.start - kb.start;   // start ascending
+                if (kb.dur !== ka.dur) return kb.dur - ka.dur;           // duration descending
+                return a.i - b.i;                                        // stable
+            }).map(o => o.s);
+        }
+
         function show(name) {
             const p = data[name];
             if(!p?.career_history?.length){alert('No data available.');return;}
-            
+
             current = name;
-            const career = p.career_history;
+            const career = sortCareer(p.career_history);
             
             document.getElementById('welcome').style.display = 'none';
             document.getElementById('playerSection').classList.add('active');
