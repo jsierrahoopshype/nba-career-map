@@ -8,25 +8,37 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --red: #d63031;
-            --text: #1a1a1a;
-            --text-muted: #666;
-            --border: #e0e0e0;
-            --bg: #fff;
-            --bg-gray: #f8f8f8;
-            --green: #27ae60;
-            --blue: #2980b9;
+            /* Palette matched to jsierrahoopshype/nba-polymarket (docs/styles.css).
+               Existing token NAMES keep their in-code meaning (--bg is the white
+               surface used throughout); values are refreshed to the reference. */
+            --page: #f5f5f7;          /* app background */
+            --surface: #fff;
+            --surface-hover: #f0f0f2;
+            --border: #d1d1d6;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #3b82f6;
+            --accent-dim: rgba(59,130,246,.15);
+            --green: #1d8a40;
+            --red: #d12c2c;
+            --orange: #b26b00;
+            /* back-compat aliases for existing var() references */
+            --bg: var(--surface);
+            --bg-gray: var(--surface-hover);
+            --text-muted: var(--text-secondary);
+            --blue: var(--accent);
+            --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #f5f5f5;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--page);
             color: var(--text);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
@@ -66,10 +78,10 @@
         .logo-text {
             font-weight: 700;
             font-size: 16px;
-            color: #1a1a1a;
+            color: var(--text);
             letter-spacing: -0.5px;
             text-transform: uppercase;
-            border-left: 2px solid #ddd;
+            border-left: 2px solid var(--border);
             padding-left: 10px;
         }
         
@@ -84,11 +96,11 @@
             padding: 10px 14px;
             font-size: 14px;
             font-family: inherit;
-            border: 2px solid #e0e0e0;
+            border: 2px solid var(--border);
             border-radius: 8px;
             outline: none;
             transition: all 0.2s ease;
-            background: #f8f8f8;
+            background: var(--surface-hover);
         }
         
         #search:focus {
@@ -98,7 +110,7 @@
         }
         
         #search::placeholder {
-            color: #999;
+            color: var(--text-secondary);
         }
         
         #results {
@@ -138,7 +150,7 @@
         #map {
             height: 55%;
             min-height: 280px;
-            background: #eee;
+            background: var(--border);
             position: relative;
         }
         
@@ -205,7 +217,7 @@
         }
         
         .quiz-hero {
-            background: linear-gradient(145deg, #d63031 0%, #b71c1c 100%);
+            background: linear-gradient(145deg, var(--red) 0%, #b71c1c 100%);
             color: #fff;
             padding: 16px 14px;
             border-radius: 12px;
@@ -236,7 +248,7 @@
         
         .quiz-hero-btn {
             background: #fff;
-            color: #d63031;
+            color: var(--red);
             border: none;
             padding: 12px 32px;
             border-radius: 50px;
@@ -327,26 +339,30 @@
             flex: 1;
             text-align: center;
             padding: 10px 4px;
-            background: var(--bg-gray);
-            border-radius: 4px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
         }
-        
+
         .stat-num {
             font-size: 20px;
             font-weight: 700;
-            color: var(--red);
+            color: var(--text);
         }
-        
+
         .stat-lbl {
+            font-family: var(--mono);
             font-size: 10px;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
+
         .section-title {
+            font-family: var(--mono);
             font-size: 11px;
             font-weight: 600;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 10px;
@@ -366,7 +382,7 @@
             transition: background 0.1s;
             margin-left: -20px;
             padding-left: 20px;
-            border-radius: 4px;
+            border-radius: 8px;
         }
         
         .stop:hover, .stop.hl { background: var(--bg-gray); }
@@ -402,8 +418,9 @@
         .stop-team:hover { color: var(--red); text-decoration: underline; }
         
         .stop-meta {
-            font-size: 12px;
-            color: var(--text-muted);
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-secondary);
         }
         
         .suggestions {
@@ -419,17 +436,19 @@
         }
         
         .chip {
-            padding: 5px 10px;
-            background: var(--bg-gray);
+            padding: 5px 12px;
+            background: var(--surface);
+            border: 1px solid var(--border);
             border-radius: 16px;
             font-size: 12px;
             cursor: pointer;
             transition: all 0.1s;
         }
-        
+
         .chip:hover {
-            background: var(--red);
-            color: #fff;
+            background: var(--accent-dim);
+            border-color: var(--accent);
+            color: var(--accent);
         }
         
         /* Modal */
@@ -447,8 +466,9 @@
         .modal-bg.show { display: flex; }
         
         .modal {
-            background: #fff;
-            border-radius: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             width: 100%;
             max-width: 360px;
             max-height: 75vh;
@@ -480,30 +500,34 @@
         }
         
         .modal-loc {
-            font-size: 12px;
-            color: var(--text-muted);
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-secondary);
             margin-bottom: 10px;
         }
-        
+
         .modal-count {
-            font-size: 11px;
-            color: var(--red);
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--text-secondary);
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 8px;
         }
-        
+
         .modal-row {
             padding: 8px;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             font-size: 13px;
         }
-        
-        .modal-row:hover { background: var(--bg-gray); }
-        
-        .modal-yrs { color: var(--text-muted); font-size: 11px; }
+
+        .modal-row:hover { background: var(--surface-hover); }
+
+        .modal-yrs { font-family: var(--mono); color: var(--text-secondary); font-size: 11px; }
         
         /* Map markers */
         .marker {
@@ -555,7 +579,7 @@
     
         /* Quiz Mode Styles */
         .quiz-btn {
-            background: linear-gradient(135deg, #d63031 0%, #c0392b 100%);
+            background: linear-gradient(135deg, var(--red) 0%, var(--red) 100%);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -657,8 +681,8 @@
         }
         
         .quiz-option {
-            background: #f5f5f5;
-            border: 2px solid #ddd;
+            background: var(--page);
+            border: 2px solid var(--border);
             padding: 14px 8px;
             border-radius: 8px;
             font-size: 14px;
@@ -746,7 +770,7 @@
             font-family: inherit;
             transition: background 0.2s;
         }
-        .quiz-next-btn:hover, .quiz-start-btn:hover { background: #c0392b; }
+        .quiz-next-btn:hover, .quiz-start-btn:hover { background: var(--red); }
         
         .quiz-close-btn {
             background: var(--bg-gray);
@@ -851,7 +875,7 @@
         #shareImageContainer {
             margin-top: 16px;
             padding: 16px;
-            background: #f8f8f8;
+            background: var(--surface-hover);
             border-radius: 12px;
         }
         
@@ -866,7 +890,7 @@
             margin: 16px 0;
             max-height: 300px;
             overflow-y: auto;
-            background: #f8f8f8;
+            background: var(--surface-hover);
             border-radius: 8px;
             padding: 8px 0;
         }
@@ -875,7 +899,7 @@
             display: flex;
             align-items: center;
             padding: 10px 16px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border);
             font-size: 15px;
         }
         
@@ -899,7 +923,7 @@
         .quiz-result-name {
             flex: 1;
             font-weight: 600;
-            color: #333;
+            color: var(--text);
         }
         
         .quiz-result-points {
@@ -937,7 +961,7 @@
         }
         
         .share-download-btn {
-            background: #333;
+            background: var(--text);
             color: #fff;
         }
         
