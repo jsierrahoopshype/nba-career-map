@@ -54,6 +54,7 @@
             background:var(--surface); border:1px solid var(--border); border-radius:12px;
             padding:16px; cursor:pointer; transition:all .15s ease;
             display:flex; flex-direction:column; gap:6px;
+            text-decoration:none; color:inherit;
         }
         .team-card:hover { border-color:var(--accent); box-shadow:0 4px 16px rgba(0,0,0,.06); transform:translateY(-1px); }
         .team-card .name { font-weight:700; font-size:15px; }
@@ -181,11 +182,11 @@
                 const t = TEAMS[n];
                 const reloc = (t.relocations && t.relocations.length)
                     ? `<span class="reloc">↳ ${t.relocations.length} name/city eras</span>` : '';
-                return `<div class="team-card" onclick="location.hash='team='+encodeURIComponent(${JSON.stringify(n)})">
+                return `<a class="team-card" href="#team=${encodeURIComponent(n)}">
                     <span class="name">${esc(n)}</span>
                     <span class="meta">${t.alumni_count} alumni · ${t.roster_count} stints</span>
                     ${reloc}
-                </div>`;
+                </a>`;
             }).join('');
             document.getElementById('app').innerHTML = `
                 <div class="page-title">NBA Franchises</div>
