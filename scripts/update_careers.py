@@ -52,6 +52,10 @@ LOCATIONS = DATA / "teams" / "team_locations.json"
 REVIEW = DATA / "teams" / "teams_needing_review.json"
 UPDATE_LOG = LOGS / "update_log.json"
 CHANGELOG = LOGS / "changelog.md"
+# Append-only transaction ledger: one record per real current_team change,
+# captured going forward (past runs' previous values weren't kept, so this
+# cannot be backfilled). Feeds the dashboard "latest_signings" widget.
+TRANSACTIONS = DATA / "logs" / "transactions.json"
 ROOT_MAP_FILE = ROOT / "nba_players_careers_READY.json"
 
 
@@ -440,6 +444,30 @@ def _persist(db: Database, summary: dict) -> None:
     write_json(ROOT_MAP_FILE, map_players)
 
     _append_logs(summary)
+    _append_transactions(summary)
+
+
+def _append_transactions(summary: dict) -> None:
+    """Append this run's current_team changes to the append-only ledger.
+
+    Each ``team_moves`` entry ({player, from, to}) becomes a dated transaction
+    record. The file is only ever appended to; existing records are preserved.
+    """
+    moves = summary.get("team_moves", [])
+    if not moves:
+        return
+    ledger = load_json(TRANSACTIONS, {"transactions": []})
+    if isinstance(ledger, list):  # tolerate a bare-list file shape
+        ledger = {"transactions": ledger}
+    date = summary.get("date", today())
+    for mv in moves:
+        ledger["transactions"].append({
+            "player": mv["player"],
+            "from_team": mv.get("from", ""),
+            "to_team": mv.get("to", ""),
+            "date": date,
+        })
+    write_json(TRANSACTIONS, ledger)
 
 
 def _append_logs(summary: dict) -> None:

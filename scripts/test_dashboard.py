@@ -1,0 +1,154 @@
+"""Tests for the dashboard data layer (build_dashboard_data + transaction log).
+
+Offline / self-contained: builds widgets from hand-made fixtures covering the
+edge cases called out in the phase-1 spec (zero-country rookies, single-alumnus
+teams, boomerang vs contiguous/loan patterns), and exercises the append-only
+transaction ledger. Run: python3 scripts/test_dashboard.py
+"""
+from __future__ import annotations
+
+import json
+import sys
+import tempfile
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import build_dashboard_data as b  # noqa: E402
+import update_careers as u  # noqa: E402
+
+
+def _p(player, status, current, hist):
+    return {"player": player, "status": status, "current_team": current,
+            "career_history": hist}
+
+
+def _stint(team, years="2020", city="", state="", country=""):
+    return {"team": team, "years": years, "city": city, "state": state,
+            "country": country}
+
+
+FIX = [
+    # zero-country single-stint rookie (must not crash, counts 0 countries)
+    _p("Rookie Zero", "nba_active", "Miami Heat",
+       [_stint("Miami Heat", "2025–present", "Miami", "Florida", "USA")]),
+    # overseas player with no resolved location at all
+    _p("No Loc", "overseas_active", "Mystery FC", [_stint("Mystery FC", "2025")]),
+    # two overseas players sharing a non-NBA team + an NBA franchise (via
+    # different era names -> must canonicalize and match)
+    _p("Sonic Guy", "overseas_active", "Real Madrid",
+       [_stint("Seattle SuperSonics", "2005", "Seattle", "Washington", "USA"),
+        _stint("Real Madrid", "2024", "Madrid", "", "Spain")]),
+    _p("Thunder Guy", "overseas_active", "Real Madrid",
+       [_stint("Oklahoma City Thunder", "2015", "Oklahoma City", "Oklahoma", "USA"),
+        _stint("Real Madrid", "2024", "Madrid", "", "Spain")]),
+    # single-alumnus non-NBA team -> in alltime/current index, NOT in reunions
+    _p("Solo Overseas", "overseas_active", "Lonely BC",
+       [_stint("Lonely BC", "2024", "Nowhere", "", "Narnia")]),
+    # boomerang: A,B,A (non-contiguous) -> flagged
+    _p("Boomer", "retired", "A",
+       [_stint("A", "2010"), _stint("B", "2011"), _stint("A", "2012")]),
+    # contiguous A,A (loan-return already collapsed) -> NOT flagged
+    _p("Contig", "retired", "B",
+       [_stint("A", "2010"), _stint("A", "2011"), _stint("B", "2012")]),
+    # all distinct -> NOT flagged
+    _p("Distinct", "retired", "C",
+       [_stint("A", "2010"), _stint("B", "2011"), _stint("C", "2012")]),
+]
+
+
+def test_most_well_traveled_zero_country():
+    rows = {r["player"]: r for r in b.w_most_well_traveled(FIX)}
+    assert rows["No Loc"]["country_count"] == 0
+    assert rows["Rookie Zero"]["country_count"] == 1
+    print("test_most_well_traveled_zero_country PASS")
+
+
+def test_boomerang():
+    flagged = {r["player"]: r for r in b.w_boomerang_players(FIX)}
+    assert "Boomer" in flagged, "A,B,A must be a boomerang"
+    assert "Contig" not in flagged, "adjacent A,A must NOT be a boomerang"
+    assert "Distinct" not in flagged
+    yrs = flagged["Boomer"]["teams"][0]["years"]
+    assert yrs == ["2010", "2012"], yrs
+    print("test_boomerang PASS")
+
+
+def test_reunions_and_single_alumnus():
+    reunions = {r["team"]: r for r in b.w_team_reunions(FIX)}
+    # Real Madrid has 2 current overseas players -> a reunion
+    assert "Real Madrid" in reunions
+    # they share an NBA franchise via SuperSonics<->Thunder canonicalization
+    pairs = reunions["Real Madrid"]["shared_franchise_pairs"]
+    assert pairs and pairs[0]["shared_nba_franchises"] == ["Oklahoma City Thunder"]
+    # single-alumnus team is excluded from reunions...
+    assert "Lonely BC" not in reunions
+    # ...but present in the current-alumni index
+    cur = {r["team"]: r["count"] for r in b.w_teams_by_current_nba_alumni(FIX)}
+    assert cur.get("Lonely BC") == 1
+    assert cur.get("Real Madrid") == 2
+    print("test_reunions_and_single_alumnus PASS")
+
+
+def test_alltime_index_excludes_nba():
+    idx = {r["team"]: r["players"] for r in b.w_teams_by_alltime_nba_alumni(FIX)}
+    assert "Miami Heat" not in idx          # current NBA team
+    assert "Seattle SuperSonics" not in idx  # historical NBA era name
+    assert idx.get("Real Madrid") == 2
+    print("test_alltime_index_excludes_nba PASS")
+
+
+def test_countries():
+    live = {r["country"]: r["count"] for r in b.w_countries_live_snapshot(FIX)}
+    assert live.get("Spain") == 2   # both Real Madrid players currently in Spain
+    allt = {r["country"]: r["players"] for r in b.w_countries_alltime_alumni(FIX)}
+    assert allt.get("USA") >= 3
+    print("test_countries PASS")
+
+
+def test_heatmap_coverage():
+    ht = b.w_world_tour_heatmap(FIX, {"Madrid||Spain"})
+    cov = ht["coverage"]
+    # 4 overseas players: 2 Madrid (in coords), 1 no-city (No Loc), 1 city not
+    # in coords (Solo Overseas: Nowhere||Narnia)
+    assert cov["total"] == 4
+    assert cov["in_coords"] == 2
+    assert cov["missing_no_city"] == 1
+    assert cov["missing_city_absent_from_coords"] == 1
+    print("test_heatmap_coverage PASS")
+
+
+def test_transactions_append_only():
+    tmp = Path(tempfile.mkdtemp()) / "transactions.json"
+    u.TRANSACTIONS = tmp
+    u._append_transactions({"date": "2026-01-01", "team_moves": [
+        {"player": "X", "from": "Real Madrid", "to": "Barcelona"}]})
+    u._append_transactions({"date": "2026-01-02", "team_moves": []})  # no-op
+    u._append_transactions({"date": "2026-01-03", "team_moves": [
+        {"player": "Y", "from": "Utah Jazz", "to": "Partizan"}]})
+    led = json.loads(tmp.read_text())
+    assert len(led["transactions"]) == 2, "must append, not overwrite"
+    assert led["transactions"][0]["from_team"] == "Real Madrid"
+    assert led["transactions"][1]["date"] == "2026-01-03"
+
+    b.TRANSACTIONS = tmp
+    latest = b.w_latest_signings()
+    assert latest[0]["player"] == "Y", "newest first"
+    print("test_transactions_append_only PASS")
+
+
+def test_latest_signings_missing_file():
+    b.TRANSACTIONS = Path(tempfile.mkdtemp()) / "does_not_exist.json"
+    assert b.w_latest_signings() == []
+    print("test_latest_signings_missing_file PASS")
+
+
+if __name__ == "__main__":
+    test_most_well_traveled_zero_country()
+    test_boomerang()
+    test_reunions_and_single_alumnus()
+    test_alltime_index_excludes_nba()
+    test_countries()
+    test_heatmap_coverage()
+    test_transactions_append_only()
+    test_latest_signings_missing_file()
+    print("\nALL DASHBOARD TESTS PASS")

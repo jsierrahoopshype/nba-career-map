@@ -80,6 +80,12 @@ jobs:
             --max-requests "${IN_MAX:-100}" \
             --delay 1.0
 
+      - name: Rebuild dashboard data
+        # Consolidated aggregation layer for the dashboard. Runs every pipeline
+        # run so data/dashboard_data.json stays fresh; reads the just-updated
+        # career DB + transaction ledger and is committed with the rest of /data.
+        run: python3 scripts/build_dashboard_data.py
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
