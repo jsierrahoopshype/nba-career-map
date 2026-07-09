@@ -142,6 +142,64 @@ def test_latest_signings_missing_file():
     print("test_latest_signings_missing_file PASS")
 
 
+# --- Phase 2: team pages -----------------------------------------------------
+TEAM_FIX = [
+    # Minneapolis-era + LA-era players must land on the SAME Lakers roster
+    _p("Old Laker", "retired", "Minneapolis Lakers",
+       [_stint("Minneapolis Lakers", "1949-1954", "Minneapolis", "Minnesota", "USA")]),
+    _p("New Laker", "nba_active", "Los Angeles Lakers",
+       [_stint("Los Angeles Lakers", "2020–present", "Los Angeles", "California", "USA")]),
+    # Seattle-era player must land on the Thunder roster (era canonicalization)
+    _p("Sonic", "retired", "Seattle SuperSonics",
+       [_stint("Seattle SuperSonics", "1995-2000", "Seattle", "Washington", "USA")]),
+    # an overseas alum of the Lakers -> active_elsewhere on the Lakers page
+    _p("Wandering Laker", "overseas_active", "Real Madrid",
+       [_stint("Los Angeles Lakers", "2015", "Los Angeles", "California", "USA"),
+        _stint("Real Madrid", "2024", "Madrid", "", "Spain")]),
+    # a non-NBA-only career -> appears on NO team page
+    _p("Euro Only", "overseas_active", "FC Barcelona",
+       [_stint("FC Barcelona", "2024", "Barcelona", "", "Spain")]),
+]
+
+
+def test_team_pages_franchise_membership():
+    teams = b.w_team_pages(TEAM_FIX)
+    assert set(teams) == set(b.NBA_TEAMS), "exactly the 30 current franchises"
+    lal = {r["player"] for r in teams["Los Angeles Lakers"]["roster"]}
+    assert "Old Laker" in lal and "New Laker" in lal, "Minneapolis + LA on one roster"
+    okc = {r["player"] for r in teams["Oklahoma City Thunder"]["roster"]}
+    assert "Sonic" in okc, "Seattle-era player on Thunder roster"
+    # a non-NBA-only player is on no roster
+    everywhere = {r["player"] for t in teams.values() for r in t["roster"]}
+    assert "Euro Only" not in everywhere
+    print("test_team_pages_franchise_membership PASS")
+
+
+def test_team_pages_active_elsewhere():
+    teams = b.w_team_pages(TEAM_FIX)
+    ae = {a["player"]: a for a in teams["Los Angeles Lakers"]["active_elsewhere"]}
+    # overseas alum currently at Real Madrid -> listed with country
+    assert ae["Wandering Laker"]["current_team"] == "Real Madrid"
+    assert ae["Wandering Laker"]["country"] == "Spain"
+    # a player currently ON the franchise is NOT "active elsewhere"
+    assert "New Laker" not in ae, "current NBA player on this team isn't 'elsewhere'"
+    # retired alum never appears in active_elsewhere
+    assert "Old Laker" not in ae
+    print("test_team_pages_active_elsewhere PASS")
+
+
+def test_relocation_timeline():
+    teams = b.w_team_pages(TEAM_FIX)
+    # never-relocated franchise -> empty timeline (section skipped in UI)
+    assert teams["Boston Celtics"]["relocations"] == []
+    # relocated franchise -> founding era has null start, present era end null
+    okc = teams["Oklahoma City Thunder"]["relocations"]
+    assert [e["name"] for e in okc] == ["Seattle SuperSonics", "Oklahoma City Thunder"]
+    assert okc[0]["start_year"] is None and okc[0]["end_year"] == 2008
+    assert okc[1]["start_year"] == 2008 and okc[1]["end_year"] is None and okc[1]["current"]
+    print("test_relocation_timeline PASS")
+
+
 if __name__ == "__main__":
     test_most_well_traveled_zero_country()
     test_boomerang()
@@ -151,4 +209,7 @@ if __name__ == "__main__":
     test_heatmap_coverage()
     test_transactions_append_only()
     test_latest_signings_missing_file()
+    test_team_pages_franchise_membership()
+    test_team_pages_active_elsewhere()
+    test_relocation_timeline()
     print("\nALL DASHBOARD TESTS PASS")

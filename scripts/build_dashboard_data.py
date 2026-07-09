@@ -38,6 +38,7 @@ CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
 TRANSACTIONS = ROOT / "data" / "logs" / "transactions.json"
 INDEX_HTML = ROOT / "index.html"
 OUT = ROOT / "data" / "dashboard_data.json"
+TEAM_PAGES_OUT = ROOT / "data" / "team_pages.json"
 
 OVERSEAS = "overseas_active"
 
@@ -292,8 +293,80 @@ def w_latest_signings() -> list[dict]:
     return list(reversed(txns[-50:]))
 
 
-def build() -> dict:
-    players = json.loads(CAREERS.read_text(encoding="utf-8"))
+def _relocation_timeline(franchise: str) -> list[dict]:
+    """Name/city history for a franchise, from the relocation reference table.
+
+    Returns [] for franchises that never relocated/renamed (single era). Each
+    entry is {name, start_year, end_year, current}: start_year is null for the
+    founding era (the reference table records relocation boundaries, not
+    founding years, so we do not invent one); end_year is the next boundary, or
+    null for the present-day name.
+    """
+    eras = ERA_TABLE.get(franchise)
+    if not eras or len(eras) < 2:
+        return []
+    out = []
+    for i, (boundary, name) in enumerate(eras):
+        start = None if boundary == 0 else boundary
+        end = eras[i + 1][0] if i + 1 < len(eras) else None
+        out.append({"name": name, "start_year": start, "end_year": end,
+                    "current": end is None})
+    return out
+
+
+def w_team_pages(players: list) -> dict:
+    """Per-franchise alumni rosters for the 30 current NBA teams.
+
+    A player belongs to a franchise's roster if ANY of their stints was under
+    that franchise (any era name) — reusing nba_franchise_of so the Lakers page
+    includes Minneapolis-era players, the Thunder page includes Seattle-era
+    players, etc. One roster row per stint (its own years span); a player with
+    two separate stints for the franchise appears twice.
+    """
+    teams: dict[str, dict] = {}
+    for fr in sorted(NBA_TEAMS):
+        teams[fr] = {"franchise": fr,
+                     "relocations": _relocation_timeline(fr),
+                     "roster": [], "active_elsewhere": []}
+
+    # active_elsewhere is deduped per (franchise, player); track seen alumni
+    seen_active: dict[str, set] = {fr: set() for fr in teams}
+    for p in players:
+        status = p.get("status", "")
+        ct = p.get("current_team", "")
+        for s in p.get("career_history", []):
+            fr = nba_franchise_of(s.get("team", ""))
+            if fr is None:
+                continue
+            teams[fr]["roster"].append({
+                "player": p["player"],
+                "years": s.get("years", ""),
+                "stint_team": s.get("team", ""),
+                "status": status,
+            })
+            # "currently active elsewhere": alum still playing, not on this
+            # franchise right now (current_team is not one of its era names).
+            if status in ("nba_active", OVERSEAS) and nba_franchise_of(ct) != fr:
+                if p["player"] not in seen_active[fr]:
+                    seen_active[fr].add(p["player"])
+                    cs = _current_stint(p) or {}
+                    teams[fr]["active_elsewhere"].append({
+                        "player": p["player"], "status": status,
+                        "current_team": ct,
+                        "country": cs.get("country", "") if status == OVERSEAS else "USA",
+                    })
+
+    for fr, t in teams.items():
+        t["roster"].sort(key=lambda r: (r["player"], r["years"]))
+        t["active_elsewhere"].sort(key=lambda r: r["player"])
+        t["roster_count"] = len(t["roster"])
+        t["alumni_count"] = len({r["player"] for r in t["roster"]})
+    return teams
+
+
+def build(players: list | None = None) -> dict:
+    if players is None:
+        players = json.loads(CAREERS.read_text(encoding="utf-8"))
     coords_keys = load_coords_keys()
     return {
         "generated_from": "data/players/nba_players_careers.json",
@@ -317,10 +390,18 @@ def main() -> None:
                     help="print a top-10-ish sample of each widget after writing")
     args = ap.parse_args()
 
-    data = build()
+    players = json.loads(CAREERS.read_text(encoding="utf-8"))
+    data = build(players)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}  ({OUT.stat().st_size:,} bytes)")
+
+    # Team pages (Phase 2): a separate file so dashboard_data.json stays lean.
+    team_pages = {"generated_from": "data/players/nba_players_careers.json",
+                  "teams": w_team_pages(players)}
+    TEAM_PAGES_OUT.write_text(json.dumps(team_pages, ensure_ascii=False, indent=2) + "\n",
+                              encoding="utf-8")
+    print(f"wrote {TEAM_PAGES_OUT.relative_to(ROOT)}  ({TEAM_PAGES_OUT.stat().st_size:,} bytes)")
 
     if args.report:
         _report(data)

@@ -594,11 +594,24 @@
             letter-spacing: 0.5px;
             box-shadow: 0 2px 8px rgba(214, 48, 49, 0.3);
         }
-        .quiz-btn:hover { 
+        .quiz-btn:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(214, 48, 49, 0.4);
         }
-        
+        .nav-teams {
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .nav-teams:hover { background: var(--surface-hover); color: var(--text); }
+
         .quiz-overlay {
             position: fixed;
             top: 0;
@@ -998,6 +1011,7 @@
                 <input type="text" id="search" placeholder="Search 5,000+ players..." autocomplete="off">
                 <div id="results"></div>
             </div>
+            <a class="nav-teams" href="teams.html">Teams</a>
             <button class="quiz-btn" onclick="startQuiz()">🎮 Quiz</button>
         </div>
     </header>
