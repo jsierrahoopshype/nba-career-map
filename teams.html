@@ -93,12 +93,21 @@
         tbody tr:last-child td { border-bottom:none; }
         tbody tr:hover { background:var(--surface-hover); }
         td.mono { font-family:var(--mono); color:var(--text-secondary); }
-        a.link { color:var(--accent); font-weight:600; }
-        a.link:hover { text-decoration:underline; }
-        a.cell-link { display:block; color:inherit; margin:-10px -14px; padding:10px 14px; }
-        a.cell-link.link { color:var(--accent); }
-        .fr-links a { color:var(--accent); }
-        .fr-links a:hover { text-decoration:underline; }
+        /* Entity links inside data rows: neutral at rest, accent on hover only
+           (matches the reference site's .echip / .gs-item — no blue text in
+           table content). Standalone nav links (.back) may stay accent-tinted. */
+        a.link { color:inherit; text-decoration:none; font-weight:600; }
+        a.link:hover { color:var(--accent); }
+        a.cell-link { display:block; color:inherit; text-decoration:none; margin:-10px -14px; padding:10px 14px; }
+        a.cell-link:hover { color:var(--accent); }
+        a.cell-link.name { font-weight:600; }
+        .fr-links a { color:inherit; }
+        .fr-links a:hover { color:var(--accent); }
+        .flag {
+            display:inline-block; width:16px; height:12px; border-radius:2px;
+            vertical-align:-1px; margin-right:5px; object-fit:cover;
+            box-shadow:0 0 0 1px rgba(0,0,0,0.08);
+        }
         .empty { padding:40px; text-align:center; color:var(--text-secondary); }
     </style>
 </head>
@@ -114,6 +123,7 @@
     </header>
     <main id="app"><div class="empty">Loading teams…</div></main>
 
+    <script src="flags.js"></script>
     <script>
         const STATUS_LABEL = { nba_active:'NBA', overseas_active:'Overseas', retired:'Retired' };
         const STATUS_RANK = { nba_active:0, overseas_active:1, retired:2 };
@@ -243,7 +253,7 @@
                 unit:'teams',
                 rows,
                 columns:[
-                    { label:'Team',  sortVal:r=>r.name.toLowerCase(), cell:r=>link(r.name, esc(r.name), 'link') },
+                    { label:'Team',  sortVal:r=>r.name.toLowerCase(), cell:r=>link(r.name, esc(r.name), 'name') },
                     { label:'Alumni',sortVal:r=>r.alumni, cls:'mono', cell:r=>link(r.name, r.alumni) },
                     { label:'Stints',sortVal:r=>r.stints, cls:'mono', cell:r=>link(r.name, r.stints) },
                     { label:'Name-city eras', sortVal:r=>r.eras, cls:'mono',
@@ -264,50 +274,56 @@
                 <div class="timeline">${nodes}</div></div>`;
         }
 
+        // shared cell renderers
+        const playerCell = r => `<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>`;
+        // link a team/club name only when its page actually exists (an NBA
+        // franchise, or a club that currently has active alumni); else plain text
+        const teamCell = n => {
+            if (!n) return '—';
+            return (NBA_SET.has(n) || clubIndex[n])
+                ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : esc(n);
+        };
+        const countryCell = c => c ? `${flagImg(c)}${esc(c)}` : '—';
+        const statusCell = r => `<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>`;
+
         function renderTeam(t){
             const relocSub = (t.relocations||[]).map(r=>r.name).join(' → ');
+            const active = t.roster.filter(r => r.status!=='retired').map(r=>({ __k:r.player, ...r }));
+            const retired = t.roster.filter(r => r.status==='retired').map(r=>({ __k:r.player, ...r }));
             document.getElementById('app').innerHTML = `
                 <a class="back" href="teams.html">← All teams</a>
                 <div class="detail-title">${esc(t.franchise)}</div>
                 <div class="detail-sub">${t.alumni_count} alumni · ${t.roster_count} stints${relocSub?' · '+esc(relocSub):''}</div>
                 ${renderTimeline(t.relocations)}
-                ${(t.active_elsewhere&&t.active_elsewhere.length)
-                    ? `<div class="section"><div class="section-h">Currently active elsewhere (${t.active_elsewhere.length})</div><div id="aeTbl"></div></div>` : ''}
-                <div class="section"><div class="section-h">All-time alumni</div><div id="alTbl"></div></div>`;
+                <div class="section"><div class="section-h">Currently active (${active.length})</div><div id="acTbl"></div></div>
+                <div class="section"><div class="section-h">Retired (${retired.length})</div><div id="reTbl"></div></div>`;
 
-            // active-elsewhere table
-            if (t.active_elsewhere && t.active_elsewhere.length){
-                const aeRows = t.active_elsewhere.map(a=>({ __k:a.player, ...a }));
-                mountTable(document.getElementById('aeTbl'), {
-                    unit:'players', rows:aeRows,
-                    columns:[
-                        { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
-                          cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
-                        { label:'Current team', sortVal:r=>(r.current_team||'').toLowerCase(),
-                          cell:r=>`<a class="link" href="${currentHref(r.current_team)}">${esc(r.current_team)}</a>` },
-                        { label:'Country', sortVal:r=>(r.country||'').toLowerCase(), cls:'mono',
-                          cell:r=>esc(r.country||'—') },
-                        { label:'Status', sortVal:r=>STATUS_RANK[r.status],
-                          cell:r=>`<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>` },
-                    ],
-                });
-            }
-
-            // all-time alumni table (Player links to map, era links to franchise)
-            const alRows = t.roster.map(r=>({ __k:r.player, ...r }));
-            mountTable(document.getElementById('alTbl'), {
-                unit:'stints', rows:alRows,
+            // Table 1 — currently active alumni (NBA + overseas), where they are now
+            mountTable(document.getElementById('acTbl'), {
+                unit:'players', rows:active,
                 filterPlaceholder:'Filter players…',
                 filter:(r,q)=>r.player.toLowerCase().includes(q),
                 columns:[
-                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
-                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
                     { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
-                    { label:'Era name', sortVal:r=>r.stint_team.toLowerCase(),
-                      cell:r=>{ const fr = eraToFranchise[r.stint_team];
-                          return fr ? `<a class="link" href="${teamHref(fr)}">${esc(r.stint_team)}</a>` : esc(r.stint_team); } },
-                    { label:'Status', sortVal:r=>STATUS_RANK[r.status],
-                      cell:r=>`<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>` },
+                    { label:'Current team', sortVal:r=>(r.current_team||'').toLowerCase(),
+                      cell:r=>teamCell(r.current_team) },
+                    { label:'Country', sortVal:r=>(r.current_country||'').toLowerCase(),
+                      cell:r=>countryCell(r.current_country) },
+                    { label:'Status', sortVal:r=>STATUS_RANK[r.status], cell:statusCell },
+                ],
+            });
+
+            // Table 2 — retired alumni, with the final club of their career
+            mountTable(document.getElementById('reTbl'), {
+                unit:'players', rows:retired,
+                filterPlaceholder:'Filter players…',
+                filter:(r,q)=>r.player.toLowerCase().includes(q),
+                columns:[
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
+                    { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
+                    { label:'Last team', sortVal:r=>(r.current_team||'').toLowerCase(),
+                      cell:r=>teamCell(r.current_team) },
                 ],
             });
         }

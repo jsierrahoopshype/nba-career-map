@@ -172,6 +172,12 @@ def test_team_pages_franchise_membership():
     # a non-NBA-only player is on no roster
     everywhere = {r["player"] for t in teams.values() for r in t["roster"]}
     assert "Euro Only" not in everywhere
+    # roster rows carry current/last team + its country (for the Active/Retired
+    # team-page tables and their flag column)
+    row = next(r for r in teams["Los Angeles Lakers"]["roster"] if r["player"] == "New Laker")
+    assert row["current_team"] == "Los Angeles Lakers" and row["current_country"] == "USA"
+    wl = next(r for r in teams["Los Angeles Lakers"]["roster"] if r["player"] == "Wandering Laker")
+    assert wl["current_team"] == "Real Madrid" and wl["current_country"] == "Spain"
     print("test_team_pages_franchise_membership PASS")
 
 

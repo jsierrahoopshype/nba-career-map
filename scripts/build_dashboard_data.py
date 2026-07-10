@@ -334,6 +334,11 @@ def w_team_pages(players: list) -> dict:
     for p in players:
         status = p.get("status", "")
         ct = p.get("current_team", "")
+        cs = _current_stint(p) or {}
+        # country of the player's current/last team (where they are now for
+        # active players; their final club for retired players). NBA-active
+        # players are in the USA.
+        cur_country = "USA" if status == "nba_active" else cs.get("country", "")
         for s in p.get("career_history", []):
             fr = nba_franchise_of(s.get("team", ""))
             if fr is None:
@@ -343,13 +348,14 @@ def w_team_pages(players: list) -> dict:
                 "years": s.get("years", ""),
                 "stint_team": s.get("team", ""),
                 "status": status,
+                "current_team": ct,
+                "current_country": cur_country,
             })
             # "currently active elsewhere": alum still playing, not on this
             # franchise right now (current_team is not one of its era names).
             if status in ("nba_active", OVERSEAS) and nba_franchise_of(ct) != fr:
                 if p["player"] not in seen_active[fr]:
                     seen_active[fr].add(p["player"])
-                    cs = _current_stint(p) or {}
                     teams[fr]["active_elsewhere"].append({
                         "player": p["player"], "status": status,
                         "current_team": ct,
