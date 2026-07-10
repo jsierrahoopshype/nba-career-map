@@ -1261,10 +1261,22 @@
             });
             
             showWelcome();
-            
+
             // Don't auto-load - let quiz hero be the focus
             // User can click chips or search to explore
+            openPlayerFromHash();  // deep-link: #player=<name> opens that player
         }
+
+        // Additive deep-link support: if the URL hash names a player, open their
+        // detail view (reusing show()). No-op when there is no #player= hash, so
+        // default behavior is unchanged. Kept in sync via the hashchange handler.
+        function openPlayerFromHash() {
+            const m = location.hash.match(/^#player=(.+)$/);
+            if(!m) return;
+            const name = decodeURIComponent(m[1]);
+            if(data[name]) show(name);
+        }
+        window.addEventListener('hashchange', openPlayerFromHash);
         
         function showWelcome() {
             const avail = ALL_STARS.filter(p=>data[p]?.career_history?.length >= 5).sort(()=>Math.random()-0.5).slice(0,12);

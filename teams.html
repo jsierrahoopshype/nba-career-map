@@ -27,12 +27,8 @@
             background:#fff; padding:14px 20px; position:sticky; top:0; z-index:100;
             box-shadow:0 2px 20px rgba(0,0,0,0.08);
         }
-        .header-inner {
-            max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px;
-        }
-        .logo-text {
-            font-weight:700; font-size:16px; letter-spacing:-0.5px; text-transform:uppercase;
-        }
+        .header-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px; }
+        .logo-text { font-weight:700; font-size:16px; letter-spacing:-0.5px; text-transform:uppercase; }
         .nav { margin-left:auto; display:flex; align-items:center; gap:8px; }
         .nav a {
             padding:8px 14px; border-radius:8px; font-size:14px; font-weight:600;
@@ -43,25 +39,9 @@
 
         main { max-width:1200px; margin:0 auto; padding:24px 20px 64px; }
 
-        /* --- team grid (landing) --- */
         .page-title { font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:4px; }
         .page-sub { color:var(--text-secondary); font-size:14px; margin-bottom:20px; }
-        .grid {
-            display:grid; gap:12px;
-            grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
-        }
-        .team-card {
-            background:var(--surface); border:1px solid var(--border); border-radius:12px;
-            padding:16px; cursor:pointer; transition:all .15s ease;
-            display:flex; flex-direction:column; gap:6px;
-            text-decoration:none; color:inherit;
-        }
-        .team-card:hover { border-color:var(--accent); box-shadow:0 4px 16px rgba(0,0,0,.06); transform:translateY(-1px); }
-        .team-card .name { font-weight:700; font-size:15px; }
-        .team-card .meta { color:var(--text-secondary); font-size:13px; font-family:var(--mono); }
-        .team-card .reloc { color:var(--accent); font-size:12px; }
 
-        /* --- detail --- */
         .back { display:inline-flex; align-items:center; gap:6px; color:var(--text-secondary);
                 font-size:14px; font-weight:600; margin-bottom:16px; }
         .back:hover { color:var(--text); }
@@ -74,47 +54,34 @@
 
         /* timeline */
         .timeline { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-        .tl-node {
-            background:var(--surface); border:1px solid var(--border); border-radius:999px;
-            padding:6px 14px; font-size:13px; font-weight:600;
-        }
+        .tl-node { background:var(--surface); border:1px solid var(--border); border-radius:999px;
+                   padding:6px 14px; font-size:13px; font-weight:600; }
         .tl-node.current { border-color:var(--accent); color:var(--accent); background:var(--accent-dim); }
         .tl-node .yrs { font-family:var(--mono); color:var(--text-secondary); font-weight:400; margin-left:6px; }
         .tl-node.current .yrs { color:var(--accent); }
         .tl-arrow { color:var(--text-secondary); font-size:16px; }
 
-        /* active-elsewhere chips */
-        .chips { display:flex; flex-wrap:wrap; gap:8px; }
-        .chip {
-            display:inline-flex; align-items:center; gap:8px; background:var(--surface);
-            border:1px solid var(--border); border-radius:999px; padding:6px 12px; font-size:13px;
-        }
-        .chip .who { font-weight:600; }
-        .chip .where { color:var(--text-secondary); }
-        .dot { width:8px; height:8px; border-radius:50%; flex:none; }
-        .dot.nba_active { background:var(--green); }
-        .dot.overseas_active { background:var(--accent); }
-        .status-badge {
-            font-family:var(--mono); font-size:11px; font-weight:600; padding:2px 8px;
-            border-radius:6px; text-transform:uppercase; letter-spacing:.3px; white-space:nowrap;
-        }
+        /* status badge */
+        .status-badge { font-family:var(--mono); font-size:11px; font-weight:600; padding:2px 8px;
+            border-radius:6px; text-transform:uppercase; letter-spacing:.3px; white-space:nowrap; }
         .status-badge.nba_active { color:var(--green); background:rgba(29,138,64,.12); }
         .status-badge.overseas_active { color:var(--accent); background:var(--accent-dim); }
         .status-badge.retired { color:var(--text-secondary); background:var(--surface-hover); }
 
-        /* roster table */
+        /* shared table styling (landing, alumni, active-elsewhere, club) */
         .toolbar { display:flex; gap:12px; align-items:center; margin-bottom:10px; flex-wrap:wrap; }
-        #filter {
+        .tfilter {
             flex:1; min-width:180px; max-width:320px; padding:9px 12px; font-size:14px;
             font-family:inherit; border:2px solid var(--border); border-radius:8px; outline:none;
             background:var(--surface-hover);
         }
-        #filter:focus { border-color:var(--accent); background:#fff; }
+        .tfilter:focus { border-color:var(--accent); background:#fff; }
         .count { color:var(--text-secondary); font-size:13px; font-family:var(--mono); }
-        .table-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
-        table { width:100%; border-collapse:collapse; font-size:14px; }
+        .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch;
+                      border:1px solid var(--border); border-radius:12px; background:var(--surface); }
+        table { width:100%; border-collapse:collapse; font-size:14px; min-width:460px; }
         th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--border); white-space:nowrap; }
-        td.player { white-space:normal; }
+        td.wrap { white-space:normal; }
         th {
             position:sticky; top:0; background:var(--surface); cursor:pointer; user-select:none;
             font-size:12px; text-transform:uppercase; letter-spacing:.3px; color:var(--text-secondary);
@@ -125,8 +92,13 @@
         th.sorted .arrow { opacity:1; color:var(--accent); }
         tbody tr:last-child td { border-bottom:none; }
         tbody tr:hover { background:var(--surface-hover); }
-        td.years { font-family:var(--mono); color:var(--text-secondary); }
-        .era-tag { font-size:12px; color:var(--text-secondary); }
+        td.mono { font-family:var(--mono); color:var(--text-secondary); }
+        a.link { color:var(--accent); font-weight:600; }
+        a.link:hover { text-decoration:underline; }
+        a.cell-link { display:block; color:inherit; margin:-10px -14px; padding:10px 14px; }
+        a.cell-link.link { color:var(--accent); }
+        .fr-links a { color:var(--accent); }
+        .fr-links a:hover { text-decoration:underline; }
         .empty { padding:40px; text-align:center; color:var(--text-secondary); }
     </style>
 </head>
@@ -144,158 +116,226 @@
 
     <script>
         const STATUS_LABEL = { nba_active:'NBA', overseas_active:'Overseas', retired:'Retired' };
-        let TEAMS = {};
-        let sortState = { key:'player', dir:1 };
-
-        function startYear(years){
-            const m = String(years||'').match(/\d{4}/);
-            return m ? parseInt(m[0],10) : 0;
-        }
-        // sort rank so active players surface first when sorting by status
         const STATUS_RANK = { nba_active:0, overseas_active:1, retired:2 };
+        let TEAMS = {};
+        let NBA_SET = new Set();
+        const eraToFranchise = {};      // era name -> current franchise
+        const playerFranchises = {};    // player -> Set(franchise)
+        const clubIndex = {};           // non-NBA club -> Map(player -> {player,status,country})
+
         const esc = s => String(s??'').replace(/[&<>"']/g, c =>
             ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        const startYear = y => { const m = String(y||'').match(/\d{4}/); return m?parseInt(m[0],10):0; };
+
+        // href builders — all navigation uses real anchors, never onclick strings
+        const teamHref   = n => '#team=' + encodeURIComponent(n);
+        const clubHref   = n => '#club=' + encodeURIComponent(n);
+        const playerHref = n => 'index.html#player=' + encodeURIComponent(n);
+        const currentHref = n => NBA_SET.has(n) ? teamHref(n) : clubHref(n);
 
         async function load(){
             try {
                 const res = await fetch('data/team_pages.json');
                 TEAMS = (await res.json()).teams || {};
             } catch(e){
-                document.getElementById('app').innerHTML =
-                    '<div class="empty">Could not load team data.</div>';
+                document.getElementById('app').innerHTML = '<div class="empty">Could not load team data.</div>';
                 return;
             }
+            NBA_SET = new Set(Object.keys(TEAMS));
+            buildIndexes();
             route();
         }
 
+        function buildIndexes(){
+            for (const [fr, t] of Object.entries(TEAMS)){
+                for (const r of t.roster){
+                    eraToFranchise[r.stint_team] = fr;
+                    (playerFranchises[r.player] ??= new Set()).add(fr);
+                }
+                for (const a of (t.active_elsewhere||[])){
+                    const club = a.current_team;
+                    if (club && !NBA_SET.has(club)){   // a non-NBA club gets a #club view
+                        (clubIndex[club] ??= new Map()).set(a.player,
+                            { player:a.player, status:a.status, country:a.country });
+                    }
+                }
+            }
+        }
+
         function route(){
-            const m = location.hash.match(/^#team=(.+)$/);
-            const name = m ? decodeURIComponent(m[1]) : null;
-            if (name && TEAMS[name]) renderTeam(TEAMS[name]);
-            else renderGrid();
+            const h = location.hash;
+            let m;
+            if ((m = h.match(/^#team=(.+)$/)) && TEAMS[decodeURIComponent(m[1])]) {
+                renderTeam(TEAMS[decodeURIComponent(m[1])]);
+            } else if ((m = h.match(/^#club=(.+)$/)) && clubIndex[decodeURIComponent(m[1])]) {
+                renderClub(decodeURIComponent(m[1]));
+            } else {
+                renderLanding();
+            }
             window.scrollTo(0,0);
         }
 
-        function renderGrid(){
-            const names = Object.keys(TEAMS).sort();
-            const cards = names.map(n => {
+        /* ---- generic sortable table -----------------------------------------
+           spec = { columns:[{label, sortVal(row), cell(row)->html, cls?}],
+                    rows, sortKey(index), sortDir, filter?(row,q), filterPlaceholder? }
+           Sorting is wired with addEventListener (function refs), not onclick
+           attributes; every linking cell returns a real <a href>. */
+        function mountTable(root, spec){
+            const state = { key: spec.sortKey ?? 0, dir: spec.sortDir ?? 1, q:'' };
+            const hasFilter = !!spec.filter;
+            root.innerHTML = `
+                ${hasFilter ? `<div class="toolbar">
+                    <input class="tfilter" type="text" placeholder="${esc(spec.filterPlaceholder||'Filter…')}" autocomplete="off">
+                    <span class="count"></span></div>` : `<div class="toolbar"><span class="count"></span></div>`}
+                <div class="table-wrap"><table>
+                    <thead><tr>${spec.columns.map((c,i)=>
+                        `<th data-i="${i}">${esc(c.label)} <span class="arrow">▲</span></th>`).join('')}</tr></thead>
+                    <tbody></tbody>
+                </table></div>`;
+            const tbody = root.querySelector('tbody');
+            const countEl = root.querySelector('.count');
+            const ths = [...root.querySelectorAll('th')];
+
+            function draw(){
+                const q = state.q.toLowerCase().trim();
+                const rows = (q && hasFilter) ? spec.rows.filter(r=>spec.filter(r,q)) : spec.rows;
+                const col = spec.columns[state.key];
+                const sorted = rows.slice().sort((a,b)=>{
+                    const av = col.sortVal(a), bv = col.sortVal(b);
+                    if (av < bv) return -1*state.dir;
+                    if (av > bv) return  1*state.dir;
+                    return String(a.__k||'').localeCompare(String(b.__k||''));
+                });
+                tbody.innerHTML = sorted.map(r =>
+                    `<tr>${spec.columns.map(c=>`<td class="${c.cls||''}">${c.cell(r)}</td>`).join('')}</tr>`
+                ).join('') || `<tr><td class="empty" colspan="${spec.columns.length}">Nothing to show.</td></tr>`;
+                countEl.textContent = `${sorted.length}${q?` of ${spec.rows.length}`:''} ${spec.unit||'rows'}`;
+                ths.forEach((th,i)=>{
+                    const on = i===state.key;
+                    th.classList.toggle('sorted', on);
+                    const ar = th.querySelector('.arrow');
+                    if (ar) ar.textContent = on ? (state.dir>0?'▲':'▼') : '▲';
+                });
+            }
+            ths.forEach((th,i)=> th.addEventListener('click', ()=>{
+                state.dir = (state.key===i) ? -state.dir : 1;
+                state.key = i; draw();
+            }));
+            if (hasFilter){
+                root.querySelector('.tfilter').addEventListener('input', e=>{ state.q = e.target.value; draw(); });
+            }
+            draw();
+        }
+
+        /* ---- landing: sortable table of the 30 franchises -------------------- */
+        function renderLanding(){
+            const rows = Object.keys(TEAMS).sort().map(n=>{
                 const t = TEAMS[n];
-                const reloc = (t.relocations && t.relocations.length)
-                    ? `<span class="reloc">↳ ${t.relocations.length} name/city eras</span>` : '';
-                return `<a class="team-card" href="#team=${encodeURIComponent(n)}">
-                    <span class="name">${esc(n)}</span>
-                    <span class="meta">${t.alumni_count} alumni · ${t.roster_count} stints</span>
-                    ${reloc}
-                </a>`;
-            }).join('');
+                return { __k:n, name:n, alumni:t.alumni_count, stints:t.roster_count,
+                         eras:(t.relocations||[]).length };
+            });
             document.getElementById('app').innerHTML = `
                 <div class="page-title">NBA Franchises</div>
-                <div class="page-sub">30 teams · every player who ever suited up, across all eras. Pick a team.</div>
-                <div class="grid">${cards}</div>`;
+                <div class="page-sub">30 teams · every player who ever suited up, across all eras. Sort or pick a team.</div>
+                <div id="tbl"></div>`;
+            const link = (n, txt, cls) => `<a class="cell-link${cls?' '+cls:''}" href="${teamHref(n)}">${txt}</a>`;
+            mountTable(document.getElementById('tbl'), {
+                unit:'teams',
+                rows,
+                columns:[
+                    { label:'Team',  sortVal:r=>r.name.toLowerCase(), cell:r=>link(r.name, esc(r.name), 'link') },
+                    { label:'Alumni',sortVal:r=>r.alumni, cls:'mono', cell:r=>link(r.name, r.alumni) },
+                    { label:'Stints',sortVal:r=>r.stints, cls:'mono', cell:r=>link(r.name, r.stints) },
+                    { label:'Name-city eras', sortVal:r=>r.eras, cls:'mono',
+                      cell:r=>link(r.name, r.eras>1?`${r.eras} eras`:'—') },
+                ],
+            });
         }
 
+        /* ---- team detail: timeline + active-elsewhere table + alumni table --- */
         function renderTimeline(relocations){
             if (!relocations || !relocations.length) return '';
-            const nodes = relocations.map(r => {
-                const s = r.start_year ?? '';
-                const e = r.end_year ?? 'present';
-                const span = r.start_year==null ? `until ${e}` : `${s}–${e}`;
+            const nodes = relocations.map(r=>{
+                const span = r.start_year==null ? `until ${r.end_year??'present'}`
+                            : `${r.start_year}–${r.end_year??'present'}`;
                 return `<span class="tl-node${r.current?' current':''}">${esc(r.name)}<span class="yrs">${span}</span></span>`;
             }).join('<span class="tl-arrow">→</span>');
-            return `<div class="section">
-                <div class="section-h">Franchise history</div>
-                <div class="timeline">${nodes}</div>
-            </div>`;
-        }
-
-        function renderActiveElsewhere(list){
-            if (!list || !list.length) return '';
-            const chips = list.map(a => {
-                const where = a.status==='overseas_active'
-                    ? `${esc(a.current_team)}${a.country?' · '+esc(a.country):''}`
-                    : esc(a.current_team);
-                return `<span class="chip">
-                    <span class="dot ${a.status}"></span>
-                    <span class="who">${esc(a.player)}</span>
-                    <span class="where">${where}</span>
-                </span>`;
-            }).join('');
-            return `<div class="section">
-                <div class="section-h">Currently active elsewhere (${list.length})</div>
-                <div class="chips">${chips}</div>
-            </div>`;
+            return `<div class="section"><div class="section-h">Franchise history</div>
+                <div class="timeline">${nodes}</div></div>`;
         }
 
         function renderTeam(t){
-            const relocSub = (t.relocations && t.relocations.length)
-                ? t.relocations.map(r=>r.name).join(' → ') : '';
+            const relocSub = (t.relocations||[]).map(r=>r.name).join(' → ');
             document.getElementById('app').innerHTML = `
                 <a class="back" href="teams.html">← All teams</a>
                 <div class="detail-title">${esc(t.franchise)}</div>
                 <div class="detail-sub">${t.alumni_count} alumni · ${t.roster_count} stints${relocSub?' · '+esc(relocSub):''}</div>
                 ${renderTimeline(t.relocations)}
-                ${renderActiveElsewhere(t.active_elsewhere)}
-                <div class="section">
-                    <div class="section-h">All-time alumni</div>
-                    <div class="toolbar">
-                        <input id="filter" type="text" placeholder="Filter players…" autocomplete="off">
-                        <span class="count" id="rowCount"></span>
-                    </div>
-                    <div class="table-wrap">
-                        <table>
-                            <thead><tr>
-                                <th data-key="player">Player <span class="arrow">▲</span></th>
-                                <th data-key="years">Years <span class="arrow">▲</span></th>
-                                <th data-key="stint_team">Era name <span class="arrow">▲</span></th>
-                                <th data-key="status">Status <span class="arrow">▲</span></th>
-                            </tr></thead>
-                            <tbody id="rosterBody"></tbody>
-                        </table>
-                    </div>
-                </div>`;
-            sortState = { key:'player', dir:1 };
-            const rows = t.roster.slice();
-            drawRoster(rows);
+                ${(t.active_elsewhere&&t.active_elsewhere.length)
+                    ? `<div class="section"><div class="section-h">Currently active elsewhere (${t.active_elsewhere.length})</div><div id="aeTbl"></div></div>` : ''}
+                <div class="section"><div class="section-h">All-time alumni</div><div id="alTbl"></div></div>`;
 
-            document.querySelectorAll('th[data-key]').forEach(th => {
-                th.addEventListener('click', () => {
-                    const k = th.dataset.key;
-                    sortState.dir = (sortState.key===k) ? -sortState.dir : 1;
-                    sortState.key = k;
-                    drawRoster(rows);
+            // active-elsewhere table
+            if (t.active_elsewhere && t.active_elsewhere.length){
+                const aeRows = t.active_elsewhere.map(a=>({ __k:a.player, ...a }));
+                mountTable(document.getElementById('aeTbl'), {
+                    unit:'players', rows:aeRows,
+                    columns:[
+                        { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                          cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                        { label:'Current team', sortVal:r=>(r.current_team||'').toLowerCase(),
+                          cell:r=>`<a class="link" href="${currentHref(r.current_team)}">${esc(r.current_team)}</a>` },
+                        { label:'Country', sortVal:r=>(r.country||'').toLowerCase(), cls:'mono',
+                          cell:r=>esc(r.country||'—') },
+                        { label:'Status', sortVal:r=>STATUS_RANK[r.status],
+                          cell:r=>`<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>` },
+                    ],
                 });
+            }
+
+            // all-time alumni table (Player links to map, era links to franchise)
+            const alRows = t.roster.map(r=>({ __k:r.player, ...r }));
+            mountTable(document.getElementById('alTbl'), {
+                unit:'stints', rows:alRows,
+                filterPlaceholder:'Filter players…',
+                filter:(r,q)=>r.player.toLowerCase().includes(q),
+                columns:[
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
+                    { label:'Era name', sortVal:r=>r.stint_team.toLowerCase(),
+                      cell:r=>{ const fr = eraToFranchise[r.stint_team];
+                          return fr ? `<a class="link" href="${teamHref(fr)}">${esc(r.stint_team)}</a>` : esc(r.stint_team); } },
+                    { label:'Status', sortVal:r=>STATUS_RANK[r.status],
+                      cell:r=>`<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>` },
+                ],
             });
-            document.getElementById('filter').addEventListener('input', () => drawRoster(rows));
         }
 
-        function drawRoster(rows){
-            const q = (document.getElementById('filter').value||'').toLowerCase().trim();
-            const { key, dir } = sortState;
-            const filtered = q ? rows.filter(r => r.player.toLowerCase().includes(q)) : rows;
-            const sorted = filtered.slice().sort((a,b) => {
-                let av, bv;
-                if (key==='years'){ av=startYear(a.years); bv=startYear(b.years); }
-                else if (key==='status'){ av=STATUS_RANK[a.status]; bv=STATUS_RANK[b.status]; }
-                else { av=(a[key]||'').toLowerCase(); bv=(b[key]||'').toLowerCase(); }
-                if (av<bv) return -1*dir;
-                if (av>bv) return 1*dir;
-                // stable tiebreak by player name
-                return a.player.localeCompare(b.player);
-            });
-            document.getElementById('rosterBody').innerHTML = sorted.map(r => `
-                <tr>
-                    <td class="player">${esc(r.player)}</td>
-                    <td class="years">${esc(r.years)}</td>
-                    <td class="era-tag">${esc(r.stint_team)}</td>
-                    <td><span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span></td>
-                </tr>`).join('') || `<tr><td colspan="4" class="empty">No players match "${esc(q)}".</td></tr>`;
-            document.getElementById('rowCount').textContent =
-                `${sorted.length} of ${rows.length} stints`;
-            document.querySelectorAll('th[data-key]').forEach(th => {
-                const on = th.dataset.key===key;
-                th.classList.toggle('sorted', on);
-                const arrow = th.querySelector('.arrow');
-                if (arrow) arrow.textContent = on ? (dir>0?'▲':'▼') : '▲';
+        /* ---- club view: NBA alumni currently at a non-NBA club --------------- */
+        function renderClub(club){
+            const members = [...clubIndex[club].values()];
+            const country = members.map(m=>m.country).find(Boolean) || '';
+            const rows = members.map(m=>({
+                __k:m.player, player:m.player, status:m.status,
+                franchises:[...(playerFranchises[m.player]||[])].sort(),
+            }));
+            document.getElementById('app').innerHTML = `
+                <a class="back" href="teams.html">← All teams</a>
+                <div class="detail-title">${esc(club)}</div>
+                <div class="detail-sub">${rows.length} NBA alumni currently here${country?' · '+esc(country):''}</div>
+                <div class="section"><div class="section-h">Roster — NBA alumni</div><div id="clubTbl"></div></div>`;
+            mountTable(document.getElementById('clubTbl'), {
+                unit:'players', rows,
+                columns:[
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'Status', sortVal:r=>STATUS_RANK[r.status],
+                      cell:r=>`<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>` },
+                    { label:'NBA franchises', sortVal:r=>r.franchises[0]?.toLowerCase()||'', cls:'wrap',
+                      cell:r=>`<span class="fr-links">${r.franchises.map(f=>
+                          `<a href="${teamHref(f)}">${esc(f)}</a>`).join(', ')||'—'}</span>` },
+                ],
             });
         }
 
