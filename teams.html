@@ -37,6 +37,30 @@
         .nav a:hover { background:var(--surface-hover); color:var(--text); }
         .nav a.active { color:var(--accent); background:var(--accent-dim); }
 
+        /* global player search (top in header, bottom in footer) */
+        .search-wrap { position:relative; }
+        .search-wrap.top { flex:1; max-width:280px; margin-left:auto; }
+        .search-wrap.top + .nav { margin-left:12px; }
+        .psearch {
+            width:100%; padding:10px 14px; font-size:14px; font-family:inherit;
+            border:2px solid var(--border); border-radius:8px; outline:none;
+            background:var(--surface-hover); color:var(--text);
+        }
+        .psearch:focus { border-color:var(--accent); background:#fff; box-shadow:0 0 0 4px var(--accent-dim); }
+        .psearch::placeholder { color:var(--text-secondary); }
+        .sresults {
+            display:none; position:absolute; top:100%; left:0; right:0; z-index:200;
+            background:var(--surface); border:1px solid var(--border); border-radius:0 0 8px 8px;
+            border-top:none; max-height:300px; overflow-y:auto; box-shadow:0 8px 24px rgba(0,0,0,.1);
+        }
+        .sresults.show { display:block; }
+        .sresult-item { padding:8px 12px; cursor:pointer; font-size:13px; border-bottom:1px solid var(--border); }
+        .sresult-item:last-child { border-bottom:none; }
+        .sresult-item:hover, .sresult-item.active { background:var(--surface-hover); color:var(--accent); }
+        .footer-search { max-width:520px; margin:48px auto 0; padding-top:28px; border-top:1px solid var(--border); }
+        .footer-search .fs-label { font-size:13px; font-weight:700; text-transform:uppercase;
+            letter-spacing:.4px; color:var(--text-secondary); text-align:center; margin-bottom:10px; }
+
         main { max-width:1200px; margin:0 auto; padding:24px 20px 64px; }
 
         .page-title { font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:4px; }
@@ -115,6 +139,10 @@
     <header>
         <div class="header-inner">
             <a class="logo-text" href="index.html">🏀 Career Map</a>
+            <div class="search-wrap top">
+                <input class="psearch" id="topSearch" type="text" placeholder="Search 5,000+ players…" autocomplete="off">
+                <div class="sresults" id="topResults"></div>
+            </div>
             <nav class="nav">
                 <a href="index.html">Map</a>
                 <a href="teams.html" class="active">Teams</a>
@@ -122,13 +150,22 @@
         </div>
     </header>
     <main id="app"><div class="empty">Loading teams…</div></main>
+    <div class="footer-search">
+        <div class="fs-label">Search any player</div>
+        <div class="search-wrap">
+            <input class="psearch" id="botSearch" type="text" placeholder="Search 5,000+ players…" autocomplete="off">
+            <div class="sresults" id="botResults"></div>
+        </div>
+    </div>
 
     <script src="flags.js"></script>
     <script>
         const STATUS_LABEL = { nba_active:'NBA', overseas_active:'Overseas', retired:'Retired' };
         const STATUS_RANK = { nba_active:0, overseas_active:1, retired:2 };
         let TEAMS = {};
+        let CLUBS = {};                 // all-time club rosters (club_pages.json)
         let NBA_SET = new Set();
+        let ALL_PLAYERS = [];           // every player name, for search
         const eraToFranchise = {};      // era name -> current franchise
         const playerFranchises = {};    // player -> Set(franchise)
         const clubIndex = {};           // non-NBA club -> Map(player -> {player,status,country})
@@ -137,51 +174,101 @@
             ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
         const startYear = y => { const m = String(y||'').match(/\d{4}/); return m?parseInt(m[0],10):0; };
 
-        // href builders — all navigation uses real anchors, never onclick strings
-        const teamHref   = n => '#team=' + encodeURIComponent(n);
-        const clubHref   = n => '#club=' + encodeURIComponent(n);
-        const playerHref = n => 'index.html#player=' + encodeURIComponent(n);
-        const currentHref = n => NBA_SET.has(n) ? teamHref(n) : clubHref(n);
+        // href builders — real query-param URLs; internal ones are same-document
+        // (?team=/?club=) so they get SPA-intercepted into history.pushState.
+        const teamHref   = n => '?team=' + encodeURIComponent(n);
+        const clubHref   = n => '?club=' + encodeURIComponent(n);
+        const playerHref = n => 'index.html?player=' + encodeURIComponent(n);
+        // Every team resolves: NBA names (any era) -> franchise page, everything
+        // else -> its club page (the all-time club index covers every club).
+        const currentHref = n => (NBA_SET.has(n) || eraToFranchise[n]) ? teamHref(n) : clubHref(n);
 
         async function load(){
             try {
-                const res = await fetch('data/team_pages.json');
-                TEAMS = (await res.json()).teams || {};
+                const [tp, cp] = await Promise.all([
+                    fetch('data/team_pages.json').then(r=>r.json()),
+                    fetch('data/club_pages.json').then(r=>r.json()),
+                ]);
+                TEAMS = tp.teams || {};
+                CLUBS = cp.clubs || {};
             } catch(e){
                 document.getElementById('app').innerHTML = '<div class="empty">Could not load team data.</div>';
                 return;
             }
             NBA_SET = new Set(Object.keys(TEAMS));
             buildIndexes();
+            initSearch();
+            redirectLegacyHash();
+            window.addEventListener('popstate', route);
+            document.addEventListener('click', interceptNav);
             route();
         }
 
         function buildIndexes(){
+            const names = new Set();
             for (const [fr, t] of Object.entries(TEAMS)){
                 for (const r of t.roster){
                     eraToFranchise[r.stint_team] = fr;
                     (playerFranchises[r.player] ??= new Set()).add(fr);
+                    names.add(r.player);
                 }
                 for (const a of (t.active_elsewhere||[])){
                     const club = a.current_team;
-                    if (club && !NBA_SET.has(club)){   // a non-NBA club gets a #club view
+                    if (club && !NBA_SET.has(club)){
                         (clubIndex[club] ??= new Map()).set(a.player,
                             { player:a.player, status:a.status, country:a.country });
                     }
                 }
             }
+            for (const c of Object.values(CLUBS))
+                for (const r of c.roster) names.add(r.player);
+            ALL_PLAYERS = [...names].sort();
+        }
+
+        const TITLE_SUFFIX = 'HoopsHype Career Map';
+        function setTitle(t){ document.title = t; }
+
+        // Rewrite legacy #team=/#club=/#player= links to the query form.
+        function redirectLegacyHash(){
+            const m = location.hash.match(/^#(team|club|player)=(.+)$/);
+            if (!m) return;
+            const val = decodeURIComponent(m[2]);
+            if (m[1] === 'player'){
+                location.replace('index.html?player=' + encodeURIComponent(val));
+                return;
+            }
+            history.replaceState({}, '', '?' + m[1] + '=' + encodeURIComponent(val));
+        }
+
+        // SPA-intercept same-document query links -> history.pushState + route().
+        function interceptNav(e){
+            if (e.defaultPrevented || e.button!==0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+            const a = e.target.closest('a');
+            if (!a || a.target==='_blank') return;
+            const u = new URL(a.href, location.href);
+            if (u.origin!==location.origin || u.pathname!==location.pathname) return; // cross-doc: let it navigate
+            e.preventDefault();
+            if (u.href !== location.href){ history.pushState({}, '', u.href); route(); }
         }
 
         function route(){
-            const h = location.hash;
-            let m;
-            if ((m = h.match(/^#team=(.+)$/)) && TEAMS[decodeURIComponent(m[1])]) {
-                renderTeam(TEAMS[decodeURIComponent(m[1])]);
-            } else if ((m = h.match(/^#club=(.+)$/)) && clubIndex[decodeURIComponent(m[1])]) {
-                renderClub(decodeURIComponent(m[1]));
-            } else {
-                renderLanding();
+            const p = new URLSearchParams(location.search);
+            const teamParam = p.get('team');
+            const clubParam = p.get('club');
+            if (teamParam){
+                const fr = TEAMS[teamParam] ? teamParam : eraToFranchise[teamParam];
+                if (fr && TEAMS[fr]){
+                    // canonicalize an era-name URL to the current franchise
+                    if (teamParam !== fr) history.replaceState({}, '', '?team=' + encodeURIComponent(fr));
+                    renderTeam(TEAMS[fr]);
+                    return window.scrollTo(0,0);
+                }
             }
+            if (clubParam && (CLUBS[clubParam] || clubIndex[clubParam])){
+                renderClub(clubParam);
+                return window.scrollTo(0,0);
+            }
+            renderLanding();
             window.scrollTo(0,0);
         }
 
@@ -239,6 +326,7 @@
 
         /* ---- landing: sortable table of the 30 franchises -------------------- */
         function renderLanding(){
+            setTitle('NBA Teams — All-Time Rosters | ' + TITLE_SUFFIX);
             const rows = Object.keys(TEAMS).sort().map(n=>{
                 const t = TEAMS[n];
                 return { __k:n, name:n, alumni:t.alumni_count, stints:t.roster_count,
@@ -276,20 +364,33 @@
 
         // shared cell renderers
         const playerCell = r => `<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>`;
-        // link a team/club name only when its page actually exists (an NBA
-        // franchise, or a club that currently has active alumni); else plain text
-        const teamCell = n => {
-            if (!n) return '—';
-            return (NBA_SET.has(n) || clubIndex[n])
-                ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : esc(n);
-        };
+        // every team/club name links to its page (all clubs resolve now)
+        const teamCell = n => n ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : '—';
         const countryCell = c => c ? `${flagImg(c)}${esc(c)}` : '—';
         const statusCell = r => `<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>`;
 
+        // Collapse per-stint roster rows into ONE row per player, joining their
+        // year-spans (chronological) into a single comma-separated string.
+        function groupByPlayer(rows){
+            const by = new Map();
+            for (const r of rows){
+                const g = by.get(r.player);
+                if (g) g.spans.push(r.years);
+                else by.set(r.player, { ...r, __k:r.player, spans:[r.years] });
+            }
+            return [...by.values()].map(g => {
+                g.spans.sort((a,b)=>startYear(a)-startYear(b));
+                g.years = g.spans.filter(Boolean).join(', ');
+                return g;
+            });
+        }
+
         function renderTeam(t){
+            setTitle(`${t.franchise} All-Time NBA Players | ${TITLE_SUFFIX}`);
             const relocSub = (t.relocations||[]).map(r=>r.name).join(' → ');
-            const active = t.roster.filter(r => r.status!=='retired').map(r=>({ __k:r.player, ...r }));
-            const retired = t.roster.filter(r => r.status==='retired').map(r=>({ __k:r.player, ...r }));
+            // one row per player (years-spans joined), not per stint
+            const active = groupByPlayer(t.roster.filter(r => r.status!=='retired'));
+            const retired = groupByPlayer(t.roster.filter(r => r.status==='retired'));
             document.getElementById('app').innerHTML = `
                 <a class="back" href="teams.html">← All teams</a>
                 <div class="detail-title">${esc(t.franchise)}</div>
@@ -314,7 +415,7 @@
                 ],
             });
 
-            // Table 2 — retired alumni, with the final club of their career
+            // Table 2 — retired alumni: final club of their career + its country
             mountTable(document.getElementById('reTbl'), {
                 unit:'players', rows:retired,
                 filterPlaceholder:'Filter players…',
@@ -324,38 +425,100 @@
                     { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
                     { label:'Last team', sortVal:r=>(r.current_team||'').toLowerCase(),
                       cell:r=>teamCell(r.current_team) },
+                    { label:'Country', sortVal:r=>(r.current_country||'').toLowerCase(),
+                      cell:r=>countryCell(r.current_country) },
                 ],
             });
         }
 
-        /* ---- club view: NBA alumni currently at a non-NBA club --------------- */
+        /* ---- club view: a non-NBA club's all-time NBA alumni + active now ---- */
         function renderClub(club){
-            const members = [...clubIndex[club].values()];
-            const country = members.map(m=>m.country).find(Boolean) || '';
-            const rows = members.map(m=>({
+            setTitle(`${club} — NBA Alumni | ${TITLE_SUFFIX}`);
+            const info = CLUBS[club] || { roster:[], city:'', country:'' };
+            const loc = [info.city, info.state, info.country].filter(Boolean).join(', ');
+            const flag = info.country ? flagImg(info.country) : '';
+            const allTime = (info.roster||[]).map(r=>({ __k:r.player, ...r }));
+
+            // "currently active here" — reuse the derived active index
+            const activeMembers = clubIndex[club] ? [...clubIndex[club].values()] : [];
+            const activeRows = activeMembers.map(m=>({
                 __k:m.player, player:m.player, status:m.status,
                 franchises:[...(playerFranchises[m.player]||[])].sort(),
             }));
+
             document.getElementById('app').innerHTML = `
                 <a class="back" href="teams.html">← All teams</a>
                 <div class="detail-title">${esc(club)}</div>
-                <div class="detail-sub">${rows.length} NBA alumni currently here${country?' · '+esc(country):''}</div>
-                <div class="section"><div class="section-h">Roster — NBA alumni</div><div id="clubTbl"></div></div>`;
-            mountTable(document.getElementById('clubTbl'), {
-                unit:'players', rows,
+                <div class="detail-sub">${flag}${loc?esc(loc)+' · ':''}${info.count||allTime.length} all-time NBA alumni${info.truncated?' (showing first '+allTime.length+')':''}</div>
+                ${activeRows.length ? `<div class="section"><div class="section-h">Currently active here (${activeRows.length})</div><div id="clubActive"></div></div>` : ''}
+                <div class="section"><div class="section-h">All-time NBA alumni</div><div id="clubAll"></div></div>`;
+
+            if (activeRows.length){
+                mountTable(document.getElementById('clubActive'), {
+                    unit:'players', rows:activeRows,
+                    columns:[
+                        { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                          cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                        { label:'Status', sortVal:r=>STATUS_RANK[r.status], cell:statusCell },
+                        { label:'NBA franchises', sortVal:r=>r.franchises[0]?.toLowerCase()||'', cls:'wrap',
+                          cell:r=>`<span class="fr-links">${r.franchises.map(f=>
+                              `<a href="${teamHref(f)}">${esc(f)}</a>`).join(', ')||'—'}</span>` },
+                    ],
+                });
+            }
+
+            mountTable(document.getElementById('clubAll'), {
+                unit:'players', rows:allTime,
+                filterPlaceholder:'Filter players…',
+                filter:(r,q)=>r.player.toLowerCase().includes(q),
                 columns:[
                     { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
                       cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
-                    { label:'Status', sortVal:r=>STATUS_RANK[r.status],
-                      cell:r=>`<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>` },
-                    { label:'NBA franchises', sortVal:r=>r.franchises[0]?.toLowerCase()||'', cls:'wrap',
-                      cell:r=>`<span class="fr-links">${r.franchises.map(f=>
-                          `<a href="${teamHref(f)}">${esc(f)}</a>`).join(', ')||'—'}</span>` },
+                    { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
+                    { label:'Status', sortVal:r=>STATUS_RANK[r.status], cell:statusCell },
                 ],
             });
         }
 
-        window.addEventListener('hashchange', route);
+        /* ---- global player search (top + bottom), same behavior as index --- */
+        function initSearch(){
+            wireSearch('topSearch', 'topResults');
+            wireSearch('botSearch', 'botResults');
+        }
+        function wireSearch(inputId, resultsId){
+            const input = document.getElementById(inputId);
+            const box = document.getElementById(resultsId);
+            let active = -1, items = [];
+            const close = () => { box.classList.remove('show'); box.innerHTML=''; active=-1; items=[]; };
+            const go = name => { window.location.href = playerHref(name); };
+            input.addEventListener('input', ()=>{
+                const q = input.value.toLowerCase().trim();
+                if (q.length < 2) return close();
+                items = ALL_PLAYERS.filter(n=>n.toLowerCase().includes(q)).sort((a,b)=>{
+                    const as=a.toLowerCase().startsWith(q), bs=b.toLowerCase().startsWith(q);
+                    if (as&&!bs) return -1; if (!as&&bs) return 1; return a.localeCompare(b);
+                }).slice(0,10);
+                active = -1;
+                box.innerHTML = items.length
+                    ? items.map((n,i)=>`<div class="sresult-item" data-i="${i}">${esc(n)}</div>`).join('')
+                    : '<div class="sresult-item" style="color:var(--text-secondary)">No players found</div>';
+                box.classList.add('show');
+                box.querySelectorAll('.sresult-item[data-i]').forEach(el=>{
+                    el.addEventListener('mousedown', e=>{ e.preventDefault(); go(items[+el.dataset.i]); });
+                });
+            });
+            input.addEventListener('keydown', e=>{
+                if (!items.length) return;
+                if (e.key==='ArrowDown'){ e.preventDefault(); active=Math.min(active+1,items.length-1); }
+                else if (e.key==='ArrowUp'){ e.preventDefault(); active=Math.max(active-1,0); }
+                else if (e.key==='Enter'){ e.preventDefault(); go(items[active<0?0:active]); return; }
+                else if (e.key==='Escape'){ return close(); }
+                else return;
+                box.querySelectorAll('.sresult-item').forEach((el,i)=>el.classList.toggle('active', i===active));
+            });
+            input.addEventListener('blur', ()=> setTimeout(close, 120));
+        }
+
         load();
     </script>
 </body>

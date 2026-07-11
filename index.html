@@ -138,8 +138,34 @@
             border-bottom: 1px solid var(--border);
         }
         
-        .result-item:hover { background: var(--bg-gray); }
-        
+        .result-item:hover { background: var(--bg-gray); color: var(--accent); }
+
+        /* bottom-of-page player search (mirrors the header search) */
+        .site-footer {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 28px 20px 48px;
+        }
+        .fs-label {
+            font-size: 13px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.4px; color: var(--text-secondary);
+            text-align: center; margin-bottom: 10px;
+        }
+        .search-wrap.footer { position: relative; }
+        .search-wrap.footer #botSearch {
+            width: 100%; padding: 10px 14px; font-size: 14px; font-family: inherit;
+            border: 2px solid var(--border); border-radius: 8px; outline: none;
+            background: var(--surface-hover); color: var(--text);
+        }
+        .search-wrap.footer #botSearch:focus { border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px var(--accent-dim); }
+        #botResults {
+            position: absolute; bottom: 100%; left: 0; right: 0;
+            background: var(--bg); border: 1px solid var(--border); border-radius: 4px 4px 0 0;
+            border-bottom: none; max-height: 300px; overflow-y: auto; display: none;
+            z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+        }
+        #botResults.show { display: block; }
+
         main {
             display: flex;
             flex-direction: column;
@@ -368,60 +394,39 @@
             margin-bottom: 10px;
         }
         
-        .timeline {
-            position: relative;
-            margin-left: 12px;
-            border-left: 2px solid var(--border);
-            padding-left: 20px;
+        /* Career timeline rendered as the same bordered table used on teams.html */
+        .timeline { margin-top: 4px; }
+        .career-table-wrap {
+            overflow-x: auto; -webkit-overflow-scrolling: touch;
+            border: 1px solid var(--border); border-radius: 12px; background: var(--surface);
         }
-        
-        .stop {
-            position: relative;
-            padding: 10px 0;
-            cursor: pointer;
-            transition: background 0.1s;
-            margin-left: -20px;
-            padding-left: 20px;
-            border-radius: 8px;
+        .career-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .career-table th, .career-table td {
+            text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); white-space: nowrap;
         }
-        
-        .stop:hover, .stop.hl { background: var(--bg-gray); }
-        
-        .stop-num {
-            position: absolute;
-            left: -31px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--red);
-            color: #fff;
-            border-radius: 50%;
-            font-size: 10px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        .career-table thead th {
+            font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px;
+            color: var(--text-secondary); font-weight: 700;
         }
-        
-        .stop:first-child .stop-num { background: var(--green); }
-        .stop:last-child .stop-num { background: var(--blue); }
-        
-        .stop-team {
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 2px;
-        }
-        
-        .stop-team:hover { color: var(--accent); }
+        .career-table td.wrap { white-space: normal; }
+        .career-table tbody tr:last-child td { border-bottom: none; }
+        .career-table tbody tr.stop { cursor: pointer; transition: background 0.1s; }
+        .career-table tbody tr.stop:hover, .career-table tbody tr.stop.hl { background: var(--bg-gray); }
+        .career-table td.years { font-family: var(--mono); color: var(--text-secondary); }
+        .career-table td.loc { color: var(--text-secondary); }
 
-        .stop-meta {
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--text-secondary);
+        .stop-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 20px; height: 20px; border-radius: 50%;
+            background: var(--red); color: #fff; font-size: 10px; font-weight: 700;
         }
+        .career-table tbody tr.stop:first-child .stop-num { background: var(--green); }
+        .career-table tbody tr.stop:last-child .stop-num { background: var(--blue); }
+
+        .stop-team {
+            font-weight: 600; color: inherit; text-decoration: none; cursor: pointer;
+        }
+        .stop-team:hover { color: var(--accent); }
 
         .flag {
             display: inline-block;
@@ -1080,7 +1085,15 @@
             </div>
         </div>
     </main>
-    
+
+    <footer class="site-footer">
+        <div class="fs-label">Search any player</div>
+        <div class="search-wrap footer">
+            <input type="text" id="botSearch" placeholder="Search 5,000+ players..." autocomplete="off">
+            <div id="botResults"></div>
+        </div>
+    </footer>
+
     <div class="modal-bg" id="modal">
         <div class="modal">
             <div class="modal-head">
@@ -1228,10 +1241,10 @@
                 const m = L.marker(p.coords,{icon, zIndexOffset: first ? 1000 : (last ? 500 : 0)}).addTo(markersLayer);
                 markers.push({m, idx:p.idx});
                 
-                const loc = p.stop.state ? `${p.stop.city}, ${p.stop.state}` : p.stop.city||'';
-                const stopLabel = first ? '🟢 First Stop' : (last ? '🔵 Latest Stop' : `Stop #${i+1}`);
-                m.bindPopup(`<div style="font-size:10px;color:#777;margin-bottom:4px">${stopLabel}</div><div class="popup-team">${getFlag(p.stop.country)} ${p.stop.team}</div><div class="popup-loc">${loc}${p.stop.country?', '+p.stop.country:''}</div><div class="popup-yrs">${p.stop.years}</div>`,{closeButton:false,offset:[0,-5]});
-                
+                // Clicking a map marker now NAVIGATES to that team/club page
+                // (the old in-page popup is replaced); hover shows a tooltip.
+                m.bindTooltip(`${p.stop.team} · ${p.stop.years}`, {direction:'top', offset:[0,-10]});
+                m.on('click',()=>{ window.location.href = teamUrl(p.stop.team); });
                 m.on('mouseover',()=>hlTimeline(p.idx));
                 m.on('mouseout',()=>hlTimeline(-1));
             });
@@ -1258,7 +1271,7 @@
         async function load() {
             const pRes = await fetch('nba_players_list.csv');
             players = (await pRes.text()).trim().split('\n').slice(1).map(l=>l.split(',')[0]?.replace(/"/g,'').trim()).filter(Boolean);
-            
+
             const cRes = await fetch('nba_players_careers_READY.json');
             (await cRes.json()).forEach(p=>{
                 data[p.player] = p;
@@ -1267,24 +1280,50 @@
                     teamIdx[s.team].players.push({name:p.player,years:s.years});
                 });
             });
-            
+
+            // NBA-name -> current franchise, for building team/club page URLs.
+            try {
+                NBA_ERAS = (await (await fetch('data/nba_team_index.json')).json()).eras || {};
+            } catch(e){ NBA_ERAS = {}; }
+
+            wireBottomSearch();
             showWelcome();
 
-            // Don't auto-load - let quiz hero be the focus
-            // User can click chips or search to explore
-            openPlayerFromHash();  // deep-link: #player=<name> opens that player
+            // Don't auto-load - let quiz hero be the focus. If the URL names a
+            // player (?player=, or a legacy #player=), open them.
+            routePlayer();
         }
 
-        // Additive deep-link support: if the URL hash names a player, open their
-        // detail view (reusing show()). No-op when there is no #player= hash, so
-        // default behavior is unchanged. Kept in sync via the hashchange handler.
-        function openPlayerFromHash() {
-            const m = location.hash.match(/^#player=(.+)$/);
-            if(!m) return;
-            const name = decodeURIComponent(m[1]);
-            if(data[name]) show(name);
+        const TITLE_SUFFIX = 'HoopsHype';
+        let NBA_ERAS = {};
+        const setTitle = t => { document.title = t; };
+
+        // Team/club page URL for a stint team name (any NBA era name -> its
+        // current franchise page; anything else -> a club page).
+        function teamUrl(team){
+            const fr = NBA_ERAS[team];
+            return fr ? 'teams.html?team=' + encodeURIComponent(fr)
+                      : 'teams.html?club=' + encodeURIComponent(team);
         }
-        window.addEventListener('hashchange', openPlayerFromHash);
+
+        // Query-param routing with legacy #player= redirect. Opens the named
+        // player (reusing show()) or returns to the welcome view. No-op default
+        // when no player is specified, so base behavior is unchanged.
+        function routePlayer(){
+            const h = location.hash.match(/^#player=(.+)$/);
+            if(h){ history.replaceState({}, '', '?player=' + h[1]); }
+            const name = new URLSearchParams(location.search).get('player');
+            if(name && data[name]) show(name, {push:false});
+            else backToWelcome();
+        }
+        function backToWelcome(){
+            const ps = document.getElementById('playerSection');
+            if(ps) ps.classList.remove('active');
+            const w = document.getElementById('welcome');
+            if(w) w.style.display = '';
+            setTitle('NBA Career Map | ' + TITLE_SUFFIX);
+        }
+        window.addEventListener('popstate', routePlayer);
         
         function showWelcome() {
             const avail = ALL_STARS.filter(p=>data[p]?.career_history?.length >= 5).sort(()=>Math.random()-0.5).slice(0,12);
@@ -1361,7 +1400,41 @@
                 if(f){searchEl.value=f.dataset.n;resultsEl.classList.remove('show');show(f.dataset.n);}
             }
         });
-        
+
+        // Bottom-of-page player search — same autocomplete behavior as the
+        // header search; selecting a player opens their career map view.
+        function wireBottomSearch(){
+            const inp = document.getElementById('botSearch');
+            const box = document.getElementById('botResults');
+            if(!inp || !box) return;
+            const render = () => {
+                const q = inp.value.toLowerCase().trim();
+                if(q.length<2){ box.classList.remove('show'); box.innerHTML=''; return; }
+                const m = Object.keys(data).filter(n=>n.toLowerCase().includes(q)).sort((a,b)=>{
+                    const as=a.toLowerCase().startsWith(q), bs=b.toLowerCase().startsWith(q);
+                    if(as&&!bs) return -1; if(!as&&bs) return 1; return a.localeCompare(b);
+                }).slice(0,10);
+                box.innerHTML = m.length
+                    ? m.map(n=>`<div class="result-item" data-n="${n.replace(/"/g,'&quot;')}">${n}</div>`).join('')
+                    : '<div class="result-item" style="color:var(--text-secondary)">No players found</div>';
+                box.classList.add('show');
+            };
+            inp.addEventListener('input', render);
+            box.addEventListener('click', e=>{
+                if(e.target.classList.contains('result-item') && e.target.dataset.n){
+                    inp.value=''; box.classList.remove('show'); show(e.target.dataset.n);
+                }
+            });
+            inp.addEventListener('keydown', e=>{
+                if(e.key==='Enter'){ const f=box.querySelector('.result-item[data-n]');
+                    if(f){ inp.value=''; box.classList.remove('show'); show(f.dataset.n); } }
+                else if(e.key==='Escape'){ box.classList.remove('show'); }
+            });
+            document.addEventListener('click', e=>{
+                if(!inp.contains(e.target)&&!box.contains(e.target)) box.classList.remove('show');
+            });
+        }
+
         // Display-only ordering of career stints (does NOT mutate stored JSON):
         // start year ascending, tie-break by duration descending, so a longer
         // "parent" stint sorts before a shorter overlapping one (loan / G League
@@ -1386,13 +1459,20 @@
             }).map(o => o.s);
         }
 
-        function show(name) {
+        function show(name, opts) {
             const p = data[name];
             if(!p?.career_history?.length){alert('No data available.');return;}
 
             current = name;
+            // Reflect the player in the URL + tab title (unless opening straight
+            // from a deep link, where the URL is already correct).
+            const url = '?player=' + encodeURIComponent(name);
+            if((!opts || opts.push !== false) && (location.search + location.hash) !== url){
+                history.pushState({}, '', url);
+            }
+            setTitle(name + ' NBA Career Map | ' + TITLE_SUFFIX);
             const career = sortCareer(p.career_history);
-            
+
             document.getElementById('welcome').style.display = 'none';
             document.getElementById('playerSection').classList.add('active');
             
@@ -1407,14 +1487,22 @@
             document.getElementById('sYears').textContent = Math.max(1, yearSpan);
             document.getElementById('sStops').textContent = career.length;
             
-            document.getElementById('timeline').innerHTML = career.map((s,i)=>{
-                const loc = s.city?(s.state?`${s.city}, ${s.state}`:s.city):'';
-                return `<div class="stop" data-i="${i}" onmouseenter="hlMarker(${i})" onmouseleave="hlMarker(-1)">
-                    <div class="stop-num">${i+1}</div>
-                    <div class="stop-team" onclick="openModal('${s.team.replace(/'/g,"\\'")}')">${getFlag(s.country)} ${s.team}</div>
-                    <div class="stop-meta">${loc}${s.country?', '+s.country:''} · ${s.years}</div>
-                </div>`;
-            }).join('');
+            // Career timeline as a bordered table (Stop # / Team / Location /
+            // Years). Rows keep class "stop" + data-i so the map hover-sync
+            // (hlTimeline/hlMarker) works unchanged. Team links navigate to the
+            // team/club page (the old in-page player-list popup is replaced).
+            document.getElementById('timeline').innerHTML =
+                `<div class="career-table-wrap"><table class="career-table">
+                    <thead><tr><th>#</th><th>Team</th><th>Location</th><th>Years</th></tr></thead>
+                    <tbody>` + career.map((s,i)=>{
+                        const locCell = [s.city, s.country].filter(Boolean).join(', ') || '—';
+                        return `<tr class="stop" data-i="${i}" onmouseenter="hlMarker(${i})" onmouseleave="hlMarker(-1)">
+                            <td><span class="stop-num">${i+1}</span></td>
+                            <td class="wrap"><a class="stop-team" href="${teamUrl(s.team)}">${getFlag(s.country)}${s.team}</a></td>
+                            <td class="loc wrap">${locCell}</td>
+                            <td class="years">${s.years}</td>
+                        </tr>`;
+                    }).join('') + `</tbody></table></div>`;
             
             document.getElementById('similarChips').innerHTML = getSimilar(name).map(x=>`<div class="chip" onclick="show('${x}')">${x}</div>`).join('');
             

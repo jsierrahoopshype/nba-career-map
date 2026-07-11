@@ -194,6 +194,53 @@ def test_team_pages_active_elsewhere():
     print("test_team_pages_active_elsewhere PASS")
 
 
+def test_franchise_country():
+    # nba_active players get their franchise's real country (part-4 fix)
+    assert b.franchise_country("Toronto Raptors") == "Canada"
+    assert b.franchise_country("Memphis Grizzlies") == "USA"   # not Vancouver-era Canada
+    assert b.franchise_country("Los Angeles Lakers") == "USA"
+    assert b.franchise_country("Seattle SuperSonics") == "USA"  # by any era name
+    print("test_franchise_country PASS")
+
+
+def test_nba_active_current_country():
+    fix = [_p("Raptor", "nba_active", "Toronto Raptors",
+              [_stint("Toronto Raptors", "2024–present", "Toronto", "Ontario", "Canada")])]
+    teams = b.w_team_pages(fix)
+    row = teams["Toronto Raptors"]["roster"][0]
+    assert row["current_country"] == "Canada", row
+    print("test_nba_active_current_country PASS")
+
+
+def test_club_pages():
+    fix = [
+        _p("Euro Guy", "overseas_active", "Baskonia",
+           [_stint("Los Angeles Lakers", "2015", "LA", "CA", "USA"),
+            _stint("Baskonia", "2024", "Vitoria", "", "Spain")]),
+        _p("Retired Euro", "retired", "Baskonia",
+           [_stint("Baskonia", "2001-2003", "Vitoria", "", "Spain")]),
+    ]
+    clubs = b.w_club_pages(fix)
+    assert "Los Angeles Lakers" not in clubs, "NBA teams are not clubs"
+    bas = clubs["Baskonia"]
+    assert bas["country"] == "Spain" and bas["count"] == 2
+    players = {r["player"]: r for r in bas["roster"]}
+    assert players["Euro Guy"]["years"] == "2024"
+    assert players["Retired Euro"]["status"] == "retired"
+    print("test_club_pages PASS")
+
+
+def test_sitemap():
+    fix = [_p("Test Player", "retired", "Boston Celtics",
+              [_stint("Boston Celtics", "2000", "Boston", "MA", "USA")])]
+    xml = b.build_sitemap(fix)
+    assert xml.startswith("<?xml")
+    assert "/teams.html?team=Atlanta%20Hawks" in xml
+    assert "/index.html?player=Test%20Player" in xml
+    assert xml.count("<url>") == 2 + 30 + 1  # index + teams landing + 30 teams + 1 player
+    print("test_sitemap PASS")
+
+
 def test_relocation_timeline():
     teams = b.w_team_pages(TEAM_FIX)
     # never-relocated franchise -> empty timeline (section skipped in UI)
@@ -217,5 +264,9 @@ if __name__ == "__main__":
     test_latest_signings_missing_file()
     test_team_pages_franchise_membership()
     test_team_pages_active_elsewhere()
+    test_franchise_country()
+    test_nba_active_current_country()
+    test_club_pages()
+    test_sitemap()
     test_relocation_timeline()
     print("\nALL DASHBOARD TESTS PASS")

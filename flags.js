@@ -39,11 +39,13 @@
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
   // Returns an <img> flag for a country name, or '' if the country is unmapped
-  // (graceful fallback — the caller keeps its text label).
+  // (graceful fallback — the caller keeps its text label). Uses flagcdn's plain
+  // FLAT rectangular PNGs (the w20 variant, ~20px wide, crisp on hi-DPI) — not
+  // waving/glossy flags.
   function flagImg(country) {
     const iso = ISO[country];
     if (!iso) return "";
-    return `<img class="flag" src="https://flagcdn.com/16x12/${iso}.png" ` +
+    return `<img class="flag" src="https://flagcdn.com/w20/${iso}.png" ` +
            `width="16" height="12" loading="lazy" alt="${esc(country)} flag">`;
   }
 

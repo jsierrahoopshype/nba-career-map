@@ -32,13 +32,24 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from era_correct_teams import ERA_TABLE  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
+from sync_era_locations import LOC  # noqa: E402  (era-accurate team locations)
 
 ROOT = Path(__file__).resolve().parent.parent
 CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
+TEAM_LOCATIONS = ROOT / "data" / "teams" / "team_locations.json"
 TRANSACTIONS = ROOT / "data" / "logs" / "transactions.json"
 INDEX_HTML = ROOT / "index.html"
 OUT = ROOT / "data" / "dashboard_data.json"
 TEAM_PAGES_OUT = ROOT / "data" / "team_pages.json"
+CLUB_PAGES_OUT = ROOT / "data" / "club_pages.json"
+NBA_TEAM_INDEX_OUT = ROOT / "data" / "nba_team_index.json"
+SITEMAP_OUT = ROOT / "sitemap.xml"
+
+# Absolute origin the site is served from, used only for sitemap.xml. Override
+# with the real production origin (env SITE_BASE_URL) before deploying — this
+# default is a placeholder.
+import os  # noqa: E402
+SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://jsierrahoopshype.github.io/nba-career-map").rstrip("/")
 
 OVERSEAS = "overseas_active"
 
@@ -61,6 +72,25 @@ def is_nba_team(team: str) -> bool:
 def nba_franchise_of(team: str) -> str | None:
     """Canonical current franchise for an NBA team name, else None (non-NBA)."""
     return _ERA_TO_CURRENT.get(team)
+
+
+# Country of each current NBA franchise's home city. Prefer the era-accurate LOC
+# map (correct e.g. Memphis=USA), fall back to the auto-generated team_locations
+# for never-relocated franchises (e.g. Toronto=Canada), default USA. Used so
+# nba_active players get their franchise's real country (not a hardcoded USA).
+_TEAM_LOCATIONS = json.loads(TEAM_LOCATIONS.read_text(encoding="utf-8")) \
+    if TEAM_LOCATIONS.exists() else {}
+FRANCHISE_COUNTRY: dict[str, str] = {}
+for _fr in NBA_TEAMS:
+    FRANCHISE_COUNTRY[_fr] = (
+        (LOC.get(_fr) or (None, None, None))[2]
+        or (_TEAM_LOCATIONS.get(_fr, {}) or {}).get("country")
+        or "USA")
+
+
+def franchise_country(team: str) -> str:
+    """Country of an NBA franchise (by any era name), defaulting to USA."""
+    return FRANCHISE_COUNTRY.get(nba_franchise_of(team) or "", "USA")
 
 
 # --- helpers ----------------------------------------------------------------
@@ -337,8 +367,9 @@ def w_team_pages(players: list) -> dict:
         cs = _current_stint(p) or {}
         # country of the player's current/last team (where they are now for
         # active players; their final club for retired players). NBA-active
-        # players are in the USA.
-        cur_country = "USA" if status == "nba_active" else cs.get("country", "")
+        # players get their franchise's real country (Toronto -> Canada).
+        cur_country = (franchise_country(ct) if status == "nba_active"
+                       else cs.get("country", ""))
         for s in p.get("career_history", []):
             fr = nba_franchise_of(s.get("team", ""))
             if fr is None:
@@ -359,7 +390,8 @@ def w_team_pages(players: list) -> dict:
                     teams[fr]["active_elsewhere"].append({
                         "player": p["player"], "status": status,
                         "current_team": ct,
-                        "country": cs.get("country", "") if status == OVERSEAS else "USA",
+                        "country": cs.get("country", "") if status == OVERSEAS
+                        else franchise_country(ct),
                     })
 
     for fr, t in teams.items():
@@ -368,6 +400,54 @@ def w_team_pages(players: list) -> dict:
         t["roster_count"] = len(t["roster"])
         t["alumni_count"] = len({r["player"] for r in t["roster"]})
     return teams
+
+
+# Cap per-club all-time roster to keep club_pages.json bounded. The largest club
+# (~300 stints) is well under this, so no club is currently truncated; the cap
+# is only a safety valve. Truncated clubs are flagged with "truncated": true.
+CLUB_ROSTER_CAP = 500
+
+
+def w_club_pages(players: list) -> dict:
+    """All-time NBA-alumni roster for every non-NBA club (overseas / G League /
+    ABA / college / etc.). club name -> {location, roster:[{player,years,status}],
+    count}. This is what the old in-page map popup used to show; the club page on
+    teams.html now renders it. Every player in the dataset is an NBA player, so a
+    stint at a non-NBA club is an NBA alumnus there."""
+    clubs: dict[str, dict] = {}
+    for p in players:
+        status = p.get("status", "")
+        for s in p.get("career_history", []):
+            team = s.get("team", "")
+            if not team or is_nba_team(team):
+                continue
+            c = clubs.setdefault(team, {"club": team, "city": s.get("city", ""),
+                                        "state": s.get("state", ""),
+                                        "country": s.get("country", ""), "roster": []})
+            c["roster"].append({"player": p["player"], "years": s.get("years", ""),
+                                "status": status})
+
+    for c in clubs.values():
+        c["roster"].sort(key=lambda r: (r["player"], r["years"]))
+        c["count"] = len(c["roster"])
+        if len(c["roster"]) > CLUB_ROSTER_CAP:
+            c["roster"] = c["roster"][:CLUB_ROSTER_CAP]
+            c["truncated"] = True
+    return clubs
+
+
+def build_sitemap(players: list) -> str:
+    """XML sitemap of the 30 team pages + every player page (query-param URLs)."""
+    from urllib.parse import quote
+    urls = [f"{SITE_BASE_URL}/index.html"]
+    urls += [f"{SITE_BASE_URL}/teams.html"]
+    urls += [f"{SITE_BASE_URL}/teams.html?team={quote(fr)}" for fr in sorted(NBA_TEAMS)]
+    names = sorted({p["player"] for p in players if str(p.get("player") or "").strip()})
+    urls += [f"{SITE_BASE_URL}/index.html?player={quote(n)}" for n in names]
+    body = "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            f"{body}\n</urlset>\n")
 
 
 def build(players: list | None = None) -> dict:
@@ -408,6 +488,31 @@ def main() -> None:
     TEAM_PAGES_OUT.write_text(json.dumps(team_pages, ensure_ascii=False, indent=2) + "\n",
                               encoding="utf-8")
     print(f"wrote {TEAM_PAGES_OUT.relative_to(ROOT)}  ({TEAM_PAGES_OUT.stat().st_size:,} bytes)")
+
+    # Club pages (Phase 2.6-B): all-time NBA alumni per non-NBA club.
+    club_pages = {"generated_from": "data/players/nba_players_careers.json",
+                  "clubs": w_club_pages(players)}
+    CLUB_PAGES_OUT.write_text(json.dumps(club_pages, ensure_ascii=False, indent=2) + "\n",
+                              encoding="utf-8")
+    truncated = sum(1 for c in club_pages["clubs"].values() if c.get("truncated"))
+    print(f"wrote {CLUB_PAGES_OUT.relative_to(ROOT)}  "
+          f"({CLUB_PAGES_OUT.stat().st_size:,} bytes, {len(club_pages['clubs'])} clubs, "
+          f"{truncated} truncated at {CLUB_ROSTER_CAP})")
+
+    # Tiny NBA-name -> current-franchise index (Phase 2.6-B): lets index.html
+    # resolve a stint's team to its canonical team-page URL (or detect a club)
+    # without loading the multi-MB team_pages file. One source of truth (derived
+    # from ERA_TABLE) shared by both pages.
+    NBA_TEAM_INDEX_OUT.write_text(json.dumps(
+        {"franchises": sorted(NBA_TEAMS), "eras": _ERA_TO_CURRENT},
+        ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"wrote {NBA_TEAM_INDEX_OUT.relative_to(ROOT)}  "
+          f"({NBA_TEAM_INDEX_OUT.stat().st_size:,} bytes)")
+
+    # sitemap.xml (Phase 2.6-B): team + player URLs for search-engine discovery.
+    SITEMAP_OUT.write_text(build_sitemap(players), encoding="utf-8")
+    print(f"wrote {SITEMAP_OUT.relative_to(ROOT)}  ({SITEMAP_OUT.stat().st_size:,} bytes, "
+          f"base={SITE_BASE_URL})")
 
     if args.report:
         _report(data)
