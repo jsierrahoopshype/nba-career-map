@@ -786,9 +786,9 @@
           "player": "Cam Reddish",
           "years": "2019–2022",
           "stint_team": "Atlanta Hawks",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
         },
         {
           "player": "Cameron Oliver",
@@ -3339,7 +3339,7 @@
           "years": "2023–2025",
           "stint_team": "Atlanta Hawks",
           "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "current_team": "New Orleans Pelicans",
           "current_country": "USA"
         },
         {
@@ -3419,7 +3419,7 @@
           "years": "2024–25",
           "stint_team": "Atlanta Hawks",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "current_country": "USA"
         },
         {
@@ -5514,9 +5514,9 @@
         },
         {
           "player": "Cam Reddish",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "country": ""
         },
         {
           "player": "Cameron Oliver",
@@ -5755,7 +5755,7 @@
         {
           "player": "Kobe Bufkin",
           "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "current_team": "New Orleans Pelicans",
           "country": "USA"
         },
         {
@@ -5785,7 +5785,7 @@
         {
           "player": "Larry Nance Jr",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "country": "USA"
         },
         {
@@ -7764,9 +7764,9 @@
           "player": "Guerschon Yabusele",
           "years": "2017–2019",
           "stint_team": "Boston Celtics",
-          "status": "nba_active",
-          "current_team": "Chicago Bulls",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "current_country": "Greece"
         },
         {
           "player": "Hank Beenders",
@@ -10490,9 +10490,9 @@
         },
         {
           "player": "Guerschon Yabusele",
-          "status": "nba_active",
-          "current_team": "Chicago Bulls",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "country": "Greece"
         },
         {
           "player": "Henry Walker",
@@ -10982,7 +10982,7 @@
           "years": "2022",
           "stint_team": "Brooklyn Nets",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "current_country": "USA"
         },
         {
@@ -15280,7 +15280,7 @@
         {
           "player": "Andre Drummond",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "country": "USA"
         },
         {
@@ -16452,9 +16452,9 @@
           "player": "DaQuan Jeffries",
           "years": "2024–25",
           "stint_team": "Charlotte Hornets",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "current_country": "Turkey"
         },
         {
           "player": "Dale Ellis",
@@ -17349,7 +17349,7 @@
           "years": "2025",
           "stint_team": "Charlotte Hornets",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -18836,9 +18836,9 @@
         },
         {
           "player": "DaQuan Jeffries",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "country": "Turkey"
         },
         {
           "player": "Damion Baugh",
@@ -18975,7 +18975,7 @@
         {
           "player": "Josh Okogie",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Utah Jazz",
           "country": "USA"
         },
         {
@@ -19373,7 +19373,7 @@
           "years": "2022–2024",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "current_country": "USA"
         },
         {
@@ -20636,9 +20636,9 @@
           "player": "Guerschon Yabusele",
           "years": "2026",
           "stint_team": "Chicago Bulls",
-          "status": "nba_active",
-          "current_team": "Chicago Bulls",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "current_country": "Greece"
         },
         {
           "player": "Guy Rodgers",
@@ -20918,6 +20918,14 @@
           "stint_team": "Chicago Bulls",
           "status": "retired",
           "current_team": "Austin Toros",
+          "current_country": "USA"
+        },
+        {
+          "player": "Jaylin Sellers",
+          "years": "2026–present",
+          "stint_team": "Chicago Bulls",
+          "status": "nba_active",
+          "current_team": "Chicago Bulls",
           "current_country": "USA"
         },
         {
@@ -22673,6 +22681,14 @@
           "current_country": "Spain"
         },
         {
+          "player": "Tobe Awaka",
+          "years": "2026–present",
+          "stint_team": "Chicago Bulls",
+          "status": "nba_active",
+          "current_team": "Chicago Bulls",
+          "current_country": "USA"
+        },
+        {
           "player": "Tom Boerwinkle",
           "years": "1968-1978",
           "stint_team": "Chicago Bulls",
@@ -22997,7 +23013,7 @@
         {
           "player": "Andre Drummond",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "country": "USA"
         },
         {
@@ -23137,6 +23153,12 @@
           "status": "nba_active",
           "current_team": "Toronto Raptors",
           "country": "Canada"
+        },
+        {
+          "player": "Guerschon Yabusele",
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "country": "Greece"
         },
         {
           "player": "Henri Drell",
@@ -23457,13 +23479,13 @@
           "country": "USA"
         }
       ],
-      "roster_count": 464,
-      "alumni_count": 432,
+      "roster_count": 466,
+      "alumni_count": 434,
       "related": [
         {
           "type": "club",
           "name": "Windy City Bulls",
-          "shared": 44
+          "shared": 46
         },
         {
           "type": "club",
@@ -23591,7 +23613,7 @@
           "years": "2020–2021",
           "stint_team": "Cleveland Cavaliers",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "current_country": "USA"
         },
         {
@@ -25911,7 +25933,7 @@
           "years": "2018–2021",
           "stint_team": "Cleveland Cavaliers",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "current_country": "USA"
         },
         {
@@ -25919,7 +25941,7 @@
           "years": "2025–26",
           "stint_team": "Cleveland Cavaliers",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "current_country": "USA"
         },
         {
@@ -27469,7 +27491,7 @@
         {
           "player": "Andre Drummond",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "country": "USA"
         },
         {
@@ -27801,6 +27823,12 @@
           "status": "overseas_active",
           "current_team": "Paris Basketball",
           "country": "France"
+        },
+        {
+          "player": "Larry Nance Jr",
+          "status": "nba_active",
+          "current_team": "Indiana Pacers",
+          "country": "USA"
         },
         {
           "player": "Lauri Markkanen",
@@ -36190,7 +36218,7 @@
           "years": "2012–2020",
           "stint_team": "Detroit Pistons",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "current_country": "USA"
         },
         {
@@ -41036,7 +41064,7 @@
         {
           "player": "Andre Drummond",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "country": "USA"
         },
         {
@@ -47785,9 +47813,9 @@
           "player": "DaQuan Jeffries",
           "years": "2021",
           "stint_team": "Houston Rockets",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "current_country": "Turkey"
         },
         {
           "player": "Daequan Cook",
@@ -48951,11 +48979,11 @@
         },
         {
           "player": "Josh Christopher",
-          "years": "2021-2023",
+          "years": "2021–2023",
           "stint_team": "Houston Rockets",
-          "status": "nba_active",
-          "current_team": "Miami Heat",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Shenzhen Leopards",
+          "current_country": "China"
         },
         {
           "player": "Josh Davis",
@@ -48970,7 +48998,7 @@
           "years": "2025–26",
           "stint_team": "Houston Rockets",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -49852,6 +49880,14 @@
           "status": "retired",
           "current_team": "Hapoel Tel Aviv",
           "current_country": "Israel"
+        },
+        {
+          "player": "Quadir Copeland",
+          "years": "2026–present",
+          "stint_team": "Houston Rockets",
+          "status": "nba_active",
+          "current_team": "Houston Rockets",
+          "current_country": "USA"
         },
         {
           "player": "RJ Hunter",
@@ -50983,9 +51019,9 @@
         },
         {
           "player": "DaQuan Jeffries",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "country": "Turkey"
         },
         {
           "player": "Daishen Nix",
@@ -51181,8 +51217,14 @@
         },
         {
           "player": "Josh Christopher",
+          "status": "overseas_active",
+          "current_team": "Shenzhen Leopards",
+          "country": "China"
+        },
+        {
+          "player": "Josh Okogie",
           "status": "nba_active",
-          "current_team": "Miami Heat",
+          "current_team": "Utah Jazz",
           "country": "USA"
         },
         {
@@ -51414,13 +51456,13 @@
           "country": "China"
         }
       ],
-      "roster_count": 485,
-      "alumni_count": 446,
+      "roster_count": 486,
+      "alumni_count": 447,
       "related": [
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 78
+          "shared": 79
         },
         {
           "type": "club",
@@ -53384,6 +53426,14 @@
           "current_country": "USA"
         },
         {
+          "player": "Larry Nance Jr",
+          "years": "2026–present",
+          "stint_team": "Indiana Pacers",
+          "status": "nba_active",
+          "current_team": "Indiana Pacers",
+          "current_country": "USA"
+        },
+        {
           "player": "Lavoy Allen",
           "years": "2014-2017",
           "stint_team": "Indiana Pacers",
@@ -55006,8 +55056,8 @@
           "country": "USA"
         }
       ],
-      "roster_count": 393,
-      "alumni_count": 372,
+      "roster_count": 394,
+      "alumni_count": 373,
       "related": [
         {
           "type": "club",
@@ -55158,9 +55208,9 @@
           "player": "Amir Coffey",
           "years": "2019–2025",
           "stint_team": "LA Clippers",
-          "status": "nba_active",
-          "current_team": "Phoenix Suns",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "current_country": "Israel"
         },
         {
           "player": "Andre Barrett",
@@ -55661,10 +55711,10 @@
         {
           "player": "Cam Reddish",
           "years": "2026–present",
-          "stint_team": "LA Clippers",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
+          "stint_team": "San Diego Clippers",
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
         },
         {
           "player": "Carlton McKinney",
@@ -56926,17 +56976,17 @@
           "player": "Jason Preston",
           "years": "2021–2023",
           "stint_team": "LA Clippers",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
         },
         {
           "player": "Jason Preston",
           "years": "2025–present",
-          "stint_team": "LA Clippers",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
+          "stint_team": "San Diego Clippers",
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
         },
         {
           "player": "Jawun Evans",
@@ -59500,9 +59550,9 @@
         },
         {
           "player": "Amir Coffey",
-          "status": "nba_active",
-          "current_team": "Phoenix Suns",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "country": "Israel"
         },
         {
           "player": "Angel Delgado",
@@ -60202,7 +60252,7 @@
           "years": "2021",
           "stint_team": "Los Angeles Lakers",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "current_country": "USA"
         },
         {
@@ -60657,9 +60707,9 @@
           "player": "Cam Reddish",
           "years": "2023–2025",
           "stint_team": "Los Angeles Lakers",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
         },
         {
           "player": "Carlos Boozer",
@@ -62034,7 +62084,7 @@
           "years": "2023–2026",
           "stint_team": "Los Angeles Lakers",
           "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -62650,7 +62700,7 @@
           "years": "2026",
           "stint_team": "Los Angeles Lakers",
           "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "current_team": "New Orleans Pelicans",
           "current_country": "USA"
         },
         {
@@ -62746,7 +62796,7 @@
           "years": "2015–2018",
           "stint_team": "Los Angeles Lakers",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "current_country": "USA"
         },
         {
@@ -64484,7 +64534,7 @@
         {
           "player": "Andre Drummond",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "country": "USA"
         },
         {
@@ -64525,9 +64575,9 @@
         },
         {
           "player": "Cam Reddish",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "country": ""
         },
         {
           "player": "Chaundee Brown",
@@ -64710,6 +64760,12 @@
           "country": "USA"
         },
         {
+          "player": "Jaxson Hayes",
+          "status": "nba_active",
+          "current_team": "Utah Jazz",
+          "country": "USA"
+        },
+        {
           "player": "Jay Huff",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -64782,6 +64838,12 @@
           "country": "USA"
         },
         {
+          "player": "Kobe Bufkin",
+          "status": "nba_active",
+          "current_team": "New Orleans Pelicans",
+          "country": "USA"
+        },
+        {
           "player": "Kostas Antetokounmpo",
           "status": "overseas_active",
           "current_team": "Aris Thessaloniki",
@@ -64802,7 +64864,7 @@
         {
           "player": "Larry Nance Jr",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "country": "USA"
         },
         {
@@ -65618,9 +65680,9 @@
           "player": "DaQuan Jeffries",
           "years": "2022",
           "stint_team": "Memphis Grizzlies",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "current_country": "Turkey"
         },
         {
           "player": "Dahntay Jones",
@@ -67792,9 +67854,9 @@
         },
         {
           "player": "DaQuan Jeffries",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "country": "Turkey"
         },
         {
           "player": "Dakota Mathias",
@@ -69500,11 +69562,11 @@
         },
         {
           "player": "Josh Christopher",
-          "years": "2024-2025",
+          "years": "2024–25",
           "stint_team": "Miami Heat",
-          "status": "nba_active",
-          "current_team": "Miami Heat",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Shenzhen Leopards",
+          "current_country": "China"
         },
         {
           "player": "Josh Harrellson",
@@ -71141,6 +71203,12 @@
           "country": "China"
         },
         {
+          "player": "Josh Christopher",
+          "status": "overseas_active",
+          "current_team": "Shenzhen Leopards",
+          "country": "China"
+        },
+        {
           "player": "Josh Harrellson",
           "status": "overseas_active",
           "current_team": "Saga Ballooners",
@@ -71514,9 +71582,9 @@
           "player": "Amir Coffey",
           "years": "2025–26",
           "stint_team": "Milwaukee Bucks",
-          "status": "nba_active",
-          "current_team": "Phoenix Suns",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "current_country": "Israel"
         },
         {
           "player": "Andre Moore",
@@ -75520,9 +75588,9 @@
         },
         {
           "player": "Amir Coffey",
-          "status": "nba_active",
-          "current_team": "Phoenix Suns",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "country": "Israel"
         },
         {
           "player": "Axel Toupane",
@@ -77279,7 +77347,7 @@
           "years": "2018–2022",
           "stint_team": "Minnesota Timberwolves",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -78871,7 +78939,7 @@
         {
           "player": "Josh Okogie",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Utah Jazz",
           "country": "USA"
         },
         {
@@ -79878,14 +79946,6 @@
           "current_country": "China"
         },
         {
-          "player": "Eric Gordon",
-          "years": "2011–2016",
-          "stint_team": "New Orleans Pelicans",
-          "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
-          "current_country": "USA"
-        },
-        {
           "player": "Frank Jackson",
           "years": "2017-2020",
           "stint_team": "New Orleans Pelicans",
@@ -80210,7 +80270,7 @@
           "years": "2019–2023",
           "stint_team": "New Orleans Pelicans",
           "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -80510,6 +80570,14 @@
           "current_country": "Dominican Republic"
         },
         {
+          "player": "Kobe Bufkin",
+          "years": "2026–present",
+          "stint_team": "New Orleans Pelicans",
+          "status": "nba_active",
+          "current_team": "New Orleans Pelicans",
+          "current_country": "USA"
+        },
+        {
           "player": "Kylor Kelley",
           "years": "2025",
           "stint_team": "New Orleans Pelicans",
@@ -80554,7 +80622,7 @@
           "years": "2022–2024",
           "stint_team": "New Orleans Pelicans",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "current_country": "USA"
         },
         {
@@ -81492,12 +81560,6 @@
           "country": "China"
         },
         {
-          "player": "Eric Gordon",
-          "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
-          "country": "USA"
-        },
-        {
           "player": "Frank Jackson",
           "status": "overseas_active",
           "current_team": "Ningbo Rockets",
@@ -81602,7 +81664,7 @@
         {
           "player": "Jaxson Hayes",
           "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "current_team": "Utah Jazz",
           "country": "USA"
         },
         {
@@ -81722,7 +81784,7 @@
         {
           "player": "Larry Nance Jr",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "country": "USA"
         },
         {
@@ -82048,6 +82110,14 @@
           "status": "retired",
           "current_team": "Maccabi Tel Aviv",
           "current_country": "Israel"
+        },
+        {
+          "player": "Andre Drummond",
+          "years": "2026–present",
+          "stint_team": "New York Knicks",
+          "status": "nba_active",
+          "current_team": "New York Knicks",
+          "current_country": "USA"
         },
         {
           "player": "Andrea Bargnani",
@@ -82557,9 +82627,9 @@
           "player": "Cam Reddish",
           "years": "2022–2023",
           "stint_team": "New York Knicks",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
         },
         {
           "player": "Cameron Payne",
@@ -82853,9 +82923,9 @@
           "player": "DaQuan Jeffries",
           "years": "2023–2024",
           "stint_team": "New York Knicks",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "current_country": "Turkey"
         },
         {
           "player": "Damyean Dotson",
@@ -83797,9 +83867,9 @@
           "player": "Guerschon Yabusele",
           "years": "2025–26",
           "stint_team": "New York Knicks",
-          "status": "nba_active",
-          "current_team": "Chicago Bulls",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "current_country": "Greece"
         },
         {
           "player": "Guy Sparrow",
@@ -86743,9 +86813,9 @@
         },
         {
           "player": "Cam Reddish",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "country": ""
         },
         {
           "player": "Cameron Payne",
@@ -86773,9 +86843,9 @@
         },
         {
           "player": "DaQuan Jeffries",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "country": "Turkey"
         },
         {
           "player": "Damyean Dotson",
@@ -86869,9 +86939,9 @@
         },
         {
           "player": "Guerschon Yabusele",
-          "status": "nba_active",
-          "current_team": "Chicago Bulls",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "country": "Greece"
         },
         {
           "player": "Henry Ellenson",
@@ -87198,8 +87268,8 @@
           "country": "Spain"
         }
       ],
-      "roster_count": 595,
-      "alumni_count": 559,
+      "roster_count": 596,
+      "alumni_count": 560,
       "related": [
         {
           "type": "club",
@@ -94386,7 +94456,7 @@
           "years": "2021–22",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "current_country": "USA"
         },
         {
@@ -94394,7 +94464,7 @@
           "years": "2024–2026",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "New York Knicks",
           "current_country": "USA"
         },
         {
@@ -94907,6 +94977,14 @@
           "stint_team": "Philadelphia 76ers",
           "status": "retired",
           "current_team": "San Antonio Spurs",
+          "current_country": "USA"
+        },
+        {
+          "player": "Caleb Love",
+          "years": "2026–present",
+          "stint_team": "Philadelphia 76ers",
+          "status": "nba_active",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA"
         },
         {
@@ -96225,9 +96303,9 @@
           "player": "Guerschon Yabusele",
           "years": "2024–25",
           "stint_team": "Philadelphia 76ers",
-          "status": "nba_active",
-          "current_team": "Chicago Bulls",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "current_country": "Greece"
         },
         {
           "player": "Hal Greer",
@@ -97307,6 +97385,14 @@
           "stint_team": "Philadelphia 76ers",
           "status": "retired",
           "current_team": "Indiana Pacers",
+          "current_country": "USA"
+        },
+        {
+          "player": "Labaron Philon Jr.",
+          "years": "2026–present",
+          "stint_team": "Philadelphia 76ers",
+          "status": "nba_active",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA"
         },
         {
@@ -99372,6 +99458,12 @@
           "country": "Russia"
         },
         {
+          "player": "Andre Drummond",
+          "status": "nba_active",
+          "current_team": "New York Knicks",
+          "country": "USA"
+        },
+        {
           "player": "Arnett Moultrie",
           "status": "overseas_active",
           "current_team": "Pioneros de Los Mochis",
@@ -99541,9 +99633,9 @@
         },
         {
           "player": "Guerschon Yabusele",
-          "status": "nba_active",
-          "current_team": "Chicago Bulls",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "Panathinaikos",
+          "country": "Greece"
         },
         {
           "player": "Haywood Highsmith",
@@ -100068,13 +100160,13 @@
           "country": "USA"
         }
       ],
-      "roster_count": 644,
-      "alumni_count": 600,
+      "roster_count": 646,
+      "alumni_count": 602,
       "related": [
         {
           "type": "club",
           "name": "Delaware Blue Coats",
-          "shared": 43
+          "shared": 44
         },
         {
           "type": "club",
@@ -100257,9 +100349,9 @@
           "player": "Amir Coffey",
           "years": "2026",
           "stint_team": "Phoenix Suns",
-          "status": "nba_active",
-          "current_team": "Phoenix Suns",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "current_country": "Israel"
         },
         {
           "player": "Andre Barrett",
@@ -102234,7 +102326,7 @@
           "years": "2022–2025",
           "stint_team": "Phoenix Suns",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -104016,6 +104108,12 @@
           "country": "Spain"
         },
         {
+          "player": "Amir Coffey",
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "country": "Israel"
+        },
+        {
           "player": "Archie Goodwin",
           "status": "overseas_active",
           "current_team": "Taipei Fubon Braves",
@@ -104336,7 +104434,7 @@
         {
           "player": "Josh Okogie",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Utah Jazz",
           "country": "USA"
         },
         {
@@ -105038,6 +105136,14 @@
           "current_country": "USA"
         },
         {
+          "player": "Caleb Love",
+          "years": "2025–26",
+          "stint_team": "Portland Trail Blazers",
+          "status": "nba_active",
+          "current_team": "Philadelphia 76ers",
+          "current_country": "USA"
+        },
+        {
           "player": "Caleb Swanigan",
           "years": "2017-2019",
           "stint_team": "Portland Trail Blazers",
@@ -105065,9 +105171,9 @@
           "player": "Cam Reddish",
           "years": "2023",
           "stint_team": "Portland Trail Blazers",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
         },
         {
           "player": "Cameron McGriff",
@@ -106610,7 +106716,7 @@
           "years": "2021–22",
           "stint_team": "Portland Trail Blazers",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "current_country": "USA"
         },
         {
@@ -108106,10 +108212,16 @@
           "country": "USA"
         },
         {
-          "player": "Cam Reddish",
+          "player": "Caleb Love",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "Philadelphia 76ers",
           "country": "USA"
+        },
+        {
+          "player": "Cam Reddish",
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "country": ""
         },
         {
           "player": "Cameron McGriff",
@@ -108348,7 +108460,7 @@
         {
           "player": "Larry Nance Jr",
           "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "current_team": "Indiana Pacers",
           "country": "USA"
         },
         {
@@ -108538,8 +108650,8 @@
           "country": "USA"
         }
       ],
-      "roster_count": 429,
-      "alumni_count": 405,
+      "roster_count": 430,
+      "alumni_count": 406,
       "related": [
         {
           "type": "club",
@@ -108554,7 +108666,7 @@
         {
           "type": "club",
           "name": "Rip City Remix",
-          "shared": 17
+          "shared": 18
         },
         {
           "type": "club",
@@ -108720,6 +108832,14 @@
           "stint_team": "Rochester Royals",
           "status": "retired",
           "current_team": "St. Louis Hawks",
+          "current_country": "USA"
+        },
+        {
+          "player": "Alex Karaban",
+          "years": "2026–present",
+          "stint_team": "Sacramento Kings",
+          "status": "nba_active",
+          "current_team": "Sacramento Kings",
           "current_country": "USA"
         },
         {
@@ -109566,17 +109686,17 @@
           "player": "DaQuan Jeffries",
           "years": "2019–20",
           "stint_team": "Sacramento Kings",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "current_country": "Turkey"
         },
         {
           "player": "DaQuan Jeffries",
           "years": "2026",
           "stint_team": "Sacramento Kings",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA"
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "current_country": "Turkey"
         },
         {
           "player": "Daeqwon Plowden",
@@ -109641,6 +109761,14 @@
           "status": "overseas_active",
           "current_team": "Anadolu Efes",
           "current_country": "Turkey"
+        },
+        {
+          "player": "Darius Acuff Jr.",
+          "years": "2026–present",
+          "stint_team": "Sacramento Kings",
+          "status": "nba_active",
+          "current_team": "Sacramento Kings",
+          "current_country": "USA"
         },
         {
           "player": "Darius Songaila",
@@ -110112,6 +110240,14 @@
           "stint_team": "Kansas City Kings",
           "status": "retired",
           "current_team": "Houston Rockets",
+          "current_country": "USA"
+        },
+        {
+          "player": "Emanuel Sharp",
+          "years": "2026–present",
+          "stint_team": "Sacramento Kings",
+          "status": "nba_active",
+          "current_team": "Sacramento Kings",
           "current_country": "USA"
         },
         {
@@ -113483,6 +113619,12 @@
           "country": "Greece"
         },
         {
+          "player": "DaQuan Jeffries",
+          "status": "overseas_active",
+          "current_team": "Beşiktaş",
+          "country": "Turkey"
+        },
+        {
           "player": "Damian Jones",
           "status": "overseas_active",
           "current_team": "Zhejiang Golden Bulls",
@@ -113963,8 +114105,8 @@
           "country": "Montenegro"
         }
       ],
-      "roster_count": 598,
-      "alumni_count": 560,
+      "roster_count": 601,
+      "alumni_count": 563,
       "related": [
         {
           "type": "club",
@@ -122399,8 +122541,16 @@
           "player": "Jason Preston",
           "years": "2024",
           "stint_team": "Utah Jazz",
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "current_country": ""
+        },
+        {
+          "player": "Jaxson Hayes",
+          "years": "2026–present",
+          "stint_team": "Utah Jazz",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -122697,6 +122847,14 @@
           "stint_team": "Utah Jazz",
           "status": "retired",
           "current_team": "Austin Toros",
+          "current_country": "USA"
+        },
+        {
+          "player": "Josh Okogie",
+          "years": "2026–present",
+          "stint_team": "Utah Jazz",
+          "status": "nba_active",
+          "current_team": "Utah Jazz",
           "current_country": "USA"
         },
         {
@@ -124337,9 +124495,9 @@
         },
         {
           "player": "Jason Preston",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "country": "USA"
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "country": ""
         },
         {
           "player": "Jeff Green",
@@ -124672,8 +124830,8 @@
           "country": "Australia"
         }
       ],
-      "roster_count": 388,
-      "alumni_count": 366,
+      "roster_count": 390,
+      "alumni_count": 368,
       "related": [
         {
           "type": "club",

@@ -1,3 +1,70 @@
 {
-  "transactions": []
+  "transactions": [
+    {
+      "player": "Amir Coffey",
+      "from_team": "Phoenix Suns",
+      "to_team": "Hapoel Tel Aviv",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Andre Drummond",
+      "from_team": "Philadelphia 76ers",
+      "to_team": "New York Knicks",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Cam Reddish",
+      "from_team": "LA Clippers",
+      "to_team": "San Diego Clippers",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "DaQuan Jeffries",
+      "from_team": "Sacramento Kings",
+      "to_team": "Beşiktaş",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Guerschon Yabusele",
+      "from_team": "Chicago Bulls",
+      "to_team": "Panathinaikos",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Jason Preston",
+      "from_team": "LA Clippers",
+      "to_team": "San Diego Clippers",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Jaxson Hayes",
+      "from_team": "Los Angeles Lakers",
+      "to_team": "Utah Jazz",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Josh Christopher",
+      "from_team": "Miami Heat",
+      "to_team": "Shenzhen Leopards",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Josh Okogie",
+      "from_team": "Houston Rockets",
+      "to_team": "Utah Jazz",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Kobe Bufkin",
+      "from_team": "Los Angeles Lakers",
+      "to_team": "New Orleans Pelicans",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Larry Nance Jr",
+      "from_team": "Cleveland Cavaliers",
+      "to_team": "Indiana Pacers",
+      "date": "2026-07-11"
+    }
+  ]
 }

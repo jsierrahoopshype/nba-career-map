@@ -8515,7 +8515,7 @@
   },
   {
     "player": "Amir Coffey",
-    "status": "nba_active",
+    "status": "overseas_active",
     "career_history": [
       {
         "years": "2019–2025",
@@ -8544,6 +8544,13 @@
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Hapoel Tel Aviv",
+        "city": "Tel Aviv",
+        "state": "",
+        "country": "Israel"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Amir_Coffey"
@@ -9178,8 +9185,8 @@
       {
         "years": "2022",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -9194,6 +9201,13 @@
         "team": "Philadelphia 76ers",
         "city": "Philadelphia",
         "state": "Pennsylvania",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "New York Knicks",
+        "city": "New York",
+        "state": "New York",
         "country": "USA"
       }
     ],
@@ -20292,8 +20306,8 @@
       {
         "years": "2022–2025",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -29435,9 +29449,9 @@
       {
         "years": "2019–2026",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Brandon_Clarke"
@@ -35429,7 +35443,7 @@
   },
   {
     "player": "Cam Reddish",
-    "status": "nba_active",
+    "status": "overseas_active",
     "career_history": [
       {
         "years": "2019–2022",
@@ -35468,10 +35482,10 @@
       },
       {
         "years": "2026–present",
-        "team": "LA Clippers",
-        "city": "Los Angeles",
-        "state": "California",
-        "country": "USA"
+        "team": "San Diego Clippers",
+        "city": "",
+        "state": "",
+        "country": ""
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cam_Reddish"
@@ -35561,8 +35575,8 @@
       {
         "years": "2021–2026",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -45643,8 +45657,8 @@
         "years": "2005–2011",
         "team": "New Orleans Hornets",
         "city": "New Orleans",
-        "state": "Louisiana",
-        "country": "USA"
+        "state": "",
+        "country": ""
       },
       {
         "years": "2011–2017",
@@ -59250,8 +59264,8 @@
       {
         "years": "2014–2019",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
@@ -59373,7 +59387,7 @@
   },
   {
     "player": "DaQuan Jeffries",
-    "status": "nba_active",
+    "status": "overseas_active",
     "career_history": [
       {
         "years": "2019–20",
@@ -59406,9 +59420,9 @@
       {
         "years": "2022",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2022",
@@ -59458,6 +59472,13 @@
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Beşiktaş",
+        "city": "Istanbul",
+        "state": "",
+        "country": "Turkey"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/DaQuan_Jeffries"
@@ -59687,8 +59708,8 @@
       {
         "years": "2023–2025",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -59708,9 +59729,9 @@
       {
         "years": "2026",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dariq_Whitehead"
@@ -66337,9 +66358,9 @@
       {
         "years": "2024",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2025–2026",
@@ -66351,9 +66372,9 @@
       {
         "years": "2026",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/DeJon_Jarreau"
@@ -66798,9 +66819,9 @@
       {
         "years": "2019",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2019–20",
@@ -88370,10 +88391,10 @@
       },
       {
         "years": "2011–2016",
-        "team": "New Orleans Pelicans",
-        "city": "New Orleans",
-        "state": "Louisiana",
-        "country": "USA"
+        "team": "New Orleans Hornets / Pelicans",
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
         "years": "2016–2023",
@@ -95777,9 +95798,9 @@
       {
         "years": "2018–19",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2019",
@@ -95791,8 +95812,8 @@
       {
         "years": "2019–20",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -99803,8 +99824,8 @@
       {
         "years": "2018-2021",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
@@ -99838,8 +99859,8 @@
       {
         "years": "2025-2026",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
@@ -104734,7 +104755,7 @@
   },
   {
     "player": "Guerschon Yabusele",
-    "status": "nba_active",
+    "status": "overseas_active",
     "career_history": [
       {
         "years": "2013–2015",
@@ -104812,6 +104833,13 @@
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Panathinaikos",
+        "city": "Athens",
+        "state": "",
+        "country": "Greece"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Guerschon_Yabusele"
@@ -120730,9 +120758,9 @@
       {
         "years": "2013-2014",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2014-2016",
@@ -120772,8 +120800,8 @@
       {
         "years": "2021-2022",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -124005,15 +124033,15 @@
       {
         "years": "2018–2026",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2026–present",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
@@ -125401,7 +125429,7 @@
   },
   {
     "player": "Jason Preston",
-    "status": "nba_active",
+    "status": "overseas_active",
     "career_history": [
       {
         "years": "2021–2023",
@@ -125427,8 +125455,8 @@
       {
         "years": "2024",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
@@ -125440,10 +125468,10 @@
       },
       {
         "years": "2025–present",
-        "team": "LA Clippers",
-        "city": "Los Angeles",
-        "state": "California",
-        "country": "USA"
+        "team": "San Diego Clippers",
+        "city": "",
+        "state": "",
+        "country": ""
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Jason_Preston"
@@ -126612,6 +126640,13 @@
         "team": "Los Angeles Lakers",
         "city": "Los Angeles",
         "state": "California",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Utah Jazz",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
@@ -128446,9 +128481,9 @@
       {
         "years": "2015-2016",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2016",
@@ -128481,8 +128516,8 @@
       {
         "years": "2019",
         "team": "Utah Jazz",
-        "city": "Salt Lake City",
-        "state": "Utah",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       },
       {
@@ -128495,8 +128530,8 @@
       {
         "years": "2020-2021",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -149070,49 +149105,49 @@
   },
   {
     "player": "Josh Christopher",
-    "status": "nba_active",
+    "status": "overseas_active",
     "career_history": [
       {
-        "years": "2021-2023",
+        "years": "2021–2023",
         "team": "Houston Rockets",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2021-2022",
+        "years": "2021–2022",
         "team": "Rio Grande Valley Vipers",
         "city": "Edinburg",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
+        "years": "2023–2024",
         "team": "Salt Lake City Stars",
         "city": "Salt Lake City",
         "state": "Utah",
         "country": "USA"
       },
       {
-        "years": "2024",
+        "years": "2024–2026",
         "team": "Sioux Falls Skyforce",
         "city": "Sioux Falls",
         "state": "South Dakota",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
+        "years": "2024–25",
         "team": "Miami Heat",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
-        "team": "Sioux Falls Skyforce",
-        "city": "Sioux Falls",
-        "state": "South Dakota",
-        "country": "USA"
+        "years": "2026–present",
+        "team": "Shenzhen Leopards",
+        "city": "Shenzhen",
+        "state": "",
+        "country": "China"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Josh_Christopher"
@@ -150072,6 +150107,13 @@
         "team": "Houston Rockets",
         "city": "Houston",
         "state": "Texas",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Utah Jazz",
+        "city": "New Orleans",
+        "state": "Louisiana",
         "country": "USA"
       }
     ],
@@ -164536,6 +164578,13 @@
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "New Orleans Pelicans",
+        "city": "New Orleans",
+        "state": "Louisiana",
+        "country": "USA"
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kobe_Bufkin"
@@ -166193,9 +166242,9 @@
       {
         "years": "2006–2009",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2009–2012",
@@ -169226,6 +169275,13 @@
         "team": "Cleveland Cavaliers",
         "city": "Cleveland",
         "state": "Ohio",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Indiana Pacers",
+        "city": "Indianapolis",
+        "state": "Indiana",
         "country": "USA"
       }
     ],
@@ -176565,9 +176621,9 @@
       {
         "years": "2023–2025",
         "team": "Memphis Grizzlies",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "city": "Vancouver",
+        "state": "British Columbia",
+        "country": "Canada"
       },
       {
         "years": "2025–26",
@@ -185163,8 +185219,8 @@
       {
         "years": "2022–23",
         "team": "Brooklyn Nets",
-        "city": "Brooklyn",
-        "state": "New York",
+        "city": "East Rutherford",
+        "state": "New Jersey",
         "country": "USA"
       },
       {
@@ -289300,5 +289356,159 @@
       }
     ],
     "wikipedia_url": "https://en.wikipedia.org/wiki/AK_Okereke"
+  },
+  {
+    "player": "Alex Karaban",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Sacramento Kings",
+        "city": "Sacramento",
+        "state": "California",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alex_Karaban"
+  },
+  {
+    "player": "Caleb Love",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2025–26",
+        "team": "Portland Trail Blazers",
+        "city": "Portland",
+        "state": "Oregon",
+        "country": "USA"
+      },
+      {
+        "years": "2025–2026",
+        "team": "Rip City Remix",
+        "city": "North Portland",
+        "state": "Oregon",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Philadelphia 76ers",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Delaware Blue Coats",
+        "city": "Newark",
+        "state": "Delaware",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Caleb_Love"
+  },
+  {
+    "player": "Darius Acuff Jr.",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Sacramento Kings",
+        "city": "Sacramento",
+        "state": "California",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Darius_Acuff_Jr."
+  },
+  {
+    "player": "Emanuel Sharp",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Sacramento Kings",
+        "city": "Sacramento",
+        "state": "California",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Emanuel_Sharp"
+  },
+  {
+    "player": "Jaylin Sellers",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Chicago Bulls",
+        "city": "Chicago",
+        "state": "Illinois",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Windy City Bulls",
+        "city": "Hoffman Estates",
+        "state": "Illinois",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jaylin_Sellers"
+  },
+  {
+    "player": "Labaron Philon Jr.",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Philadelphia 76ers",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Labaron_Philon_Jr."
+  },
+  {
+    "player": "Quadir Copeland",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Houston Rockets",
+        "city": "Houston",
+        "state": "Texas",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Rio Grande Valley Vipers",
+        "city": "Edinburg",
+        "state": "Texas",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Quadir_Copeland"
+  },
+  {
+    "player": "Tobe Awaka",
+    "status": "nba_active",
+    "career_history": [
+      {
+        "years": "2026–present",
+        "team": "Chicago Bulls",
+        "city": "Chicago",
+        "state": "Illinois",
+        "country": "USA"
+      },
+      {
+        "years": "2026–present",
+        "team": "Windy City Bulls",
+        "city": "Hoffman Estates",
+        "state": "Illinois",
+        "country": "USA"
+      }
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tobe_Awaka"
   }
 ]

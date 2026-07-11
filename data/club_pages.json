@@ -2410,7 +2410,7 @@
       "city": "Istanbul",
       "state": "",
       "country": "Turkey",
-      "count": 42,
+      "count": 43,
       "roster": [
         {
           "player": "A.J. English",
@@ -2456,6 +2456,11 @@
           "player": "D.J. Strawberry",
           "years": "2016-2018",
           "status": "retired"
+        },
+        {
+          "player": "DaQuan Jeffries",
+          "years": "2026–present",
+          "status": "overseas_active"
         },
         {
           "player": "Damir Markota",
@@ -3164,12 +3169,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 3
         },
         {
@@ -5540,8 +5545,8 @@
         },
         {
           "player": "Josh Christopher",
-          "years": "2024, 2024-2025",
-          "status": "nba_active"
+          "years": "2024–2026",
+          "status": "overseas_active"
         },
         {
           "player": "Josh Richardson",
@@ -6122,7 +6127,7 @@
       "city": "Edinburg",
       "state": "Texas",
       "country": "USA",
-      "count": 145,
+      "count": 146,
       "roster": [
         {
           "player": "Aaron Brooks",
@@ -6511,8 +6516,8 @@
         },
         {
           "player": "Josh Christopher",
-          "years": "2021-2022",
-          "status": "nba_active"
+          "years": "2021–2022",
+          "status": "overseas_active"
         },
         {
           "player": "Josh Huestis",
@@ -6657,6 +6662,11 @@
         {
           "player": "Phillip Wheeler",
           "years": "2021-2022",
+          "status": "nba_active"
+        },
+        {
+          "player": "Quadir Copeland",
+          "years": "2026–present",
           "status": "nba_active"
         },
         {
@@ -10438,12 +10448,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 4
         },
         {
@@ -11410,7 +11420,7 @@
       "city": "Newark",
       "state": "Delaware",
       "country": "USA",
-      "count": 71,
+      "count": 72,
       "roster": [
         {
           "player": "Aaron Henry",
@@ -11441,6 +11451,11 @@
           "player": "Braxton Key",
           "years": "2021–2022, 2023",
           "status": "overseas_active"
+        },
+        {
+          "player": "Caleb Love",
+          "years": "2026–present",
+          "status": "nba_active"
         },
         {
           "player": "Charles Bassey",
@@ -12130,12 +12145,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -12145,12 +12160,12 @@
         },
         {
           "type": "club",
-          "name": "Benetton Treviso",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Benetton Treviso",
           "shared": 1
         },
         {
@@ -17371,7 +17386,7 @@
         {
           "player": "Guerschon Yabusele",
           "years": "2017–2018",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Hamady N'Diaye",
@@ -17803,12 +17818,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
@@ -21101,7 +21116,7 @@
         {
           "player": "DaQuan Jeffries",
           "years": "2019–2020, 2025–2026",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Daeqwon Plowden",
@@ -23322,7 +23337,7 @@
       "city": "Hoffman Estates",
       "state": "Illinois",
       "country": "USA",
-      "count": 77,
+      "count": 79,
       "roster": [
         {
           "player": "Adam Mokoka",
@@ -23520,6 +23535,11 @@
           "status": "overseas_active"
         },
         {
+          "player": "Jaylin Sellers",
+          "years": "2026–present",
+          "status": "nba_active"
+        },
+        {
           "player": "Jeremy Pargo",
           "years": "2022–2023",
           "status": "overseas_active"
@@ -23678,6 +23698,11 @@
           "player": "Tim Quarterman",
           "years": "2017",
           "status": "retired"
+        },
+        {
+          "player": "Tobe Awaka",
+          "years": "2026–present",
+          "status": "nba_active"
         },
         {
           "player": "Trentyn Flowers",
@@ -24594,12 +24619,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
@@ -26575,7 +26600,7 @@
         {
           "player": "Guerschon Yabusele",
           "years": "2020–2021",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Hilton Armstrong",
@@ -26741,17 +26766,17 @@
       "related": [
         {
           "type": "club",
+          "name": "Panathinaikos",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Idaho Stampede",
           "shared": 5
         },
         {
           "type": "club",
           "name": "Olimpia Milano",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Panathinaikos",
           "shared": 5
         },
         {
@@ -28373,7 +28398,7 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -29505,7 +29530,7 @@
       "city": "Athens",
       "state": "",
       "country": "Greece",
-      "count": 89,
+      "count": 90,
       "roster": [
         {
           "player": "Adreian Payne",
@@ -29645,6 +29670,11 @@
         {
           "player": "Georgios Papagiannis",
           "years": "2014–2016, 2018–2023",
+          "status": "overseas_active"
+        },
+        {
+          "player": "Guerschon Yabusele",
+          "years": "2026–present",
           "status": "overseas_active"
         },
         {
@@ -29981,17 +30011,17 @@
         },
         {
           "type": "club",
+          "name": "Real Madrid",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "UNICS",
           "shared": 8
         },
         {
           "type": "club",
           "name": "Baskonia",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Olympiacos",
           "shared": 7
         }
       ]
@@ -33578,7 +33608,7 @@
         {
           "player": "Jason Preston",
           "years": "2023–2024",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Javon Small",
@@ -34729,7 +34759,7 @@
       "city": "Tel Aviv",
       "state": "",
       "country": "Israel",
-      "count": 50,
+      "count": 51,
       "roster": [
         {
           "player": "AJ Guyton",
@@ -34740,6 +34770,11 @@
           "player": "Alando Tucker",
           "years": "2016-2017",
           "status": "retired"
+        },
+        {
+          "player": "Amir Coffey",
+          "years": "2026–present",
+          "status": "overseas_active"
         },
         {
           "player": "Andre Spencer",
@@ -36206,7 +36241,7 @@
         {
           "player": "DaQuan Jeffries",
           "years": "2021, 2022",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Daeqwon Plowden",
@@ -37565,7 +37600,7 @@
         {
           "player": "Guerschon Yabusele",
           "years": "2016–2017",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Hassan Whiteside",
@@ -37671,6 +37706,11 @@
         },
         {
           "type": "club",
+          "name": "Panathinaikos",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Westchester Knicks",
           "shared": 5
         },
@@ -37687,11 +37727,6 @@
         {
           "type": "club",
           "name": "Maccabi Tel Aviv",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Panathinaikos",
           "shared": 4
         },
         {
@@ -43675,7 +43710,7 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         }
       ]
@@ -47793,7 +47828,7 @@
         {
           "player": "Jason Preston",
           "years": "2024",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Jeenathan Williams",
@@ -47827,8 +47862,8 @@
         },
         {
           "player": "Josh Christopher",
-          "years": "2023-2024",
-          "status": "nba_active"
+          "years": "2023–2024",
+          "status": "overseas_active"
         },
         {
           "player": "Josh Green",
@@ -49142,7 +49177,7 @@
       "city": "North Portland",
       "state": "Oregon",
       "country": "USA",
-      "count": 33,
+      "count": 34,
       "roster": [
         {
           "player": "Aleem Ford",
@@ -49167,6 +49202,11 @@
         {
           "player": "Bryce McGowens",
           "years": "2024–2025",
+          "status": "nba_active"
+        },
+        {
+          "player": "Caleb Love",
+          "years": "2025–2026",
           "status": "nba_active"
         },
         {
@@ -49323,6 +49363,11 @@
         },
         {
           "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Texas Legends",
           "shared": 4
         },
@@ -49334,11 +49379,6 @@
         {
           "type": "club",
           "name": "Windy City Bulls",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Delaware Blue Coats",
           "shared": 4
         },
         {
@@ -50503,12 +50543,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -56591,7 +56631,7 @@
         {
           "player": "Guerschon Yabusele",
           "years": "2021–2024",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Gustavo Ayon",
@@ -56907,12 +56947,12 @@
         },
         {
           "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 7
+          "name": "Panathinaikos",
+          "shared": 8
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Olimpia Milano",
           "shared": 7
         },
         {
@@ -58048,12 +58088,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Windy City Bulls",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Virtus Bologna",
           "shared": 4
         },
         {
@@ -60735,12 +60775,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 3
         },
         {
@@ -61753,7 +61793,7 @@
       "city": "Shenzhen",
       "state": "",
       "country": "China",
-      "count": 14,
+      "count": 15,
       "roster": [
         {
           "player": "Alize Johnson",
@@ -61783,6 +61823,11 @@
         {
           "player": "Jeremy Pargo",
           "years": "2016–2017",
+          "status": "overseas_active"
+        },
+        {
+          "player": "Josh Christopher",
+          "years": "2026–present",
           "status": "overseas_active"
         },
         {
@@ -61849,6 +61894,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Santa Cruz Warriors",
           "shared": 2
         },
@@ -61860,11 +61910,6 @@
         {
           "type": "club",
           "name": "Panathinaikos",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 2
         }
       ]
@@ -62696,7 +62741,7 @@
         {
           "player": "DaQuan Jeffries",
           "years": "2022–2023, 2024",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Damien Inglis",
@@ -68401,7 +68446,7 @@
         {
           "player": "Amir Coffey",
           "years": "2019–2022",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Andre Dawkins",
@@ -71377,12 +71422,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -79295,7 +79340,7 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -79346,12 +79391,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 2
         },
         {
@@ -88568,12 +88613,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 2
         },
         {
@@ -91976,7 +92021,7 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         }
       ]
@@ -93749,7 +93794,7 @@
         {
           "player": "Guerschon Yabusele",
           "years": "2019–2020",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Hamed Haddadi",
@@ -96413,7 +96458,7 @@
         {
           "player": "Jason Preston",
           "years": "2022–2023",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Josh Primo",
@@ -97128,12 +97173,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -103975,12 +104020,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 3
         }
       ]
@@ -104482,17 +104527,17 @@
         },
         {
           "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -106554,12 +106599,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -106615,12 +106660,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -120631,12 +120676,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         }
       ]
@@ -122251,12 +122296,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -123944,12 +123989,12 @@
         },
         {
           "type": "club",
-          "name": "Scavolini Pesaro",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Scavolini Pesaro",
           "shared": 1
         },
         {
@@ -125236,7 +125281,7 @@
         {
           "player": "Guerschon Yabusele",
           "years": "2013–2015",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Henri Drell",
@@ -125317,6 +125362,11 @@
         },
         {
           "type": "club",
+          "name": "Panathinaikos",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Austin Spurs",
           "shared": 2
         },
@@ -125328,11 +125378,6 @@
         {
           "type": "club",
           "name": "Westchester Knicks",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
           "shared": 2
         }
       ]
@@ -125611,7 +125656,7 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -129410,12 +129455,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -130135,7 +130180,7 @@
         {
           "player": "Cam Reddish",
           "years": "2025",
-          "status": "nba_active"
+          "status": "overseas_active"
         },
         {
           "player": "Mindaugas Kuzminskas",
@@ -143008,12 +143053,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -143312,13 +143357,18 @@
         {
           "player": "Guerschon Yabusele",
           "years": "2015–2016",
-          "status": "nba_active"
+          "status": "overseas_active"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Baskonia",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -143349,11 +143399,6 @@
         {
           "type": "club",
           "name": "Shanghai Sharks",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "AS Monaco",
           "shared": 1
         }
       ]
@@ -144519,7 +144564,7 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         }
       ]
@@ -145230,12 +145275,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -149082,12 +149127,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -149350,12 +149395,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 2
         },
         {
@@ -149528,12 +149573,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -149680,12 +149725,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         }
       ]
@@ -149944,17 +149989,17 @@
         },
         {
           "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -150736,12 +150781,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -158484,12 +158529,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
@@ -162421,7 +162466,7 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -164146,7 +164191,7 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -164690,12 +164735,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -169142,12 +169187,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         },
         {
@@ -169198,12 +169243,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         },
         {
@@ -170235,12 +170280,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         },
         {
@@ -170367,12 +170412,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         },
         {
@@ -172875,12 +172920,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -177823,12 +177868,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Anadolu Efes",
           "shared": 1
         }
       ]
@@ -178824,12 +178869,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -178880,12 +178925,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -184491,12 +184536,12 @@
         },
         {
           "type": "club",
-          "name": "Estudiantes",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Estudiantes",
           "shared": 1
         },
         {
@@ -186473,12 +186518,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 2
         },
         {
@@ -189377,6 +189422,62 @@
           "type": "club",
           "name": "Raptors 905",
           "shared": 1
+        }
+      ]
+    },
+    "New Orleans Hornets / Pelicans": {
+      "club": "New Orleans Hornets / Pelicans",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Eric Gordon",
+          "years": "2011–2016",
+          "status": "nba_active"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Anchorage Northern Knights",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Boca Juniors",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Bahçeşehir Koleji",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Elmira Colonels",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Cañeros del Este",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Kansas City Steers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Pinheiros",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Ittihad Alexandria",
+          "shared": 0
         }
       ]
     },
@@ -193157,12 +193258,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -193640,7 +193741,7 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         }
       ]
@@ -196618,12 +196719,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Estudiantes",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Estudiantes",
           "shared": 1
         },
         {
@@ -197574,12 +197675,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 0
         },
         {
@@ -206593,12 +206694,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Rip City Remix",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Rip City Remix",
+          "name": "Brose Bamberg",
           "shared": 1
         },
         {
@@ -208743,12 +208844,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -211153,12 +211254,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -212967,7 +213068,7 @@
         },
         {
           "type": "club",
-          "name": "Iraklis Thessaloniki",
+          "name": "Shenzhen Leopards",
           "shared": 1
         }
       ]
@@ -227902,12 +228003,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -227963,12 +228064,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -228960,12 +229061,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -233578,12 +233679,12 @@
         },
         {
           "type": "club",
-          "name": "Iraklis Thessaloniki",
+          "name": "Shenzhen Leopards",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Shenzhen Leopards",
+          "name": "Iraklis Thessaloniki",
           "shared": 1
         },
         {
@@ -234458,12 +234559,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         },
         {
@@ -238930,12 +239031,12 @@
         },
         {
           "type": "club",
-          "name": "Scavolini Pesaro",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Scavolini Pesaro",
           "shared": 1
         },
         {
@@ -239011,12 +239112,12 @@
         },
         {
           "type": "club",
-          "name": "Scavolini Pesaro",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Scavolini Pesaro",
           "shared": 1
         },
         {
@@ -239047,12 +239148,12 @@
         },
         {
           "type": "club",
-          "name": "Scavolini Pesaro",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Scavolini Pesaro",
           "shared": 1
         },
         {
@@ -239103,12 +239204,12 @@
         },
         {
           "type": "club",
-          "name": "Scavolini Pesaro",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Scavolini Pesaro",
           "shared": 1
         },
         {
@@ -245233,7 +245334,7 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         }
       ]
@@ -259999,12 +260100,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         },
         {
@@ -263984,12 +264085,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -264040,12 +264141,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -264096,12 +264197,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -265445,12 +265546,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -266972,12 +267073,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -268178,12 +268279,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -268234,12 +268335,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -296632,12 +296733,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 1
         },
         {

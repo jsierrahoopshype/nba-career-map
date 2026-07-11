@@ -1,3 +1,30 @@
+## 2026-07-11 — incremental run
+
+- Players updated: **65** (8 new)
+- New teams discovered: **3**
+- Team moves detected: **11**
+- Status changes: **6** (6 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Alex Karaban, Caleb Love, Darius Acuff Jr., Emanuel Sharp, Jaylin Sellers, Labaron Philon Jr., Quadir Copeland, Tobe Awaka
+- New teams: Charlotte Bobcats, New Orleans Hornets, San Diego Clippers
+  - Amir Coffey: Phoenix Suns → Hapoel Tel Aviv
+  - Andre Drummond: Philadelphia 76ers → New York Knicks
+  - Cam Reddish: LA Clippers → San Diego Clippers
+  - DaQuan Jeffries: Sacramento Kings → Beşiktaş
+  - Guerschon Yabusele: Chicago Bulls → Panathinaikos
+  - Jason Preston: LA Clippers → San Diego Clippers
+  - Jaxson Hayes: Los Angeles Lakers → Utah Jazz
+  - Josh Christopher: Miami Heat → Shenzhen Leopards
+  - Josh Okogie: Houston Rockets → Utah Jazz
+  - Kobe Bufkin: Los Angeles Lakers → New Orleans Pelicans
+  - Larry Nance Jr: Cleveland Cavaliers → Indiana Pacers
+  - Amir Coffey: [nba_active → overseas_active]
+  - Cam Reddish: [nba_active → overseas_active]
+  - DaQuan Jeffries: [nba_active → overseas_active]
+  - Guerschon Yabusele: [nba_active → overseas_active]
+  - Jason Preston: [nba_active → overseas_active]
+  - Josh Christopher: [nba_active → overseas_active]
+
 ## 2026-07-06 — incremental run
 
 - Players updated: **1285** (0 new)

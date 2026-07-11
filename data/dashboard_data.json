@@ -1,6 +1,6 @@
 {
   "generated_from": "data/players/nba_players_careers.json",
-  "player_count": 5141,
+  "player_count": 5149,
   "where_are_they_now": [
     {
       "player": "Aaron Harrison",
@@ -131,6 +131,11 @@
       "player": "Amida Brimah",
       "current_team": "Covirán Granada",
       "country": "Spain"
+    },
+    {
+      "player": "Amir Coffey",
+      "current_team": "Hapoel Tel Aviv",
+      "country": "Israel"
     },
     {
       "player": "Andre Roberson",
@@ -393,6 +398,11 @@
       "country": "Georgia"
     },
     {
+      "player": "Cam Reddish",
+      "current_team": "San Diego Clippers",
+      "country": ""
+    },
+    {
       "player": "Cam Reynolds",
       "current_team": "Maroussi",
       "country": "Greece"
@@ -606,6 +616,11 @@
       "player": "DaJuan Summers",
       "current_team": "Piratas de La Guaira",
       "country": "Venezuela"
+    },
+    {
+      "player": "DaQuan Jeffries",
+      "current_team": "Beşiktaş",
+      "country": "Turkey"
     },
     {
       "player": "Dairis Bertans",
@@ -1133,6 +1148,11 @@
       "country": "Mexico"
     },
     {
+      "player": "Guerschon Yabusele",
+      "current_team": "Panathinaikos",
+      "country": "Greece"
+    },
+    {
       "player": "Guillermo Diaz",
       "current_team": "Capitanes de Arecibo",
       "country": "Puerto Rico"
@@ -1573,6 +1593,11 @@
       "country": ""
     },
     {
+      "player": "Jason Preston",
+      "current_team": "San Diego Clippers",
+      "country": ""
+    },
+    {
       "player": "Javin DeLaurier",
       "current_team": "Bursaspor",
       "country": "Turkey"
@@ -1865,6 +1890,11 @@
     {
       "player": "Joseph Young",
       "current_team": "Qingdao Eagles",
+      "country": "China"
+    },
+    {
+      "player": "Josh Christopher",
+      "current_team": "Shenzhen Leopards",
       "country": "China"
     },
     {
@@ -4561,7 +4591,7 @@
     },
     {
       "team": "Rio Grande Valley Vipers",
-      "players": 145
+      "players": 146
     },
     {
       "team": "Texas Legends",
@@ -4612,12 +4642,12 @@
       "players": 96
     },
     {
-      "team": "Real Madrid",
+      "team": "Panathinaikos",
       "players": 90
     },
     {
-      "team": "Panathinaikos",
-      "players": 89
+      "team": "Real Madrid",
+      "players": 90
     },
     {
       "team": "Austin Spurs",
@@ -4660,6 +4690,10 @@
       "players": 80
     },
     {
+      "team": "Windy City Bulls",
+      "players": 79
+    },
+    {
       "team": "Anadolu Efes",
       "players": 78
     },
@@ -4673,10 +4707,6 @@
     },
     {
       "team": "Salt Lake City Stars",
-      "players": 77
-    },
-    {
-      "team": "Windy City Bulls",
       "players": 77
     },
     {
@@ -4697,7 +4727,7 @@
     },
     {
       "team": "Delaware Blue Coats",
-      "players": 71
+      "players": 72
     },
     {
       "team": "Grand Rapids Hoops",
@@ -4836,15 +4866,15 @@
       "players": 52
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "players": 51
+    },
+    {
       "team": "Pau-Orthez",
       "players": 51
     },
     {
       "team": "Hapoel Holon",
-      "players": 50
-    },
-    {
-      "team": "Hapoel Tel Aviv",
       "players": 50
     },
     {
@@ -4892,6 +4922,10 @@
       "players": 44
     },
     {
+      "team": "Beşiktaş",
+      "players": 43
+    },
+    {
       "team": "Estudiantes",
       "players": 43
     },
@@ -4901,10 +4935,6 @@
     },
     {
       "team": "Benetton Treviso",
-      "players": 42
-    },
-    {
-      "team": "Beşiktaş",
       "players": 42
     },
     {
@@ -5024,6 +5054,10 @@
       "players": 34
     },
     {
+      "team": "Rip City Remix",
+      "players": 34
+    },
+    {
       "team": "Trotamundos de Carabobo",
       "players": 34
     },
@@ -5033,10 +5067,6 @@
     },
     {
       "team": "Guaiqueríes de Margarita",
-      "players": 33
-    },
-    {
-      "team": "Rip City Remix",
       "players": 33
     },
     {
@@ -5636,6 +5666,10 @@
       "players": 15
     },
     {
+      "team": "Shenzhen Leopards",
+      "players": 15
+    },
+    {
       "team": "Spirou Charleroi",
       "players": 15
     },
@@ -5753,10 +5787,6 @@
     },
     {
       "team": "Scranton Apollos",
-      "players": 14
-    },
-    {
-      "team": "Shenzhen Leopards",
       "players": 14
     },
     {
@@ -17120,6 +17150,10 @@
       "players": 1
     },
     {
+      "team": "New Orleans Hornets / Pelicans",
+      "players": 1
+    },
+    {
       "team": "New Taipei CTBC DEA",
       "players": 1
     },
@@ -20228,6 +20262,21 @@
       ]
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "count": 9,
+      "players": [
+        "Amir Coffey",
+        "Antonio Blakeney",
+        "Daniel Oturu",
+        "Elijah Bryant",
+        "Ishmail Wainright",
+        "Johnathan Motley",
+        "Kessler Edwards",
+        "Tyler Ennis",
+        "Vasilije Micic"
+      ]
+    },
+    {
       "team": "Baskonia",
       "count": 8,
       "players": [
@@ -20239,20 +20288,6 @@
         "Rodions Kurucs",
         "Timothe Luwawu",
         "Trent Forrest"
-      ]
-    },
-    {
-      "team": "Hapoel Tel Aviv",
-      "count": 8,
-      "players": [
-        "Antonio Blakeney",
-        "Daniel Oturu",
-        "Elijah Bryant",
-        "Ishmail Wainright",
-        "Johnathan Motley",
-        "Kessler Edwards",
-        "Tyler Ennis",
-        "Vasilije Micic"
       ]
     },
     {
@@ -20351,6 +20386,19 @@
       ]
     },
     {
+      "team": "Panathinaikos",
+      "count": 7,
+      "players": [
+        "Cedi Osman",
+        "Guerschon Yabusele",
+        "Jerian Grant",
+        "Juan Hernangomez",
+        "Kendrick Nunn",
+        "Nigel Hayes",
+        "Richaun Holmes"
+      ]
+    },
+    {
       "team": "AS Monaco",
       "count": 6,
       "players": [
@@ -20423,18 +20471,6 @@
       ]
     },
     {
-      "team": "Panathinaikos",
-      "count": 6,
-      "players": [
-        "Cedi Osman",
-        "Jerian Grant",
-        "Juan Hernangomez",
-        "Kendrick Nunn",
-        "Nigel Hayes",
-        "Richaun Holmes"
-      ]
-    },
-    {
       "team": "Valley Suns",
       "count": 6,
       "players": [
@@ -20468,6 +20504,17 @@
         "Moses Wright",
         "Nigel Williams-Goss",
         "Saben Lee"
+      ]
+    },
+    {
+      "team": "Beşiktaş",
+      "count": 5,
+      "players": [
+        "Ante Zizic",
+        "Anthony Brown",
+        "DaQuan Jeffries",
+        "Devon Dotson",
+        "Furkan Korkmaz"
       ]
     },
     {
@@ -20554,16 +20601,6 @@
         "Malachi Richardson",
         "Sindarius Thornwell",
         "Trey Burke"
-      ]
-    },
-    {
-      "team": "Beşiktaş",
-      "count": 4,
-      "players": [
-        "Ante Zizic",
-        "Anthony Brown",
-        "Devon Dotson",
-        "Furkan Korkmaz"
       ]
     },
     {
@@ -20989,6 +21026,15 @@
         "Hamidou Diallo",
         "Kyle Guy",
         "Walter Lemon Jr"
+      ]
+    },
+    {
+      "team": "Shenzhen Leopards",
+      "count": 3,
+      "players": [
+        "Alize Johnson",
+        "Josh Christopher",
+        "Terquavion Smith"
       ]
     },
     {
@@ -21436,14 +21482,6 @@
       "players": [
         "DeMarcus Cousins",
         "Jay Scrubb"
-      ]
-    },
-    {
-      "team": "Shenzhen Leopards",
-      "count": 2,
-      "players": [
-        "Alize Johnson",
-        "Terquavion Smith"
       ]
     },
     {
@@ -22904,7 +22942,7 @@
     },
     {
       "country": "China",
-      "count": 49
+      "count": 50
     },
     {
       "country": "Puerto Rico",
@@ -22912,15 +22950,15 @@
     },
     {
       "country": "Turkey",
-      "count": 40
+      "count": 41
     },
     {
       "country": "Greece",
-      "count": 38
+      "count": 39
     },
     {
       "country": "Israel",
-      "count": 37
+      "count": 38
     },
     {
       "country": "Italy",
@@ -23086,7 +23124,7 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5037
+      "players": 5044
     },
     {
       "country": "Italy",
@@ -23101,24 +23139,24 @@
       "players": 559
     },
     {
-      "country": "Greece",
-      "players": 519
+      "country": "Canada",
+      "players": 525
     },
     {
-      "country": "Canada",
-      "players": 518
+      "country": "Greece",
+      "players": 520
     },
     {
       "country": "Turkey",
-      "players": 483
+      "players": 484
     },
     {
       "country": "Israel",
-      "players": 441
+      "players": 442
     },
     {
       "country": "China",
-      "players": 421
+      "players": 422
     },
     {
       "country": "Puerto Rico",
@@ -23930,6 +23968,131 @@
       ]
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "players": [
+        "Amir Coffey",
+        "Antonio Blakeney",
+        "Daniel Oturu",
+        "Elijah Bryant",
+        "Ishmail Wainright",
+        "Johnathan Motley",
+        "Kessler Edwards",
+        "Tyler Ennis",
+        "Vasilije Micic"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Amir Coffey",
+            "Daniel Oturu"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ]
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Elijah Bryant"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ]
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Ishmail Wainright"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ]
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Johnathan Motley"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ]
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks",
+            "Phoenix Suns"
+          ]
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Vasilije Micic"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ]
+        },
+        {
+          "players": [
+            "Daniel Oturu",
+            "Johnathan Motley"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ]
+        },
+        {
+          "players": [
+            "Elijah Bryant",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ]
+        },
+        {
+          "players": [
+            "Ishmail Wainright",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ]
+        },
+        {
+          "players": [
+            "Ishmail Wainright",
+            "Vasilije Micic"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ]
+        },
+        {
+          "players": [
+            "Johnathan Motley",
+            "Kessler Edwards"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ]
+        },
+        {
+          "players": [
+            "Tyler Ennis",
+            "Vasilije Micic"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ]
+        }
+      ]
+    },
+    {
       "team": "Baskonia",
       "players": [
         "Eugene Omoruyi",
@@ -24012,75 +24175,6 @@
           ],
           "shared_nba_franchises": [
             "Atlanta Hawks"
-          ]
-        }
-      ]
-    },
-    {
-      "team": "Hapoel Tel Aviv",
-      "players": [
-        "Antonio Blakeney",
-        "Daniel Oturu",
-        "Elijah Bryant",
-        "Ishmail Wainright",
-        "Johnathan Motley",
-        "Kessler Edwards",
-        "Tyler Ennis",
-        "Vasilije Micic"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Daniel Oturu",
-            "Johnathan Motley"
-          ],
-          "shared_nba_franchises": [
-            "LA Clippers"
-          ]
-        },
-        {
-          "players": [
-            "Elijah Bryant",
-            "Tyler Ennis"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ]
-        },
-        {
-          "players": [
-            "Ishmail Wainright",
-            "Tyler Ennis"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ]
-        },
-        {
-          "players": [
-            "Ishmail Wainright",
-            "Vasilije Micic"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ]
-        },
-        {
-          "players": [
-            "Johnathan Motley",
-            "Kessler Edwards"
-          ],
-          "shared_nba_franchises": [
-            "Dallas Mavericks"
-          ]
-        },
-        {
-          "players": [
-            "Tyler Ennis",
-            "Vasilije Micic"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
           ]
         }
       ]
@@ -24601,6 +24695,112 @@
       ]
     },
     {
+      "team": "Panathinaikos",
+      "players": [
+        "Cedi Osman",
+        "Guerschon Yabusele",
+        "Jerian Grant",
+        "Juan Hernangomez",
+        "Kendrick Nunn",
+        "Nigel Hayes",
+        "Richaun Holmes"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Cedi Osman",
+            "Juan Hernangomez"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ]
+        },
+        {
+          "players": [
+            "Guerschon Yabusele",
+            "Jerian Grant"
+          ],
+          "shared_nba_franchises": [
+            "Chicago Bulls",
+            "New York Knicks"
+          ]
+        },
+        {
+          "players": [
+            "Guerschon Yabusele",
+            "Juan Hernangomez"
+          ],
+          "shared_nba_franchises": [
+            "Boston Celtics"
+          ]
+        },
+        {
+          "players": [
+            "Guerschon Yabusele",
+            "Richaun Holmes"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ]
+        },
+        {
+          "players": [
+            "Jerian Grant",
+            "Kendrick Nunn"
+          ],
+          "shared_nba_franchises": [
+            "Washington Wizards"
+          ]
+        },
+        {
+          "players": [
+            "Jerian Grant",
+            "Richaun Holmes"
+          ],
+          "shared_nba_franchises": [
+            "Washington Wizards"
+          ]
+        },
+        {
+          "players": [
+            "Juan Hernangomez",
+            "Nigel Hayes"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ]
+        },
+        {
+          "players": [
+            "Kendrick Nunn",
+            "Nigel Hayes"
+          ],
+          "shared_nba_franchises": [
+            "Los Angeles Lakers"
+          ]
+        },
+        {
+          "players": [
+            "Kendrick Nunn",
+            "Richaun Holmes"
+          ],
+          "shared_nba_franchises": [
+            "Washington Wizards"
+          ]
+        },
+        {
+          "players": [
+            "Nigel Hayes",
+            "Richaun Holmes"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns",
+            "Sacramento Kings"
+          ]
+        }
+      ]
+    },
+    {
       "team": "AS Monaco",
       "players": [
         "Daniel Theis",
@@ -24902,83 +25102,6 @@
       ]
     },
     {
-      "team": "Panathinaikos",
-      "players": [
-        "Cedi Osman",
-        "Jerian Grant",
-        "Juan Hernangomez",
-        "Kendrick Nunn",
-        "Nigel Hayes",
-        "Richaun Holmes"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Cedi Osman",
-            "Juan Hernangomez"
-          ],
-          "shared_nba_franchises": [
-            "San Antonio Spurs"
-          ]
-        },
-        {
-          "players": [
-            "Jerian Grant",
-            "Kendrick Nunn"
-          ],
-          "shared_nba_franchises": [
-            "Washington Wizards"
-          ]
-        },
-        {
-          "players": [
-            "Jerian Grant",
-            "Richaun Holmes"
-          ],
-          "shared_nba_franchises": [
-            "Washington Wizards"
-          ]
-        },
-        {
-          "players": [
-            "Juan Hernangomez",
-            "Nigel Hayes"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
-          ]
-        },
-        {
-          "players": [
-            "Kendrick Nunn",
-            "Nigel Hayes"
-          ],
-          "shared_nba_franchises": [
-            "Los Angeles Lakers"
-          ]
-        },
-        {
-          "players": [
-            "Kendrick Nunn",
-            "Richaun Holmes"
-          ],
-          "shared_nba_franchises": [
-            "Washington Wizards"
-          ]
-        },
-        {
-          "players": [
-            "Nigel Hayes",
-            "Richaun Holmes"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns",
-            "Sacramento Kings"
-          ]
-        }
-      ]
-    },
-    {
       "team": "Valley Suns",
       "players": [
         "David Stockton",
@@ -25087,6 +25210,17 @@
           ]
         }
       ]
+    },
+    {
+      "team": "Beşiktaş",
+      "players": [
+        "Ante Zizic",
+        "Anthony Brown",
+        "DaQuan Jeffries",
+        "Devon Dotson",
+        "Furkan Korkmaz"
+      ],
+      "shared_franchise_pairs": []
     },
     {
       "team": "Capital City Go-Go",
@@ -25307,16 +25441,6 @@
           ]
         }
       ]
-    },
-    {
-      "team": "Beşiktaş",
-      "players": [
-        "Ante Zizic",
-        "Anthony Brown",
-        "Devon Dotson",
-        "Furkan Korkmaz"
-      ],
-      "shared_franchise_pairs": []
     },
     {
       "team": "Capitanes de Arecibo",
@@ -26126,6 +26250,15 @@
       "shared_franchise_pairs": []
     },
     {
+      "team": "Shenzhen Leopards",
+      "players": [
+        "Alize Johnson",
+        "Josh Christopher",
+        "Terquavion Smith"
+      ],
+      "shared_franchise_pairs": []
+    },
+    {
       "team": "Sioux Falls Skyforce",
       "players": [
         "Jahmir Young",
@@ -26671,14 +26804,6 @@
           ]
         }
       ]
-    },
-    {
-      "team": "Shenzhen Leopards",
-      "players": [
-        "Alize Johnson",
-        "Terquavion Smith"
-      ],
-      "shared_franchise_pairs": []
     },
     {
       "team": "Shimane Susanoo Magic",
@@ -41477,19 +41602,6 @@
       ]
     },
     {
-      "player": "Jason Preston",
-      "teams": [
-        {
-          "team": "LA Clippers",
-          "stints": 2,
-          "years": [
-            "2021–2023",
-            "2025–present"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Jason Williams",
       "teams": [
         {
@@ -43254,19 +43366,6 @@
           "years": [
             "2016-2017",
             "2018-2019"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Josh Christopher",
-      "teams": [
-        {
-          "team": "Sioux Falls Skyforce",
-          "stints": 2,
-          "years": [
-            "2024",
-            "2024-2025"
           ]
         }
       ]
@@ -53426,6 +53525,14 @@
         "in_coords": true
       },
       {
+        "player": "Amir Coffey",
+        "current_team": "Hapoel Tel Aviv",
+        "city": "Tel Aviv",
+        "state": "",
+        "country": "Israel",
+        "in_coords": true
+      },
+      {
         "player": "Andre Roberson",
         "current_team": "Zenit Saint Petersburg",
         "city": "Saint Petersburg",
@@ -53799,6 +53906,14 @@
         "city": "College Park",
         "state": "",
         "country": "Georgia",
+        "in_coords": false
+      },
+      {
+        "player": "Cam Reddish",
+        "current_team": "San Diego Clippers",
+        "city": "",
+        "state": "",
+        "country": "",
         "in_coords": false
       },
       {
@@ -54239,6 +54354,14 @@
         "city": "Bayamón",
         "state": "",
         "country": "Puerto Rico",
+        "in_coords": true
+      },
+      {
+        "player": "DaQuan Jeffries",
+        "current_team": "Beşiktaş",
+        "city": "Istanbul",
+        "state": "",
+        "country": "Turkey",
         "in_coords": true
       },
       {
@@ -54978,6 +55101,14 @@
         "in_coords": true
       },
       {
+        "player": "Guerschon Yabusele",
+        "current_team": "Panathinaikos",
+        "city": "Athens",
+        "state": "",
+        "country": "Greece",
+        "in_coords": true
+      },
+      {
         "player": "Guillermo Diaz",
         "current_team": "Capitanes de Arecibo",
         "city": "Arecibo",
@@ -55618,6 +55749,14 @@
         "in_coords": false
       },
       {
+        "player": "Jason Preston",
+        "current_team": "San Diego Clippers",
+        "city": "",
+        "state": "",
+        "country": "",
+        "in_coords": false
+      },
+      {
         "player": "JaVale McGee",
         "current_team": "Beijing Ducks",
         "city": "Beijing",
@@ -56053,6 +56192,14 @@
         "player": "Joseph Young",
         "current_team": "Qingdao Eagles",
         "city": "Qingdao",
+        "state": "",
+        "country": "China",
+        "in_coords": true
+      },
+      {
+        "player": "Josh Christopher",
+        "current_team": "Shenzhen Leopards",
+        "city": "Shenzhen",
         "state": "",
         "country": "China",
         "in_coords": true
@@ -58875,13 +59022,80 @@
       }
     ],
     "coverage": {
-      "total": 705,
-      "in_coords": 611,
-      "missing_from_coords": 94,
-      "missing_no_city": 54,
+      "total": 711,
+      "in_coords": 615,
+      "missing_from_coords": 96,
+      "missing_no_city": 56,
       "missing_city_absent_from_coords": 40,
       "distinct_missing_combos": 25
     }
   },
-  "latest_signings": []
+  "latest_signings": [
+    {
+      "player": "Larry Nance Jr",
+      "from_team": "Cleveland Cavaliers",
+      "to_team": "Indiana Pacers",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Kobe Bufkin",
+      "from_team": "Los Angeles Lakers",
+      "to_team": "New Orleans Pelicans",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Josh Okogie",
+      "from_team": "Houston Rockets",
+      "to_team": "Utah Jazz",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Josh Christopher",
+      "from_team": "Miami Heat",
+      "to_team": "Shenzhen Leopards",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Jaxson Hayes",
+      "from_team": "Los Angeles Lakers",
+      "to_team": "Utah Jazz",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Jason Preston",
+      "from_team": "LA Clippers",
+      "to_team": "San Diego Clippers",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Guerschon Yabusele",
+      "from_team": "Chicago Bulls",
+      "to_team": "Panathinaikos",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "DaQuan Jeffries",
+      "from_team": "Sacramento Kings",
+      "to_team": "Beşiktaş",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Cam Reddish",
+      "from_team": "LA Clippers",
+      "to_team": "San Diego Clippers",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Andre Drummond",
+      "from_team": "Philadelphia 76ers",
+      "to_team": "New York Knicks",
+      "date": "2026-07-11"
+    },
+    {
+      "player": "Amir Coffey",
+      "from_team": "Phoenix Suns",
+      "to_team": "Hapoel Tel Aviv",
+      "date": "2026-07-11"
+    }
+  ]
 }

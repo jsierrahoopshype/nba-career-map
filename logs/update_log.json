@@ -6537,6 +6537,192 @@
       "newly_retired": [],
       "requests": 1558,
       "budget_exhausted": false
+    },
+    {
+      "date": "2026-07-11",
+      "mode": "incremental",
+      "players_updated": [
+        "Alex Karaban",
+        "Caleb Love",
+        "Darius Acuff Jr.",
+        "Emanuel Sharp",
+        "Jaylin Sellers",
+        "Labaron Philon Jr.",
+        "Quadir Copeland",
+        "Tobe Awaka",
+        "Aaron Holiday",
+        "Amir Coffey",
+        "Andre Drummond",
+        "Ben Simmons",
+        "Bradley Beal",
+        "Brandon Clarke",
+        "Brandon Williams",
+        "Cam Reddish",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Chris Paul",
+        "Christian Wood",
+        "Cody Martin",
+        "Cole Anthony",
+        "Damion Lee",
+        "Dante Exum",
+        "DaQuan Jeffries",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "DeMar DeRozan",
+        "Donovan Williams",
+        "Drew Peterson",
+        "Duop Reath",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Garrett Temple",
+        "Garrison Mathews",
+        "Gary Payton II",
+        "Gary Trent Jr",
+        "Georges Niang",
+        "Guerschon Yabusele",
+        "Isaiah Joe",
+        "Jacob Toppin",
+        "Jaden Ivey",
+        "Jae'Sean Tate",
+        "Jalen Hood-Schifino",
+        "Jalen McDaniels",
+        "James Johnson",
+        "James Wiseman",
+        "Jaren Jackson Jr",
+        "Jason Preston",
+        "Jaxson Hayes",
+        "Jeff Green",
+        "Josh Christopher",
+        "Josh Okogie",
+        "Kawhi Leonard",
+        "Kobe Bufkin",
+        "Kyle Lowry",
+        "Larry Nance Jr",
+        "Leaky Black",
+        "LeBron James",
+        "Lonzo Ball",
+        "Luke Kennard",
+        "Mac McClung",
+        "Markieff Morris"
+      ],
+      "new_players": [
+        "Alex Karaban",
+        "Caleb Love",
+        "Darius Acuff Jr.",
+        "Emanuel Sharp",
+        "Jaylin Sellers",
+        "Labaron Philon Jr.",
+        "Quadir Copeland",
+        "Tobe Awaka"
+      ],
+      "new_teams": [
+        "Charlotte Bobcats",
+        "New Orleans Hornets",
+        "San Diego Clippers"
+      ],
+      "team_moves": [
+        {
+          "player": "Amir Coffey",
+          "from": "Phoenix Suns",
+          "to": "Hapoel Tel Aviv"
+        },
+        {
+          "player": "Andre Drummond",
+          "from": "Philadelphia 76ers",
+          "to": "New York Knicks"
+        },
+        {
+          "player": "Cam Reddish",
+          "from": "LA Clippers",
+          "to": "San Diego Clippers"
+        },
+        {
+          "player": "DaQuan Jeffries",
+          "from": "Sacramento Kings",
+          "to": "Beşiktaş"
+        },
+        {
+          "player": "Guerschon Yabusele",
+          "from": "Chicago Bulls",
+          "to": "Panathinaikos"
+        },
+        {
+          "player": "Jason Preston",
+          "from": "LA Clippers",
+          "to": "San Diego Clippers"
+        },
+        {
+          "player": "Jaxson Hayes",
+          "from": "Los Angeles Lakers",
+          "to": "Utah Jazz"
+        },
+        {
+          "player": "Josh Christopher",
+          "from": "Miami Heat",
+          "to": "Shenzhen Leopards"
+        },
+        {
+          "player": "Josh Okogie",
+          "from": "Houston Rockets",
+          "to": "Utah Jazz"
+        },
+        {
+          "player": "Kobe Bufkin",
+          "from": "Los Angeles Lakers",
+          "to": "New Orleans Pelicans"
+        },
+        {
+          "player": "Larry Nance Jr",
+          "from": "Cleveland Cavaliers",
+          "to": "Indiana Pacers"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Amir Coffey",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Cam Reddish",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "DaQuan Jeffries",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Guerschon Yabusele",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Jason Preston",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Josh Christopher",
+          "from": "nba_active",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Amir Coffey",
+        "Cam Reddish",
+        "DaQuan Jeffries",
+        "Guerschon Yabusele",
+        "Jason Preston",
+        "Josh Christopher"
+      ],
+      "newly_retired": [],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }
