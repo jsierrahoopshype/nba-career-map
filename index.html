@@ -138,7 +138,16 @@
             border-bottom: 1px solid var(--border);
         }
         
-        .result-item:hover { background: var(--bg-gray); color: var(--accent); }
+        .result-item:hover, .result-item.active { background: var(--bg-gray); color: var(--accent); }
+        .result-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .result-item .result-type {
+            font-family: var(--mono); font-size: 10px; text-transform: uppercase;
+            letter-spacing: 0.4px; color: var(--text-secondary); flex: none;
+        }
+        .result-group {
+            padding: 6px 12px 3px; font-size: 10px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-secondary); background: var(--surface-hover);
+        }
 
         /* bottom-of-page player search (mirrors the header search) */
         .site-footer {
@@ -427,6 +436,8 @@
             font-weight: 600; color: inherit; text-decoration: none; cursor: pointer;
         }
         .stop-team:hover { color: var(--accent); }
+        .loc-link { color: inherit; text-decoration: none; }
+        .loc-link:hover { color: var(--accent); }
 
         .flag {
             display: inline-block;
@@ -452,6 +463,7 @@
         }
         
         .chip {
+            display: inline-block;
             padding: 5px 12px;
             background: var(--surface);
             border: 1px solid var(--border);
@@ -459,6 +471,8 @@
             font-size: 12px;
             cursor: pointer;
             transition: all 0.1s;
+            color: inherit;
+            text-decoration: none;
         }
 
         .chip:hover {
@@ -1079,7 +1093,7 @@
                 <div class="timeline" id="timeline"></div>
                 
                 <div class="suggestions">
-                    <div class="section-title">Similar Players</div>
+                    <div class="section-title">Shared Paths</div>
                     <div class="chips" id="similarChips"></div>
                 </div>
             </div>
@@ -1283,10 +1297,14 @@
 
             // NBA-name -> current franchise, for building team/club page URLs.
             try {
-                NBA_ERAS = (await (await fetch('data/nba_team_index.json')).json()).eras || {};
-            } catch(e){ NBA_ERAS = {}; }
+                const idx = await (await fetch('data/nba_team_index.json')).json();
+                NBA_ERAS = idx.eras || {};
+                NBA_FRANCHISES = idx.franchises || [];
+            } catch(e){ NBA_ERAS = {}; NBA_FRANCHISES = []; }
 
-            wireBottomSearch();
+            buildSearchItems();
+            wireIndexSearch('search', 'results');
+            wireIndexSearch('botSearch', 'botResults');
             showWelcome();
 
             // Don't auto-load - let quiz hero be the focus. If the URL names a
@@ -1296,7 +1314,81 @@
 
         const TITLE_SUFFIX = 'HoopsHype';
         let NBA_ERAS = {};
+        let NBA_FRANCHISES = [];
+        let SEARCH_ITEMS = [];
         const setTitle = t => { document.title = t; };
+
+        // Universal search index: players, teams (franchises + non-NBA clubs),
+        // countries. Built from already-loaded data (no extra fetch).
+        function buildSearchItems(){
+            const items = [];
+            for(const n in data) items.push({ label:n, type:'Player', kind:'player' });
+            for(const n of NBA_FRANCHISES) items.push({ label:n, type:'Team', kind:'team' });
+            const clubs = new Set(), countries = new Set();
+            for(const t in teamIdx) if(t && !NBA_ERAS[t]) clubs.add(t);
+            for(const n of [...clubs].sort()) items.push({ label:n, type:'Team', kind:'club' });
+            for(const n in data) (data[n].career_history||[]).forEach(s=>{ if(s.country) countries.add(s.country); });
+            for(const n of [...countries].sort()) items.push({ label:n, type:'Country', kind:'country' });
+            SEARCH_ITEMS = items;
+        }
+        function _searchNav(it){
+            if(it.kind==='player') show(it.label);
+            else if(it.kind==='team') window.location.href = 'teams.html?team=' + encodeURIComponent(it.label);
+            else if(it.kind==='club') window.location.href = 'teams.html?club=' + encodeURIComponent(it.label);
+            else if(it.kind==='country') window.location.href = 'teams.html?country=' + encodeURIComponent(it.label);
+        }
+        const _S_ORDER = ['Player','Team','Country'];
+        const _S_LABEL = { Player:'Players', Team:'Teams', Country:'Countries' };
+        const _S_CAP = { Player:6, Team:6, Country:4 };
+        function _searchGroups(q){
+            const hits = SEARCH_ITEMS.filter(it => it.label.toLowerCase().includes(q));
+            hits.sort((a,b)=>{
+                const as=a.label.toLowerCase().startsWith(q), bs=b.label.toLowerCase().startsWith(q);
+                if(as&&!bs) return -1; if(!as&&bs) return 1; return a.label.localeCompare(b.label);
+            });
+            const out = [];
+            for(const g of _S_ORDER){
+                const inG = hits.filter(h=>h.type===g).slice(0, _S_CAP[g]);
+                if(inG.length) out.push({ group:g, items:inG });
+            }
+            return out;
+        }
+        function wireIndexSearch(inputId, resultsId){
+            const input = document.getElementById(inputId);
+            const box = document.getElementById(resultsId);
+            if(!input || !box) return;
+            let flat = [], active = -1;
+            const close = () => { box.classList.remove('show'); box.innerHTML=''; flat=[]; active=-1; };
+            const paint = () => box.querySelectorAll('.result-item').forEach((el,i)=>el.classList.toggle('active', i===active));
+            input.addEventListener('input', ()=>{
+                const q = input.value.toLowerCase().trim();
+                if(q.length<2) return close();
+                const groups = _searchGroups(q);
+                flat = [];
+                if(!groups.length){ box.innerHTML='<div class="result-item" style="color:var(--text-muted)">No matches</div>'; box.classList.add('show'); return; }
+                let html='';
+                for(const g of groups){
+                    html += `<div class="result-group">${_S_LABEL[g.group]}</div>`;
+                    for(const it of g.items){
+                        const idx = flat.length; flat.push(it);
+                        html += `<div class="result-item" data-i="${idx}">${it.label.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}<span class="result-type">${g.group}</span></div>`;
+                    }
+                }
+                box.innerHTML = html; active=-1; box.classList.add('show');
+                box.querySelectorAll('.result-item[data-i]').forEach(el=>{
+                    el.addEventListener('mousedown', e=>{ e.preventDefault();
+                        const it = flat[+el.dataset.i]; input.value=''; close(); _searchNav(it); });
+                });
+            });
+            input.addEventListener('keydown', e=>{
+                if(!flat.length) return;
+                if(e.key==='ArrowDown'){ e.preventDefault(); active=Math.min(active+1,flat.length-1); paint(); }
+                else if(e.key==='ArrowUp'){ e.preventDefault(); active=Math.max(active-1,0); paint(); }
+                else if(e.key==='Enter'){ e.preventDefault(); const it=flat[active<0?0:active]; input.value=''; close(); _searchNav(it); }
+                else if(e.key==='Escape'){ close(); }
+            });
+            document.addEventListener('click', e=>{ if(!input.contains(e.target)&&!box.contains(e.target)) close(); });
+        }
 
         // Team/club page URL for a stint team name (any NBA era name -> its
         // current franchise page; anything else -> a club page).
@@ -1305,6 +1397,8 @@
             return fr ? 'teams.html?team=' + encodeURIComponent(fr)
                       : 'teams.html?club=' + encodeURIComponent(team);
         }
+        const cityUrl = c => 'teams.html?city=' + encodeURIComponent(c);
+        const countryUrl = c => 'teams.html?country=' + encodeURIComponent(c);
 
         // Query-param routing with legacy #player= redirect. Opens the named
         // player (reusing show()) or returns to the welcome view. No-op default
@@ -1324,117 +1418,74 @@
             setTitle('NBA Career Map | ' + TITLE_SUFFIX);
         }
         window.addEventListener('popstate', routePlayer);
+        // Shared-path chips are real ?player= anchors; intercept to open in-page
+        // via show() (no reload) and to handle names with apostrophes safely.
+        document.addEventListener('click', e=>{
+            const a = e.target.closest('a.chip[data-player]');
+            if(a && !(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) && e.button===0){
+                e.preventDefault(); show(a.dataset.player);
+            }
+        });
         
         function showWelcome() {
             const avail = ALL_STARS.filter(p=>data[p]?.career_history?.length >= 5).sort(()=>Math.random()-0.5).slice(0,12);
             document.getElementById('welcomeChips').innerHTML = avail.map(p=>`<div class="chip" onclick="show('${p}')">${p}</div>`).join('');
         }
         
-        function getSimilar(name) {
+        // "Shared paths": rank other players by (a) shared exact teams, weighted
+        // higher when the stints actually overlap in time (genuine teammates),
+        // then (b) shared non-NBA countries, then (c) career-era overlap. Up to 8.
+        function _interval(s){
+            const nums = (String(s.years||'').match(/\d{4}/g)||[]).map(Number);
+            if(!nums.length) return null;
+            const start = nums[0];
+            const end = /present/i.test(s.years||'') ? 9999 : (nums[1] || nums[0]);
+            return [start, end];
+        }
+        const _overlaps = (a,b) => !!a && !!b && a[0] <= b[1] && b[0] <= a[1];
+
+        function getSimilar(name){
             const p = data[name];
             if(!p) return [];
-            const career = p.career_history||[];
-            const y1 = parseInt(career[0]?.years?.split('-')[0])||2000;
-            
-            let era = "2010s";
-            if(y1>=2018) era="2020s";
-            else if(y1>=2005) era="2010s";
-            else if(y1>=1995) era="2000s";
-            else if(y1>=1985) era="1990s";
-            else era="1980s";
-            
-            const set = new Set();
-            (ERAS[era]||[]).forEach(x=>{if(x!==name&&data[x]?.career_history?.length >= 5)set.add(x);});
-            
-            const teams = new Set(career.map(c=>c.team));
-            teams.forEach(t=>{
-                if(teamIdx[t]) teamIdx[t].players.forEach(x=>{
-                    if(x.name!==name&&data[x.name]&&ALL_STARS.includes(x.name)) set.add(x.name);
-                });
+            const career = p.career_history || [];
+            const myTeams = {};              // team -> [intervals]
+            const myCountries = new Set();   // non-NBA countries
+            let myMin = 9999, myMax = 0;
+            career.forEach(s=>{
+                const iv = _interval(s);
+                (myTeams[s.team] ||= []).push(iv);
+                if(iv){ myMin = Math.min(myMin, iv[0]); myMax = Math.max(myMax, iv[1]===9999?iv[0]:iv[1]); }
+                if(s.country && !NBA_ERAS[s.team]) myCountries.add(s.country);
             });
-            
-            return [...set].slice(0,8);
-        }
-        
-        // Search
-        const searchEl = document.getElementById('search');
-        const resultsEl = document.getElementById('results');
-        
-        searchEl.addEventListener('input',function(){
-            const q = this.value.toLowerCase().trim();
-            if(q.length<2){resultsEl.classList.remove('show');resultsEl.innerHTML='';return;}
-            // Search through loaded data keys (more reliable than CSV)
-            const dataPlayers = Object.keys(data);
-            const m = dataPlayers.filter(n=>n.toLowerCase().includes(q)).sort((a,b)=>{
-                // Prioritize names that START with the query
-                const aStarts = a.toLowerCase().startsWith(q);
-                const bStarts = b.toLowerCase().startsWith(q);
-                if(aStarts && !bStarts) return -1;
-                if(!aStarts && bStarts) return 1;
-                return a.localeCompare(b);
-            }).slice(0,10);
-            if(!m.length){
-                resultsEl.innerHTML='<div class="result-item" style="color:#777">No players found</div>';
-                resultsEl.classList.add('show');
-                return;
-            }
-            resultsEl.innerHTML = m.map(n=>`<div class="result-item" data-n="${n}">${n}</div>`).join('');
-            resultsEl.classList.add('show');
-        });
-        
-        resultsEl.addEventListener('click',e=>{
-            if(e.target.classList.contains('result-item')){
-                searchEl.value = e.target.dataset.n;
-                resultsEl.classList.remove('show');
-                show(e.target.dataset.n);
-            }
-        });
-        
-        document.addEventListener('click',e=>{
-            if(!searchEl.contains(e.target)&&!resultsEl.contains(e.target)) resultsEl.classList.remove('show');
-        });
-        
-        searchEl.addEventListener('keydown',e=>{
-            if(e.key==='Enter'){
-                const f = resultsEl.querySelector('.result-item');
-                if(f){searchEl.value=f.dataset.n;resultsEl.classList.remove('show');show(f.dataset.n);}
-            }
-        });
 
-        // Bottom-of-page player search — same autocomplete behavior as the
-        // header search; selecting a player opens their career map view.
-        function wireBottomSearch(){
-            const inp = document.getElementById('botSearch');
-            const box = document.getElementById('botResults');
-            if(!inp || !box) return;
-            const render = () => {
-                const q = inp.value.toLowerCase().trim();
-                if(q.length<2){ box.classList.remove('show'); box.innerHTML=''; return; }
-                const m = Object.keys(data).filter(n=>n.toLowerCase().includes(q)).sort((a,b)=>{
-                    const as=a.toLowerCase().startsWith(q), bs=b.toLowerCase().startsWith(q);
-                    if(as&&!bs) return -1; if(!as&&bs) return 1; return a.localeCompare(b);
-                }).slice(0,10);
-                box.innerHTML = m.length
-                    ? m.map(n=>`<div class="result-item" data-n="${n.replace(/"/g,'&quot;')}">${n}</div>`).join('')
-                    : '<div class="result-item" style="color:var(--text-secondary)">No players found</div>';
-                box.classList.add('show');
-            };
-            inp.addEventListener('input', render);
-            box.addEventListener('click', e=>{
-                if(e.target.classList.contains('result-item') && e.target.dataset.n){
-                    inp.value=''; box.classList.remove('show'); show(e.target.dataset.n);
+            const scored = [];
+            for(const q in data){
+                if(q === name) continue;
+                const qc = data[q].career_history || [];
+                if(!qc.length) continue;
+                let a = 0, qMin = 9999, qMax = 0;
+                const qCountries = new Set(), sharedSeen = new Set();
+                for(const s of qc){
+                    const iv = _interval(s);
+                    if(iv){ qMin = Math.min(qMin, iv[0]); qMax = Math.max(qMax, iv[1]===9999?iv[0]:iv[1]); }
+                    if(s.country && !NBA_ERAS[s.team]) qCountries.add(s.country);
+                    if(myTeams[s.team] && !sharedSeen.has(s.team)){
+                        const teammates = myTeams[s.team].some(mi => _overlaps(mi, iv));
+                        a += teammates ? 2 : 1;   // genuine teammates count double
+                        sharedSeen.add(s.team);
+                    }
                 }
-            });
-            inp.addEventListener('keydown', e=>{
-                if(e.key==='Enter'){ const f=box.querySelector('.result-item[data-n]');
-                    if(f){ inp.value=''; box.classList.remove('show'); show(f.dataset.n); } }
-                else if(e.key==='Escape'){ box.classList.remove('show'); }
-            });
-            document.addEventListener('click', e=>{
-                if(!inp.contains(e.target)&&!box.contains(e.target)) box.classList.remove('show');
-            });
+                let b = 0;
+                qCountries.forEach(c=>{ if(myCountries.has(c)) b++; });
+                if(a > 0 || b > 0){
+                    const c = Math.max(0, Math.min(myMax, qMax) - Math.max(myMin, qMin));
+                    scored.push({ q, a, b, c });
+                }
+            }
+            scored.sort((x,y)=> y.a-x.a || y.b-x.b || y.c-x.c || x.q.localeCompare(y.q));
+            return scored.slice(0,8).map(o=>o.q);
         }
-
+        
         // Display-only ordering of career stints (does NOT mutate stored JSON):
         // start year ascending, tie-break by duration descending, so a longer
         // "parent" stint sorts before a shorter overlapping one (loan / G League
@@ -1495,7 +1546,11 @@
                 `<div class="career-table-wrap"><table class="career-table">
                     <thead><tr><th>#</th><th>Team</th><th>Location</th><th>Years</th></tr></thead>
                     <tbody>` + career.map((s,i)=>{
-                        const locCell = [s.city, s.country].filter(Boolean).join(', ') || '—';
+                        // City -> ?city= page, country -> ?country= page (on teams.html)
+                        const parts = [];
+                        if(s.city) parts.push(`<a class="loc-link" href="${cityUrl(s.city)}">${s.city}</a>`);
+                        if(s.country) parts.push(`<a class="loc-link" href="${countryUrl(s.country)}">${s.country}</a>`);
+                        const locCell = parts.join(', ') || '—';
                         return `<tr class="stop" data-i="${i}" onmouseenter="hlMarker(${i})" onmouseleave="hlMarker(-1)">
                             <td><span class="stop-num">${i+1}</span></td>
                             <td class="wrap"><a class="stop-team" href="${teamUrl(s.team)}">${getFlag(s.country)}${s.team}</a></td>
@@ -1504,7 +1559,9 @@
                         </tr>`;
                     }).join('') + `</tbody></table></div>`;
             
-            document.getElementById('similarChips').innerHTML = getSimilar(name).map(x=>`<div class="chip" onclick="show('${x}')">${x}</div>`).join('');
+            document.getElementById('similarChips').innerHTML = getSimilar(name).map(x=>
+                `<a class="chip" href="?player=${encodeURIComponent(x)}" data-player="${x.replace(/"/g,'&quot;')}">${x}</a>`).join('')
+                || '<span style="color:var(--text-muted);font-size:13px">No shared-path players found.</span>';
             
             draw(career);
             

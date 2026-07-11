@@ -57,6 +57,11 @@
         .sresult-item { padding:8px 12px; cursor:pointer; font-size:13px; border-bottom:1px solid var(--border); }
         .sresult-item:last-child { border-bottom:none; }
         .sresult-item:hover, .sresult-item.active { background:var(--surface-hover); color:var(--accent); }
+        .sresult-item { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+        .sresult-item .stype { font-family:var(--mono); font-size:10px; text-transform:uppercase;
+            letter-spacing:.4px; color:var(--text-secondary); flex:none; }
+        .sgroup { padding:6px 12px 3px; font-size:10px; font-weight:700; text-transform:uppercase;
+            letter-spacing:.5px; color:var(--text-secondary); background:var(--surface-hover); }
         .footer-search { max-width:520px; margin:48px auto 0; padding-top:28px; border-top:1px solid var(--border); }
         .footer-search .fs-label { font-size:13px; font-weight:700; text-transform:uppercase;
             letter-spacing:.4px; color:var(--text-secondary); text-align:center; margin-bottom:10px; }
@@ -176,8 +181,10 @@
         const STATUS_RANK = { nba_active:0, overseas_active:1, retired:2 };
         let TEAMS = {};
         let CLUBS = {};                 // all-time club rosters (club_pages.json)
+        let ACTIVE_ABROAD = [];         // where_are_they_now + city (world_tour_heatmap)
         let NBA_SET = new Set();
         let ALL_PLAYERS = [];           // every player name, for search
+        let SEARCH_ITEMS = [];          // {label, type, href} for universal search
         const eraToFranchise = {};      // era name -> current franchise
         const playerFranchises = {};    // player -> Set(franchise)
         const clubIndex = {};           // non-NBA club -> Map(player -> {player,status,country})
@@ -187,33 +194,52 @@
         const startYear = y => { const m = String(y||'').match(/\d{4}/); return m?parseInt(m[0],10):0; };
 
         // href builders — real query-param URLs; internal ones are same-document
-        // (?team=/?club=) so they get SPA-intercepted into history.pushState.
-        const teamHref   = n => '?team=' + encodeURIComponent(n);
-        const clubHref   = n => '?club=' + encodeURIComponent(n);
-        const playerHref = n => 'index.html?player=' + encodeURIComponent(n);
+        // (?team=/?club=/?country=/?city=) so they get SPA-intercepted into pushState.
+        const teamHref    = n => '?team=' + encodeURIComponent(n);
+        const clubHref    = n => '?club=' + encodeURIComponent(n);
+        const countryHref = n => '?country=' + encodeURIComponent(n);
+        const cityHref    = n => '?city=' + encodeURIComponent(n);
+        const playerHref  = n => 'index.html?player=' + encodeURIComponent(n);
         // Every team resolves: NBA names (any era) -> franchise page, everything
         // else -> its club page (the all-time club index covers every club).
         const currentHref = n => (NBA_SET.has(n) || eraToFranchise[n]) ? teamHref(n) : clubHref(n);
 
         async function load(){
             try {
-                const [tp, cp] = await Promise.all([
+                const [tp, cp, dd] = await Promise.all([
                     fetch('data/team_pages.json').then(r=>r.json()),
                     fetch('data/club_pages.json').then(r=>r.json()),
+                    fetch('data/dashboard_data.json').then(r=>r.json()),
                 ]);
                 TEAMS = tp.teams || {};
                 CLUBS = cp.clubs || {};
+                // overseas-active players with city+country (superset of where_are_they_now)
+                ACTIVE_ABROAD = (dd.world_tour_heatmap && dd.world_tour_heatmap.players) || [];
             } catch(e){
                 document.getElementById('app').innerHTML = '<div class="empty">Could not load team data.</div>';
                 return;
             }
             NBA_SET = new Set(Object.keys(TEAMS));
             buildIndexes();
+            buildSearchItems();
             initSearch();
             redirectLegacyHash();
             window.addEventListener('popstate', route);
             document.addEventListener('click', interceptNav);
             route();
+        }
+
+        // Universal search index: players, franchises, clubs, countries.
+        function buildSearchItems(){
+            const items = [];
+            for (const n of ALL_PLAYERS) items.push({ label:n, type:'Player', href:playerHref(n) });
+            for (const n of Object.keys(TEAMS)) items.push({ label:n, type:'Team', href:teamHref(n) });
+            for (const n of Object.keys(CLUBS)) items.push({ label:n, type:'Team', href:clubHref(n) });
+            const countries = new Set();
+            for (const c of Object.values(CLUBS)) if (c.country) countries.add(c.country);
+            for (const a of ACTIVE_ABROAD) if (a.country) countries.add(a.country);
+            for (const n of [...countries].sort()) items.push({ label:n, type:'Country', href:countryHref(n) });
+            SEARCH_ITEMS = items;
         }
 
         function buildIndexes(){
@@ -280,6 +306,10 @@
                 renderClub(clubParam);
                 return window.scrollTo(0,0);
             }
+            const countryParam = p.get('country');
+            if (countryParam){ renderPlace('country', countryParam); return window.scrollTo(0,0); }
+            const cityParam = p.get('city');
+            if (cityParam){ renderPlace('city', cityParam); return window.scrollTo(0,0); }
             renderLanding();
             window.scrollTo(0,0);
         }
@@ -399,7 +429,7 @@
         const playerCell = r => `<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>`;
         // every team/club name links to its page (all clubs resolve now)
         const teamCell = n => n ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : '—';
-        const countryCell = c => c ? `${flagImg(c)}${esc(c)}` : '—';
+        const countryCell = c => c ? `<a class="link" href="${countryHref(c)}">${flagImg(c)}${esc(c)}</a>` : '—';
         const statusCell = r => `<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>`;
 
         // Related-teams suggestions (precomputed in the data layer): chips that
@@ -482,7 +512,12 @@
         function renderClub(club){
             setTitle(`${club} — NBA Alumni | ${TITLE_SUFFIX}`);
             const info = CLUBS[club] || { roster:[], city:'', country:'' };
-            const loc = [info.city, info.state, info.country].filter(Boolean).join(', ');
+            // clickable location line: city -> ?city=, country -> ?country=
+            const locParts = [];
+            if (info.city) locParts.push(`<a class="link" href="${cityHref(info.city)}">${esc(info.city)}</a>`);
+            if (info.state) locParts.push(esc(info.state));
+            if (info.country) locParts.push(`<a class="link" href="${countryHref(info.country)}">${esc(info.country)}</a>`);
+            const loc = locParts.join(', ');
             const flag = info.country ? flagImg(info.country) : '';
             const allTime = (info.roster||[]).map(r=>({ __k:r.player, ...r }));
 
@@ -496,7 +531,7 @@
             document.getElementById('app').innerHTML = `
                 <a class="back" href="teams.html">← All teams</a>
                 <div class="detail-title">${esc(club)}</div>
-                <div class="detail-sub">${flag}${loc?esc(loc)+' · ':''}${info.count||allTime.length} all-time NBA alumni${info.truncated?' (showing first '+allTime.length+')':''}</div>
+                <div class="detail-sub">${flag}${loc?loc+' · ':''}${info.count||allTime.length} all-time NBA alumni${info.truncated?' (showing first '+allTime.length+')':''}</div>
                 ${activeRows.length ? `<div class="section"><div class="section-h">Currently active here (${activeRows.length})</div><div id="clubActive"></div></div>` : ''}
                 <div class="section"><div class="section-h">All-time NBA alumni</div><div id="clubAll"></div></div>
                 ${renderRelated(info.related)}`;
@@ -528,43 +563,117 @@
             });
         }
 
-        /* ---- global player search (top + bottom), same behavior as index --- */
+        /* ---- place pages: ?country= / ?city= (client-side from the indexes) -- */
+        function renderPlace(kind, value){
+            const isCountry = kind === 'country';
+            setTitle(`NBA Players in ${value} | ${TITLE_SUFFIX}`);
+            const clubs = Object.values(CLUBS)
+                .filter(c => isCountry ? c.country === value : c.city === value)
+                .sort((a,b)=> (b.count||0)-(a.count||0) || a.club.localeCompare(b.club))
+                .map(c=>({ __k:c.club, club:c.club, city:c.city||'', country:c.country||'', count:c.count||0 }));
+            const active = ACTIVE_ABROAD
+                .filter(a => isCountry ? a.country === value : a.city === value)
+                .map(a=>({ __k:a.player, player:a.player, current_team:a.current_team||'',
+                           city:a.city||'', country:a.country||'' }));
+            const flag = isCountry ? flagImg(value) : (clubs[0] && clubs[0].country ? flagImg(clubs[0].country) : '');
+            const sub = isCountry
+                ? `${clubs.length} clubs · ${active.length} players active here now`
+                : `${flag}${clubs[0] && clubs[0].country ? esc(clubs[0].country)+' · ' : ''}${clubs.length} clubs · ${active.length} players active here now`;
+
+            document.getElementById('app').innerHTML = `
+                <a class="back" href="teams.html">← All teams</a>
+                <div class="detail-title">${isCountry?flag:''}NBA players in ${esc(value)}</div>
+                <div class="detail-sub">${sub}</div>
+                ${active.length ? `<div class="section"><div class="section-h">Active here now (${active.length})</div><div id="plActive"></div></div>` : ''}
+                <div class="section"><div class="section-h">Clubs${isCountry?' in '+esc(value):''} by NBA alumni</div><div id="plClubs"></div></div>`;
+
+            if (active.length){
+                const cols = [
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'Current team', sortVal:r=>r.current_team.toLowerCase(),
+                      cell:r=>teamCell(r.current_team) },
+                ];
+                if (isCountry) cols.push({ label:'City', sortVal:r=>r.city.toLowerCase(),
+                    cell:r=>r.city ? `<a class="link" href="${cityHref(r.city)}">${esc(r.city)}</a>` : '—' });
+                mountTable(document.getElementById('plActive'), { unit:'players', rows:active, columns:cols });
+            }
+
+            const clubCols = [
+                { label:'Club', sortVal:r=>r.club.toLowerCase(), cls:'wrap',
+                  cell:r=>`<a class="link" href="${clubHref(r.club)}">${esc(r.club)}</a>` },
+            ];
+            if (isCountry) clubCols.push({ label:'City', sortVal:r=>r.city.toLowerCase(),
+                cell:r=>r.city ? `<a class="link" href="${cityHref(r.city)}">${esc(r.city)}</a>` : '—' });
+            clubCols.push({ label:'All-time NBA alumni', sortVal:r=>r.count, cls:'mono', cell:r=>String(r.count) });
+            mountTable(document.getElementById('plClubs'), { unit:'clubs', rows:clubs, columns:clubCols });
+        }
+
+        /* ---- global universal search (top + bottom): players/teams/countries - */
         function initSearch(){
             wireSearch('topSearch', 'topResults');
             wireSearch('botSearch', 'botResults');
         }
+        // Universal search: players, teams (franchises + clubs), countries —
+        // grouped by type in the dropdown; each result navigates to its page.
+        const GROUP_ORDER = ['Player', 'Team', 'Country'];
+        const GROUP_LABEL = { Player:'Players', Team:'Teams', Country:'Countries' };
+        const GROUP_CAP = { Player:6, Team:6, Country:4 };
+        function searchMatches(q){
+            const hits = SEARCH_ITEMS.filter(it => it.label.toLowerCase().includes(q));
+            hits.sort((a,b)=>{
+                const as=a.label.toLowerCase().startsWith(q), bs=b.label.toLowerCase().startsWith(q);
+                if (as&&!bs) return -1; if (!as&&bs) return 1; return a.label.localeCompare(b.label);
+            });
+            const out = [];
+            for (const g of GROUP_ORDER){
+                const inG = hits.filter(h=>h.type===g).slice(0, GROUP_CAP[g]);
+                if (inG.length) out.push({ group:g, items:inG });
+            }
+            return out;
+        }
         function wireSearch(inputId, resultsId){
             const input = document.getElementById(inputId);
             const box = document.getElementById(resultsId);
-            let active = -1, items = [];
-            const close = () => { box.classList.remove('show'); box.innerHTML=''; active=-1; items=[]; };
-            const go = name => { window.location.href = playerHref(name); };
+            let flat = [], active = -1;
+            const close = () => { box.classList.remove('show'); box.innerHTML=''; active=-1; flat=[]; };
+            const go = it => {
+                if (!it) return;
+                const u = new URL(it.href, location.href);
+                if (u.pathname===location.pathname){ history.pushState({}, '', u.href); route(); window.scrollTo(0,0); close(); input.value=''; }
+                else window.location.href = it.href;
+            };
+            const paint = () => box.querySelectorAll('.sresult-item').forEach((el,i)=>el.classList.toggle('active', i===active));
             input.addEventListener('input', ()=>{
                 const q = input.value.toLowerCase().trim();
                 if (q.length < 2) return close();
-                items = ALL_PLAYERS.filter(n=>n.toLowerCase().includes(q)).sort((a,b)=>{
-                    const as=a.toLowerCase().startsWith(q), bs=b.toLowerCase().startsWith(q);
-                    if (as&&!bs) return -1; if (!as&&bs) return 1; return a.localeCompare(b);
-                }).slice(0,10);
-                active = -1;
-                box.innerHTML = items.length
-                    ? items.map((n,i)=>`<div class="sresult-item" data-i="${i}">${esc(n)}</div>`).join('')
-                    : '<div class="sresult-item" style="color:var(--text-secondary)">No players found</div>';
-                box.classList.add('show');
+                const groups = searchMatches(q);
+                flat = [];
+                if (!groups.length){
+                    box.innerHTML = '<div class="sresult-item" style="color:var(--text-secondary)">No matches</div>';
+                    box.classList.add('show'); return;
+                }
+                let html = '';
+                for (const g of groups){
+                    html += `<div class="sgroup">${GROUP_LABEL[g.group]}</div>`;
+                    for (const it of g.items){
+                        const idx = flat.length; flat.push(it);
+                        html += `<div class="sresult-item" data-i="${idx}">${esc(it.label)}<span class="stype">${g.group}</span></div>`;
+                    }
+                }
+                box.innerHTML = html; active=-1; box.classList.add('show');
                 box.querySelectorAll('.sresult-item[data-i]').forEach(el=>{
-                    el.addEventListener('mousedown', e=>{ e.preventDefault(); go(items[+el.dataset.i]); });
+                    el.addEventListener('mousedown', e=>{ e.preventDefault(); go(flat[+el.dataset.i]); });
                 });
             });
             input.addEventListener('keydown', e=>{
-                if (!items.length) return;
-                if (e.key==='ArrowDown'){ e.preventDefault(); active=Math.min(active+1,items.length-1); }
-                else if (e.key==='ArrowUp'){ e.preventDefault(); active=Math.max(active-1,0); }
-                else if (e.key==='Enter'){ e.preventDefault(); go(items[active<0?0:active]); return; }
-                else if (e.key==='Escape'){ return close(); }
-                else return;
-                box.querySelectorAll('.sresult-item').forEach((el,i)=>el.classList.toggle('active', i===active));
+                if (!flat.length) return;
+                if (e.key==='ArrowDown'){ e.preventDefault(); active=Math.min(active+1,flat.length-1); paint(); }
+                else if (e.key==='ArrowUp'){ e.preventDefault(); active=Math.max(active-1,0); paint(); }
+                else if (e.key==='Enter'){ e.preventDefault(); go(flat[active<0?0:active]); }
+                else if (e.key==='Escape'){ close(); }
             });
-            input.addEventListener('blur', ()=> setTimeout(close, 120));
+            input.addEventListener('blur', ()=> setTimeout(close, 150));
         }
 
         load();

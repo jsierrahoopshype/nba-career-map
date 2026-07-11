@@ -263,9 +263,11 @@ def test_compute_related():
     ]
     rel = b.compute_related(fix)
     lakers = rel[("team", "Los Angeles Lakers")]
+    # part 3: suggestions are ONLY non-NBA clubs — franchises never surface
     assert any(r["type"] == "club" and r["name"] == "ClubZ" and r["shared"] == 2 for r in lakers), lakers
+    assert all(r["type"] == "club" for r in lakers), lakers
     clubz = rel[("club", "ClubZ")]
-    assert any(r["type"] == "team" and r["name"] == "Los Angeles Lakers" and r["shared"] == 2 for r in clubz), clubz
+    assert all(r["type"] == "club" for r in clubz), clubz  # no franchise suggestions on a club
     assert len(lakers) <= 8 and len(clubz) <= 8
     print("test_compute_related PASS")
 
@@ -277,7 +279,9 @@ def test_sitemap():
     assert xml.startswith("<?xml")
     assert "/teams.html?team=Atlanta%20Hawks" in xml
     assert "/index.html?player=Test%20Player" in xml
-    assert xml.count("<url>") == 2 + 30 + 1  # index + teams landing + 30 teams + 1 player
+    assert "/teams.html?country=USA" in xml
+    assert xml.count("<url>") == 2 + 30 + 1 + 1  # index+landing + 30 teams + 1 country + 1 player
+    assert "https://jsierrahoopshype.github.io/nba-career-map/" in xml  # permanent base
     print("test_sitemap PASS")
 
 

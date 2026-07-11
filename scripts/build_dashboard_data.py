@@ -45,11 +45,12 @@ CLUB_PAGES_OUT = ROOT / "data" / "club_pages.json"
 NBA_TEAM_INDEX_OUT = ROOT / "data" / "nba_team_index.json"
 SITEMAP_OUT = ROOT / "sitemap.xml"
 
-# Absolute origin the site is served from, used only for sitemap.xml. Override
-# with the real production origin (env SITE_BASE_URL) before deploying — this
-# default is a placeholder.
+# Absolute origin the site is served from, used only for sitemap.xml. This is
+# the permanent production origin (do not revert to a placeholder); an env
+# override is allowed for non-prod builds.
 import os  # noqa: E402
-SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://jsierrahoopshype.github.io/nba-career-map").rstrip("/")
+SITE_BASE_URL = os.environ.get(
+    "SITE_BASE_URL", "https://jsierrahoopshype.github.io/nba-career-map").rstrip("/")
 
 OVERSEAS = "overseas_active"
 
@@ -395,8 +396,13 @@ def compute_related(players: list, max_suggestions: int = 8) -> dict:
 
     related: dict = {}
     for e in membership:
+        # Suggest only non-NBA clubs — for BOTH franchise and club pages. Every
+        # player in the DB is an NBA alumnus, so franchises always dominate
+        # shared-alumni counts and would swamp the list; the interesting signal
+        # is which CLUBS this entity's alumni also played for.
         picks, seen = [], {e}
-        for nb, cnt in sorted(neighbors.get(e, []), key=lambda x: (-x[1], -size.get(x[0], 0), x[0][1])):
+        club_nbrs = [(nb, cnt) for nb, cnt in neighbors.get(e, []) if nb[0] == "club"]
+        for nb, cnt in sorted(club_nbrs, key=lambda x: (-x[1], -size.get(x[0], 0), x[0][1])):
             if nb in seen:
                 continue
             picks.append({"type": nb[0], "name": nb[1], "shared": cnt})
@@ -531,11 +537,15 @@ def w_club_pages(players: list, related: dict | None = None) -> dict:
 
 
 def build_sitemap(players: list) -> str:
-    """XML sitemap of the 30 team pages + every player page (query-param URLs)."""
+    """XML sitemap: team pages + player pages + country place-pages (query URLs)."""
     from urllib.parse import quote
     urls = [f"{SITE_BASE_URL}/index.html"]
     urls += [f"{SITE_BASE_URL}/teams.html"]
     urls += [f"{SITE_BASE_URL}/teams.html?team={quote(fr)}" for fr in sorted(NBA_TEAMS)]
+    countries = sorted({(s.get("country") or "").strip()
+                        for p in players for s in p.get("career_history", [])
+                        if (s.get("country") or "").strip()})
+    urls += [f"{SITE_BASE_URL}/teams.html?country={quote(c)}" for c in countries]
     names = sorted({p["player"] for p in players if str(p.get("player") or "").strip()})
     urls += [f"{SITE_BASE_URL}/index.html?player={quote(n)}" for n in names]
     body = "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls)
