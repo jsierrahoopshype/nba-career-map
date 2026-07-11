@@ -344,7 +344,78 @@ def _relocation_timeline(franchise: str) -> list[dict]:
     return out
 
 
-def w_team_pages(players: list) -> dict:
+def compute_related(players: list, max_suggestions: int = 8) -> dict:
+    """For every franchise and club, the up-to-N entities sharing the most alumni
+    with it, back-filled with the largest clubs from the same country.
+
+    Returns {(type, name): [{type, name, shared}, ...]} where type is "team"
+    (franchise page) or "club" (club page). Computed here (data layer) so the
+    frontend just renders links.
+    """
+    from collections import defaultdict
+    membership: dict = defaultdict(set)     # entity -> set(players)
+    country_of: dict = {}                   # entity -> country
+    co: dict = defaultdict(int)             # (entityA, entityB) sorted -> shared players
+
+    for p in players:
+        ents = set()
+        for s in p.get("career_history", []):
+            team = s.get("team", "")
+            if not team:
+                continue
+            fr = nba_franchise_of(team)
+            if fr:
+                e = ("team", fr)
+                country_of[e] = FRANCHISE_COUNTRY.get(fr, "USA")
+            else:
+                e = ("club", team)
+                if not country_of.get(e):
+                    country_of[e] = (s.get("country") or "").strip()
+            ents.add(e)
+        for e in ents:
+            membership[e].add(p["player"])
+        el = sorted(ents)
+        for i in range(len(el)):
+            for j in range(i + 1, len(el)):
+                co[(el[i], el[j])] += 1
+
+    size = {e: len(ps) for e, ps in membership.items()}
+    neighbors: dict = defaultdict(list)
+    for (a, b), cnt in co.items():
+        neighbors[a].append((b, cnt))
+        neighbors[b].append((a, cnt))
+
+    # largest clubs per country, for back-fill
+    clubs_by_country: dict = defaultdict(list)
+    for e in membership:
+        if e[0] == "club":
+            clubs_by_country[country_of.get(e, "")].append(e)
+    for c in clubs_by_country.values():
+        c.sort(key=lambda e: (-size[e], e[1]))
+
+    related: dict = {}
+    for e in membership:
+        picks, seen = [], {e}
+        for nb, cnt in sorted(neighbors.get(e, []), key=lambda x: (-x[1], -size.get(x[0], 0), x[0][1])):
+            if nb in seen:
+                continue
+            picks.append({"type": nb[0], "name": nb[1], "shared": cnt})
+            seen.add(nb)
+            if len(picks) >= max_suggestions:
+                break
+        if len(picks) < max_suggestions:
+            for nb in clubs_by_country.get(country_of.get(e, ""), []):
+                if nb in seen:
+                    continue
+                picks.append({"type": nb[0], "name": nb[1], "shared": 0})
+                seen.add(nb)
+                if len(picks) >= max_suggestions:
+                    break
+        related[e] = picks
+    return related
+
+
+def w_team_pages(players: list, related: dict | None = None) -> dict:
     """Per-franchise alumni rosters for the 30 current NBA teams.
 
     A player belongs to a franchise's roster if ANY of their stints was under
@@ -399,6 +470,8 @@ def w_team_pages(players: list) -> dict:
         t["active_elsewhere"].sort(key=lambda r: r["player"])
         t["roster_count"] = len(t["roster"])
         t["alumni_count"] = len({r["player"] for r in t["roster"]})
+        if related is not None:
+            t["related"] = related.get(("team", fr), [])
     return teams
 
 
@@ -408,12 +481,20 @@ def w_team_pages(players: list) -> dict:
 CLUB_ROSTER_CAP = 500
 
 
-def w_club_pages(players: list) -> dict:
+def _join_years(spans: list) -> str:
+    return ", ".join(s for s in sorted(spans, key=_year_start) if s)
+
+
+def _year_start(years: str) -> int:
+    m = re.search(r"\d{4}", str(years or ""))
+    return int(m.group()) if m else 0
+
+
+def w_club_pages(players: list, related: dict | None = None) -> dict:
     """All-time NBA-alumni roster for every non-NBA club (overseas / G League /
     ABA / college / etc.). club name -> {location, roster:[{player,years,status}],
-    count}. This is what the old in-page map popup used to show; the club page on
-    teams.html now renders it. Every player in the dataset is an NBA player, so a
-    stint at a non-NBA club is an NBA alumnus there."""
+    count}. ONE row per player, their year-spans at the club comma-joined
+    (Carlos Delfino once with "2002-2004, 2019", not two rows)."""
     clubs: dict[str, dict] = {}
     for p in players:
         status = p.get("status", "")
@@ -421,18 +502,31 @@ def w_club_pages(players: list) -> dict:
             team = s.get("team", "")
             if not team or is_nba_team(team):
                 continue
-            c = clubs.setdefault(team, {"club": team, "city": s.get("city", ""),
-                                        "state": s.get("state", ""),
-                                        "country": s.get("country", ""), "roster": []})
-            c["roster"].append({"player": p["player"], "years": s.get("years", ""),
-                                "status": status})
+            c = clubs.setdefault(team, {"club": team, "city": "", "state": "",
+                                        "country": "", "_by": {}})
+            # club location: first stint that carries a country wins (so a
+            # location-less stint never blanks a club that is placed elsewhere)
+            if not c["country"] and (s.get("country") or "").strip():
+                c["city"], c["state"], c["country"] = \
+                    s.get("city", ""), s.get("state", ""), s.get("country", "")
+            g = c["_by"].setdefault(p["player"], {"player": p["player"], "status": status,
+                                                  "spans": []})
+            g["spans"].append(s.get("years", ""))
 
     for c in clubs.values():
-        c["roster"].sort(key=lambda r: (r["player"], r["years"]))
-        c["count"] = len(c["roster"])
-        if len(c["roster"]) > CLUB_ROSTER_CAP:
-            c["roster"] = c["roster"][:CLUB_ROSTER_CAP]
+        roster = []
+        for g in c["_by"].values():
+            roster.append({"player": g["player"], "years": _join_years(g["spans"]),
+                           "status": g["status"]})
+        roster.sort(key=lambda r: r["player"])
+        del c["_by"]
+        c["count"] = len(roster)
+        if len(roster) > CLUB_ROSTER_CAP:
+            roster = roster[:CLUB_ROSTER_CAP]
             c["truncated"] = True
+        c["roster"] = roster
+        if related is not None:
+            c["related"] = related.get(("club", c["club"]), [])
     return clubs
 
 
@@ -482,16 +576,20 @@ def main() -> None:
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}  ({OUT.stat().st_size:,} bytes)")
 
+    # Related-teams suggestions (shared alumni, then same-country fill), computed
+    # once and attached to both franchise and club pages.
+    related = compute_related(players)
+
     # Team pages (Phase 2): a separate file so dashboard_data.json stays lean.
     team_pages = {"generated_from": "data/players/nba_players_careers.json",
-                  "teams": w_team_pages(players)}
+                  "teams": w_team_pages(players, related)}
     TEAM_PAGES_OUT.write_text(json.dumps(team_pages, ensure_ascii=False, indent=2) + "\n",
                               encoding="utf-8")
     print(f"wrote {TEAM_PAGES_OUT.relative_to(ROOT)}  ({TEAM_PAGES_OUT.stat().st_size:,} bytes)")
 
     # Club pages (Phase 2.6-B): all-time NBA alumni per non-NBA club.
     club_pages = {"generated_from": "data/players/nba_players_careers.json",
-                  "clubs": w_club_pages(players)}
+                  "clubs": w_club_pages(players, related)}
     CLUB_PAGES_OUT.write_text(json.dumps(club_pages, ensure_ascii=False, indent=2) + "\n",
                               encoding="utf-8")
     truncated = sum(1 for c in club_pages["clubs"].values() if c.get("truncated"))

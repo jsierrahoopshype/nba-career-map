@@ -5952,7 +5952,49 @@
         }
       ],
       "roster_count": 676,
-      "alumni_count": 629
+      "alumni_count": 629,
+      "related": [
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 103
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 102
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 91
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 89
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 79
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 77
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 76
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 66
+        }
+      ]
     },
     "Boston Celtics": {
       "franchise": "Boston Celtics",
@@ -7932,7 +7974,7 @@
           "stint_team": "Boston Celtics",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Jarell Eddie",
@@ -8484,7 +8526,7 @@
           "stint_team": "Boston Celtics",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "current_country": ""
+          "current_country": "Spain"
         },
         {
           "player": "Kelly Olynyk",
@@ -10510,7 +10552,7 @@
           "player": "Jared Sullinger",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Jarell Eddie",
@@ -10606,7 +10648,7 @@
           "player": "Kelan Martin",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "country": ""
+          "country": "Spain"
         },
         {
           "player": "Kelly Olynyk",
@@ -10772,7 +10814,49 @@
         }
       ],
       "roster_count": 548,
-      "alumni_count": 525
+      "alumni_count": 525,
+      "related": [
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 67
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 64
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 61
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 61
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 60
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 60
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 60
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 59
+        }
+      ]
     },
     "Brooklyn Nets": {
       "franchise": "Brooklyn Nets",
@@ -11419,7 +11503,7 @@
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Chris Douglas-Roberts",
@@ -12155,7 +12239,7 @@
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Eduardo Najera",
@@ -14683,7 +14767,7 @@
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Tamar Slay",
@@ -15275,7 +15359,7 @@
           "player": "Chris Chiozza",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Chris McCullough",
@@ -15365,7 +15449,7 @@
           "player": "Edmond Sumner",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Garrett Temple",
@@ -15707,7 +15791,7 @@
           "player": "Tahjere McCall",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Taurean Prince",
@@ -15801,7 +15885,49 @@
         }
       ],
       "roster_count": 547,
-      "alumni_count": 519
+      "alumni_count": 519,
+      "related": [
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 93
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 80
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 78
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 76
+        },
+        {
+          "type": "team",
+          "name": "Dallas Mavericks",
+          "shared": 71
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Denver Nuggets",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 67
+        }
+      ]
     },
     "Charlotte Hornets": {
       "franchise": "Charlotte Hornets",
@@ -18624,7 +18750,7 @@
           "stint_team": "Charlotte Hornets",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Xavier Tillman",
@@ -19072,7 +19198,7 @@
           "player": "Xavier Sneed",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Xavier Tillman",
@@ -19082,7 +19208,49 @@
         }
       ],
       "roster_count": 351,
-      "alumni_count": 325
+      "alumni_count": 325,
+      "related": [
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 61
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 57
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 50
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 50
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 49
+        },
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Chicago Bulls",
+          "shared": 43
+        }
+      ]
     },
     "Chicago Bulls": {
       "franchise": "Chicago Bulls",
@@ -23290,7 +23458,49 @@
         }
       ],
       "roster_count": 464,
-      "alumni_count": 432
+      "alumni_count": 432,
+      "related": [
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 67
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 62
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 62
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 61
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 61
+        },
+        {
+          "type": "team",
+          "name": "San Antonio Spurs",
+          "shared": 60
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 59
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 59
+        }
+      ]
     },
     "Cleveland Cavaliers": {
       "franchise": "Cleveland Cavaliers",
@@ -27786,7 +27996,49 @@
         }
       ],
       "roster_count": 494,
-      "alumni_count": 466
+      "alumni_count": 466,
+      "related": [
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 80
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 76
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 73
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 65
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 64
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 63
+        },
+        {
+          "type": "team",
+          "name": "Chicago Bulls",
+          "shared": 62
+        }
+      ]
     },
     "Dallas Mavericks": {
       "franchise": "Dallas Mavericks",
@@ -31734,7 +31986,49 @@
         }
       ],
       "roster_count": 424,
-      "alumni_count": 395
+      "alumni_count": 395,
+      "related": [
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 71
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 60
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 59
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 58
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 56
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 55
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 55
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 55
+        }
+      ]
     },
     "Denver Nuggets": {
       "franchise": "Denver Nuggets",
@@ -32882,7 +33176,7 @@
           "stint_team": "Denver Nuggets",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Ervin Johnson",
@@ -35370,7 +35664,7 @@
           "player": "Erick Green",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Evan Fournier",
@@ -35710,7 +36004,49 @@
         }
       ],
       "roster_count": 441,
-      "alumni_count": 414
+      "alumni_count": 414,
+      "related": [
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 64
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 63
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 56
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 56
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 53
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 51
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 50
+        }
+      ]
     },
     "Detroit Pistons": {
       "franchise": "Detroit Pistons",
@@ -41287,7 +41623,49 @@
         }
       ],
       "roster_count": 620,
-      "alumni_count": 579
+      "alumni_count": 579,
+      "related": [
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 108
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 102
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 85
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 75
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 72
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 63
+        }
+      ]
     },
     "Golden State Warriors": {
       "franchise": "Golden State Warriors",
@@ -42158,7 +42536,7 @@
           "stint_team": "Golden State Warriors",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Chris Engler",
@@ -46158,7 +46536,7 @@
           "player": "Chris Chiozza",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Chris Paul",
@@ -46534,7 +46912,49 @@
         }
       ],
       "roster_count": 599,
-      "alumni_count": 568
+      "alumni_count": 568,
+      "related": [
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 88
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 80
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 77
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 72
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 64
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 63
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 63
+        },
+        {
+          "type": "team",
+          "name": "Boston Celtics",
+          "shared": 61
+        }
+      ]
     },
     "Houston Rockets": {
       "franchise": "Houston Rockets",
@@ -47167,7 +47587,7 @@
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Chris Clemons",
@@ -47255,7 +47675,7 @@
           "stint_team": "Houston Rockets",
           "status": "retired",
           "current_team": "Lazio",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Clint Capela",
@@ -50175,7 +50595,7 @@
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Trevor Ariza",
@@ -50535,7 +50955,7 @@
           "player": "Chris Chiozza",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Chris Clemons",
@@ -50943,7 +51363,7 @@
           "player": "Trevelin Queen",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Trevor Hudgins",
@@ -50995,7 +51415,49 @@
         }
       ],
       "roster_count": 485,
-      "alumni_count": 446
+      "alumni_count": 446,
+      "related": [
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 83
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 78
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 75
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 73
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 63
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 63
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 62
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 61
+        }
+      ]
     },
     "Indiana Pacers": {
       "franchise": "Indiana Pacers",
@@ -51951,7 +52413,7 @@
           "stint_team": "Indiana Pacers",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Enrique Freeman",
@@ -52759,7 +53221,7 @@
           "stint_team": "Indiana Pacers",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "current_country": ""
+          "current_country": "Spain"
         },
         {
           "player": "Kelly Oubre",
@@ -53967,7 +54429,7 @@
           "stint_team": "Indiana Pacers",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Trevor Booker",
@@ -54271,7 +54733,7 @@
           "player": "Edmond Sumner",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Enrique Freeman",
@@ -54397,7 +54859,7 @@
           "player": "Kelan Martin",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "country": ""
+          "country": "Spain"
         },
         {
           "player": "Kendall Brown",
@@ -54517,7 +54979,7 @@
           "player": "Trevelin Queen",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Trey McKinney-Jones",
@@ -54545,7 +55007,49 @@
         }
       ],
       "roster_count": 393,
-      "alumni_count": 372
+      "alumni_count": 372,
+      "related": [
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 56
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 54
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "Chicago Bulls",
+          "shared": 46
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 45
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 45
+        },
+        {
+          "type": "team",
+          "name": "Dallas Mavericks",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 43
+        }
+      ]
     },
     "LA Clippers": {
       "franchise": "LA Clippers",
@@ -59512,7 +60016,49 @@
         }
       ],
       "roster_count": 552,
-      "alumni_count": 509
+      "alumni_count": 509,
+      "related": [
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 92
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 83
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 76
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 75
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 72
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "Portland Trail Blazers",
+          "shared": 69
+        }
+      ]
     },
     "Los Angeles Lakers": {
       "franchise": "Los Angeles Lakers",
@@ -60297,7 +60843,7 @@
           "stint_team": "Los Angeles Lakers",
           "status": "retired",
           "current_team": "Lazio",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Cliff Robinson",
@@ -64495,7 +65041,49 @@
         }
       ],
       "roster_count": 548,
-      "alumni_count": 513
+      "alumni_count": 513,
+      "related": [
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 82
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 79
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 76
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 72
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 71
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 66
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 65
+        }
+      ]
     },
     "Memphis Grizzlies": {
       "franchise": "Memphis Grizzlies",
@@ -67040,7 +67628,7 @@
           "stint_team": "Memphis Grizzlies",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Xavier Tillman",
@@ -67656,7 +68244,7 @@
           "player": "Xavier Sneed",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Xavier Tillman",
@@ -67702,7 +68290,49 @@
         }
       ],
       "roster_count": 326,
-      "alumni_count": 316
+      "alumni_count": 316,
+      "related": [
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
+          "shared": 57
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 54
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 43
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 41
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 40
+        }
+      ]
     },
     "Miami Heat": {
       "franchise": "Miami Heat",
@@ -70728,7 +71358,49 @@
         }
       ],
       "roster_count": 329,
-      "alumni_count": 310
+      "alumni_count": 310,
+      "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 62
+        },
+        {
+          "type": "team",
+          "name": "Dallas Mavericks",
+          "shared": 53
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 46
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 46
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 46
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 45
+        },
+        {
+          "type": "team",
+          "name": "Boston Celtics",
+          "shared": 44
+        }
+      ]
     },
     "Milwaukee Bucks": {
       "franchise": "Milwaukee Bucks",
@@ -75346,7 +76018,49 @@
         }
       ],
       "roster_count": 513,
-      "alumni_count": 478
+      "alumni_count": 478,
+      "related": [
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 92
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 82
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 78
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 75
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 73
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 67
+        }
+      ]
     },
     "Minnesota Timberwolves": {
       "franchise": "Minnesota Timberwolves",
@@ -76646,7 +77360,7 @@
           "stint_team": "Minnesota Timberwolves",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "current_country": ""
+          "current_country": "Spain"
         },
         {
           "player": "Kendall Gill",
@@ -78188,7 +78902,7 @@
           "player": "Kelan Martin",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "country": ""
+          "country": "Spain"
         },
         {
           "player": "Kevin Love",
@@ -78390,7 +79104,49 @@
         }
       ],
       "roster_count": 326,
-      "alumni_count": 310
+      "alumni_count": 310,
+      "related": [
+        {
+          "type": "team",
+          "name": "Boston Celtics",
+          "shared": 45
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Denver Nuggets",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Utah Jazz",
+          "shared": 43
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 42
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 41
+        }
+      ]
     },
     "New Orleans Pelicans": {
       "franchise": "New Orleans Pelicans",
@@ -79671,7 +80427,7 @@
           "stint_team": "New Orleans Pelicans",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "current_country": ""
+          "current_country": "Spain"
         },
         {
           "player": "Karlo Matkovic",
@@ -80919,7 +81675,7 @@
           "player": "Kaiser Gates",
           "status": "overseas_active",
           "current_team": "UCAM Murcia",
-          "country": ""
+          "country": "Spain"
         },
         {
           "player": "Keion Brooks",
@@ -81157,7 +81913,49 @@
         }
       ],
       "roster_count": 268,
-      "alumni_count": 258
+      "alumni_count": 258,
+      "related": [
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 42
+        },
+        {
+          "type": "team",
+          "name": "Charlotte Hornets",
+          "shared": 41
+        },
+        {
+          "type": "team",
+          "name": "Chicago Bulls",
+          "shared": 40
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 39
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 37
+        },
+        {
+          "type": "team",
+          "name": "Dallas Mavericks",
+          "shared": 37
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 36
+        },
+        {
+          "type": "team",
+          "name": "Memphis Grizzlies",
+          "shared": 36
+        }
+      ]
     },
     "New York Knicks": {
       "franchise": "New York Knicks",
@@ -86401,7 +87199,49 @@
         }
       ],
       "roster_count": 595,
-      "alumni_count": 559
+      "alumni_count": 559,
+      "related": [
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 80
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 76
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 72
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 66
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 66
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 64
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 64
+        }
+      ]
     },
     "Oklahoma City Thunder": {
       "franchise": "Oklahoma City Thunder",
@@ -90290,7 +91130,49 @@
         }
       ],
       "roster_count": 424,
-      "alumni_count": 401
+      "alumni_count": 401,
+      "related": [
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 67
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 64
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 59
+        },
+        {
+          "type": "team",
+          "name": "Chicago Bulls",
+          "shared": 58
+        },
+        {
+          "type": "club",
+          "name": "Oklahoma City Blue",
+          "shared": 57
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 55
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 54
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 53
+        }
+      ]
     },
     "Orlando Magic": {
       "franchise": "Orlando Magic",
@@ -91838,7 +92720,7 @@
           "stint_team": "Orlando Magic",
           "status": "overseas_active",
           "current_team": "Xinjiang Flying Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Keyon Dooling",
@@ -92678,7 +93560,7 @@
           "stint_team": "Orlando Magic",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Trevor Ariza",
@@ -93078,7 +93960,7 @@
           "player": "Kevon Harris",
           "status": "overseas_active",
           "current_team": "Xinjiang Flying Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Khem Birch",
@@ -93204,7 +94086,7 @@
           "player": "Trevelin Queen",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Troy Caupain",
@@ -93238,7 +94120,49 @@
         }
       ],
       "roster_count": 314,
-      "alumni_count": 297
+      "alumni_count": 297,
+      "related": [
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 53
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 48
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "Denver Nuggets",
+          "shared": 46
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 45
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 39
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 39
+        }
+      ]
     },
     "Philadelphia 76ers": {
       "franchise": "Philadelphia 76ers",
@@ -95535,7 +96459,7 @@
           "stint_team": "Philadelphia 76ers",
           "status": "overseas_active",
           "current_team": "Napoli",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Jaden Springer",
@@ -98685,7 +99609,7 @@
           "player": "Jacob Pullen",
           "status": "overseas_active",
           "current_team": "Napoli",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Jaden Springer",
@@ -99145,7 +100069,49 @@
         }
       ],
       "roster_count": 644,
-      "alumni_count": 600
+      "alumni_count": 600,
+      "related": [
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 93
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 92
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 91
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 90
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 88
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 85
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 82
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 75
+        }
+      ]
     },
     "Phoenix Suns": {
       "franchise": "Phoenix Suns",
@@ -103615,7 +104581,49 @@
         }
       ],
       "roster_count": 484,
-      "alumni_count": 453
+      "alumni_count": 453,
+      "related": [
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 67
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 61
+        },
+        {
+          "type": "team",
+          "name": "Chicago Bulls",
+          "shared": 61
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 60
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 59
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 57
+        }
+      ]
     },
     "Portland Trail Blazers": {
       "franchise": "Portland Trail Blazers",
@@ -106699,7 +107707,7 @@
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
           "current_team": "Varese",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Taze Moore",
@@ -106707,7 +107715,7 @@
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
           "current_team": "Varese",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Terry Dischinger",
@@ -107479,7 +108487,7 @@
           "player": "Taze Moore",
           "status": "overseas_active",
           "current_team": "Varese",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Thomas Robinson",
@@ -107531,7 +108539,49 @@
         }
       ],
       "roster_count": 429,
-      "alumni_count": 405
+      "alumni_count": 405,
+      "related": [
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 58
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 56
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 53
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 51
+        },
+        {
+          "type": "team",
+          "name": "San Antonio Spurs",
+          "shared": 51
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 49
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 49
+        }
+      ]
     },
     "Sacramento Kings": {
       "franchise": "Sacramento Kings",
@@ -112914,7 +113964,49 @@
         }
       ],
       "roster_count": 598,
-      "alumni_count": 560
+      "alumni_count": 560,
+      "related": [
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 92
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 89
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 75
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 72
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 71
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "Washington Wizards",
+          "shared": 69
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 69
+        }
+      ]
     },
     "San Antonio Spurs": {
       "franchise": "San Antonio Spurs",
@@ -116746,7 +117838,49 @@
         }
       ],
       "roster_count": 429,
-      "alumni_count": 404
+      "alumni_count": 404,
+      "related": [
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 66
+        },
+        {
+          "type": "team",
+          "name": "Chicago Bulls",
+          "shared": 60
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 59
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 59
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 58
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 54
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 53
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 52
+        }
+      ]
     },
     "Toronto Raptors": {
       "franchise": "Toronto Raptors",
@@ -117838,7 +118972,7 @@
           "stint_team": "Toronto Raptors",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "current_country": ""
+          "current_country": "China"
         },
         {
           "player": "Jarrett Jack",
@@ -119544,7 +120678,7 @@
           "player": "Jared Sullinger",
           "status": "overseas_active",
           "current_team": "Guangdong Southern Tigers",
-          "country": ""
+          "country": "China"
         },
         {
           "player": "Javon Freeman-Liberty",
@@ -119872,7 +121006,49 @@
         }
       ],
       "roster_count": 322,
-      "alumni_count": 307
+      "alumni_count": 307,
+      "related": [
+        {
+          "type": "club",
+          "name": "Raptors 905",
+          "shared": 57
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 51
+        },
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 48
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "San Antonio Spurs",
+          "shared": 47
+        },
+        {
+          "type": "team",
+          "name": "Houston Rockets",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Boston Celtics",
+          "shared": 43
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 43
+        }
+      ]
     },
     "Utah Jazz": {
       "franchise": "Utah Jazz",
@@ -120793,7 +121969,7 @@
           "stint_team": "Utah Jazz",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Erik McCree",
@@ -122985,7 +124161,7 @@
           "stint_team": "Utah Jazz",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Zylan Cheatham",
@@ -123079,7 +124255,7 @@
           "player": "Erick Green",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Erik McCree",
@@ -123487,7 +124663,7 @@
           "player": "Xavier Sneed",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Zylan Cheatham",
@@ -123497,7 +124673,49 @@
         }
       ],
       "roster_count": 388,
-      "alumni_count": 366
+      "alumni_count": 366,
+      "related": [
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 58
+        },
+        {
+          "type": "team",
+          "name": "Phoenix Suns",
+          "shared": 52
+        },
+        {
+          "type": "team",
+          "name": "Cleveland Cavaliers",
+          "shared": 51
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 48
+        },
+        {
+          "type": "team",
+          "name": "Milwaukee Bucks",
+          "shared": 48
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Denver Nuggets",
+          "shared": 44
+        },
+        {
+          "type": "team",
+          "name": "Brooklyn Nets",
+          "shared": 43
+        }
+      ]
     },
     "Washington Wizards": {
       "franchise": "Washington Wizards",
@@ -124546,7 +125764,7 @@
           "stint_team": "Washington Wizards",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "current_country": ""
+          "current_country": "Italy"
         },
         {
           "player": "Chris Corchiani",
@@ -129118,7 +130336,7 @@
           "player": "Chris Chiozza",
           "status": "overseas_active",
           "current_team": "Cantù",
-          "country": ""
+          "country": "Italy"
         },
         {
           "player": "Chris McCullough",
@@ -129632,7 +130850,49 @@
         }
       ],
       "roster_count": 686,
-      "alumni_count": 649
+      "alumni_count": 649,
+      "related": [
+        {
+          "type": "team",
+          "name": "Detroit Pistons",
+          "shared": 108
+        },
+        {
+          "type": "team",
+          "name": "Atlanta Hawks",
+          "shared": 103
+        },
+        {
+          "type": "team",
+          "name": "Philadelphia 76ers",
+          "shared": 90
+        },
+        {
+          "type": "team",
+          "name": "Los Angeles Lakers",
+          "shared": 82
+        },
+        {
+          "type": "team",
+          "name": "Golden State Warriors",
+          "shared": 80
+        },
+        {
+          "type": "team",
+          "name": "New York Knicks",
+          "shared": 80
+        },
+        {
+          "type": "team",
+          "name": "LA Clippers",
+          "shared": 70
+        },
+        {
+          "type": "team",
+          "name": "Sacramento Kings",
+          "shared": 69
+        }
+      ]
     }
   }
 }

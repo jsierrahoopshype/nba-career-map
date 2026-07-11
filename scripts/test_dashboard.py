@@ -230,6 +230,46 @@ def test_club_pages():
     print("test_club_pages PASS")
 
 
+def test_club_pages_group_by_player():
+    # a player with two stints at the same club -> ONE row, joined years
+    fix = [_p("Two Spell", "overseas_active", "Baskonia",
+              [_stint("Baskonia", "2019", "Vitoria", "", "Spain"),
+               _stint("Real Madrid", "2020", "Madrid", "", "Spain"),
+               _stint("Baskonia", "2002-2004", "Vitoria", "", "Spain")])]
+    clubs = b.w_club_pages(fix)
+    bas = clubs["Baskonia"]
+    assert bas["count"] == 1, "one row per player"
+    assert bas["roster"][0]["years"] == "2002-2004, 2019", bas["roster"][0]["years"]
+
+
+def test_club_location_prefers_located_stint():
+    # a location-less stint must NOT blank a club placed by another stint
+    fix = [
+        _p("A", "overseas_active", "ClubX", [_stint("ClubX", "2020", "", "", "")]),
+        _p("B", "retired", "ClubX", [_stint("ClubX", "2018", "Split", "", "Croatia")]),
+    ]
+    clubs = b.w_club_pages(fix)
+    assert clubs["ClubX"]["country"] == "Croatia", clubs["ClubX"]
+    print("test_club_pages_group_by_player + location PASS")
+
+
+def test_compute_related():
+    # two players shared between Lakers and a club -> they're related to each other
+    fix = [
+        _p("P1", "overseas_active", "ClubZ",
+           [_stint("Los Angeles Lakers", "2015"), _stint("ClubZ", "2020", "X", "", "Spain")]),
+        _p("P2", "overseas_active", "ClubZ",
+           [_stint("Los Angeles Lakers", "2016"), _stint("ClubZ", "2021", "X", "", "Spain")]),
+    ]
+    rel = b.compute_related(fix)
+    lakers = rel[("team", "Los Angeles Lakers")]
+    assert any(r["type"] == "club" and r["name"] == "ClubZ" and r["shared"] == 2 for r in lakers), lakers
+    clubz = rel[("club", "ClubZ")]
+    assert any(r["type"] == "team" and r["name"] == "Los Angeles Lakers" and r["shared"] == 2 for r in clubz), clubz
+    assert len(lakers) <= 8 and len(clubz) <= 8
+    print("test_compute_related PASS")
+
+
 def test_sitemap():
     fix = [_p("Test Player", "retired", "Boston Celtics",
               [_stint("Boston Celtics", "2000", "Boston", "MA", "USA")])]
@@ -267,6 +307,9 @@ if __name__ == "__main__":
     test_franchise_country()
     test_nba_active_current_country()
     test_club_pages()
+    test_club_pages_group_by_player()
+    test_club_location_prefers_located_stint()
+    test_compute_related()
     test_sitemap()
     test_relocation_timeline()
     print("\nALL DASHBOARD TESTS PASS")

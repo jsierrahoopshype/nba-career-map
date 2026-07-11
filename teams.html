@@ -92,6 +92,18 @@
         .status-badge.overseas_active { color:var(--accent); background:var(--accent-dim); }
         .status-badge.retired { color:var(--text-secondary); background:var(--surface-hover); }
 
+        /* related-teams suggestion chips */
+        .related-chips { display:flex; flex-wrap:wrap; gap:8px; }
+        .rel-chip {
+            display:inline-flex; align-items:baseline; gap:8px; background:var(--surface);
+            border:1px solid var(--border); border-radius:999px; padding:7px 14px;
+            font-size:13px; color:inherit; transition:all .15s ease;
+        }
+        .rel-chip:hover { border-color:var(--accent); background:var(--surface-hover); color:var(--accent); }
+        .rel-chip .rel-shared { font-family:var(--mono); font-size:11px; color:var(--text-secondary); }
+        .rel-chip:hover .rel-shared { color:var(--accent); }
+        .subtable-h { margin-top:36px; }
+
         /* shared table styling (landing, alumni, active-elsewhere, club) */
         .toolbar { display:flex; gap:12px; align-items:center; margin-bottom:10px; flex-wrap:wrap; }
         .tfilter {
@@ -332,10 +344,20 @@
                 return { __k:n, name:n, alumni:t.alumni_count, stints:t.roster_count,
                          eras:(t.relocations||[]).length };
             });
+            // Top 100 non-NBA clubs by all-time alumni count, shown alphabetically.
+            const topClubs = Object.values(CLUBS)
+                .sort((a,b)=> (b.count||0)-(a.count||0) || a.club.localeCompare(b.club))
+                .slice(0,100)
+                .sort((a,b)=> a.club.localeCompare(b.club))
+                .map(c=>({ __k:c.club, club:c.club, country:c.country||'', count:c.count||0 }));
+
             document.getElementById('app').innerHTML = `
                 <div class="page-title">NBA Franchises</div>
                 <div class="page-sub">30 teams · every player who ever suited up, across all eras. Sort or pick a team.</div>
-                <div id="tbl"></div>`;
+                <div id="tbl"></div>
+                <div class="section-h subtable-h">Top international &amp; minor-league clubs</div>
+                <div class="page-sub">100 non-NBA clubs with the most all-time NBA alumni.</div>
+                <div id="clubTbl"></div>`;
             const link = (n, txt, cls) => `<a class="cell-link${cls?' '+cls:''}" href="${teamHref(n)}">${txt}</a>`;
             mountTable(document.getElementById('tbl'), {
                 unit:'teams',
@@ -346,6 +368,17 @@
                     { label:'Stints',sortVal:r=>r.stints, cls:'mono', cell:r=>link(r.name, r.stints) },
                     { label:'Name-city eras', sortVal:r=>r.eras, cls:'mono',
                       cell:r=>link(r.name, r.eras>1?`${r.eras} eras`:'—') },
+                ],
+            });
+            const clink = (n, txt, cls) => `<a class="cell-link${cls?' '+cls:''}" href="${clubHref(n)}">${txt}</a>`;
+            mountTable(document.getElementById('clubTbl'), {
+                unit:'clubs',
+                rows:topClubs,
+                columns:[
+                    { label:'Club', sortVal:r=>r.club.toLowerCase(), cls:'wrap', cell:r=>clink(r.club, esc(r.club), 'name') },
+                    { label:'Country', sortVal:r=>r.country.toLowerCase(),
+                      cell:r=>r.country ? clink(r.club, `${flagImg(r.country)}${esc(r.country)}`) : clink(r.club,'—') },
+                    { label:'All-time NBA alumni', sortVal:r=>r.count, cls:'mono', cell:r=>clink(r.club, r.count) },
                 ],
             });
         }
@@ -368,6 +401,19 @@
         const teamCell = n => n ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : '—';
         const countryCell = c => c ? `${flagImg(c)}${esc(c)}` : '—';
         const statusCell = r => `<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>`;
+
+        // Related-teams suggestions (precomputed in the data layer): chips that
+        // link to each suggestion's team/club page.
+        function renderRelated(related){
+            if (!related || !related.length) return '';
+            const chips = related.map(r=>{
+                const href = r.type==='team' ? teamHref(r.name) : clubHref(r.name);
+                const shared = r.shared ? `<span class="rel-shared">${r.shared} shared</span>` : '';
+                return `<a class="rel-chip" href="${href}"><span class="rel-name">${esc(r.name)}</span>${shared}</a>`;
+            }).join('');
+            return `<div class="section"><div class="section-h">Related teams</div>
+                <div class="related-chips">${chips}</div></div>`;
+        }
 
         // Collapse per-stint roster rows into ONE row per player, joining their
         // year-spans (chronological) into a single comma-separated string.
@@ -397,7 +443,8 @@
                 <div class="detail-sub">${t.alumni_count} alumni · ${t.roster_count} stints${relocSub?' · '+esc(relocSub):''}</div>
                 ${renderTimeline(t.relocations)}
                 <div class="section"><div class="section-h">Currently active (${active.length})</div><div id="acTbl"></div></div>
-                <div class="section"><div class="section-h">Retired (${retired.length})</div><div id="reTbl"></div></div>`;
+                <div class="section"><div class="section-h">Retired (${retired.length})</div><div id="reTbl"></div></div>
+                ${renderRelated(t.related)}`;
 
             // Table 1 — currently active alumni (NBA + overseas), where they are now
             mountTable(document.getElementById('acTbl'), {
@@ -451,7 +498,8 @@
                 <div class="detail-title">${esc(club)}</div>
                 <div class="detail-sub">${flag}${loc?esc(loc)+' · ':''}${info.count||allTime.length} all-time NBA alumni${info.truncated?' (showing first '+allTime.length+')':''}</div>
                 ${activeRows.length ? `<div class="section"><div class="section-h">Currently active here (${activeRows.length})</div><div id="clubActive"></div></div>` : ''}
-                <div class="section"><div class="section-h">All-time NBA alumni</div><div id="clubAll"></div></div>`;
+                <div class="section"><div class="section-h">All-time NBA alumni</div><div id="clubAll"></div></div>
+                ${renderRelated(info.related)}`;
 
             if (activeRows.length){
                 mountTable(document.getElementById('clubActive'), {

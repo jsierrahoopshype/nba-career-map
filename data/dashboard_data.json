@@ -495,7 +495,7 @@
     {
       "player": "Chris Chiozza",
       "current_team": "Cantù",
-      "country": ""
+      "country": "Italy"
     },
     {
       "player": "Chris Clemons",
@@ -940,7 +940,7 @@
     {
       "player": "Edmond Sumner",
       "current_team": "Guangdong Southern Tigers",
-      "country": ""
+      "country": "China"
     },
     {
       "player": "Elfrid Payton",
@@ -1000,7 +1000,7 @@
     {
       "player": "Erick Green",
       "current_team": "Cantù",
-      "country": ""
+      "country": "Italy"
     },
     {
       "player": "Erik McCree",
@@ -1380,7 +1380,7 @@
     {
       "player": "Jacob Pullen",
       "current_team": "Napoli",
-      "country": ""
+      "country": "Italy"
     },
     {
       "player": "Jacob Wiley",
@@ -1535,7 +1535,7 @@
     {
       "player": "Jared Sullinger",
       "current_team": "Guangdong Southern Tigers",
-      "country": ""
+      "country": "China"
     },
     {
       "player": "Jarell Eddie",
@@ -1985,7 +1985,7 @@
     {
       "player": "Kaiser Gates",
       "current_team": "UCAM Murcia",
-      "country": ""
+      "country": "Spain"
     },
     {
       "player": "Karim Mane",
@@ -2015,7 +2015,7 @@
     {
       "player": "Kelan Martin",
       "current_team": "UCAM Murcia",
-      "country": ""
+      "country": "Spain"
     },
     {
       "player": "Keljin Blevins",
@@ -2090,7 +2090,7 @@
     {
       "player": "Kevon Harris",
       "current_team": "Xinjiang Flying Tigers",
-      "country": ""
+      "country": "China"
     },
     {
       "player": "Keyontae Johnson",
@@ -3075,7 +3075,7 @@
     {
       "player": "Tahjere McCall",
       "current_team": "Guangdong Southern Tigers",
-      "country": ""
+      "country": "China"
     },
     {
       "player": "Talen Horton-Tucker",
@@ -3095,7 +3095,7 @@
     {
       "player": "Taze Moore",
       "current_team": "Varese",
-      "country": ""
+      "country": "Italy"
     },
     {
       "player": "Terence Davis",
@@ -3230,7 +3230,7 @@
     {
       "player": "Trevelin Queen",
       "current_team": "Guangdong Southern Tigers",
-      "country": ""
+      "country": "China"
     },
     {
       "player": "Treveon Graham",
@@ -3460,7 +3460,7 @@
     {
       "player": "Xavier Sneed",
       "current_team": "Cantù",
-      "country": ""
+      "country": "Italy"
     },
     {
       "player": "Xavier Tillman",
@@ -3722,6 +3722,28 @@
       "status": "overseas_active"
     },
     {
+      "player": "Devin Green",
+      "country_count": 14,
+      "stint_count": 25,
+      "countries": [
+        "USA",
+        "Germany",
+        "Italy",
+        "Belgium",
+        "Ukraine",
+        "Greece",
+        "Puerto Rico",
+        "China",
+        "Bulgaria",
+        "Venezuela",
+        "Mexico",
+        "Argentina",
+        "Lebanon",
+        "Qatar"
+      ],
+      "status": "retired"
+    },
+    {
       "player": "Andre Brown",
       "country_count": 14,
       "stint_count": 22,
@@ -3740,27 +3762,6 @@
         "Iran",
         "Uruguay",
         "Saudi Arabia"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Devin Green",
-      "country_count": 13,
-      "stint_count": 25,
-      "countries": [
-        "USA",
-        "Germany",
-        "Italy",
-        "Belgium",
-        "Ukraine",
-        "Greece",
-        "Puerto Rico",
-        "China",
-        "Bulgaria",
-        "Venezuela",
-        "Mexico",
-        "Argentina",
-        "Lebanon"
       ],
       "status": "retired"
     },
@@ -4515,6 +4516,25 @@
       "status": "overseas_active"
     },
     {
+      "player": "Adonis Thomas",
+      "country_count": 11,
+      "stint_count": 18,
+      "countries": [
+        "USA",
+        "Italy",
+        "Turkey",
+        "Germany",
+        "France",
+        "Mexico",
+        "Kazakhstan",
+        "Slovenia",
+        "Poland",
+        "Israel",
+        "Qatar"
+      ],
+      "status": "overseas_active"
+    },
+    {
       "player": "Aleksandar Radojevic",
       "country_count": 11,
       "stint_count": 18,
@@ -4530,25 +4550,6 @@
         "Greece",
         "Cyprus",
         "Lebanon"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Diante Garrett",
-      "country_count": 11,
-      "stint_count": 18,
-      "countries": [
-        "Croatia",
-        "France",
-        "USA",
-        "Israel",
-        "Japan",
-        "Italy",
-        "Turkey",
-        "Greece",
-        "Germany",
-        "Puerto Rico",
-        "Mexico"
       ],
       "status": "retired"
     }
@@ -4767,12 +4768,12 @@
       "players": 60
     },
     {
-      "team": "Los Angeles D-Fenders",
+      "team": "Fortitudo Bologna",
       "players": 60
     },
     {
-      "team": "Fortitudo Bologna",
-      "players": 59
+      "team": "Los Angeles D-Fenders",
+      "players": 60
     },
     {
       "team": "Joventut Badalona",
@@ -5595,6 +5596,10 @@
       "players": 15
     },
     {
+      "team": "Libertad de Sunchales",
+      "players": 15
+    },
+    {
       "team": "Lietuvos rytas",
       "players": 15
     },
@@ -6168,10 +6173,6 @@
     },
     {
       "team": "Levallois",
-      "players": 10
-    },
-    {
-      "team": "Libertad de Sunchales",
       "players": 10
     },
     {
@@ -9323,10 +9324,6 @@
       "players": 3
     },
     {
-      "team": "Libertad Sunchales",
-      "players": 3
-    },
-    {
       "team": "Lietkabelis",
       "players": 3
     },
@@ -11056,10 +11053,6 @@
     },
     {
       "team": "Liaoning Hunters",
-      "players": 2
-    },
-    {
-      "team": "Libertad",
       "players": 2
     },
     {
@@ -16312,10 +16305,6 @@
     },
     {
       "team": "Laval Kebs",
-      "players": 1
-    },
-    {
-      "team": "Lavoropiù Fortitudo Bologna",
       "players": 1
     },
     {
@@ -22911,11 +22900,11 @@
     },
     {
       "country": "Spain",
-      "count": 52
+      "count": 54
     },
     {
       "country": "China",
-      "count": 44
+      "count": 49
     },
     {
       "country": "Puerto Rico",
@@ -22934,12 +22923,12 @@
       "count": 37
     },
     {
-      "country": "Japan",
+      "country": "Italy",
       "count": 28
     },
     {
-      "country": "Italy",
-      "count": 23
+      "country": "Japan",
+      "count": 28
     },
     {
       "country": "Mexico",
@@ -23101,15 +23090,15 @@
     },
     {
       "country": "Italy",
-      "players": 896
+      "players": 904
     },
     {
       "country": "Spain",
-      "players": 777
+      "players": 782
     },
     {
       "country": "France",
-      "players": 558
+      "players": 559
     },
     {
       "country": "Greece",
@@ -23121,7 +23110,7 @@
     },
     {
       "country": "Turkey",
-      "players": 480
+      "players": 483
     },
     {
       "country": "Israel",
@@ -23129,7 +23118,7 @@
     },
     {
       "country": "China",
-      "players": 408
+      "players": 421
     },
     {
       "country": "Puerto Rico",
@@ -23165,7 +23154,7 @@
     },
     {
       "country": "Serbia",
-      "players": 144
+      "players": 145
     },
     {
       "country": "Argentina",
@@ -23201,7 +23190,7 @@
     },
     {
       "country": "Ukraine",
-      "players": 81
+      "players": 83
     },
     {
       "country": "Taiwan",
@@ -23225,7 +23214,7 @@
     },
     {
       "country": "Brazil",
-      "players": 42
+      "players": 44
     },
     {
       "country": "Portugal",
@@ -23233,7 +23222,7 @@
     },
     {
       "country": "Cyprus",
-      "players": 36
+      "players": 37
     },
     {
       "country": "Uruguay",
@@ -23309,7 +23298,7 @@
     },
     {
       "country": "Qatar",
-      "players": 14
+      "players": 16
     },
     {
       "country": "North Macedonia",
@@ -23332,12 +23321,12 @@
       "players": 11
     },
     {
-      "country": "Kazakhstan",
-      "players": 9
+      "country": "Austria",
+      "players": 10
     },
     {
-      "country": "Austria",
-      "players": 8
+      "country": "Kazakhstan",
+      "players": 9
     },
     {
       "country": "Egypt",
@@ -53975,10 +53964,10 @@
       {
         "player": "Chris Chiozza",
         "current_team": "Cantù",
-        "city": "",
+        "city": "Cantù",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "Italy",
+        "in_coords": true
       },
       {
         "player": "Chris Clemons",
@@ -54671,10 +54660,10 @@
       {
         "player": "Edmond Sumner",
         "current_team": "Guangdong Southern Tigers",
-        "city": "",
+        "city": "Dongguan",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "China",
+        "in_coords": true
       },
       {
         "player": "EJ Liddell",
@@ -54775,10 +54764,10 @@
       {
         "player": "Erick Green",
         "current_team": "Cantù",
-        "city": "",
+        "city": "Cantù",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "Italy",
+        "in_coords": true
       },
       {
         "player": "Erik McCree",
@@ -55311,10 +55300,10 @@
       {
         "player": "Jacob Pullen",
         "current_team": "Napoli",
-        "city": "",
+        "city": "Naples",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "Italy",
+        "in_coords": true
       },
       {
         "player": "Jacob Wiley",
@@ -55567,10 +55556,10 @@
       {
         "player": "Jared Sullinger",
         "current_team": "Guangdong Southern Tigers",
-        "city": "",
+        "city": "Dongguan",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "China",
+        "in_coords": true
       },
       {
         "player": "Jarell Eddie",
@@ -56255,10 +56244,10 @@
       {
         "player": "Kaiser Gates",
         "current_team": "UCAM Murcia",
-        "city": "",
+        "city": "Murcia",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "Spain",
+        "in_coords": true
       },
       {
         "player": "Karim Mane",
@@ -56295,10 +56284,10 @@
       {
         "player": "Kelan Martin",
         "current_team": "UCAM Murcia",
-        "city": "",
+        "city": "Murcia",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "Spain",
+        "in_coords": true
       },
       {
         "player": "Keljin Blevins",
@@ -56415,10 +56404,10 @@
       {
         "player": "Kevon Harris",
         "current_team": "Xinjiang Flying Tigers",
-        "city": "",
+        "city": "Ürümqi",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "China",
+        "in_coords": true
       },
       {
         "player": "Keyontae Johnson",
@@ -57943,10 +57932,10 @@
       {
         "player": "Tahjere McCall",
         "current_team": "Guangdong Southern Tigers",
-        "city": "",
+        "city": "Dongguan",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "China",
+        "in_coords": true
       },
       {
         "player": "Talen Horton-Tucker",
@@ -57975,10 +57964,10 @@
       {
         "player": "Taze Moore",
         "current_team": "Varese",
-        "city": "",
+        "city": "Varese",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "Italy",
+        "in_coords": true
       },
       {
         "player": "Terence Davis",
@@ -58199,10 +58188,10 @@
       {
         "player": "Trevelin Queen",
         "current_team": "Guangdong Southern Tigers",
-        "city": "",
+        "city": "Dongguan",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "China",
+        "in_coords": true
       },
       {
         "player": "Treveon Graham",
@@ -58551,10 +58540,10 @@
       {
         "player": "Xavier Sneed",
         "current_team": "Cantù",
-        "city": "",
+        "city": "Cantù",
         "state": "",
-        "country": "",
-        "in_coords": false
+        "country": "Italy",
+        "in_coords": true
       },
       {
         "player": "Xavier Tillman",
@@ -58887,9 +58876,9 @@
     ],
     "coverage": {
       "total": 705,
-      "in_coords": 599,
-      "missing_from_coords": 106,
-      "missing_no_city": 66,
+      "in_coords": 611,
+      "missing_from_coords": 94,
+      "missing_no_city": 54,
       "missing_city_absent_from_coords": 40,
       "distinct_missing_combos": 25
     }
