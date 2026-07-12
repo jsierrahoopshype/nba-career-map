@@ -12,6 +12,7 @@ from __future__ import annotations
 import re
 from team_normalizer import TeamNormalizer
 from player_status import is_nba_team
+from retirement import detect_retirement
 
 INFOBOX_RE = re.compile(r"\{\{\s*Infobox\s+basketball\s+biography", re.IGNORECASE)
 
@@ -268,5 +269,10 @@ def parse_player(text: str, player_name: str, normalizer: TeamNormalizer) -> dic
         record["death_date"] = _parse_date_template(fields["death_date"])
     if fields.get("death_place"):
         record["death_place"] = _clean_text(fields["death_place"])
+    ret = detect_retirement(text)
+    if ret.get("retirement_announced"):
+        record["retirement_announced"] = True
+        if ret.get("retirement_date"):
+            record["retirement_date"] = ret["retirement_date"]
     record["_raw_teams"] = raw_names  # transient, stripped before saving
     return record

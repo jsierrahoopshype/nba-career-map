@@ -52,7 +52,7 @@ def is_nba_team(team: str) -> bool:
 
 
 def classify_status(record: dict, on_nba_roster: bool, current_year: int,
-                    retire_gap: int = 2) -> str:
+                    retire_gap: int = 2, retirement_announced: bool = False) -> str:
     """Classify a player record into one of the three tracking statuses.
 
     Roster membership (``on_nba_roster``) is only a *candidate* signal used to
@@ -60,6 +60,13 @@ def classify_status(record: dict, on_nba_roster: bool, current_year: int,
     coaches and staff listed on roster templates would be marked active. The
     decision is made from the fetched page:
 
+      * ``retirement_announced`` (an explicit "announced his retirement" /
+        "retired from professional basketball" sentence found on the page —
+        see retirement.detect_retirement) is a PRIMARY signal, independent of
+        recency: it retires the player immediately, even if their last stint
+        ended within ``retire_gap`` years or is still open-ended ("present").
+        Without it, a player who retires stays classified as still playing
+        for up to ``retire_gap`` years (confirmed case: Alex Abrines).
       * A record with no parseable playing career (empty career_history) is a
         non-player (coach/staff) -> retired, never nba_active.
       * nba_active requires an actual *current NBA stint*: a recent (within
@@ -69,8 +76,16 @@ def classify_status(record: dict, on_nba_roster: bool, current_year: int,
       * Otherwise (gap of retire_gap+ years) -> retired.
 
     ``on_nba_roster`` is retained in the signature for callers but intentionally
-    not used in the positive decision.
+    not used in the positive decision. The ``retire_gap`` fallback stays
+    unchanged and un-shortened: it exists to protect genuine contract gaps
+    (e.g. an NBA free agent between teams, or an overseas player between club
+    seasons) from being wrongly retired when no explicit signal is available;
+    ``retirement_announced`` is an additional signal layered on top, not a
+    tightening of that timer.
     """
+    if retirement_announced:
+        return RETIRED
+
     current_team = record.get("current_team", "") or ""
     history = record.get("career_history", []) or []
 

@@ -189,7 +189,8 @@ def w_where_are_they_now(players: list) -> list[dict]:
             continue
         st = _current_stint(p)
         out.append({"player": p["player"], "current_team": p.get("current_team", ""),
-                    "country": (st or {}).get("country", "") if st else ""})
+                    "country": (st or {}).get("country", "") if st else "",
+                    "last_updated": p.get("last_updated", "")})
     out.sort(key=lambda r: r["player"])
     return out
 
@@ -333,7 +334,7 @@ def w_world_tour_heatmap(players: list, coords_keys: set[str]) -> dict:
                 missing_combos[k1] = missing_combos.get(k1, 0) + 1
         rows.append({"player": p["player"], "current_team": p.get("current_team", ""),
                      "city": city, "state": state, "country": country,
-                     "in_coords": in_coords})
+                     "in_coords": in_coords, "last_updated": p.get("last_updated", "")})
     missing = no_city + city_not_in_coords
     return {"players": rows,
             "coverage": {"total": len(rows), "in_coords": len(rows) - missing,

@@ -1,3 +1,11 @@
+## 2026-07-12 — manual correction
+
+- Álex Abrines: `overseas_active` → `retired` (confirmed retirement announcement, 22 July 2025 — explicit-language signal; source: human-verified quote of the live Wikipedia article)
+
+## 2026-07-12 — sync migration
+
+- Backfilled `last_updated` into nba_players_careers_READY.json for **1380**/5149 players (frontend freshness indicator)
+
 ## 2026-07-11 — incremental run
 
 - Players updated: **65** (8 new)

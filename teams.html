@@ -193,6 +193,13 @@
         const esc = s => String(s??'').replace(/[&<>"']/g, c =>
             ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
         const startYear = y => { const m = String(y||'').match(/\d{4}/); return m?parseInt(m[0],10):0; };
+        // freshness indicator: periodic re-crawling can't be real-time, so
+        // place pages sourced from a player's last_updated show an honest
+        // "as of" date rather than implying live data.
+        const fmtDate = s => { if(!s) return ''; const d = new Date(s+'T00:00:00Z');
+            if(isNaN(d)) return s;
+            return d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', timeZone:'UTC'}); };
+        const oldestUpdate = rows => rows.reduce((m,r)=> (r.last_updated && (!m || r.last_updated < m)) ? r.last_updated : m, '');
 
         // href builders — real query-param URLs; internal ones are same-document
         // (?team=/?club=/?country=/?city=) so they get SPA-intercepted into pushState.
@@ -609,11 +616,13 @@
             const active = ACTIVE_ABROAD
                 .filter(a => isCountry ? a.country === value : a.city === value)
                 .map(a=>({ __k:a.player, player:a.player, current_team:a.current_team||'',
-                           city:a.city||'', country:a.country||'' }));
+                           city:a.city||'', country:a.country||'', last_updated:a.last_updated||'' }));
             const flag = isCountry ? flagImg(value) : (clubs[0] && clubs[0].country ? flagImg(clubs[0].country) : '');
+            const asOf = oldestUpdate(active);
+            const freshNote = asOf ? ` (as of ${fmtDate(asOf)})` : '';
             const sub = isCountry
-                ? `${clubs.length} clubs · ${active.length} players active here now`
-                : `${flag}${clubs[0] && clubs[0].country ? esc(clubs[0].country)+' · ' : ''}${clubs.length} clubs · ${active.length} players active here now`;
+                ? `${clubs.length} clubs · ${active.length} players active here now${freshNote}`
+                : `${flag}${clubs[0] && clubs[0].country ? esc(clubs[0].country)+' · ' : ''}${clubs.length} clubs · ${active.length} players active here now${freshNote}`;
 
             document.getElementById('app').innerHTML = `
                 ${crumb('teams.html', '← All teams')}

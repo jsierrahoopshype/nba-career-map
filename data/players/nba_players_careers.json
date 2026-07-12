@@ -5750,7 +5750,7 @@
       }
     ],
     "current_team": "FC Barcelona",
-    "status": "overseas_active",
+    "status": "retired",
     "birth_date": "1993-08-01",
     "birth_place": "Palma, Spain",
     "draft": {
@@ -5763,7 +5763,9 @@
     "aliases": [
       "Álex Abrines"
     ],
-    "last_updated": "2026-07-06"
+    "last_updated": "2026-07-06",
+    "retirement_announced": true,
+    "retirement_date": "2025-07-22"
   },
   {
     "player": "Alex Acker",

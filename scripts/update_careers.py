@@ -38,7 +38,8 @@ from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import TeamNormalizer
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
-from player_status import (classify_status, NBA_ACTIVE, OVERSEAS_ACTIVE,
+from player_status import (classify_status, last_active_year, PRESENT,
+                           NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
 from names import normkey, url_key, canonical_url
@@ -272,9 +273,32 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
             new_teams.append(stint["team"])
         db.enrich_stint(stint, client, discovered)
 
+    # Explicit-retirement-announcement signal (bug fix): sticky once detected —
+    # a transient regex miss on a later re-fetch (e.g. the prose gets copy-
+    # edited) must not un-retire someone we already confirmed. The one
+    # exception is a genuine comeback: if this run's fresh, richer history
+    # shows a stint dated after the recorded retirement year, the retirement
+    # no longer holds and the flag clears.
+    fresh_retired = bool(fresh.get("retirement_announced"))
+    prev_retired = bool(base.get("retirement_announced"))
+    comeback = False
+    if prev_retired and not fresh_retired and use_fresh:
+        ret_year = re.search(r"\d{4}", base.get("retirement_date", "") or "")
+        ly = last_active_year(rec["career_history"])
+        if ret_year and ly and (ly == PRESENT or ly > int(ret_year.group())):
+            comeback = True
+    if fresh_retired or (prev_retired and not comeback):
+        rec["retirement_announced"] = True
+        rd = fresh.get("retirement_date") or base.get("retirement_date", "")
+        if rd:
+            rec["retirement_date"] = rd
+    else:
+        rec.pop("retirement_announced", None)
+        rec.pop("retirement_date", None)
+
     rec["status"] = classify_status(
         rec, on_nba_roster=name in roster_players or key in roster_players,
-        current_year=current_year)
+        current_year=current_year, retirement_announced=rec.get("retirement_announced", False))
     rec["last_updated"] = today()
 
     # upsert: if we merged into a different existing key, drop the queue name
@@ -436,6 +460,8 @@ def _persist(db: Database, summary: dict) -> None:
                                   "city": s.get("city", ""), "state": s.get("state", ""),
                                   "country": s.get("country", "")}
                                  for s in p.get("career_history", [])]}
+        if p.get("last_updated"):
+            mp["last_updated"] = p["last_updated"]
         if p.get("display_name") and p["display_name"] != p["player"]:
             mp["display_name"] = p["display_name"]
         if p.get("wikipedia_url"):
