@@ -68,6 +68,8 @@
             align-items: center;
             gap: 10px;
             white-space: nowrap;
+            color: inherit;
+            text-decoration: none;
         }
         
         .logo-img {
@@ -351,6 +353,11 @@
         
         .player-section { display: none; }
         .player-section.active { display: block; }
+        .crumb-back {
+            display: inline-flex; align-items: center; gap: 6px; margin-bottom: 12px;
+            font-size: 14px; font-weight: 600; color: var(--text-secondary); text-decoration: none;
+        }
+        .crumb-back:hover { color: var(--text); }
         
         .player-name {
             font-size: 22px;
@@ -1033,10 +1040,9 @@
 <body>
     <header>
         <div class="header-inner">
-            <div class="logo">
-                <img src="data:image/png;base64,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" alt="HoopsHype" class="logo-img">
+            <a class="logo" href="index.html">
                 <span class="logo-text">Career Map</span>
-            </div>
+            </a>
             <div class="search-wrap">
                 <input type="text" id="search" placeholder="Search 5,000+ players..." autocomplete="off">
                 <div id="results"></div>
@@ -1079,6 +1085,7 @@
             </div>
             
             <div class="player-section" id="playerSection">
+                <a class="crumb-back" href="index.html" data-back>← Back</a>
                 <div class="player-name" id="pName"></div>
                 <div class="player-span" id="pSpan"></div>
                 
@@ -1258,7 +1265,7 @@
                 // Clicking a map marker now NAVIGATES to that team/club page
                 // (the old in-page popup is replaced); hover shows a tooltip.
                 m.bindTooltip(`${p.stop.team} · ${p.stop.years}`, {direction:'top', offset:[0,-10]});
-                m.on('click',()=>{ window.location.href = teamUrl(p.stop.team); });
+                m.on('click',()=>{ window.location.href = teamUrl(p.stop.team, startYearOf(p.stop.years)); });
                 m.on('mouseover',()=>hlTimeline(p.idx));
                 m.on('mouseout',()=>hlTimeline(-1));
             });
@@ -1300,7 +1307,10 @@
                 const idx = await (await fetch('data/nba_team_index.json')).json();
                 NBA_ERAS = idx.eras || {};
                 NBA_FRANCHISES = idx.franchises || [];
-            } catch(e){ NBA_ERAS = {}; NBA_FRANCHISES = []; }
+                ERA_COLLISIONS = idx.collisions || {};
+            } catch(e){ NBA_ERAS = {}; NBA_FRANCHISES = []; ERA_COLLISIONS = {}; }
+            try { PLAYER_ALIASES = await (await fetch('data/player_aliases.json')).json(); }
+            catch(e){ PLAYER_ALIASES = {}; }
 
             buildSearchItems();
             wireIndexSearch('search', 'results');
@@ -1315,20 +1325,27 @@
         const TITLE_SUFFIX = 'HoopsHype';
         let NBA_ERAS = {};
         let NBA_FRANCHISES = [];
+        let ERA_COLLISIONS = {};   // era name -> year cutoff (modern G-League club)
+        let PLAYER_ALIASES = {};
         let SEARCH_ITEMS = [];
         const setTitle = t => { document.title = t; };
 
-        // Universal search index: players, teams (franchises + non-NBA clubs),
-        // countries. Built from already-loaded data (no extra fetch).
+        // Universal search index: players (+ aliases/display_name), teams
+        // (franchises + non-NBA clubs), countries. `match` is searched; `label`
+        // is displayed (an alias hit still shows the canonical player name).
         function buildSearchItems(){
             const items = [];
-            for(const n in data) items.push({ label:n, type:'Player', kind:'player' });
-            for(const n of NBA_FRANCHISES) items.push({ label:n, type:'Team', kind:'team' });
+            for(const n in data){
+                items.push({ match:n, label:n, type:'Player', kind:'player' });
+                for(const alt of (PLAYER_ALIASES[n] || []))
+                    items.push({ match:alt, label:n, type:'Player', kind:'player' });
+            }
+            for(const n of NBA_FRANCHISES) items.push({ match:n, label:n, type:'Team', kind:'team' });
             const clubs = new Set(), countries = new Set();
             for(const t in teamIdx) if(t && !NBA_ERAS[t]) clubs.add(t);
-            for(const n of [...clubs].sort()) items.push({ label:n, type:'Team', kind:'club' });
+            for(const n of [...clubs].sort()) items.push({ match:n, label:n, type:'Team', kind:'club' });
             for(const n in data) (data[n].career_history||[]).forEach(s=>{ if(s.country) countries.add(s.country); });
-            for(const n of [...countries].sort()) items.push({ label:n, type:'Country', kind:'country' });
+            for(const n of [...countries].sort()) items.push({ match:n, label:n, type:'Country', kind:'country' });
             SEARCH_ITEMS = items;
         }
         function _searchNav(it){
@@ -1341,14 +1358,20 @@
         const _S_LABEL = { Player:'Players', Team:'Teams', Country:'Countries' };
         const _S_CAP = { Player:6, Team:6, Country:4 };
         function _searchGroups(q){
-            const hits = SEARCH_ITEMS.filter(it => it.label.toLowerCase().includes(q));
+            const hits = SEARCH_ITEMS.filter(it => it.match.toLowerCase().includes(q));
             hits.sort((a,b)=>{
-                const as=a.label.toLowerCase().startsWith(q), bs=b.label.toLowerCase().startsWith(q);
+                const as=a.match.toLowerCase().startsWith(q), bs=b.match.toLowerCase().startsWith(q);
                 if(as&&!bs) return -1; if(!as&&bs) return 1; return a.label.localeCompare(b.label);
             });
-            const out = [];
+            const out = [], seen = new Set();
             for(const g of _S_ORDER){
-                const inG = hits.filter(h=>h.type===g).slice(0, _S_CAP[g]);
+                const inG = [];
+                for(const h of hits){
+                    const key = h.kind + '|' + h.label;
+                    if(h.type!==g || seen.has(key)) continue;   // dedup alias+name -> one row
+                    seen.add(key); inG.push(h);
+                    if(inG.length >= _S_CAP[g]) break;
+                }
                 if(inG.length) out.push({ group:g, items:inG });
             }
             return out;
@@ -1392,7 +1415,13 @@
 
         // Team/club page URL for a stint team name (any NBA era name -> its
         // current franchise page; anything else -> a club page).
-        function teamUrl(team){
+        const startYearOf = y => { const m = String(y||'').match(/\d{4}/); return m ? parseInt(m[0],10) : null; };
+        function teamUrl(team, year){
+            // A collision era name (e.g. "San Diego Clippers") at/after its cutoff
+            // year is the modern G-League club -> its club page, not the franchise.
+            const cut = ERA_COLLISIONS[team];
+            if(cut != null && year != null && year >= cut)
+                return 'teams.html?club=' + encodeURIComponent(team);
             const fr = NBA_ERAS[team];
             return fr ? 'teams.html?team=' + encodeURIComponent(fr)
                       : 'teams.html?club=' + encodeURIComponent(team);
@@ -1418,13 +1447,25 @@
             setTitle('NBA Career Map | ' + TITLE_SUFFIX);
         }
         window.addEventListener('popstate', routePlayer);
-        // Shared-path chips are real ?player= anchors; intercept to open in-page
-        // via show() (no reload) and to handle names with apostrophes safely.
+        // Breadcrumb: history.back() when we arrived within the site, else fall
+        // back to the welcome view. inSiteNav is true after any in-page open or
+        // when we arrived from a same-origin referrer.
+        let inSiteNav = false;
+        try { inSiteNav = !!document.referrer && new URL(document.referrer).origin === location.origin; }
+        catch(e){ inSiteNav = false; }
         document.addEventListener('click', e=>{
-            const a = e.target.closest('a.chip[data-player]');
-            if(a && !(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) && e.button===0){
-                e.preventDefault(); show(a.dataset.player);
+            if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey || e.button!==0) return;
+            const back = e.target.closest('a[data-back]');
+            if(back){
+                e.preventDefault();
+                if(inSiteNav && history.length > 1) history.back();
+                else { history.pushState({}, '', 'index.html'); backToWelcome(); }
+                return;
             }
+            // Shared-path chips are real ?player= anchors; open in-page via show()
+            // (no reload) and handle names with apostrophes safely.
+            const chip = e.target.closest('a.chip[data-player]');
+            if(chip){ e.preventDefault(); show(chip.dataset.player); }
         });
         
         function showWelcome() {
@@ -1512,7 +1553,7 @@
 
         function show(name, opts) {
             const p = data[name];
-            if(!p?.career_history?.length){alert('No data available.');return;}
+            if(!p){ alert('No data available.'); return; }
 
             current = name;
             // Reflect the player in the URL + tab title (unless opening straight
@@ -1520,12 +1561,25 @@
             const url = '?player=' + encodeURIComponent(name);
             if((!opts || opts.push !== false) && (location.search + location.hash) !== url){
                 history.pushState({}, '', url);
+                inSiteNav = true;   // in-page navigation -> breadcrumb can go back
             }
             setTitle(name + ' NBA Career Map | ' + TITLE_SUFFIX);
-            const career = sortCareer(p.career_history);
-
             document.getElementById('welcome').style.display = 'none';
             document.getElementById('playerSection').classList.add('active');
+
+            // Records with no parsed career (data gaps) still open, showing the
+            // name + a message instead of alerting.
+            if(!p.career_history || !p.career_history.length){
+                document.getElementById('pName').textContent = name;
+                document.getElementById('pSpan').textContent = '';
+                ['sTeams','sCountries','sYears','sStops'].forEach(id=>document.getElementById(id).textContent='0');
+                document.getElementById('timeline').innerHTML =
+                    '<div style="color:var(--text-muted);font-size:14px;padding:8px 0">No career data available yet.</div>';
+                document.getElementById('similarChips').innerHTML = '';
+                if(window.innerWidth<768) document.querySelector('.panel').scrollTop=0;
+                return;
+            }
+            const career = sortCareer(p.career_history);
             
             document.getElementById('pName').textContent = name;
             const y1 = parseInt(career[0].years?.split('-')[0]) || 0;
@@ -1553,7 +1607,7 @@
                         const locCell = parts.join(', ') || '—';
                         return `<tr class="stop" data-i="${i}" onmouseenter="hlMarker(${i})" onmouseleave="hlMarker(-1)">
                             <td><span class="stop-num">${i+1}</span></td>
-                            <td class="wrap"><a class="stop-team" href="${teamUrl(s.team)}">${getFlag(s.country)}${s.team}</a></td>
+                            <td class="wrap"><a class="stop-team" href="${teamUrl(s.team, startYearOf(s.years))}">${getFlag(s.country)}${s.team}</a></td>
                             <td class="loc wrap">${locCell}</td>
                             <td class="years">${s.years}</td>
                         </tr>`;

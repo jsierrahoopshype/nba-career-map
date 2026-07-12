@@ -272,6 +272,58 @@ def test_compute_related():
     print("test_compute_related PASS")
 
 
+def test_player_aliases():
+    fix = [
+        {"player": "Ibo Kutluay", "status": "retired", "career_history": [],
+         "aliases": ["Ibrahim Kutluay"]},
+        {"player": "Şengün", "status": "nba_active", "career_history": [],
+         "display_name": "Alperen Şengün"},
+        {"player": "No Alts", "status": "retired", "career_history": []},
+    ]
+    al = b.w_player_aliases(fix)
+    assert al["Ibo Kutluay"] == ["Ibrahim Kutluay"]
+    assert "Alperen Şengün" in al["Şengün"]
+    assert "No Alts" not in al
+    print("test_player_aliases PASS")
+
+
+def test_club_roster_last_team():
+    fix = [_p("Retiree", "retired", "Real Madrid",
+              [_stint("Baskonia", "2001", "Vitoria", "", "Spain")])]
+    clubs = b.w_club_pages(fix)
+    row = clubs["Baskonia"]["roster"][0]
+    assert row["last_team"] == "Real Madrid", row
+    print("test_club_roster_last_team PASS")
+
+
+def test_era_gleague_collision():
+    # "San Diego Clippers": modern (>=2024) = G-League club; earlier = NBA era
+    assert b.nba_franchise_of("San Diego Clippers", 2025) is None
+    assert b.nba_franchise_of("San Diego Clippers", 1980) == "LA Clippers"
+    assert b.nba_franchise_of("San Diego Clippers") == "LA Clippers"  # no year -> era default
+    assert b.is_nba_team("San Diego Clippers", 2025) is False
+    assert b.is_nba_team("San Diego Clippers", 1980) is True
+    print("test_era_gleague_collision PASS")
+
+
+def test_collision_team_vs_club():
+    fix = [
+        _p("Modern GLeague", "overseas_active", "San Diego Clippers",
+           [_stint("San Diego Clippers", "2025-present", "San Diego", "California", "USA")]),
+        _p("Era Player", "retired", "San Diego Clippers",
+           [_stint("San Diego Clippers", "1979-1985", "San Diego", "California", "USA")]),
+    ]
+    teams = b.w_team_pages(fix)
+    lac_players = {r["player"] for r in teams["LA Clippers"]["roster"]}
+    assert "Modern GLeague" not in lac_players, "G-League stint must not be on LA Clippers page"
+    assert "Era Player" in lac_players, "1979 era stint belongs to LA Clippers"
+    clubs = b.w_club_pages(fix)
+    assert "San Diego Clippers" in clubs, "modern G-League club exists as a club"
+    club_players = {r["player"] for r in clubs["San Diego Clippers"]["roster"]}
+    assert club_players == {"Modern GLeague"}, club_players
+    print("test_collision_team_vs_club PASS")
+
+
 def test_sitemap():
     fix = [_p("Test Player", "retired", "Boston Celtics",
               [_stint("Boston Celtics", "2000", "Boston", "MA", "USA")])]
@@ -314,6 +366,10 @@ if __name__ == "__main__":
     test_club_pages_group_by_player()
     test_club_location_prefers_located_stint()
     test_compute_related()
+    test_player_aliases()
+    test_club_roster_last_team()
+    test_era_gleague_collision()
+    test_collision_team_vs_club()
     test_sitemap()
     test_relocation_timeline()
     print("\nALL DASHBOARD TESTS PASS")

@@ -58,6 +58,11 @@ LOC: dict[str, tuple[str, str, str]] = {
     "San Diego Rockets": ("San Diego", "California", "USA"),
     "Houston Rockets": ("Houston", "Texas", "USA"),
     "Buffalo Braves": ("Buffalo", "New York", "USA"),
+    # Shared by the 1978-84 NBA era AND the LA Clippers' G-League affiliate that
+    # relocated to San Diego in 2024 — both are in San Diego, so syncing any
+    # "San Diego Clippers" stint here is correct regardless of year. Franchise
+    # attribution (era vs G-League club) is disambiguated by year in
+    # build_dashboard_data.nba_franchise_of.
     "San Diego Clippers": ("San Diego", "California", "USA"),
     "LA Clippers": ("Los Angeles", "California", "USA"),
 }

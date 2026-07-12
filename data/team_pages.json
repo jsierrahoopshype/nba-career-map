@@ -55709,14 +55709,6 @@
           "current_country": "USA"
         },
         {
-          "player": "Cam Reddish",
-          "years": "2026–present",
-          "stint_team": "San Diego Clippers",
-          "status": "overseas_active",
-          "current_team": "San Diego Clippers",
-          "current_country": ""
-        },
-        {
           "player": "Carlton McKinney",
           "years": "1989",
           "stint_team": "LA Clippers",
@@ -56976,14 +56968,6 @@
           "player": "Jason Preston",
           "years": "2021–2023",
           "stint_team": "LA Clippers",
-          "status": "overseas_active",
-          "current_team": "San Diego Clippers",
-          "current_country": ""
-        },
-        {
-          "player": "Jason Preston",
-          "years": "2025–present",
-          "stint_team": "San Diego Clippers",
           "status": "overseas_active",
           "current_team": "San Diego Clippers",
           "current_country": ""
@@ -59735,6 +59719,12 @@
           "country": ""
         },
         {
+          "player": "Jason Preston",
+          "status": "overseas_active",
+          "current_team": "San Diego Clippers",
+          "country": ""
+        },
+        {
           "player": "Jawun Evans",
           "status": "overseas_active",
           "current_team": "Pioneros de Los Mochis",
@@ -60065,8 +60055,8 @@
           "country": "Montenegro"
         }
       ],
-      "roster_count": 552,
-      "alumni_count": 509,
+      "roster_count": 550,
+      "alumni_count": 508,
       "related": [
         {
           "type": "club",

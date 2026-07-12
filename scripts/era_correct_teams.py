@@ -41,6 +41,11 @@ ERA_TABLE: dict[str, list[tuple[int, str]]] = {
                            (1974, "Washington Bullets"), (1997, "Washington Wizards")],
     "Philadelphia 76ers": [(0, "Syracuse Nationals"), (1963, "Philadelphia 76ers")],
     "Houston Rockets": [(0, "San Diego Rockets"), (1971, "Houston Rockets")],
+    # NOTE: the 1978-84 "San Diego Clippers" era name is re-used by the Clippers'
+    # G-League affiliate (San Diego, 2024-present). era_name() only renames the
+    # CURRENT franchise name ("LA Clippers") to an era, so a fetched G-League
+    # "San Diego Clippers" stint is left untouched here; year-based disambiguation
+    # of the two lives in build_dashboard_data.nba_franchise_of.
     "LA Clippers": [(0, "Buffalo Braves"), (1978, "San Diego Clippers"),
                     (1984, "LA Clippers")],
     "Brooklyn Nets": [(0, "New York Nets"), (1977, "New Jersey Nets"),

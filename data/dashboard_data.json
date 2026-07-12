@@ -11758,6 +11758,10 @@
       "players": 2
     },
     {
+      "team": "San Diego Clippers",
+      "players": 2
+    },
+    {
       "team": "San Diego Conquistadors / Sails",
       "players": 2
     },
@@ -21461,6 +21465,14 @@
       ]
     },
     {
+      "team": "San Diego Clippers",
+      "count": 2,
+      "players": [
+        "Cam Reddish",
+        "Jason Preston"
+      ]
+    },
+    {
       "team": "San Pablo Burgos",
       "count": 2,
       "players": [
@@ -23124,7 +23136,7 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5044
+      "players": 5045
     },
     {
       "country": "Italy",
@@ -23139,12 +23151,12 @@
       "players": 559
     },
     {
-      "country": "Canada",
-      "players": 525
-    },
-    {
       "country": "Greece",
       "players": 520
+    },
+    {
+      "country": "Canada",
+      "players": 518
     },
     {
       "country": "Turkey",
@@ -26770,6 +26782,14 @@
           ]
         }
       ]
+    },
+    {
+      "team": "San Diego Clippers",
+      "players": [
+        "Cam Reddish",
+        "Jason Preston"
+      ],
+      "shared_franchise_pairs": []
     },
     {
       "team": "San Pablo Burgos",

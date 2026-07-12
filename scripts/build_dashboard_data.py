@@ -43,6 +43,7 @@ OUT = ROOT / "data" / "dashboard_data.json"
 TEAM_PAGES_OUT = ROOT / "data" / "team_pages.json"
 CLUB_PAGES_OUT = ROOT / "data" / "club_pages.json"
 NBA_TEAM_INDEX_OUT = ROOT / "data" / "nba_team_index.json"
+PLAYER_ALIASES_OUT = ROOT / "data" / "player_aliases.json"
 SITEMAP_OUT = ROOT / "sitemap.xml"
 
 # Absolute origin the site is served from, used only for sitemap.xml. This is
@@ -65,13 +66,39 @@ for _t in NBA_TEAMS:
 
 NBA_FRANCHISE_NAMES = set(_ERA_TO_CURRENT)  # all NBA names, any era
 
+# Historical NBA era names that a modern (G League) club has re-used verbatim.
+# A stint under such a name whose START year is >= the cutoff is the modern
+# club, NOT the NBA era, so it must not be filed under the franchise's history.
+# (Only "San Diego Clippers": the LA Clippers' G League affiliate relocated to
+# San Diego in 2024 and shares the 1978-1984 NBA era name.)
+ERA_COLLISIONS = {"San Diego Clippers": 2024}
+_YEAR_PRESENT = 9999  # sentinel for "current" when only a team name is known
 
-def is_nba_team(team: str) -> bool:
+
+def _yr(years) -> int:
+    m = re.search(r"\d{4}", str(years or ""))
+    return int(m.group()) if m else 0
+
+
+def _is_modern_collision(team: str, year: int | None) -> bool:
+    cut = ERA_COLLISIONS.get(team)
+    return cut is not None and year is not None and year >= cut
+
+
+def is_nba_team(team: str, year: int | None = None) -> bool:
+    if _is_modern_collision(team, year):
+        return False
     return team in NBA_FRANCHISE_NAMES
 
 
-def nba_franchise_of(team: str) -> str | None:
-    """Canonical current franchise for an NBA team name, else None (non-NBA)."""
+def nba_franchise_of(team: str, year: int | None = None) -> str | None:
+    """Canonical current franchise for an NBA team name, else None (non-NBA).
+
+    A collision era name (e.g. "San Diego Clippers") resolves to None when the
+    stint's year is in the modern G-League club's range, so the G League club is
+    never filed under the NBA franchise's history."""
+    if _is_modern_collision(team, year):
+        return None
     return _ERA_TO_CURRENT.get(team)
 
 
@@ -183,7 +210,7 @@ def w_teams_by_alltime_nba_alumni(players: list) -> list[dict]:
         seen = set()
         for s in p.get("career_history", []):
             t = s.get("team", "")
-            if not t or is_nba_team(t) or t in seen:
+            if not t or is_nba_team(t, _yr(s.get("years"))) or t in seen:
                 continue
             seen.add(t)
             counts[t] = counts.get(t, 0) + 1
@@ -196,7 +223,7 @@ def w_teams_by_current_nba_alumni(players: list) -> list[dict]:
         if p.get("status") != OVERSEAS:
             continue
         t = p.get("current_team", "")
-        if not t or is_nba_team(t):
+        if not t or is_nba_team(t, _YEAR_PRESENT):
             continue
         teams.setdefault(t, []).append(p["player"])
     return [{"team": t, "count": len(ps), "players": sorted(ps)}
@@ -230,11 +257,11 @@ def w_team_reunions(players: list) -> list[dict]:
         if p.get("status") != OVERSEAS:
             continue
         t = p.get("current_team", "")
-        if not t or is_nba_team(t):
+        if not t or is_nba_team(t, _YEAR_PRESENT):
             continue
         franchises = set()
         for s in p.get("career_history", []):
-            fr = nba_franchise_of(s.get("team", ""))
+            fr = nba_franchise_of(s.get("team", ""), _yr(s.get("years")))
             if fr:
                 franchises.add(fr)
         teams.setdefault(t, []).append((p["player"], franchises))
@@ -364,7 +391,7 @@ def compute_related(players: list, max_suggestions: int = 8) -> dict:
             team = s.get("team", "")
             if not team:
                 continue
-            fr = nba_franchise_of(team)
+            fr = nba_franchise_of(team, _yr(s.get("years")))
             if fr:
                 e = ("team", fr)
                 country_of[e] = FRANCHISE_COUNTRY.get(fr, "USA")
@@ -448,7 +475,7 @@ def w_team_pages(players: list, related: dict | None = None) -> dict:
         cur_country = (franchise_country(ct) if status == "nba_active"
                        else cs.get("country", ""))
         for s in p.get("career_history", []):
-            fr = nba_franchise_of(s.get("team", ""))
+            fr = nba_franchise_of(s.get("team", ""), _yr(s.get("years")))
             if fr is None:
                 continue
             teams[fr]["roster"].append({
@@ -461,7 +488,7 @@ def w_team_pages(players: list, related: dict | None = None) -> dict:
             })
             # "currently active elsewhere": alum still playing, not on this
             # franchise right now (current_team is not one of its era names).
-            if status in ("nba_active", OVERSEAS) and nba_franchise_of(ct) != fr:
+            if status in ("nba_active", OVERSEAS) and nba_franchise_of(ct, _YEAR_PRESENT) != fr:
                 if p["player"] not in seen_active[fr]:
                     seen_active[fr].add(p["player"])
                     teams[fr]["active_elsewhere"].append({
@@ -506,8 +533,8 @@ def w_club_pages(players: list, related: dict | None = None) -> dict:
         status = p.get("status", "")
         for s in p.get("career_history", []):
             team = s.get("team", "")
-            if not team or is_nba_team(team):
-                continue
+            if not team or is_nba_team(team, _yr(s.get("years"))):
+                continue  # modern G-League "San Diego Clippers" falls through as a club
             c = clubs.setdefault(team, {"club": team, "city": "", "state": "",
                                         "country": "", "_by": {}})
             # club location: first stint that carries a country wins (so a
@@ -516,14 +543,14 @@ def w_club_pages(players: list, related: dict | None = None) -> dict:
                 c["city"], c["state"], c["country"] = \
                     s.get("city", ""), s.get("state", ""), s.get("country", "")
             g = c["_by"].setdefault(p["player"], {"player": p["player"], "status": status,
-                                                  "spans": []})
+                                                  "last_team": p.get("current_team", ""), "spans": []})
             g["spans"].append(s.get("years", ""))
 
     for c in clubs.values():
         roster = []
         for g in c["_by"].values():
             roster.append({"player": g["player"], "years": _join_years(g["spans"]),
-                           "status": g["status"]})
+                           "status": g["status"], "last_team": g["last_team"]})
         roster.sort(key=lambda r: r["player"])
         del c["_by"]
         c["count"] = len(roster)
@@ -534,6 +561,24 @@ def w_club_pages(players: list, related: dict | None = None) -> dict:
         if related is not None:
             c["related"] = related.get(("club", c["club"]), [])
     return clubs
+
+
+def w_player_aliases(players: list) -> dict:
+    """Canonical player name -> alternate strings (aliases + a differing
+    display_name), for alias-aware search. Only players with an alt are listed."""
+    out: dict[str, list] = {}
+    for p in players:
+        name = p.get("player", "")
+        if not name:
+            continue
+        alts = set(p.get("aliases") or [])
+        dn = p.get("display_name")
+        if dn and dn != name:
+            alts.add(dn)
+        alts.discard(name)
+        if alts:
+            out[name] = sorted(alts)
+    return out
 
 
 def build_sitemap(players: list) -> str:
@@ -612,10 +657,18 @@ def main() -> None:
     # without loading the multi-MB team_pages file. One source of truth (derived
     # from ERA_TABLE) shared by both pages.
     NBA_TEAM_INDEX_OUT.write_text(json.dumps(
-        {"franchises": sorted(NBA_TEAMS), "eras": _ERA_TO_CURRENT},
+        {"franchises": sorted(NBA_TEAMS), "eras": _ERA_TO_CURRENT,
+         "collisions": ERA_COLLISIONS},
         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {NBA_TEAM_INDEX_OUT.relative_to(ROOT)}  "
           f"({NBA_TEAM_INDEX_OUT.stat().st_size:,} bytes)")
+
+    # Player aliases (Phase 2.6-E): alias-aware search on both pages.
+    aliases = w_player_aliases(players)
+    PLAYER_ALIASES_OUT.write_text(json.dumps(aliases, ensure_ascii=False, indent=2) + "\n",
+                                  encoding="utf-8")
+    print(f"wrote {PLAYER_ALIASES_OUT.relative_to(ROOT)}  "
+          f"({PLAYER_ALIASES_OUT.stat().st_size:,} bytes, {len(aliases)} players)")
 
     # sitemap.xml (Phase 2.6-B): team + player URLs for search-engine discovery.
     SITEMAP_OUT.write_text(build_sitemap(players), encoding="utf-8")
