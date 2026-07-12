@@ -400,7 +400,7 @@
     {
       "player": "Cam Reddish",
       "current_team": "San Diego Clippers",
-      "country": ""
+      "country": "USA"
     },
     {
       "player": "Cam Reynolds",
@@ -1595,7 +1595,7 @@
     {
       "player": "Jason Preston",
       "current_team": "San Diego Clippers",
-      "country": ""
+      "country": "USA"
     },
     {
       "player": "Javin DeLaurier",
@@ -22946,7 +22946,7 @@
   "countries_live_snapshot": [
     {
       "country": "USA",
-      "count": 75
+      "count": 77
     },
     {
       "country": "Spain",
@@ -53931,10 +53931,10 @@
       {
         "player": "Cam Reddish",
         "current_team": "San Diego Clippers",
-        "city": "",
-        "state": "",
-        "country": "",
-        "in_coords": false
+        "city": "San Diego",
+        "state": "California",
+        "country": "USA",
+        "in_coords": true
       },
       {
         "player": "Cam Reynolds",
@@ -55771,10 +55771,10 @@
       {
         "player": "Jason Preston",
         "current_team": "San Diego Clippers",
-        "city": "",
-        "state": "",
-        "country": "",
-        "in_coords": false
+        "city": "San Diego",
+        "state": "California",
+        "country": "USA",
+        "in_coords": true
       },
       {
         "player": "JaVale McGee",
@@ -59043,9 +59043,9 @@
     ],
     "coverage": {
       "total": 711,
-      "in_coords": 615,
-      "missing_from_coords": 96,
-      "missing_no_city": 56,
+      "in_coords": 617,
+      "missing_from_coords": 94,
+      "missing_no_city": 54,
       "missing_city_absent_from_coords": 40,
       "distinct_missing_combos": 25
     }
