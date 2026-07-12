@@ -44,6 +44,7 @@ TEAM_PAGES_OUT = ROOT / "data" / "team_pages.json"
 CLUB_PAGES_OUT = ROOT / "data" / "club_pages.json"
 NBA_TEAM_INDEX_OUT = ROOT / "data" / "nba_team_index.json"
 PLAYER_ALIASES_OUT = ROOT / "data" / "player_aliases.json"
+PLAYER_INDEX_OUT = ROOT / "data" / "player_index.json"  # all names, light homepage search
 SITEMAP_OUT = ROOT / "sitemap.xml"
 
 # Absolute origin the site is served from, used only for sitemap.xml. This is
@@ -669,6 +670,14 @@ def main() -> None:
                                   encoding="utf-8")
     print(f"wrote {PLAYER_ALIASES_OUT.relative_to(ROOT)}  "
           f"({PLAYER_ALIASES_OUT.stat().st_size:,} bytes, {len(aliases)} players)")
+
+    # Player index (Phase 3): the full name list, so the dashboard homepage has
+    # complete search without loading the multi-MB career file.
+    names = sorted(p["player"] for p in players if str(p.get("player") or "").strip())
+    PLAYER_INDEX_OUT.write_text(json.dumps(names, ensure_ascii=False, indent=0) + "\n",
+                                encoding="utf-8")
+    print(f"wrote {PLAYER_INDEX_OUT.relative_to(ROOT)}  "
+          f"({PLAYER_INDEX_OUT.stat().st_size:,} bytes, {len(names)} names)")
 
     # sitemap.xml (Phase 2.6-B): team + player URLs for search-engine discovery.
     SITEMAP_OUT.write_text(build_sitemap(players), encoding="utf-8")

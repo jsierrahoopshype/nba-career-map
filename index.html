@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NBA Career Map | HoopsHype</title>
+    <title>NBA Career Map: where every NBA player is playing now | HoopsHype</title>
+    <meta name="description" content="A live dashboard of where every NBA player is playing now — overseas signings, country hotspots, most-traveled journeymen, and club alumni.">
+    <link rel="canonical" href="https://jsierrahoopshype.github.io/nba-career-map/">
+    <meta property="og:title" content="NBA Career Map: where every NBA player is playing now | HoopsHype">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jsierrahoopshype.github.io/nba-career-map/">
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,13 +182,73 @@
         }
         #botResults.show { display: block; }
 
-        main {
+        main { display: block; }
+        #mapView {
             display: flex;
             flex-direction: column;
             height: calc(100vh - 50px);
             height: calc(100dvh - 50px);
         }
-        
+
+        /* ===== Phase 3 dashboard ===== */
+        #dashboardView { display: none; }
+        .dash { max-width: 1180px; margin: 0 auto; padding: 18px 16px 60px; }
+        .dash-hero { margin: 6px 2px 18px; }
+        .dash-hero h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+        .dash-hero p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+        .dash-grid {
+            display: grid; gap: 14px;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 720px) { .dash-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1040px) { .dash-grid { grid-template-columns: 1fr 1fr 1fr; } }
+        .card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+            padding: 14px 16px; overflow: hidden; display: flex; flex-direction: column;
+        }
+        .card.span-all { grid-column: 1 / -1; }
+        @media (min-width: 720px) { .card.span-2 { grid-column: span 2; } }
+        .card-h {
+            font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.6px; color: var(--text-muted); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px; justify-content: space-between;
+        }
+        .card-h .see-all { font-size: 10px; color: var(--accent); text-transform: none; letter-spacing: 0; }
+        .card-h .see-all:hover { text-decoration: underline; }
+        .dlink { color: inherit; text-decoration: none; }
+        .dlink:hover { color: var(--accent); }
+        .flagd { width: 16px; height: 12px; border-radius: 2px; vertical-align: -1px; margin: 0 3px; object-fit: cover; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+        /* mini tables */
+        .dtable { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .dtable td, .dtable th { padding: 6px 4px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+        .dtable tr:last-child td { border-bottom: none; }
+        .dtable th { font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); letter-spacing: .3px; cursor: pointer; user-select: none; }
+        .dtable td.num, .dtable th.num { text-align: right; font-family: var(--mono); color: var(--text-muted); }
+        .dtable td.wrapc { white-space: normal; }
+        .dtable tbody tr:hover { background: var(--surface-hover); }
+        .rank { color: var(--text-muted); font-family: var(--mono); font-size: 11px; }
+        /* ticker */
+        .ticker { max-height: 340px; overflow-y: auto; }
+        .tick-row { display: grid; grid-template-columns: 1.3fr 2fr auto; gap: 10px; align-items: center;
+            padding: 8px 4px; border-bottom: 1px solid var(--border); font-size: 13px; }
+        .tick-row:last-child { border-bottom: none; }
+        .tick-move { color: var(--text-muted); }
+        .tick-date { font-family: var(--mono); font-size: 11px; color: var(--text-muted); text-align: right; }
+        @media (max-width: 560px) { .tick-row { grid-template-columns: 1fr; gap: 2px; } .tick-date { text-align: left; } }
+        /* spotlight / list */
+        .spot-controls { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+        .spot-select { font-family: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-hover); }
+        .chiplist { display: flex; flex-wrap: wrap; gap: 6px; }
+        .dchip { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border); border-radius: 999px;
+            padding: 5px 11px; font-size: 12px; color: inherit; text-decoration: none; background: var(--surface); }
+        .dchip:hover { border-color: var(--accent); color: var(--accent); background: var(--surface-hover); }
+        .dchip .sub { color: var(--text-muted); }
+        .dchip:hover .sub { color: var(--accent); }
+        .lines .line { padding: 7px 2px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.45; }
+        .lines .line:last-child { border-bottom: none; }
+        #heatmap { height: 320px; border-radius: 10px; overflow: hidden; background: var(--border); }
+        .heat-note { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+
         #map {
             height: 55%;
             min-height: 280px;
@@ -618,6 +683,9 @@
         .quiz-btn {
             background: linear-gradient(135deg, var(--red) 0%, var(--red) 100%);
             color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
             border: none;
             padding: 10px 20px;
             border-radius: 8px;
@@ -648,6 +716,11 @@
             transition: all 0.2s ease;
         }
         .nav-teams:hover { background: var(--surface-hover); color: var(--text); }
+        /* narrow phones: tighten the shared header so all four items fit without overflow */
+        @media (max-width: 420px) {
+            .quiz-btn { padding: 10px 14px; }
+            .nav-teams { padding: 10px 10px; }
+        }
 
         .quiz-overlay {
             position: fixed;
@@ -1048,11 +1121,13 @@
                 <div id="results"></div>
             </div>
             <a class="nav-teams" href="teams.html">Teams</a>
-            <button class="quiz-btn" onclick="startQuiz()">🎮 Quiz</button>
+            <a class="quiz-btn" href="?view=quiz" onclick="event.preventDefault();goQuiz()">🎮 Quiz</a>
         </div>
     </header>
     
     <main>
+      <div id="dashboardView"></div>
+      <div id="mapView">
         <div id="map">
             <div class="legend">
                 <div class="legend-item"><div class="legend-dot first"></div> Start</div>
@@ -1105,6 +1180,7 @@
                 </div>
             </div>
         </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -1289,37 +1365,275 @@
             });
         }
         
-        async function load() {
-            const pRes = await fetch('nba_players_list.csv');
-            players = (await pRes.text()).trim().split('\n').slice(1).map(l=>l.split(',')[0]?.replace(/"/g,'').trim()).filter(Boolean);
+        // ===== Phase 3 bootstrap: light homepage, lazy careers =====
+        // The homepage loads ONLY the dashboard data + small lookups (never the
+        // multi-MB career file). The player map and quiz lazily fetch careers.
+        let DASH = null, mapInited = false, careersP = null, careersReady = false;
 
-            const cRes = await fetch('nba_players_careers_READY.json');
-            (await cRes.json()).forEach(p=>{
-                data[p.player] = p;
-                if(p.career_history) p.career_history.forEach(s=>{
-                    if(!teamIdx[s.team]) teamIdx[s.team] = {loc:s, players:[]};
-                    teamIdx[s.team].players.push({name:p.player,years:s.years});
-                });
-            });
-
-            // NBA-name -> current franchise, for building team/club page URLs.
-            try {
-                const idx = await (await fetch('data/nba_team_index.json')).json();
-                NBA_ERAS = idx.eras || {};
-                NBA_FRANCHISES = idx.franchises || [];
-                ERA_COLLISIONS = idx.collisions || {};
-            } catch(e){ NBA_ERAS = {}; NBA_FRANCHISES = []; ERA_COLLISIONS = {}; }
-            try { PLAYER_ALIASES = await (await fetch('data/player_aliases.json')).json(); }
-            catch(e){ PLAYER_ALIASES = {}; }
-
+        async function boot() {
+            // Small lookups needed everywhere (franchise URLs, aliases, names).
+            const [dd, idx, aliases, names] = await Promise.all([
+                fetch('data/dashboard_data.json').then(r=>r.json()),
+                fetch('data/nba_team_index.json').then(r=>r.json()).catch(()=>({})),
+                fetch('data/player_aliases.json').then(r=>r.json()).catch(()=>({})),
+                fetch('data/player_index.json').then(r=>r.json()).catch(()=>null),
+            ]);
+            DASH = dd;
+            NBA_ERAS = idx.eras || {}; NBA_FRANCHISES = idx.franchises || []; ERA_COLLISIONS = idx.collisions || {};
+            PLAYER_ALIASES = aliases || {};
+            players = names || [];
             buildSearchItems();
             wireIndexSearch('search', 'results');
             wireIndexSearch('botSearch', 'botResults');
-            showWelcome();
+            window.addEventListener('popstate', route);
+            route();
+        }
 
-            // Don't auto-load - let quiz hero be the focus. If the URL names a
-            // player (?player=, or a legacy #player=), open them.
-            routePlayer();
+        // Lazily load the full career file (for the player map + quiz), once.
+        function ensureCareers() {
+            if (careersP) return careersP;
+            careersP = (async () => {
+                const cRes = await fetch('nba_players_careers_READY.json');
+                (await cRes.json()).forEach(p=>{
+                    data[p.player] = p;
+                    if(p.career_history) p.career_history.forEach(s=>{
+                        if(!teamIdx[s.team]) teamIdx[s.team] = {loc:s, players:[]};
+                        teamIdx[s.team].players.push({name:p.player,years:s.years});
+                    });
+                });
+                if(!mapInited){ initMap(); mapInited = true; }
+                careersReady = true;
+                buildSearchItems();  // upgrade search to full data (display_name etc.)
+                showWelcome();
+            })();
+            return careersP;
+        }
+
+        // Top-level router: ?player= -> map view; ?view=quiz -> quiz; else dashboard.
+        function showView(which){
+            document.getElementById('dashboardView').style.display = which==='dashboard' ? 'block' : 'none';
+            document.getElementById('mapView').style.display = which==='map' ? 'flex' : 'none';
+        }
+        async function route(){
+            const h = location.hash.match(/^#player=(.+)$/);
+            if(h){ history.replaceState({}, '', '?player=' + h[1]); }
+            const p = new URLSearchParams(location.search);
+            const player = p.get('player');
+            const view = p.get('view');
+            if(player){
+                showView('map');
+                await ensureCareers();
+                if(data[player]) show(player, {push:false});
+                else backToWelcome();
+            } else if(view === 'quiz'){
+                showView('dashboard');           // quiz overlay sits atop the dashboard
+                renderDashboard();
+                await ensureCareers();
+                startQuiz();
+            } else {
+                showView('dashboard');
+                renderDashboard();
+                setTitle('NBA Career Map: where every NBA player is playing now | ' + TITLE_SUFFIX);
+            }
+        }
+        function goPlayer(name){ history.pushState({}, '', '?player=' + encodeURIComponent(name)); route(); }
+
+        /* ============================ DASHBOARD ============================ */
+        const _escH = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+        const _enc = encodeURIComponent;
+        // date-seeded RNG so rotations are stable per (UTC) day and change daily
+        function _dayNum(){ const d=new Date(); return d.getUTCFullYear()*10000+(d.getUTCMonth()+1)*100+d.getUTCDate(); }
+        function _rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+        function _sample(arr,n,seed){ const r=_rng(seed),a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a.slice(0,n); }
+        // link helpers
+        const dPlayer = n => `<a class="dlink" href="?player=${_enc(n)}" data-dplayer="${_escH(n)}">${_escH(n)}</a>`;
+        const dClub = n => `<a class="dlink" href="teams.html?club=${_enc(n)}">${_escH(n)}</a>`;
+        const dCountry = n => `<a class="dlink" href="teams.html?country=${_enc(n)}">${getFlag(n)}${_escH(n)}</a>`;
+        const dCity = n => `<a class="dlink" href="teams.html?city=${_enc(n)}">${_escH(n)}</a>`;
+        const _isNba = n => !!NBA_ERAS[n] || NBA_FRANCHISES.includes(n);
+        const dTeam = n => _isNba(n)
+            ? `<a class="dlink" href="teams.html?team=${_enc(NBA_ERAS[n]||n)}">${_escH(n)}</a>` : dClub(n);
+        let TEAM_COUNTRY = {};
+        const teamCountry = n => TEAM_COUNTRY[n] || (_isNba(n) ? (n==='Toronto Raptors'?'Canada':'USA') : '');
+        const dTeamFlag = n => { const c=teamCountry(n); return (c?getFlag(c):'') + dTeam(n); };
+
+        // compact sortable mini-table for the leaderboards
+        function mountDTable(root, columns, rows, sortIdx, dir){
+            let s = { i: sortIdx, d: dir||1 };
+            function draw(){
+                const col = columns[s.i];
+                const sorted = rows.slice().sort((a,b)=>{ const av=col.val(a),bv=col.val(b);
+                    return (av<bv?-1:av>bv?1:0)*s.d; });
+                root.innerHTML = `<table class="dtable"><thead><tr>${columns.map((c,i)=>
+                    `<th class="${c.num?'num':''}" data-i="${i}">${_escH(c.label)}${i===s.i?(s.d>0?' ▲':' ▼'):''}</th>`).join('')}</tr></thead>
+                    <tbody>${sorted.map((r,ri)=>`<tr>${columns.map(c=>`<td class="${c.num?'num':(c.wrap?'wrapc':'')}">${c.cell(r,ri)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+                root.querySelectorAll('th[data-i]').forEach(th=>th.addEventListener('click',()=>{
+                    const i=+th.dataset.i; s.d=(s.i===i)?-s.d:(columns[i].num?-1:1); s.i=i; draw();
+                }));
+            }
+            draw();
+        }
+
+        function renderDashboard(){
+            if(!DASH || !document.getElementById('dashboardView')) return;
+            const view = document.getElementById('dashboardView');
+            if(view.dataset.built === _dayNum()+''){ /* already built today */ } // still rebuild spotlight/heatmap below is idempotent
+            const seed = _dayNum();
+            TEAM_COUNTRY = {};
+            (DASH.where_are_they_now||[]).forEach(r=>{ if(r.current_team && r.country) TEAM_COUNTRY[r.current_team]=r.country; });
+
+            view.innerHTML = `
+              <div class="dash">
+                <div class="dash-hero">
+                  <h1>Where every NBA player is playing now</h1>
+                  <p>Live signings, overseas hotspots, and the journeys behind the league — updated after every pipeline run.</p>
+                </div>
+                <div class="card span-all" id="w-signings"></div>
+                <div class="dash-grid">
+                  <div class="card span-2" id="w-spotlight"></div>
+                  <div class="card" id="w-watn"></div>
+                  <div class="card span-2" id="w-heatmap"></div>
+                  <div class="card" id="w-traveled"></div>
+                  <div class="card" id="w-clubs-all"></div>
+                  <div class="card" id="w-clubs-cur"></div>
+                  <div class="card" id="w-ctry-live"></div>
+                  <div class="card" id="w-ctry-all"></div>
+                  <div class="card span-2" id="w-reunions"></div>
+                  <div class="card" id="w-boomerang"></div>
+                </div>
+              </div>`;
+            view.dataset.built = _dayNum()+'';
+
+            wSignings(document.getElementById('w-signings'));
+            wSpotlight(document.getElementById('w-spotlight'), seed);
+            wWatn(document.getElementById('w-watn'), seed);
+            wHeatmap(document.getElementById('w-heatmap'));
+            wTraveled(document.getElementById('w-traveled'));
+            wClubsAll(document.getElementById('w-clubs-all'));
+            wClubsCur(document.getElementById('w-clubs-cur'));
+            wCountriesLive(document.getElementById('w-ctry-live'));
+            wCountriesAll(document.getElementById('w-ctry-all'));
+            wReunions(document.getElementById('w-reunions'), seed);
+            wBoomerang(document.getElementById('w-boomerang'), seed);
+        }
+
+        // 1. latest signings ticker
+        function wSignings(el){
+            const rows = (DASH.latest_signings||[]);
+            el.innerHTML = `<div class="card-h">Latest Signings <span class="see-all">${rows.length} moves</span></div>
+              <div class="ticker">${rows.slice(0,15).map(r=>`
+                <div class="tick-row">
+                  <span>${dPlayer(r.player)}</span>
+                  <span class="tick-move">${dTeamFlag(r.from_team)} → ${dTeamFlag(r.to_team)}</span>
+                  <span class="tick-date">${_escH(r.date)}</span>
+                </div>`).join('') || '<div class="heat-note">No signings recorded yet.</div>'}</div>`;
+        }
+
+        // 2. who's playing in X — rotating country spotlight
+        function wSpotlight(el, seed){
+            const pool = (DASH.countries_live_snapshot||[]).filter(c=>c.count>=8).map(c=>c.country);
+            const all = (DASH.countries_live_snapshot||[]).map(c=>c.country);
+            const chosen = el.dataset.country || (pool.length ? pool[Math.floor(_rng(seed)()*pool.length)] : all[0]);
+            const list = (DASH.where_are_they_now||[]).filter(p=>p.country===chosen);
+            el.innerHTML = `<div class="card-h">Who's Playing In… <a class="see-all" href="teams.html?country=${_enc(chosen)}">full page →</a></div>
+              <div class="spot-controls">
+                <strong>${getFlag(chosen)} ${_escH(chosen)}</strong>
+                <span class="rank">${list.length} active</span>
+                <select class="spot-select" id="spotSelect">${all.map(c=>`<option ${c===chosen?'selected':''}>${_escH(c)}</option>`).join('')}</select>
+              </div>
+              <div class="chiplist">${list.slice(0,24).map(p=>`<a class="dchip" href="?player=${_enc(p.player)}" data-dplayer="${_escH(p.player)}">${_escH(p.player)} <span class="sub">· ${_escH(p.current_team)}</span></a>`).join('')}</div>`;
+            const sel = el.querySelector('#spotSelect');
+            sel && sel.addEventListener('change', ()=>{ el.dataset.country = sel.value; wSpotlight(el, seed); });
+        }
+
+        // 4. where are they now — daily sample
+        function wWatn(el, seed){
+            const s = _sample(DASH.where_are_they_now||[], 12, seed+4);
+            el.innerHTML = `<div class="card-h">Where Are They Now <a class="see-all" href="teams.html">explore →</a></div>
+              <table class="dtable"><tbody>${s.map(p=>`<tr>
+                <td class="wrapc">${dPlayer(p.player)}</td>
+                <td class="wrapc">${dClub(p.current_team)}</td>
+                <td>${p.country?dCountry(p.country):'—'}</td></tr>`).join('')}</tbody></table>`;
+        }
+
+        // 3. world tour heatmap
+        let heatMap = null;
+        function wHeatmap(el){
+            el.innerHTML = `<div class="card-h">World Tour Heatmap</div><div id="heatmap"></div>
+              <div class="heat-note" id="heatNote"></div>`;
+            const byCity = {};
+            (DASH.world_tour_heatmap.players||[]).forEach(p=>{
+                const co = getCoords(p.city, p.state, p.country); if(!co) return;
+                const k = p.city+'|'+p.country;
+                (byCity[k] ||= {city:p.city, state:p.state, country:p.country, co, n:0, clubs:new Set()});
+                byCity[k].n++; if(p.current_team) byCity[k].clubs.add(p.current_team);
+            });
+            const cities = Object.values(byCity);
+            document.getElementById('heatNote').textContent =
+                `${cities.length} cities · ${DASH.world_tour_heatmap.coverage.missing_from_coords} players without a mapped city (skipped)`;
+            // (re)create the map
+            if(heatMap){ heatMap.remove(); heatMap=null; }
+            heatMap = L.map('heatmap', {scrollWheelZoom:false, worldCopyJump:true}).setView([25,10], 1);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'©OSM ©CARTO',subdomains:'abcd',maxZoom:19}).addTo(heatMap);
+            cities.forEach(c=>{
+                const r = Math.min(22, 5 + Math.sqrt(c.n)*3);
+                const clubs = [...c.clubs].slice(0,6).join(', ') + (c.clubs.size>6?'…':'');
+                L.circleMarker(c.co,{radius:r, color:'#3b82f6', weight:1, fillColor:'#3b82f6', fillOpacity:.35})
+                    .addTo(heatMap)
+                    .bindTooltip(`<strong>${_escH(c.city)}</strong> · ${c.n} player${c.n>1?'s':''}<br>${_escH(clubs)}`, {direction:'top'})
+                    .on('click', ()=>{ window.location.href = 'teams.html?city=' + _enc(c.city); });
+            });
+            setTimeout(()=>heatMap && heatMap.invalidateSize(), 60);
+        }
+
+        // 5. most well-traveled
+        function wTraveled(el){
+            const rows = (DASH.most_well_traveled||[]).slice(0,10);
+            el.innerHTML = `<div class="card-h">Most Well-Traveled</div>`;
+            const wrap = document.createElement('div'); el.appendChild(wrap);
+            mountDTable(wrap, [
+                {label:'Player', val:r=>r.player.toLowerCase(), cell:(r,i)=>`<span class="rank">${i+1}.</span> ${dPlayer(r.player)}`, wrap:true},
+                {label:'Countries', num:true, val:r=>r.country_count, cell:r=>r.country_count},
+                {label:'Stops', num:true, val:r=>r.stint_count, cell:r=>r.stint_count},
+            ], rows, 1, -1);
+        }
+
+        function _leaderCard(el, title, seeAll, rows, valLabel, valKey, linkFn){
+            el.innerHTML = `<div class="card-h">${title} ${seeAll?`<a class="see-all" href="${seeAll}">see all →</a>`:''}</div>`;
+            const wrap = document.createElement('div'); el.appendChild(wrap);
+            mountDTable(wrap, [
+                {label:'', val:r=>r._n, cell:(r,i)=>`<span class="rank">${i+1}.</span> ${linkFn(r)}`, wrap:true},
+                {label:valLabel, num:true, val:r=>r[valKey], cell:r=>r[valKey]},
+            ], rows, 1, -1);
+        }
+        // 6/7 clubs
+        function wClubsAll(el){ _leaderCard(el,'Top Clubs · All-Time Alumni','teams.html',(DASH.teams_by_alltime_nba_alumni||[]).slice(0,10),'Alumni','players',r=>dClub(r.team)); }
+        function wClubsCur(el){ _leaderCard(el,'Top Clubs · NBA Alumni Now','teams.html',(DASH.teams_by_current_nba_alumni||[]).slice(0,10),'Now','count',r=>dClub(r.team)); }
+        // 8/9 countries
+        function wCountriesLive(el){ _leaderCard(el,'Countries · Live Snapshot',null,(DASH.countries_live_snapshot||[]).slice(0,10),'Active','count',r=>dCountry(r.country)); }
+        function wCountriesAll(el){ _leaderCard(el,'Countries · All-Time',null,(DASH.countries_alltime_alumni||[]).slice(0,10),'Alumni','players',r=>dCountry(r.country)); }
+
+        // 10. team reunions
+        function wReunions(el, seed){
+            const nick = f => f.split(' ').pop();
+            const clubs = (DASH.team_reunions||[]).filter(t=>(t.shared_franchise_pairs||[]).length);
+            const pick = _sample(clubs, 8, seed+10);
+            el.innerHTML = `<div class="card-h">Reunions · Ex-Teammates Abroad</div>
+              <div class="lines">${pick.map(t=>{
+                const pr = t.shared_franchise_pairs[0];
+                const extra = t.shared_franchise_pairs.length>1 ? ` <span class="rank">+${t.shared_franchise_pairs.length-1} more</span>` : '';
+                return `<div class="line">${dClub(t.team)}: ${dPlayer(pr.players[0])} &amp; ${dPlayer(pr.players[1])}, both ex-${_escH(nick(pr.shared_nba_franchises[0]))}${extra}</div>`;
+              }).join('') || '<div class="heat-note">None right now.</div>'}</div>`;
+        }
+
+        // 11. boomerang players
+        function wBoomerang(el, seed){
+            const pick = _sample(DASH.boomerang_players||[], 8, seed+11);
+            el.innerHTML = `<div class="card-h">Boomerang Players</div>
+              <div class="lines">${pick.map(b=>{
+                const t = b.teams[0];
+                return `<div class="line">${dPlayer(b.player)}, returned to ${dClub(t.team)} <span class="rank">(${_escH(t.years.join(', '))})</span></div>`;
+              }).join('')}</div>`;
         }
 
         const TITLE_SUFFIX = 'HoopsHype';
@@ -1335,21 +1649,31 @@
         // is displayed (an alias hit still shows the canonical player name).
         function buildSearchItems(){
             const items = [];
-            for(const n in data){
+            // Player names: full career data when loaded, else the light index +
+            // alias canonicals — so the dashboard homepage has complete search
+            // without the career file.
+            const nameSet = new Set(careersReady ? Object.keys(data) : players);
+            for(const n of Object.keys(PLAYER_ALIASES)) nameSet.add(n);
+            for(const n of nameSet){
                 items.push({ match:n, label:n, type:'Player', kind:'player' });
                 for(const alt of (PLAYER_ALIASES[n] || []))
                     items.push({ match:alt, label:n, type:'Player', kind:'player' });
             }
             for(const n of NBA_FRANCHISES) items.push({ match:n, label:n, type:'Team', kind:'team' });
             const clubs = new Set(), countries = new Set();
-            for(const t in teamIdx) if(t && !NBA_ERAS[t]) clubs.add(t);
+            if(careersReady){
+                for(const t in teamIdx) if(t && !NBA_ERAS[t]) clubs.add(t);
+                for(const n in data) (data[n].career_history||[]).forEach(s=>{ if(s.country) countries.add(s.country); });
+            } else if(DASH){
+                (DASH.teams_by_alltime_nba_alumni||[]).forEach(r=>clubs.add(r.team));
+                (DASH.countries_alltime_alumni||[]).forEach(r=>countries.add(r.country));
+            }
             for(const n of [...clubs].sort()) items.push({ match:n, label:n, type:'Team', kind:'club' });
-            for(const n in data) (data[n].career_history||[]).forEach(s=>{ if(s.country) countries.add(s.country); });
             for(const n of [...countries].sort()) items.push({ match:n, label:n, type:'Country', kind:'country' });
             SEARCH_ITEMS = items;
         }
         function _searchNav(it){
-            if(it.kind==='player') show(it.label);
+            if(it.kind==='player') goPlayer(it.label);
             else if(it.kind==='team') window.location.href = 'teams.html?team=' + encodeURIComponent(it.label);
             else if(it.kind==='club') window.location.href = 'teams.html?club=' + encodeURIComponent(it.label);
             else if(it.kind==='country') window.location.href = 'teams.html?country=' + encodeURIComponent(it.label);
@@ -1429,26 +1753,16 @@
         const cityUrl = c => 'teams.html?city=' + encodeURIComponent(c);
         const countryUrl = c => 'teams.html?country=' + encodeURIComponent(c);
 
-        // Query-param routing with legacy #player= redirect. Opens the named
-        // player (reusing show()) or returns to the welcome view. No-op default
-        // when no player is specified, so base behavior is unchanged.
-        function routePlayer(){
-            const h = location.hash.match(/^#player=(.+)$/);
-            if(h){ history.replaceState({}, '', '?player=' + h[1]); }
-            const name = new URLSearchParams(location.search).get('player');
-            if(name && data[name]) show(name, {push:false});
-            else backToWelcome();
-        }
+        // Return the map-view "welcome" to its default (used when a ?player= URL
+        // names an unknown player). The site's real home is the dashboard.
         function backToWelcome(){
             const ps = document.getElementById('playerSection');
             if(ps) ps.classList.remove('active');
             const w = document.getElementById('welcome');
             if(w) w.style.display = '';
-            setTitle('NBA Career Map | ' + TITLE_SUFFIX);
         }
-        window.addEventListener('popstate', routePlayer);
         // Breadcrumb: history.back() when we arrived within the site, else fall
-        // back to the welcome view. inSiteNav is true after any in-page open or
+        // back to the dashboard home. inSiteNav is true after any in-page open or
         // when we arrived from a same-origin referrer.
         let inSiteNav = false;
         try { inSiteNav = !!document.referrer && new URL(document.referrer).origin === location.origin; }
@@ -1459,13 +1773,15 @@
             if(back){
                 e.preventDefault();
                 if(inSiteNav && history.length > 1) history.back();
-                else { history.pushState({}, '', 'index.html'); backToWelcome(); }
+                else { history.pushState({}, '', 'index.html'); route(); }   // -> dashboard home
                 return;
             }
-            // Shared-path chips are real ?player= anchors; open in-page via show()
-            // (no reload) and handle names with apostrophes safely.
+            // In-page player anchors (shared-path chips + dashboard links): open
+            // via goPlayer (no reload). Names with quotes handled via data-attr.
             const chip = e.target.closest('a.chip[data-player]');
-            if(chip){ e.preventDefault(); show(chip.dataset.player); }
+            if(chip){ e.preventDefault(); goPlayer(chip.dataset.player); return; }
+            const dp = e.target.closest('a[data-dplayer]');
+            if(dp){ e.preventDefault(); goPlayer(dp.dataset.dplayer); }
         });
         
         function showWelcome() {
@@ -2242,7 +2558,8 @@
             ctx.closePath();
         }
 
-document.addEventListener('DOMContentLoaded',()=>{initMap();load();});
+function goQuiz(){ history.pushState({}, '', '?view=quiz'); route(); }
+document.addEventListener('DOMContentLoaded', boot);
     </script>
 
     <!-- Quiz Overlay -->
