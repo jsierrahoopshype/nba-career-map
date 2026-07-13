@@ -1,3 +1,60 @@
+## 2026-07-13 — full run
+
+- Players updated: **1291** (0 new)
+- New teams discovered: **8**
+- Team moves detected: **52**
+- Status changes: **23** (1 → overseas, 20 → retired)
+- Wikipedia requests: 1556
+- New teams: ARIS, Al-Qadsia SC, Cedevita / Cedevita Olimpija, Charlotte Bobcats, New Orleans Hornets, Roma SPQR, Seattle SuperSonics / , Oklahoma City Thunder, South Bay / Coachella Valley Lakers
+  - Micah Potter: Indiana Pacers → Portland Trail Blazers
+  - Rui Hachimura: Los Angeles Lakers → LA Clippers
+  - TyTy Washington: LA Clippers → San Diego Clippers
+  - Nic Claxton: Brooklyn Nets → Chicago Bulls
+  - Caris LeVert: Detroit Pistons → Milwaukee Bucks
+  - Collin Sexton: Chicago Bulls → Los Angeles Lakers
+  - D'Angelo Russell: Washington Wizards → Memphis Grizzlies
+  - Deandre Ayton: Los Angeles Lakers → Washington Wizards
+  - Gary Harris: Milwaukee Bucks → Detroit Pistons
+  - Isaiah Stewart: Detroit Pistons → Memphis Grizzlies
+  - Jaden Hardy: Washington Wizards → Los Angeles Lakers
+  - Julius Randle: Minnesota Timberwolves → Brooklyn Nets
+  - Keon Ellis: Cleveland Cavaliers → Brooklyn Nets
+  - Khris Middleton: Dallas Mavericks → Washington Wizards
+  - LaMelo Ball: Charlotte Hornets → Minnesota Timberwolves
+  - Marcus Sasser: Detroit Pistons → Dallas Mavericks
+  - Marcus Smart: Los Angeles Lakers → Houston Rockets
+  - Mitchell Robinson: New York Knicks → Boston Celtics
+  - Mouhamadou Gueye: Chicago Bulls → Charlotte Hornets
+  - Naz Reid: Minnesota Timberwolves → Charlotte Hornets
+  - Nicolas Claxton: Brooklyn Nets → Chicago Bulls
+  - Norman Powell: Miami Heat → Chicago Bulls
+  - Quentin Grimes: Philadelphia 76ers → Los Angeles Lakers
+  - Rayan Rupert: Memphis Grizzlies → Philadelphia 76ers
+  - Sandro Mamukelashvili: Toronto Raptors → Los Angeles Lakers
+  - PJ Tucker: [nba_active → retired]
+  - TyTy Washington: [nba_active → overseas_active]
+  - Chris Paul: [nba_active → retired]
+  - Damion Lee: [nba_active → retired]
+  - Kyle Lowry: [nba_active → retired]
+  - Devin Booker: [nba_active → retired]
+  - Nikola Vucevic: [nba_active → retired]
+  - Branden Dawson: [overseas_active → retired]
+  - Carlos Delfino: [overseas_active → retired]
+  - Christapher Johnson: [overseas_active → retired]
+  - Danilo Gallinari: [overseas_active → retired]
+  - Jan Vesely: [overseas_active → retired]
+  - Jeremy Lin: [overseas_active → retired]
+  - Jimmer Fredette: [overseas_active → retired]
+  - Jonah Bolden: [overseas_active → retired]
+  - Jontay Porter: [overseas_active → retired]
+  - Marco Belinelli: [overseas_active → retired]
+  - Milos Teodosic: [overseas_active → retired]
+  - Ricky Rubio: [overseas_active → retired]
+  - Theo Pinson: [overseas_active → retired]
+  - Trey Lyles: [overseas_active → nba_active]
+  - Will Barton: [overseas_active → retired]
+  - Vladislav Goldin: [overseas_active → nba_active]
+
 ## 2026-07-12 — manual correction
 
 - Álex Abrines: `overseas_active` → `retired` (confirmed retirement announcement, 22 July 2025 — explicit-language signal; source: human-verified quote of the live Wikipedia article)
