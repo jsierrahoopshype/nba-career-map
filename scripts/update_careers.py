@@ -241,7 +241,8 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     rec["current_team"] = primary.get("current_team", "")
     # scalar fields: prefer the chosen source, fall back to the other
     for f in ("position", "number", "birth_date", "birth_place", "death_date",
-              "death_place", "high_school", "college", "draft"):
+              "death_place", "high_school", "college", "draft",
+              "nationality", "all_star"):
         val = primary.get(f) or fresh.get(f) or base.get(f)
         if val:
             rec[f] = val
@@ -466,6 +467,10 @@ def _persist(db: Database, summary: dict) -> None:
             mp["display_name"] = p["display_name"]
         if p.get("wikipedia_url"):
             mp["wikipedia_url"] = p["wikipedia_url"]
+        if p.get("nationality"):
+            mp["nationality"] = p["nationality"]
+        if p.get("all_star") is not None:
+            mp["all_star"] = p["all_star"]
         map_players.append(mp)
     write_json(ROOT_MAP_FILE, map_players)
 

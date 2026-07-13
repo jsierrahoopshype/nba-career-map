@@ -133,6 +133,19 @@ def _current_stint(player: dict) -> dict | None:
     return match
 
 
+def _nat_star(player: dict) -> dict:
+    """nationality/all_star for a roster row, sparse — omitted (not stored as
+    empty/null) when the source player has neither, so today's fully-unpopulated
+    fields (the backfill is a separate GitHub Actions run) don't bloat every
+    roster row across team_pages.json/club_pages.json with placeholders."""
+    out = {}
+    if player.get("nationality"):
+        out["nationality"] = player["nationality"]
+    if player.get("all_star") is not None:
+        out["all_star"] = player["all_star"]
+    return out
+
+
 def _distinct_countries(player: dict) -> list[str]:
     out = []
     for s in player.get("career_history", []):
@@ -487,6 +500,7 @@ def w_team_pages(players: list, related: dict | None = None) -> dict:
                 "status": status,
                 "current_team": ct,
                 "current_country": cur_country,
+                **_nat_star(p),
             })
             # "currently active elsewhere": alum still playing, not on this
             # franchise right now (current_team is not one of its era names).
@@ -498,6 +512,7 @@ def w_team_pages(players: list, related: dict | None = None) -> dict:
                         "current_team": ct,
                         "country": cs.get("country", "") if status == OVERSEAS
                         else franchise_country(ct),
+                        **_nat_star(p),
                     })
 
     for fr, t in teams.items():
@@ -545,14 +560,16 @@ def w_club_pages(players: list, related: dict | None = None) -> dict:
                 c["city"], c["state"], c["country"] = \
                     s.get("city", ""), s.get("state", ""), s.get("country", "")
             g = c["_by"].setdefault(p["player"], {"player": p["player"], "status": status,
-                                                  "last_team": p.get("current_team", ""), "spans": []})
+                                                  "last_team": p.get("current_team", ""), "spans": [],
+                                                  **_nat_star(p)})
             g["spans"].append(s.get("years", ""))
 
     for c in clubs.values():
         roster = []
         for g in c["_by"].values():
             roster.append({"player": g["player"], "years": _join_years(g["spans"]),
-                           "status": g["status"], "last_team": g["last_team"]})
+                           "status": g["status"], "last_team": g["last_team"],
+                           **{k: g[k] for k in ("nationality", "all_star") if k in g}})
         roster.sort(key=lambda r: r["player"])
         del c["_by"]
         c["count"] = len(roster)

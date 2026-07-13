@@ -424,12 +424,26 @@
         }
         .crumb-back:hover { color: var(--text); }
         
+        .player-name-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .player-name {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 2px;
         }
-        
+
+        .player-allstar {
+            display: none;
+            color: #f5a623;
+            font-size: 18px;
+            line-height: 1;
+        }
+        .player-allstar.show { display: inline-block; }
+
         .player-span {
             font-size: 13px;
             color: var(--text-muted);
@@ -1168,7 +1182,11 @@
             
             <div class="player-section" id="playerSection">
                 <a class="crumb-back" href="index.html" data-back>← Back</a>
-                <div class="player-name" id="pName"></div>
+                <div class="player-name-row">
+                    <div class="player-name" id="pName"></div>
+                    <span id="pNatFlag"></span>
+                    <span class="player-allstar" id="pAllStar" title="NBA All-Star">★</span>
+                </div>
                 <div class="player-span" id="pSpan"></div>
                 <div class="player-updated" id="pUpdated"></div>
 
@@ -1900,6 +1918,10 @@
             document.getElementById('playerSection').classList.add('active');
             document.getElementById('pUpdated').textContent =
                 p.last_updated ? `Data as of ${_fmtDate(p.last_updated)}` : '';
+            // silent no-op when nationality/all_star aren't known — no flag, no star
+            document.getElementById('pNatFlag').innerHTML =
+                (p.nationality && window.nationalityFlag) ? nationalityFlag(p.nationality) : '';
+            document.getElementById('pAllStar').classList.toggle('show', !!p.all_star);
 
             // Records with no parsed career (data gaps) still open, showing the
             // name + a message instead of alerting.

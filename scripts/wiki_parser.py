@@ -207,6 +207,43 @@ def _parse_numbers(val: str) -> list[str]:
     return out
 
 
+def _parse_nationality(fields: dict[str, str]) -> str:
+    """The infobox |nationality= value (a demonym: "American", "Spanish"), read
+    directly and never derived from birth_place — a player can be born in one
+    country and hold/represent another (Joel Embiid: born Cameroon, nationality
+    French). Empty when the field is absent, so callers never guess."""
+    return _clean_text(fields.get("nationality", ""))
+
+
+_ALL_STAR_YEARS_RE = re.compile(
+    r"(?:\d+\s*[x×]\s*)?(?:NBA\s+)?All-Stars?(?:\s+Game)?\s*\(([^)]*)\)",
+    re.IGNORECASE)
+_ALL_STAR_MENTION_RE = re.compile(r"(?:NBA\s+)?All-Star", re.IGNORECASE)
+
+
+def _parse_all_star(highlights_raw: str) -> "list[int] | bool | None":
+    """All-Star selections from the infobox highlights/awards field. Distinct
+    from All-NBA Team / All-Defensive Team / Rookie of the Year / All-Rookie
+    Team — none of those contain the substring "All-Star", so they can never
+    false-positive here.
+
+    Returns the list of years when the "Nx NBA All-Star (year, year, ...)"
+    pattern parses cleanly, True when All-Star is mentioned but doesn't parse
+    into a clean year list, or None when there's no All-Star mention at all.
+    """
+    if not highlights_raw:
+        return None
+    cleaned = _clean_text(highlights_raw)
+    m = _ALL_STAR_YEARS_RE.search(cleaned)
+    if m:
+        years = [int(y) for y in re.findall(r"\d{4}", m.group(1))]
+        if years:
+            return years
+    if _ALL_STAR_MENTION_RE.search(cleaned):
+        return True
+    return None
+
+
 def _parse_career_history(fields: dict[str, str], normalizer: TeamNormalizer):
     """Return (career_history, raw_team_names) from yearsN/teamN pairs."""
     idxs = set()
@@ -274,5 +311,13 @@ def parse_player(text: str, player_name: str, normalizer: TeamNormalizer) -> dic
         record["retirement_announced"] = True
         if ret.get("retirement_date"):
             record["retirement_date"] = ret["retirement_date"]
+    nationality = _parse_nationality(fields)
+    if nationality:
+        record["nationality"] = nationality
+    highlights_raw = (fields.get("highlights") or fields.get("career_highlights")
+                      or fields.get("awards") or "")
+    all_star = _parse_all_star(highlights_raw)
+    if all_star is not None:
+        record["all_star"] = all_star
     record["_raw_teams"] = raw_names  # transient, stripped before saving
     return record

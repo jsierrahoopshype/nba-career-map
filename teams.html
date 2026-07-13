@@ -96,6 +96,7 @@
         .status-badge.nba_active { color:var(--green); background:rgba(29,138,64,.12); }
         .status-badge.overseas_active { color:var(--accent); background:var(--accent-dim); }
         .status-badge.retired { color:var(--text-secondary); background:var(--surface-hover); }
+        .allstar-mark { color:#f5a623; font-size:13px; }
 
         /* related-teams suggestion chips */
         .related-chips { display:flex; flex-wrap:wrap; gap:8px; }
@@ -277,7 +278,8 @@
                     const club = a.current_team;
                     if (club && !NBA_SET.has(club)){
                         (clubIndex[club] ??= new Map()).set(a.player,
-                            { player:a.player, status:a.status, country:a.country });
+                            { player:a.player, status:a.status, country:a.country,
+                              nationality:a.nationality||'', all_star:a.all_star });
                     }
                 }
             }
@@ -463,11 +465,15 @@
         }
 
         // shared cell renderers
-        const playerCell = r => `<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>`;
+        // silent no-op (no star) when all_star is unset — never a placeholder
+        const playerCell = r => `<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` +
+            (r.all_star ? ` <span class="allstar-mark" title="NBA All-Star">★</span>` : '');
         // every team/club name links to its page (all clubs resolve now)
         const teamCell = n => n ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : '—';
         const countryCell = c => c ? `<a class="link" href="${countryHref(c)}">${flagImg(c)}${esc(c)}</a>` : '—';
         const statusCell = r => `<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>`;
+        // silent no-op (empty cell, no broken image) when nationality is unknown/unmapped
+        const natCell = r => (r.nationality && window.nationalityFlag) ? nationalityFlag(r.nationality) : '';
 
         // Related-teams suggestions (precomputed in the data layer): chips that
         // link to each suggestion's team/club page.
@@ -520,6 +526,7 @@
                 filter:(r,q)=>r.player.toLowerCase().includes(q),
                 columns:[
                     { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
+                    { label:'Nat.', sortVal:r=>(r.nationality||'').toLowerCase(), cell:natCell },
                     { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
                     { label:'Current team', sortVal:r=>(r.current_team||'').toLowerCase(),
                       cell:r=>teamCell(r.current_team) },
@@ -536,6 +543,7 @@
                 filter:(r,q)=>r.player.toLowerCase().includes(q),
                 columns:[
                     { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
+                    { label:'Nat.', sortVal:r=>(r.nationality||'').toLowerCase(), cell:natCell },
                     { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
                     { label:'Last team', sortVal:r=>(r.current_team||'').toLowerCase(),
                       cell:r=>teamCell(r.current_team) },
@@ -563,6 +571,7 @@
             const activeRows = activeMembers.map(m=>({
                 __k:m.player, player:m.player, status:m.status,
                 franchises:[...(playerFranchises[m.player]||[])].sort(),
+                nationality:m.nationality||'', all_star:m.all_star,
             }));
 
             // Retired alumni of this club (mirrors the team-page split). The
@@ -581,8 +590,8 @@
                 mountTable(document.getElementById('clubActive'), {
                     unit:'players', rows:activeRows,
                     columns:[
-                        { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
-                          cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                        { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
+                        { label:'Nat.', sortVal:r=>(r.nationality||'').toLowerCase(), cell:natCell },
                         { label:'Status', sortVal:r=>STATUS_RANK[r.status], cell:statusCell },
                         { label:'NBA franchises', sortVal:r=>r.franchises[0]?.toLowerCase()||'', cls:'wrap',
                           cell:r=>`<span class="fr-links">${r.franchises.map(f=>
@@ -596,8 +605,8 @@
                 filterPlaceholder:'Filter players…',
                 filter:(r,q)=>r.player.toLowerCase().includes(q),
                 columns:[
-                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
-                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
+                    { label:'Nat.', sortVal:r=>(r.nationality||'').toLowerCase(), cell:natCell },
                     { label:'Years', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
                     { label:'Last team', sortVal:r=>(r.last_team||'').toLowerCase(),
                       cell:r=>teamCell(r.last_team) },

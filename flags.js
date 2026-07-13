@@ -35,6 +35,122 @@
     "Senegal":"sn","Thailand":"th","Andorra":"ad","South Sudan":"ss","Sudan":"sd"
   };
 
+  // Nationality demonym -> country (a key into ISO above), covering every
+  // country ISO maps. A player's Wikipedia |nationality= field is a demonym
+  // ("American", "Spanish"), not a country name, and is a DIFFERENT concept
+  // from birth_place/stint country (a player can be born in one country and
+  // hold/represent another — e.g. Joel Embiid, born Cameroon, nationality
+  // French). Where a country has more than one common English demonym
+  // spelling, both are listed; all point at the exact same country/flag, so
+  // this is not ambiguity. Genuinely coarser choices (documented, not
+  // guesses): "Scottish"/"Welsh"/"Northern Irish" roll up to the dataset's
+  // "United Kingdom" flag (no separate flags.js entries exist for the home
+  // nations); "Korean" (unqualified) resolves to "South Korea" since no
+  // "North Korea" entry exists in ISO. Nationalities for countries NOT in
+  // ISO (e.g. "Cameroonian") are intentionally absent — silent no-op, not a
+  // gap to fix here; expanding ISO's country coverage is future work.
+  const DEMONYM = {
+    "Angolan":"Angola",
+    "Argentine":"Argentina","Argentinian":"Argentina",
+    "Australian":"Australia",
+    "Austrian":"Austria",
+    "Azerbaijani":"Azerbaijan",
+    "Bahraini":"Bahrain",
+    "Belarusian":"Belarus","Belarusan":"Belarus",
+    "Belgian":"Belgium",
+    "Bolivian":"Bolivia",
+    "Bosnian":"Bosnia",
+    "Brazilian":"Brazil",
+    "Bulgarian":"Bulgaria",
+    "Burundian":"Burundi",
+    "Canadian":"Canada",
+    "Chilean":"Chile",
+    "Chinese":"China",
+    "Colombian":"Colombia",
+    "Croatian":"Croatia",
+    "Cypriot":"Cyprus",
+    "Czech":"Czech Republic",
+    "Danish":"Denmark",
+    "Dominican":"Dominican Republic",
+    "Ecuadorian":"Ecuador","Ecuadorean":"Ecuador",
+    "Egyptian":"Egypt",
+    "Estonian":"Estonia",
+    "Finnish":"Finland",
+    "French":"France",
+    "Georgian":"Georgia",
+    "German":"Germany",
+    "Greek":"Greece",
+    "Honduran":"Honduras",
+    "Hongkonger":"Hong Kong","Hong Konger":"Hong Kong",
+    "Hungarian":"Hungary",
+    "Icelandic":"Iceland",
+    "Indian":"India",
+    "Indonesian":"Indonesia",
+    "Iranian":"Iran",
+    "Iraqi":"Iraq",
+    "Irish":"Ireland",
+    "Israeli":"Israel",
+    "Italian":"Italy",
+    "Ivorian":"Ivory Coast",
+    "Japanese":"Japan",
+    "Jordanian":"Jordan",
+    "Kazakh":"Kazakhstan","Kazakhstani":"Kazakhstan",
+    "Kosovar":"Kosovo","Kosovan":"Kosovo",
+    "Kuwaiti":"Kuwait",
+    "Latvian":"Latvia",
+    "Lebanese":"Lebanon",
+    "Libyan":"Libya",
+    "Lithuanian":"Lithuania",
+    "Luxembourgish":"Luxembourg","Luxembourger":"Luxembourg",
+    "Malaysian":"Malaysia",
+    "Mexican":"Mexico",
+    "Monégasque":"Monaco","Monegasque":"Monaco","Monacan":"Monaco",
+    "Mongolian":"Mongolia",
+    "Montenegrin":"Montenegro",
+    "Moroccan":"Morocco",
+    "Dutch":"Netherlands",
+    "New Zealander":"New Zealand","New Zealand":"New Zealand",
+    "Nicaraguan":"Nicaragua",
+    "Nigerian":"Nigeria",
+    "Macedonian":"North Macedonia",
+    "Filipino":"Philippines","Filipina":"Philippines","Philippine":"Philippines",
+    "Polish":"Poland",
+    "Portuguese":"Portugal",
+    "Puerto Rican":"Puerto Rico",
+    "Qatari":"Qatar",
+    "Romanian":"Romania",
+    "Russian":"Russia",
+    "Saudi":"Saudi Arabia","Saudi Arabian":"Saudi Arabia",
+    "Serbian":"Serbia",
+    "Singaporean":"Singapore",
+    "Slovak":"Slovakia",
+    "Slovenian":"Slovenia","Slovene":"Slovenia",
+    "South African":"South Africa",
+    "South Korean":"South Korea","Korean":"South Korea",
+    "Spanish":"Spain",
+    "Swedish":"Sweden",
+    "Swiss":"Switzerland",
+    "Syrian":"Syria",
+    "Taiwanese":"Taiwan",
+    "Tanzanian":"Tanzania",
+    "Tunisian":"Tunisia",
+    "Turkish":"Turkey",
+    "Emirati":"UAE",
+    "American":"USA",
+    "Ukrainian":"Ukraine",
+    "British":"United Kingdom","Scottish":"United Kingdom",
+    "Welsh":"United Kingdom","Northern Irish":"United Kingdom",
+    "Uruguayan":"Uruguay",
+    "Venezuelan":"Venezuela",
+    "Vietnamese":"Vietnam",
+    "English":"England",
+    "Senegalese":"Senegal",
+    "Thai":"Thailand",
+    "Andorran":"Andorra",
+    "South Sudanese":"South Sudan",
+    "Sudanese":"Sudan"
+  };
+
   const esc = s => String(s == null ? "" : s)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
@@ -49,6 +165,16 @@
            `width="16" height="12" loading="lazy" alt="${esc(country)} flag">`;
   }
 
+  // Returns an <img> flag for a nationality demonym ("American", "Spanish"),
+  // or '' if unmapped — a silent no-op, same contract as flagImg, so callers
+  // never need to special-case a missing/unrecognized nationality.
+  function nationalityFlag(nationality) {
+    const country = DEMONYM[String(nationality ?? "").trim()];
+    return country ? flagImg(country) : "";
+  }
+
   window.COUNTRY_ISO = ISO;
   window.flagImg = flagImg;
+  window.DEMONYM_TO_COUNTRY = DEMONYM;
+  window.nationalityFlag = nationalityFlag;
 })();
