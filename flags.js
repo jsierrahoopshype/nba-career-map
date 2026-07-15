@@ -32,7 +32,22 @@
     "Venezuela":"ve","Vietnam":"vn",
     // historical / alternate spellings that may appear
     "United Arab Emirates":"ae","England":"gb","Bosnia and Herzegovina":"ba",
-    "Senegal":"sn","Thailand":"th","Andorra":"ad","South Sudan":"ss","Sudan":"sd"
+    "Senegal":"sn","Thailand":"th","Andorra":"ad","South Sudan":"ss","Sudan":"sd",
+    // added for nationality-CSV coverage (real countries appearing in the
+    // player nationality data that had no prior club-location entry)
+    "Jamaica":"jm","Bahamas":"bs","DR Congo":"cd","Cameroon":"cm","Mali":"ml",
+    "Ghana":"gh","US Virgin Islands":"vi","Panama":"pa","Belize":"bz","Haiti":"ht",
+    "Cuba":"cu","Gabon":"ga","Trinidad and Tobago":"tt","Guyana":"gy","Guinea":"gn",
+    "British Virgin Islands":"vg","Dominica":"dm","Uganda":"ug",
+    "Antigua and Barbuda":"ag","Norway":"no","Cape Verde":"cv"
+  };
+
+  // A handful of nationality-CSV country spellings that name a country
+  // already covered above under a different canonical spelling (so no new
+  // ISO entry is needed — just recognize the alternate spelling).
+  const COUNTRY_ALIASES = {
+    "United States":"USA","Great Britain":"United Kingdom",
+    "Republic of Georgia":"Georgia"
   };
 
   // Nationality demonym -> country (a key into ISO above), covering every
@@ -148,7 +163,14 @@
     "Thai":"Thailand",
     "Andorran":"Andorra",
     "South Sudanese":"South Sudan",
-    "Sudanese":"Sudan"
+    "Sudanese":"Sudan",
+    // demonyms for the countries added above for nationality-CSV coverage
+    "Jamaican":"Jamaica","Bahamian":"Bahamas","Congolese":"DR Congo",
+    "Cameroonian":"Cameroon","Malian":"Mali","Ghanaian":"Ghana",
+    "Panamanian":"Panama","Belizean":"Belize","Haitian":"Haiti","Cuban":"Cuba",
+    "Gabonese":"Gabon","Trinidadian":"Trinidad and Tobago","Guyanese":"Guyana",
+    "Guinean":"Guinea","Ugandan":"Uganda","Antiguan":"Antigua and Barbuda",
+    "Norwegian":"Norway","Cape Verdean":"Cape Verde"
   };
 
   const esc = s => String(s == null ? "" : s)
@@ -165,16 +187,25 @@
            `width="16" height="12" loading="lazy" alt="${esc(country)} flag">`;
   }
 
-  // Returns an <img> flag for a nationality demonym ("American", "Spanish"),
-  // or '' if unmapped — a silent no-op, same contract as flagImg, so callers
-  // never need to special-case a missing/unrecognized nationality.
+  // Returns an <img> flag for a nationality value, or '' if unmapped — a
+  // silent no-op, same contract as flagImg, so callers never need to
+  // special-case a missing/unrecognized nationality. Accepts either a
+  // demonym ("American", "Spanish" — the live Wikipedia-fetch parser's
+  // format) or a plain country name ("Nigeria", "France" — the batch
+  // nationality-CSV's format); a compound dual-nationality value
+  // ("American / Nigerian") resolves to its first recognizable part.
   function nationalityFlag(nationality) {
-    const country = DEMONYM[String(nationality ?? "").trim()];
-    return country ? flagImg(country) : "";
+    const parts = String(nationality ?? "").split("/").map(s => s.trim()).filter(Boolean);
+    for (const p of parts) {
+      const country = DEMONYM[p] || COUNTRY_ALIASES[p] || (ISO[p] ? p : null);
+      if (country) return flagImg(country);
+    }
+    return "";
   }
 
   window.COUNTRY_ISO = ISO;
   window.flagImg = flagImg;
   window.DEMONYM_TO_COUNTRY = DEMONYM;
+  window.COUNTRY_ALIASES = COUNTRY_ALIASES;
   window.nationalityFlag = nationalityFlag;
 })();

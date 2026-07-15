@@ -1,0 +1,41 @@
+{
+  "nationality_conflicts": [
+    {
+      "player": "Davon Reed",
+      "existing_nationality": "Puerto Rican",
+      "existing_resolved_countries": [
+        "Puerto Rico"
+      ],
+      "csv_nationality": "United States",
+      "csv_resolved_country": "USA"
+    },
+    {
+      "player": "Karlo Matkovic",
+      "existing_nationality": "Croatian / Bosnian",
+      "existing_resolved_countries": [
+        "Bosnia",
+        "Croatia"
+      ],
+      "csv_nationality": "Slovenia",
+      "csv_resolved_country": "Slovenia"
+    },
+    {
+      "player": "Stevie Thompson",
+      "existing_nationality": "Puerto Rican",
+      "existing_resolved_countries": [
+        "Puerto Rico"
+      ],
+      "csv_nationality": "United States",
+      "csv_resolved_country": "USA"
+    },
+    {
+      "player": "Thon Maker",
+      "existing_nationality": "South Sudanese",
+      "existing_resolved_countries": [
+        "South Sudan"
+      ],
+      "csv_nationality": "Australia",
+      "csv_resolved_country": "Australia"
+    }
+  ]
+}
