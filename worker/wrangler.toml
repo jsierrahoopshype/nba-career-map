@@ -1,0 +1,16 @@
+name = "nba-career-map-data-proxy"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+# Deploys to https://nba-career-map-data-proxy.<your-subdomain>.workers.dev —
+# no custom domain/zone needed, no [routes] section required.
+
+# Cloudflare's native Rate Limiting binding: a lightweight, free-tier-eligible
+# platform primitive (NOT Durable Objects, no extra billing). "simple" means
+# a fixed-window counter per key. Tune `limit`/`period` to taste; 60 req/min
+# per IP is generous for a real visitor (a handful of JSON fetches per page
+# load) and a real constraint on a tight scraping loop.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 60, period = 60 }

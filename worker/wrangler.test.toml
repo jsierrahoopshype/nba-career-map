@@ -1,0 +1,20 @@
+# Local-only test config — NOT deployed. Points the Worker at a local mock
+# upstream (a plain static file server serving copies of the real JSON files)
+# instead of the real GitHub Pages site, so the Origin/Referer gate, path
+# whitelist, rate limiting, and pass-through logic can all be verified
+# end-to-end without any live network access.
+#
+# Usage: start a local server on the port below serving the JSON fixtures,
+# then `npx wrangler dev --local --config wrangler.test.toml`.
+name = "nba-career-map-data-proxy-test"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+[vars]
+ALLOWED_ORIGIN = "https://jsierrahoopshype.github.io"
+UPSTREAM_BASE = "http://127.0.0.1:8973"
+
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 3, period = 10 }

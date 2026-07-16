@@ -1287,6 +1287,7 @@
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="flags.js"></script>
+    <script src="data-proxy.js"></script>
     <script>
         const ERAS = {
             "2020s": ["Luka Dončić","Giannis Antetokounmpo","Nikola Jokić","Joel Embiid","Jayson Tatum","Ja Morant","Trae Young","Anthony Edwards","LaMelo Ball","Shai Gilgeous-Alexander"],
@@ -1459,10 +1460,10 @@
         async function boot() {
             // Small lookups needed everywhere (franchise URLs, aliases, names).
             const [dd, idx, aliases, names] = await Promise.all([
-                fetch('data/dashboard_data.json').then(r=>r.json()),
-                fetch('data/nba_team_index.json').then(r=>r.json()).catch(()=>({})),
-                fetch('data/player_aliases.json').then(r=>r.json()).catch(()=>({})),
-                fetch('data/player_index.json').then(r=>r.json()).catch(()=>null),
+                fetchData('data/dashboard_data.json').then(r=>r.json()),
+                fetchData('data/nba_team_index.json').then(r=>r.json()).catch(()=>({})),
+                fetchData('data/player_aliases.json').then(r=>r.json()).catch(()=>({})),
+                fetchData('data/player_index.json').then(r=>r.json()).catch(()=>null),
             ]);
             DASH = dd;
             NBA_ERAS = idx.eras || {}; NBA_FRANCHISES = idx.franchises || []; ERA_COLLISIONS = idx.collisions || {};
@@ -1479,7 +1480,7 @@
         function ensureCareers() {
             if (careersP) return careersP;
             careersP = (async () => {
-                const cRes = await fetch('nba_players_careers_READY.json');
+                const cRes = await fetchData('nba_players_careers_READY.json');
                 (await cRes.json()).forEach(p=>{
                     data[p.player] = p;
                     if(p.career_history) p.career_history.forEach(s=>{

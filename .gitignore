@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 scripts/last_commit_message.txt
 logs/last_commit_message.txt
+worker/node_modules/
+worker/.wrangler/
