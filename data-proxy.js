@@ -16,7 +16,7 @@
 (function () {
   // Replace after deploying (see worker/README.md) — `wrangler deploy`
   // prints the exact *.workers.dev URL assigned to your account.
-  const DATA_PROXY_BASE = "https://nba-career-map-data-proxy.YOUR-SUBDOMAIN.workers.dev";
+  const DATA_PROXY_BASE = "https://nba-career-map-data-proxy.thejorgesierra.workers.dev";
 
   async function fetchData(path) {
     try {
