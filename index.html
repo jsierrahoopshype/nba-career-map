@@ -190,64 +190,110 @@
             height: calc(100dvh - 50px);
         }
 
-        /* ===== Phase 3 dashboard ===== */
+        /* ===== Phase 3 dashboard (Phase 3.1: visual-hierarchy pass) =====
+           Tiers, most to least prominent:
+             hero      — Latest Signings + World Tour Heatmap: the two most
+                         visually distinctive widgets, given real size and a
+                         louder card-h.
+             featured  — Who's Playing In X + Where Are They Now: still
+                         near the top, standard card scale.
+             secondary — the five leaderboard/list cards: compact, dense,
+                         built for scanning.
+             tertiary  — Reunions + Boomerang: pushed to their own
+                         de-prioritized section at the bottom, under a
+                         section label, naturally below the fold. */
         #dashboardView { display: none; }
-        .dash { max-width: 1180px; margin: 0 auto; padding: 18px 16px 60px; }
-        .dash-hero { margin: 6px 2px 18px; }
-        .dash-hero h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
-        .dash-hero p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+        .dash { max-width: 1180px; margin: 0 auto; padding: 20px 16px 64px; }
+        .dash-hero { margin: 6px 2px 24px; }
+        .dash-hero h1 { font-size: 23px; font-weight: 700; letter-spacing: -0.5px; }
+        .dash-hero p { color: var(--text-muted); font-size: 14px; margin-top: 5px; }
+
+        .dash-section { margin-bottom: 32px; }
+        .dash-section:last-child { margin-bottom: 0; }
+        .dash-section-h {
+            font-family: var(--mono); font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-secondary); margin: 0 2px 14px;
+        }
+        .dash-hero-row { display: flex; flex-direction: column; gap: 18px; }
+
         .dash-grid {
-            display: grid; gap: 14px;
+            display: grid; gap: 20px;
             grid-template-columns: 1fr;
         }
         @media (min-width: 720px) { .dash-grid { grid-template-columns: 1fr 1fr; } }
         @media (min-width: 1040px) { .dash-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
         .card {
             background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-            padding: 14px 16px; overflow: hidden; display: flex; flex-direction: column;
+            padding: 18px 20px; overflow: hidden; display: flex; flex-direction: column;
         }
         .card.span-all { grid-column: 1 / -1; }
         @media (min-width: 720px) { .card.span-2 { grid-column: span 2; } }
         .card-h {
             font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.6px; color: var(--text-muted); margin-bottom: 10px;
+            letter-spacing: 0.6px; color: var(--text-muted); margin-bottom: 14px;
             display: flex; align-items: center; gap: 8px; justify-content: space-between;
         }
         .card-h .see-all { font-size: 10px; color: var(--accent); text-transform: none; letter-spacing: 0; }
         .card-h .see-all:hover { text-decoration: underline; }
+
+        /* hero tier: bigger card, louder (less muted) title, more headroom
+           before content — the visual "these two matter most" signal. */
+        .card.hero { padding: 26px 28px; border-radius: 16px; }
+        .card.hero .card-h {
+            font-size: 14px; color: var(--text); letter-spacing: 0.3px; margin-bottom: 18px;
+        }
+        .card.hero .card-h .see-all { font-size: 11px; }
+
         .dlink { color: inherit; text-decoration: none; }
         .dlink:hover { color: var(--accent); }
         .flagd { width: 16px; height: 12px; border-radius: 2px; vertical-align: -1px; margin: 0 3px; object-fit: cover; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
-        /* mini tables */
+
+        /* mini tables — primary column (player/team identity) reads heavier
+           than the muted numeric/metadata columns beside it. */
         .dtable { width: 100%; border-collapse: collapse; font-size: 13px; }
-        .dtable td, .dtable th { padding: 6px 4px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+        .dtable td, .dtable th { padding: 10px 8px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
         .dtable tr:last-child td { border-bottom: none; }
         .dtable th { font-family: var(--mono); font-size: 10px; text-transform: uppercase; color: var(--text-muted); letter-spacing: .3px; cursor: pointer; user-select: none; }
         .dtable td.num, .dtable th.num { text-align: right; font-family: var(--mono); color: var(--text-muted); }
+        .dtable td:first-child:not(.num) { font-weight: 500; }
         .dtable td.wrapc { white-space: normal; }
         .dtable tbody tr:hover { background: var(--surface-hover); }
         .rank { color: var(--text-muted); font-family: var(--mono); font-size: 11px; }
-        /* ticker */
-        .ticker { max-height: 340px; overflow-y: auto; }
-        .tick-row { display: grid; grid-template-columns: 1.3fr 2fr auto; gap: 10px; align-items: center;
-            padding: 8px 4px; border-bottom: 1px solid var(--border); font-size: 13px; }
+
+        /* ticker — the hero-tier treatment: a distinctly larger, bolder
+           player name against small muted move/date metadata. */
+        .ticker { max-height: 380px; overflow-y: auto; }
+        .tick-row { display: grid; grid-template-columns: 1.3fr 2fr auto; gap: 12px; align-items: center;
+            padding: 13px 8px; border-bottom: 1px solid var(--border); font-size: 13px; }
         .tick-row:last-child { border-bottom: none; }
+        .tick-player { font-weight: 600; font-size: 14.5px; }
         .tick-move { color: var(--text-muted); }
         .tick-date { font-family: var(--mono); font-size: 11px; color: var(--text-muted); text-align: right; }
-        @media (max-width: 560px) { .tick-row { grid-template-columns: 1fr; gap: 2px; } .tick-date { text-align: left; } }
+        @media (max-width: 560px) { .tick-row { grid-template-columns: 1fr; gap: 3px; } .tick-date { text-align: left; } }
+
         /* spotlight / list */
-        .spot-controls { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+        .spot-controls { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
         .spot-select { font-family: inherit; font-size: 13px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-hover); }
-        .chiplist { display: flex; flex-wrap: wrap; gap: 6px; }
+        .chiplist { display: flex; flex-wrap: wrap; gap: 8px; }
         .dchip { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border); border-radius: 999px;
-            padding: 5px 11px; font-size: 12px; color: inherit; text-decoration: none; background: var(--surface); }
+            padding: 7px 13px; font-size: 12.5px; font-weight: 500; color: inherit; text-decoration: none; background: var(--surface); }
         .dchip:hover { border-color: var(--accent); color: var(--accent); background: var(--surface-hover); }
-        .dchip .sub { color: var(--text-muted); }
+        .dchip .sub { color: var(--text-muted); font-weight: 400; }
         .dchip:hover .sub { color: var(--accent); }
-        .lines .line { padding: 7px 2px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.45; }
+        .lines .line { padding: 12px 4px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.5; }
         .lines .line:last-child { border-bottom: none; }
-        #heatmap { height: 320px; border-radius: 10px; overflow: hidden; background: var(--border); }
-        .heat-note { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+        .lines .dlink { font-weight: 600; }
+
+        #heatmap { height: 440px; border-radius: 10px; overflow: hidden; background: var(--border); }
+        .heat-note { font-size: 11px; color: var(--text-muted); margin-top: 10px; }
+
+        /* tertiary tier: pushed to the bottom under its own section label,
+           deliberately quieter than everything above (smaller card-h,
+           tighter padding) so it reads as "more to explore", not core content. */
+        .dash-section-tertiary .card { padding: 14px 16px; }
+        .dash-section-tertiary .card-h { font-size: 10px; margin-bottom: 10px; }
+        .dash-section-tertiary .lines .line { padding: 9px 4px; font-size: 12.5px; }
 
         #map {
             height: 55%;
@@ -678,11 +724,18 @@
         
         /* Side-by-side map + panel only on genuinely wide/desktop viewports.
            Requiring min-height as well keeps landscape phones (wide but short,
-           e.g. ~930x430) stacked, which was the bad-UX case. */
+           e.g. ~930x430) stacked, which was the bad-UX case. Targets #mapView
+           (the Phase-3 flex container) — NOT `main`, which is `display:block`
+           and holds #dashboardView as a sibling; a stale rule here that still
+           targeted `main` was a no-op, silently leaving #mapView stuck in its
+           default column direction (panel full-width above a full-width map)
+           at every viewport width, desktop included.
+           .panel's width scales with the viewport instead of a flat 360px so
+           it doesn't starve the map on wide monitors or force its own
+           internal horizontal scrollbar on the timeline table. */
         @media (min-width: 1024px) and (min-height: 640px) {
-            main {
+            #mapView {
                 flex-direction: row;
-                height: calc(100vh - 50px);
             }
 
             #map {
@@ -692,7 +745,8 @@
             }
 
             .panel {
-                width: 360px;
+                width: clamp(360px, 30vw, 520px);
+                flex: none;
                 border-right: 1px solid var(--border);
                 order: 1;
             }
@@ -1277,6 +1331,12 @@
             }).addTo(map);
             markersLayer = L.layerGroup().addTo(map);
             pathLayer = L.layerGroup().addTo(map);
+            // Defensive: Leaflet sizes its tile grid to the container's box AT
+            // INIT TIME. A subsequent layout pass (web fonts loading, a CSS
+            // reflow) can leave stale/blank tiles if the box changes size
+            // afterward without this — same pattern already used for the
+            // heatmap below.
+            setTimeout(() => map && map.invalidateSize(), 60);
         }
         
         function clearMap() {
@@ -1521,18 +1581,36 @@
                   <h1>Where every NBA player is playing now</h1>
                   <p>Live signings, overseas hotspots, and the journeys behind the league — updated after every pipeline run.</p>
                 </div>
-                <div class="card span-all" id="w-signings"></div>
-                <div class="dash-grid">
-                  <div class="card span-2" id="w-spotlight"></div>
-                  <div class="card" id="w-watn"></div>
-                  <div class="card span-2" id="w-heatmap"></div>
-                  <div class="card" id="w-traveled"></div>
-                  <div class="card" id="w-clubs-all"></div>
-                  <div class="card" id="w-clubs-cur"></div>
-                  <div class="card" id="w-ctry-live"></div>
-                  <div class="card" id="w-ctry-all"></div>
-                  <div class="card span-2" id="w-reunions"></div>
-                  <div class="card" id="w-boomerang"></div>
+
+                <div class="dash-section dash-hero-row">
+                  <div class="card hero" id="w-signings"></div>
+                  <div class="card hero" id="w-heatmap"></div>
+                </div>
+
+                <div class="dash-section">
+                  <div class="dash-grid">
+                    <div class="card span-2" id="w-spotlight"></div>
+                    <div class="card" id="w-watn"></div>
+                  </div>
+                </div>
+
+                <div class="dash-section">
+                  <div class="dash-section-h">Leaderboards</div>
+                  <div class="dash-grid">
+                    <div class="card" id="w-traveled"></div>
+                    <div class="card" id="w-clubs-all"></div>
+                    <div class="card" id="w-clubs-cur"></div>
+                    <div class="card" id="w-ctry-live"></div>
+                    <div class="card" id="w-ctry-all"></div>
+                  </div>
+                </div>
+
+                <div class="dash-section dash-section-tertiary">
+                  <div class="dash-section-h">More Storylines</div>
+                  <div class="dash-grid">
+                    <div class="card span-2" id="w-reunions"></div>
+                    <div class="card" id="w-boomerang"></div>
+                  </div>
                 </div>
               </div>`;
             view.dataset.built = _dayNum()+'';
@@ -1556,7 +1634,7 @@
             el.innerHTML = `<div class="card-h">Latest Signings <span class="see-all">${rows.length} moves</span></div>
               <div class="ticker">${rows.slice(0,15).map(r=>`
                 <div class="tick-row">
-                  <span>${dPlayer(r.player)}</span>
+                  <span class="tick-player">${dPlayer(r.player)}</span>
                   <span class="tick-move">${dTeamFlag(r.from_team)} → ${dTeamFlag(r.to_team)}</span>
                   <span class="tick-date">${_escH(r.date)}</span>
                 </div>`).join('') || '<div class="heat-note">No signings recorded yet.</div>'}</div>`;
