@@ -12978,7 +12978,7 @@
           "status": "nba_active",
           "current_team": "Milwaukee Bucks",
           "current_country": "USA",
-          "nationality": "United States"
+          "nationality": "American"
         },
         {
           "player": "Cameron Johnson",
@@ -17424,7 +17424,7 @@
           "status": "nba_active",
           "current_team": "Milwaukee Bucks",
           "country": "USA",
-          "nationality": "United States"
+          "nationality": "American"
         },
         {
           "player": "Cameron Johnson",
@@ -33351,7 +33351,7 @@
         },
         {
           "player": "Dwight Powell",
-          "years": "2014–present",
+          "years": "2014–2026",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
           "current_team": "Dallas Mavericks",
@@ -34645,7 +34645,7 @@
           "years": "2026",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -35622,6 +35622,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Tarik Biberović",
+          "years": "2026–present",
+          "stint_team": "Dallas Mavericks",
+          "status": "nba_active",
+          "current_team": "Dallas Mavericks",
+          "current_country": "USA",
+          "nationality": "Bosnian / Turkish"
+        },
+        {
           "player": "Tariq Abdul-Wahad",
           "years": "2002-2003",
           "stint_team": "Dallas Mavericks",
@@ -35701,6 +35710,14 @@
           "current_team": "Dallas Mavericks",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Tobi Lawal",
+          "years": "2026–present",
+          "stint_team": "Dallas Mavericks",
+          "status": "nba_active",
+          "current_team": "Dallas Mavericks",
+          "current_country": "USA"
         },
         {
           "player": "Tom Garrick",
@@ -36532,6 +36549,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Marvin Bagley",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Maxi Kleber",
           "status": "nba_active",
           "current_team": "Los Angeles Lakers",
@@ -36739,13 +36763,13 @@
           ]
         }
       ],
-      "roster_count": 426,
-      "alumni_count": 397,
+      "roster_count": 428,
+      "alumni_count": 399,
       "related": [
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 59
+          "shared": 60
         },
         {
           "type": "club",
@@ -36759,17 +36783,17 @@
         },
         {
           "type": "club",
+          "name": "Fenerbahçe",
+          "shared": 12
+        },
+        {
+          "type": "club",
           "name": "Olimpia Milano",
           "shared": 11
         },
         {
           "type": "club",
           "name": "Rapid City Thrillers",
-          "shared": 11
-        },
-        {
-          "type": "club",
-          "name": "Fenerbahçe",
           "shared": 11
         },
         {
@@ -38960,9 +38984,9 @@
           "player": "Jonas Valanciunas",
           "years": "2025–26",
           "stint_team": "Denver Nuggets",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "current_country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -39499,6 +39523,15 @@
           "status": "retired",
           "current_team": "Sporting Club Gira",
           "current_country": "Italy",
+          "nationality": "United States"
+        },
+        {
+          "player": "Marvin Bagley",
+          "years": "2026–present",
+          "stint_team": "Denver Nuggets",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -41083,6 +41116,17 @@
           ]
         },
         {
+          "player": "Jonas Valanciunas",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "country": "Lithuania",
+          "nationality": "Lithuania",
+          "all_star": [
+            2010,
+            2012
+          ]
+        },
+        {
           "player": "Jordan Hamilton",
           "status": "overseas_active",
           "current_team": "Al-Difaa Al-Jawi",
@@ -41339,8 +41383,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 441,
-      "alumni_count": 414,
+      "roster_count": 442,
+      "alumni_count": 415,
       "related": [
         {
           "type": "club",
@@ -43169,6 +43213,14 @@
           "current_team": "Bnei Herzliya",
           "current_country": "Israel",
           "nationality": "United States"
+        },
+        {
+          "player": "Ebuka Okorie",
+          "years": "2026–present",
+          "stint_team": "Detroit Pistons",
+          "status": "nba_active",
+          "current_team": "Detroit Pistons",
+          "current_country": "USA"
         },
         {
           "player": "Ed Conlin",
@@ -45239,7 +45291,7 @@
           "years": "2022–2024",
           "stint_team": "Detroit Pistons",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -46729,6 +46781,14 @@
           "nationality": "United States"
         },
         {
+          "player": "Ugonna Onyenso",
+          "years": "2026–present",
+          "stint_team": "Detroit Pistons",
+          "status": "nba_active",
+          "current_team": "Detroit Pistons",
+          "current_country": "USA"
+        },
+        {
           "player": "Vernon Macklin",
           "years": "2011-2012",
           "stint_team": "Detroit Pistons",
@@ -47570,7 +47630,7 @@
         {
           "player": "Marvin Bagley",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -47815,8 +47875,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 623,
-      "alumni_count": 582,
+      "roster_count": 625,
+      "alumni_count": 584,
       "related": [
         {
           "type": "club",
@@ -47826,7 +47886,7 @@
         {
           "type": "club",
           "name": "Motor City Cruise",
-          "shared": 24
+          "shared": 25
         },
         {
           "type": "club",
@@ -76109,9 +76169,9 @@
           "player": "Jonas Valanciunas",
           "years": "2019–2021",
           "stint_team": "Memphis Grizzlies",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "current_country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -76595,7 +76655,7 @@
           "years": "2025",
           "stint_team": "Memphis Grizzlies",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -77913,9 +77973,9 @@
         },
         {
           "player": "Jonas Valanciunas",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -78041,7 +78101,7 @@
         {
           "player": "Marvin Bagley",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -82464,7 +82524,7 @@
           "status": "nba_active",
           "current_team": "Milwaukee Bucks",
           "current_country": "USA",
-          "nationality": "United States"
+          "nationality": "American"
         },
         {
           "player": "Cameron Payne",
@@ -83551,7 +83611,7 @@
         },
         {
           "player": "Gary Trent Jr",
-          "years": "2024–2026",
+          "years": "2024–present",
           "stint_team": "Milwaukee Bucks",
           "status": "nba_active",
           "current_team": "Milwaukee Bucks",
@@ -92107,9 +92167,9 @@
           "player": "Jonas Valanciunas",
           "years": "2021–2024",
           "stint_team": "New Orleans Pelicans",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "current_country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -93666,9 +93726,9 @@
         },
         {
           "player": "Jonas Valanciunas",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -127570,9 +127630,9 @@
           "player": "Jonas Valanciunas",
           "years": "2025",
           "stint_team": "Sacramento Kings",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "current_country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -128218,7 +128278,7 @@
           "years": "2018–2022",
           "stint_team": "Sacramento Kings",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -130478,9 +130538,9 @@
         },
         {
           "player": "Jonas Valanciunas",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -130599,7 +130659,7 @@
         {
           "player": "Marvin Bagley",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -136730,9 +136790,9 @@
           "player": "Jonas Valanciunas",
           "years": "2012–2019",
           "stint_team": "Toronto Raptors",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "current_country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -138493,9 +138553,9 @@
         },
         {
           "player": "Jonas Valanciunas",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -139568,6 +139628,14 @@
           "current_team": "Pennsylvania ValleyDawgs",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Darryn Peterson",
+          "years": "2026–present",
+          "stint_team": "Utah Jazz",
+          "status": "nba_active",
+          "current_team": "Utah Jazz",
+          "current_country": "USA"
         },
         {
           "player": "Dave Jamerson",
@@ -142107,6 +142175,14 @@
           "nationality": "United States"
         },
         {
+          "player": "Tamar Bates",
+          "years": "2026–present",
+          "stint_team": "Utah Jazz",
+          "status": "nba_active",
+          "current_team": "Utah Jazz",
+          "current_country": "USA"
+        },
+        {
           "player": "Taylor Hendricks",
           "years": "2023–2026",
           "stint_team": "Utah Jazz",
@@ -143076,13 +143152,13 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 390,
-      "alumni_count": 368,
+      "roster_count": 392,
+      "alumni_count": 370,
       "related": [
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 43
+          "shared": 44
         },
         {
           "type": "club",
@@ -146661,9 +146737,9 @@
           "player": "Jonas Valanciunas",
           "years": "2024–25",
           "stint_team": "Washington Wizards",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "current_country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -147500,7 +147576,7 @@
           "years": "2024–2025",
           "stint_team": "Washington Wizards",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -147509,7 +147585,7 @@
           "years": "2025–26",
           "stint_team": "Washington Wizards",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -149774,9 +149850,9 @@
         },
         {
           "player": "Jonas Valanciunas",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Žalgiris",
+          "country": "Lithuania",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -149909,7 +149985,7 @@
         {
           "player": "Marvin Bagley",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },

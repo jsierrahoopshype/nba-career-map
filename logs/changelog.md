@@ -1,3 +1,16 @@
+## 2026-07-20 — incremental run
+
+- Players updated: **67** (6 new)
+- New teams discovered: **1**
+- Team moves detected: **2**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Darryn Peterson, Ebuka Okorie, Tamar Bates, Tarik Biberović, Tobi Lawal, Ugonna Onyenso
+- New teams: OKK Spars
+  - Jonas Valanciunas: Denver Nuggets → Žalgiris
+  - Marvin Bagley: Dallas Mavericks → Denver Nuggets
+  - Jonas Valanciunas: [nba_active → overseas_active]
+
 ## 2026-07-13 — incremental run
 
 - Players updated: **67** (0 new)

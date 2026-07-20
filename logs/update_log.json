@@ -8518,6 +8518,115 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-07-20",
+      "mode": "incremental",
+      "players_updated": [
+        "Darryn Peterson",
+        "Ebuka Okorie",
+        "Tamar Bates",
+        "Tarik Biberović",
+        "Tobi Lawal",
+        "Ugonna Onyenso",
+        "Aaron Holiday",
+        "Ben Simmons",
+        "Bradley Beal",
+        "Brandon Clarke",
+        "Brandon Williams",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Christian Wood",
+        "Cody Martin",
+        "Cole Anthony",
+        "Dalano Banton",
+        "Dante Exum",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "DeMar DeRozan",
+        "Donovan Williams",
+        "Drew Peterson",
+        "Duop Reath",
+        "Dwight Powell",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Garrett Temple",
+        "Garrison Mathews",
+        "Gary Payton II",
+        "Gary Trent Jr",
+        "Georges Niang",
+        "Jacob Toppin",
+        "Jaden Ivey",
+        "Jae'Sean Tate",
+        "Jalen Hood-Schifino",
+        "Jalen McDaniels",
+        "Jalen Wilson",
+        "James Johnson",
+        "James Wiseman",
+        "Jaren Jackson Jr",
+        "Jeff Green",
+        "Jonas Valanciunas",
+        "Kawhi Leonard",
+        "Kevin Love",
+        "Kobe Bufkin",
+        "Larry Nance Jr",
+        "Leaky Black",
+        "LeBron James",
+        "Lonzo Ball",
+        "Mac McClung",
+        "Markieff Morris",
+        "Marvin Bagley",
+        "Maxi Kleber",
+        "Nick Richards",
+        "Nick Smith",
+        "Nicolas Batum",
+        "Ochai Agbaji",
+        "Olivier Sarr",
+        "Oscar Tshiebwe",
+        "Reggie Jackson",
+        "Rui Hachimura",
+        "Stanley Umude",
+        "Terry Rozier",
+        "Thanasis Antetokounmpo"
+      ],
+      "new_players": [
+        "Darryn Peterson",
+        "Ebuka Okorie",
+        "Tamar Bates",
+        "Tarik Biberović",
+        "Tobi Lawal",
+        "Ugonna Onyenso"
+      ],
+      "new_teams": [
+        "OKK Spars"
+      ],
+      "team_moves": [
+        {
+          "player": "Jonas Valanciunas",
+          "from": "Denver Nuggets",
+          "to": "Žalgiris"
+        },
+        {
+          "player": "Marvin Bagley",
+          "from": "Dallas Mavericks",
+          "to": "Denver Nuggets"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Jonas Valanciunas",
+          "from": "nba_active",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Jonas Valanciunas"
+      ],
+      "newly_retired": [],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }

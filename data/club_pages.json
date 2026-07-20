@@ -41899,7 +41899,7 @@
       "city": "Istanbul",
       "state": "",
       "country": "Turkey",
-      "count": 82,
+      "count": 83,
       "roster": [
         {
           "player": "Adrian Caldwell",
@@ -42459,6 +42459,13 @@
           "status": "retired",
           "last_team": "Orlandina",
           "nationality": "United States"
+        },
+        {
+          "player": "Tarik Biberović",
+          "years": "2018–2026",
+          "status": "nba_active",
+          "last_team": "Dallas Mavericks",
+          "nationality": "Bosnian / Turkish"
         },
         {
           "player": "Thabo Sefolosha",
@@ -47248,7 +47255,7 @@
       "city": "Frisco",
       "state": "Texas",
       "country": "USA",
-      "count": 123,
+      "count": 124,
       "roster": [
         {
           "player": "AJ Hammons",
@@ -48062,6 +48069,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Tobi Lawal",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Dallas Mavericks"
+        },
+        {
           "player": "Tony Bradley",
           "years": "2023-2024",
           "status": "nba_active",
@@ -48645,7 +48658,7 @@
           "years": "2021",
           "status": "nba_active",
           "last_team": "Milwaukee Bucks",
-          "nationality": "United States"
+          "nationality": "American"
         },
         {
           "player": "Carrick Felix",
@@ -63112,7 +63125,7 @@
       "city": "Salt Lake City",
       "state": "Utah",
       "country": "USA",
-      "count": 77,
+      "count": 78,
       "roster": [
         {
           "player": "Alec Burks",
@@ -63559,6 +63572,12 @@
           "status": "retired",
           "last_team": "Peñarol",
           "nationality": "United States"
+        },
+        {
+          "player": "Tamar Bates",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
         },
         {
           "player": "Taylor Hendricks",
@@ -83102,7 +83121,7 @@
       "city": "Detroit",
       "state": "Michigan",
       "country": "USA",
-      "count": 39,
+      "count": 40,
       "roster": [
         {
           "player": "Alondes Williams",
@@ -83366,6 +83385,12 @@
           "status": "overseas_active",
           "last_team": "Taoyuan Pauian Pilots",
           "nationality": "United States"
+        },
+        {
+          "player": "Ugonna Onyenso",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Detroit Pistons"
         },
         {
           "player": "Wendell Moore",
@@ -87732,7 +87757,7 @@
       "city": "Grand Rapids",
       "state": "Michigan",
       "country": "USA",
-      "count": 39,
+      "count": 40,
       "roster": [
         {
           "player": "Amida Brimah",
@@ -87976,6 +88001,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Tamar Bates",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
+        },
+        {
           "player": "Tarik Black",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -88037,6 +88068,11 @@
         },
         {
           "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Birmingham Squadron",
           "shared": 4
         },
@@ -88048,11 +88084,6 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
           "shared": 3
         }
       ]
@@ -93229,7 +93260,7 @@
       "city": "Vilnius on Tuesday",
       "state": "",
       "country": "USA",
-      "count": 15,
+      "count": 16,
       "roster": [
         {
           "player": "Andre Emmett",
@@ -93258,6 +93289,17 @@
           "status": "retired",
           "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
+        },
+        {
+          "player": "Jonas Valanciunas",
+          "years": "2008–2012",
+          "status": "overseas_active",
+          "last_team": "Žalgiris",
+          "nationality": "Lithuania",
+          "all_star": [
+            2010,
+            2012
+          ]
         },
         {
           "player": "Josh Akognon",
@@ -113192,7 +113234,7 @@
       "city": "Kaunas",
       "state": "",
       "country": "Lithuania",
-      "count": 62,
+      "count": 63,
       "roster": [
         {
           "player": "Anthony Bowie",
@@ -113398,6 +113440,17 @@
           "status": "overseas_active",
           "last_team": "Partizan",
           "nationality": "French / Serbian"
+        },
+        {
+          "player": "Jonas Valanciunas",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Žalgiris",
+          "nationality": "Lithuania",
+          "all_star": [
+            2010,
+            2012
+          ]
         },
         {
           "player": "Justin Dentmon",
@@ -117702,12 +117755,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Motor City Cruise",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Motor City Cruise",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -127689,7 +127742,7 @@
       "city": "Vilnius",
       "state": "",
       "country": "Lithuania",
-      "count": 4,
+      "count": 3,
       "roster": [
         {
           "player": "Arvydas Macijauskas",
@@ -127704,17 +127757,6 @@
           "status": "retired",
           "last_team": "Žalgiris",
           "nationality": "Lithuania"
-        },
-        {
-          "player": "Jonas Valanciunas",
-          "years": "2010–2012",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
-          "nationality": "Lithuania",
-          "all_star": [
-            2010,
-            2012
-          ]
         },
         {
           "player": "Tyrone Nesby",
@@ -269384,8 +269426,8 @@
         {
           "player": "Jonas Valanciunas",
           "years": "2008–2010",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "Žalgiris",
           "nationality": "Lithuania",
           "all_star": [
             2010,
@@ -269413,18 +269455,18 @@
         },
         {
           "type": "club",
+          "name": "Žalgiris",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Lietuvos rytas",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "FC Barcelona B",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Lietuvos rytas Vilnius",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Žalgiris",
-          "shared": 0
         },
         {
           "type": "club",
@@ -293758,12 +293800,12 @@
         },
         {
           "type": "club",
-          "name": "Indios de Mayagüez",
+          "name": "Grand Rapids Gold",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Grand Rapids Gold",
+          "name": "Indios de Mayagüez",
           "shared": 1
         }
       ]
@@ -323250,12 +323292,12 @@
         },
         {
           "type": "club",
-          "name": "Lietuvos rytas Vilnius",
+          "name": "Lietkabelis",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Lietkabelis",
+          "name": "Lietuvos rytas Vilnius",
           "shared": 0
         },
         {
@@ -344369,6 +344411,29 @@
           "type": "club",
           "name": "EWE Baskets Oldenburg",
           "shared": 0
+        }
+      ]
+    },
+    "OKK Spars": {
+      "club": "OKK Spars",
+      "city": "Ilidža",
+      "state": "",
+      "country": "Bosnia and Herzegovina",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Tarik Biberović",
+          "years": "2016–2018",
+          "status": "nba_active",
+          "last_team": "Dallas Mavericks",
+          "nationality": "Bosnian / Turkish"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Fenerbahçe",
+          "shared": 1
         }
       ]
     }

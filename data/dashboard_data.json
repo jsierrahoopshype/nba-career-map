@@ -1,6 +1,6 @@
 {
   "generated_from": "data/players/nba_players_careers.json",
-  "player_count": 5149,
+  "player_count": 5155,
   "where_are_they_now": [
     {
       "player": "Aaron Harrison",
@@ -2119,6 +2119,12 @@
       "current_team": "Sagesse SC",
       "country": "Lebanon",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Jonas Valanciunas",
+      "current_team": "Žalgiris",
+      "country": "Lithuania",
+      "last_updated": "2026-07-20"
     },
     {
       "player": "Jonathan Gibson",
@@ -5210,7 +5216,7 @@
     },
     {
       "team": "Texas Legends",
-      "players": 123
+      "players": 124
     },
     {
       "team": "Baskonia",
@@ -5286,7 +5292,7 @@
     },
     {
       "team": "Fenerbahçe",
-      "players": 82
+      "players": 83
     },
     {
       "team": "Maine Red Claws",
@@ -5322,7 +5328,7 @@
     },
     {
       "team": "Salt Lake City Stars",
-      "players": 77
+      "players": 78
     },
     {
       "team": "Greensboro Swarm",
@@ -5386,7 +5392,7 @@
     },
     {
       "team": "Žalgiris",
-      "players": 62
+      "players": 63
     },
     {
       "team": "Bakersfield Jam",
@@ -5573,7 +5579,15 @@
       "players": 40
     },
     {
+      "team": "Grand Rapids Gold",
+      "players": 40
+    },
+    {
       "team": "Indios de Mayagüez",
+      "players": 40
+    },
+    {
+      "team": "Motor City Cruise",
       "players": 40
     },
     {
@@ -5586,14 +5600,6 @@
     },
     {
       "team": "Gigantes de Carolina",
-      "players": 39
-    },
-    {
-      "team": "Grand Rapids Gold",
-      "players": 39
-    },
-    {
-      "team": "Motor City Cruise",
       "players": 39
     },
     {
@@ -6173,6 +6179,10 @@
       "players": 16
     },
     {
+      "team": "Lietuvos rytas",
+      "players": 16
+    },
+    {
       "team": "Long Island Surf",
       "players": 16
     },
@@ -6246,10 +6256,6 @@
     },
     {
       "team": "Libertad de Sunchales",
-      "players": 15
-    },
-    {
-      "team": "Lietuvos rytas",
       "players": 15
     },
     {
@@ -9029,10 +9035,6 @@
       "players": 4
     },
     {
-      "team": "Lietuvos rytas Vilnius",
-      "players": 4
-    },
-    {
       "team": "Lokomotiv Rostov",
       "players": 4
     },
@@ -9974,6 +9976,10 @@
     },
     {
       "team": "Lietkabelis",
+      "players": 3
+    },
+    {
+      "team": "Lietuvos rytas Vilnius",
       "players": 3
     },
     {
@@ -17925,6 +17931,10 @@
       "players": 1
     },
     {
+      "team": "OKK Spars",
+      "players": 1
+    },
+    {
       "team": "OSG Phoenix",
       "players": 1
     },
@@ -21026,6 +21036,19 @@
       ]
     },
     {
+      "team": "Žalgiris",
+      "count": 7,
+      "players": [
+        "Carsen Edwards",
+        "Deividas Sirvydis",
+        "Ignas Brazdeikis",
+        "Jonas Valanciunas",
+        "Moses Wright",
+        "Nigel Williams-Goss",
+        "Saben Lee"
+      ]
+    },
+    {
       "team": "Cangrejeros de Santurce",
       "count": 6,
       "players": [
@@ -21083,18 +21106,6 @@
         "Kira Lewis",
         "Stevie Thompson",
         "Victor Oladipo"
-      ]
-    },
-    {
-      "team": "Žalgiris",
-      "count": 6,
-      "players": [
-        "Carsen Edwards",
-        "Deividas Sirvydis",
-        "Ignas Brazdeikis",
-        "Moses Wright",
-        "Nigel Williams-Goss",
-        "Saben Lee"
       ]
     },
     {
@@ -23654,12 +23665,12 @@
       "count": 10
     },
     {
-      "country": "South Korea",
+      "country": "Lithuania",
       "count": 8
     },
     {
-      "country": "Lithuania",
-      "count": 7
+      "country": "South Korea",
+      "count": 8
     },
     {
       "country": "Brazil",
@@ -23765,7 +23776,7 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5045
+      "players": 5051
     },
     {
       "country": "Italy",
@@ -23789,7 +23800,7 @@
     },
     {
       "country": "Turkey",
-      "players": 489
+      "players": 490
     },
     {
       "country": "Israel",
@@ -24109,6 +24120,10 @@
     },
     {
       "country": "Bolivia",
+      "players": 1
+    },
+    {
+      "country": "Bosnia and Herzegovina",
       "players": 1
     },
     {
@@ -25295,6 +25310,56 @@
       ]
     },
     {
+      "team": "Žalgiris",
+      "players": [
+        "Carsen Edwards",
+        "Deividas Sirvydis",
+        "Ignas Brazdeikis",
+        "Jonas Valanciunas",
+        "Moses Wright",
+        "Nigel Williams-Goss",
+        "Saben Lee"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Carsen Edwards",
+            "Deividas Sirvydis"
+          ],
+          "shared_nba_franchises": [
+            "Detroit Pistons"
+          ]
+        },
+        {
+          "players": [
+            "Carsen Edwards",
+            "Saben Lee"
+          ],
+          "shared_nba_franchises": [
+            "Detroit Pistons"
+          ]
+        },
+        {
+          "players": [
+            "Deividas Sirvydis",
+            "Saben Lee"
+          ],
+          "shared_nba_franchises": [
+            "Detroit Pistons"
+          ]
+        },
+        {
+          "players": [
+            "Ignas Brazdeikis",
+            "Saben Lee"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ]
+        }
+      ]
+    },
+    {
       "team": "Cangrejeros de Santurce",
       "players": [
         "DJ Wilson",
@@ -25547,55 +25612,6 @@
           ],
           "shared_nba_franchises": [
             "Miami Heat"
-          ]
-        }
-      ]
-    },
-    {
-      "team": "Žalgiris",
-      "players": [
-        "Carsen Edwards",
-        "Deividas Sirvydis",
-        "Ignas Brazdeikis",
-        "Moses Wright",
-        "Nigel Williams-Goss",
-        "Saben Lee"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Carsen Edwards",
-            "Deividas Sirvydis"
-          ],
-          "shared_nba_franchises": [
-            "Detroit Pistons"
-          ]
-        },
-        {
-          "players": [
-            "Carsen Edwards",
-            "Saben Lee"
-          ],
-          "shared_nba_franchises": [
-            "Detroit Pistons"
-          ]
-        },
-        {
-          "players": [
-            "Deividas Sirvydis",
-            "Saben Lee"
-          ],
-          "shared_nba_franchises": [
-            "Detroit Pistons"
-          ]
-        },
-        {
-          "players": [
-            "Ignas Brazdeikis",
-            "Saben Lee"
-          ],
-          "shared_nba_franchises": [
-            "Philadelphia 76ers"
           ]
         }
       ]
@@ -56910,6 +56926,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Jonas Valanciunas",
+        "current_team": "Žalgiris",
+        "city": "Kaunas",
+        "state": "",
+        "country": "Lithuania",
+        "in_coords": true,
+        "last_updated": "2026-07-20"
+      },
+      {
         "player": "Jonathan Gibson",
         "current_team": "Sagesse Sports Club",
         "city": "",
@@ -60169,8 +60194,8 @@
       }
     ],
     "coverage": {
-      "total": 695,
-      "in_coords": 605,
+      "total": 696,
+      "in_coords": 606,
       "missing_from_coords": 90,
       "missing_no_city": 51,
       "missing_city_absent_from_coords": 39,
@@ -60178,6 +60203,18 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Marvin Bagley",
+      "from_team": "Dallas Mavericks",
+      "to_team": "Denver Nuggets",
+      "date": "2026-07-20"
+    },
+    {
+      "player": "Jonas Valanciunas",
+      "from_team": "Denver Nuggets",
+      "to_team": "Žalgiris",
+      "date": "2026-07-20"
+    },
     {
       "player": "Vladislav Goldin",
       "from_team": "Sioux Falls Skyforce",
@@ -60464,18 +60501,6 @@
       "player": "Caris LeVert",
       "from_team": "Detroit Pistons",
       "to_team": "Milwaukee Bucks",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Nic Claxton",
-      "from_team": "Brooklyn Nets",
-      "to_team": "Chicago Bulls",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "TyTy Washington",
-      "from_team": "LA Clippers",
-      "to_team": "San Diego Clippers",
       "date": "2026-07-13"
     }
   ]
