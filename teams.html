@@ -15,6 +15,9 @@
             --accent-dim:rgba(59,130,246,.15); --green:#1d8a40; --red:#d12c2c; --orange:#b26b00;
             --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
         }
+        /* Type scale matched to the nba-polymarket reference stylesheet — see
+           index.html's matching comment for the full rationale. */
+        html { font-size: 115%; }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family:'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -68,30 +71,30 @@
 
         main { max-width:1200px; margin:0 auto; padding:24px 20px 64px; }
 
-        .page-title { font-size:24px; font-weight:700; letter-spacing:-0.5px; margin-bottom:4px; }
-        .page-sub { color:var(--text-secondary); font-size:14px; margin-bottom:20px; }
+        .page-title { font-size:1.5rem; font-weight:700; letter-spacing:-0.5px; margin-bottom:4px; }
+        .page-sub { color:var(--text-secondary); font-size:.78rem; margin-bottom:20px; }
 
         .back { display:inline-flex; align-items:center; gap:6px; color:var(--text-secondary);
                 font-size:14px; font-weight:600; margin-bottom:16px; }
         .back:hover { color:var(--text); }
-        .detail-title { font-size:28px; font-weight:700; letter-spacing:-0.5px; }
-        .detail-sub { color:var(--text-secondary); font-size:14px; margin:2px 0 20px; font-family:var(--mono); }
+        .detail-title { font-size:1.6rem; font-weight:700; letter-spacing:-0.5px; }
+        .detail-sub { color:var(--text-secondary); font-size:.78rem; margin:2px 0 20px; font-family:var(--mono); }
 
         .section { margin-bottom:28px; }
-        .section-h { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.4px;
+        .section-h { font-size:.95rem; font-weight:700; text-transform:uppercase; letter-spacing:.4px;
                      color:var(--text-secondary); margin-bottom:12px; }
 
         /* timeline */
         .timeline { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
         .tl-node { background:var(--surface); border:1px solid var(--border); border-radius:999px;
-                   padding:6px 14px; font-size:13px; font-weight:600; }
+                   padding:6px 14px; font-size:.86rem; font-weight:600; }
         .tl-node.current { border-color:var(--accent); color:var(--accent); background:var(--accent-dim); }
-        .tl-node .yrs { font-family:var(--mono); color:var(--text-secondary); font-weight:400; margin-left:6px; }
+        .tl-node .yrs { font-family:var(--mono); font-size:.72rem; color:var(--text-secondary); font-weight:400; margin-left:6px; }
         .tl-node.current .yrs { color:var(--accent); }
         .tl-arrow { color:var(--text-secondary); font-size:16px; }
 
         /* status badge */
-        .status-badge { font-family:var(--mono); font-size:11px; font-weight:600; padding:2px 8px;
+        .status-badge { font-family:var(--mono); font-size:.7rem; font-weight:600; padding:2px 8px;
             border-radius:6px; text-transform:uppercase; letter-spacing:.3px; white-space:nowrap; }
         .status-badge.nba_active { color:var(--green); background:rgba(29,138,64,.12); }
         .status-badge.overseas_active { color:var(--accent); background:var(--accent-dim); }
@@ -103,10 +106,10 @@
         .rel-chip {
             display:inline-flex; align-items:baseline; gap:8px; background:var(--surface);
             border:1px solid var(--border); border-radius:999px; padding:7px 14px;
-            font-size:13px; color:inherit; transition:all .15s ease;
+            font-size:.86rem; color:inherit; transition:all .15s ease;
         }
         .rel-chip:hover { border-color:var(--accent); background:var(--surface-hover); color:var(--accent); }
-        .rel-chip .rel-shared { font-family:var(--mono); font-size:11px; color:var(--text-secondary); }
+        .rel-chip .rel-shared { font-family:var(--mono); font-size:.72rem; color:var(--text-secondary); }
         .rel-chip:hover .rel-shared { color:var(--accent); }
         .subtable-h { margin-top:36px; }
 
@@ -118,15 +121,15 @@
             background:var(--surface-hover);
         }
         .tfilter:focus { border-color:var(--accent); background:#fff; }
-        .count { color:var(--text-secondary); font-size:13px; font-family:var(--mono); }
+        .count { color:var(--text-secondary); font-size:.72rem; font-family:var(--mono); }
         .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch;
                       border:1px solid var(--border); border-radius:12px; background:var(--surface); }
-        table { width:100%; border-collapse:collapse; font-size:14px; min-width:460px; }
+        table { width:100%; border-collapse:collapse; font-size:.86rem; min-width:460px; }
         th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--border); white-space:nowrap; }
         td.wrap { white-space:normal; }
         th {
             position:sticky; top:0; background:var(--surface); cursor:pointer; user-select:none;
-            font-size:12px; text-transform:uppercase; letter-spacing:.3px; color:var(--text-secondary);
+            font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.3px; color:var(--text-secondary);
             font-weight:700;
         }
         th:hover { color:var(--text); }
@@ -138,11 +141,11 @@
         /* Entity links inside data rows: neutral at rest, accent on hover only
            (matches the reference site's .echip / .gs-item — no blue text in
            table content). Standalone nav links (.back) may stay accent-tinted. */
-        a.link { color:inherit; text-decoration:none; font-weight:600; }
+        a.link { color:inherit; text-decoration:none; font-size:.92rem; font-weight:600; }
         a.link:hover { color:var(--accent); }
         a.cell-link { display:block; color:inherit; text-decoration:none; margin:-10px -14px; padding:10px 14px; }
         a.cell-link:hover { color:var(--accent); }
-        a.cell-link.name { font-weight:600; }
+        a.cell-link.name { font-size:.92rem; font-weight:600; }
         .fr-links a { color:inherit; }
         .fr-links a:hover { color:var(--accent); }
         .flag {
@@ -183,6 +186,8 @@
         const STATUS_RANK = { nba_active:0, overseas_active:1, retired:2 };
         let TEAMS = {};
         let CLUBS = {};                 // all-time club rosters (club_pages.json)
+        let DASH = {};                  // full dashboard_data.json (for ?view= pages)
+        let TRANSACTIONS = [];          // complete transactions.json ledger, newest-first
         let ACTIVE_ABROAD = [];         // where_are_they_now + city (world_tour_heatmap)
         let NBA_SET = new Set();
         let ALL_PLAYERS = [];           // every player name, for search
@@ -216,15 +221,19 @@
 
         async function load(){
             try {
-                const [tp, cp, dd, pa] = await Promise.all([
+                const [tp, cp, dd, pa, tx] = await Promise.all([
                     fetchData('data/team_pages.json').then(r=>r.json()),
                     fetchData('data/club_pages.json').then(r=>r.json()),
                     fetchData('data/dashboard_data.json').then(r=>r.json()),
                     fetchData('data/player_aliases.json').then(r=>r.json()).catch(()=>({})),
+                    fetchData('data/logs/transactions.json').then(r=>r.json()).catch(()=>({transactions:[]})),
                 ]);
                 TEAMS = tp.teams || {};
                 CLUBS = cp.clubs || {};
+                DASH = dd || {};
                 PLAYER_ALIASES = pa || {};
+                // ledger is stored oldest-first; the signings page wants newest-first
+                TRANSACTIONS = (tx.transactions || []).slice().reverse();
                 // overseas-active players with city+country (superset of where_are_they_now)
                 ACTIVE_ABROAD = (dd.world_tour_heatmap && dd.world_tour_heatmap.players) || [];
             } catch(e){
@@ -264,6 +273,10 @@
             for (const c of Object.values(CLUBS)) if (c.country) countries.add(c.country);
             for (const a of ACTIVE_ABROAD) if (a.country) countries.add(a.country);
             for (const n of [...countries].sort()) items.push({ match:n, label:n, type:'Country', href:countryHref(n) });
+            const cities = new Set();
+            for (const c of Object.values(CLUBS)) if (c.city) cities.add(c.city);
+            for (const a of ACTIVE_ABROAD) if (a.city) cities.add(a.city);
+            for (const n of [...cities].sort()) items.push({ match:n, label:n, type:'City', href:cityHref(n) });
             SEARCH_ITEMS = items;
         }
 
@@ -350,6 +363,11 @@
             if (countryParam){ renderPlace('country', countryParam); return window.scrollTo(0,0); }
             const cityParam = p.get('city');
             if (cityParam){ renderPlace('city', cityParam); return window.scrollTo(0,0); }
+            const viewParam = p.get('view');
+            if (viewParam === 'signings'){ renderSignings(); return window.scrollTo(0,0); }
+            if (viewParam === 'welltraveled'){ renderWellTraveled(); return window.scrollTo(0,0); }
+            if (viewParam === 'reunions'){ renderReunions(); return window.scrollTo(0,0); }
+            if (viewParam === 'boomerang'){ renderBoomerang(); return window.scrollTo(0,0); }
             renderLanding();
             window.scrollTo(0,0);
         }
@@ -663,6 +681,118 @@
             mountTable(document.getElementById('plClubs'), { unit:'clubs', rows:clubs, columns:clubCols });
         }
 
+        /* ---- full-list pages, linked from the dashboard widgets' "see all" --- */
+        function renderSignings(){
+            setTitle('Latest Signings — Full Ledger | ' + TITLE_SUFFIX);
+            const rows = TRANSACTIONS.map((r,i)=>({ __k:i, ...r }));
+            document.getElementById('app').innerHTML = `
+                <a class="back" href="index.html">← Dashboard</a>
+                <div class="detail-title">Latest Signings</div>
+                <div class="detail-sub">${rows.length} moves · complete transaction ledger, newest first</div>
+                <div id="tbl"></div>`;
+            mountTable(document.getElementById('tbl'), {
+                unit:'moves', rows, sortKey:0, sortDir:-1,
+                filterPlaceholder:'Filter player or team…',
+                filter:(r,q)=>r.player.toLowerCase().includes(q) ||
+                    (r.from_team||'').toLowerCase().includes(q) || (r.to_team||'').toLowerCase().includes(q),
+                columns:[
+                    { label:'Date', sortVal:r=>r.date||'', cls:'mono', cell:r=>esc(r.date) },
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'From', sortVal:r=>(r.from_team||'').toLowerCase(), cell:r=>teamCell(r.from_team) },
+                    { label:'To', sortVal:r=>(r.to_team||'').toLowerCase(), cell:r=>teamCell(r.to_team) },
+                ],
+            });
+        }
+
+        function renderWellTraveled(){
+            setTitle('Most Well-Traveled — Full List | ' + TITLE_SUFFIX);
+            const rows = (DASH.most_well_traveled||[]).map(r=>({ __k:r.player, ...r }));
+            document.getElementById('app').innerHTML = `
+                <a class="back" href="index.html">← Dashboard</a>
+                <div class="detail-title">Most Well-Traveled</div>
+                <div class="detail-sub">${rows.length} players ranked by distinct countries played in</div>
+                <div id="tbl"></div>`;
+            mountTable(document.getElementById('tbl'), {
+                unit:'players', rows, sortKey:1, sortDir:-1,
+                filterPlaceholder:'Filter players…',
+                filter:(r,q)=>r.player.toLowerCase().includes(q),
+                columns:[
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'Countries', sortVal:r=>r.country_count, cls:'mono', cell:r=>r.country_count },
+                    { label:'Stops', sortVal:r=>r.stint_count, cls:'mono', cell:r=>r.stint_count },
+                ],
+            });
+        }
+
+        function renderReunions(){
+            setTitle('Reunions · Ex-Teammates Abroad — Full List | ' + TITLE_SUFFIX);
+            const nick = f => f.split(' ').pop();
+            // one row per shared-franchise pair — the "reunion" granularity —
+            // newest-first by the pair's own latest_stint_year.
+            const rows = [];
+            for (const t of (DASH.team_reunions||[])){
+                for (const pr of (t.shared_franchise_pairs||[]))
+                    rows.push({ __k:t.team+'|'+pr.players.join('|'), team:t.team,
+                                players:pr.players, shared:pr.shared_nba_franchises,
+                                latest_stint_year:pr.latest_stint_year });
+            }
+            document.getElementById('app').innerHTML = `
+                <a class="back" href="index.html">← Dashboard</a>
+                <div class="detail-title">Reunions · Ex-Teammates Abroad</div>
+                <div class="detail-sub">${rows.length} pairs of former NBA teammates now at the same overseas club</div>
+                <div id="tbl"></div>`;
+            mountTable(document.getElementById('tbl'), {
+                unit:'pairs', rows, sortKey:3, sortDir:-1,
+                filterPlaceholder:'Filter club or player…',
+                filter:(r,q)=>r.team.toLowerCase().includes(q) ||
+                    r.players.some(p=>p.toLowerCase().includes(q)),
+                columns:[
+                    { label:'Club', sortVal:r=>r.team.toLowerCase(), cls:'wrap', cell:r=>teamCell(r.team) },
+                    { label:'Player 1', sortVal:r=>r.players[0].toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.players[0])}">${esc(r.players[0])}</a>` },
+                    { label:'Player 2', sortVal:r=>r.players[1].toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.players[1])}">${esc(r.players[1])}</a>` },
+                    { label:'Shared NBA team(s)', sortVal:r=>nick(r.shared[0]||'').toLowerCase(), cls:'wrap',
+                      cell:r=>r.shared.map(f=>`<a class="link" href="${teamHref(f)}">${esc(f)}</a>`).join(', ') },
+                    { label:'Latest stint', sortVal:r=>r.latest_stint_year, cls:'mono', cell:r=>r.latest_stint_year||'—' },
+                ],
+            });
+        }
+
+        function renderBoomerang(){
+            setTitle('Boomerang Players — Full List | ' + TITLE_SUFFIX);
+            const returnYear = years => Math.max(0, ...years.map(y=>{
+                const m = String(y).match(/\d{4}/g); return m ? parseInt(m[m.length-1],10) : 0;
+            }));
+            // one row per player-team boomerang — newest-first by that team's
+            // own most recent return year.
+            const rows = [];
+            for (const b of (DASH.boomerang_players||[])){
+                for (const t of (b.teams||[]))
+                    rows.push({ __k:b.player+'|'+t.team, player:b.player, team:t.team,
+                                stints:t.stints, years:t.years, return_year:returnYear(t.years) });
+            }
+            document.getElementById('app').innerHTML = `
+                <a class="back" href="index.html">← Dashboard</a>
+                <div class="detail-title">Boomerang Players</div>
+                <div class="detail-sub">${rows.length} player-club boomerangs — left and came back at least once</div>
+                <div id="tbl"></div>`;
+            mountTable(document.getElementById('tbl'), {
+                unit:'boomerangs', rows, sortKey:3, sortDir:-1,
+                filterPlaceholder:'Filter player or club…',
+                filter:(r,q)=>r.player.toLowerCase().includes(q) || r.team.toLowerCase().includes(q),
+                columns:[
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
+                      cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
+                    { label:'Club', sortVal:r=>r.team.toLowerCase(), cls:'wrap', cell:r=>teamCell(r.team) },
+                    { label:'Stints', sortVal:r=>r.stints, cls:'mono', cell:r=>r.stints },
+                    { label:'Years', sortVal:r=>r.return_year, cls:'mono', cell:r=>esc(r.years.join(', ')) },
+                ],
+            });
+        }
+
         /* ---- global universal search (top + bottom): players/teams/countries - */
         function initSearch(){
             wireSearch('topSearch', 'topResults');
@@ -670,9 +800,9 @@
         }
         // Universal search: players, teams (franchises + clubs), countries —
         // grouped by type in the dropdown; each result navigates to its page.
-        const GROUP_ORDER = ['Player', 'Team', 'Country'];
-        const GROUP_LABEL = { Player:'Players', Team:'Teams', Country:'Countries' };
-        const GROUP_CAP = { Player:6, Team:6, Country:4 };
+        const GROUP_ORDER = ['Player', 'Team', 'Country', 'City'];
+        const GROUP_LABEL = { Player:'Players', Team:'Teams', Country:'Countries', City:'Cities' };
+        const GROUP_CAP = { Player:6, Team:6, Country:4, City:4 };
         function searchMatches(q){
             const hits = SEARCH_ITEMS.filter(it => it.match.toLowerCase().includes(q));
             hits.sort((a,b)=>{
