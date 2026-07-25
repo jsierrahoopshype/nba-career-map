@@ -266,7 +266,8 @@ def w_countries_alltime_alumni(players: list) -> list[dict]:
 
 
 def w_team_reunions(players: list) -> list[dict]:
-    # current non-NBA team -> list of (player, {current NBA franchises})
+    # current non-NBA team -> list of (player, {current NBA franchises}, latest
+    # stint-start-year that player logged AT this specific club)
     teams: dict[str, list] = {}
     for p in players:
         if p.get("status") != OVERSEAS:
@@ -279,7 +280,9 @@ def w_team_reunions(players: list) -> list[dict]:
             fr = nba_franchise_of(s.get("team", ""), _yr(s.get("years")))
             if fr:
                 franchises.add(fr)
-        teams.setdefault(t, []).append((p["player"], franchises))
+        stint_year = max((_yr(s.get("years")) for s in p.get("career_history", [])
+                           if s.get("team") == t), default=0)
+        teams.setdefault(t, []).append((p["player"], franchises, stint_year))
 
     out = []
     for t, members in sorted(teams.items()):
@@ -291,11 +294,15 @@ def w_team_reunions(players: list) -> list[dict]:
                 shared = sorted(members[i][1] & members[j][1])
                 if shared:
                     pairs.append({"players": [members[i][0], members[j][0]],
-                                  "shared_nba_franchises": shared})
+                                  "shared_nba_franchises": shared,
+                                  "latest_stint_year": max(members[i][2], members[j][2])})
+        latest_stint_year = max((pr["latest_stint_year"] for pr in pairs),
+                                 default=max(m[2] for m in members))
         out.append({"team": t,
                     "players": sorted(m[0] for m in members),
-                    "shared_franchise_pairs": pairs})
-    out.sort(key=lambda r: (-len(r["players"]), r["team"]))
+                    "shared_franchise_pairs": pairs,
+                    "latest_stint_year": latest_stint_year})
+    out.sort(key=lambda r: (-r["latest_stint_year"], -len(r["players"]), r["team"]))
     return out
 
 
