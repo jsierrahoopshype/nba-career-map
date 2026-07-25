@@ -33,7 +33,7 @@ function ok(label, cond, extra = '') {
 
 function mockUpstreamFixtures() {
   const dir = join('/tmp', 'mock-upstream-ci');
-  mkdirSync(join(dir, 'data'), { recursive: true });
+  mkdirSync(join(dir, 'data', 'logs'), { recursive: true });
   writeFileSync(join(dir, 'data', 'nba_team_index.json'),
     readFileSync(join(ROOT, 'data', 'nba_team_index.json')));
   writeFileSync(join(dir, 'data', 'player_aliases.json'),
@@ -42,6 +42,7 @@ function mockUpstreamFixtures() {
   writeFileSync(join(dir, 'data', 'player_index.json'), '["Stub Player"]');
   writeFileSync(join(dir, 'data', 'team_pages.json'), '{"stub":"team_pages"}');
   writeFileSync(join(dir, 'data', 'club_pages.json'), '{"stub":"club_pages"}');
+  writeFileSync(join(dir, 'data', 'logs', 'transactions.json'), '{"stub":"transactions"}');
   writeFileSync(join(dir, 'nba_players_careers_READY.json'),
     '[{"player":"Stub Player","career_history":[]}]');
   return dir;
@@ -127,6 +128,13 @@ async function main() {
       const r = await fetch(`${WORKER_BASE}/data/some_random_file.json`,
         { headers: { Origin: ALLOWED_ORIGIN } });
       ok('non-whitelisted path -> 404', r.status === 404, r.status);
+    }
+
+    // 5b. newly-whitelisted transactions ledger path -> 200
+    {
+      const r = await fetch(`${WORKER_BASE}/data/logs/transactions.json`,
+        { headers: { Origin: ALLOWED_ORIGIN } });
+      ok('whitelisted transactions.json path -> 200', r.status === 200, r.status);
     }
 
     // 6. POST -> 405

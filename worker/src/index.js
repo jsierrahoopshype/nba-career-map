@@ -50,6 +50,7 @@ const ALLOWED_PATHS = new Set([
   "/data/player_index.json",
   "/data/team_pages.json",
   "/data/club_pages.json",
+  "/data/logs/transactions.json",
 ]);
 
 // Pipeline runs at most a few times a day (see .github/workflows/update-
