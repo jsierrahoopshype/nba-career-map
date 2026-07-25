@@ -1,16 +1,16 @@
 name: Update NBA Career Database
 
 # Schedule (all times UTC):
-#   In-season  (October–June): daily at 08:00       -> incremental
-#   Off-season (July–September): weekly Mondays 08:00 -> incremental
+#   Daily, year-round, at 08:00                     -> incremental
 #   Monthly (1st of every month 09:00)              -> full_overseas
-# Cron month/day-of-week fields express the seasonal split natively. The run
-# step maps the monthly cron to the full_overseas mode (re-check ALL overseas
-# players); all other scheduled runs use incremental.
+# Latest Signings depends on daily transaction capture, so the pipeline no
+# longer drops to weekly in the off-season (Jul-Sep) -- daily runs still find
+# real moves (overseas signings, G League call-ups) even outside the NBA
+# season proper. The run step maps the monthly cron to the full_overseas
+# mode (re-check ALL overseas players); the daily cron uses incremental.
 on:
   schedule:
-    - cron: "0 8 * 10,11,12,1,2,3,4,5,6 *"   # in-season: every day, Oct–Jun
-    - cron: "0 8 * 7,8,9 1"                   # off-season: Mondays, Jul–Sep
+    - cron: "0 8 * * *"                       # daily, every day of the year
     - cron: "0 9 1 * *"                       # monthly: full overseas re-check
   workflow_dispatch:
     inputs:
