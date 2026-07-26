@@ -502,6 +502,10 @@
             line-height: 1;
         }
         .player-allstar.show { display: inline-block; }
+        .player-allstar .as-count {
+            font-family: var(--mono); font-size: 11px; font-weight: 700;
+            vertical-align: super; margin-left: 1px;
+        }
 
         .player-span {
             font-size: .78rem;
@@ -2029,7 +2033,14 @@
             // silent no-op when nationality/all_star aren't known — no flag, no star
             document.getElementById('pNatFlag').innerHTML =
                 (p.nationality && window.nationalityFlag) ? nationalityFlag(p.nationality) : '';
-            document.getElementById('pAllStar').classList.toggle('show', !!p.all_star);
+            // all_star (year-list/boolean, live-fetched) and all_star_count (int,
+            // CSV-ingested) are independent fields — either marks the star, the
+            // count (when known) renders as a small superscript badge.
+            const asCount = p.all_star_count;
+            const pAllStarEl = document.getElementById('pAllStar');
+            pAllStarEl.classList.toggle('show', !!p.all_star || asCount != null);
+            pAllStarEl.innerHTML = asCount != null ? `★<span class="as-count">${asCount}</span>` : '★';
+            pAllStarEl.title = asCount != null ? `${asCount}x NBA All-Star` : 'NBA All-Star';
 
             // Records with no parsed career (data gaps) still open, showing the
             // name + a message instead of alerting.

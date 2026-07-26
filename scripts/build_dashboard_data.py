@@ -134,15 +134,20 @@ def _current_stint(player: dict) -> dict | None:
 
 
 def _nat_star(player: dict) -> dict:
-    """nationality/all_star for a roster row, sparse — omitted (not stored as
-    empty/null) when the source player has neither, so today's fully-unpopulated
-    fields (the backfill is a separate GitHub Actions run) don't bloat every
-    roster row across team_pages.json/club_pages.json with placeholders."""
+    """nationality/all_star/all_star_count for a roster row, sparse — omitted
+    (not stored as empty/null) when the source player has none, so today's
+    fully-unpopulated fields (the backfill is a separate GitHub Actions run)
+    don't bloat every roster row across team_pages.json/club_pages.json with
+    placeholders. all_star (year-list/boolean, live-fetched) and
+    all_star_count (int, CSV-ingested) are independent — a row can carry
+    either, both, or neither."""
     out = {}
     if player.get("nationality"):
         out["nationality"] = player["nationality"]
     if player.get("all_star") is not None:
         out["all_star"] = player["all_star"]
+    if player.get("all_star_count") is not None:
+        out["all_star_count"] = player["all_star_count"]
     return out
 
 
@@ -576,7 +581,7 @@ def w_club_pages(players: list, related: dict | None = None) -> dict:
         for g in c["_by"].values():
             roster.append({"player": g["player"], "years": _join_years(g["spans"]),
                            "status": g["status"], "last_team": g["last_team"],
-                           **{k: g[k] for k in ("nationality", "all_star") if k in g}})
+                           **{k: g[k] for k in ("nationality", "all_star", "all_star_count") if k in g}})
         roster.sort(key=lambda r: r["player"])
         del c["_by"]
         c["count"] = len(roster)

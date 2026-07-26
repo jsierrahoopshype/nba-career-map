@@ -484,6 +484,8 @@ def _persist(db: Database, summary: dict) -> None:
             mp["nationality"] = p["nationality"]
         if p.get("all_star") is not None:
             mp["all_star"] = p["all_star"]
+        if p.get("all_star_count") is not None:
+            mp["all_star_count"] = p["all_star_count"]
         map_players.append(mp)
     write_json(ROOT_MAP_FILE, map_players)
 

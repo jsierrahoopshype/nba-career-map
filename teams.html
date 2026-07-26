@@ -100,6 +100,7 @@
         .status-badge.overseas_active { color:var(--accent); background:var(--accent-dim); }
         .status-badge.retired { color:var(--text-secondary); background:var(--surface-hover); }
         .allstar-mark { color:#f5a623; font-size:13px; }
+        .allstar-mark .as-count { font-family:var(--mono); font-size:9px; font-weight:700; vertical-align:super; margin-left:1px; }
 
         /* related-teams suggestion chips */
         .related-chips { display:flex; flex-wrap:wrap; gap:8px; }
@@ -293,7 +294,8 @@
                     if (club && !NBA_SET.has(club)){
                         (clubIndex[club] ??= new Map()).set(a.player,
                             { player:a.player, status:a.status, country:a.country,
-                              nationality:a.nationality||'', all_star:a.all_star });
+                              nationality:a.nationality||'', all_star:a.all_star,
+                              all_star_count:a.all_star_count });
                     }
                 }
             }
@@ -484,9 +486,17 @@
         }
 
         // shared cell renderers
-        // silent no-op (no star) when all_star is unset — never a placeholder
-        const playerCell = r => `<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` +
-            (r.all_star ? ` <span class="allstar-mark" title="NBA All-Star">★</span>` : '');
+        // all_star (year-list/boolean, live-fetched) and all_star_count (int,
+        // CSV-ingested) are independent — either marks the star; silent no-op
+        // (no star) when neither is set — never a placeholder.
+        const playerCell = r => {
+            const asCount = r.all_star_count;
+            const isStar = !!r.all_star || asCount != null;
+            const badge = asCount != null ? `★<span class="as-count">${asCount}</span>` : '★';
+            const title = asCount != null ? `${asCount}x NBA All-Star` : 'NBA All-Star';
+            return `<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` +
+                (isStar ? ` <span class="allstar-mark" title="${title}">${badge}</span>` : '');
+        };
         // every team/club name links to its page (all clubs resolve now)
         const teamCell = n => n ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : '—';
         const countryCell = c => c ? `<a class="link" href="${countryHref(c)}">${flagImg(c)}${esc(c)}</a>` : '—';
@@ -591,6 +601,7 @@
                 __k:m.player, player:m.player, status:m.status,
                 franchises:[...(playerFranchises[m.player]||[])].sort(),
                 nationality:m.nationality||'', all_star:m.all_star,
+                all_star_count:m.all_star_count,
             }));
 
             // Retired alumni of this club (mirrors the team-page split). The
