@@ -148,7 +148,7 @@
     },
     {
       "player": "Amida Brimah",
-      "current_team": "Covirán Granada",
+      "current_team": "Granada",
       "country": "Spain",
       "last_updated": "2026-07-13"
     },
@@ -400,7 +400,7 @@
     },
     {
       "player": "Briante Weber",
-      "current_team": "Treviso",
+      "current_team": "Benetton Treviso",
       "country": "Italy",
       "last_updated": "2026-07-13"
     },
@@ -508,7 +508,7 @@
     },
     {
       "player": "Cassius Stanley",
-      "current_team": "BC Šiauliai",
+      "current_team": "Šiauliai",
       "country": "Lithuania",
       "last_updated": "2026-07-13"
     },
@@ -1558,7 +1558,7 @@
     },
     {
       "player": "JP Macura",
-      "current_team": "Treviso",
+      "current_team": "Benetton Treviso",
       "country": "Italy",
       "last_updated": "2026-07-13"
     },
@@ -2242,7 +2242,7 @@
     },
     {
       "player": "Josh Richardson",
-      "current_team": "Basket Zaragoza",
+      "current_team": "Zaragoza",
       "country": "Spain",
       "last_updated": "2026-07-13"
     },
@@ -2320,7 +2320,7 @@
     },
     {
       "player": "Justin Wright-Foreman",
-      "current_team": "Casademont Zaragoza",
+      "current_team": "Zaragoza",
       "country": "Spain",
       "last_updated": "2026-07-13"
     },
@@ -4084,7 +4084,7 @@
     },
     {
       "player": "William Howard",
-      "current_team": "Covirán Granada",
+      "current_team": "Granada",
       "country": "Spain",
       "last_updated": "2026-07-13"
     },
@@ -5309,6 +5309,10 @@
       "players": 88
     },
     {
+      "team": "FC Barcelona",
+      "players": 88
+    },
+    {
       "team": "Westchester Knicks",
       "players": 87
     },
@@ -5363,10 +5367,6 @@
     {
       "team": "Greensboro Swarm",
       "players": 76
-    },
-    {
-      "team": "FC Barcelona",
-      "players": 74
     },
     {
       "team": "Reno Bighorns",
@@ -5457,11 +5457,15 @@
       "players": 60
     },
     {
-      "team": "ASVEL",
-      "players": 56
+      "team": "Joventut Badalona",
+      "players": 58
     },
     {
-      "team": "Joventut Badalona",
+      "team": "Zaragoza",
+      "players": 57
+    },
+    {
+      "team": "ASVEL",
       "players": 56
     },
     {
@@ -5513,10 +5517,6 @@
       "players": 52
     },
     {
-      "team": "Zaragoza",
-      "players": 52
-    },
-    {
       "team": "Hapoel Tel Aviv",
       "players": 51
     },
@@ -5537,11 +5537,19 @@
       "players": 49
     },
     {
+      "team": "UNICS",
+      "players": 48
+    },
+    {
+      "team": "Benetton Treviso",
+      "players": 47
+    },
+    {
       "team": "Murcia",
       "players": 47
     },
     {
-      "team": "UNICS",
+      "team": "Scavolini Pesaro",
       "players": 47
     },
     {
@@ -5573,20 +5581,16 @@
       "players": 44
     },
     {
+      "team": "Gran Canaria",
+      "players": 44
+    },
+    {
       "team": "Providence Steamrollers",
       "players": 44
     },
     {
       "team": "Estudiantes",
       "players": 43
-    },
-    {
-      "team": "Scavolini Pesaro",
-      "players": 43
-    },
-    {
-      "team": "Benetton Treviso",
-      "players": 42
     },
     {
       "team": "Grand Rapids Drive",
@@ -5689,7 +5693,7 @@
       "players": 35
     },
     {
-      "team": "Gran Canaria",
+      "team": "Brose Bamberg",
       "players": 35
     },
     {
@@ -5699,6 +5703,10 @@
     {
       "team": "Kentucky Colonels",
       "players": 35
+    },
+    {
+      "team": "Cedevita Zagreb",
+      "players": 34
     },
     {
       "team": "Columbus Horizon",
@@ -5713,7 +5721,11 @@
       "players": 34
     },
     {
-      "team": "Brose Bamberg",
+      "team": "Bayern Munich",
+      "players": 33
+    },
+    {
+      "team": "Fuenlabrada",
       "players": 33
     },
     {
@@ -5725,8 +5737,8 @@
       "players": 33
     },
     {
-      "team": "Bayern Munich",
-      "players": 32
+      "team": "Valladolid",
+      "players": 33
     },
     {
       "team": "Guaros de Lara",
@@ -5739,6 +5751,14 @@
     {
       "team": "Scranton Miners",
       "players": 32
+    },
+    {
+      "team": "AS Monaco",
+      "players": 31
+    },
+    {
+      "team": "CSP Limoges",
+      "players": 31
     },
     {
       "team": "Darüşşafaka",
@@ -5789,6 +5809,10 @@
       "players": 29
     },
     {
+      "team": "Granada",
+      "players": 29
+    },
+    {
       "team": "Limoges CSP",
       "players": 29
     },
@@ -5799,6 +5823,10 @@
     {
       "team": "Zhejiang Lions",
       "players": 29
+    },
+    {
+      "team": "BCM Gravelines",
+      "players": 28
     },
     {
       "team": "Dinamo Sassari",
@@ -5849,8 +5877,8 @@
       "players": 26
     },
     {
-      "team": "AS Monaco",
-      "players": 25
+      "team": "Valvi Girona",
+      "players": 26
     },
     {
       "team": "Avtodor Saratov",
@@ -5870,6 +5898,10 @@
     },
     {
       "team": "Olympique Antibes",
+      "players": 25
+    },
+    {
+      "team": "Pallacanestro Trieste",
       "players": 25
     },
     {
@@ -5917,10 +5949,6 @@
       "players": 24
     },
     {
-      "team": "BCM Gravelines",
-      "players": 23
-    },
-    {
       "team": "Bilbao Basket",
       "players": 23
     },
@@ -5945,6 +5973,14 @@
       "players": 23
     },
     {
+      "team": "Viola Reggio Calabria",
+      "players": 23
+    },
+    {
+      "team": "Basket Livorno",
+      "players": 22
+    },
+    {
       "team": "Gaiteros del Zulia",
       "players": 22
     },
@@ -5961,15 +5997,15 @@
       "players": 22
     },
     {
+      "team": "Manresa",
+      "players": 22
+    },
+    {
       "team": "SIG Strasbourg",
       "players": 22
     },
     {
       "team": "Tri-City Chinook",
-      "players": 22
-    },
-    {
-      "team": "Viola Reggio Calabria",
       "players": 22
     },
     {
@@ -5993,7 +6029,15 @@
       "players": 21
     },
     {
+      "team": "Baloncesto León",
+      "players": 21
+    },
+    {
       "team": "Fayetteville Patriots",
+      "players": 21
+    },
+    {
+      "team": "Kyiv",
       "players": 21
     },
     {
@@ -6021,7 +6065,7 @@
       "players": 20
     },
     {
-      "team": "Fuenlabrada",
+      "team": "Reyer Venezia",
       "players": 20
     },
     {
@@ -6093,6 +6137,10 @@
       "players": 18
     },
     {
+      "team": "Breogán",
+      "players": 18
+    },
+    {
       "team": "Carolina Cougars",
       "players": 18
     },
@@ -6113,6 +6161,10 @@
       "players": 18
     },
     {
+      "team": "Guangdong Southern Tigers",
+      "players": 18
+    },
+    {
       "team": "Harlem Globetrotters",
       "players": 18
     },
@@ -6122,6 +6174,10 @@
     },
     {
       "team": "Jilin Northeast Tigers",
+      "players": 18
+    },
+    {
+      "team": "Joventut",
       "players": 18
     },
     {
@@ -6173,11 +6229,11 @@
       "players": 17
     },
     {
-      "team": "Panteras de Miranda",
+      "team": "Oostende",
       "players": 17
     },
     {
-      "team": "Reyer Venezia",
+      "team": "Panteras de Miranda",
       "players": 17
     },
     {
@@ -6189,11 +6245,15 @@
       "players": 17
     },
     {
-      "team": "Boca Juniors",
+      "team": "Andorra",
       "players": 16
     },
     {
-      "team": "CSP Limoges",
+      "team": "BCM Gravelines-Dunkerque",
+      "players": 16
+    },
+    {
+      "team": "Boca Juniors",
       "players": 16
     },
     {
@@ -6201,7 +6261,11 @@
       "players": 16
     },
     {
-      "team": "Guangdong Southern Tigers",
+      "team": "EWE Baskets Oldenburg",
+      "players": 16
+    },
+    {
+      "team": "Enel Brindisi",
       "players": 16
     },
     {
@@ -6261,7 +6325,7 @@
       "players": 16
     },
     {
-      "team": "BCM Gravelines-Dunkerque",
+      "team": "Basket Brescia",
       "players": 15
     },
     {
@@ -6293,10 +6357,6 @@
       "players": 15
     },
     {
-      "team": "Limoges",
-      "players": 15
-    },
-    {
       "team": "Meralco Bolts",
       "players": 15
     },
@@ -6309,7 +6369,7 @@
       "players": 15
     },
     {
-      "team": "Pallacanestro Trieste",
+      "team": "Ourense",
       "players": 15
     },
     {
@@ -6322,6 +6382,10 @@
     },
     {
       "team": "Seoul SK Knights",
+      "players": 15
+    },
+    {
+      "team": "Sidigas Avellino",
       "players": 15
     },
     {
@@ -6357,7 +6421,7 @@
       "players": 14
     },
     {
-      "team": "Cedevita Zagreb",
+      "team": "Cáceres",
       "players": 14
     },
     {
@@ -6421,10 +6485,6 @@
       "players": 14
     },
     {
-      "team": "Ourense",
-      "players": 14
-    },
-    {
       "team": "Oyak Renault",
       "players": 14
     },
@@ -6445,7 +6505,7 @@
       "players": 14
     },
     {
-      "team": "Sidigas Avellino",
+      "team": "Sevilla",
       "players": 14
     },
     {
@@ -6461,6 +6521,10 @@
       "players": 14
     },
     {
+      "team": "Angelico Biella",
+      "players": 13
+    },
+    {
       "team": "Asseco Prokom Gdynia",
       "players": 13
     },
@@ -6469,11 +6533,11 @@
       "players": 13
     },
     {
-      "team": "Barcelona",
+      "team": "Bay State Bombardiers",
       "players": 13
     },
     {
-      "team": "Bay State Bombardiers",
+      "team": "Bursaspor",
       "players": 13
     },
     {
@@ -6489,15 +6553,15 @@
       "players": 13
     },
     {
+      "team": "FC Porto",
+      "players": 13
+    },
+    {
       "team": "Florida Beach Dogs",
       "players": 13
     },
     {
       "team": "Florida Beachdogs",
-      "players": 13
-    },
-    {
-      "team": "Granada",
       "players": 13
     },
     {
@@ -6529,10 +6593,6 @@
       "players": 13
     },
     {
-      "team": "Manresa",
-      "players": 13
-    },
-    {
       "team": "Memphis Tams",
       "players": 13
     },
@@ -6561,6 +6621,10 @@
       "players": 13
     },
     {
+      "team": "Reggio Emilia",
+      "players": 13
+    },
+    {
       "team": "Roanoke Dazzle",
       "players": 13
     },
@@ -6575,10 +6639,6 @@
     {
       "team": "Taipei Fubon Braves",
       "players": 13
-    },
-    {
-      "team": "Baloncesto Fuenlabrada",
-      "players": 12
     },
     {
       "team": "Beijing Royal Fighters",
@@ -6597,15 +6657,15 @@
       "players": 12
     },
     {
-      "team": "Cáceres",
-      "players": 12
-    },
-    {
-      "team": "EWE Baskets Oldenburg",
+      "team": "Dnipro",
       "players": 12
     },
     {
       "team": "Fuerza Regia",
+      "players": 12
+    },
+    {
+      "team": "Granollers",
       "players": 12
     },
     {
@@ -6633,7 +6693,7 @@
       "players": 12
     },
     {
-      "team": "Sevilla",
+      "team": "Tenerife",
       "players": 12
     },
     {
@@ -6657,19 +6717,15 @@
       "players": 11
     },
     {
+      "team": "Azovmash",
+      "players": 11
+    },
+    {
       "team": "BC Kalev",
       "players": 11
     },
     {
-      "team": "Baloncesto León",
-      "players": 11
-    },
-    {
       "team": "Bnei HaSharon",
-      "players": 11
-    },
-    {
-      "team": "Breogán",
       "players": 11
     },
     {
@@ -6725,6 +6781,14 @@
       "players": 11
     },
     {
+      "team": "Málaga",
+      "players": 11
+    },
+    {
+      "team": "Nizhny Novgorod",
+      "players": 11
+    },
+    {
       "team": "Pennsylvania ValleyDawgs",
       "players": 11
     },
@@ -6742,6 +6806,10 @@
     },
     {
       "team": "Rochester Flyers",
+      "players": 11
+    },
+    {
+      "team": "Roseto",
       "players": 11
     },
     {
@@ -6765,23 +6833,15 @@
       "players": 11
     },
     {
-      "team": "Valladolid",
-      "players": 11
-    },
-    {
-      "team": "Valvi Girona",
-      "players": 11
-    },
-    {
       "team": "Williamsport Billies",
       "players": 11
     },
     {
-      "team": "Al-Muharraq",
+      "team": "ALM Évreux",
       "players": 10
     },
     {
-      "team": "Andorra",
+      "team": "Al-Muharraq",
       "players": 10
     },
     {
@@ -6793,11 +6853,15 @@
       "players": 10
     },
     {
-      "team": "Basket Livorno",
+      "team": "Bucaneros de La Guaira",
       "players": 10
     },
     {
-      "team": "Bucaneros de La Guaira",
+      "team": "Budivelnyk",
+      "players": 10
+    },
+    {
+      "team": "Champagne Châlons-Reims",
       "players": 10
     },
     {
@@ -6821,7 +6885,7 @@
       "players": 10
     },
     {
-      "team": "Dnipro",
+      "team": "Donetsk",
       "players": 10
     },
     {
@@ -6853,10 +6917,6 @@
       "players": 10
     },
     {
-      "team": "Kyiv",
-      "players": 10
-    },
-    {
       "team": "Levallois",
       "players": 10
     },
@@ -6866,10 +6926,6 @@
     },
     {
       "team": "Melbourne Tigers",
-      "players": 10
-    },
-    {
-      "team": "Nizhny Novgorod",
       "players": 10
     },
     {
@@ -6921,14 +6977,6 @@
       "players": 10
     },
     {
-      "team": "Tenerife",
-      "players": 10
-    },
-    {
-      "team": "Zagreb",
-      "players": 10
-    },
-    {
       "team": "ASVEL Villeurbanne",
       "players": 9
     },
@@ -6945,10 +6993,6 @@
       "players": 9
     },
     {
-      "team": "Angelico Biella",
-      "players": 9
-    },
-    {
       "team": "Artland Dragons",
       "players": 9
     },
@@ -6957,15 +7001,15 @@
       "players": 9
     },
     {
-      "team": "Azovmash",
-      "players": 9
-    },
-    {
       "team": "BA Centre of Excellence",
       "players": 9
     },
     {
-      "team": "Basket Brescia",
+      "team": "BC Astana",
+      "players": 9
+    },
+    {
+      "team": "Banvit",
       "players": 9
     },
     {
@@ -6973,15 +7017,15 @@
       "players": 9
     },
     {
+      "team": "Brescia Leonessa",
+      "players": 9
+    },
+    {
       "team": "CB Girona",
       "players": 9
     },
     {
-      "team": "CB Gran Canaria",
-      "players": 9
-    },
-    {
-      "team": "CB Granada",
+      "team": "CRO Lyon",
       "players": 9
     },
     {
@@ -7018,10 +7062,6 @@
     },
     {
       "team": "Hapoel Gilboa Galil",
-      "players": 9
-    },
-    {
-      "team": "Joventut",
       "players": 9
     },
     {
@@ -7065,10 +7105,6 @@
       "players": 9
     },
     {
-      "team": "Málaga",
-      "players": 9
-    },
-    {
       "team": "Nagoya Diamond Dolphins",
       "players": 9
     },
@@ -7089,11 +7125,15 @@
       "players": 9
     },
     {
+      "team": "OAR Ferrol",
+      "players": 9
+    },
+    {
       "team": "Oklahoma Storm",
       "players": 9
     },
     {
-      "team": "Oostende",
+      "team": "Olympia Larissa",
       "players": 9
     },
     {
@@ -7114,6 +7154,10 @@
     },
     {
       "team": "Rhode Island Gulls",
+      "players": 9
+    },
+    {
+      "team": "Sagesse",
       "players": 9
     },
     {
@@ -7189,15 +7233,11 @@
       "players": 8
     },
     {
+      "team": "BG Göttingen",
+      "players": 8
+    },
+    {
       "team": "Beijing Ducks",
-      "players": 8
-    },
-    {
-      "team": "Budivelnyk",
-      "players": 8
-    },
-    {
-      "team": "CB Valladolid",
       "players": 8
     },
     {
@@ -7221,14 +7261,6 @@
       "players": 8
     },
     {
-      "team": "Champagne Châlons-Reims",
-      "players": 8
-    },
-    {
-      "team": "Cibona Zagreb",
-      "players": 8
-    },
-    {
       "team": "Club Atlético Aguada",
       "players": 8
     },
@@ -7237,15 +7269,7 @@
       "players": 8
     },
     {
-      "team": "Donetsk",
-      "players": 8
-    },
-    {
-      "team": "Enel Brindisi",
-      "players": 8
-    },
-    {
-      "team": "FC Porto",
+      "team": "Enisey",
       "players": 8
     },
     {
@@ -7266,10 +7290,6 @@
     },
     {
       "team": "Gladiadores de Anzoátegui",
-      "players": 8
-    },
-    {
-      "team": "Granollers",
       "players": 8
     },
     {
@@ -7309,6 +7329,10 @@
       "players": 8
     },
     {
+      "team": "Kleenex Pistoia",
+      "players": 8
+    },
+    {
       "team": "Krasnye Krylia",
       "players": 8
     },
@@ -7318,6 +7342,10 @@
     },
     {
       "team": "Libertas Forlì",
+      "players": 8
+    },
+    {
+      "team": "Manama",
       "players": 8
     },
     {
@@ -7341,15 +7369,7 @@
       "players": 8
     },
     {
-      "team": "OAR Ferrol",
-      "players": 8
-    },
-    {
       "team": "Obradoiro CAB",
-      "players": 8
-    },
-    {
-      "team": "Olympia Larissa",
       "players": 8
     },
     {
@@ -7369,10 +7389,6 @@
       "players": 8
     },
     {
-      "team": "Reggio Emilia",
-      "players": 8
-    },
-    {
       "team": "Riesen Ludwigsburg",
       "players": 8
     },
@@ -7381,11 +7397,11 @@
       "players": 8
     },
     {
-      "team": "Sagesse",
+      "team": "San Lorenzo",
       "players": 8
     },
     {
-      "team": "San Lorenzo",
+      "team": "San Pablo Burgos",
       "players": 8
     },
     {
@@ -7445,10 +7461,6 @@
       "players": 8
     },
     {
-      "team": "ALM Évreux",
-      "players": 7
-    },
-    {
       "team": "Air Avellino",
       "players": 7
     },
@@ -7489,15 +7501,7 @@
       "players": 7
     },
     {
-      "team": "BG Göttingen",
-      "players": 7
-    },
-    {
       "team": "Baloncesto Salamanca",
-      "players": 7
-    },
-    {
-      "team": "Banvit",
       "players": 7
     },
     {
@@ -7525,14 +7529,6 @@
       "players": 7
     },
     {
-      "team": "Bursaspor",
-      "players": 7
-    },
-    {
-      "team": "CB Breogán",
-      "players": 7
-    },
-    {
       "team": "Cherkaski Mavpy",
       "players": 7
     },
@@ -7546,10 +7542,6 @@
     },
     {
       "team": "Converge FiberXers",
-      "players": 7
-    },
-    {
-      "team": "Covirán Granada",
       "players": 7
     },
     {
@@ -7813,14 +7805,6 @@
       "players": 6
     },
     {
-      "team": "BC Astana",
-      "players": 6
-    },
-    {
-      "team": "BC Kyiv",
-      "players": 6
-    },
-    {
       "team": "Baltimore Bayrunners",
       "players": 6
     },
@@ -7841,14 +7825,6 @@
       "players": 6
     },
     {
-      "team": "Bàsquet Manresa",
-      "players": 6
-    },
-    {
-      "team": "CRO Lyon",
-      "players": 6
-    },
-    {
       "team": "Canarias",
       "players": 6
     },
@@ -7857,19 +7833,11 @@
       "players": 6
     },
     {
-      "team": "Casademont Girona",
-      "players": 6
-    },
-    {
       "team": "Cleveland Allmen Transfers",
       "players": 6
     },
     {
       "team": "Crispa Redmanizers",
-      "players": 6
-    },
-    {
-      "team": "DKV Joventut",
       "players": 6
     },
     {
@@ -7885,11 +7853,11 @@
       "players": 6
     },
     {
-      "team": "Enisey",
+      "team": "Enisey Krasnoyarsk",
       "players": 6
     },
     {
-      "team": "Enisey Krasnoyarsk",
+      "team": "FC Barcelona B",
       "players": 6
     },
     {
@@ -7905,7 +7873,7 @@
       "players": 6
     },
     {
-      "team": "Frutti Extra Bursaspor",
+      "team": "Gijón",
       "players": 6
     },
     {
@@ -7993,10 +7961,6 @@
       "players": 6
     },
     {
-      "team": "León",
-      "players": 6
-    },
-    {
       "team": "Link Tochigi Brex",
       "players": 6
     },
@@ -8038,10 +8002,6 @@
     },
     {
       "team": "Mitteldeutscher BC",
-      "players": 6
-    },
-    {
-      "team": "Monaco",
       "players": 6
     },
     {
@@ -8101,10 +8061,6 @@
       "players": 6
     },
     {
-      "team": "Roseto",
-      "players": 6
-    },
-    {
       "team": "Royal Halı Gaziantep",
       "players": 6
     },
@@ -8113,7 +8069,7 @@
       "players": 6
     },
     {
-      "team": "San Pablo Burgos",
+      "team": "Segafredo Gorizia",
       "players": 6
     },
     {
@@ -8181,6 +8137,10 @@
       "players": 6
     },
     {
+      "team": "s.Oliver Würzburg",
+      "players": 6
+    },
+    {
       "team": "Al-Ahli Jeddah",
       "players": 5
     },
@@ -8225,15 +8185,7 @@
       "players": 5
     },
     {
-      "team": "Brescia Leonessa",
-      "players": 5
-    },
-    {
       "team": "Brooklyn Kings",
-      "players": 5
-    },
-    {
-      "team": "Budivelnyk Kyiv",
       "players": 5
     },
     {
@@ -8245,7 +8197,7 @@
       "players": 5
     },
     {
-      "team": "Bàsquet Girona",
+      "team": "CSU Asesoft Ploiești",
       "players": 5
     },
     {
@@ -8277,15 +8229,11 @@
       "players": 5
     },
     {
+      "team": "Club Ourense Baloncesto",
+      "players": 5
+    },
+    {
       "team": "EnBW Ludwigsburg",
-      "players": 5
-    },
-    {
-      "team": "FC Barcelona B",
-      "players": 5
-    },
-    {
-      "team": "Festina Andorra",
       "players": 5
     },
     {
@@ -8305,10 +8253,6 @@
       "players": 5
     },
     {
-      "team": "Gijón",
-      "players": 5
-    },
-    {
       "team": "Glaxo Verona",
       "players": 5
     },
@@ -8318,10 +8262,6 @@
     },
     {
       "team": "Goyang Sono Skygunners",
-      "players": 5
-    },
-    {
-      "team": "Gravelines",
       "players": 5
     },
     {
@@ -8361,10 +8301,6 @@
       "players": 5
     },
     {
-      "team": "Kleenex Pistoia",
-      "players": 5
-    },
-    {
       "team": "Legia Warsaw",
       "players": 5
     },
@@ -8373,7 +8309,15 @@
       "players": 5
     },
     {
+      "team": "Levski Sofia",
+      "players": 5
+    },
+    {
       "team": "Liaoning Dinosaurs",
+      "players": 5
+    },
+    {
+      "team": "Lietuvos Rytas",
       "players": 5
     },
     {
@@ -8637,6 +8581,10 @@
       "players": 5
     },
     {
+      "team": "Zielona Góra",
+      "players": 5
+    },
+    {
       "team": "Znicz Pruszków",
       "players": 5
     },
@@ -8646,6 +8594,10 @@
     },
     {
       "team": "İstanbul BB",
+      "players": 5
+    },
+    {
+      "team": "Šiauliai",
       "players": 5
     },
     {
@@ -8685,19 +8637,11 @@
       "players": 4
     },
     {
-      "team": "Akasvayu Girona",
-      "players": 4
-    },
-    {
       "team": "Al Ahly Benghazi",
       "players": 4
     },
     {
       "team": "Al Kuwait",
-      "players": 4
-    },
-    {
-      "team": "Al Manama",
       "players": 4
     },
     {
@@ -8737,11 +8681,11 @@
       "players": 4
     },
     {
-      "team": "Barako Bull Energy",
+      "team": "Avtodor",
       "players": 4
     },
     {
-      "team": "Basket Brescia Leonessa",
+      "team": "Barako Bull Energy",
       "players": 4
     },
     {
@@ -8757,15 +8701,7 @@
       "players": 4
     },
     {
-      "team": "Biella",
-      "players": 4
-    },
-    {
       "team": "Blackwater Bossing",
-      "players": 4
-    },
-    {
-      "team": "Blancos de Rueda Valladolid",
       "players": 4
     },
     {
@@ -8778,10 +8714,6 @@
     },
     {
       "team": "Breogán Lugo",
-      "players": 4
-    },
-    {
-      "team": "Brindisi",
       "players": 4
     },
     {
@@ -8806,10 +8738,6 @@
     },
     {
       "team": "CS Maristes",
-      "players": 4
-    },
-    {
-      "team": "CSU Asesoft Ploiești",
       "players": 4
     },
     {
@@ -8869,11 +8797,19 @@
       "players": 4
     },
     {
+      "team": "Czarni Słupsk",
+      "players": 4
+    },
+    {
       "team": "Dacin Tigers",
       "players": 4
     },
     {
       "team": "Daegu KOGAS Pegasus",
+      "players": 4
+    },
+    {
+      "team": "Dafni Athens",
       "players": 4
     },
     {
@@ -8890,6 +8826,10 @@
     },
     {
       "team": "Detroit Eagles",
+      "players": 4
+    },
+    {
+      "team": "Dexia Mons-Hainaut",
       "players": 4
     },
     {
@@ -8921,10 +8861,6 @@
       "players": 4
     },
     {
-      "team": "Filou Oostende",
-      "players": 4
-    },
-    {
       "team": "Flint Fuze",
       "players": 4
     },
@@ -8934,10 +8870,6 @@
     },
     {
       "team": "Fukushima Firebonds",
-      "players": 4
-    },
-    {
-      "team": "Fórum Valladolid",
       "players": 4
     },
     {
@@ -9021,6 +8953,10 @@
       "players": 4
     },
     {
+      "team": "Krka",
+      "players": 4
+    },
+    {
       "team": "Köln 99ers",
       "players": 4
     },
@@ -9053,14 +8989,6 @@
       "players": 4
     },
     {
-      "team": "Levski Sofia",
-      "players": 4
-    },
-    {
-      "team": "Lietuvos Rytas",
-      "players": 4
-    },
-    {
       "team": "Lokomotiv Rostov",
       "players": 4
     },
@@ -9074,10 +9002,6 @@
     },
     {
       "team": "Maccabi Ra'anana",
-      "players": 4
-    },
-    {
-      "team": "Manama",
       "players": 4
     },
     {
@@ -9193,10 +9117,6 @@
       "players": 4
     },
     {
-      "team": "Porto",
-      "players": 4
-    },
-    {
       "team": "Purefoods Tender Juicy Hotdogs",
       "players": 4
     },
@@ -9242,10 +9162,6 @@
     },
     {
       "team": "Science City Jena",
-      "players": 4
-    },
-    {
-      "team": "Segafredo Gorizia",
       "players": 4
     },
     {
@@ -9333,6 +9249,14 @@
       "players": 4
     },
     {
+      "team": "Traiskirchen Lions",
+      "players": 4
+    },
+    {
+      "team": "Tsmoki-Minsk",
+      "players": 4
+    },
+    {
       "team": "Tulsa Zone",
       "players": 4
     },
@@ -9389,14 +9313,6 @@
       "players": 4
     },
     {
-      "team": "Zielona Góra",
-      "players": 4
-    },
-    {
-      "team": "s.Oliver Würzburg",
-      "players": 4
-    },
-    {
       "team": "Élan Béarnais",
       "players": 4
     },
@@ -9410,6 +9326,10 @@
     },
     {
       "team": "ASA Sceaux",
+      "players": 3
+    },
+    {
+      "team": "ASPO Tours",
       "players": 3
     },
     {
@@ -9493,19 +9413,11 @@
       "players": 3
     },
     {
-      "team": "Astana",
-      "players": 3
-    },
-    {
       "team": "Atenas",
       "players": 3
     },
     {
       "team": "Aurora Basket Jesi",
-      "players": 3
-    },
-    {
-      "team": "Avtodor",
       "players": 3
     },
     {
@@ -9517,19 +9429,15 @@
       "players": 3
     },
     {
+      "team": "BSC Saturn Köln",
+      "players": 3
+    },
+    {
       "team": "Bahçeşehir",
       "players": 3
     },
     {
       "team": "Bancatercas Teramo",
-      "players": 3
-    },
-    {
-      "team": "Bartolini Brindisi",
-      "players": 3
-    },
-    {
-      "team": "Base Oostende",
       "players": 3
     },
     {
@@ -9550,14 +9458,6 @@
     },
     {
       "team": "Basket Mestre",
-      "players": 3
-    },
-    {
-      "team": "Basket Zaragoza",
-      "players": 3
-    },
-    {
-      "team": "Baskets Oldenburg",
       "players": 3
     },
     {
@@ -9589,10 +9489,6 @@
       "players": 3
     },
     {
-      "team": "Bipop Carire Reggio Emilia",
-      "players": 3
-    },
-    {
       "team": "Blue Stars",
       "players": 3
     },
@@ -9602,10 +9498,6 @@
     },
     {
       "team": "Borås Basket",
-      "players": 3
-    },
-    {
-      "team": "Brescia",
       "players": 3
     },
     {
@@ -9641,6 +9533,10 @@
       "players": 3
     },
     {
+      "team": "CSK VVS Samara",
+      "players": 3
+    },
+    {
       "team": "Caja de Ronda",
       "players": 3
     },
@@ -9665,6 +9561,10 @@
       "players": 3
     },
     {
+      "team": "Castors Braine",
+      "players": 3
+    },
+    {
       "team": "Cañeros de La Romana",
       "players": 3
     },
@@ -9682,10 +9582,6 @@
     },
     {
       "team": "Club Atlético Atenas",
-      "players": 3
-    },
-    {
-      "team": "Club Ourense Baloncesto",
       "players": 3
     },
     {
@@ -9729,10 +9625,6 @@
       "players": 3
     },
     {
-      "team": "Dafni Athens",
-      "players": 3
-    },
-    {
       "team": "Dallas / Texas Chaparrals",
       "players": 3
     },
@@ -9746,10 +9638,6 @@
     },
     {
       "team": "Detroit Vagabond Kings",
-      "players": 3
-    },
-    {
-      "team": "Dexia Mons-Hainaut",
       "players": 3
     },
     {
@@ -9777,10 +9665,6 @@
       "players": 3
     },
     {
-      "team": "Elosúa León",
-      "players": 3
-    },
-    {
       "team": "Entente Orléanaise",
       "players": 3
     },
@@ -9797,10 +9681,6 @@
       "players": 3
     },
     {
-      "team": "Euro Roseto",
-      "players": 3
-    },
-    {
       "team": "Ezzahra Sports",
       "players": 3
     },
@@ -9809,15 +9689,7 @@
       "players": 3
     },
     {
-      "team": "Filodoro Brescia",
-      "players": 3
-    },
-    {
       "team": "Flint Dow A.C.'s",
-      "players": 3
-    },
-    {
-      "team": "Forum Valladolid",
       "players": 3
     },
     {
@@ -9850,10 +9722,6 @@
     },
     {
       "team": "Gregorio Urbano Gilbert",
-      "players": 3
-    },
-    {
-      "team": "Grupo Libro Valladolid",
       "players": 3
     },
     {
@@ -9894,10 +9762,6 @@
     },
     {
       "team": "Huracanes del Atlántico",
-      "players": 3
-    },
-    {
-      "team": "Hurlingham Trieste",
       "players": 3
     },
     {
@@ -9969,10 +9833,6 @@
       "players": 3
     },
     {
-      "team": "Krka",
-      "players": 3
-    },
-    {
       "team": "Krka Novo Mesto",
       "players": 3
     },
@@ -10026,6 +9886,10 @@
     },
     {
       "team": "Los Angeles D-Fenders / South Bay Lakers",
+      "players": 3
+    },
+    {
+      "team": "Los Barrios",
       "players": 3
     },
     {
@@ -10197,6 +10061,10 @@
       "players": 3
     },
     {
+      "team": "Rapid București",
+      "players": 3
+    },
+    {
       "team": "Red Bull Thunder",
       "players": 3
     },
@@ -10333,10 +10201,6 @@
       "players": 3
     },
     {
-      "team": "Traiskirchen Lions",
-      "players": 3
-    },
-    {
       "team": "Treasure Coast Tropics",
       "players": 3
     },
@@ -10349,15 +10213,7 @@
       "players": 3
     },
     {
-      "team": "Treviso",
-      "players": 3
-    },
-    {
       "team": "Trotamundos",
-      "players": 3
-    },
-    {
-      "team": "Tsmoki-Minsk",
       "players": 3
     },
     {
@@ -10429,18 +10285,6 @@
       "players": 3
     },
     {
-      "team": "Évreux",
-      "players": 3
-    },
-    {
-      "team": "Šiauliai",
-      "players": 3
-    },
-    {
-      "team": "7Up Joventut",
-      "players": 2
-    },
-    {
       "team": "A.S. Ramat HaSharon",
       "players": 2
     },
@@ -10462,10 +10306,6 @@
     },
     {
       "team": "ASK Rīga",
-      "players": 2
-    },
-    {
-      "team": "ASPO Tours",
       "players": 2
     },
     {
@@ -10585,10 +10425,6 @@
       "players": 2
     },
     {
-      "team": "Allibert Livorno",
-      "players": 2
-    },
-    {
       "team": "Alvik BK",
       "players": 2
     },
@@ -10689,35 +10525,11 @@
       "players": 2
     },
     {
-      "team": "BC Azovmash",
-      "players": 2
-    },
-    {
-      "team": "BC Budivelnyk",
-      "players": 2
-    },
-    {
       "team": "BC Cherkasy",
       "players": 2
     },
     {
-      "team": "BC Dnipro",
-      "players": 2
-    },
-    {
-      "team": "BC Donetsk",
-      "players": 2
-    },
-    {
-      "team": "BC Enisey",
-      "players": 2
-    },
-    {
       "team": "BC Samara",
-      "players": 2
-    },
-    {
-      "team": "BC Šiauliai",
       "players": 2
     },
     {
@@ -10729,10 +10541,6 @@
       "players": 2
     },
     {
-      "team": "BSC Saturn Köln",
-      "players": 2
-    },
-    {
       "team": "BV Amstelveen",
       "players": 2
     },
@@ -10741,19 +10549,11 @@
       "players": 2
     },
     {
-      "team": "Baker Livorno",
-      "players": 2
-    },
-    {
-      "team": "Baloncesto Sevilla",
+      "team": "Balkan Botevgrad",
       "players": 2
     },
     {
       "team": "Baltimore Clippers",
-      "players": 2
-    },
-    {
-      "team": "Bandırma Banvit",
       "players": 2
     },
     {
@@ -10770,10 +10570,6 @@
     },
     {
       "team": "Barreteros de Zacatecas",
-      "players": 2
-    },
-    {
-      "team": "Basket CRO Lyon",
       "players": 2
     },
     {
@@ -10809,19 +10605,11 @@
       "players": 2
     },
     {
-      "team": "Benston Zagreb",
-      "players": 2
-    },
-    {
       "team": "Beopetrol",
       "players": 2
     },
     {
       "team": "Best Balıkesir",
-      "players": 2
-    },
-    {
-      "team": "Bini Viaggi Livorno",
       "players": 2
     },
     {
@@ -10869,10 +10657,6 @@
       "players": 2
     },
     {
-      "team": "CB Cáceres",
-      "players": 2
-    },
-    {
       "team": "CB Las Rozas",
       "players": 2
     },
@@ -10886,10 +10670,6 @@
     },
     {
       "team": "CDP Domingo Paulino Santiago",
-      "players": 2
-    },
-    {
-      "team": "CSK VVS Samara",
       "players": 2
     },
     {
@@ -10929,6 +10709,10 @@
       "players": 2
     },
     {
+      "team": "Cajamadrid",
+      "players": 2
+    },
+    {
       "team": "Canturina Cantù",
       "players": 2
     },
@@ -10953,19 +10737,7 @@
       "players": 2
     },
     {
-      "team": "Carpegna Prosciutto Basket Pesaro",
-      "players": 2
-    },
-    {
-      "team": "Casademont Zaragoza",
-      "players": 2
-    },
-    {
       "team": "Casale Monferrato",
-      "players": 2
-    },
-    {
-      "team": "Castors Braine",
       "players": 2
     },
     {
@@ -11021,10 +10793,6 @@
       "players": 2
     },
     {
-      "team": "Châlons-Reims",
-      "players": 2
-    },
-    {
       "team": "Cimberio Novara",
       "players": 2
     },
@@ -11057,10 +10825,6 @@
       "players": 2
     },
     {
-      "team": "Club Joventut Badalona",
-      "players": 2
-    },
-    {
       "team": "Club La Unión",
       "players": 2
     },
@@ -11081,14 +10845,6 @@
       "players": 2
     },
     {
-      "team": "Consultinvest Pesaro",
-      "players": 2
-    },
-    {
-      "team": "Coop Nordest Trieste",
-      "players": 2
-    },
-    {
       "team": "Coren Ourense",
       "players": 2
     },
@@ -11101,15 +10857,7 @@
       "players": 2
     },
     {
-      "team": "Czarni Słupsk",
-      "players": 2
-    },
-    {
       "team": "Cóndores de Cundinamarca",
-      "players": 2
-    },
-    {
-      "team": "DJK Würzburg",
       "players": 2
     },
     {
@@ -11146,10 +10894,6 @@
     },
     {
       "team": "Dijlah Al-Jamiea",
-      "players": 2
-    },
-    {
-      "team": "Dinamica Gorizia",
       "players": 2
     },
     {
@@ -11198,14 +10942,6 @@
     },
     {
       "team": "Empire State Stallions",
-      "players": 2
-    },
-    {
-      "team": "Energa Czarni Słupsk",
-      "players": 2
-    },
-    {
-      "team": "Enichem Livorno",
       "players": 2
     },
     {
@@ -11333,10 +11069,6 @@
       "players": 2
     },
     {
-      "team": "Giorgio Tesi Group Pistoia",
-      "players": 2
-    },
-    {
       "team": "Girona Gavis",
       "players": 2
     },
@@ -11362,10 +11094,6 @@
     },
     {
       "team": "Great Taste Coffee Makers",
-      "players": 2
-    },
-    {
-      "team": "Grupo IFA Granollers",
       "players": 2
     },
     {
@@ -11433,10 +11161,6 @@
       "players": 2
     },
     {
-      "team": "Hitachi Venezia",
-      "players": 2
-    },
-    {
       "team": "Holland Carvers",
       "players": 2
     },
@@ -11470,10 +11194,6 @@
     },
     {
       "team": "Iberia Superstars",
-      "players": 2
-    },
-    {
-      "team": "Iberostar Tenerife",
       "players": 2
     },
     {
@@ -11761,10 +11481,6 @@
       "players": 2
     },
     {
-      "team": "Livorno",
-      "players": 2
-    },
-    {
       "team": "Liège",
       "players": 2
     },
@@ -11802,10 +11518,6 @@
     },
     {
       "team": "Los Angeles / Utah Stars",
-      "players": 2
-    },
-    {
-      "team": "Los Barrios",
       "players": 2
     },
     {
@@ -11922,6 +11634,10 @@
     },
     {
       "team": "Minnesota Muskies",
+      "players": 2
+    },
+    {
+      "team": "Minsk-2006",
       "players": 2
     },
     {
@@ -12113,10 +11829,6 @@
       "players": 2
     },
     {
-      "team": "Ourense Baloncesto",
-      "players": 2
-    },
-    {
       "team": "PBC Lukoil Academic",
       "players": 2
     },
@@ -12146,6 +11858,10 @@
     },
     {
       "team": "Pallacanestro Livorno",
+      "players": 2
+    },
+    {
+      "team": "Pallacanestro Torino",
       "players": 2
     },
     {
@@ -12302,10 +12018,6 @@
     },
     {
       "team": "Radnički Kragujevac",
-      "players": 2
-    },
-    {
-      "team": "Rapid București",
       "players": 2
     },
     {
@@ -12537,10 +12249,6 @@
       "players": 2
     },
     {
-      "team": "Southern Tigers",
-      "players": 2
-    },
-    {
       "team": "Spartak Primorje",
       "players": 2
     },
@@ -12590,6 +12298,10 @@
     },
     {
       "team": "Syracuse Nationals/Philadelphia 76ers",
+      "players": 2
+    },
+    {
+      "team": "São Paulo",
       "players": 2
     },
     {
@@ -12873,6 +12585,10 @@
       "players": 2
     },
     {
+      "team": "Zrinjski Mostar",
+      "players": 2
+    },
+    {
       "team": "Álftanes",
       "players": 2
     },
@@ -12965,10 +12681,6 @@
       "players": 1
     },
     {
-      "team": "AO Dafni Athens",
-      "players": 1
-    },
-    {
       "team": "APOP Paphos B.C.",
       "players": 1
     },
@@ -12993,10 +12705,6 @@
       "players": 1
     },
     {
-      "team": "AXA FC Barcelona",
-      "players": 1
-    },
-    {
       "team": "Abejas de León",
       "players": 1
     },
@@ -13010,10 +12718,6 @@
     },
     {
       "team": "Academic Sofia",
-      "players": 1
-    },
-    {
-      "team": "Acegas A.P.S. Trieste",
       "players": 1
     },
     {
@@ -13385,10 +13089,6 @@
       "players": 1
     },
     {
-      "team": "Alta Gestión Fuenlabrada",
-      "players": 1
-    },
-    {
       "team": "Altai Basket",
       "players": 1
     },
@@ -13553,19 +13253,11 @@
       "players": 1
     },
     {
-      "team": "Areslux Granollers",
-      "players": 1
-    },
-    {
       "team": "Aries Trikala",
       "players": 1
     },
     {
       "team": "Arka Gdynia",
-      "players": 1
-    },
-    {
-      "team": "Arkadia Traiskirchen Lions",
       "players": 1
     },
     {
@@ -13593,10 +13285,6 @@
       "players": 1
     },
     {
-      "team": "Asesoft Ploiești",
-      "players": 1
-    },
-    {
       "team": "Askatuak",
       "players": 1
     },
@@ -13614,10 +13302,6 @@
     },
     {
       "team": "Assigeco Casalpusterlengo",
-      "players": 1
-    },
-    {
-      "team": "Assignia Manresa",
       "players": 1
     },
     {
@@ -13689,10 +13373,6 @@
       "players": 1
     },
     {
-      "team": "Auxilium Pallacanestro Torino",
-      "players": 1
-    },
-    {
       "team": "Avala Ada",
       "players": 1
     },
@@ -13737,23 +13417,7 @@
       "players": 1
     },
     {
-      "team": "BC Andorra",
-      "players": 1
-    },
-    {
-      "team": "BC Avtodor",
-      "players": 1
-    },
-    {
-      "team": "BC Balkan Botevgrad",
-      "players": 1
-    },
-    {
       "team": "BC Besancon",
-      "players": 1
-    },
-    {
-      "team": "BC Castors Braine",
       "players": 1
     },
     {
@@ -13777,31 +13441,11 @@
       "players": 1
     },
     {
-      "team": "BC Krka",
-      "players": 1
-    },
-    {
-      "team": "BC Levski Sofia",
-      "players": 1
-    },
-    {
-      "team": "BC Lietuvos Rytas",
-      "players": 1
-    },
-    {
-      "team": "BC Nizhny Novgorod",
-      "players": 1
-    },
-    {
       "team": "BC Nokia",
       "players": 1
     },
     {
       "team": "BC Odesa",
-      "players": 1
-    },
-    {
-      "team": "BC Oostende",
       "players": 1
     },
     {
@@ -13818,14 +13462,6 @@
     },
     {
       "team": "BC Ternopil",
-      "players": 1
-    },
-    {
-      "team": "BC Tsmoki-Minsk",
-      "players": 1
-    },
-    {
-      "team": "BC UNICS",
       "players": 1
     },
     {
@@ -13861,10 +13497,6 @@
       "players": 1
     },
     {
-      "team": "BK Minsk-2006",
-      "players": 1
-    },
-    {
       "team": "BK Opava",
       "players": 1
     },
@@ -13881,10 +13513,6 @@
       "players": 1
     },
     {
-      "team": "BT Roseto",
-      "players": 1
-    },
-    {
       "team": "BTN CLS Knights Indonesia",
       "players": 1
     },
@@ -13894,10 +13522,6 @@
     },
     {
       "team": "Bakersfield Jam / Northern Arizona Suns",
-      "players": 1
-    },
-    {
-      "team": "Balkan Botevgrad",
       "players": 1
     },
     {
@@ -13922,10 +13546,6 @@
     },
     {
       "team": "Baltur Cento",
-      "players": 1
-    },
-    {
-      "team": "Bamberg",
       "players": 1
     },
     {
@@ -13977,10 +13597,6 @@
       "players": 1
     },
     {
-      "team": "Barcelona B",
-      "players": 1
-    },
-    {
       "team": "Barons",
       "players": 1
     },
@@ -14018,10 +13634,6 @@
     },
     {
       "team": "Basket Rimini Crabs",
-      "players": 1
-    },
-    {
-      "team": "Basket Treviso",
       "players": 1
     },
     {
@@ -14125,10 +13737,6 @@
       "players": 1
     },
     {
-      "team": "Bic Trieste",
-      "players": 1
-    },
-    {
       "team": "Biguá",
       "players": 1
     },
@@ -14150,10 +13758,6 @@
     },
     {
       "team": "Binova Bergamo",
-      "players": 1
-    },
-    {
-      "team": "Bipop-Carire Reggio Emilia",
       "players": 1
     },
     {
@@ -14206,10 +13810,6 @@
     },
     {
       "team": "Boston Frenzy",
-      "players": 1
-    },
-    {
-      "team": "Boston Livorno",
       "players": 1
     },
     {
@@ -14313,10 +13913,6 @@
       "players": 1
     },
     {
-      "team": "Brose Baskets Bamberg",
-      "players": 1
-    },
-    {
       "team": "Bruesa GBC",
       "players": 1
     },
@@ -14330,10 +13926,6 @@
     },
     {
       "team": "Budapest Honvéd",
-      "players": 1
-    },
-    {
-      "team": "Budivelnik Kyiv",
       "players": 1
     },
     {
@@ -14441,19 +14033,7 @@
       "players": 1
     },
     {
-      "team": "CB Los Barrios",
-      "players": 1
-    },
-    {
       "team": "CB Mataró",
-      "players": 1
-    },
-    {
-      "team": "CB OAR Ferrol",
-      "players": 1
-    },
-    {
-      "team": "CB Ourense",
       "players": 1
     },
     {
@@ -14469,10 +14049,6 @@
       "players": 1
     },
     {
-      "team": "CB San Pablo Burgos",
-      "players": 1
-    },
-    {
       "team": "CB Tarragona",
       "players": 1
     },
@@ -14482,10 +14058,6 @@
     },
     {
       "team": "CBet Jonava",
-      "players": 1
-    },
-    {
-      "team": "CD Cajamadrid",
       "players": 1
     },
     {
@@ -14525,10 +14097,6 @@
       "players": 1
     },
     {
-      "team": "CS Rapid București",
-      "players": 1
-    },
-    {
       "team": "CS Vâlcea 1924",
       "players": 1
     },
@@ -14565,10 +14133,6 @@
       "players": 1
     },
     {
-      "team": "Cacaolat Granollers",
-      "players": 1
-    },
-    {
       "team": "Caen Basket",
       "players": 1
     },
@@ -14577,19 +14141,7 @@
       "players": 1
     },
     {
-      "team": "Caixa Manresa",
-      "players": 1
-    },
-    {
       "team": "Caja Guipúzcoa",
-      "players": 1
-    },
-    {
-      "team": "Caja Mayoral Málaga",
-      "players": 1
-    },
-    {
-      "team": "Caja de Ronda Málaga",
       "players": 1
     },
     {
@@ -14606,10 +14158,6 @@
     },
     {
       "team": "Cajahuelva",
-      "players": 1
-    },
-    {
-      "team": "Cajamadrid",
       "players": 1
     },
     {
@@ -14673,10 +14221,6 @@
       "players": 1
     },
     {
-      "team": "Cantine Riunite Reggio Emilia",
-      "players": 1
-    },
-    {
       "team": "Canton / Cleveland Charge",
       "players": 1
     },
@@ -14717,19 +14261,11 @@
       "players": 1
     },
     {
-      "team": "Carmatic Pistoia",
-      "players": 1
-    },
-    {
       "team": "Carol Ann - Rica Hotdogs",
       "players": 1
     },
     {
       "team": "Carolina Cougars/Spirits of St. Louis",
-      "players": 1
-    },
-    {
-      "team": "Carrera Venezia",
       "players": 1
     },
     {
@@ -14909,10 +14445,6 @@
       "players": 1
     },
     {
-      "team": "Ciro Avellino",
-      "players": 1
-    },
-    {
       "team": "Cirsa Hospitalet",
       "players": 1
     },
@@ -14997,10 +14529,6 @@
       "players": 1
     },
     {
-      "team": "Club Sagesse",
-      "players": 1
-    },
-    {
       "team": "Club Trouville",
       "players": 1
     },
@@ -15073,10 +14601,6 @@
       "players": 1
     },
     {
-      "team": "Cordivari Roseto",
-      "players": 1
-    },
-    {
       "team": "Cordon Atlético",
       "players": 1
     },
@@ -15090,10 +14614,6 @@
     },
     {
       "team": "Correcaminos Matamoros",
-      "players": 1
-    },
-    {
-      "team": "Cortan Livorno",
       "players": 1
     },
     {
@@ -15122,10 +14642,6 @@
     },
     {
       "team": "Cáceres C.B.",
-      "players": 1
-    },
-    {
-      "team": "Círculo Gijón",
       "players": 1
     },
     {
@@ -15186,10 +14702,6 @@
     },
     {
       "team": "De Schiestreek",
-      "players": 1
-    },
-    {
-      "team": "De' Longhi Treviso",
       "players": 1
     },
     {
@@ -15290,10 +14802,6 @@
     },
     {
       "team": "Dinamo Tbilisi",
-      "players": 1
-    },
-    {
-      "team": "Dinamo Zagreb",
       "players": 1
     },
     {
@@ -15461,10 +14969,6 @@
       "players": 1
     },
     {
-      "team": "Enea Zastal Zielona Góra",
-      "players": 1
-    },
-    {
       "team": "Energa Czarni Slupsk",
       "players": 1
     },
@@ -15541,15 +15045,7 @@
       "players": 1
     },
     {
-      "team": "Eurofiditalia Reggio Calabria",
-      "players": 1
-    },
-    {
       "team": "Eurorida Scafati",
-      "players": 1
-    },
-    {
-      "team": "F.C. Porto",
       "players": 1
     },
     {
@@ -15558,10 +15054,6 @@
     },
     {
       "team": "FC Barcelona Lassa",
-      "players": 1
-    },
-    {
-      "team": "FC Bayern Munich",
       "players": 1
     },
     {
@@ -15574,10 +15066,6 @@
     },
     {
       "team": "FMP Železnik",
-      "players": 1
-    },
-    {
-      "team": "FMU São Paulo",
       "players": 1
     },
     {
@@ -15665,10 +15153,6 @@
       "players": 1
     },
     {
-      "team": "Festina Joventut",
-      "players": 1
-    },
-    {
       "team": "Fethiye Belediyespor",
       "players": 1
     },
@@ -15698,10 +15182,6 @@
     },
     {
       "team": "Fluminense",
-      "players": 1
-    },
-    {
-      "team": "Ford Burgos",
       "players": 1
     },
     {
@@ -15805,10 +15285,6 @@
       "players": 1
     },
     {
-      "team": "G.S. Olympia Larissa",
-      "players": 1
-    },
-    {
       "team": "GEPU San Luis",
       "players": 1
     },
@@ -15862,10 +15338,6 @@
     },
     {
       "team": "Gediz Üniversitesi",
-      "players": 1
-    },
-    {
-      "team": "Genertel Trieste",
       "players": 1
     },
     {
@@ -15961,10 +15433,6 @@
       "players": 1
     },
     {
-      "team": "Gravelines-Dunkerque",
-      "players": 1
-    },
-    {
       "team": "Great Falls Explorers",
       "players": 1
     },
@@ -15997,10 +15465,6 @@
       "players": 1
     },
     {
-      "team": "Grupo Begar León",
-      "players": 1
-    },
-    {
       "team": "Guadalajara Black Knights",
       "players": 1
     },
@@ -16029,19 +15493,11 @@
       "players": 1
     },
     {
-      "team": "Göttingen",
-      "players": 1
-    },
-    {
       "team": "HBA-Märsky",
       "players": 1
     },
     {
       "team": "HDI Sigorta Afyon Belediye",
-      "players": 1
-    },
-    {
-      "team": "HKK Zrinjski Mostar",
       "players": 1
     },
     {
@@ -16138,10 +15594,6 @@
     },
     {
       "team": "Hapoel Yossi Avrahami Eilat",
-      "players": 1
-    },
-    {
-      "team": "Happy Casa Brindisi",
       "players": 1
     },
     {
@@ -16329,10 +15781,6 @@
       "players": 1
     },
     {
-      "team": "ICL Manresa",
-      "players": 1
-    },
-    {
       "team": "Idea Śląsk",
       "players": 1
     },
@@ -16382,14 +15830,6 @@
     },
     {
       "team": "Illiabum Clube",
-      "players": 1
-    },
-    {
-      "team": "Illy Caffè Trieste",
-      "players": 1
-    },
-    {
-      "team": "Illycaffe Trieste",
       "players": 1
     },
     {
@@ -17217,10 +16657,6 @@
       "players": 1
     },
     {
-      "team": "Lyon",
-      "players": 1
-    },
-    {
       "team": "Löwen Braunschweig",
       "players": 1
     },
@@ -17561,10 +16997,6 @@
       "players": 1
     },
     {
-      "team": "Minsk-2006",
-      "players": 1
-    },
-    {
       "team": "Mississauga Power",
       "players": 1
     },
@@ -17626,10 +17058,6 @@
     },
     {
       "team": "Mono Vampire",
-      "players": 1
-    },
-    {
-      "team": "Mons-Hainaut",
       "players": 1
     },
     {
@@ -18025,10 +17453,6 @@
       "players": 1
     },
     {
-      "team": "Oldenburg",
-      "players": 1
-    },
-    {
       "team": "Olimpia Asuncion",
       "players": 1
     },
@@ -18246,10 +17670,6 @@
     },
     {
       "team": "Pallacanestro Piacentina",
-      "players": 1
-    },
-    {
-      "team": "Pallacanestro Torino",
       "players": 1
     },
     {
@@ -19241,10 +18661,6 @@
       "players": 1
     },
     {
-      "team": "Saturn Köln",
-      "players": 1
-    },
-    {
       "team": "Savio",
       "players": 1
     },
@@ -19789,10 +19205,6 @@
       "players": 1
     },
     {
-      "team": "São Paulo",
-      "players": 1
-    },
-    {
       "team": "Sírio",
       "players": 1
     },
@@ -20117,10 +19529,6 @@
       "players": 1
     },
     {
-      "team": "Tours",
-      "players": 1
-    },
-    {
       "team": "Tours B.C.",
       "players": 1
     },
@@ -20382,10 +19790,6 @@
     },
     {
       "team": "VITA Tbilisi",
-      "players": 1
-    },
-    {
-      "team": "VVS Samara",
       "players": 1
     },
     {
@@ -20782,10 +20186,6 @@
     },
     {
       "team": "Zorka Šabac",
-      "players": 1
-    },
-    {
-      "team": "Zrinjski Mostar",
       "players": 1
     },
     {
@@ -21481,6 +20881,16 @@
       ]
     },
     {
+      "team": "Zaragoza",
+      "count": 4,
+      "players": [
+        "Devin Robinson",
+        "Josh Richardson",
+        "Justin Wright-Foreman",
+        "Nicolas Brussino"
+      ]
+    },
+    {
       "team": "AEK Athens",
       "count": 3,
       "players": [
@@ -21550,6 +20960,15 @@
         "Elijah Hughes",
         "Hunter Tyson",
         "Tremont Waters"
+      ]
+    },
+    {
+      "team": "Granada",
+      "count": 3,
+      "players": [
+        "Amida Brimah",
+        "Matt Thomas",
+        "William Howard"
       ]
     },
     {
@@ -21825,6 +21244,14 @@
       ]
     },
     {
+      "team": "Benetton Treviso",
+      "count": 2,
+      "players": [
+        "Briante Weber",
+        "JP Macura"
+      ]
+    },
+    {
       "team": "Boulazac Basket Dordogne",
       "count": 2,
       "players": [
@@ -21886,14 +21313,6 @@
       "players": [
         "Admiral Schofield",
         "Jack McVeigh"
-      ]
-    },
-    {
-      "team": "Covirán Granada",
-      "count": 2,
-      "players": [
-        "Amida Brimah",
-        "William Howard"
       ]
     },
     {
@@ -22217,14 +21636,6 @@
       ]
     },
     {
-      "team": "Treviso",
-      "count": 2,
-      "players": [
-        "Briante Weber",
-        "JP Macura"
-      ]
-    },
-    {
       "team": "Trotamundos de Carabobo",
       "count": 2,
       "players": [
@@ -22286,14 +21697,6 @@
       "players": [
         "Damien Inglis",
         "Gary Clark"
-      ]
-    },
-    {
-      "team": "Zaragoza",
-      "count": 2,
-      "players": [
-        "Devin Robinson",
-        "Nicolas Brussino"
       ]
     },
     {
@@ -22432,20 +21835,6 @@
       ]
     },
     {
-      "team": "BC Šiauliai",
-      "count": 1,
-      "players": [
-        "Cassius Stanley"
-      ]
-    },
-    {
-      "team": "Basket Zaragoza",
-      "count": 1,
-      "players": [
-        "Josh Richardson"
-      ]
-    },
-    {
       "team": "Bauru",
       "count": 1,
       "players": [
@@ -22541,13 +21930,6 @@
       "count": 1,
       "players": [
         "Damion Baugh"
-      ]
-    },
-    {
-      "team": "Casademont Zaragoza",
-      "count": 1,
-      "players": [
-        "Justin Wright-Foreman"
       ]
     },
     {
@@ -22765,13 +22147,6 @@
       "count": 1,
       "players": [
         "Nathan Knight"
-      ]
-    },
-    {
-      "team": "Granada",
-      "count": 1,
-      "players": [
-        "Matt Thomas"
       ]
     },
     {
@@ -23605,6 +22980,13 @@
       "count": 1,
       "players": [
         "Perry Jones"
+      ]
+    },
+    {
+      "team": "Šiauliai",
+      "count": 1,
+      "players": [
+        "Cassius Stanley"
       ]
     }
   ],
@@ -25976,6 +25358,28 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Zaragoza",
+      "players": [
+        "Devin Robinson",
+        "Josh Richardson",
+        "Justin Wright-Foreman",
+        "Nicolas Brussino"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Josh Richardson",
+            "Nicolas Brussino"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "AEK Athens",
       "players": [
         "Greg Brown",
@@ -26249,6 +25653,26 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Benetton Treviso",
+      "players": [
+        "Briante Weber",
+        "JP Macura"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Briante Weber",
+            "JP Macura"
+          ],
+          "shared_nba_franchises": [
+            "Charlotte Hornets"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Boulazac Basket Dordogne",
       "players": [
         "Malik Fitts",
@@ -26446,26 +25870,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Treviso",
-      "players": [
-        "Briante Weber",
-        "JP Macura"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Briante Weber",
-            "JP Macura"
-          ],
-          "shared_nba_franchises": [
-            "Charlotte Hornets"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Trotamundos de Carabobo",
       "players": [
         "DJ Kennedy",
@@ -26497,15 +25901,6 @@
       "players": [
         "Bobi Klintman",
         "Kessler Edwards"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Zaragoza",
-      "players": [
-        "Devin Robinson",
-        "Nicolas Brussino"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
@@ -27355,6 +26750,16 @@
       "latest_stint_year": 2025
     },
     {
+      "team": "Granada",
+      "players": [
+        "Amida Brimah",
+        "Matt Thomas",
+        "William Howard"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2025
+    },
+    {
       "team": "Lokomotiv Kuban",
       "players": [
         "BJ Johnson",
@@ -27594,15 +26999,6 @@
       "players": [
         "Admiral Schofield",
         "Jack McVeigh"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2025
-    },
-    {
-      "team": "Covirán Granada",
-      "players": [
-        "Amida Brimah",
-        "William Howard"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2025
@@ -27976,6 +27372,14 @@
           "years": [
             "2009-2010",
             "2013-2014"
+          ]
+        },
+        {
+          "team": "Cedevita Zagreb",
+          "stints": 2,
+          "years": [
+            "2012",
+            "2022-2023"
           ]
         },
         {
@@ -29652,7 +29056,7 @@
       "player": "Corsley Edwards",
       "teams": [
         {
-          "team": "CB Granada",
+          "team": "Granada",
           "stints": 3,
           "years": [
             "2005",
@@ -31846,7 +31250,7 @@
           ]
         },
         {
-          "team": "Alta Gestión Fuenlabrada",
+          "team": "Fuenlabrada",
           "stints": 2,
           "years": [
             "2008-2009",
@@ -33715,19 +33119,19 @@
           ]
         },
         {
-          "team": "Casademont Girona",
-          "stints": 2,
-          "years": [
-            "2003",
-            "2003-2004"
-          ]
-        },
-        {
           "team": "Fuerza Regia",
           "stints": 2,
           "years": [
             "2016-2017",
             "2017-2018"
+          ]
+        },
+        {
+          "team": "Valvi Girona",
+          "stints": 2,
+          "years": [
+            "2003",
+            "2003-2004"
           ]
         },
         {
@@ -34066,7 +33470,7 @@
       "player": "Archie Goodwin",
       "teams": [
         {
-          "team": "BC Budivelnyk",
+          "team": "Budivelnyk",
           "stints": 2,
           "years": [
             "2022",
@@ -34868,7 +34272,7 @@
       "player": "Brad Wright",
       "teams": [
         {
-          "team": "Ourense Baloncesto",
+          "team": "Club Ourense Baloncesto",
           "stints": 2,
           "years": [
             "1990-1991",
@@ -37027,7 +36431,7 @@
       "player": "Dalibor Bagaric",
       "teams": [
         {
-          "team": "Benston Zagreb",
+          "team": "Cedevita Zagreb",
           "stints": 2,
           "years": [
             "1997-1998",
@@ -38467,19 +37871,19 @@
       "player": "Devin Ebanks",
       "teams": [
         {
-          "team": "Al Manama",
-          "stints": 2,
-          "years": [
-            "2021–2022",
-            "2024"
-          ]
-        },
-        {
           "team": "Al-Ahli",
           "stints": 2,
           "years": [
             "2022–2024",
             "2024–present"
+          ]
+        },
+        {
+          "team": "Manama",
+          "stints": 2,
+          "years": [
+            "2021–2022",
+            "2024"
           ]
         }
       ]
@@ -38586,19 +37990,19 @@
       "player": "Dexter Cambridge",
       "teams": [
         {
-          "team": "Dinamica Gorizia",
-          "stints": 2,
-          "years": [
-            "1996-1997",
-            "1997-1998"
-          ]
-        },
-        {
           "team": "Gigantes de Carolina",
           "stints": 2,
           "years": [
             "1996",
             "1997"
+          ]
+        },
+        {
+          "team": "Segafredo Gorizia",
+          "stints": 2,
+          "years": [
+            "1996-1997",
+            "1997-1998"
           ]
         }
       ]
@@ -40691,7 +40095,7 @@
       "player": "Gordan Giricek",
       "teams": [
         {
-          "team": "Cibona Zagreb",
+          "team": "Cedevita Zagreb",
           "stints": 2,
           "years": [
             "1993-2001",
@@ -41687,7 +41091,7 @@
       "player": "JP Macura",
       "teams": [
         {
-          "team": "Treviso",
+          "team": "Benetton Treviso",
           "stints": 2,
           "years": [
             "2024–2025",
@@ -43123,7 +42527,7 @@
       "player": "Jerome Moiso",
       "teams": [
         {
-          "team": "DKV Joventut",
+          "team": "Joventut",
           "stints": 2,
           "years": [
             "2007-2008",
@@ -43542,7 +42946,7 @@
       "player": "Joey Dorsey",
       "teams": [
         {
-          "team": "Barcelona",
+          "team": "FC Barcelona",
           "stints": 2,
           "years": [
             "2013-2014",
@@ -46586,7 +45990,7 @@
           ]
         },
         {
-          "team": "FMU São Paulo",
+          "team": "São Paulo",
           "stints": 2,
           "years": [
             "2001–2002",
@@ -47531,7 +46935,7 @@
       "player": "Micheal Ray Richardson",
       "teams": [
         {
-          "team": "Livorno",
+          "team": "Basket Livorno",
           "stints": 2,
           "years": [
             "1992-1994",
@@ -50155,19 +49559,19 @@
       "player": "Rick Hughes",
       "teams": [
         {
+          "team": "Baloncesto León",
+          "stints": 2,
+          "years": [
+            "2006-2008",
+            "2009-2010"
+          ]
+        },
+        {
           "team": "HTV Basket",
           "stints": 2,
           "years": [
             "2008-2009",
             "2010-2012"
-          ]
-        },
-        {
-          "team": "León",
-          "stints": 2,
-          "years": [
-            "2006-2008",
-            "2009-2010"
           ]
         }
       ]
@@ -51717,6 +51121,19 @@
           "years": [
             "1944-1946",
             "1948-1949"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Stanislav Medvedenko",
+      "teams": [
+        {
+          "team": "Kyiv",
+          "stints": 2,
+          "years": [
+            "1997-1998",
+            "1999-2000"
           ]
         }
       ]
@@ -54598,7 +54015,7 @@
       },
       {
         "player": "Amida Brimah",
-        "current_team": "Covirán Granada",
+        "current_team": "Granada",
         "city": "Granada",
         "state": "",
         "country": "Spain",
@@ -54949,7 +54366,7 @@
       },
       {
         "player": "Briante Weber",
-        "current_team": "Treviso",
+        "current_team": "Benetton Treviso",
         "city": "Treviso",
         "state": "",
         "country": "Italy",
@@ -55093,7 +54510,7 @@
       },
       {
         "player": "Cassius Stanley",
-        "current_team": "BC Šiauliai",
+        "current_team": "Šiauliai",
         "city": "Šiauliai",
         "state": "",
         "country": "Lithuania",
@@ -57577,7 +56994,7 @@
       },
       {
         "player": "Josh Richardson",
-        "current_team": "Basket Zaragoza",
+        "current_team": "Zaragoza",
         "city": "Zaragoza",
         "state": "",
         "country": "Spain",
@@ -57586,7 +57003,7 @@
       },
       {
         "player": "JP Macura",
-        "current_team": "Treviso",
+        "current_team": "Benetton Treviso",
         "city": "Treviso",
         "state": "",
         "country": "Italy",
@@ -57712,7 +57129,7 @@
       },
       {
         "player": "Justin Wright-Foreman",
-        "current_team": "Casademont Zaragoza",
+        "current_team": "Zaragoza",
         "city": "Zaragoza",
         "state": "",
         "country": "Spain",
@@ -60250,7 +59667,7 @@
       },
       {
         "player": "William Howard",
-        "current_team": "Covirán Granada",
+        "current_team": "Granada",
         "city": "Granada",
         "state": "",
         "country": "Spain",
