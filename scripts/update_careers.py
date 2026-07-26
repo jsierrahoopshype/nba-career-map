@@ -197,6 +197,20 @@ def _richer(a: list, b: list) -> bool:
     return len(a or []) >= len(b or [])
 
 
+def _is_real_move(normalizer: TeamNormalizer, prev: str, new: str) -> bool:
+    """True only when `prev` and `new` resolve to different CANONICAL clubs.
+
+    A raw string diff can fire on a club-name normalization rather than an
+    actual transfer — e.g. a cached pre-alias spelling ("Beşiktaş Gain") next
+    to a freshly-normalized one ("Beşiktaş"), or a club's infobox name
+    changing without the player moving. Both sides go through the same
+    team_aliases-backed normalizer before comparing.
+    """
+    if not prev or not new:
+        return False
+    return normalizer.normalize(prev) != normalizer.normalize(new)
+
+
 def merge_player(db: Database, name: str, client: WikipediaClient,
                  discovered: dict, roster_players: set[str],
                  current_year: int) -> tuple[dict | None, list[str], bool]:
@@ -395,11 +409,10 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                 summary["new_players"].append(key)
             summary["players_updated"].append(key)
             summary["new_teams"].extend(new_teams)
-            if prev_current and rec.get("current_team") and \
-                    prev_current != rec["current_team"]:
+            new_current = rec.get("current_team")
+            if _is_real_move(db.normalizer, prev_current, new_current):
                 summary["team_moves"].append(
-                    {"player": key, "from": prev_current,
-                     "to": rec["current_team"]})
+                    {"player": key, "from": prev_current, "to": new_current})
             new_status = rec.get("status")
             if prev_status and new_status and prev_status != new_status:
                 summary["status_changes"].append(

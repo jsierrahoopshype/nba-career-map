@@ -154,10 +154,41 @@ def test_empty_name_guard():
     print("test_empty_name_guard PASS")
 
 
+def test_phantom_move_detection():
+    """_is_real_move must skip a same-canonical-club rename (phantom move) but
+    still catch a real transfer between two different clubs."""
+    import json
+    import tempfile
+    from pathlib import Path
+    import update_careers as uc
+    from team_normalizer import TeamNormalizer
+
+    sb = Path(tempfile.mkdtemp())
+    aliases_path = sb / "team_aliases.json"
+    aliases_path.write_text(json.dumps({"aliases": {
+        "Beşiktaş Gain": "Beşiktaş",
+        "Birmingham/Laketown Squadron": "Birmingham Squadron",
+    }}))
+    tn = TeamNormalizer(aliases_path=aliases_path)
+
+    # same club, different spelling -> not a move
+    assert not uc._is_real_move(tn, "Beşiktaş Gain", "Beşiktaş")
+    assert not uc._is_real_move(tn, "Birmingham/Laketown Squadron", "Birmingham Squadron")
+    assert not uc._is_real_move(tn, "Beşiktaş", "Beşiktaş")  # unchanged
+    # missing on either side -> not a move (nothing to compare)
+    assert not uc._is_real_move(tn, "", "Beşiktaş")
+    assert not uc._is_real_move(tn, "Beşiktaş", "")
+    # genuinely different clubs -> a real move
+    assert uc._is_real_move(tn, "Brooklyn Nets", "Chicago Bulls")
+    assert uc._is_real_move(tn, "Beşiktaş Gain", "Birmingham Squadron")
+    print("test_phantom_move_detection PASS")
+
+
 if __name__ == "__main__":
     test_nbay_expansion()
     test_kuminga_full_parse()
     test_retired_persist_populated()
     test_merge_preserves_present_end_to_end()
     test_empty_name_guard()
+    test_phantom_move_detection()
     print("\nALL NBAY / RETIRED / MERGE / GUARD TESTS PASS")
