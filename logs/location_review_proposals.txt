@@ -1,0 +1,846 @@
+Location review proposals -- tiered review of teams_needing_review.json
+================================================================================
+
+Source: 1224 teams with a location-less stint. Two HIGH-confidence signals:
+(a) this exact team-name string already has a located stint elsewhere in the
+data, reused directly; (b) the team name contains a city name that resolves
+to exactly one country everywhere else it's used in this dataset, is not
+slash-joined, and isn't preceded by an article/preposition that could mean a
+dropped compound-name word (the "Los Lagos" -> "Lagos" trap).
+
+A same-city-name match being statistically unambiguous WITHIN this dataset is
+not the same as being factually correct -- a manual real-world-knowledge pass
+over the full candidate set caught and excluded several matches that looked
+safe by the numbers but were wrong: "Club de Regatas Lima" is a Peruvian
+club, not Lima, Ohio; "Phoenix Fuel Masters" is a Philippine PBA team, not
+Phoenix, AZ; "Newcastle Eagles" is English, not Australian; "Universidad de
+Los Lagos" is Chilean, not Lagos, Nigeria; "Rosalía de Castro" is a Galician
+poet's name (the club is Spanish), not Castro, Chile. These, plus a short
+list of other known cross-country homonym cities (Newark, Hamilton, Beverly
+Hills, Worcester, etc.), are excluded from HIGH regardless of what the
+in-dataset statistics alone would suggest -- see the MEDIUM section below.
+
+Three team-name strings contain literal HTML/wikitext comment syntax
+("<!--"/"-->") -- these are upstream parsing artifacts, not real team names,
+and are called out separately rather than backfilled under a fake name.
+
+HIGH:   255 total (150 applied this round via team_locations.json + a new
+        LOC_FIX backfill pass, 105 held at the 150-change
+        checkpoint pending confirmation)
+MEDIUM: 78 (review only, not applied -- includes the homonym-risk
+        exclusions above)
+LOW:    891 (review only, not applied -- no actionable signal, or a
+        parsing-artifact name)
+
+Applying the 150 HIGH entries located 214 stints in careers.json (and 214 in
+READY.json), updated 148 team_locations.json entries (2 already matched), and
+removed all 150 teams from teams_needing_review.json (1224 -> 1074 remaining).
+
+================================================================================
+HIGH -- APPLIED THIS ROUND (150)
+================================================================================
+  '7bet-Lietkabelis Panevėžys' -> city='Panevėžys', state='—', country='Lithuania'
+    team name contains the unambiguous city name "Panevėžys" (-> Lithuania in every other located stint using that city)
+  'AEK Larnaca' -> city='Larnaca', state='—', country='Cyprus'
+    team name contains the unambiguous city name "Larnaca" (-> Cyprus in every other located stint using that city)
+  'AO Dafni' -> city='Dafni', state='—', country='Greece'
+    team name contains the unambiguous city name "Dafni" (-> Greece in every other located stint using that city)
+  'APOEL Nicosia' -> city='Nicosia', state='—', country='Cyprus'
+    team name contains the unambiguous city name "Nicosia" (-> Cyprus in every other located stint using that city)
+  'APU Udine' -> city='Udine', state='—', country='Italy'
+    team name contains the unambiguous city name "Udine" (-> Italy in every other located stint using that city)
+  'Aguada' -> city='Aguada', state='—', country='Puerto Rico'
+    team name contains the unambiguous city name "Aguada" (-> Puerto Rico in every other located stint using that city)
+  'Airmatic Valve of Cleveland' -> city='Cleveland', state='Ohio', country='USA'
+    team name contains the unambiguous city name "Cleveland" (-> USA in every other located stint using that city)
+  'Aironi Novara' -> city='Novara', state='—', country='Italy'
+    team name contains the unambiguous city name "Novara" (-> Italy in every other located stint using that city)
+  'Akita Isuzu Motors' -> city='Akita', state='—', country='Japan'
+    team name contains the unambiguous city name "Akita" (-> Japan in every other located stint using that city)
+  'Al Jalaa Aleppo' -> city='Aleppo', state='—', country='Syria'
+    team name contains the unambiguous city name "Aleppo" (-> Syria in every other located stint using that city)
+  'Al Muharraq' -> city='Muharraq', state='—', country='Bahrain'
+    team name contains the unambiguous city name "Muharraq" (-> Bahrain in every other located stint using that city)
+  'Al Naser Dubai' -> city='Dubai', state='—', country='UAE'
+    team name contains the unambiguous city name "Dubai" (-> UAE in every other located stint using that city)
+  'Al Nasr Dubai' -> city='Dubai', state='—', country='UAE'
+    team name contains the unambiguous city name "Dubai" (-> UAE in every other located stint using that city)
+  'Al Rayyan Club' -> city='Al Rayyan', state='—', country='Qatar'
+    team name contains the unambiguous city name "Al Rayyan" (-> Qatar in every other located stint using that city)
+  'Al Sadd Doha' -> city='Doha', state='—', country='Qatar'
+    team name contains the unambiguous city name "Doha" (-> Qatar in every other located stint using that city)
+  'Al-Ahli Manama' -> city='Manama', state='—', country='Bahrain'
+    team name contains the unambiguous city name "Manama" (-> Bahrain in every other located stint using that city)
+  'Al-Ittihad Manama' -> city='Manama', state='—', country='Bahrain'
+    team name contains the unambiguous city name "Manama" (-> Bahrain in every other located stint using that city)
+  'Al-Manama' -> city='Manama', state='—', country='Bahrain'
+    team name contains the unambiguous city name "Manama" (-> Bahrain in every other located stint using that city)
+  'Al-Riyadh SC' -> city='Riyadh', state='—', country='Saudi Arabia'
+    team name contains the unambiguous city name "Riyadh" (-> Saudi Arabia in every other located stint using that city)
+  'Alicante' -> city='Alicante', state='Valencian Community', country='Spain'
+    team name contains the unambiguous city name "Alicante" (-> Spain in every other located stint using that city)
+  'Andino La Rioja' -> city='La Rioja', state='—', country='Argentina'
+    team name contains the unambiguous city name "La Rioja" (-> Argentina in every other located stint using that city)
+  'Antalya' -> city='Antalya', state='—', country='Turkey'
+    team name contains the unambiguous city name "Antalya" (-> Turkey in every other located stint using that city)
+  'Antalya Kepez Belediyesi' -> city='Antalya', state='—', country='Turkey'
+    team name contains the unambiguous city name "Antalya" (-> Turkey in every other located stint using that city)
+  'Antibes' -> city='Antibes', state='—', country='France'
+    team name contains the unambiguous city name "Antibes" (-> France in every other located stint using that city)
+  'Antranik Beirut' -> city='Beirut', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Beirut" (-> Lebanon in every other located stint using that city)
+  'Apoel Nicosia' -> city='Nicosia', state='—', country='Cyprus'
+    team name contains the unambiguous city name "Nicosia" (-> Cyprus in every other located stint using that city)
+  'Apollon Limassol' -> city='Limassol', state='—', country='Cyprus'
+    team name contains the unambiguous city name "Limassol" (-> Cyprus in every other located stint using that city)
+  'Auckland Tuatara' -> city='Auckland', state='—', country='New Zealand'
+    team name contains the unambiguous city name "Auckland" (-> New Zealand in every other located stint using that city)
+  'Axarquía' -> city='Vélez-Málaga', state='—', country='Spain'
+    this exact team-name string already has a located stint elsewhere in the data: (Vélez-Málaga, -, Spain); reusing it.
+  'Ayandez Sazan Tehran' -> city='Tehran', state='—', country='Iran'
+    team name contains the unambiguous city name "Tehran" (-> Iran in every other located stint using that city)
+  'Azad University Tehran' -> city='Tehran', state='—', country='Iran'
+    team name contains the unambiguous city name "Tehran" (-> Iran in every other located stint using that city)
+  'BBV Collado Villalba' -> city='Collado Villalba', state='—', country='Spain'
+    team name contains the unambiguous city name "Collado Villalba" (-> Spain in every other located stint using that city)
+  'BC Slovan Bratislava' -> city='Bratislava', state='—', country='Slovakia'
+    team name contains the unambiguous city name "Bratislava" (-> Slovakia in every other located stint using that city)
+  'Baltimore Claws' -> city='Baltimore', state='Maryland', country='USA'
+    team name contains the unambiguous city name "Baltimore" (-> USA in every other located stint using that city)
+  'Baltimore Colts' -> city='Baltimore', state='Maryland', country='USA'
+    team name contains the unambiguous city name "Baltimore" (-> USA in every other located stint using that city)
+  'Baltimore Metros' -> city='Baltimore', state='Maryland', country='USA'
+    team name contains the unambiguous city name "Baltimore" (-> USA in every other located stint using that city)
+  'Barranquilla' -> city='Barranquilla', state='—', country='Colombia'
+    team name contains the unambiguous city name "Barranquilla" (-> Colombia in every other located stint using that city)
+  'Basket Groot Leuven' -> city='Leuven', state='—', country='Belgium'
+    team name contains the unambiguous city name "Leuven" (-> Belgium in every other located stint using that city)
+  'Battle Creek Braves' -> city='Battle Creek', state='Michigan', country='USA'
+    team name contains the unambiguous city name "Battle Creek" (-> USA in every other located stint using that city)
+  'Battle Creek Warriors' -> city='Battle Creek', state='Michigan', country='USA'
+    team name contains the unambiguous city name "Battle Creek" (-> USA in every other located stint using that city)
+  'Bayer 04 Leverkusen' -> city='Leverkusen', state='—', country='Germany'
+    team name contains the unambiguous city name "Leverkusen" (-> Germany in every other located stint using that city)
+  'Belgrano San Nicolás' -> city='San Nicolás', state='—', country='Argentina'
+    team name contains the unambiguous city name "San Nicolás" (-> Argentina in every other located stint using that city)
+  'Birra Messina Trapani' -> city='Trapani', state='—', country='Italy'
+    team name contains the unambiguous city name "Trapani" (-> Italy in every other located stint using that city)
+  'Blue Stars Beirut' -> city='Beirut', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Beirut" (-> Lebanon in every other located stint using that city)
+  'Boston Frenzy' -> city='Boston', state='Massachusetts', country='USA'
+    team name contains the unambiguous city name "Boston" (-> USA in every other located stint using that city)
+  'Boulazac' -> city='Boulazac', state='—', country='France'
+    team name contains the unambiguous city name "Boulazac" (-> France in every other located stint using that city)
+  'Boulazac Dordogne' -> city='Boulazac', state='—', country='France'
+    team name contains the unambiguous city name "Boulazac" (-> France in every other located stint using that city)
+  'Brescialat Gorizia' -> city='Gorizia', state='—', country='Italy'
+    team name contains the unambiguous city name "Gorizia" (-> Italy in every other located stint using that city)
+  'Bridgeport Newfield Steelers' -> city='Bridgeport', state='Connecticut', country='USA'
+    team name contains the unambiguous city name "Bridgeport" (-> USA in every other located stint using that city)
+  'Brocēni Rīga' -> city='Rīga', state='—', country='Latvia'
+    team name contains the unambiguous city name "Rīga" (-> Latvia in every other located stint using that city)
+  'Byblos' -> city='Byblos', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Byblos" (-> Lebanon in every other located stint using that city)
+  'C. Montana Forlì' -> city='Forlì', state='—', country='Italy'
+    team name contains the unambiguous city name "Forlì" (-> Italy in every other located stint using that city)
+  'CBP Huesca' -> city='Huesca', state='—', country='Spain'
+    team name contains the unambiguous city name "Huesca" (-> Spain in every other located stint using that city)
+  'COC-Ribeirão Preto' -> city='Ribeirão Preto', state='—', country='Brazil'
+    team name contains the unambiguous city name "Ribeirão Preto" (-> Brazil in every other located stint using that city)
+  'Cabitel Gijón' -> city='Gijón', state='—', country='Spain'
+    team name contains the unambiguous city name "Gijón" (-> Spain in every other located stint using that city)
+  'Caixa Ourense' -> city='Ourense', state='—', country='Spain'
+    team name contains the unambiguous city name "Ourense" (-> Spain in every other located stint using that city)
+  'Cajacanarias La Laguna' -> city='La Laguna', state='—', country='Spain'
+    team name contains the unambiguous city name "La Laguna" (-> Spain in every other located stint using that city)
+  'Calgary Drillers' -> city='Calgary', state='Alberta', country='Canada'
+    team name contains the unambiguous city name "Calgary" (-> Canada in every other located stint using that city)
+  "Capo d'Orlando" -> city="Capo d'Orlando", state='—', country='Italy'
+    team name contains the unambiguous city name "Capo d'Orlando" (-> Italy in every other located stint using that city)
+  'Casale Monferrato' -> city='Casale Monferrato', state='—', country='Italy'
+    team name contains the unambiguous city name "Casale Monferrato" (-> Italy in every other located stint using that city)
+  'Caspian Qazvin' -> city='Qazvin', state='—', country='Iran'
+    team name contains the unambiguous city name "Qazvin" (-> Iran in every other located stint using that city)
+  'Cercom Ferrara' -> city='Ferrara', state='—', country='Italy'
+    team name contains the unambiguous city name "Ferrara" (-> Italy in every other located stint using that city)
+  'Chabeb-Zahle' -> city='Zahle', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Zahle" (-> Lebanon in every other located stint using that city)
+  'Changsha Bank Guangdong' -> city='Changsha', state='—', country='China'
+    team name contains the unambiguous city name "Changsha" (-> China in every other located stint using that city)
+  'Changsha Wantian Yongsheng' -> city='Changsha', state='—', country='China'
+    team name contains the unambiguous city name "Changsha" (-> China in every other located stint using that city)
+  'Charleroi' -> city='Charleroi', state='—', country='Belgium'
+    team name contains the unambiguous city name "Charleroi" (-> Belgium in every other located stint using that city)
+  'Chemnitz 99' -> city='Chemnitz', state='—', country='Germany'
+    team name contains the unambiguous city name "Chemnitz" (-> Germany in every other located stint using that city)
+  'Cherry Hill Demons' -> city='Cherry Hill', state='New Jersey', country='USA'
+    team name contains the unambiguous city name "Cherry Hill" (-> USA in every other located stint using that city)
+  'Châlons-en-Champagne' -> city='Châlons-en-Champagne', state='—', country='France'
+    team name contains the unambiguous city name "Châlons-en-Champagne" (-> France in every other located stint using that city)
+  'Cidneo Brescia' -> city='Brescia', state='—', country='Italy'
+    team name contains the unambiguous city name "Brescia" (-> Italy in every other located stint using that city)
+  'Citrosil Verona' -> city='Verona', state='—', country='Italy'
+    team name contains the unambiguous city name "Verona" (-> Italy in every other located stint using that city)
+  'Cleveland Brass' -> city='Cleveland', state='Ohio', country='USA'
+    team name contains the unambiguous city name "Cleveland" (-> USA in every other located stint using that city)
+  'Cleveland Chase Brassmen' -> city='Cleveland', state='Ohio', country='USA'
+    team name contains the unambiguous city name "Cleveland" (-> USA in every other located stint using that city)
+  'Club Bàsquet Llíria' -> city='Llíria', state='—', country='Spain'
+    team name contains the unambiguous city name "Llíria" (-> Spain in every other located stint using that city)
+  'Collado Villalba' -> city='Collado Villalba', state='—', country='Spain'
+    team name contains the unambiguous city name "Collado Villalba" (-> Spain in every other located stint using that city)
+  'Coren Ourense' -> city='Ourense', state='—', country='Spain'
+    team name contains the unambiguous city name "Ourense" (-> Spain in every other located stint using that city)
+  'Cáceres C.B.' -> city='Cáceres', state='—', country='Spain'
+    team name contains the unambiguous city name "Cáceres" (-> Spain in every other located stint using that city)
+  'Denver Truckers' -> city='Denver', state='Colorado', country='USA'
+    team name contains the unambiguous city name "Denver" (-> USA in every other located stint using that city)
+  'Drac Inca' -> city='Inca', state='—', country='Spain'
+    team name contains the unambiguous city name "Inca" (-> Spain in every other located stint using that city)
+  'Draghi Novara' -> city='Novara', state='—', country='Italy'
+    team name contains the unambiguous city name "Novara" (-> Italy in every other located stint using that city)
+  'Dubai' -> city='Dubai', state='—', country='UAE'
+    team name contains the unambiguous city name "Dubai" (-> UAE in every other located stint using that city)
+  'ESPE Châlons-en-Champagne' -> city='Châlons-en-Champagne', state='—', country='France'
+    team name contains the unambiguous city name "Châlons-en-Champagne" (-> France in every other located stint using that city)
+  'East Pittsburgh Pirates' -> city='Pittsburgh', state='Pennsylvania', country='USA'
+    team name contains the unambiguous city name "Pittsburgh" (-> USA in every other located stint using that city)
+  'Elecon Desio' -> city='Desio', state='—', country='Italy'
+    team name contains the unambiguous city name "Desio" (-> Italy in every other located stint using that city)
+  'Eskişehir' -> city='Eskişehir', state='—', country='Turkey'
+    team name contains the unambiguous city name "Eskişehir" (-> Turkey in every other located stint using that city)
+  'Espé Basket Châlons-en-Champagne' -> city='Châlons-en-Champagne', state='—', country='France'
+    team name contains the unambiguous city name "Châlons-en-Champagne" (-> France in every other located stint using that city)
+  'FL Forlì' -> city='Forlì', state='—', country='Italy'
+    team name contains the unambiguous city name "Forlì" (-> Italy in every other located stint using that city)
+  'Fabriano' -> city='Fabriano', state='—', country='Italy'
+    team name contains the unambiguous city name "Fabriano" (-> Italy in every other located stint using that city)
+  'Fargo–Moorhead Fever' -> city='Fargo', state='North Dakota', country='USA'
+    team name contains the unambiguous city name "Fargo" (-> USA in every other located stint using that city)
+  'Fastlink Amman' -> city='Amman', state='—', country='Jordan'
+    team name contains the unambiguous city name "Amman" (-> Jordan in every other located stint using that city)
+  'Ferrara' -> city='Ferrara', state='—', country='Italy'
+    team name contains the unambiguous city name "Ferrara" (-> Italy in every other located stint using that city)
+  'Ferrys Llíria' -> city='Llíria', state='—', country='Spain'
+    team name contains the unambiguous city name "Llíria" (-> Spain in every other located stint using that city)
+  'Filanto Desio' -> city='Desio', state='—', country='Italy'
+    team name contains the unambiguous city name "Desio" (-> Italy in every other located stint using that city)
+  'Filanto Forlì' -> city='Forlì', state='—', country='Italy'
+    team name contains the unambiguous city name "Forlì" (-> Italy in every other located stint using that city)
+  'Forlì' -> city='Forlì', state='—', country='Italy'
+    team name contains the unambiguous city name "Forlì" (-> Italy in every other located stint using that city)
+  'Fortress Körmend' -> city='Körmend', state='—', country='Hungary'
+    team name contains the unambiguous city name "Körmend" (-> Hungary in every other located stint using that city)
+  'Fos-sur-mer Basket' -> city='Fos-sur-mer', state='—', country='France'
+    team name contains the unambiguous city name "Fos-sur-mer" (-> France in every other located stint using that city)
+  'Fribourg' -> city='Fribourg', state='—', country='Switzerland'
+    team name contains the unambiguous city name "Fribourg" (-> Switzerland in every other located stint using that city)
+  'Fürstenfeld Panthers' -> city='Fürstenfeld', state='—', country='Austria'
+    team name contains the unambiguous city name "Fürstenfeld" (-> Austria in every other located stint using that city)
+  'GSA Udine' -> city='Udine', state='—', country='Italy'
+    team name contains the unambiguous city name "Udine" (-> Italy in every other located stint using that city)
+  'Galicia Ferrol' -> city='Ferrol', state='—', country='Spain'
+    team name contains the unambiguous city name "Ferrol" (-> Spain in every other located stint using that city)
+  'GeVi Napoli' -> city='Napoli', state='—', country='Italy'
+    team name contains the unambiguous city name "Napoli" (-> Italy in every other located stint using that city)
+  'Girona Gavis' -> city='Girona', state='—', country='Spain'
+    team name contains the unambiguous city name "Girona" (-> Spain in every other located stint using that city)
+  'Glint Manisa Basket' -> city='Manisa', state='—', country='Turkey'
+    team name contains the unambiguous city name "Manisa" (-> Turkey in every other located stint using that city)
+  'Great Falls Sky' -> city='Great Falls', state='Montana', country='USA'
+    team name contains the unambiguous city name "Great Falls" (-> USA in every other located stint using that city)
+  'Grupo AGB Huesca' -> city='Huesca', state='—', country='Spain'
+    team name contains the unambiguous city name "Huesca" (-> Spain in every other located stint using that city)
+  'Guadalajara Black Knights' -> city='Guadalajara', state='—', country='Mexico'
+    team name contains the unambiguous city name "Guadalajara" (-> Mexico in every other located stint using that city)
+  'Hangzhou Jingwei' -> city='Hangzhou', state='—', country='China'
+    team name contains the unambiguous city name "Hangzhou" (-> China in every other located stint using that city)
+  'Hartford Downtowners' -> city='Hartford', state='Connecticut', country='USA'
+    team name contains the unambiguous city name "Hartford" (-> USA in every other located stint using that city)
+  'Heidelberg' -> city='Heidelberg', state='—', country='Germany'
+    team name contains the unambiguous city name "Heidelberg" (-> Germany in every other located stint using that city)
+  'Hong Kong Eastern Long Lions' -> city='Hong Kong', state='—', country='China'
+    team name contains the unambiguous city name "Hong Kong" (-> China in every other located stint using that city)
+  'Houston Flyers' -> city='Houston', state='Texas', country='USA'
+    team name contains the unambiguous city name "Houston" (-> USA in every other located stint using that city)
+  'Huesca La Magia' -> city='Huesca', state='—', country='Spain'
+    team name contains the unambiguous city name "Huesca" (-> Spain in every other located stint using that city)
+  'Hyundai Desio' -> city='Desio', state='—', country='Italy'
+    team name contains the unambiguous city name "Desio" (-> Italy in every other located stint using that city)
+  'Ignis Novara' -> city='Novara', state='—', country='Italy'
+    team name contains the unambiguous city name "Novara" (-> Italy in every other located stint using that city)
+  'Illescas' -> city='Illescas', state='—', country='Spain'
+    team name contains the unambiguous city name "Illescas" (-> Spain in every other located stint using that city)
+  'Imola' -> city='Imola', state='—', country='Italy'
+    team name contains the unambiguous city name "Imola" (-> Italy in every other located stint using that city)
+  'Inca' -> city='Inca', state='—', country='Spain'
+    team name contains the unambiguous city name "Inca" (-> Spain in every other located stint using that city)
+  'JA Vichy-Clermont' -> city='Vichy', state='—', country='France'
+    team name contains the unambiguous city name "Vichy" (-> France in every other located stint using that city)
+  'Jackson Jammers' -> city='Jackson', state='Mississippi', country='USA'
+    team name contains the unambiguous city name "Jackson" (-> USA in every other located stint using that city)
+  'Jacksonville Jets' -> city='Jacksonville', state='Florida', country='USA'
+    team name contains the unambiguous city name "Jacksonville" (-> USA in every other located stint using that city)
+  'Jahesh Tarabar Qom' -> city='Qom', state='—', country='Iran'
+    team name contains the unambiguous city name "Qom" (-> Iran in every other located stint using that city)
+  'Juvi Cremona' -> city='Cremona', state='—', country='Italy'
+    team name contains the unambiguous city name "Cremona" (-> Italy in every other located stint using that city)
+  'Kahraba Beirut' -> city='Beirut', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Beirut" (-> Lebanon in every other located stint using that city)
+  'Kansas City Blues' -> city='Kansas City', state='Missouri', country='USA'
+    team name contains the unambiguous city name "Kansas City" (-> USA in every other located stint using that city)
+  'Kansas City Steers' -> city='Kansas City', state='Missouri', country='USA'
+    team name contains the unambiguous city name "Kansas City" (-> USA in every other located stint using that city)
+  'Kepez Bld Antalya' -> city='Antalya', state='—', country='Turkey'
+    team name contains the unambiguous city name "Antalya" (-> Turkey in every other located stint using that city)
+  'Kinzo Amstelveen' -> city='Amstelveen', state='—', country='Netherlands'
+    team name contains the unambiguous city name "Amstelveen" (-> Netherlands in every other located stint using that city)
+  'Komfort Stargard Szczec' -> city='Stargard', state='—', country='Poland'
+    team name contains the unambiguous city name "Stargard" (-> Poland in every other located stint using that city)
+  'Konya Kombassan' -> city='Konya', state='—', country='Turkey'
+    team name contains the unambiguous city name "Konya" (-> Turkey in every other located stint using that city)
+  'Kotwica Kołobrzeg' -> city='Kołobrzeg', state='—', country='Poland'
+    team name contains the unambiguous city name "Kołobrzeg" (-> Poland in every other located stint using that city)
+  'Las Vegas Silver Streaks' -> city='Las Vegas', state='Nevada', country='USA'
+    team name contains the unambiguous city name "Las Vegas" (-> USA in every other located stint using that city)
+  'Latini Forlì' -> city='Forlì', state='—', country='Italy'
+    team name contains the unambiguous city name "Forlì" (-> Italy in every other located stint using that city)
+  'Lavoropiù Fortitudo Bologna' -> city='Bologna', state='—', country='Italy'
+    team name contains the unambiguous city name "Bologna" (-> Italy in every other located stint using that city)
+  'Le Havre' -> city='Le Havre', state='—', country='France'
+    team name contains the unambiguous city name "Le Havre" (-> France in every other located stint using that city)
+  'Lebole Mestre' -> city='Mestre', state='—', country='Italy'
+    team name contains the unambiguous city name "Mestre" (-> Italy in every other located stint using that city)
+  'Leiden' -> city='Leiden', state='—', country='Netherlands'
+    team name contains the unambiguous city name "Leiden" (-> Netherlands in every other located stint using that city)
+  'Leuven' -> city='Leuven', state='—', country='Belgium'
+    team name contains the unambiguous city name "Leuven" (-> Belgium in every other located stint using that city)
+  'Liège' -> city='Liège', state='—', country='Belgium'
+    team name contains the unambiguous city name "Liège" (-> Belgium in every other located stint using that city)
+  'Lleida' -> city='Lleida', state='—', country='Spain'
+    team name contains the unambiguous city name "Lleida" (-> Spain in every other located stint using that city)
+  'Llíria' -> city='Llíria', state='—', country='Spain'
+    team name contains the unambiguous city name "Llíria" (-> Spain in every other located stint using that city)
+  'Los Angeles Jaguars' -> city='Los Angeles', state='California', country='USA'
+    team name contains the unambiguous city name "Los Angeles" (-> USA in every other located stint using that city)
+  'Magia Huesca' -> city='Huesca', state='—', country='Spain'
+    team name contains the unambiguous city name "Huesca" (-> Spain in every other located stint using that city)
+  'Magic M7 Borås' -> city='Borås', state='—', country='Sweden'
+    team name contains the unambiguous city name "Borås" (-> Sweden in every other located stint using that city)
+  'Manama Club' -> city='Manama', state='—', country='Bahrain'
+    team name contains the unambiguous city name "Manama" (-> Bahrain in every other located stint using that city)
+  'Manisa' -> city='Manisa', state='—', country='Turkey'
+    team name contains the unambiguous city name "Manisa" (-> Turkey in every other located stint using that city)
+  'Manisa BB' -> city='Manisa', state='—', country='Turkey'
+    team name contains the unambiguous city name "Manisa" (-> Turkey in every other located stint using that city)
+  'Manner Novara' -> city='Novara', state='—', country='Italy'
+    team name contains the unambiguous city name "Novara" (-> Italy in every other located stint using that city)
+  'Melilla' -> city='Melilla', state='—', country='Spain'
+    team name contains the unambiguous city name "Melilla" (-> Spain in every other located stint using that city)
+  'Memphis Fire' -> city='Memphis', state='Tennessee', country='USA'
+    team name contains the unambiguous city name "Memphis" (-> USA in every other located stint using that city)
+
+================================================================================
+HIGH -- IDENTIFIED, HELD AT THE ~150 CHECKPOINT, NOT YET APPLIED (105)
+================================================================================
+Same confidence bar as the applied batch above; withheld only because applying
+all HIGH-tier locations in one pass would exceed the ~150-change checkpoint.
+Apply on confirmation.
+
+  'Memphis Rockers' -> city='Memphis', state='Tennessee', country='USA'
+    team name contains the unambiguous city name "Memphis" (-> USA in every other located stint using that city)
+  'Meridiano Alicante' -> city='Alicante', state='Valencian Community', country='Spain'
+    team name contains the unambiguous city name "Alicante" (-> Spain in every other located stint using that city)
+  'Mestre 1958' -> city='Mestre', state='—', country='Italy'
+    team name contains the unambiguous city name "Mestre" (-> Italy in every other located stint using that city)
+  'Montana Forlì' -> city='Forlì', state='—', country='Italy'
+    team name contains the unambiguous city name "Forlì" (-> Italy in every other located stint using that city)
+  'Montegranaro' -> city='Montegranaro', state='—', country='Italy'
+    team name contains the unambiguous city name "Montegranaro" (-> Italy in every other located stint using that city)
+  'Montpellier Basket' -> city='Montpellier', state='—', country='France'
+    team name contains the unambiguous city name "Montpellier" (-> France in every other located stint using that city)
+  'Montpellier Paillade' -> city='Montpellier', state='—', country='France'
+    team name contains the unambiguous city name "Montpellier" (-> France in every other located stint using that city)
+  'Montpellier Paillade Basket' -> city='Montpellier', state='—', country='France'
+    team name contains the unambiguous city name "Montpellier" (-> France in every other located stint using that city)
+  'Mornar Bar' -> city='Bar', state='—', country='Montenegro'
+    team name contains the unambiguous city name "Bar" (-> Montenegro in every other located stint using that city)
+  'Mumbai Titans' -> city='Mumbai', state='—', country='India'
+    team name contains the unambiguous city name "Mumbai" (-> India in every other located stint using that city)
+  'Muskegon Panthers' -> city='Muskegon', state='Michigan', country='USA'
+    team name contains the unambiguous city name "Muskegon" (-> USA in every other located stint using that city)
+  'Nacional Montevideo' -> city='Montevideo', state='—', country='Uruguay'
+    team name contains the unambiguous city name "Montevideo" (-> Uruguay in every other located stint using that city)
+  'New Basket Caserta' -> city='Caserta', state='—', country='Italy'
+    team name contains the unambiguous city name "Caserta" (-> Italy in every other located stint using that city)
+  'New Haven Elms' -> city='New Haven', state='Connecticut', country='USA'
+    team name contains the unambiguous city name "New Haven" (-> USA in every other located stint using that city)
+  'New Orleans Hornets' -> city='New Orleans', state='Louisiana', country='USA'
+    this exact team-name string already has a located stint elsewhere in the data: (New Orleans, Louisiana, USA); reusing it.
+  'North Gold Coast Seahawks' -> city='Gold Coast', state='Queensland', country='Australia'
+    team name contains the unambiguous city name "Gold Coast" (-> Australia in every other located stint using that city)
+  'Novipiù Casale Monferrato' -> city='Casale Monferrato', state='—', country='Italy'
+    team name contains the unambiguous city name "Casale Monferrato" (-> Italy in every other located stint using that city)
+  'Nuova Gorizia' -> city='Gorizia', state='—', country='Italy'
+    team name contains the unambiguous city name "Gorizia" (-> Italy in every other located stint using that city)
+  'Nymburk' -> city='Nymburk', state='—', country='Czech Republic'
+    team name contains the unambiguous city name "Nymburk" (-> Czech Republic in every other located stint using that city)
+  "Oakland Blue n' Gold Atlas" -> city='Oakland', state='California', country='USA'
+    team name contains the unambiguous city name "Oakland" (-> USA in every other located stint using that city)
+  'Ockelbo Basket' -> city='Ockelbo', state='—', country='Sweden'
+    team name contains the unambiguous city name "Ockelbo" (-> Sweden in every other located stint using that city)
+  'Odesa' -> city='Odesa', state='—', country='Ukraine'
+    team name contains the unambiguous city name "Odesa" (-> Ukraine in every other located stint using that city)
+  'Omonia Nicosia' -> city='Nicosia', state='—', country='Cyprus'
+    team name contains the unambiguous city name "Nicosia" (-> Cyprus in every other located stint using that city)
+  'Otto Caserta' -> city='Caserta', state='—', country='Italy'
+    team name contains the unambiguous city name "Caserta" (-> Italy in every other located stint using that city)
+  'Overense Aerosoles Ovar' -> city='Ovar', state='—', country='Portugal'
+    team name contains the unambiguous city name "Ovar" (-> Portugal in every other located stint using that city)
+  'Pardubice' -> city='Pardubice', state='—', country='Czech Republic'
+    team name contains the unambiguous city name "Pardubice" (-> Czech Republic in every other located stint using that city)
+  'Pavia' -> city='Pavia', state='—', country='Italy'
+    team name contains the unambiguous city name "Pavia" (-> Italy in every other located stint using that city)
+  'Pescanova Ferrol' -> city='Ferrol', state='—', country='Spain'
+    team name contains the unambiguous city name "Ferrol" (-> Spain in every other located stint using that city)
+  'Pezoporikos Larnaca' -> city='Larnaca', state='—', country='Cyprus'
+    team name contains the unambiguous city name "Larnaca" (-> Cyprus in every other located stint using that city)
+  'Pittsburgh Corbetts' -> city='Pittsburgh', state='Pennsylvania', country='USA'
+    team name contains the unambiguous city name "Pittsburgh" (-> USA in every other located stint using that city)
+  'Pittsburgh Pirates' -> city='Pittsburgh', state='Pennsylvania', country='USA'
+    team name contains the unambiguous city name "Pittsburgh" (-> USA in every other located stint using that city)
+  'Pivovarna Laško' -> city='Laško', state='—', country='Slovenia'
+    team name contains the unambiguous city name "Laško" (-> Slovenia in every other located stint using that city)
+  'Prienai' -> city='Prienai', state='—', country='Lithuania'
+    team name contains the unambiguous city name "Prienai" (-> Lithuania in every other located stint using that city)
+  'Proaguas Costablanca Alicante' -> city='Alicante', state='Valencian Community', country='Spain'
+    team name contains the unambiguous city name "Alicante" (-> Spain in every other located stint using that city)
+  'Puleva Granada' -> city='Granada', state='—', country='Spain'
+    team name contains the unambiguous city name "Granada" (-> Spain in every other located stint using that city)
+  'RIG Luleå' -> city='Luleå', state='—', country='Sweden'
+    team name contains the unambiguous city name "Luleå" (-> Sweden in every other located stint using that city)
+  'Racing Mechelen' -> city='Mechelen', state='—', country='Belgium'
+    team name contains the unambiguous city name "Mechelen" (-> Belgium in every other located stint using that city)
+  'Raleigh Bullfrogs' -> city='Raleigh', state='North Carolina', country='USA'
+    team name contains the unambiguous city name "Raleigh" (-> USA in every other located stint using that city)
+  'Raleigh Knights' -> city='Raleigh', state='North Carolina', country='USA'
+    team name contains the unambiguous city name "Raleigh" (-> USA in every other located stint using that city)
+  'Regatas San Nicolás' -> city='San Nicolás', state='—', country='Argentina'
+    team name contains the unambiguous city name "San Nicolás" (-> Argentina in every other located stint using that city)
+  'Reims CAUFA' -> city='Reims', state='—', country='France'
+    team name contains the unambiguous city name "Reims" (-> France in every other located stint using that city)
+  'Rimini Crabs' -> city='Rimini', state='—', country='Italy'
+    team name contains the unambiguous city name "Rimini" (-> Italy in every other located stint using that city)
+  'Riyadi Beirut' -> city='Beirut', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Beirut" (-> Lebanon in every other located stint using that city)
+  'Roanne' -> city='Roanne', state='—', country='France'
+    team name contains the unambiguous city name "Roanne" (-> France in every other located stint using that city)
+  'Roma SPQR' -> city='Roma', state='—', country='Italy'
+    team name contains the unambiguous city name "Roma" (-> Italy in every other located stint using that city)
+  'Rotterdam-Zuid' -> city='Rotterdam', state='—', country='Netherlands'
+    team name contains the unambiguous city name "Rotterdam" (-> Netherlands in every other located stint using that city)
+  'Râmnicu Vâlcea' -> city='Râmnicu Vâlcea', state='—', country='Romania'
+    team name contains the unambiguous city name "Râmnicu Vâlcea" (-> Romania in every other located stint using that city)
+  'S. Benedetto Gorizia' -> city='Gorizia', state='—', country='Italy'
+    team name contains the unambiguous city name "Gorizia" (-> Italy in every other located stint using that city)
+  'S. Bennedetto Gorizia' -> city='Gorizia', state='—', country='Italy'
+    team name contains the unambiguous city name "Gorizia" (-> Italy in every other located stint using that city)
+  'SSV Hagen' -> city='Hagen', state='—', country='Germany'
+    team name contains the unambiguous city name "Hagen" (-> Germany in every other located stint using that city)
+  'Sacramento Prospectors' -> city='Sacramento', state='California', country='USA'
+    team name contains the unambiguous city name "Sacramento" (-> USA in every other located stint using that city)
+  'Sagesse Club Beirut' -> city='Beirut', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Beirut" (-> Lebanon in every other located stint using that city)
+  'Sakarya' -> city='Sakarya', state='—', country='Turkey'
+    team name contains the unambiguous city name "Sakarya" (-> Turkey in every other located stint using that city)
+  'Sakarya Isik Koleji' -> city='Sakarya', state='—', country='Turkey'
+    team name contains the unambiguous city name "Sakarya" (-> Turkey in every other located stint using that city)
+  'San Diego Clippers' -> city='San Diego', state='California', country='USA'
+    this exact team-name string already has a located stint elsewhere in the data: (San Diego, California, USA); reusing it.
+  'San Pedro de Macorís' -> city='San Pedro de Macorís', state='—', country='Dominican Republic'
+    team name contains the unambiguous city name "San Pedro de Macorís" (-> Dominican Republic in every other located stint using that city)
+  'San Sebastián' -> city='San Sebastián', state='—', country='Spain'
+    team name contains the unambiguous city name "San Sebastián" (-> Spain in every other located stint using that city)
+  'Satria Muda Bandung' -> city='Bandung', state='—', country='Indonesia'
+    team name contains the unambiguous city name "Bandung" (-> Indonesia in every other located stint using that city)
+  'Scafati' -> city='Scafati', state='—', country='Italy'
+    team name contains the unambiguous city name "Scafati" (-> Italy in every other located stint using that city)
+  'Schenectady Comets' -> city='Schenectady', state='New York', country='USA'
+    team name contains the unambiguous city name "Schenectady" (-> USA in every other located stint using that city)
+  'Seattle Aviators' -> city='Seattle', state='Washington', country='USA'
+    team name contains the unambiguous city name "Seattle" (-> USA in every other located stint using that city)
+  'Seattle Super Hawks' -> city='Seattle', state='Washington', country='USA'
+    team name contains the unambiguous city name "Seattle" (-> USA in every other located stint using that city)
+  'Silverstone Brescia' -> city='Brescia', state='—', country='Italy'
+    team name contains the unambiguous city name "Brescia" (-> Italy in every other located stint using that city)
+  'Slovan Bratislava' -> city='Bratislava', state='—', country='Slovakia'
+    team name contains the unambiguous city name "Bratislava" (-> Slovakia in every other located stint using that city)
+  'Sparta Prague' -> city='Prague', state='—', country='Czech Republic'
+    team name contains the unambiguous city name "Prague" (-> Czech Republic in every other located stint using that city)
+  'Spotter Leuven' -> city='Leuven', state='—', country='Belgium'
+    team name contains the unambiguous city name "Leuven" (-> Belgium in every other located stint using that city)
+  'Standard Liège' -> city='Liège', state='—', country='Belgium'
+    team name contains the unambiguous city name "Liège" (-> Belgium in every other located stint using that city)
+  'Starogard Gdański' -> city='Starogard Gdański', state='—', country='Poland'
+    team name contains the unambiguous city name "Starogard Gdański" (-> Poland in every other located stint using that city)
+  'Sunbury Mercurys' -> city='Sunbury', state='Pennsylvania', country='USA'
+    team name contains the unambiguous city name "Sunbury" (-> USA in every other located stint using that city)
+  'Supernova Montegranaro' -> city='Montegranaro', state='—', country='Italy'
+    team name contains the unambiguous city name "Montegranaro" (-> Italy in every other located stint using that city)
+  'Surne Bilbao Basket' -> city='Bilbao', state='—', country='Spain'
+    team name contains the unambiguous city name "Bilbao" (-> Spain in every other located stint using that city)
+  'TSG Ehingen' -> city='Ehingen', state='—', country='Germany'
+    team name contains the unambiguous city name "Ehingen" (-> Germany in every other located stint using that city)
+  'TSV Quakenbrück' -> city='Quakenbrück', state='—', country='Germany'
+    team name contains the unambiguous city name "Quakenbrück" (-> Germany in every other located stint using that city)
+  'Tabiat Tehran' -> city='Tehran', state='—', country='Iran'
+    team name contains the unambiguous city name "Tehran" (-> Iran in every other located stint using that city)
+  'Tampa Bay Sunblasters' -> city='Tampa', state='Florida', country='USA'
+    team name contains the unambiguous city name "Tampa" (-> USA in every other located stint using that city)
+  'Tampa Bay Windjammers' -> city='Tampa', state='Florida', country='USA'
+    team name contains the unambiguous city name "Tampa" (-> USA in every other located stint using that city)
+  'Tarragona' -> city='Tarragona', state='—', country='Spain'
+    team name contains the unambiguous city name "Tarragona" (-> Spain in every other located stint using that city)
+  'Telemarket Brescia' -> city='Brescia', state='—', country='Italy'
+    team name contains the unambiguous city name "Brescia" (-> Italy in every other located stint using that city)
+  'Telemarket Forlì' -> city='Forlì', state='—', country='Italy'
+    team name contains the unambiguous city name "Forlì" (-> Italy in every other located stint using that city)
+  'Teramo' -> city='Teramo', state='—', country='Italy'
+    team name contains the unambiguous city name "Teramo" (-> Italy in every other located stint using that city)
+  'Tijuana Dragons' -> city='Tijuana', state='—', country='Mexico'
+    team name contains the unambiguous city name "Tijuana" (-> Mexico in every other located stint using that city)
+  'Tizona Burgos' -> city='Burgos', state='—', country='Spain'
+    team name contains the unambiguous city name "Burgos" (-> Spain in every other located stint using that city)
+  'Tortona' -> city='Tortona', state='—', country='Italy'
+    team name contains the unambiguous city name "Tortona" (-> Italy in every other located stint using that city)
+  'Townsville Heat' -> city='Townsville', state='Queensland', country='Australia'
+    team name contains the unambiguous city name "Townsville" (-> Australia in every other located stint using that city)
+  'Trento' -> city='Trento', state='—', country='Italy'
+    team name contains the unambiguous city name "Trento" (-> Italy in every other located stint using that city)
+  'United Byblos Amchit' -> city='Byblos', state='—', country='Lebanon'
+    team name contains the unambiguous city name "Byblos" (-> Lebanon in every other located stint using that city)
+  'Universitatea Cluj-Napoca' -> city='Cluj-Napoca', state='—', country='Romania'
+    team name contains the unambiguous city name "Cluj-Napoca" (-> Romania in every other located stint using that city)
+  'Universitetas-Irvinga Klaipėda' -> city='Klaipėda', state='—', country='Lithuania'
+    team name contains the unambiguous city name "Klaipėda" (-> Lithuania in every other located stint using that city)
+  'Verona' -> city='Verona', state='—', country='Italy'
+    team name contains the unambiguous city name "Verona" (-> Italy in every other located stint using that city)
+  'Vichy' -> city='Vichy', state='—', country='France'
+    team name contains the unambiguous city name "Vichy" (-> France in every other located stint using that city)
+  'Waterloo Revolution' -> city='Waterloo', state='Iowa', country='USA'
+    team name contains the unambiguous city name "Waterloo" (-> USA in every other located stint using that city)
+  'Waterloo Rockets' -> city='Waterloo', state='Iowa', country='USA'
+    team name contains the unambiguous city name "Waterloo" (-> USA in every other located stint using that city)
+  'Willebroek' -> city='Willebroek', state='—', country='Belgium'
+    team name contains the unambiguous city name "Willebroek" (-> Belgium in every other located stint using that city)
+  'Wilmington Wave Rockers' -> city='Wilmington', state='Delaware', country='USA'
+    team name contains the unambiguous city name "Wilmington" (-> USA in every other located stint using that city)
+  'Wonju TG Xers' -> city='Wonju', state='—', country='South Korea'
+    team name contains the unambiguous city name "Wonju" (-> South Korea in every other located stint using that city)
+  'Wuhan Kunpeng' -> city='Wuhan', state='—', country='China'
+    team name contains the unambiguous city name "Wuhan" (-> China in every other located stint using that city)
+  'Xacobeo 99 Ourense' -> city='Ourense', state='—', country='Spain'
+    team name contains the unambiguous city name "Ourense" (-> Spain in every other located stint using that city)
+  'Yenisey Krasnoyarsk' -> city='Krasnoyarsk', state='—', country='Russia'
+    team name contains the unambiguous city name "Krasnoyarsk" (-> Russia in every other located stint using that city)
+  'Youngstown Cubs' -> city='Youngstown', state='Ohio', country='USA'
+    team name contains the unambiguous city name "Youngstown" (-> USA in every other located stint using that city)
+  'Zabok' -> city='Zabok', state='—', country='Croatia'
+    team name contains the unambiguous city name "Zabok" (-> Croatia in every other located stint using that city)
+  'Zara Imballaggi Fabriano' -> city='Fabriano', state='—', country='Italy'
+    team name contains the unambiguous city name "Fabriano" (-> Italy in every other located stint using that city)
+  'Élan Béarnais Pau-Lacq-Orthez' -> city='Pau', state='—', country='France'
+    team name contains the unambiguous city name "Pau" (-> France in every other located stint using that city)
+  'Élan Béarnais Pau-Orthez' -> city='Pau', state='—', country='France'
+    team name contains the unambiguous city name "Pau" (-> France in every other located stint using that city)
+  'Ādaži Rīga' -> city='Rīga', state='—', country='Latvia'
+    team name contains the unambiguous city name "Rīga" (-> Latvia in every other located stint using that city)
+  'Šiauliai–Casino Admiral' -> city='Šiauliai', state='—', country='Lithuania'
+    team name contains the unambiguous city name "Šiauliai" (-> Lithuania in every other located stint using that city)
+
+================================================================================
+MEDIUM -- REVIEW ONLY, NOT APPLIED (78)
+================================================================================
+  'Agua Caliente / Ontario / San Diego Clippers'
+    name contains city "San Diego" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Agua Caliente / Ontario Clippers'
+    name contains city "Ontario" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Al Ittihad Alexandria'
+    "Alexandria" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Anaheim Amigos/Los Angeles Stars'
+    name contains city "Los Angeles" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Anderson Chiefs/ Packers'
+    name contains city "Anderson" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Anderson Chiefs/Duffey Packers'
+    name contains city "Anderson" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Austin Toros/Spurs'
+    has a located stint elsewhere in the data ([('Austin', 'Texas', 'USA')]) but the name is slash-joined (possibly two merged historical teams) -- needs individual verification before reuse.
+  'Battle Creek Braves /Twin Cities Sailors'
+    name contains city "Battle Creek" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Beverly Hills'
+    "Beverly Hills" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Birmingham/Laketown Squadron'
+    "Birmingham" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Camden / Brooklyn Indians'
+    name contains city "Brooklyn" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Caneros de La Romana'
+    "La Romana" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Canton / Cleveland Charge'
+    name contains city "Cleveland" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Carbondale Celtics / Scranton Miners'
+    name contains city "Carbondale" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Casademont / Akasvayu Girona'
+    name contains city "Girona" (-> Spain) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Charlotte Bobcats / Hornets'
+    name contains city "Charlotte" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Cherry Hill Demons / Hazleton Hurricanes / Bits'
+    name contains city "Cherry Hill" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Ciclista Olimpico de La Banda'
+    "La Banda" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Club de Regatas Lima'
+    "Lima" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Delaware 87ers/Blue Coats'
+    has a located stint elsewhere in the data ([('Delaware', 'Delaware', 'USA')]) but the name is slash-joined (possibly two merged historical teams) -- needs individual verification before reuse.
+  'Delfines de Miranda'
+    "Miranda" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Diablos de La Vega'
+    "La Vega" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Fargo-Moorhead Fever / Mexico Aztecas'
+    name contains city "Fargo" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Fort Wayne / Indiana Mad Ants'
+    name contains city "Fort Wayne" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Hamilton Pat Pavers'
+    "Hamilton" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Hapoel Afula/Gilboa'
+    name contains city "Afula" (-> Israel) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Hapoel Kazrin/Galil Elyon'
+    existing located stint for this exact team-name string says (Lyon, France) -- almost certainly a data bug (this reads as an Israeli club: "Hapoel" + place names Kazrin / Galil Elyon in the Golan Heights region; "Lyon" likely a substring/fuzzy-match false positive against "Elyon" elsewhere in the pipeline). Flagging for human research rather than propagating a location that looks wrong.
+  'Hawaii / Billings Volcanos'
+    name contains city "Billings" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Hazleton / Jersey Shore Bullets'
+    name contains city "Hazleton" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Indiana Mad Ants/Noblesville Boom'
+    name contains city "Noblesville" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Jacksonville/Mississippi Jets'
+    name contains city "Jacksonville" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Kansas City / Topeka Sizzlers'
+    name contains city "Kansas City" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Lancaster Red Roses / Philadelphia Kings'
+    "Lancaster" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Lancaster Rockets / Red Roses'
+    "Lancaster" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Link Tochigi / Utsunomiya Brex'
+    name contains city "Utsunomiya" (-> Japan) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Los Angeles / Utah Stars'
+    name contains city "Los Angeles" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Los Angeles D-Fenders / South Bay Lakers'
+    has a located stint elsewhere in the data ([('Los Angeles', 'California', 'USA')]) but the name is slash-joined (possibly two merged historical teams) -- needs individual verification before reuse.
+  'Los Angeles/Utah Stars'
+    name contains city "Los Angeles" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Magia de Huesca'
+    "Huesca" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Miami Tropics/ Treasure Coast Tropics'
+    name contains city "Miami" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Minnesota Muskies / Miami Floridians'
+    name contains city "Miami" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Minnesota Muskies/Miami Floridians'
+    name contains city "Miami" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'NMKY Helsinki/Sornaisten'
+    name contains city "Helsinki" (-> Finland) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'New Britain Jackaways / Newark Mules'
+    "Newark" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'New Haven Elms / Hamden Bics'
+    name contains city "New Haven" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'New Jersey / Brooklyn Nets'
+    name contains city "Brooklyn" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'New Orleans Hornets / Pelicans'
+    name contains city "New Orleans" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Newark Iron Dukes'
+    "Newark" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Newcastle Eagles'
+    "Newcastle" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'North Charleston / Charleston Lowgators'
+    name contains city "Charleston" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Ontario / San Diego Clippers'
+    name contains city "San Diego" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Paisas de Medellín'
+    "Medellín" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Patterson / Brooklyn Visitations'
+    name contains city "Brooklyn" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Pepper / Cuki Mestre'
+    name contains city "Mestre" (-> Italy) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Phoenix Fuel Masters'
+    "Phoenix" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Phoenix Pulse Fuel Masters'
+    "Phoenix" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Phoenix Super LPG Fuel Masters'
+    "Phoenix" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Pittsburgh / Minnesota Pipers'
+    name contains city "Pittsburgh" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Pittsburgh Pipers / Condors'
+    name contains city "Pittsburgh" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Pittsburgh Pipers/Condors'
+    name contains city "Pittsburgh" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Pittsburgh/Minnesota Pipers'
+    name contains city "Pittsburgh" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Reno Bighorns / Stockton Kings'
+    name contains city "Stockton" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'RheinEnergie Köln / Köln 99ers'
+    name contains city "Köln" (-> Germany) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Riachuelo de La Rioja'
+    "La Rioja" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Rosalía de Castro'
+    "Castro" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone); "Castro" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'San Diego Conquistadors / Sails'
+    name contains city "San Diego" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Sarasota / Florida Stingers'
+    name contains city "Sarasota" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Scranton Miners / Apollos'
+    name contains city "Scranton" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Seattle SuperSonics / , Oklahoma City Thunder'
+    name contains city "Oklahoma City" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Seattle SuperSonics/Oklahoma City Thunder'
+    has a located stint elsewhere in the data ([('Oklahoma City', 'Oklahoma', 'USA')]) but the name is slash-joined (possibly two merged historical teams) -- needs individual verification before reuse.
+  'Supersónicos de Miranda'
+    "Miranda" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Trenton / Hamilton Pat Pavers'
+    "Hamilton" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Tulsa 66ers / Oklahoma City Blue'
+    name contains city "Oklahoma City" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Universidad de Los Lagos'
+    "Lagos" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone); "Lagos" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Unión Deportiva de Venado Tuerto'
+    "Venado Tuerto" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+  'Warren Penns / Cleveland White Horses'
+    name contains city "Cleveland" (-> USA) but the name is slash-joined (possibly two merged historical teams across a relocation) -- country is a fair guess, exact city per-stint is not, needs individual verification
+  'Worcester Counts'
+    "Worcester" is a known cross-country homonym risk (verified by manual review, not auto-trusted from in-dataset stats alone)
+  'Zonkeys de Tijuana'
+    "Tijuana" is preceded by an article/preposition in the team name, suggesting the match may have dropped part of a compound place name or matched inside a personal name
+
+================================================================================
+LOW -- REVIEW ONLY, NOT APPLIED, sample of 60 of 891
+(the rest have the identical no-signal reason and are omitted for length; full
+list remains in data/teams/teams_needing_review.json)
+================================================================================
+  '"Card-Pitt"'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  '7-Up Uncolas'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  '? Japan/Taiwan'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  '? Venezuela'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'AA Guaru'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'ABBR - Avenir Basket Berck Rang du Fliers'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'ABBR Opale Sud'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'AC Golfe-Juan-Vallauris'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'APR'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'ARIS'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'AS Berck'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'AS Douanes'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'ASK Kadeti'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Aberdeen Army Center'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Academia Montana'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Acunsa GBC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Afyon'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Agropoli'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Aguas de Calpe'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Aichi Machine'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Air21 Express'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Aisčiai'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Ajaccio'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Akhisar Belediyespor'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Ahli'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Ahli Bahrein'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Ahly'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Arabi'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Arabi SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Gezira'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Gharafa'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Hala'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Hilal'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Jalaa'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Nawair'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Nuwaidrat'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Riffa'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Salam'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Seeb'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Shaab'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Shabab'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Shurtah'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Wahda'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al Wasl'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Arabi'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Arabi SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Difaa Al-Jawi'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Fateh'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Gharafa'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Ittihad'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Jahra'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Jaish'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Jalaa SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Naft SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Nasr SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Qadsia SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Qurain SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Riffa'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Riffa SC'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+  'Al-Seeb Club'
+    no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
+
