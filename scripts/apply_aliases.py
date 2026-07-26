@@ -50,6 +50,17 @@ def _apply(players: list, tally: dict) -> int:
                 s["team"] = new
                 tally[f"{old} -> {new}"] = tally.get(f"{old} -> {new}", 0) + 1
                 changed += 1
+        # current_team is stored separately from career_history (not derived
+        # from it at read time), so it needs the same canonicalization —
+        # otherwise a stale raw spelling here logs a phantom transaction the
+        # next time the real canonical spelling is parsed (see update_careers
+        # team-move detection, which already skips same-canonical-club moves).
+        old_ct = p.get("current_team", "")
+        new_ct = _canon(old_ct)
+        if new_ct != old_ct:
+            p["current_team"] = new_ct
+            tally[f"{old_ct} -> {new_ct}"] = tally.get(f"{old_ct} -> {new_ct}", 0) + 1
+            changed += 1
     return changed
 
 
