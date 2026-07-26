@@ -1,6 +1,6 @@
 {
   "generated_from": "data/players/nba_players_careers.json",
-  "player_count": 5155,
+  "player_count": 5154,
   "where_are_they_now": [
     {
       "player": "Aaron Harrison",
@@ -1924,7 +1924,7 @@
     },
     {
       "player": "Jaylen Nowell",
-      "current_team": "Beşiktaş Gain",
+      "current_team": "Beşiktaş",
       "country": "Turkey",
       "last_updated": "2026-07-13"
     },
@@ -5279,12 +5279,12 @@
       "players": 88
     },
     {
-      "team": "Long Island Nets",
+      "team": "Westchester Knicks",
       "players": 87
     },
     {
-      "team": "Westchester Knicks",
-      "players": 87
+      "team": "Long Island Nets",
+      "players": 86
     },
     {
       "team": "Oklahoma City Blue",
@@ -5535,16 +5535,16 @@
       "players": 45
     },
     {
+      "team": "Beşiktaş",
+      "players": 44
+    },
+    {
       "team": "Lokomotiv Kuban",
       "players": 44
     },
     {
       "team": "Providence Steamrollers",
       "players": 44
-    },
-    {
-      "team": "Beşiktaş",
-      "players": 43
     },
     {
       "team": "Estudiantes",
@@ -5639,6 +5639,10 @@
       "players": 36
     },
     {
+      "team": "Birmingham Squadron",
+      "players": 36
+    },
+    {
       "team": "College Park Skyhawks",
       "players": 36
     },
@@ -5652,10 +5656,6 @@
     },
     {
       "team": "Allentown Jets",
-      "players": 35
-    },
-    {
-      "team": "Birmingham Squadron",
       "players": 35
     },
     {
@@ -14087,10 +14087,6 @@
       "players": 1
     },
     {
-      "team": "Beşiktaş Gain",
-      "players": 1
-    },
-    {
       "team": "Beşiktaş Sompo Japan",
       "players": 1
     },
@@ -14136,10 +14132,6 @@
     },
     {
       "team": "Birmingham Magicians",
-      "players": 1
-    },
-    {
-      "team": "Birmingham/Laketown Squadron",
       "players": 1
     },
     {
@@ -21049,6 +21041,18 @@
       ]
     },
     {
+      "team": "Beşiktaş",
+      "count": 6,
+      "players": [
+        "Ante Zizic",
+        "Anthony Brown",
+        "DaQuan Jeffries",
+        "Devon Dotson",
+        "Furkan Korkmaz",
+        "Jaylen Nowell"
+      ]
+    },
+    {
       "team": "Cangrejeros de Santurce",
       "count": 6,
       "players": [
@@ -21128,17 +21132,6 @@
         "Shabazz Napier",
         "Spencer Dinwiddie",
         "Wenyen Gabriel"
-      ]
-    },
-    {
-      "team": "Beşiktaş",
-      "count": 5,
-      "players": [
-        "Ante Zizic",
-        "Anthony Brown",
-        "DaQuan Jeffries",
-        "Devon Dotson",
-        "Furkan Korkmaz"
       ]
     },
     {
@@ -22425,13 +22418,6 @@
       "count": 1,
       "players": [
         "Grant Riller"
-      ]
-    },
-    {
-      "team": "Beşiktaş Gain",
-      "count": 1,
-      "players": [
-        "Jaylen Nowell"
       ]
     },
     {
@@ -23776,7 +23762,7 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5051
+      "players": 5050
     },
     {
       "country": "Italy",
@@ -25282,6 +25268,41 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Beşiktaş",
+      "players": [
+        "Ante Zizic",
+        "Anthony Brown",
+        "DaQuan Jeffries",
+        "Devon Dotson",
+        "Furkan Korkmaz",
+        "Jaylen Nowell"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Anthony Brown",
+            "Jaylen Nowell"
+          ],
+          "shared_nba_franchises": [
+            "Minnesota Timberwolves",
+            "New Orleans Pelicans"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "DaQuan Jeffries",
+            "Jaylen Nowell"
+          ],
+          "shared_nba_franchises": [
+            "Memphis Grizzlies"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Cangrejeros de Santurce",
       "players": [
         "DJ Wilson",
@@ -25506,18 +25527,6 @@
         "Paul Watson",
         "RJ Nembhard",
         "Sean McDermott"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Beşiktaş",
-      "players": [
-        "Ante Zizic",
-        "Anthony Brown",
-        "DaQuan Jeffries",
-        "Devon Dotson",
-        "Furkan Korkmaz"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
@@ -57022,7 +57031,7 @@
       },
       {
         "player": "Jaylen Nowell",
-        "current_team": "Beşiktaş Gain",
+        "current_team": "Beşiktaş",
         "city": "Istanbul",
         "state": "",
         "country": "Turkey",
@@ -60634,13 +60643,7 @@
     {
       "player": "Jaylen Nowell",
       "from_team": "Gigantes de Carolina",
-      "to_team": "Beşiktaş Gain",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Jaden Springer",
-      "from_team": "Birmingham/Laketown Squadron",
-      "to_team": "Birmingham Squadron",
+      "to_team": "Beşiktaş",
       "date": "2026-07-13"
     },
     {
@@ -60857,6 +60860,12 @@
       "player": "Caris LeVert",
       "from_team": "Detroit Pistons",
       "to_team": "Milwaukee Bucks",
+      "date": "2026-07-13"
+    },
+    {
+      "player": "TyTy Washington",
+      "from_team": "LA Clippers",
+      "to_team": "San Diego Clippers",
       "date": "2026-07-13"
     }
   ]
