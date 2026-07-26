@@ -1,3 +1,24 @@
+## 2026-07-26 — incremental run
+
+- Players updated: **65** (7 new)
+- New teams discovered: **1**
+- Team moves detected: **6**
+- Status changes: **5** (5 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Arthur Kaluma, Jamarion Sharp, Jaron Pierre Jr., Kylan Boswell, Michael Ajayi, Nate Bittle, Vsevolod Ishchenko
+- New teams: Laketown Squadron
+  - Tyrese Martin: Philadelphia 76ers → FC Barcelona
+  - Vlatko Cancar: Denver Nuggets → San Pablo Burgos
+  - Tyson Etienne: Brooklyn Nets → Paris Basketball
+  - Luke Travers: Cleveland Cavaliers → Melbourne United
+  - Taelon Peter: Indiana Pacers → Noblesville Boom
+  - Jalen Wilson: Brooklyn Nets → Atlanta Hawks
+  - Tyrese Martin: [nba_active → overseas_active]
+  - Vlatko Cancar: [nba_active → overseas_active]
+  - Tyson Etienne: [nba_active → overseas_active]
+  - Luke Travers: [nba_active → overseas_active]
+  - Taelon Peter: [nba_active → overseas_active]
+
 ## 2026-07-20 — incremental run
 
 - Players updated: **67** (6 new)

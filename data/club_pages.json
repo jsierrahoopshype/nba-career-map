@@ -10949,8 +10949,8 @@
         {
           "player": "Vlatko Cancar",
           "years": "2019",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "San Pablo Burgos",
           "nationality": "Slovenia"
         },
         {
@@ -11016,7 +11016,7 @@
       "city": "Greensboro",
       "state": "North Carolina",
       "country": "USA",
-      "count": 74,
+      "count": 76,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -11346,6 +11346,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Kylan Boswell",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Charlotte Hornets"
+        },
+        {
           "player": "Leaky Black",
           "years": "2023–2024",
           "status": "nba_active",
@@ -11400,6 +11406,12 @@
           "status": "overseas_active",
           "last_team": "Ironi Ness Ziona",
           "nationality": "American / Indonesian"
+        },
+        {
+          "player": "Michael Ajayi",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Charlotte Hornets"
         },
         {
           "player": "Mike Tobey",
@@ -14230,12 +14242,12 @@
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Lokomotiv Kuban",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Lokomotiv Kuban",
+          "name": "Beşiktaş",
           "shared": 4
         },
         {
@@ -15990,8 +16002,8 @@
         {
           "player": "Tyrese Martin",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "FC Barcelona",
           "nationality": "United States"
         },
         {
@@ -20624,7 +20636,7 @@
       "city": "Krasnodar",
       "state": "",
       "country": "Russia",
-      "count": 44,
+      "count": 45,
       "roster": [
         {
           "player": "Aaron Miles",
@@ -20960,6 +20972,15 @@
           "nationality": "United States",
           "all_star": [
             2016
+          ]
+        },
+        {
+          "player": "Vsevolod Ishchenko",
+          "years": "2024–2026",
+          "status": "nba_active",
+          "last_team": "Dallas Mavericks",
+          "all_star": [
+            2026
           ]
         }
       ],
@@ -30180,12 +30201,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 3
         },
         {
@@ -33836,8 +33857,8 @@
         {
           "player": "Tyrese Martin",
           "years": "2023–2024",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "FC Barcelona",
           "nationality": "United States"
         },
         {
@@ -47262,7 +47283,7 @@
       "city": "Frisco",
       "state": "Texas",
       "country": "USA",
-      "count": 124,
+      "count": 125,
       "roster": [
         {
           "player": "AJ Hammons",
@@ -47657,6 +47678,12 @@
           "status": "retired",
           "last_team": "Texas Legends",
           "nationality": "United States"
+        },
+        {
+          "player": "Jamarion Sharp",
+          "years": "2024–2026",
+          "status": "nba_active",
+          "last_team": "LA Clippers"
         },
         {
           "player": "Jameel Warney",
@@ -48217,7 +48244,7 @@
       "city": "College Park",
       "state": "",
       "country": "Georgia",
-      "count": 36,
+      "count": 37,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -48299,6 +48326,13 @@
         {
           "player": "Jacob Toppin",
           "years": "2025",
+          "status": "nba_active",
+          "last_team": "Atlanta Hawks",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jalen Wilson",
+          "years": "2026–present",
           "status": "nba_active",
           "last_team": "Atlanta Hawks",
           "nationality": "United States"
@@ -48449,8 +48483,8 @@
         {
           "player": "Tyrese Martin",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "FC Barcelona",
           "nationality": "United States"
         },
         {
@@ -48463,8 +48497,8 @@
         {
           "player": "Tyson Etienne",
           "years": "2022–2024",
-          "status": "nba_active",
-          "last_team": "Brooklyn Nets",
+          "status": "overseas_active",
+          "last_team": "Paris Basketball",
           "nationality": "United States"
         },
         {
@@ -48479,7 +48513,7 @@
         {
           "type": "club",
           "name": "Long Island Nets",
-          "shared": 7
+          "shared": 8
         },
         {
           "type": "club",
@@ -48845,7 +48879,7 @@
           "player": "Jalen Wilson",
           "years": "2023–2024",
           "status": "nba_active",
-          "last_team": "Brooklyn Nets",
+          "last_team": "Atlanta Hawks",
           "nationality": "United States"
         },
         {
@@ -49178,8 +49212,8 @@
         {
           "player": "Tyrese Martin",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "FC Barcelona",
           "nationality": "United States"
         },
         {
@@ -49191,9 +49225,9 @@
         },
         {
           "player": "Tyson Etienne",
-          "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Brooklyn Nets",
+          "years": "2024–2025, 2025–2026",
+          "status": "overseas_active",
+          "last_team": "Paris Basketball",
           "nationality": "United States"
         },
         {
@@ -49242,17 +49276,17 @@
         },
         {
           "type": "club",
+          "name": "College Park Skyhawks",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 7
         },
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Agua Caliente Clippers",
           "shared": 7
         }
       ]
@@ -54695,12 +54729,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 2
         },
         {
@@ -56928,12 +56962,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "FC Barcelona",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Canton Charge",
           "shared": 2
         },
         {
@@ -57214,7 +57248,7 @@
       "city": "Barcelona",
       "state": "",
       "country": "Spain",
-      "count": 73,
+      "count": 74,
       "roster": [
         {
           "player": "Alan Anderson",
@@ -57738,6 +57772,13 @@
           "status": "overseas_active",
           "last_team": "FC Barcelona",
           "nationality": "Republic of Georgia"
+        },
+        {
+          "player": "Tyrese Martin",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "FC Barcelona",
+          "nationality": "United States"
         },
         {
           "player": "Victor Claver",
@@ -59478,12 +59519,12 @@
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Lokomotiv Kuban",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lokomotiv Kuban",
+          "name": "Mets de Guaynabo",
           "shared": 1
         }
       ]
@@ -62559,8 +62600,8 @@
         {
           "player": "Vlatko Cancar",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "San Pablo Burgos",
           "nationality": "Slovenia"
         },
         {
@@ -64984,8 +65025,8 @@
         {
           "player": "Luke Travers",
           "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Cleveland Cavaliers",
+          "status": "overseas_active",
+          "last_team": "Melbourne United",
           "nationality": "Australia"
         },
         {
@@ -65718,8 +65759,8 @@
         {
           "player": "Vlatko Cancar",
           "years": "2014–2016",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "San Pablo Burgos",
           "nationality": "Slovenia"
         },
         {
@@ -70058,7 +70099,7 @@
       "city": "Bayamón",
       "state": "",
       "country": "Puerto Rico",
-      "count": 39,
+      "count": 40,
       "roster": [
         {
           "player": "Alex Blackwell",
@@ -70228,6 +70269,12 @@
           ]
         },
         {
+          "player": "Jamarion Sharp",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "LA Clippers"
+        },
+        {
           "player": "Jamil Wilson",
           "years": "2023",
           "status": "overseas_active",
@@ -70353,7 +70400,7 @@
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 5
+          "shared": 6
         },
         {
           "type": "club",
@@ -71939,7 +71986,7 @@
       "city": "El Segundo",
       "state": "California",
       "country": "USA",
-      "count": 68,
+      "count": 69,
       "roster": [
         {
           "player": "Adou Thiero",
@@ -71975,6 +72022,13 @@
           "status": "overseas_active",
           "last_team": "South Bay Lakers",
           "nationality": "United States"
+        },
+        {
+          "player": "Arthur Kaluma",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "Ugandan / American"
         },
         {
           "player": "Cameron Oliver",
@@ -85915,12 +85969,12 @@
         },
         {
           "type": "club",
-          "name": "Panionios",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Panionios",
           "shared": 1
         },
         {
@@ -86468,7 +86522,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "FC Barcelona",
           "shared": 1
         }
       ]
@@ -88040,8 +88094,8 @@
         {
           "player": "Vlatko Cancar",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "San Pablo Burgos",
           "nationality": "Slovenia"
         }
       ],
@@ -92620,8 +92674,8 @@
         {
           "player": "Luke Travers",
           "years": "2019–2023",
-          "status": "nba_active",
-          "last_team": "Cleveland Cavaliers",
+          "status": "overseas_active",
+          "last_team": "Melbourne United",
           "nationality": "Australia"
         },
         {
@@ -93422,12 +93476,12 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "FC Barcelona",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Reno Bighorns",
           "shared": 2
         }
       ]
@@ -100387,12 +100441,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "FC Barcelona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -108737,12 +108791,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Gigantes de Carolina",
           "shared": 1
         }
       ]
@@ -123862,7 +123916,7 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         }
       ]
@@ -129286,7 +129340,7 @@
       "city": "Paris",
       "state": "",
       "country": "France",
-      "count": 12,
+      "count": 13,
       "roster": [
         {
           "player": "Axel Toupane",
@@ -129371,9 +129425,21 @@
           "status": "overseas_active",
           "last_team": "Galatasaray",
           "nationality": "United States"
+        },
+        {
+          "player": "Tyson Etienne",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Paris Basketball",
+          "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "College Park Skyhawks",
+          "shared": 3
+        },
         {
           "type": "club",
           "name": "Raptors 905",
@@ -129382,6 +129448,11 @@
         {
           "type": "club",
           "name": "Westchester Knicks",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Long Island Nets",
           "shared": 2
         },
         {
@@ -129401,17 +129472,7 @@
         },
         {
           "type": "club",
-          "name": "College Park Skyhawks",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Texas Legends",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olimpia Milano",
           "shared": 1
         }
       ]
@@ -135150,12 +135211,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "FC Barcelona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
@@ -147986,12 +148047,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -150751,12 +150812,12 @@
         },
         {
           "type": "club",
-          "name": "Sydney Kings",
+          "name": "Vaqueros de Bayamón",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Sydney Kings",
           "shared": 2
         },
         {
@@ -154070,7 +154131,7 @@
       "city": "San Diego",
       "state": "California",
       "country": "USA",
-      "count": 15,
+      "count": 16,
       "roster": [
         {
           "player": "Braxton Key",
@@ -154106,6 +154167,12 @@
           "status": "overseas_active",
           "last_team": "New Zealand Breakers",
           "nationality": "United States"
+        },
+        {
+          "player": "Jamarion Sharp",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "LA Clippers"
         },
         {
           "player": "Jason Preston",
@@ -154186,6 +154253,11 @@
         },
         {
           "type": "club",
+          "name": "Texas Legends",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Santa Cruz Warriors",
           "shared": 2
         },
@@ -154201,6 +154273,11 @@
         },
         {
           "type": "club",
+          "name": "Vaqueros de Bayamón",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Birmingham Squadron",
           "shared": 2
         },
@@ -154208,16 +154285,6 @@
           "type": "club",
           "name": "Ontario Clippers",
           "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 1
         }
       ]
     },
@@ -155121,12 +155188,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -162487,7 +162554,7 @@
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "San Diego Clippers",
           "shared": 1
         }
       ]
@@ -167098,9 +167165,9 @@
         },
         {
           "player": "Luke Travers",
-          "years": "2023–2024",
-          "status": "nba_active",
-          "last_team": "Cleveland Cavaliers",
+          "years": "2023–2024, 2026–present",
+          "status": "overseas_active",
+          "last_team": "Melbourne United",
           "nationality": "Australia"
         },
         {
@@ -176145,12 +176212,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -183822,12 +183889,12 @@
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
+          "name": "FC Barcelona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Delaware Blue Coats",
           "shared": 1
         },
         {
@@ -191481,7 +191548,7 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         }
       ]
@@ -191835,17 +191902,17 @@
         },
         {
           "type": "club",
+          "name": "Vaqueros de Bayamón",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Sydney Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Vaqueros de Bayamón",
           "shared": 1
         }
       ]
@@ -194269,7 +194336,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "FC Barcelona",
           "shared": 1
         }
       ]
@@ -196010,9 +196077,9 @@
         },
         {
           "player": "Taelon Peter",
-          "years": "2025–present",
-          "status": "nba_active",
-          "last_team": "Indiana Pacers",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Noblesville Boom",
           "nationality": "United States"
         }
       ],
@@ -207673,12 +207740,12 @@
         },
         {
           "type": "club",
-          "name": "Sydney Kings",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Sydney Kings",
           "shared": 1
         }
       ]
@@ -220834,12 +220901,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -220927,7 +220994,7 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         }
       ]
@@ -220975,12 +221042,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -221112,12 +221179,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -224500,7 +224567,7 @@
       "city": "Burgos",
       "state": "",
       "country": "Spain",
-      "count": 4,
+      "count": 3,
       "roster": [
         {
           "player": "Earl Clark",
@@ -224518,13 +224585,6 @@
           "status": "overseas_active",
           "last_team": "Cangrejeros de Santurce",
           "nationality": "United States"
-        },
-        {
-          "player": "Vlatko Cancar",
-          "years": "2018, 2018–2019",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
-          "nationality": "Slovenia"
         },
         {
           "player": "Vyacheslav Kravtsov",
@@ -224556,17 +224616,7 @@
         },
         {
           "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Fort Wayne Mad Ants",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -224577,6 +224627,16 @@
         {
           "type": "club",
           "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "CSKA Moscow",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Iowa Energy",
           "shared": 1
         }
       ]
@@ -241284,12 +241344,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -249908,12 +249968,12 @@
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Lokomotiv Kuban",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lokomotiv Kuban",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
@@ -250662,12 +250722,12 @@
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Lokomotiv Kuban",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lokomotiv Kuban",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
@@ -250836,7 +250896,7 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         }
       ]
@@ -251227,8 +251287,8 @@
         {
           "player": "Vlatko Cancar",
           "years": "2016–2018",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "San Pablo Burgos",
           "nationality": "Slovenia"
         }
       ],
@@ -253322,12 +253382,12 @@
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Lokomotiv Kuban",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lokomotiv Kuban",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
@@ -255959,12 +256019,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -257447,7 +257507,7 @@
       "city": "Burgos",
       "state": "",
       "country": "Spain",
-      "count": 5,
+      "count": 6,
       "roster": [
         {
           "player": "Jarell Eddie",
@@ -257489,9 +257549,21 @@
           "all_star": [
             2011
           ]
+        },
+        {
+          "player": "Vlatko Cancar",
+          "years": "2018, 2018–2019, 2026–present",
+          "status": "overseas_active",
+          "last_team": "San Pablo Burgos",
+          "nationality": "Slovenia"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Olimpia Milano",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Windy City Bulls",
@@ -257514,11 +257586,6 @@
         },
         {
           "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
@@ -257529,7 +257596,7 @@
         },
         {
           "type": "club",
-          "name": "Fenerbahçe",
+          "name": "Erie BayHawks",
           "shared": 1
         }
       ]
@@ -268540,12 +268607,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -268598,12 +268665,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -268656,12 +268723,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -272938,12 +273005,12 @@
         },
         {
           "type": "club",
-          "name": "Sydney Kings",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Sydney Kings",
           "shared": 1
         },
         {
@@ -273999,12 +274066,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -298543,7 +298610,7 @@
         },
         {
           "type": "club",
-          "name": "Agua Caliente Clippers",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         }
       ]
@@ -312875,12 +312942,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -312936,12 +313003,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -312997,12 +313064,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -318477,12 +318544,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -318538,12 +318605,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -322977,12 +323044,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Sydney Kings",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Sydney Kings",
           "shared": 1
         },
         {
@@ -336371,12 +336438,12 @@
         },
         {
           "type": "club",
-          "name": "Sydney Kings",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Sydney Kings",
           "shared": 1
         },
         {
@@ -338152,8 +338219,8 @@
         {
           "player": "Vlatko Cancar",
           "years": "2014–2016",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "San Pablo Burgos",
           "nationality": "Slovenia"
         }
       ],
@@ -338180,7 +338247,7 @@
         },
         {
           "type": "club",
-          "name": "Burgos",
+          "name": "San Pablo Burgos",
           "shared": 1
         },
         {
@@ -341186,12 +341253,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Sydney Kings",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Sydney Kings",
           "shared": 1
         },
         {
@@ -342601,8 +342668,8 @@
         {
           "player": "Luke Travers",
           "years": "2017–2019",
-          "status": "nba_active",
-          "last_team": "Cleveland Cavaliers",
+          "status": "overseas_active",
+          "last_team": "Melbourne United",
           "nationality": "Australia"
         }
       ],
@@ -342659,8 +342726,8 @@
         {
           "player": "Luke Travers",
           "years": "2020",
-          "status": "nba_active",
-          "last_team": "Cleveland Cavaliers",
+          "status": "overseas_active",
+          "last_team": "Melbourne United",
           "nationality": "Australia"
         }
       ],
@@ -344075,13 +344142,20 @@
       "city": "Thousand Palms",
       "state": "California",
       "country": "USA",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "AK Okereke",
           "years": "2026–present",
           "status": "nba_active",
           "last_team": "Los Angeles Lakers"
+        },
+        {
+          "player": "Arthur Kaluma",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "Ugandan / American"
         },
         {
           "player": "Peter Suder",
@@ -344091,6 +344165,11 @@
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 1
+        },
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
@@ -344124,11 +344203,6 @@
         {
           "type": "club",
           "name": "Santa Cruz Warriors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
           "shared": 0
         }
       ]
@@ -344325,6 +344399,63 @@
           "type": "club",
           "name": "Fenerbahçe",
           "shared": 1
+        }
+      ]
+    },
+    "Laketown Squadron": {
+      "club": "Laketown Squadron",
+      "city": "Kenner",
+      "state": "Louisiana",
+      "country": "USA",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Jaron Pierre Jr.",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Idaho Stampede",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Rockford Lightning",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Rapid City Thrillers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Quad City Thunder",
+          "shared": 0
         }
       ]
     }

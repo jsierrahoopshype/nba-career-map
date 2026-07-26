@@ -8627,6 +8627,158 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-07-26",
+      "mode": "incremental",
+      "players_updated": [
+        "Arthur Kaluma",
+        "Jamarion Sharp",
+        "Jaron Pierre Jr.",
+        "Kylan Boswell",
+        "Michael Ajayi",
+        "Nate Bittle",
+        "Vsevolod Ishchenko",
+        "Christian Koloko",
+        "Tim Hardaway Jr",
+        "Tosan Evbuomwan",
+        "Trendon Watford",
+        "Trevor Keels",
+        "Trey Lyles",
+        "Tristan Thompson",
+        "Tyrese Martin",
+        "Vlatko Cancar",
+        "Tyson Etienne",
+        "Phillip Wheeler",
+        "Luke Travers",
+        "Tyler Smith",
+        "Keshad Johnson",
+        "N'Faly Dante",
+        "Yuki Kawamura",
+        "Bez Mbeng",
+        "Hayden Gray",
+        "Jakob Pöltl",
+        "Max Shulga",
+        "Peter Suder",
+        "Rafael Castro",
+        "Taelon Peter",
+        "Aaron Holiday",
+        "Ben Simmons",
+        "Bradley Beal",
+        "Brandon Clarke",
+        "Brandon Williams",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Christian Wood",
+        "Cody Martin",
+        "Cole Anthony",
+        "Dalano Banton",
+        "Dante Exum",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "DeMar DeRozan",
+        "Donovan Williams",
+        "Drew Peterson",
+        "Duop Reath",
+        "Dwight Powell",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Garrett Temple",
+        "Garrison Mathews",
+        "Gary Payton II",
+        "Gary Trent Jr",
+        "Georges Niang",
+        "Jacob Toppin",
+        "Jaden Ivey",
+        "Jalen Hood-Schifino",
+        "Jalen McDaniels",
+        "Jalen Wilson",
+        "James Johnson",
+        "James Wiseman"
+      ],
+      "new_players": [
+        "Arthur Kaluma",
+        "Jamarion Sharp",
+        "Jaron Pierre Jr.",
+        "Kylan Boswell",
+        "Michael Ajayi",
+        "Nate Bittle",
+        "Vsevolod Ishchenko"
+      ],
+      "new_teams": [
+        "Laketown Squadron"
+      ],
+      "team_moves": [
+        {
+          "player": "Tyrese Martin",
+          "from": "Philadelphia 76ers",
+          "to": "FC Barcelona"
+        },
+        {
+          "player": "Vlatko Cancar",
+          "from": "Denver Nuggets",
+          "to": "San Pablo Burgos"
+        },
+        {
+          "player": "Tyson Etienne",
+          "from": "Brooklyn Nets",
+          "to": "Paris Basketball"
+        },
+        {
+          "player": "Luke Travers",
+          "from": "Cleveland Cavaliers",
+          "to": "Melbourne United"
+        },
+        {
+          "player": "Taelon Peter",
+          "from": "Indiana Pacers",
+          "to": "Noblesville Boom"
+        },
+        {
+          "player": "Jalen Wilson",
+          "from": "Brooklyn Nets",
+          "to": "Atlanta Hawks"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Tyrese Martin",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Vlatko Cancar",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Tyson Etienne",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Luke Travers",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Taelon Peter",
+          "from": "nba_active",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Tyrese Martin",
+        "Vlatko Cancar",
+        "Tyson Etienne",
+        "Luke Travers",
+        "Taelon Peter"
+      ],
+      "newly_retired": [],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }
