@@ -1,0 +1,694 @@
+Club-variant merge proposals -- tiered review of fragment_candidates_review.txt
+================================================================================
+
+Source: apply_aliases.py's fragment-candidate scan (328 same-city pairs where
+one name is the other plus a prefix). Canonical direction picks whichever
+spelling already has more players on record (minimizes churn, aligns to the
+spelling already established in the data); ties default to the bare/base name.
+
+HIGH:   285 total (150 applied this round via team_aliases.json + apply_aliases.py, 135 held at the 150-change checkpoint
+        pending confirmation)
+MEDIUM: 42 (review only, not applied)
+LOW:    1 (review only, not applied)
+
+Applying the 150 HIGH aliases + re-running apply_aliases.py (which also caught
+up a small pre-existing backlog of already-defined-but-never-applied aliases)
+renamed 443 career_history stints across careers.json + 394 in READY.json, and
+collapsed club_pages.json from 3913 to 3763 distinct club entries.
+
+================================================================================
+HIGH -- APPLIED THIS ROUND (150)
+================================================================================
+  "De' Longhi Treviso" -> 'Benetton Treviso'   [Treviso, Italy]
+    "De' Longhi" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "De' Longhi Treviso" -> "Treviso" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Treviso" is itself folded into "Benetton Treviso"]
+  '7Up Joventut' -> 'Joventut'   [Badalona, Spain]
+    "7Up" reads as a sponsor/generic-designator prefix, same city [Badalona, Spain]. Canonical direction: "7Up Joventut" -> "Joventut" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=2)
+  'Évreux' -> 'ALM Évreux'   [Évreux, France]
+    "ALM" reads as a sponsor/generic-designator prefix, same city [Évreux, France]. Canonical direction: "Évreux" -> "ALM Évreux" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=7 vs n=3)
+  'AO Dafni Athens' -> 'Dafni Athens'   [Athens, Greece]
+    "AO" reads as a sponsor/generic-designator prefix, same city [Athens, Greece]. Canonical direction: "AO Dafni Athens" -> "Dafni Athens" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)
+  'Monaco' -> 'AS Monaco'   [Monaco, Monaco]
+    "AS" reads as a sponsor/generic-designator prefix, same city [Monaco, Monaco]. Canonical direction: "Monaco" -> "AS Monaco" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=25 vs n=6)
+  'Tours' -> 'ASPO Tours'   [Tours, France]
+    "ASPO" reads as a sponsor/generic-designator prefix, same city [Tours, France]. Canonical direction: "Tours" -> "ASPO Tours" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=2 vs n=1)
+  'AXA FC Barcelona' -> 'FC Barcelona'   [Barcelona, Spain]
+    "AXA" reads as a sponsor/generic-designator prefix, same city [Barcelona, Spain]. Canonical direction: "AXA FC Barcelona" -> "FC Barcelona" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=74 vs n=1)
+  'Acegas A.P.S. Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Acegas A.P.S." reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Acegas A.P.S. Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Akasvayu Girona' -> 'Valvi Girona'   [Girona, Spain]
+    "Akasvayu" reads as a sponsor/generic-designator prefix, same city [Girona, Spain]. Canonical direction: "Akasvayu Girona" -> "Girona" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=4)  [chain-resolved: "Girona" is itself folded into "Valvi Girona"]
+  'Al Manama' -> 'Manama'   [Manama, Bahrain]
+    "Al" reads as a sponsor/generic-designator prefix, same city [Manama, Bahrain]. Canonical direction: "Al Manama" -> "Manama" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=4)
+  'Allibert Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Allibert" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Allibert Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Alta Gestión Fuenlabrada' -> 'Fuenlabrada'   [Fuenlabrada, Spain]
+    "Alta Gestión" reads as a sponsor/generic-designator prefix, same city [Fuenlabrada, Spain]. Canonical direction: "Alta Gestión Fuenlabrada" -> "Fuenlabrada" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=20 vs n=1)
+  'Biella' -> 'Angelico Biella'   [Biella, Italy]
+    "Angelico" reads as a sponsor/generic-designator prefix, same city [Biella, Italy]. Canonical direction: "Biella" -> "Angelico Biella" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=9 vs n=4)
+  'Areslux Granollers' -> 'Granollers'   [Granollers, Spain]
+    "Areslux" reads as a sponsor/generic-designator prefix, same city [Granollers, Spain]. Canonical direction: "Areslux Granollers" -> "Granollers" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Arkadia Traiskirchen Lions' -> 'Traiskirchen Lions'   [Traiskirchen, Austria]
+    "Arkadia" reads as a sponsor/generic-designator prefix, same city [Traiskirchen, Austria]. Canonical direction: "Arkadia Traiskirchen Lions" -> "Traiskirchen Lions" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)
+  'Assignia Manresa' -> 'Manresa'   [Manresa, Spain]
+    "Assignia" reads as a sponsor/generic-designator prefix, same city [Manresa, Spain]. Canonical direction: "Assignia Manresa" -> "Manresa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=1)
+  'Auxilium Pallacanestro Torino' -> 'Pallacanestro Torino'   [Torino, Italy]
+    "Auxilium" reads as a sponsor/generic-designator prefix, same city [Torino, Italy]. Canonical direction: "Auxilium Pallacanestro Torino" -> "Pallacanestro Torino" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'BC Andorra' -> 'Andorra'   [Andorra, Spain]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Andorra, Spain]. Canonical direction: "BC Andorra" -> "Andorra" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=1)
+  'Astana' -> 'BC Astana'   [Astana, Kazakhstan]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Astana, Kazakhstan]. Canonical direction: "Astana" -> "BC Astana" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=6 vs n=3)
+  'BC Avtodor' -> 'Avtodor'   [Saratov, Russia]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Saratov, Russia]. Canonical direction: "BC Avtodor" -> "Avtodor" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)
+  'BC Azovmash' -> 'Azovmash'   [Mariupol, Ukraine]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Mariupol, Ukraine]. Canonical direction: "BC Azovmash" -> "Azovmash" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=2)
+  'BC Balkan Botevgrad' -> 'Balkan Botevgrad'   [Botevgrad, Bulgaria]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Botevgrad, Bulgaria]. Canonical direction: "BC Balkan Botevgrad" -> "Balkan Botevgrad" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'BC Budivelnyk' -> 'Budivelnyk'   [Kyiv, Ukraine]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Kyiv, Ukraine]. Canonical direction: "BC Budivelnyk" -> "Budivelnyk" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=2)
+  'BC Castors Braine' -> 'Castors Braine'   [Braine-l'Alleud, Belgium]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Braine-l'Alleud, Belgium]. Canonical direction: "BC Castors Braine" -> "Castors Braine" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)
+  'BC Dnipro' -> 'Dnipro'   [Dnipro, Ukraine]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Dnipro, Ukraine]. Canonical direction: "BC Dnipro" -> "Dnipro" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=2)
+  'BC Donetsk' -> 'Donetsk'   [Donetsk, Ukraine]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Donetsk, Ukraine]. Canonical direction: "BC Donetsk" -> "Donetsk" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=2)
+  'BC Enisey' -> 'Enisey'   [Krasnoyarsk, Russia]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Krasnoyarsk, Russia]. Canonical direction: "BC Enisey" -> "Enisey" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=2)
+  'BC Krka' -> 'Krka'   [Novo Mesto, Slovenia]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Novo Mesto, Slovenia]. Canonical direction: "BC Krka" -> "Krka" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)
+  'BC Kyiv' -> 'Kyiv'   [Kyiv, Ukraine]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Kyiv, Ukraine]. Canonical direction: "BC Kyiv" -> "Kyiv" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=6)
+  'BC Levski Sofia' -> 'Levski Sofia'   [Sofia, Bulgaria]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Sofia, Bulgaria]. Canonical direction: "BC Levski Sofia" -> "Levski Sofia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=1)
+  'BC Lietuvos Rytas' -> 'Lietuvos Rytas'   [Vilnius, Lithuania]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Vilnius, Lithuania]. Canonical direction: "BC Lietuvos Rytas" -> "Lietuvos Rytas" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=1)
+  'BC Nizhny Novgorod' -> 'Nizhny Novgorod'   [Nizhny Novgorod, Russia]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Nizhny Novgorod, Russia]. Canonical direction: "BC Nizhny Novgorod" -> "Nizhny Novgorod" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=1)
+  'BC Oostende' -> 'Oostende'   [Ostend, Belgium]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Ostend, Belgium]. Canonical direction: "BC Oostende" -> "Oostende" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'BC Tsmoki-Minsk' -> 'Tsmoki-Minsk'   [Minsk, Belarus]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Minsk, Belarus]. Canonical direction: "BC Tsmoki-Minsk" -> "Tsmoki-Minsk" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)
+  'BC UNICS' -> 'UNICS'   [Kazan, Russia]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Kazan, Russia]. Canonical direction: "BC UNICS" -> "UNICS" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=47 vs n=1)
+  'BC Šiauliai' -> 'Šiauliai'   [Šiauliai, Lithuania]
+    "BC" reads as a sponsor/generic-designator prefix, same city [Šiauliai, Lithuania]. Canonical direction: "BC Šiauliai" -> "Šiauliai" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)
+  'Gravelines' -> 'BCM Gravelines'   [Gravelines, France]
+    "BCM" reads as a sponsor/generic-designator prefix, same city [Gravelines, France]. Canonical direction: "Gravelines" -> "BCM Gravelines" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=23 vs n=5)
+  'Gravelines-Dunkerque' -> 'BCM Gravelines-Dunkerque'   [Gravelines, France]
+    "BCM" reads as a sponsor/generic-designator prefix, same city [Gravelines, France]. Canonical direction: "Gravelines-Dunkerque" -> "BCM Gravelines-Dunkerque" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=15 vs n=1)
+  'Göttingen' -> 'BG Göttingen'   [Göttingen, Germany]
+    "BG" reads as a sponsor/generic-designator prefix, same city [Göttingen, Germany]. Canonical direction: "Göttingen" -> "BG Göttingen" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=7 vs n=1)
+  'BK Minsk-2006' -> 'Minsk-2006'   [Minsk, Belarus]
+    "BK" reads as a sponsor/generic-designator prefix, same city [Minsk, Belarus]. Canonical direction: "BK Minsk-2006" -> "Minsk-2006" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'Saturn Köln' -> 'BSC Saturn Köln'   [Köln, Germany]
+    "BSC" reads as a sponsor/generic-designator prefix, same city [Köln, Germany]. Canonical direction: "Saturn Köln" -> "BSC Saturn Köln" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=2 vs n=1)
+  'BT Roseto' -> 'Roseto'   [Roseto degli Abruzzi, Italy]
+    "BT" reads as a sponsor/generic-designator prefix, same city [Roseto degli Abruzzi, Italy]. Canonical direction: "BT Roseto" -> "Roseto" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=1)
+  'Baker Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Baker" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Baker Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Baloncesto Fuenlabrada' -> 'Fuenlabrada'   [Fuenlabrada, Spain]
+    "Baloncesto" reads as a sponsor/generic-designator prefix, same city [Fuenlabrada, Spain]. Canonical direction: "Baloncesto Fuenlabrada" -> "Fuenlabrada" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=20 vs n=12)
+  'León' -> 'Baloncesto León'   [León, Spain]
+    "Baloncesto" reads as a sponsor/generic-designator prefix, same city [León, Spain]. Canonical direction: "León" -> "Baloncesto León" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=11 vs n=6)
+  'Baloncesto Sevilla' -> 'Sevilla'   [Sevilla, Spain]
+    "Baloncesto" reads as a sponsor/generic-designator prefix, same city [Sevilla, Spain]. Canonical direction: "Baloncesto Sevilla" -> "Sevilla" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=12 vs n=2)
+  'Bandırma Banvit' -> 'Banvit'   [Bandırma, Turkey]
+    "Bandırma" reads as a sponsor/generic-designator prefix, same city [Bandırma, Turkey]. Canonical direction: "Bandırma Banvit" -> "Banvit" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=7 vs n=2)
+  'Bartolini Brindisi' -> 'Enel Brindisi'   [Brindisi, Italy]
+    "Bartolini" reads as a sponsor/generic-designator prefix, same city [Brindisi, Italy]. Canonical direction: "Bartolini Brindisi" -> "Brindisi" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=3)  [chain-resolved: "Brindisi" is itself folded into "Enel Brindisi"]
+  'Base Oostende' -> 'Oostende'   [Ostend, Belgium]
+    "Base" reads as a sponsor/generic-designator prefix, same city [Ostend, Belgium]. Canonical direction: "Base Oostende" -> "Oostende" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=3)
+  'Basket Brescia Leonessa' -> 'Brescia Leonessa'   [Brescia, Italy]
+    "Basket" reads as a sponsor/generic-designator prefix, same city [Brescia, Italy]. Canonical direction: "Basket Brescia Leonessa" -> "Brescia Leonessa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=4)
+  'Brescia' -> 'Basket Brescia'   [Brescia, Italy]
+    "Basket" reads as a sponsor/generic-designator prefix, same city [Brescia, Italy]. Canonical direction: "Brescia" -> "Basket Brescia" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=9 vs n=3)
+  'Basket CRO Lyon' -> 'CRO Lyon'   [Lyon, France]
+    "Basket" reads as a sponsor/generic-designator prefix, same city [Lyon, France]. Canonical direction: "Basket CRO Lyon" -> "CRO Lyon" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=2)
+  'Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Basket" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Livorno" -> "Basket Livorno" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=10 vs n=2)
+  'Basket Treviso' -> 'Benetton Treviso'   [Treviso, Italy]
+    "Basket" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "Basket Treviso" -> "Treviso" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Treviso" is itself folded into "Benetton Treviso"]
+  'Basket Zaragoza' -> 'Zaragoza'   [Zaragoza, Spain]
+    "Basket" reads as a sponsor/generic-designator prefix, same city [Zaragoza, Spain]. Canonical direction: "Basket Zaragoza" -> "Zaragoza" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=52 vs n=3)
+  'Treviso' -> 'Benetton Treviso'   [Treviso, Italy]
+    "Benetton" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "Treviso" -> "Benetton Treviso" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=42 vs n=3)
+  'Benston Zagreb' -> 'Cedevita Zagreb'   [Zagreb, Croatia]
+    "Benston" reads as a sponsor/generic-designator prefix, same city [Zagreb, Croatia]. Canonical direction: "Benston Zagreb" -> "Zagreb" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=2)  [chain-resolved: "Zagreb" is itself folded into "Cedevita Zagreb"]
+  'Bic Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Bic" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Bic Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Bini Viaggi Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Bini Viaggi" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Bini Viaggi Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Bipop Carire Reggio Emilia' -> 'Reggio Emilia'   [Reggio Emilia, Italy]
+    "Bipop Carire" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "Bipop Carire Reggio Emilia" -> "Reggio Emilia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=3)
+  'Bipop-Carire Reggio Emilia' -> 'Reggio Emilia'   [Reggio Emilia, Italy]
+    "Bipop-Carire" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "Bipop-Carire Reggio Emilia" -> "Reggio Emilia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Blancos de Rueda Valladolid' -> 'Valladolid'   [Valladolid, Spain]
+    "Blancos de Rueda" reads as a sponsor/generic-designator prefix, same city [Valladolid, Spain]. Canonical direction: "Blancos de Rueda Valladolid" -> "Valladolid" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=4)
+  'Boston Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Boston" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Boston Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Bamberg' -> 'Brose Bamberg'   [Bamberg, Germany]
+    "Brose" reads as a sponsor/generic-designator prefix, same city [Bamberg, Germany]. Canonical direction: "Bamberg" -> "Brose Bamberg" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=33 vs n=1)
+  'Brose Baskets Bamberg' -> 'Brose Bamberg'   [Bamberg, Germany]
+    "Brose Baskets" reads as a sponsor/generic-designator prefix, same city [Bamberg, Germany]. Canonical direction: "Brose Baskets Bamberg" -> "Bamberg" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)  [chain-resolved: "Bamberg" is itself folded into "Brose Bamberg"]
+  'Budivelnik Kyiv' -> 'Kyiv'   [Kyiv, Ukraine]
+    "Budivelnik" reads as a sponsor/generic-designator prefix, same city [Kyiv, Ukraine]. Canonical direction: "Budivelnik Kyiv" -> "Kyiv" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=1)
+  'Budivelnyk Kyiv' -> 'Kyiv'   [Kyiv, Ukraine]
+    "Budivelnyk" reads as a sponsor/generic-designator prefix, same city [Kyiv, Ukraine]. Canonical direction: "Budivelnyk Kyiv" -> "Kyiv" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=5)
+  'Bàsquet Girona' -> 'Valvi Girona'   [Girona, Spain]
+    "Bàsquet" reads as a sponsor/generic-designator prefix, same city [Girona, Spain]. Canonical direction: "Bàsquet Girona" -> "Girona" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=5)  [chain-resolved: "Girona" is itself folded into "Valvi Girona"]
+  'Bàsquet Manresa' -> 'Manresa'   [Manresa, Spain]
+    "Bàsquet" reads as a sponsor/generic-designator prefix, same city [Manresa, Spain]. Canonical direction: "Bàsquet Manresa" -> "Manresa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=6)
+  'CB Breogán' -> 'Breogán'   [Lugo, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Lugo, Spain]. Canonical direction: "CB Breogán" -> "Breogán" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=7)
+  'CB Cáceres' -> 'Cáceres'   [Cáceres, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Cáceres, Spain]. Canonical direction: "CB Cáceres" -> "Cáceres" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=12 vs n=2)
+  'CB Gran Canaria' -> 'Gran Canaria'   [Las Palmas, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Las Palmas, Spain]. Canonical direction: "CB Gran Canaria" -> "Gran Canaria" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=35 vs n=9)
+  'CB Granada' -> 'Granada'   [Granada, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Granada, Spain]. Canonical direction: "CB Granada" -> "Granada" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=9)
+  'CB Los Barrios' -> 'Los Barrios'   [Los Barrios, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Los Barrios, Spain]. Canonical direction: "CB Los Barrios" -> "Los Barrios" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)
+  'CB OAR Ferrol' -> 'OAR Ferrol'   [Ferrol, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Ferrol, Spain]. Canonical direction: "CB OAR Ferrol" -> "OAR Ferrol" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'CB Ourense' -> 'Ourense'   [Ourense, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Ourense, Spain]. Canonical direction: "CB Ourense" -> "Ourense" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=14 vs n=1)
+  'CB San Pablo Burgos' -> 'San Pablo Burgos'   [Burgos, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Burgos, Spain]. Canonical direction: "CB San Pablo Burgos" -> "San Pablo Burgos" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=1)
+  'CB Valladolid' -> 'Valladolid'   [Valladolid, Spain]
+    "CB" reads as a sponsor/generic-designator prefix, same city [Valladolid, Spain]. Canonical direction: "CB Valladolid" -> "Valladolid" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=8)
+  'CD Cajamadrid' -> 'Cajamadrid'   [Madrid, Spain]
+    "CD" reads as a sponsor/generic-designator prefix, same city [Madrid, Spain]. Canonical direction: "CD Cajamadrid" -> "Cajamadrid" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'Lyon' -> 'CRO Lyon'   [Lyon, France]
+    "CRO" reads as a sponsor/generic-designator prefix, same city [Lyon, France]. Canonical direction: "Lyon" -> "CRO Lyon" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=6 vs n=1)
+  'CS Rapid București' -> 'Rapid București'   [Bucharest, Romania]
+    "CS" reads as a sponsor/generic-designator prefix, same city [Bucharest, Romania]. Canonical direction: "CS Rapid București" -> "Rapid București" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)
+  'VVS Samara' -> 'CSK VVS Samara'   [Samara, Russia]
+    "CSK" reads as a sponsor/generic-designator prefix, same city [Samara, Russia]. Canonical direction: "VVS Samara" -> "CSK VVS Samara" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=2 vs n=1)
+  'Limoges' -> 'CSP Limoges'   [Limoges, France]
+    "CSP" reads as a sponsor/generic-designator prefix, same city [Limoges, France]. Canonical direction: "Limoges" -> "CSP Limoges" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=16 vs n=15)
+  'Asesoft Ploiești' -> 'CSU Asesoft Ploiești'   [Ploiești, Romania]
+    "CSU" reads as a sponsor/generic-designator prefix, same city [Ploiești, Romania]. Canonical direction: "Asesoft Ploiești" -> "CSU Asesoft Ploiești" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=4 vs n=1)
+  'Cacaolat Granollers' -> 'Granollers'   [Granollers, Spain]
+    "Cacaolat" reads as a sponsor/generic-designator prefix, same city [Granollers, Spain]. Canonical direction: "Cacaolat Granollers" -> "Granollers" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Caixa Manresa' -> 'Manresa'   [Manresa, Spain]
+    "Caixa" reads as a sponsor/generic-designator prefix, same city [Manresa, Spain]. Canonical direction: "Caixa Manresa" -> "Manresa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=1)
+  'Caja Mayoral Málaga' -> 'Málaga'   [Málaga, Spain]
+    "Caja Mayoral" reads as a sponsor/generic-designator prefix, same city [Málaga, Spain]. Canonical direction: "Caja Mayoral Málaga" -> "Málaga" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Caja de Ronda Málaga' -> 'Málaga'   [Málaga, Spain]
+    "Caja de Ronda" reads as a sponsor/generic-designator prefix, same city [Málaga, Spain]. Canonical direction: "Caja de Ronda Málaga" -> "Málaga" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Cantine Riunite Reggio Emilia' -> 'Reggio Emilia'   [Reggio Emilia, Italy]
+    "Cantine Riunite" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "Cantine Riunite Reggio Emilia" -> "Reggio Emilia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Carmatic Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "Carmatic" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "Carmatic Pistoia" -> "Pistoia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Pistoia" is itself folded into "Kleenex Pistoia"]
+  'Carpegna Prosciutto Basket Pesaro' -> 'Scavolini Pesaro'   [Pesaro, Italy]
+    "Carpegna Prosciutto Basket" reads as a sponsor/generic-designator prefix, same city [Pesaro, Italy]. Canonical direction: "Carpegna Prosciutto Basket Pesaro" -> "Pesaro" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=2)  [chain-resolved: "Pesaro" is itself folded into "Scavolini Pesaro"]
+  'Carrera Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Carrera" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Carrera Venezia" -> "Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Venezia" is itself folded into "Reyer Venezia"]
+  'Casademont Girona' -> 'Valvi Girona'   [Girona, Spain]
+    "Casademont" reads as a sponsor/generic-designator prefix, same city [Girona, Spain]. Canonical direction: "Casademont Girona" -> "Girona" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=6)  [chain-resolved: "Girona" is itself folded into "Valvi Girona"]
+  'Casademont Zaragoza' -> 'Zaragoza'   [Zaragoza, Spain]
+    "Casademont" reads as a sponsor/generic-designator prefix, same city [Zaragoza, Spain]. Canonical direction: "Casademont Zaragoza" -> "Zaragoza" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=52 vs n=2)
+  'Zagreb' -> 'Cedevita Zagreb'   [Zagreb, Croatia]
+    "Cedevita" reads as a sponsor/generic-designator prefix, same city [Zagreb, Croatia]. Canonical direction: "Zagreb" -> "Cedevita Zagreb" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=14 vs n=10)
+  'Châlons-Reims' -> 'Champagne Châlons-Reims'   [Châlons-Reims, France]
+    "Champagne" reads as a sponsor/generic-designator prefix, same city [Châlons-Reims, France]. Canonical direction: "Châlons-Reims" -> "Champagne Châlons-Reims" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=8 vs n=2)
+  'Cibona Zagreb' -> 'Cedevita Zagreb'   [Zagreb, Croatia]
+    "Cibona" reads as a sponsor/generic-designator prefix, same city [Zagreb, Croatia]. Canonical direction: "Cibona Zagreb" -> "Zagreb" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=8)  [chain-resolved: "Zagreb" is itself folded into "Cedevita Zagreb"]
+  'Ciro Avellino' -> 'Sidigas Avellino'   [Avellino, Italy]
+    "Ciro" reads as a sponsor/generic-designator prefix, same city [Avellino, Italy]. Canonical direction: "Ciro Avellino" -> "Avellino" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)  [chain-resolved: "Avellino" is itself folded into "Sidigas Avellino"]
+  'Club Joventut Badalona' -> 'Joventut Badalona'   [Badalona, Spain]
+    "Club" reads as a sponsor/generic-designator prefix, same city [Badalona, Spain]. Canonical direction: "Club Joventut Badalona" -> "Joventut Badalona" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=56 vs n=2)
+  'Ourense Baloncesto' -> 'Club Ourense Baloncesto'   [Ourense, Spain]
+    "Club" reads as a sponsor/generic-designator prefix, same city [Ourense, Spain]. Canonical direction: "Ourense Baloncesto" -> "Club Ourense Baloncesto" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=3 vs n=2)
+  'Club Sagesse' -> 'Sagesse'   [Beirut, Lebanon]
+    "Club" reads as a sponsor/generic-designator prefix, same city [Beirut, Lebanon]. Canonical direction: "Club Sagesse" -> "Sagesse" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Consultinvest Pesaro' -> 'Scavolini Pesaro'   [Pesaro, Italy]
+    "Consultinvest" reads as a sponsor/generic-designator prefix, same city [Pesaro, Italy]. Canonical direction: "Consultinvest Pesaro" -> "Pesaro" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=2)  [chain-resolved: "Pesaro" is itself folded into "Scavolini Pesaro"]
+  'Coop Nordest Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Coop Nordest" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Coop Nordest Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=2)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Cordivari Roseto' -> 'Roseto'   [Roseto degli Abruzzi, Italy]
+    "Cordivari" reads as a sponsor/generic-designator prefix, same city [Roseto degli Abruzzi, Italy]. Canonical direction: "Cordivari Roseto" -> "Roseto" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=1)
+  'Cortan Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Cortan" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Cortan Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Covirán Granada' -> 'Granada'   [Granada, Spain]
+    "Covirán" reads as a sponsor/generic-designator prefix, same city [Granada, Spain]. Canonical direction: "Covirán Granada" -> "Granada" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=7)
+  'Círculo Gijón' -> 'Gijón'   [Gijón, Spain]
+    "Círculo" reads as a sponsor/generic-designator prefix, same city [Gijón, Spain]. Canonical direction: "Círculo Gijón" -> "Gijón" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)
+  'DJK Würzburg' -> 's.Oliver Würzburg'   [Würzburg, Germany]
+    "DJK" reads as a sponsor/generic-designator prefix, same city [Würzburg, Germany]. Canonical direction: "DJK Würzburg" -> "Würzburg" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Würzburg" is itself folded into "s.Oliver Würzburg"]
+  'DKV Joventut' -> 'Joventut'   [Badalona, Spain]
+    "DKV" reads as a sponsor/generic-designator prefix, same city [Badalona, Spain]. Canonical direction: "DKV Joventut" -> "Joventut" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=6)
+  'Mons-Hainaut' -> 'Dexia Mons-Hainaut'   [Mons, Belgium]
+    "Dexia" reads as a sponsor/generic-designator prefix, same city [Mons, Belgium]. Canonical direction: "Mons-Hainaut" -> "Dexia Mons-Hainaut" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=3 vs n=1)
+  'Dinamica Gorizia' -> 'Segafredo Gorizia'   [Gorizia, Italy]
+    "Dinamica" reads as a sponsor/generic-designator prefix, same city [Gorizia, Italy]. Canonical direction: "Dinamica Gorizia" -> "Gorizia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)  [chain-resolved: "Gorizia" is itself folded into "Segafredo Gorizia"]
+  'Dinamo Zagreb' -> 'Cedevita Zagreb'   [Zagreb, Croatia]
+    "Dinamo" reads as a sponsor/generic-designator prefix, same city [Zagreb, Croatia]. Canonical direction: "Dinamo Zagreb" -> "Zagreb" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=1)  [chain-resolved: "Zagreb" is itself folded into "Cedevita Zagreb"]
+  'Baskets Oldenburg' -> 'EWE Baskets Oldenburg'   [Oldenburg, Germany]
+    "EWE" reads as a sponsor/generic-designator prefix, same city [Oldenburg, Germany]. Canonical direction: "Baskets Oldenburg" -> "EWE Baskets Oldenburg" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=12 vs n=3)
+  'Oldenburg' -> 'EWE Baskets Oldenburg'   [Oldenburg, Germany]
+    "EWE Baskets" reads as a sponsor/generic-designator prefix, same city [Oldenburg, Germany]. Canonical direction: "Oldenburg" -> "EWE Baskets Oldenburg" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=12 vs n=1)
+  'Elosúa León' -> 'Baloncesto León'   [León, Spain]
+    "Elosúa" reads as a sponsor/generic-designator prefix, same city [León, Spain]. Canonical direction: "Elosúa León" -> "León" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=3)  [chain-resolved: "León" is itself folded into "Baloncesto León"]
+  'Enea Zastal Zielona Góra' -> 'Zielona Góra'   [Zielona Góra, Poland]
+    "Enea Zastal" reads as a sponsor/generic-designator prefix, same city [Zielona Góra, Poland]. Canonical direction: "Enea Zastal Zielona Góra" -> "Zielona Góra" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=1)
+  'Brindisi' -> 'Enel Brindisi'   [Brindisi, Italy]
+    "Enel" reads as a sponsor/generic-designator prefix, same city [Brindisi, Italy]. Canonical direction: "Brindisi" -> "Enel Brindisi" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=8 vs n=4)
+  'Energa Czarni Słupsk' -> 'Czarni Słupsk'   [Słupsk, Poland]
+    "Energa" reads as a sponsor/generic-designator prefix, same city [Słupsk, Poland]. Canonical direction: "Energa Czarni Słupsk" -> "Czarni Słupsk" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)
+  'Enichem Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Enichem" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Enichem Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Euro Roseto' -> 'Roseto'   [Roseto degli Abruzzi, Italy]
+    "Euro" reads as a sponsor/generic-designator prefix, same city [Roseto degli Abruzzi, Italy]. Canonical direction: "Euro Roseto" -> "Roseto" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=3)
+  'Eurofiditalia Reggio Calabria' -> 'Viola Reggio Calabria'   [Reggio Calabria, Italy]
+    "Eurofiditalia" reads as a sponsor/generic-designator prefix, same city [Reggio Calabria, Italy]. Canonical direction: "Eurofiditalia Reggio Calabria" -> "Reggio Calabria" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Reggio Calabria" is itself folded into "Viola Reggio Calabria"]
+  'F.C. Porto' -> 'FC Porto'   [Porto, Portugal]
+    "F.C." reads as a sponsor/generic-designator prefix, same city [Porto, Portugal]. Canonical direction: "F.C. Porto" -> "Porto" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=1)  [chain-resolved: "Porto" is itself folded into "FC Porto"]
+  'Barcelona B' -> 'FC Barcelona B'   [Barcelona, Spain]
+    "FC" reads as a sponsor/generic-designator prefix, same city [Barcelona, Spain]. Canonical direction: "Barcelona B" -> "FC Barcelona B" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=5 vs n=1)
+  'Barcelona' -> 'FC Barcelona'   [Barcelona, Spain]
+    "FC" reads as a sponsor/generic-designator prefix, same city [Barcelona, Spain]. Canonical direction: "Barcelona" -> "FC Barcelona" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=74 vs n=13)
+  'FC Bayern Munich' -> 'Bayern Munich'   [Munich, Germany]
+    "FC" reads as a sponsor/generic-designator prefix, same city [Munich, Germany]. Canonical direction: "FC Bayern Munich" -> "Bayern Munich" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=32 vs n=1)
+  'Porto' -> 'FC Porto'   [Porto, Portugal]
+    "FC" reads as a sponsor/generic-designator prefix, same city [Porto, Portugal]. Canonical direction: "Porto" -> "FC Porto" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=8 vs n=4)
+  'FMU São Paulo' -> 'São Paulo'   [São Paulo, Brazil]
+    "FMU" reads as a sponsor/generic-designator prefix, same city [São Paulo, Brazil]. Canonical direction: "FMU São Paulo" -> "São Paulo" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'Festina Andorra' -> 'Andorra'   [Andorra, Spain]
+    "Festina" reads as a sponsor/generic-designator prefix, same city [Andorra, Spain]. Canonical direction: "Festina Andorra" -> "Andorra" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=5)
+  'Festina Joventut' -> 'Joventut'   [Badalona, Spain]
+    "Festina" reads as a sponsor/generic-designator prefix, same city [Badalona, Spain]. Canonical direction: "Festina Joventut" -> "Joventut" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Filodoro Brescia' -> 'Basket Brescia'   [Brescia, Italy]
+    "Filodoro" reads as a sponsor/generic-designator prefix, same city [Brescia, Italy]. Canonical direction: "Filodoro Brescia" -> "Brescia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=3)  [chain-resolved: "Brescia" is itself folded into "Basket Brescia"]
+  'Filou Oostende' -> 'Oostende'   [Ostend, Belgium]
+    "Filou" reads as a sponsor/generic-designator prefix, same city [Ostend, Belgium]. Canonical direction: "Filou Oostende" -> "Oostende" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=4)
+  'Ford Burgos' -> 'San Pablo Burgos'   [Burgos, Spain]
+    "Ford" reads as a sponsor/generic-designator prefix, same city [Burgos, Spain]. Canonical direction: "Ford Burgos" -> "Burgos" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Burgos" is itself folded into "San Pablo Burgos"]
+  'Forum Valladolid' -> 'Valladolid'   [Valladolid, Spain]
+    "Forum" reads as a sponsor/generic-designator prefix, same city [Valladolid, Spain]. Canonical direction: "Forum Valladolid" -> "Valladolid" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=3)
+  'Frutti Extra Bursaspor' -> 'Bursaspor'   [Bursa, Turkey]
+    "Frutti Extra" reads as a sponsor/generic-designator prefix, same city [Bursa, Turkey]. Canonical direction: "Frutti Extra Bursaspor" -> "Bursaspor" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=7 vs n=6)
+  'Fórum Valladolid' -> 'Valladolid'   [Valladolid, Spain]
+    "Fórum" reads as a sponsor/generic-designator prefix, same city [Valladolid, Spain]. Canonical direction: "Fórum Valladolid" -> "Valladolid" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=4)
+  'G.S. Olympia Larissa' -> 'Olympia Larissa'   [Larissa, Greece]
+    "G.S." reads as a sponsor/generic-designator prefix, same city [Larissa, Greece]. Canonical direction: "G.S. Olympia Larissa" -> "Olympia Larissa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Genertel Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Genertel" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Genertel Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Giorgio Tesi Group Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "Giorgio Tesi Group" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "Giorgio Tesi Group Pistoia" -> "Pistoia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)  [chain-resolved: "Pistoia" is itself folded into "Kleenex Pistoia"]
+  'Grupo Begar León' -> 'Baloncesto León'   [León, Spain]
+    "Grupo Begar" reads as a sponsor/generic-designator prefix, same city [León, Spain]. Canonical direction: "Grupo Begar León" -> "León" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=1)  [chain-resolved: "León" is itself folded into "Baloncesto León"]
+  'Grupo IFA Granollers' -> 'Granollers'   [Granollers, Spain]
+    "Grupo IFA" reads as a sponsor/generic-designator prefix, same city [Granollers, Spain]. Canonical direction: "Grupo IFA Granollers" -> "Granollers" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=2)
+  'Grupo Libro Valladolid' -> 'Valladolid'   [Valladolid, Spain]
+    "Grupo Libro" reads as a sponsor/generic-designator prefix, same city [Valladolid, Spain]. Canonical direction: "Grupo Libro Valladolid" -> "Valladolid" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=3)
+  'Southern Tigers' -> 'Guangdong Southern Tigers'   [Dongguan, China]
+    "Guangdong" reads as a sponsor/generic-designator prefix, same city [Dongguan, China]. Canonical direction: "Southern Tigers" -> "Guangdong Southern Tigers" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=16 vs n=2)
+  'HKK Zrinjski Mostar' -> 'Zrinjski Mostar'   [Mostar,  ]
+    "HKK" reads as a sponsor/generic-designator prefix, same city [Mostar,  ]. Canonical direction: "HKK Zrinjski Mostar" -> "Zrinjski Mostar" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'Happy Casa Brindisi' -> 'Enel Brindisi'   [Brindisi, Italy]
+    "Happy Casa" reads as a sponsor/generic-designator prefix, same city [Brindisi, Italy]. Canonical direction: "Happy Casa Brindisi" -> "Brindisi" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=1)  [chain-resolved: "Brindisi" is itself folded into "Enel Brindisi"]
+  'Hitachi Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Hitachi" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Hitachi Venezia" -> "Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Venezia" is itself folded into "Reyer Venezia"]
+  'Hurlingham Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Hurlingham" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Hurlingham Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=3)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'ICL Manresa' -> 'Manresa'   [Manresa, Spain]
+    "ICL" reads as a sponsor/generic-designator prefix, same city [Manresa, Spain]. Canonical direction: "ICL Manresa" -> "Manresa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=1)
+  'Iberostar Tenerife' -> 'Tenerife'   [Tenerife, Spain]
+    "Iberostar" reads as a sponsor/generic-designator prefix, same city [Tenerife, Spain]. Canonical direction: "Iberostar Tenerife" -> "Tenerife" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=2)
+  'Illy Caffè Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Illy Caffè" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Illy Caffè Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Illycaffe Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Illycaffe" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Illycaffe Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+
+================================================================================
+HIGH -- IDENTIFIED, HELD AT THE ~150 CHECKPOINT, NOT YET APPLIED (135)
+================================================================================
+Same confidence bar as the applied batch above; withheld only because applying
+all HIGH-tier merges in one pass would exceed the ~150-change checkpoint.
+Apply on confirmation.
+
+  'Illycaffé Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Illycaffé" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Illycaffé Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Mayagüez' -> 'Indios de Mayagüez'   [Mayagüez, Puerto Rico]
+    "Indios de" reads as a sponsor/generic-designator prefix, same city [Mayagüez, Puerto Rico]. Canonical direction: "Mayagüez" -> "Indios de Mayagüez" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=40 vs n=1)
+  'Dijon Basket' -> 'JDA Dijon Basket'   [Dijon, France]
+    "JDA" reads as a sponsor/generic-designator prefix, same city [Dijon, France]. Canonical direction: "Dijon Basket" -> "JDA Dijon Basket" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=5 vs n=1)
+  'Dijon' -> 'JDA Dijon'   [Dijon, France]
+    "JDA" reads as a sponsor/generic-designator prefix, same city [Dijon, France]. Canonical direction: "Dijon" -> "JDA Dijon" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=18 vs n=3)
+  'Bourg-en-Bresse' -> 'JL Bourg-en-Bresse'   [Bourg-en-Bresse, France]
+    "JL" reads as a sponsor/generic-designator prefix, same city [Bourg-en-Bresse, France]. Canonical direction: "Bourg-en-Bresse" -> "JL Bourg-en-Bresse" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=5 vs n=2)
+  'Jabones Pardo Fuenlabrada' -> 'Fuenlabrada'   [Fuenlabrada, Spain]
+    "Jabones Pardo" reads as a sponsor/generic-designator prefix, same city [Fuenlabrada, Spain]. Canonical direction: "Jabones Pardo Fuenlabrada" -> "Fuenlabrada" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=20 vs n=2)
+  'KK Budućnost' -> 'Budućnost'   [Budućnost, Montenegro]
+    "KK" reads as a sponsor/generic-designator prefix, same city [Budućnost, Montenegro]. Canonical direction: "KK Budućnost" -> "Budućnost" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=17 vs n=1)
+  'KK Cedevita' -> 'Cedevita'   [Zagreb, Croatia]
+    "KK" reads as a sponsor/generic-designator prefix, same city [Zagreb, Croatia]. Canonical direction: "KK Cedevita" -> "Cedevita" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=15 vs n=1)
+  'KK Cibona' -> 'Cibona'   [Zagreb, Croatia]
+    "KK" reads as a sponsor/generic-designator prefix, same city [Zagreb, Croatia]. Canonical direction: "KK Cibona" -> "Cibona" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=18 vs n=2)
+  'KK Split' -> 'Split'   [Split, Croatia]
+    "KK" reads as a sponsor/generic-designator prefix, same city [Split, Croatia]. Canonical direction: "KK Split" -> "Split" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=4)
+  'KK Zadar' -> 'Zadar'   [Zadar, Croatia]
+    "KK" reads as a sponsor/generic-designator prefix, same city [Zadar, Croatia]. Canonical direction: "KK Zadar" -> "Zadar" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=2)
+  'KK Zrinjevac' -> 'Zrinjevac'   [Zagreb, Croatia]
+    "KK" reads as a sponsor/generic-designator prefix, same city [Zagreb, Croatia]. Canonical direction: "KK Zrinjevac" -> "Zrinjevac" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)
+  'Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "Kleenex" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "Pistoia" -> "Kleenex Pistoia" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=5 vs n=3)
+  'Samara' -> 'Krasnye Krylya Samara'   [Samara, Russia]
+    "Krasnye Krylya" reads as a sponsor/generic-designator prefix, same city [Samara, Russia]. Canonical direction: "Samara" -> "Krasnye Krylya Samara" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=3 vs n=1)
+  'La Laguna Tenerife' -> 'Tenerife'   [Tenerife, Spain]
+    "La Laguna" reads as a sponsor/generic-designator prefix, same city [Tenerife, Spain]. Canonical direction: "La Laguna Tenerife" -> "Tenerife" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=4)
+  'Lauretana Biella' -> 'Angelico Biella'   [Biella, Italy]
+    "Lauretana" reads as a sponsor/generic-designator prefix, same city [Biella, Italy]. Canonical direction: "Lauretana Biella" -> "Biella" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=4)  [chain-resolved: "Biella" is itself folded into "Angelico Biella"]
+  'Leche Río Breogán' -> 'Breogán'   [Lugo, Spain]
+    "Leche Río" reads as a sponsor/generic-designator prefix, same city [Lugo, Spain]. Canonical direction: "Leche Río Breogán" -> "Breogán" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=3)
+  'Lenovo Tenerife' -> 'Tenerife'   [Tenerife, Spain]
+    "Lenovo" reads as a sponsor/generic-designator prefix, same city [Tenerife, Spain]. Canonical direction: "Lenovo Tenerife" -> "Tenerife" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=3)
+  'Libertas Brindisi' -> 'Enel Brindisi'   [Brindisi, Italy]
+    "Libertas" reads as a sponsor/generic-designator prefix, same city [Brindisi, Italy]. Canonical direction: "Libertas Brindisi" -> "Brindisi" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=2)  [chain-resolved: "Brindisi" is itself folded into "Enel Brindisi"]
+  'Liberti Treviso' -> 'Benetton Treviso'   [Treviso, Italy]
+    "Liberti" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "Liberti Treviso" -> "Treviso" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)  [chain-resolved: "Treviso" is itself folded into "Benetton Treviso"]
+  'Lineltex Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Lineltex" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Lineltex Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'MHP Riesen Ludwigsburg' -> 'Riesen Ludwigsburg'   [Ludwigsburg, Germany]
+    "MHP" reads as a sponsor/generic-designator prefix, same city [Ludwigsburg, Germany]. Canonical direction: "MHP Riesen Ludwigsburg" -> "Riesen Ludwigsburg" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=6)
+  'Mabo Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Mabo" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Mabo Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Mabo Prefabbricati Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Mabo Prefabbricati" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Mabo Prefabbricati Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Maccabi Ironi Ramat Gan' -> 'Ironi Ramat Gan'   [Ramat Gan, Israel]
+    "Maccabi" reads as a sponsor/generic-designator prefix, same city [Ramat Gan, Israel]. Canonical direction: "Maccabi Ironi Ramat Gan" -> "Ironi Ramat Gan" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=1)
+  'Madigan Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "Madigan" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "Madigan Pistoia" -> "Pistoia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Pistoia" is itself folded into "Kleenex Pistoia"]
+  'Maristas Málaga' -> 'Málaga'   [Málaga, Spain]
+    "Maristas" reads as a sponsor/generic-designator prefix, same city [Málaga, Spain]. Canonical direction: "Maristas Málaga" -> "Málaga" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Mariupol Azovmash' -> 'Azovmash'   [Mariupol, Ukraine]
+    "Mariupol" reads as a sponsor/generic-designator prefix, same city [Mariupol, Ukraine]. Canonical direction: "Mariupol Azovmash" -> "Azovmash" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Mayoral Málaga' -> 'Málaga'   [Málaga, Spain]
+    "Mayoral" reads as a sponsor/generic-designator prefix, same city [Málaga, Spain]. Canonical direction: "Mayoral Málaga" -> "Málaga" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=2)
+  'Bayreuth' -> 'Medi Bayreuth'   [Bayreuth, Germany]
+    "Medi" reads as a sponsor/generic-designator prefix, same city [Bayreuth, Germany]. Canonical direction: "Bayreuth" -> "Medi Bayreuth" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=8 vs n=1)
+  'Denizli Basket' -> 'Merkezefendi Bld. Denizli Basket'   [Denizli, Turkey]
+    "Merkezefendi Bld." reads as a sponsor/generic-designator prefix, same city [Denizli, Turkey]. Canonical direction: "Denizli Basket" -> "Merkezefendi Bld. Denizli Basket" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=3 vs n=1)
+  'Meta System Reggio Emilia' -> 'Reggio Emilia'   [Reggio Emilia, Italy]
+    "Meta System" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "Meta System Reggio Emilia" -> "Reggio Emilia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Miñón Valladolid' -> 'Valladolid'   [Valladolid, Spain]
+    "Miñón" reads as a sponsor/generic-designator prefix, same city [Valladolid, Spain]. Canonical direction: "Miñón Valladolid" -> "Valladolid" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=1)
+  'Monbus Obradoiro' -> 'Obradoiro'   [Santiago de Compostela, Spain]
+    "Monbus" reads as a sponsor/generic-designator prefix, same city [Santiago de Compostela, Spain]. Canonical direction: "Monbus Obradoiro" -> "Obradoiro" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=1)
+  'Montakit Fuenlabrada' -> 'Fuenlabrada'   [Fuenlabrada, Spain]
+    "Montakit" reads as a sponsor/generic-designator prefix, same city [Fuenlabrada, Spain]. Canonical direction: "Montakit Fuenlabrada" -> "Fuenlabrada" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=20 vs n=1)
+  'MoraBanc Andorra' -> 'Andorra'   [Andorra, Spain]
+    "MoraBanc" reads as a sponsor/generic-designator prefix, same city [Andorra, Spain]. Canonical direction: "MoraBanc Andorra" -> "Andorra" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=10 vs n=1)
+  'Neckar Riesen Ludwigsburg' -> 'Riesen Ludwigsburg'   [Ludwigsburg, Germany]
+    "Neckar" reads as a sponsor/generic-designator prefix, same city [Ludwigsburg, Germany]. Canonical direction: "Neckar Riesen Ludwigsburg" -> "Riesen Ludwigsburg" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'New Basket Brindisi' -> 'Enel Brindisi'   [Brindisi, Italy]
+    "New Basket" reads as a sponsor/generic-designator prefix, same city [Brindisi, Italy]. Canonical direction: "New Basket Brindisi" -> "Brindisi" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=4)  [chain-resolved: "Brindisi" is itself folded into "Enel Brindisi"]
+  'New Jersey Jammers' -> 'Jersey Jammers'   [Lakewood, USA]
+    "New" reads as a sponsor/generic-designator prefix, same city [Lakewood, USA]. Canonical direction: "New Jersey Jammers" -> "Jersey Jammers" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=4)
+  'Nuova Pallacanestro Gorizia' -> 'Segafredo Gorizia'   [Gorizia, Italy]
+    "Nuova Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Gorizia, Italy]. Canonical direction: "Nuova Pallacanestro Gorizia" -> "Gorizia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Gorizia" is itself folded into "Segafredo Gorizia"]
+  'Nuova Pallacanestro Pavia' -> 'Pallacanestro Pavia'   [Pavia, Italy]
+    "Nuova" reads as a sponsor/generic-designator prefix, same city [Pavia, Italy]. Canonical direction: "Nuova Pallacanestro Pavia" -> "Pallacanestro Pavia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)
+  'OGM Ormanspor' -> 'Ormanspor'   [Ankara, Turkey]
+    "OGM" reads as a sponsor/generic-designator prefix, same city [Ankara, Turkey]. Canonical direction: "OGM Ormanspor" -> "Ormanspor" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)
+  'Olimpia Basket Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "Olimpia Basket" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "Olimpia Basket Pistoia" -> "Pistoia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)  [chain-resolved: "Pistoia" is itself folded into "Kleenex Pistoia"]
+  'Olimpia Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "Olimpia" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "Olimpia Pistoia" -> "Pistoia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)  [chain-resolved: "Pistoia" is itself folded into "Kleenex Pistoia"]
+  'Opel Reggio Calabria' -> 'Viola Reggio Calabria'   [Reggio Calabria, Italy]
+    "Opel" reads as a sponsor/generic-designator prefix, same city [Reggio Calabria, Italy]. Canonical direction: "Opel Reggio Calabria" -> "Reggio Calabria" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Reggio Calabria" is itself folded into "Viola Reggio Calabria"]
+  'Openjobmetis Varese' -> 'Pallacanestro Varese'   [Varese, Italy]
+    "Openjobmetis" reads as a sponsor/generic-designator prefix, same city [Varese, Italy]. Canonical direction: "Openjobmetis Varese" -> "Varese" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=2)  [chain-resolved: "Varese" is itself folded into "Pallacanestro Varese"]
+  'OriOra Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "OriOra" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "OriOra Pistoia" -> "Pistoia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Pistoia" is itself folded into "Kleenex Pistoia"]
+  'Oximesa Granada' -> 'Granada'   [Granada, Spain]
+    "Oximesa" reads as a sponsor/generic-designator prefix, same city [Granada, Spain]. Canonical direction: "Oximesa Granada" -> "Granada" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=4)
+  'PBC Lukoil Academic' -> 'Lukoil Academic'   [Sofia, Bulgaria]
+    "PBC" reads as a sponsor/generic-designator prefix, same city [Sofia, Bulgaria]. Canonical direction: "PBC Lukoil Academic" -> "Lukoil Academic" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=2)
+  'PBC Ural Great Perm' -> 'Ural Great Perm'   [Perm, Russia]
+    "PBC" reads as a sponsor/generic-designator prefix, same city [Perm, Russia]. Canonical direction: "PBC Ural Great Perm" -> "Ural Great Perm" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=2)
+  'Pallacanestro Biella' -> 'Angelico Biella'   [Biella, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Biella, Italy]. Canonical direction: "Pallacanestro Biella" -> "Biella" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=2)  [chain-resolved: "Biella" is itself folded into "Angelico Biella"]
+  'Pallacanestro Brescia' -> 'Basket Brescia'   [Brescia, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Brescia, Italy]. Canonical direction: "Pallacanestro Brescia" -> "Brescia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=3)  [chain-resolved: "Brescia" is itself folded into "Basket Brescia"]
+  'Pallacanestro Brindisi' -> 'Enel Brindisi'   [Brindisi, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Brindisi, Italy]. Canonical direction: "Pallacanestro Brindisi" -> "Brindisi" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=1)  [chain-resolved: "Brindisi" is itself folded into "Enel Brindisi"]
+  'Cantù' -> 'Pallacanestro Cantù'   [Cantù, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Cantù, Italy]. Canonical direction: "Cantù" -> "Pallacanestro Cantù" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=54 vs n=4)
+  'Pallacanestro Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Pallacanestro Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Pallacanestro Reggiana' -> 'Reggiana'   [Reggio Emilia, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "Pallacanestro Reggiana" -> "Reggiana" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=23 vs n=9)
+  'Pallacanestro Treviso' -> 'Benetton Treviso'   [Treviso, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "Pallacanestro Treviso" -> "Treviso" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Treviso" is itself folded into "Benetton Treviso"]
+  'Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Trieste" -> "Pallacanestro Trieste" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=15 vs n=5)
+  'Varese' -> 'Pallacanestro Varese'   [Varese, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Varese, Italy]. Canonical direction: "Varese" -> "Pallacanestro Varese" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=56 vs n=6)
+  'Pallacanestro Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Pallacanestro" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Pallacanestro Venezia" -> "Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Venezia" is itself folded into "Reyer Venezia"]
+  'Passlab Yamagata Wyverns' -> 'Yamagata Wyverns'   [Tendo, Japan]
+    "Passlab" reads as a sponsor/generic-designator prefix, same city [Tendo, Japan]. Canonical direction: "Passlab Yamagata Wyverns" -> "Yamagata Wyverns" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'Pfizer Reggio Calabria' -> 'Viola Reggio Calabria'   [Reggio Calabria, Italy]
+    "Pfizer" reads as a sponsor/generic-designator prefix, same city [Reggio Calabria, Italy]. Canonical direction: "Pfizer Reggio Calabria" -> "Reggio Calabria" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Reggio Calabria" is itself folded into "Viola Reggio Calabria"]
+  'Pitch Cholet' -> 'Cholet'   [Cholet, France]
+    "Pitch" reads as a sponsor/generic-designator prefix, same city [Cholet, France]. Canonical direction: "Pitch Cholet" -> "Cholet" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=19 vs n=1)
+  'Karşıyaka' -> 'Pınar Karşıyaka'   [Izmir, Turkey]
+    "Pınar" reads as a sponsor/generic-designator prefix, same city [Izmir, Turkey]. Canonical direction: "Karşıyaka" -> "Pınar Karşıyaka" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=15 vs n=8)
+  'Espanyol' -> 'RCD Espanyol'   [Barcelona, Spain]
+    "RCD" reads as a sponsor/generic-designator prefix, same city [Barcelona, Spain]. Canonical direction: "Espanyol" -> "RCD Espanyol" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=4 vs n=1)
+  'Rapident Livorno' -> 'Basket Livorno'   [Livorno, Italy]
+    "Rapident" reads as a sponsor/generic-designator prefix, same city [Livorno, Italy]. Canonical direction: "Rapident Livorno" -> "Livorno" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Livorno" is itself folded into "Basket Livorno"]
+  'Reyer Giomo Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Reyer Giomo" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Reyer Giomo Venezia" -> "Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Venezia" is itself folded into "Reyer Venezia"]
+  'Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Reyer" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Venezia" -> "Reyer Venezia" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=17 vs n=2)
+  'Ricoh Manresa' -> 'Manresa'   [Manresa, Spain]
+    "Ricoh" reads as a sponsor/generic-designator prefix, same city [Manresa, Spain]. Canonical direction: "Ricoh Manresa" -> "Manresa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=2)
+  'Rolly Pistoia' -> 'Kleenex Pistoia'   [Pistoia, Italy]
+    "Rolly" reads as a sponsor/generic-designator prefix, same city [Pistoia, Italy]. Canonical direction: "Rolly Pistoia" -> "Pistoia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)  [chain-resolved: "Pistoia" is itself folded into "Kleenex Pistoia"]
+  'Gaziantep' -> 'Royal Halı Gaziantep'   [Gaziantep, Turkey]
+    "Royal Halı" reads as a sponsor/generic-designator prefix, same city [Gaziantep, Turkey]. Canonical direction: "Gaziantep" -> "Royal Halı Gaziantep" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=6 vs n=4)
+  'Río Breogán' -> 'Breogán'   [Lugo, Spain]
+    "Río" reads as a sponsor/generic-designator prefix, same city [Lugo, Spain]. Canonical direction: "Río Breogán" -> "Breogán" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=11 vs n=3)
+  'S.Oliver Würzburg' -> 's.Oliver Würzburg'   [Würzburg, Germany]
+    "S.Oliver" reads as a sponsor/generic-designator prefix, same city [Würzburg, Germany]. Canonical direction: "S.Oliver Würzburg" -> "Würzburg" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Würzburg" is itself folded into "s.Oliver Würzburg"]
+  'S.S. Felice Scandone' -> 'Felice Scandone'   [Avellino, Italy]
+    "S.S." reads as a sponsor/generic-designator prefix, same city [Avellino, Italy]. Canonical direction: "S.S. Felice Scandone" -> "Felice Scandone" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)
+  'SC Rasta Vechta' -> 'Rasta Vechta'   [Vechta, Germany]
+    "SC" reads as a sponsor/generic-designator prefix, same city [Vechta, Germany]. Canonical direction: "SC Rasta Vechta" -> "Rasta Vechta" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)
+  'Strasbourg' -> 'SIG Strasbourg'   [Strasbourg, France]
+    "SIG" reads as a sponsor/generic-designator prefix, same city [Strasbourg, France]. Canonical direction: "Strasbourg" -> "SIG Strasbourg" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=22 vs n=6)
+  'Nancy' -> 'SLUC Nancy'   [Nancy, France]
+    "SLUC" reads as a sponsor/generic-designator prefix, same city [Nancy, France]. Canonical direction: "Nancy" -> "SLUC Nancy" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=19 vs n=1)
+  'SS Basket Napoli' -> 'Basket Napoli'   [Napoli, Italy]
+    "SS" reads as a sponsor/generic-designator prefix, same city [Napoli, Italy]. Canonical direction: "SS Basket Napoli" -> "Basket Napoli" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Burgos' -> 'San Pablo Burgos'   [Burgos, Spain]
+    "San Pablo" reads as a sponsor/generic-designator prefix, same city [Burgos, Spain]. Canonical direction: "Burgos" -> "San Pablo Burgos" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=6 vs n=3)
+  'San Sebastián Gipuzkoa' -> 'Gipuzkoa'   [San Sebastián, Spain]
+    "San Sebastián" reads as a sponsor/generic-designator prefix, same city [San Sebastián, Spain]. Canonical direction: "San Sebastián Gipuzkoa" -> "Gipuzkoa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)
+  'Sato Aris' -> 'Aris'   [Thessaloniki, Greece]
+    "Sato" reads as a sponsor/generic-designator prefix, same city [Thessaloniki, Greece]. Canonical direction: "Sato Aris" -> "Aris" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=30 vs n=1)
+  'Scaini Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Scaini" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Scaini Venezia" -> "Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Venezia" is itself folded into "Reyer Venezia"]
+  'Scani Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Scani" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Scani Venezia" -> "Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Venezia" is itself folded into "Reyer Venezia"]
+  'Pesaro' -> 'Scavolini Pesaro'   [Pesaro, Italy]
+    "Scavolini" reads as a sponsor/generic-designator prefix, same city [Pesaro, Italy]. Canonical direction: "Pesaro" -> "Scavolini Pesaro" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=43 vs n=5)
+  'Scavolini Spar Pesaro' -> 'Scavolini Pesaro'   [Pesaro, Italy]
+    "Scavolini Spar" reads as a sponsor/generic-designator prefix, same city [Pesaro, Italy]. Canonical direction: "Scavolini Spar Pesaro" -> "Pesaro" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Pesaro" is itself folded into "Scavolini Pesaro"]
+  'Scavolini-Gruppo Spar Pesaro' -> 'Scavolini Pesaro'   [Pesaro, Italy]
+    "Scavolini-Gruppo Spar" reads as a sponsor/generic-designator prefix, same city [Pesaro, Italy]. Canonical direction: "Scavolini-Gruppo Spar Pesaro" -> "Pesaro" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Pesaro" is itself folded into "Scavolini Pesaro"]
+  'Sedima Roseto' -> 'Roseto'   [Roseto degli Abruzzi, Italy]
+    "Sedima" reads as a sponsor/generic-designator prefix, same city [Roseto degli Abruzzi, Italy]. Canonical direction: "Sedima Roseto" -> "Roseto" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=2)
+  'Gorizia' -> 'Segafredo Gorizia'   [Gorizia, Italy]
+    "Segafredo" reads as a sponsor/generic-designator prefix, same city [Gorizia, Italy]. Canonical direction: "Gorizia" -> "Segafredo Gorizia" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=4 vs n=3)
+  'Yalovaspor' -> 'Semt77 Yalovaspor'   [Yalova, Turkey]
+    "Semt77" reads as a sponsor/generic-designator prefix, same city [Yalova, Turkey]. Canonical direction: "Yalovaspor" -> "Semt77 Yalovaspor" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=3 vs n=1)
+  'Sesi Franca' -> 'Franca'   [Franca, Brazil]
+    "Sesi" reads as a sponsor/generic-designator prefix, same city [Franca, Brazil]. Canonical direction: "Sesi Franca" -> "Franca" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=1)
+  'Avellino' -> 'Sidigas Avellino'   [Avellino, Italy]
+    "Sidigas" reads as a sponsor/generic-designator prefix, same city [Avellino, Italy]. Canonical direction: "Avellino" -> "Sidigas Avellino" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=14 vs n=1)
+  'Sidis Reggio Emilia' -> 'Reggio Emilia'   [Reggio Emilia, Italy]
+    "Sidis" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "Sidis Reggio Emilia" -> "Reggio Emilia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=3)
+  'Sporting Al Riyadi Beirut' -> 'Al Riyadi Beirut'   [Manara, Lebanon]
+    "Sporting" reads as a sponsor/generic-designator prefix, same city [Manara, Lebanon]. Canonical direction: "Sporting Al Riyadi Beirut" -> "Al Riyadi Beirut" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=9)
+  'Standa Reggio Calabria' -> 'Viola Reggio Calabria'   [Reggio Calabria, Italy]
+    "Standa" reads as a sponsor/generic-designator prefix, same city [Reggio Calabria, Italy]. Canonical direction: "Standa Reggio Calabria" -> "Reggio Calabria" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)  [chain-resolved: "Reggio Calabria" is itself folded into "Viola Reggio Calabria"]
+  'Stefanel Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Stefanel" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Stefanel Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=5)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Steiner Bayreuth' -> 'Medi Bayreuth'   [Bayreuth, Germany]
+    "Steiner" reads as a sponsor/generic-designator prefix, same city [Bayreuth, Germany]. Canonical direction: "Steiner Bayreuth" -> "Bayreuth" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)  [chain-resolved: "Bayreuth" is itself folded into "Medi Bayreuth"]
+  'Stelmet Zielona Góra' -> 'Zielona Góra'   [Zielona Góra, Poland]
+    "Stelmet" reads as a sponsor/generic-designator prefix, same city [Zielona Góra, Poland]. Canonical direction: "Stelmet Zielona Góra" -> "Zielona Góra" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=1)
+  'TDK Manresa' -> 'Manresa'   [Manresa, Spain]
+    "TDK" reads as a sponsor/generic-designator prefix, same city [Manresa, Spain]. Canonical direction: "TDK Manresa" -> "Manresa" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=13 vs n=9)
+  'TSK uniVersa Bamberg' -> 'Brose Bamberg'   [Bamberg, Germany]
+    "TSK uniVersa" reads as a sponsor/generic-designator prefix, same city [Bamberg, Germany]. Canonical direction: "TSK uniVersa Bamberg" -> "Bamberg" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)  [chain-resolved: "Bamberg" is itself folded into "Brose Bamberg"]
+  'TTL Bamberg' -> 'Brose Bamberg'   [Bamberg, Germany]
+    "TTL" reads as a sponsor/generic-designator prefix, same city [Bamberg, Germany]. Canonical direction: "TTL Bamberg" -> "Bamberg" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)  [chain-resolved: "Bamberg" is itself folded into "Brose Bamberg"]
+  'TSG GhostHawks' -> 'Tainan TSG GhostHawks'   [Tainan City, Taiwan]
+    "Tainan" reads as a sponsor/generic-designator prefix, same city [Tainan City, Taiwan]. Canonical direction: "TSG GhostHawks" -> "Tainan TSG GhostHawks" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=2 vs n=1)
+  'Fubon Braves' -> 'Taipei Fubon Braves'   [Taipei, Taiwan]
+    "Taipei" reads as a sponsor/generic-designator prefix, same city [Taipei, Taiwan]. Canonical direction: "Fubon Braves" -> "Taipei Fubon Braves" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=13 vs n=5)
+  'Taiwan Beer Leopards' -> 'Taoyuan Taiwan Beer Leopards'   [Taoyuan City, Taiwan]
+    "Taoyuan" reads as a sponsor/generic-designator prefix, same city [Taoyuan City, Taiwan]. Canonical direction: "Taiwan Beer Leopards" -> "Taoyuan Taiwan Beer Leopards" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=5 vs n=1)
+  'Bandırma' -> 'Teksüt Bandırma'   [Bandırma, Turkey]
+    "Teksüt" reads as a sponsor/generic-designator prefix, same city [Bandırma, Turkey]. Canonical direction: "Bandırma" -> "Teksüt Bandırma" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=2 vs n=1)
+  'Telenet Oostende' -> 'Oostende'   [Ostend, Belgium]
+    "Telenet" reads as a sponsor/generic-designator prefix, same city [Ostend, Belgium]. Canonical direction: "Telenet Oostende" -> "Oostende" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=2)
+  'Telindus Oostende' -> 'Oostende'   [Ostend, Belgium]
+    "Telindus" reads as a sponsor/generic-designator prefix, same city [Ostend, Belgium]. Canonical direction: "Telindus Oostende" -> "Oostende" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=7)
+  'Telit Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
+    "Telit" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Telit Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=2)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
+  'Floridians' -> 'The Floridians'   [Miami, USA]
+    "The" reads as a sponsor/generic-designator prefix, same city [Miami, USA]. Canonical direction: "Floridians" -> "The Floridians" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=7 vs n=1)
+  'Aguadilla' -> 'Tiburones de Aguadilla'   [Aguadilla, Puerto Rico]
+    "Tiburones de" reads as a sponsor/generic-designator prefix, same city [Aguadilla, Puerto Rico]. Canonical direction: "Aguadilla" -> "Tiburones de Aguadilla" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=2 vs n=1)
+  'Konyaspor' -> 'Torku Konyaspor'   [Konya, Turkey]
+    "Torku" reads as a sponsor/generic-designator prefix, same city [Konya, Turkey]. Canonical direction: "Konyaspor" -> "Torku Konyaspor" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=3 vs n=1)
+  'Toshiba Kawasaki Brave Thunders' -> 'Kawasaki Brave Thunders'   [Kawasaki, Japan]
+    "Toshiba" reads as a sponsor/generic-designator prefix, same city [Kawasaki, Japan]. Canonical direction: "Toshiba Kawasaki Brave Thunders" -> "Kawasaki Brave Thunders" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=6 vs n=1)
+  'Toyotsu Fighting Eagles Nagoya' -> 'Fighting Eagles Nagoya'   [Nagoya, Japan]
+    "Toyotsu" reads as a sponsor/generic-designator prefix, same city [Nagoya, Japan]. Canonical direction: "Toyotsu Fighting Eagles Nagoya" -> "Fighting Eagles Nagoya" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=2)
+  'Twarde Pierniki Toruń' -> 'Pierniki Toruń'   [Toruń, Poland]
+    "Twarde" reads as a sponsor/generic-designator prefix, same city [Toruń, Poland]. Canonical direction: "Twarde Pierniki Toruń" -> "Pierniki Toruń" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'Türk Telekom Ankara' -> 'Telekom Ankara'   [Ankara, Turkey]
+    "Türk" reads as a sponsor/generic-designator prefix, same city [Ankara, Turkey]. Canonical direction: "Türk Telekom Ankara" -> "Telekom Ankara" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'UCAM Murcia' -> 'Murcia'   [Murcia, Spain]
+    "UCAM" reads as a sponsor/generic-designator prefix, same city [Murcia, Spain]. Canonical direction: "UCAM Murcia" -> "Murcia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=47 vs n=5)
+  'UNAHOTELS Reggio Emilia' -> 'Reggio Emilia'   [Reggio Emilia, Italy]
+    "UNAHOTELS" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "UNAHOTELS Reggio Emilia" -> "Reggio Emilia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=1)
+  'Mobis Phoebus' -> 'Ulsan Hyundai Mobis Phoebus'   [Ulsan, South Korea]
+    "Ulsan Hyundai" reads as a sponsor/generic-designator prefix, same city [Ulsan, South Korea]. Canonical direction: "Mobis Phoebus" -> "Ulsan Hyundai Mobis Phoebus" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=5 vs n=1)
+  'Umana Reyer Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Umana" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Umana Reyer Venezia" -> "Reyer Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=17 vs n=3)
+  'Umana Venezia' -> 'Reyer Venezia'   [Venezia, Italy]
+    "Umana" reads as a sponsor/generic-designator prefix, same city [Venezia, Italy]. Canonical direction: "Umana Venezia" -> "Venezia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)  [chain-resolved: "Venezia" is itself folded into "Reyer Venezia"]
+  'UnaHotels Reggio Emilia' -> 'Reggio Emilia'   [Reggio Emilia, Italy]
+    "UnaHotels" reads as a sponsor/generic-designator prefix, same city [Reggio Emilia, Italy]. Canonical direction: "UnaHotels Reggio Emilia" -> "Reggio Emilia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=8 vs n=2)
+  'Unicaja Mayoral Málaga' -> 'Málaga'   [Málaga, Spain]
+    "Unicaja Mayoral" reads as a sponsor/generic-designator prefix, same city [Málaga, Spain]. Canonical direction: "Unicaja Mayoral Málaga" -> "Málaga" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Unicaja-Mayoral Málaga' -> 'Málaga'   [Málaga, Spain]
+    "Unicaja-Mayoral" reads as a sponsor/generic-designator prefix, same city [Málaga, Spain]. Canonical direction: "Unicaja-Mayoral Málaga" -> "Málaga" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=9 vs n=1)
+  'Union Olimpija Ljubljana' -> 'Olimpija Ljubljana'   [Ljubljana, Slovenia]
+    "Union" reads as a sponsor/generic-designator prefix, same city [Ljubljana, Slovenia]. Canonical direction: "Union Olimpija Ljubljana" -> "Olimpija Ljubljana" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+  'Unitri Uberlândia' -> 'Uberlândia'   [Uberlândia, Brazil]
+    "Unitri" reads as a sponsor/generic-designator prefix, same city [Uberlândia, Brazil]. Canonical direction: "Unitri Uberlândia" -> "Uberlândia" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=1)
+  'Universo Treviso Basket' -> 'Treviso Basket'   [Treviso, Italy]
+    "Universo" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "Universo Treviso Basket" -> "Treviso Basket" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=2 vs n=2)
+  'Universo Treviso' -> 'Benetton Treviso'   [Treviso, Italy]
+    "Universo" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "Universo Treviso" -> "Treviso" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=2)  [chain-resolved: "Treviso" is itself folded into "Benetton Treviso"]
+  'V.L. Pesaro' -> 'Scavolini Pesaro'   [Pesaro, Italy]
+    "V.L." reads as a sponsor/generic-designator prefix, same city [Pesaro, Italy]. Canonical direction: "V.L. Pesaro" -> "Pesaro" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Pesaro" is itself folded into "Scavolini Pesaro"]
+  'Girona' -> 'Valvi Girona'   [Girona, Spain]
+    "Valvi" reads as a sponsor/generic-designator prefix, same city [Girona, Spain]. Canonical direction: "Girona" -> "Valvi Girona" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=11 vs n=8)
+  'Reggio Calabria' -> 'Viola Reggio Calabria'   [Reggio Calabria, Italy]
+    "Viola" reads as a sponsor/generic-designator prefix, same city [Reggio Calabria, Italy]. Canonical direction: "Reggio Calabria" -> "Viola Reggio Calabria" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=22 vs n=2)
+  'Walter Tigers Tübingen' -> 'Tigers Tübingen'   [Tübingen, Germany]
+    "Walter" reads as a sponsor/generic-designator prefix, same city [Tübingen, Germany]. Canonical direction: "Walter Tigers Tübingen" -> "Tigers Tübingen" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=2)
+  'Barons' -> 'Wilkes-Barre Barons'   [Wilkes-Barre, USA]
+    "Wilkes-Barre" reads as a sponsor/generic-designator prefix, same city [Wilkes-Barre, USA]. Canonical direction: "Barons" -> "Wilkes-Barre Barons" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=68 vs n=1)
+  'Zastal Zielona Góra' -> 'Zielona Góra'   [Zielona Góra, Poland]
+    "Zastal" reads as a sponsor/generic-designator prefix, same city [Zielona Góra, Poland]. Canonical direction: "Zastal Zielona Góra" -> "Zielona Góra" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=4 vs n=3)
+  'Ulm' -> 'ratiopharm Ulm'   [Ulm, Germany]
+    "ratiopharm" reads as a sponsor/generic-designator prefix, same city [Ulm, Germany]. Canonical direction: "Ulm" -> "ratiopharm Ulm" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=15 vs n=1)
+  'Würzburg' -> 's.Oliver Würzburg'   [Würzburg, Germany]
+    "s.Oliver" reads as a sponsor/generic-designator prefix, same city [Würzburg, Germany]. Canonical direction: "Würzburg" -> "s.Oliver Würzburg" (the sponsor-prefixed spelling is actually the more-established one in the data, so the bare name folds INTO it, not the reverse) (n=4 vs n=2)
+  'ÉS Chalon-sur-Saône' -> 'Chalon-sur-Saône'   [Chalon, France]
+    "ÉS" reads as a sponsor/generic-designator prefix, same city [Chalon, France]. Canonical direction: "ÉS Chalon-sur-Saône" -> "Chalon-sur-Saône" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=1 vs n=1)
+
+================================================================================
+MEDIUM -- REVIEW ONLY, NOT APPLIED (42)
+================================================================================
+  'AXA FC Barcelona' ~ 'Barcelona'   [Barcelona, Spain]
+    "AXA FC Barcelona" also matches "FC Barcelona" (count=74), which has more players than "Barcelona" (count=13) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Barcelona" is meant to be distinct
+  'Air Avellino' ~ 'Avellino'   [Avellino, Italy]
+    "Avellino" also matches "Sidigas Avellino" (count=14), which has more players than "Air Avellino" (count=7) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Air Avellino" is meant to be distinct
+  'Albany Patroons / Capital Region Pontiacs' ~ 'Capital Region Pontiacs'   [Albany, USA]
+    one name is slash-joined ("Albany Patroons / Capital Region Pontiacs" / "Capital Region Pontiacs") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Allentown / Lehigh Valley Jets' ~ 'Lehigh Valley Jets'   [Allentown, USA]
+    one name is slash-joined ("Allentown / Lehigh Valley Jets" / "Lehigh Valley Jets") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'BBC Bayreuth' ~ 'Bayreuth'   [Bayreuth, Germany]
+    "Bayreuth" also matches "Medi Bayreuth" (count=8), which has more players than "BBC Bayreuth" (count=2) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "BBC Bayreuth" is meant to be distinct
+  'BC Kalev/Cramo' ~ 'Kalev/Cramo'   [Tallinn, Estonia]
+    one name is slash-joined ("BC Kalev/Cramo" / "Kalev/Cramo") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'BC Samara' ~ 'Samara'   [Samara, Russia]
+    "Samara" also matches "Krasnye Krylya Samara" (count=3), which has more players than "BC Samara" (count=2) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "BC Samara" is meant to be distinct
+  'Basket CRO Lyon' ~ 'Lyon'   [Lyon, France]
+    "Lyon" also matches "CRO Lyon" (count=6), which has more players than "Basket CRO Lyon" (count=2) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Basket CRO Lyon" is meant to be distinct
+  'Baskets Oldenburg' ~ 'Oldenburg'   [Oldenburg, Germany]
+    "Oldenburg" also matches "EWE Baskets Oldenburg" (count=12), which has more players than "Baskets Oldenburg" (count=3) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Baskets Oldenburg" is meant to be distinct
+  'Belfius Mons-Hainaut' ~ 'Mons-Hainaut'   [Mons, Belgium]
+    "Mons-Hainaut" also matches "Dexia Mons-Hainaut" (count=3), which has more players than "Belfius Mons-Hainaut" (count=2) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Belfius Mons-Hainaut" is meant to be distinct
+  'Binghamton Flyers / Trenton Pat Pavers' ~ 'Trenton Pat Pavers'   [Binghamton, USA]
+    one name is slash-joined ("Binghamton Flyers / Trenton Pat Pavers" / "Trenton Pat Pavers") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Brooklyn Pros / Wilkes-Barre Barons' ~ 'Barons'   [Wilkes-Barre, USA]
+    one name is slash-joined ("Brooklyn Pros / Wilkes-Barre Barons" / "Barons") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Brooklyn Pros / Wilkes-Barre Barons' ~ 'Wilkes-Barre Barons'   [Wilkes-Barre, USA]
+    one name is slash-joined ("Brooklyn Pros / Wilkes-Barre Barons" / "Wilkes-Barre Barons") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'CB Girona' ~ 'Girona'   [Girona, Spain]
+    "Girona" also matches "Valvi Girona" (count=11), which has more players than "CB Girona" (count=9) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "CB Girona" is meant to be distinct
+  'CB San Pablo Burgos' ~ 'Burgos'   [Burgos, Spain]
+    "CB San Pablo Burgos" also matches "San Pablo Burgos" (count=6), which has more players than "Burgos" (count=3) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Burgos" is meant to be distinct
+  'CSK VVS Samara' ~ 'Samara'   [Samara, Russia]
+    "Samara" also matches "Krasnye Krylya Samara" (count=3), which has more players than "CSK VVS Samara" (count=2) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "CSK VVS Samara" is meant to be distinct
+  'Caja Mayoral Málaga' ~ 'Mayoral Málaga'   [Málaga, Spain]
+    "Caja Mayoral Málaga" also matches "Málaga" (count=9), which has more players than "Mayoral Málaga" (count=2) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Mayoral Málaga" is meant to be distinct
+  'Dongguan / Shenzhen Leopards' ~ 'Shenzhen Leopards'   [Shenzhen, China]
+    one name is slash-joined ("Dongguan / Shenzhen Leopards" / "Shenzhen Leopards") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Enea Zastal Zielona Góra' ~ 'Zastal Zielona Góra'   [Zielona Góra, Poland]
+    "Enea Zastal Zielona Góra" also matches "Zielona Góra" (count=4), which has more players than "Zastal Zielona Góra" (count=3) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Zastal Zielona Góra" is meant to be distinct
+  'Leche Río Breogán' ~ 'Río Breogán'   [Lugo, Spain]
+    "Leche Río Breogán" also matches "Breogán" (count=11), which has more players than "Río Breogán" (count=3) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Río Breogán" is meant to be distinct
+  'Libertas Livorno' ~ 'Livorno'   [Livorno, Italy]
+    "Livorno" also matches "Basket Livorno" (count=10), which has more players than "Libertas Livorno" (count=10) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Libertas Livorno" is meant to be distinct
+  'Liberti / Benetton Treviso' ~ 'Benetton Treviso'   [Treviso, Italy]
+    one name is slash-joined ("Liberti / Benetton Treviso" / "Benetton Treviso") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Liberti / Benetton Treviso' ~ 'Treviso'   [Treviso, Italy]
+    one name is slash-joined ("Liberti / Benetton Treviso" / "Treviso") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Mabo Pistoia' ~ 'Pistoia'   [Pistoia, Italy]
+    "Pistoia" also matches "Kleenex Pistoia" (count=5), which has more players than "Mabo Pistoia" (count=5) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Mabo Pistoia" is meant to be distinct
+  'Maltinti / Kleenex Pistoia' ~ 'Kleenex Pistoia'   [Pistoia, Italy]
+    one name is slash-joined ("Maltinti / Kleenex Pistoia" / "Kleenex Pistoia") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Maltinti / Kleenex Pistoia' ~ 'Pistoia'   [Pistoia, Italy]
+    one name is slash-joined ("Maltinti / Kleenex Pistoia" / "Pistoia") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Miami Floridians' ~ 'Floridians'   [Miami, USA]
+    "Floridians" also matches "The Floridians" (count=7), which has more players than "Miami Floridians" (count=6) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Miami Floridians" is meant to be distinct
+  'Oakland Oaks / Washington Caps / Virginia Squires' ~ 'Washington Caps / Virginia Squires'   [Washington, USA]
+    one name is slash-joined ("Oakland Oaks / Washington Caps / Virginia Squires" / "Washington Caps / Virginia Squires") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Oece / Bic Trieste' ~ 'Bic Trieste'   [Trieste, Italy]
+    one name is slash-joined ("Oece / Bic Trieste" / "Bic Trieste") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Oece / Bic Trieste' ~ 'Trieste'   [Trieste, Italy]
+    one name is slash-joined ("Oece / Bic Trieste" / "Trieste") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Panasonic Reggio Calabria' ~ 'Reggio Calabria'   [Reggio Calabria, Italy]
+    "Reggio Calabria" also matches "Viola Reggio Calabria" (count=22), which has more players than "Panasonic Reggio Calabria" (count=3) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Panasonic Reggio Calabria" is meant to be distinct
+  'Ratiopharm Ulm' ~ 'Ulm'   [Ulm, Germany]
+    "Ulm" also matches "ratiopharm Ulm" (count=15), which has more players than "Ratiopharm Ulm" (count=13) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Ratiopharm Ulm" is meant to be distinct
+  'Scandone Avellino' ~ 'Avellino'   [Avellino, Italy]
+    "Avellino" also matches "Sidigas Avellino" (count=14), which has more players than "Scandone Avellino" (count=7) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Scandone Avellino" is meant to be distinct
+  'TSK/GHP Bamberg' ~ 'Bamberg'   [Bamberg, Germany]
+    one name is slash-joined ("TSK/GHP Bamberg" / "Bamberg") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+  'Ulsan Mobis Phoebus' ~ 'Mobis Phoebus'   [Ulsan, South Korea]
+    "Mobis Phoebus" also matches "Ulsan Hyundai Mobis Phoebus" (count=5), which has more players than "Ulsan Mobis Phoebus" (count=3) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Ulsan Mobis Phoebus" is meant to be distinct
+  'Umana Reyer Venezia' ~ 'Venezia'   [Venezia, Italy]
+    "Venezia" also matches "Reyer Venezia" (count=17), which has more players than "Umana Reyer Venezia" (count=3) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Umana Reyer Venezia" is meant to be distinct
+  'Unicaja Mayoral Málaga' ~ 'Mayoral Málaga'   [Málaga, Spain]
+    "Unicaja Mayoral Málaga" also matches "Málaga" (count=9), which has more players than "Mayoral Málaga" (count=2) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Mayoral Málaga" is meant to be distinct
+  'VL Pesaro' ~ 'Pesaro'   [Pesaro, Italy]
+    "Pesaro" also matches "Scavolini Pesaro" (count=43), which has more players than "VL Pesaro" (count=6) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "VL Pesaro" is meant to be distinct
+  'VVS Samara' ~ 'Samara'   [Samara, Russia]
+    "VVS Samara" also matches "CSK VVS Samara" (count=2), which has more players than "Samara" (count=1) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Samara" is meant to be distinct
+  'Victoria Libertas Pesaro' ~ 'Pesaro'   [Pesaro, Italy]
+    "Pesaro" also matches "Scavolini Pesaro" (count=43), which has more players than "Victoria Libertas Pesaro" (count=8) -- keeping only the higher-count target as HIGH to avoid a conflicting alias; this pairing needs manual review if "Victoria Libertas Pesaro" is meant to be distinct
+  'West Palm Beach Stingrays' ~ 'Palm Beach Stingrays'   [West Palm Beach, USA]
+    "West" is a real distinguishing geographic qualifier, not a sponsor -- West Palm Beach and Palm Beach are two separate, adjacent Florida municipalities (the county seat vs. a distinct barrier-island town); this could be the same team informally shortened, or two genuinely different teams that happen to share a city-grouping key -- needs individual verification, not auto-merge
+  'Wilmington / Allentown Jets' ~ 'Allentown Jets'   [Allentown, USA]
+    one name is slash-joined ("Wilmington / Allentown Jets" / "Allentown Jets") -- the codebase already treats slash-joined names as possibly two merged historical franchises (see Birmingham/Laketown precedent), needs individual verification, not a blanket sponsor-prefix merge
+
+================================================================================
+LOW -- REVIEW ONLY, NOT APPLIED (1)
+================================================================================
+  'Select Avellino' ~ 'Avellino'   [Avellino, Italy]
+    candidate name contains a competitive-tier qualifier (reserves/youth/select/etc.) that may denote a genuinely different squad, not a sponsor variant -- "Select" vs base "Avellino"
+
