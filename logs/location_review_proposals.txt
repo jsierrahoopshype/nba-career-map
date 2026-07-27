@@ -24,20 +24,21 @@ Three team-name strings contain literal HTML/wikitext comment syntax
 ("<!--"/"-->") -- these are upstream parsing artifacts, not real team names,
 and are called out separately rather than backfilled under a fake name.
 
-HIGH:   255 total (150 applied this round via team_locations.json + a new
-        LOC_FIX backfill pass, 105 held at the 150-change
-        checkpoint pending confirmation)
+HIGH:   255 total -- ALL APPLIED across two rounds (150 in the first round, 105 in this round)
 MEDIUM: 78 (review only, not applied -- includes the homonym-risk
         exclusions above)
 LOW:    891 (review only, not applied -- no actionable signal, or a
         parsing-artifact name)
 
-Applying the 150 HIGH entries located 214 stints in careers.json (and 214 in
-READY.json), updated 148 team_locations.json entries (2 already matched), and
-removed all 150 teams from teams_needing_review.json (1224 -> 1074 remaining).
+Round 1: applying 150 HIGH entries located 214 stints (careers.json + READY.json
+each), updated 148 team_locations.json entries, and removed 150 teams from
+teams_needing_review.json (1224 -> 1074).
+Round 2 (this round): applying the remaining 105 HIGH entries located 139 more
+stints, updated 104 more team_locations.json entries, and removed the final 105
+teams from teams_needing_review.json (1074 -> 969).
 
 ================================================================================
-HIGH -- APPLIED THIS ROUND (150)
+HIGH -- APPLIED, ROUND 1 (150)
 ================================================================================
   '7bet-Lietkabelis Panevėžys' -> city='Panevėžys', state='—', country='Lithuania'
     team name contains the unambiguous city name "Panevėžys" (-> Lithuania in every other located stint using that city)
@@ -341,12 +342,8 @@ HIGH -- APPLIED THIS ROUND (150)
     team name contains the unambiguous city name "Memphis" (-> USA in every other located stint using that city)
 
 ================================================================================
-HIGH -- IDENTIFIED, HELD AT THE ~150 CHECKPOINT, NOT YET APPLIED (105)
+HIGH -- APPLIED, ROUND 2 (105)
 ================================================================================
-Same confidence bar as the applied batch above; withheld only because applying
-all HIGH-tier locations in one pass would exceed the ~150-change checkpoint.
-Apply on confirmation.
-
   'Memphis Rockers' -> city='Memphis', state='Tennessee', country='USA'
     team name contains the unambiguous city name "Memphis" (-> USA in every other located stint using that city)
   'Meridiano Alicante' -> city='Alicante', state='Valencian Community', country='Spain'
