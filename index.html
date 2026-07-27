@@ -268,8 +268,8 @@
         .rank { color: var(--text-muted); font-family: var(--mono); font-size: .72rem; }
 
         /* ticker — the hero-tier treatment: a distinctly larger, bolder
-           player name against small muted move/date metadata. */
-        .ticker { max-height: 380px; overflow-y: auto; }
+           player name against small muted move/date metadata. Exactly the 10
+           most recent rows render, fully visible — no inline scroll. */
         .tick-row { display: grid; grid-template-columns: 1.3fr 2fr auto; gap: 12px; align-items: center;
             padding: 13px 8px; border-bottom: 1px solid var(--border); font-size: .86rem; }
         .tick-row:last-child { border-bottom: none; }
@@ -1588,7 +1588,7 @@
             if(!DASH || !document.getElementById('dashboardView')) return;
             const view = document.getElementById('dashboardView');
             if(view.dataset.built === _dayNum()+''){ /* already built today */ } // still rebuild spotlight/heatmap below is idempotent
-            const seed = _dayNum();
+            const spotlightSeed = Math.floor(Math.random()*2147483647);
             TEAM_COUNTRY = {};
             (DASH.where_are_they_now||[]).forEach(r=>{ if(r.current_team && r.country) TEAM_COUNTRY[r.current_team]=r.country; });
 
@@ -1624,7 +1624,7 @@
                   <div class="dash-section-h">More Storylines</div>
                   <div class="dash-grid">
                     <div class="card span-2" id="w-reunions"></div>
-                    <div class="card" id="w-boomerang"></div>
+                    <div class="card" id="w-allstars-abroad"></div>
                   </div>
                 </div>
               </div>`;
@@ -1633,21 +1633,21 @@
             wSignings(document.getElementById('w-signings'));
             wWatn(document.getElementById('w-watn'), Math.floor(Math.random()*2147483647));
             wHeatmap(document.getElementById('w-heatmap'));
-            wSpotlight(document.getElementById('w-spotlight'), seed);
+            wSpotlight(document.getElementById('w-spotlight'), spotlightSeed);
             wTraveled(document.getElementById('w-traveled'));
             wClubsAll(document.getElementById('w-clubs-all'));
             wClubsCur(document.getElementById('w-clubs-cur'));
             wCountriesLive(document.getElementById('w-ctry-live'));
             wCountriesAll(document.getElementById('w-ctry-all'));
             wReunions(document.getElementById('w-reunions'));
-            wBoomerang(document.getElementById('w-boomerang'));
+            wAllStarsAbroad(document.getElementById('w-allstars-abroad'));
         }
 
         // 1. latest signings ticker
         function wSignings(el){
             const rows = (DASH.latest_signings||[]);
             el.innerHTML = `<div class="card-h">Latest Signings <a class="see-all" href="teams.html?view=signings">${rows.length} moves →</a></div>
-              <div class="ticker">${rows.slice(0,15).map(r=>`
+              <div>${rows.slice(0,10).map(r=>`
                 <div class="tick-row">
                   <span class="tick-player">${dPlayer(r.player)}</span>
                   <span class="tick-move">${dTeamFlag(r.from_team)} → ${dTeamFlag(r.to_team)}</span>
@@ -1655,7 +1655,7 @@
                 </div>`).join('') || '<div class="heat-note">No signings recorded yet.</div>'}</div>`;
         }
 
-        // 2. who's playing in X — rotating country spotlight
+        // 2. who's playing in X — random country spotlight, reshuffled every page load
         function wSpotlight(el, seed){
             const pool = (DASH.countries_live_snapshot||[]).filter(c=>c.count>=8).map(c=>c.country);
             const all = (DASH.countries_live_snapshot||[]).map(c=>c.country);
@@ -1759,21 +1759,15 @@
               }).join('') || '<div class="heat-note">None right now.</div>'}</div>`;
         }
 
-        // 11. boomerang players — newest-first: most recent return year (the
-        // largest year found in that team's most recent stint span).
-        function _boomerangReturnYear(b){
-            return Math.max(...b.teams.map(t=>Math.max(0, ...t.years.map(y=>{
-                const m = String(y).match(/\d{4}/g); return m ? parseInt(m[m.length-1],10) : 0;
-            }))));
-        }
-        function wBoomerang(el){
-            const pick = (DASH.boomerang_players||[]).slice()
-                .sort((a,b)=>_boomerangReturnYear(b)-_boomerangReturnYear(a)).slice(0,8);
-            el.innerHTML = `<div class="card-h">Boomerang Players <a class="see-all" href="teams.html?view=boomerang">see all →</a></div>
-              <div class="lines">${pick.map(b=>{
-                const t = b.teams[0];
-                return `<div class="line">${dPlayer(b.player)}, returned to ${dClub(t.team)} <span class="rank">(${_escH(t.years.join(', '))})</span></div>`;
-              }).join('')}</div>`;
+        // 11. all-stars abroad — former NBA All-Stars now playing overseas,
+        // ranked by selection count (server-computed; see w_all_stars_abroad
+        // in build_dashboard_data.py for why this uses all_star_count only).
+        function wAllStarsAbroad(el){
+            const rows = (DASH.all_stars_abroad||[]).slice(0,10);
+            el.innerHTML = `<div class="card-h">All-Stars Abroad <a class="see-all" href="teams.html?view=allstarsabroad">see all →</a></div>
+              <div class="lines">${rows.map(r=>
+                `<div class="line">${dPlayer(r.player)} <span class="rank">${r.all_star_count}x All-Star</span> · ${dClub(r.current_team)} · ${r.country?dCountry(r.country):'—'}</div>`
+              ).join('') || '<div class="heat-note">None right now.</div>'}</div>`;
         }
 
         const TITLE_SUFFIX = 'HoopsHype';
