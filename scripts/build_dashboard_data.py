@@ -339,6 +339,35 @@ def w_boomerang_players(players: list) -> list[dict]:
     return out
 
 
+def w_all_stars_abroad(players: list) -> list[dict]:
+    """Former NBA All-Stars currently playing overseas, ranked by selection count.
+
+    Deliberately keys ONLY on all_star_count (the CSV-ingested, exact-match-
+    verified field from ingest_allstar_counts.py) and NOT on the separate
+    all_star field. all_star is parsed from a Wikipedia highlights-field regex
+    that matches any "All-Star" substring regardless of league — in practice
+    it also fires on G League / EuroLeague / NBL / other domestic-league
+    All-Star mentions, so it flags plenty of players (e.g. Aaron Harrison,
+    Xavier Cooks, Cedi Osman) who were never actually NBA All-Stars. Using it
+    here would put visibly-wrong names in a feature whose entire premise is
+    "genuine former NBA All-Star" — all_star_count's regex requires the exact
+    "All-Star (N)" pattern against a real HoopsHype awards export, so it
+    doesn't have that false-positive class.
+    """
+    out = []
+    for p in players:
+        if p.get("status") != OVERSEAS:
+            continue
+        count = p.get("all_star_count")
+        if count is None:
+            continue
+        out.append({"player": p["player"], "all_star_count": count,
+                    "current_team": p.get("current_team", ""),
+                    "country": (_current_stint(p) or {}).get("country", "")})
+    out.sort(key=lambda r: (-r["all_star_count"], r["player"]))
+    return out
+
+
 def w_world_tour_heatmap(players: list, coords_keys: set[str]) -> dict:
     rows, no_city, city_not_in_coords = [], 0, 0
     missing_combos: dict[str, int] = {}
@@ -645,6 +674,7 @@ def build(players: list | None = None) -> dict:
         "countries_alltime_alumni": w_countries_alltime_alumni(players),
         "team_reunions": w_team_reunions(players),
         "boomerang_players": w_boomerang_players(players),
+        "all_stars_abroad": w_all_stars_abroad(players),
         "world_tour_heatmap": w_world_tour_heatmap(players, coords_keys),
         "latest_signings": w_latest_signings(),
     }
@@ -732,6 +762,7 @@ def _report(data: dict) -> None:
     head("6. countries_alltime_alumni", data["countries_alltime_alumni"])
     head("7. team_reunions", data["team_reunions"])
     head("8. boomerang_players", data["boomerang_players"])
+    head("8b. all_stars_abroad", data["all_stars_abroad"])
     ht = data["world_tour_heatmap"]
     print(f"\n=== 9. world_tour_heatmap  (total {ht['coverage']['total']}) ===")
     print("   coverage:", json.dumps(ht["coverage"]))

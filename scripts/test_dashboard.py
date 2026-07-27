@@ -73,6 +73,34 @@ def test_boomerang():
     print("test_boomerang PASS")
 
 
+def test_all_stars_abroad_uses_verified_count_only():
+    """all_star_count (CSV-verified) qualifies; a bare all_star mention (the
+    Wikipedia-regex field, prone to non-NBA All-Star false positives) does
+    NOT — see w_all_stars_abroad's docstring. Retired/NBA-active players,
+    even with a count, are excluded (not currently overseas)."""
+    fix = [
+        {**_p("Verified Star", "overseas_active", "Real Madrid",
+              [_stint("Real Madrid", "2024", "Madrid", "", "Spain")]),
+         "all_star_count": 4},
+        {**_p("Bigger Star", "overseas_active", "Baskonia",
+              [_stint("Baskonia", "2024", "Vitoria", "", "Spain")]),
+         "all_star_count": 9},
+        {**_p("Unverified Mention", "overseas_active", "Partizan",
+              [_stint("Partizan", "2024", "Belgrade", "", "Serbia")]),
+         "all_star": True},
+        {**_p("Retired Star", "retired", "",
+              [_stint("Miami Heat", "2010", "Miami", "Florida", "USA")]),
+         "all_star_count": 6},
+    ]
+    rows = b.w_all_stars_abroad(fix)
+    names = [r["player"] for r in rows]
+    assert names == ["Bigger Star", "Verified Star"], names  # sorted desc by count
+    assert "Unverified Mention" not in names
+    assert "Retired Star" not in names
+    assert rows[0]["all_star_count"] == 9 and rows[0]["country"] == "Spain"
+    print("test_all_stars_abroad_uses_verified_count_only PASS")
+
+
 def test_reunions_and_single_alumnus():
     reunions = {r["team"]: r for r in b.w_team_reunions(FIX)}
     # Real Madrid has 2 current overseas players -> a reunion
@@ -352,6 +380,7 @@ def test_relocation_timeline():
 if __name__ == "__main__":
     test_most_well_traveled_zero_country()
     test_boomerang()
+    test_all_stars_abroad_uses_verified_count_only()
     test_reunions_and_single_alumnus()
     test_alltime_index_excludes_nba()
     test_countries()
