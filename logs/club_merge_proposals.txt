@@ -6,18 +6,18 @@ one name is the other plus a prefix). Canonical direction picks whichever
 spelling already has more players on record (minimizes churn, aligns to the
 spelling already established in the data); ties default to the bare/base name.
 
-HIGH:   285 total (150 applied this round via team_aliases.json + apply_aliases.py, 135 held at the 150-change checkpoint
-        pending confirmation)
+HIGH:   285 total -- ALL APPLIED across two rounds (150 in the first round, 135 in this round)
 MEDIUM: 42 (review only, not applied)
 LOW:    1 (review only, not applied)
 
-Applying the 150 HIGH aliases + re-running apply_aliases.py (which also caught
-up a small pre-existing backlog of already-defined-but-never-applied aliases)
-renamed 443 career_history stints across careers.json + 394 in READY.json, and
+Round 1: applying 150 HIGH aliases + re-running apply_aliases.py (which also
+caught up a small pre-existing backlog) renamed 443 career_history stints and
 collapsed club_pages.json from 3913 to 3763 distinct club entries.
+Round 2 (this round): applying the remaining 135 HIGH aliases renamed 337
+more stints and collapsed club_pages.json further, from 3763 to 3628 entries.
 
 ================================================================================
-HIGH -- APPLIED THIS ROUND (150)
+HIGH -- APPLIED, ROUND 1 (150)
 ================================================================================
   "De' Longhi Treviso" -> 'Benetton Treviso'   [Treviso, Italy]
     "De' Longhi" reads as a sponsor/generic-designator prefix, same city [Treviso, Italy]. Canonical direction: "De' Longhi Treviso" -> "Treviso" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=3 vs n=1)  [chain-resolved: "Treviso" is itself folded into "Benetton Treviso"]
@@ -321,12 +321,8 @@ HIGH -- APPLIED THIS ROUND (150)
     "Illycaffe" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Illycaffe Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
 
 ================================================================================
-HIGH -- IDENTIFIED, HELD AT THE ~150 CHECKPOINT, NOT YET APPLIED (135)
+HIGH -- APPLIED, ROUND 2 (135)
 ================================================================================
-Same confidence bar as the applied batch above; withheld only because applying
-all HIGH-tier merges in one pass would exceed the ~150-change checkpoint.
-Apply on confirmation.
-
   'Illycaffé Trieste' -> 'Pallacanestro Trieste'   [Trieste, Italy]
     "Illycaffé" reads as a sponsor/generic-designator prefix, same city [Trieste, Italy]. Canonical direction: "Illycaffé Trieste" -> "Trieste" (folding the sponsor-prefixed spelling into the bare name, the more-established one) (n=5 vs n=1)  [chain-resolved: "Trieste" is itself folded into "Pallacanestro Trieste"]
   'Mayagüez' -> 'Indios de Mayagüez'   [Mayagüez, Puerto Rico]
