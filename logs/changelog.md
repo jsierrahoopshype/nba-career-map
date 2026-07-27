@@ -1,3 +1,17 @@
+## 2026-07-27 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Kentavious Caldwell-Pope: Memphis Grizzlies → Philadelphia 76ers
+  - Maxi Kleber: Los Angeles Lakers → Hapoel Tel Aviv
+  - Oscar Tshiebwe: Utah Jazz → Houston Rockets
+  - Stanley Umude: San Antonio Spurs → FC Barcelona
+  - Maxi Kleber: [nba_active → overseas_active]
+  - Stanley Umude: [nba_active → overseas_active]
+
 ## 2026-07-26 — incremental run
 
 - Players updated: **65** (7 new)

@@ -8779,6 +8779,123 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-07-27",
+      "mode": "incremental",
+      "players_updated": [
+        "Dalen Terry",
+        "Kentavious Caldwell-Pope",
+        "Jaren Jackson Jr",
+        "Jeff Green",
+        "Kawhi Leonard",
+        "Kevin Love",
+        "Kobe Bufkin",
+        "Larry Nance Jr",
+        "Leaky Black",
+        "Lonzo Ball",
+        "Mac McClung",
+        "Markieff Morris",
+        "Marvin Bagley",
+        "Maxi Kleber",
+        "Nick Richards",
+        "Nick Smith",
+        "Nicolas Batum",
+        "Ochai Agbaji",
+        "Olivier Sarr",
+        "Oscar Tshiebwe",
+        "Reggie Jackson",
+        "Rui Hachimura",
+        "Stanley Umude",
+        "Terry Rozier",
+        "Thanasis Antetokounmpo",
+        "Aaron Holiday",
+        "Ben Simmons",
+        "Bradley Beal",
+        "Brandon Clarke",
+        "Brandon Williams",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Christian Koloko",
+        "Christian Wood",
+        "Cody Martin",
+        "Cole Anthony",
+        "Dalano Banton",
+        "Dante Exum",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "DeMar DeRozan",
+        "Donovan Williams",
+        "Drew Peterson",
+        "Duop Reath",
+        "Dwight Powell",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Garrett Temple",
+        "Garrison Mathews",
+        "Gary Payton II",
+        "Gary Trent Jr",
+        "Georges Niang",
+        "Jacob Toppin",
+        "Jaden Ivey",
+        "Jalen Hood-Schifino",
+        "Jalen McDaniels",
+        "Jalen Wilson",
+        "James Johnson",
+        "James Wiseman",
+        "Tim Hardaway Jr",
+        "Tosan Evbuomwan",
+        "Trendon Watford",
+        "Trevor Keels",
+        "Trey Lyles",
+        "Tristan Thompson",
+        "Phillip Wheeler"
+      ],
+      "new_players": [],
+      "new_teams": [],
+      "team_moves": [
+        {
+          "player": "Kentavious Caldwell-Pope",
+          "from": "Memphis Grizzlies",
+          "to": "Philadelphia 76ers"
+        },
+        {
+          "player": "Maxi Kleber",
+          "from": "Los Angeles Lakers",
+          "to": "Hapoel Tel Aviv"
+        },
+        {
+          "player": "Oscar Tshiebwe",
+          "from": "Utah Jazz",
+          "to": "Houston Rockets"
+        },
+        {
+          "player": "Stanley Umude",
+          "from": "San Antonio Spurs",
+          "to": "FC Barcelona"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Maxi Kleber",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Stanley Umude",
+          "from": "nba_active",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Maxi Kleber",
+        "Stanley Umude"
+      ],
+      "newly_retired": [],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }

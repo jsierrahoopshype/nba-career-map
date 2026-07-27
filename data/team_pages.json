@@ -35151,9 +35151,9 @@
           "player": "Maxi Kleber",
           "years": "2017–2025",
           "stint_team": "Dallas Mavericks",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "current_country": "Israel",
           "nationality": "Germany",
           "all_star": [
             2015,
@@ -37059,9 +37059,9 @@
         },
         {
           "player": "Maxi Kleber",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "country": "Israel",
           "nationality": "Germany",
           "all_star": [
             2015,
@@ -39739,7 +39739,7 @@
           "years": "2022–2024",
           "stint_team": "Denver Nuggets",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -41739,7 +41739,7 @@
         {
           "player": "Kentavious Caldwell-Pope",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "country": "USA",
           "nationality": "United States"
         },
@@ -45358,7 +45358,7 @@
           "years": "2013–2017",
           "stint_team": "Detroit Pistons",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -46948,9 +46948,9 @@
           "player": "Stanley Umude",
           "years": "2022–23",
           "stint_team": "Detroit Pistons",
-          "status": "nba_active",
-          "current_team": "San Antonio Spurs",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -48161,7 +48161,7 @@
         {
           "player": "Kentavious Caldwell-Pope",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "country": "USA",
           "nationality": "United States"
         },
@@ -48392,9 +48392,9 @@
         },
         {
           "player": "Stanley Umude",
-          "status": "nba_active",
-          "current_team": "San Antonio Spurs",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -57875,6 +57875,15 @@
           "nationality": "Venezuela"
         },
         {
+          "player": "Oscar Tshiebwe",
+          "years": "2026–present",
+          "stint_team": "Houston Rockets",
+          "status": "nba_active",
+          "current_team": "Houston Rockets",
+          "current_country": "USA",
+          "nationality": "DR Congo"
+        },
+        {
           "player": "Othella Harrington",
           "years": "1996-1999",
           "stint_team": "Houston Rockets",
@@ -59882,8 +59891,8 @@
           ]
         }
       ],
-      "roster_count": 487,
-      "alumni_count": 448,
+      "roster_count": 488,
+      "alumni_count": 449,
       "related": [
         {
           "type": "club",
@@ -62566,7 +62575,7 @@
           "years": "2023–24",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
+          "current_team": "Houston Rockets",
           "current_country": "USA",
           "nationality": "DR Congo"
         },
@@ -63927,7 +63936,7 @@
         {
           "player": "Oscar Tshiebwe",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
+          "current_team": "Houston Rockets",
           "country": "USA",
           "nationality": "DR Congo"
         },
@@ -72687,7 +72696,7 @@
           "years": "2017–2021",
           "stint_team": "Los Angeles Lakers",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -73250,9 +73259,9 @@
           "player": "Maxi Kleber",
           "years": "2025–2026",
           "stint_team": "Los Angeles Lakers",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "current_country": "Israel",
           "nationality": "Germany",
           "all_star": [
             2015,
@@ -75266,7 +75275,7 @@
         {
           "player": "Kentavious Caldwell-Pope",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "country": "USA",
           "nationality": "United States"
         },
@@ -75377,6 +75386,17 @@
           "current_team": "Dallas Mavericks",
           "country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Maxi Kleber",
+          "status": "overseas_active",
+          "current_team": "Hapoel Tel Aviv",
+          "country": "Israel",
+          "nationality": "Germany",
+          "all_star": [
+            2015,
+            2017
+          ]
         },
         {
           "player": "Maxwell Lewis",
@@ -77390,10 +77410,10 @@
         },
         {
           "player": "Kentavious Caldwell-Pope",
-          "years": "2025–present",
+          "years": "2025–2027",
           "stint_team": "Memphis Grizzlies",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -79089,6 +79109,13 @@
             2025,
             2026
           ]
+        },
+        {
+          "player": "Kentavious Caldwell-Pope",
+          "status": "nba_active",
+          "current_team": "Philadelphia 76ers",
+          "country": "USA",
+          "nationality": "United States"
         },
         {
           "player": "Killian Tillie",
@@ -87273,9 +87300,9 @@
           "player": "Stanley Umude",
           "years": "2024–25",
           "stint_team": "Milwaukee Bucks",
-          "status": "nba_active",
-          "current_team": "San Antonio Spurs",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -88311,9 +88338,9 @@
         },
         {
           "player": "Stanley Umude",
-          "status": "nba_active",
-          "current_team": "San Antonio Spurs",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -88436,7 +88463,7 @@
         {
           "type": "club",
           "name": "FC Barcelona",
-          "shared": 17
+          "shared": 18
         },
         {
           "type": "club",
@@ -107761,7 +107788,7 @@
           "years": "2024–25",
           "stint_team": "Orlando Magic",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -109251,7 +109278,7 @@
         {
           "player": "Kentavious Caldwell-Pope",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "country": "USA",
           "nationality": "United States"
         },
@@ -110785,7 +110812,7 @@
         },
         {
           "player": "Dalen Terry",
-          "years": "2026–present",
+          "years": "2026",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
           "current_team": "Philadelphia 76ers",
@@ -113065,6 +113092,15 @@
           "stint_team": "Philadelphia 76ers",
           "status": "retired",
           "current_team": "Sacramento Kings",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kentavious Caldwell-Pope",
+          "years": "2026–",
+          "stint_team": "Philadelphia 76ers",
+          "status": "nba_active",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -116449,8 +116485,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 648,
-      "alumni_count": 604,
+      "roster_count": 649,
+      "alumni_count": 605,
       "related": [
         {
           "type": "club",
@@ -136047,9 +136083,9 @@
           "player": "Stanley Umude",
           "years": "2025–2026",
           "stint_team": "San Antonio Spurs",
-          "status": "nba_active",
-          "current_team": "San Antonio Spurs",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -137003,6 +137039,13 @@
           "status": "overseas_active",
           "current_team": "Nagasaki Velca",
           "country": "Japan",
+          "nationality": "United States"
+        },
+        {
+          "player": "Stanley Umude",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -143410,7 +143453,7 @@
           "years": "2024–2026",
           "stint_team": "Utah Jazz",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
+          "current_team": "Houston Rockets",
           "current_country": "USA",
           "nationality": "DR Congo"
         },
@@ -144839,6 +144882,13 @@
           "current_team": "Real Madrid",
           "country": "Spain",
           "nationality": "Turkey"
+        },
+        {
+          "player": "Oscar Tshiebwe",
+          "status": "nba_active",
+          "current_team": "Houston Rockets",
+          "country": "USA",
+          "nationality": "DR Congo"
         },
         {
           "player": "Patrick Mills",
@@ -148827,7 +148877,7 @@
           "years": "2021–22",
           "stint_team": "Washington Wizards",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -151848,7 +151898,7 @@
         {
           "player": "Kentavious Caldwell-Pope",
           "status": "nba_active",
-          "current_team": "Memphis Grizzlies",
+          "current_team": "Philadelphia 76ers",
           "country": "USA",
           "nationality": "United States"
         },

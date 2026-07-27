@@ -2901,6 +2901,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Maxi Kleber",
+      "current_team": "Hapoel Tel Aviv",
+      "country": "Israel",
+      "last_updated": "2026-07-27"
+    },
+    {
       "player": "Maxwell Lewis",
       "current_team": "London Lions",
       "country": "United Kingdom",
@@ -3613,6 +3619,12 @@
       "current_team": "Nagasaki Velca",
       "country": "Japan",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Stanley Umude",
+      "current_team": "FC Barcelona",
+      "country": "Spain",
+      "last_updated": "2026-07-27"
     },
     {
       "player": "Stanton Kidd",
@@ -5306,15 +5318,15 @@
       "players": 90
     },
     {
+      "team": "FC Barcelona",
+      "players": 89
+    },
+    {
       "team": "Austin Spurs",
       "players": 88
     },
     {
       "team": "Erie BayHawks",
-      "players": 88
-    },
-    {
-      "team": "FC Barcelona",
       "players": 88
     },
     {
@@ -5510,6 +5522,10 @@
       "players": 52
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "players": 52
+    },
+    {
       "team": "La Crosse Catbirds",
       "players": 52
     },
@@ -5520,10 +5536,6 @@
     {
       "team": "Tulsa 66ers",
       "players": 52
-    },
-    {
-      "team": "Hapoel Tel Aviv",
-      "players": 51
     },
     {
       "team": "Pau-Orthez",
@@ -20358,6 +20370,21 @@
       ]
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "count": 9,
+      "players": [
+        "Amir Coffey",
+        "Antonio Blakeney",
+        "Daniel Oturu",
+        "Elijah Bryant",
+        "Ishmail Wainright",
+        "Johnathan Motley",
+        "Maxi Kleber",
+        "Tyler Ennis",
+        "Vasilije Micic"
+      ]
+    },
+    {
       "team": "Crvena Zvezda",
       "count": 8,
       "players": [
@@ -20369,20 +20396,6 @@
         "Joel Bolomboy",
         "Jordan Nwora",
         "Semi Ojeleye"
-      ]
-    },
-    {
-      "team": "Hapoel Tel Aviv",
-      "count": 8,
-      "players": [
-        "Amir Coffey",
-        "Antonio Blakeney",
-        "Daniel Oturu",
-        "Elijah Bryant",
-        "Ishmail Wainright",
-        "Johnathan Motley",
-        "Tyler Ennis",
-        "Vasilije Micic"
       ]
     },
     {
@@ -20438,6 +20451,19 @@
         "Markus Howard",
         "Rodions Kurucs",
         "Timothe Luwawu"
+      ]
+    },
+    {
+      "team": "FC Barcelona",
+      "count": 7,
+      "players": [
+        "Miles Norris",
+        "Nicolas Laprovittola",
+        "Stanley Umude",
+        "Tomas Satoransky",
+        "Tornike Shengelia",
+        "Tyrese Martin",
+        "Willy Hernangomez"
       ]
     },
     {
@@ -20501,18 +20527,6 @@
         "Kenneth Faried",
         "Malik Beasley",
         "Thomas Robinson"
-      ]
-    },
-    {
-      "team": "FC Barcelona",
-      "count": 6,
-      "players": [
-        "Miles Norris",
-        "Nicolas Laprovittola",
-        "Tomas Satoransky",
-        "Tornike Shengelia",
-        "Tyrese Martin",
-        "Willy Hernangomez"
       ]
     },
     {
@@ -23006,7 +23020,7 @@
     },
     {
       "country": "Spain",
-      "count": 48
+      "count": 49
     },
     {
       "country": "Turkey",
@@ -23022,7 +23036,7 @@
     },
     {
       "country": "Israel",
-      "count": 36
+      "count": 37
     },
     {
       "country": "Italy",
@@ -23196,7 +23210,7 @@
     },
     {
       "country": "Spain",
-      "players": 789
+      "players": 790
     },
     {
       "country": "France",
@@ -23216,7 +23230,7 @@
     },
     {
       "country": "Israel",
-      "players": 442
+      "players": 443
     },
     {
       "country": "China",
@@ -24042,6 +24056,7 @@
         "Elijah Bryant",
         "Ishmail Wainright",
         "Johnathan Motley",
+        "Maxi Kleber",
         "Tyler Ennis",
         "Vasilije Micic"
       ],
@@ -24146,6 +24161,26 @@
             "Phoenix Suns"
           ],
           "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Johnathan Motley",
+            "Maxi Kleber"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Maxi Kleber",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Los Angeles Lakers"
+          ],
+          "latest_stint_year": 2026
         },
         {
           "players": [
@@ -24508,6 +24543,81 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "FC Barcelona",
+      "players": [
+        "Miles Norris",
+        "Nicolas Laprovittola",
+        "Stanley Umude",
+        "Tomas Satoransky",
+        "Tornike Shengelia",
+        "Tyrese Martin",
+        "Willy Hernangomez"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Nicolas Laprovittola",
+            "Stanley Umude"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Nicolas Laprovittola",
+            "Tomas Satoransky"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2022
+        },
+        {
+          "players": [
+            "Stanley Umude",
+            "Tomas Satoransky"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Tomas Satoransky",
+            "Tornike Shengelia"
+          ],
+          "shared_nba_franchises": [
+            "Chicago Bulls"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Tomas Satoransky",
+            "Willy Hernangomez"
+          ],
+          "shared_nba_franchises": [
+            "New Orleans Pelicans"
+          ],
+          "latest_stint_year": 2023
+        },
+        {
+          "players": [
+            "Tornike Shengelia",
+            "Tyrese Martin"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Maccabi Tel Aviv",
       "players": [
         "Bonzie Colson",
@@ -24819,60 +24929,6 @@
           ],
           "shared_nba_franchises": [
             "Los Angeles Lakers"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "FC Barcelona",
-      "players": [
-        "Miles Norris",
-        "Nicolas Laprovittola",
-        "Tomas Satoransky",
-        "Tornike Shengelia",
-        "Tyrese Martin",
-        "Willy Hernangomez"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Nicolas Laprovittola",
-            "Tomas Satoransky"
-          ],
-          "shared_nba_franchises": [
-            "San Antonio Spurs"
-          ],
-          "latest_stint_year": 2022
-        },
-        {
-          "players": [
-            "Tomas Satoransky",
-            "Tornike Shengelia"
-          ],
-          "shared_nba_franchises": [
-            "Chicago Bulls"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Tomas Satoransky",
-            "Willy Hernangomez"
-          ],
-          "shared_nba_franchises": [
-            "New Orleans Pelicans"
-          ],
-          "latest_stint_year": 2023
-        },
-        {
-          "players": [
-            "Tornike Shengelia",
-            "Tyrese Martin"
-          ],
-          "shared_nba_franchises": [
-            "Brooklyn Nets"
           ],
           "latest_stint_year": 2026
         }
@@ -51160,6 +51216,14 @@
       "player": "Stanley Umude",
       "teams": [
         {
+          "team": "Austin Spurs",
+          "stints": 2,
+          "years": [
+            "2025–2026",
+            "2026"
+          ]
+        },
+        {
           "team": "Motor City Cruise",
           "stints": 2,
           "years": [
@@ -57961,6 +58025,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Maxi Kleber",
+        "current_team": "Hapoel Tel Aviv",
+        "city": "Tel Aviv",
+        "state": "",
+        "country": "Israel",
+        "in_coords": true,
+        "last_updated": "2026-07-27"
+      },
+      {
         "player": "Maxwell Lewis",
         "current_team": "London Lions",
         "city": "Stratford",
@@ -59003,6 +59076,15 @@
         "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-07-13"
+      },
+      {
+        "player": "Stanley Umude",
+        "current_team": "FC Barcelona",
+        "city": "Barcelona",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-07-27"
       },
       {
         "player": "Stanton Kidd",
@@ -60131,8 +60213,8 @@
       }
     ],
     "coverage": {
-      "total": 701,
-      "in_coords": 615,
+      "total": 703,
+      "in_coords": 617,
       "missing_from_coords": 86,
       "missing_no_city": 47,
       "missing_city_absent_from_coords": 39,
@@ -60140,6 +60222,30 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Stanley Umude",
+      "from_team": "San Antonio Spurs",
+      "to_team": "FC Barcelona",
+      "date": "2026-07-27"
+    },
+    {
+      "player": "Oscar Tshiebwe",
+      "from_team": "Utah Jazz",
+      "to_team": "Houston Rockets",
+      "date": "2026-07-27"
+    },
+    {
+      "player": "Maxi Kleber",
+      "from_team": "Los Angeles Lakers",
+      "to_team": "Hapoel Tel Aviv",
+      "date": "2026-07-27"
+    },
+    {
+      "player": "Kentavious Caldwell-Pope",
+      "from_team": "Memphis Grizzlies",
+      "to_team": "Philadelphia 76ers",
+      "date": "2026-07-27"
+    },
     {
       "player": "Jalen Wilson",
       "from_team": "Brooklyn Nets",
@@ -60414,30 +60520,6 @@
       "player": "Khris Middleton",
       "from_team": "Dallas Mavericks",
       "to_team": "Washington Wizards",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Keon Ellis",
-      "from_team": "Cleveland Cavaliers",
-      "to_team": "Brooklyn Nets",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Julius Randle",
-      "from_team": "Minnesota Timberwolves",
-      "to_team": "Brooklyn Nets",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Jaden Hardy",
-      "from_team": "Washington Wizards",
-      "to_team": "Los Angeles Lakers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Isaiah Stewart",
-      "from_team": "Detroit Pistons",
-      "to_team": "Memphis Grizzlies",
       "date": "2026-07-13"
     }
   ]
