@@ -370,6 +370,7 @@
             if (viewParam === 'welltraveled'){ renderWellTraveled(); return window.scrollTo(0,0); }
             if (viewParam === 'reunions'){ renderReunions(); return window.scrollTo(0,0); }
             if (viewParam === 'boomerang'){ renderBoomerang(); return window.scrollTo(0,0); }
+            if (viewParam === 'allstarsabroad'){ renderAllStarsAbroad(); return window.scrollTo(0,0); }
             renderLanding();
             window.scrollTo(0,0);
         }
@@ -800,6 +801,27 @@
                     { label:'Club', sortVal:r=>r.team.toLowerCase(), cls:'wrap', cell:r=>teamCell(r.team) },
                     { label:'Stints', sortVal:r=>r.stints, cls:'mono', cell:r=>r.stints },
                     { label:'Years', sortVal:r=>r.return_year, cls:'mono', cell:r=>esc(r.years.join(', ')) },
+                ],
+            });
+        }
+
+        function renderAllStarsAbroad(){
+            setTitle('All-Stars Abroad — Full List | ' + TITLE_SUFFIX);
+            const rows = (DASH.all_stars_abroad||[]).map(r=>({ __k:r.player, ...r }));
+            document.getElementById('app').innerHTML = `
+                <a class="back" href="index.html">← Dashboard</a>
+                <div class="detail-title">All-Stars Abroad</div>
+                <div class="detail-sub">${rows.length} former NBA All-Stars currently playing overseas, ranked by selection count</div>
+                <div id="tbl"></div>`;
+            mountTable(document.getElementById('tbl'), {
+                unit:'players', rows, sortKey:1, sortDir:-1,
+                filterPlaceholder:'Filter player or club…',
+                filter:(r,q)=>r.player.toLowerCase().includes(q) || (r.current_team||'').toLowerCase().includes(q),
+                columns:[
+                    { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
+                    { label:'All-Star Selections', sortVal:r=>r.all_star_count, cls:'mono', cell:r=>r.all_star_count },
+                    { label:'Current Club', sortVal:r=>(r.current_team||'').toLowerCase(), cls:'wrap', cell:r=>teamCell(r.current_team) },
+                    { label:'Country', sortVal:r=>(r.country||'').toLowerCase(), cell:r=>countryCell(r.country) },
                 ],
             });
         }
