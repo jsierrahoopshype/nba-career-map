@@ -118,6 +118,81 @@ def test_career_highlights_field_alias():
     print("test_career_highlights_field_alias PASS")
 
 
+# --- regression: NBA-specific All-Star extraction (bug found live: the prior
+# regex accepted ANY "All-Star" mention regardless of league, so it flagged
+# players who were never NBA All-Stars) -----------------------------------
+
+def _assert_no_all_star(name, highlights):
+    tn = TeamNormalizer()
+    wt = _mk(name, **{"highlights": highlights,
+                      "years1": "2010-present", "team1": "[[Boston Celtics]]"})
+    rec = parse_player(wt, name, tn)
+    assert rec.get("all_star") is None, (name, highlights, rec.get("all_star"))
+    assert "all_star" not in rec
+
+
+def test_all_star_excludes_g_league():
+    _assert_no_all_star("G League Star", "3x NBA G League All-Star (2018, 2019, 2021)")
+    _assert_no_all_star("G League Star Plain", "G League All-Star (2020)")
+    print("test_all_star_excludes_g_league PASS")
+
+
+def test_all_star_excludes_euroleague():
+    _assert_no_all_star("Euro Star", "EuroLeague All-Star (2019)")
+    print("test_all_star_excludes_euroleague PASS")
+
+
+def test_all_star_excludes_nbl():
+    _assert_no_all_star("NBL Star", "NBL All-Star (2021)")
+    print("test_all_star_excludes_nbl PASS")
+
+
+def test_all_star_excludes_cba():
+    _assert_no_all_star("CBA Star", "CBA All-Star (2016)")
+    print("test_all_star_excludes_cba PASS")
+
+
+def test_all_star_excludes_game_mvp_only_mention():
+    """An All-Star Game MVP award is a distinct, different honor from being
+    selected an All-Star, and must not count on its own."""
+    _assert_no_all_star("MVP Only", "NBA All-Star Game MVP (1)")
+    print("test_all_star_excludes_game_mvp_only_mention PASS")
+
+
+def test_all_star_game_mvp_alongside_genuine_selection_still_counts():
+    """The MVP-exclusion must not blind the parser to a SEPARATE genuine
+    selection line appearing in the same highlights text."""
+    tn = TeamNormalizer()
+    wt = _mk("MVP Plus Selections",
+             **{"highlights": "NBA All-Star Game MVP (1), 3x NBA All-Star (2015, 2016, 2017)",
+                "years1": "2010-present", "team1": "[[Boston Celtics]]"})
+    rec = parse_player(wt, "MVP Plus Selections", tn)
+    assert rec.get("all_star") == [2015, 2016, 2017], rec.get("all_star")
+    print("test_all_star_game_mvp_alongside_genuine_selection_still_counts PASS")
+
+
+def test_all_star_excludes_bare_mention_without_nba():
+    """A bare "All-Star" mention with no league qualifier at all (and
+    critically no "NBA") must not count -- it's exactly as ambiguous as a
+    named other league."""
+    _assert_no_all_star("Bare Star", "All-Star (2015)")
+    _assert_no_all_star("Bare Star Boolean", "All-Star selection")
+    print("test_all_star_excludes_bare_mention_without_nba PASS")
+
+
+def test_all_star_real_false_positive_cases():
+    """Reconstructed from the three real false-positive players found live
+    (Cedi Osman, Aaron Harrison, Xavier Cooks) -- representative phrasing for
+    their actual non-NBA All-Star honors (pre-NBA domestic-league selections
+    and a G League / NBL selection respectively), none of whom were ever
+    NBA All-Stars."""
+    _assert_no_all_star("Cedi Osman Repro",
+                         "Turkish Basketball Super League All-Star (2015, 2017)")
+    _assert_no_all_star("Aaron Harrison Repro", "NBA G League All-Star (2020)")
+    _assert_no_all_star("Xavier Cooks Repro", "NBL All-Star Five (2022)")
+    print("test_all_star_real_false_positive_cases PASS")
+
+
 def test_purely_additive_no_existing_field_touched():
     """Adding nationality/all_star must not alter any existing field's value
     for a record that has neither."""
@@ -143,5 +218,13 @@ if __name__ == "__main__":
     test_all_star_absent_when_no_mention()
     test_all_star_not_conflated_with_other_honors()
     test_career_highlights_field_alias()
+    test_all_star_excludes_g_league()
+    test_all_star_excludes_euroleague()
+    test_all_star_excludes_nbl()
+    test_all_star_excludes_cba()
+    test_all_star_excludes_game_mvp_only_mention()
+    test_all_star_game_mvp_alongside_genuine_selection_still_counts()
+    test_all_star_excludes_bare_mention_without_nba()
+    test_all_star_real_false_positive_cases()
     test_purely_additive_no_existing_field_touched()
     print("\nALL NATIONALITY/ALL-STAR TESTS PASS")

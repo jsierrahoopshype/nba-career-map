@@ -216,9 +216,10 @@ def _parse_nationality(fields: dict[str, str]) -> str:
 
 
 _ALL_STAR_YEARS_RE = re.compile(
-    r"(?:\d+\s*[x×]\s*)?(?:NBA\s+)?All-Stars?(?:\s+Game)?\s*\(([^)]*)\)",
+    r"(?:\d+\s*[x×]\s*)?\bNBA\s+All-Stars?(?:\s+Game)?\s*\(([^)]*)\)",
     re.IGNORECASE)
-_ALL_STAR_MENTION_RE = re.compile(r"(?:NBA\s+)?All-Star", re.IGNORECASE)
+_ALL_STAR_MENTION_RE = re.compile(
+    r"\bNBA\s+All-Stars?\b(?!\s*(?:Game\s+)?MVP)", re.IGNORECASE)
 
 
 def _parse_all_star(highlights_raw: str) -> "list[int] | bool | None":
@@ -227,9 +228,28 @@ def _parse_all_star(highlights_raw: str) -> "list[int] | bool | None":
     Team — none of those contain the substring "All-Star", so they can never
     false-positive here.
 
+    Requires "NBA" directly adjacent to "All-Star" (word-boundaried, so it
+    never matches inside a longer token). This is deliberately stricter than
+    a bare "All-Star" substring check: highlights fields commonly ALSO list
+    All-Star honors from other competitions (G League, EuroLeague, NBL, CBA,
+    a player's pre-NBA domestic league, etc.), and "NBA G League All-Star" /
+    "NBA Development League All-Star" have "NBA" in them too but modifying
+    "G League"/"Development League", not "All-Star" — those must not count.
+    A regex that accepted any "All-Star" mention regardless of league
+    previously flagged players who were NEVER NBA All-Stars (e.g. Cedi
+    Osman's Turkish-league All-Star mentions, Aaron Harrison's G League
+    All-Star selection, Xavier Cooks' NBL All-Star selection).
+
+    Also excludes an "(NBA) All-Star Game MVP" mention on its own — a
+    distinct, different honor from being SELECTED an All-Star, not proof of
+    a selection by itself (a player's genuine "NBA All-Star (N)" selection
+    line, if one exists elsewhere in the same highlights text, still matches
+    independently).
+
     Returns the list of years when the "Nx NBA All-Star (year, year, ...)"
-    pattern parses cleanly, True when All-Star is mentioned but doesn't parse
-    into a clean year list, or None when there's no All-Star mention at all.
+    pattern parses cleanly, True when NBA All-Star is mentioned but doesn't
+    parse into a clean year list, or None when there's no NBA All-Star
+    mention at all.
     """
     if not highlights_raw:
         return None
