@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>NBA Career Map: where every NBA player is playing now | HoopsHype</title>
     <meta name="description" content="A live dashboard of where every NBA player is playing now — overseas signings, country hotspots, most-traveled journeymen, and club alumni.">
     <link rel="canonical" href="https://jsierrahoopshype.github.io/nba-career-map/">
@@ -411,7 +411,8 @@
             background: #fff;
             color: var(--red);
             border: none;
-            padding: 12px 32px;
+            padding: 14px 32px;
+            min-height: 48px;
             border-radius: 50px;
             font-size: 15px;
             font-weight: 700;
@@ -424,6 +425,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.25);
             text-transform: uppercase;
             letter-spacing: 1px;
+            touch-action: manipulation;
         }
         
         .quiz-hero-btn:hover {
@@ -826,6 +828,9 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            padding-top: calc(20px + env(safe-area-inset-top));
+            padding-bottom: calc(20px + env(safe-area-inset-bottom));
+            overscroll-behavior: contain;
         }
         .quiz-overlay.show { display: flex; }
         
@@ -864,192 +869,320 @@
             margin-bottom: 20px;
         }
         
-        .quiz-timer {
-            font-size: 48px;
+        /* ===== Quiz gameplay UI (mobile-first; desktop overrides below keep
+           its existing 280px-panel / fill-remaining-map layout unchanged) ===== */
+
+        .quiz-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 10px;
+        }
+
+        .quiz-progress {
+            font-size: 13px;
             font-weight: 700;
-            color: var(--red);
-            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+            flex: 0 0 auto;
+        }
+
+        /* Timer: a full-width color-shifting bar (genuinely glanceable at a
+           glance, no need to focus on a small digit) plus a precise numeric
+           readout beside it. Both driven from the same timeLeft value
+           updateTimerDisplay() already computes every 10ms tick — this is a
+           presentation-only reflection of that existing number, the timer's
+           own countdown rate and thresholds are untouched. */
+        .quiz-timer-wrap {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+        .quiz-timer-bar {
+            flex: 1 1 auto;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--border);
+            overflow: hidden;
+        }
+        .quiz-timer-bar-fill {
+            height: 100%;
+            width: 100%;
+            border-radius: 999px;
+            background: var(--green);
+            transition: width 0.1s linear, background-color 0.2s ease;
+        }
+        .quiz-timer-bar-fill.warning { background: #e67e22; }
+        .quiz-timer-bar-fill.danger { background: var(--red); }
+
+        .quiz-timer {
+            font-size: 15px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            color: var(--text);
+            flex: 0 0 auto;
+            min-width: 3.4em;
+            text-align: right;
         }
         .quiz-timer.warning { color: #e67e22; }
-        .quiz-timer.danger { animation: pulse 0.5s infinite; }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-        
-        .quiz-progress {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-        
-        .quiz-score-display {
-            font-size: 14px;
+        .quiz-timer.danger { animation: quizPulse 0.5s infinite; }
+        @keyframes quizPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+        .quiz-score {
+            font-size: 13px;
+            font-weight: 700;
             color: var(--green);
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-variant-numeric: tabular-nums;
+            flex: 0 0 auto;
         }
-        
+        /* Triggered by a classList add/remove pair in JS right after the
+           existing score-text assignment -- decorative only, doesn't touch
+           the score value or when/how it's computed. */
+        .quiz-score.bump { animation: quizScoreBump 0.35s ease; }
+        @keyframes quizScoreBump { 0%{transform:scale(1)} 35%{transform:scale(1.22)} 100%{transform:scale(1)} }
+
+        /* Answer grid: comfortably tappable (52px+ min-height, generous gaps)
+           on mobile; desktop keeps its existing compact stacked-list sizing
+           via the override below, unchanged. */
         .quiz-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px;
+            gap: 12px;
             margin-bottom: 0;
         }
-        
+
         .quiz-option {
             background: var(--page);
             border: 2px solid var(--border);
-            padding: 14px 8px;
-            border-radius: 8px;
-            font-size: 14px;
+            padding: 16px 10px;
+            min-height: 52px;
+            border-radius: 10px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: background 0.15s, border-color 0.15s, opacity 0.15s;
             font-family: inherit;
             text-align: center;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
+
         .quiz-option:last-child:nth-child(odd) {
             grid-column: 1 / -1;
-            max-width: 50%;
+            max-width: 60%;
             margin: 0 auto;
         }
-        
+
         @media (min-width: 768px) {
-            .quiz-options { 
+            .quiz-options {
                 display: flex;
                 flex-direction: column;
-                gap: 8px; 
+                gap: 8px;
             }
-            .quiz-option { 
-                padding: 12px 16px; 
-                font-size: 15px; 
+            .quiz-option {
+                padding: 12px 16px;
+                min-height: 0;
+                font-size: 15px;
                 border-width: 2px;
                 text-align: left;
+                justify-content: flex-start;
                 white-space: normal;
             }
         }
-        .quiz-option:hover:not(:disabled) { 
-            border-color: var(--red); 
+        .quiz-option:hover:not(:disabled) {
+            border-color: var(--red);
             background: #fff;
         }
-        .quiz-option:disabled { cursor: not-allowed; opacity: 0.7; }
-        .quiz-option.correct { 
-            background: #d4edda; 
+        .quiz-option:disabled { cursor: not-allowed; }
+        .quiz-option:disabled:not(.correct):not(.wrong) { opacity: 0.45; }
+        /* A brief flash on reveal (a full color pop settling back to the
+           existing correct/wrong tint) instead of the plain instant
+           color-swap -- purely decorative, the classes themselves are still
+           assigned by the exact same JS as before. */
+        .quiz-option.correct {
+            background: #d4edda;
             border-color: var(--green);
             color: var(--green);
+            animation: quizFlashCorrect 0.4s ease;
         }
-        .quiz-option.wrong { 
-            background: #f8d7da; 
+        .quiz-option.wrong {
+            background: #f8d7da;
             border-color: var(--red);
             color: var(--red);
+            animation: quizFlashWrong 0.4s ease;
         }
-        
+        @keyframes quizFlashCorrect {
+            0% { background: var(--green); color: #fff; transform: scale(1.04); }
+            100% { background: #d4edda; color: var(--green); transform: scale(1); }
+        }
+        @keyframes quizFlashWrong {
+            0% { background: var(--red); color: #fff; transform: scale(0.97); }
+            100% { background: #f8d7da; color: var(--red); transform: scale(1); }
+        }
+
+        /* Result banner floats just above the panel (over the bottom of the
+           map) via bottom:100% anchored to quiz-panel (position:relative) --
+           it stays a DOM child of the panel (initQuizMap() replaces the map
+           container's innerHTML, which would otherwise destroy it), but
+           visually reads as part of the map. Its appearance never shifts the
+           answer buttons' position, on any viewport. */
         .quiz-result {
-            display: none;
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 100%;
+            margin-bottom: 12px;
+            z-index: 1000;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(6px);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
         }
-        
-        @media (min-width: 768px) {
-            .quiz-result.show { 
-                display: block;
-                padding: 8px 12px; 
-                margin-bottom: 8px; 
-                font-size: 13px;
-                border-radius: 6px;
-                font-weight: 600;
-            }
-        }
-        .quiz-result.show { display: block; }
+        .quiz-result.show { opacity: 1; transform: translateY(0); }
         .quiz-result.correct { background: #d4edda; color: #155724; }
         .quiz-result.wrong { background: #f8d7da; color: #721c24; }
         .quiz-result.timeout { background: #fff3cd; color: #856404; }
-        
+
         .quiz-buttons {
             display: flex;
             gap: 10px;
             justify-content: center;
         }
-        
+
         .quiz-next-btn { display: none !important; }
         .quiz-start-btn {
             background: var(--red);
             color: #fff;
             border: none;
-            padding: 12px 32px;
+            padding: 14px 32px;
+            min-height: 48px;
             border-radius: 6px;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             font-family: inherit;
             transition: background 0.2s;
+            touch-action: manipulation;
         }
         .quiz-next-btn:hover, .quiz-start-btn:hover { background: var(--red); }
-        
+
         .quiz-close-btn {
             background: var(--bg-gray);
             color: var(--text);
             border: none;
-            padding: 12px 24px;
+            padding: 14px 24px;
+            min-height: 48px;
             border-radius: 6px;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             font-family: inherit;
+            touch-action: manipulation;
         }
         .quiz-close-btn:hover { background: var(--border); }
-        
+
         .quiz-final {
             padding: 20px;
         }
-        
+
         .quiz-final-score {
             font-size: 64px;
             font-weight: 700;
             color: var(--red);
             margin-bottom: 8px;
         }
-        
+
         .quiz-final-label {
             font-size: 18px;
             color: var(--text-muted);
             margin-bottom: 24px;
         }
-        
+
         /* Results list styling is in quiz-results-list */
-        
-        .quiz-map-container {
+
+        /* Map/panel split: flex column instead of hardcoded percentages, so
+           the panel is always exactly as tall as its content needs (all 5
+           answers guaranteed visible, never scrolled) and the map -- which
+           IS the question -- gets whatever's left, typically noticeably more
+           than the old fixed 45% on a normal phone. The wrapper is invisible
+           and non-interactive until gameplay actually shows the panel, so it
+           never blocks clicks on the page underneath. */
+        .quiz-game-area {
             position: fixed;
             top: 50px;
             left: 0;
             right: 0;
-            height: 45%;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
             z-index: 10000;
+            visibility: hidden;
+            pointer-events: none;
+            overscroll-behavior: contain;
+        }
+        .quiz-game-area.show { visibility: visible; pointer-events: auto; }
+
+        .quiz-map-container {
+            position: relative;
+            flex: 1 1 auto;
+            min-height: 0;
             display: none;
         }
         .quiz-map-container.show { display: block; }
-        
+
         .quiz-panel {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: calc(50px + 45%);
+            position: relative;
+            flex: 0 0 auto;
             background: #fff;
-            z-index: 10001;
-            padding: 10px 12px;
+            padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
             box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
             display: none;
-            overflow: hidden;
+            overscroll-behavior: contain;
         }
         .quiz-panel.show { display: block; }
-        
+
         @media (min-width: 768px) {
-            .quiz-map-container { height: calc(100% - 50px - 280px); }
-            .quiz-panel { 
-                top: auto;
-                height: 280px;
-                padding: 14px 20px; 
+            .quiz-panel {
+                flex: 0 0 280px;
+                padding: 14px 20px;
+            }
+        }
+
+        /* Satisfying pop-in when the results screen replaces the intro/game
+           overlay -- plays every time #quizFinal goes from display:none to
+           block (a fresh CSS animation on an element re-entering the render
+           tree), no JS involvement needed. */
+        .quiz-box-large {
+            animation: quizReveal 0.4s cubic-bezier(.16,1,.3,1);
+        }
+        @keyframes quizReveal {
+            from { opacity: 0; transform: scale(0.92) translateY(12px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .quiz-timer.danger,
+            .quiz-timer-bar-fill,
+            .quiz-option.correct,
+            .quiz-option.wrong,
+            .quiz-score.bump,
+            .quiz-box-large {
+                animation: none !important;
+                transition: none !important;
             }
         }
     
@@ -2186,6 +2319,7 @@
             document.getElementById('quizOverlay').classList.remove('show');
             document.getElementById('quizPanel').classList.remove('show');
             document.getElementById('quizMapContainer').classList.remove('show');
+            document.getElementById('quizGameArea').classList.remove('show');
             if(quizState.timer) clearInterval(quizState.timer);
             quizState.active = false;
             
@@ -2222,9 +2356,14 @@
             document.getElementById('map').style.display = 'none';
             document.getElementById('quizMapContainer').classList.add('show');
             document.getElementById('quizPanel').classList.add('show');
-            
+            document.getElementById('quizGameArea').classList.add('show');
+
             // Initialize quiz map
             initQuizMap();
+            // Flex-based layout (see CSS) needs a post-layout remeasure for
+            // Leaflet's initial size, same pattern used by the dashboard's
+            // heatmap for the same reason.
+            setTimeout(() => { if(quizState.quizMap) quizState.quizMap.invalidateSize(); }, 60);
             
             showQuestion();
         }
@@ -2351,12 +2490,38 @@
             const el = document.getElementById('quizTimer');
             const t = Math.max(0, quizState.timeLeft);
             el.textContent = t.toFixed(2);
-            
+
             el.classList.remove('warning', 'danger');
             if(t <= 3) el.classList.add('danger');
             else if(t <= 7) el.classList.add('warning');
+
+            // Presentation-only: reflect the same t/threshold values above as
+            // a glanceable bar. Doesn't read or alter quizState.timeLeft.
+            const bar = document.getElementById('quizTimerBarFill');
+            if(bar) {
+                bar.style.width = (t / 15 * 100) + '%';
+                bar.classList.remove('warning', 'danger');
+                if(t <= 3) bar.classList.add('danger');
+                else if(t <= 7) bar.classList.add('warning');
+            }
         }
         
+        // Presentation-only helpers: a light haptic tap (progressive
+        // enhancement, no-op where the Vibration API is unsupported) and a
+        // brief score-bump animation trigger. Neither reads nor changes any
+        // scoring value -- they just react to a score/answer event that
+        // already happened.
+        function _quizVibrate(pattern) {
+            if(navigator.vibrate) { try { navigator.vibrate(pattern); } catch(e) {} }
+        }
+        function _quizBumpScore() {
+            const el = document.getElementById('quizScoreDisplay');
+            if(!el) return;
+            el.classList.remove('bump');
+            void el.offsetWidth; // restart the animation even on back-to-back bumps
+            el.classList.add('bump');
+        }
+
         function submitAnswer(selectedName) {
             if(quizState.answered) return;
             quizState.answered = true;
@@ -2394,19 +2559,22 @@
             if(isCorrect) {
                 resultEl.textContent = `✓ Correct! +${points.toFixed(2)} points (${timeTaken.toFixed(2)}s)`;
                 resultEl.className = 'quiz-result show correct';
+                _quizVibrate(15);
             } else {
                 resultEl.textContent = `✗ Wrong! The answer was ${correctName} (-5 points)`;
                 resultEl.className = 'quiz-result show wrong';
+                _quizVibrate(30);
             }
-            
+
             document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
-            
+            _quizBumpScore();
+
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
                 if(quizState.active) nextQuestion();
             }, 1500);
         }
-        
+
         function handleTimeout() {
             quizState.answered = true;
             const correctName = quizState.players[quizState.currentIdx].player;
@@ -2431,9 +2599,11 @@
             const resultEl = document.getElementById('quizResult');
             resultEl.textContent = `⏱ Time's up! The answer was ${correctName} (-5 points)`;
             resultEl.className = 'quiz-result show timeout';
-            
+            _quizVibrate(30);
+
             document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
-            
+            _quizBumpScore();
+
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
                 if(quizState.active) nextQuestion();
@@ -2454,7 +2624,8 @@
             // Hide game UI
             document.getElementById('quizPanel').classList.remove('show');
             document.getElementById('quizMapContainer').classList.remove('show');
-            
+            document.getElementById('quizGameArea').classList.remove('show');
+
             // Restore original map
             document.getElementById('map').style.display = '';
             
@@ -2755,17 +2926,25 @@ document.addEventListener('DOMContentLoaded', boot);
     </div>
     
     <!-- Quiz Game Panel (during gameplay) -->
-    <div class="quiz-map-container" id="quizMapContainer"></div>
-    <div class="quiz-panel" id="quizPanel">
-        <div class="quiz-header">
-            <div class="quiz-progress" id="quizProgress">Q1/10</div>
-            <div class="quiz-timer" id="quizTimer">15.0</div>
-            <div class="quiz-score" id="quizScoreDisplay">0 pts</div>
-        </div>
-        <div class="quiz-result" id="quizResult"></div>
-        <div class="quiz-options" id="quizOptions"></div>
-        <div class="quiz-buttons" id="quizButtons" style="display:none">
-            <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()">Next Question</button>
+    <div class="quiz-game-area" id="quizGameArea">
+        <div class="quiz-map-container" id="quizMapContainer"></div>
+        <div class="quiz-panel" id="quizPanel">
+            <!-- Lives in the panel (not the map container) because
+                 initQuizMap() replaces quizMapContainer's innerHTML on every
+                 question -- CSS floats it visually over the map instead. -->
+            <div class="quiz-result" id="quizResult"></div>
+            <div class="quiz-header">
+                <div class="quiz-progress" id="quizProgress">Q1/10</div>
+                <div class="quiz-timer-wrap">
+                    <div class="quiz-timer-bar"><div class="quiz-timer-bar-fill" id="quizTimerBarFill"></div></div>
+                    <div class="quiz-timer" id="quizTimer">15.0</div>
+                </div>
+                <div class="quiz-score" id="quizScoreDisplay">0 pts</div>
+            </div>
+            <div class="quiz-options" id="quizOptions"></div>
+            <div class="quiz-buttons" id="quizButtons" style="display:none">
+                <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()">Next Question</button>
+            </div>
         </div>
     </div>
 
