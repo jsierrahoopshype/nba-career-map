@@ -856,7 +856,7 @@
             overscroll-behavior: contain;
         }
         .quiz-overlay.show { display: flex; }
-        
+
         .quiz-box {
             background: #fff;
             border-radius: 12px;
@@ -865,33 +865,129 @@
             padding: 24px;
             text-align: center;
         }
-        
-        .quiz-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text);
+
+        /* ===== "73-9 game" visual family, adapted to this site's own token
+           palette (its orange accent -> our --red) rather than copied
+           wholesale: dark gradient card, glowing hero number, small-caps
+           meta line, muted card rows. Scoped as its own set of custom
+           properties on .quiz-box-dark so it can't leak into the rest of
+           the (light-themed) site. Same class sits on both the intro and
+           the results screen so they read as one consistent game family. */
+        .quiz-box-dark {
+            --qd-bg1: #0c0c14;
+            --qd-bg2: #1b1b28;
+            --qd-accent: var(--red);
+            --qd-accent-glow: rgba(209,44,44,.5);
+            --qd-text: #fff;
+            --qd-text-dim: rgba(255,255,255,.58);
+            --qd-card: rgba(255,255,255,.045);
+            --qd-card-border: rgba(255,255,255,.09);
+            background: linear-gradient(180deg, var(--qd-bg1) 0%, var(--qd-bg2) 100%);
+            color: var(--qd-text);
+            border-radius: 22px;
+            padding: 40px 26px 28px;
+            position: relative;
         }
-        
-        
-        .quiz-ready-buttons {
+
+        .quiz-overlay-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,.08);
+            color: rgba(255,255,255,.75);
+            font-size: 18px;
+            line-height: 1;
+            cursor: pointer;
             display: flex;
-            gap: 12px;
+            align-items: center;
             justify-content: center;
-            margin-top: 20px;
+            z-index: 1;
+            touch-action: manipulation;
         }
-        
-        .quiz-subtitle {
-            font-size: 14px;
-            color: var(--text-muted);
+        .quiz-overlay-close:hover { background: rgba(255,255,255,.16); color: #fff; }
+
+        .quiz-dark-kicker {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            margin-bottom: 6px;
+        }
+
+        .quiz-title {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
             margin-bottom: 10px;
         }
-        .quiz-subtitle {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
+
+        .quiz-dark-premise {
+            font-size: 15px;
+            color: var(--qd-text-dim);
+            line-height: 1.5;
+            margin-bottom: 22px;
         }
-        
+
+        .quiz-rules-dark {
+            text-align: left;
+            list-style: none;
+            counter-reset: quizrule;
+            margin: 0 0 26px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .quiz-rules-dark li {
+            counter-increment: quizrule;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+            color: rgba(255,255,255,.88);
+        }
+        .quiz-rules-dark li::before {
+            content: counter(quizrule);
+            flex: 0 0 auto;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--qd-accent);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        .quiz-dark-start-btn {
+            width: 100%;
+            background: var(--qd-accent);
+            color: #fff;
+            border: none;
+            padding: 16px;
+            min-height: 52px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 0 8px 24px var(--qd-accent-glow);
+            transition: transform 0.15s ease;
+            touch-action: manipulation;
+        }
+        .quiz-dark-start-btn:hover { transform: translateY(-1px); }
+        .quiz-dark-start-btn:active { transform: translateY(0); }
+
         /* ===== Quiz gameplay UI (mobile-first; desktop overrides below keep
            its existing 280px-panel / fill-remaining-map layout unchanged) ===== */
 
@@ -903,12 +999,25 @@
         }
 
         .quiz-progress {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 0 0 auto;
+        }
+        .quiz-streak {
             font-size: 13px;
             font-weight: 700;
             color: var(--text-muted);
             font-variant-numeric: tabular-nums;
-            flex: 0 0 auto;
         }
+        /* Remaining lives, hearts/strikes style -- the primary "how much
+           room for error is left" signal in survival mode (there's no fixed
+           question count to show progress against instead). Reflects
+           quizState.lives; never sets it. */
+        .quiz-lives { display: flex; gap: 2px; }
+        .quiz-heart { font-size: 15px; line-height: 1; }
+        .quiz-heart.full { color: var(--red); }
+        .quiz-heart.empty { color: var(--border); }
 
         /* Timer: a full-width color-shifting bar (genuinely glanceable at a
            glance, no need to focus on a small digit) plus a precise numeric
@@ -1087,52 +1196,53 @@
         }
 
         .quiz-next-btn { display: none !important; }
-        .quiz-start-btn {
-            background: var(--red);
-            color: #fff;
-            border: none;
-            padding: 14px 32px;
-            min-height: 48px;
-            border-radius: 6px;
-            font-size: 15px;
+        .quiz-next-btn:hover { background: var(--red); }
+
+        /* Results screen hero: the big glowing score, same visual weight as
+           the 73-9 game's hero percentage, its color swapped for this
+           site's own accent. */
+        .quiz-dark-hero {
+            font-size: 76px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: var(--qd-accent);
+            text-shadow: 0 0 40px var(--qd-accent-glow);
+            margin-top: 6px;
+        }
+        .quiz-dark-hero-label {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            margin-bottom: 14px;
+        }
+        .quiz-dark-meta {
+            font-size: 12px;
             font-weight: 600;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.2s;
-            touch-action: manipulation;
+            letter-spacing: 0.3px;
+            color: var(--qd-text-dim);
+            margin-bottom: 18px;
         }
-        .quiz-next-btn:hover, .quiz-start-btn:hover { background: var(--red); }
-
-        .quiz-close-btn {
-            background: var(--bg-gray);
-            color: var(--text);
-            border: none;
-            padding: 14px 24px;
-            min-height: 48px;
-            border-radius: 6px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: inherit;
-            touch-action: manipulation;
-        }
-        .quiz-close-btn:hover { background: var(--border); }
-
-        .quiz-final {
-            padding: 20px;
-        }
-
-        .quiz-final-score {
-            font-size: 64px;
+        .quiz-dark-caption {
+            font-size: 11px;
             font-weight: 700;
-            color: var(--red);
-            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            margin: 18px 0 10px;
         }
 
-        .quiz-final-label {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
+        /* Base look for the percentile line; submitScore()'s inline
+           color/background (once a real rank comes back) still overrides
+           these two properties, this just keeps spacing/font consistent in
+           every state including the "Calculating ranking…" placeholder. */
+        .quiz-percentile {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--qd-text-dim);
+            margin-bottom: 14px;
         }
 
         /* Results list styling is in quiz-results-list */
@@ -1209,151 +1319,179 @@
             }
         }
     
-        .quiz-share-section {
-            margin: 20px 0;
-        }
-        
-        .quiz-share-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .quiz-share-btn:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-        }
-        
         .quiz-final-buttons {
             display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 18px;
         }
-        
-        #shareImageContainer {
-            margin-top: 16px;
-            padding: 16px;
-            background: var(--surface-hover);
-            border-radius: 12px;
+        .quiz-action-btn {
+            flex: 1;
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,.18);
+            color: #fff;
+            padding: 13px 10px;
+            min-height: 46px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: inherit;
+            touch-action: manipulation;
+            transition: border-color 0.15s, background 0.15s;
         }
-        
+        .quiz-action-btn:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.06); }
+        .quiz-action-btn.primary {
+            background: var(--qd-accent);
+            border-color: var(--qd-accent);
+            box-shadow: 0 6px 18px var(--qd-accent-glow);
+        }
+        .quiz-action-btn.primary:hover { filter: brightness(1.1); }
+
         .quiz-box-large {
             max-width: 550px !important;
             max-height: 90vh;
             overflow-y: auto;
         }
-        
+
+        /* Unbounded length (survival has no fixed question count) -- scrolls
+           within its own box rather than growing the whole card. */
         .quiz-results-list {
             text-align: left;
-            margin: 16px 0;
-            max-height: 300px;
+            margin: 4px 0 14px;
+            max-height: 240px;
             overflow-y: auto;
-            background: var(--surface-hover);
-            border-radius: 8px;
-            padding: 8px 0;
+            background: var(--qd-card);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 12px;
+            padding: 4px 0;
         }
-        
+
         .quiz-result-row {
             display: flex;
             align-items: center;
-            padding: 10px 16px;
-            border-bottom: 1px solid var(--border);
-            font-size: 15px;
+            gap: 10px;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--qd-card-border);
+            font-size: 14px;
         }
-        
-        .quiz-result-row:last-child {
-            border-bottom: none;
-        }
-        
-        .quiz-result-row:nth-child(odd) {
-            background: #fff;
-        }
-        
+        .quiz-result-row:last-child { border-bottom: none; }
+
         .quiz-result-icon {
-            width: 24px;
-            font-weight: 700;
-            font-size: 16px;
+            flex: 0 0 auto;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            background: rgba(255,255,255,.08);
         }
-        
-        .quiz-result-icon.correct { color: var(--green); }
-        .quiz-result-icon.wrong { color: var(--red); }
-        
+        .quiz-result-icon.correct { color: #2ecc71; }
+        .quiz-result-icon.wrong { color: #e74c3c; }
+
         .quiz-result-name {
             flex: 1;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .quiz-result-points {
+            min-width: 0;
             font-weight: 700;
-            font-size: 14px;
+            color: #fff;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        
-        .quiz-result-points.correct { color: var(--green); }
-        .quiz-result-points.wrong { color: var(--red); }
-        
+
+        .quiz-result-points {
+            flex: 0 0 auto;
+            font-weight: 800;
+            font-size: 13px;
+            font-variant-numeric: tabular-nums;
+        }
+        .quiz-result-points.correct { color: #2ecc71; }
+        /* No -5 penalty exists anymore -- a miss shows a plain dash, not a
+           colored point value, since no points changed hands. */
+        .quiz-result-points.wrong { color: rgba(255,255,255,.35); }
+
         #shareImage {
             max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+            margin-bottom: 14px;
         }
-        
-        .share-actions {
+
+        .quiz-copy-row {
             display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 16px;
-            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
         }
-        
-        .share-download-btn, .share-twitter-btn {
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
+        .quiz-copy-input {
+            flex: 1;
+            min-width: 0;
+            background: rgba(255,255,255,.06);
+            border: 1px solid var(--qd-card-border);
+            color: rgba(255,255,255,.7);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 12px;
         }
-        
-        .share-download-btn {
-            background: var(--text);
+        .quiz-copy-btn {
+            flex: 0 0 auto;
+            background: var(--qd-accent);
             color: #fff;
-        }
-        
-        .share-download-btn:hover {
-            background: #000;
-        }
-        
-        .share-twitter-btn {
-            background: #1DA1F2;
-            color: #fff;
-        }
-        
-        .share-twitter-btn:hover {
-            background: #0d8ecf;
-        }
-        
-        .share-instructions {
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
             font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            font-family: inherit;
+            touch-action: manipulation;
         }
-        
+        .quiz-copy-btn:hover { filter: brightness(1.1); }
+
+        /* Same share-options set as the 73-9 game (X, Bluesky, Facebook,
+           WhatsApp, Reddit, Telegram), restyled as colored icon tiles. */
+        .quiz-social-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+        .quiz-social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 42px;
+            border-radius: 10px;
+            border: none;
+            color: #fff;
+            font-size: 17px;
+            cursor: pointer;
+            text-decoration: none;
+            touch-action: manipulation;
+            transition: filter 0.15s;
+        }
+        .quiz-social-btn:hover { filter: brightness(1.15); }
+        .quiz-social-btn.x { background: #000; }
+        .quiz-social-btn.bluesky { background: #1185fe; }
+        .quiz-social-btn.facebook { background: #1877f2; }
+        .quiz-social-btn.whatsapp { background: #25d366; }
+        .quiz-social-btn.reddit { background: #ff4500; }
+        .quiz-social-btn.telegram { background: #2aabee; }
+        @media (max-width: 420px) {
+            .quiz-social-row { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .share-instructions {
+            font-size: 12px;
+            color: var(--qd-text-dim);
+            margin-top: 2px;
+            text-align: center;
+        }
+
         #shareImageContainer.show { display: block !important; }
     </style>
 </head>
@@ -2271,15 +2409,25 @@
         });
         
         
-        // ====== QUIZ MODE ======
+        // ====== QUIZ MODE (v2: survival) ======
+        // Rules for this mode (deliberate product decision, not the frozen
+        // legacy scoring): 10s per question, decay from 15 -> 1.5 over that
+        // window (same top/floor/shape as the old 15s version, compressed),
+        // NO -5 point penalty -- a miss (wrong answer or timeout) costs a
+        // life instead. Game ends the moment lives reaches 0 (three
+        // mistakes), not at a fixed question count.
+        const QUIZ_TIMER_SECONDS = 10;
+        const QUIZ_START_LIVES = 3;
         let quizState = {
             active: false,
-            players: [],
-            currentIdx: 0,
+            asked: new Set(),      // player names already used this session (avoid repeats until the pool is exhausted)
+            currentPlayer: null,
+            streak: 0,             // questions answered so far this run (correct + wrong), 1-indexed display
             score: 0,
+            lives: QUIZ_START_LIVES,
             results: [],
             timer: null,
-            timeLeft: 15,
+            timeLeft: QUIZ_TIMER_SECONDS,
             answered: false,
             quizMap: null
         };
@@ -2329,13 +2477,33 @@
             
             // If not enough similar, use any eligible
             let pool = candidates.length >= 10 ? candidates : eligible.filter(p => p.player !== correctPlayer);
-            
+
             return shuffleArray(pool).slice(0, 4).map(p => p.player);
         }
-        
+
+        // Survival mode has no fixed question list -- draw one player at a
+        // time from the (untouched) eligible pool, avoiding repeats within
+        // the run until the pool itself runs out, then allow repeats rather
+        // than ending the game artificially.
+        function pickNextQuizPlayer(eligible) {
+            let pool = eligible.filter(p => !quizState.asked.has(p.player));
+            if(!pool.length) {
+                quizState.asked.clear();
+                pool = eligible;
+            }
+            const chosen = pool[Math.floor(Math.random() * pool.length)];
+            quizState.asked.add(chosen.player);
+            return chosen;
+        }
+
         function startQuiz() {
-            // Go straight to playing
-            beginQuiz();
+            // Show the intro (title/premise/rules/start button) before any
+            // question -- exactly once per quiz-mode entry. "Play Again" on
+            // the results screen calls beginQuiz() directly and deliberately
+            // skips back through here.
+            document.getElementById('quizOverlay').classList.add('show');
+            document.getElementById('quizIntro').style.display = 'block';
+            document.getElementById('quizFinal').style.display = 'none';
         }
         
         function closeQuiz() {
@@ -2356,16 +2524,18 @@
                 alert('Not enough eligible players loaded. Please wait for data to load.');
                 return;
             }
-            
+
             // Reset state
             quizState = {
                 active: true,
-                players: shuffleArray(eligible).slice(0, 10),
-                currentIdx: 0,
+                asked: new Set(),
+                currentPlayer: null,
+                streak: 0,
                 score: 0,
+                lives: QUIZ_START_LIVES,
                 results: [],
                 timer: null,
-                timeLeft: 15,
+                timeLeft: QUIZ_TIMER_SECONDS,
                 answered: false,
                 quizMap: null
             };
@@ -2407,99 +2577,133 @@
         function drawQuizMap(career) {
             quizState.markersLayer.clearLayers();
             quizState.pathLayer.clearLayers();
-            
+
             const pts = [];
             career.forEach((s, i) => {
                 const c = getCoords(s.city, s.state, s.country);
                 if(c) pts.push({coords: c, stop: s, idx: i});
             });
-            
+
             if(pts.length < 2) return;
-            
-            // Draw curved paths with arrows
-            for(let i = 0; i < pts.length - 1; i++) {
+            const n = pts.length;
+
+            // Draw curved paths with arrows. Quiz-specific clarity pass,
+            // beyond the main player map's: the map IS the question here, so
+            // a route that crosses itself (a player who returned to the same
+            // region more than once) must still read unambiguously in career
+            // order. Two cues beyond a single midpoint arrow: (1) TWO arrows
+            // per segment (~35%/~65% along the curve) so direction is
+            // legible even where a segment is short or visually overlaps
+            // another, (2) line weight/opacity increase later in the route,
+            // so "which segment came later" doesn't rely on spotting arrows
+            // alone -- a lighter/thinner line is earlier, a bolder one later.
+            for(let i = 0; i < n - 1; i++) {
                 const curveOffset = (i % 2 === 0) ? 1 : -1;
                 const curvePoints = bezierCurve(pts[i].coords, pts[i+1].coords, curveOffset);
-                
+                const progress = i / Math.max(1, n - 2);
+                const weight = 2.5 + progress * 2.5;    // 2.5 -> 5
+                const opacity = 0.45 + progress * 0.35; // 0.45 -> 0.8
+
                 L.polyline(curvePoints, {
-                    color: '#d63031', weight: 2.5, opacity: 0.6
+                    color: '#d63031', weight, opacity
                 }).addTo(quizState.pathLayer);
-                
-                // Arrow at midpoint
-                const midIdx = Math.floor(curvePoints.length / 2);
-                const arrowPos = curvePoints[midIdx];
-                const nextPos = curvePoints[Math.min(midIdx + 2, curvePoints.length - 1)];
-                const angle = Math.atan2(nextPos[0] - arrowPos[0], nextPos[1] - arrowPos[1]) * 180 / Math.PI;
-                
-                const arrowIcon = L.divIcon({
-                    className: '',
-                    html: `<div style="color:#d63031;font-size:14px;transform:rotate(${-angle + 90}deg);opacity:0.8">➤</div>`,
-                    iconSize: [14, 14],
-                    iconAnchor: [7, 7]
+
+                [0.35, 0.65].forEach(frac => {
+                    const idx = Math.max(1, Math.min(curvePoints.length - 2, Math.round(curvePoints.length * frac)));
+                    const arrowPos = curvePoints[idx];
+                    const nextPos = curvePoints[Math.min(idx + 2, curvePoints.length - 1)];
+                    const angle = Math.atan2(nextPos[0] - arrowPos[0], nextPos[1] - arrowPos[1]) * 180 / Math.PI;
+
+                    const arrowIcon = L.divIcon({
+                        className: '',
+                        html: `<div style="color:#d63031;font-size:15px;transform:rotate(${-angle + 90}deg);opacity:${Math.min(1, opacity + 0.15).toFixed(2)}">➤</div>`,
+                        iconSize: [15, 15],
+                        iconAnchor: [7, 7]
+                    });
+                    L.marker(arrowPos, {icon: arrowIcon, interactive: false}).addTo(quizState.pathLayer);
                 });
-                L.marker(arrowPos, {icon: arrowIcon, interactive: false}).addTo(quizState.pathLayer);
             }
-            
-            // Draw markers
+
+            // Draw markers: green circle "START" for the first stop,
+            // sequentially-numbered red circles for every stop in between,
+            // and -- distinct in BOTH shape and color from everything else,
+            // per the clarity requirement -- a gold diamond flag for the
+            // final/current stop, so the end of the route is unmistakable
+            // even at a glance and even where markers cluster together.
             pts.forEach((p, i) => {
-                const first = i === 0, last = i === pts.length - 1;
-                let bg = '#d63031';
-                if(first) bg = '#27ae60';
-                else if(last) bg = '#2980b9';
-                const sz = first ? 32 : (last ? 26 : 22);
-                const label = first ? 'START' : (i+1).toString();
-                const fontSize = first ? '8px' : '11px';
-                
-                const icon = L.divIcon({
-                    className: '',
-                    html: `<div style="width:${sz}px;height:${sz}px;background:${bg};border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:${fontSize};font-weight:700">${label}</div>`,
-                    iconSize: [sz, sz],
-                    iconAnchor: [sz/2, sz/2]
-                });
-                
-                const m = L.marker(p.coords, {icon, zIndexOffset: first ? 1000 : (last ? 500 : 0)}).addTo(quizState.markersLayer);
+                const first = i === 0, last = i === n - 1;
                 const loc = p.stop.city ? (p.stop.state ? `${p.stop.city}, ${p.stop.state}` : p.stop.city) : '';
-                const stopLabel = first ? '🟢 First Stop' : (last ? '🔵 Latest Stop' : `Stop #${i+1}`);
-                m.bindPopup(`<div style="font-size:10px;color:#777;margin-bottom:4px">${stopLabel}</div><div style="font-weight:600">${getFlag(p.stop.country)} ${p.stop.team}</div><div style="font-size:12px;color:#777">${loc} · ${p.stop.years}</div>`, {closeButton: false});
+                const stopLabel = first ? '🟢 First Stop' : (last ? '🏁 Final Stop' : `Stop #${i+1}`);
+                const popup = `<div style="font-size:10px;color:#777;margin-bottom:4px">${stopLabel}</div><div style="font-weight:600">${getFlag(p.stop.country)} ${p.stop.team}</div><div style="font-size:12px;color:#777">${loc} · ${p.stop.years}</div>`;
+
+                let icon, zIndexOffset;
+                if(last) {
+                    const sz = 30;
+                    icon = L.divIcon({
+                        className: '',
+                        html: `<div style="width:${sz}px;height:${sz}px;transform:rotate(45deg);background:#f39c12;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center"><div style="transform:rotate(-45deg);font-size:13px;line-height:1">🏁</div></div>`,
+                        iconSize: [sz, sz],
+                        iconAnchor: [sz/2, sz/2]
+                    });
+                    zIndexOffset = 1000; // wins any overlap, incl. against START -- "where am I now" matters most
+                } else {
+                    const bg = first ? '#27ae60' : '#d63031';
+                    const sz = first ? 32 : 22;
+                    const label = first ? 'START' : (i+1).toString();
+                    const fontSize = first ? '8px' : '11px';
+                    icon = L.divIcon({
+                        className: '',
+                        html: `<div style="width:${sz}px;height:${sz}px;background:${bg};border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:${fontSize};font-weight:700">${label}</div>`,
+                        iconSize: [sz, sz],
+                        iconAnchor: [sz/2, sz/2]
+                    });
+                    zIndexOffset = first ? 900 : 0;
+                }
+
+                L.marker(p.coords, {icon, zIndexOffset}).addTo(quizState.markersLayer).bindPopup(popup, {closeButton: false});
             });
-            
+
             quizState.quizMap.fitBounds(pts.map(p => p.coords), {padding: [40, 40], maxZoom: 5});
         }
         
         function showQuestion() {
-            const player = quizState.players[quizState.currentIdx];
+            const eligible = getEligiblePlayers();
+            const player = pickNextQuizPlayer(eligible);
+            quizState.currentPlayer = player;
+            quizState.streak++;
             const career = player.career_history;
-            
-            // Update progress
-            document.getElementById('quizProgress').textContent = `Question ${quizState.currentIdx + 1} of 10`;
+
+            // Update progress: question count + lives (hearts) -- there's no
+            // fixed total in survival mode, so no "of N".
+            document.getElementById('quizStreak').textContent = `Q${quizState.streak}`;
+            updateLivesDisplay();
             document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
-            
+
             // Draw map
             drawQuizMap(career);
-            
-            // Generate options
-            const eligible = getEligiblePlayers();
+
+            // Generate options (unchanged eligibility/decoy logic)
             const wrongOptions = getWrongOptions(player.player, eligible);
             const allOptions = shuffleArray([player.player, ...wrongOptions]);
-            
-            document.getElementById('quizOptions').innerHTML = allOptions.map(name => 
+
+            document.getElementById('quizOptions').innerHTML = allOptions.map(name =>
                 `<button class="quiz-option" onclick="submitAnswer('${name.replace(/'/g, "\'")}')">${name}</button>`
             ).join('');
-            
+
             // Reset UI
             document.getElementById('quizResult').classList.remove('show', 'correct', 'wrong', 'timeout');
             document.getElementById('quizButtons').style.display = 'none';
             quizState.answered = false;
-            
+
             // Start timer
-            quizState.timeLeft = 15;
+            quizState.timeLeft = QUIZ_TIMER_SECONDS;
             updateTimerDisplay();
-            
+
             if(quizState.timer) clearInterval(quizState.timer);
             quizState.timer = setInterval(() => {
                 quizState.timeLeft -= 0.01;
                 updateTimerDisplay();
-                
+
                 if(quizState.timeLeft <= 0) {
                     clearInterval(quizState.timer);
                     if(!quizState.answered) {
@@ -2508,24 +2712,41 @@
                 }
             }, 10);
         }
+
+        // Hearts/strikes display: filled heart per remaining life, hollow
+        // for spent ones. Purely presentational -- reflects quizState.lives,
+        // never sets it.
+        function updateLivesDisplay() {
+            const el = document.getElementById('quizLives');
+            if(!el) return;
+            let hearts = '';
+            for(let i = 0; i < QUIZ_START_LIVES; i++) {
+                hearts += i < quizState.lives ? '<span class="quiz-heart full">♥</span>' : '<span class="quiz-heart empty">♥</span>';
+            }
+            el.innerHTML = hearts;
+        }
         
         function updateTimerDisplay() {
             const el = document.getElementById('quizTimer');
             const t = Math.max(0, quizState.timeLeft);
             el.textContent = t.toFixed(2);
 
+            // Thresholds scaled proportionally from the old 15s window (20%/47%
+            // of the window) to the new 10s one, not just carried over as
+            // literal seconds.
+            const danger = QUIZ_TIMER_SECONDS * 0.2, warning = QUIZ_TIMER_SECONDS * 0.47;
             el.classList.remove('warning', 'danger');
-            if(t <= 3) el.classList.add('danger');
-            else if(t <= 7) el.classList.add('warning');
+            if(t <= danger) el.classList.add('danger');
+            else if(t <= warning) el.classList.add('warning');
 
             // Presentation-only: reflect the same t/threshold values above as
             // a glanceable bar. Doesn't read or alter quizState.timeLeft.
             const bar = document.getElementById('quizTimerBarFill');
             if(bar) {
-                bar.style.width = (t / 15 * 100) + '%';
+                bar.style.width = (t / QUIZ_TIMER_SECONDS * 100) + '%';
                 bar.classList.remove('warning', 'danger');
-                if(t <= 3) bar.classList.add('danger');
-                else if(t <= 7) bar.classList.add('warning');
+                if(t <= danger) bar.classList.add('danger');
+                else if(t <= warning) bar.classList.add('warning');
             }
         }
         
@@ -2549,27 +2770,31 @@
             if(quizState.answered) return;
             quizState.answered = true;
             clearInterval(quizState.timer);
-            
-            const correctName = quizState.players[quizState.currentIdx].player;
+
+            const correctName = quizState.currentPlayer.player;
             const isCorrect = selectedName === correctName;
-            const timeTaken = 15 - quizState.timeLeft;
-            
-            // Calculate score: 15 at 0 sec, 1.5 at 15 sec (linear), -5 for wrong
+            const timeTaken = QUIZ_TIMER_SECONDS - quizState.timeLeft;
+
+            // Score decay rescaled to the 10s window: same 15pt ceiling and
+            // 1.5pt floor as the legacy 15s formula, same linear shape, just
+            // compressed so the floor is reached at 10s instead of 15s.
+            // A wrong answer costs a life (below), never points.
             let points = 0;
             if(isCorrect) {
-                points = Math.max(1.5, 15 - (timeTaken * 0.9)); // 0.9 pts per second
+                const perSecond = (15 - 1.5) / QUIZ_TIMER_SECONDS; // 1.35 pts/sec
+                points = Math.max(1.5, 15 - (timeTaken * perSecond));
+                quizState.score += points;
             } else {
-                points = -5; // Penalty for wrong answer
+                quizState.lives--;
             }
-            
-            quizState.score += points;
+
             quizState.results.push({
                 player: correctName,
                 correct: isCorrect,
                 points: points,
                 time: timeTaken
             });
-            
+
             // Update UI
             const buttons = document.querySelectorAll('.quiz-option');
             buttons.forEach(btn => {
@@ -2577,20 +2802,21 @@
                 if(btn.textContent === correctName) btn.classList.add('correct');
                 if(btn.textContent === selectedName && !isCorrect) btn.classList.add('wrong');
             });
-            
+
             const resultEl = document.getElementById('quizResult');
             if(isCorrect) {
                 resultEl.textContent = `✓ Correct! +${points.toFixed(2)} points (${timeTaken.toFixed(2)}s)`;
                 resultEl.className = 'quiz-result show correct';
                 _quizVibrate(15);
             } else {
-                resultEl.textContent = `✗ Wrong! The answer was ${correctName} (-5 points)`;
+                resultEl.textContent = `✗ Wrong! The answer was ${correctName} — lost a life`;
                 resultEl.className = 'quiz-result show wrong';
                 _quizVibrate(30);
             }
 
             document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
-            _quizBumpScore();
+            if(isCorrect) _quizBumpScore();
+            updateLivesDisplay();
 
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
@@ -2600,43 +2826,42 @@
 
         function handleTimeout() {
             quizState.answered = true;
-            const correctName = quizState.players[quizState.currentIdx].player;
-            
-            const points = -5; // Penalty for timeout
-            quizState.score += points;
-            
+            const correctName = quizState.currentPlayer.player;
+
+            // Timeout is a miss exactly like a wrong answer: costs a life,
+            // never points -- the -5 point penalty is gone entirely.
+            quizState.lives--;
+
             quizState.results.push({
                 player: correctName,
                 correct: false,
-                points: points,
-                time: 15
+                points: 0,
+                time: QUIZ_TIMER_SECONDS
             });
-            
+
             // Update UI
             const buttons = document.querySelectorAll('.quiz-option');
             buttons.forEach(btn => {
                 btn.disabled = true;
                 if(btn.textContent === correctName) btn.classList.add('correct');
             });
-            
+
             const resultEl = document.getElementById('quizResult');
-            resultEl.textContent = `⏱ Time's up! The answer was ${correctName} (-5 points)`;
+            resultEl.textContent = `⏱ Time's up! The answer was ${correctName} — lost a life`;
             resultEl.className = 'quiz-result show timeout';
             _quizVibrate(30);
 
             document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
-            _quizBumpScore();
+            updateLivesDisplay();
 
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
                 if(quizState.active) nextQuestion();
             }, 1500);
         }
-        
+
         function nextQuestion() {
-            quizState.currentIdx++;
-            
-            if(quizState.currentIdx >= 10) {
+            if(quizState.lives <= 0) {
                 showFinalResults();
             } else {
                 showQuestion();
@@ -2657,12 +2882,20 @@
             document.getElementById('quizIntro').style.display = 'none';
             document.getElementById('quizFinal').style.display = 'block';
             
+            const correctCount = quizState.results.filter(r => r.correct).length;
+            const totalAsked = quizState.results.length;
+
             document.getElementById('finalScore').textContent = quizState.score.toFixed(2);
-            
-            // Build detailed results list
+            const metaEl = document.getElementById('finalMeta');
+            if(metaEl) metaEl.textContent = `${correctCount} correct · ${totalAsked} questions · out of ${QUIZ_START_LIVES} lives`;
+
+            // Build detailed results list. Unbounded length (survival has no
+            // fixed question count) -- .quiz-results-list scrolls its own box.
             const resultsList = quizState.results.map(r => {
                 const isCorrect = r.correct;
-                const ptsStr = isCorrect ? '+' + r.points.toFixed(2) : r.points.toFixed(2);
+                // No -5 penalty exists anymore -- a miss is a life lost, not
+                // a point value, so it gets a dash rather than "+0.00".
+                const ptsStr = isCorrect ? '+' + r.points.toFixed(2) : '—';
                 const timeStr = isCorrect ? ' (' + r.time.toFixed(2) + 's)' : '';
                 return `<div class="quiz-result-row">
                     <span class="quiz-result-icon ${isCorrect ? 'correct' : 'wrong'}">${isCorrect ? '✓' : '✗'}</span>
@@ -2670,7 +2903,7 @@
                     <span class="quiz-result-points ${isCorrect ? 'correct' : 'wrong'}">${ptsStr}${timeStr}</span>
                 </div>`;
             }).join('');
-            
+
             document.getElementById('quizResultsList').innerHTML = resultsList;
             
             // Show loading state for percentile
@@ -2687,46 +2920,51 @@
         
         async function submitScore() {
             const correct = quizState.results.filter(r => r.correct).length;
-            const missed = 10 - correct;
-            
+            const missed = quizState.results.length - correct;
+
             // Store percentile data for share image
             quizState.percentile = null;
             quizState.rank = null;
             quizState.totalPlayers = null;
-            
+
             // Check if API URL is configured
             if (!SCORE_API_URL || SCORE_API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
                 document.getElementById('quizPercentile').textContent = '';
                 document.getElementById('quizPercentile').classList.remove('loading');
                 return;
             }
-            
+
             try {
-                // Use GET with query params to avoid CORS preflight issues
+                // Use GET with query params to avoid CORS preflight issues.
+                // mode='survival' tags this submission so the Apps Script can
+                // compute percentile/rank against survival-mode entries only
+                // -- unbounded survival scores are not comparable with the
+                // legacy fixed-10-question format, so the two must never mix.
                 const params = new URLSearchParams({
                     action: 'submit',
                     score: quizState.score.toFixed(2),
                     correct: correct,
-                    missed: missed
+                    missed: missed,
+                    mode: 'survival'
                 });
-                
+
                 const response = await fetch(SCORE_API_URL + '?' + params.toString(), {
                     method: 'GET',
                     redirect: 'follow'
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (data.success) {
                     quizState.percentile = data.percentile;
                     quizState.rank = data.rank;
                     quizState.totalPlayers = data.totalPlayers;
-                    
+
                     const percentileEl = document.getElementById('quizPercentile');
                     percentileEl.classList.remove('loading');
-                    
+
                     // Show rank clearly
-                    percentileEl.innerHTML = `Rank <strong>#${data.rank}</strong> of ${data.totalPlayers.toLocaleString()} players`;
+                    percentileEl.innerHTML = `Rank <strong>#${data.rank}</strong> of ${data.totalPlayers.toLocaleString()} survival players`;
                     percentileEl.style.color = '#fff';
                     percentileEl.style.background = 'rgba(255,255,255,0.1)';
                 }
@@ -2765,39 +3003,42 @@
                 ctx.fillStyle = '#fff';
                 ctx.font = 'bold 32px "Open Sans", Arial, sans-serif';
                 ctx.textAlign = 'center';
-                ctx.fillText('NBA CAREER MAP QUIZ', size/2, 150);
-                
+                ctx.fillText('NBA CAREER MAP: SURVIVAL', size/2, 150);
+
                 // Red accent line
                 ctx.fillStyle = '#d63031';
                 ctx.fillRect(size/2 - 80, 165, 160, 3);
-                
-                // Score section - prominent
+
+                // Score section - prominent (score can only go up now -- no
+                // -5 penalty exists, a miss costs a life instead -- so it's
+                // always shown in the "good" color)
                 const scoreNum = quizState.score.toFixed(1);
-                const scoreColor = quizState.score >= 0 ? '#2ecc71' : '#e74c3c';
-                ctx.fillStyle = scoreColor;
+                ctx.fillStyle = '#2ecc71';
                 ctx.font = 'bold 100px "Open Sans", Arial, sans-serif';
                 ctx.fillText(scoreNum, size/2, 270);
-                
+
                 ctx.fillStyle = '#888';
                 ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
                 ctx.fillText('POINTS', size/2, 295);
-                
+
                 // Rank display (if available) - simple and clear
                 if (quizState.rank && quizState.totalPlayers) {
                     ctx.fillStyle = '#ffffff';
                     ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
-                    ctx.fillText('Rank #' + quizState.rank + ' of ' + quizState.totalPlayers.toLocaleString() + ' players', size/2, 340);
+                    ctx.fillText('Rank #' + quizState.rank + ' of ' + quizState.totalPlayers.toLocaleString() + ' survivors', size/2, 340);
                 }
-                
-                // Stats bar
+
+                // Stats bar: correct answers vs. total questions faced this
+                // run (there's no fixed length, so "questions asked" replaces
+                // the old fixed-10 "missed" framing)
                 const correct = quizState.results.filter(r => r.correct).length;
-                const wrong = 10 - correct;
+                const totalAsked = quizState.results.length;
                 const statsY = 380;
-                
+
                 ctx.fillStyle = '#111';
                 roundRect(ctx, 60, statsY, size - 120, 70, 10);
                 ctx.fill();
-                
+
                 // Correct count
                 ctx.fillStyle = '#2ecc71';
                 ctx.font = 'bold 36px "Open Sans", Arial, sans-serif';
@@ -2805,87 +3046,100 @@
                 ctx.fillStyle = '#aaa';
                 ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
                 ctx.fillText('CORRECT', size/2 - 140, statsY + 62);
-                
+
                 // Divider
                 ctx.fillStyle = '#333';
                 ctx.fillRect(size/2, statsY + 15, 1, 45);
-                
-                // Wrong count  
-                ctx.fillStyle = '#e74c3c';
+
+                // Questions faced (streak length)
+                ctx.fillStyle = '#ffffff';
                 ctx.font = 'bold 36px "Open Sans", Arial, sans-serif';
-                ctx.fillText(wrong.toString(), size/2 + 140, statsY + 45);
+                ctx.fillText(totalAsked.toString(), size/2 + 140, statsY + 45);
                 ctx.fillStyle = '#aaa';
                 ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
-                ctx.fillText('MISSED', size/2 + 140, statsY + 62);
-                
-                // Player results - compact
-                let y = 490;
+                ctx.fillText('QUESTIONS', size/2 + 140, statsY + 62);
+
+                // Player results - compact. Survival runs are unbounded, so
+                // this shows only the most recent rows the fixed canvas has
+                // room for; a "+N earlier" note (not a silent truncation)
+                // covers the rest of a long run.
+                const MAX_SHARE_ROWS = 12;
+                const rowH = 36;
+                const shown = quizState.results.slice(-MAX_SHARE_ROWS);
+                const earlierCount = quizState.results.length - shown.length;
+                let y = 480;
                 ctx.textAlign = 'left';
-                
-                quizState.results.forEach((r, i) => {
+
+                if(earlierCount > 0) {
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = '#777';
+                    ctx.font = 'italic 16px "Open Sans", Arial, sans-serif';
+                    ctx.fillText(`+ ${earlierCount} earlier question${earlierCount === 1 ? '' : 's'} not shown`, size/2, y - 8);
+                    ctx.textAlign = 'left';
+                    y += 20;
+                }
+
+                shown.forEach((r, i) => {
                     const isCorrect = r.correct;
-                    const rowY = y + (i * 42);
-                    
+                    const rowY = y + (i * rowH);
+
                     // Subtle alternating background
                     if(i % 2 === 0) {
                         ctx.fillStyle = 'rgba(255,255,255,0.03)';
-                        ctx.fillRect(60, rowY - 25, size - 120, 40);
+                        ctx.fillRect(60, rowY - 22, size - 120, rowH - 2);
                     }
-                    
+
                     // Status icon
-                    ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
+                    ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
                     ctx.fillStyle = isCorrect ? '#2ecc71' : '#e74c3c';
                     ctx.fillText(isCorrect ? '✓' : '✗', 80, rowY);
-                    
+
                     // Player name
                     ctx.fillStyle = '#ffffff';
-                    ctx.font = '22px "Open Sans", Arial, sans-serif';
-                    ctx.fillText(r.player, 115, rowY);
-                    
-                    // Points
+                    ctx.font = '19px "Open Sans", Arial, sans-serif';
+                    ctx.fillText(r.player, 113, rowY);
+
+                    // Points -- a miss costs a life, never points, so it
+                    // gets a neutral "MISS" label rather than a -5 value
                     ctx.textAlign = 'right';
-                    ctx.fillStyle = isCorrect ? '#2ecc71' : '#e74c3c';
-                    ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
+                    ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
                     if(isCorrect) {
+                        ctx.fillStyle = '#2ecc71';
                         ctx.fillText('+' + r.points.toFixed(1), size - 70, rowY);
                     } else {
-                        ctx.fillText('-5', size - 70, rowY);
+                        ctx.fillStyle = '#888';
+                        ctx.fillText('MISS', size - 70, rowY);
                     }
                     ctx.textAlign = 'left';
                 });
-                
+
                 // CTA section at bottom
                 ctx.textAlign = 'center';
                 ctx.fillStyle = '#ffffff';
                 ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
                 ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 940);
-                
+
                 // Red button
                 ctx.fillStyle = '#d63031';
                 roundRect(ctx, size/2 - 170, 960, 340, 50, 25);
                 ctx.fill();
-                
+
                 ctx.fillStyle = '#ffffff';
                 ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
                 ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 993);
-                
+
                 // Subtle top/bottom red lines instead of corner brackets
                 ctx.fillStyle = '#d63031';
                 ctx.fillRect(size/2 - 200, 0, 400, 4);
                 ctx.fillRect(size/2 - 200, size - 4, 400, 4);
-                
+
                 // Convert to image
                 const dataUrl = canvas.toDataURL('image/png');
                 const img = document.getElementById('shareImage');
                 img.src = dataUrl;
-                
-                // Set download link
-                document.getElementById('downloadLink').href = dataUrl;
-                
-                // Set Twitter share link
-                const tweetText = encodeURIComponent('I scored ' + quizState.score.toFixed(1) + ' points on the NBA Career Map Quiz! Can you beat me? 🏀\n\nPlay now: https://www.hoopshype.com/story/sports/nba/2025/12/10/nba-career-map-quiz-how-many-players-can-you-identify-by-their-journey/87707431007/');
-                document.getElementById('twitterShare').href = 'https://twitter.com/intent/tweet?text=' + tweetText;
-                
+
+                setQuizShareLinks();
+
                 document.getElementById('shareImageContainer').classList.add('show');
             };
             logo.src = 'data:image/png;base64,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';
@@ -2905,49 +3159,141 @@
             ctx.closePath();
         }
 
+        // ====== Quiz results: share links, copy-link, copy/download image ======
+        // Same set of share options as the 73-9 game: a plain URL to copy,
+        // plus X/Bluesky/Facebook/WhatsApp/Reddit/Telegram intent links.
+        const QUIZ_SHARE_URL = 'https://www.hoopshype.com/story/sports/nba/2025/12/10/nba-career-map-quiz-how-many-players-can-you-identify-by-their-journey/87707431007/';
+
+        function setQuizShareLinks() {
+            const correct = quizState.results.filter(r => r.correct).length;
+            const text = `I scored ${quizState.score.toFixed(1)} points and got ${correct} right on the NBA Career Map Quiz (Survival Mode)! Can you beat me? 🏀`;
+            const url = QUIZ_SHARE_URL;
+            const t = encodeURIComponent(text), u = encodeURIComponent(url);
+
+            const input = document.getElementById('quizShareUrlInput');
+            if(input) input.value = url;
+
+            const links = {
+                shareX: `https://twitter.com/intent/tweet?text=${t}&url=${u}`,
+                shareBluesky: `https://bsky.app/intent/compose?text=${encodeURIComponent(text + ' ' + url)}`,
+                shareFacebook: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
+                shareWhatsapp: `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`,
+                shareReddit: `https://www.reddit.com/submit?url=${u}&title=${t}`,
+                shareTelegram: `https://t.me/share/url?url=${u}&text=${t}`,
+            };
+            Object.entries(links).forEach(([id, href]) => {
+                const el = document.getElementById(id);
+                if(el) el.href = href;
+            });
+        }
+
+        function _quizButtonFlash(btn, label, ms) {
+            if(!btn) return;
+            const orig = btn.textContent;
+            btn.textContent = label;
+            setTimeout(() => { btn.textContent = orig; }, ms || 1500);
+        }
+
+        function copyQuizLink() {
+            const input = document.getElementById('quizShareUrlInput');
+            const btn = document.querySelector('.quiz-copy-btn');
+            if(!input) return;
+            const done = (ok) => _quizButtonFlash(btn, ok ? 'Copied!' : 'Failed');
+            if(navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(input.value).then(() => done(true)).catch(() => {
+                    input.select();
+                    try { done(document.execCommand('copy')); } catch(e) { done(false); }
+                });
+            } else {
+                input.select();
+                try { done(document.execCommand('copy')); } catch(e) { done(false); }
+            }
+        }
+
+        function downloadShareImage() {
+            const img = document.getElementById('shareImage');
+            if(!img || !img.src) return;
+            const a = document.createElement('a');
+            a.href = img.src;
+            a.download = 'nba-career-map-quiz.png';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        }
+
+        async function copyShareImage() {
+            const btn = document.getElementById('copyImageBtn');
+            try {
+                const canvas = document.getElementById('shareCanvas');
+                if(!navigator.clipboard || !window.ClipboardItem) throw new Error('unsupported');
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                if(!blob) throw new Error('no image yet');
+                await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+                _quizButtonFlash(btn, 'Copied!');
+            } catch(e) {
+                _quizButtonFlash(btn, 'Use Download');
+            }
+        }
+
 function goQuiz(){ history.pushState({}, '', '?view=quiz'); route(); }
 document.addEventListener('DOMContentLoaded', boot);
     </script>
 
     <!-- Quiz Overlay -->
     <div class="quiz-overlay" id="quizOverlay">
-        <div class="quiz-box" id="quizIntro">
-            <div class="quiz-title">🏀 Ready to Play?</div>
-            <div class="quiz-subtitle">10 questions • 15 seconds each • 150 max points</div>
-            <div class="quiz-ready-buttons">
-                <button class="quiz-start-btn" onclick="beginQuiz()">Start Quiz</button>
-                <button class="quiz-close-btn" onclick="closeQuiz()">Cancel</button>
-            </div>
+        <button class="quiz-overlay-close" onclick="closeQuiz()" aria-label="Close">×</button>
+
+        <div class="quiz-box quiz-box-dark" id="quizIntro">
+            <div class="quiz-dark-kicker">NBA CAREER MAP</div>
+            <div class="quiz-title">SURVIVAL MODE</div>
+            <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Three misses and you're out.</div>
+            <ol class="quiz-rules-dark">
+                <li>Study the career map, then pick the player from 5 choices</li>
+                <li>10 seconds per question — faster answers score more (up to 15 pts)</li>
+                <li>A wrong answer or a timeout costs a life, never points</li>
+                <li>3 lives, no fixed length — survive as long as you can</li>
+            </ol>
+            <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
         </div>
-        
-        <div class="quiz-box quiz-box-large" id="quizFinal" style="display:none">
-            <div class="quiz-title">Quiz Complete!</div>
-            <div class="quiz-final">
-                <div class="quiz-final-score" id="finalScore">0</div>
-                <div class="quiz-final-label">out of 150 points</div>
-                <div class="quiz-percentile" id="quizPercentile"></div>
-                <div class="quiz-results-list" id="quizResultsList"></div>
-            </div>
+
+        <div class="quiz-box quiz-box-dark quiz-box-large" id="quizFinal" style="display:none">
+            <div class="quiz-dark-kicker">SURVIVAL RESULT</div>
+            <div class="quiz-title">RUN OVER</div>
+            <div class="quiz-dark-hero" id="finalScore">0</div>
+            <div class="quiz-dark-hero-label">POINTS SCORED</div>
+            <div class="quiz-dark-meta" id="finalMeta"></div>
+            <div class="quiz-percentile" id="quizPercentile"></div>
+            <div class="quiz-results-list" id="quizResultsList"></div>
+            <div class="quiz-dark-caption">Play your own at hoopshype.com</div>
+
             <canvas id="shareCanvas" style="display:none"></canvas>
             <div id="shareImageContainer">
                 <img id="shareImage">
-                <div class="share-actions">
-                    <button id="downloadLink" class="share-download-btn" onclick="downloadImage()">
-                        ⬇️ Save Image
-                    </button>
-                    <a id="twitterShare" class="share-twitter-btn" target="_blank">
-                        🐦 Share on Twitter
-                    </a>
+
+                <div class="quiz-copy-row">
+                    <input type="text" id="quizShareUrlInput" class="quiz-copy-input" readonly>
+                    <button class="quiz-copy-btn" onclick="copyQuizLink()">Copy</button>
+                </div>
+
+                <div class="quiz-social-row">
+                    <a class="quiz-social-btn x" id="shareX" target="_blank" rel="noopener" aria-label="Share on X">𝕏</a>
+                    <a class="quiz-social-btn bluesky" id="shareBluesky" target="_blank" rel="noopener" aria-label="Share on Bluesky">🦋</a>
+                    <a class="quiz-social-btn facebook" id="shareFacebook" target="_blank" rel="noopener" aria-label="Share on Facebook">f</a>
+                    <a class="quiz-social-btn whatsapp" id="shareWhatsapp" target="_blank" rel="noopener" aria-label="Share on WhatsApp">☎</a>
+                    <a class="quiz-social-btn reddit" id="shareReddit" target="_blank" rel="noopener" aria-label="Share on Reddit">👽</a>
+                    <a class="quiz-social-btn telegram" id="shareTelegram" target="_blank" rel="noopener" aria-label="Share on Telegram">✈</a>
+                </div>
+
+                <div class="quiz-final-buttons">
+                    <button class="quiz-action-btn primary" onclick="downloadShareImage()">⬇ Download</button>
+                    <button class="quiz-action-btn" id="copyImageBtn" onclick="copyShareImage()">Copy</button>
+                    <button class="quiz-action-btn" onclick="beginQuiz()">Play Again</button>
                 </div>
                 <div class="share-instructions">On iPhone: Long-press the image above, then tap "Add to Photos"</div>
             </div>
-            <div class="quiz-final-buttons">
-                <button class="quiz-start-btn" onclick="beginQuiz()">Play Again</button>
-                <button class="quiz-close-btn" onclick="closeQuiz()">Close</button>
-            </div>
         </div>
     </div>
-    
+
     <!-- Quiz Game Panel (during gameplay) -->
     <div class="quiz-game-area" id="quizGameArea">
         <div class="quiz-map-container" id="quizMapContainer"></div>
@@ -2957,10 +3303,13 @@ document.addEventListener('DOMContentLoaded', boot);
                  question -- CSS floats it visually over the map instead. -->
             <div class="quiz-result" id="quizResult"></div>
             <div class="quiz-header">
-                <div class="quiz-progress" id="quizProgress">Q1/10</div>
+                <div class="quiz-progress" id="quizProgress">
+                    <span class="quiz-streak" id="quizStreak">Q1</span>
+                    <span class="quiz-lives" id="quizLives"></span>
+                </div>
                 <div class="quiz-timer-wrap">
                     <div class="quiz-timer-bar"><div class="quiz-timer-bar-fill" id="quizTimerBarFill"></div></div>
-                    <div class="quiz-timer" id="quizTimer">15.0</div>
+                    <div class="quiz-timer" id="quizTimer">10.0</div>
                 </div>
                 <div class="quiz-score" id="quizScoreDisplay">0 pts</div>
             </div>
