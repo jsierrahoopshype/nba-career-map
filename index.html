@@ -188,11 +188,19 @@
         #botResults.show { display: block; }
 
         main { display: block; }
+        /* Mobile: natural document flow -- the panel (header, stats, full
+           career timeline) renders at its own content height, the page
+           scrolls normally, and the map follows below at a fixed height.
+           A fixed 100vh/100dvh split here (moved into the desktop override
+           below) forced the panel into a small internal overflow:auto box,
+           clipping the timeline after ~1 row on tall content with the map
+           immediately below it -- looked like the map was overlapping/
+           cutting off the timeline. Desktop's side-by-side layout (with its
+           own independently-scrolling panel) is unaffected: see the
+           min-width:1024px override, which restores the fixed height. */
         #mapView {
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 50px);
-            height: calc(100dvh - 50px);
         }
 
         /* ===== Phase 3 dashboard (Phase 3.1: visual-hierarchy pass) =====
@@ -303,7 +311,12 @@
         .dash-section-tertiary .lines .line { padding: 9px 4px; font-size: .8rem; }
 
         #map {
-            height: 55%;
+            /* vh, not %: #mapView no longer has a fixed height on mobile
+               (see above), so a percentage here would resolve against an
+               auto-height ancestor and collapse. The desktop override below
+               replaces this with height:100% of its own (fixed-height)
+               #mapView. */
+            height: 55vh;
             min-height: 280px;
             background: var(--border);
             position: relative;
@@ -348,10 +361,13 @@
         .legend-dot.last { background: var(--blue); }
         
         .panel {
-            flex: 1;
-            overflow-y: auto;
+            /* No flex:1/overflow-y:auto here on mobile -- that clamped the
+               panel to whatever space was left after the map's fixed
+               height, clipping the timeline inside a tiny internal
+               scrollbox (see #mapView above). The desktop override
+               restores flex:1 + overflow-y:auto for its independently-
+               scrolling side panel. */
             padding: 16px;
-            -webkit-overflow-scrolling: touch;
             order: 1;
         }
         
@@ -756,6 +772,11 @@
         @media (min-width: 1024px) and (min-height: 640px) {
             #mapView {
                 flex-direction: row;
+                /* Fixed viewport height + independent panel scroll is
+                   desktop-only UX (the mobile base rule uses natural
+                   document flow instead -- see #mapView/.panel above). */
+                height: calc(100vh - 50px);
+                height: calc(100dvh - 50px);
             }
 
             #map {
@@ -766,6 +787,8 @@
             .panel {
                 width: clamp(360px, 30vw, 520px);
                 flex: none;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
                 border-right: 1px solid var(--border);
             }
 
@@ -1729,7 +1752,7 @@
               <div class="dash">
                 <div class="dash-hero">
                   <h1>Where every NBA player is playing now</h1>
-                  <p>Live signings, overseas hotspots, and the journeys behind the league — updated after every pipeline run.</p>
+                  <p>Updated signings, overseas hotspots and the journeys behind the league.</p>
                 </div>
 
                 <div class="dash-section dash-hero-row">
@@ -1799,7 +1822,7 @@
               <div class="spot-controls">
                 <strong>${getFlag(chosen)} ${_escH(chosen)}</strong>
                 <span class="rank">${list.length} active${asOf?` · as of ${_fmtDate(asOf)}`:''}</span>
-                <select class="spot-select" id="spotSelect">${all.map(c=>`<option ${c===chosen?'selected':''}>${_escH(c)}</option>`).join('')}</select>
+                <select class="spot-select" id="spotSelect">${all.slice().sort((a,b)=>a.localeCompare(b)).map(c=>`<option ${c===chosen?'selected':''}>${_escH(c)}</option>`).join('')}</select>
               </div>
               <div class="chiplist">${list.slice(0,24).map(p=>`<a class="dchip" href="?player=${_enc(p.player)}" data-dplayer="${_escH(p.player)}">${_escH(p.player)} <span class="sub">· ${_escH(p.current_team)}</span></a>`).join('')}</div>`;
             const sel = el.querySelector('#spotSelect');
@@ -1897,7 +1920,7 @@
         // in build_dashboard_data.py for why this uses all_star_count only).
         function wAllStarsAbroad(el){
             const rows = (DASH.all_stars_abroad||[]).slice(0,10);
-            el.innerHTML = `<div class="card-h">All-Stars Abroad <a class="see-all" href="teams.html?view=allstarsabroad">see all →</a></div>
+            el.innerHTML = `<div class="card-h">Last Stop for All-Stars <a class="see-all" href="teams.html?view=allstarsabroad">see all →</a></div>
               <div class="lines">${rows.map(r=>
                 `<div class="line">${dPlayer(r.player)} <span class="rank">${r.all_star_count}x All-Star</span> · ${dClub(r.current_team)} · ${r.country?dCountry(r.country):'—'}</div>`
               ).join('') || '<div class="heat-note">None right now.</div>'}</div>`;

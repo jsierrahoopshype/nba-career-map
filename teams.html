@@ -191,6 +191,7 @@
         let TRANSACTIONS = [];          // complete transactions.json ledger, newest-first
         let ACTIVE_ABROAD = [];         // where_are_they_now + city (world_tour_heatmap)
         let NBA_SET = new Set();
+        let TEAM_COUNTRY = {};          // current_team -> country (same resolution as the dashboard signings widget)
         let ALL_PLAYERS = [];           // every player name, for search
         let PLAYER_ALIASES = {};        // canonical name -> [alias, ...]
         let SEARCH_ITEMS = [];          // {match, label, type, href} for universal search
@@ -242,6 +243,13 @@
                 return;
             }
             NBA_SET = new Set(Object.keys(TEAMS));
+            // Same team-to-country resolution as the dashboard signings widget
+            // (index.html's TEAM_COUNTRY/teamCountry): where_are_they_now gives
+            // exact countries for active clubs, with an NBA fallback (Raptors ->
+            // Canada, every other franchise -> USA) for teams that never appear
+            // there (e.g. a player currently on that very team, or retired).
+            TEAM_COUNTRY = {};
+            (DASH.where_are_they_now||[]).forEach(r=>{ if(r.current_team && r.country) TEAM_COUNTRY[r.current_team]=r.country; });
             // arrived from within the site? then the breadcrumb can history.back()
             try { inSiteNav = !!document.referrer && new URL(document.referrer).origin === location.origin; }
             catch(e){ inSiteNav = false; }
@@ -500,6 +508,13 @@
         };
         // every team/club name links to its page (all clubs resolve now)
         const teamCell = n => n ? `<a class="link" href="${currentHref(n)}">${esc(n)}</a>` : '—';
+        // NBA-franchise check + country lookup, same rule as the dashboard
+        // signings widget's dTeamFlag -- used for the signings ledger's From/To
+        // columns, which (unlike the other tables here) have no country column
+        // of their own to make a flag redundant.
+        const _isNbaTeam = n => NBA_SET.has(n) || !!eraToFranchise[n];
+        const teamCountryOf = n => TEAM_COUNTRY[n] || (_isNbaTeam(n) ? (n==='Toronto Raptors'?'Canada':'USA') : '');
+        const teamCellFlag = n => { if(!n) return '—'; const c = teamCountryOf(n); return (c?flagImg(c):'') + teamCell(n); };
         const countryCell = c => c ? `<a class="link" href="${countryHref(c)}">${flagImg(c)}${esc(c)}</a>` : '—';
         const statusCell = r => `<span class="status-badge ${r.status}">${STATUS_LABEL[r.status]||esc(r.status)}</span>`;
         // silent no-op (empty cell, no broken image) when nationality is unknown/unmapped
@@ -711,8 +726,8 @@
                     { label:'Date', sortVal:r=>r.date||'', cls:'mono', cell:r=>esc(r.date) },
                     { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
                       cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
-                    { label:'From', sortVal:r=>(r.from_team||'').toLowerCase(), cell:r=>teamCell(r.from_team) },
-                    { label:'To', sortVal:r=>(r.to_team||'').toLowerCase(), cell:r=>teamCell(r.to_team) },
+                    { label:'From', sortVal:r=>(r.from_team||'').toLowerCase(), cell:r=>teamCellFlag(r.from_team) },
+                    { label:'To', sortVal:r=>(r.to_team||'').toLowerCase(), cell:r=>teamCellFlag(r.to_team) },
                 ],
             });
         }
@@ -806,12 +821,12 @@
         }
 
         function renderAllStarsAbroad(){
-            setTitle('All-Stars Abroad — Full List | ' + TITLE_SUFFIX);
+            setTitle('Last Stop for All-Stars — Full List | ' + TITLE_SUFFIX);
             const rows = (DASH.all_stars_abroad||[]).map(r=>({ __k:r.player, ...r }));
             document.getElementById('app').innerHTML = `
                 <a class="back" href="index.html">← Dashboard</a>
-                <div class="detail-title">All-Stars Abroad</div>
-                <div class="detail-sub">${rows.length} former NBA All-Stars currently playing overseas, ranked by selection count</div>
+                <div class="detail-title">Last Stop for All-Stars</div>
+                <div class="detail-sub">${rows.length} former NBA All-Stars and their current club, ranked by selection count</div>
                 <div id="tbl"></div>`;
             mountTable(document.getElementById('tbl'), {
                 unit:'players', rows, sortKey:1, sortDir:-1,
