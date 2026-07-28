@@ -1,3 +1,13 @@
+## 2026-07-28 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Isaiah Stevens: Sacramento Kings → Stockton Kings
+  - Isaiah Stevens: [nba_active → overseas_active]
+
 ## 2026-07-27 — incremental run
 
 - Players updated: **68** (0 new)

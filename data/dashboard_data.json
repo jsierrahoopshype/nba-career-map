@@ -1515,6 +1515,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Isaiah Stevens",
+      "current_team": "Stockton Kings",
+      "country": "USA",
+      "last_updated": "2026-07-28"
+    },
+    {
       "player": "Isaiah Taylor",
       "current_team": "Dubai Basketball",
       "country": "UAE",
@@ -21085,6 +21091,14 @@
       ]
     },
     {
+      "team": "Stockton Kings",
+      "count": 2,
+      "players": [
+        "Dexter Dennis",
+        "Isaiah Stevens"
+      ]
+    },
+    {
       "team": "Sydney Kings",
       "count": 2,
       "players": [
@@ -22268,13 +22282,6 @@
       ]
     },
     {
-      "team": "Stockton Kings",
-      "count": 1,
-      "players": [
-        "Dexter Dennis"
-      ]
-    },
-    {
       "team": "Suke Lions",
       "count": 1,
       "players": [
@@ -22460,7 +22467,7 @@
   "countries_live_snapshot": [
     {
       "country": "USA",
-      "count": 78
+      "count": 79
     },
     {
       "country": "China",
@@ -26712,6 +26719,15 @@
       "players": [
         "Anton Watson",
         "Drew Timme"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2025
+    },
+    {
+      "team": "Stockton Kings",
+      "players": [
+        "Dexter Dennis",
+        "Isaiah Stevens"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2025
@@ -59583,6 +59599,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Isaiah Stevens",
+        "current_team": "Stockton Kings",
+        "city": "Stockton",
+        "state": "California",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-07-28"
+      },
+      {
         "player": "Jesse Edwards",
         "current_team": "Melbourne United",
         "city": "Melbourne",
@@ -59728,8 +59753,8 @@
       }
     ],
     "coverage": {
-      "total": 703,
-      "in_coords": 617,
+      "total": 704,
+      "in_coords": 618,
       "missing_from_coords": 86,
       "missing_no_city": 47,
       "missing_city_absent_from_coords": 39,
@@ -59737,6 +59762,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Isaiah Stevens",
+      "from_team": "Sacramento Kings",
+      "to_team": "Stockton Kings",
+      "date": "2026-07-28"
+    },
     {
       "player": "Stanley Umude",
       "from_team": "San Antonio Spurs",
@@ -60029,12 +60060,6 @@
       "player": "LaMelo Ball",
       "from_team": "Charlotte Hornets",
       "to_team": "Minnesota Timberwolves",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Khris Middleton",
-      "from_team": "Dallas Mavericks",
-      "to_team": "Washington Wizards",
       "date": "2026-07-13"
     }
   ]
