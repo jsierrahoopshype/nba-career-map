@@ -841,3 +841,15 @@ list remains in data/teams/teams_needing_review.json)
   'Al-Seeb Club'
     no unambiguous city-name match found in this team's name, and no located stint exists elsewhere in the data for this exact team-name string -- no actionable signal without external research
 
+
+================================================================================
+AD-HOC FIX -- ROUND 4 (2 teams, requested directly, not from the tiered sweep)
+================================================================================
+  'Botafogo de Futebol e Regatas' -> city='Rio de Janeiro', state='—', country='Brazil'
+    CERTAIN (both city and country) -- real-world knowledge of the club's home city
+  'Selenge Bodons' -> city='Sükhbaatar', state='—', country='Mongolia'
+    country CERTAIN (Mongolian National Basketball Association club)
+    city REVIEW-TIER / PROBABLE -- best-available inference, not independently confirmed;
+    applied to the data (unblocks DeMarcus Cousins's "-" country in the Most
+    Well-Traveled widget) but flagged here for future verification, unlike
+    every other entry in this log which is presented as equally-confident.
