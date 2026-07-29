@@ -2478,7 +2478,10 @@
             // If not enough similar, use any eligible
             let pool = candidates.length >= 10 ? candidates : eligible.filter(p => p.player !== correctPlayer);
 
-            return shuffleArray(pool).slice(0, 4).map(p => p.player);
+            // 3 wrong options + 1 correct = 4 total choices (down from 5).
+            // This changes the random-guess baseline from 20% to 25% -- a
+            // real difficulty change, not a visual-only one.
+            return shuffleArray(pool).slice(0, 3).map(p => p.player);
         }
 
         // Survival mode has no fixed question list -- draw one player at a
@@ -2561,6 +2564,44 @@
             showQuestion();
         }
         
+        // Quiz map only (not the main site-wide player map): when a
+        // player's first career stop is an NBA franchise, drawQuizMap()
+        // uses that team's real logo for the start marker instead of the
+        // generic green circle. Logos come from the existing
+        // jsierrahoopshype/nba-headshots asset library (raw.githubusercontent
+        // -- a standard public CDN for repo files, unlike the GitHub Pages
+        // build which this sandbox's network policy blocks; both serve the
+        // identical committed file). team_id values below are copied
+        // directly from that repo's teams/metadata/teams.json and verified
+        // against every current NBA_FRANCHISES name in this app (exact
+        // string match, all 30 teams) -- so a non-NBA first stop, or the
+        // rare case where the image itself fails to load, is the only way
+        // this falls back to the green circle (see the onerror handler in
+        // drawQuizMap()).
+        const NBA_LOGO_TEAM_ID = {
+            'Atlanta Hawks': 1610612737, 'Boston Celtics': 1610612738, 'Brooklyn Nets': 1610612751,
+            'Charlotte Hornets': 1610612766, 'Chicago Bulls': 1610612741, 'Cleveland Cavaliers': 1610612739,
+            'Dallas Mavericks': 1610612742, 'Denver Nuggets': 1610612743, 'Detroit Pistons': 1610612765,
+            'Golden State Warriors': 1610612744, 'Houston Rockets': 1610612745, 'Indiana Pacers': 1610612754,
+            'LA Clippers': 1610612746, 'Los Angeles Lakers': 1610612747, 'Memphis Grizzlies': 1610612763,
+            'Miami Heat': 1610612748, 'Milwaukee Bucks': 1610612749, 'Minnesota Timberwolves': 1610612750,
+            'New Orleans Pelicans': 1610612740, 'New York Knicks': 1610612752, 'Oklahoma City Thunder': 1610612760,
+            'Orlando Magic': 1610612753, 'Philadelphia 76ers': 1610612755, 'Phoenix Suns': 1610612756,
+            'Portland Trail Blazers': 1610612757, 'Sacramento Kings': 1610612758, 'San Antonio Spurs': 1610612759,
+            'Toronto Raptors': 1610612761, 'Utah Jazz': 1610612762, 'Washington Wizards': 1610612764,
+        };
+        const NBA_LOGO_BASE = 'https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/main/teams/logos/current/svg/';
+        function nbaTeamLogoUrl(team) {
+            // Reuses this app's own era-name resolution (NBA_ERAS/NBA_FRANCHISES,
+            // loaded at boot from data/nba_team_index.json) so a historical era
+            // name (e.g. "Seattle SuperSonics") resolves to its current
+            // franchise's logo, same as everywhere else in the app.
+            const franchise = NBA_FRANCHISES.includes(team) ? team : NBA_ERAS[team];
+            if(!franchise) return null;
+            const id = NBA_LOGO_TEAM_ID[franchise];
+            return id ? NBA_LOGO_BASE + id + '.svg' : null;
+        }
+
         function initQuizMap() {
             const container = document.getElementById('quizMapContainer');
             container.innerHTML = '<div id="quizMap" style="width:100%;height:100%"></div>';
@@ -2646,18 +2687,39 @@
                         iconAnchor: [sz/2, sz/2]
                     });
                     zIndexOffset = 1000; // wins any overlap, incl. against START -- "where am I now" matters most
+                } else if(first) {
+                    const sz = 32;
+                    const logoUrl = nbaTeamLogoUrl(p.stop.team);
+                    if(logoUrl) {
+                        // Real team logo, white circular badge to match the
+                        // other markers' size/border/shadow treatment. The
+                        // onerror handler is the fallback path: if the image
+                        // itself ever fails to load, it swaps back to the
+                        // exact plain green "START" circle.
+                        icon = L.divIcon({
+                            className: '',
+                            html: `<div style="width:${sz}px;height:${sz}px;background:#fff;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="${logoUrl}" alt="" style="width:76%;height:76%;object-fit:contain" onerror="this.style.display='none';this.parentElement.style.background='#27ae60';this.parentElement.textContent='START';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='8px';this.parentElement.style.fontWeight='700';"></div>`,
+                            iconSize: [sz, sz],
+                            iconAnchor: [sz/2, sz/2]
+                        });
+                    } else {
+                        icon = L.divIcon({
+                            className: '',
+                            html: `<div style="width:${sz}px;height:${sz}px;background:#27ae60;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px;font-weight:700">START</div>`,
+                            iconSize: [sz, sz],
+                            iconAnchor: [sz/2, sz/2]
+                        });
+                    }
+                    zIndexOffset = 900;
                 } else {
-                    const bg = first ? '#27ae60' : '#d63031';
-                    const sz = first ? 32 : 22;
-                    const label = first ? 'START' : (i+1).toString();
-                    const fontSize = first ? '8px' : '11px';
+                    const sz = 22;
                     icon = L.divIcon({
                         className: '',
-                        html: `<div style="width:${sz}px;height:${sz}px;background:${bg};border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:${fontSize};font-weight:700">${label}</div>`,
+                        html: `<div style="width:${sz}px;height:${sz}px;background:#d63031;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">${i+1}</div>`,
                         iconSize: [sz, sz],
                         iconAnchor: [sz/2, sz/2]
                     });
-                    zIndexOffset = first ? 900 : 0;
+                    zIndexOffset = 0;
                 }
 
                 L.marker(p.coords, {icon, zIndexOffset}).addTo(quizState.markersLayer).bindPopup(popup, {closeButton: false});
@@ -3248,7 +3310,7 @@ document.addEventListener('DOMContentLoaded', boot);
             <div class="quiz-title">SURVIVAL MODE</div>
             <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Three misses and you're out.</div>
             <ol class="quiz-rules-dark">
-                <li>Study the career map, then pick the player from 5 choices</li>
+                <li>Study the career map, then pick the player from 4 choices</li>
                 <li>10 seconds per question — faster answers score more (up to 15 pts)</li>
                 <li>A wrong answer or a timeout costs a life, never points</li>
                 <li>3 lives, no fixed length — survive as long as you can</li>
