@@ -1,3 +1,14 @@
+## 2026-07-29 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Tosan Evbuomwan: Charlotte Hornets → FC Barcelona
+  - Christian Koloko: Atlanta Hawks → New Orleans Pelicans
+  - Tosan Evbuomwan: [nba_active → overseas_active]
+
 ## 2026-07-28 — incremental run
 
 - Players updated: **68** (0 new)

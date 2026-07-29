@@ -3825,6 +3825,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Tosan Evbuomwan",
+      "current_team": "FC Barcelona",
+      "country": "Spain",
+      "last_updated": "2026-07-29"
+    },
+    {
       "player": "Travis Leslie",
       "current_team": "CS Maristes",
       "country": "Lebanon",
@@ -5320,12 +5326,12 @@
       "players": 91
     },
     {
-      "team": "Real Madrid",
+      "team": "FC Barcelona",
       "players": 90
     },
     {
-      "team": "FC Barcelona",
-      "players": 89
+      "team": "Real Madrid",
+      "players": 90
     },
     {
       "team": "Austin Spurs",
@@ -6300,6 +6306,10 @@
       "players": 17
     },
     {
+      "team": "San Diego Clippers",
+      "players": 17
+    },
+    {
       "team": "Sunbury Mercuries",
       "players": 17
     },
@@ -6361,10 +6371,6 @@
     },
     {
       "team": "Qingdao Eagles",
-      "players": 16
-    },
-    {
-      "team": "San Diego Clippers",
       "players": 16
     },
     {
@@ -19865,6 +19871,20 @@
       ]
     },
     {
+      "team": "FC Barcelona",
+      "count": 8,
+      "players": [
+        "Miles Norris",
+        "Nicolas Laprovittola",
+        "Stanley Umude",
+        "Tomas Satoransky",
+        "Tornike Shengelia",
+        "Tosan Evbuomwan",
+        "Tyrese Martin",
+        "Willy Hernangomez"
+      ]
+    },
+    {
       "team": "Olympiacos",
       "count": 8,
       "players": [
@@ -19917,19 +19937,6 @@
         "Markus Howard",
         "Rodions Kurucs",
         "Timothe Luwawu"
-      ]
-    },
-    {
-      "team": "FC Barcelona",
-      "count": 7,
-      "players": [
-        "Miles Norris",
-        "Nicolas Laprovittola",
-        "Stanley Umude",
-        "Tomas Satoransky",
-        "Tornike Shengelia",
-        "Tyrese Martin",
-        "Willy Hernangomez"
       ]
     },
     {
@@ -22475,7 +22482,7 @@
     },
     {
       "country": "Spain",
-      "count": 49
+      "count": 50
     },
     {
       "country": "Turkey",
@@ -22669,7 +22676,7 @@
     },
     {
       "country": "Spain",
-      "players": 790
+      "players": 791
     },
     {
       "country": "France",
@@ -23655,6 +23662,122 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "FC Barcelona",
+      "players": [
+        "Miles Norris",
+        "Nicolas Laprovittola",
+        "Stanley Umude",
+        "Tomas Satoransky",
+        "Tornike Shengelia",
+        "Tosan Evbuomwan",
+        "Tyrese Martin",
+        "Willy Hernangomez"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Nicolas Laprovittola",
+            "Stanley Umude"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Nicolas Laprovittola",
+            "Tomas Satoransky"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2022
+        },
+        {
+          "players": [
+            "Stanley Umude",
+            "Tomas Satoransky"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Stanley Umude",
+            "Tosan Evbuomwan"
+          ],
+          "shared_nba_franchises": [
+            "Detroit Pistons"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Tomas Satoransky",
+            "Tornike Shengelia"
+          ],
+          "shared_nba_franchises": [
+            "Chicago Bulls"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Tomas Satoransky",
+            "Willy Hernangomez"
+          ],
+          "shared_nba_franchises": [
+            "New Orleans Pelicans"
+          ],
+          "latest_stint_year": 2023
+        },
+        {
+          "players": [
+            "Tornike Shengelia",
+            "Tosan Evbuomwan"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Tornike Shengelia",
+            "Tyrese Martin"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Tosan Evbuomwan",
+            "Tyrese Martin"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Tosan Evbuomwan",
+            "Willy Hernangomez"
+          ],
+          "shared_nba_franchises": [
+            "New York Knicks"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Olympiacos",
       "players": [
         "Cory Joseph",
@@ -23995,81 +24118,6 @@
           "shared_nba_franchises": [
             "Phoenix Suns",
             "Sacramento Kings"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "FC Barcelona",
-      "players": [
-        "Miles Norris",
-        "Nicolas Laprovittola",
-        "Stanley Umude",
-        "Tomas Satoransky",
-        "Tornike Shengelia",
-        "Tyrese Martin",
-        "Willy Hernangomez"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Nicolas Laprovittola",
-            "Stanley Umude"
-          ],
-          "shared_nba_franchises": [
-            "San Antonio Spurs"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Nicolas Laprovittola",
-            "Tomas Satoransky"
-          ],
-          "shared_nba_franchises": [
-            "San Antonio Spurs"
-          ],
-          "latest_stint_year": 2022
-        },
-        {
-          "players": [
-            "Stanley Umude",
-            "Tomas Satoransky"
-          ],
-          "shared_nba_franchises": [
-            "San Antonio Spurs"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Tomas Satoransky",
-            "Tornike Shengelia"
-          ],
-          "shared_nba_franchises": [
-            "Chicago Bulls"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Tomas Satoransky",
-            "Willy Hernangomez"
-          ],
-          "shared_nba_franchises": [
-            "New Orleans Pelicans"
-          ],
-          "latest_stint_year": 2023
-        },
-        {
-          "players": [
-            "Tornike Shengelia",
-            "Tyrese Martin"
-          ],
-          "shared_nba_franchises": [
-            "Brooklyn Nets"
           ],
           "latest_stint_year": 2026
         }
@@ -51358,7 +51406,7 @@
           "stints": 2,
           "years": [
             "2019–2024",
-            "2025–2026"
+            "2025–26"
           ]
         }
       ]
@@ -58901,6 +58949,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Tosan Evbuomwan",
+        "current_team": "FC Barcelona",
+        "city": "Barcelona",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-07-29"
+      },
+      {
         "player": "Travis Leslie",
         "current_team": "CS Maristes",
         "city": "Collège des Frères Maristes Champville",
@@ -59757,8 +59814,8 @@
       }
     ],
     "coverage": {
-      "total": 704,
-      "in_coords": 619,
+      "total": 705,
+      "in_coords": 620,
       "missing_from_coords": 85,
       "missing_no_city": 44,
       "missing_city_absent_from_coords": 41,
@@ -59766,6 +59823,18 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Christian Koloko",
+      "from_team": "Atlanta Hawks",
+      "to_team": "New Orleans Pelicans",
+      "date": "2026-07-29"
+    },
+    {
+      "player": "Tosan Evbuomwan",
+      "from_team": "Charlotte Hornets",
+      "to_team": "FC Barcelona",
+      "date": "2026-07-29"
+    },
     {
       "player": "Isaiah Stevens",
       "from_team": "Sacramento Kings",
@@ -60052,18 +60121,6 @@
       "player": "Marcus Smart",
       "from_team": "Los Angeles Lakers",
       "to_team": "Houston Rockets",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Marcus Sasser",
-      "from_team": "Detroit Pistons",
-      "to_team": "Dallas Mavericks",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "LaMelo Ball",
-      "from_team": "Charlotte Hornets",
-      "to_team": "Minnesota Timberwolves",
       "date": "2026-07-13"
     }
   ]
