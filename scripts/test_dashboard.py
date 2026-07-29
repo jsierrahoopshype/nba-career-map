@@ -7,6 +7,7 @@ transaction ledger. Run: python3 scripts/test_dashboard.py
 """
 from __future__ import annotations
 
+import datetime
 import json
 import sys
 import tempfile
@@ -15,6 +16,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_dashboard_data as b  # noqa: E402
 import update_careers as u  # noqa: E402
+
+# A fixed reference date for widget tests that aren't exercising the
+# freshness gate (see test_live_freshness_gate below) -- every "current"
+# stint in FIX below is dated 2024 or later, all within LIVE_FRESHNESS_MONTHS
+# of this date, so it never filters any of these pre-existing fixtures.
+FRESH_TODAY = datetime.date(2024, 8, 1)
 
 
 def _p(player, status, current, hist):
@@ -92,7 +99,7 @@ def test_all_stars_abroad_uses_verified_count_only():
               [_stint("Miami Heat", "2010", "Miami", "Florida", "USA")]),
          "all_star_count": 6},
     ]
-    rows = b.w_all_stars_abroad(fix)
+    rows = b.w_all_stars_abroad(fix, FRESH_TODAY)
     names = [r["player"] for r in rows]
     assert names == ["Bigger Star", "Verified Star"], names  # sorted desc by count
     assert "Unverified Mention" not in names
@@ -126,7 +133,7 @@ def test_alltime_index_excludes_nba():
 
 
 def test_countries():
-    live = {r["country"]: r["count"] for r in b.w_countries_live_snapshot(FIX)}
+    live = {r["country"]: r["count"] for r in b.w_countries_live_snapshot(FIX, FRESH_TODAY)}
     assert live.get("Spain") == 2   # both Real Madrid players currently in Spain
     allt = {r["country"]: r["players"] for r in b.w_countries_alltime_alumni(FIX)}
     assert allt.get("USA") >= 3
@@ -134,7 +141,7 @@ def test_countries():
 
 
 def test_heatmap_coverage():
-    ht = b.w_world_tour_heatmap(FIX, {"Madrid||Spain"})
+    ht = b.w_world_tour_heatmap(FIX, {"Madrid||Spain"}, FRESH_TODAY)
     cov = ht["coverage"]
     # 4 overseas players: 2 Madrid (in coords), 1 no-city (No Loc), 1 city not
     # in coords (Solo Overseas: Nowhere||Narnia)
@@ -143,6 +150,47 @@ def test_heatmap_coverage():
     assert cov["missing_no_city"] == 1
     assert cov["missing_city_absent_from_coords"] == 1
     print("test_heatmap_coverage PASS")
+
+
+def test_live_freshness_gate():
+    """The Anthony Bennett case: status stays overseas_active (untouched --
+    this is a DISPLAY filter, not a status change), but a closed (non-
+    "-present") current-team stint recorded more than LIVE_FRESHNESS_MONTHS
+    (11) ago must not appear on a "happening right now" widget. An
+    open-ended stint is exempt from the date math entirely, no matter how
+    old, since a genuinely still-open stint (no explicit retirement/next
+    move recorded) is not stale by definition."""
+    today = datetime.date(2026, 7, 29)
+    fix = [
+        # closed 2024-2025 stint, ~13 months before `today` -- stale
+        _p("Stale Player", "overseas_active", "Formosa Dreamers",
+           [_stint("Formosa Dreamers", "2024-2025", "Taichung City", "", "Taiwan")]),
+        # closed stint from the same season, but recent enough (within 11mo)
+        _p("Fresh Closed Player", "overseas_active", "Baskonia",
+           [_stint("Baskonia", "2025-2026", "Vitoria", "", "Spain")]),
+        # open-ended stint dated far in the past -- never filtered
+        _p("Fresh Open Player", "overseas_active", "Old Present Club",
+           [_stint("Old Present Club", "2015–present", "Athens", "", "Greece")]),
+    ]
+
+    assert b._stint_is_live_fresh(b._current_stint(fix[0]), today) is False
+    assert b._stint_is_live_fresh(b._current_stint(fix[1]), today) is True
+    assert b._stint_is_live_fresh(b._current_stint(fix[2]), today) is True
+
+    watn = {r["player"] for r in b.w_where_are_they_now(fix, today)}
+    assert "Stale Player" not in watn
+    assert "Fresh Closed Player" in watn
+    assert "Fresh Open Player" in watn
+
+    live_countries = {r["country"]: r["count"] for r in b.w_countries_live_snapshot(fix, today)}
+    assert "Taiwan" not in live_countries
+    assert live_countries.get("Spain") == 1
+    assert live_countries.get("Greece") == 1
+
+    # the filtered player's status is untouched -- still overseas_active,
+    # exactly as classify_status computed it; only the widget row is gone
+    assert fix[0]["status"] == "overseas_active"
+    print("test_live_freshness_gate PASS")
 
 
 def test_transactions_append_only():
@@ -385,6 +433,7 @@ if __name__ == "__main__":
     test_alltime_index_excludes_nba()
     test_countries()
     test_heatmap_coverage()
+    test_live_freshness_gate()
     test_transactions_append_only()
     test_latest_signings_missing_file()
     test_team_pages_franchise_membership()

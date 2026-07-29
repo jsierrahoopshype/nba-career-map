@@ -24,6 +24,7 @@ to the bottom of the ranked widgets.
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import re
 import sys
@@ -133,6 +134,58 @@ def _current_stint(player: dict) -> dict | None:
     return match
 
 
+# --- freshness gate for "happening right now" surfaces ----------------------
+# player_status.classify_status()'s 2-year recency fallback is deliberately
+# lenient -- it protects genuine contract-gap players (an NBA free agent
+# between teams, an overseas player between club seasons) from being wrongly
+# retired just because no explicit retirement announcement was found on their
+# page. That's the right call for `status` itself, and this does not touch it,
+# retirement detection, or any other page -- a filtered player's own player
+# page and their former club's roster still show them normally.
+#
+# But a handful of dashboard surfaces imply "happening right now" (Who's
+# Playing In, Where Are They Now, the World Tour Heatmap, Last Stop for
+# All-Stars), and for THOSE a player whose current-team stint ended well over
+# a year ago with no explicit retirement signal is actively misleading.
+# Confirmed case: Anthony Bennett shown "active" in Taiwan (Formosa Dreamers)
+# though his own Wikipedia page shows nothing since the 2024-2025 season --
+# about 13 months stale as of a 2026-07 run, comfortably inside the 2-year
+# status fallback but well past what a "right now" widget should tolerate.
+#
+# Cutoff: 11 months (the middle of the requested ~10-12 month range). Stint
+# `years` strings only carry year granularity ("2024-2025", not a month), so a
+# closed (non-open-ended) stint's end is approximated as July 1 of its last
+# recorded year -- a single defensible reference point, since most leagues in
+# this dataset (NBA, EuroLeague, and most domestic seasons) end their season
+# between April and June. An open-ended stint ("...-present" / a trailing
+# dash, same detection as player_status.last_active_year) is always fresh,
+# never subject to this date math.
+LIVE_FRESHNESS_MONTHS = 11
+
+
+def _months_before(d: datetime.date, months: int) -> datetime.date:
+    total = d.year * 12 + (d.month - 1) - months
+    y, m = divmod(total, 12)
+    return datetime.date(y, m + 1, 1)
+
+
+def _stint_is_live_fresh(stint: dict | None, today: datetime.date) -> bool:
+    """True if `stint` (a player's current_team stint) is fresh enough for a
+    "happening right now" widget. No stint at all (current_team doesn't match
+    any recorded stint) is treated as not fresh -- there's nothing dated to
+    confirm as current."""
+    if not stint:
+        return False
+    years = str(stint.get("years") or "")
+    if "present" in years.lower() or re.search(r"[–\-]\s*$", years):
+        return True  # open-ended -- always fresh, no date math needed
+    found = [int(y) for y in re.findall(r"\d{4}", years)]
+    if not found:
+        return False  # no parseable year at all -- can't confirm current
+    assumed_end = datetime.date(max(found), 7, 1)
+    return _months_before(today, LIVE_FRESHNESS_MONTHS) <= assumed_end
+
+
 def _nat_star(player: dict) -> dict:
     """nationality/all_star/all_star_count for a roster row, sparse — omitted
     (not stored as empty/null) when the source player has none, so today's
@@ -200,12 +253,14 @@ def _rank(counter: dict, key_name: str, val_name: str) -> list[dict]:
 
 
 # --- widgets ----------------------------------------------------------------
-def w_where_are_they_now(players: list) -> list[dict]:
+def w_where_are_they_now(players: list, today: datetime.date) -> list[dict]:
     out = []
     for p in players:
         if p.get("status") != OVERSEAS:
             continue
         st = _current_stint(p)
+        if not _stint_is_live_fresh(st, today):
+            continue
         out.append({"player": p["player"], "current_team": p.get("current_team", ""),
                     "country": (st or {}).get("country", "") if st else "",
                     "last_updated": p.get("last_updated", "")})
@@ -250,12 +305,14 @@ def w_teams_by_current_nba_alumni(players: list) -> list[dict]:
             for t, ps in sorted(teams.items(), key=lambda kv: (-len(kv[1]), kv[0]))]
 
 
-def w_countries_live_snapshot(players: list) -> list[dict]:
+def w_countries_live_snapshot(players: list, today: datetime.date) -> list[dict]:
     counts: dict[str, int] = {}
     for p in players:
         if p.get("status") != OVERSEAS:
             continue
         st = _current_stint(p)
+        if not _stint_is_live_fresh(st, today):
+            continue
         c = (st or {}).get("country", "").strip() if st else ""
         if c:
             counts[c] = counts.get(c, 0) + 1
@@ -339,7 +396,7 @@ def w_boomerang_players(players: list) -> list[dict]:
     return out
 
 
-def w_all_stars_abroad(players: list) -> list[dict]:
+def w_all_stars_abroad(players: list, today: datetime.date) -> list[dict]:
     """Former NBA All-Stars currently playing overseas, ranked by selection count.
 
     Deliberately keys ONLY on all_star_count (the CSV-ingested, exact-match-
@@ -361,20 +418,26 @@ def w_all_stars_abroad(players: list) -> list[dict]:
         count = p.get("all_star_count")
         if count is None:
             continue
+        st = _current_stint(p)
+        if not _stint_is_live_fresh(st, today):
+            continue
         out.append({"player": p["player"], "all_star_count": count,
                     "current_team": p.get("current_team", ""),
-                    "country": (_current_stint(p) or {}).get("country", "")})
+                    "country": (st or {}).get("country", "")})
     out.sort(key=lambda r: (-r["all_star_count"], r["player"]))
     return out
 
 
-def w_world_tour_heatmap(players: list, coords_keys: set[str]) -> dict:
+def w_world_tour_heatmap(players: list, coords_keys: set[str], today: datetime.date) -> dict:
     rows, no_city, city_not_in_coords = [], 0, 0
     missing_combos: dict[str, int] = {}
     for p in players:
         if p.get("status") != OVERSEAS:
             continue
-        st = _current_stint(p) or {}
+        st = _current_stint(p)
+        if not _stint_is_live_fresh(st, today):
+            continue
+        st = st or {}
         city = (st.get("city") or "").strip()
         state = (st.get("state") or "").strip()
         country = (st.get("country") or "").strip()
@@ -659,23 +722,25 @@ def build_sitemap(players: list) -> str:
             f"{body}\n</urlset>\n")
 
 
-def build(players: list | None = None) -> dict:
+def build(players: list | None = None, today: datetime.date | None = None) -> dict:
     if players is None:
         players = json.loads(CAREERS.read_text(encoding="utf-8"))
+    if today is None:
+        today = datetime.date.today()
     coords_keys = load_coords_keys()
     return {
         "generated_from": "data/players/nba_players_careers.json",
         "player_count": len(players),
-        "where_are_they_now": w_where_are_they_now(players),
+        "where_are_they_now": w_where_are_they_now(players, today),
         "most_well_traveled": w_most_well_traveled(players),
         "teams_by_alltime_nba_alumni": w_teams_by_alltime_nba_alumni(players),
         "teams_by_current_nba_alumni": w_teams_by_current_nba_alumni(players),
-        "countries_live_snapshot": w_countries_live_snapshot(players),
+        "countries_live_snapshot": w_countries_live_snapshot(players, today),
         "countries_alltime_alumni": w_countries_alltime_alumni(players),
         "team_reunions": w_team_reunions(players),
         "boomerang_players": w_boomerang_players(players),
-        "all_stars_abroad": w_all_stars_abroad(players),
-        "world_tour_heatmap": w_world_tour_heatmap(players, coords_keys),
+        "all_stars_abroad": w_all_stars_abroad(players, today),
+        "world_tour_heatmap": w_world_tour_heatmap(players, coords_keys, today),
         "latest_signings": w_latest_signings(),
     }
 
