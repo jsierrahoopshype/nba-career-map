@@ -1539,6 +1539,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Jacob Toppin",
+      "current_team": "Hapoel Tel Aviv",
+      "country": "Israel",
+      "last_updated": "2026-07-30"
+    },
+    {
       "player": "Jacob Wiley",
       "current_team": "Santeros de Aguada",
       "country": "Puerto Rico",
@@ -5164,6 +5170,10 @@
       "players": 53
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "players": 53
+    },
+    {
       "team": "Leones de Ponce",
       "players": 53
     },
@@ -5173,10 +5183,6 @@
     },
     {
       "team": "Dakota Wizards",
-      "players": 52
-    },
-    {
-      "team": "Hapoel Tel Aviv",
       "players": 52
     },
     {
@@ -19430,6 +19436,22 @@
       ]
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "count": 10,
+      "players": [
+        "Amir Coffey",
+        "Antonio Blakeney",
+        "Daniel Oturu",
+        "Elijah Bryant",
+        "Ishmail Wainright",
+        "Jacob Toppin",
+        "Johnathan Motley",
+        "Maxi Kleber",
+        "Tyler Ennis",
+        "Vasilije Micic"
+      ]
+    },
+    {
       "team": "Real Madrid",
       "count": 10,
       "players": [
@@ -19473,21 +19495,6 @@
         "Talen Horton-Tucker",
         "Trent Forrest",
         "Wade Baldwin"
-      ]
-    },
-    {
-      "team": "Hapoel Tel Aviv",
-      "count": 9,
-      "players": [
-        "Amir Coffey",
-        "Antonio Blakeney",
-        "Daniel Oturu",
-        "Elijah Bryant",
-        "Ishmail Wainright",
-        "Johnathan Motley",
-        "Maxi Kleber",
-        "Tyler Ennis",
-        "Vasilije Micic"
       ]
     },
     {
@@ -22123,11 +22130,11 @@
       "count": 43
     },
     {
-      "country": "Greece",
-      "count": 37
+      "country": "Israel",
+      "count": 38
     },
     {
-      "country": "Israel",
+      "country": "Greece",
       "count": 37
     },
     {
@@ -22330,7 +22337,7 @@
     },
     {
       "country": "Israel",
-      "players": 443
+      "players": 444
     },
     {
       "country": "China",
@@ -22856,6 +22863,155 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Hapoel Tel Aviv",
+      "players": [
+        "Amir Coffey",
+        "Antonio Blakeney",
+        "Daniel Oturu",
+        "Elijah Bryant",
+        "Ishmail Wainright",
+        "Jacob Toppin",
+        "Johnathan Motley",
+        "Maxi Kleber",
+        "Tyler Ennis",
+        "Vasilije Micic"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Amir Coffey",
+            "Daniel Oturu"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Elijah Bryant"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Ishmail Wainright"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Johnathan Motley"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks",
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Amir Coffey",
+            "Vasilije Micic"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Daniel Oturu",
+            "Johnathan Motley"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Elijah Bryant",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Ishmail Wainright",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Ishmail Wainright",
+            "Vasilije Micic"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Johnathan Motley",
+            "Maxi Kleber"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Maxi Kleber",
+            "Tyler Ennis"
+          ],
+          "shared_nba_franchises": [
+            "Los Angeles Lakers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Tyler Ennis",
+            "Vasilije Micic"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Real Madrid",
       "players": [
         "Alex Len",
@@ -23143,154 +23299,6 @@
             "Utah Jazz"
           ],
           "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Hapoel Tel Aviv",
-      "players": [
-        "Amir Coffey",
-        "Antonio Blakeney",
-        "Daniel Oturu",
-        "Elijah Bryant",
-        "Ishmail Wainright",
-        "Johnathan Motley",
-        "Maxi Kleber",
-        "Tyler Ennis",
-        "Vasilije Micic"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Amir Coffey",
-            "Daniel Oturu"
-          ],
-          "shared_nba_franchises": [
-            "LA Clippers"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Amir Coffey",
-            "Elijah Bryant"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Amir Coffey",
-            "Ishmail Wainright"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Amir Coffey",
-            "Johnathan Motley"
-          ],
-          "shared_nba_franchises": [
-            "LA Clippers"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Amir Coffey",
-            "Tyler Ennis"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks",
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Amir Coffey",
-            "Vasilije Micic"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Daniel Oturu",
-            "Johnathan Motley"
-          ],
-          "shared_nba_franchises": [
-            "LA Clippers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Elijah Bryant",
-            "Tyler Ennis"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Ishmail Wainright",
-            "Tyler Ennis"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Ishmail Wainright",
-            "Vasilije Micic"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Johnathan Motley",
-            "Maxi Kleber"
-          ],
-          "shared_nba_franchises": [
-            "Dallas Mavericks"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Maxi Kleber",
-            "Tyler Ennis"
-          ],
-          "shared_nba_franchises": [
-            "Los Angeles Lakers"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Tyler Ennis",
-            "Vasilije Micic"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2025
         }
       ],
       "latest_stint_year": 2026
@@ -55244,6 +55252,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Jacob Toppin",
+        "current_team": "Hapoel Tel Aviv",
+        "city": "Tel Aviv",
+        "state": "",
+        "country": "Israel",
+        "in_coords": true,
+        "last_updated": "2026-07-30"
+      },
+      {
         "player": "Jacob Wiley",
         "current_team": "Santeros de Aguada",
         "city": "Aguada",
@@ -58899,8 +58916,8 @@
       }
     ],
     "coverage": {
-      "total": 644,
-      "in_coords": 567,
+      "total": 645,
+      "in_coords": 568,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -58908,6 +58925,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Jacob Toppin",
+      "from_team": "Atlanta Hawks",
+      "to_team": "Hapoel Tel Aviv",
+      "date": "2026-07-30"
+    },
     {
       "player": "Christian Koloko",
       "from_team": "Atlanta Hawks",
@@ -59200,12 +59223,6 @@
       "player": "Mitchell Robinson",
       "from_team": "New York Knicks",
       "to_team": "Boston Celtics",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Marcus Smart",
-      "from_team": "Los Angeles Lakers",
-      "to_team": "Houston Rockets",
       "date": "2026-07-13"
     }
   ]
