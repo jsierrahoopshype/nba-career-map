@@ -1295,16 +1295,16 @@
             }
         }
 
-        /* Satisfying pop-in when the results screen replaces the intro/game
-           overlay -- plays every time #quizFinal goes from display:none to
-           block (a fresh CSS animation on an element re-entering the render
-           tree), no JS involvement needed. */
-        .quiz-box-large {
-            animation: quizReveal 0.4s cubic-bezier(.16,1,.3,1);
+        /* Plain fade when the results screen replaces the intro/game overlay
+           -- plays every time #quizFinal goes from display:none to block, no
+           JS involvement needed. Opacity-only, no scale/translate: a full-
+           screen page appearing shouldn't read as a dialog popping in. */
+        .quiz-final-screen {
+            animation: quizReveal 0.3s ease-out;
         }
         @keyframes quizReveal {
-            from { opacity: 0; transform: scale(0.92) translateY(12px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -1313,7 +1313,7 @@
             .quiz-option.correct,
             .quiz-option.wrong,
             .quiz-score.bump,
-            .quiz-box-large {
+            .quiz-final-screen {
                 animation: none !important;
                 transition: none !important;
             }
@@ -1342,18 +1342,15 @@
             transition: border-color 0.15s, background 0.15s;
         }
         .quiz-action-btn:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.06); }
+        /* Download is the share card's real CTA -- gold-gradient, matching
+           the reference share card's own button treatment (was plain red). */
         .quiz-action-btn.primary {
-            background: var(--qd-accent);
-            border-color: var(--qd-accent);
-            box-shadow: 0 6px 18px var(--qd-accent-glow);
+            background: linear-gradient(135deg, #ffdd8a, #f0b429 60%, #d68f1a);
+            border-color: transparent;
+            color: #1a1200;
+            box-shadow: 0 6px 18px rgba(240,180,41,.35);
         }
-        .quiz-action-btn.primary:hover { filter: brightness(1.1); }
-
-        .quiz-box-large {
-            max-width: 550px !important;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
+        .quiz-action-btn.primary:hover { filter: brightness(1.06); }
 
         /* Unbounded length (survival has no fixed question count) -- scrolls
            within its own box rather than growing the whole card. */
@@ -1439,8 +1436,8 @@
         }
         .quiz-copy-btn {
             flex: 0 0 auto;
-            background: var(--qd-accent);
-            color: #fff;
+            background: linear-gradient(135deg, #ffdd8a, #f0b429 60%, #d68f1a);
+            color: #1a1200;
             border: none;
             padding: 10px 18px;
             border-radius: 8px;
@@ -1453,10 +1450,12 @@
         .quiz-copy-btn:hover { filter: brightness(1.1); }
 
         /* Same share-options set as the 73-9 game (X, Bluesky, Facebook,
-           WhatsApp, Reddit, Telegram), restyled as colored icon tiles. */
+           WhatsApp, Reddit, Telegram), restyled as colored icon tiles, in
+           the same 3x2 grid as their reference share card at every width
+           (not just a narrow-screen fallback). */
         .quiz-social-row {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 8px;
             margin-bottom: 18px;
         }
@@ -1481,9 +1480,6 @@
         .quiz-social-btn.whatsapp { background: #25d366; }
         .quiz-social-btn.reddit { background: #ff4500; }
         .quiz-social-btn.telegram { background: #2aabee; }
-        @media (max-width: 420px) {
-            .quiz-social-row { grid-template-columns: repeat(3, 1fr); }
-        }
 
         .share-instructions {
             font-size: 12px;
@@ -1493,6 +1489,197 @@
         }
 
         #shareImageContainer.show { display: block !important; }
+
+        /* ===== Results screen: full-screen page, not a centered popup.
+           Only #quizFinal gets this treatment (via .results-mode on the
+           shared overlay) -- the intro screen keeps its original centered
+           card look untouched. */
+        .quiz-overlay.results-mode {
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 0;
+            background: var(--qd-bg1, #0c0c14);
+            overflow-y: auto;
+        }
+        .quiz-final-screen {
+            width: 100%;
+            max-width: none;
+            min-height: 100vh;
+            min-height: 100dvh;
+            border-radius: 0;
+            margin: 0 auto;
+            padding: calc(28px + env(safe-area-inset-top)) 20px calc(28px + env(safe-area-inset-bottom));
+        }
+        @media (min-width: 640px) {
+            .quiz-final-screen { max-width: 640px; }
+        }
+
+        /* Gold gradient text/button treatment -- the game-title accent from
+           the 73-9 game's own results/share screens, alongside this app's
+           existing red accent (kept for the hero score and secondary UI). */
+        .qd-gold-text {
+            background: linear-gradient(135deg, #ffe49a 0%, #f0b429 55%, #d68f1a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #f0b429;
+        }
+
+        .qf-hero-wrap { text-align: center; }
+        .qf-subtitle {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--qd-text-dim);
+            margin: -6px 0 20px;
+        }
+
+        .qf-statbox {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 4px;
+            background: var(--qd-card);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 14px;
+            padding: 16px 10px;
+            margin: 4px 0 20px;
+        }
+        .qf-stat { flex: 1 1 0; text-align: center; min-width: 0; }
+        .qf-stat-num {
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+        }
+        .qf-stat-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            margin-top: 4px;
+        }
+        .qf-stat-div { width: 1px; background: var(--qd-card-border); flex: 0 0 auto; }
+
+        .qf-actions {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .qf-btn {
+            flex: 1;
+            min-height: 46px;
+            padding: 12px 8px;
+            border-radius: 10px;
+            font-size: 12.5px;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: inherit;
+            touch-action: manipulation;
+            transition: filter 0.15s, border-color 0.15s, background 0.15s;
+        }
+        .qf-btn-primary {
+            border: none;
+            background: linear-gradient(135deg, #ffdd8a, #f0b429 60%, #d68f1a);
+            color: #1a1200;
+            box-shadow: 0 6px 18px rgba(240,180,41,.35);
+        }
+        .qf-btn-primary:hover { filter: brightness(1.06); }
+        .qf-btn-secondary {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,.18);
+            color: #fff;
+        }
+        .qf-btn-secondary:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.06); }
+
+        .qf-leaderboard {
+            background: var(--qd-card);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 14px;
+            padding: 14px 4px 6px;
+            margin-bottom: 18px;
+        }
+        .qf-leaderboard-title {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            text-align: center;
+            margin-bottom: 8px;
+            padding: 0 14px;
+        }
+        .qf-lb-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 14px;
+            border-top: 1px solid var(--qd-card-border);
+            font-size: 13.5px;
+        }
+        .qf-lb-row:first-child { border-top: none; }
+        .qf-lb-row.you { background: rgba(240,180,41,.08); }
+        .qf-lb-rank {
+            flex: 0 0 26px;
+            font-weight: 800;
+            color: var(--qd-text-dim);
+            font-variant-numeric: tabular-nums;
+        }
+        .qf-lb-row.top .qf-lb-rank { color: #f0b429; }
+        .qf-lb-name {
+            flex: 1;
+            min-width: 0;
+            font-weight: 700;
+            color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .qf-lb-row.you .qf-lb-name::after {
+            content: 'YOU';
+            margin-left: 8px;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .5px;
+            color: #f0b429;
+            border: 1px solid rgba(240,180,41,.5);
+            border-radius: 4px;
+            padding: 1px 5px;
+        }
+        .qf-lb-score {
+            flex: 0 0 auto;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            color: rgba(255,255,255,.85);
+        }
+        .qf-lb-row.top .qf-lb-score { color: #f0b429; }
+
+        .qf-rank-fallback.quiz-percentile { margin-bottom: 18px; }
+
+        .qf-share-divider {
+            text-align: center;
+            margin: 26px 0 16px;
+            position: relative;
+        }
+        .qf-share-divider span {
+            background: var(--qd-bg1, #0c0c14);
+            position: relative;
+            z-index: 1;
+            padding: 0 12px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            color: var(--qd-text-dim);
+        }
+        .qf-share-divider::before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 50%;
+            height: 1px;
+            background: var(--qd-card-border);
+        }
     </style>
 </head>
 <body>
@@ -2499,6 +2686,20 @@
             return chosen;
         }
 
+        // The results screen is a genuine full page now (item 1), not a
+        // small centered card floating over a visible dimmed backdrop -- so
+        // the underlying dashboard's own scroll must be locked while any
+        // quiz screen is up, or a user scrolling what looks like one long
+        // page would eventually scroll past the fixed overlay into the
+        // dashboard rendered behind it.
+        function _quizLockBodyScroll(lock) {
+            // overflow:hidden on <body> alone doesn't reliably stop page
+            // scroll in every browser -- <html> is the actual scrolling box
+            // in some engines, so both need it set together.
+            document.documentElement.style.overflow = lock ? 'hidden' : '';
+            document.body.style.overflow = lock ? 'hidden' : '';
+        }
+
         function startQuiz() {
             // Show the intro (title/premise/rules/start button) before any
             // question -- exactly once per quiz-mode entry. "Play Again" on
@@ -2507,16 +2708,18 @@
             document.getElementById('quizOverlay').classList.add('show');
             document.getElementById('quizIntro').style.display = 'block';
             document.getElementById('quizFinal').style.display = 'none';
+            _quizLockBodyScroll(true);
         }
         
         function closeQuiz() {
-            document.getElementById('quizOverlay').classList.remove('show');
+            document.getElementById('quizOverlay').classList.remove('show', 'results-mode');
             document.getElementById('quizPanel').classList.remove('show');
             document.getElementById('quizMapContainer').classList.remove('show');
             document.getElementById('quizGameArea').classList.remove('show');
             if(quizState.timer) clearInterval(quizState.timer);
             quizState.active = false;
-            
+            _quizLockBodyScroll(false);
+
             // Restore original map
             document.getElementById('map').style.display = '';
         }
@@ -2543,8 +2746,11 @@
                 quizMap: null
             };
             
-            // Hide intro, show game
-            document.getElementById('quizOverlay').classList.remove('show');
+            // Hide intro, show game (still a fixed full-screen element, so
+            // scroll stays locked straight through -- closeQuiz() is the
+            // only place that unlocks it)
+            _quizLockBodyScroll(true);
+            document.getElementById('quizOverlay').classList.remove('show', 'results-mode');
             document.getElementById('quizIntro').style.display = 'none';
             document.getElementById('quizFinal').style.display = 'none';
             
@@ -2615,6 +2821,60 @@
             quizState.pathLayer = L.layerGroup().addTo(quizState.quizMap);
         }
         
+        // Nudges geographically-clustered stops apart in on-screen pixel
+        // space so they don't visually collapse into one indistinguishable
+        // clump -- e.g. a player whose route also includes one far-off stop
+        // forces the map to a low, continent-wide zoom, at which several
+        // genuinely nearby cities (say, Detroit/Toronto/Philadelphia) can
+        // land within a marker-diameter of each other on screen even though
+        // they're hundreds of km apart in reality. Done in PIXEL space
+        // (via the same zoom fitBounds() will actually render at) rather
+        // than a fixed lat/lng-degree threshold, because "close enough to
+        // collide" depends entirely on the realized zoom, which varies
+        // career to career. Markers found within COLLIDE_PX of each other
+        // are grouped and fanned out in a small ring around their shared
+        // center; ungrouped markers are returned untouched. Real
+        // coordinates (pts[i].coords) still drive fitBounds()'s framing --
+        // only the returned displayCoords feed marker placement and the
+        // connecting lines, so what's drawn stays visually self-consistent.
+        function computeDisplayCoords(pts, map) {
+            const bounds = L.latLngBounds(pts.map(p => p.coords));
+            let zoom;
+            try {
+                zoom = Math.min(5, map.getBoundsZoom(bounds, false, [40, 40]));
+            } catch(e) {
+                zoom = 4;
+            }
+            if(!isFinite(zoom)) zoom = 4;
+
+            const projected = pts.map(p => map.project(p.coords, zoom));
+            const displayPoints = projected.map(pt => L.point(pt.x, pt.y));
+
+            const COLLIDE_PX = 30; // a bit more than one marker's rendered diameter
+            const used = new Array(pts.length).fill(false);
+
+            for(let i = 0; i < pts.length; i++) {
+                if(used[i]) continue;
+                const group = [i];
+                for(let j = i + 1; j < pts.length; j++) {
+                    if(used[j]) continue;
+                    if(projected[i].distanceTo(projected[j]) < COLLIDE_PX) group.push(j);
+                }
+                if(group.length > 1) {
+                    group.forEach(idx => used[idx] = true);
+                    const cx = group.reduce((s, idx) => s + projected[idx].x, 0) / group.length;
+                    const cy = group.reduce((s, idx) => s + projected[idx].y, 0) / group.length;
+                    const radius = 20 + Math.min(group.length, 5) * 4;
+                    group.forEach((idx, k) => {
+                        const angle = -Math.PI / 2 + (2 * Math.PI * k / group.length);
+                        displayPoints[idx] = L.point(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
+                    });
+                }
+            }
+
+            return displayPoints.map(pt => map.unproject(pt, zoom));
+        }
+
         function drawQuizMap(career) {
             quizState.markersLayer.clearLayers();
             quizState.pathLayer.clearLayers();
@@ -2628,19 +2888,18 @@
             if(pts.length < 2) return;
             const n = pts.length;
 
-            // Draw curved paths with arrows. Quiz-specific clarity pass,
-            // beyond the main player map's: the map IS the question here, so
-            // a route that crosses itself (a player who returned to the same
-            // region more than once) must still read unambiguously in career
-            // order. Two cues beyond a single midpoint arrow: (1) TWO arrows
-            // per segment (~35%/~65% along the curve) so direction is
-            // legible even where a segment is short or visually overlaps
-            // another, (2) line weight/opacity increase later in the route,
-            // so "which segment came later" doesn't rely on spotting arrows
-            // alone -- a lighter/thinner line is earlier, a bolder one later.
+            const displayCoords = computeDisplayCoords(pts, quizState.quizMap);
+            pts.forEach((p, i) => { p.displayCoords = displayCoords[i]; });
+
+            // Curved paths in career order. No directional arrows -- tried
+            // last round, confirmed confusing rather than clarifying in real
+            // use; the sequential numbered markers already convey order on
+            // their own. Line weight/opacity still increases later in the
+            // route, so "which segment came later" doesn't rely on a second,
+            // harder-to-read visual language on the lines.
             for(let i = 0; i < n - 1; i++) {
                 const curveOffset = (i % 2 === 0) ? 1 : -1;
-                const curvePoints = bezierCurve(pts[i].coords, pts[i+1].coords, curveOffset);
+                const curvePoints = bezierCurve(pts[i].displayCoords, pts[i+1].displayCoords, curveOffset);
                 const progress = i / Math.max(1, n - 2);
                 const weight = 2.5 + progress * 2.5;    // 2.5 -> 5
                 const opacity = 0.45 + progress * 0.35; // 0.45 -> 0.8
@@ -2648,21 +2907,6 @@
                 L.polyline(curvePoints, {
                     color: '#d63031', weight, opacity
                 }).addTo(quizState.pathLayer);
-
-                [0.35, 0.65].forEach(frac => {
-                    const idx = Math.max(1, Math.min(curvePoints.length - 2, Math.round(curvePoints.length * frac)));
-                    const arrowPos = curvePoints[idx];
-                    const nextPos = curvePoints[Math.min(idx + 2, curvePoints.length - 1)];
-                    const angle = Math.atan2(nextPos[0] - arrowPos[0], nextPos[1] - arrowPos[1]) * 180 / Math.PI;
-
-                    const arrowIcon = L.divIcon({
-                        className: '',
-                        html: `<div style="color:#d63031;font-size:15px;transform:rotate(${-angle + 90}deg);opacity:${Math.min(1, opacity + 0.15).toFixed(2)}">➤</div>`,
-                        iconSize: [15, 15],
-                        iconAnchor: [7, 7]
-                    });
-                    L.marker(arrowPos, {icon: arrowIcon, interactive: false}).addTo(quizState.pathLayer);
-                });
             }
 
             // Draw markers: green circle "START" for the first stop,
@@ -2722,9 +2966,12 @@
                     zIndexOffset = 0;
                 }
 
-                L.marker(p.coords, {icon, zIndexOffset}).addTo(quizState.markersLayer).bindPopup(popup, {closeButton: false});
+                L.marker(p.displayCoords, {icon, zIndexOffset}).addTo(quizState.markersLayer).bindPopup(popup, {closeButton: false});
             });
 
+            // Framed on true geography (not the nudged display coords) --
+            // computeDisplayCoords() already assumed this exact bounds/padding
+            // when it decided which markers needed separating.
             quizState.quizMap.fitBounds(pts.map(p => p.coords), {padding: [40, 40], maxZoom: 5});
         }
         
@@ -2850,11 +3097,14 @@
                 quizState.lives--;
             }
 
+            const lastStop = quizState.currentPlayer.career_history[quizState.currentPlayer.career_history.length - 1];
             quizState.results.push({
                 player: correctName,
                 correct: isCorrect,
                 points: points,
-                time: timeTaken
+                time: timeTaken,
+                team: lastStop.team,
+                years: lastStop.years
             });
 
             // Update UI
@@ -2894,11 +3144,14 @@
             // never points -- the -5 point penalty is gone entirely.
             quizState.lives--;
 
+            const lastStop = quizState.currentPlayer.career_history[quizState.currentPlayer.career_history.length - 1];
             quizState.results.push({
                 player: correctName,
                 correct: false,
                 points: 0,
-                time: QUIZ_TIMER_SECONDS
+                time: QUIZ_TIMER_SECONDS,
+                team: lastStop.team,
+                years: lastStop.years
             });
 
             // Update UI
@@ -2930,6 +3183,19 @@
             }
         }
         
+        // Longest run of consecutive correct answers this run -- a genuinely
+        // new stat (not surfaced anywhere previously), one of the three the
+        // results screen's stat callout box shows alongside correct count
+        // and lives used.
+        function getBestStreak(results) {
+            let best = 0, current = 0;
+            results.forEach(r => {
+                current = r.correct ? current + 1 : 0;
+                if(current > best) best = current;
+            });
+            return best;
+        }
+
         function showFinalResults() {
             // Hide game UI
             document.getElementById('quizPanel').classList.remove('show');
@@ -2938,18 +3204,31 @@
 
             // Restore original map
             document.getElementById('map').style.display = '';
-            
-            // Show results overlay
-            document.getElementById('quizOverlay').classList.add('show');
+
+            // Results is a full-screen page, not a centered popup: same
+            // shared overlay element as the intro screen, but 'results-mode'
+            // overrides its centered/dimmed presentation (see CSS) -- the
+            // intro screen itself is untouched since it never gets this class.
+            document.getElementById('quizOverlay').classList.add('show', 'results-mode');
             document.getElementById('quizIntro').style.display = 'none';
             document.getElementById('quizFinal').style.display = 'block';
-            
+            document.getElementById('quizOverlay').scrollTop = 0;
+            _quizLockBodyScroll(true);
+
             const correctCount = quizState.results.filter(r => r.correct).length;
             const totalAsked = quizState.results.length;
+            const livesUsed = QUIZ_START_LIVES - quizState.lives;
 
             document.getElementById('finalScore').textContent = quizState.score.toFixed(2);
             const metaEl = document.getElementById('finalMeta');
             if(metaEl) metaEl.textContent = `${correctCount} correct · ${totalAsked} questions · out of ${QUIZ_START_LIVES} lives`;
+
+            // Stat callout box: correct answers, lives used, best streak --
+            // this game's equivalent of the reference game's own highlighted
+            // comparison box beneath its hero number.
+            document.getElementById('qfStatCorrect').textContent = correctCount;
+            document.getElementById('qfStatLives').textContent = `${livesUsed}/${QUIZ_START_LIVES}`;
+            document.getElementById('qfStatStreak').textContent = getBestStreak(quizState.results);
 
             // Build detailed results list. Unbounded length (survival has no
             // fixed question count) -- .quiz-results-list scrolls its own box.
@@ -2967,19 +3246,22 @@
             }).join('');
 
             document.getElementById('quizResultsList').innerHTML = resultsList;
-            
-            // Show loading state for percentile
+
+            // Show loading state for percentile (fallback line -- hidden in
+            // favor of the real leaderboard section if that fetch succeeds)
             const percentileEl = document.getElementById('quizPercentile');
+            percentileEl.style.display = '';
             percentileEl.textContent = 'Calculating ranking...';
             percentileEl.classList.add('loading');
-            
-            // Submit score and get percentile
+            document.getElementById('qfLeaderboard').style.display = 'none';
+
+            // Submit score, then fetch the leaderboard and build the share image
             submitScore().then(() => {
-                // Generate share image after we have percentile
+                fetchLeaderboard();
                 generateShareImage();
             });
         }
-        
+
         async function submitScore() {
             const correct = quizState.results.filter(r => r.correct).length;
             const missed = quizState.results.length - correct;
@@ -3002,12 +3284,16 @@
                 // compute percentile/rank against survival-mode entries only
                 // -- unbounded survival scores are not comparable with the
                 // legacy fixed-10-question format, so the two must never mix.
+                // name is a fun anonymous per-browser handle (see
+                // getQuizNickname()), not personal info -- purely so the
+                // leaderboard section below has something to display per row.
                 const params = new URLSearchParams({
                     action: 'submit',
                     score: quizState.score.toFixed(2),
                     correct: correct,
                     missed: missed,
-                    mode: 'survival'
+                    mode: 'survival',
+                    name: getQuizNickname()
                 });
 
                 const response = await fetch(SCORE_API_URL + '?' + params.toString(), {
@@ -3037,174 +3323,261 @@
             }
         }
 
+        // A fun, stable-per-browser nickname for the leaderboard. There's no
+        // account system here, so this is generated once and kept in
+        // localStorage (not personal info -- just an adjective+noun+number
+        // handle) purely so a repeat player recognizes their own row run to
+        // run, in the same anonymous-handle spirit as the reference game's
+        // own leaderboard usernames.
+        const QUIZ_NICKNAME_KEY = 'nbaQuizNickname';
+        const QUIZ_NICKNAME_ADJ = ['Clutch','Baseline','Corner','FastBreak','Rimrunner','Paint','Buzzer','Crossover','Alley','Backdoor','Fadeaway','Hustle','Pickup','Zone','Fullcourt'];
+        const QUIZ_NICKNAME_NOUN = ['Hoopster','Baller','Scout','Rook','Vet','Sniper','Grinder','Rebounder','Playmaker','Hooper','Shooter','Defender'];
+        function getQuizNickname() {
+            try {
+                let name = localStorage.getItem(QUIZ_NICKNAME_KEY);
+                if(!name) {
+                    const adj = QUIZ_NICKNAME_ADJ[Math.floor(Math.random() * QUIZ_NICKNAME_ADJ.length)];
+                    const noun = QUIZ_NICKNAME_NOUN[Math.floor(Math.random() * QUIZ_NICKNAME_NOUN.length)];
+                    const num = Math.floor(Math.random() * 90) + 10;
+                    name = `${adj}${noun}${num}`;
+                    localStorage.setItem(QUIZ_NICKNAME_KEY, name);
+                }
+                return name;
+            } catch(e) {
+                return 'Hooper';
+            }
+        }
+
+        // Top-N survival leaderboard. Requires an Apps Script deployment
+        // that supports action=leaderboard -- a newer addition than
+        // action=submit (see the delivered .gs update). An older
+        // deployment, a network failure, or zero entries all degrade the
+        // same way: the leaderboard section stays hidden and the plain
+        // "Rank #X of Y" line (already set by submitScore()) stays visible
+        // as the fallback, so nothing looks broken either way.
+        async function fetchLeaderboard() {
+            if (!SCORE_API_URL || SCORE_API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+            try {
+                const params = new URLSearchParams({ action: 'leaderboard', mode: 'survival', limit: 10 });
+                const response = await fetch(SCORE_API_URL + '?' + params.toString(), { method: 'GET', redirect: 'follow' });
+                const data = await response.json();
+                if(data.success && Array.isArray(data.entries) && data.entries.length) {
+                    renderLeaderboard(data.entries);
+                }
+            } catch(e) {
+                console.log('Leaderboard fetch error:', e);
+            }
+        }
+
+        function renderLeaderboard(entries) {
+            const myRank = quizState.rank;
+            const rows = entries.map(e => {
+                const isTop = e.rank <= 3;
+                const isYou = !!myRank && e.rank === myRank;
+                return `<div class="qf-lb-row ${isTop ? 'top' : ''} ${isYou ? 'you' : ''}">
+                    <span class="qf-lb-rank">#${e.rank}</span>
+                    <span class="qf-lb-name">${e.name}</span>
+                    <span class="qf-lb-score">${Number(e.score).toFixed(1)}</span>
+                </div>`;
+            }).join('');
+            document.getElementById('qfLeaderboardRows').innerHTML = rows;
+            document.getElementById('qfLeaderboard').style.display = 'block';
+            // The leaderboard already carries rank context -- the plain
+            // fallback line beneath it would just be redundant now.
+            document.getElementById('quizPercentile').style.display = 'none';
+        }
+
+        // Results-screen action row (Share Result / Challenge a Friend /
+        // Play Again) -- distinct from the share-card's own Download/Copy/
+        // Play Again row further down the page.
+        function shareResult() {
+            const correct = quizState.results.filter(r => r.correct).length;
+            const text = `I scored ${quizState.score.toFixed(1)} points and got ${correct} right on the NBA Career Map Quiz (Survival Mode)! Can you beat me? 🏀`;
+            if(navigator.share) {
+                navigator.share({ title: 'NBA Career Map Quiz', text, url: QUIZ_SHARE_URL }).catch(() => {});
+            } else {
+                const el = document.getElementById('shareImageContainer');
+                if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function challengeAFriend() {
+            const text = `Bet you can't beat my ${quizState.score.toFixed(1)} on the NBA Career Map Quiz (Survival Mode)! 🏀 ${QUIZ_SHARE_URL}`;
+            const btn = document.getElementById('qfChallengeBtn');
+            const done = (ok) => _quizButtonFlash(btn, ok ? 'Copied!' : 'Copy Failed', 1500);
+            if(navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => done(true)).catch(() => done(false));
+            } else {
+                done(false);
+            }
+        }
+
 
         function generateShareImage() {
             const canvas = document.getElementById('shareCanvas');
             const ctx = canvas.getContext('2d');
-            
+
             // Square format (1080x1080)
             const size = 1080;
             canvas.width = size;
             canvas.height = size;
-            
+
             // Dark gradient background
             const bgGrad = ctx.createLinearGradient(0, 0, 0, size);
             bgGrad.addColorStop(0, '#0a0a0a');
             bgGrad.addColorStop(1, '#1a1a1a');
             ctx.fillStyle = bgGrad;
             ctx.fillRect(0, 0, size, size);
-            
-            // Load and draw logo
-            const logo = new Image();
-            logo.onload = function() {
-                // Draw logo at top - smaller
-                const logoSize = 80;
-                ctx.drawImage(logo, (size - logoSize) / 2, 35, logoSize, logoSize);
-                
-                // Title - smaller
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 32px "Open Sans", Arial, sans-serif';
+
+            ctx.textAlign = 'center';
+
+            // Top gold accent bar (reference's own accent color, kept
+            // separate from the individual row correct/miss coloring below)
+            const goldGrad = ctx.createLinearGradient(size/2 - 200, 0, size/2 + 200, 0);
+            goldGrad.addColorStop(0, '#ffe49a');
+            goldGrad.addColorStop(1, '#d68f1a');
+            ctx.fillStyle = goldGrad;
+            ctx.fillRect(size/2 - 200, 0, 400, 5);
+
+            // Title: bold gold-gradient game title + subtitle, matching the
+            // reference share card's own title treatment (was a small plain
+            // logo+text line).
+            const titleGrad = ctx.createLinearGradient(size/2 - 260, 0, size/2 + 260, 0);
+            titleGrad.addColorStop(0, '#ffe49a');
+            titleGrad.addColorStop(0.55, '#f0b429');
+            titleGrad.addColorStop(1, '#d68f1a');
+            ctx.fillStyle = titleGrad;
+            ctx.font = '800 54px "Open Sans", Arial, sans-serif';
+            ctx.fillText('NBA CAREER MAP', size/2, 100);
+
+            ctx.fillStyle = '#f0b429';
+            ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
+            ctx.fillText('SURVIVAL MODE', size/2, 132);
+
+            // Hero: huge bold WHITE score -- the dominant element on the
+            // card, same visual weight as the reference's own huge hero
+            // number (was a small green "0.0").
+            const scoreNum = quizState.score.toFixed(1);
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '800 118px "Open Sans", Arial, sans-serif';
+            ctx.fillText(scoreNum, size/2, 268);
+
+            ctx.fillStyle = '#888';
+            ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
+            ctx.fillText('POINTS SCORED', size/2, 296);
+
+            // Meta lines -- run summary, then rank if available (mirrors the
+            // reference's two small meta lines beneath its own hero number)
+            const correct = quizState.results.filter(r => r.correct).length;
+            const totalAsked = quizState.results.length;
+            const livesUsed = QUIZ_START_LIVES - quizState.lives;
+
+            ctx.fillStyle = '#bbb';
+            ctx.font = '600 20px "Open Sans", Arial, sans-serif';
+            ctx.fillText(`${correct} correct · ${totalAsked} questions · ${livesUsed} of ${QUIZ_START_LIVES} lives used`, size/2, 332);
+
+            if (quizState.rank && quizState.totalPlayers) {
+                ctx.fillStyle = '#f0b429';
+                ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
+                ctx.fillText('Rank #' + quizState.rank + ' of ' + quizState.totalPlayers.toLocaleString() + ' survivors', size/2, 362);
+            }
+
+            // Per-question rows: a badge, the player name, a detail line
+            // (their last career stop -- which team/years the question was
+            // about), and a right-aligned value, mirroring the reference's
+            // own position-badge + name + team-years + dollar-value row
+            // structure. Survival runs are unbounded, so only the rows the
+            // fixed canvas has room for are shown; a "+N earlier" note (not
+            // a silent truncation) covers the rest of a long run.
+            const MAX_SHARE_ROWS = 8;
+            const rowH = 62;
+            const rowsTop = 410;
+            const shown = quizState.results.slice(-MAX_SHARE_ROWS);
+            const earlierCount = quizState.results.length - shown.length;
+            let y = rowsTop;
+
+            if(earlierCount > 0) {
+                ctx.fillStyle = '#777';
+                ctx.font = 'italic 16px "Open Sans", Arial, sans-serif';
+                ctx.fillText(`+ ${earlierCount} earlier question${earlierCount === 1 ? '' : 's'} not shown`, size/2, y);
+                y += 26;
+            }
+
+            shown.forEach((r, i) => {
+                const isCorrect = r.correct;
+                const rowY = y + (i * rowH);
+                const rowTop = rowY - 4;
+
+                // Subtle alternating background
+                if(i % 2 === 0) {
+                    ctx.fillStyle = 'rgba(255,255,255,0.03)';
+                    roundRect(ctx, 60, rowTop, size - 120, rowH - 6, 8);
+                    ctx.fill();
+                }
+
+                // Question-number badge, small gold-bordered box -- this
+                // game's equivalent of the reference's position badge (PG/
+                // SG/SF/PF/C), since "which question number" is the neutral
+                // positional fact here.
+                const badgeX = 80, badgeSize = 40;
+                ctx.strokeStyle = '#f0b429';
+                ctx.lineWidth = 1.5;
+                ctx.fillStyle = 'rgba(240,180,41,0.12)';
+                roundRect(ctx, badgeX, rowTop + 4, badgeSize, badgeSize, 8);
+                ctx.fill();
+                ctx.stroke();
+                ctx.fillStyle = '#f0b429';
+                ctx.font = 'bold 15px "Open Sans", Arial, sans-serif';
                 ctx.textAlign = 'center';
-                ctx.fillText('NBA CAREER MAP: SURVIVAL', size/2, 150);
+                ctx.fillText('Q' + (quizState.results.indexOf(r) + 1), badgeX + badgeSize/2, rowTop + 4 + badgeSize/2 + 5);
 
-                // Red accent line
-                ctx.fillStyle = '#d63031';
-                ctx.fillRect(size/2 - 80, 165, 160, 3);
-
-                // Score section - prominent (score can only go up now -- no
-                // -5 penalty exists, a miss costs a life instead -- so it's
-                // always shown in the "good" color)
-                const scoreNum = quizState.score.toFixed(1);
-                ctx.fillStyle = '#2ecc71';
-                ctx.font = 'bold 100px "Open Sans", Arial, sans-serif';
-                ctx.fillText(scoreNum, size/2, 270);
+                // Player name (bold white) + detail line (team the question
+                // was about, muted gray) -- two lines, left-aligned
+                const textX = badgeX + badgeSize + 18;
+                ctx.textAlign = 'left';
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 21px "Open Sans", Arial, sans-serif';
+                ctx.fillText(r.player, textX, rowTop + 22);
 
                 ctx.fillStyle = '#888';
-                ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
-                ctx.fillText('POINTS', size/2, 295);
+                ctx.font = '15px "Open Sans", Arial, sans-serif';
+                ctx.fillText(`${r.team || ''} · ${r.years || ''}`, textX, rowTop + 42);
 
-                // Rank display (if available) - simple and clear
-                if (quizState.rank && quizState.totalPlayers) {
-                    ctx.fillStyle = '#ffffff';
-                    ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
-                    ctx.fillText('Rank #' + quizState.rank + ' of ' + quizState.totalPlayers.toLocaleString() + ' survivors', size/2, 340);
-                }
-
-                // Stats bar: correct answers vs. total questions faced this
-                // run (there's no fixed length, so "questions asked" replaces
-                // the old fixed-10 "missed" framing)
-                const correct = quizState.results.filter(r => r.correct).length;
-                const totalAsked = quizState.results.length;
-                const statsY = 380;
-
-                ctx.fillStyle = '#111';
-                roundRect(ctx, 60, statsY, size - 120, 70, 10);
-                ctx.fill();
-
-                // Correct count
-                ctx.fillStyle = '#2ecc71';
-                ctx.font = 'bold 36px "Open Sans", Arial, sans-serif';
-                ctx.fillText(correct.toString(), size/2 - 140, statsY + 45);
-                ctx.fillStyle = '#aaa';
-                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CORRECT', size/2 - 140, statsY + 62);
-
-                // Divider
-                ctx.fillStyle = '#333';
-                ctx.fillRect(size/2, statsY + 15, 1, 45);
-
-                // Questions faced (streak length)
-                ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 36px "Open Sans", Arial, sans-serif';
-                ctx.fillText(totalAsked.toString(), size/2 + 140, statsY + 45);
-                ctx.fillStyle = '#aaa';
-                ctx.font = 'bold 14px "Open Sans", Arial, sans-serif';
-                ctx.fillText('QUESTIONS', size/2 + 140, statsY + 62);
-
-                // Player results - compact. Survival runs are unbounded, so
-                // this shows only the most recent rows the fixed canvas has
-                // room for; a "+N earlier" note (not a silent truncation)
-                // covers the rest of a long run.
-                const MAX_SHARE_ROWS = 12;
-                const rowH = 36;
-                const shown = quizState.results.slice(-MAX_SHARE_ROWS);
-                const earlierCount = quizState.results.length - shown.length;
-                let y = 480;
-                ctx.textAlign = 'left';
-
-                if(earlierCount > 0) {
-                    ctx.textAlign = 'center';
-                    ctx.fillStyle = '#777';
-                    ctx.font = 'italic 16px "Open Sans", Arial, sans-serif';
-                    ctx.fillText(`+ ${earlierCount} earlier question${earlierCount === 1 ? '' : 's'} not shown`, size/2, y - 8);
-                    ctx.textAlign = 'left';
-                    y += 20;
-                }
-
-                shown.forEach((r, i) => {
-                    const isCorrect = r.correct;
-                    const rowY = y + (i * rowH);
-
-                    // Subtle alternating background
-                    if(i % 2 === 0) {
-                        ctx.fillStyle = 'rgba(255,255,255,0.03)';
-                        ctx.fillRect(60, rowY - 22, size - 120, rowH - 2);
-                    }
-
-                    // Status icon
-                    ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
-                    ctx.fillStyle = isCorrect ? '#2ecc71' : '#e74c3c';
-                    ctx.fillText(isCorrect ? '✓' : '✗', 80, rowY);
-
-                    // Player name
-                    ctx.fillStyle = '#ffffff';
-                    ctx.font = '19px "Open Sans", Arial, sans-serif';
-                    ctx.fillText(r.player, 113, rowY);
-
-                    // Points -- a miss costs a life, never points, so it
-                    // gets a neutral "MISS" label rather than a -5 value
-                    ctx.textAlign = 'right';
-                    ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
-                    if(isCorrect) {
-                        ctx.fillStyle = '#2ecc71';
-                        ctx.fillText('+' + r.points.toFixed(1), size - 70, rowY);
-                    } else {
-                        ctx.fillStyle = '#888';
-                        ctx.fillText('MISS', size - 70, rowY);
-                    }
-                    ctx.textAlign = 'left';
-                });
-
-                // CTA section at bottom
-                ctx.textAlign = 'center';
-                ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 28px "Open Sans", Arial, sans-serif';
-                ctx.fillText('CAN YOU BEAT MY SCORE?', size/2, 940);
-
-                // Red button
-                ctx.fillStyle = '#d63031';
-                roundRect(ctx, size/2 - 170, 960, 340, 50, 25);
-                ctx.fill();
-
-                ctx.fillStyle = '#ffffff';
+                // Value -- a miss costs a life, never points, so it gets a
+                // neutral "MISS" label rather than a -5 point value
+                ctx.textAlign = 'right';
                 ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
-                ctx.fillText('PLAY AT HOOPSHYPE.COM', size/2, 993);
+                if(isCorrect) {
+                    ctx.fillStyle = '#2ecc71';
+                    ctx.fillText('+' + r.points.toFixed(1), size - 76, rowTop + 32);
+                } else {
+                    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+                    ctx.fillText('MISS', size - 76, rowTop + 32);
+                }
+                ctx.textAlign = 'left';
+            });
 
-                // Subtle top/bottom red lines instead of corner brackets
-                ctx.fillStyle = '#d63031';
-                ctx.fillRect(size/2 - 200, 0, 400, 4);
-                ctx.fillRect(size/2 - 200, size - 4, 400, 4);
+            // Caption -- mirrors the reference's own "spin your own" caption
+            // (no button baked into the image itself; the real, clickable
+            // gold-gradient CTA lives in the HTML below the image, same
+            // pattern as the reference's separate download/copy/social row).
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#999';
+            ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
+            ctx.fillText('PLAY YOUR OWN AT HOOPSHYPE.COM', size/2, 1030);
 
-                // Convert to image
-                const dataUrl = canvas.toDataURL('image/png');
-                const img = document.getElementById('shareImage');
-                img.src = dataUrl;
+            // Bottom gold accent bar
+            ctx.fillStyle = goldGrad;
+            ctx.fillRect(size/2 - 200, size - 5, 400, 5);
 
-                setQuizShareLinks();
+            // Convert to image
+            const dataUrl = canvas.toDataURL('image/png');
+            const img = document.getElementById('shareImage');
+            img.src = dataUrl;
 
-                document.getElementById('shareImageContainer').classList.add('show');
-            };
-            logo.src = 'data:image/png;base64,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';
+            setQuizShareLinks();
+
+            document.getElementById('shareImageContainer').classList.add('show');
         }
         
         function roundRect(ctx, x, y, w, h, r) {
@@ -3318,15 +3691,39 @@ document.addEventListener('DOMContentLoaded', boot);
             <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
         </div>
 
-        <div class="quiz-box quiz-box-dark quiz-box-large" id="quizFinal" style="display:none">
-            <div class="quiz-dark-kicker">SURVIVAL RESULT</div>
-            <div class="quiz-title">RUN OVER</div>
-            <div class="quiz-dark-hero" id="finalScore">0</div>
-            <div class="quiz-dark-hero-label">POINTS SCORED</div>
-            <div class="quiz-dark-meta" id="finalMeta"></div>
-            <div class="quiz-percentile" id="quizPercentile"></div>
+        <div class="quiz-box quiz-box-dark quiz-final-screen" id="quizFinal" style="display:none">
+            <div class="qf-hero-wrap">
+                <div class="quiz-dark-kicker">SURVIVAL RESULT</div>
+                <div class="quiz-title">RUN OVER</div>
+                <div class="quiz-dark-hero" id="finalScore">0</div>
+                <div class="quiz-dark-hero-label">POINTS SCORED</div>
+                <div class="qf-subtitle" id="finalMeta"></div>
+            </div>
+
+            <div class="qf-statbox" id="qfStatBox">
+                <div class="qf-stat"><div class="qf-stat-num" id="qfStatCorrect">0</div><div class="qf-stat-label">Correct</div></div>
+                <div class="qf-stat-div"></div>
+                <div class="qf-stat"><div class="qf-stat-num" id="qfStatLives">0/3</div><div class="qf-stat-label">Lives Used</div></div>
+                <div class="qf-stat-div"></div>
+                <div class="qf-stat"><div class="qf-stat-num" id="qfStatStreak">0</div><div class="qf-stat-label">Best Streak</div></div>
+            </div>
+
+            <div class="qf-actions">
+                <button class="qf-btn qf-btn-primary" onclick="shareResult()">Share Result</button>
+                <button class="qf-btn qf-btn-secondary" id="qfChallengeBtn" onclick="challengeAFriend()">Challenge a Friend</button>
+                <button class="qf-btn qf-btn-secondary" onclick="beginQuiz()">Play Again</button>
+            </div>
+
+            <div class="qf-leaderboard" id="qfLeaderboard" style="display:none">
+                <div class="qf-leaderboard-title">Survival Leaderboard</div>
+                <div class="qf-leaderboard-rows" id="qfLeaderboardRows"></div>
+            </div>
+            <div class="quiz-percentile qf-rank-fallback" id="quizPercentile"></div>
+
             <div class="quiz-results-list" id="quizResultsList"></div>
-            <div class="quiz-dark-caption">Play your own at hoopshype.com</div>
+
+            <div class="qf-share-divider"><span>SHARE YOUR RESULT</span></div>
+            <div class="quiz-dark-caption" style="margin-top:0">Play your own at hoopshype.com</div>
 
             <canvas id="shareCanvas" style="display:none"></canvas>
             <div id="shareImageContainer">
