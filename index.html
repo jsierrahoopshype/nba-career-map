@@ -1843,15 +1843,20 @@
             markers = [];
         }
         
-        function bezierCurve(p1, p2, offset) {
-            // Create a curved path between two points
+        function bezierCurve(p1, p2, offset, intensity) {
+            // Create a curved path between two points. intensity scales the
+            // whole curve factor beyond the default (1) -- only the quiz
+            // map passes anything else, to arc harder around geographically
+            // clustered stops; the main site-wide player map's own calls
+            // are unaffected, still getting exactly the original curvature.
+            intensity = intensity || 1;
             const midLat = (p1[0] + p2[0]) / 2;
             const midLng = (p1[1] + p2[1]) / 2;
             const dx = p2[1] - p1[1];
             const dy = p2[0] - p1[0];
             const dist = Math.sqrt(dx*dx + dy*dy);
             // Perpendicular offset for curve
-            const curveFactor = Math.min(0.3, dist * 0.15);
+            const curveFactor = Math.min(0.3, dist * 0.15) * intensity;
             const ctrlLat = midLat + (dx * curveFactor * offset);
             const ctrlLng = midLng - (dy * curveFactor * offset);
             
@@ -2837,6 +2842,13 @@
         // coordinates (pts[i].coords) still drive fitBounds()'s framing --
         // only the returned displayCoords feed marker placement and the
         // connecting lines, so what's drawn stays visually self-consistent.
+        function haversineKm(a, b) {
+            const R = 6371, toRad = d => d * Math.PI / 180;
+            const dLat = toRad(b[0] - a[0]), dLng = toRad(b[1] - a[1]);
+            const x = Math.sin(dLat/2)**2 + Math.cos(toRad(a[0])) * Math.cos(toRad(b[0])) * Math.sin(dLng/2)**2;
+            return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1-x));
+        }
+
         function computeDisplayCoords(pts, map) {
             const bounds = L.latLngBounds(pts.map(p => p.coords));
             let zoom;
@@ -2853,18 +2865,42 @@
             const COLLIDE_PX = 30; // a bit more than one marker's rendered diameter
             const used = new Array(pts.length).fill(false);
 
+            // A fixed pixel radius unprojects to a wildly different
+            // real-world distance depending on zoom: fine at zoom 4-5
+            // (a typical continental route), but at zoom 0-1 (forced by a
+            // career that also includes one far-flung stop, e.g. a G-League
+            // or overseas assignment) the SAME 20-40px nudge can displace a
+            // marker by thousands of km -- caught by testing against the
+            // real Leaflet library (this app's own Leaflet test stub never
+            // validates coordinates, so this never surfaced there). Capping
+            // the allowed radius by ground resolution at this zoom keeps
+            // any ADDED jitter under ~250km -- but that alone isn't enough:
+            // at very low zoom, two points can land within COLLIDE_PX of
+            // each other purely because the whole view is zoomed out to fit
+            // one far-flung stop, while in reality they're a different
+            // continent apart -- their GROUP CENTROID itself would already
+            // misrepresent both of them, before any radius is even added.
+            // So grouping also requires the pair to be genuinely close in
+            // real km, not just close on screen -- pixel proximity alone
+            // conflates "actually nearby" with "only looks nearby because
+            // we're zoomed out to planet scale".
+            const MAX_JITTER_KM = 250;
+            const metersPerPixel = 156543.03392 / Math.pow(2, zoom);
+            const maxRadiusPx = (MAX_JITTER_KM * 1000) / metersPerPixel;
+
             for(let i = 0; i < pts.length; i++) {
                 if(used[i]) continue;
                 const group = [i];
                 for(let j = i + 1; j < pts.length; j++) {
                     if(used[j]) continue;
-                    if(projected[i].distanceTo(projected[j]) < COLLIDE_PX) group.push(j);
+                    if(projected[i].distanceTo(projected[j]) < COLLIDE_PX &&
+                       haversineKm(pts[i].coords, pts[j].coords) < MAX_JITTER_KM) group.push(j);
                 }
                 if(group.length > 1) {
                     group.forEach(idx => used[idx] = true);
                     const cx = group.reduce((s, idx) => s + projected[idx].x, 0) / group.length;
                     const cy = group.reduce((s, idx) => s + projected[idx].y, 0) / group.length;
-                    const radius = 20 + Math.min(group.length, 5) * 4;
+                    const radius = Math.min(20 + Math.min(group.length, 5) * 4, maxRadiusPx);
                     group.forEach((idx, k) => {
                         const angle = -Math.PI / 2 + (2 * Math.PI * k / group.length);
                         displayPoints[idx] = L.point(cx + radius * Math.cos(angle), cy + radius * Math.sin(angle));
@@ -2872,7 +2908,19 @@
                 }
             }
 
-            return displayPoints.map(pt => map.unproject(pt, zoom));
+            // Plain [lat, lng] arrays, matching what getCoords()/p.coords
+            // already are and what bezierCurve() and the rest of this
+            // codebase expect -- map.unproject() returns a Leaflet LatLng
+            // OBJECT ({lat, lng}), not an array. Indexing that object with
+            // [0]/[1] (as bezierCurve does) silently reads undefined and
+            // every curve point becomes NaN -- invisible in this app's own
+            // Leaflet stub (which never validates coordinates) but a hard
+            // crash against the real library, aborting drawQuizMap() before
+            // the answer options ever render.
+            return displayPoints.map(pt => {
+                const ll = map.unproject(pt, zoom);
+                return [ll.lat, ll.lng];
+            });
         }
 
         function drawQuizMap(career) {
@@ -2894,15 +2942,43 @@
             // Curved paths in career order. No directional arrows -- tried
             // last round, confirmed confusing rather than clarifying in real
             // use; the sequential numbered markers already convey order on
-            // their own. Line weight/opacity still increases later in the
-            // route, so "which segment came later" doesn't rely on a second,
-            // harder-to-read visual language on the lines.
+            // their own.
+            //
+            // Marker-position jitter (computeDisplayCoords above) fixes
+            // overlapping MARKERS, but not overlapping/crossing LINES --
+            // several consecutive short segments between geographically
+            // clustered stops (e.g. Philadelphia/Brooklyn/Chicago/New York
+            // all close together on a route that also includes Detroit and
+            // LA) still tangle into a knot of nearly-identical small bows if
+            // every segment just curves the same modest amount, and every
+            // line competes at equal visual weight. Two changes address
+            // this: (1) curve intensity raised well above the main
+            // site-wide player map's own bow (untouched -- bezierCurve()'s
+            // new `intensity` param defaults to 1, only the quiz map passes
+            // anything higher), with each segment's offset MAGNITUDE also
+            // growing by index (not just direction alternating), so a run
+            // of short segments in one cluster fans into progressively
+            // wider nested arcs instead of stacking on nearly the same
+          // curve. (2) The map always shows a career's full route in one
+            // shot (there's no progressive stop-by-stop reveal to fade
+            // against -- checked showQuestion(): drawQuizMap() always gets
+            // the complete career_history at once), so "past vs. current"
+            // here means "earlier vs. latest stop in career order": only
+            // the FINAL segment (leading into the gold-diamond stop) gets
+            // full prominence, the second-to-last gets medium weight, and
+            // every earlier segment recedes to one flat, faint tier --
+            // fewer competing bold lines fighting for attention even where
+            // several of them still physically cross near a cluster.
             for(let i = 0; i < n - 1; i++) {
-                const curveOffset = (i % 2 === 0) ? 1 : -1;
-                const curvePoints = bezierCurve(pts[i].displayCoords, pts[i+1].displayCoords, curveOffset);
-                const progress = i / Math.max(1, n - 2);
-                const weight = 2.5 + progress * 2.5;    // 2.5 -> 5
-                const opacity = 0.45 + progress * 0.35; // 0.45 -> 0.8
+                const direction = (i % 2 === 0) ? 1 : -1;
+                const magnitude = 1 + Math.floor(i / 2) * 0.8;
+                const curveOffset = direction * magnitude;
+                const curvePoints = bezierCurve(pts[i].displayCoords, pts[i+1].displayCoords, curveOffset, 1.6);
+
+                let weight, opacity;
+                if(i === n - 2) { weight = 4.5; opacity = 0.9; }       // final segment: the current answer
+                else if(i === n - 3) { weight = 3; opacity = 0.6; }   // one stop back
+                else { weight = 1.5; opacity = 0.22; }                // earlier history, faded uniformly
 
                 L.polyline(curvePoints, {
                     color: '#d63031', weight, opacity
@@ -2996,7 +3072,14 @@
             const allOptions = shuffleArray([player.player, ...wrongOptions]);
 
             document.getElementById('quizOptions').innerHTML = allOptions.map(name =>
-                `<button class="quiz-option" onclick="submitAnswer('${name.replace(/'/g, "\'")}')">${name}</button>`
+                // Pre-existing bug, found via testing, unrelated to this
+                // round's arrows/line-declutter work: replace(/'/g, "\'")
+                // is a no-op ("\'" is just "'" in a JS string), so any of
+                // the ~45 players with an apostrophe in their name (D'Angelo
+                // Russell, De'Aaron Fox, ...) broke this inline onclick's JS
+                // parsing whenever they appeared as an option. "\\'" is the
+                // actual 2-character escape needed.
+                `<button class="quiz-option" onclick="submitAnswer('${name.replace(/'/g, "\\'")}')">${name}</button>`
             ).join('');
 
             // Reset UI
