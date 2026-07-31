@@ -1843,22 +1843,38 @@
             markers = [];
         }
         
+        // Peak deviation of the curve's control point from the straight
+        // line between p1/p2, as a FRACTION of that segment's own length,
+        // is (curveFactor * |offset|) -- see bezierCurve below. Capped here
+        // so no combination of intensity/offset (the quiz map's per-cluster
+        // offset magnitude grows with segment index, see drawQuizMap) can
+        // ever bow a segment further from its own true path than this
+        // fraction, regardless of how many segments share a cluster. 0.5
+        // is already a dramatic, clearly-visible arc; well short of a
+        // control point escaping toward some unrelated part of the map.
+        const MAX_CURVE_DEVIATION_RATIO = 0.5;
+
         function bezierCurve(p1, p2, offset, intensity) {
             // Create a curved path between two points. intensity scales the
             // whole curve factor beyond the default (1) -- only the quiz
             // map passes anything else, to arc harder around geographically
             // clustered stops; the main site-wide player map's own calls
-            // are unaffected, still getting exactly the original curvature.
+            // are unaffected (curveFactor*|offset| there is always well
+            // under the cap below, so it never triggers, and this function
+            // returns pixel-for-pixel what it always has for that caller).
             intensity = intensity || 1;
             const midLat = (p1[0] + p2[0]) / 2;
             const midLng = (p1[1] + p2[1]) / 2;
             const dx = p2[1] - p1[1];
             const dy = p2[0] - p1[0];
             const dist = Math.sqrt(dx*dx + dy*dy);
-            // Perpendicular offset for curve
-            const curveFactor = Math.min(0.3, dist * 0.15) * intensity;
-            const ctrlLat = midLat + (dx * curveFactor * offset);
-            const ctrlLng = midLng - (dy * curveFactor * offset);
+            // Perpendicular offset for curve, capped as a fraction of dist
+            // no matter how large intensity/offset get.
+            const rawFactor = Math.min(0.3, dist * 0.15) * intensity;
+            const deviationRatio = Math.min(Math.abs(rawFactor * offset), MAX_CURVE_DEVIATION_RATIO);
+            const signedRatio = deviationRatio * Math.sign(offset || 1);
+            const ctrlLat = midLat + (dx * signedRatio);
+            const ctrlLng = midLng - (dy * signedRatio);
             
             const points = [];
             for(let t = 0; t <= 1; t += 0.05) {
@@ -2714,8 +2730,22 @@
             document.getElementById('quizIntro').style.display = 'block';
             document.getElementById('quizFinal').style.display = 'none';
             _quizLockBodyScroll(true);
+
+            // route() called showView('dashboard') just before this, so the
+            // dashboard is fully rendered underneath the (opaque, fixed)
+            // quiz overlay -- harmless for real users, since overflow:hidden
+            // above already makes it genuinely unreachable by any real
+            // scroll/swipe (verified: window.scrollY stays 0 through actual
+            // touch-drag gestures, not just a JS-set scrollTop). But a
+            // covered-not-hidden dashboardView still contributes its full
+            // height to document.scrollHeight, which is exactly what a
+            // "capture full page" / long-screenshot tool (common on mobile
+            // browsers) uses to decide how tall a shot to render -- giving
+            // a misleading screenshot even though nothing is actually wrong
+            // for a real user. Hiding it outright removes that ambiguity.
+            document.getElementById('dashboardView').style.display = 'none';
         }
-        
+
         function closeQuiz() {
             document.getElementById('quizOverlay').classList.remove('show', 'results-mode');
             document.getElementById('quizPanel').classList.remove('show');
@@ -2727,6 +2757,10 @@
 
             // Restore original map
             document.getElementById('map').style.display = '';
+            // Restore the dashboard hidden in startQuiz() -- this is the
+            // only path back that doesn't already re-run route() (which
+            // would call showView('dashboard') itself).
+            document.getElementById('dashboardView').style.display = 'block';
         }
         
         function beginQuiz() {
