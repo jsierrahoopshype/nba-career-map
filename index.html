@@ -1307,6 +1307,31 @@
             to { opacity: 1; }
         }
 
+        /* Start marker glow (quiz map only): a soft pulsing halo around the
+           first-stop marker (NBA logo or green fallback circle) so it reads
+           as unmistakably distinct from the plain numbered stops, without
+           needing to already know what a gold diamond vs. a green circle
+           means. --quiz-glow-color is set inline per-marker so one
+           animation serves both the logo and green-circle variants. */
+        @keyframes quizStartGlowPulse {
+            0%, 100% { box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 0 0 var(--quiz-glow-color); }
+            50% { box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 14px 6px var(--quiz-glow-color); }
+        }
+        .quiz-start-glow {
+            animation: quizStartGlowPulse 1.8s ease-in-out infinite;
+        }
+        .quiz-start-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgba(0,0,0,0.6);
+            padding: 2px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .quiz-timer.danger,
             .quiz-timer-bar-fill,
@@ -1316,6 +1341,12 @@
             .quiz-final-screen {
                 animation: none !important;
                 transition: none !important;
+            }
+            /* Static glow instead of no glow at all -- still unmistakably
+               distinct at a glance, just without the pulsing motion. */
+            .quiz-start-glow {
+                animation: none !important;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 10px 4px var(--quiz-glow-color) !important;
             }
         }
     
@@ -2973,6 +3004,40 @@
             const displayCoords = computeDisplayCoords(pts, quizState.quizMap);
             pts.forEach((p, i) => { p.displayCoords = displayCoords[i]; });
 
+            // fitBounds() moved up here (from the end of this function) so
+            // the map's view is already finalized before markers are built
+            // below -- needed to measure the start marker's REAL on-screen
+            // position next. animate:false is required for that measurement
+            // to be meaningful: real Leaflet's fitBounds/setView, once a map
+            // is already _loaded (true here, since initQuizMap() gives it an
+            // initial view in its constructor), tries an ANIMATED transition
+            // first -- _zoom/_center (and therefore getSize()-relative pixel
+            // positions) don't actually update until that transition
+            // resolves, so reading them back in the same synchronous tick
+            // silently returns the map's stale PREVIOUS view. Caught by
+            // measuring actual pixel positions against real Leaflet: without
+            // this, the "current view" used below was sometimes still the
+            // constructor's [39,-98] zoom 4 default. Framed on true
+            // geography (not the nudged display coords) --
+            // computeDisplayCoords() already assumed this exact bounds/
+            // padding when it decided which markers needed separating. A
+            // fresh map is recreated every question via initQuizMap() (full
+            // innerHTML replacement) anyway, so there is no continuous
+            // pan/zoom animation from a prior question being sacrificed here
+            // -- this only ever transitions away from that same instant
+            // default view.
+            quizState.quizMap.fitBounds(pts.map(p => p.coords), {padding: [40, 40], maxZoom: 5, animate: false});
+
+            // Whether the first stop's marker will render on the eastern
+            // (right) side of the visible map, used below to flip its
+            // "START" label to whichever side actually has room -- the
+            // map's actual finalized projection (now synchronous, see
+            // above): the real container-relative pixel X of the start
+            // point, compared against the real container width.
+            const startContainerPoint = quizState.quizMap.latLngToContainerPoint(pts[0].displayCoords);
+            const mapContainerWidth = quizState.quizMap.getSize().x;
+            const startIsEast = (mapContainerWidth - startContainerPoint.x) < 90;
+
             // Curved paths in career order. No directional arrows -- tried
             // last round, confirmed confusing rather than clarifying in real
             // use; the sequential numbered markers already convey order on
@@ -3043,25 +3108,45 @@
                     zIndexOffset = 1000; // wins any overlap, incl. against START -- "where am I now" matters most
                 } else if(first) {
                     const sz = 32;
+                    // Wider container than just the circle, to give the
+                    // "START" label room beside it. The circle sits at
+                    // whichever edge of that wider box keeps the label away
+                    // from the map's own edge (startIsEast, computed above)
+                    // -- iconAnchor always tracks the circle's own position
+                    // within the box, so the circle itself still renders
+                    // centered exactly on the true marker position either way.
+                    const boxW = 110;
+                    const circleLeft = startIsEast ? boxW - sz : 0;
+                    // Mirrored positioning: label sits on whichever side of
+                    // the circle has room, sized to its own "START" text
+                    // (no fixed width needed) via left/right instead of a
+                    // box + text-align.
+                    const labelPos = startIsEast ? `right:${sz + 6}px` : `left:${sz + 6}px`;
+                    const glowColor = 'rgba(39,174,96,0.65)'; // matches the green fallback circle; used for the logo badge too so "start" reads as one consistent signal either way
+                    const label = `<div class="quiz-start-label" style="position:absolute;${labelPos};top:50%;transform:translateY(-50%)">START</div>`;
                     const logoUrl = nbaTeamLogoUrl(p.stop.team);
                     if(logoUrl) {
                         // Real team logo, white circular badge to match the
                         // other markers' size/border/shadow treatment. The
                         // onerror handler is the fallback path: if the image
                         // itself ever fails to load, it swaps back to the
-                        // exact plain green "START" circle.
+                        // exact plain green "START" circle. A persistent
+                        // pulsing glow (quiz-start-glow) plus the fixed
+                        // "START" label make this marker unmistakable at a
+                        // glance, not dependent on already knowing the
+                        // logo/green-circle convention.
                         icon = L.divIcon({
                             className: '',
-                            html: `<div style="width:${sz}px;height:${sz}px;background:#fff;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="${logoUrl}" alt="" style="width:76%;height:76%;object-fit:contain" onerror="this.style.display='none';this.parentElement.style.background='#27ae60';this.parentElement.textContent='START';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='8px';this.parentElement.style.fontWeight='700';"></div>`,
-                            iconSize: [sz, sz],
-                            iconAnchor: [sz/2, sz/2]
+                            html: `<div style="position:relative;width:${boxW}px;height:${sz}px">${label}<div class="quiz-start-glow" style="--quiz-glow-color:${glowColor};position:absolute;left:${circleLeft}px;top:0;width:${sz}px;height:${sz}px;background:#fff;border-radius:50%;border:3px solid #fff;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="${logoUrl}" alt="" style="width:76%;height:76%;object-fit:contain" onerror="this.style.display='none';this.parentElement.style.background='#27ae60';this.parentElement.textContent='START';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='8px';this.parentElement.style.fontWeight='700';"></div></div>`,
+                            iconSize: [boxW, sz],
+                            iconAnchor: [circleLeft + sz/2, sz/2]
                         });
                     } else {
                         icon = L.divIcon({
                             className: '',
-                            html: `<div style="width:${sz}px;height:${sz}px;background:#27ae60;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px;font-weight:700">START</div>`,
-                            iconSize: [sz, sz],
-                            iconAnchor: [sz/2, sz/2]
+                            html: `<div style="position:relative;width:${boxW}px;height:${sz}px">${label}<div class="quiz-start-glow" style="--quiz-glow-color:${glowColor};position:absolute;left:${circleLeft}px;top:0;width:${sz}px;height:${sz}px;background:#27ae60;border-radius:50%;border:3px solid #fff;display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px;font-weight:700">START</div></div>`,
+                            iconSize: [boxW, sz],
+                            iconAnchor: [circleLeft + sz/2, sz/2]
                         });
                     }
                     zIndexOffset = 900;
@@ -3078,11 +3163,6 @@
 
                 L.marker(p.displayCoords, {icon, zIndexOffset}).addTo(quizState.markersLayer).bindPopup(popup, {closeButton: false});
             });
-
-            // Framed on true geography (not the nudged display coords) --
-            // computeDisplayCoords() already assumed this exact bounds/padding
-            // when it decided which markers needed separating.
-            quizState.quizMap.fitBounds(pts.map(p => p.coords), {padding: [40, 40], maxZoom: 5});
         }
         
         function showQuestion() {
