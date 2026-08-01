@@ -9355,6 +9355,125 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-08-01",
+      "mode": "full_overseas",
+      "players_updated": [
+        "BJ Johnson",
+        "Aaron Harrison",
+        "Aaron Henry",
+        "Adam Mokoka",
+        "Adama Sanogo",
+        "Ade Murkey",
+        "Admiral Schofield",
+        "Adonis Thomas",
+        "Ahmad Caver",
+        "Al Thornton",
+        "Alan Williams",
+        "Alec Peters",
+        "Aleem Ford",
+        "Aleksej Pokusevski",
+        "Alex Fudge",
+        "Alex Garcia",
+        "Alex Kirk",
+        "Alex Len",
+        "Alex Poythress",
+        "Alexey Shved",
+        "Alize Johnson",
+        "Alondes Williams",
+        "Amari Bailey",
+        "Amida Brimah",
+        "Amir Coffey",
+        "Andre Roberson",
+        "Andrew Funk",
+        "Andrew Goudelock",
+        "Andrew Harrison",
+        "Andrew Nicholson",
+        "Angel Delgado",
+        "Ante Zizic",
+        "Anthony Barber",
+        "Anthony Bennett",
+        "Anthony Brown",
+        "Anthony Lamb",
+        "Antonio Blakeney",
+        "Antonis Fotsis",
+        "Antonius Cleveland",
+        "Anzejs Pasecniks",
+        "Archie Goodwin",
+        "Armoni Brooks",
+        "Arnett Moultrie",
+        "Arnoldas Kulboka",
+        "Ashton Hagans",
+        "Austin Daye",
+        "Axel Toupane",
+        "Ben Bentil",
+        "Ben McLemore",
+        "Ben Moore",
+        "BJ Boston",
+        "Boban Marjanovic",
+        "Bol Bol",
+        "Bonzie Colson",
+        "Brandon Davies",
+        "Brandon Goodwin",
+        "Brandon Knight",
+        "Brandon Paul",
+        "Brandon Sampson",
+        "Braxton Key",
+        "Brian Bowen",
+        "Briante Weber",
+        "Brice Johnson",
+        "Brodric Thomas",
+        "Bruno Caboclo",
+        "Bruno Fernando",
+        "Bryce Cotton",
+        "Bryn Forbes",
+        "Buddy Boeheim",
+        "Caleb Houstan",
+        "Cam Reddish",
+        "Cam Reynolds",
+        "Cameron McGriff",
+        "Cameron Oliver",
+        "Carlik Jones",
+        "Carsen Edwards",
+        "Casper Ware",
+        "Cassius Stanley",
+        "Cassius Winston"
+      ],
+      "new_players": [],
+      "new_teams": [
+        "ASC Ville de Dakar"
+      ],
+      "team_moves": [
+        {
+          "player": "Alize Johnson",
+          "from": "Shenzhen Leopards",
+          "to": "Paris Basketball"
+        },
+        {
+          "player": "Axel Toupane",
+          "from": "FC Porto",
+          "to": "ASC Ville de Dakar"
+        },
+        {
+          "player": "Cameron McGriff",
+          "from": "Yankey Ark",
+          "to": "Andorra"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Brandon Davies",
+          "from": "overseas_active",
+          "to": "retired"
+        }
+      ],
+      "newly_overseas": [],
+      "newly_retired": [
+        "Brandon Davies"
+      ],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }

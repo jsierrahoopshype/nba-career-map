@@ -1,3 +1,16 @@
+## 2026-08-01 — full_overseas run
+
+- Players updated: **79** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **3**
+- Status changes: **1** (0 → overseas, 1 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New teams: ASC Ville de Dakar
+  - Alize Johnson: Shenzhen Leopards → Paris Basketball
+  - Axel Toupane: FC Porto → ASC Ville de Dakar
+  - Cameron McGriff: Yankey Ark → Andorra
+  - Brandon Davies: [overseas_active → retired]
+
 ## 2026-08-01 — incremental run
 
 - Players updated: **69** (0 new)
