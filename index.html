@@ -2650,12 +2650,11 @@
         
         // ====== QUIZ MODE (v2: survival) ======
         // Rules for this mode (deliberate product decision, not the frozen
-        // legacy scoring): 10s per question, decay from 15 -> 1.5 over that
-        // window (same top/floor/shape as the old 15s version, compressed),
-        // NO -5 point penalty -- a miss (wrong answer or timeout) costs a
-        // life instead. Game ends the moment lives reaches 0 (three
+        // legacy scoring): 15s per question, decay from 15 -> 1.5 over that
+        // window, NO -5 point penalty -- a miss (wrong answer or timeout)
+        // costs a life instead. Game ends the moment lives reaches 0 (three
         // mistakes), not at a fixed question count.
-        const QUIZ_TIMER_SECONDS = 10;
+        const QUIZ_TIMER_SECONDS = 15;
         const QUIZ_START_LIVES = 3;
         let quizState = {
             active: false,
@@ -3237,9 +3236,9 @@
             const t = Math.max(0, quizState.timeLeft);
             el.textContent = t.toFixed(2);
 
-            // Thresholds scaled proportionally from the old 15s window (20%/47%
-            // of the window) to the new 10s one, not just carried over as
-            // literal seconds.
+            // Danger/warning thresholds as a proportion of the window
+            // (20%/47%), not literal seconds -- stays correct regardless of
+            // QUIZ_TIMER_SECONDS.
             const danger = QUIZ_TIMER_SECONDS * 0.2, warning = QUIZ_TIMER_SECONDS * 0.47;
             el.classList.remove('warning', 'danger');
             if(t <= danger) el.classList.add('danger');
@@ -3281,13 +3280,12 @@
             const isCorrect = selectedName === correctName;
             const timeTaken = QUIZ_TIMER_SECONDS - quizState.timeLeft;
 
-            // Score decay rescaled to the 10s window: same 15pt ceiling and
-            // 1.5pt floor as the legacy 15s formula, same linear shape, just
-            // compressed so the floor is reached at 10s instead of 15s.
-            // A wrong answer costs a life (below), never points.
+            // Score decay: 15pt ceiling at t=0 down to a 1.5pt floor at
+            // t=QUIZ_TIMER_SECONDS, linear in between. A wrong answer costs
+            // a life (below), never points.
             let points = 0;
             if(isCorrect) {
-                const perSecond = (15 - 1.5) / QUIZ_TIMER_SECONDS; // 1.35 pts/sec
+                const perSecond = (15 - 1.5) / QUIZ_TIMER_SECONDS; // 0.9 pts/sec
                 points = Math.max(1.5, 15 - (timeTaken * perSecond));
                 quizState.score += points;
             } else {
@@ -3881,7 +3879,7 @@ document.addEventListener('DOMContentLoaded', boot);
             <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Three misses and you're out.</div>
             <ol class="quiz-rules-dark">
                 <li>Study the career map, then pick the player from 4 choices</li>
-                <li>10 seconds per question — faster answers score more (up to 15 pts)</li>
+                <li>15 seconds per question — faster answers score more (up to 15 pts)</li>
                 <li>A wrong answer or a timeout costs a life, never points</li>
                 <li>3 lives, no fixed length — survive as long as you can</li>
             </ol>
