@@ -1,3 +1,11 @@
+## 2026-08-02 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+
 ## 2026-08-01 — full_overseas run
 
 - Players updated: **79** (0 new)
