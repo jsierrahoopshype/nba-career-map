@@ -198,6 +198,12 @@
         const eraToFranchise = {};      // era name -> current franchise
         const playerFranchises = {};    // player -> Set(franchise)
         const clubIndex = {};           // non-NBA club -> Map(player -> {player,status,country})
+        // Old club-variant names (sponsor prefixes, spelling merges) are
+        // renamed away entirely by apply_aliases.py, so a stale ?club= link
+        // to a merged-away name would otherwise 404 into the landing page --
+        // same fix pattern as eraToFranchise, which does this for NBA teams.
+        let CLUB_ALIAS_TO_CANON = {};
+        let CLUB_ALIAS_CI = {};         // lowercased alias -> canonical (case-insensitive lookup)
 
         const esc = s => String(s??'').replace(/[&<>"']/g, c =>
             ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -223,17 +229,23 @@
 
         async function load(){
             try {
-                const [tp, cp, dd, pa, tx] = await Promise.all([
+                const [tp, cp, dd, pa, tx, ta] = await Promise.all([
                     fetchData('data/team_pages.json').then(r=>r.json()),
                     fetchData('data/club_pages.json').then(r=>r.json()),
                     fetchData('data/dashboard_data.json').then(r=>r.json()),
                     fetchData('data/player_aliases.json').then(r=>r.json()).catch(()=>({})),
                     fetchData('data/logs/transactions.json').then(r=>r.json()).catch(()=>({transactions:[]})),
+                    fetchData('data/teams/team_aliases.json').then(r=>r.json()).catch(()=>({aliases:{}})),
                 ]);
                 TEAMS = tp.teams || {};
                 CLUBS = cp.clubs || {};
                 DASH = dd || {};
                 PLAYER_ALIASES = pa || {};
+                CLUB_ALIAS_TO_CANON = ta.aliases || {};
+                CLUB_ALIAS_CI = {};
+                Object.entries(CLUB_ALIAS_TO_CANON).forEach(([alias, canon]) => {
+                    CLUB_ALIAS_CI[alias.trim().toLowerCase()] = canon;
+                });
                 // ledger is stored oldest-first; the signings page wants newest-first
                 TRANSACTIONS = (tx.transactions || []).slice().reverse();
                 // overseas-active players with city+country (superset of where_are_they_now)
@@ -365,9 +377,15 @@
                     return window.scrollTo(0,0);
                 }
             }
-            if (clubParam && (CLUBS[clubParam] || clubIndex[clubParam])){
-                renderClub(clubParam);
-                return window.scrollTo(0,0);
+            if (clubParam){
+                let canon = clubParam;
+                if (!CLUBS[canon] && !clubIndex[canon]) canon = CLUB_ALIAS_CI[clubParam.trim().toLowerCase()] || canon;
+                if (CLUBS[canon] || clubIndex[canon]){
+                    // canonicalize a merged-away club-variant URL to its current name
+                    if (clubParam !== canon) history.replaceState({}, '', '?club=' + encodeURIComponent(canon));
+                    renderClub(canon);
+                    return window.scrollTo(0,0);
+                }
             }
             const countryParam = p.get('country');
             if (countryParam){ renderPlace('country', countryParam); return window.scrollTo(0,0); }
