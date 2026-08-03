@@ -10281,9 +10281,9 @@
           "player": "Max Shulga",
           "years": "2025–2026",
           "stint_team": "Boston Celtics",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Real Madrid",
+          "current_country": "Spain",
           "nationality": "Ukraine"
         },
         {
@@ -12244,6 +12244,13 @@
           "current_team": "Dubai Basketball",
           "country": "UAE",
           "nationality": "United States"
+        },
+        {
+          "player": "Max Shulga",
+          "status": "overseas_active",
+          "current_team": "Real Madrid",
+          "country": "Spain",
+          "nationality": "Ukraine"
         },
         {
           "player": "Mfiondu Kabengele",
@@ -96456,7 +96463,7 @@
           "years": "2026",
           "stint_team": "New York Knicks",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Portland Trail Blazers",
           "current_country": "USA",
           "nationality": "Polish / American"
         },
@@ -99573,6 +99580,13 @@
           "current_team": "Hapoel Jerusalem",
           "country": "Israel",
           "nationality": "United States"
+        },
+        {
+          "player": "Jeremy Sochan",
+          "status": "nba_active",
+          "current_team": "Portland Trail Blazers",
+          "country": "USA",
+          "nationality": "Polish / American"
         },
         {
           "player": "Jeremy Tyler",
@@ -121591,6 +121605,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Jeremy Sochan",
+          "years": "2026–present",
+          "stint_team": "Portland Trail Blazers",
+          "status": "nba_active",
+          "current_team": "Portland Trail Blazers",
+          "current_country": "USA",
+          "nationality": "Polish / American"
+        },
+        {
           "player": "Jermaine O'Neal",
           "years": "1996-2000",
           "stint_team": "Portland Trail Blazers",
@@ -124303,8 +124326,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 431,
-      "alumni_count": 407,
+      "roster_count": 432,
+      "alumni_count": 408,
       "related": [
         {
           "type": "club",
@@ -132407,7 +132430,7 @@
           "years": "2022–2026",
           "stint_team": "San Antonio Spurs",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Portland Trail Blazers",
           "current_country": "USA",
           "nationality": "Polish / American"
         },
@@ -134709,7 +134732,7 @@
         {
           "player": "Jeremy Sochan",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Portland Trail Blazers",
           "country": "USA",
           "nationality": "Polish / American"
         },

@@ -1,3 +1,14 @@
+## 2026-08-03 — incremental run
+
+- Players updated: **69** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Jeremy Sochan: New York Knicks → Portland Trail Blazers
+  - Max Shulga: Boston Celtics → Real Madrid
+  - Max Shulga: [nba_active → overseas_active]
+
 ## 2026-08-02 — incremental run
 
 - Players updated: **68** (0 new)

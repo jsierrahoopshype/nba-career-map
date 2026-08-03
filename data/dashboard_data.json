@@ -2661,6 +2661,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Max Shulga",
+      "current_team": "Real Madrid",
+      "country": "Spain",
+      "last_updated": "2026-08-03"
+    },
+    {
       "player": "Maxi Kleber",
       "current_team": "Hapoel Tel Aviv",
       "country": "Israel",
@@ -4960,11 +4966,11 @@
       "players": 91
     },
     {
-      "team": "FC Barcelona",
-      "players": 90
+      "team": "Real Madrid",
+      "players": 91
     },
     {
-      "team": "Real Madrid",
+      "team": "FC Barcelona",
       "players": 90
     },
     {
@@ -19418,6 +19424,23 @@
   ],
   "teams_by_current_nba_alumni": [
     {
+      "team": "Real Madrid",
+      "count": 11,
+      "players": [
+        "Alex Len",
+        "Chuma Okeke",
+        "Facundo Campazzo",
+        "Gabriel Deck",
+        "Mario Hezonja",
+        "Max Shulga",
+        "Omer Yurtseven",
+        "Serge Ibaka",
+        "Theo Maledon",
+        "Usman Garuba",
+        "Walter Tavares"
+      ]
+    },
+    {
       "team": "Anadolu Efes",
       "count": 10,
       "players": [
@@ -19447,22 +19470,6 @@
         "Maxi Kleber",
         "Tyler Ennis",
         "Vasilije Micic"
-      ]
-    },
-    {
-      "team": "Real Madrid",
-      "count": 10,
-      "players": [
-        "Alex Len",
-        "Chuma Okeke",
-        "Facundo Campazzo",
-        "Gabriel Deck",
-        "Mario Hezonja",
-        "Omer Yurtseven",
-        "Serge Ibaka",
-        "Theo Maledon",
-        "Usman Garuba",
-        "Walter Tavares"
       ]
     },
     {
@@ -22122,7 +22129,7 @@
     },
     {
       "country": "Spain",
-      "count": 49
+      "count": 50
     },
     {
       "country": "China",
@@ -22320,7 +22327,7 @@
     },
     {
       "country": "Spain",
-      "players": 792
+      "players": 793
     },
     {
       "country": "France",
@@ -22685,6 +22692,135 @@
   ],
   "team_reunions": [
     {
+      "team": "Real Madrid",
+      "players": [
+        "Alex Len",
+        "Chuma Okeke",
+        "Facundo Campazzo",
+        "Gabriel Deck",
+        "Mario Hezonja",
+        "Max Shulga",
+        "Omer Yurtseven",
+        "Serge Ibaka",
+        "Theo Maledon",
+        "Usman Garuba",
+        "Walter Tavares"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Alex Len",
+            "Serge Ibaka"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Alex Len",
+            "Theo Maledon"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Alex Len",
+            "Walter Tavares"
+          ],
+          "shared_nba_franchises": [
+            "Atlanta Hawks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Chuma Okeke",
+            "Mario Hezonja"
+          ],
+          "shared_nba_franchises": [
+            "Orlando Magic"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Chuma Okeke",
+            "Serge Ibaka"
+          ],
+          "shared_nba_franchises": [
+            "Orlando Magic"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Chuma Okeke",
+            "Walter Tavares"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Gabriel Deck",
+            "Serge Ibaka"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2024
+        },
+        {
+          "players": [
+            "Gabriel Deck",
+            "Theo Maledon"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Mario Hezonja",
+            "Serge Ibaka"
+          ],
+          "shared_nba_franchises": [
+            "Orlando Magic"
+          ],
+          "latest_stint_year": 2024
+        },
+        {
+          "players": [
+            "Omer Yurtseven",
+            "Usman Garuba"
+          ],
+          "shared_nba_franchises": [
+            "Golden State Warriors"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Serge Ibaka",
+            "Theo Maledon"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Anadolu Efes",
       "players": [
         "Bruno Fernando",
@@ -23008,134 +23144,6 @@
           ],
           "shared_nba_franchises": [
             "Phoenix Suns"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Real Madrid",
-      "players": [
-        "Alex Len",
-        "Chuma Okeke",
-        "Facundo Campazzo",
-        "Gabriel Deck",
-        "Mario Hezonja",
-        "Omer Yurtseven",
-        "Serge Ibaka",
-        "Theo Maledon",
-        "Usman Garuba",
-        "Walter Tavares"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Alex Len",
-            "Serge Ibaka"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Alex Len",
-            "Theo Maledon"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Alex Len",
-            "Walter Tavares"
-          ],
-          "shared_nba_franchises": [
-            "Atlanta Hawks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Chuma Okeke",
-            "Mario Hezonja"
-          ],
-          "shared_nba_franchises": [
-            "Orlando Magic"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Chuma Okeke",
-            "Serge Ibaka"
-          ],
-          "shared_nba_franchises": [
-            "Orlando Magic"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Chuma Okeke",
-            "Walter Tavares"
-          ],
-          "shared_nba_franchises": [
-            "Cleveland Cavaliers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Gabriel Deck",
-            "Serge Ibaka"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2024
-        },
-        {
-          "players": [
-            "Gabriel Deck",
-            "Theo Maledon"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Mario Hezonja",
-            "Serge Ibaka"
-          ],
-          "shared_nba_franchises": [
-            "Orlando Magic"
-          ],
-          "latest_stint_year": 2024
-        },
-        {
-          "players": [
-            "Omer Yurtseven",
-            "Usman Garuba"
-          ],
-          "shared_nba_franchises": [
-            "Golden State Warriors"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Serge Ibaka",
-            "Theo Maledon"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
           ],
           "latest_stint_year": 2025
         }
@@ -58912,6 +58920,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Max Shulga",
+        "current_team": "Real Madrid",
+        "city": "Madrid",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-08-03"
+      },
+      {
         "player": "Taelon Peter",
         "current_team": "Noblesville Boom",
         "city": "Noblesville",
@@ -58922,8 +58939,8 @@
       }
     ],
     "coverage": {
-      "total": 644,
-      "in_coords": 567,
+      "total": 645,
+      "in_coords": 568,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -58931,6 +58948,18 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Max Shulga",
+      "from_team": "Boston Celtics",
+      "to_team": "Real Madrid",
+      "date": "2026-08-03"
+    },
+    {
+      "player": "Jeremy Sochan",
+      "from_team": "New York Knicks",
+      "to_team": "Portland Trail Blazers",
+      "date": "2026-08-03"
+    },
     {
       "player": "Cameron McGriff",
       "from_team": "Yankey Ark",
@@ -59217,18 +59246,6 @@
       "player": "Quentin Grimes",
       "from_team": "Philadelphia 76ers",
       "to_team": "Los Angeles Lakers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Norman Powell",
-      "from_team": "Miami Heat",
-      "to_team": "Chicago Bulls",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Nicolas Claxton",
-      "from_team": "Brooklyn Nets",
-      "to_team": "Chicago Bulls",
       "date": "2026-07-13"
     }
   ]
