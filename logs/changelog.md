@@ -1,3 +1,16 @@
+## 2026-08-05 — incremental run
+
+- Players updated: **69** (2 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Milos Uzan, Tucker DeVries
+  - Patrick Baldwin: Sacramento Kings → Crvena Zvezda
+  - Cole Anthony: Milwaukee Bucks → Melbourne United
+  - Patrick Baldwin: [nba_active → overseas_active]
+  - Cole Anthony: [nba_active → overseas_active]
+
 ## 2026-08-04 — incremental run
 
 - Players updated: **68** (0 new)

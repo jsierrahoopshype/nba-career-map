@@ -1,6 +1,6 @@
 {
   "generated_from": "data/players/nba_players_careers.json",
-  "player_count": 5161,
+  "player_count": 5163,
   "where_are_they_now": [
     {
       "player": "Aaron Henry",
@@ -583,6 +583,12 @@
       "current_team": "Memphis Hustle",
       "country": "USA",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Cole Anthony",
+      "current_team": "Melbourne United",
+      "country": "Australia",
+      "last_updated": "2026-08-05"
     },
     {
       "player": "Cole Swider",
@@ -2967,6 +2973,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Patrick Baldwin",
+      "current_team": "Crvena Zvezda",
+      "country": "Serbia",
+      "last_updated": "2026-08-05"
+    },
+    {
       "player": "Patrick Beverley",
       "current_team": "PAOK Thessaloniki",
       "country": "Greece",
@@ -5074,6 +5086,10 @@
       "players": 68
     },
     {
+      "team": "Crvena Zvezda",
+      "players": 67
+    },
+    {
       "team": "Fort Wayne Fury",
       "players": 67
     },
@@ -5083,10 +5099,6 @@
     },
     {
       "team": "Capital City Go-Go",
-      "players": 66
-    },
-    {
-      "team": "Crvena Zvezda",
       "players": 66
     },
     {
@@ -5638,6 +5650,10 @@
       "players": 24
     },
     {
+      "team": "Melbourne United",
+      "players": 24
+    },
+    {
       "team": "Spirits of St. Louis",
       "players": 24
     },
@@ -5659,10 +5675,6 @@
     },
     {
       "team": "Fort Worth Flyers",
-      "players": 23
-    },
-    {
-      "team": "Melbourne United",
       "players": 23
     },
     {
@@ -19473,6 +19485,21 @@
       ]
     },
     {
+      "team": "Crvena Zvezda",
+      "count": 9,
+      "players": [
+        "Chima Moneke",
+        "Devonte Graham",
+        "Donatas Motiejunas",
+        "Isaiah Canaan",
+        "Jared Butler",
+        "Joel Bolomboy",
+        "Jordan Nwora",
+        "Patrick Baldwin",
+        "Semi Ojeleye"
+      ]
+    },
+    {
       "team": "Dubai Basketball",
       "count": 9,
       "players": [
@@ -19500,20 +19527,6 @@
         "Talen Horton-Tucker",
         "Trent Forrest",
         "Wade Baldwin"
-      ]
-    },
-    {
-      "team": "Crvena Zvezda",
-      "count": 8,
-      "players": [
-        "Chima Moneke",
-        "Devonte Graham",
-        "Donatas Motiejunas",
-        "Isaiah Canaan",
-        "Jared Butler",
-        "Joel Bolomboy",
-        "Jordan Nwora",
-        "Semi Ojeleye"
       ]
     },
     {
@@ -19776,6 +19789,17 @@
       ]
     },
     {
+      "team": "Melbourne United",
+      "count": 5,
+      "players": [
+        "Cole Anthony",
+        "Jesse Edwards",
+        "Joe Ingles",
+        "Luke Travers",
+        "Milton Doyle"
+      ]
+    },
+    {
       "team": "Noblesville Boom",
       "count": 5,
       "players": [
@@ -19927,16 +19951,6 @@
         "Georgios Kalaitzakis",
         "London Perrantes",
         "Miroslav Raduljica"
-      ]
-    },
-    {
-      "team": "Melbourne United",
-      "count": 4,
-      "players": [
-        "Jesse Edwards",
-        "Joe Ingles",
-        "Luke Travers",
-        "Milton Doyle"
       ]
     },
     {
@@ -22160,12 +22174,12 @@
       "count": 26
     },
     {
-      "country": "France",
+      "country": "Australia",
       "count": 21
     },
     {
-      "country": "Australia",
-      "count": 20
+      "country": "France",
+      "count": 21
     },
     {
       "country": "Mexico",
@@ -22173,7 +22187,7 @@
     },
     {
       "country": "Serbia",
-      "count": 15
+      "count": 16
     },
     {
       "country": "Russia",
@@ -22371,7 +22385,7 @@
     },
     {
       "country": "Australia",
-      "players": 205
+      "players": 206
     },
     {
       "country": "Philippines",
@@ -22387,7 +22401,7 @@
     },
     {
       "country": "Serbia",
-      "players": 145
+      "players": 146
     },
     {
       "country": "Argentina",
@@ -23146,6 +23160,165 @@
             "Phoenix Suns"
           ],
           "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Crvena Zvezda",
+      "players": [
+        "Chima Moneke",
+        "Devonte Graham",
+        "Donatas Motiejunas",
+        "Isaiah Canaan",
+        "Jared Butler",
+        "Joel Bolomboy",
+        "Jordan Nwora",
+        "Patrick Baldwin",
+        "Semi Ojeleye"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Chima Moneke",
+            "Patrick Baldwin"
+          ],
+          "shared_nba_franchises": [
+            "Sacramento Kings"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Devonte Graham",
+            "Donatas Motiejunas"
+          ],
+          "shared_nba_franchises": [
+            "New Orleans Pelicans",
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Donatas Motiejunas",
+            "Isaiah Canaan"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Jared Butler"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Joel Bolomboy"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2024
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Jordan Nwora"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Patrick Baldwin"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jared Butler",
+            "Joel Bolomboy"
+          ],
+          "shared_nba_franchises": [
+            "Utah Jazz"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jared Butler",
+            "Patrick Baldwin"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers",
+            "Washington Wizards"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Joel Bolomboy",
+            "Jordan Nwora"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Joel Bolomboy",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jordan Nwora",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Patrick Baldwin",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ],
+          "latest_stint_year": 2026
         }
       ],
       "latest_stint_year": 2026
@@ -24338,6 +24511,40 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Melbourne United",
+      "players": [
+        "Cole Anthony",
+        "Jesse Edwards",
+        "Joe Ingles",
+        "Luke Travers",
+        "Milton Doyle"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Cole Anthony",
+            "Joe Ingles"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks",
+            "Orlando Magic"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Joe Ingles",
+            "Jesse Edwards"
+          ],
+          "shared_nba_franchises": [
+            "Minnesota Timberwolves"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Noblesville Boom",
       "players": [
         "Jalen Slawson",
@@ -24522,28 +24729,6 @@
         "Keon Johnson"
       ],
       "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Melbourne United",
-      "players": [
-        "Jesse Edwards",
-        "Joe Ingles",
-        "Luke Travers",
-        "Milton Doyle"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Joe Ingles",
-            "Jesse Edwards"
-          ],
-          "shared_nba_franchises": [
-            "Minnesota Timberwolves"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
       "latest_stint_year": 2026
     },
     {
@@ -25155,123 +25340,6 @@
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
-    },
-    {
-      "team": "Crvena Zvezda",
-      "players": [
-        "Chima Moneke",
-        "Devonte Graham",
-        "Donatas Motiejunas",
-        "Isaiah Canaan",
-        "Jared Butler",
-        "Joel Bolomboy",
-        "Jordan Nwora",
-        "Semi Ojeleye"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Devonte Graham",
-            "Donatas Motiejunas"
-          ],
-          "shared_nba_franchises": [
-            "New Orleans Pelicans",
-            "San Antonio Spurs"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Donatas Motiejunas",
-            "Isaiah Canaan"
-          ],
-          "shared_nba_franchises": [
-            "Houston Rockets"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Jared Butler"
-          ],
-          "shared_nba_franchises": [
-            "Philadelphia 76ers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Joel Bolomboy"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2024
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Jordan Nwora"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Semi Ojeleye"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Jared Butler",
-            "Joel Bolomboy"
-          ],
-          "shared_nba_franchises": [
-            "Utah Jazz"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Joel Bolomboy",
-            "Jordan Nwora"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Joel Bolomboy",
-            "Semi Ojeleye"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Jordan Nwora",
-            "Semi Ojeleye"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2025
     },
     {
       "team": "Baskonia",
@@ -53961,6 +54029,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Cole Anthony",
+        "current_team": "Melbourne United",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "country": "Australia",
+        "in_coords": true,
+        "last_updated": "2026-08-05"
+      },
+      {
         "player": "Cole Swider",
         "current_team": "Anadolu Efes",
         "city": "Istanbul",
@@ -57345,6 +57422,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Patrick Baldwin",
+        "current_team": "Crvena Zvezda",
+        "city": "Belgrade",
+        "state": "",
+        "country": "Serbia",
+        "in_coords": true,
+        "last_updated": "2026-08-05"
+      },
+      {
         "player": "Patrick Beverley",
         "current_team": "PAOK Thessaloniki",
         "city": "Thessaloniki",
@@ -58939,8 +59025,8 @@
       }
     ],
     "coverage": {
-      "total": 645,
-      "in_coords": 568,
+      "total": 647,
+      "in_coords": 570,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -58948,6 +59034,18 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Cole Anthony",
+      "from_team": "Milwaukee Bucks",
+      "to_team": "Melbourne United",
+      "date": "2026-08-05"
+    },
+    {
+      "player": "Patrick Baldwin",
+      "from_team": "Sacramento Kings",
+      "to_team": "Crvena Zvezda",
+      "date": "2026-08-05"
+    },
     {
       "player": "Max Shulga",
       "from_team": "Boston Celtics",
@@ -59233,18 +59331,6 @@
     {
       "player": "Sandro Mamukelashvili",
       "from_team": "Toronto Raptors",
-      "to_team": "Los Angeles Lakers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Rayan Rupert",
-      "from_team": "Memphis Grizzlies",
-      "to_team": "Philadelphia 76ers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Quentin Grimes",
-      "from_team": "Philadelphia 76ers",
       "to_team": "Los Angeles Lakers",
       "date": "2026-07-13"
     }
