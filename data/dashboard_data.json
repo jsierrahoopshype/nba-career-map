@@ -1443,6 +1443,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "JD Davison",
+      "current_team": "Rio Grande Valley Vipers",
+      "country": "USA",
+      "last_updated": "2026-08-06"
+    },
+    {
       "player": "JP Macura",
       "current_team": "Benetton Treviso",
       "country": "Italy",
@@ -19822,6 +19828,17 @@
       ]
     },
     {
+      "team": "Rio Grande Valley Vipers",
+      "count": 5,
+      "players": [
+        "Daishen Nix",
+        "Isaiah Crawford",
+        "JD Davison",
+        "Josh Reaves",
+        "Ricky Council IV"
+      ]
+    },
+    {
       "team": "Rip City Remix",
       "count": 5,
       "players": [
@@ -20001,16 +20018,6 @@
         "Markelle Fultz",
         "Patrick McCaw",
         "Ulrich Chomche"
-      ]
-    },
-    {
-      "team": "Rio Grande Valley Vipers",
-      "count": 4,
-      "players": [
-        "Daishen Nix",
-        "Isaiah Crawford",
-        "Josh Reaves",
-        "Ricky Council IV"
       ]
     },
     {
@@ -22139,7 +22146,7 @@
   "countries_live_snapshot": [
     {
       "country": "USA",
-      "count": 72
+      "count": 73
     },
     {
       "country": "Spain",
@@ -25667,6 +25674,49 @@
       "latest_stint_year": 2025
     },
     {
+      "team": "Rio Grande Valley Vipers",
+      "players": [
+        "Daishen Nix",
+        "Isaiah Crawford",
+        "JD Davison",
+        "Josh Reaves",
+        "Ricky Council IV"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Daishen Nix",
+            "JD Davison"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Daishen Nix",
+            "Isaiah Crawford"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "JD Davison",
+            "Isaiah Crawford"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2025
+    },
+    {
       "team": "Adelaide 36ers",
       "players": [
         "Bryce Cotton",
@@ -25966,28 +26016,6 @@
           ],
           "shared_nba_franchises": [
             "San Antonio Spurs"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2025
-    },
-    {
-      "team": "Rio Grande Valley Vipers",
-      "players": [
-        "Daishen Nix",
-        "Isaiah Crawford",
-        "Josh Reaves",
-        "Ricky Council IV"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Daishen Nix",
-            "Isaiah Crawford"
-          ],
-          "shared_nba_franchises": [
-            "Houston Rockets"
           ],
           "latest_stint_year": 2025
         }
@@ -55757,6 +55785,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "JD Davison",
+        "current_team": "Rio Grande Valley Vipers",
+        "city": "Edinburg",
+        "state": "Texas",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-08-06"
+      },
+      {
         "player": "Jeff Adrien",
         "current_team": "Piratas de Quebradillas",
         "city": "Quebradillas",
@@ -59025,8 +59062,8 @@
       }
     ],
     "coverage": {
-      "total": 647,
-      "in_coords": 570,
+      "total": 648,
+      "in_coords": 571,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59034,6 +59071,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "JD Davison",
+      "from_team": "Houston Rockets",
+      "to_team": "Rio Grande Valley Vipers",
+      "date": "2026-08-06"
+    },
     {
       "player": "Cole Anthony",
       "from_team": "Milwaukee Bucks",
@@ -59326,12 +59369,6 @@
       "player": "Taurean Prince",
       "from_team": "Milwaukee Bucks",
       "to_team": "Detroit Pistons",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Sandro Mamukelashvili",
-      "from_team": "Toronto Raptors",
-      "to_team": "Los Angeles Lakers",
       "date": "2026-07-13"
     }
   ]
