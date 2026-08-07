@@ -1,3 +1,19 @@
+## 2026-08-07 — incremental run
+
+- Players updated: **65** (8 new)
+- New teams discovered: **2**
+- Team moves detected: **3**
+- Status changes: **3** (3 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Alpha Diallo, Bryce Hopkins, Carson Cooper, Jack Kayil, Lajae Jones, Trevon Brazile, Tyler Nickel, Yaxel Lendeborg
+- New teams: Alba Berlin II, Rasta Vechta II
+  - AJ Lawson: Toronto Raptors → Baskonia
+  - Mouhamadou Gueye: Charlotte Hornets → Valencia
+  - Josh Oduro: New Orleans Pelicans → Melbourne United
+  - AJ Lawson: [nba_active → overseas_active]
+  - Mouhamadou Gueye: [nba_active → overseas_active]
+  - Josh Oduro: [nba_active → overseas_active]
+
 ## 2026-08-06 — incremental run
 
 - Players updated: **68** (0 new)

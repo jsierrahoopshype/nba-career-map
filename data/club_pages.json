@@ -24430,8 +24430,15 @@
       "city": "Vitoria",
       "state": "",
       "country": "Spain",
-      "count": 120,
+      "count": 121,
       "roster": [
+        {
+          "player": "AJ Lawson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
+          "nationality": "Canada"
+        },
         {
           "player": "Abdul Jeelani",
           "years": "1985-1987",
@@ -32270,8 +32277,8 @@
         {
           "player": "Mouhamadou Gueye",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets",
+          "status": "overseas_active",
+          "last_team": "Valencia",
           "nationality": "United States"
         },
         {
@@ -34201,8 +34208,8 @@
         {
           "player": "AJ Lawson",
           "years": "2022",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
           "nationality": "Canada"
         },
         {
@@ -35768,8 +35775,8 @@
         {
           "player": "Mouhamadou Gueye",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets",
+          "status": "overseas_active",
+          "last_team": "Valencia",
           "nationality": "United States"
         },
         {
@@ -48118,8 +48125,8 @@
         {
           "player": "AJ Lawson",
           "years": "2022–2024",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
           "nationality": "Canada"
         },
         {
@@ -48719,8 +48726,8 @@
         {
           "player": "Mouhamadou Gueye",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets",
+          "status": "overseas_active",
+          "last_team": "Valencia",
           "nationality": "United States"
         },
         {
@@ -49035,8 +49042,8 @@
         {
           "player": "AJ Lawson",
           "years": "2021–2022, 2022",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
           "nationality": "Canada"
         },
         {
@@ -49345,8 +49352,8 @@
         {
           "player": "AJ Lawson",
           "years": "2022",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
           "nationality": "Canada"
         },
         {
@@ -49377,6 +49384,11 @@
         },
         {
           "type": "club",
+          "name": "Baskonia",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
@@ -49399,11 +49411,6 @@
           "type": "club",
           "name": "Iowa Wolves",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Delaware 87ers",
-          "shared": 1
         }
       ]
     },
@@ -49417,8 +49424,8 @@
         {
           "player": "AJ Lawson",
           "years": "2024",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
           "nationality": "Canada"
         },
         {
@@ -50069,8 +50076,8 @@
         {
           "player": "AJ Lawson",
           "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
           "nationality": "Canada"
         },
         {
@@ -50580,8 +50587,8 @@
         {
           "player": "Mouhamadou Gueye",
           "years": "2023–2024, 2024",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets",
+          "status": "overseas_active",
+          "last_team": "Valencia",
           "nationality": "United States"
         },
         {
@@ -66462,12 +66469,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 1
         }
       ]
@@ -84939,7 +84946,7 @@
       "city": "Valencia",
       "state": "",
       "country": "Spain",
-      "count": 46,
+      "count": 47,
       "roster": [
         {
           "player": "Alvin Jones",
@@ -85150,6 +85157,13 @@
           "status": "overseas_active",
           "last_team": "Gran Canaria",
           "nationality": "American / Slovenian"
+        },
+        {
+          "player": "Mouhamadou Gueye",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Valencia",
+          "nationality": "United States"
         },
         {
           "player": "Nando De Colo",
@@ -112016,7 +112030,7 @@
       "city": "Berlin",
       "state": "",
       "country": "Germany",
-      "count": 36,
+      "count": 37,
       "roster": [
         {
           "player": "Ansu Sesay",
@@ -112115,6 +112129,12 @@
           "status": "retired",
           "last_team": "Halcones UV Xalapa",
           "nationality": "United States"
+        },
+        {
+          "player": "Jack Kayil",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "New York Knicks"
         },
         {
           "player": "John Celestand",
@@ -137452,12 +137472,12 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Melbourne United",
+          "name": "Illawarra Hawks",
           "shared": 0
         }
       ]
@@ -148965,12 +148985,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 1
         }
       ]
@@ -152982,7 +153002,7 @@
         },
         {
           "player": "Sean Pedulla",
-          "years": "2026–present",
+          "years": "2026",
           "status": "nba_active",
           "last_team": "LA Clippers",
           "nationality": "United States"
@@ -158488,8 +158508,8 @@
         {
           "player": "Josh Oduro",
           "years": "2024–2026, 2026",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Melbourne United",
           "nationality": "United States"
         },
         {
@@ -165307,7 +165327,7 @@
       "city": "Melbourne",
       "state": "Victoria",
       "country": "Australia",
-      "count": 24,
+      "count": 25,
       "roster": [
         {
           "player": "Ariel Hukporti",
@@ -165419,6 +165439,13 @@
           "years": "2016-2019",
           "status": "retired",
           "last_team": "Halcones de Xalapa",
+          "nationality": "United States"
+        },
+        {
+          "player": "Josh Oduro",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Melbourne United",
           "nationality": "United States"
         },
         {
@@ -177355,12 +177382,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         }
       ]
@@ -193605,12 +193632,12 @@
         },
         {
           "type": "club",
-          "name": "Shanghai Sharks",
+          "name": "Alba Berlin",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Shanghai Sharks",
           "shared": 1
         },
         {
@@ -199980,7 +200007,7 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 1
         }
       ]
@@ -201532,12 +201559,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 1
         },
         {
@@ -206574,12 +206601,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 1
         },
         {
@@ -219157,7 +219184,7 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         }
       ]
@@ -227570,7 +227597,7 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 0
         }
       ]
@@ -231443,7 +231470,7 @@
       "city": "",
       "state": "",
       "country": "",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "Goga Bitadze",
@@ -231451,6 +231478,12 @@
           "status": "nba_active",
           "last_team": "Orlando Magic",
           "nationality": "Republic of Georgia"
+        },
+        {
+          "player": "Jack Kayil",
+          "years": "2024–2026",
+          "status": "nba_active",
+          "last_team": "New York Knicks"
         },
         {
           "player": "Nikola Topić",
@@ -231478,6 +231511,11 @@
         },
         {
           "type": "club",
+          "name": "Alba Berlin",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Budućnost",
           "shared": 1
         },
@@ -231488,17 +231526,12 @@
         },
         {
           "type": "club",
-          "name": "Slodes",
+          "name": "Alba Berlin II",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Smederevo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "VITA Tbilisi",
+          "name": "Rasta Vechta II",
           "shared": 1
         }
       ]
@@ -232511,12 +232544,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -239564,12 +239597,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         }
       ]
@@ -240601,12 +240634,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -244661,12 +244694,12 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Melbourne United",
+          "name": "Illawarra Hawks",
           "shared": 0
         },
         {
@@ -245154,12 +245187,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -250517,12 +250550,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -252898,12 +252931,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -259565,12 +259598,12 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Melbourne United",
+          "name": "Illawarra Hawks",
           "shared": 1
         },
         {
@@ -259623,12 +259656,12 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Melbourne United",
+          "name": "Illawarra Hawks",
           "shared": 1
         },
         {
@@ -267781,12 +267814,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         }
       ]
@@ -271278,12 +271311,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -275782,12 +275815,12 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Melbourne United",
+          "name": "Illawarra Hawks",
           "shared": 0
         },
         {
@@ -278443,12 +278476,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -286875,12 +286908,12 @@
         },
         {
           "type": "club",
-          "name": "Snaidero Udine",
+          "name": "Alba Berlin",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Snaidero Udine",
           "shared": 1
         },
         {
@@ -292876,12 +292909,12 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Melbourne United",
+          "name": "Illawarra Hawks",
           "shared": 0
         },
         {
@@ -308770,12 +308803,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 1
         },
         {
@@ -311480,12 +311513,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         }
       ]
@@ -313970,12 +314003,12 @@
         },
         {
           "type": "club",
-          "name": "Delaware 87ers",
+          "name": "Valencia",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valencia",
+          "name": "Delaware 87ers",
           "shared": 1
         },
         {
@@ -314028,12 +314061,12 @@
         },
         {
           "type": "club",
-          "name": "Delaware 87ers",
+          "name": "Valencia",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valencia",
+          "name": "Delaware 87ers",
           "shared": 1
         },
         {
@@ -319843,7 +319876,7 @@
         },
         {
           "type": "club",
-          "name": "Snaidero Udine",
+          "name": "Alba Berlin",
           "shared": 1
         }
       ]
@@ -319901,7 +319934,7 @@
         },
         {
           "type": "club",
-          "name": "Snaidero Udine",
+          "name": "Alba Berlin",
           "shared": 1
         }
       ]
@@ -325214,12 +325247,12 @@
         },
         {
           "type": "club",
-          "name": "Illawarra Hawks",
+          "name": "Melbourne United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Melbourne United",
+          "name": "Illawarra Hawks",
           "shared": 0
         },
         {
@@ -325400,12 +325433,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         }
       ]
@@ -326146,12 +326179,12 @@
         },
         {
           "type": "club",
-          "name": "OKK Beograd",
+          "name": "Mega",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "OKK Beograd",
           "shared": 1
         },
         {
@@ -326499,12 +326532,12 @@
         },
         {
           "type": "club",
-          "name": "Brose Bamberg",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
@@ -326610,6 +326643,120 @@
         {
           "type": "club",
           "name": "Quad City Thunder",
+          "shared": 0
+        }
+      ]
+    },
+    "Alba Berlin II": {
+      "club": "Alba Berlin II",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Jack Kayil",
+          "years": "2022–2023",
+          "status": "nba_active",
+          "last_team": "New York Knicks"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Alba Berlin",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Mega",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Rasta Vechta II",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Anchorage Northern Knights",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Boca Juniors",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Bahçeşehir Koleji",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Elmira Colonels",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Cañeros del Este",
+          "shared": 0
+        }
+      ]
+    },
+    "Rasta Vechta II": {
+      "club": "Rasta Vechta II",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Jack Kayil",
+          "years": "2023–2024",
+          "status": "nba_active",
+          "last_team": "New York Knicks"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Alba Berlin",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Mega",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Alba Berlin II",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Anchorage Northern Knights",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Boca Juniors",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Bahçeşehir Koleji",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Elmira Colonels",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Cañeros del Este",
           "shared": 0
         }
       ]

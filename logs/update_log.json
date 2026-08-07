@@ -9947,6 +9947,133 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-08-07",
+      "mode": "incremental",
+      "players_updated": [
+        "Alpha Diallo",
+        "Bryce Hopkins",
+        "Carson Cooper",
+        "Jack Kayil",
+        "Lajae Jones",
+        "Trevon Brazile",
+        "Tyler Nickel",
+        "Yaxel Lendeborg",
+        "AJ Lawson",
+        "Anthony Gill",
+        "Bismack Biyombo",
+        "Blake Wesley",
+        "Bruce Brown",
+        "Doug McDermott",
+        "Drew Eubanks",
+        "Gabe Vincent",
+        "Julian Phillips",
+        "Kelly Olynyk",
+        "Killian Hayes",
+        "Lindy Waters III",
+        "Mason Plumlee",
+        "Mouhamadou Gueye",
+        "Russell Westbrook",
+        "Seth Curry",
+        "Tony Bradley",
+        "Kevin McCullar",
+        "Emanuel Miller",
+        "Keaton Wallace",
+        "Dillon Jones",
+        "Josh Oduro",
+        "Sean Pedulla",
+        "Bez Mbeng",
+        "Hayden Gray",
+        "Jakob Pöltl",
+        "Peter Suder",
+        "Rafael Castro",
+        "Aaron Holiday",
+        "Ben Simmons",
+        "Bradley Beal",
+        "Brandon Clarke",
+        "Brandon Williams",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Christian Wood",
+        "Cody Martin",
+        "Dalano Banton",
+        "Dalen Terry",
+        "Dante Exum",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "DeMar DeRozan",
+        "Donovan Williams",
+        "Drew Peterson",
+        "Duop Reath",
+        "Dwight Powell",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Garrett Temple",
+        "Garrison Mathews",
+        "Gary Payton II",
+        "Gary Trent Jr",
+        "Georges Niang",
+        "Jaden Ivey"
+      ],
+      "new_players": [
+        "Alpha Diallo",
+        "Bryce Hopkins",
+        "Carson Cooper",
+        "Jack Kayil",
+        "Lajae Jones",
+        "Trevon Brazile",
+        "Tyler Nickel",
+        "Yaxel Lendeborg"
+      ],
+      "new_teams": [
+        "Alba Berlin II",
+        "Rasta Vechta II"
+      ],
+      "team_moves": [
+        {
+          "player": "AJ Lawson",
+          "from": "Toronto Raptors",
+          "to": "Baskonia"
+        },
+        {
+          "player": "Mouhamadou Gueye",
+          "from": "Charlotte Hornets",
+          "to": "Valencia"
+        },
+        {
+          "player": "Josh Oduro",
+          "from": "New Orleans Pelicans",
+          "to": "Melbourne United"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "AJ Lawson",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Mouhamadou Gueye",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Josh Oduro",
+          "from": "nba_active",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "AJ Lawson",
+        "Mouhamadou Gueye",
+        "Josh Oduro"
+      ],
+      "newly_retired": [],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }
