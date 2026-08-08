@@ -8937,8 +8937,8 @@
         {
           "player": "Garrison Mathews",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "Indiana Pacers",
+          "status": "overseas_active",
+          "last_team": "Olimpia Milano",
           "nationality": "United States"
         },
         {
@@ -16085,8 +16085,8 @@
         {
           "player": "Mac McClung",
           "years": "2022–2023, 2023",
-          "status": "nba_active",
-          "last_team": "Chicago Bulls",
+          "status": "overseas_active",
+          "last_team": "Valvi Girona",
           "nationality": "United States"
         },
         {
@@ -31018,7 +31018,7 @@
       "city": "Girona",
       "state": "",
       "country": "Spain",
-      "count": 34,
+      "count": 35,
       "roster": [
         {
           "player": "Adam Keefe",
@@ -31158,6 +31158,13 @@
           "years": "1998-2001",
           "status": "retired",
           "last_team": "UJAP Quimper",
+          "nationality": "United States"
+        },
+        {
+          "player": "Mac McClung",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Valvi Girona",
           "nationality": "United States"
         },
         {
@@ -32235,8 +32242,8 @@
         {
           "player": "Mac McClung",
           "years": "2022, 2025–2026, 2026",
-          "status": "nba_active",
-          "last_team": "Chicago Bulls",
+          "status": "overseas_active",
+          "last_team": "Valvi Girona",
           "nationality": "United States"
         },
         {
@@ -35530,8 +35537,8 @@
         {
           "player": "Garrison Mathews",
           "years": "2019–2020",
-          "status": "nba_active",
-          "last_team": "Indiana Pacers",
+          "status": "overseas_active",
+          "last_team": "Olimpia Milano",
           "nationality": "United States"
         },
         {
@@ -47960,12 +47967,12 @@
         },
         {
           "type": "club",
-          "name": "Cedevita Zagreb",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Cedevita Zagreb",
           "shared": 1
         }
       ]
@@ -62225,7 +62232,7 @@
       "city": "Milan",
       "state": "",
       "country": "Italy",
-      "count": 115,
+      "count": 116,
       "roster": [
         {
           "player": "Albert King",
@@ -62488,6 +62495,13 @@
           "status": "retired",
           "last_team": "Plateros de Fresnillo",
           "nationality": "Nigeria"
+        },
+        {
+          "player": "Garrison Mathews",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Olimpia Milano",
+          "nationality": "United States"
         },
         {
           "player": "George Bon Salle",
@@ -72730,8 +72744,8 @@
         {
           "player": "Mac McClung",
           "years": "2021, 2022",
-          "status": "nba_active",
-          "last_team": "Chicago Bulls",
+          "status": "overseas_active",
+          "last_team": "Valvi Girona",
           "nationality": "United States"
         },
         {
@@ -102295,12 +102309,12 @@
         },
         {
           "type": "club",
-          "name": "Trotamundos de Carabobo",
+          "name": "Valvi Girona",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Trotamundos de Carabobo",
           "shared": 3
         }
       ]
@@ -152755,8 +152769,8 @@
         {
           "player": "Mac McClung",
           "years": "2023–2024, 2024–2025",
-          "status": "nba_active",
-          "last_team": "Chicago Bulls",
+          "status": "overseas_active",
+          "last_team": "Valvi Girona",
           "nationality": "United States"
         },
         {
@@ -190983,17 +190997,17 @@
         },
         {
           "type": "club",
+          "name": "Valvi Girona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Cedevita Zagreb",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Valladolid",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -191063,12 +191077,12 @@
         },
         {
           "type": "club",
-          "name": "Valladolid",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Valladolid",
           "shared": 1
         }
       ]
@@ -191106,17 +191120,17 @@
         },
         {
           "type": "club",
+          "name": "Valvi Girona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Cedevita Zagreb",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Valladolid",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -191181,17 +191195,17 @@
         },
         {
           "type": "club",
+          "name": "Valvi Girona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Cedevita Zagreb",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Valladolid",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Valvi Girona",
           "shared": 1
         }
       ]
@@ -191229,17 +191243,17 @@
         },
         {
           "type": "club",
+          "name": "Valvi Girona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Cedevita Zagreb",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Valladolid",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -219822,7 +219836,7 @@
         },
         {
           "type": "club",
-          "name": "Trotamundos de Carabobo",
+          "name": "Valvi Girona",
           "shared": 1
         }
       ]
@@ -221255,12 +221269,12 @@
         },
         {
           "type": "club",
-          "name": "Cedevita Zagreb",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Cedevita Zagreb",
           "shared": 1
         },
         {
@@ -221313,12 +221327,12 @@
         },
         {
           "type": "club",
-          "name": "Cedevita Zagreb",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Cedevita Zagreb",
           "shared": 1
         },
         {

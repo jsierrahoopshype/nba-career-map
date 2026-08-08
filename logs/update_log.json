@@ -10074,6 +10074,111 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-08-08",
+      "mode": "incremental",
+      "players_updated": [
+        "Jalen Hood-Schifino",
+        "Jalen McDaniels",
+        "James Johnson",
+        "James Wiseman",
+        "Jaren Jackson Jr",
+        "Jeff Green",
+        "Kawhi Leonard",
+        "Kevin Love",
+        "Larry Nance Jr",
+        "Leaky Black",
+        "Lonzo Ball",
+        "Mac McClung",
+        "Markieff Morris",
+        "Nick Richards",
+        "Nick Smith",
+        "Nicolas Batum",
+        "Ochai Agbaji",
+        "Olivier Sarr",
+        "Reggie Jackson",
+        "Rui Hachimura",
+        "Terry Rozier",
+        "Thanasis Antetokounmpo",
+        "Tim Hardaway Jr",
+        "Trendon Watford",
+        "Trevor Keels",
+        "Tristan Thompson",
+        "Wendell Moore",
+        "Phillip Wheeler",
+        "Tyler Smith",
+        "Keshad Johnson",
+        "N'Faly Dante",
+        "Yuki Kawamura",
+        "Aaron Holiday",
+        "Anthony Gill",
+        "Ben Simmons",
+        "Bismack Biyombo",
+        "Blake Wesley",
+        "Bradley Beal",
+        "Brandon Clarke",
+        "Brandon Williams",
+        "Bruce Brown",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Christian Wood",
+        "Cody Martin",
+        "Dalano Banton",
+        "Dalen Terry",
+        "Dante Exum",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "DeMar DeRozan",
+        "Donovan Williams",
+        "Doug McDermott",
+        "Drew Eubanks",
+        "Drew Peterson",
+        "Duop Reath",
+        "Dwight Powell",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Gabe Vincent",
+        "Garrett Temple",
+        "Garrison Mathews",
+        "Gary Payton II",
+        "Gary Trent Jr"
+      ],
+      "new_players": [],
+      "new_teams": [],
+      "team_moves": [
+        {
+          "player": "Mac McClung",
+          "from": "Chicago Bulls",
+          "to": "Valvi Girona"
+        },
+        {
+          "player": "Garrison Mathews",
+          "from": "Indiana Pacers",
+          "to": "Olimpia Milano"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Mac McClung",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Garrison Mathews",
+          "from": "nba_active",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Mac McClung",
+        "Garrison Mathews"
+      ],
+      "newly_retired": [],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }

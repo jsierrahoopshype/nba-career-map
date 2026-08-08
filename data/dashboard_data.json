@@ -1179,6 +1179,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Garrison Mathews",
+      "current_team": "Olimpia Milano",
+      "country": "Italy",
+      "last_updated": "2026-08-08"
+    },
+    {
       "player": "Gary Clark",
       "current_team": "Yokohama B-Corsairs",
       "country": "Japan",
@@ -2473,6 +2479,12 @@
       "current_team": "Melbourne United",
       "country": "Australia",
       "last_updated": "2026-07-26"
+    },
+    {
+      "player": "Mac McClung",
+      "current_team": "Valvi Girona",
+      "country": "Spain",
+      "last_updated": "2026-08-08"
     },
     {
       "player": "Malachi Flynn",
@@ -4963,7 +4975,7 @@
     },
     {
       "team": "Olimpia Milano",
-      "players": 115
+      "players": 116
     },
     {
       "team": "Rockford Lightning",
@@ -5418,6 +5430,10 @@
       "players": 35
     },
     {
+      "team": "Valvi Girona",
+      "players": 35
+    },
+    {
       "team": "Cedevita Zagreb",
       "players": 34
     },
@@ -5435,10 +5451,6 @@
     },
     {
       "team": "Valladolid",
-      "players": 34
-    },
-    {
-      "team": "Valvi Girona",
       "players": 34
     },
     {
@@ -19720,6 +19732,18 @@
       ]
     },
     {
+      "team": "Olimpia Milano",
+      "count": 6,
+      "players": [
+        "Alec Peters",
+        "Devon Hall",
+        "Garrison Mathews",
+        "Leandro Bolmaro",
+        "Lorenzo Brown",
+        "Marko Guduric"
+      ]
+    },
+    {
       "team": "Osos de Manatí",
       "count": 6,
       "players": [
@@ -19842,17 +19866,6 @@
         "Keion Brooks",
         "Raymond Spalding",
         "Taelon Peter"
-      ]
-    },
-    {
-      "team": "Olimpia Milano",
-      "count": 5,
-      "players": [
-        "Alec Peters",
-        "Devon Hall",
-        "Leandro Bolmaro",
-        "Lorenzo Brown",
-        "Marko Guduric"
       ]
     },
     {
@@ -22088,6 +22101,13 @@
       ]
     },
     {
+      "team": "Valvi Girona",
+      "count": 1,
+      "players": [
+        "Mac McClung"
+      ]
+    },
+    {
       "team": "Vanoli Cremona",
       "count": 1,
       "players": [
@@ -22179,7 +22199,7 @@
     },
     {
       "country": "Spain",
-      "count": 52
+      "count": 53
     },
     {
       "country": "China",
@@ -22203,7 +22223,7 @@
     },
     {
       "country": "Italy",
-      "count": 29
+      "count": 30
     },
     {
       "country": "Japan",
@@ -22373,11 +22393,11 @@
     },
     {
       "country": "Italy",
-      "players": 915
+      "players": 916
     },
     {
       "country": "Spain",
-      "players": 795
+      "players": 796
     },
     {
       "country": "France",
@@ -24531,6 +24551,40 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Olimpia Milano",
+      "players": [
+        "Alec Peters",
+        "Devon Hall",
+        "Garrison Mathews",
+        "Leandro Bolmaro",
+        "Lorenzo Brown",
+        "Marko Guduric"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Alec Peters",
+            "Lorenzo Brown"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Leandro Bolmaro",
+            "Lorenzo Brown"
+          ],
+          "shared_nba_franchises": [
+            "Minnesota Timberwolves"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Osos de Manatí",
       "players": [
         "Cheick Diallo",
@@ -24716,39 +24770,6 @@
             "Indiana Pacers"
           ],
           "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Olimpia Milano",
-      "players": [
-        "Alec Peters",
-        "Devon Hall",
-        "Leandro Bolmaro",
-        "Lorenzo Brown",
-        "Marko Guduric"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Alec Peters",
-            "Lorenzo Brown"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Leandro Bolmaro",
-            "Lorenzo Brown"
-          ],
-          "shared_nba_franchises": [
-            "Minnesota Timberwolves"
-          ],
-          "latest_stint_year": 2025
         }
       ],
       "latest_stint_year": 2026
@@ -54991,6 +55012,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Garrison Mathews",
+        "current_team": "Olimpia Milano",
+        "city": "Milan",
+        "state": "",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-08-08"
+      },
+      {
         "player": "Gary Clark",
         "current_team": "Yokohama B-Corsairs",
         "city": "Yokohama",
@@ -56798,6 +56828,15 @@
         "country": "Russia",
         "in_coords": true,
         "last_updated": "2026-07-13"
+      },
+      {
+        "player": "Mac McClung",
+        "current_team": "Valvi Girona",
+        "city": "Girona",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-08-08"
       },
       {
         "player": "Malachi Flynn",
@@ -59159,8 +59198,8 @@
       }
     ],
     "coverage": {
-      "total": 651,
-      "in_coords": 574,
+      "total": 653,
+      "in_coords": 576,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59168,6 +59207,18 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Garrison Mathews",
+      "from_team": "Indiana Pacers",
+      "to_team": "Olimpia Milano",
+      "date": "2026-08-08"
+    },
+    {
+      "player": "Mac McClung",
+      "from_team": "Chicago Bulls",
+      "to_team": "Valvi Girona",
+      "date": "2026-08-08"
+    },
     {
       "player": "Josh Oduro",
       "from_team": "New Orleans Pelicans",
@@ -59454,18 +59505,6 @@
       "player": "Quinten Post",
       "from_team": "Golden State Warriors",
       "to_team": "Memphis Grizzlies",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Elijah Harkless",
-      "from_team": "Utah Jazz",
-      "to_team": "Detroit Pistons",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Ariel Hukporti",
-      "from_team": "New York Knicks",
-      "to_team": "Philadelphia 76ers",
       "date": "2026-07-13"
     }
   ]

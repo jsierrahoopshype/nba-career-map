@@ -1,3 +1,15 @@
+## 2026-08-08 — incremental run
+
+- Players updated: **66** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Mac McClung: Chicago Bulls → Valvi Girona
+  - Garrison Mathews: Indiana Pacers → Olimpia Milano
+  - Mac McClung: [nba_active → overseas_active]
+  - Garrison Mathews: [nba_active → overseas_active]
+
 ## 2026-08-07 — incremental run
 
 - Players updated: **65** (8 new)
