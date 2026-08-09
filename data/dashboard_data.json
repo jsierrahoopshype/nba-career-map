@@ -1521,6 +1521,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Jack Kayil",
+      "current_team": "Alba Berlin",
+      "country": "Germany",
+      "last_updated": "2026-08-09"
+    },
+    {
       "player": "Jack McVeigh",
       "current_team": "Cairns Taipans",
       "country": "Australia",
@@ -20422,6 +20428,14 @@
       ]
     },
     {
+      "team": "Alba Berlin",
+      "count": 2,
+      "players": [
+        "Jack Kayil",
+        "Jordan Ford"
+      ]
+    },
+    {
       "team": "Austin Spurs",
       "count": 2,
       "players": [
@@ -20985,13 +20999,6 @@
       "count": 1,
       "players": [
         "Jordan Hamilton"
-      ]
-    },
-    {
-      "team": "Alba Berlin",
-      "count": 1,
-      "players": [
-        "Jordan Ford"
       ]
     },
     {
@@ -22254,12 +22261,12 @@
       "count": 11
     },
     {
-      "country": "Lebanon",
+      "country": "Germany",
       "count": 11
     },
     {
-      "country": "Germany",
-      "count": 10
+      "country": "Lebanon",
+      "count": 11
     },
     {
       "country": "Taiwan",
@@ -22389,7 +22396,7 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5062
+      "players": 5061
     },
     {
       "country": "Italy",
@@ -25251,6 +25258,15 @@
           "latest_stint_year": 2026
         }
       ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Alba Berlin",
+      "players": [
+        "Jack Kayil",
+        "Jordan Ford"
+      ],
+      "shared_franchise_pairs": [],
       "latest_stint_year": 2026
     },
     {
@@ -59195,11 +59211,20 @@
         "country": "USA",
         "in_coords": true,
         "last_updated": "2026-07-26"
+      },
+      {
+        "player": "Jack Kayil",
+        "current_team": "Alba Berlin",
+        "city": "Berlin",
+        "state": "",
+        "country": "Germany",
+        "in_coords": true,
+        "last_updated": "2026-08-09"
       }
     ],
     "coverage": {
-      "total": 653,
-      "in_coords": 576,
+      "total": 654,
+      "in_coords": 577,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59207,6 +59232,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Jack Kayil",
+      "from_team": "New York Knicks",
+      "to_team": "Alba Berlin",
+      "date": "2026-08-09"
+    },
     {
       "player": "Garrison Mathews",
       "from_team": "Indiana Pacers",
@@ -59499,12 +59530,6 @@
       "player": "Santi Aldama",
       "from_team": "Memphis Grizzlies",
       "to_team": "Dallas Mavericks",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Quinten Post",
-      "from_team": "Golden State Warriors",
-      "to_team": "Memphis Grizzlies",
       "date": "2026-07-13"
     }
   ]
