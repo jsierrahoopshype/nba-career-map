@@ -18488,7 +18488,7 @@
       "city": "Tel Aviv",
       "state": "",
       "country": "Israel",
-      "count": 96,
+      "count": 97,
       "roster": [
         {
           "player": "Aaron Jackson",
@@ -18819,6 +18819,13 @@
           "player": "Joseph Forte",
           "years": "2014-2015",
           "status": "retired",
+          "last_team": "Maccabi Tel Aviv",
+          "nationality": "United States"
+        },
+        {
+          "player": "Keaton Wallace",
+          "years": "2026–present",
+          "status": "overseas_active",
           "last_team": "Maccabi Tel Aviv",
           "nationality": "United States"
         },
@@ -49161,8 +49168,8 @@
         {
           "player": "Keaton Wallace",
           "years": "2023–2024, 2024–2025",
-          "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "last_team": "Maccabi Tel Aviv",
           "nationality": "United States"
         },
         {
@@ -141331,12 +141338,17 @@
         {
           "player": "Keaton Wallace",
           "years": "2021–2023",
-          "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "last_team": "Maccabi Tel Aviv",
           "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Maccabi Tel Aviv",
+          "shared": 1
+        },
         {
           "type": "club",
           "name": "Fenerbahçe",
@@ -141370,11 +141382,6 @@
         {
           "type": "club",
           "name": "Cañeros del Este",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Pinheiros",
           "shared": 0
         }
       ]
