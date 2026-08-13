@@ -1,3 +1,12 @@
+## 2026-08-13 — incremental run
+
+- Players updated: **69** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **1** (0 → overseas, 1 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Russell Westbrook: [nba_active → retired]
+
 ## 2026-08-12 — incremental run
 
 - Players updated: **68** (0 new)
