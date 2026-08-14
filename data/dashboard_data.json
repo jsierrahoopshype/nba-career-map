@@ -1095,6 +1095,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Ethan Thompson",
+      "current_team": "Noblesville Boom",
+      "country": "USA",
+      "last_updated": "2026-08-14"
+    },
+    {
       "player": "Eugene Omoruyi",
       "current_team": "Baskonia",
       "country": "Spain",
@@ -19745,6 +19751,18 @@
       ]
     },
     {
+      "team": "Noblesville Boom",
+      "count": 6,
+      "players": [
+        "Ethan Thompson",
+        "Jalen Slawson",
+        "Jordan Bell",
+        "Keion Brooks",
+        "Raymond Spalding",
+        "Taelon Peter"
+      ]
+    },
+    {
       "team": "Olimpia Milano",
       "count": 6,
       "players": [
@@ -19868,17 +19886,6 @@
         "Isaiah Hicks",
         "Jalen Crutcher",
         "Terence Davis"
-      ]
-    },
-    {
-      "team": "Noblesville Boom",
-      "count": 5,
-      "players": [
-        "Jalen Slawson",
-        "Jordan Bell",
-        "Keion Brooks",
-        "Raymond Spalding",
-        "Taelon Peter"
       ]
     },
     {
@@ -22209,7 +22216,7 @@
   "countries_live_snapshot": [
     {
       "country": "USA",
-      "count": 73
+      "count": 74
     },
     {
       "country": "Spain",
@@ -24566,6 +24573,50 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Noblesville Boom",
+      "players": [
+        "Ethan Thompson",
+        "Jalen Slawson",
+        "Jordan Bell",
+        "Keion Brooks",
+        "Raymond Spalding",
+        "Taelon Peter"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Jalen Slawson",
+            "Ethan Thompson"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Jalen Slawson",
+            "Taelon Peter"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Ethan Thompson",
+            "Taelon Peter"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Olimpia Milano",
       "players": [
         "Alec Peters",
@@ -24764,29 +24815,6 @@
         "Terence Davis"
       ],
       "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Noblesville Boom",
-      "players": [
-        "Jalen Slawson",
-        "Jordan Bell",
-        "Keion Brooks",
-        "Raymond Spalding",
-        "Taelon Peter"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Jalen Slawson",
-            "Taelon Peter"
-          ],
-          "shared_nba_franchises": [
-            "Indiana Pacers"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
       "latest_stint_year": 2026
     },
     {
@@ -59194,6 +59222,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Ethan Thompson",
+        "current_team": "Noblesville Boom",
+        "city": "Noblesville",
+        "state": "Indiana",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-08-14"
+      },
+      {
         "player": "John Tonje",
         "current_team": "Maine Celtics",
         "city": "Portland",
@@ -59240,8 +59277,8 @@
       }
     ],
     "coverage": {
-      "total": 655,
-      "in_coords": 578,
+      "total": 656,
+      "in_coords": 579,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59249,6 +59286,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Ethan Thompson",
+      "from_team": "Indiana Pacers",
+      "to_team": "Noblesville Boom",
+      "date": "2026-08-14"
+    },
     {
       "player": "Keaton Wallace",
       "from_team": "Atlanta Hawks",
@@ -59541,12 +59584,6 @@
       "player": "Chimezie Metu",
       "from_team": "Gran Canaria",
       "to_team": "Galatasaray",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Bruno Fernando",
-      "from_team": "Partizan",
-      "to_team": "Anadolu Efes",
       "date": "2026-07-13"
     }
   ]
