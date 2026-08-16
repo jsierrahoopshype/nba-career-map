@@ -11670,8 +11670,8 @@
         {
           "player": "Jalen McDaniels",
           "years": "2019–2021",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Kobe Storks",
           "nationality": "United States"
         },
         {
@@ -35600,8 +35600,8 @@
         {
           "player": "Jalen McDaniels",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Kobe Storks",
           "nationality": "United States"
         },
         {
@@ -173343,13 +173343,20 @@
       "city": "Kobe",
       "state": "",
       "country": "Japan",
-      "count": 1,
+      "count": 2,
       "roster": [
         {
           "player": "Chaundee Brown",
           "years": "2024–2025",
           "status": "overseas_active",
           "last_team": "London Lions",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jalen McDaniels",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Kobe Storks",
           "nationality": "United States"
         }
       ],
@@ -173361,7 +173368,17 @@
         },
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "South Bay Lakers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -173382,16 +173399,6 @@
         {
           "type": "club",
           "name": "London Lions",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Scarborough Shooting Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "New Taipei Kings",
           "shared": 1
         }
       ]

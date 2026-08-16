@@ -1653,6 +1653,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Jalen McDaniels",
+      "current_team": "Kobe Storks",
+      "country": "Japan",
+      "last_updated": "2026-08-16"
+    },
+    {
       "player": "Jalen Slawson",
       "current_team": "Noblesville Boom",
       "country": "USA",
@@ -11016,6 +11022,10 @@
       "players": 2
     },
     {
+      "team": "Kobe Storks",
+      "players": 2
+    },
+    {
       "team": "Korihait",
       "players": 2
     },
@@ -15697,10 +15707,6 @@
     },
     {
       "team": "Knox Raiders",
-      "players": 1
-    },
-    {
-      "team": "Kobe Storks",
       "players": 1
     },
     {
@@ -21618,6 +21624,13 @@
       ]
     },
     {
+      "team": "Kobe Storks",
+      "count": 1,
+      "players": [
+        "Jalen McDaniels"
+      ]
+    },
+    {
       "team": "Kolossos Rodou",
       "count": 1,
       "players": [
@@ -22248,7 +22261,7 @@
     },
     {
       "country": "Japan",
-      "count": 26
+      "count": 27
     },
     {
       "country": "Australia",
@@ -22474,7 +22487,7 @@
     },
     {
       "country": "Japan",
-      "players": 158
+      "players": 159
     },
     {
       "country": "Serbia",
@@ -55658,6 +55671,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Jalen McDaniels",
+        "current_team": "Kobe Storks",
+        "city": "Kobe",
+        "state": "",
+        "country": "Japan",
+        "in_coords": true,
+        "last_updated": "2026-08-16"
+      },
+      {
         "player": "Jalen Slawson",
         "current_team": "Noblesville Boom",
         "city": "Noblesville",
@@ -59277,8 +59299,8 @@
       }
     ],
     "coverage": {
-      "total": 656,
-      "in_coords": 579,
+      "total": 657,
+      "in_coords": 580,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59286,6 +59308,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Jalen McDaniels",
+      "from_team": "Washington Wizards",
+      "to_team": "Kobe Storks",
+      "date": "2026-08-16"
+    },
     {
       "player": "Ethan Thompson",
       "from_team": "Indiana Pacers",
@@ -59578,12 +59606,6 @@
       "player": "Chris McCullough",
       "from_team": "TNT Tropang 5G",
       "to_team": "Vaqueros de Bayamón",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Chimezie Metu",
-      "from_team": "Gran Canaria",
-      "to_team": "Galatasaray",
       "date": "2026-07-13"
     }
   ]
