@@ -2985,6 +2985,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Olivier Sarr",
+      "current_team": "Real Madrid",
+      "country": "Spain",
+      "last_updated": "2026-08-17"
+    },
+    {
       "player": "Omari Spellman",
       "current_team": "Beijing Ducks",
       "country": "China",
@@ -5034,11 +5040,11 @@
       "players": 96
     },
     {
-      "team": "Panathinaikos",
-      "players": 91
+      "team": "Real Madrid",
+      "players": 92
     },
     {
-      "team": "Real Madrid",
+      "team": "Panathinaikos",
       "players": 91
     },
     {
@@ -19505,7 +19511,7 @@
   "teams_by_current_nba_alumni": [
     {
       "team": "Real Madrid",
-      "count": 11,
+      "count": 12,
       "players": [
         "Alex Len",
         "Chuma Okeke",
@@ -19513,6 +19519,7 @@
         "Gabriel Deck",
         "Mario Hezonja",
         "Max Shulga",
+        "Olivier Sarr",
         "Omer Yurtseven",
         "Serge Ibaka",
         "Theo Maledon",
@@ -22233,7 +22240,7 @@
     },
     {
       "country": "Spain",
-      "count": 53
+      "count": 54
     },
     {
       "country": "China",
@@ -22431,7 +22438,7 @@
     },
     {
       "country": "Spain",
-      "players": 796
+      "players": 797
     },
     {
       "country": "France",
@@ -22804,6 +22811,7 @@
         "Gabriel Deck",
         "Mario Hezonja",
         "Max Shulga",
+        "Olivier Sarr",
         "Omer Yurtseven",
         "Serge Ibaka",
         "Theo Maledon",
@@ -22854,6 +22862,16 @@
         {
           "players": [
             "Chuma Okeke",
+            "Olivier Sarr"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Chuma Okeke",
             "Serge Ibaka"
           ],
           "shared_nba_franchises": [
@@ -22870,6 +22888,16 @@
             "Cleveland Cavaliers"
           ],
           "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Gabriel Deck",
+            "Olivier Sarr"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2026
         },
         {
           "players": [
@@ -22900,6 +22928,36 @@
             "Orlando Magic"
           ],
           "latest_stint_year": 2024
+        },
+        {
+          "players": [
+            "Olivier Sarr",
+            "Serge Ibaka"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Olivier Sarr",
+            "Theo Maledon"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Olivier Sarr",
+            "Walter Tavares"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
+          ],
+          "latest_stint_year": 2026
         },
         {
           "players": [
@@ -57597,6 +57655,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Olivier Sarr",
+        "current_team": "Real Madrid",
+        "city": "Madrid",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-08-17"
+      },
+      {
         "player": "Omari Spellman",
         "current_team": "Beijing Ducks",
         "city": "Beijing",
@@ -59299,8 +59366,8 @@
       }
     ],
     "coverage": {
-      "total": 657,
-      "in_coords": 580,
+      "total": 658,
+      "in_coords": 581,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59308,6 +59375,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Olivier Sarr",
+      "from_team": "Cleveland Cavaliers",
+      "to_team": "Real Madrid",
+      "date": "2026-08-17"
+    },
     {
       "player": "Jalen McDaniels",
       "from_team": "Washington Wizards",
@@ -59600,12 +59673,6 @@
       "player": "Craig Sword",
       "from_team": "Hsinchu Toplus Lioneers",
       "to_team": "Rayos de Hermosillo",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Chris McCullough",
-      "from_team": "TNT Tropang 5G",
-      "to_team": "Vaqueros de Bayamón",
       "date": "2026-07-13"
     }
   ]
