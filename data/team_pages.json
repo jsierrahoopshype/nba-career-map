@@ -91677,10 +91677,10 @@
         },
         {
           "player": "Hunter Dickinson",
-          "years": "2025–present",
+          "years": "2025–26",
           "stint_team": "New Orleans Pelicans",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "current_team": "Birmingham Squadron",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -92420,6 +92420,14 @@
           "current_team": "Delaware Blue Coats",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Malik Dia",
+          "years": "2026–present",
+          "stint_team": "New Orleans Pelicans",
+          "status": "nba_active",
+          "current_team": "New Orleans Pelicans",
+          "current_country": "USA"
         },
         {
           "player": "Marc Jackson",
@@ -93439,6 +93447,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Hunter Dickinson",
+          "status": "overseas_active",
+          "current_team": "Birmingham Squadron",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Ian Clark",
           "status": "overseas_active",
           "current_team": "Cangrejeros de Santurce",
@@ -93885,8 +93900,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 270,
-      "alumni_count": 260,
+      "roster_count": 271,
+      "alumni_count": 261,
       "related": [
         {
           "type": "club",

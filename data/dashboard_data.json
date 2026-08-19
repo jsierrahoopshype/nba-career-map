@@ -1,6 +1,6 @@
 {
   "generated_from": "data/players/nba_players_careers.json",
-  "player_count": 5171,
+  "player_count": 5172,
   "where_are_they_now": [
     {
       "player": "AJ Lawson",
@@ -1339,6 +1339,12 @@
       "current_team": "Caballeros de Culiacán",
       "country": "Mexico",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Hunter Dickinson",
+      "current_team": "Birmingham Squadron",
+      "country": "USA",
+      "last_updated": "2026-08-19"
     },
     {
       "player": "Hunter Tyson",
@@ -11056,6 +11062,10 @@
       "players": 2
     },
     {
+      "team": "Laketown Squadron",
+      "players": 2
+    },
+    {
       "team": "Larisa",
       "players": 2
     },
@@ -15836,10 +15846,6 @@
       "players": 1
     },
     {
-      "team": "Laketown Squadron",
-      "players": 1
-    },
-    {
       "team": "Lancaster Red Roses / Philadelphia Kings",
       "players": 1
     },
@@ -20503,6 +20509,14 @@
       ]
     },
     {
+      "team": "Birmingham Squadron",
+      "count": 2,
+      "players": [
+        "Hunter Dickinson",
+        "Jaden Springer"
+      ]
+    },
+    {
       "team": "Boulazac Basket Dordogne",
       "count": 2,
       "players": [
@@ -21124,13 +21138,6 @@
       "count": 1,
       "players": [
         "Keljin Blevins"
-      ]
-    },
-    {
-      "team": "Birmingham Squadron",
-      "count": 1,
-      "players": [
-        "Jaden Springer"
       ]
     },
     {
@@ -22236,7 +22243,7 @@
   "countries_live_snapshot": [
     {
       "country": "USA",
-      "count": 74
+      "count": 75
     },
     {
       "country": "Spain",
@@ -22430,7 +22437,7 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5061
+      "players": 5062
     },
     {
       "country": "Italy",
@@ -26528,6 +26535,15 @@
       "players": [
         "Quincy Miller",
         "Tony Mitchell (1989)"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2025
+    },
+    {
+      "team": "Birmingham Squadron",
+      "players": [
+        "Hunter Dickinson",
+        "Jaden Springer"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2025
@@ -59320,6 +59336,15 @@
         "last_updated": "2026-08-14"
       },
       {
+        "player": "Hunter Dickinson",
+        "current_team": "Birmingham Squadron",
+        "city": "Birmingham",
+        "state": "Alabama",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-08-19"
+      },
+      {
         "player": "John Tonje",
         "current_team": "Maine Celtics",
         "city": "Portland",
@@ -59366,8 +59391,8 @@
       }
     ],
     "coverage": {
-      "total": 658,
-      "in_coords": 581,
+      "total": 659,
+      "in_coords": 582,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59375,6 +59400,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Hunter Dickinson",
+      "from_team": "New Orleans Pelicans",
+      "to_team": "Birmingham Squadron",
+      "date": "2026-08-19"
+    },
     {
       "player": "Trendon Watford",
       "from_team": "Philadelphia 76ers",
@@ -59667,12 +59698,6 @@
       "player": "Ibou Badji",
       "from_team": "Windy City Bulls",
       "to_team": "Shenzhen Leopards",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Daniel Theis",
-      "from_team": "AS Monaco",
-      "to_team": "ASVEL",
       "date": "2026-07-13"
     }
   ]
