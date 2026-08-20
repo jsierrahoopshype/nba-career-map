@@ -1,3 +1,14 @@
+## 2026-08-20 — incremental run
+
+- Players updated: **67** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New teams: Maxima Roma
+  - Aaron Holiday: Houston Rockets → Maxima Roma
+  - Aaron Holiday: [nba_active → overseas_active]
+
 ## 2026-08-19 — incremental run
 
 - Players updated: **69** (1 new)

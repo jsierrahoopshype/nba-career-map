@@ -11191,6 +11191,103 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-08-20",
+      "mode": "incremental",
+      "players_updated": [
+        "Thanasis Antetokounmpo",
+        "Tim Hardaway Jr",
+        "Trevor Keels",
+        "Tristan Thompson",
+        "Wendell Moore",
+        "Phillip Wheeler",
+        "Tyler Smith",
+        "Keshad Johnson",
+        "N'Faly Dante",
+        "Yuki Kawamura",
+        "Aaron Holiday",
+        "Anthony Gill",
+        "Ben Simmons",
+        "Bismack Biyombo",
+        "Blake Wesley",
+        "Brandon Clarke",
+        "Brandon Williams",
+        "Bruce Brown",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Christian Wood",
+        "Cody Martin",
+        "Dalano Banton",
+        "Dalen Terry",
+        "Dante Exum",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "DeMar DeRozan",
+        "Donovan Williams",
+        "Doug McDermott",
+        "Drew Eubanks",
+        "Drew Peterson",
+        "Duop Reath",
+        "Dwight Powell",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Gabe Vincent",
+        "Garrett Temple",
+        "Gary Payton II",
+        "Gary Trent Jr",
+        "Georges Niang",
+        "Jaden Ivey",
+        "Jalen Hood-Schifino",
+        "James Harden",
+        "James Johnson",
+        "James Wiseman",
+        "Jaren Jackson Jr",
+        "Jeff Green",
+        "Kelly Olynyk",
+        "Kevin Love",
+        "Killian Hayes",
+        "Larry Nance Jr",
+        "Leaky Black",
+        "Lindy Waters III",
+        "Lonzo Ball",
+        "Markieff Morris",
+        "Mason Plumlee",
+        "Nick Richards",
+        "Nick Smith",
+        "Nicolas Batum",
+        "Ochai Agbaji",
+        "Reggie Jackson",
+        "Rui Hachimura",
+        "Seth Curry",
+        "Terry Rozier"
+      ],
+      "new_players": [],
+      "new_teams": [
+        "Maxima Roma"
+      ],
+      "team_moves": [
+        {
+          "player": "Aaron Holiday",
+          "from": "Houston Rockets",
+          "to": "Maxima Roma"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Aaron Holiday",
+          "from": "nba_active",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Aaron Holiday"
+      ],
+      "newly_retired": [],
+      "requests": 100,
+      "budget_exhausted": true
     }
   ]
 }

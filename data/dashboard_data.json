@@ -15,6 +15,12 @@
       "last_updated": "2026-08-01"
     },
     {
+      "player": "Aaron Holiday",
+      "current_team": "Maxima Roma",
+      "country": "Italy",
+      "last_updated": "2026-08-20"
+    },
+    {
       "player": "Adam Mokoka",
       "current_team": "JL Bourg",
       "country": "France",
@@ -16294,6 +16300,10 @@
       "players": 1
     },
     {
+      "team": "Maxima Roma",
+      "players": 1
+    },
+    {
       "team": "Maywood Buzz",
       "players": 1
     },
@@ -21729,6 +21739,13 @@
       ]
     },
     {
+      "team": "Maxima Roma",
+      "count": 1,
+      "players": [
+        "Aaron Holiday"
+      ]
+    },
+    {
       "team": "Meralco Bolts",
       "count": 1,
       "players": [
@@ -22271,7 +22288,7 @@
     },
     {
       "country": "Italy",
-      "count": 30
+      "count": 31
     },
     {
       "country": "Japan",
@@ -22441,7 +22458,7 @@
     },
     {
       "country": "Italy",
-      "players": 916
+      "players": 917
     },
     {
       "country": "Spain",
@@ -53468,6 +53485,15 @@
         "last_updated": "2026-08-01"
       },
       {
+        "player": "Aaron Holiday",
+        "current_team": "Maxima Roma",
+        "city": "Rome",
+        "state": "Lazio",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-08-20"
+      },
+      {
         "player": "Adam Mokoka",
         "current_team": "JL Bourg",
         "city": "Bourg-en-Bresse",
@@ -59391,8 +59417,8 @@
       }
     ],
     "coverage": {
-      "total": 659,
-      "in_coords": 582,
+      "total": 660,
+      "in_coords": 583,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59400,6 +59426,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Aaron Holiday",
+      "from_team": "Houston Rockets",
+      "to_team": "Maxima Roma",
+      "date": "2026-08-20"
+    },
     {
       "player": "Hunter Dickinson",
       "from_team": "New Orleans Pelicans",
@@ -59692,12 +59724,6 @@
       "player": "Isaac Bonga",
       "from_team": "Partizan",
       "to_team": "Panathinaikos",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Ibou Badji",
-      "from_team": "Windy City Bulls",
-      "to_team": "Shenzhen Leopards",
       "date": "2026-07-13"
     }
   ]
