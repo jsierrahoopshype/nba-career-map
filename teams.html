@@ -637,16 +637,25 @@
                 nationality:m.nationality||'', all_star:m.all_star,
                 all_star_count:m.all_star_count,
             }));
+            const activeHereNames = new Set(activeRows.map(r=>r.player));
 
-            // Retired alumni of this club (mirrors the team-page split). The
-            // active players are already shown above, so this is retired-only.
+            // Retired alumni of this club (mirrors the team-page split).
             const retired = allTime.filter(r => r.status === 'retired');
+
+            // Alumni who are NBA-active or overseas-active, but not currently
+            // AT this specific club (so absent from clubIndex above) --
+            // without this bucket they were silently dropped from every
+            // table despite counting toward info.count/allTime.length, the
+            // gap between the page's alumni-count header and what actually
+            // rendered (e.g. a club showing "10 alumni" but only 5 rows).
+            const activeElsewhere = allTime.filter(r => r.status !== 'retired' && !activeHereNames.has(r.player));
 
             document.getElementById('app').innerHTML = `
                 ${crumb('teams.html', '← All teams')}
                 <div class="detail-title">${esc(club)}</div>
                 <div class="detail-sub">${flag}${loc?loc+' · ':''}${info.count||allTime.length} all-time NBA alumni${info.truncated?' (showing first '+allTime.length+')':''}</div>
                 ${activeRows.length ? `<div class="section"><div class="section-h">Currently active here (${activeRows.length})</div><div id="clubActive"></div></div>` : ''}
+                ${activeElsewhere.length ? `<div class="section"><div class="section-h">Active elsewhere (${activeElsewhere.length})</div><div id="clubActiveElsewhere"></div></div>` : ''}
                 <div class="section"><div class="section-h">Retired (${retired.length})</div><div id="clubRetired"></div></div>
                 ${renderRelated(info.related)}`;
 
@@ -660,6 +669,22 @@
                         { label:'NBA franchises', sortVal:r=>r.franchises[0]?.toLowerCase()||'', cls:'wrap',
                           cell:r=>`<span class="fr-links">${r.franchises.map(f=>
                               `<a href="${teamHref(f)}">${esc(f)}</a>`).join(', ')||'—'}</span>` },
+                    ],
+                });
+            }
+
+            if (activeElsewhere.length){
+                mountTable(document.getElementById('clubActiveElsewhere'), {
+                    unit:'players', rows:activeElsewhere,
+                    filterPlaceholder:'Filter players…',
+                    filter:(r,q)=>r.player.toLowerCase().includes(q),
+                    columns:[
+                        { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap', cell:playerCell },
+                        { label:'Nat.', sortVal:r=>(r.nationality||'').toLowerCase(), cell:natCell },
+                        { label:'Years here', sortVal:r=>startYear(r.years), cls:'mono', cell:r=>esc(r.years) },
+                        { label:'Current team', sortVal:r=>(r.last_team||'').toLowerCase(),
+                          cell:r=>teamCell(r.last_team) },
+                        { label:'Status', sortVal:r=>STATUS_RANK[r.status], cell:statusCell },
                     ],
                 });
             }
