@@ -1,12 +1,24 @@
 {
   "generated_from": "data/players/nba_players_careers.json",
-  "player_count": 5161,
+  "player_count": 5172,
   "where_are_they_now": [
+    {
+      "player": "AJ Lawson",
+      "current_team": "Baskonia",
+      "country": "Spain",
+      "last_updated": "2026-08-07"
+    },
     {
       "player": "Aaron Henry",
       "current_team": "Nagoya Diamond Dolphins",
       "country": "Japan",
       "last_updated": "2026-08-01"
+    },
+    {
+      "player": "Aaron Holiday",
+      "current_team": "Maxima Roma",
+      "country": "Italy",
+      "last_updated": "2026-08-20"
     },
     {
       "player": "Adam Mokoka",
@@ -585,6 +597,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Cole Anthony",
+      "current_team": "Melbourne United",
+      "country": "Australia",
+      "last_updated": "2026-08-05"
+    },
+    {
       "player": "Cole Swider",
       "current_team": "Anadolu Efes",
       "country": "Turkey",
@@ -1083,6 +1101,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Ethan Thompson",
+      "current_team": "Noblesville Boom",
+      "country": "USA",
+      "last_updated": "2026-08-14"
+    },
+    {
       "player": "Eugene Omoruyi",
       "current_team": "Baskonia",
       "country": "Spain",
@@ -1165,6 +1189,12 @@
       "current_team": "Maccabi Tel Aviv",
       "country": "Israel",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Garrison Mathews",
+      "current_team": "Olimpia Milano",
+      "country": "Italy",
+      "last_updated": "2026-08-08"
     },
     {
       "player": "Gary Clark",
@@ -1317,6 +1347,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Hunter Dickinson",
+      "current_team": "Birmingham Squadron",
+      "country": "USA",
+      "last_updated": "2026-08-19"
+    },
+    {
       "player": "Hunter Tyson",
       "current_team": "Gigantes de Carolina",
       "country": "Puerto Rico",
@@ -1437,6 +1473,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "JD Davison",
+      "current_team": "Rio Grande Valley Vipers",
+      "country": "USA",
+      "last_updated": "2026-08-06"
+    },
+    {
       "player": "JP Macura",
       "current_team": "Benetton Treviso",
       "country": "Italy",
@@ -1495,6 +1537,12 @@
       "current_team": "Ryukyu Golden Kings",
       "country": "Japan",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Jack Kayil",
+      "current_team": "Alba Berlin",
+      "country": "Germany",
+      "last_updated": "2026-08-09"
     },
     {
       "player": "Jack McVeigh",
@@ -1615,6 +1663,12 @@
       "current_team": "Büyükçekmece Basketbol",
       "country": "Turkey",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Jalen McDaniels",
+      "current_team": "Kobe Storks",
+      "country": "Japan",
+      "last_updated": "2026-08-16"
     },
     {
       "player": "Jalen Slawson",
@@ -2073,6 +2127,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Josh Oduro",
+      "current_team": "Melbourne United",
+      "country": "Australia",
+      "last_updated": "2026-08-07"
+    },
+    {
       "player": "Josh Reaves",
       "current_team": "Rio Grande Valley Vipers",
       "country": "USA",
@@ -2191,6 +2251,12 @@
       "current_team": "Victoria Libertas Pesaro",
       "country": "Italy",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Keaton Wallace",
+      "current_team": "Maccabi Tel Aviv",
+      "country": "Israel",
+      "last_updated": "2026-08-11"
     },
     {
       "player": "Keifer Sykes",
@@ -2449,6 +2515,12 @@
       "current_team": "Melbourne United",
       "country": "Australia",
       "last_updated": "2026-07-26"
+    },
+    {
+      "player": "Mac McClung",
+      "current_team": "Valvi Girona",
+      "country": "Spain",
+      "last_updated": "2026-08-08"
     },
     {
       "player": "Malachi Flynn",
@@ -2793,6 +2865,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Mouhamadou Gueye",
+      "current_team": "Valencia",
+      "country": "Spain",
+      "last_updated": "2026-08-07"
+    },
+    {
       "player": "Mychal Mulder",
       "current_team": "Vancouver Bandits",
       "country": "Canada",
@@ -2919,6 +2997,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Olivier Sarr",
+      "current_team": "Real Madrid",
+      "country": "Spain",
+      "last_updated": "2026-08-17"
+    },
+    {
       "player": "Omari Spellman",
       "current_team": "Beijing Ducks",
       "country": "China",
@@ -2965,6 +3049,12 @@
       "current_team": "Estudiantes",
       "country": "Spain",
       "last_updated": "2026-07-13"
+    },
+    {
+      "player": "Patrick Baldwin",
+      "current_team": "Crvena Zvezda",
+      "country": "Serbia",
+      "last_updated": "2026-08-05"
     },
     {
       "player": "Patrick Beverley",
@@ -4919,7 +5009,7 @@
     },
     {
       "team": "Baskonia",
-      "players": 120
+      "players": 121
     },
     {
       "team": "Idaho Stampede",
@@ -4927,7 +5017,7 @@
     },
     {
       "team": "Olimpia Milano",
-      "players": 115
+      "players": 116
     },
     {
       "team": "Rockford Lightning",
@@ -4955,18 +5045,18 @@
     },
     {
       "team": "Maccabi Tel Aviv",
-      "players": 96
+      "players": 97
     },
     {
       "team": "Raptors 905",
       "players": 96
     },
     {
-      "team": "Panathinaikos",
-      "players": 91
+      "team": "Real Madrid",
+      "players": 92
     },
     {
-      "team": "Real Madrid",
+      "team": "Panathinaikos",
       "players": 91
     },
     {
@@ -5074,6 +5164,10 @@
       "players": 68
     },
     {
+      "team": "Crvena Zvezda",
+      "players": 67
+    },
+    {
       "team": "Fort Wayne Fury",
       "players": 67
     },
@@ -5083,10 +5177,6 @@
     },
     {
       "team": "Capital City Go-Go",
-      "players": 66
-    },
-    {
-      "team": "Crvena Zvezda",
       "players": 66
     },
     {
@@ -5222,11 +5312,11 @@
       "players": 48
     },
     {
-      "team": "Delaware 87ers",
-      "players": 46
+      "team": "Valencia",
+      "players": 47
     },
     {
-      "team": "Valencia",
+      "team": "Delaware 87ers",
       "players": 46
     },
     {
@@ -5330,6 +5420,10 @@
       "players": 38
     },
     {
+      "team": "Alba Berlin",
+      "players": 37
+    },
+    {
       "team": "Brose Bamberg",
       "players": 37
     },
@@ -5344,10 +5438,6 @@
     {
       "team": "Snaidero Udine",
       "players": 37
-    },
-    {
-      "team": "Alba Berlin",
-      "players": 36
     },
     {
       "team": "Aris Thessaloniki",
@@ -5382,6 +5472,10 @@
       "players": 35
     },
     {
+      "team": "Valvi Girona",
+      "players": 35
+    },
+    {
       "team": "Cedevita Zagreb",
       "players": 34
     },
@@ -5399,10 +5493,6 @@
     },
     {
       "team": "Valladolid",
-      "players": 34
-    },
-    {
-      "team": "Valvi Girona",
       "players": 34
     },
     {
@@ -5594,6 +5684,10 @@
       "players": 25
     },
     {
+      "team": "Melbourne United",
+      "players": 25
+    },
+    {
       "team": "Northern Arizona Suns",
       "players": 25
     },
@@ -5659,10 +5753,6 @@
     },
     {
       "team": "Fort Worth Flyers",
-      "players": 23
-    },
-    {
-      "team": "Melbourne United",
       "players": 23
     },
     {
@@ -9502,6 +9592,10 @@
       "players": 3
     },
     {
+      "team": "Mega",
+      "players": 3
+    },
+    {
       "team": "Mega Leks",
       "players": 3
     },
@@ -10942,6 +11036,10 @@
       "players": 2
     },
     {
+      "team": "Kobe Storks",
+      "players": 2
+    },
+    {
       "team": "Korihait",
       "players": 2
     },
@@ -10963,6 +11061,10 @@
     },
     {
       "team": "Lakeland / Osceola Magic",
+      "players": 2
+    },
+    {
+      "team": "Laketown Squadron",
       "players": 2
     },
     {
@@ -11131,10 +11233,6 @@
     },
     {
       "team": "Media Broker Messina",
-      "players": 2
-    },
-    {
-      "team": "Mega",
       "players": 2
     },
     {
@@ -12431,6 +12529,10 @@
     },
     {
       "team": "Al-Wehdat",
+      "players": 1
+    },
+    {
+      "team": "Alba Berlin II",
       "players": 1
     },
     {
@@ -15626,10 +15728,6 @@
       "players": 1
     },
     {
-      "team": "Kobe Storks",
-      "players": 1
-    },
-    {
       "team": "Kolejliler",
       "players": 1
     },
@@ -15747,10 +15845,6 @@
     },
     {
       "team": "Lakeland/Osceola Magic",
-      "players": 1
-    },
-    {
-      "team": "Laketown Squadron",
       "players": 1
     },
     {
@@ -16199,6 +16293,10 @@
     },
     {
       "team": "Maurienne",
+      "players": 1
+    },
+    {
+      "team": "Maxima Roma",
       "players": 1
     },
     {
@@ -17443,6 +17541,10 @@
     },
     {
       "team": "Rapid City Thrillers/ Florida Beachdogs",
+      "players": 1
+    },
+    {
+      "team": "Rasta Vechta II",
       "players": 1
     },
     {
@@ -19421,7 +19523,7 @@
   "teams_by_current_nba_alumni": [
     {
       "team": "Real Madrid",
-      "count": 11,
+      "count": 12,
       "players": [
         "Alex Len",
         "Chuma Okeke",
@@ -19429,6 +19531,7 @@
         "Gabriel Deck",
         "Mario Hezonja",
         "Max Shulga",
+        "Olivier Sarr",
         "Omer Yurtseven",
         "Serge Ibaka",
         "Theo Maledon",
@@ -19469,6 +19572,21 @@
       ]
     },
     {
+      "team": "Crvena Zvezda",
+      "count": 9,
+      "players": [
+        "Chima Moneke",
+        "Devonte Graham",
+        "Donatas Motiejunas",
+        "Isaiah Canaan",
+        "Jared Butler",
+        "Joel Bolomboy",
+        "Jordan Nwora",
+        "Patrick Baldwin",
+        "Semi Ojeleye"
+      ]
+    },
+    {
       "team": "Dubai Basketball",
       "count": 9,
       "players": [
@@ -19499,17 +19617,17 @@
       ]
     },
     {
-      "team": "Crvena Zvezda",
+      "team": "Baskonia",
       "count": 8,
       "players": [
-        "Chima Moneke",
-        "Devonte Graham",
-        "Donatas Motiejunas",
-        "Isaiah Canaan",
-        "Jared Butler",
-        "Joel Bolomboy",
-        "Jordan Nwora",
-        "Semi Ojeleye"
+        "AJ Lawson",
+        "Eugene Omoruyi",
+        "Kobi Simmons",
+        "Mamadi Diakite",
+        "Markquis Nowell",
+        "Markus Howard",
+        "Rodions Kurucs",
+        "Timothe Luwawu"
       ]
     },
     {
@@ -19524,6 +19642,20 @@
         "Tosan Evbuomwan",
         "Tyrese Martin",
         "Willy Hernangomez"
+      ]
+    },
+    {
+      "team": "Maccabi Tel Aviv",
+      "count": 8,
+      "players": [
+        "Bonzie Colson",
+        "Gabriel Lundberg",
+        "Jaylen Hoard",
+        "Jeff Dowtin",
+        "Keaton Wallace",
+        "Lonnie Walker",
+        "Oshae Brissett",
+        "TJ Leaf"
       ]
     },
     {
@@ -19566,32 +19698,6 @@
         "Kendrick Nunn",
         "Nigel Hayes",
         "Richaun Holmes"
-      ]
-    },
-    {
-      "team": "Baskonia",
-      "count": 7,
-      "players": [
-        "Eugene Omoruyi",
-        "Kobi Simmons",
-        "Mamadi Diakite",
-        "Markquis Nowell",
-        "Markus Howard",
-        "Rodions Kurucs",
-        "Timothe Luwawu"
-      ]
-    },
-    {
-      "team": "Maccabi Tel Aviv",
-      "count": 7,
-      "players": [
-        "Bonzie Colson",
-        "Gabriel Lundberg",
-        "Jaylen Hoard",
-        "Jeff Dowtin",
-        "Lonnie Walker",
-        "Oshae Brissett",
-        "TJ Leaf"
       ]
     },
     {
@@ -19655,6 +19761,42 @@
         "Kenneth Faried",
         "Malik Beasley",
         "Thomas Robinson"
+      ]
+    },
+    {
+      "team": "Melbourne United",
+      "count": 6,
+      "players": [
+        "Cole Anthony",
+        "Jesse Edwards",
+        "Joe Ingles",
+        "Josh Oduro",
+        "Luke Travers",
+        "Milton Doyle"
+      ]
+    },
+    {
+      "team": "Noblesville Boom",
+      "count": 6,
+      "players": [
+        "Ethan Thompson",
+        "Jalen Slawson",
+        "Jordan Bell",
+        "Keion Brooks",
+        "Raymond Spalding",
+        "Taelon Peter"
+      ]
+    },
+    {
+      "team": "Olimpia Milano",
+      "count": 6,
+      "players": [
+        "Alec Peters",
+        "Devon Hall",
+        "Garrison Mathews",
+        "Leandro Bolmaro",
+        "Lorenzo Brown",
+        "Marko Guduric"
       ]
     },
     {
@@ -19772,25 +19914,14 @@
       ]
     },
     {
-      "team": "Noblesville Boom",
+      "team": "Rio Grande Valley Vipers",
       "count": 5,
       "players": [
-        "Jalen Slawson",
-        "Jordan Bell",
-        "Keion Brooks",
-        "Raymond Spalding",
-        "Taelon Peter"
-      ]
-    },
-    {
-      "team": "Olimpia Milano",
-      "count": 5,
-      "players": [
-        "Alec Peters",
-        "Devon Hall",
-        "Leandro Bolmaro",
-        "Lorenzo Brown",
-        "Marko Guduric"
+        "Daishen Nix",
+        "Isaiah Crawford",
+        "JD Davison",
+        "Josh Reaves",
+        "Ricky Council IV"
       ]
     },
     {
@@ -19926,16 +20057,6 @@
       ]
     },
     {
-      "team": "Melbourne United",
-      "count": 4,
-      "players": [
-        "Jesse Edwards",
-        "Joe Ingles",
-        "Luke Travers",
-        "Milton Doyle"
-      ]
-    },
-    {
       "team": "Minas",
       "count": 4,
       "players": [
@@ -19983,16 +20104,6 @@
         "Markelle Fultz",
         "Patrick McCaw",
         "Ulrich Chomche"
-      ]
-    },
-    {
-      "team": "Rio Grande Valley Vipers",
-      "count": 4,
-      "players": [
-        "Daishen Nix",
-        "Isaiah Crawford",
-        "Josh Reaves",
-        "Ricky Council IV"
       ]
     },
     {
@@ -20356,6 +20467,14 @@
       ]
     },
     {
+      "team": "Alba Berlin",
+      "count": 2,
+      "players": [
+        "Jack Kayil",
+        "Jordan Ford"
+      ]
+    },
+    {
       "team": "Austin Spurs",
       "count": 2,
       "players": [
@@ -20393,6 +20512,14 @@
       "players": [
         "Briante Weber",
         "JP Macura"
+      ]
+    },
+    {
+      "team": "Birmingham Squadron",
+      "count": 2,
+      "players": [
+        "Hunter Dickinson",
+        "Jaden Springer"
       ]
     },
     {
@@ -20796,6 +20923,14 @@
       ]
     },
     {
+      "team": "Valencia",
+      "count": 2,
+      "players": [
+        "Matt Costello",
+        "Mouhamadou Gueye"
+      ]
+    },
+    {
       "team": "Vancouver Bandits",
       "count": 2,
       "players": [
@@ -20914,13 +21049,6 @@
       ]
     },
     {
-      "team": "Alba Berlin",
-      "count": 1,
-      "players": [
-        "Jordan Ford"
-      ]
-    },
-    {
       "team": "Altiri Chiba",
       "count": 1,
       "players": [
@@ -21016,13 +21144,6 @@
       "count": 1,
       "players": [
         "Keljin Blevins"
-      ]
-    },
-    {
-      "team": "Birmingham Squadron",
-      "count": 1,
-      "players": [
-        "Jaden Springer"
       ]
     },
     {
@@ -21523,6 +21644,13 @@
       ]
     },
     {
+      "team": "Kobe Storks",
+      "count": 1,
+      "players": [
+        "Jalen McDaniels"
+      ]
+    },
+    {
       "team": "Kolossos Rodou",
       "count": 1,
       "players": [
@@ -21604,6 +21732,13 @@
       "count": 1,
       "players": [
         "Diamond Stone"
+      ]
+    },
+    {
+      "team": "Maxima Roma",
+      "count": 1,
+      "players": [
+        "Aaron Holiday"
       ]
     },
     {
@@ -22027,10 +22162,10 @@
       ]
     },
     {
-      "team": "Valencia",
+      "team": "Valvi Girona",
       "count": 1,
       "players": [
-        "Matt Costello"
+        "Mac McClung"
       ]
     },
     {
@@ -22121,11 +22256,11 @@
   "countries_live_snapshot": [
     {
       "country": "USA",
-      "count": 72
+      "count": 75
     },
     {
       "country": "Spain",
-      "count": 50
+      "count": 54
     },
     {
       "country": "China",
@@ -22137,7 +22272,7 @@
     },
     {
       "country": "Israel",
-      "count": 38
+      "count": 39
     },
     {
       "country": "Greece",
@@ -22149,19 +22284,19 @@
     },
     {
       "country": "Italy",
-      "count": 29
+      "count": 31
     },
     {
       "country": "Japan",
-      "count": 26
+      "count": 27
+    },
+    {
+      "country": "Australia",
+      "count": 22
     },
     {
       "country": "France",
       "count": 21
-    },
-    {
-      "country": "Australia",
-      "count": 20
     },
     {
       "country": "Mexico",
@@ -22169,7 +22304,7 @@
     },
     {
       "country": "Serbia",
-      "count": 15
+      "count": 16
     },
     {
       "country": "Russia",
@@ -22180,12 +22315,12 @@
       "count": 11
     },
     {
-      "country": "Lebanon",
+      "country": "Germany",
       "count": 11
     },
     {
-      "country": "Germany",
-      "count": 10
+      "country": "Lebanon",
+      "count": 11
     },
     {
       "country": "Taiwan",
@@ -22315,15 +22450,15 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5056
+      "players": 5062
     },
     {
       "country": "Italy",
-      "players": 915
+      "players": 917
     },
     {
       "country": "Spain",
-      "players": 793
+      "players": 797
     },
     {
       "country": "France",
@@ -22343,7 +22478,7 @@
     },
     {
       "country": "Israel",
-      "players": 444
+      "players": 445
     },
     {
       "country": "China",
@@ -22359,7 +22494,7 @@
     },
     {
       "country": "Germany",
-      "players": 295
+      "players": 296
     },
     {
       "country": "Venezuela",
@@ -22367,7 +22502,7 @@
     },
     {
       "country": "Australia",
-      "players": 205
+      "players": 207
     },
     {
       "country": "Philippines",
@@ -22379,11 +22514,11 @@
     },
     {
       "country": "Japan",
-      "players": 158
+      "players": 159
     },
     {
       "country": "Serbia",
-      "players": 145
+      "players": 146
     },
     {
       "country": "Argentina",
@@ -22696,6 +22831,7 @@
         "Gabriel Deck",
         "Mario Hezonja",
         "Max Shulga",
+        "Olivier Sarr",
         "Omer Yurtseven",
         "Serge Ibaka",
         "Theo Maledon",
@@ -22746,6 +22882,16 @@
         {
           "players": [
             "Chuma Okeke",
+            "Olivier Sarr"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Chuma Okeke",
             "Serge Ibaka"
           ],
           "shared_nba_franchises": [
@@ -22762,6 +22908,16 @@
             "Cleveland Cavaliers"
           ],
           "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Gabriel Deck",
+            "Olivier Sarr"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2026
         },
         {
           "players": [
@@ -22792,6 +22948,36 @@
             "Orlando Magic"
           ],
           "latest_stint_year": 2024
+        },
+        {
+          "players": [
+            "Olivier Sarr",
+            "Serge Ibaka"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Olivier Sarr",
+            "Theo Maledon"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Olivier Sarr",
+            "Walter Tavares"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
+          ],
+          "latest_stint_year": 2026
         },
         {
           "players": [
@@ -23147,6 +23333,165 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Crvena Zvezda",
+      "players": [
+        "Chima Moneke",
+        "Devonte Graham",
+        "Donatas Motiejunas",
+        "Isaiah Canaan",
+        "Jared Butler",
+        "Joel Bolomboy",
+        "Jordan Nwora",
+        "Patrick Baldwin",
+        "Semi Ojeleye"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Chima Moneke",
+            "Patrick Baldwin"
+          ],
+          "shared_nba_franchises": [
+            "Sacramento Kings"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Devonte Graham",
+            "Donatas Motiejunas"
+          ],
+          "shared_nba_franchises": [
+            "New Orleans Pelicans",
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Donatas Motiejunas",
+            "Isaiah Canaan"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Jared Butler"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Joel Bolomboy"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2024
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Jordan Nwora"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Patrick Baldwin"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Isaiah Canaan",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jared Butler",
+            "Joel Bolomboy"
+          ],
+          "shared_nba_franchises": [
+            "Utah Jazz"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jared Butler",
+            "Patrick Baldwin"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers",
+            "Washington Wizards"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Joel Bolomboy",
+            "Jordan Nwora"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Joel Bolomboy",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jordan Nwora",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Patrick Baldwin",
+            "Semi Ojeleye"
+          ],
+          "shared_nba_franchises": [
+            "LA Clippers"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Dubai Basketball",
       "players": [
         "Bruno Caboclo",
@@ -23311,6 +23656,122 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Baskonia",
+      "players": [
+        "AJ Lawson",
+        "Eugene Omoruyi",
+        "Kobi Simmons",
+        "Mamadi Diakite",
+        "Markquis Nowell",
+        "Markus Howard",
+        "Rodions Kurucs",
+        "Timothe Luwawu"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "AJ Lawson",
+            "Eugene Omoruyi"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "AJ Lawson",
+            "Kobi Simmons"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "AJ Lawson",
+            "Markquis Nowell"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Eugene Omoruyi",
+            "Mamadi Diakite"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Eugene Omoruyi",
+            "Timothe Luwawu"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Kobi Simmons",
+            "Mamadi Diakite"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Kobi Simmons",
+            "Markquis Nowell"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Mamadi Diakite",
+            "Rodions Kurucs"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Mamadi Diakite",
+            "Timothe Luwawu"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Rodions Kurucs",
+            "Timothe Luwawu"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "FC Barcelona",
       "players": [
         "Miles Norris",
@@ -23422,6 +23883,83 @@
             "New York Knicks"
           ],
           "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Maccabi Tel Aviv",
+      "players": [
+        "Bonzie Colson",
+        "Gabriel Lundberg",
+        "Jaylen Hoard",
+        "Jeff Dowtin",
+        "Keaton Wallace",
+        "Lonnie Walker",
+        "Oshae Brissett",
+        "TJ Leaf"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Bonzie Colson",
+            "Jeff Dowtin"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Jaylen Hoard",
+            "TJ Leaf"
+          ],
+          "shared_nba_franchises": [
+            "Portland Trail Blazers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jeff Dowtin",
+            "Lonnie Walker"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Jeff Dowtin",
+            "Oshae Brissett"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers",
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Lonnie Walker",
+            "Oshae Brissett"
+          ],
+          "shared_nba_franchises": [
+            "Philadelphia 76ers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Oshae Brissett",
+            "TJ Leaf"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2025
         }
       ],
       "latest_stint_year": 2026
@@ -23774,82 +24312,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Maccabi Tel Aviv",
-      "players": [
-        "Bonzie Colson",
-        "Gabriel Lundberg",
-        "Jaylen Hoard",
-        "Jeff Dowtin",
-        "Lonnie Walker",
-        "Oshae Brissett",
-        "TJ Leaf"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Bonzie Colson",
-            "Jeff Dowtin"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Jaylen Hoard",
-            "TJ Leaf"
-          ],
-          "shared_nba_franchises": [
-            "Portland Trail Blazers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Jeff Dowtin",
-            "Lonnie Walker"
-          ],
-          "shared_nba_franchises": [
-            "Philadelphia 76ers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Jeff Dowtin",
-            "Oshae Brissett"
-          ],
-          "shared_nba_franchises": [
-            "Philadelphia 76ers",
-            "Toronto Raptors"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Lonnie Walker",
-            "Oshae Brissett"
-          ],
-          "shared_nba_franchises": [
-            "Philadelphia 76ers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Oshae Brissett",
-            "TJ Leaf"
-          ],
-          "shared_nba_franchises": [
-            "Indiana Pacers"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Paris Basketball",
       "players": [
         "Alize Johnson",
@@ -24167,6 +24629,119 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Melbourne United",
+      "players": [
+        "Cole Anthony",
+        "Jesse Edwards",
+        "Joe Ingles",
+        "Josh Oduro",
+        "Luke Travers",
+        "Milton Doyle"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Cole Anthony",
+            "Joe Ingles"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks",
+            "Orlando Magic"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Joe Ingles",
+            "Jesse Edwards"
+          ],
+          "shared_nba_franchises": [
+            "Minnesota Timberwolves"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Noblesville Boom",
+      "players": [
+        "Ethan Thompson",
+        "Jalen Slawson",
+        "Jordan Bell",
+        "Keion Brooks",
+        "Raymond Spalding",
+        "Taelon Peter"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Jalen Slawson",
+            "Ethan Thompson"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Jalen Slawson",
+            "Taelon Peter"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Ethan Thompson",
+            "Taelon Peter"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Olimpia Milano",
+      "players": [
+        "Alec Peters",
+        "Devon Hall",
+        "Garrison Mathews",
+        "Leandro Bolmaro",
+        "Lorenzo Brown",
+        "Marko Guduric"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Alec Peters",
+            "Lorenzo Brown"
+          ],
+          "shared_nba_franchises": [
+            "Phoenix Suns"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Leandro Bolmaro",
+            "Lorenzo Brown"
+          ],
+          "shared_nba_franchises": [
+            "Minnesota Timberwolves"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Osos de Manatí",
       "players": [
         "Cheick Diallo",
@@ -24334,62 +24909,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Noblesville Boom",
-      "players": [
-        "Jalen Slawson",
-        "Jordan Bell",
-        "Keion Brooks",
-        "Raymond Spalding",
-        "Taelon Peter"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Jalen Slawson",
-            "Taelon Peter"
-          ],
-          "shared_nba_franchises": [
-            "Indiana Pacers"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Olimpia Milano",
-      "players": [
-        "Alec Peters",
-        "Devon Hall",
-        "Leandro Bolmaro",
-        "Lorenzo Brown",
-        "Marko Guduric"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Alec Peters",
-            "Lorenzo Brown"
-          ],
-          "shared_nba_franchises": [
-            "Phoenix Suns"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Leandro Bolmaro",
-            "Lorenzo Brown"
-          ],
-          "shared_nba_franchises": [
-            "Minnesota Timberwolves"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Rip City Remix",
       "players": [
         "Alex Reese",
@@ -24518,28 +25037,6 @@
         "Keon Johnson"
       ],
       "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Melbourne United",
-      "players": [
-        "Jesse Edwards",
-        "Joe Ingles",
-        "Luke Travers",
-        "Milton Doyle"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Joe Ingles",
-            "Jesse Edwards"
-          ],
-          "shared_nba_franchises": [
-            "Minnesota Timberwolves"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
       "latest_stint_year": 2026
     },
     {
@@ -24891,6 +25388,15 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Alba Berlin",
+      "players": [
+        "Jack Kayil",
+        "Jordan Ford"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "BCM Gravelines-Dunkerque",
       "players": [
         "Chris Babb",
@@ -25135,6 +25641,15 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Valencia",
+      "players": [
+        "Matt Costello",
+        "Mouhamadou Gueye"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Vancouver Bandits",
       "players": [
         "Mitch Creek",
@@ -25151,208 +25666,6 @@
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
-    },
-    {
-      "team": "Crvena Zvezda",
-      "players": [
-        "Chima Moneke",
-        "Devonte Graham",
-        "Donatas Motiejunas",
-        "Isaiah Canaan",
-        "Jared Butler",
-        "Joel Bolomboy",
-        "Jordan Nwora",
-        "Semi Ojeleye"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Devonte Graham",
-            "Donatas Motiejunas"
-          ],
-          "shared_nba_franchises": [
-            "New Orleans Pelicans",
-            "San Antonio Spurs"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Donatas Motiejunas",
-            "Isaiah Canaan"
-          ],
-          "shared_nba_franchises": [
-            "Houston Rockets"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Jared Butler"
-          ],
-          "shared_nba_franchises": [
-            "Philadelphia 76ers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Joel Bolomboy"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2024
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Jordan Nwora"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Isaiah Canaan",
-            "Semi Ojeleye"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Jared Butler",
-            "Joel Bolomboy"
-          ],
-          "shared_nba_franchises": [
-            "Utah Jazz"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Joel Bolomboy",
-            "Jordan Nwora"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Joel Bolomboy",
-            "Semi Ojeleye"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Jordan Nwora",
-            "Semi Ojeleye"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2025
-    },
-    {
-      "team": "Baskonia",
-      "players": [
-        "Eugene Omoruyi",
-        "Kobi Simmons",
-        "Mamadi Diakite",
-        "Markquis Nowell",
-        "Markus Howard",
-        "Rodions Kurucs",
-        "Timothe Luwawu"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Eugene Omoruyi",
-            "Mamadi Diakite"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Eugene Omoruyi",
-            "Timothe Luwawu"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Kobi Simmons",
-            "Mamadi Diakite"
-          ],
-          "shared_nba_franchises": [
-            "Cleveland Cavaliers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Kobi Simmons",
-            "Markquis Nowell"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Mamadi Diakite",
-            "Rodions Kurucs"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Mamadi Diakite",
-            "Timothe Luwawu"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Rodions Kurucs",
-            "Timothe Luwawu"
-          ],
-          "shared_nba_franchises": [
-            "Brooklyn Nets"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2025
     },
     {
       "team": "Wisconsin Herd",
@@ -25588,6 +25901,49 @@
           ],
           "shared_nba_franchises": [
             "New York Knicks"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2025
+    },
+    {
+      "team": "Rio Grande Valley Vipers",
+      "players": [
+        "Daishen Nix",
+        "Isaiah Crawford",
+        "JD Davison",
+        "Josh Reaves",
+        "Ricky Council IV"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Daishen Nix",
+            "JD Davison"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Daishen Nix",
+            "Isaiah Crawford"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "JD Davison",
+            "Isaiah Crawford"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets"
           ],
           "latest_stint_year": 2025
         }
@@ -25901,28 +26257,6 @@
       "latest_stint_year": 2025
     },
     {
-      "team": "Rio Grande Valley Vipers",
-      "players": [
-        "Daishen Nix",
-        "Isaiah Crawford",
-        "Josh Reaves",
-        "Ricky Council IV"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Daishen Nix",
-            "Isaiah Crawford"
-          ],
-          "shared_nba_franchises": [
-            "Houston Rockets"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2025
-    },
-    {
       "team": "Shanghai Sharks",
       "players": [
         "Brandon Goodwin",
@@ -26214,6 +26548,15 @@
       "players": [
         "Quincy Miller",
         "Tony Mitchell (1989)"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2025
+    },
+    {
+      "team": "Birmingham Squadron",
+      "players": [
+        "Hunter Dickinson",
+        "Jaden Springer"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2025
@@ -53138,6 +53481,15 @@
         "last_updated": "2026-08-01"
       },
       {
+        "player": "Aaron Holiday",
+        "current_team": "Maxima Roma",
+        "city": "Rome",
+        "state": "Lazio",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-08-20"
+      },
+      {
         "player": "Adam Mokoka",
         "current_team": "JL Bourg",
         "city": "Bourg-en-Bresse",
@@ -53190,6 +53542,15 @@
         "country": "Mexico",
         "in_coords": true,
         "last_updated": "2026-08-01"
+      },
+      {
+        "player": "AJ Lawson",
+        "current_team": "Baskonia",
+        "city": "Vitoria",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-08-07"
       },
       {
         "player": "Al Thornton",
@@ -53955,6 +54316,15 @@
         "country": "USA",
         "in_coords": true,
         "last_updated": "2026-07-13"
+      },
+      {
+        "player": "Cole Anthony",
+        "current_team": "Melbourne United",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "country": "Australia",
+        "in_coords": true,
+        "last_updated": "2026-08-05"
       },
       {
         "player": "Cole Swider",
@@ -54803,6 +55173,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Garrison Mathews",
+        "current_team": "Olimpia Milano",
+        "city": "Milan",
+        "state": "",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-08-08"
+      },
+      {
         "player": "Gary Clark",
         "current_team": "Yokohama B-Corsairs",
         "city": "Yokohama",
@@ -55388,6 +55767,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Jalen McDaniels",
+        "current_team": "Kobe Storks",
+        "city": "Kobe",
+        "state": "",
+        "country": "Japan",
+        "in_coords": true,
+        "last_updated": "2026-08-16"
+      },
+      {
         "player": "Jalen Slawson",
         "current_team": "Noblesville Boom",
         "city": "Noblesville",
@@ -55674,6 +56062,15 @@
         "country": "Puerto Rico",
         "in_coords": true,
         "last_updated": "2026-07-13"
+      },
+      {
+        "player": "JD Davison",
+        "current_team": "Rio Grande Valley Vipers",
+        "city": "Edinburg",
+        "state": "Texas",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-08-06"
       },
       {
         "player": "Jeff Adrien",
@@ -56603,6 +57000,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Mac McClung",
+        "current_team": "Valvi Girona",
+        "city": "Girona",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-08-08"
+      },
+      {
         "player": "Malachi Flynn",
         "current_team": "Bahçeşehir Koleji",
         "city": "Harvard",
@@ -57089,6 +57495,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Mouhamadou Gueye",
+        "current_team": "Valencia",
+        "city": "Valencia",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-08-07"
+      },
+      {
         "player": "Mychal Mulder",
         "current_team": "Vancouver Bandits",
         "city": "Vancouver",
@@ -57278,6 +57693,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Olivier Sarr",
+        "current_team": "Real Madrid",
+        "city": "Madrid",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-08-17"
+      },
+      {
         "player": "Omari Spellman",
         "current_team": "Beijing Ducks",
         "city": "Beijing",
@@ -57339,6 +57763,15 @@
         "country": "Spain",
         "in_coords": true,
         "last_updated": "2026-07-13"
+      },
+      {
+        "player": "Patrick Baldwin",
+        "current_team": "Crvena Zvezda",
+        "city": "Belgrade",
+        "state": "",
+        "country": "Serbia",
+        "in_coords": true,
+        "last_updated": "2026-08-05"
       },
       {
         "player": "Patrick Beverley",
@@ -58763,6 +59196,15 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Keaton Wallace",
+        "current_team": "Maccabi Tel Aviv",
+        "city": "Tel Aviv",
+        "state": "",
+        "country": "Israel",
+        "in_coords": true,
+        "last_updated": "2026-08-11"
+      },
+      {
         "player": "Damion Baugh",
         "current_team": "Calgary Surge",
         "city": "Calgary",
@@ -58907,6 +59349,24 @@
         "last_updated": "2026-07-13"
       },
       {
+        "player": "Ethan Thompson",
+        "current_team": "Noblesville Boom",
+        "city": "Noblesville",
+        "state": "Indiana",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-08-14"
+      },
+      {
+        "player": "Hunter Dickinson",
+        "current_team": "Birmingham Squadron",
+        "city": "Birmingham",
+        "state": "Alabama",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-08-19"
+      },
+      {
         "player": "John Tonje",
         "current_team": "Maine Celtics",
         "city": "Portland",
@@ -58914,6 +59374,15 @@
         "country": "USA",
         "in_coords": true,
         "last_updated": "2026-07-13"
+      },
+      {
+        "player": "Josh Oduro",
+        "current_team": "Melbourne United",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "country": "Australia",
+        "in_coords": true,
+        "last_updated": "2026-08-07"
       },
       {
         "player": "Max Shulga",
@@ -58932,11 +59401,20 @@
         "country": "USA",
         "in_coords": true,
         "last_updated": "2026-07-26"
+      },
+      {
+        "player": "Jack Kayil",
+        "current_team": "Alba Berlin",
+        "city": "Berlin",
+        "state": "",
+        "country": "Germany",
+        "in_coords": true,
+        "last_updated": "2026-08-09"
       }
     ],
     "coverage": {
-      "total": 645,
-      "in_coords": 568,
+      "total": 660,
+      "in_coords": 583,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -58944,6 +59422,108 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Aaron Holiday",
+      "from_team": "Houston Rockets",
+      "to_team": "Maxima Roma",
+      "date": "2026-08-20"
+    },
+    {
+      "player": "Hunter Dickinson",
+      "from_team": "New Orleans Pelicans",
+      "to_team": "Birmingham Squadron",
+      "date": "2026-08-19"
+    },
+    {
+      "player": "Trendon Watford",
+      "from_team": "Philadelphia 76ers",
+      "to_team": "New Orleans Pelicans",
+      "date": "2026-08-18"
+    },
+    {
+      "player": "Olivier Sarr",
+      "from_team": "Cleveland Cavaliers",
+      "to_team": "Real Madrid",
+      "date": "2026-08-17"
+    },
+    {
+      "player": "Jalen McDaniels",
+      "from_team": "Washington Wizards",
+      "to_team": "Kobe Storks",
+      "date": "2026-08-16"
+    },
+    {
+      "player": "Ethan Thompson",
+      "from_team": "Indiana Pacers",
+      "to_team": "Noblesville Boom",
+      "date": "2026-08-14"
+    },
+    {
+      "player": "Keaton Wallace",
+      "from_team": "Atlanta Hawks",
+      "to_team": "Maccabi Tel Aviv",
+      "date": "2026-08-11"
+    },
+    {
+      "player": "Yuki Kawamura",
+      "from_team": "Indiana Pacers",
+      "to_team": "LA Clippers",
+      "date": "2026-08-10"
+    },
+    {
+      "player": "Jack Kayil",
+      "from_team": "New York Knicks",
+      "to_team": "Alba Berlin",
+      "date": "2026-08-09"
+    },
+    {
+      "player": "Garrison Mathews",
+      "from_team": "Indiana Pacers",
+      "to_team": "Olimpia Milano",
+      "date": "2026-08-08"
+    },
+    {
+      "player": "Mac McClung",
+      "from_team": "Chicago Bulls",
+      "to_team": "Valvi Girona",
+      "date": "2026-08-08"
+    },
+    {
+      "player": "Josh Oduro",
+      "from_team": "New Orleans Pelicans",
+      "to_team": "Melbourne United",
+      "date": "2026-08-07"
+    },
+    {
+      "player": "Mouhamadou Gueye",
+      "from_team": "Charlotte Hornets",
+      "to_team": "Valencia",
+      "date": "2026-08-07"
+    },
+    {
+      "player": "AJ Lawson",
+      "from_team": "Toronto Raptors",
+      "to_team": "Baskonia",
+      "date": "2026-08-07"
+    },
+    {
+      "player": "JD Davison",
+      "from_team": "Houston Rockets",
+      "to_team": "Rio Grande Valley Vipers",
+      "date": "2026-08-06"
+    },
+    {
+      "player": "Cole Anthony",
+      "from_team": "Milwaukee Bucks",
+      "to_team": "Melbourne United",
+      "date": "2026-08-05"
+    },
+    {
+      "player": "Patrick Baldwin",
+      "from_team": "Sacramento Kings",
+      "to_team": "Crvena Zvezda",
+      "date": "2026-08-05"
+    },
     {
       "player": "Max Shulga",
       "from_team": "Boston Celtics",
@@ -59140,108 +59720,6 @@
       "player": "Isaac Bonga",
       "from_team": "Partizan",
       "to_team": "Panathinaikos",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Ibou Badji",
-      "from_team": "Windy City Bulls",
-      "to_team": "Shenzhen Leopards",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Daniel Theis",
-      "from_team": "AS Monaco",
-      "to_team": "ASVEL",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Craig Sword",
-      "from_team": "Hsinchu Toplus Lioneers",
-      "to_team": "Rayos de Hermosillo",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Chris McCullough",
-      "from_team": "TNT Tropang 5G",
-      "to_team": "Vaqueros de Bayamón",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Chimezie Metu",
-      "from_team": "Gran Canaria",
-      "to_team": "Galatasaray",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Bruno Fernando",
-      "from_team": "Partizan",
-      "to_team": "Anadolu Efes",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Braxton Key",
-      "from_team": "Valencia",
-      "to_team": "Fenerbahçe",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Santi Aldama",
-      "from_team": "Memphis Grizzlies",
-      "to_team": "Dallas Mavericks",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Quinten Post",
-      "from_team": "Golden State Warriors",
-      "to_team": "Memphis Grizzlies",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Elijah Harkless",
-      "from_team": "Utah Jazz",
-      "to_team": "Detroit Pistons",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Ariel Hukporti",
-      "from_team": "New York Knicks",
-      "to_team": "Philadelphia 76ers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Walker Kessler",
-      "from_team": "Utah Jazz",
-      "to_team": "Los Angeles Lakers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Tobias Harris",
-      "from_team": "Detroit Pistons",
-      "to_team": "San Antonio Spurs",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Taurean Prince",
-      "from_team": "Milwaukee Bucks",
-      "to_team": "Detroit Pistons",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Sandro Mamukelashvili",
-      "from_team": "Toronto Raptors",
-      "to_team": "Los Angeles Lakers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Rayan Rupert",
-      "from_team": "Memphis Grizzlies",
-      "to_team": "Philadelphia 76ers",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Quentin Grimes",
-      "from_team": "Philadelphia 76ers",
-      "to_team": "Los Angeles Lakers",
       "date": "2026-07-13"
     }
   ]

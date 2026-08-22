@@ -1,3 +1,193 @@
+## 2026-08-22 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+
+## 2026-08-21 — incremental run
+
+- Players updated: **69** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+
+## 2026-08-20 — incremental run
+
+- Players updated: **67** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New teams: Maxima Roma
+  - Aaron Holiday: Houston Rockets → Maxima Roma
+  - Aaron Holiday: [nba_active → overseas_active]
+
+## 2026-08-19 — incremental run
+
+- Players updated: **69** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Malik Dia
+  - Hunter Dickinson: New Orleans Pelicans → Birmingham Squadron
+  - Hunter Dickinson: [nba_active → overseas_active]
+
+## 2026-08-18 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Trendon Watford: Philadelphia 76ers → New Orleans Pelicans
+
+## 2026-08-17 — incremental run
+
+- Players updated: **69** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Olivier Sarr: Cleveland Cavaliers → Real Madrid
+  - Olivier Sarr: [nba_active → overseas_active]
+
+## 2026-08-16 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Jalen McDaniels: Washington Wizards → Kobe Storks
+  - Jalen McDaniels: [nba_active → overseas_active]
+
+## 2026-08-15 — incremental run
+
+- Players updated: **69** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+
+## 2026-08-14 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Ethan Thompson: Indiana Pacers → Noblesville Boom
+  - Ethan Thompson: [nba_active → overseas_active]
+
+## 2026-08-13 — incremental run
+
+- Players updated: **69** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **1** (0 → overseas, 1 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Russell Westbrook: [nba_active → retired]
+
+## 2026-08-12 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+
+## 2026-08-11 — incremental run
+
+- Players updated: **69** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Keaton Wallace: Atlanta Hawks → Maccabi Tel Aviv
+  - Keaton Wallace: [nba_active → overseas_active]
+
+## 2026-08-10 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Yuki Kawamura: Indiana Pacers → LA Clippers
+
+## 2026-08-09 — incremental run
+
+- Players updated: **67** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Jack Kayil: New York Knicks → Alba Berlin
+  - Jack Kayil: [nba_active → overseas_active]
+
+## 2026-08-08 — incremental run
+
+- Players updated: **66** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - Mac McClung: Chicago Bulls → Valvi Girona
+  - Garrison Mathews: Indiana Pacers → Olimpia Milano
+  - Mac McClung: [nba_active → overseas_active]
+  - Garrison Mathews: [nba_active → overseas_active]
+
+## 2026-08-07 — incremental run
+
+- Players updated: **65** (8 new)
+- New teams discovered: **2**
+- Team moves detected: **3**
+- Status changes: **3** (3 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Alpha Diallo, Bryce Hopkins, Carson Cooper, Jack Kayil, Lajae Jones, Trevon Brazile, Tyler Nickel, Yaxel Lendeborg
+- New teams: Alba Berlin II, Rasta Vechta II
+  - AJ Lawson: Toronto Raptors → Baskonia
+  - Mouhamadou Gueye: Charlotte Hornets → Valencia
+  - Josh Oduro: New Orleans Pelicans → Melbourne United
+  - AJ Lawson: [nba_active → overseas_active]
+  - Mouhamadou Gueye: [nba_active → overseas_active]
+  - Josh Oduro: [nba_active → overseas_active]
+
+## 2026-08-06 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+  - JD Davison: Houston Rockets → Rio Grande Valley Vipers
+  - JD Davison: [nba_active → overseas_active]
+
+## 2026-08-05 — incremental run
+
+- Players updated: **69** (2 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+- New players: Milos Uzan, Tucker DeVries
+  - Patrick Baldwin: Sacramento Kings → Crvena Zvezda
+  - Cole Anthony: Milwaukee Bucks → Melbourne United
+  - Patrick Baldwin: [nba_active → overseas_active]
+  - Cole Anthony: [nba_active → overseas_active]
+
+## 2026-08-04 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+
 ## 2026-08-03 — incremental run
 
 - Players updated: **69** (0 new)
