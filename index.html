@@ -1049,60 +1049,30 @@
         .quiz-timer-bar-fill.warning { background: #e67e22; }
         .quiz-timer-bar-fill.danger { background: var(--red); }
 
-        .quiz-timer {
-            font-size: 15px;
-            font-weight: 700;
-            font-variant-numeric: tabular-nums;
-            color: var(--text);
-            flex: 0 0 auto;
-            min-width: 3.4em;
-            text-align: right;
-        }
-        .quiz-timer.warning { color: #e67e22; }
-        .quiz-timer.danger { animation: quizPulse 0.5s infinite; }
-        @keyframes quizPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-
-        .quiz-score {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--green);
-            font-variant-numeric: tabular-nums;
-            flex: 0 0 auto;
-        }
-        /* Triggered by a classList add/remove pair in JS right after the
-           existing score-text assignment -- decorative only, doesn't touch
-           the score value or when/how it's computed. */
-        .quiz-score.bump { animation: quizScoreBump 0.35s ease; }
-        @keyframes quizScoreBump { 0%{transform:scale(1)} 35%{transform:scale(1.22)} 100%{transform:scale(1)} }
-
-        /* Time bank: the tension mechanic now -- its own prominent row,
-           deliberately bigger/bolder than the per-question timer above
-           (quiz-timer), since this is the number that ends the game and
-           becomes the share headline. Same warning/danger color language
-           as the per-question timer (reuses quizPulse), but its own
-           absolute-second thresholds since the bank isn't a fixed-size
-           countdown window like QUIZ_TIMER_SECONDS is. */
-        .quiz-bank-wrap {
+        /* Survival clock: the tension mechanic now -- its own prominent
+           row, deliberately bigger/bolder than the (now numberless)
+           per-question progress bar above, since this is the number that
+           becomes the share headline. No warning/danger color states: it
+           only ever counts up, there's nothing "running out" about it. */
+        .quiz-clock-wrap {
             display: flex;
             align-items: baseline;
             justify-content: center;
             gap: 8px;
             padding: 4px 0 10px;
         }
-        .quiz-bank-label {
+        .quiz-clock-label {
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.06em;
             color: var(--text-muted);
         }
-        .quiz-bank {
+        .quiz-clock {
             font-size: 26px;
             font-weight: 800;
             font-variant-numeric: tabular-nums;
             color: var(--text);
         }
-        .quiz-bank.warning { color: #e67e22; }
-        .quiz-bank.danger { color: var(--red); animation: quizPulse 0.5s infinite; }
 
         /* Answer grid: comfortably tappable (52px+ min-height, generous gaps)
            on mobile; desktop keeps its existing compact stacked-list sizing
@@ -1362,11 +1332,9 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .quiz-timer.danger,
             .quiz-timer-bar-fill,
             .quiz-option.correct,
             .quiz-option.wrong,
-            .quiz-score.bump,
             .quiz-final-screen {
                 animation: none !important;
                 transition: none !important;
@@ -2682,37 +2650,30 @@
         });
         
         
-        // ====== QUIZ MODE (v2: survival) ======
-        // Rules for this mode (deliberate product decision, not the frozen
-        // legacy scoring): 15s per question, decay from 15 -> 1.5 over that
-        // window, NO -5 point penalty -- a miss (wrong answer or timeout)
-        // costs a life instead. Game ends the moment lives reaches 0 (three
-        // mistakes), not at a fixed question count.
+        // ====== QUIZ MODE (v3: survival, anti-stalling lives) ======
+        // Rules for this mode: 15s per question. A wrong answer or a
+        // timeout costs a life. Two independent, speed-only counters (never
+        // gated on correctness) add friction against both extremes of
+        // stalling: answer under QUIZ_EARLY_THRESHOLD three times IN A ROW
+        // and earn a bonus life (capped at QUIZ_MAX_LIVES); answer over
+        // QUIZ_LATE_THRESHOLD and it adds to a CUMULATIVE, never-resetting
+        // count -- every QUIZ_LATE_PENALTY_EVERY'th late answer overall
+        // costs a life, whether or not it was correct. Game ends the
+        // moment lives reaches 0, not at a fixed question count. The score
+        // is real accumulated survival time (sum of every question's real
+        // elapsed answer time, right or wrong) -- there is no separate
+        // points/decay formula anymore.
         const QUIZ_TIMER_SECONDS = 15;
         const QUIZ_START_LIVES = 3;
+        const QUIZ_MAX_LIVES = 5;
+        const QUIZ_EARLY_THRESHOLD = 5;   // < 5s = "early"
+        const QUIZ_LATE_THRESHOLD = 10;   // > 10s = "late"; [5,10] is neutral
+        const QUIZ_EARLY_STREAK_FOR_BONUS = 3;  // 3 early answers in a row -> +1 life
+        const QUIZ_LATE_PENALTY_EVERY = 3;      // every 3rd cumulative late answer -> -1 life
 
-        // Time-bank: a second, parallel "survival time" stat that drives the
-        // game's second end-condition and IS the share/results headline
-        // ("Survived MM:SS.CC"). Independent of the points/percentile system
-        // below, which stays the unchanged leaderboard-ranking mechanic.
-        // Every question's real elapsed answer time is deducted
-        // unconditionally (right or wrong); answering under
-        // QUIZ_BANK_FAST_THRESHOLD adds QUIZ_BANK_FAST_BONUS back. Because
-        // the deduction is always exactly the elapsed time and the bonus can
-        // only ever be *lost* by taking longer (never gained), the bank is
-        // monotonically non-increasing in time-per-question for any fixed
-        // answer sequence -- waiting longer can never raise the final share
-        // number. 60s start / 5s threshold / +8s bonus is tuned so a
-        // consistently-fast player's bank trends upward (net +6s/question at
-        // a steady 2s pace) rather than bleeding to zero regardless of
-        // speed -- verified by simulation, see the delivered test report.
-        const QUIZ_BANK_START = 60;
-        const QUIZ_BANK_FAST_THRESHOLD = 5;
-        const QUIZ_BANK_FAST_BONUS = 8;
-
-        // MM:SS.CC, used everywhere the bank/survival time is shown: the
-        // live in-game display, the results screen, and the share text/image.
-        function formatBankTime(seconds) {
+        // MM:SS.CC, used everywhere survival time is shown: the live
+        // in-game clock, the results screen, and the share text/image.
+        function formatSurvivalTime(seconds) {
             const clamped = Math.max(0, seconds);
             const mins = Math.floor(clamped / 60);
             const secs = clamped - mins * 60;
@@ -2724,9 +2685,11 @@
             asked: new Set(),      // player names already used this session (avoid repeats until the pool is exhausted)
             currentPlayer: null,
             streak: 0,             // questions answered so far this run (correct + wrong), 1-indexed display
-            score: 0,
-            bank: QUIZ_BANK_START,
+            score: 0,              // accumulated real survival seconds -- THE score (leaderboard + share)
             lives: QUIZ_START_LIVES,
+            earlyStreak: 0,        // consecutive <5s answers this run, right or wrong; resets on any non-early answer
+            lateCount: 0,          // cumulative >10s answers this run, right or wrong; NEVER resets
+            livesLostTotal: 0,     // total life-loss events this run (can exceed QUIZ_START_LIVES via bonus lives)
             results: [],
             timer: null,
             timeLeft: QUIZ_TIMER_SECONDS,
@@ -2871,8 +2834,10 @@
                 currentPlayer: null,
                 streak: 0,
                 score: 0,
-                bank: QUIZ_BANK_START,
                 lives: QUIZ_START_LIVES,
+                earlyStreak: 0,
+                lateCount: 0,
+                livesLostTotal: 0,
                 results: [],
                 timer: null,
                 timeLeft: QUIZ_TIMER_SECONDS,
@@ -3240,7 +3205,6 @@
             // fixed total in survival mode, so no "of N".
             document.getElementById('quizStreak').textContent = `Q${quizState.streak}`;
             updateLivesDisplay();
-            document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
 
             // Draw map
             drawQuizMap(career);
@@ -3284,33 +3248,29 @@
         }
 
         // Hearts/strikes display: filled heart per remaining life, hollow
-        // for spent ones. Purely presentational -- reflects quizState.lives,
+        // for spent ones. Always renders QUIZ_MAX_LIVES (5) slots -- lives
+        // can exceed the starting 3 via the early-streak bonus, up to the
+        // hard cap -- purely presentational, reflects quizState.lives,
         // never sets it.
         function updateLivesDisplay() {
             const el = document.getElementById('quizLives');
             if(!el) return;
             let hearts = '';
-            for(let i = 0; i < QUIZ_START_LIVES; i++) {
+            for(let i = 0; i < QUIZ_MAX_LIVES; i++) {
                 hearts += i < quizState.lives ? '<span class="quiz-heart full">♥</span>' : '<span class="quiz-heart empty">♥</span>';
             }
             el.innerHTML = hearts;
         }
-        
+
         function updateTimerDisplay() {
-            const el = document.getElementById('quizTimer');
             const t = Math.max(0, quizState.timeLeft);
-            el.textContent = t.toFixed(2);
 
-            // Danger/warning thresholds as a proportion of the window
-            // (20%/47%), not literal seconds -- stays correct regardless of
-            // QUIZ_TIMER_SECONDS.
+            // Plain progress bar only -- no numeric countdown, no
+            // centiseconds ticking visibly. The bar's color still shifts as
+            // the window runs low (a glanceable, non-numeric signal); the
+            // actual live pressure/reward now lives in the survival clock
+            // below and the early/late thresholds, not a digit readout.
             const danger = QUIZ_TIMER_SECONDS * 0.2, warning = QUIZ_TIMER_SECONDS * 0.47;
-            el.classList.remove('warning', 'danger');
-            if(t <= danger) el.classList.add('danger');
-            else if(t <= warning) el.classList.add('warning');
-
-            // Presentation-only: reflect the same t/threshold values above as
-            // a glanceable bar. Doesn't read or alter quizState.timeLeft.
             const bar = document.getElementById('quizTimerBarFill');
             if(bar) {
                 bar.style.width = (t / QUIZ_TIMER_SECONDS * 100) + '%';
@@ -3319,59 +3279,109 @@
                 else if(t <= warning) bar.classList.add('warning');
             }
 
-            // Live bank preview: ticks down in real time with elapsed answer
-            // time on THIS question (the same value _applyBankDelta will
-            // deduct at resolution), so the bank reads as a genuine
-            // real-time countdown rather than only changing in discrete
-            // jumps. This never mutates quizState.bank -- the actual commit
-            // (including any fast-answer bonus) happens once, in
-            // _applyBankDelta, at submitAnswer/handleTimeout.
+            // Live survival-clock preview: ticks UP in real time with
+            // elapsed answer time on THIS question, then FREEZES and holds
+            // at the pre-question value the instant elapsed crosses the
+            // late threshold -- previewing the same zero-credit-if-late
+            // rule _applyTimeEffects commits at resolution (see there for
+            // why). A visible, real-time "you just stopped earning credit"
+            // signal, not just an invisible rule. This never mutates
+            // quizState.score -- the actual commit happens once, in
+            // _applyTimeEffects, at submitAnswer/handleTimeout.
             const elapsedSoFar = QUIZ_TIMER_SECONDS - t;
-            _renderBank(quizState.bank - elapsedSoFar);
+            const previewCredit = elapsedSoFar > QUIZ_LATE_THRESHOLD ? 0 : elapsedSoFar;
+            _renderSurvivalClock(quizState.score + previewCredit);
         }
 
-        // Shared bank render: used both for the live per-tick preview above
-        // and for the committed value after _applyBankDelta. Single source
-        // of formatting/threshold logic so the two paths can't drift.
-        function _renderBank(seconds) {
-            const el = document.getElementById('quizBankDisplay');
+        // Shared survival-clock render: used both for the live per-tick
+        // preview above and for the committed value after
+        // _applyTimeEffects. Single source of formatting so the two paths
+        // can't drift.
+        function _renderSurvivalClock(seconds) {
+            const el = document.getElementById('quizClockDisplay');
             if(!el) return;
-            const clamped = Math.max(0, seconds);
-            el.textContent = formatBankTime(clamped);
-            el.classList.remove('warning', 'danger');
-            if(clamped <= 10) el.classList.add('danger');
-            else if(clamped <= 20) el.classList.add('warning');
+            el.textContent = formatSurvivalTime(seconds);
         }
 
-        // The one place quizState.bank is ever mutated. `elapsedSeconds` is
-        // the real time taken to answer (or QUIZ_TIMER_SECONDS on a
-        // timeout) -- always deducted in full, unconditionally; a bonus is
-        // added back only when that elapsed time is under the fast
-        // threshold. Never gated on correctness: the deduction bullet in
-        // the spec this implements is explicit that time-cost applies
-        // "right or wrong," and the bonus is the mirror of that same
-        // time-only rule.
-        function _applyBankDelta(elapsedSeconds) {
-            quizState.bank -= elapsedSeconds;
-            if(elapsedSeconds < QUIZ_BANK_FAST_THRESHOLD) quizState.bank += QUIZ_BANK_FAST_BONUS;
-            quizState.bank = Math.max(0, quizState.bank);
-            _renderBank(quizState.bank);
+        // The one place quizState.score/earlyStreak/lateCount are ever
+        // mutated. `elapsedSeconds` is the real time taken to answer (or
+        // QUIZ_TIMER_SECONDS on a timeout) -- called unconditionally, on
+        // every question, regardless of correctness (a wrong-answer/
+        // timeout life loss is the separate, unchanged existing rule,
+        // applied directly in submitAnswer/handleTimeout).
+        //
+        // Score rule: a late answer (> QUIZ_LATE_THRESHOLD) earns ZERO
+        // survival-time credit; only early/neutral pace (<= 10s) adds to
+        // the score. This is not the literal "always add the raw elapsed
+        // time" reading -- it's the one rule that makes the score
+        // UNCONDITIONALLY impossible to inflate by stalling, regardless of
+        // how the anti-stalling lives play out. A plain uncapped sum does
+        // NOT have that property: simulated proof (see delivered report) --
+        // a 15-question all-correct run at ~3s/question survives all 15
+        // for 48.51s, while the same at ~14s/question dies at question 9
+        // (three late-count life losses, exactly on schedule) but a raw
+        // sum would total 127.42s > 48.51s, i.e. the slower run would score
+        // HIGHER despite dying two-thirds of the way through -- the exact
+        // failure this rewrite exists to prevent. Zero-credit-if-late fixes
+        // it categorically: an always-late run can accumulate at most 0s
+        // of score no matter how long it survives or how "barely" late
+        // each answer is, while an always-early/neutral run accumulates
+        // its full real time. No new tunable was introduced -- this reuses
+        // QUIZ_LATE_THRESHOLD, already pinned by the spec.
+        //
+        // Lives: adds one (early-streak bonus, capped) or removes one
+        // (cumulative late-count penalty, never resets) -- both purely
+        // speed-driven, exactly mirroring "correctness and speed are
+        // tracked independently." Returns a short note describing any
+        // score/life-changing event, for the caller to fold into the
+        // on-screen result message (otherwise these effects are entirely
+        // invisible to the player).
+        function _applyTimeEffects(elapsedSeconds) {
+            const notes = [];
+
+            if(elapsedSeconds > QUIZ_LATE_THRESHOLD) {
+                notes.push('no time credit (too slow)');
+            } else {
+                quizState.score += elapsedSeconds;
+            }
+
+            if(elapsedSeconds < QUIZ_EARLY_THRESHOLD) {
+                quizState.earlyStreak++;
+                if(quizState.earlyStreak % QUIZ_EARLY_STREAK_FOR_BONUS === 0) {
+                    // Fresh streak required for the next bonus, rather than
+                    // granting again at every further multiple of 3 without
+                    // a break -- a deliberate reading of "repeatable," see
+                    // the delivered proof report for the alternative
+                    // considered.
+                    quizState.earlyStreak = 0;
+                    if(quizState.lives < QUIZ_MAX_LIVES) {
+                        quizState.lives++;
+                        notes.push('3 fast answers in a row: +1 life!');
+                    }
+                }
+            } else if(elapsedSeconds > QUIZ_LATE_THRESHOLD) {
+                quizState.earlyStreak = 0; // a late answer is non-early: breaks the streak
+                quizState.lateCount++;
+                if(quizState.lateCount % QUIZ_LATE_PENALTY_EVERY === 0) {
+                    quizState.lives = Math.max(0, quizState.lives - 1);
+                    quizState.livesLostTotal++;
+                    notes.push('slow-answer streak cost a life');
+                }
+            } else {
+                // Neutral [5,10]: not early, so it breaks the streak; not
+                // late, so the cumulative count is untouched.
+                quizState.earlyStreak = 0;
+            }
+
+            _renderSurvivalClock(quizState.score);
+            updateLivesDisplay();
+            return notes.length ? ' — ' + notes.join('; ') : '';
         }
 
-        // Presentation-only helpers: a light haptic tap (progressive
-        // enhancement, no-op where the Vibration API is unsupported) and a
-        // brief score-bump animation trigger. Neither reads nor changes any
-        // scoring value -- they just react to a score/answer event that
-        // already happened.
+        // Presentation-only: a light haptic tap (progressive enhancement,
+        // no-op where the Vibration API is unsupported).
         function _quizVibrate(pattern) {
             if(navigator.vibrate) { try { navigator.vibrate(pattern); } catch(e) {} }
-        }
-        function _quizBumpScore() {
-            const el = document.getElementById('quizScoreDisplay');
-            if(!el) return;
-            el.classList.remove('bump');
-            void el.offsetWidth; // restart the animation even on back-to-back bumps
-            el.classList.add('bump');
         }
 
         function submitAnswer(selectedName) {
@@ -3382,25 +3392,23 @@
             const correctName = quizState.currentPlayer.player;
             const isCorrect = selectedName === correctName;
             const timeTaken = QUIZ_TIMER_SECONDS - quizState.timeLeft;
-            _applyBankDelta(timeTaken);
 
-            // Score decay: 15pt ceiling at t=0 down to a 1.5pt floor at
-            // t=QUIZ_TIMER_SECONDS, linear in between. A wrong answer costs
-            // a life (below), never points.
-            let points = 0;
-            if(isCorrect) {
-                const perSecond = (15 - 1.5) / QUIZ_TIMER_SECONDS; // 0.9 pts/sec
-                points = Math.max(1.5, 15 - (timeTaken * perSecond));
-                quizState.score += points;
-            } else {
-                quizState.lives--;
+            // Time-based effects (score, early-streak bonus, late-count
+            // penalty) are entirely independent of correctness -- applied
+            // first, unconditionally.
+            const timeNote = _applyTimeEffects(timeTaken);
+
+            // A wrong answer costs a life -- the existing rule, unchanged,
+            // and separate from the speed-driven effects above.
+            if(!isCorrect) {
+                quizState.lives = Math.max(0, quizState.lives - 1);
+                quizState.livesLostTotal++;
             }
 
             const lastStop = quizState.currentPlayer.career_history[quizState.currentPlayer.career_history.length - 1];
             quizState.results.push({
                 player: correctName,
                 correct: isCorrect,
-                points: points,
                 time: timeTaken,
                 team: lastStop.team,
                 years: lastStop.years
@@ -3416,18 +3424,14 @@
 
             const resultEl = document.getElementById('quizResult');
             if(isCorrect) {
-                resultEl.textContent = `✓ Correct! +${points.toFixed(2)} points (${timeTaken.toFixed(2)}s)`;
+                resultEl.textContent = `✓ Correct! (${timeTaken.toFixed(2)}s)${timeNote}`;
                 resultEl.className = 'quiz-result show correct';
                 _quizVibrate(15);
             } else {
-                resultEl.textContent = `✗ Wrong! The answer was ${correctName} — lost a life`;
+                resultEl.textContent = `✗ Wrong! The answer was ${correctName} — lost a life${timeNote}`;
                 resultEl.className = 'quiz-result show wrong';
                 _quizVibrate(30);
             }
-
-            document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
-            if(isCorrect) _quizBumpScore();
-            updateLivesDisplay();
 
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
@@ -3439,19 +3443,19 @@
             quizState.answered = true;
             const correctName = quizState.currentPlayer.player;
 
-            // Timeout is a miss exactly like a wrong answer: costs a life,
-            // never points -- the -5 point penalty is gone entirely. It's
-            // still ordinary elapsed time for the bank though: the full
-            // window was spent, so the full QUIZ_TIMER_SECONDS is deducted
-            // (always >= the fast threshold, so never a bonus).
-            quizState.lives--;
-            _applyBankDelta(QUIZ_TIMER_SECONDS);
+            // Timeout is a miss exactly like a wrong answer: costs a life --
+            // the existing rule, unchanged. It's still ordinary elapsed time
+            // for the score/streak counters though: the full window was
+            // spent, so the full QUIZ_TIMER_SECONDS feeds _applyTimeEffects
+            // (always > the late threshold, so this always counts as late).
+            quizState.lives = Math.max(0, quizState.lives - 1);
+            quizState.livesLostTotal++;
+            const timeNote = _applyTimeEffects(QUIZ_TIMER_SECONDS);
 
             const lastStop = quizState.currentPlayer.career_history[quizState.currentPlayer.career_history.length - 1];
             quizState.results.push({
                 player: correctName,
                 correct: false,
-                points: 0,
                 time: QUIZ_TIMER_SECONDS,
                 team: lastStop.team,
                 years: lastStop.years
@@ -3465,12 +3469,9 @@
             });
 
             const resultEl = document.getElementById('quizResult');
-            resultEl.textContent = `⏱ Time's up! The answer was ${correctName} — lost a life`;
+            resultEl.textContent = `⏱ Time's up! The answer was ${correctName} — lost a life${timeNote}`;
             resultEl.className = 'quiz-result show timeout';
             _quizVibrate(30);
-
-            document.getElementById('quizScoreDisplay').textContent = `${quizState.score.toFixed(1)} pts`;
-            updateLivesDisplay();
 
             // Auto-advance after 1.5 seconds
             setTimeout(() => {
@@ -3479,8 +3480,8 @@
         }
 
         function nextQuestion() {
-            // Whichever comes first: 3 misses, or the time bank hitting zero.
-            if(quizState.lives <= 0 || quizState.bank <= 0) {
+            // The only end condition: lives reaching 0. No fixed length.
+            if(quizState.lives <= 0) {
                 showFinalResults();
             } else {
                 showQuestion();
@@ -3521,35 +3522,35 @@
 
             const correctCount = quizState.results.filter(r => r.correct).length;
             const totalAsked = quizState.results.length;
-            const livesUsed = QUIZ_START_LIVES - quizState.lives;
 
-            // Headline is now the time bank's final balance ("Survived
-            // MM:SS.CC"), never raw wall-clock session duration -- points
-            // stay fully computed/submitted below for the leaderboard, just
-            // demoted from hero number to a line in the meta subtitle.
-            document.getElementById('finalScore').textContent = formatBankTime(quizState.bank);
+            // Headline is real accumulated survival time ("Survived
+            // MM:SS.CC") -- the sum of every question's real elapsed
+            // answer time, right or wrong. This IS the score now; there is
+            // no separate points system.
+            document.getElementById('finalScore').textContent = formatSurvivalTime(quizState.score);
             const metaEl = document.getElementById('finalMeta');
-            if(metaEl) metaEl.textContent = `${correctCount} correct · ${totalAsked} questions · out of ${QUIZ_START_LIVES} lives · ${quizState.score.toFixed(2)} pts`;
+            // "Lives lost" (not "out of N lives") since bonus lives mean
+            // the effective max isn't fixed at QUIZ_START_LIVES anymore.
+            if(metaEl) metaEl.textContent = `${correctCount} correct · ${totalAsked} questions · ${quizState.livesLostTotal} lives lost`;
 
-            // Stat callout box: correct answers, lives used, best streak --
+            // Stat callout box: correct answers, lives lost, best streak --
             // this game's equivalent of the reference game's own highlighted
             // comparison box beneath its hero number.
             document.getElementById('qfStatCorrect').textContent = correctCount;
-            document.getElementById('qfStatLives').textContent = `${livesUsed}/${QUIZ_START_LIVES}`;
+            document.getElementById('qfStatLives').textContent = quizState.livesLostTotal;
             document.getElementById('qfStatStreak').textContent = getBestStreak(quizState.results);
 
             // Build detailed results list. Unbounded length (survival has no
             // fixed question count) -- .quiz-results-list scrolls its own box.
+            // Every row shows its real elapsed time (right or wrong -- time
+            // is tracked unconditionally now, there's no per-row points
+            // value to gate a dash on).
             const resultsList = quizState.results.map(r => {
                 const isCorrect = r.correct;
-                // No -5 penalty exists anymore -- a miss is a life lost, not
-                // a point value, so it gets a dash rather than "+0.00".
-                const ptsStr = isCorrect ? '+' + r.points.toFixed(2) : '—';
-                const timeStr = isCorrect ? ' (' + r.time.toFixed(2) + 's)' : '';
                 return `<div class="quiz-result-row">
                     <span class="quiz-result-icon ${isCorrect ? 'correct' : 'wrong'}">${isCorrect ? '✓' : '✗'}</span>
                     <span class="quiz-result-name">${r.player}</span>
-                    <span class="quiz-result-points ${isCorrect ? 'correct' : 'wrong'}">${ptsStr}${timeStr}</span>
+                    <span class="quiz-result-points ${isCorrect ? 'correct' : 'wrong'}">${r.time.toFixed(2)}s</span>
                 </div>`;
             }).join('');
 
@@ -3682,10 +3683,12 @@
             const rows = entries.map(e => {
                 const isTop = e.rank <= 3;
                 const isYou = !!myRank && e.rank === myRank;
+                // Score is now real survival seconds, not points -- render
+                // it the same MM:SS.CC way as everywhere else.
                 return `<div class="qf-lb-row ${isTop ? 'top' : ''} ${isYou ? 'you' : ''}">
                     <span class="qf-lb-rank">#${e.rank}</span>
                     <span class="qf-lb-name">${e.name}</span>
-                    <span class="qf-lb-score">${Number(e.score).toFixed(1)}</span>
+                    <span class="qf-lb-score">${formatSurvivalTime(Number(e.score))}</span>
                 </div>`;
             }).join('');
             document.getElementById('qfLeaderboardRows').innerHTML = rows;
@@ -3703,11 +3706,12 @@
         // three can never drift out of sync with each other. No emoji (same
         // standard as the social-icon fix: platform-inconsistent glyph
         // rendering, not something to reintroduce in plain text either).
-        // Headlines the survival time (the new share-headline stat), keeps
-        // points/correct-count as supporting context.
+        // Headlines the survival time -- the score, full stop, there's no
+        // separate points system anymore -- with correct-count as
+        // supporting context.
         function _quizShareText() {
             const correct = quizState.results.filter(r => r.correct).length;
-            return `I survived ${formatBankTime(quizState.bank)} and scored ${quizState.score.toFixed(1)} points (${correct} correct) on the NBA Career Map Quiz (Survival Mode)! Can you beat me?`;
+            return `I survived ${formatSurvivalTime(quizState.score)} (${correct} correct) on the NBA Career Map Quiz (Survival Mode)! Can you beat me?`;
         }
 
         function shareResult() {
@@ -3774,21 +3778,19 @@
             ctx.fillText('SURVIVAL MODE', size/2, 132);
 
             // Hero: huge bold WHITE survival time -- the dominant element on
-            // the card, same visual weight the score used to have. This IS
-            // the headline number now ("Survived MM:SS.CC"), not raw
-            // wall-clock session length -- points move to the meta line
-            // below, still fully computed/submitted for the leaderboard.
-            // Auto-shrinks if a long value (3+ digit minutes) would
-            // overflow the card width.
-            const bankStr = formatBankTime(quizState.bank);
+            // the card. This IS the score now ("Survived MM:SS.CC"), the
+            // real accumulated elapsed answer time -- there's no separate
+            // points system anymore. Auto-shrinks if a long value (3+ digit
+            // minutes) would overflow the card width.
+            const survivalStr = formatSurvivalTime(quizState.score);
             let heroSize = 118;
             ctx.font = `800 ${heroSize}px "Open Sans", Arial, sans-serif`;
-            while (ctx.measureText(bankStr).width > 900 && heroSize > 60) {
+            while (ctx.measureText(survivalStr).width > 900 && heroSize > 60) {
                 heroSize -= 4;
                 ctx.font = `800 ${heroSize}px "Open Sans", Arial, sans-serif`;
             }
             ctx.fillStyle = '#ffffff';
-            ctx.fillText(bankStr, size/2, 268);
+            ctx.fillText(survivalStr, size/2, 268);
 
             ctx.fillStyle = '#888';
             ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
@@ -3798,11 +3800,10 @@
             // reference's two small meta lines beneath its own hero number)
             const correct = quizState.results.filter(r => r.correct).length;
             const totalAsked = quizState.results.length;
-            const livesUsed = QUIZ_START_LIVES - quizState.lives;
 
             ctx.fillStyle = '#bbb';
             ctx.font = '600 20px "Open Sans", Arial, sans-serif';
-            ctx.fillText(`${correct} correct · ${totalAsked} questions · ${livesUsed} of ${QUIZ_START_LIVES} lives used · ${quizState.score.toFixed(2)} pts`, size/2, 332);
+            ctx.fillText(`${correct} correct · ${totalAsked} questions · ${quizState.livesLostTotal} lives lost`, size/2, 332);
 
             if (quizState.rank && quizState.totalPlayers) {
                 ctx.fillStyle = '#f0b429';
@@ -3871,13 +3872,15 @@
                 ctx.font = '15px "Open Sans", Arial, sans-serif';
                 ctx.fillText(`${r.team || ''} · ${r.years || ''}`, textX, rowTop + 42);
 
-                // Value -- a miss costs a life, never points, so it gets a
-                // neutral "MISS" label rather than a -5 point value
+                // Value -- real elapsed time for the question (tracked
+                // unconditionally, right or wrong now); a miss still gets
+                // the neutral "MISS" label since it's the more important
+                // fact about that row than its exact timing.
                 ctx.textAlign = 'right';
                 ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
                 if(isCorrect) {
                     ctx.fillStyle = '#2ecc71';
-                    ctx.fillText('+' + r.points.toFixed(1), size - 76, rowTop + 32);
+                    ctx.fillText(r.time.toFixed(1) + 's', size - 76, rowTop + 32);
                 } else {
                     ctx.fillStyle = 'rgba(255,255,255,0.4)';
                     ctx.fillText('MISS', size - 76, rowTop + 32);
@@ -4016,13 +4019,13 @@ document.addEventListener('DOMContentLoaded', boot);
         <div class="quiz-box quiz-box-dark" id="quizIntro">
             <div class="quiz-dark-kicker">NBA CAREER MAP</div>
             <div class="quiz-title">SURVIVAL MODE</div>
-            <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Three misses, or your time bank hits zero, and you're out.</div>
+            <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Three lives, and you're out.</div>
             <ol class="quiz-rules-dark">
-                <li>Study the career map, then pick the player from 4 choices</li>
-                <li>15 seconds per question — faster answers score more (up to 15 pts)</li>
-                <li>A wrong answer or a timeout costs a life, never points</li>
-                <li>Start with a 1:00.00 time bank — every answer spends the time it really took, answers under 5s add time back</li>
-                <li>3 lives, no fixed length — survive as long as you can</li>
+                <li>Study the career map, then pick the player from 4 choices — 15 seconds per question</li>
+                <li>A wrong answer or a timeout costs a life</li>
+                <li>Answer 3 in a row quickly (under 5s) and earn a bonus life, up to 5 max</li>
+                <li>Slow answers (over 10s) earn no time toward your score and add up — every 3rd one overall costs a life, even if you got it right</li>
+                <li>No fixed length — survive as long as you can, your time survived is the score</li>
             </ol>
             <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
         </div>
@@ -4039,7 +4042,7 @@ document.addEventListener('DOMContentLoaded', boot);
             <div class="qf-statbox" id="qfStatBox">
                 <div class="qf-stat"><div class="qf-stat-num" id="qfStatCorrect">0</div><div class="qf-stat-label">Correct</div></div>
                 <div class="qf-stat-div"></div>
-                <div class="qf-stat"><div class="qf-stat-num" id="qfStatLives">0/3</div><div class="qf-stat-label">Lives Used</div></div>
+                <div class="qf-stat"><div class="qf-stat-num" id="qfStatLives">0</div><div class="qf-stat-label">Lives Lost</div></div>
                 <div class="qf-stat-div"></div>
                 <div class="qf-stat"><div class="qf-stat-num" id="qfStatStreak">0</div><div class="qf-stat-label">Best Streak</div></div>
             </div>
@@ -4102,25 +4105,24 @@ document.addEventListener('DOMContentLoaded', boot);
                  initQuizMap() replaces quizMapContainer's innerHTML on every
                  question -- CSS floats it visually over the map instead. -->
             <div class="quiz-result" id="quizResult"></div>
-            <!-- Time bank: the tension mechanic now (drives the second
-                 end-condition and IS the share/results headline), so it
-                 gets its own prominent row above the rest of the header
-                 rather than competing for space with the per-question
-                 timer/score. -->
-            <div class="quiz-bank-wrap">
-                <span class="quiz-bank-label">TIME BANK</span>
-                <span class="quiz-bank" id="quizBankDisplay">1:00.00</span>
+            <!-- Survival clock: the tension mechanic now (this IS the
+                 score, and the share/results headline), so it gets its own
+                 prominent row above the rest of the header rather than
+                 competing for space with the per-question timer. -->
+            <div class="quiz-clock-wrap">
+                <span class="quiz-clock-label">SURVIVAL TIME</span>
+                <span class="quiz-clock" id="quizClockDisplay">0:00.00</span>
             </div>
             <div class="quiz-header">
                 <div class="quiz-progress" id="quizProgress">
                     <span class="quiz-streak" id="quizStreak">Q1</span>
                     <span class="quiz-lives" id="quizLives"></span>
                 </div>
+                <!-- Plain progress bar only -- no numeric countdown/
+                     centiseconds ticking visibly (see updateTimerDisplay). -->
                 <div class="quiz-timer-wrap">
                     <div class="quiz-timer-bar"><div class="quiz-timer-bar-fill" id="quizTimerBarFill"></div></div>
-                    <div class="quiz-timer" id="quizTimer">10.0</div>
                 </div>
-                <div class="quiz-score" id="quizScoreDisplay">0 pts</div>
             </div>
             <div class="quiz-options" id="quizOptions"></div>
             <div class="quiz-buttons" id="quizButtons" style="display:none">
