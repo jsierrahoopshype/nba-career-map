@@ -31,7 +31,10 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import re
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
@@ -58,6 +61,11 @@ CHANGELOG = LOGS / "changelog.md"
 # cannot be backfilled). Feeds the dashboard "latest_signings" widget.
 TRANSACTIONS = DATA / "logs" / "transactions.json"
 ROOT_MAP_FILE = ROOT / "nba_players_careers_READY.json"
+# Cursor into TRANSACTIONS: how many ledger entries have already been posted
+# to Slack. Same append-only-ledger pattern as TRANSACTIONS itself; tracking
+# a count (not content) means a re-run naturally resumes from the right spot
+# and never backfills or double-posts. See _notify_slack.
+SLACK_MARKER = DATA / "logs" / "slack_posted_marker.json"
 
 
 def load_json(path: Path, default):
@@ -491,6 +499,7 @@ def _persist(db: Database, summary: dict) -> None:
 
     _append_logs(summary)
     _append_transactions(summary)
+    _notify_slack(summary)
 
 
 def _append_transactions(summary: dict) -> None:
@@ -514,6 +523,132 @@ def _append_transactions(summary: dict) -> None:
             "date": date,
         })
     write_json(TRANSACTIONS, ledger)
+
+
+# Country -> ISO 3166-1 alpha-2. Mirrors flags.js's ISO table (the same ~92
+# countries actually present in this dataset), retargeted at Slack's own
+# emoji rendering instead of flagcdn images. Slack renders flag emoji
+# consistently across all clients, unlike the browser-inconsistency problem
+# that made flags.js move the *website* away from emoji flags in the first
+# place -- this is a different rendering surface, not the same bug.
+_COUNTRY_ISO = {
+    "Angola": "ao", "Argentina": "ar", "Australia": "au", "Austria": "at",
+    "Azerbaijan": "az", "Bahrain": "bh", "Belarus": "by", "Belgium": "be",
+    "Bolivia": "bo", "Bosnia": "ba", "Brazil": "br", "Bulgaria": "bg",
+    "Burundi": "bi", "Canada": "ca", "Chile": "cl", "China": "cn",
+    "Colombia": "co", "Croatia": "hr", "Cyprus": "cy", "Czech Republic": "cz",
+    "Denmark": "dk", "Dominican Republic": "do", "Ecuador": "ec", "Egypt": "eg",
+    "Estonia": "ee", "Finland": "fi", "France": "fr", "Georgia": "ge",
+    "Germany": "de", "Greece": "gr", "Honduras": "hn", "Hong Kong": "hk",
+    "Hungary": "hu", "Iceland": "is", "India": "in", "Indonesia": "id",
+    "Iran": "ir", "Iraq": "iq", "Ireland": "ie", "Israel": "il", "Italy": "it",
+    "Ivory Coast": "ci", "Japan": "jp", "Jordan": "jo", "Kazakhstan": "kz",
+    "Kosovo": "xk", "Kuwait": "kw", "Latvia": "lv", "Lebanon": "lb",
+    "Libya": "ly", "Lithuania": "lt", "Luxembourg": "lu", "Malaysia": "my",
+    "Mexico": "mx", "Monaco": "mc", "Mongolia": "mn", "Montenegro": "me",
+    "Morocco": "ma", "Netherlands": "nl", "New Zealand": "nz",
+    "Nicaragua": "ni", "Nigeria": "ng", "North Macedonia": "mk",
+    "Philippines": "ph", "Poland": "pl", "Portugal": "pt",
+    "Puerto Rico": "pr", "Qatar": "qa", "Romania": "ro", "Russia": "ru",
+    "Saudi Arabia": "sa", "Serbia": "rs", "Singapore": "sg",
+    "Slovakia": "sk", "Slovenia": "si", "South Africa": "za",
+    "South Korea": "kr", "Spain": "es", "Sweden": "se", "Switzerland": "ch",
+    "Syria": "sy", "Taiwan": "tw", "Tanzania": "tz", "Tunisia": "tn",
+    "Turkey": "tr", "UAE": "ae", "USA": "us", "Ukraine": "ua",
+    "United Kingdom": "gb", "Uruguay": "uy", "Venezuela": "ve",
+    "Vietnam": "vn", "United Arab Emirates": "ae", "England": "gb",
+    "Bosnia and Herzegovina": "ba", "Senegal": "sn", "Thailand": "th",
+    "Andorra": "ad", "South Sudan": "ss", "Sudan": "sd", "Jamaica": "jm",
+    "Bahamas": "bs", "DR Congo": "cd", "Cameroon": "cm", "Mali": "ml",
+    "Ghana": "gh", "US Virgin Islands": "vi", "Panama": "pa",
+    "Belize": "bz", "Haiti": "ht", "Cuba": "cu", "Gabon": "ga",
+    "Trinidad and Tobago": "tt", "Guyana": "gy", "Guinea": "gn",
+    "British Virgin Islands": "vg", "Dominica": "dm", "Uganda": "ug",
+    "Antigua and Barbuda": "ag", "Norway": "no", "Cape Verde": "cv",
+}
+
+
+def _flag_emoji(country: str) -> str:
+    """Regional-indicator emoji flag for a country name, or '' if unmapped
+    (same graceful-fallback contract as flags.js's flagImg)."""
+    iso = _COUNTRY_ISO.get(country or "", "")
+    if len(iso) != 2:
+        return ""
+    return "".join(chr(0x1F1E6 + (ord(c) - ord("A"))) for c in iso.upper())
+
+
+def _team_label(team: str, locations: dict) -> str:
+    country = (locations.get(team) or {}).get("country", "")
+    flag = _flag_emoji(country)
+    return f"{flag} {team}" if flag else team
+
+
+def _slack_payload(new_tx: list[dict], date: str) -> dict:
+    """Build the batched Slack message: one header + one line per move."""
+    locations = load_json(LOCATIONS, {})
+    n = len(new_tx)
+    header = f"\U0001F3C0 *{n} new team move{'s' if n != 1 else ''}* — {date}"
+    lines = [header, ""]
+    for mv in new_tx:
+        frm = _team_label(mv.get("from_team", ""), locations)
+        to = _team_label(mv.get("to_team", ""), locations)
+        lines.append(f"• *{mv.get('player', '')}*: {frm} → {to}")
+    return {"text": "\n".join(lines)}
+
+
+def _post_to_slack(webhook_url: str, payload: dict) -> None:
+    body = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        webhook_url, data=body, method="POST",
+        headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=10) as resp:
+        resp.read()
+
+
+def _notify_slack(summary: dict) -> None:
+    """Post one batched Slack message for this run's newly-detected moves.
+
+    Additive and non-blocking: reuses summary["team_moves"] (the same
+    _is_real_move-gated list _append_transactions just wrote), so phantom
+    club-renames never trigger an alert here either, and posts nothing when
+    a run finds no moves. SLACK_MARKER tracks how many ledger entries have
+    been posted so far (a plain count, since TRANSACTIONS is append-only);
+    diffing against that -- rather than just posting summary["team_moves"]
+    directly -- means a failed post is retried (and only it, batched with
+    whatever's new) on the next run instead of being silently lost, while a
+    successful post's marker advance makes a workflow re-run a no-op. The
+    marker is only ever advanced after a confirmed-successful POST.
+    """
+    moves = summary.get("team_moves", [])
+    if not moves:
+        return
+    ledger = load_json(TRANSACTIONS, {"transactions": []})
+    if isinstance(ledger, list):
+        ledger = {"transactions": ledger}
+    all_tx = ledger["transactions"]
+
+    marker = load_json(SLACK_MARKER, {})
+    # A missing/never-initialized marker defaults to "only this run's moves"
+    # -- never the full historical ledger -- so a lost marker file fails
+    # safe against backfilling old entries rather than flooding the channel.
+    posted_count = marker.get("posted_count", max(0, len(all_tx) - len(moves)))
+    new_tx = all_tx[posted_count:]
+    if not new_tx:
+        return
+
+    webhook = os.environ.get("SLACK_SIGNINGS_WEBHOOK", "")
+    if not webhook:
+        return  # secret not configured (e.g. a local/dev run) -- skip silently
+
+    payload = _slack_payload(new_tx, summary.get("date", today()))
+    try:
+        _post_to_slack(webhook, payload)
+    except (urllib.error.URLError, OSError, ValueError) as exc:
+        # Never log the webhook URL or its contents -- only the exception
+        # type. Marker is NOT advanced, so these entries retry next run.
+        print(f"[slack] notification failed: {type(exc).__name__}")
+        return
+    write_json(SLACK_MARKER, {"posted_count": len(all_tx)})
 
 
 def _append_logs(summary: dict) -> None:

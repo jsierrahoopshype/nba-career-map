@@ -63,6 +63,10 @@ jobs:
           IN_MODE: ${{ github.event.inputs.mode }}
           IN_PLAYER: ${{ github.event.inputs.player }}
           IN_MAX: ${{ github.event.inputs.max_requests }}
+          # Incoming webhook for the #signings Slack notification (see
+          # _notify_slack in update_careers.py). Read from the environment
+          # only, never hardcoded or logged.
+          SLACK_SIGNINGS_WEBHOOK: ${{ secrets.SLACK_SIGNINGS_WEBHOOK }}
         run: |
           # Resolve the run mode: manual dispatch uses the chosen input; the
           # monthly cron runs full_overseas; every other schedule runs incremental.
