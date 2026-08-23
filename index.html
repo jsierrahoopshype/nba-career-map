@@ -2660,9 +2660,12 @@
         // count -- every QUIZ_LATE_PENALTY_EVERY'th late answer overall
         // costs a life, whether or not it was correct. Game ends the
         // moment lives reaches 0, not at a fixed question count. The score
-        // is real accumulated survival time (sum of every question's real
-        // elapsed answer time, right or wrong) -- there is no separate
-        // points/decay formula anymore.
+        // is banked survival time: per question (right or wrong),
+        // credited_seconds = max(0, QUIZ_LATE_THRESHOLD - elapsed), summed
+        // across the run -- strictly more credit for strictly faster
+        // answers, zero at/past the late threshold (see _applyTimeEffects
+        // for why raw elapsed time can't be the score). There is no
+        // separate points/decay formula anymore.
         const QUIZ_TIMER_SECONDS = 15;
         const QUIZ_START_LIVES = 3;
         const QUIZ_MAX_LIVES = 5;
@@ -2685,7 +2688,7 @@
             asked: new Set(),      // player names already used this session (avoid repeats until the pool is exhausted)
             currentPlayer: null,
             streak: 0,             // questions answered so far this run (correct + wrong), 1-indexed display
-            score: 0,              // accumulated real survival seconds -- THE score (leaderboard + share)
+            score: 0,              // banked survival seconds (time-remaining credit per question) -- THE score (leaderboard + share)
             lives: QUIZ_START_LIVES,
             earlyStreak: 0,        // consecutive <5s answers this run, right or wrong; resets on any non-early answer
             lateCount: 0,          // cumulative >10s answers this run, right or wrong; NEVER resets
@@ -3279,17 +3282,18 @@
                 else if(t <= warning) bar.classList.add('warning');
             }
 
-            // Live survival-clock preview: ticks UP in real time with
-            // elapsed answer time on THIS question, then FREEZES and holds
-            // at the pre-question value the instant elapsed crosses the
-            // late threshold -- previewing the same zero-credit-if-late
-            // rule _applyTimeEffects commits at resolution (see there for
-            // why). A visible, real-time "you just stopped earning credit"
-            // signal, not just an invisible rule. This never mutates
-            // quizState.score -- the actual commit happens once, in
-            // _applyTimeEffects, at submitAnswer/handleTimeout.
+            // Live survival-clock preview: shows what the score WILL be if
+            // the player answers right now -- committed score plus this
+            // question's time-remaining credit, max(0, late-threshold -
+            // elapsed). Starts each question at +10s of potential credit
+            // and drains in real time to the committed value at the
+            // threshold, making the strictly-decreasing credit rule (see
+            // _applyTimeEffects) visible as live pressure rather than an
+            // invisible formula. This never mutates quizState.score -- the
+            // actual commit happens once, in _applyTimeEffects, at
+            // submitAnswer/handleTimeout.
             const elapsedSoFar = QUIZ_TIMER_SECONDS - t;
-            const previewCredit = elapsedSoFar > QUIZ_LATE_THRESHOLD ? 0 : elapsedSoFar;
+            const previewCredit = Math.max(0, QUIZ_LATE_THRESHOLD - elapsedSoFar);
             _renderSurvivalClock(quizState.score + previewCredit);
         }
 
@@ -3310,24 +3314,21 @@
         // timeout life loss is the separate, unchanged existing rule,
         // applied directly in submitAnswer/handleTimeout).
         //
-        // Score rule: a late answer (> QUIZ_LATE_THRESHOLD) earns ZERO
-        // survival-time credit; only early/neutral pace (<= 10s) adds to
-        // the score. This is not the literal "always add the raw elapsed
-        // time" reading -- it's the one rule that makes the score
-        // UNCONDITIONALLY impossible to inflate by stalling, regardless of
-        // how the anti-stalling lives play out. A plain uncapped sum does
-        // NOT have that property: simulated proof (see delivered report) --
-        // a 15-question all-correct run at ~3s/question survives all 15
-        // for 48.51s, while the same at ~14s/question dies at question 9
-        // (three late-count life losses, exactly on schedule) but a raw
-        // sum would total 127.42s > 48.51s, i.e. the slower run would score
-        // HIGHER despite dying two-thirds of the way through -- the exact
-        // failure this rewrite exists to prevent. Zero-credit-if-late fixes
-        // it categorically: an always-late run can accumulate at most 0s
-        // of score no matter how long it survives or how "barely" late
-        // each answer is, while an always-early/neutral run accumulates
-        // its full real time. No new tunable was introduced -- this reuses
-        // QUIZ_LATE_THRESHOLD, already pinned by the spec.
+        // Score rule: TIME-REMAINING credit, not raw-elapsed credit --
+        // credited_seconds = max(0, QUIZ_LATE_THRESHOLD - elapsed). This
+        // is strictly decreasing across the entire elapsed range with no
+        // flat zones: answering faster yields strictly more credit than
+        // answering slower at EVERY point, not just at the extremes, and
+        // an answer at or past the late threshold credits exactly zero.
+        // Two prior formulas each failed a stalling exploit (both caught
+        // by scripted simulation, see the delivered proof reports): a raw
+        // elapsed-time sum let a slower run out-score a faster one
+        // outright, and its zero-credit-if-late repair still left a flat
+        // fully-rewarded plateau across the whole neutral 5-10s window --
+        // so camping at ~9.9s/question (never early, never late) beat
+        // genuinely fast ~3s play for identical correctness. The
+        // time-remaining form eliminates plateaus categorically. Reuses
+        // QUIZ_LATE_THRESHOLD as the ceiling -- no new tunable.
         //
         // Lives: adds one (early-streak bonus, capped) or removes one
         // (cumulative late-count penalty, never resets) -- both purely
@@ -3339,10 +3340,11 @@
         function _applyTimeEffects(elapsedSeconds) {
             const notes = [];
 
-            if(elapsedSeconds > QUIZ_LATE_THRESHOLD) {
+            const credit = Math.max(0, QUIZ_LATE_THRESHOLD - elapsedSeconds);
+            if(credit <= 0) {
                 notes.push('no time credit (too slow)');
             } else {
-                quizState.score += elapsedSeconds;
+                quizState.score += credit;
             }
 
             if(elapsedSeconds < QUIZ_EARLY_THRESHOLD) {
@@ -3523,9 +3525,9 @@
             const correctCount = quizState.results.filter(r => r.correct).length;
             const totalAsked = quizState.results.length;
 
-            // Headline is real accumulated survival time ("Survived
-            // MM:SS.CC") -- the sum of every question's real elapsed
-            // answer time, right or wrong. This IS the score now; there is
+            // Headline is banked survival time ("Survived MM:SS.CC") --
+            // the sum of every question's time-remaining credit, right or
+            // wrong (see _applyTimeEffects). This IS the score; there is
             // no separate points system.
             document.getElementById('finalScore').textContent = formatSurvivalTime(quizState.score);
             const metaEl = document.getElementById('finalMeta');
@@ -3542,15 +3544,19 @@
 
             // Build detailed results list. Unbounded length (survival has no
             // fixed question count) -- .quiz-results-list scrolls its own box.
-            // Every row shows its real elapsed time (right or wrong -- time
-            // is tracked unconditionally now, there's no per-row points
-            // value to gate a dash on).
+            // Every row shows the survival time it BANKED (time-remaining
+            // credit, right or wrong -- speed and correctness are
+            // independent), so the rows visibly sum to the headline score
+            // rather than displaying raw elapsed values that don't add up
+            // to it. Credit is derived from the stored real elapsed time,
+            // same formula as _applyTimeEffects.
             const resultsList = quizState.results.map(r => {
                 const isCorrect = r.correct;
+                const credit = Math.max(0, QUIZ_LATE_THRESHOLD - r.time);
                 return `<div class="quiz-result-row">
                     <span class="quiz-result-icon ${isCorrect ? 'correct' : 'wrong'}">${isCorrect ? '✓' : '✗'}</span>
                     <span class="quiz-result-name">${r.player}</span>
-                    <span class="quiz-result-points ${isCorrect ? 'correct' : 'wrong'}">${r.time.toFixed(2)}s</span>
+                    <span class="quiz-result-points ${isCorrect ? 'correct' : 'wrong'}">+${credit.toFixed(2)}s</span>
                 </div>`;
             }).join('');
 
@@ -3778,10 +3784,10 @@
             ctx.fillText('SURVIVAL MODE', size/2, 132);
 
             // Hero: huge bold WHITE survival time -- the dominant element on
-            // the card. This IS the score now ("Survived MM:SS.CC"), the
-            // real accumulated elapsed answer time -- there's no separate
-            // points system anymore. Auto-shrinks if a long value (3+ digit
-            // minutes) would overflow the card width.
+            // the card. This IS the score ("Survived MM:SS.CC"), the banked
+            // time-remaining credit summed across the run -- there's no
+            // separate points system anymore. Auto-shrinks if a long value
+            // (3+ digit minutes) would overflow the card width.
             const survivalStr = formatSurvivalTime(quizState.score);
             let heroSize = 118;
             ctx.font = `800 ${heroSize}px "Open Sans", Arial, sans-serif`;
@@ -3872,15 +3878,15 @@
                 ctx.font = '15px "Open Sans", Arial, sans-serif';
                 ctx.fillText(`${r.team || ''} · ${r.years || ''}`, textX, rowTop + 42);
 
-                // Value -- real elapsed time for the question (tracked
-                // unconditionally, right or wrong now); a miss still gets
-                // the neutral "MISS" label since it's the more important
-                // fact about that row than its exact timing.
+                // Value -- survival time this question BANKED (time-
+                // remaining credit, same formula as _applyTimeEffects); a
+                // miss still gets the neutral "MISS" label since it's the
+                // more important fact about that row than its credit.
                 ctx.textAlign = 'right';
                 ctx.font = 'bold 20px "Open Sans", Arial, sans-serif';
                 if(isCorrect) {
                     ctx.fillStyle = '#2ecc71';
-                    ctx.fillText(r.time.toFixed(1) + 's', size - 76, rowTop + 32);
+                    ctx.fillText('+' + Math.max(0, QUIZ_LATE_THRESHOLD - r.time).toFixed(1) + 's', size - 76, rowTop + 32);
                 } else {
                     ctx.fillStyle = 'rgba(255,255,255,0.4)';
                     ctx.fillText('MISS', size - 76, rowTop + 32);
@@ -4024,8 +4030,9 @@ document.addEventListener('DOMContentLoaded', boot);
                 <li>Study the career map, then pick the player from 4 choices — 15 seconds per question</li>
                 <li>A wrong answer or a timeout costs a life</li>
                 <li>Answer 3 in a row quickly (under 5s) and earn a bonus life, up to 5 max</li>
-                <li>Slow answers (over 10s) earn no time toward your score and add up — every 3rd one overall costs a life, even if you got it right</li>
-                <li>No fixed length — survive as long as you can, your time survived is the score</li>
+                <li>Every answer banks the seconds you had left before the 10s mark — the faster you answer, the more time you bank</li>
+                <li>Slow answers (over 10s) bank nothing and add up — every 3rd one overall costs a life, even if you got it right</li>
+                <li>No fixed length — survive as long as you can, your banked time is the score</li>
             </ol>
             <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
         </div>
