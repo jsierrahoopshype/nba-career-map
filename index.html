@@ -1075,6 +1075,35 @@
         .quiz-score.bump { animation: quizScoreBump 0.35s ease; }
         @keyframes quizScoreBump { 0%{transform:scale(1)} 35%{transform:scale(1.22)} 100%{transform:scale(1)} }
 
+        /* Time bank: the tension mechanic now -- its own prominent row,
+           deliberately bigger/bolder than the per-question timer above
+           (quiz-timer), since this is the number that ends the game and
+           becomes the share headline. Same warning/danger color language
+           as the per-question timer (reuses quizPulse), but its own
+           absolute-second thresholds since the bank isn't a fixed-size
+           countdown window like QUIZ_TIMER_SECONDS is. */
+        .quiz-bank-wrap {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 8px;
+            padding: 4px 0 10px;
+        }
+        .quiz-bank-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+        .quiz-bank {
+            font-size: 26px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            color: var(--text);
+        }
+        .quiz-bank.warning { color: #e67e22; }
+        .quiz-bank.danger { color: var(--red); animation: quizPulse 0.5s infinite; }
+
         /* Answer grid: comfortably tappable (52px+ min-height, generous gaps)
            on mobile; desktop keeps its existing compact stacked-list sizing
            via the override below, unchanged. */
@@ -2661,12 +2690,42 @@
         // mistakes), not at a fixed question count.
         const QUIZ_TIMER_SECONDS = 15;
         const QUIZ_START_LIVES = 3;
+
+        // Time-bank: a second, parallel "survival time" stat that drives the
+        // game's second end-condition and IS the share/results headline
+        // ("Survived MM:SS.CC"). Independent of the points/percentile system
+        // below, which stays the unchanged leaderboard-ranking mechanic.
+        // Every question's real elapsed answer time is deducted
+        // unconditionally (right or wrong); answering under
+        // QUIZ_BANK_FAST_THRESHOLD adds QUIZ_BANK_FAST_BONUS back. Because
+        // the deduction is always exactly the elapsed time and the bonus can
+        // only ever be *lost* by taking longer (never gained), the bank is
+        // monotonically non-increasing in time-per-question for any fixed
+        // answer sequence -- waiting longer can never raise the final share
+        // number. 60s start / 5s threshold / +8s bonus is tuned so a
+        // consistently-fast player's bank trends upward (net +6s/question at
+        // a steady 2s pace) rather than bleeding to zero regardless of
+        // speed -- verified by simulation, see the delivered test report.
+        const QUIZ_BANK_START = 60;
+        const QUIZ_BANK_FAST_THRESHOLD = 5;
+        const QUIZ_BANK_FAST_BONUS = 8;
+
+        // MM:SS.CC, used everywhere the bank/survival time is shown: the
+        // live in-game display, the results screen, and the share text/image.
+        function formatBankTime(seconds) {
+            const clamped = Math.max(0, seconds);
+            const mins = Math.floor(clamped / 60);
+            const secs = clamped - mins * 60;
+            return `${mins}:${secs.toFixed(2).padStart(5, '0')}`;
+        }
+
         let quizState = {
             active: false,
             asked: new Set(),      // player names already used this session (avoid repeats until the pool is exhausted)
             currentPlayer: null,
             streak: 0,             // questions answered so far this run (correct + wrong), 1-indexed display
             score: 0,
+            bank: QUIZ_BANK_START,
             lives: QUIZ_START_LIVES,
             results: [],
             timer: null,
@@ -2812,6 +2871,7 @@
                 currentPlayer: null,
                 streak: 0,
                 score: 0,
+                bank: QUIZ_BANK_START,
                 lives: QUIZ_START_LIVES,
                 results: [],
                 timer: null,
@@ -3258,8 +3318,46 @@
                 if(t <= danger) bar.classList.add('danger');
                 else if(t <= warning) bar.classList.add('warning');
             }
+
+            // Live bank preview: ticks down in real time with elapsed answer
+            // time on THIS question (the same value _applyBankDelta will
+            // deduct at resolution), so the bank reads as a genuine
+            // real-time countdown rather than only changing in discrete
+            // jumps. This never mutates quizState.bank -- the actual commit
+            // (including any fast-answer bonus) happens once, in
+            // _applyBankDelta, at submitAnswer/handleTimeout.
+            const elapsedSoFar = QUIZ_TIMER_SECONDS - t;
+            _renderBank(quizState.bank - elapsedSoFar);
         }
-        
+
+        // Shared bank render: used both for the live per-tick preview above
+        // and for the committed value after _applyBankDelta. Single source
+        // of formatting/threshold logic so the two paths can't drift.
+        function _renderBank(seconds) {
+            const el = document.getElementById('quizBankDisplay');
+            if(!el) return;
+            const clamped = Math.max(0, seconds);
+            el.textContent = formatBankTime(clamped);
+            el.classList.remove('warning', 'danger');
+            if(clamped <= 10) el.classList.add('danger');
+            else if(clamped <= 20) el.classList.add('warning');
+        }
+
+        // The one place quizState.bank is ever mutated. `elapsedSeconds` is
+        // the real time taken to answer (or QUIZ_TIMER_SECONDS on a
+        // timeout) -- always deducted in full, unconditionally; a bonus is
+        // added back only when that elapsed time is under the fast
+        // threshold. Never gated on correctness: the deduction bullet in
+        // the spec this implements is explicit that time-cost applies
+        // "right or wrong," and the bonus is the mirror of that same
+        // time-only rule.
+        function _applyBankDelta(elapsedSeconds) {
+            quizState.bank -= elapsedSeconds;
+            if(elapsedSeconds < QUIZ_BANK_FAST_THRESHOLD) quizState.bank += QUIZ_BANK_FAST_BONUS;
+            quizState.bank = Math.max(0, quizState.bank);
+            _renderBank(quizState.bank);
+        }
+
         // Presentation-only helpers: a light haptic tap (progressive
         // enhancement, no-op where the Vibration API is unsupported) and a
         // brief score-bump animation trigger. Neither reads nor changes any
@@ -3284,6 +3382,7 @@
             const correctName = quizState.currentPlayer.player;
             const isCorrect = selectedName === correctName;
             const timeTaken = QUIZ_TIMER_SECONDS - quizState.timeLeft;
+            _applyBankDelta(timeTaken);
 
             // Score decay: 15pt ceiling at t=0 down to a 1.5pt floor at
             // t=QUIZ_TIMER_SECONDS, linear in between. A wrong answer costs
@@ -3341,8 +3440,12 @@
             const correctName = quizState.currentPlayer.player;
 
             // Timeout is a miss exactly like a wrong answer: costs a life,
-            // never points -- the -5 point penalty is gone entirely.
+            // never points -- the -5 point penalty is gone entirely. It's
+            // still ordinary elapsed time for the bank though: the full
+            // window was spent, so the full QUIZ_TIMER_SECONDS is deducted
+            // (always >= the fast threshold, so never a bonus).
             quizState.lives--;
+            _applyBankDelta(QUIZ_TIMER_SECONDS);
 
             const lastStop = quizState.currentPlayer.career_history[quizState.currentPlayer.career_history.length - 1];
             quizState.results.push({
@@ -3376,7 +3479,8 @@
         }
 
         function nextQuestion() {
-            if(quizState.lives <= 0) {
+            // Whichever comes first: 3 misses, or the time bank hitting zero.
+            if(quizState.lives <= 0 || quizState.bank <= 0) {
                 showFinalResults();
             } else {
                 showQuestion();
@@ -3419,9 +3523,13 @@
             const totalAsked = quizState.results.length;
             const livesUsed = QUIZ_START_LIVES - quizState.lives;
 
-            document.getElementById('finalScore').textContent = quizState.score.toFixed(2);
+            // Headline is now the time bank's final balance ("Survived
+            // MM:SS.CC"), never raw wall-clock session duration -- points
+            // stay fully computed/submitted below for the leaderboard, just
+            // demoted from hero number to a line in the meta subtitle.
+            document.getElementById('finalScore').textContent = formatBankTime(quizState.bank);
             const metaEl = document.getElementById('finalMeta');
-            if(metaEl) metaEl.textContent = `${correctCount} correct · ${totalAsked} questions · out of ${QUIZ_START_LIVES} lives`;
+            if(metaEl) metaEl.textContent = `${correctCount} correct · ${totalAsked} questions · out of ${QUIZ_START_LIVES} lives · ${quizState.score.toFixed(2)} pts`;
 
             // Stat callout box: correct answers, lives used, best streak --
             // this game's equivalent of the reference game's own highlighted
@@ -3590,9 +3698,20 @@
         // Results-screen action row (Share Result / Challenge a Friend /
         // Play Again) -- distinct from the share-card's own Download/Copy/
         // Play Again row further down the page.
-        function shareResult() {
+        // Single source of the share/tweet copy text -- reused by
+        // shareResult(), challengeAFriend(), and setQuizShareLinks() so all
+        // three can never drift out of sync with each other. No emoji (same
+        // standard as the social-icon fix: platform-inconsistent glyph
+        // rendering, not something to reintroduce in plain text either).
+        // Headlines the survival time (the new share-headline stat), keeps
+        // points/correct-count as supporting context.
+        function _quizShareText() {
             const correct = quizState.results.filter(r => r.correct).length;
-            const text = `I scored ${quizState.score.toFixed(1)} points and got ${correct} right on the NBA Career Map Quiz (Survival Mode)! Can you beat me? 🏀`;
+            return `I survived ${formatBankTime(quizState.bank)} and scored ${quizState.score.toFixed(1)} points (${correct} correct) on the NBA Career Map Quiz (Survival Mode)! Can you beat me?`;
+        }
+
+        function shareResult() {
+            const text = _quizShareText();
             if(navigator.share) {
                 navigator.share({ title: 'NBA Career Map Quiz', text, url: QUIZ_SHARE_URL }).catch(() => {});
             } else {
@@ -3602,7 +3721,7 @@
         }
 
         function challengeAFriend() {
-            const text = `Bet you can't beat my ${quizState.score.toFixed(1)} on the NBA Career Map Quiz (Survival Mode)! 🏀 ${QUIZ_SHARE_URL}`;
+            const text = `${_quizShareText()} ${QUIZ_SHARE_URL}`;
             const btn = document.getElementById('qfChallengeBtn');
             const done = (ok) => _quizButtonFlash(btn, ok ? 'Copied!' : 'Copy Failed', 1500);
             if(navigator.clipboard && navigator.clipboard.writeText) {
@@ -3654,17 +3773,26 @@
             ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
             ctx.fillText('SURVIVAL MODE', size/2, 132);
 
-            // Hero: huge bold WHITE score -- the dominant element on the
-            // card, same visual weight as the reference's own huge hero
-            // number (was a small green "0.0").
-            const scoreNum = quizState.score.toFixed(1);
+            // Hero: huge bold WHITE survival time -- the dominant element on
+            // the card, same visual weight the score used to have. This IS
+            // the headline number now ("Survived MM:SS.CC"), not raw
+            // wall-clock session length -- points move to the meta line
+            // below, still fully computed/submitted for the leaderboard.
+            // Auto-shrinks if a long value (3+ digit minutes) would
+            // overflow the card width.
+            const bankStr = formatBankTime(quizState.bank);
+            let heroSize = 118;
+            ctx.font = `800 ${heroSize}px "Open Sans", Arial, sans-serif`;
+            while (ctx.measureText(bankStr).width > 900 && heroSize > 60) {
+                heroSize -= 4;
+                ctx.font = `800 ${heroSize}px "Open Sans", Arial, sans-serif`;
+            }
             ctx.fillStyle = '#ffffff';
-            ctx.font = '800 118px "Open Sans", Arial, sans-serif';
-            ctx.fillText(scoreNum, size/2, 268);
+            ctx.fillText(bankStr, size/2, 268);
 
             ctx.fillStyle = '#888';
             ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
-            ctx.fillText('POINTS SCORED', size/2, 296);
+            ctx.fillText('SURVIVED', size/2, 296);
 
             // Meta lines -- run summary, then rank if available (mirrors the
             // reference's two small meta lines beneath its own hero number)
@@ -3674,7 +3802,7 @@
 
             ctx.fillStyle = '#bbb';
             ctx.font = '600 20px "Open Sans", Arial, sans-serif';
-            ctx.fillText(`${correct} correct · ${totalAsked} questions · ${livesUsed} of ${QUIZ_START_LIVES} lives used`, size/2, 332);
+            ctx.fillText(`${correct} correct · ${totalAsked} questions · ${livesUsed} of ${QUIZ_START_LIVES} lives used · ${quizState.score.toFixed(2)} pts`, size/2, 332);
 
             if (quizState.rank && quizState.totalPlayers) {
                 ctx.fillStyle = '#f0b429';
@@ -3797,11 +3925,18 @@
         // ====== Quiz results: share links, copy-link, copy/download image ======
         // Same set of share options as the 73-9 game: a plain URL to copy,
         // plus X/Bluesky/Facebook/WhatsApp/Reddit/Telegram intent links.
-        const QUIZ_SHARE_URL = 'https://www.hoopshype.com/story/sports/nba/2025/12/10/nba-career-map-quiz-how-many-players-can-you-identify-by-their-journey/87707431007/';
+        //
+        // Single named constant for the game's own base URL, used in share
+        // text and everywhere else it's referenced -- so pointing it at
+        // hoopsmatic.com/nba-career-map once that's actually live is a
+        // one-line change here, not a repo-wide hunt. NOT live yet: this is
+        // the current GitHub Pages URL, not the HoopsHype article link that
+        // used to be here (that pointed readers at an article about the
+        // game instead of the game itself).
+        const QUIZ_SHARE_URL = 'https://jsierrahoopshype.github.io/nba-career-map/index.html?view=quiz';
 
         function setQuizShareLinks() {
-            const correct = quizState.results.filter(r => r.correct).length;
-            const text = `I scored ${quizState.score.toFixed(1)} points and got ${correct} right on the NBA Career Map Quiz (Survival Mode)! Can you beat me? 🏀`;
+            const text = _quizShareText();
             const url = QUIZ_SHARE_URL;
             const t = encodeURIComponent(text), u = encodeURIComponent(url);
 
@@ -3881,11 +4016,12 @@ document.addEventListener('DOMContentLoaded', boot);
         <div class="quiz-box quiz-box-dark" id="quizIntro">
             <div class="quiz-dark-kicker">NBA CAREER MAP</div>
             <div class="quiz-title">SURVIVAL MODE</div>
-            <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Three misses and you're out.</div>
+            <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Three misses, or your time bank hits zero, and you're out.</div>
             <ol class="quiz-rules-dark">
                 <li>Study the career map, then pick the player from 4 choices</li>
                 <li>15 seconds per question — faster answers score more (up to 15 pts)</li>
                 <li>A wrong answer or a timeout costs a life, never points</li>
+                <li>Start with a 1:00.00 time bank — every answer spends the time it really took, answers under 5s add time back</li>
                 <li>3 lives, no fixed length — survive as long as you can</li>
             </ol>
             <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
@@ -3895,8 +4031,8 @@ document.addEventListener('DOMContentLoaded', boot);
             <div class="qf-hero-wrap">
                 <div class="quiz-dark-kicker">SURVIVAL RESULT</div>
                 <div class="quiz-title">RUN OVER</div>
-                <div class="quiz-dark-hero" id="finalScore">0</div>
-                <div class="quiz-dark-hero-label">POINTS SCORED</div>
+                <div class="quiz-dark-hero" id="finalScore">0:00.00</div>
+                <div class="quiz-dark-hero-label">SURVIVED</div>
                 <div class="qf-subtitle" id="finalMeta"></div>
             </div>
 
@@ -3966,6 +4102,15 @@ document.addEventListener('DOMContentLoaded', boot);
                  initQuizMap() replaces quizMapContainer's innerHTML on every
                  question -- CSS floats it visually over the map instead. -->
             <div class="quiz-result" id="quizResult"></div>
+            <!-- Time bank: the tension mechanic now (drives the second
+                 end-condition and IS the share/results headline), so it
+                 gets its own prominent row above the rest of the header
+                 rather than competing for space with the per-question
+                 timer/score. -->
+            <div class="quiz-bank-wrap">
+                <span class="quiz-bank-label">TIME BANK</span>
+                <span class="quiz-bank" id="quizBankDisplay">1:00.00</span>
+            </div>
             <div class="quiz-header">
                 <div class="quiz-progress" id="quizProgress">
                     <span class="quiz-streak" id="quizStreak">Q1</span>
