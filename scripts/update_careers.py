@@ -41,6 +41,7 @@ from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import TeamNormalizer
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
+from era_correct_teams import ERA_TABLE
 from player_status import (classify_status, last_active_year, PRESENT,
                            NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
@@ -499,7 +500,7 @@ def _persist(db: Database, summary: dict) -> None:
 
     _append_logs(summary)
     _append_transactions(summary)
-    _notify_slack(summary)
+    _notify_slack(db, summary)
 
 
 def _append_transactions(summary: dict) -> None:
@@ -525,74 +526,76 @@ def _append_transactions(summary: dict) -> None:
     write_json(TRANSACTIONS, ledger)
 
 
-# Country -> ISO 3166-1 alpha-2. Mirrors flags.js's ISO table (the same ~92
-# countries actually present in this dataset), retargeted at Slack's own
-# emoji rendering instead of flagcdn images. Slack renders flag emoji
-# consistently across all clients, unlike the browser-inconsistency problem
-# that made flags.js move the *website* away from emoji flags in the first
-# place -- this is a different rendering surface, not the same bug.
-_COUNTRY_ISO = {
-    "Angola": "ao", "Argentina": "ar", "Australia": "au", "Austria": "at",
-    "Azerbaijan": "az", "Bahrain": "bh", "Belarus": "by", "Belgium": "be",
-    "Bolivia": "bo", "Bosnia": "ba", "Brazil": "br", "Bulgaria": "bg",
-    "Burundi": "bi", "Canada": "ca", "Chile": "cl", "China": "cn",
-    "Colombia": "co", "Croatia": "hr", "Cyprus": "cy", "Czech Republic": "cz",
-    "Denmark": "dk", "Dominican Republic": "do", "Ecuador": "ec", "Egypt": "eg",
-    "Estonia": "ee", "Finland": "fi", "France": "fr", "Georgia": "ge",
-    "Germany": "de", "Greece": "gr", "Honduras": "hn", "Hong Kong": "hk",
-    "Hungary": "hu", "Iceland": "is", "India": "in", "Indonesia": "id",
-    "Iran": "ir", "Iraq": "iq", "Ireland": "ie", "Israel": "il", "Italy": "it",
-    "Ivory Coast": "ci", "Japan": "jp", "Jordan": "jo", "Kazakhstan": "kz",
-    "Kosovo": "xk", "Kuwait": "kw", "Latvia": "lv", "Lebanon": "lb",
-    "Libya": "ly", "Lithuania": "lt", "Luxembourg": "lu", "Malaysia": "my",
-    "Mexico": "mx", "Monaco": "mc", "Mongolia": "mn", "Montenegro": "me",
-    "Morocco": "ma", "Netherlands": "nl", "New Zealand": "nz",
-    "Nicaragua": "ni", "Nigeria": "ng", "North Macedonia": "mk",
-    "Philippines": "ph", "Poland": "pl", "Portugal": "pt",
-    "Puerto Rico": "pr", "Qatar": "qa", "Romania": "ro", "Russia": "ru",
-    "Saudi Arabia": "sa", "Serbia": "rs", "Singapore": "sg",
-    "Slovakia": "sk", "Slovenia": "si", "South Africa": "za",
-    "South Korea": "kr", "Spain": "es", "Sweden": "se", "Switzerland": "ch",
-    "Syria": "sy", "Taiwan": "tw", "Tanzania": "tz", "Tunisia": "tn",
-    "Turkey": "tr", "UAE": "ae", "USA": "us", "Ukraine": "ua",
-    "United Kingdom": "gb", "Uruguay": "uy", "Venezuela": "ve",
-    "Vietnam": "vn", "United Arab Emirates": "ae", "England": "gb",
-    "Bosnia and Herzegovina": "ba", "Senegal": "sn", "Thailand": "th",
-    "Andorra": "ad", "South Sudan": "ss", "Sudan": "sd", "Jamaica": "jm",
-    "Bahamas": "bs", "DR Congo": "cd", "Cameroon": "cm", "Mali": "ml",
-    "Ghana": "gh", "US Virgin Islands": "vi", "Panama": "pa",
-    "Belize": "bz", "Haiti": "ht", "Cuba": "cu", "Gabon": "ga",
-    "Trinidad and Tobago": "tt", "Guyana": "gy", "Guinea": "gn",
-    "British Virgin Islands": "vg", "Dominica": "dm", "Uganda": "ug",
-    "Antigua and Barbuda": "ag", "Norway": "no", "Cape Verde": "cv",
-}
+# Every name that counts as "an NBA team" for Slack sentences: current
+# franchises plus historical era names (a 1998 stint says "Vancouver
+# Grizzlies", not "Memphis Grizzlies" -- both must register as NBA when
+# walking a career history for the most recent NBA franchise).
+_NBA_SLACK_NAMES = set(NBA_TEAMS)
+for _eras in ERA_TABLE.values():
+    for _b, _n in _eras:
+        _NBA_SLACK_NAMES.add(_n)
 
 
-def _flag_emoji(country: str) -> str:
-    """Regional-indicator emoji flag for a country name, or '' if unmapped
-    (same graceful-fallback contract as flags.js's flagImg)."""
-    iso = _COUNTRY_ISO.get(country or "", "")
-    if len(iso) != 2:
-        return ""
-    return "".join(chr(0x1F1E6 + (ord(c) - ord("A"))) for c in iso.upper())
+def _last_nba_team(record: dict) -> str:
+    """Most recent NBA franchise in the player's career history, or ''.
+
+    Walks the history from the latest stint backwards. This is NOT the
+    ledger's from_team: a player moving between two overseas clubs has an
+    overseas from_team, but the sentence should still say which NBA team
+    they are known from.
+    """
+    for stint in reversed(record.get("career_history", []) or []):
+        if stint.get("team") in _NBA_SLACK_NAMES:
+            return stint["team"]
+    return ""
 
 
-def _team_label(team: str, locations: dict) -> str:
-    country = (locations.get(team) or {}).get("country", "")
-    flag = _flag_emoji(country)
-    return f"{flag} {team}" if flag else team
+def _slack_sentence(mv: dict, db, locations: dict) -> str:
+    """One natural-language line per move, e.g.:
+
+    "Jeenathan Williams, formerly with the Golden State Warriors, has
+    signed with Chiba Jets of Japan."
+
+    - "formerly with the X" names the player's most recent NBA franchise
+      (see _last_nba_team), falling back to the raw from_team -- without
+      the "the", since non-NBA club names don't take an article -- only
+      when no NBA stint exists in the record.
+    - An NBA destination reads "has signed with the X" (no country); a
+      non-NBA destination appends "of <country>" from team_locations,
+      omitted entirely when the country is unknown.
+    """
+    player = mv.get("player", "")
+    to_team = mv.get("to_team", "")
+    from_team = mv.get("from_team", "")
+
+    record = db.by_name.get(player) or db.by_name.get(db.resolve_by_name(player) or "") or {}
+    last_nba = _last_nba_team(record)
+    if last_nba:
+        formerly = f", formerly with the {last_nba},"
+    elif from_team:
+        formerly = f", formerly with {from_team},"
+    else:
+        formerly = ""
+
+    if to_team in _NBA_SLACK_NAMES:
+        dest = f"the {to_team}"
+    else:
+        country = (locations.get(to_team) or {}).get("country", "")
+        dest = f"{to_team} of {country}" if country else to_team
+
+    return f"{player}{formerly} has signed with {dest}."
 
 
-def _slack_payload(new_tx: list[dict], date: str) -> dict:
-    """Build the batched Slack message: one header + one line per move."""
+def _slack_payload(new_tx: list[dict], db, date: str) -> dict:
+    """Batched Slack message: header, one sentence per move, closing link."""
     locations = load_json(LOCATIONS, {})
     n = len(new_tx)
-    header = f"\U0001F3C0 *{n} new team move{'s' if n != 1 else ''}* — {date}"
+    header = f"\U0001F3C0 *{n} new team move{'s' if n != 1 else ''}* \u2014 {date}"
     lines = [header, ""]
     for mv in new_tx:
-        frm = _team_label(mv.get("from_team", ""), locations)
-        to = _team_label(mv.get("to_team", ""), locations)
-        lines.append(f"• *{mv.get('player', '')}*: {frm} → {to}")
+        lines.append(f"\u2022 {_slack_sentence(mv, db, locations)}")
+    lines.append("")
+    lines.append("https://hoopsmatic.com/nba-career-map")
     return {"text": "\n".join(lines)}
 
 
@@ -605,7 +608,7 @@ def _post_to_slack(webhook_url: str, payload: dict) -> None:
         resp.read()
 
 
-def _notify_slack(summary: dict) -> None:
+def _notify_slack(db, summary: dict) -> None:
     """Post one batched Slack message for this run's newly-detected moves.
 
     Additive and non-blocking: reuses summary["team_moves"] (the same
@@ -640,7 +643,7 @@ def _notify_slack(summary: dict) -> None:
     if not webhook:
         return  # secret not configured (e.g. a local/dev run) -- skip silently
 
-    payload = _slack_payload(new_tx, summary.get("date", today()))
+    payload = _slack_payload(new_tx, db, summary.get("date", today()))
     try:
         _post_to_slack(webhook, payload)
     except (urllib.error.URLError, OSError, ValueError) as exc:

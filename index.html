@@ -1643,6 +1643,20 @@
         }
         .qf-btn-secondary:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.06); }
 
+        /* "Back to the site" link shown on the quiz intro and results
+           screens -- the overlay covers the real site header, so these
+           screens need their own way out. */
+        .quiz-home-link {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--qd-text-dim);
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .quiz-home-link:hover { color: #f0b429; }
+
         .qf-leaderboard {
             background: var(--qd-card);
             border: 1px solid var(--qd-card-border);
@@ -1659,6 +1673,19 @@
             text-align: center;
             margin-bottom: 8px;
             padding: 0 14px;
+        }
+        /* One block per time window (Today / This Week / All-Time), same
+           row pattern inside each; the window label gets the gold accent
+           so the three sections scan apart at a glance. */
+        .qf-lb-section { margin-bottom: 10px; }
+        .qf-lb-section:last-child { margin-bottom: 0; }
+        .qf-lb-window-title {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #f0b429;
+            padding: 6px 14px 2px;
         }
         .qf-lb-row {
             display: flex;
@@ -1742,7 +1769,7 @@
                 <div id="results"></div>
             </div>
             <a class="nav-teams" href="teams.html">Teams</a>
-            <a class="quiz-btn" href="?view=quiz" onclick="event.preventDefault();goQuiz()">🎮 Quiz</a>
+            <a class="quiz-btn" href="quiz.html" onclick="event.preventDefault();goQuiz()">🎮 Quiz</a>
         </div>
     </header>
     
@@ -2080,6 +2107,15 @@
                 if(data[player]) show(player, {push:false});
                 else backToWelcome();
             } else if(view === 'quiz'){
+                // Legacy quiz links redirect to quiz.html -- the page that
+                // carries the quiz's own Open Graph tags (social crawlers
+                // fetch whatever URL is shared, and index.html's OG tags
+                // describe the homepage). quiz.html bounces humans back
+                // here with ?quizdirect=1, which opens the quiz WITHOUT
+                // re-redirecting -- that param is the loop-breaker, don't
+                // fold it back into view=quiz.
+                location.replace('quiz.html');
+            } else if(p.get('quizdirect')){
                 showView('dashboard');           // quiz overlay sits atop the dashboard
                 renderDashboard();
                 await ensureCareers();
@@ -2668,13 +2704,12 @@
         
         // ====== QUIZ MODE (v4: survival, lives-only effects) ======
         // Rules for this mode: 15s per question. A wrong answer or a
-        // timeout costs a life. Answers affect LIVES ONLY, never the score:
-        // answer under QUIZ_EARLY_THRESHOLD AND correctly three times IN A
-        // ROW and earn a bonus life (capped at QUIZ_MAX_LIVES; the streak
-        // resets on any answer that is not both fast and correct); answer
-        // over QUIZ_LATE_THRESHOLD and it adds to a CUMULATIVE,
-        // never-resetting count -- every QUIZ_LATE_PENALTY_EVERY'th late
-        // answer overall costs a life, whether or not it was correct.
+        // timeout costs a life. Answers affect LIVES ONLY, never the score.
+        // Two mirrored CUMULATIVE counters, neither ever resets: every
+        // QUIZ_EARLY_STREAK_FOR_BONUS'th answer that is both under
+        // QUIZ_EARLY_THRESHOLD and correct earns a bonus life (capped at
+        // QUIZ_MAX_LIVES); every QUIZ_LATE_PENALTY_EVERY'th answer over
+        // QUIZ_LATE_THRESHOLD costs one, whether or not it was correct.
         // Game ends the moment lives reaches 0, not at a fixed question
         // count. The score is real wall-clock time alive: the sum of every
         // question's actual elapsed answer time, accumulating while the
@@ -2685,7 +2720,7 @@
         const QUIZ_MAX_LIVES = 6;
         const QUIZ_EARLY_THRESHOLD = 5;   // < 5s = "early"
         const QUIZ_LATE_THRESHOLD = 10;   // > 10s = "late"; [5,10] is neutral
-        const QUIZ_EARLY_STREAK_FOR_BONUS = 3;  // 3 early+correct answers in a row -> +1 life
+        const QUIZ_EARLY_STREAK_FOR_BONUS = 3;  // every 3rd cumulative early+correct answer -> +1 life
         const QUIZ_LATE_PENALTY_EVERY = 3;      // every 3rd cumulative late answer -> -1 life
 
         // MM:SS.CC, used everywhere survival time is shown: the live
@@ -2704,7 +2739,7 @@
             streak: 0,             // questions answered so far this run (correct + wrong), 1-indexed display
             score: 0,              // real elapsed survival seconds (sum of per-question elapsed time) -- THE score (leaderboard + share)
             lives: QUIZ_START_LIVES,
-            earlyStreak: 0,        // consecutive fast-AND-correct answers; resets on any answer that isn't both
+            earlyCount: 0,         // cumulative fast-AND-correct answers this run; NEVER resets
             lateCount: 0,          // cumulative >10s answers this run, right or wrong; NEVER resets
             livesLostTotal: 0,     // total life-loss events this run (can exceed QUIZ_START_LIVES via bonus lives)
             results: [],
@@ -2852,7 +2887,7 @@
                 streak: 0,
                 score: 0,
                 lives: QUIZ_START_LIVES,
-                earlyStreak: 0,
+                earlyCount: 0,
                 lateCount: 0,
                 livesLostTotal: 0,
                 results: [],
@@ -3323,31 +3358,32 @@
             el.textContent = formatSurvivalTime(seconds);
         }
 
-        // The one place quizState.score/earlyStreak/lateCount are ever
+        // The one place quizState.score/earlyCount/lateCount are ever
         // mutated. `elapsedSeconds` is the real time taken to answer (or
         // QUIZ_TIMER_SECONDS on a timeout); `isCorrect` gates ONLY the
-        // early-streak (a bonus life requires fast AND correct -- a fast
+        // early counter (a bonus life requires fast AND correct -- a fast
         // wrong answer must not build it). Called unconditionally on every
         // question. A wrong-answer/timeout life loss is the separate,
         // unchanged rule applied directly in submitAnswer/handleTimeout.
         //
         // Score: real elapsed time, added unconditionally -- answers
         // affect lives only, never the score. Prior rounds tried policing
-        // stalling through score math (credit formulas); this round's
-        // explicit direction is the opposite: the score is honest
-        // wall-clock time alive, and stalling is punished through the
-        // late-answer life penalty (which shortens the run and therefore
-        // the time alive) rather than through the score formula.
+        // stalling through score math (credit formulas); the standing
+        // direction is the opposite: the score is honest wall-clock time
+        // alive, and stalling is punished through the late-answer life
+        // penalty (which shortens the run and therefore the time alive)
+        // rather than through the score formula.
         //
-        // Lives: +1 for three fast-AND-correct answers in a row (capped at
-        // QUIZ_MAX_LIVES; streak resets on any answer that isn't both, and
-        // resets after granting so a fresh run of 3 is needed for the
-        // next bonus); -1 at every QUIZ_LATE_PENALTY_EVERY'th cumulative
-        // late answer (correctness-independent, never resets). Returns a
-        // short note naming the speed outcome and any life change, for the
-        // caller to fold into the on-screen result flash -- speed feedback
-        // is deliberately shown on every non-neutral answer (not only on
-        // life events) so both counters stay legible in the moment.
+        // Lives: two mirrored CUMULATIVE counters, neither ever resets.
+        // Every QUIZ_EARLY_STREAK_FOR_BONUS'th fast-AND-correct answer
+        // overall grants +1 life (capped at QUIZ_MAX_LIVES) -- cumulative,
+        // not consecutive, so interruptions don't zero the progress; every
+        // QUIZ_LATE_PENALTY_EVERY'th late answer overall costs one
+        // (correctness-independent). Returns a short note naming the
+        // speed outcome and any life change, for the caller to fold into
+        // the on-screen result flash -- speed feedback is deliberately
+        // shown on every non-neutral answer (not only on life events) so
+        // both counters stay legible in the moment.
         function _applyTimeEffects(elapsedSeconds, isCorrect) {
             const notes = [];
             quizState.score += elapsedSeconds;
@@ -3368,23 +3404,18 @@
             }
 
             if(isEarly && isCorrect) {
-                quizState.earlyStreak++;
-                if(quizState.earlyStreak >= QUIZ_EARLY_STREAK_FOR_BONUS) {
-                    quizState.earlyStreak = 0;
+                quizState.earlyCount++;
+                const toward = quizState.earlyCount % QUIZ_EARLY_STREAK_FOR_BONUS;
+                if(toward === 0) {
                     if(quizState.lives < QUIZ_MAX_LIVES) {
                         quizState.lives++;
-                        notes.push('FAST x3 — bonus life!');
+                        notes.push(`FAST ${QUIZ_EARLY_STREAK_FOR_BONUS} of ${QUIZ_EARLY_STREAK_FOR_BONUS} — bonus life!`);
                     } else {
-                        notes.push('FAST x3 — already at max lives');
+                        notes.push(`FAST ${QUIZ_EARLY_STREAK_FOR_BONUS} of ${QUIZ_EARLY_STREAK_FOR_BONUS} — already at max lives`);
                     }
                 } else {
-                    notes.push(`FAST +1 streak (${quizState.earlyStreak} of ${QUIZ_EARLY_STREAK_FOR_BONUS})`);
+                    notes.push(`FAST, ${toward} of ${QUIZ_EARLY_STREAK_FOR_BONUS}`);
                 }
-            } else {
-                // Any answer that is not both fast and correct breaks the
-                // streak: fast-but-wrong, neutral pace, or late.
-                if(quizState.earlyStreak > 0 && !isLate) notes.push('streak reset');
-                quizState.earlyStreak = 0;
             }
 
             _renderSurvivalClock(quizState.score);
@@ -3394,13 +3425,15 @@
         }
 
         // Persistent early/late counter chips beside the lives display:
-        // early-streak progress toward the next bonus life and cumulative
-        // late-count progress toward the next penalty, visible at all
-        // times (not just at the moment they fire).
+        // cumulative fast-and-correct progress toward the next bonus life
+        // and cumulative late-count progress toward the next penalty,
+        // visible at all times (not just at the moment they fire). Both
+        // are shown modulo their trigger interval -- what matters at a
+        // glance is distance to the next event.
         function _renderSpeedCounters() {
             const earlyEl = document.getElementById('quizEarlyCounter');
             const lateEl = document.getElementById('quizLateCounter');
-            if(earlyEl) earlyEl.textContent = `FAST ${quizState.earlyStreak}/${QUIZ_EARLY_STREAK_FOR_BONUS}`;
+            if(earlyEl) earlyEl.textContent = `FAST ${quizState.earlyCount % QUIZ_EARLY_STREAK_FOR_BONUS}/${QUIZ_EARLY_STREAK_FOR_BONUS}`;
             if(lateEl) lateEl.textContent = `LATE ${quizState.lateCount % QUIZ_LATE_PENALTY_EVERY}/${QUIZ_LATE_PENALTY_EVERY}`;
         }
 
@@ -3692,36 +3725,63 @@
         // as the fallback, so nothing looks broken either way.
         async function fetchLeaderboard() {
             if (!SCORE_API_URL || SCORE_API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
-            try {
-                const params = new URLSearchParams({ action: 'leaderboard', mode: 'survival', limit: 10 });
-                const response = await fetch(SCORE_API_URL + '?' + params.toString(), { method: 'GET', redirect: 'follow' });
-                const data = await response.json();
-                if(data.success && Array.isArray(data.entries) && data.entries.length) {
-                    renderLeaderboard(data.entries);
+            // Three time windows, fetched in parallel. The updated Apps
+            // Script (delivered alongside this change) accepts window=
+            // daily|weekly|all and ECHOES the window back in its response;
+            // a legacy deployment ignores the param and returns all-time
+            // entries with no echo -- in that case only the All-Time
+            // section renders (showing all-time rows under "Today" would
+            // be wrong data, not a degraded view).
+            const windows = [
+                { key: 'daily', rowsEl: 'qfLbDailyRows', sectionEl: 'qfLbDaily' },
+                { key: 'weekly', rowsEl: 'qfLbWeeklyRows', sectionEl: 'qfLbWeekly' },
+                { key: 'all', rowsEl: 'qfLbAllRows', sectionEl: 'qfLbAll' },
+            ];
+            const results = await Promise.all(windows.map(async w => {
+                try {
+                    const params = new URLSearchParams({ action: 'leaderboard', mode: 'survival', limit: 10, window: w.key });
+                    const response = await fetch(SCORE_API_URL + '?' + params.toString(), { method: 'GET', redirect: 'follow' });
+                    const data = await response.json();
+                    if(!data.success || !Array.isArray(data.entries) || !data.entries.length) return null;
+                    const legacy = data.window === undefined;
+                    if(legacy && w.key !== 'all') return null;
+                    return { ...w, entries: data.entries };
+                } catch(e) {
+                    console.log('Leaderboard fetch error (' + w.key + '):', e);
+                    return null;
                 }
-            } catch(e) {
-                console.log('Leaderboard fetch error:', e);
+            }));
+            let anyRendered = false;
+            results.forEach(r => {
+                if(!r) return;
+                renderLeaderboardSection(r.entries, r.rowsEl, r.sectionEl);
+                anyRendered = true;
+            });
+            if(anyRendered) {
+                document.getElementById('qfLeaderboard').style.display = 'block';
+                // The leaderboard already carries rank context -- the plain
+                // fallback line beneath it would just be redundant now.
+                document.getElementById('quizPercentile').style.display = 'none';
             }
         }
 
-        function renderLeaderboard(entries) {
+        function renderLeaderboardSection(entries, rowsElId, sectionElId) {
             const myRank = quizState.rank;
             const rows = entries.map(e => {
                 const isTop = e.rank <= 3;
-                const isYou = !!myRank && e.rank === myRank;
-                // Score is now real survival seconds, not points -- render
-                // it the same MM:SS.CC way as everywhere else.
+                // "you" highlight only makes sense against the all-time
+                // ranking, which is what submitScore()'s rank refers to.
+                const isYou = sectionElId === 'qfLbAll' && !!myRank && e.rank === myRank;
+                // Score is real survival seconds -- render it the same
+                // MM:SS.CC way as everywhere else.
                 return `<div class="qf-lb-row ${isTop ? 'top' : ''} ${isYou ? 'you' : ''}">
                     <span class="qf-lb-rank">#${e.rank}</span>
                     <span class="qf-lb-name">${e.name}</span>
                     <span class="qf-lb-score">${formatSurvivalTime(Number(e.score))}</span>
                 </div>`;
             }).join('');
-            document.getElementById('qfLeaderboardRows').innerHTML = rows;
-            document.getElementById('qfLeaderboard').style.display = 'block';
-            // The leaderboard already carries rank context -- the plain
-            // fallback line beneath it would just be redundant now.
-            document.getElementById('quizPercentile').style.display = 'none';
+            document.getElementById(rowsElId).innerHTML = rows;
+            document.getElementById(sectionElId).style.display = 'block';
         }
 
         // Results-screen action row (Share Result / Challenge a Friend /
@@ -3761,119 +3821,6 @@
             }
         }
 
-
-        // Career-map panel for the share card. FEASIBILITY, investigated
-        // before choosing this approach: capturing the live Leaflet map is
-        // not workable here. (1) The map is DOM (positioned tile <img>s +
-        // SVG overlay), not a canvas -- rasterizing it needs a DOM-to-
-        // canvas library (html2canvas / leaflet-image), a new dependency
-        // this single-file app doesn't ship. (2) Even with one, the CDN
-        // tiles are loaded WITHOUT crossOrigin attributes, so drawing them
-        // to a canvas taints it and toDataURL() -- which the share flow
-        // depends on -- throws, blanking the whole card. Retrofitting
-        // crossOrigin onto Leaflet's tile layer changes tile-request
-        // behavior site-wide to serve one screenshot. So: the documented
-        // fallback -- draw the player's route natively as vectors
-        // (numbered markers + connecting lines, same visual language as
-        // the live map's markers) on a styled panel. Zero external
-        // requests, can't taint, always renders.
-        //
-        // Draws the FINAL question's player (the map the run ended on --
-        // quizState.currentPlayer still holds it at game over), projecting
-        // stop coordinates with a simple equirectangular fit into the
-        // panel. Stops without coordinates are skipped (same as the live
-        // map); if fewer than 2 stops locate, the panel renders with a
-        // note instead of a route (practically unreachable: quiz
-        // eligibility already requires 2+ located stops).
-        function _drawShareMap(ctx, x, y, w, h) {
-            // Panel chrome
-            ctx.fillStyle = 'rgba(255,255,255,0.03)';
-            roundRect(ctx, x, y, w, h, 12);
-            ctx.fill();
-            ctx.strokeStyle = 'rgba(240,180,41,0.3)';
-            ctx.lineWidth = 1.5;
-            roundRect(ctx, x, y, w, h, 12);
-            ctx.stroke();
-
-            const player = quizState.currentPlayer;
-            const label = player ? `FINAL MAP — ${player.player.toUpperCase()}` : 'FINAL MAP';
-            ctx.textAlign = 'left';
-            ctx.fillStyle = '#f0b429';
-            ctx.font = 'bold 16px "Open Sans", Arial, sans-serif';
-            ctx.fillText(label, x + 18, y + 28);
-
-            const pts = [];
-            if(player) {
-                player.career_history.forEach(s => {
-                    const c = getCoords(s.city, s.state, s.country);
-                    if(c) pts.push(c);
-                });
-            }
-            if(pts.length < 2) {
-                ctx.fillStyle = '#777';
-                ctx.font = 'italic 16px "Open Sans", Arial, sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('Route unavailable', x + w/2, y + h/2);
-                return;
-            }
-
-            // Equirectangular fit: lng -> px x, lat -> px y (inverted),
-            // uniform scale so the route isn't stretched, centered in the
-            // drawable area below the label.
-            const pad = 40, labelH = 36;
-            const dx0 = x + pad, dy0 = y + labelH + pad/2;
-            const dw = w - pad*2, dh = h - labelH - pad;
-            let minLat = Infinity, maxLat = -Infinity, minLng = Infinity, maxLng = -Infinity;
-            pts.forEach(p => {
-                minLat = Math.min(minLat, p[0]); maxLat = Math.max(maxLat, p[0]);
-                minLng = Math.min(minLng, p[1]); maxLng = Math.max(maxLng, p[1]);
-            });
-            // Degenerate-span guard (all stops in one city)
-            if(maxLat - minLat < 0.5) { minLat -= 0.25; maxLat += 0.25; }
-            if(maxLng - minLng < 0.5) { minLng -= 0.25; maxLng += 0.25; }
-            const scale = Math.min(dw / (maxLng - minLng), dh / (maxLat - minLat));
-            const ox = dx0 + (dw - (maxLng - minLng) * scale) / 2;
-            const oy = dy0 + (dh - (maxLat - minLat) * scale) / 2;
-            const px = p => [ox + (p[1] - minLng) * scale, oy + (maxLat - p[0]) * scale];
-
-            // Connecting route lines
-            ctx.strokeStyle = 'rgba(240,180,41,0.75)';
-            ctx.lineWidth = 2.5;
-            ctx.beginPath();
-            pts.forEach((p, i) => {
-                const [cx, cy] = px(p);
-                if(i === 0) ctx.moveTo(cx, cy); else ctx.lineTo(cx, cy);
-            });
-            ctx.stroke();
-
-            // Stop markers: green start, numbered red intermediates, gold
-            // diamond end -- the live quiz map's own marker language.
-            pts.forEach((p, i) => {
-                const [cx, cy] = px(p);
-                if(i === 0) {
-                    ctx.fillStyle = '#27ae60';
-                    ctx.beginPath(); ctx.arc(cx, cy, 12, 0, Math.PI*2); ctx.fill();
-                    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5; ctx.stroke();
-                } else if(i === pts.length - 1) {
-                    ctx.save();
-                    ctx.translate(cx, cy); ctx.rotate(Math.PI/4);
-                    ctx.fillStyle = '#f39c12';
-                    ctx.fillRect(-10, -10, 20, 20);
-                    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5;
-                    ctx.strokeRect(-10, -10, 20, 20);
-                    ctx.restore();
-                } else {
-                    ctx.fillStyle = '#d63031';
-                    ctx.beginPath(); ctx.arc(cx, cy, 10, 0, Math.PI*2); ctx.fill();
-                    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
-                    ctx.fillStyle = '#fff';
-                    ctx.font = 'bold 11px "Open Sans", Arial, sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.fillText(String(i + 1), cx, cy + 4);
-                }
-            });
-            ctx.textAlign = 'left';
-        }
 
         function generateShareImage() {
             const canvas = document.getElementById('shareCanvas');
@@ -3950,23 +3897,16 @@
                 ctx.fillText('Rank #' + quizState.rank + ' of ' + quizState.totalPlayers.toLocaleString() + ' survivors', size/2, 362);
             }
 
-            // Career map panel: the route of the final question's player
-            // (the map the run ended on), drawn natively as vectors -- see
-            // _drawShareMap for why the live Leaflet map is NOT captured
-            // directly (CORS-tainted tiles + no DOM rasterizer).
-            _drawShareMap(ctx, 60, 390, size - 120, 265);
-
             // Per-question rows: a badge, the player name, a detail line
             // (their last career stop -- which team/years the question was
             // about), and a right-aligned value, mirroring the reference's
             // own position-badge + name + team-years + dollar-value row
             // structure. Survival runs are unbounded, so only the rows the
-            // fixed canvas has room for are shown (fewer than before --
-            // the map panel above takes the space); a "+N earlier" note
-            // (not a silent truncation) covers the rest of a long run.
-            const MAX_SHARE_ROWS = 4;
+            // fixed canvas has room for are shown; a "+N earlier" note (not
+            // a silent truncation) covers the rest of a long run.
+            const MAX_SHARE_ROWS = 8;
             const rowH = 62;
-            const rowsTop = 700;
+            const rowsTop = 410;
             const shown = quizState.results.slice(-MAX_SHARE_ROWS);
             const earlierCount = quizState.results.length - shown.length;
             let y = rowsTop;
@@ -4042,7 +3982,7 @@
             ctx.textAlign = 'center';
             ctx.fillStyle = '#999';
             ctx.font = 'bold 18px "Open Sans", Arial, sans-serif';
-            ctx.fillText('PLAY YOUR OWN AT HOOPSHYPE.COM', size/2, 1030);
+            ctx.fillText('PLAY YOUR OWN AT HOOPSMATIC.COM', size/2, 1030);
 
             // Bottom gold accent bar
             ctx.fillStyle = goldGrad;
@@ -4081,7 +4021,7 @@
         // hoopsmatic.com address by EXPLICIT DECISION even though that
         // domain is not live yet -- do not "fix" this back to a working
         // URL; it will resolve when the domain launches.
-        const QUIZ_SHARE_URL = 'https://hoopsmatic.com/nba-career-map/index.html?view=quiz';
+        const QUIZ_SHARE_URL = 'https://hoopsmatic.com/nba-career-map/quiz.html';
 
         function setQuizShareLinks() {
             const text = _quizShareText();
@@ -4153,7 +4093,7 @@
             }
         }
 
-function goQuiz(){ history.pushState({}, '', '?view=quiz'); route(); }
+function goQuiz(){ history.pushState({}, '', '?quizdirect=1'); route(); }
 document.addEventListener('DOMContentLoaded', boot);
     </script>
 
@@ -4162,13 +4102,18 @@ document.addEventListener('DOMContentLoaded', boot);
         <button class="quiz-overlay-close" onclick="closeQuiz()" aria-label="Close">×</button>
 
         <div class="quiz-box quiz-box-dark" id="quizIntro">
+            <!-- Way back to the main site from inside the quiz overlay
+                 (which covers the site header). Plain navigation, not
+                 closeQuiz(): works identically whether the quiz was
+                 entered in-app or directly via quiz.html. -->
+            <a class="quiz-home-link" href="index.html">&larr; CAREER MAP</a>
             <div class="quiz-dark-kicker">NBA CAREER MAP</div>
             <div class="quiz-title">SURVIVAL MODE</div>
             <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Run out of lives, and you're out.</div>
             <ol class="quiz-rules-dark">
                 <li>Study the career map, then pick the player from 4 choices. You have 15 seconds per question</li>
                 <li>You start with 4 lives. A wrong answer or a timeout costs one</li>
-                <li>Answer 3 in a row quickly (under 5 seconds) and correctly to earn a bonus life, up to 6 max</li>
+                <li>Answer 3 questions quickly (under 5 seconds) and correctly to earn a bonus life, up to 6 max</li>
                 <li>Slow answers (over 10s) add up. Every 3rd one costs a life, even if you got it right</li>
                 <li>No fixed length: survive as long as you can, your time survived is the score</li>
             </ol>
@@ -4176,6 +4121,7 @@ document.addEventListener('DOMContentLoaded', boot);
         </div>
 
         <div class="quiz-box quiz-box-dark quiz-final-screen" id="quizFinal" style="display:none">
+            <a class="quiz-home-link" href="index.html">&larr; CAREER MAP</a>
             <div class="qf-hero-wrap">
                 <div class="quiz-dark-kicker">SURVIVAL RESULT</div>
                 <div class="quiz-title">RUN OVER</div>
@@ -4198,16 +4144,33 @@ document.addEventListener('DOMContentLoaded', boot);
                 <button class="qf-btn qf-btn-secondary" onclick="beginQuiz()">Play Again</button>
             </div>
 
+            <!-- Three time-windowed leaderboards (73-9-game results-page
+                 pattern: aligned rank/name/score columns, gold accent on
+                 the top ranks, one section per window). Each section shows
+                 only if its window's fetch returns data; a legacy backend
+                 that doesn't understand windows populates All-Time only
+                 (see fetchLeaderboard). -->
             <div class="qf-leaderboard" id="qfLeaderboard" style="display:none">
                 <div class="qf-leaderboard-title">Survival Leaderboard</div>
-                <div class="qf-leaderboard-rows" id="qfLeaderboardRows"></div>
+                <div class="qf-lb-section" id="qfLbDaily" style="display:none">
+                    <div class="qf-lb-window-title">Today</div>
+                    <div class="qf-leaderboard-rows" id="qfLbDailyRows"></div>
+                </div>
+                <div class="qf-lb-section" id="qfLbWeekly" style="display:none">
+                    <div class="qf-lb-window-title">This Week</div>
+                    <div class="qf-leaderboard-rows" id="qfLbWeeklyRows"></div>
+                </div>
+                <div class="qf-lb-section" id="qfLbAll" style="display:none">
+                    <div class="qf-lb-window-title">All-Time</div>
+                    <div class="qf-leaderboard-rows" id="qfLbAllRows"></div>
+                </div>
             </div>
             <div class="quiz-percentile qf-rank-fallback" id="quizPercentile"></div>
 
             <div class="quiz-results-list" id="quizResultsList"></div>
 
             <div class="qf-share-divider"><span>SHARE YOUR RESULT</span></div>
-            <div class="quiz-dark-caption" style="margin-top:0">Play your own at hoopshype.com</div>
+            <div class="quiz-dark-caption" style="margin-top:0">Play your own at hoopsmatic.com</div>
 
             <canvas id="shareCanvas" style="display:none"></canvas>
             <div id="shareImageContainer">
