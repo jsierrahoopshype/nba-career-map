@@ -172,6 +172,19 @@
             letter-spacing: 0.4px; color: var(--text-secondary);
             text-align: center; margin-bottom: 10px;
         }
+        /* Contact lines: muted-metadata treatment (small, secondary color,
+           centered), matching the site's existing footnote styling. The
+           quiz's dark screens carry their own dark-token variant
+           (.quiz-contact-footer below). */
+        .contact-footer {
+            margin-top: 28px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .contact-footer a { color: var(--text-secondary); text-decoration: underline; }
+        .contact-footer a:hover { color: var(--text); }
         .search-wrap.footer { position: relative; }
         .search-wrap.footer #botSearch {
             width: 100%; padding: 10px 14px; font-size: 14px; font-family: inherit;
@@ -1537,6 +1550,19 @@
             text-align: center;
         }
 
+        /* Dark-screen variant of .contact-footer: same muted-metadata
+           treatment, but on the quiz's dark tokens so it stays legible
+           against that background. */
+        .quiz-contact-footer {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--qd-text-dim);
+            line-height: 1.7;
+        }
+        .quiz-contact-footer a { color: var(--qd-text-dim); text-decoration: underline; }
+        .quiz-contact-footer a:hover { color: #f0b429; }
+
         #shareImageContainer.show { display: block !important; }
 
         /* ===== Results screen: full-screen page, not a centered popup.
@@ -1841,6 +1867,10 @@
         <div class="search-wrap footer">
             <input type="text" id="botSearch" placeholder="Search 5,000+ players..." autocomplete="off">
             <div id="botResults"></div>
+        </div>
+        <div class="contact-footer">
+            <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
+            <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
         </div>
     </footer>
 
@@ -4118,6 +4148,10 @@ document.addEventListener('DOMContentLoaded', boot);
                 <li>No fixed length: survive as long as you can, your time survived is the score</li>
             </ol>
             <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
+            <div class="quiz-contact-footer">
+                <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
+                <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
+            </div>
         </div>
 
         <div class="quiz-box quiz-box-dark quiz-final-screen" id="quizFinal" style="display:none">
@@ -4201,6 +4235,10 @@ document.addEventListener('DOMContentLoaded', boot);
                     <button class="quiz-action-btn" onclick="beginQuiz()">Play Again</button>
                 </div>
                 <div class="share-instructions">On iPhone: Long-press the image above, then tap "Add to Photos"</div>
+            </div>
+            <div class="quiz-contact-footer">
+                <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
+                <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
             </div>
         </div>
     </div>
