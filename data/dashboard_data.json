@@ -1863,6 +1863,12 @@
       "last_updated": "2026-07-13"
     },
     {
+      "player": "Jeenathan Williams",
+      "current_team": "Chiba Jets Funabashi",
+      "country": "Japan",
+      "last_updated": "2026-08-24"
+    },
+    {
       "player": "Jeff Adrien",
       "current_team": "Piratas de Quebradillas",
       "country": "Puerto Rico",
@@ -7988,6 +7994,10 @@
       "players": 5
     },
     {
+      "team": "Chiba Jets Funabashi",
+      "players": 5
+    },
+    {
       "team": "Club Malvín",
       "players": 5
     },
@@ -8485,10 +8495,6 @@
     },
     {
       "team": "Cherry Hill Pros",
-      "players": 4
-    },
-    {
-      "team": "Chiba Jets Funabashi",
       "players": 4
     },
     {
@@ -20587,6 +20593,14 @@
       ]
     },
     {
+      "team": "Chiba Jets Funabashi",
+      "count": 2,
+      "players": [
+        "Jeenathan Williams",
+        "Yuta Watanabe"
+      ]
+    },
+    {
       "team": "Elitzur Netanya",
       "count": 2,
       "players": [
@@ -21214,13 +21228,6 @@
       "count": 1,
       "players": [
         "Matthew Hurt"
-      ]
-    },
-    {
-      "team": "Chiba Jets Funabashi",
-      "count": 1,
-      "players": [
-        "Yuta Watanabe"
       ]
     },
     {
@@ -22288,7 +22295,7 @@
     },
     {
       "country": "Japan",
-      "count": 27
+      "count": 28
     },
     {
       "country": "Australia",
@@ -22514,7 +22521,7 @@
     },
     {
       "country": "Japan",
-      "players": 159
+      "players": 160
     },
     {
       "country": "Serbia",
@@ -25439,6 +25446,15 @@
       "players": [
         "Daniel Hamilton",
         "Hollis Thompson"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Chiba Jets Funabashi",
+      "players": [
+        "Jeenathan Williams",
+        "Yuta Watanabe"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
@@ -56073,6 +56089,15 @@
         "last_updated": "2026-08-06"
       },
       {
+        "player": "Jeenathan Williams",
+        "current_team": "Chiba Jets Funabashi",
+        "city": "Funabashi",
+        "state": "",
+        "country": "Japan",
+        "in_coords": true,
+        "last_updated": "2026-08-24"
+      },
+      {
         "player": "Jeff Adrien",
         "current_team": "Piratas de Quebradillas",
         "city": "Quebradillas",
@@ -59413,8 +59438,8 @@
       }
     ],
     "coverage": {
-      "total": 660,
-      "in_coords": 583,
+      "total": 661,
+      "in_coords": 584,
       "missing_from_coords": 77,
       "missing_no_city": 38,
       "missing_city_absent_from_coords": 39,
@@ -59422,6 +59447,12 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Jeenathan Williams",
+      "from_team": "Golden State Warriors",
+      "to_team": "Chiba Jets Funabashi",
+      "date": "2026-08-24"
+    },
     {
       "player": "Aaron Holiday",
       "from_team": "Houston Rockets",
@@ -59714,12 +59745,6 @@
       "player": "Jaylen Nowell",
       "from_team": "Gigantes de Carolina",
       "to_team": "Beşiktaş",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Isaac Bonga",
-      "from_team": "Partizan",
-      "to_team": "Panathinaikos",
       "date": "2026-07-13"
     }
   ]

@@ -9119,8 +9119,8 @@
         {
           "player": "Jeenathan Williams",
           "years": "2023–2025",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Chiba Jets Funabashi",
           "nationality": "United States"
         },
         {
@@ -49762,8 +49762,8 @@
         {
           "player": "Jeenathan Williams",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Chiba Jets Funabashi",
           "nationality": "United States"
         },
         {
@@ -63838,8 +63838,8 @@
         {
           "player": "Jeenathan Williams",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Chiba Jets Funabashi",
           "nationality": "United States"
         },
         {
@@ -89178,8 +89178,8 @@
         {
           "player": "Jeenathan Williams",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Chiba Jets Funabashi",
           "nationality": "United States"
         },
         {
@@ -248433,6 +248433,92 @@
         }
       ]
     },
+    "Chiba Jets Funabashi": {
+      "club": "Chiba Jets Funabashi",
+      "city": "Funabashi",
+      "state": "",
+      "country": "Japan",
+      "count": 5,
+      "roster": [
+        {
+          "player": "Jeenathan Williams",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Chiba Jets Funabashi",
+          "nationality": "United States"
+        },
+        {
+          "player": "Trey McKinney-Jones",
+          "years": "2018–2019",
+          "status": "overseas_active",
+          "last_team": "Gunma Crane Thunders",
+          "nationality": "United States"
+        },
+        {
+          "player": "Vic Law",
+          "years": "2022–2023",
+          "status": "overseas_active",
+          "last_team": "Ryukyu Golden Kings",
+          "nationality": "United States"
+        },
+        {
+          "player": "Xavier Cooks",
+          "years": "2023–2024",
+          "status": "overseas_active",
+          "last_team": "Sydney Kings",
+          "nationality": "Australia"
+        },
+        {
+          "player": "Yuta Watanabe",
+          "years": "2024–present",
+          "status": "overseas_active",
+          "last_team": "Chiba Jets Funabashi",
+          "nationality": "Japan"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Fort Wayne Mad Ants",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Raptors 905",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Long Island Nets",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Vaqueros de Bayamón",
+          "shared": 1
+        }
+      ]
+    },
     "Niigata Albirex BB": {
       "club": "Niigata Albirex BB",
       "city": "Nagaoka",
@@ -319070,12 +319156,12 @@
         },
         {
           "type": "club",
-          "name": "Gunma Crane Thunders",
+          "name": "Chiba Jets Funabashi",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Chiba Jets Funabashi",
+          "name": "Gunma Crane Thunders",
           "shared": 1
         },
         {
@@ -319087,85 +319173,6 @@
           "type": "club",
           "name": "Irge Desio",
           "shared": 0
-        }
-      ]
-    },
-    "Chiba Jets Funabashi": {
-      "club": "Chiba Jets Funabashi",
-      "city": "Funabashi",
-      "state": "",
-      "country": "Japan",
-      "count": 4,
-      "roster": [
-        {
-          "player": "Trey McKinney-Jones",
-          "years": "2018–2019",
-          "status": "overseas_active",
-          "last_team": "Gunma Crane Thunders",
-          "nationality": "United States"
-        },
-        {
-          "player": "Vic Law",
-          "years": "2022–2023",
-          "status": "overseas_active",
-          "last_team": "Ryukyu Golden Kings",
-          "nationality": "United States"
-        },
-        {
-          "player": "Xavier Cooks",
-          "years": "2023–2024",
-          "status": "overseas_active",
-          "last_team": "Sydney Kings",
-          "nationality": "Australia"
-        },
-        {
-          "player": "Yuta Watanabe",
-          "years": "2024–present",
-          "status": "overseas_active",
-          "last_team": "Chiba Jets Funabashi",
-          "nationality": "Japan"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Fort Wayne Mad Ants",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Raptors 905",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Vaqueros de Bayamón",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sydney Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Lakeland Magic",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "BCM Gravelines",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Brisbane Bullets",
-          "shared": 1
         }
       ]
     },
