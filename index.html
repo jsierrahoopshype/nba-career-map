@@ -1669,19 +1669,31 @@
         }
         .qf-btn-secondary:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.06); }
 
-        /* "Back to the site" link shown on the quiz intro and results
+        /* "Back to the site" control on the quiz intro and results
            screens -- the overlay covers the real site header, so these
-           screens need their own way out. */
-        .quiz-home-link {
+           screens need their own way out. Styled as a real button (same
+           dark-theme treatment as .quiz-action-btn) rather than a faint
+           text link, which was easy to miss. */
+        .quiz-home-btn {
             display: inline-block;
-            font-size: 11px;
+            padding: 8px 16px;
+            margin-bottom: 14px;
+            font-size: 12px;
             font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--qd-text-dim);
+            letter-spacing: 0.8px;
+            color: var(--qd-text);
+            background: var(--qd-card);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 999px;
             text-decoration: none;
-            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all .15s ease;
         }
-        .quiz-home-link:hover { color: #f0b429; }
+        .quiz-home-btn:hover {
+            color: #f0b429;
+            border-color: #f0b429;
+            background: rgba(240,180,41,0.08);
+        }
 
         .qf-leaderboard {
             background: var(--qd-card);
@@ -1721,12 +1733,21 @@
         /* Leaderboard-name row on the results screen: muted metadata with
            a small inline Edit affordance. */
         .qf-name-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
             text-align: center;
-            font-size: 12px;
+            font-size: 13px;
             color: var(--qd-text-dim);
-            margin: 12px 0 4px;
+            background: var(--qd-card);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin: 14px 0 16px;
         }
-        .qf-name-row #qfNameValue { color: var(--qd-text); font-weight: 700; }
+        .qf-name-row #qfNameValue { color: var(--qd-text); font-weight: 800; font-size: 14px; }
         .qf-name-edit {
             margin-left: 8px;
             background: transparent;
@@ -2990,6 +3011,25 @@
             document.getElementById('dashboardView').style.display = 'none';
         }
 
+        // "Play Again" from the results screen returns to the INTRO
+        // rather than jumping straight into a run. Before this, the intro
+        // (and therefore the leaderboard-name field) was reachable only
+        // on a player's very first game. The intro is short and the START
+        // button is focused on arrival, so a repeat player can just hit
+        // Enter -- but the name is always one glance away.
+        function replayQuiz() {
+            const overlay = document.getElementById('quizOverlay');
+            overlay.classList.add('show');
+            overlay.classList.remove('results-mode');
+            overlay.scrollTop = 0;
+            document.getElementById('quizFinal').style.display = 'none';
+            document.getElementById('quizIntro').style.display = 'block';
+            _syncQuizNameInput();
+            _quizLockBodyScroll(true);
+            const startBtn = document.querySelector('.quiz-dark-start-btn');
+            if(startBtn) startBtn.focus();
+        }
+
         function closeQuiz() {
             document.getElementById('quizOverlay').classList.remove('show', 'results-mode');
             document.getElementById('quizPanel').classList.remove('show');
@@ -3745,6 +3785,13 @@
             const nameValueEl = document.getElementById('qfNameValue');
             if(nameValueEl) nameValueEl.textContent = getQuizNickname();
 
+            // Native share sheet is the best mobile share path, but on
+            // desktop it would just be a fourth way to do what the copy
+            // link / social rows already do -- so it only appears when
+            // the platform actually supports it.
+            const nativeBtn = document.getElementById('qfNativeShareBtn');
+            if(nativeBtn) nativeBtn.style.display = navigator.share ? '' : 'none';
+
             // Build detailed results list. Unbounded length (survival has no
             // fixed question count) -- .quiz-results-list scrolls its own box.
             // Every row shows its real elapsed answer time (right or wrong
@@ -3983,11 +4030,10 @@
             document.getElementById(sectionElId).style.display = 'block';
         }
 
-        // Results-screen action row (Share Result / Challenge a Friend /
-        // Play Again) -- distinct from the share-card's own Download/Copy/
-        // Play Again row further down the page.
+        // Results-screen share text, used by the native share sheet and
+        // by the link/social controls in the share-card section.
         // Single source of the share/tweet copy text -- reused by
-        // shareResult(), challengeAFriend(), and setQuizShareLinks() so all
+        // shareResult() and setQuizShareLinks() so both
         // three can never drift out of sync with each other. No emoji (same
         // standard as the social-icon fix: platform-inconsistent glyph
         // rendering, not something to reintroduce in plain text either).
@@ -4006,17 +4052,6 @@
             } else {
                 const el = document.getElementById('shareImageContainer');
                 if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        function challengeAFriend() {
-            const text = `${_quizShareText()} ${QUIZ_SHARE_URL}`;
-            const btn = document.getElementById('qfChallengeBtn');
-            const done = (ok) => _quizButtonFlash(btn, ok ? 'Copied!' : 'Copy Failed', 1500);
-            if(navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(() => done(true)).catch(() => done(false));
-            } else {
-                done(false);
             }
         }
 
@@ -4305,7 +4340,7 @@ document.addEventListener('DOMContentLoaded', boot);
                  (which covers the site header). Plain navigation, not
                  closeQuiz(): works identically whether the quiz was
                  entered in-app or directly via quiz.html. -->
-            <a class="quiz-home-link" href="index.html">&larr; CAREER MAP</a>
+            <a class="quiz-home-btn" href="index.html">&larr; CAREER MAP</a>
             <div class="quiz-dark-kicker">NBA CAREER MAP</div>
             <div class="quiz-title">SURVIVAL MODE</div>
             <div class="quiz-dark-premise">Guess the player from their career map — the route is shown, the name isn't. Run out of lives, and you're out.</div>
@@ -4328,7 +4363,7 @@ document.addEventListener('DOMContentLoaded', boot);
         </div>
 
         <div class="quiz-box quiz-box-dark quiz-final-screen" id="quizFinal" style="display:none">
-            <a class="quiz-home-link" href="index.html">&larr; CAREER MAP</a>
+            <a class="quiz-home-btn" href="index.html">&larr; CAREER MAP</a>
             <div class="qf-hero-wrap">
                 <div class="quiz-dark-kicker">SURVIVAL RESULT</div>
                 <div class="quiz-title">RUN OVER</div>
@@ -4345,10 +4380,20 @@ document.addEventListener('DOMContentLoaded', boot);
                 <div class="qf-stat"><div class="qf-stat-num" id="qfStatStreak">0</div><div class="qf-stat-label">Best Streak</div></div>
             </div>
 
+            <!-- Name control sits directly beneath the hero/stat box and
+                 above the action row: this is the only place a repeat
+                 player reliably sees it, since Play Again now routes back
+                 through the intro (which also carries the name field). -->
+            <div class="qf-name-row">
+                Playing as: <span id="qfNameValue"></span>
+                <button class="qf-name-edit" onclick="editQuizName()">Edit</button>
+            </div>
+
+            <!-- ONE primary action. Every share path lives in the share
+                 card section below, so there is a single share entry
+                 point and a single Play Again on this screen. -->
             <div class="qf-actions">
-                <button class="qf-btn qf-btn-primary" onclick="shareResult()">Share Result</button>
-                <button class="qf-btn qf-btn-secondary" id="qfChallengeBtn" onclick="challengeAFriend()">Challenge a Friend</button>
-                <button class="qf-btn qf-btn-secondary" onclick="beginQuiz()">Play Again</button>
+                <button class="qf-btn qf-btn-primary" onclick="replayQuiz()">Play Again</button>
             </div>
 
             <div class="quiz-percentile qf-rank-fallback" id="quizPercentile"></div>
@@ -4364,7 +4409,7 @@ document.addEventListener('DOMContentLoaded', boot);
 
                 <div class="quiz-copy-row">
                     <input type="text" id="quizShareUrlInput" class="quiz-copy-input" readonly>
-                    <button class="quiz-copy-btn" onclick="copyQuizLink()">Copy</button>
+                    <button class="quiz-copy-btn" onclick="copyQuizLink()">Copy Link</button>
                 </div>
 
                 <!-- Platform marks are inline SVGs from the simple-icons project
@@ -4381,10 +4426,13 @@ document.addEventListener('DOMContentLoaded', boot);
                     <a class="quiz-social-btn telegram" id="shareTelegram" target="_blank" rel="noopener" aria-label="Share on Telegram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Telegram</span></a>
                 </div>
 
+                <!-- Image actions, explicitly labelled "Image" so they
+                     read as distinct from the link actions above (both
+                     rows previously had a bare "Copy" button). -->
                 <div class="quiz-final-buttons">
-                    <button class="quiz-action-btn primary" onclick="downloadShareImage()">⬇ Download</button>
-                    <button class="quiz-action-btn" id="copyImageBtn" onclick="copyShareImage()">Copy</button>
-                    <button class="quiz-action-btn" onclick="beginQuiz()">Play Again</button>
+                    <button class="quiz-action-btn primary" onclick="downloadShareImage()">⬇ Download Image</button>
+                    <button class="quiz-action-btn" id="copyImageBtn" onclick="copyShareImage()">Copy Image</button>
+                    <button class="quiz-action-btn" id="qfNativeShareBtn" onclick="shareResult()" style="display:none">Share…</button>
                 </div>
                 <div class="share-instructions">On iPhone: Long-press the image above, then tap "Add to Photos"</div>
             </div>
@@ -4413,12 +4461,6 @@ document.addEventListener('DOMContentLoaded', boot);
                 </div>
             </div>
 
-            <!-- Leaderboard name shown for the NEXT run; editing never
-                 renames already-submitted rows. -->
-            <div class="qf-name-row">
-                Leaderboard name: <span id="qfNameValue"></span>
-                <button class="qf-name-edit" onclick="editQuizName()">Edit</button>
-            </div>
             <div class="quiz-contact-footer">
                 <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
                 <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
