@@ -1713,6 +1713,58 @@
             color: #f0b429;
             padding: 6px 14px 2px;
         }
+        /* Deeper windows (25 / 100 rows) scroll inside the section rather
+           than stretching the results page -- same max-height + overflow
+           pattern as .quiz-results-list above. */
+        .qf-leaderboard-rows { max-height: 240px; overflow-y: auto; }
+
+        /* Leaderboard-name row on the results screen: muted metadata with
+           a small inline Edit affordance. */
+        .qf-name-row {
+            text-align: center;
+            font-size: 12px;
+            color: var(--qd-text-dim);
+            margin: 12px 0 4px;
+        }
+        .qf-name-row #qfNameValue { color: var(--qd-text); font-weight: 700; }
+        .qf-name-edit {
+            margin-left: 8px;
+            background: transparent;
+            border: 1px solid var(--qd-card-border);
+            color: var(--qd-text-dim);
+            border-radius: 999px;
+            padding: 2px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .qf-name-edit:hover { color: #f0b429; border-color: #f0b429; }
+
+        /* Intro-screen name field: pre-filled with the stored/generated
+           handle so the player can replace it before starting. */
+        .quiz-name-field { margin: 4px 0 16px; text-align: left; }
+        .quiz-name-field label {
+            display: block;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            margin-bottom: 6px;
+        }
+        .quiz-name-field input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--qd-text);
+            background: var(--qd-card);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 10px;
+            outline: none;
+        }
+        .quiz-name-field input:focus { border-color: #f0b429; }
         .qf-lb-row {
             display: flex;
             align-items: center;
@@ -2808,11 +2860,63 @@
             return a;
         }
         
+        // Share of questions that attempt "same origin" distractors --
+        // wrong options whose FIRST career stop matches the correct
+        // player's, so the opening marker on the map stops giving the
+        // answer away. Deliberately not 100%: difficulty should vary
+        // question to question rather than every question being maximally
+        // hard.
+        const QUIZ_SAME_ORIGIN_RATE = 0.4;
+        // Instrumentation for tuning/verification (see the delivered
+        // report): how often same-origin was attempted and how often it
+        // had to fall back for want of candidates. Never read by gameplay.
+        let quizDistractorStats = { attempts: 0, sameOrigin: 0, fallback: 0, normal: 0 };
+
+        // The player's first career stop, as {franchise} for an NBA start
+        // (era names resolved to the current franchise, so a "Vancouver
+        // Grizzlies" start matches a "Memphis Grizzlies" one) or
+        // {country} for a non-NBA start (international / G League).
+        function _firstStopOrigin(player) {
+            const first = player?.career_history?.[0];
+            if(!first || !first.team) return null;
+            const franchise = NBA_FRANCHISES.includes(first.team) ? first.team : NBA_ERAS[first.team];
+            if(franchise) return { franchise };
+            return first.country ? { country: first.country } : null;
+        }
+
         function getWrongOptions(correctPlayer, eligible) {
             const correct = data[correctPlayer];
             const correctTeams = correct.career_history?.length || 5;
             const correctY1 = parseInt(correct.career_history[0]?.years?.split('-')[0]) || 2000;
-            
+
+            quizDistractorStats.attempts++;
+
+            // ~40% of questions: draw the three wrong options from players
+            // who STARTED in the same place (same NBA franchise, or same
+            // country for a non-NBA start). Falls back to the normal
+            // similarity logic below when fewer than 3 such candidates
+            // exist -- plenty of franchises/countries can't field three
+            // other eligible players.
+            if(Math.random() < QUIZ_SAME_ORIGIN_RATE) {
+                const origin = _firstStopOrigin(correct);
+                if(origin) {
+                    const sameOrigin = eligible.filter(p => {
+                        if(p.player === correctPlayer) return false;
+                        const o = _firstStopOrigin(p);
+                        if(!o) return false;
+                        return origin.franchise ? o.franchise === origin.franchise
+                                                : o.country === origin.country;
+                    });
+                    if(sameOrigin.length >= 3) {
+                        quizDistractorStats.sameOrigin++;
+                        return shuffleArray(sameOrigin).slice(0, 3).map(p => p.player);
+                    }
+                }
+                quizDistractorStats.fallback++;
+            } else {
+                quizDistractorStats.normal++;
+            }
+
             // Get similar players (same era, similar team count)
             const candidates = eligible.filter(p => {
                 if(p.player === correctPlayer) return false;
@@ -2821,7 +2925,7 @@
                 // Within 10 years and within 3 teams
                 return Math.abs(y1 - correctY1) <= 12 && Math.abs(teams - correctTeams) <= 4;
             });
-            
+
             // If not enough similar, use any eligible
             let pool = candidates.length >= 10 ? candidates : eligible.filter(p => p.player !== correctPlayer);
 
@@ -2868,6 +2972,7 @@
             document.getElementById('quizOverlay').classList.add('show');
             document.getElementById('quizIntro').style.display = 'block';
             document.getElementById('quizFinal').style.display = 'none';
+            _syncQuizNameInput();
             _quizLockBodyScroll(true);
 
             // route() called showView('dashboard') just before this, so the
@@ -2908,6 +3013,12 @@
                 alert('Not enough eligible players loaded. Please wait for data to load.');
                 return;
             }
+
+            // Commit whatever is in the intro's name field (sanitized;
+            // blank falls back to the stored/generated handle). "Play
+            // Again" skips the intro, so the stored name simply persists.
+            const nameInput = document.getElementById('quizNameInput');
+            if(nameInput) setQuizNickname(nameInput.value);
 
             // Reset state
             quizState = {
@@ -3629,6 +3740,11 @@
             document.getElementById('qfStatLives').textContent = quizState.livesLostTotal;
             document.getElementById('qfStatStreak').textContent = getBestStreak(quizState.results);
 
+            // Show the name this run was submitted under; the Edit button
+            // beside it changes the name for FUTURE runs only.
+            const nameValueEl = document.getElementById('qfNameValue');
+            if(nameValueEl) nameValueEl.textContent = getQuizNickname();
+
             // Build detailed results list. Unbounded length (survival has no
             // fixed question count) -- .quiz-results-list scrolls its own box.
             // Every row shows its real elapsed answer time (right or wrong
@@ -3730,20 +3846,70 @@
         const QUIZ_NICKNAME_KEY = 'nbaQuizNickname';
         const QUIZ_NICKNAME_ADJ = ['Clutch','Baseline','Corner','FastBreak','Rimrunner','Paint','Buzzer','Crossover','Alley','Backdoor','Fadeaway','Hustle','Pickup','Zone','Fullcourt'];
         const QUIZ_NICKNAME_NOUN = ['Hoopster','Baller','Scout','Rook','Vet','Sniper','Grinder','Rebounder','Playmaker','Hooper','Shooter','Defender'];
+        const QUIZ_NAME_MAX = 20;
+
+        function _generateQuizNickname() {
+            const adj = QUIZ_NICKNAME_ADJ[Math.floor(Math.random() * QUIZ_NICKNAME_ADJ.length)];
+            const noun = QUIZ_NICKNAME_NOUN[Math.floor(Math.random() * QUIZ_NICKNAME_NOUN.length)];
+            const num = Math.floor(Math.random() * 90) + 10;
+            return `${adj}${noun}${num}`;
+        }
+
+        // Sanitize a player-supplied leaderboard name: trim, strip anything
+        // HTML-ish (the name is rendered into leaderboard rows via
+        // innerHTML), collapse whitespace, cap length, and fall back to a
+        // generated handle when nothing usable remains.
+        function sanitizeQuizName(raw, fallback) {
+            let name = String(raw ?? '')
+                // Strip whole tags first -- removing only the angle
+                // brackets would leave the tag letters behind as literal
+                // text ("<b>Jorge</b>" -> "bJorge/b").
+                .replace(/<[^>]*>/g, '')
+                .replace(/[<>&"']/g, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .slice(0, QUIZ_NAME_MAX)
+                .trim();
+            return name || fallback || _generateQuizNickname();
+        }
+
         function getQuizNickname() {
             try {
                 let name = localStorage.getItem(QUIZ_NICKNAME_KEY);
                 if(!name) {
-                    const adj = QUIZ_NICKNAME_ADJ[Math.floor(Math.random() * QUIZ_NICKNAME_ADJ.length)];
-                    const noun = QUIZ_NICKNAME_NOUN[Math.floor(Math.random() * QUIZ_NICKNAME_NOUN.length)];
-                    const num = Math.floor(Math.random() * 90) + 10;
-                    name = `${adj}${noun}${num}`;
+                    name = _generateQuizNickname();
                     localStorage.setItem(QUIZ_NICKNAME_KEY, name);
                 }
                 return name;
             } catch(e) {
                 return 'Hooper';
             }
+        }
+
+        function setQuizNickname(raw) {
+            const name = sanitizeQuizName(raw, getQuizNickname());
+            try { localStorage.setItem(QUIZ_NICKNAME_KEY, name); } catch(e) {}
+            return name;
+        }
+
+        // Pre-fill the intro screen's name input with the stored/generated
+        // handle so the player sees what they'd be submitting as, and can
+        // replace it before starting. Called when the intro screen shows.
+        function _syncQuizNameInput() {
+            const el = document.getElementById('quizNameInput');
+            if(el) el.value = getQuizNickname();
+        }
+
+        // Results-screen "edit name" affordance: commits the new name for
+        // FUTURE submissions only -- already-submitted rows are never
+        // retroactively renamed.
+        function editQuizName() {
+            const current = getQuizNickname();
+            const entered = window.prompt('Leaderboard name (used on your next run):', current);
+            if(entered === null) return;  // cancelled
+            const saved = setQuizNickname(entered);
+            const label = document.getElementById('qfNameValue');
+            if(label) label.textContent = saved;
         }
 
         // Top-N survival leaderboard. Requires an Apps Script deployment
@@ -3762,14 +3928,17 @@
             // entries with no echo -- in that case only the All-Time
             // section renders (showing all-time rows under "Today" would
             // be wrong data, not a degraded view).
+            // Depth per window (server caps limit at 100): a short daily
+            // board, deeper weekly, full all-time. Sections scroll rather
+            // than stretching the page (see .qf-leaderboard-rows CSS).
             const windows = [
-                { key: 'daily', rowsEl: 'qfLbDailyRows', sectionEl: 'qfLbDaily' },
-                { key: 'weekly', rowsEl: 'qfLbWeeklyRows', sectionEl: 'qfLbWeekly' },
-                { key: 'all', rowsEl: 'qfLbAllRows', sectionEl: 'qfLbAll' },
+                { key: 'daily', rowsEl: 'qfLbDailyRows', sectionEl: 'qfLbDaily', limit: 10 },
+                { key: 'weekly', rowsEl: 'qfLbWeeklyRows', sectionEl: 'qfLbWeekly', limit: 25 },
+                { key: 'all', rowsEl: 'qfLbAllRows', sectionEl: 'qfLbAll', limit: 100 },
             ];
             const results = await Promise.all(windows.map(async w => {
                 try {
-                    const params = new URLSearchParams({ action: 'leaderboard', mode: 'survival', limit: 10, window: w.key });
+                    const params = new URLSearchParams({ action: 'leaderboard', mode: 'survival', limit: w.limit, window: w.key });
                     const response = await fetch(SCORE_API_URL + '?' + params.toString(), { method: 'GET', redirect: 'follow' });
                     const data = await response.json();
                     if(!data.success || !Array.isArray(data.entries) || !data.entries.length) return null;
@@ -4147,6 +4316,10 @@ document.addEventListener('DOMContentLoaded', boot);
                 <li>Slow answers (over 10s) add up. Every 3rd one costs a life, even if you got it right</li>
                 <li>No fixed length: survive as long as you can, your time survived is the score</li>
             </ol>
+            <div class="quiz-name-field">
+                <label for="quizNameInput">Leaderboard name</label>
+                <input type="text" id="quizNameInput" maxlength="20" autocomplete="off" spellcheck="false">
+            </div>
             <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
             <div class="quiz-contact-footer">
                 <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
@@ -4178,27 +4351,6 @@ document.addEventListener('DOMContentLoaded', boot);
                 <button class="qf-btn qf-btn-secondary" onclick="beginQuiz()">Play Again</button>
             </div>
 
-            <!-- Three time-windowed leaderboards (73-9-game results-page
-                 pattern: aligned rank/name/score columns, gold accent on
-                 the top ranks, one section per window). Each section shows
-                 only if its window's fetch returns data; a legacy backend
-                 that doesn't understand windows populates All-Time only
-                 (see fetchLeaderboard). -->
-            <div class="qf-leaderboard" id="qfLeaderboard" style="display:none">
-                <div class="qf-leaderboard-title">Survival Leaderboard</div>
-                <div class="qf-lb-section" id="qfLbDaily" style="display:none">
-                    <div class="qf-lb-window-title">Today</div>
-                    <div class="qf-leaderboard-rows" id="qfLbDailyRows"></div>
-                </div>
-                <div class="qf-lb-section" id="qfLbWeekly" style="display:none">
-                    <div class="qf-lb-window-title">This Week</div>
-                    <div class="qf-leaderboard-rows" id="qfLbWeeklyRows"></div>
-                </div>
-                <div class="qf-lb-section" id="qfLbAll" style="display:none">
-                    <div class="qf-lb-window-title">All-Time</div>
-                    <div class="qf-leaderboard-rows" id="qfLbAllRows"></div>
-                </div>
-            </div>
             <div class="quiz-percentile qf-rank-fallback" id="quizPercentile"></div>
 
             <div class="quiz-results-list" id="quizResultsList"></div>
@@ -4235,6 +4387,37 @@ document.addEventListener('DOMContentLoaded', boot);
                     <button class="quiz-action-btn" onclick="beginQuiz()">Play Again</button>
                 </div>
                 <div class="share-instructions">On iPhone: Long-press the image above, then tap "Add to Photos"</div>
+            </div>
+            <!-- Three time-windowed leaderboards (73-9-game results-page
+                 pattern: aligned rank/name/score columns, gold accent on
+                 the top ranks, one section per window), placed BELOW the
+                 share card. Each section shows only if its window's fetch
+                 returns data; a legacy backend that doesn't understand
+                 windows populates All-Time only (see fetchLeaderboard).
+                 Sections scroll within a max height (same pattern as
+                 .quiz-results-list) so the 25/100-deep lists don't run the
+                 page to an enormous length. -->
+            <div class="qf-leaderboard" id="qfLeaderboard" style="display:none">
+                <div class="qf-leaderboard-title">Survival Leaderboard</div>
+                <div class="qf-lb-section" id="qfLbDaily" style="display:none">
+                    <div class="qf-lb-window-title">Today</div>
+                    <div class="qf-leaderboard-rows" id="qfLbDailyRows"></div>
+                </div>
+                <div class="qf-lb-section" id="qfLbWeekly" style="display:none">
+                    <div class="qf-lb-window-title">This Week</div>
+                    <div class="qf-leaderboard-rows" id="qfLbWeeklyRows"></div>
+                </div>
+                <div class="qf-lb-section" id="qfLbAll" style="display:none">
+                    <div class="qf-lb-window-title">All-Time</div>
+                    <div class="qf-leaderboard-rows" id="qfLbAllRows"></div>
+                </div>
+            </div>
+
+            <!-- Leaderboard name shown for the NEXT run; editing never
+                 renames already-submitted rows. -->
+            <div class="qf-name-row">
+                Leaderboard name: <span id="qfNameValue"></span>
+                <button class="qf-name-edit" onclick="editQuizName()">Edit</button>
             </div>
             <div class="quiz-contact-footer">
                 <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
