@@ -1411,15 +1411,15 @@
 
         /* Unbounded length (survival has no fixed question count) -- scrolls
            within its own box rather than growing the whole card. */
+        /* No internal scrolling: the list renders at full height and the
+           page scrolls instead (a long run makes a long page, by design). */
         .quiz-results-list {
             text-align: left;
-            margin: 4px 0 14px;
-            max-height: 240px;
-            overflow-y: auto;
+            margin: 8px 0 32px;
             background: var(--qd-card);
             border: 1px solid var(--qd-card-border);
             border-radius: 12px;
-            padding: 4px 0;
+            padding: 8px 0;
         }
 
         .quiz-result-row {
@@ -1616,8 +1616,8 @@
             background: var(--qd-card);
             border: 1px solid var(--qd-card-border);
             border-radius: 14px;
-            padding: 16px 10px;
-            margin: 4px 0 20px;
+            padding: 20px 10px;
+            margin: 8px 0 28px;
         }
         .qf-stat { flex: 1 1 0; text-align: center; min-width: 0; }
         .qf-stat-num {
@@ -1639,7 +1639,7 @@
         .qf-actions {
             display: flex;
             gap: 8px;
-            margin-bottom: 24px;
+            margin-bottom: 36px;
         }
         .qf-btn {
             flex: 1;
@@ -1699,8 +1699,8 @@
             background: var(--qd-card);
             border: 1px solid var(--qd-card-border);
             border-radius: 14px;
-            padding: 14px 4px 6px;
-            margin-bottom: 18px;
+            padding: 20px 4px 12px;
+            margin: 36px 0 32px;
         }
         .qf-leaderboard-title {
             font-size: 11px;
@@ -1715,7 +1715,7 @@
         /* One block per time window (Today / This Week / All-Time), same
            row pattern inside each; the window label gets the gold accent
            so the three sections scan apart at a glance. */
-        .qf-lb-section { margin-bottom: 10px; }
+        .qf-lb-section { margin-bottom: 28px; }
         .qf-lb-section:last-child { margin-bottom: 0; }
         .qf-lb-window-title {
             font-size: 10px;
@@ -1723,12 +1723,11 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             color: #f0b429;
-            padding: 6px 14px 2px;
+            padding: 8px 14px 6px;
         }
-        /* Deeper windows (25 / 100 rows) scroll inside the section rather
-           than stretching the results page -- same max-height + overflow
-           pattern as .quiz-results-list above. */
-        .qf-leaderboard-rows { max-height: 240px; overflow-y: auto; }
+        /* Every window renders at full height -- no inner scrollbars.
+           All-time is a deliberately long 100-row list; the page scrolls. */
+        .qf-leaderboard-rows { }
 
         /* Leaderboard-name row on the results screen: muted metadata with
            a small inline Edit affordance. */
@@ -1748,6 +1747,54 @@
             margin: 14px 0 16px;
         }
         .qf-name-row #qfNameValue { color: var(--qd-text); font-weight: 800; font-size: 14px; }
+        /* End-of-run name form: the gate on submission, so it gets real
+           weight rather than metadata styling. */
+        .qf-name-form {
+            background: var(--qd-card);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 8px 0 28px;
+            text-align: left;
+        }
+        .qf-name-form label {
+            display: block;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            margin-bottom: 8px;
+        }
+        .qf-name-inputrow { display: flex; gap: 8px; }
+        .qf-name-inputrow input {
+            flex: 1 1 auto;
+            min-width: 0;
+            padding: 11px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--qd-text);
+            background: var(--qd-bg1, #0c0c14);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 10px;
+            outline: none;
+        }
+        .qf-name-inputrow input:focus { border-color: #f0b429; }
+        .qf-name-save {
+            flex: 0 0 auto;
+            padding: 11px 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            font-family: inherit;
+            color: #1a1205;
+            background: linear-gradient(90deg, #ffe49a, #f0b429);
+            cursor: pointer;
+        }
+        .qf-name-save:disabled { opacity: .6; cursor: default; }
+        .qf-name-hint { margin-top: 8px; font-size: 11.5px; color: var(--qd-text-dim); }
+
         .qf-name-edit {
             margin-left: 8px;
             background: transparent;
@@ -1790,7 +1837,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 9px 14px;
+            padding: 13px 14px;
             border-top: 1px solid var(--qd-card-border);
             font-size: 13.5px;
         }
@@ -1835,7 +1882,7 @@
 
         .qf-share-divider {
             text-align: center;
-            margin: 26px 0 16px;
+            margin: 44px 0 20px;
             position: relative;
         }
         .qf-share-divider span {
@@ -2845,6 +2892,7 @@
             earlyCount: 0,         // cumulative fast-AND-correct answers this run; NEVER resets
             lateCount: 0,          // cumulative >10s answers this run, right or wrong; NEVER resets
             livesLostTotal: 0,     // total life-loss events this run (can exceed QUIZ_START_LIVES via bonus lives)
+            submitted: false,      // set once the player confirms their name; gates the single deferred write
             results: [],
             timer: null,
             timeLeft: QUIZ_TIMER_SECONDS,
@@ -2993,7 +3041,6 @@
             document.getElementById('quizOverlay').classList.add('show');
             document.getElementById('quizIntro').style.display = 'block';
             document.getElementById('quizFinal').style.display = 'none';
-            _syncQuizNameInput();
             _quizLockBodyScroll(true);
 
             // route() called showView('dashboard') just before this, so the
@@ -3024,7 +3071,6 @@
             overlay.scrollTop = 0;
             document.getElementById('quizFinal').style.display = 'none';
             document.getElementById('quizIntro').style.display = 'block';
-            _syncQuizNameInput();
             _quizLockBodyScroll(true);
             const startBtn = document.querySelector('.quiz-dark-start-btn');
             if(startBtn) startBtn.focus();
@@ -3054,12 +3100,6 @@
                 return;
             }
 
-            // Commit whatever is in the intro's name field (sanitized;
-            // blank falls back to the stored/generated handle). "Play
-            // Again" skips the intro, so the stored name simply persists.
-            const nameInput = document.getElementById('quizNameInput');
-            if(nameInput) setQuizNickname(nameInput.value);
-
             // Reset state
             quizState = {
                 active: true,
@@ -3071,6 +3111,7 @@
                 earlyCount: 0,
                 lateCount: 0,
                 livesLostTotal: 0,
+                submitted: false,
                 results: [],
                 timer: null,
                 timeLeft: QUIZ_TIMER_SECONDS,
@@ -3808,19 +3849,18 @@
 
             document.getElementById('quizResultsList').innerHTML = resultsList;
 
-            // Show loading state for percentile (fallback line -- hidden in
-            // favor of the real leaderboard section if that fetch succeeds)
+            // Nothing is submitted yet: the name form gates it. The
+            // percentile line and leaderboard stay hidden until the player
+            // confirms, because both describe a row that doesn't exist
+            // until then (rank/highlight would otherwise be meaningless).
             const percentileEl = document.getElementById('quizPercentile');
-            percentileEl.style.display = '';
-            percentileEl.textContent = 'Calculating ranking...';
-            percentileEl.classList.add('loading');
+            percentileEl.style.display = 'none';
+            percentileEl.classList.remove('loading');
             document.getElementById('qfLeaderboard').style.display = 'none';
+            _resetQuizNameForm();
 
-            // Submit score, then fetch the leaderboard and build the share image
-            submitScore().then(() => {
-                fetchLeaderboard();
-                generateShareImage();
-            });
+            // The share card doesn't depend on submission, so build it now.
+            generateShareImage();
         }
 
         async function submitScore() {
@@ -3939,24 +3979,57 @@
             return name;
         }
 
-        // Pre-fill the intro screen's name input with the stored/generated
-        // handle so the player sees what they'd be submitting as, and can
-        // replace it before starting. Called when the intro screen shows.
-        function _syncQuizNameInput() {
-            const el = document.getElementById('quizNameInput');
-            if(el) el.value = getQuizNickname();
+        // Name is asked at the END of a run now. Submission is DEFERRED
+        // until the player confirms, so the sheet never receives a row
+        // under a name they didn't choose -- rather than writing first and
+        // renaming after (which would need an update-the-row mechanism the
+        // backend doesn't have).
+        //
+        // If a player never confirms (closes the tab, hits Play Again, or
+        // leaves via CAREER MAP), the run is NOT submitted at all. Chosen
+        // over auto-submitting under the stored handle because the whole
+        // point of moving the prompt here is that the leaderboard shows
+        // names people actually picked; silently posting an unconfirmed
+        // run would reintroduce exactly the problem this change removes.
+        // The trade is a lost score on abandonment, which is the safer
+        // failure: nothing wrong is published.
+        function _resetQuizNameForm() {
+            const form = document.getElementById('qfNameForm');
+            const row = document.getElementById('qfNameRow');
+            const input = document.getElementById('qfNameInput');
+            const btn = document.getElementById('qfNameSaveBtn');
+            const hint = document.getElementById('qfNameHint');
+            if(form) form.style.display = '';
+            if(row) row.style.display = 'none';
+            if(input) input.value = getQuizNickname();   // pre-filled: repeat players just confirm
+            if(btn) { btn.disabled = false; btn.textContent = 'Save score'; }
+            if(hint) hint.textContent = 'Confirm your name to post this run to the leaderboard.';
         }
 
-        // Results-screen "edit name" affordance: commits the new name for
-        // FUTURE submissions only -- already-submitted rows are never
-        // retroactively renamed.
-        function editQuizName() {
-            const current = getQuizNickname();
-            const entered = window.prompt('Leaderboard name (used on your next run):', current);
-            if(entered === null) return;  // cancelled
-            const saved = setQuizNickname(entered);
+        // Confirm -> persist the name, submit the score, THEN load the
+        // leaderboard (so the player's own rank/highlight reflects the row
+        // that was just written).
+        async function confirmQuizName() {
+            if(quizState.submitted) return;
+            const input = document.getElementById('qfNameInput');
+            const btn = document.getElementById('qfNameSaveBtn');
+            const hint = document.getElementById('qfNameHint');
+            const saved = setQuizNickname(input ? input.value : '');
+            if(input) input.value = saved;
+            if(btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
+            if(hint) hint.textContent = 'Posting your run…';
+
+            quizState.submitted = true;
+            await submitScore();
+
+            const form = document.getElementById('qfNameForm');
+            const row = document.getElementById('qfNameRow');
             const label = document.getElementById('qfNameValue');
             if(label) label.textContent = saved;
+            if(form) form.style.display = 'none';
+            if(row) row.style.display = '';
+
+            fetchLeaderboard();
         }
 
         // Top-N survival leaderboard. Requires an Apps Script deployment
@@ -4351,10 +4424,6 @@ document.addEventListener('DOMContentLoaded', boot);
                 <li>Slow answers (over 10s) add up. Every 3rd one costs a life, even if you got it right</li>
                 <li>No fixed length: survive as long as you can, your time survived is the score</li>
             </ol>
-            <div class="quiz-name-field">
-                <label for="quizNameInput">Leaderboard name</label>
-                <input type="text" id="quizNameInput" maxlength="20" autocomplete="off" spellcheck="false">
-            </div>
             <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
             <div class="quiz-contact-footer">
                 <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
@@ -4384,9 +4453,21 @@ document.addEventListener('DOMContentLoaded', boot);
                  above the action row: this is the only place a repeat
                  player reliably sees it, since Play Again now routes back
                  through the intro (which also carries the name field). -->
-            <div class="qf-name-row">
-                Playing as: <span id="qfNameValue"></span>
-                <button class="qf-name-edit" onclick="editQuizName()">Edit</button>
+            <!-- Name is asked HERE, at the end of the run, and the score
+                 is not written until it is confirmed (see
+                 confirmQuizName/submitScore). Pre-filled from the stored
+                 name so a repeat player just presses Save. -->
+            <div class="qf-name-form" id="qfNameForm">
+                <label for="qfNameInput">Your leaderboard name</label>
+                <div class="qf-name-inputrow">
+                    <input type="text" id="qfNameInput" maxlength="20" autocomplete="off" spellcheck="false"
+                           onkeydown="if(event.key==='Enter'){event.preventDefault();confirmQuizName();}">
+                    <button class="qf-name-save" id="qfNameSaveBtn" onclick="confirmQuizName()">Save score</button>
+                </div>
+                <div class="qf-name-hint" id="qfNameHint">Confirm your name to post this run to the leaderboard.</div>
+            </div>
+            <div class="qf-name-row" id="qfNameRow" style="display:none">
+                Posted as: <span id="qfNameValue"></span>
             </div>
 
             <!-- ONE primary action. Every share path lives in the share
