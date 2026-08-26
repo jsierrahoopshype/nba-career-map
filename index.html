@@ -1310,6 +1310,43 @@
         }
         .quiz-game-area.show { visibility: visible; pointer-events: auto; }
 
+        /* "Ready? ... Go!" beat between the start click and the first live
+           question. Its own fixed layer above the game area (10001 vs
+           10000) rather than a child of it, so it covers the whole viewport
+           including the site header the game area starts below -- and hides
+           the map/panel while they initialise. It carries .quiz-box-dark
+           too, purely to inherit that block's --qd-* tokens and gradient
+           (hence the radius/padding reset here); no colours of its own. */
+        .quiz-readygo {
+            position: fixed;
+            inset: 0;
+            z-index: 10001;
+            border-radius: 0;
+            padding: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .quiz-readygo.show { display: flex; }
+        /* Same hero treatment as the results score, so the beat reads as
+           part of the same game rather than a new screen. "Ready?" is plain
+           white; "Go!" takes the accent + glow the hero normally has. */
+        .quiz-readygo .quiz-dark-hero {
+            margin-top: 0;
+            color: var(--qd-text);
+            text-shadow: none;
+            animation: quizReadyGoPop .22s ease-out;
+        }
+        .quiz-readygo.phase-go .quiz-dark-hero {
+            color: var(--qd-accent);
+            text-shadow: 0 0 40px var(--qd-accent-glow);
+        }
+        @keyframes quizReadyGoPop {
+            from { opacity: 0; transform: scale(.88); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
         .quiz-map-container {
             position: relative;
             flex: 1 1 auto;
@@ -1380,6 +1417,11 @@
             .quiz-final-screen {
                 animation: none !important;
                 transition: none !important;
+            }
+            /* The Ready?/Go! words still swap on the same schedule, they
+               just appear instead of popping in. */
+            .quiz-readygo .quiz-dark-hero {
+                animation: none !important;
             }
             /* Static glow instead of no glow at all -- still unmistakably
                distinct at a glance, just without the pulsing motion. */
@@ -2901,6 +2943,12 @@
         const QUIZ_LATE_THRESHOLD = 10;   // > 10s = "late"; [5,10] is neutral
         const QUIZ_EARLY_STREAK_FOR_BONUS = 3;  // every 3rd cumulative early+correct answer -> +1 life
         const QUIZ_LATE_PENALTY_EVERY = 3;      // every 3rd cumulative late answer -> -1 life
+        // "Ready? ... Go!" brace beat, ~1s total. A beat, not a countdown --
+        // long enough to look up from the button, short enough that a repeat
+        // player doesn't sit through it. None of it is on the clock: the
+        // question timer only starts when showQuestion() runs, after this.
+        const QUIZ_READY_MS = 600;
+        const QUIZ_GO_MS = 400;
 
         // MM:SS.CC, used everywhere survival time is shown: the live
         // in-game clock, the results screen, and the share text/image.
@@ -3124,6 +3172,7 @@
             document.getElementById('quizMapContainer').classList.remove('show');
             document.getElementById('quizGameArea').classList.remove('show');
             if(quizState.timer) clearInterval(quizState.timer);
+            _cancelReadyGo();   // closing mid-beat must not still fire a question
             quizState.active = false;
             _quizLockBodyScroll(false);
 
@@ -3142,6 +3191,44 @@
             history.replaceState({}, '', 'index.html');
         }
         
+        // Pending Ready?/Go! timeouts, so closing the quiz (or an immediate
+        // second START) can't leave a question scheduled to fire into a
+        // torn-down game.
+        let _readyGoTimers = [];
+        function _cancelReadyGo() {
+            _readyGoTimers.forEach(clearTimeout);
+            _readyGoTimers = [];
+            const el = document.getElementById('quizReadyGo');
+            if(el) el.classList.remove('show', 'phase-go');
+        }
+
+        // Runs the brace beat, then hands off to `onDone` -- which is where
+        // the first question (and only then, the timer) starts.
+        function _runReadyGo(onDone) {
+            _cancelReadyGo();
+            const el = document.getElementById('quizReadyGo');
+            const txt = document.getElementById('quizReadyGoText');
+            if(!el || !txt) { onDone(); return; }   // markup missing: never strand the player
+
+            txt.textContent = 'Ready?';
+            el.classList.add('show');
+            _readyGoTimers.push(setTimeout(() => {
+                txt.textContent = 'Go!';
+                el.classList.add('phase-go');
+                // Restart the pop animation for the second word: re-adding
+                // the class alone wouldn't retrigger it, and the text swap
+                // on its own doesn't either.
+                void el.offsetWidth;
+                txt.style.animation = 'none';
+                void txt.offsetWidth;
+                txt.style.animation = '';
+            }, QUIZ_READY_MS));
+            _readyGoTimers.push(setTimeout(() => {
+                _cancelReadyGo();
+                onDone();
+            }, QUIZ_READY_MS + QUIZ_GO_MS));
+        }
+
         function beginQuiz() {
             const eligible = getEligiblePlayers();
             if(eligible.length < 15) {
@@ -3188,8 +3275,15 @@
             // Leaflet's initial size, same pattern used by the dashboard's
             // heatmap for the same reason.
             setTimeout(() => { if(quizState.quizMap) quizState.quizMap.invalidateSize(); }, 60);
-            
-            showQuestion();
+
+            // The brace beat sits between the click and the first question.
+            // showQuestion() is what starts the per-question timer, and
+            // elapsed time is derived from that timer alone (see
+            // submitAnswer's QUIZ_TIMER_SECONDS - timeLeft), so the whole
+            // transition is outside the score by construction, not by
+            // subtracting anything afterwards. It also usefully covers the
+            // map/panel while Leaflet initialises above.
+            _runReadyGo(showQuestion);
         }
         
         // Quiz map only (not the main site-wide player map): when a
@@ -4601,6 +4695,15 @@ document.addEventListener('DOMContentLoaded', boot);
                 <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
             </div>
         </div>
+    </div>
+
+    <!-- Brace beat between the start click and the first live question.
+         Deliberately outside #quizGameArea, which starts at top:50px (below
+         the site header) -- this one covers the full viewport. showQuestion()
+         (and therefore the question timer) does not run until it finishes,
+         so the transition is never part of a recorded answer time. -->
+    <div class="quiz-readygo quiz-box-dark" id="quizReadyGo" role="status" aria-live="assertive">
+        <div class="quiz-dark-hero" id="quizReadyGoText"></div>
     </div>
 
     <!-- Quiz Game Panel (during gameplay) -->
