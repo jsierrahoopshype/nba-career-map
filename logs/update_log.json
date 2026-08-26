@@ -11797,6 +11797,27 @@
       "newly_retired": [],
       "requests": 100,
       "budget_exhausted": true
+    },
+    {
+      "date": "2026-08-26",
+      "mode": "single",
+      "players_updated": [
+        "Kenneth Faried"
+      ],
+      "new_players": [],
+      "new_teams": [],
+      "team_moves": [
+        {
+          "player": "Kenneth Faried",
+          "from": "Cangrejeros de Santurce",
+          "to": "Baskonia"
+        }
+      ],
+      "status_changes": [],
+      "newly_overseas": [],
+      "newly_retired": [],
+      "requests": 1,
+      "budget_exhausted": false
     }
   ]
 }

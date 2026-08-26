@@ -1,3 +1,12 @@
+## 2026-08-26 — single run
+
+- Players updated: **1** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 1
+  - Kenneth Faried: Cangrejeros de Santurce → Baskonia
+
 ## 2026-08-26 — incremental run
 
 - Players updated: **68** (0 new)

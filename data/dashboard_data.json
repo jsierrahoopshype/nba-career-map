@@ -2308,9 +2308,9 @@
     },
     {
       "player": "Kenneth Faried",
-      "current_team": "Cangrejeros de Santurce",
-      "country": "Puerto Rico",
-      "last_updated": "2026-07-13"
+      "current_team": "Baskonia",
+      "country": "Spain",
+      "last_updated": "2026-08-26"
     },
     {
       "player": "Kenneth Lofton",
@@ -5015,7 +5015,7 @@
     },
     {
       "team": "Baskonia",
-      "players": 121
+      "players": 122
     },
     {
       "team": "Idaho Stampede",
@@ -19578,6 +19578,21 @@
       ]
     },
     {
+      "team": "Baskonia",
+      "count": 9,
+      "players": [
+        "AJ Lawson",
+        "Eugene Omoruyi",
+        "Kenneth Faried",
+        "Kobi Simmons",
+        "Mamadi Diakite",
+        "Markquis Nowell",
+        "Markus Howard",
+        "Rodions Kurucs",
+        "Timothe Luwawu"
+      ]
+    },
+    {
       "team": "Crvena Zvezda",
       "count": 9,
       "players": [
@@ -19620,20 +19635,6 @@
         "Talen Horton-Tucker",
         "Trent Forrest",
         "Wade Baldwin"
-      ]
-    },
-    {
-      "team": "Baskonia",
-      "count": 8,
-      "players": [
-        "AJ Lawson",
-        "Eugene Omoruyi",
-        "Kobi Simmons",
-        "Mamadi Diakite",
-        "Markquis Nowell",
-        "Markus Howard",
-        "Rodions Kurucs",
-        "Timothe Luwawu"
       ]
     },
     {
@@ -19758,18 +19759,6 @@
       ]
     },
     {
-      "team": "Cangrejeros de Santurce",
-      "count": 6,
-      "players": [
-        "DJ Wilson",
-        "Ian Clark",
-        "John Jenkins",
-        "Kenneth Faried",
-        "Malik Beasley",
-        "Thomas Robinson"
-      ]
-    },
-    {
       "team": "Melbourne United",
       "count": 6,
       "players": [
@@ -19873,6 +19862,17 @@
         "Shabazz Napier",
         "Spencer Dinwiddie",
         "Wenyen Gabriel"
+      ]
+    },
+    {
+      "team": "Cangrejeros de Santurce",
+      "count": 5,
+      "players": [
+        "DJ Wilson",
+        "Ian Clark",
+        "John Jenkins",
+        "Malik Beasley",
+        "Thomas Robinson"
       ]
     },
     {
@@ -22267,7 +22267,7 @@
     },
     {
       "country": "Spain",
-      "count": 54
+      "count": 55
     },
     {
       "country": "China",
@@ -22287,7 +22287,7 @@
     },
     {
       "country": "Puerto Rico",
-      "count": 34
+      "count": 33
     },
     {
       "country": "Italy",
@@ -22465,7 +22465,7 @@
     },
     {
       "country": "Spain",
-      "players": 797
+      "players": 798
     },
     {
       "country": "France",
@@ -23340,6 +23340,154 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Baskonia",
+      "players": [
+        "AJ Lawson",
+        "Eugene Omoruyi",
+        "Kenneth Faried",
+        "Kobi Simmons",
+        "Mamadi Diakite",
+        "Markquis Nowell",
+        "Markus Howard",
+        "Rodions Kurucs",
+        "Timothe Luwawu"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "AJ Lawson",
+            "Eugene Omoruyi"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "AJ Lawson",
+            "Kobi Simmons"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "AJ Lawson",
+            "Markquis Nowell"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Eugene Omoruyi",
+            "Mamadi Diakite"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Eugene Omoruyi",
+            "Timothe Luwawu"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Kenneth Faried",
+            "Markus Howard"
+          ],
+          "shared_nba_franchises": [
+            "Denver Nuggets"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Kenneth Faried",
+            "Rodions Kurucs"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets",
+            "Houston Rockets"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Kenneth Faried",
+            "Timothe Luwawu"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Kobi Simmons",
+            "Mamadi Diakite"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Kobi Simmons",
+            "Markquis Nowell"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Mamadi Diakite",
+            "Rodions Kurucs"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Mamadi Diakite",
+            "Timothe Luwawu"
+          ],
+          "shared_nba_franchises": [
+            "Oklahoma City Thunder"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "Rodions Kurucs",
+            "Timothe Luwawu"
+          ],
+          "shared_nba_franchises": [
+            "Brooklyn Nets"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Crvena Zvezda",
       "players": [
         "Chima Moneke",
@@ -23658,122 +23806,6 @@
             "Utah Jazz"
           ],
           "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Baskonia",
-      "players": [
-        "AJ Lawson",
-        "Eugene Omoruyi",
-        "Kobi Simmons",
-        "Mamadi Diakite",
-        "Markquis Nowell",
-        "Markus Howard",
-        "Rodions Kurucs",
-        "Timothe Luwawu"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "AJ Lawson",
-            "Eugene Omoruyi"
-          ],
-          "shared_nba_franchises": [
-            "Dallas Mavericks"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "AJ Lawson",
-            "Kobi Simmons"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "AJ Lawson",
-            "Markquis Nowell"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Eugene Omoruyi",
-            "Mamadi Diakite"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Eugene Omoruyi",
-            "Timothe Luwawu"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Kobi Simmons",
-            "Mamadi Diakite"
-          ],
-          "shared_nba_franchises": [
-            "Cleveland Cavaliers"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Kobi Simmons",
-            "Markquis Nowell"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Mamadi Diakite",
-            "Rodions Kurucs"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Mamadi Diakite",
-            "Timothe Luwawu"
-          ],
-          "shared_nba_franchises": [
-            "Oklahoma City Thunder"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Rodions Kurucs",
-            "Timothe Luwawu"
-          ],
-          "shared_nba_franchises": [
-            "Brooklyn Nets"
-          ],
-          "latest_stint_year": 2025
         }
       ],
       "latest_stint_year": 2026
@@ -24539,103 +24571,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Cangrejeros de Santurce",
-      "players": [
-        "DJ Wilson",
-        "Ian Clark",
-        "John Jenkins",
-        "Kenneth Faried",
-        "Malik Beasley",
-        "Thomas Robinson"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "DJ Wilson",
-            "Kenneth Faried"
-          ],
-          "shared_nba_franchises": [
-            "Houston Rockets"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "DJ Wilson",
-            "Malik Beasley"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "DJ Wilson",
-            "Thomas Robinson"
-          ],
-          "shared_nba_franchises": [
-            "Houston Rockets",
-            "Philadelphia 76ers"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Ian Clark",
-            "Kenneth Faried"
-          ],
-          "shared_nba_franchises": [
-            "Denver Nuggets"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Ian Clark",
-            "Malik Beasley"
-          ],
-          "shared_nba_franchises": [
-            "Denver Nuggets",
-            "Utah Jazz"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Kenneth Faried",
-            "Malik Beasley"
-          ],
-          "shared_nba_franchises": [
-            "Denver Nuggets"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Kenneth Faried",
-            "Thomas Robinson"
-          ],
-          "shared_nba_franchises": [
-            "Brooklyn Nets",
-            "Houston Rockets"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Malik Beasley",
-            "Thomas Robinson"
-          ],
-          "shared_nba_franchises": [
-            "Los Angeles Lakers"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Melbourne United",
       "players": [
         "Cole Anthony",
@@ -24878,6 +24813,61 @@
         "Sean McDermott"
       ],
       "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Cangrejeros de Santurce",
+      "players": [
+        "DJ Wilson",
+        "Ian Clark",
+        "John Jenkins",
+        "Malik Beasley",
+        "Thomas Robinson"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "DJ Wilson",
+            "Malik Beasley"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "DJ Wilson",
+            "Thomas Robinson"
+          ],
+          "shared_nba_franchises": [
+            "Houston Rockets",
+            "Philadelphia 76ers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Ian Clark",
+            "Malik Beasley"
+          ],
+          "shared_nba_franchises": [
+            "Denver Nuggets",
+            "Utah Jazz"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Malik Beasley",
+            "Thomas Robinson"
+          ],
+          "shared_nba_franchises": [
+            "Los Angeles Lakers"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
       "latest_stint_year": 2026
     },
     {
@@ -29988,7 +29978,7 @@
           "years": [
             "2023",
             "2025",
-            "2026–present"
+            "2026"
           ]
         },
         {
@@ -56711,12 +56701,12 @@
       },
       {
         "player": "Kenneth Faried",
-        "current_team": "Cangrejeros de Santurce",
-        "city": "San Juan",
+        "current_team": "Baskonia",
+        "city": "Vitoria",
         "state": "",
-        "country": "Puerto Rico",
+        "country": "Spain",
         "in_coords": true,
-        "last_updated": "2026-07-13"
+        "last_updated": "2026-08-26"
       },
       {
         "player": "Kenneth Lofton",
@@ -59448,6 +59438,12 @@
   },
   "latest_signings": [
     {
+      "player": "Kenneth Faried",
+      "from_team": "Cangrejeros de Santurce",
+      "to_team": "Baskonia",
+      "date": "2026-08-26"
+    },
+    {
       "player": "Jeenathan Williams",
       "from_team": "Golden State Warriors",
       "to_team": "Chiba Jets Funabashi",
@@ -59739,12 +59735,6 @@
       "player": "Kessler Edwards",
       "from_team": "Hapoel Tel Aviv",
       "to_team": "Virtus Bologna",
-      "date": "2026-07-13"
-    },
-    {
-      "player": "Jaylen Nowell",
-      "from_team": "Gigantes de Carolina",
-      "to_team": "Beşiktaş",
       "date": "2026-07-13"
     }
   ]
