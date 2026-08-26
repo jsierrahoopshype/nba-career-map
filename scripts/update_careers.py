@@ -550,15 +550,27 @@ for _eras in ERA_TABLE.values():
         _NBA_SLACK_NAMES.add(_n)
 
 
-def _last_nba_team(record: dict) -> str:
+def _last_nba_team(record: dict, exclude_team: str = "") -> str:
     """Most recent NBA franchise in the player's career history, or ''.
 
     Walks the history from the latest stint backwards. This is NOT the
     ledger's from_team: a player moving between two overseas clubs has an
     overseas from_team, but the sentence should still say which NBA team
     they are known from.
+
+    ``exclude_team`` is the move's destination, and it matters: by the time
+    the Slack sentence is built, the update has ALREADY appended the new
+    stint to career_history. Without excluding it, an NBA signing resolved
+    to the team the player just joined -- "Dennis Schroeder, formerly with
+    the Charlotte Hornets, has signed with the Charlotte Hornets". Only the
+    trailing run of destination stints is skipped, so an earlier, genuinely
+    former spell with the same franchise (a player returning to a club he
+    left years ago) still reads correctly.
     """
-    for stint in reversed(record.get("career_history", []) or []):
+    history = list(record.get("career_history", []) or [])
+    while exclude_team and history and history[-1].get("team") == exclude_team:
+        history.pop()
+    for stint in reversed(history):
         if stint.get("team") in _NBA_SLACK_NAMES:
             return stint["team"]
     return ""
@@ -571,9 +583,11 @@ def _slack_sentence(mv: dict, db, locations: dict) -> str:
     signed with Chiba Jets of Japan."
 
     - "formerly with the X" names the player's most recent NBA franchise
-      (see _last_nba_team), falling back to the raw from_team -- without
-      the "the", since non-NBA club names don't take an article -- only
-      when no NBA stint exists in the record.
+      EXCLUDING the one he just joined (see _last_nba_team) -- the record
+      already contains the destination stint at this point. When the
+      destination is his only NBA team, that lookup comes back empty and
+      the ledger's from_team is used instead, which is the real previous
+      club (e.g. Caleb Houstan: College Park Skyhawks -> Pelicans).
     - An NBA destination reads "has signed with the X" (no country); a
       non-NBA destination appends "of <country>" from team_locations,
       omitted entirely when the country is unknown.
@@ -583,11 +597,17 @@ def _slack_sentence(mv: dict, db, locations: dict) -> str:
     from_team = mv.get("from_team", "")
 
     record = db.by_name.get(player) or db.by_name.get(db.resolve_by_name(player) or "") or {}
-    last_nba = _last_nba_team(record)
-    if last_nba:
-        formerly = f", formerly with the {last_nba},"
-    elif from_team:
-        formerly = f", formerly with {from_team},"
+    former = _last_nba_team(record, to_team) or from_team
+    # Belt and braces: whatever the source, the sentence must never name the
+    # destination as the team the player is "formerly with" -- that reads as
+    # a bug to anyone in the channel even when the underlying move is real.
+    if former == to_team:
+        former = ""
+    if former:
+        # Non-NBA club names don't take an article ("formerly with Chiba
+        # Jets"), NBA franchises do ("formerly with the Detroit Pistons").
+        article = "the " if former in _NBA_SLACK_NAMES else ""
+        formerly = f", formerly with {article}{former},"
     else:
         formerly = ""
 
@@ -604,7 +624,12 @@ def _slack_payload(new_tx: list[dict], db, date: str) -> dict:
     """Batched Slack message: header, one sentence per move, closing link."""
     locations = load_json(LOCATIONS, {})
     n = len(new_tx)
-    header = f"\U0001F3C0 *{n} new team move{'s' if n != 1 else ''}* \u2014 {date}"
+    # "detected {date}", not just the bare date: this is the day the pipeline
+    # picked the move up, which can lag the actual signing by however long the
+    # source took to update (and by the rotation cycle). Wikipedia career
+    # stints are year-granular, so a real signing date isn't available to
+    # print instead -- saying which kind of date this is, is the honest fix.
+    header = f"\U0001F3C0 *{n} new team move{'s' if n != 1 else ''}* \u2014 detected {date}"
     lines = [header, ""]
     for mv in new_tx:
         lines.append(f"\u2022 {_slack_sentence(mv, db, locations)}")

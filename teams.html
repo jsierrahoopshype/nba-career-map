@@ -770,7 +770,8 @@
             document.getElementById('app').innerHTML = `
                 <a class="back" href="index.html">← Dashboard</a>
                 <div class="detail-title">Latest Signings</div>
-                <div class="detail-sub">${rows.length} moves · complete transaction ledger, newest first</div>
+                <div class="detail-sub">${rows.length} moves · complete transaction ledger, newest first ·
+                    <span class="mono">Detected</span> is when this pipeline picked the move up, not when it was signed</div>
                 <div id="tbl"></div>`;
             mountTable(document.getElementById('tbl'), {
                 unit:'moves', rows, sortKey:0, sortDir:-1,
@@ -778,7 +779,11 @@
                 filter:(r,q)=>r.player.toLowerCase().includes(q) ||
                     (r.from_team||'').toLowerCase().includes(q) || (r.to_team||'').toLowerCase().includes(q),
                 columns:[
-                    { label:'Date', sortVal:r=>r.date||'', cls:'mono', cell:r=>esc(r.date) },
+                    // "Detected", not "Date": the ledger stamps the day the
+                    // pipeline noticed the move. Wikipedia career stints are
+                    // year-granular ("2026–present"), so no signing date
+                    // exists in the source to show here.
+                    { label:'Detected', sortVal:r=>r.date||'', cls:'mono', cell:r=>esc(r.date) },
                     { label:'Player', sortVal:r=>r.player.toLowerCase(), cls:'wrap',
                       cell:r=>`<a class="link" href="${playerHref(r.player)}">${esc(r.player)}</a>` },
                     { label:'From', sortVal:r=>(r.from_team||'').toLowerCase(), cell:r=>teamCellFlag(r.from_team) },
