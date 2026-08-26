@@ -11,6 +11,7 @@
     <meta property="og:url" content="https://jsierrahoopshype.github.io/nba-career-map/">
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -313,6 +314,16 @@
         .lines .dlink { font-size: .92rem; font-weight: 600; }
 
         #heatmap { height: 440px; border-radius: 10px; overflow: hidden; background: var(--border); }
+
+        /* Raster-tile fallback only (no WebGL / basemap CDN unreachable --
+           see addBaseLayer). Standard OSM tiles are far more colourful than
+           the Positron style everything here is designed against, so they get
+           desaturated and lightened to sit back behind the red route lines
+           the same way. Scoped to the tile pane, so markers, polylines and
+           popups above it keep their real colours. */
+        .basemap-raster .leaflet-tile-pane {
+            filter: grayscale(1) contrast(.82) brightness(1.12);
+        }
         .heat-note { font-family: var(--mono); font-size: .72rem; color: var(--text-muted); margin-top: 10px; }
 
         /* tertiary tier: pushed to the bottom under its own section label,
@@ -1521,8 +1532,12 @@
         }
         .quiz-result-points.correct { color: #2ecc71; }
         /* No -5 penalty exists anymore -- a miss shows a plain dash, not a
-           colored point value, since no points changed hands. */
-        .quiz-result-points.wrong { color: rgba(255,255,255,.35); }
+           colored point value, since no points changed hands. Kept visually
+           subordinate to the green correct value, but not faint: .35 alpha
+           measured 3.2:1 against the row behind it, below the 4.5:1 floor.
+           .62 measures 7.4:1. (Every other secondary line on this screen was
+           measured at 6.6-6.9:1 and left alone.) */
+        .quiz-result-points.wrong { color: rgba(255,255,255,.62); }
 
         #shareImage {
             max-width: 100%;
@@ -2107,6 +2122,17 @@
     </div>
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Basemap renderer. OpenFreeMap serves VECTOR tiles, so Leaflet needs
+         MapLibre GL to draw them; maplibre-gl-leaflet mounts that renderer as
+         an ordinary Leaflet layer, which is what keeps every marker,
+         polyline, fitBounds and invalidateSize call on the pages below
+         working untouched. maplibre-gl is pinned to 5.x deliberately: 6.x
+         dropped the UMD build and ships ESM only, which this plugin's
+         window.maplibregl lookup can't see. If either file fails to load, or
+         the device has no WebGL, addBaseLayer() falls back to raster tiles --
+         see BASEMAP below. -->
+    <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js"></script>
     <script src="flags.js"></script>
     <script src="data-proxy.js"></script>
     <script>
@@ -2146,11 +2172,72 @@
         let map, markersLayer, pathLayer, markers = [];
         let players = [], data = {}, teamIdx = {}, current = null;
         
+        /* ============================ BASEMAP ==============================
+           Every map on this site (player career map, dashboard heatmap, quiz
+           map) draws its background here, so the provider is one edit rather
+           than three -- which is the lesson from how this changed: CARTO's
+           Positron raster tiles were used since launch and were moved behind
+           an API key, after which every map on the site rendered with a
+           diagonal "API KEY REQUIRED" watermark.
+
+           OpenFreeMap's Positron style is the replacement: no API key, no
+           registration, no request limits, and it IS Positron (same
+           OpenMapTiles style CARTO's design came from), so the light grey,
+           low-contrast look the red route lines are designed to sit on is
+           preserved exactly. Esri's light-grey canvas was the obvious
+           drop-in raster alternative and was rejected: those legacy
+           services are in mature/deprecated support and Esri is moving
+           basemaps behind ArcGIS keys too, so it would be the same failure
+           again on a timer.
+
+           The fallback is standard OSM raster with a grey filter (see
+           .basemap-raster CSS): it covers a device without WebGL and a
+           failed CDN load. It is not the primary because the OSM
+           Foundation's tile usage policy asks sites of this kind not to
+           lean on their tile servers.  */
+        const BASEMAP = {
+            style: 'https://tiles.openfreemap.org/styles/positron',
+            attribution: '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> | &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+            raster: {
+                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }
+        };
+
+        function _webglAvailable() {
+            try {
+                const c = document.createElement('canvas');
+                return !!(window.WebGLRenderingContext &&
+                          (c.getContext('webgl') || c.getContext('experimental-webgl')));
+            } catch(e) { return false; }
+        }
+
+        // Adds the basemap to a Leaflet map and returns the layer. Attribution
+        // is a licence condition of both providers, so it is always passed --
+        // Leaflet's own attribution control renders it small and out of the
+        // way, including on the quiz map (which previously showed none).
+        function addBaseLayer(map) {
+            const vector = window.L && L.maplibreGL && window.maplibregl && _webglAvailable();
+            const credit = vector ? BASEMAP.attribution : BASEMAP.raster.attribution;
+            // Added to the control directly rather than passed as a layer
+            // option: maplibre-gl-leaflet overrides getAttribution() and
+            // reads only the style's own source credits, so a layer-level
+            // attribution string is silently dropped there (verified). This
+            // route behaves identically for both providers.
+            if (map.attributionControl && map.attributionControl.addAttribution) {
+                map.attributionControl.addAttribution(credit);
+            }
+            if (vector) {
+                return L.maplibreGL({ style: BASEMAP.style }).addTo(map);
+            }
+            map.getContainer().classList.add('basemap-raster');
+            return L.tileLayer(BASEMAP.raster.url, { maxZoom: BASEMAP.raster.maxZoom }).addTo(map);
+        }
+
         function initMap() {
             map = L.map('map', {center:[39,-98], zoom:4});
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                attribution:'©OSM ©CARTO', subdomains:'abcd', maxZoom:19
-            }).addTo(map);
+            addBaseLayer(map);
             markersLayer = L.layerGroup().addTo(map);
             pathLayer = L.layerGroup().addTo(map);
             // Defensive: Leaflet sizes its tile grid to the container's box AT
@@ -2556,7 +2643,7 @@
             // fiddly, and the world view is usually what's wanted there).
             const heatMaxZoom = window.innerWidth >= 768 ? 11 : 19;
             heatMap = L.map('heatmap', {scrollWheelZoom:false, worldCopyJump:true, maxZoom: heatMaxZoom}).setView([25,10], 1);
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'©OSM ©CARTO',subdomains:'abcd',maxZoom:19}).addTo(heatMap);
+            addBaseLayer(heatMap);
             cities.forEach(c=>{
                 const r = Math.min(22, 5 + Math.sqrt(c.n)*3);
                 const clubs = [...c.clubs].slice(0,6).join(', ') + (c.clubs.size>6?'…':'');
@@ -3372,9 +3459,7 @@
             container.innerHTML = '<div id="quizMap" style="width:100%;height:100%"></div>';
             
             quizState.quizMap = L.map('quizMap', {center: [39, -98], zoom: 4});
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                attribution: '', subdomains: 'abcd', maxZoom: 19
-            }).addTo(quizState.quizMap);
+            addBaseLayer(quizState.quizMap);
             
             quizState.markersLayer = L.layerGroup().addTo(quizState.quizMap);
             quizState.pathLayer = L.layerGroup().addTo(quizState.quizMap);
@@ -3626,7 +3711,7 @@
                         // logo/green-circle convention.
                         icon = L.divIcon({
                             className: '',
-                            html: `<div style="position:relative;width:${boxW}px;height:${sz}px">${label}<div class="quiz-start-glow" style="--quiz-glow-color:${glowColor};position:absolute;left:${circleLeft}px;top:0;width:${sz}px;height:${sz}px;background:#fff;border-radius:50%;border:3px solid #fff;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="${logoUrl}" alt="" style="width:76%;height:76%;object-fit:contain" onerror="this.style.display='none';this.parentElement.style.background='#27ae60';this.parentElement.textContent='START';this.parentElement.style.color='#fff';this.parentElement.style.fontSize='8px';this.parentElement.style.fontWeight='700';"></div></div>`,
+                            html: `<div style="position:relative;width:${boxW}px;height:${sz}px">${label}<div class="quiz-start-glow" style="--quiz-glow-color:${glowColor};position:absolute;left:${circleLeft}px;top:0;width:${sz}px;height:${sz}px;background:#fff;border-radius:50%;border:3px solid #fff;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="${logoUrl}" alt="" style="width:76%;height:76%;object-fit:contain" onerror="var p=this.parentElement;if(!p)return;p.style.background='#27ae60';p.style.color='#fff';p.style.fontSize='8px';p.style.fontWeight='700';p.textContent='START';"></div></div>`,
                             iconSize: [boxW, sz],
                             iconAnchor: [circleLeft + sz/2, sz/2]
                         });
@@ -4561,7 +4646,7 @@
 
             if(earlierCount > 0) {
                 ctx.textAlign = 'center';
-                ctx.fillStyle = '#777';
+                ctx.fillStyle = '#a0a0a0';   // was #777: 3.9:1, below AA
                 ctx.font = 'italic 16px "Open Sans", Arial, sans-serif';
                 ctx.fillText(`+ ${earlierCount} earlier question${earlierCount === 1 ? '' : 's'} not shown`, size/2, y);
                 ctx.textAlign = 'left';
@@ -4604,9 +4689,17 @@
                 ctx.font = 'bold 21px "Open Sans", Arial, sans-serif';
                 ctx.fillText(r.player, textX, rowTop + 22);
 
-                ctx.fillStyle = '#888';
+                // Measured 4.9:1 against the card's background at #888 --
+                // technically AA, but this is a 15px line inside a 1080px
+                // image that people read scaled down in a social timeline,
+                // after JPEG recompression. #aaa takes it to 7.5:1 (AAA)
+                // while staying clearly subordinate to the white name above.
+                // The label is explicit too: the bare "Team · 2023" read as
+                // an unexplained fragment.
+                ctx.fillStyle = '#aaa';
                 ctx.font = '15px "Open Sans", Arial, sans-serif';
-                ctx.fillText(`${r.team || ''} · ${r.years || ''}`, textX, rowTop + 42);
+                const stopBits = [r.team || '', r.years || ''].filter(Boolean).join(' · ');
+                ctx.fillText(stopBits ? `Last team: ${stopBits}` : '', textX, rowTop + 42);
 
                 // Value -- real elapsed answer time (the score is the sum
                 // of exactly these); a miss still gets the neutral "MISS"
@@ -4617,7 +4710,9 @@
                     ctx.fillStyle = '#2ecc71';
                     ctx.fillText('+' + r.time.toFixed(1) + 's', size - 76, rowTop + 32);
                 } else {
-                    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+                    // 3.2:1 at 0.4 alpha -- below AA, and it is the most
+                    // important fact about the row it labels.
+                    ctx.fillStyle = 'rgba(255,255,255,0.62)';
                     ctx.fillText('MISS', size - 76, rowTop + 32);
                 }
                 ctx.textAlign = 'left';
