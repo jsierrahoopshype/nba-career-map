@@ -1,3 +1,73 @@
+## 2026-08-26 — full run
+
+- Players updated: **1268** (0 new)
+- New teams discovered: **12**
+- Team moves detected: **144**
+- Status changes: **19** (1 → overseas, 7 → retired)
+- Wikipedia requests: 1500  ⚠️ budget exhausted — continues next run
+- New teams: Bamberg Baskets, Básquet Coruña, Cedevita / Cedevita Olimpija, Detroit Pistons <!--, Körfez Basket, Lietkabelis Panevėžys, Maree Basketball Galway, Motor City Cruise-->, Phoenix Hagen, Saskatoon Mamba, Seattle SuperSonics / , Oklahoma City Thunder, South Bay / Coachella Valley Lakers
+  - Dennis Schroeder: Cleveland Cavaliers → Charlotte Hornets
+  - Grayson Allen: Phoenix Suns → Charlotte Hornets
+  - Jalen Pickett: Denver Nuggets → LA Clippers
+  - Jett Howard: Orlando Magic → Dallas Mavericks
+  - Kevon Looney: New Orleans Pelicans → Los Angeles Lakers
+  - Luguentz Dort: Oklahoma City Thunder → Atlanta Hawks
+  - Luke Kennard: Los Angeles Lakers → Phoenix Suns
+  - Matisse Thybulle: Portland Trail Blazers → Los Angeles Lakers
+  - Max Strus: Cleveland Cavaliers → LA Clippers
+  - Miles Bridges: Charlotte Hornets → Phoenix Suns
+  - Peyton Watson: Denver Nuggets → Cleveland Cavaliers
+  - Royce O'Neale: Phoenix Suns → Charlotte Hornets
+  - Tre Mann: Charlotte Hornets → Washington Wizards
+  - Ziaire Williams: Brooklyn Nets → Los Angeles Lakers
+  - Zaccharie Risacher: Atlanta Hawks → Dallas Mavericks
+  - Harrison Ingram: San Antonio Spurs → Utah Jazz
+  - Johni Broome: Philadelphia 76ers → LA Clippers
+  - Malique Lewis: Milwaukee Bucks → Cairns Taipans
+  - Ryan Nembhard: Dallas Mavericks → Atlanta Hawks
+  - LeBron James: Los Angeles Lakers → Philadelphia 76ers
+  - Sean Pedulla: LA Clippers → Houston Rockets
+  - Klay Thompson: Dallas Mavericks → Miami Heat
+  - Georges Niang: Utah Jazz → Golden State Warriors
+  - Cedi Osman: Panathinaikos → PAOK Thessaloniki
+  - Chaundee Brown: London Lions → Fukui Blowinds
+  - Malique Lewis: [nba_active → overseas_active]
+  - Darington Hobson: [overseas_active → retired]
+  - Jalen Slawson: [overseas_active → nba_active]
+  - Jeff Adrien: [overseas_active → retired]
+  - Jonathon Simmons: [overseas_active → retired]
+  - Josh Richardson: [overseas_active → retired]
+  - Julyan Stone: [overseas_active → retired]
+  - Justin Dentmon: [overseas_active → retired]
+  - Mario Hezonja: [overseas_active → nba_active]
+  - Markelle Fultz: [overseas_active → nba_active]
+  - Omer Yurtseven: [overseas_active → nba_active]
+  - Trayvon Palmer: [overseas_active → retired]
+  - Trey Jemison: [overseas_active → nba_active]
+  - Isaiah Crawford: [overseas_active → nba_active]
+  - David Jones García: [overseas_active → nba_active]
+  - John Tonje: [overseas_active → nba_active]
+  - Taelon Peter: [overseas_active → nba_active]
+  - Alondes Williams: [overseas_active → nba_active]
+  - Caleb Houstan: [overseas_active → nba_active]
+
+## 2026-08-26 — single run
+
+- Players updated: **1** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 1
+  - Kenneth Faried: Cangrejeros de Santurce → Baskonia
+
+## 2026-08-26 — incremental run
+
+- Players updated: **68** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 100  ⚠️ budget exhausted — continues next run
+
 ## 2026-08-25 — incremental run
 
 - Players updated: **69** (0 new)
