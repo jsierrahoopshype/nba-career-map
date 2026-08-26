@@ -869,6 +869,19 @@
             overscroll-behavior: contain;
         }
         .quiz-overlay.show { display: flex; }
+        /* Quiz-route first paint. The <head> script below stamps
+           html.quiz-boot from the URL before anything renders, so the very
+           first frame is the quiz intro -- not the dashboard, and not a
+           blank page that later becomes the dashboard. Without this the
+           router painted the dashboard, then sat on it for the whole
+           careers-JSON fetch (measured: 2.6s of visible dashboard on a
+           throttled connection) before the overlay appeared. */
+        html.quiz-boot #dashboardView,
+        html.quiz-boot #mapView { display: none !important; }
+        html.quiz-boot #quizOverlay { display: flex; }
+        /* START stays inert until the careers file has loaded, since the
+           intro is now on screen before its data exists. */
+        .quiz-dark-start-btn[disabled] { opacity: .55; cursor: default; }
 
         .quiz-box {
             background: #fff;
@@ -1903,6 +1916,19 @@
             background: var(--qd-card-border);
         }
     </style>
+    <script>
+        // Runs before first paint: if this is a quiz URL, mark the document
+        // so the CSS above shows the quiz and hides the dashboard from frame
+        // one. Purely presentational -- route() still does the real work.
+        (function () {
+            try {
+                var p = new URLSearchParams(location.search);
+                if (p.get('view') === 'quiz' || p.get('quizdirect')) {
+                    document.documentElement.classList.add('quiz-boot');
+                }
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -2256,20 +2282,23 @@
                 await ensureCareers();
                 if(data[player]) show(player, {push:false});
                 else backToWelcome();
-            } else if(view === 'quiz'){
-                // Legacy quiz links redirect to quiz.html -- the page that
-                // carries the quiz's own Open Graph tags (social crawlers
-                // fetch whatever URL is shared, and index.html's OG tags
-                // describe the homepage). quiz.html bounces humans back
-                // here with ?quizdirect=1, which opens the quiz WITHOUT
-                // re-redirecting -- that param is the loop-breaker, don't
-                // fold it back into view=quiz.
-                location.replace('quiz.html');
-            } else if(p.get('quizdirect')){
-                showView('dashboard');           // quiz overlay sits atop the dashboard
-                renderDashboard();
-                await ensureCareers();
-                startQuiz();
+            } else if(view === 'quiz' || p.get('quizdirect')){
+                // Both quiz entry points are handled IN PLACE -- no
+                // navigation. ?view=quiz used to location.replace() to
+                // quiz.html, which bounced straight back here with
+                // ?quizdirect=1: three full document loads (each re-running
+                // boot()) to open one quiz. That redirect never helped the
+                // Open Graph case anyway, since crawlers read quiz.html's
+                // static tags without running JS and never follow this path;
+                // quiz.html remains the shared URL (QUIZ_SHARE_URL).
+                //
+                // The dashboard is deliberately NOT rendered here: it sits
+                // under an opaque full-screen overlay, so building it was
+                // both wasted work and the thing that was visibly flashing
+                // while the careers file loaded.
+                startQuiz();                     // paints instantly (static intro)
+                await ensureCareers();           // then the heavy data
+                _setQuizStartEnabled(true);
             } else {
                 showView('dashboard');
                 renderDashboard();
@@ -3033,6 +3062,16 @@
             document.body.style.overflow = lock ? 'hidden' : '';
         }
 
+        // The intro now paints before the careers file has loaded, so
+        // START must stay inert until the data it needs exists -- otherwise
+        // beginQuiz() would hit its "not enough eligible players" alert.
+        function _setQuizStartEnabled(on) {
+            const btn = document.querySelector('.quiz-dark-start-btn');
+            if(!btn) return;
+            btn.disabled = !on;
+            btn.textContent = on ? '\u25B6 START' : 'Loading\u2026';
+        }
+
         function startQuiz() {
             // Show the intro (title/premise/rules/start button) before any
             // question -- exactly once per quiz-mode entry. "Play Again" on
@@ -3041,11 +3080,14 @@
             document.getElementById('quizOverlay').classList.add('show');
             document.getElementById('quizIntro').style.display = 'block';
             document.getElementById('quizFinal').style.display = 'none';
+            _setQuizStartEnabled(Object.keys(data).length > 0);
             _quizLockBodyScroll(true);
 
-            // route() called showView('dashboard') just before this, so the
-            // dashboard is fully rendered underneath the (opaque, fixed)
-            // quiz overlay -- harmless for real users, since overflow:hidden
+            // On a direct quiz URL the dashboard was never rendered (see
+            // route()); this covers the in-app path, where the player was
+            // already on a rendered dashboard when they opened the quiz.
+            // Hiding it matters because a covered-not-hidden dashboardView
+            // is harmless for real users -- overflow:hidden
             // above already makes it genuinely unreachable by any real
             // scroll/swipe (verified: window.scrollY stays 0 through actual
             // touch-drag gestures, not just a JS-set scrollTop). But a
@@ -3087,10 +3129,17 @@
 
             // Restore original map
             document.getElementById('map').style.display = '';
+            // Drop the pre-paint quiz-route class before restoring the
+            // dashboard: its CSS uses !important, so the inline style below
+            // alone would not win and the page would go blank on close.
+            document.documentElement.classList.remove('quiz-boot');
             // Restore the dashboard hidden in startQuiz() -- this is the
             // only path back that doesn't already re-run route() (which
-            // would call showView('dashboard') itself).
+            // would call showView('dashboard') itself). A direct quiz URL
+            // never rendered the dashboard, so build it now.
             document.getElementById('dashboardView').style.display = 'block';
+            if(!document.getElementById('dashboardView').textContent.trim()) renderDashboard();
+            history.replaceState({}, '', 'index.html');
         }
         
         function beginQuiz() {
@@ -4424,7 +4473,12 @@ document.addEventListener('DOMContentLoaded', boot);
                 <li>Slow answers (over 10s) add up. Every 3rd one costs a life, even if you got it right</li>
                 <li>No fixed length: survive as long as you can, your time survived is the score</li>
             </ol>
-            <button class="quiz-dark-start-btn" onclick="beginQuiz()">▶ START</button>
+            <!-- Starts inert in the markup on purpose: on a direct quiz URL the
+                 intro is painted by CSS (html.quiz-boot) before any script runs,
+                 so a statically-enabled START would look clickable for the whole
+                 careers-file download. _setQuizStartEnabled() flips it to
+                 "▶ START" as soon as the data it needs exists. -->
+            <button class="quiz-dark-start-btn" onclick="beginQuiz()" disabled>Loading…</button>
             <div class="quiz-contact-footer">
                 <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
                 <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
