@@ -31,7 +31,7 @@ on:
       max_requests:
         description: "Max Wikipedia requests this run"
         type: string
-        default: "100"
+        default: "650"
 
 concurrency:
   group: update-careers
@@ -43,7 +43,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -81,7 +81,7 @@ jobs:
           python3 scripts/update_careers.py \
             --mode "$MODE" \
             --player "${IN_PLAYER:-}" \
-            --max-requests "${IN_MAX:-100}" \
+            --max-requests "${IN_MAX:-650}" \
             --delay 1.0
 
       - name: Rebuild dashboard data

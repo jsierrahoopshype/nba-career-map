@@ -21,7 +21,17 @@ but whose Wikipedia shows a current overseas team becomes overseas_active (not
 retired); one with no team for 2+ years becomes retired.
 
 Rate limiting: WikipediaClient enforces --delay seconds between requests and a
-hard --max-requests budget per run (roster fetches count toward it).
+hard --max-requests budget per run (roster fetches count toward it). The delay
+is measured start-to-start, so network latency is absorbed into it and each
+request costs ~max(delay, latency) ~= 1.0s of wall time at the default delay.
+
+Budget sizing: the incremental queue is the whole active rotation (~1,295
+players as of Aug 2026) and real runs average ~1.46 requests per player
+(measured over 12 consecutive daily runs), so a full sweep costs ~1,900
+requests. The default 650/run therefore refreshes ~445 players/day and cycles
+the rotation in ~3 days, at ~11 minutes of wall time -- comfortably inside the
+job timeout. The previous default of 100 refreshed only ~68 players/day, a
+19-day cycle, which meant a signing could sit unnoticed for weeks.
 
 Outputs are written under /data and /logs; the root
 nba_players_careers_READY.json is kept in sync so index.html keeps working.
@@ -389,7 +399,8 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
     summary = {"date": today(), "mode": mode, "players_updated": [],
                "new_players": [], "new_teams": [], "team_moves": [],
                "status_changes": [], "newly_overseas": [], "newly_retired": [],
-               "requests": 0, "budget_exhausted": False}
+               "requests": 0, "budget_exhausted": False,
+               "queue_size": 0, "queue_completed": False}
 
     if mode == "review":
         _run_review(db, client, summary)
@@ -400,6 +411,8 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
             for team_players in rosters.values():
                 roster_players.update(team_players)
         queue = build_queue(db, mode, player, roster_players)
+        summary["queue_size"] = len(queue)
+        summary["queue_completed"] = True   # cleared below if the budget cuts the run short
         discovered: dict = {}
         for name in queue:
             try:
@@ -407,6 +420,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                     db, name, client, discovered, roster_players, current_year)
             except RequestBudgetExceeded:
                 summary["budget_exhausted"] = True
+                summary["queue_completed"] = False
                 break
             except Exception as exc:  # noqa: BLE001
                 print(f"[update] {name}: failed ({exc})")
@@ -670,8 +684,10 @@ def _append_logs(summary: dict) -> None:
         f" ({len(summary.get('newly_overseas', []))} → overseas,"
         f" {len(summary.get('newly_retired', []))} → retired)",
         f"- Wikipedia requests: {summary['requests']}"
-        + ("  ⚠️ budget exhausted — continues next run"
-           if summary.get("budget_exhausted") else ""),
+        + ("  ⚠️ budget exhausted — queue truncated, continues next run"
+           if summary.get("budget_exhausted")
+           else (f"  ✅ queue complete ({summary.get('queue_size', 0)} queued)"
+                 if summary.get("queue_completed") else "")),
     ]
     if summary["new_players"]:
         lines.append(f"- New players: {', '.join(summary['new_players'][:25])}"
@@ -699,7 +715,7 @@ def parse_args():
                     default="incremental")
     ap.add_argument("--player", default=None, help="player name for --mode single")
     ap.add_argument("--delay", type=float, default=1.0)
-    ap.add_argument("--max-requests", type=int, default=100)
+    ap.add_argument("--max-requests", type=int, default=650)
     return ap.parse_args()
 
 
