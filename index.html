@@ -1850,6 +1850,40 @@
         .qf-name-save:disabled { opacity: .6; cursor: default; }
         .qf-name-hint { margin-top: 8px; font-size: 11.5px; color: var(--qd-text-dim); }
 
+        /* Optional X handle, beneath the name row in the same form. Styled
+           as a secondary field so it reads as optional at a glance rather
+           than competing with the name it hangs off. */
+        .qf-name-handle { margin-top: 12px; }
+        .qf-name-handle label {
+            display: block;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            margin-bottom: 6px;
+        }
+        .qf-name-handle label span {
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-transform: none;
+            opacity: .7;
+        }
+        .qf-name-handle input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--qd-text);
+            background: var(--qd-bg1, #0c0c14);
+            border: 1px solid var(--qd-card-border);
+            border-radius: 10px;
+            outline: none;
+        }
+        .qf-name-handle input:focus { border-color: #f0b429; }
+        .qf-handle { color: #f0b429; font-weight: 700; font-size: 12.5px; text-decoration: none; }
+        .qf-handle:hover { text-decoration: underline; }
+
         .qf-name-edit {
             margin-left: 8px;
             background: transparent;
@@ -1864,30 +1898,6 @@
         }
         .qf-name-edit:hover { color: #f0b429; border-color: #f0b429; }
 
-        /* Intro-screen name field: pre-filled with the stored/generated
-           handle so the player can replace it before starting. */
-        .quiz-name-field { margin: 4px 0 16px; text-align: left; }
-        .quiz-name-field label {
-            display: block;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--qd-text-dim);
-            margin-bottom: 6px;
-        }
-        .quiz-name-field input {
-            width: 100%;
-            padding: 10px 12px;
-            font-size: 14px;
-            font-family: inherit;
-            color: var(--qd-text);
-            background: var(--qd-card);
-            border: 1px solid var(--qd-card-border);
-            border-radius: 10px;
-            outline: none;
-        }
-        .quiz-name-field input:focus { border-color: #f0b429; }
         .qf-lb-row {
             display: flex;
             align-items: center;
@@ -1905,16 +1915,36 @@
             font-variant-numeric: tabular-nums;
         }
         .qf-lb-row.top .qf-lb-rank { color: #f0b429; }
+        /* Name column stacks the handle/date metadata under the name when
+           the backend supplies them; with an older backend it collapses
+           back to exactly the single-line row it was before. */
         .qf-lb-name {
             flex: 1;
             min-width: 0;
             font-weight: 700;
             color: #fff;
             overflow: hidden;
+        }
+        .qf-lb-nametext {
+            display: block;
+            overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        .qf-lb-row.you .qf-lb-name::after {
+        .qf-lb-meta {
+            display: block;
+            margin-top: 2px;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: .2px;
+            color: var(--qd-text-dim);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .qf-lb-meta a { color: #f0b429; text-decoration: none; }
+        .qf-lb-meta a:hover { text-decoration: underline; }
+        .qf-lb-row.you .qf-lb-nametext::after {
             content: 'YOU';
             margin-left: 8px;
             font-size: 9px;
@@ -2451,6 +2481,19 @@
             wAllStarsAbroad(document.getElementById('w-allstars-abroad'));
         }
 
+        // Ledger dates are DETECTION dates -- the day this pipeline noticed
+        // the move -- not signing dates. They can't be signing dates: the
+        // source is Wikipedia career-history stints, which carry year
+        // granularity only ("2026–present"), with no month or day anywhere
+        // in the markup. Every surface that shows one says "detected" so the
+        // number is never read as the day a deal was done.
+        function _detectedLabel(iso){
+            const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso||''));
+            if(!m) return iso ? `detected ${iso}` : '';
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return `detected ${months[Number(m[2])-1]} ${Number(m[3])}`;
+        }
+
         // 1. latest signings ticker
         function wSignings(el){
             const rows = (DASH.latest_signings||[]);
@@ -2459,7 +2502,7 @@
                 <div class="tick-row">
                   <span class="tick-player">${dPlayer(r.player)}</span>
                   <span class="tick-move">${dTeamFlag(r.from_team)} → ${dTeamFlag(r.to_team)}</span>
-                  <span class="tick-date">${_escH(r.date)}</span>
+                  <span class="tick-date">${_escH(_detectedLabel(r.date))}</span>
                 </div>`).join('') || '<div class="heat-note">No signings recorded yet.</div>'}</div>`;
         }
 
@@ -3992,15 +4035,17 @@
 
             document.getElementById('quizResultsList').innerHTML = resultsList;
 
-            // Nothing is submitted yet: the name form gates it. The
-            // percentile line and leaderboard stay hidden until the player
-            // confirms, because both describe a row that doesn't exist
-            // until then (rank/highlight would otherwise be meaningless).
             const percentileEl = document.getElementById('quizPercentile');
             percentileEl.style.display = 'none';
             percentileEl.classList.remove('loading');
-            document.getElementById('qfLeaderboard').style.display = 'none';
-            _resetQuizNameForm();
+
+            // The leaderboard is standings that exist independently of this
+            // run, so it renders straight away -- a first-time player used
+            // to reach the results screen and see nothing at all here.
+            // _applyQuizNameState() fetches it a second time after a
+            // submission so the player's own row shows up highlighted.
+            fetchLeaderboard();
+            _applyQuizNameState();
 
             // The share card doesn't depend on submission, so build it now.
             generateShareImage();
@@ -4031,13 +4076,18 @@
                 // name is a fun anonymous per-browser handle (see
                 // getQuizNickname()), not personal info -- purely so the
                 // leaderboard section below has something to display per row.
+                // handle is optional and additive: an Apps Script deployment
+                // that predates it simply ignores the extra query param, so
+                // sending it unconditionally is safe against an un-updated
+                // backend.
                 const params = new URLSearchParams({
                     action: 'submit',
                     score: quizState.score.toFixed(2),
                     correct: correct,
                     missed: missed,
                     mode: 'survival',
-                    name: getQuizNickname()
+                    name: getQuizNickname(),
+                    handle: getQuizHandle()
                 });
 
                 const response = await fetch(SCORE_API_URL + '?' + params.toString(), {
@@ -4074,6 +4124,12 @@
         // run, in the same anonymous-handle spirit as the reference game's
         // own leaderboard usernames.
         const QUIZ_NICKNAME_KEY = 'nbaQuizNickname';
+        // Set once a player has actually chosen a name. Distinguishes "we
+        // generated a handle for this browser" from "this person told us
+        // who they are" -- only the latter earns a zero-click submit.
+        const QUIZ_NAME_OK_KEY = 'nbaQuizNameConfirmed';
+        const QUIZ_HANDLE_KEY = 'nbaQuizHandle';
+        const QUIZ_HANDLE_MAX = 15;   // X's own limit
         const QUIZ_NICKNAME_ADJ = ['Clutch','Baseline','Corner','FastBreak','Rimrunner','Paint','Buzzer','Crossover','Alley','Backdoor','Fadeaway','Hustle','Pickup','Zone','Fullcourt'];
         const QUIZ_NICKNAME_NOUN = ['Hoopster','Baller','Scout','Rook','Vet','Sniper','Grinder','Rebounder','Playmaker','Hooper','Shooter','Defender'];
         const QUIZ_NAME_MAX = 20;
@@ -4118,8 +4174,60 @@
 
         function setQuizNickname(raw) {
             const name = sanitizeQuizName(raw, getQuizNickname());
-            try { localStorage.setItem(QUIZ_NICKNAME_KEY, name); } catch(e) {}
+            try {
+                localStorage.setItem(QUIZ_NICKNAME_KEY, name);
+                localStorage.setItem(QUIZ_NAME_OK_KEY, '1');
+            } catch(e) {}
             return name;
+        }
+
+        // An X handle: strip a leading @, keep only what X itself allows,
+        // cap at 15. Returns '' for anything unusable -- the field is
+        // optional, so an unusable value is simply no handle, never an error.
+        function sanitizeQuizHandle(raw) {
+            return String(raw ?? '')
+                .trim()
+                .replace(/^@+/, '')
+                .replace(/[^A-Za-z0-9_]/g, '')
+                .slice(0, QUIZ_HANDLE_MAX);
+        }
+
+        function getQuizHandle() {
+            try { return localStorage.getItem(QUIZ_HANDLE_KEY) || ''; } catch(e) { return ''; }
+        }
+
+        function setQuizHandle(raw) {
+            const h = sanitizeQuizHandle(raw);
+            try {
+                if(h) localStorage.setItem(QUIZ_HANDLE_KEY, h);
+                else localStorage.removeItem(QUIZ_HANDLE_KEY);
+            } catch(e) {}
+            return h;
+        }
+
+        // Does a stored name look like one WE generated? Both word lists are
+        // fixed and known, so this is an exact test, not a guess. It exists
+        // for one job: players who saved a name before QUIZ_NAME_OK_KEY
+        // existed have the name but not the flag, and shouldn't be asked
+        // again just because the flag is new.
+        function _looksGeneratedName(name) {
+            const adj = QUIZ_NICKNAME_ADJ.join('|');
+            const noun = QUIZ_NICKNAME_NOUN.join('|');
+            return new RegExp(`^(${adj})(${noun})\\d{2}$`).test(String(name || ''));
+        }
+
+        function hasConfirmedQuizName() {
+            try {
+                if(localStorage.getItem(QUIZ_NAME_OK_KEY) === '1') return true;
+                const stored = localStorage.getItem(QUIZ_NICKNAME_KEY);
+                if(stored && !_looksGeneratedName(stored)) {
+                    localStorage.setItem(QUIZ_NAME_OK_KEY, '1');   // migrate, ask once less
+                    return true;
+                }
+                return false;
+            } catch(e) {
+                return false;   // no storage -> treat every run as a first run
+            }
         }
 
         // Name is asked at the END of a run now. Submission is DEFERRED
@@ -4136,42 +4244,95 @@
         // run would reintroduce exactly the problem this change removes.
         // The trade is a lost score on abandonment, which is the safer
         // failure: nothing wrong is published.
-        function _resetQuizNameForm() {
+        // Renders the "Playing as: NAME @handle [not you?]" row.
+        function _showQuizNameRow(lead) {
+            const form = document.getElementById('qfNameForm');
+            const row = document.getElementById('qfNameRow');
+            const label = document.getElementById('qfNameValue');
+            const leadEl = document.getElementById('qfNameLead');
+            const handleEl = document.getElementById('qfHandleValue');
+            const handle = getQuizHandle();
+            if(form) form.style.display = 'none';
+            if(row) row.style.display = '';
+            if(label) label.textContent = getQuizNickname();
+            if(leadEl) leadEl.textContent = lead;
+            if(handleEl) {
+                handleEl.textContent = handle ? '@' + handle : '';
+                handleEl.href = handle ? 'https://x.com/' + encodeURIComponent(handle) : '#';
+                handleEl.style.display = handle ? '' : 'none';
+            }
+        }
+
+        function _showQuizNameForm() {
             const form = document.getElementById('qfNameForm');
             const row = document.getElementById('qfNameRow');
             const input = document.getElementById('qfNameInput');
+            const handleInput = document.getElementById('qfHandleInput');
             const btn = document.getElementById('qfNameSaveBtn');
             const hint = document.getElementById('qfNameHint');
             if(form) form.style.display = '';
             if(row) row.style.display = 'none';
-            if(input) input.value = getQuizNickname();   // pre-filled: repeat players just confirm
-            if(btn) { btn.disabled = false; btn.textContent = 'Save score'; }
-            if(hint) hint.textContent = 'Confirm your name to post this run to the leaderboard.';
+            if(input) input.value = getQuizNickname();   // pre-filled with the generated handle
+            if(handleInput) handleInput.value = getQuizHandle() ? '@' + getQuizHandle() : '';
+            if(btn) {
+                btn.disabled = false;
+                // Already submitted (a returning player editing their name):
+                // the row is written and there's no update mechanism, so this
+                // press only changes what future runs post under.
+                btn.textContent = quizState.submitted ? 'Save name' : 'Save score';
+            }
+            if(hint) hint.textContent = quizState.submitted
+                ? 'This run is already posted. A new name applies from your next run.'
+                : 'Save to post this run to the leaderboard.';
         }
 
-        // Confirm -> persist the name, submit the score, THEN load the
-        // leaderboard (so the player's own rank/highlight reflects the row
-        // that was just written).
-        async function confirmQuizName() {
-            if(quizState.submitted) return;
+        // Called on every results screen. A player who has chosen a name
+        // posts with zero clicks; only a first-timer sees the form.
+        async function _applyQuizNameState() {
+            if(hasConfirmedQuizName()) {
+                _showQuizNameRow('Playing as:');
+                if(!quizState.submitted) {
+                    quizState.submitted = true;
+                    await submitScore();
+                    _showQuizNameRow('Posted as:');
+                    fetchLeaderboard();      // refresh so the player's own row is highlighted
+                }
+            } else {
+                _showQuizNameForm();
+            }
+        }
+
+        // "not you?" -- reopen the form. For a first-timer this is a no-op
+        // (the form is already showing); for a returning player it's the
+        // only way back to the field.
+        function editQuizName() {
+            _showQuizNameForm();
             const input = document.getElementById('qfNameInput');
+            if(input) { input.focus(); input.select(); }
+        }
+
+        // Save -> persist name + handle, submit if this run hasn't been
+        // posted yet, THEN reload the leaderboard (so the player's own
+        // rank/highlight reflects the row that was just written).
+        async function confirmQuizName() {
+            const input = document.getElementById('qfNameInput');
+            const handleInput = document.getElementById('qfHandleInput');
             const btn = document.getElementById('qfNameSaveBtn');
             const hint = document.getElementById('qfNameHint');
             const saved = setQuizNickname(input ? input.value : '');
+            setQuizHandle(handleInput ? handleInput.value : '');
             if(input) input.value = saved;
+
+            if(quizState.submitted) {          // editing after an auto-submit
+                _showQuizNameRow('Posted as:');
+                return;
+            }
             if(btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
             if(hint) hint.textContent = 'Posting your run…';
 
             quizState.submitted = true;
             await submitScore();
-
-            const form = document.getElementById('qfNameForm');
-            const row = document.getElementById('qfNameRow');
-            const label = document.getElementById('qfNameValue');
-            if(label) label.textContent = saved;
-            if(form) form.style.display = 'none';
-            if(row) row.style.display = '';
-
+            _showQuizNameRow('Posted as:');
             fetchLeaderboard();
         }
 
@@ -4182,8 +4343,15 @@
         // same way: the leaderboard section stays hidden and the plain
         // "Rank #X of Y" line (already set by submitScore()) stays visible
         // as the fallback, so nothing looks broken either way.
+        // The results screen fetches the board twice -- once on arrival, once
+        // after a submission -- and those two rounds can land out of order.
+        // Only the newest round is allowed to render, otherwise a slow
+        // pre-submit response could overwrite the post-submit board and drop
+        // the player's own highlighted row.
+        let _lbFetchSeq = 0;
         async function fetchLeaderboard() {
             if (!SCORE_API_URL || SCORE_API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+            const seq = ++_lbFetchSeq;
             // Three time windows, fetched in parallel. The updated Apps
             // Script (delivered alongside this change) accepts window=
             // daily|weekly|all and ECHOES the window back in its response;
@@ -4213,6 +4381,7 @@
                     return null;
                 }
             }));
+            if(seq !== _lbFetchSeq) return;   // a newer round already rendered
             let anyRendered = false;
             results.forEach(r => {
                 if(!r) return;
@@ -4227,18 +4396,47 @@
             }
         }
 
+        // "Detected"-style date for a leaderboard row: this one IS a real
+        // event time (the sheet's own submission timestamp), unlike the
+        // transaction ledger's dates.
+        function _lbDate(iso) {
+            const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ''));
+            if(!m) return '';
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return `${months[Number(m[2])-1]} ${Number(m[3])}, ${m[1]}`;
+        }
+
         function renderLeaderboardSection(entries, rowsElId, sectionElId) {
             const myRank = quizState.rank;
+            const myName = getQuizNickname();
             const rows = entries.map(e => {
                 const isTop = e.rank <= 3;
-                // "you" highlight only makes sense against the all-time
-                // ranking, which is what submitScore()'s rank refers to.
-                const isYou = sectionElId === 'qfLbAll' && !!myRank && e.rank === myRank;
+                // Two ways to be "you": the all-time rank submitScore() got
+                // back, and an exact name+score match, which is what makes
+                // the highlight work in the Today/This Week sections too
+                // (the returned rank is an all-time rank only).
+                // Compare against the value that was actually SUBMITTED
+                // (2dp), not the raw float -- the row in the sheet is the
+                // rounded one, so comparing against the full-precision score
+                // would sit right on the rounding boundary.
+                const mySubmitted = Number(quizState.score.toFixed(2));
+                const isYou = quizState.submitted && (
+                    (sectionElId === 'qfLbAll' && !!myRank && e.rank === myRank) ||
+                    (e.name === myName && Math.abs(Number(e.score) - mySubmitted) < 0.001)
+                );
+                // handle and date are only present on an updated backend;
+                // without them the row renders exactly as it did before.
+                const handle = sanitizeQuizHandle(e.handle);
+                const when = _lbDate(e.date);
+                const bits = [];
+                if(handle) bits.push(`<a href="https://x.com/${encodeURIComponent(handle)}" target="_blank" rel="noopener">@${_escH(handle)}</a>`);
+                if(when) bits.push(_escH(when));
+                const meta = bits.length ? `<span class="qf-lb-meta">${bits.join(' · ')}</span>` : '';
                 // Score is real survival seconds -- render it the same
                 // MM:SS.CC way as everywhere else.
                 return `<div class="qf-lb-row ${isTop ? 'top' : ''} ${isYou ? 'you' : ''}">
                     <span class="qf-lb-rank">#${e.rank}</span>
-                    <span class="qf-lb-name">${e.name}</span>
+                    <span class="qf-lb-name"><span class="qf-lb-nametext">${_escH(e.name)}</span>${meta}</span>
                     <span class="qf-lb-score">${formatSurvivalTime(Number(e.score))}</span>
                 </div>`;
             }).join('');
@@ -4601,10 +4799,11 @@ document.addEventListener('DOMContentLoaded', boot);
                  above the action row: this is the only place a repeat
                  player reliably sees it, since Play Again now routes back
                  through the intro (which also carries the name field). -->
-            <!-- Name is asked HERE, at the end of the run, and the score
-                 is not written until it is confirmed (see
-                 confirmQuizName/submitScore). Pre-filled from the stored
-                 name so a repeat player just presses Save. -->
+            <!-- FIRST-TIME players only. Once a name has been saved, the
+                 run posts automatically on game end and this form stays
+                 hidden -- the row below is what a returning player sees
+                 (see showFinalResults/_applyQuizNameState). The form comes
+                 back only if they choose "not you?". -->
             <div class="qf-name-form" id="qfNameForm">
                 <label for="qfNameInput">Your leaderboard name</label>
                 <div class="qf-name-inputrow">
@@ -4612,10 +4811,19 @@ document.addEventListener('DOMContentLoaded', boot);
                            onkeydown="if(event.key==='Enter'){event.preventDefault();confirmQuizName();}">
                     <button class="qf-name-save" id="qfNameSaveBtn" onclick="confirmQuizName()">Save score</button>
                 </div>
-                <div class="qf-name-hint" id="qfNameHint">Confirm your name to post this run to the leaderboard.</div>
+                <div class="qf-name-handle">
+                    <label for="qfHandleInput">X handle <span>optional</span></label>
+                    <input type="text" id="qfHandleInput" maxlength="16" autocomplete="off" spellcheck="false"
+                           placeholder="@yourhandle"
+                           onkeydown="if(event.key==='Enter'){event.preventDefault();confirmQuizName();}">
+                </div>
+                <div class="qf-name-hint" id="qfNameHint">Save to post this run to the leaderboard.</div>
             </div>
             <div class="qf-name-row" id="qfNameRow" style="display:none">
-                Posted as: <span id="qfNameValue"></span>
+                <span id="qfNameLead">Playing as:</span>
+                <span id="qfNameValue"></span>
+                <a id="qfHandleValue" class="qf-handle" target="_blank" rel="noopener" style="display:none"></a>
+                <button class="qf-name-edit" onclick="editQuizName()">not you?</button>
             </div>
 
             <!-- ONE primary action. Every share path lives in the share
