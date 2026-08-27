@@ -1423,6 +1423,12 @@
                 animation: none !important;
                 transition: none !important;
             }
+            /* Static placeholder rows: still visibly a pending state, just
+               without the sweep. */
+            .qf-lb-skel {
+                animation: none !important;
+                background: rgba(255,255,255,.07) !important;
+            }
             /* The Ready?/Go! words still swap on the same schedule, they
                just appear instead of popping in. */
             .quiz-readygo .quiz-dark-hero {
@@ -1776,6 +1782,37 @@
             margin-bottom: 8px;
             padding: 0 14px;
         }
+        /* Pending state for the board. Uses the same card tokens as the real
+           rows, so it reads as "this is filling in" rather than as a
+           different component. */
+        .qf-lb-loading { padding: 4px 14px 10px; }
+        .qf-lb-skel-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--qd-text-dim);
+            padding: 8px 0 10px;
+        }
+        .qf-lb-skel {
+            height: 34px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg,
+                rgba(255,255,255,.045) 25%,
+                rgba(255,255,255,.10) 37%,
+                rgba(255,255,255,.045) 63%);
+            background-size: 400% 100%;
+            animation: qfLbShimmer 1.4s ease-in-out infinite;
+        }
+        .qf-lb-skel:nth-child(3) { opacity: .8; }
+        .qf-lb-skel:nth-child(4) { opacity: .6; }
+        .qf-lb-skel:nth-child(5) { opacity: .4; }
+        @keyframes qfLbShimmer {
+            0%   { background-position: 100% 50%; }
+            100% { background-position: 0 50%; }
+        }
+
         /* One block per time window (Today / This Week / All-Time), same
            row pattern inside each; the window label gets the gold accent
            so the three sections scan apart at a glance. */
@@ -4443,51 +4480,165 @@
         // pre-submit response could overwrite the post-submit board and drop
         // the player's own highlighted row.
         let _lbFetchSeq = 0;
-        async function fetchLeaderboard() {
-            if (!SCORE_API_URL || SCORE_API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
-            const seq = ++_lbFetchSeq;
-            // Three time windows, fetched in parallel. The updated Apps
-            // Script (delivered alongside this change) accepts window=
-            // daily|weekly|all and ECHOES the window back in its response;
-            // a legacy deployment ignores the param and returns all-time
-            // entries with no echo -- in that case only the All-Time
-            // section renders (showing all-time rows under "Today" would
-            // be wrong data, not a degraded view).
-            // Depth per window (server caps limit at 100): a short daily
-            // board, deeper weekly, full all-time. Sections scroll rather
-            // than stretching the page (see .qf-leaderboard-rows CSS).
-            const windows = [
-                { key: 'daily', rowsEl: 'qfLbDailyRows', sectionEl: 'qfLbDaily', limit: 10 },
-                { key: 'weekly', rowsEl: 'qfLbWeeklyRows', sectionEl: 'qfLbWeekly', limit: 25 },
-                { key: 'all', rowsEl: 'qfLbAllRows', sectionEl: 'qfLbAll', limit: 100 },
-            ];
-            const results = await Promise.all(windows.map(async w => {
-                try {
-                    const params = new URLSearchParams({ action: 'leaderboard', mode: 'survival', limit: w.limit, window: w.key });
-                    const response = await fetch(SCORE_API_URL + '?' + params.toString(), { method: 'GET', redirect: 'follow' });
-                    const data = await response.json();
-                    if(!data.success || !Array.isArray(data.entries) || !data.entries.length) return null;
-                    const legacy = data.window === undefined;
-                    if(legacy && w.key !== 'all') return null;
-                    return { ...w, entries: data.entries };
-                } catch(e) {
-                    console.log('Leaderboard fetch error (' + w.key + '):', e);
-                    return null;
-                }
-            }));
-            if(seq !== _lbFetchSeq) return;   // a newer round already rendered
-            let anyRendered = false;
-            results.forEach(r => {
-                if(!r) return;
-                renderLeaderboardSection(r.entries, r.rowsEl, r.sectionEl);
-                anyRendered = true;
-            });
+        // Depth per window: a short daily board, deeper weekly, full all-time.
+        const LB_WINDOWS = [
+            { key: 'daily', rowsEl: 'qfLbDailyRows', sectionEl: 'qfLbDaily', limit: 10 },
+            { key: 'weekly', rowsEl: 'qfLbWeeklyRows', sectionEl: 'qfLbWeekly', limit: 25 },
+            { key: 'all', rowsEl: 'qfLbAllRows', sectionEl: 'qfLbAll', limit: 100 },
+        ];
+        // A hung Apps Script must not leave the section spinning forever.
+        const LB_TIMEOUT_MS = 12000;
+
+        // Remembers whether the deployed backend understands the batch action.
+        // Without this, a deployment that doesn't would pay a wasted round
+        // trip discovering that on EVERY fetch -- measured at ~1.8s of pure
+        // overhead per round, i.e. the fallback would be slower than the
+        // three-call version it replaced. Re-probed after a day so deploying
+        // the updated script heals this by itself rather than leaving those
+        // browsers stuck on the slow path.
+        const LB_BATCH_KEY = 'nbaQuizLbBatch';
+        const LB_BATCH_RECHECK_MS = 24 * 60 * 60 * 1000;
+
+        function _lbBatchWorthTrying() {
+            try {
+                const raw = localStorage.getItem(LB_BATCH_KEY);
+                if(!raw) return true;
+                const rec = JSON.parse(raw);
+                if(rec.supported) return true;
+                return (Date.now() - (rec.at || 0)) > LB_BATCH_RECHECK_MS;
+            } catch(e) { return true; }
+        }
+
+        function _lbRememberBatch(supported) {
+            try { localStorage.setItem(LB_BATCH_KEY, JSON.stringify({ supported, at: Date.now() })); }
+            catch(e) {}
+        }
+
+        function _lbFetch(params) {
+            const ctl = new AbortController();
+            const timer = setTimeout(() => ctl.abort(), LB_TIMEOUT_MS);
+            return fetch(SCORE_API_URL + '?' + params.toString(),
+                         { method: 'GET', redirect: 'follow', signal: ctl.signal })
+                .then(r => r.json())
+                .finally(() => clearTimeout(timer));
+        }
+
+        // Pending state: the panel appears immediately with placeholder rows,
+        // so the section reads as loading rather than as broken or empty
+        // while the backend is answering.
+        function _lbSetLoading(on) {
+            const box = document.getElementById('qfLeaderboard');
+            const skel = document.getElementById('qfLbLoading');
+            if(!box || !skel) return;
+            // A refresh (the one fired after a score is submitted, to pick up
+            // the player's own highlighted row) leaves the board it already
+            // painted on screen and swaps the rows in place when the new data
+            // lands. Blanking it back to placeholders would make a populated
+            // board visibly disappear and come back -- measured while timing
+            // this change, and worse than the delay it was meant to explain.
+            if(on && document.querySelector('.qf-lb-row')) return;
+            skel.style.display = on ? 'block' : 'none';
+            if(on) {
+                box.style.display = 'block';
+                // Nothing rendered yet: make sure no section from a previous
+                // run is left sitting under the pending state.
+                LB_WINDOWS.forEach(w => {
+                    const s = document.getElementById(w.sectionEl);
+                    if(s) s.style.display = 'none';
+                });
+            }
+        }
+
+        // Called once every fetch settles, however it settled.
+        function _lbFinish(anyRendered) {
+            _lbSetLoading(false);
+            const box = document.getElementById('qfLeaderboard');
             if(anyRendered) {
-                document.getElementById('qfLeaderboard').style.display = 'block';
+                box.style.display = 'block';
                 // The leaderboard already carries rank context -- the plain
                 // fallback line beneath it would just be redundant now.
                 document.getElementById('quizPercentile').style.display = 'none';
+            } else {
+                // Nothing to show: hide the panel entirely and leave the
+                // plain "Rank #X of Y" line as the fallback, exactly as
+                // before. An empty bordered box would just look broken.
+                box.style.display = 'none';
             }
+        }
+
+        // ONE request for all three windows, with the three-request version
+        // kept as the fallback.
+        //
+        // The three per-window calls were ALREADY parallel (Promise.all over
+        // three fetches issued in the same tick), so firing them in parallel
+        // was not the missing fix -- the cost is the Apps Script round trip
+        // itself, three of them, each re-reading the entire sheet, and Apps
+        // Script serializes same-user executions so they do not actually run
+        // concurrently on the server. The batch action reads the sheet once
+        // and answers all three windows in a single trip.
+        //
+        // Degradation follows the existing window-echo pattern: a deployment
+        // that doesn't know action=leaderboards returns no `batch` marker, and
+        // the frontend drops back to the per-window calls. Those now render
+        // each section AS IT ARRIVES rather than awaiting all three, so one
+        // slow window no longer gates the two that already answered.
+        async function fetchLeaderboard() {
+            if (!SCORE_API_URL || SCORE_API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+            const seq = ++_lbFetchSeq;
+            _lbSetLoading(true);
+
+            const useable = (win, key) =>
+                win && Array.isArray(win.entries) && win.entries.length;
+
+            if(_lbBatchWorthTrying()) {
+                try {
+                    const params = new URLSearchParams({
+                        action: 'leaderboards', mode: 'survival',
+                        limits: LB_WINDOWS.map(w => `${w.key}:${w.limit}`).join(','),
+                    });
+                    const data = await _lbFetch(params);
+                    if(seq !== _lbFetchSeq) return;      // a newer round owns the panel
+                    if(data && data.success && data.batch && data.windows) {
+                        _lbRememberBatch(true);
+                        let any = false;
+                        LB_WINDOWS.forEach(w => {
+                            if(!useable(data.windows[w.key])) return;
+                            renderLeaderboardSection(data.windows[w.key].entries, w.rowsEl, w.sectionEl);
+                            any = true;
+                        });
+                        _lbFinish(any);
+                        return;
+                    }
+                    // Answered, but doesn't know this action.
+                    _lbRememberBatch(false);
+                } catch(e) {
+                    // A network failure says nothing about the deployment's
+                    // capabilities, so this case is deliberately NOT cached.
+                    console.log('Leaderboard batch fetch failed, falling back:', e);
+                    if(seq !== _lbFetchSeq) return;
+                }
+            }
+
+            // ---- fallback: one request per window, rendered independently
+            let any = false, pending = LB_WINDOWS.length;
+            LB_WINDOWS.forEach(w => {
+                const params = new URLSearchParams({ action: 'leaderboard', mode: 'survival', limit: w.limit, window: w.key });
+                _lbFetch(params).then(data => {
+                    if(seq !== _lbFetchSeq) return;
+                    if(!data || !data.success || !Array.isArray(data.entries) || !data.entries.length) return;
+                    // A deployment older still ignores `window` entirely and
+                    // returns all-time rows with no echo -- showing those
+                    // under "Today" would be wrong data, not a degraded view.
+                    if(data.window === undefined && w.key !== 'all') return;
+                    renderLeaderboardSection(data.entries, w.rowsEl, w.sectionEl);
+                    any = true;
+                    _lbFinish(true);                     // show what we have, now
+                }).catch(e => {
+                    console.log('Leaderboard fetch error (' + w.key + '):', e);
+                }).finally(() => {
+                    if(--pending === 0 && seq === _lbFetchSeq) _lbFinish(any);
+                });
+            });
         }
 
         // "Detected"-style date for a leaderboard row: this one IS a real
@@ -4988,6 +5139,17 @@ document.addEventListener('DOMContentLoaded', boot);
                  page to an enormous length. -->
             <div class="qf-leaderboard" id="qfLeaderboard" style="display:none">
                 <div class="qf-leaderboard-title">Survival Leaderboard</div>
+                <!-- Pending state. Shown the moment a fetch starts and
+                     replaced by the real sections when they arrive; the
+                     placeholder rows mirror the real row height so the panel
+                     doesn't jump as it fills in. -->
+                <div class="qf-lb-loading" id="qfLbLoading" style="display:none" aria-hidden="true">
+                    <div class="qf-lb-skel-label">Loading standings…</div>
+                    <div class="qf-lb-skel"></div>
+                    <div class="qf-lb-skel"></div>
+                    <div class="qf-lb-skel"></div>
+                    <div class="qf-lb-skel"></div>
+                </div>
                 <div class="qf-lb-section" id="qfLbDaily" style="display:none">
                     <div class="qf-lb-window-title">Today</div>
                     <div class="qf-leaderboard-rows" id="qfLbDailyRows"></div>
