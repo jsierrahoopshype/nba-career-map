@@ -1,3 +1,16 @@
+## 2026-08-27 — incremental run
+
+- Players updated: **506** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **5**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Cassius Winston: Hapoel Jerusalem → Rytas Vilnius
+  - Ethan Thompson: Noblesville Boom → Partizan
+  - Jeenathan Williams: Chiba Jets Funabashi → Chiba Jets
+  - Anzejs Pasecniks: Hsinchu Toplus Lioneers → Petkim Spor
+  - Chinanu Onuaku: Bnei Herzliya → Kuwait SC
+
 ## 2026-08-26 — full run
 
 - Players updated: **1268** (0 new)
