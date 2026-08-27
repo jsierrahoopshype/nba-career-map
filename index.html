@@ -4701,7 +4701,7 @@
         // supporting context.
         function _quizShareText() {
             const correct = quizState.results.filter(r => r.correct).length;
-            return `I survived ${formatSurvivalTime(quizState.score)} (${correct} correct) on the NBA Career Map Quiz (Survival Mode)! Can you beat me?`;
+            return `I survived ${formatSurvivalTime(quizState.score)} (${correct} correct answers) on the NBA Career Map Quiz. Can you beat my time?`;
         }
 
         function shareResult() {
@@ -4752,9 +4752,13 @@
             ctx.font = '800 54px "Open Sans", Arial, sans-serif';
             ctx.fillText('NBA CAREER MAP', size/2, 100);
 
+            // "QUIZ", not "SURVIVAL MODE": the card is the thing people
+            // actually post, so it carries the same naming as the share text
+            // beside it ("the NBA Career Map Quiz"). The mode branding stays
+            // on the in-app intro screen, which nobody shares.
             ctx.fillStyle = '#f0b429';
             ctx.font = 'bold 22px "Open Sans", Arial, sans-serif';
-            ctx.fillText('SURVIVAL MODE', size/2, 132);
+            ctx.fillText('QUIZ', size/2, 132);
 
             // Hero: huge bold WHITE survival time -- the dominant element on
             // the card. This IS the score ("Survived MM:SS.CC"), real
