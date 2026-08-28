@@ -2362,7 +2362,7 @@
         // has room: the icon box is wider than the circle, and iconAnchor
         // tracks the circle's own position inside that box, so the circle
         // still sits exactly on the true marker position either way.
-        function startMarkerIcon(team, startIsEast) {
+        function startMarkerIcon(team, startIsEast, year) {
             const sz = 32, boxW = 110;
             const circleLeft = startIsEast ? boxW - sz : 0;
             const labelPos = startIsEast ? `right:${sz + 6}px` : `left:${sz + 6}px`;
@@ -2372,9 +2372,16 @@
             const glow = 'rgba(39,174,96,0.65)';
             const label = `<div class="route-start-label" style="position:absolute;${labelPos};top:50%;transform:translateY(-50%)">START</div>`;
             const circle = `--route-glow-color:${glow};position:absolute;left:${circleLeft}px;top:0;width:${sz}px;height:${sz}px;border-radius:50%;border:3px solid #fff;display:flex;align-items:center;justify-content:center`;
-            const logoUrl = nbaTeamLogoUrl(team);
+            // Era mark first (the franchise AS IT WAS during this stint),
+            // current-franchise mark as the fallback behind it. When there is
+            // no era mark to try, this is exactly the single-step behaviour
+            // it had before.
+            const eraUrl = nbaEraLogoUrl(team, year);
+            const currentUrl = nbaTeamLogoUrl(team);
+            const logoUrl = eraUrl || currentUrl;
+            const nextUrl = (eraUrl && currentUrl) ? currentUrl : '';
             const inner = logoUrl
-                ? `<div class="route-start-glow" style="${circle};background:#fff;overflow:hidden"><img src="${logoUrl}" alt="" style="width:76%;height:76%;object-fit:contain" onerror="var p=this.parentElement;if(!p)return;p.style.background='#27ae60';p.style.color='#fff';p.style.fontSize='8px';p.style.fontWeight='700';p.textContent='START';"></div>`
+                ? `<div class="route-start-glow" style="${circle};background:#fff;overflow:hidden"><img src="${logoUrl}" alt="" data-fallback="${nextUrl}" style="width:76%;height:76%;object-fit:contain" onerror="_routeLogoFallback(this)"></div>`
                 : `<div class="route-start-glow" style="${circle};background:#27ae60;color:#fff;font-size:8px;font-weight:700">START</div>`;
             return L.divIcon({
                 className: '',
@@ -2456,7 +2463,7 @@
                 // first before last on purpose: a single-stop career keeps
                 // reading as a START, which is how this map has always
                 // rendered one.
-                const icon = first ? startMarkerIcon(p.stop.team, startIsEast)
+                const icon = first ? startMarkerIcon(p.stop.team, startIsEast, startYearOf(p.stop.years))
                            : last  ? finalMarkerIcon()
                                    : stopMarkerIcon(i+1);
 
@@ -3551,14 +3558,82 @@
         };
         const NBA_LOGO_BASE = 'https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/main/teams/logos/current/svg/';
         function nbaTeamLogoUrl(team) {
-            // Reuses this app's own era-name resolution (NBA_ERAS/NBA_FRANCHISES,
-            // loaded at boot from data/nba_team_index.json) so a historical era
-            // name (e.g. "Seattle SuperSonics") resolves to its current
-            // franchise's logo, same as everywhere else in the app.
+            // The CURRENT franchise's mark. Reuses this app's own era-name
+            // resolution (NBA_ERAS/NBA_FRANCHISES, loaded at boot from
+            // data/nba_team_index.json), so a historical era name resolves to
+            // the franchise that carries it today. That is the right answer
+            // for a fallback, and the wrong one for the stint itself -- see
+            // nbaEraLogoUrl below.
             const franchise = NBA_FRANCHISES.includes(team) ? team : NBA_ERAS[team];
             if(!franchise) return null;
             const id = NBA_LOGO_TEAM_ID[franchise];
             return id ? NBA_LOGO_BASE + id + '.svg' : null;
+        }
+
+        /* ===== Era-accurate marks ==========================================
+           A stint with the Seattle SuperSonics should show the Sonics mark,
+           not the Thunder's -- the same era-accuracy rule the rest of the
+           database follows for names. These assets are SLUG-keyed, not
+           id-keyed, because NBA team ids are shared across eras (Seattle and
+           OKC are both 1610612760), so an id cannot express the distinction.
+
+           NOTE ON THE BRANCH: the era assets currently exist only on the
+           nba-headshots `master` branch; the current-franchise marks above
+           are read from `main`. Verified live, all eight files. Collapse this
+           to `main` once they are on that branch -- the fallback chain means
+           a wrong branch degrades to the current-franchise mark rather than
+           breaking anything. */
+        const NBA_LOGO_ERA_BASE = 'https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/master/teams/logos/historical/';
+
+        // Era names whose asset can't be derived from the name alone.
+        // "Charlotte Hornets" is two different things: the 1988-2002 original
+        // (which became the New Orleans Hornets, then the Pelicans) and the
+        // franchise that has carried the name since 2014 -- so the stint's
+        // year decides, and only the original gets an era mark.
+        const NBA_ERA_LOGO_SPECIAL = {
+            'Charlotte Hornets': { originalBefore: 2004, slug: 'charlotte-hornets-original' },
+        };
+
+        function _eraLogoSlug(team, year) {
+            const special = NBA_ERA_LOGO_SPECIAL[team];
+            if(special) return (year != null && year < special.originalBefore) ? special.slug : null;
+            // A collision era name at/after its cutoff year is the modern
+            // club of that name, not the NBA era -- the same rule teamUrl()
+            // applies (e.g. "San Diego Clippers" from 2024 is the G League
+            // club, not the 1978-84 NBA team).
+            const cut = ERA_COLLISIONS[team];
+            if(cut != null && year != null && year >= cut) return null;
+            // Only genuine era names have one; a current franchise name is
+            // its own logo, already handled by nbaTeamLogoUrl().
+            if(NBA_FRANCHISES.includes(team) || !NBA_ERAS[team]) return null;
+            return team.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        }
+
+        // The era mark for a stint, or null when the name isn't an era name,
+        // is the current franchise, or is a collision resolving to a modern
+        // club. A slug with no asset yet simply 404s and the marker's
+        // fallback chain takes over -- see _routeLogoFallback.
+        function nbaEraLogoUrl(team, year) {
+            const slug = _eraLogoSlug(team, year);
+            return slug ? NBA_LOGO_ERA_BASE + slug + '.svg' : null;
+        }
+
+        // Two-step image fallback for the start marker, called from its inline
+        // onerror: era mark -> current-franchise mark -> the plain green START
+        // circle. data-fallback carries the next URL to try and is cleared as
+        // it is used, so a second failure lands on the circle rather than
+        // looping. Styles are set BEFORE textContent, which removes the <img>
+        // and with it this element's parent reference.
+        function _routeLogoFallback(img) {
+            const next = img.getAttribute('data-fallback');
+            if(next) { img.removeAttribute('data-fallback'); img.src = next; return; }
+            const p = img.parentElement;
+            if(!p) return;
+            p.style.background = '#27ae60';
+            p.style.color = '#fff';
+            p.style.fontSize = '8px';
+            p.style.fontWeight = '700';
+            p.textContent = 'START';
         }
 
         function initQuizMap() {
@@ -3777,7 +3852,7 @@
                 // overlap against START -- "where is he now" is the answer
                 // the player is being asked for.
                 const icon = last  ? finalMarkerIcon()
-                           : first ? startMarkerIcon(p.stop.team, startIsEast)
+                           : first ? startMarkerIcon(p.stop.team, startIsEast, startYearOf(p.stop.years))
                                    : stopMarkerIcon(i + 1);
                 const zIndexOffset = last ? 1000 : (first ? 900 : 0);
 
