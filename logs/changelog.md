@@ -1,3 +1,18 @@
+## 2026-08-28 — incremental run
+
+- Players updated: **497** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **6**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Malaki Branham: Cleveland Charge → Orlando Magic
+  - Malcolm Cazalon: Merkezefendi Basket → Cholet Basket
+  - Nathan Knight: Goyang Sono Skygunners → Bnei Herzliya
+  - Raymond Spalding: Noblesville Boom → Dorados de Chihuahua
+  - Will Cherry: Boulazac Basket Dordogne → Dorados de Chihuahua
+  - Dereon Seabron: Salt Lake City Stars → Greensboro Swarm
+  - Malaki Branham: [overseas_active → nba_active]
+
 ## 2026-08-27 — incremental run
 
 - Players updated: **506** (0 new)
