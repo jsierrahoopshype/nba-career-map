@@ -3040,28 +3040,50 @@
             return scored.slice(0,8).map(o=>o.q);
         }
         
-        // Display-only ordering of career stints (does NOT mutate stored JSON):
-        // start year ascending, tie-break by duration descending, so a longer
-        // "parent" stint sorts before a shorter overlapping one (loan / G League
-        // assignment) with the same start year — e.g. Baskonia before Gijón,
-        // Utah Jazz before Bakersfield Jam. A "present"/open-ended stint counts
-        // as ongoing (longest). Stable within equal keys (keeps original order).
+        // Canonical ordering of career stints: start year ascending, then END
+        // year ascending, then original position.
+        //
+        // The end-year tie-break is what puts a stint in sequence when two
+        // start in the same year. A bare "2003" ends in 2003 — the player was
+        // there within that year and left — while "2003-2004" runs past it, so
+        // the bare year comes FIRST. Gary Payton 2003: Bucks ("2003") then
+        // Lakers ("2003-2004"), which is the real sequence.
+        //
+        // This replaces a duration-DESCENDING tie-break, which put the longer
+        // stint first and so read Lakers before Bucks. That old rule existed to
+        // keep a parent club ahead of a same-year loan or G League assignment
+        // (Rockets before Rio Grande Valley Vipers); ordering strictly by when
+        // a stint ENDED reverses those, because the assignment did end first.
+        // The two cannot be told apart from years alone — they have identical
+        // shape — so chronology wins and the affiliate now sorts first.
+        //
+        // "present"/open-ended counts as still running, so it sorts last.
         function careerBounds(s) {
             const yrs = String(s && s.years || '');
             const nums = yrs.match(/\d{4}/g) || [];
             const start = nums.length ? parseInt(nums[0], 10) : 9999;
             let end;
             if (/present/i.test(yrs) || /[–-]\s*$/.test(yrs)) end = 9999;
-            else end = nums.length > 1 ? parseInt(nums[1], 10) : (nums.length ? parseInt(nums[0], 10) : 9999);
-            return { start, dur: end - start };
+            else end = nums.length > 1 ? parseInt(nums[1], 10) : start;
+            return { start, end };
         }
         function sortCareer(career) {
             return (career || []).map((s, i) => ({ s, i })).sort((a, b) => {
                 const ka = careerBounds(a.s), kb = careerBounds(b.s);
                 if (ka.start !== kb.start) return ka.start - kb.start;   // start ascending
-                if (kb.dur !== ka.dur) return kb.dur - ka.dur;           // duration descending
+                if (ka.end !== kb.end) return ka.end - kb.end;           // then end ascending
                 return a.i - b.i;                                        // stable
             }).map(o => o.s);
+        }
+        // The year the career actually begins: the earliest start across every
+        // stint, not whichever stint happens to sit at index 0.
+        function careerStartYear(p) {
+            let min = Infinity;
+            for (const s of (p && p.career_history) || []) {
+                const b = careerBounds(s);
+                if (b.start < min) min = b.start;
+            }
+            return min === Infinity || min === 9999 ? 0 : min;
         }
 
         function show(name, opts) {
@@ -3234,7 +3256,7 @@
                 // Must have 400+ NBA games played
                 if(!PLAYERS_400_GAMES.has(p.player)) return false;
                 
-                const y1 = parseInt(p.career_history[0]?.years?.split('-')[0]) || 0;
+                const y1 = careerStartYear(p);
                 if(y1 < 1990) return false;
                 
                 // Must have valid coordinates for at least 2 stops
@@ -3272,7 +3294,9 @@
         // Grizzlies" start matches a "Memphis Grizzlies" one) or
         // {country} for a non-NBA start (international / G League).
         function _firstStopOrigin(player) {
-            const first = player?.career_history?.[0];
+            // The genuinely first stop in canonical order — [0] is only the
+            // first stint the fetch happened to write.
+            const first = sortCareer(player?.career_history)[0];
             if(!first || !first.team) return null;
             const franchise = NBA_FRANCHISES.includes(first.team) ? first.team : NBA_ERAS[first.team];
             if(franchise) return { franchise };
@@ -3282,7 +3306,7 @@
         function getWrongOptions(correctPlayer, eligible) {
             const correct = data[correctPlayer];
             const correctTeams = correct.career_history?.length || 5;
-            const correctY1 = parseInt(correct.career_history[0]?.years?.split('-')[0]) || 2000;
+            const correctY1 = careerStartYear(correct) || 2000;
 
             quizDistractorStats.attempts++;
 
@@ -3316,7 +3340,7 @@
             const candidates = eligible.filter(p => {
                 if(p.player === correctPlayer) return false;
                 const teams = p.career_history?.length || 0;
-                const y1 = parseInt(p.career_history[0]?.years?.split('-')[0]) || 2000;
+                const y1 = careerStartYear(p) || 2000;
                 // Within 10 years and within 3 teams
                 return Math.abs(y1 - correctY1) <= 12 && Math.abs(teams - correctTeams) <= 4;
             });
@@ -3868,7 +3892,9 @@
             const player = pickNextQuizPlayer(eligible);
             quizState.currentPlayer = player;
             quizState.streak++;
-            const career = player.career_history;
+            // Same canonical order as the player page, so the quiz route and
+            // its numbered markers run in true sequence.
+            const career = sortCareer(player.career_history);
 
             // Update progress: question count + lives (hearts) + the two
             // persistent speed counters -- there's no fixed total in
@@ -4081,7 +4107,10 @@
                 quizState.livesLostTotal++;
             }
 
-            const lastStop = quizState.currentPlayer.career_history[quizState.currentPlayer.career_history.length - 1];
+            // "Last team" must be the last stint in canonical order, not the
+            // last one the fetch happened to write.
+            const _sorted = sortCareer(quizState.currentPlayer.career_history);
+            const lastStop = _sorted[_sorted.length - 1];
             quizState.results.push({
                 player: correctName,
                 correct: isCorrect,
@@ -4128,7 +4157,10 @@
             quizState.livesLostTotal++;
             const timeNote = _applyTimeEffects(QUIZ_TIMER_SECONDS, false);
 
-            const lastStop = quizState.currentPlayer.career_history[quizState.currentPlayer.career_history.length - 1];
+            // "Last team" must be the last stint in canonical order, not the
+            // last one the fetch happened to write.
+            const _sorted = sortCareer(quizState.currentPlayer.career_history);
+            const lastStop = _sorted[_sorted.length - 1];
             quizState.results.push({
                 player: correctName,
                 correct: false,

@@ -99,8 +99,36 @@ def _split_top_level(body: str, sep: str) -> list[str]:
     return parts
 
 
+_HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+
+
+def strip_html_comments(text: str) -> str:
+    """Remove HTML comments, and everything between them, from wikitext.
+
+    This MUST happen before the infobox is split on "|", because editors
+    routinely comment out whole blocks of infobox parameters:
+
+        |team10  = [[Detroit Pistons]]<!--
+        |years11 = 2025
+        |team11  = [[Motor City Cruise]]-->
+
+    _split_top_level splits on the "|" characters *inside* that comment, so the
+    opening marker lands on one field and the closing marker on another. That
+    is how "Detroit Pistons <!--" and "Motor City Cruise-->" became team names.
+    _clean_text's generic <[^>]+> tag strip cannot rescue either half: "<!--"
+    has no ">" to close the match and "-->" has no "<" to open it, so both
+    survive into storage.
+    """
+    out = _HTML_COMMENT_RE.sub(" ", text or "")
+    # A marker still standing came from an unterminated comment. Drop the
+    # markers themselves so they can never reach a stored name; the surrounding
+    # text is left alone rather than guessing how far the comment was meant to
+    # run and deleting real stints along with it.
+    return out.replace("<!--", " ").replace("-->", " ")
+
+
 def parse_infobox_fields(text: str) -> dict[str, str]:
-    body = _find_infobox(text)
+    body = _find_infobox(strip_html_comments(text))
     if body is None:
         return {}
     fields: dict[str, str] = {}

@@ -31,6 +31,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import stint_order  # noqa: E402
 from era_correct_teams import ERA_TABLE  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
 from sync_era_locations import LOC  # noqa: E402  (era-accurate team locations)
@@ -636,7 +637,9 @@ CLUB_ROSTER_CAP = 500
 
 
 def _join_years(spans: list) -> str:
-    return ", ".join(s for s in sorted(spans, key=_year_start) if s)
+    # Same canonical rule as career_history itself: start ascending, then END
+    # ascending, so a bare "2019" precedes a "2019-2021" it starts alongside.
+    return ", ".join(s for s in sorted(spans, key=stint_order.year_span_key) if s)
 
 
 def _year_start(years: str) -> int:

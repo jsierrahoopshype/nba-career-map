@@ -48,6 +48,7 @@ import urllib.request
 from pathlib import Path
 
 import split_combined_teams
+import stint_order
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import TeamNormalizer
 from wiki_parser import parse_player
@@ -493,6 +494,17 @@ def _persist(db: Database, summary: dict) -> None:
     if split_n:
         print(f"[split] resolved {split_n} combined team name(s); "
               f"left {sum(split_skipped.values())} with no authoritative split")
+
+    # Put every career_history in canonical order (start asc, then END asc) on
+    # the way out, so positional reads -- [0] for the first stop, [-1] for the
+    # last -- are correct by construction for every consumer downstream rather
+    # than depending on the order Wikipedia happened to list the stints in.
+    # Like the split above, this runs every time: a re-fetch reintroduces
+    # whatever order the source used.
+    ordered_n = stint_order.order_players(players)
+    summary["stints_reordered"] = ordered_n
+    if ordered_n:
+        print(f"[order] reordered career_history for {ordered_n} player(s)")
 
     write_json(CAREERS, players)
     write_json(LOCATIONS, dict(sorted(db.locations.items())))

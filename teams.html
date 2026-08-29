@@ -220,6 +220,15 @@
         const esc = s => String(s??'').replace(/[&<>"']/g, c =>
             ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
         const startYear = y => { const m = String(y||'').match(/\d{4}/); return m?parseInt(m[0],10):0; };
+        // End year of a span, matching the canonical stint rule: a bare "2019"
+        // ends in 2019, an open-ended span sorts last. Used to break ties
+        // between two spans that start in the same year.
+        const endYear = y => {
+            const s = String(y||''); const nums = s.match(/\d{4}/g) || [];
+            if(/present/i.test(s) || /[–-]\s*$/.test(s)) return 9999;
+            if(nums.length > 1) return parseInt(nums[1],10);
+            return nums.length ? parseInt(nums[0],10) : 9999;
+        };
         // freshness indicator: periodic re-crawling can't be real-time, so
         // place pages sourced from a player's last_updated show an honest
         // "as of" date rather than implying live data.
@@ -573,7 +582,7 @@
                 else by.set(r.player, { ...r, __k:r.player, spans:[r.years] });
             }
             return [...by.values()].map(g => {
-                g.spans.sort((a,b)=>startYear(a)-startYear(b));
+                g.spans.sort((a,b)=>startYear(a)-startYear(b) || endYear(a)-endYear(b));
                 g.years = g.spans.filter(Boolean).join(', ');
                 return g;
             });
