@@ -3582,13 +3582,11 @@
            id-keyed, because NBA team ids are shared across eras (Seattle and
            OKC are both 1610612760), so an id cannot express the distinction.
 
-           NOTE ON THE BRANCH: the era assets currently exist only on the
-           nba-headshots `master` branch; the current-franchise marks above
-           are read from `main`. Verified live, all eight files. Collapse this
-           to `main` once they are on that branch -- the fallback chain means
-           a wrong branch degrades to the current-franchise mark rather than
-           breaking anything. */
-        const NBA_LOGO_ERA_BASE = 'https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/master/teams/logos/historical/';
+           Same branch as the current-franchise marks above: the era assets
+           briefly lived only on a `master` branch, which has since been
+           removed, so both bases now read from `main` and there is one place
+           to look when a mark is missing. */
+        const NBA_LOGO_ERA_BASE = 'https://raw.githubusercontent.com/jsierrahoopshype/nba-headshots/main/teams/logos/historical/';
 
         // Era names whose asset can't be derived from the name alone.
         // "Charlotte Hornets" is two different things: the 1988-2002 original
