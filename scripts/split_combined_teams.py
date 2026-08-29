@@ -2,13 +2,20 @@
 
 Some stints store a franchise's relocation as a combined name (e.g.
 "New Orleans / Utah Jazz") because the player's tenure spanned the move, and the
-location defaulted to whichever name appeared last. For each such stint that maps
+location defaulted to whichever name appeared last -- often to nothing at all,
+which drops the stint from the career map entirely. For each such stint that maps
 to a franchise in the relocation reference table, compute how many of the stint's
 own years fall in each era (using the era boundaries) and set team +
 city/state/country to the majority era. Even split -> the later/current era.
 
 Combined strings whose franchise is NOT in the reference table (G League, ABA,
-international) have no reference split year and are left unchanged (reported).
+international: "Denver Rockets / Nuggets", "U/Tex Wranglers") have no
+authoritative split year and are left unchanged (reported).
+
+This runs AUTOMATICALLY from the pipeline -- update_careers._persist() calls
+resolve_players() on every run, because Wikipedia re-writes combined names on
+every re-fetch and a one-off cleanup regenerates within days. The CLI entry
+point below stays for ad-hoc runs over the files on disk.
 
 Idempotent. Run:  python3 scripts/split_combined_teams.py
 """
@@ -103,14 +110,59 @@ for _fr, _eras in ERA_TABLE.items():
 _ALIASES = json.loads(ALIASES.read_text(encoding="utf-8")).get("aliases", {})
 
 
-def _identify_franchise(combined: str) -> str | None:
-    """Franchise for a combined string: any segment that is (or aliases to) a
-    known era name identifies the franchise."""
-    for seg in combined.split(" / "):
-        seg = seg.strip().lstrip(",").strip()
-        cand = _ALIASES.get(seg, seg)
-        if cand in _ERA_INDEX:
-            return _ERA_INDEX[cand][0]
+# Combined names arrive in several shapes -- " / ", "/", and city-only or
+# nickname-only shorthand -- so the separator match can't be the literal " / "
+# it once was. That single-form assumption is why the earlier pass resolved
+# only 8 of the 190 stints now present.
+_SPLIT = re.compile(r"\s*/\s*")
+
+
+def _segments(combined: str) -> list[str]:
+    return [seg.strip().lstrip(",").strip()
+            for seg in _SPLIT.split(combined) if seg.strip()]
+
+
+def _era_candidates(combined: str) -> list[str]:
+    """Every era name a combined string could be naming.
+
+    Verbatim segments first, then the two shorthand shapes that appear in the
+    data: a city-only prefix borrowing the last segment's nickname
+    ("Vancouver/Memphis Grizzlies" -> "Vancouver Grizzlies") and a
+    nickname-only suffix borrowing the first segment's city
+    ("New Orleans Hornets/Pelicans" -> "New Orleans Pelicans").
+    """
+    segs = _segments(combined)
+    cands = list(segs)
+    if len(segs) >= 2:
+        nickname = segs[-1].split()[-1]
+        cands += [f"{seg} {nickname}" for seg in segs[:-1]]
+        city = " ".join(segs[0].split()[:-1])
+        if city:
+            cands += [f"{city} {seg}" for seg in segs[1:]]
+    return cands
+
+
+def _identify(combined: str, bounds) -> str | None:
+    """Franchise for a combined string, or None to leave it alone.
+
+    A candidate only counts when the era it names actually OVERLAPS the stint's
+    own years. Without that check, "Ontario / San Diego Clippers" (the Clippers'
+    G League affiliate, 2019-) matches the NBA "San Diego Clippers" era of
+    1978-84 and the stint gets rewritten to an NBA city it has nothing to do
+    with -- caught while testing this.
+    """
+    start, end = bounds
+    for cand in _era_candidates(combined):
+        cand = _ALIASES.get(cand, cand)
+        hit = _ERA_INDEX.get(cand)
+        if not hit:
+            continue
+        franchise, i = hit
+        eras = ERA_TABLE[franchise]
+        era_start = eras[i][0]
+        era_end = eras[i + 1][0] if i + 1 < len(eras) else 10_000
+        if min(end, era_end) - max(start, era_start) > 0:
+            return franchise
     return None
 
 
@@ -145,10 +197,10 @@ def _resolve(players: list, changes: list, skipped: dict) -> int:
     for p in players:
         for s in p.get("career_history", []):
             team = s.get("team", "")
-            if " / " not in team:
+            if "/" not in team:
                 continue
-            fr = _identify_franchise(team)
             bounds = _year_bounds(s.get("years", ""))
+            fr = _identify(team, bounds) if bounds else None
             if not fr or not bounds:
                 skipped[team] = skipped.get(team, 0) + 1
                 continue
@@ -163,6 +215,19 @@ def _resolve(players: list, changes: list, skipped: dict) -> int:
                 s["team"], s["city"], s["state"], s["country"] = era, city, state, country
                 n += 1
     return n
+
+
+def resolve_players(players: list) -> tuple[int, list, dict]:
+    """Split combined names in an in-memory player list, in place.
+
+    This is what the pipeline calls (update_careers._persist), before anything
+    is written, so the careers file and every file derived from it get the same
+    resolved values in one pass. Returns (changed, changes, skipped).
+    """
+    changes: list = []
+    skipped: dict = {}
+    n = _resolve(players, changes, skipped)
+    return n, changes, skipped
 
 
 def main() -> None:

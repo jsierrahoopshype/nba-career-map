@@ -47,6 +47,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+import split_combined_teams
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import TeamNormalizer
 from wiki_parser import parse_player
@@ -473,6 +474,26 @@ def _persist(db: Database, summary: dict) -> None:
         db.by_name.pop(empty, None)
         db.order.remove(empty)
     players = [db.by_name[n] for n in db.order if str(n or "").strip()]
+
+    # Split combined era names ("New Orleans Hornets/Pelicans") into the single
+    # era their years actually fall in, BEFORE anything is written -- so the
+    # careers file and every file derived from it below get the same resolved
+    # values in one pass.
+    #
+    # This has to run every time, not once: Wikipedia writes these combined
+    # strings, so each re-fetch regenerates them. They matter because a combined
+    # name usually carries NO city/state/country, and a stint with no location
+    # is dropped from the career map entirely -- Anthony Davis's 2012-19 New
+    # Orleans stint simply wasn't on his map. Non-NBA combined names (ABA, G
+    # League, international) have no authoritative split year and are
+    # deliberately left alone; see split_combined_teams.
+    split_n, _split_changes, split_skipped = split_combined_teams.resolve_players(players)
+    summary["combined_names_split"] = split_n
+    summary["combined_names_left"] = sum(split_skipped.values())
+    if split_n:
+        print(f"[split] resolved {split_n} combined team name(s); "
+              f"left {sum(split_skipped.values())} with no authoritative split")
+
     write_json(CAREERS, players)
     write_json(LOCATIONS, dict(sorted(db.locations.items())))
     write_json(REVIEW, dict(sorted(db.review.items())))
