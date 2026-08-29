@@ -5291,6 +5291,10 @@
       "players": 40
     },
     {
+      "team": "Motor City Cruise",
+      "players": 40
+    },
+    {
       "team": "Napoli Basket",
       "players": 40
     },
@@ -5308,10 +5312,6 @@
     },
     {
       "team": "Gigantes de Carolina",
-      "players": 39
-    },
-    {
-      "team": "Motor City Cruise",
       "players": 39
     },
     {
@@ -14163,10 +14163,6 @@
       "players": 1
     },
     {
-      "team": "Detroit Pistons <!--",
-      "players": 1
-    },
-    {
       "team": "Dewa United Banten",
       "players": 1
     },
@@ -16396,10 +16392,6 @@
     },
     {
       "team": "Mornar Barsko zlato",
-      "players": 1
-    },
-    {
-      "team": "Motor City Cruise-->",
       "players": 1
     },
     {
@@ -26834,45 +26826,6 @@
       ]
     },
     {
-      "player": "Andre Turner",
-      "teams": [
-        {
-          "team": "La Crosse Catbirds",
-          "stints": 4,
-          "years": [
-            "1987",
-            "1988-1989",
-            "1989-1990",
-            "1990"
-          ]
-        },
-        {
-          "team": "Joventut",
-          "stints": 2,
-          "years": [
-            "1996-1998",
-            "2005"
-          ]
-        },
-        {
-          "team": "Memphis Rockers",
-          "stints": 2,
-          "years": [
-            "1990",
-            "1991-1992"
-          ]
-        },
-        {
-          "team": "Zaragoza",
-          "stints": 2,
-          "years": [
-            "1994-1996",
-            "2007-2008"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Antonis Fotsis",
       "teams": [
         {
@@ -27672,6 +27625,67 @@
       ]
     },
     {
+      "player": "Andre Dawkins",
+      "teams": [
+        {
+          "team": "Sioux Falls Skyforce",
+          "stints": 3,
+          "years": [
+            "2014",
+            "2015",
+            "2015"
+          ]
+        },
+        {
+          "team": "Texas Legends",
+          "stints": 2,
+          "years": [
+            "2016",
+            "2017"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Andre Turner",
+      "teams": [
+        {
+          "team": "La Crosse Catbirds",
+          "stints": 3,
+          "years": [
+            "1987",
+            "1988-1989",
+            "1989-1990",
+            "1990"
+          ]
+        },
+        {
+          "team": "Joventut",
+          "stints": 2,
+          "years": [
+            "1996-1998",
+            "2005"
+          ]
+        },
+        {
+          "team": "Memphis Rockers",
+          "stints": 2,
+          "years": [
+            "1990",
+            "1991-1992"
+          ]
+        },
+        {
+          "team": "Zaragoza",
+          "stints": 2,
+          "years": [
+            "1994-1996",
+            "2007-2008"
+          ]
+        }
+      ]
+    },
+    {
       "player": "Andrei Kirilenko",
       "teams": [
         {
@@ -28419,20 +28433,6 @@
       ]
     },
     {
-      "player": "Danuel House",
-      "teams": [
-        {
-          "team": "Rio Grande Valley Vipers",
-          "stints": 3,
-          "years": [
-            "2017",
-            "2018",
-            "2018–2019"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Darrick Martin",
       "teams": [
         {
@@ -28817,14 +28817,6 @@
             "1987-1988",
             "1989-1990",
             "1990-1991"
-          ]
-        },
-        {
-          "team": "Albany Patroons",
-          "stints": 2,
-          "years": [
-            "1986-1987",
-            "1987"
           ]
         },
         {
@@ -29305,20 +29297,6 @@
           "years": [
             "2023",
             "2025"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Jason Sasser",
-      "teams": [
-        {
-          "team": "Sioux Falls Skyforce",
-          "stints": 3,
-          "years": [
-            "1996-1997",
-            "1997-1998",
-            "1998-1999"
           ]
         }
       ]
@@ -32187,28 +32165,6 @@
       ]
     },
     {
-      "player": "Andre Dawkins",
-      "teams": [
-        {
-          "team": "Sioux Falls Skyforce",
-          "stints": 2,
-          "years": [
-            "2014",
-            "2015",
-            "2015"
-          ]
-        },
-        {
-          "team": "Texas Legends",
-          "stints": 2,
-          "years": [
-            "2016",
-            "2017"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Andre Drummond",
       "teams": [
         {
@@ -33438,19 +33394,6 @@
       ]
     },
     {
-      "player": "Bobby Phills",
-      "teams": [
-        {
-          "team": "Cleveland Cavaliers",
-          "stints": 2,
-          "years": [
-            "1992",
-            "1992-1997"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Bobby Simmons",
       "teams": [
         {
@@ -33480,14 +33423,6 @@
           "years": [
             "2006–2008",
             "2009"
-          ]
-        },
-        {
-          "team": "Zrinjski Mostar",
-          "stints": 2,
-          "years": [
-            "2004–2005",
-            "2005–2006"
           ]
         }
       ]
@@ -36099,6 +36034,20 @@
       ]
     },
     {
+      "player": "Danuel House",
+      "teams": [
+        {
+          "team": "Rio Grande Valley Vipers",
+          "stints": 2,
+          "years": [
+            "2017",
+            "2018",
+            "2018–2019"
+          ]
+        }
+      ]
+    },
+    {
       "player": "Darington Hobson",
       "teams": [
         {
@@ -37252,14 +37201,6 @@
     {
       "player": "Devon Hall",
       "teams": [
-        {
-          "team": "Oklahoma City Blue",
-          "stints": 2,
-          "years": [
-            "2019–2020",
-            "2019–2020"
-          ]
-        },
         {
           "team": "Olimpia Milano",
           "stints": 2,
@@ -39636,14 +39577,6 @@
             "2017",
             "2019"
           ]
-        },
-        {
-          "team": "Rio Grande Valley Vipers",
-          "stints": 2,
-          "years": [
-            "2011-2012",
-            "2012-2013"
-          ]
         }
       ]
     },
@@ -39669,19 +39602,6 @@
           "years": [
             "2015–2016",
             "2017"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Gui Santos",
-      "teams": [
-        {
-          "team": "Santa Cruz Warriors",
-          "stints": 2,
-          "years": [
-            "2022–2023",
-            "2023–2025"
           ]
         }
       ]
@@ -40917,19 +40837,6 @@
       ]
     },
     {
-      "player": "James Michael McAdoo",
-      "teams": [
-        {
-          "team": "Santa Cruz Warriors",
-          "stints": 2,
-          "years": [
-            "2014–2015",
-            "2015"
-          ]
-        }
-      ]
-    },
-    {
       "player": "James Nunnally",
       "teams": [
         {
@@ -41328,6 +41235,20 @@
           "years": [
             "1998-2000",
             "2001-2002"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Jason Sasser",
+      "teams": [
+        {
+          "team": "Sioux Falls Skyforce",
+          "stints": 2,
+          "years": [
+            "1996-1997",
+            "1997-1998",
+            "1998-1999"
           ]
         }
       ]
@@ -42723,19 +42644,6 @@
       ]
     },
     {
-      "player": "Jonas Valanciunas",
-      "teams": [
-        {
-          "team": "Perlas",
-          "stints": 2,
-          "years": [
-            "2008–2009",
-            "2009–2010"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Jonathan Gibson",
       "teams": [
         {
@@ -43152,19 +43060,6 @@
       ]
     },
     {
-      "player": "Josh Huestis",
-      "teams": [
-        {
-          "team": "Oklahoma City Blue",
-          "stints": 2,
-          "years": [
-            "2014-2015",
-            "2015-2017"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Josh Magette",
       "teams": [
         {
@@ -43487,14 +43382,6 @@
             "2021",
             "2022"
           ]
-        },
-        {
-          "team": "Salt Lake City Stars",
-          "stints": 2,
-          "years": [
-            "2019",
-            "2019–2020"
-          ]
         }
       ]
     },
@@ -43580,19 +43467,6 @@
       ]
     },
     {
-      "player": "Karlo Matkovic",
-      "teams": [
-        {
-          "team": "Birmingham Squadron",
-          "stints": 2,
-          "years": [
-            "2024",
-            "2024"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Kasib Powell",
       "teams": [
         {
@@ -43614,19 +43488,6 @@
           "years": [
             "2018–19",
             "2026–present"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Keaton Wallace",
-      "teams": [
-        {
-          "team": "College Park Skyhawks",
-          "stints": 2,
-          "years": [
-            "2023–2024",
-            "2024–2025"
           ]
         }
       ]
@@ -46830,19 +46691,6 @@
       ]
     },
     {
-      "player": "Mindaugas Kuzminskas",
-      "teams": [
-        {
-          "team": "Šiauliai",
-          "stints": 2,
-          "years": [
-            "2008–2010",
-            "2009-2010"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Mirsad Turkcan",
       "teams": [
         {
@@ -47043,19 +46891,6 @@
           "years": [
             "2013-2015",
             "2016-2017"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Nae'Qwan Tomlin",
-      "teams": [
-        {
-          "team": "Cleveland Charge",
-          "stints": 2,
-          "years": [
-            "2024–2025",
-            "2025–2026"
           ]
         }
       ]
@@ -47770,19 +47605,6 @@
       ]
     },
     {
-      "player": "Pat Spencer",
-      "teams": [
-        {
-          "team": "Santa Cruz Warriors",
-          "stints": 2,
-          "years": [
-            "2022–2024",
-            "2024–2025"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Patrick Christopher",
       "teams": [
         {
@@ -48473,14 +48295,6 @@
           "years": [
             "2023",
             "2024"
-          ]
-        },
-        {
-          "team": "Santos de San Luis",
-          "stints": 2,
-          "years": [
-            "2023",
-            "2023"
           ]
         }
       ]
@@ -50574,14 +50388,6 @@
             "2025–2026",
             "2026"
           ]
-        },
-        {
-          "team": "Motor City Cruise",
-          "stints": 2,
-          "years": [
-            "2022–2023",
-            "2023–2024"
-          ]
         }
       ]
     },
@@ -51201,19 +51007,6 @@
       ]
     },
     {
-      "player": "Thanasis Antetokounmpo",
-      "teams": [
-        {
-          "team": "Milwaukee Bucks",
-          "stints": 2,
-          "years": [
-            "2019–2024",
-            "2025–26"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Theo Maledon",
       "teams": [
         {
@@ -51465,19 +51258,6 @@
           "years": [
             "1999-2001",
             "2002-2003"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Tolu Smith",
-      "teams": [
-        {
-          "team": "Motor City Cruise",
-          "stints": 2,
-          "years": [
-            "2024–2025",
-            "2025–2026"
           ]
         }
       ]
@@ -52980,27 +52760,11 @@
       "player": "Xavier Moon",
       "teams": [
         {
-          "team": "Agua Caliente Clippers",
-          "stints": 2,
-          "years": [
-            "2021–2022",
-            "2022"
-          ]
-        },
-        {
           "team": "LA Clippers",
           "stints": 2,
           "years": [
             "2021–22",
             "2023–2024"
-          ]
-        },
-        {
-          "team": "London Lightning",
-          "stints": 2,
-          "years": [
-            "2018–2019",
-            "2019–2020"
           ]
         },
         {

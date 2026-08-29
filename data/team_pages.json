@@ -42662,6 +42662,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Colby Jones",
+          "years": "2025",
+          "stint_team": "Detroit Pistons",
+          "status": "overseas_active",
+          "current_team": "Memphis Hustle",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Cole Swider",
           "years": "2024–25",
           "stint_team": "Detroit Pistons",
@@ -47385,6 +47394,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Colby Jones",
+          "status": "overseas_active",
+          "current_team": "Memphis Hustle",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Cole Swider",
           "status": "overseas_active",
           "current_team": "Anadolu Efes",
@@ -47975,8 +47991,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 624,
-      "alumni_count": 583,
+      "roster_count": 625,
+      "alumni_count": 584,
       "related": [
         {
           "type": "club",
@@ -47986,7 +48002,7 @@
         {
           "type": "club",
           "name": "Motor City Cruise",
-          "shared": 24
+          "shared": 25
         },
         {
           "type": "club",

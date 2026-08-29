@@ -37983,6 +37983,64 @@
         }
       ]
     },
+    "ASGE": {
+      "club": "ASGE",
+      "city": "Downers Grove",
+      "state": "Illinois",
+      "country": "USA",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Adonis Jordan",
+          "years": "2001-2002",
+          "status": "retired",
+          "last_team": "Chelsea Gulls",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Cocodrilos de Caracas",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Rochester Renegade",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Townsville Crocodiles",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Maccabi Jerusalem",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Chelsea Gulls",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Kwangju Nasan Flamans BC",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "South-East Melbourne Magic",
+          "shared": 1
+        }
+      ]
+    },
     "Townsville Crocodiles": {
       "club": "Townsville Crocodiles",
       "city": "Townsville",
@@ -38086,64 +38144,6 @@
         {
           "type": "club",
           "name": "Fortitudo Bologna",
-          "shared": 1
-        }
-      ]
-    },
-    "ASGE": {
-      "club": "ASGE",
-      "city": "Downers Grove",
-      "state": "Illinois",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Adonis Jordan",
-          "years": "2001-2002",
-          "status": "retired",
-          "last_team": "Chelsea Gulls",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cocodrilos de Caracas",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Rochester Renegade",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Townsville Crocodiles",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maccabi Jerusalem",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Chelsea Gulls",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Kwangju Nasan Flamans BC",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "South-East Melbourne Magic",
           "shared": 1
         }
       ]
@@ -84146,7 +84146,7 @@
       "city": "Detroit",
       "state": "Michigan",
       "country": "USA",
-      "count": 39,
+      "count": 40,
       "roster": [
         {
           "player": "Alondes Williams",
@@ -84196,6 +84196,13 @@
           "status": "overseas_active",
           "last_team": "Hsinchu Toplus Lioneers",
           "nationality": "Mali"
+        },
+        {
+          "player": "Colby Jones",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Memphis Hustle",
+          "nationality": "United States"
         },
         {
           "player": "Cole Swider",
@@ -84434,6 +84441,11 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 4
         },
@@ -84450,11 +84462,6 @@
         {
           "type": "club",
           "name": "Iowa Wolves",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
           "shared": 4
         },
         {
@@ -117688,6 +117695,64 @@
         }
       ]
     },
+    "Dukok": {
+      "club": "Dukok",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Anthony Grundy",
+          "years": "2013",
+          "status": "retired",
+          "last_team": "Hacettepe Üniversitesi",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "AEK Athens",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Panteras de Miranda",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "EWE Baskets Oldenburg",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Panellinios",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Mahram Tehran",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Roanoke Dazzle",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Kavala",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Petron Blaze Boosters",
+          "shared": 1
+        }
+      ]
+    },
     "Hacettepe Üniversitesi": {
       "club": "Hacettepe Üniversitesi",
       "city": "Ankara",
@@ -117763,64 +117828,6 @@
         {
           "type": "club",
           "name": "Pallacanestro Varese",
-          "shared": 1
-        }
-      ]
-    },
-    "Dukok": {
-      "club": "Dukok",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Anthony Grundy",
-          "years": "2013",
-          "status": "retired",
-          "last_team": "Hacettepe Üniversitesi",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "AEK Athens",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Panteras de Miranda",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "EWE Baskets Oldenburg",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Panellinios",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mahram Tehran",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Roanoke Dazzle",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Kavala",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Petron Blaze Boosters",
           "shared": 1
         }
       ]
@@ -118826,12 +118833,12 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Motor City Cruise",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Motor City Cruise",
+          "name": "Gigantes de Carolina",
           "shared": 1
         },
         {
@@ -140260,6 +140267,99 @@
         }
       ]
     },
+    "Crispa Redmanizers": {
+      "club": "Crispa Redmanizers",
+      "city": "Manila",
+      "state": "",
+      "country": "Philippines",
+      "count": 6,
+      "roster": [
+        {
+          "player": "Billy Ray Bates",
+          "years": "1983",
+          "status": "retired",
+          "last_team": "Pensacola Tornados",
+          "nationality": "United States"
+        },
+        {
+          "player": "Cornell Warner",
+          "years": "1979",
+          "status": "retired",
+          "last_team": "Crispa Redmanizers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Glenn Hagan",
+          "years": "1982",
+          "status": "retired",
+          "last_team": "Bay State Bombardiers",
+          "nationality": "United States"
+        },
+        {
+          "player": "James Hardy",
+          "years": "1981",
+          "status": "retired",
+          "last_team": "Ourense",
+          "nationality": "United States"
+        },
+        {
+          "player": "Larry Demic",
+          "years": "1983",
+          "status": "retired",
+          "last_team": "Puerto Rico Coquis",
+          "nationality": "United States"
+        },
+        {
+          "player": "Lewis Brown",
+          "years": "1982",
+          "status": "retired",
+          "last_team": "Segafredo Gorizia",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Montepaschi Siena",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Snaidero Udine",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Paris Basket Racing",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Detroit Spirits",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Olympique Antibes",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Pensacola Tornados",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Maine Lumberjacks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Anchorage Northern Knights",
+          "shared": 1
+        }
+      ]
+    },
     "Ohio Mixers": {
       "club": "Ohio Mixers",
       "city": "Lima",
@@ -140391,99 +140491,6 @@
         {
           "type": "club",
           "name": "Fort Wayne Fury",
-          "shared": 1
-        }
-      ]
-    },
-    "Crispa Redmanizers": {
-      "club": "Crispa Redmanizers",
-      "city": "Manila",
-      "state": "",
-      "country": "Philippines",
-      "count": 6,
-      "roster": [
-        {
-          "player": "Billy Ray Bates",
-          "years": "1983",
-          "status": "retired",
-          "last_team": "Pensacola Tornados",
-          "nationality": "United States"
-        },
-        {
-          "player": "Cornell Warner",
-          "years": "1979",
-          "status": "retired",
-          "last_team": "Crispa Redmanizers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Glenn Hagan",
-          "years": "1982",
-          "status": "retired",
-          "last_team": "Bay State Bombardiers",
-          "nationality": "United States"
-        },
-        {
-          "player": "James Hardy",
-          "years": "1981",
-          "status": "retired",
-          "last_team": "Ourense",
-          "nationality": "United States"
-        },
-        {
-          "player": "Larry Demic",
-          "years": "1983",
-          "status": "retired",
-          "last_team": "Puerto Rico Coquis",
-          "nationality": "United States"
-        },
-        {
-          "player": "Lewis Brown",
-          "years": "1982",
-          "status": "retired",
-          "last_team": "Segafredo Gorizia",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Montepaschi Siena",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Snaidero Udine",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Paris Basket Racing",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Detroit Spirits",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olympique Antibes",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pensacola Tornados",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maine Lumberjacks",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Anchorage Northern Knights",
           "shared": 1
         }
       ]
@@ -186400,122 +186407,6 @@
           "type": "club",
           "name": "Sutor Montegranaro",
           "shared": 1
-        }
-      ]
-    },
-    "Detroit Pistons <!--": {
-      "club": "Detroit Pistons <!--",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Colby Jones",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Stockton Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Motor City Cruise-->",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "APR",
-          "shared": 0
-        }
-      ]
-    },
-    "Motor City Cruise-->": {
-      "club": "Motor City Cruise-->",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Colby Jones",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Stockton Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Detroit Pistons <!--",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "APR",
-          "shared": 0
         }
       ]
     },
@@ -259492,16 +259383,16 @@
         }
       ]
     },
-    "Vancouver Nighthawks": {
-      "club": "Vancouver Nighthawks",
-      "city": "Vancouver",
-      "state": "British Columbia",
-      "country": "Canada",
+    "Hills Bros. Coffee Kings": {
+      "club": "Hills Bros. Coffee Kings",
+      "city": "",
+      "state": "",
+      "country": "",
       "count": 1,
       "roster": [
         {
           "player": "Jose Slaughter",
-          "years": "1988",
+          "years": "1987",
           "status": "retired",
           "last_team": "Yakima SunKings",
           "nationality": "United States"
@@ -259550,16 +259441,16 @@
         }
       ]
     },
-    "Hills Bros. Coffee Kings": {
-      "club": "Hills Bros. Coffee Kings",
-      "city": "",
-      "state": "",
-      "country": "",
+    "Vancouver Nighthawks": {
+      "club": "Vancouver Nighthawks",
+      "city": "Vancouver",
+      "state": "British Columbia",
+      "country": "Canada",
       "count": 1,
       "roster": [
         {
           "player": "Jose Slaughter",
-          "years": "1987",
+          "years": "1988",
           "status": "retired",
           "last_team": "Yakima SunKings",
           "nationality": "United States"
