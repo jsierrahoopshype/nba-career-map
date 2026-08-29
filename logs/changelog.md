@@ -1,3 +1,13 @@
+## 2026-08-29 — incremental run
+
+- Players updated: **504** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **1**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: Gifu Swoops
+  - Erik McCree: Minas → Gifu Swoops
+
 ## 2026-08-28 — incremental run
 
 - Players updated: **497** (0 new)
