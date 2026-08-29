@@ -2349,7 +2349,12 @@
         function routeSegmentStyle(i, n) {
             if(i === n - 2) return { weight: 4.5, opacity: 0.9 };   // final segment
             if(i === n - 3) return { weight: 3,   opacity: 0.6 };   // one stop back
-            return { weight: 1.5, opacity: 0.22 };                  // earlier history
+            // Earlier history. The floor was 1.5 @ 0.22, which on the grey
+            // basemap made a long career's opening moves genuinely hard to
+            // follow -- the trail has to stay readable, not just present. The
+            // three tiers are still clearly ordered in both weight and
+            // opacity, so recency reads exactly as before.
+            return { weight: 2.2, opacity: 0.45 };
         }
 
         // First stop: the franchise's real logo in a white badge when the

@@ -7506,10 +7506,6 @@
       "players": 7
     },
     {
-      "team": "Seattle SuperSonics/Oklahoma City Thunder",
-      "players": 7
-    },
-    {
       "team": "Shimane Susanoo Magic",
       "players": 7
     },
@@ -8982,10 +8978,6 @@
       "players": 4
     },
     {
-      "team": "Vancouver/Memphis Grizzlies",
-      "players": 4
-    },
-    {
       "team": "Ventspils",
       "players": 4
     },
@@ -9655,10 +9647,6 @@
     },
     {
       "team": "New York Celtics",
-      "players": 3
-    },
-    {
-      "team": "New York/New Jersey Nets",
       "players": 3
     },
     {
@@ -10435,10 +10423,6 @@
     },
     {
       "team": "Charleston Lowgators",
-      "players": 2
-    },
-    {
-      "team": "Charlotte Bobcats / Hornets",
       "players": 2
     },
     {
@@ -11350,14 +11334,6 @@
       "players": 2
     },
     {
-      "team": "New Orleans Hornets / Pelicans",
-      "players": 2
-    },
-    {
-      "team": "New Orleans Hornets/Pelicans",
-      "players": 2
-    },
-    {
       "team": "New York Whitecaps",
       "players": 2
     },
@@ -11863,10 +11839,6 @@
     },
     {
       "team": "Syracuse Centennials",
-      "players": 2
-    },
-    {
-      "team": "Syracuse Nationals/Philadelphia 76ers",
       "players": 2
     },
     {
@@ -13446,10 +13418,6 @@
       "players": 1
     },
     {
-      "team": "Buffalo Braves/San Diego Clippers",
-      "players": 1
-    },
-    {
       "team": "Buffalo City Thunder",
       "players": 1
     },
@@ -13907,10 +13875,6 @@
     },
     {
       "team": "Chicago Studebaker Flyers",
-      "players": 1
-    },
-    {
-      "team": "Chicago Zephyrs/Baltimore Bullets",
       "players": 1
     },
     {
@@ -15642,10 +15606,6 @@
       "players": 1
     },
     {
-      "team": "Kansas City/Sacramento Kings",
-      "players": 1
-    },
-    {
       "team": "Kaohsiung Jeoutai Technology",
       "players": 1
     },
@@ -16402,10 +16362,6 @@
       "players": 1
     },
     {
-      "team": "Minneapolis/Los Angeles Lakers",
-      "players": 1
-    },
-    {
       "team": "Minnesota Muskies / Miami Floridians",
       "players": 1
     },
@@ -16651,10 +16607,6 @@
     },
     {
       "team": "New Haven Elms / Hamden Bics",
-      "players": 1
-    },
-    {
-      "team": "New Jersey / Brooklyn Nets",
       "players": 1
     },
     {
@@ -17183,10 +17135,6 @@
     },
     {
       "team": "Pezoporikos Larnaca",
-      "players": 1
-    },
-    {
-      "team": "Philadelphia/San Francisco Warriors",
       "players": 1
     },
     {
@@ -17898,10 +17846,6 @@
       "players": 1
     },
     {
-      "team": "San Francisco/Golden State Warriors",
-      "players": 1
-    },
-    {
       "team": "San Javier de Puerto Montt",
       "players": 1
     },
@@ -18027,10 +17971,6 @@
     },
     {
       "team": "Seattle Super Hawks",
-      "players": 1
-    },
-    {
-      "team": "Seattle SuperSonics / , Oklahoma City Thunder",
       "players": 1
     },
     {
@@ -18347,10 +18287,6 @@
     },
     {
       "team": "St. Louis Flight",
-      "players": 1
-    },
-    {
-      "team": "St. Louis/Atlanta Hawks",
       "players": 1
     },
     {
@@ -22477,7 +22413,7 @@
     },
     {
       "country": "Canada",
-      "players": 519
+      "players": 520
     },
     {
       "country": "Turkey",
@@ -51070,6 +51006,19 @@
           "years": [
             "1984-1985",
             "1985"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Stromile Swift",
+      "teams": [
+        {
+          "team": "Memphis Grizzlies",
+          "stints": 2,
+          "years": [
+            "2000-2005",
+            "2006-2008"
           ]
         }
       ]

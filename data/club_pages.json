@@ -54694,78 +54694,6 @@
         }
       ]
     },
-    "New York/New Jersey Nets": {
-      "club": "New York/New Jersey Nets",
-      "city": "East Rutherford",
-      "state": "New Jersey",
-      "country": "USA",
-      "count": 3,
-      "roster": [
-        {
-          "player": "Al Skinner",
-          "years": "1974-1977",
-          "status": "retired",
-          "last_team": "Joventut Badalona",
-          "nationality": "United States"
-        },
-        {
-          "player": "Robert Hawkins",
-          "years": "1976-1978",
-          "status": "retired",
-          "last_team": "Detroit Pistons",
-          "nationality": "United States"
-        },
-        {
-          "player": "Tim Bassett",
-          "years": "1975-1979",
-          "status": "retired",
-          "last_team": "Pallacanestro Varese",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Pallacanestro Varese",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Joventut Badalona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "San Diego Conquistadors",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        }
-      ]
-    },
     "Brujos de Guayama": {
       "club": "Brujos de Guayama",
       "city": "Guayama",
@@ -56391,71 +56319,6 @@
         {
           "type": "club",
           "name": "Limoges CSP",
-          "shared": 0
-        }
-      ]
-    },
-    "New Orleans Hornets/Pelicans": {
-      "club": "New Orleans Hornets/Pelicans",
-      "city": "New Orleans",
-      "state": "Louisiana",
-      "country": "USA",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Al-Farouq Aminu",
-          "years": "2011-2014",
-          "status": "retired",
-          "last_team": "Chicago Bulls",
-          "nationality": "Nigeria"
-        },
-        {
-          "player": "Jason Smith",
-          "years": "2010-2014",
-          "status": "retired",
-          "last_team": "New Orleans Pelicans",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
           "shared": 0
         }
       ]
@@ -114867,73 +114730,6 @@
         }
       ]
     },
-    "New Orleans Hornets / Pelicans": {
-      "club": "New Orleans Hornets / Pelicans",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Anthony Davis",
-          "years": "2012–2019",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
-          "nationality": "United States",
-          "all_star": true,
-          "all_star_count": 10
-        },
-        {
-          "player": "Eric Gordon",
-          "years": "2011–2016",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
-          "nationality": "American / Bahamian"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Anchorage Northern Knights",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Boca Juniors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bahçeşehir Koleji",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Elmira Colonels",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Cañeros del Este",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Pinheiros",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Ittihad Alexandria",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "New Haven Elms",
-          "shared": 0
-        }
-      ]
-    },
     "Mississippi Jets": {
       "club": "Mississippi Jets",
       "city": "La Crosse",
@@ -138076,64 +137872,6 @@
         }
       ]
     },
-    "Chicago Zephyrs/Baltimore Bullets": {
-      "club": "Chicago Zephyrs/Baltimore Bullets",
-      "city": "Baltimore",
-      "state": "Maryland",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Bill McGill",
-          "years": "1962-1963",
-          "status": "retired",
-          "last_team": "Dallas Chaparrals",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Dallas Chaparrals",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Grand Rapids Tackers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pittsburgh Pipers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Holland Carvers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        }
-      ]
-    },
     "Grand Rapids Tackers": {
       "club": "Grand Rapids Tackers",
       "city": "Grand Rapids",
@@ -138278,17 +138016,17 @@
         },
         {
           "type": "club",
-          "name": "Chicago Zephyrs/Baltimore Bullets",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Anchorage Northern Knights",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Boca Juniors",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Bahçeşehir Koleji",
           "shared": 0
         }
       ]
@@ -139169,64 +138907,6 @@
           "type": "club",
           "name": "Philadelphia Tapers",
           "shared": 1
-        }
-      ]
-    },
-    "San Francisco/Golden State Warriors": {
-      "club": "San Francisco/Golden State Warriors",
-      "city": "San Francisco",
-      "state": "California",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Bill Turner",
-          "years": "1971-1972",
-          "status": "retired",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 0
         }
       ]
     },
@@ -141257,11 +140937,6 @@
         },
         {
           "type": "club",
-          "name": "Charlotte Bobcats / Hornets",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "CB Illescas",
           "shared": 1
         },
@@ -141288,6 +140963,11 @@
         {
           "type": "club",
           "name": "Zaragoza",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Unicaja",
           "shared": 0
         }
       ]
@@ -141315,11 +140995,6 @@
         },
         {
           "type": "club",
-          "name": "Charlotte Bobcats / Hornets",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Fuenlabrada-Getafe Madrid",
           "shared": 1
         },
@@ -141347,70 +141022,10 @@
           "type": "club",
           "name": "Zaragoza",
           "shared": 0
-        }
-      ]
-    },
-    "Charlotte Bobcats / Hornets": {
-      "club": "Charlotte Bobcats / Hornets",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Bismack Biyombo",
-          "years": "2011–2015",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
-          "nationality": "DR Congo"
-        },
-        {
-          "player": "Jeffery Taylor",
-          "years": "2012–2015",
-          "status": "overseas_active",
-          "last_team": "U-BT Cluj-Napoca",
-          "nationality": "American / Swedish"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Real Madrid",
-          "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fuenlabrada",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "U-BT Cluj-Napoca",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "CB Illescas",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fuenlabrada-Getafe Madrid",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Vilnius Wolves",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Anchorage Northern Knights",
+          "name": "Unicaja",
           "shared": 0
         }
       ]
@@ -147536,11 +147151,6 @@
         },
         {
           "type": "club",
-          "name": "Minneapolis/Los Angeles Lakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Anchorage Northern Knights",
           "shared": 0
         },
@@ -147552,6 +147162,11 @@
         {
           "type": "club",
           "name": "Bahçeşehir Koleji",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Elmira Colonels",
           "shared": 0
         }
       ]
@@ -156252,66 +155867,6 @@
           "type": "club",
           "name": "Windy City Bulls",
           "shared": 1
-        }
-      ]
-    },
-    "New Jersey / Brooklyn Nets": {
-      "club": "New Jersey / Brooklyn Nets",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Brook Lopez",
-          "years": "2008–2017",
-          "status": "nba_active",
-          "last_team": "LA Clippers",
-          "nationality": "United States",
-          "all_star": true,
-          "all_star_count": 1
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Anchorage Northern Knights",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Boca Juniors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bahçeşehir Koleji",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Elmira Colonels",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Cañeros del Este",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Pinheiros",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Ittihad Alexandria",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "New Haven Elms",
-          "shared": 0
         }
       ]
     },
@@ -181096,106 +180651,6 @@
         }
       ]
     },
-    "Seattle SuperSonics/Oklahoma City Thunder": {
-      "club": "Seattle SuperSonics/Oklahoma City Thunder",
-      "city": "Oklahoma City",
-      "state": "Oklahoma",
-      "country": "USA",
-      "count": 7,
-      "roster": [
-        {
-          "player": "Chris Wilcox",
-          "years": "2006-2009",
-          "status": "retired",
-          "last_team": "Boston Celtics",
-          "nationality": "United States"
-        },
-        {
-          "player": "Damien Wilkins",
-          "years": "2004-2009",
-          "status": "retired",
-          "last_team": "Indiana Pacers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jeff Green",
-          "years": "2007-2011",
-          "status": "nba_active",
-          "last_team": "Houston Rockets",
-          "nationality": "United States"
-        },
-        {
-          "player": "Johan Petro",
-          "years": "2005-2009",
-          "status": "retired",
-          "last_team": "Sioux Falls Skyforce",
-          "nationality": "France"
-        },
-        {
-          "player": "Nick Collison",
-          "years": "2003-2018",
-          "status": "retired",
-          "last_team": "Seattle SuperSonics/Oklahoma City Thunder",
-          "nationality": "United States"
-        },
-        {
-          "player": "Robert Swift",
-          "years": "2004-2009",
-          "status": "retired",
-          "last_team": "Gijón",
-          "nationality": "United States"
-        },
-        {
-          "player": "Saer Sene",
-          "years": "2006-2009",
-          "status": "retired",
-          "last_team": "Austin Spurs",
-          "nationality": "Senegal"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Bakersfield Jam",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Iowa Energy",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Leones de Ponce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pau-Orthez",
-          "shared": 1
-        }
-      ]
-    },
     "Olin Edirne": {
       "club": "Olin Edirne",
       "city": "Eskişehir",
@@ -199346,72 +198801,6 @@
         }
       ]
     },
-    "Syracuse Nationals/Philadelphia 76ers": {
-      "club": "Syracuse Nationals/Philadelphia 76ers",
-      "city": "Syracuse",
-      "state": "New York",
-      "country": "USA",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Dave Gambee",
-          "years": "1960-1967",
-          "status": "retired",
-          "last_team": "San Francisco Warriors",
-          "nationality": "United States"
-        },
-        {
-          "player": "Larry Costello",
-          "years": "1957-1965",
-          "status": "retired",
-          "last_team": "Philadelphia 76ers",
-          "nationality": "United States",
-          "all_star_count": 6
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Wilkes-Barre Barons",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        }
-      ]
-    },
     "San Francisco Saints": {
       "club": "San Francisco Saints",
       "city": "San Francisco",
@@ -199991,7 +199380,7 @@
         },
         {
           "type": "club",
-          "name": "Kansas City/Sacramento Kings",
+          "name": "Turun NMKY",
           "shared": 1
         }
       ]
@@ -231887,85 +231276,6 @@
         }
       ]
     },
-    "Vancouver/Memphis Grizzlies": {
-      "club": "Vancouver/Memphis Grizzlies",
-      "city": "Memphis",
-      "state": "Tennessee",
-      "country": "USA",
-      "count": 4,
-      "roster": [
-        {
-          "player": "Grant Long",
-          "years": "1999-2002",
-          "status": "retired",
-          "last_team": "Boston Celtics",
-          "nationality": "United States"
-        },
-        {
-          "player": "Isaac Austin",
-          "years": "2000-2002",
-          "status": "retired",
-          "last_team": "Jersey Squires",
-          "nationality": "United States"
-        },
-        {
-          "player": "Michael Dickerson",
-          "years": "1999-2003",
-          "status": "retired",
-          "last_team": "Faymasa Palencia",
-          "nationality": "United States"
-        },
-        {
-          "player": "Stromile Swift",
-          "years": "2000-2005",
-          "status": "retired",
-          "last_team": "Shandong Lions",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Oklahoma City Cavalry",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Xinjiang",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Ülkerspor",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Shandong Lions",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "CRO Lyon",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tuborg Pilsener",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Jersey Squires",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Faymasa Palencia",
-          "shared": 1
-        }
-      ]
-    },
     "Belgrano de San Nicolás": {
       "club": "Belgrano de San Nicolás",
       "city": "San Nicolás",
@@ -249816,11 +249126,6 @@
         },
         {
           "type": "club",
-          "name": "Charlotte Bobcats / Hornets",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Žalgiris",
           "shared": 0
         },
@@ -249837,6 +249142,11 @@
         {
           "type": "club",
           "name": "Juventus Utena",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Lietuvos Rytas",
           "shared": 0
         }
       ]
@@ -254634,65 +253944,6 @@
         }
       ]
     },
-    "St. Louis/Atlanta Hawks": {
-      "club": "St. Louis/Atlanta Hawks",
-      "city": "Atlanta",
-      "state": "Georgia",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Joe Caldwell",
-          "years": "1965-1970",
-          "status": "retired",
-          "last_team": "Carolina Cougars/Spirits of St. Louis",
-          "nationality": "United States",
-          "all_star_count": 2
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Carolina Cougars/Spirits of St. Louis",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        }
-      ]
-    },
     "Carolina Cougars/Spirits of St. Louis": {
       "club": "Carolina Cougars/Spirits of St. Louis",
       "city": "Carolina",
@@ -254710,11 +253961,6 @@
         }
       ],
       "related": [
-        {
-          "type": "club",
-          "name": "St. Louis/Atlanta Hawks",
-          "shared": 1
-        },
         {
           "type": "club",
           "name": "Capitanes de Arecibo",
@@ -254748,6 +253994,11 @@
         {
           "type": "club",
           "name": "Atléticos de San Germán",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Vaqueros de Bayamón",
           "shared": 0
         }
       ]
@@ -268010,66 +267261,6 @@
         }
       ]
     },
-    "Seattle SuperSonics / , Oklahoma City Thunder": {
-      "club": "Seattle SuperSonics / , Oklahoma City Thunder",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Kevin Durant",
-          "years": "2007–2016",
-          "status": "nba_active",
-          "last_team": "Houston Rockets",
-          "nationality": "United States",
-          "all_star": true,
-          "all_star_count": 16
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Anchorage Northern Knights",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Boca Juniors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bahçeşehir Koleji",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Elmira Colonels",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Cañeros del Este",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Pinheiros",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Ittihad Alexandria",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "New Haven Elms",
-          "shared": 0
-        }
-      ]
-    },
     "Añejo Rum 65": {
       "club": "Añejo Rum 65",
       "city": "",
@@ -281068,64 +280259,6 @@
         }
       ]
     },
-    "Kansas City/Sacramento Kings": {
-      "club": "Kansas City/Sacramento Kings",
-      "city": "Sacramento",
-      "state": "California",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Mark Olberding",
-          "years": "1983-1987",
-          "status": "retired",
-          "last_team": "Benetton Treviso",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Benetton Treviso",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "San Diego Sails",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        }
-      ]
-    },
     "EBBC Den Bosch": {
       "club": "EBBC Den Bosch",
       "city": "s-Hertogenbosch",
@@ -284613,11 +283746,6 @@
       "related": [
         {
           "type": "club",
-          "name": "Vancouver/Memphis Grizzlies",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Anchorage Northern Knights",
           "shared": 0
         },
@@ -284649,6 +283777,11 @@
         {
           "type": "club",
           "name": "Al Ittihad Alexandria",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "New Haven Elms",
           "shared": 0
         }
       ]
@@ -300625,65 +299758,6 @@
         }
       ]
     },
-    "Minneapolis/Los Angeles Lakers": {
-      "club": "Minneapolis/Los Angeles Lakers",
-      "city": "Los Angeles",
-      "state": "California",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Ray Felix",
-          "years": "1960-1962",
-          "status": "retired",
-          "last_team": "Minneapolis/Los Angeles Lakers",
-          "nationality": "United States",
-          "all_star_count": 1
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        }
-      ]
-    },
     "Wilmington Jets": {
       "club": "Wilmington Jets",
       "city": "Allentown",
@@ -303346,11 +302420,6 @@
         },
         {
           "type": "club",
-          "name": "Seattle SuperSonics/Oklahoma City Thunder",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Gijón",
           "shared": 1
         },
@@ -303378,6 +302447,11 @@
           "type": "club",
           "name": "Bahçeşehir Koleji",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Elmira Colonels",
+          "shared": 0
         }
       ]
     },
@@ -303400,11 +302474,6 @@
         {
           "type": "club",
           "name": "Bakersfield Jam",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Seattle SuperSonics/Oklahoma City Thunder",
           "shared": 1
         },
         {
@@ -303435,6 +302504,11 @@
         {
           "type": "club",
           "name": "Bahçeşehir Koleji",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Elmira Colonels",
           "shared": 0
         }
       ]
@@ -306830,11 +305904,6 @@
         },
         {
           "type": "club",
-          "name": "Seattle SuperSonics/Oklahoma City Thunder",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "BCM Gravelines Dunkerque",
           "shared": 1
         },
@@ -306842,6 +305911,11 @@
           "type": "club",
           "name": "Sharks Antibes",
           "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Anchorage Northern Knights",
+          "shared": 0
         }
       ]
     },
@@ -306888,11 +305962,6 @@
         },
         {
           "type": "club",
-          "name": "Seattle SuperSonics/Oklahoma City Thunder",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Sharks Antibes",
           "shared": 1
         },
@@ -306900,6 +305969,11 @@
           "type": "club",
           "name": "Toulon Basket",
           "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "ASVEL",
+          "shared": 0
         }
       ]
     },
@@ -306946,11 +306020,6 @@
         },
         {
           "type": "club",
-          "name": "Seattle SuperSonics/Oklahoma City Thunder",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "BCM Gravelines Dunkerque",
           "shared": 1
         },
@@ -306958,6 +306027,11 @@
           "type": "club",
           "name": "Toulon Basket",
           "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "ASVEL",
+          "shared": 0
         }
       ]
     },
@@ -312122,64 +311196,6 @@
         }
       ]
     },
-    "Buffalo Braves/San Diego Clippers": {
-      "club": "Buffalo Braves/San Diego Clippers",
-      "city": "Buffalo",
-      "state": "New York",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Swen Nater",
-          "years": "1977-1983",
-          "status": "retired",
-          "last_team": "Snaidero Udine",
-          "nationality": "Netherlands"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Snaidero Udine",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Virginia Squires",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        }
-      ]
-    },
     "Mydonose Kolejliler": {
       "club": "Mydonose Kolejliler",
       "city": "",
@@ -315817,65 +314833,6 @@
           "status": "retired",
           "last_team": "Lazio Basket",
           "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 0
-        }
-      ]
-    },
-    "Philadelphia/San Francisco Warriors": {
-      "club": "Philadelphia/San Francisco Warriors",
-      "city": "San Francisco",
-      "state": "California",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Tom Meschery",
-          "years": "1961-1967",
-          "status": "retired",
-          "last_team": "Seattle SuperSonics",
-          "nationality": "United States",
-          "all_star_count": 1
         }
       ],
       "related": [
