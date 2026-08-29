@@ -688,8 +688,8 @@
   "Al Ahly": {
     "team": "Al Ahly",
     "city": "Cairo",
-    "state": "Egypt",
-    "country": "",
+    "state": "",
+    "country": "Egypt",
     "league": ""
   },
   "Al Ahly Benghazi": {
@@ -766,7 +766,7 @@
     "team": "Al Ittihad Alexandria",
     "city": "Alexandria",
     "state": "",
-    "country": "",
+    "country": "Egypt",
     "league": ""
   },
   "Al Jalaa": {
@@ -1088,7 +1088,7 @@
     "team": "Al-Difaa Al-Jawi",
     "city": "Baghdad",
     "state": "",
-    "country": "",
+    "country": "Iraq",
     "league": ""
   },
   "Al-Fateh": {
@@ -1696,8 +1696,8 @@
   "Anchorage Northern Knights": {
     "team": "Anchorage Northern Knights",
     "city": "Anchorage",
-    "state": "",
-    "country": "",
+    "state": "Alaska",
+    "country": "USA",
     "league": ""
   },
   "Anderson Chiefs/ Packers": {
@@ -3221,9 +3221,9 @@
   },
   "Bahçeşehir Koleji": {
     "team": "Bahçeşehir Koleji",
-    "city": "Harvard",
+    "city": "Istanbul",
     "state": "",
-    "country": "",
+    "country": "Turkey",
     "league": ""
   },
   "Baker Livorno": {
@@ -3664,7 +3664,7 @@
     "team": "Basket Kwidzyn",
     "city": "Kwidzyn",
     "state": "",
-    "country": "",
+    "country": "Poland",
     "league": ""
   },
   "Basket Livorno": {
@@ -4404,9 +4404,9 @@
   },
   "Boca Juniors": {
     "team": "Boca Juniors",
-    "city": "La Boca",
+    "city": "Buenos Aires",
     "state": "",
-    "country": "",
+    "country": "Argentina",
     "league": ""
   },
   "Bodrumspor": {
@@ -6247,7 +6247,7 @@
     "team": "Cañeros del Este",
     "city": "La Romana",
     "state": "",
-    "country": "",
+    "country": "Dominican Republic",
     "league": ""
   },
   "Cearense": {
@@ -7031,7 +7031,7 @@
     "team": "Club Africain",
     "city": "Tunis",
     "state": "",
-    "country": "",
+    "country": "Tunisia",
     "league": ""
   },
   "Club Antonin Sportif": {
@@ -8161,11 +8161,18 @@
     "country": "Belgium",
     "league": ""
   },
+  "Diablos Rojos del Mexico": {
+    "team": "Diablos Rojos del Mexico",
+    "city": "Mexico City",
+    "state": "",
+    "country": "Mexico",
+    "league": ""
+  },
   "Diablos Rojos del México": {
     "team": "Diablos Rojos del México",
     "city": "Mexico City",
     "state": "",
-    "country": "",
+    "country": "Mexico",
     "league": ""
   },
   "Diablos de La Vega": {
@@ -8752,8 +8759,8 @@
   "Elmira Colonels": {
     "team": "Elmira Colonels",
     "city": "Elmira",
-    "state": "",
-    "country": "",
+    "state": "New York",
+    "country": "USA",
     "league": ""
   },
   "Elosúa León": {
@@ -8949,7 +8956,7 @@
     "team": "Español de Talca",
     "city": "Talca",
     "state": "",
-    "country": "",
+    "country": "Chile",
     "league": ""
   },
   "Esperos Kallitheas": {
@@ -9082,7 +9089,7 @@
     "team": "Ezzahra Sports",
     "city": "Ezzahra",
     "state": "",
-    "country": "",
+    "country": "Tunisia",
     "league": ""
   },
   "F.C. Porto": {
@@ -11817,9 +11824,9 @@
   },
   "Hsinchu JKO Lioneers": {
     "team": "Hsinchu JKO Lioneers",
-    "city": "Hsinchu County",
+    "city": "Hsinchu",
     "state": "",
-    "country": "",
+    "country": "Taiwan",
     "league": ""
   },
   "Hsinchu Lioneers": {
@@ -11831,9 +11838,9 @@
   },
   "Hsinchu Toplus Lioneers": {
     "team": "Hsinchu Toplus Lioneers",
-    "city": "Hsinchu County",
+    "city": "Hsinchu",
     "state": "",
-    "country": "",
+    "country": "Taiwan",
     "league": ""
   },
   "Hubei Wenlv": {
@@ -12785,7 +12792,7 @@
     "team": "Japan Energy Griffins",
     "city": "Tokyo",
     "state": "",
-    "country": "",
+    "country": "Japan",
     "league": ""
   },
   "Jeonju KCC Egis": {
@@ -13406,9 +13413,9 @@
   },
   "Kaohsiung Aquas": {
     "team": "Kaohsiung Aquas",
-    "city": "Kaohsiung City",
+    "city": "Kaohsiung",
     "state": "",
-    "country": "",
+    "country": "Taiwan",
     "league": ""
   },
   "Kaohsiung Jeoutai Technology": {
@@ -13421,8 +13428,8 @@
   "Kaohsiung Steelers": {
     "team": "Kaohsiung Steelers",
     "city": "Kaohsiung",
-    "state": "Taiwan",
-    "country": "",
+    "state": "",
+    "country": "Taiwan",
     "league": ""
   },
   "Kapfenberg Bulls": {
@@ -13511,9 +13518,9 @@
   },
   "Kazma": {
     "team": "Kazma",
-    "city": "Kuwait",
+    "city": "Kuwait City",
     "state": "",
-    "country": "",
+    "country": "Kuwait",
     "league": ""
   },
   "Kaštela": {
@@ -15487,7 +15494,7 @@
     "team": "Maccabi Kiryat Motzkin",
     "city": "Kiryat Motzkin",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Maccabi Nazareth": {
@@ -15508,7 +15515,7 @@
     "team": "Maccabi Ra'anana",
     "city": "Ra'anana",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Maccabi Raanana": {
@@ -16108,9 +16115,9 @@
   },
   "Mega Vizura": {
     "team": "Mega Vizura",
-    "city": "DNA repair",
+    "city": "Belgrade",
     "state": "",
-    "country": "",
+    "country": "Serbia",
     "league": ""
   },
   "Melbourne Tigers": {
@@ -16200,8 +16207,8 @@
   "Memphis Rockers": {
     "team": "Memphis Rockers",
     "city": "Memphis",
-    "state": "",
-    "country": "",
+    "state": "Tennessee",
+    "country": "USA",
     "league": ""
   },
   "Memphis Sounds": {
@@ -17383,8 +17390,8 @@
   "New Haven Elms": {
     "team": "New Haven Elms",
     "city": "New Haven",
-    "state": "",
-    "country": "",
+    "state": "Connecticut",
+    "country": "USA",
     "league": ""
   },
   "New Haven Elms / Hamden Bics": {
@@ -17495,8 +17502,8 @@
   "New Orleans Hornets": {
     "team": "New Orleans Hornets",
     "city": "New Orleans",
-    "state": "",
-    "country": "",
+    "state": "Louisiana",
+    "country": "USA",
     "league": ""
   },
   "New Orleans Hornets / Pelicans": {
@@ -18105,7 +18112,7 @@
     "team": "Ohud Medina",
     "city": "Medina",
     "state": "",
-    "country": "",
+    "country": "Saudi Arabia",
     "league": ""
   },
   "Okapi Aalst": {
@@ -19750,7 +19757,7 @@
     "team": "Pinheiros",
     "city": "São Paulo",
     "state": "",
-    "country": "",
+    "country": "Brazil",
     "league": ""
   },
   "Pinheiros Basquete": {
@@ -22647,8 +22654,8 @@
   "Sendai 89ers": {
     "team": "Sendai 89ers",
     "city": "Sendai",
-    "state": "",
-    "country": "",
+    "state": "Miyagi",
+    "country": "Japan",
     "league": ""
   },
   "Seoul Knights": {
@@ -22982,9 +22989,9 @@
   },
   "Shimane Susanoo Magic": {
     "team": "Shimane Susanoo Magic",
-    "city": "Matsue City",
-    "state": "",
-    "country": "",
+    "city": "Matsue",
+    "state": "Shimane",
+    "country": "Japan",
     "league": ""
   },
   "Shinshu Brave Warriors": {
@@ -25077,7 +25084,7 @@
     "team": "Titanes del Licey",
     "city": "Santo Domingo",
     "state": "",
-    "country": "",
+    "country": "Dominican Republic",
     "league": ""
   },
   "Titánicos de León": {
@@ -27730,7 +27737,7 @@
     "team": "Zrinjski Mostar",
     "city": "Mostar",
     "state": "",
-    "country": "",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "Zunder Palencia": {
@@ -27763,9 +27770,9 @@
   },
   "Álftanes": {
     "team": "Álftanes",
-    "city": "",
+    "city": "Álftanes",
     "state": "",
-    "country": "",
+    "country": "Iceland",
     "league": ""
   },
   "Ángeles de la Ciudad de México": {
@@ -27800,7 +27807,7 @@
     "team": "Élan Béarnais",
     "city": "Pau",
     "state": "",
-    "country": "",
+    "country": "France",
     "league": ""
   },
   "Élan Béarnais Pau-Lacq-Orthez": {

@@ -853,3 +853,26 @@ AD-HOC FIX -- ROUND 4 (2 teams, requested directly, not from the tiered sweep)
     applied to the data (unblocks DeMarcus Cousins's "-" country in the Most
     Well-Traveled widget) but flagged here for future verification, unlike
     every other entry in this log which is presented as equally-confident.
+
+================================================================================
+ROUND 5 -- head of the location-less distribution (34 teams applied,
+7 sent to review)
+================================================================================
+  Cause: 116 team_locations.json entries carry a city and an EMPTY country.
+  A stint needs both to plot, and earlier rounds could not see these because
+  _located() tests "city AND country" while _missing_location_teams() tests
+  "no city AND no country" -- a city-only stint falls between the two.
+
+  Applied (34): home city unambiguous. Four recorded cities were
+  misparses and were corrected rather than trusted -- Bahçeşehir Koleji
+  ("Harvard"), Mega Vizura ("DNA repair"), Boca Juniors (the La Boca barrio),
+  Kazma ("Kuwait", the country).
+
+  Sent to review (7), NOT guessed:
+    'Al Arabi': several unrelated clubs of this name (Kuwait, Qatar, Saudi Arabia) — which one is unclear from the stint alone
+    'La Palma': ambiguous: the Canary Island, CB La Palma (Spain), and Palma clubs all fit the bare name
+    'Mega': probably KK Mega (Belgrade) but the bare name is also a common sponsor prefix — not confirmable from the stint
+    'Hebei Xianglan': CBA-affiliated club in Hebei, China; the home city within the province isn't established
+    'TNT Tropang 5G': PBA (Philippines) club with no single home city — the league plays a rotating venue schedule
+    'Manchester British-Americans': historical club; Manchester, New Hampshire and Manchester, England are both plausible readings
+    'Fukushima Firebonds': B.League club in Fukushima prefecture; commonly associated with Koriyama, but the home city isn't confirmed here

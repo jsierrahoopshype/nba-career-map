@@ -35,7 +35,7 @@
     {
       "player": "Ade Murkey",
       "current_team": "Álftanes",
-      "country": "",
+      "country": "Iceland",
       "last_updated": "2026-08-28"
     },
     {
@@ -485,7 +485,7 @@
     {
       "player": "Cheick Diallo",
       "current_team": "Hsinchu Toplus Lioneers",
-      "country": "",
+      "country": "Taiwan",
       "last_updated": "2026-08-28"
     },
     {
@@ -599,7 +599,7 @@
     {
       "player": "Coty Clarke",
       "current_team": "Shimane Susanoo Magic",
-      "country": "",
+      "country": "Japan",
       "last_updated": "2026-08-28"
     },
     {
@@ -611,7 +611,7 @@
     {
       "player": "Cristiano Felicio",
       "current_team": "Sendai 89ers",
-      "country": "",
+      "country": "Japan",
       "last_updated": "2026-08-28"
     },
     {
@@ -677,7 +677,7 @@
     {
       "player": "Damien Inglis",
       "current_team": "Bahçeşehir Koleji",
-      "country": "",
+      "country": "Turkey",
       "last_updated": "2026-08-28"
     },
     {
@@ -893,7 +893,7 @@
     {
       "player": "Dexter Dennis",
       "current_team": "Shimane Susanoo Magic",
-      "country": "",
+      "country": "Japan",
       "last_updated": "2026-08-27"
     },
     {
@@ -1409,7 +1409,7 @@
     {
       "player": "Isaiah Todd",
       "current_team": "Kaohsiung Steelers",
-      "country": "",
+      "country": "Taiwan",
       "last_updated": "2026-08-27"
     },
     {
@@ -1595,7 +1595,7 @@
     {
       "player": "Jake Layman",
       "current_team": "Sendai 89ers",
-      "country": "",
+      "country": "Japan",
       "last_updated": "2026-08-27"
     },
     {
@@ -1673,7 +1673,7 @@
     {
       "player": "James Michael McAdoo",
       "current_team": "Shimane Susanoo Magic",
-      "country": "",
+      "country": "Japan",
       "last_updated": "2026-08-27"
     },
     {
@@ -1745,7 +1745,7 @@
     {
       "player": "Jarrett Culver",
       "current_team": "Sendai 89ers",
-      "country": "",
+      "country": "Japan",
       "last_updated": "2026-08-27"
     },
     {
@@ -1757,7 +1757,7 @@
     {
       "player": "Jarron Cumberland",
       "current_team": "Maccabi Ra'anana",
-      "country": "",
+      "country": "Israel",
       "last_updated": "2026-08-27"
     },
     {
@@ -2027,7 +2027,7 @@
     {
       "player": "Jordan Hamilton",
       "current_team": "Al-Difaa Al-Jawi",
-      "country": "",
+      "country": "Iraq",
       "last_updated": "2026-08-27"
     },
     {
@@ -2459,7 +2459,7 @@
     {
       "player": "Malachi Flynn",
       "current_team": "Bahçeşehir Koleji",
-      "country": "",
+      "country": "Turkey",
       "last_updated": "2026-08-28"
     },
     {
@@ -3011,7 +3011,7 @@
     {
       "player": "Pierre Jackson",
       "current_team": "Al Ittihad Alexandria",
-      "country": "",
+      "country": "Egypt",
       "last_updated": "2026-08-28"
     },
     {
@@ -3269,7 +3269,7 @@
     {
       "player": "Sim Bhullar",
       "current_team": "Hsinchu Toplus Lioneers",
-      "country": "",
+      "country": "Taiwan",
       "last_updated": "2026-08-28"
     },
     {
@@ -3599,7 +3599,7 @@
     {
       "player": "Tyler Cavanaugh",
       "current_team": "Bahçeşehir Koleji",
-      "country": "",
+      "country": "Turkey",
       "last_updated": "2026-08-28"
     },
     {
@@ -3892,7 +3892,7 @@
     },
     {
       "player": "Tony Mitchell (1989)",
-      "country_count": 18,
+      "country_count": 19,
       "stint_count": 33,
       "countries": [
         "USA",
@@ -3912,7 +3912,8 @@
         "Bahrain",
         "Iraq",
         "Lebanon",
-        "Libya"
+        "Libya",
+        "Egypt"
       ],
       "status": "overseas_active"
     },
@@ -3988,6 +3989,29 @@
       "status": "retired"
     },
     {
+      "player": "Justin Dentmon",
+      "country_count": 15,
+      "stint_count": 26,
+      "countries": [
+        "Israel",
+        "USA",
+        "Venezuela",
+        "Canada",
+        "Italy",
+        "Puerto Rico",
+        "Lithuania",
+        "China",
+        "Turkey",
+        "South Korea",
+        "Lebanon",
+        "France",
+        "Denmark",
+        "Iran",
+        "Mexico"
+      ],
+      "status": "retired"
+    },
+    {
       "player": "Andre Brown",
       "country_count": 15,
       "stint_count": 22,
@@ -4056,28 +4080,6 @@
       "status": "overseas_active"
     },
     {
-      "player": "Justin Dentmon",
-      "country_count": 14,
-      "stint_count": 26,
-      "countries": [
-        "Israel",
-        "USA",
-        "Venezuela",
-        "Canada",
-        "Italy",
-        "Puerto Rico",
-        "Lithuania",
-        "China",
-        "Turkey",
-        "South Korea",
-        "Lebanon",
-        "Denmark",
-        "Iran",
-        "Mexico"
-      ],
-      "status": "retired"
-    },
-    {
       "player": "Devin Green",
       "country_count": 14,
       "stint_count": 25,
@@ -4098,6 +4100,94 @@
         "Qatar"
       ],
       "status": "retired"
+    },
+    {
+      "player": "Kevinn Pinkney",
+      "country_count": 14,
+      "stint_count": 22,
+      "countries": [
+        "France",
+        "Poland",
+        "USA",
+        "Italy",
+        "Israel",
+        "Slovenia",
+        "Russia",
+        "Turkey",
+        "Puerto Rico",
+        "UAE",
+        "Lebanon",
+        "Venezuela",
+        "Argentina",
+        "Japan"
+      ],
+      "status": "retired"
+    },
+    {
+      "player": "DaJuan Summers",
+      "country_count": 14,
+      "stint_count": 21,
+      "countries": [
+        "USA",
+        "Italy",
+        "Ukraine",
+        "Spain",
+        "Turkey",
+        "South Korea",
+        "Japan",
+        "Iran",
+        "Saudi Arabia",
+        "Lebanon",
+        "Bahrain",
+        "Philippines",
+        "Iraq",
+        "Venezuela"
+      ],
+      "status": "overseas_active"
+    },
+    {
+      "player": "Desmon Farmer",
+      "country_count": 14,
+      "stint_count": 20,
+      "countries": [
+        "Greece",
+        "Belgium",
+        "Poland",
+        "USA",
+        "Spain",
+        "Puerto Rico",
+        "Russia",
+        "Croatia",
+        "Israel",
+        "Dominican Republic",
+        "Argentina",
+        "Colombia",
+        "Kosovo",
+        "Venezuela"
+      ],
+      "status": "retired"
+    },
+    {
+      "player": "Will Cherry",
+      "country_count": 14,
+      "stint_count": 20,
+      "countries": [
+        "USA",
+        "Lithuania",
+        "Germany",
+        "Turkey",
+        "Croatia",
+        "Greece",
+        "Italy",
+        "Israel",
+        "Romania",
+        "Iran",
+        "Egypt",
+        "Venezuela",
+        "France",
+        "Mexico"
+      ],
+      "status": "overseas_active"
     },
     {
       "player": "Arnett Moultrie",
@@ -4184,27 +4274,6 @@
       "status": "retired"
     },
     {
-      "player": "Kevinn Pinkney",
-      "country_count": 13,
-      "stint_count": 22,
-      "countries": [
-        "France",
-        "Poland",
-        "USA",
-        "Italy",
-        "Israel",
-        "Slovenia",
-        "Russia",
-        "Turkey",
-        "Puerto Rico",
-        "UAE",
-        "Lebanon",
-        "Venezuela",
-        "Japan"
-      ],
-      "status": "retired"
-    },
-    {
       "player": "Samardo Samuels",
       "country_count": 13,
       "stint_count": 22,
@@ -4247,27 +4316,6 @@
       "status": "retired"
     },
     {
-      "player": "Desmon Farmer",
-      "country_count": 13,
-      "stint_count": 20,
-      "countries": [
-        "Greece",
-        "Belgium",
-        "Poland",
-        "USA",
-        "Spain",
-        "Puerto Rico",
-        "Russia",
-        "Croatia",
-        "Israel",
-        "Dominican Republic",
-        "Colombia",
-        "Kosovo",
-        "Venezuela"
-      ],
-      "status": "retired"
-    },
-    {
       "player": "Mickell Gladness",
       "country_count": 13,
       "stint_count": 20,
@@ -4287,27 +4335,6 @@
         "Poland"
       ],
       "status": "retired"
-    },
-    {
-      "player": "Will Cherry",
-      "country_count": 13,
-      "stint_count": 20,
-      "countries": [
-        "USA",
-        "Lithuania",
-        "Germany",
-        "Turkey",
-        "Croatia",
-        "Greece",
-        "Italy",
-        "Israel",
-        "Romania",
-        "Iran",
-        "Venezuela",
-        "France",
-        "Mexico"
-      ],
-      "status": "overseas_active"
     },
     {
       "player": "Rawle Marshall",
@@ -4352,6 +4379,26 @@
       "status": "overseas_active"
     },
     {
+      "player": "Corsley Edwards",
+      "country_count": 12,
+      "stint_count": 28,
+      "countries": [
+        "USA",
+        "Italy",
+        "Turkey",
+        "Spain",
+        "Puerto Rico",
+        "UAE",
+        "China",
+        "Egypt",
+        "Croatia",
+        "Poland",
+        "Bosnia",
+        "Lebanon"
+      ],
+      "status": "retired"
+    },
+    {
       "player": "Nikoloz Tskitishvili",
       "country_count": 12,
       "stint_count": 27,
@@ -4370,6 +4417,26 @@
         "China"
       ],
       "status": "retired"
+    },
+    {
+      "player": "Thomas Robinson",
+      "country_count": 12,
+      "stint_count": 27,
+      "countries": [
+        "USA",
+        "Russia",
+        "China",
+        "Turkey",
+        "Puerto Rico",
+        "South Korea",
+        "Nicaragua",
+        "Philippines",
+        "Indonesia",
+        "Mexico",
+        "Taiwan",
+        "Colombia"
+      ],
+      "status": "overseas_active"
     },
     {
       "player": "Ricky Ledo",
@@ -4432,6 +4499,46 @@
       "status": "overseas_active"
     },
     {
+      "player": "Kevin Murphy",
+      "country_count": 12,
+      "stint_count": 24,
+      "countries": [
+        "USA",
+        "France",
+        "China",
+        "Japan",
+        "Croatia",
+        "Philippines",
+        "Bahrain",
+        "UAE",
+        "Kuwait",
+        "Lebanon",
+        "Saudi Arabia",
+        "Libya"
+      ],
+      "status": "overseas_active"
+    },
+    {
+      "player": "JR Giddens",
+      "country_count": 12,
+      "stint_count": 23,
+      "countries": [
+        "USA",
+        "Poland",
+        "Spain",
+        "Greece",
+        "Italy",
+        "Puerto Rico",
+        "Argentina",
+        "Portugal",
+        "Dominican Republic",
+        "Mexico",
+        "Chile",
+        "Brazil"
+      ],
+      "status": "retired"
+    },
+    {
       "player": "Orlando Johnson",
       "country_count": 12,
       "stint_count": 23,
@@ -4470,26 +4577,6 @@
         "Mexico"
       ],
       "status": "retired"
-    },
-    {
-      "player": "DaJuan Summers",
-      "country_count": 12,
-      "stint_count": 21,
-      "countries": [
-        "USA",
-        "Italy",
-        "Ukraine",
-        "Spain",
-        "Turkey",
-        "South Korea",
-        "Iran",
-        "Saudi Arabia",
-        "Lebanon",
-        "Bahrain",
-        "Philippines",
-        "Venezuela"
-      ],
-      "status": "overseas_active"
     },
     {
       "player": "Jerome Jordan",
@@ -4532,21 +4619,41 @@
       "status": "retired"
     },
     {
-      "player": "Corsley Edwards",
-      "country_count": 11,
-      "stint_count": 28,
+      "player": "Gary Forbes",
+      "country_count": 12,
+      "stint_count": 19,
       "countries": [
         "USA",
+        "Philippines",
+        "Venezuela",
         "Italy",
-        "Turkey",
-        "Spain",
-        "Puerto Rico",
-        "UAE",
+        "Israel",
+        "Canada",
         "China",
-        "Croatia",
-        "Poland",
-        "Bosnia",
-        "Lebanon"
+        "Puerto Rico",
+        "Argentina",
+        "Greece",
+        "Saudi Arabia",
+        "Vietnam"
+      ],
+      "status": "retired"
+    },
+    {
+      "player": "Alex Blackwell",
+      "country_count": 11,
+      "stint_count": 33,
+      "countries": [
+        "USA",
+        "Turkey",
+        "Puerto Rico",
+        "Argentina",
+        "Spain",
+        "Venezuela",
+        "Dominican Republic",
+        "Mexico",
+        "Brazil",
+        "Uruguay",
+        "Chile"
       ],
       "status": "retired"
     },
@@ -4627,25 +4734,6 @@
       "status": "retired"
     },
     {
-      "player": "Thomas Robinson",
-      "country_count": 11,
-      "stint_count": 27,
-      "countries": [
-        "USA",
-        "Russia",
-        "China",
-        "Puerto Rico",
-        "South Korea",
-        "Nicaragua",
-        "Philippines",
-        "Indonesia",
-        "Mexico",
-        "Taiwan",
-        "Colombia"
-      ],
-      "status": "overseas_active"
-    },
-    {
       "player": "Isaiah Morris",
       "country_count": 11,
       "stint_count": 26,
@@ -4703,23 +4791,42 @@
       "status": "retired"
     },
     {
-      "player": "Kevin Murphy",
+      "player": "Earl Clark",
       "country_count": 11,
       "stint_count": 24,
       "countries": [
         "USA",
-        "France",
         "China",
-        "Japan",
-        "Croatia",
-        "Philippines",
+        "Turkey",
+        "Montenegro",
+        "Spain",
+        "South Korea",
         "Bahrain",
-        "UAE",
-        "Lebanon",
-        "Saudi Arabia",
-        "Libya"
+        "Puerto Rico",
+        "Philippines",
+        "Taiwan",
+        "Uruguay"
       ],
       "status": "overseas_active"
+    },
+    {
+      "player": "Manny Harris",
+      "country_count": 11,
+      "stint_count": 24,
+      "countries": [
+        "USA",
+        "Ukraine",
+        "Turkey",
+        "China",
+        "Greece",
+        "Lithuania",
+        "Philippines",
+        "Israel",
+        "Taiwan",
+        "Egypt",
+        "Lebanon"
+      ],
+      "status": "retired"
     },
     {
       "player": "Scotty Hopson",
@@ -4760,25 +4867,6 @@
       "status": "retired"
     },
     {
-      "player": "JR Giddens",
-      "country_count": 11,
-      "stint_count": 23,
-      "countries": [
-        "USA",
-        "Poland",
-        "Spain",
-        "Greece",
-        "Italy",
-        "Puerto Rico",
-        "Argentina",
-        "Portugal",
-        "Dominican Republic",
-        "Mexico",
-        "Brazil"
-      ],
-      "status": "retired"
-    },
-    {
       "player": "Stephen Howard",
       "country_count": 11,
       "stint_count": 23,
@@ -4815,82 +4903,6 @@
         "Taiwan"
       ],
       "status": "overseas_active"
-    },
-    {
-      "player": "Ndudi Ebi",
-      "country_count": 11,
-      "stint_count": 22,
-      "countries": [
-        "USA",
-        "Israel",
-        "Italy",
-        "France",
-        "Lebanon",
-        "China",
-        "Puerto Rico",
-        "Egypt",
-        "Bahrain",
-        "Iran",
-        "Saudi Arabia"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Art Long",
-      "country_count": 11,
-      "stint_count": 21,
-      "countries": [
-        "France",
-        "USA",
-        "Argentina",
-        "Venezuela",
-        "Puerto Rico",
-        "Canada",
-        "Greece",
-        "Philippines",
-        "Ukraine",
-        "Turkey",
-        "Iran"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Mario Bennett",
-      "country_count": 11,
-      "stint_count": 21,
-      "countries": [
-        "USA",
-        "Spain",
-        "Philippines",
-        "France",
-        "Russia",
-        "Jordan",
-        "Switzerland",
-        "Mexico",
-        "Uruguay",
-        "Czech Republic",
-        "Romania"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Anthony Grundy",
-      "country_count": 11,
-      "stint_count": 20,
-      "countries": [
-        "Germany",
-        "Cyprus",
-        "Sweden",
-        "Israel",
-        "Venezuela",
-        "USA",
-        "Italy",
-        "Greece",
-        "Turkey",
-        "Philippines",
-        "Iran"
-      ],
-      "status": "retired"
     }
   ],
   "teams_by_alltime_nba_alumni": [
@@ -22070,7 +22082,7 @@
     },
     {
       "country": "Turkey",
-      "count": 49
+      "count": 52
     },
     {
       "country": "Spain",
@@ -22082,19 +22094,19 @@
     },
     {
       "country": "Israel",
-      "count": 40
+      "count": 41
     },
     {
       "country": "Greece",
       "count": 37
     },
     {
-      "country": "Italy",
-      "count": 33
+      "country": "Japan",
+      "count": 37
     },
     {
-      "country": "Japan",
-      "count": 31
+      "country": "Italy",
+      "count": 33
     },
     {
       "country": "Australia",
@@ -22125,12 +22137,12 @@
       "count": 14
     },
     {
-      "country": "Russia",
-      "count": 13
+      "country": "Taiwan",
+      "count": 14
     },
     {
-      "country": "Taiwan",
-      "count": 11
+      "country": "Russia",
+      "count": 13
     },
     {
       "country": "Venezuela",
@@ -22221,7 +22233,19 @@
       "count": 1
     },
     {
+      "country": "Egypt",
+      "count": 1
+    },
+    {
+      "country": "Iceland",
+      "count": 1
+    },
+    {
       "country": "Iran",
+      "count": 1
+    },
+    {
+      "country": "Iraq",
       "count": 1
     },
     {
@@ -22272,7 +22296,7 @@
     },
     {
       "country": "France",
-      "players": 571
+      "players": 573
     },
     {
       "country": "Canada",
@@ -22284,11 +22308,11 @@
     },
     {
       "country": "Turkey",
-      "players": 499
+      "players": 506
     },
     {
       "country": "Israel",
-      "players": 454
+      "players": 458
     },
     {
       "country": "China",
@@ -22324,19 +22348,19 @@
     },
     {
       "country": "Japan",
-      "players": 163
+      "players": 172
+    },
+    {
+      "country": "Argentina",
+      "players": 147
     },
     {
       "country": "Serbia",
       "players": 147
     },
     {
-      "country": "Argentina",
-      "players": 140
-    },
-    {
       "country": "Poland",
-      "players": 133
+      "players": 134
     },
     {
       "country": "Lebanon",
@@ -22368,11 +22392,11 @@
     },
     {
       "country": "Taiwan",
-      "players": 72
+      "players": 80
     },
     {
       "country": "Dominican Republic",
-      "players": 51
+      "players": 58
     },
     {
       "country": "Iran",
@@ -22392,7 +22416,7 @@
     },
     {
       "country": "Brazil",
-      "players": 45
+      "players": 46
     },
     {
       "country": "Portugal",
@@ -22401,6 +22425,10 @@
     {
       "country": "Uruguay",
       "players": 36
+    },
+    {
+      "country": "Saudi Arabia",
+      "players": 35
     },
     {
       "country": "United Kingdom",
@@ -22416,10 +22444,6 @@
     },
     {
       "country": "Montenegro",
-      "players": 33
-    },
-    {
-      "country": "Saudi Arabia",
       "players": 33
     },
     {
@@ -22451,8 +22475,16 @@
       "players": 23
     },
     {
+      "country": "Kuwait",
+      "players": 22
+    },
+    {
       "country": "Finland",
       "players": 20
+    },
+    {
+      "country": "Egypt",
+      "players": 18
     },
     {
       "country": "Qatar",
@@ -22468,10 +22500,6 @@
     },
     {
       "country": "Indonesia",
-      "players": 17
-    },
-    {
-      "country": "Kuwait",
       "players": 17
     },
     {
@@ -22499,12 +22527,16 @@
       "players": 11
     },
     {
+      "country": "Chile",
+      "players": 9
+    },
+    {
       "country": "Kazakhstan",
       "players": 9
     },
     {
-      "country": "Egypt",
-      "players": 8
+      "country": "Tunisia",
+      "players": 9
     },
     {
       "country": "Kosovo",
@@ -22531,19 +22563,15 @@
       "players": 6
     },
     {
-      "country": "Chile",
-      "players": 6
-    },
-    {
       "country": "Nicaragua",
       "players": 6
     },
     {
-      "country": "Tunisia",
-      "players": 6
+      "country": "Colombia",
+      "players": 5
     },
     {
-      "country": "Colombia",
+      "country": "Iraq",
       "players": 5
     },
     {
@@ -22555,8 +22583,16 @@
       "players": 5
     },
     {
+      "country": "Iceland",
+      "players": 4
+    },
+    {
       "country": "Syria",
       "players": 4
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "players": 3
     },
     {
       "country": "Honduras",
@@ -22579,14 +22615,6 @@
       "players": 2
     },
     {
-      "country": "Iceland",
-      "players": 2
-    },
-    {
-      "country": "Iraq",
-      "players": 2
-    },
-    {
       "country": "Malaysia",
       "players": 2
     },
@@ -22604,10 +22632,6 @@
     },
     {
       "country": "Bolivia",
-      "players": 1
-    },
-    {
-      "country": "Bosnia and Herzegovina",
       "players": 1
     },
     {
@@ -53275,9 +53299,9 @@
       {
         "player": "Ade Murkey",
         "current_team": "Álftanes",
-        "city": "",
+        "city": "Álftanes",
         "state": "",
-        "country": "",
+        "country": "Iceland",
         "in_coords": false,
         "last_updated": "2026-08-28"
       },
@@ -53905,9 +53929,9 @@
       {
         "player": "Cheick Diallo",
         "current_team": "Hsinchu Toplus Lioneers",
-        "city": "Hsinchu County",
+        "city": "Hsinchu",
         "state": "",
-        "country": "",
+        "country": "Taiwan",
         "in_coords": false,
         "last_updated": "2026-08-28"
       },
@@ -54085,9 +54109,9 @@
       {
         "player": "Coty Clarke",
         "current_team": "Shimane Susanoo Magic",
-        "city": "Matsue City",
-        "state": "",
-        "country": "",
+        "city": "Matsue",
+        "state": "Shimane",
+        "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-08-28"
       },
@@ -54104,8 +54128,8 @@
         "player": "Cristiano Felicio",
         "current_team": "Sendai 89ers",
         "city": "Sendai",
-        "state": "",
-        "country": "",
+        "state": "Miyagi",
+        "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-08-28"
       },
@@ -54175,10 +54199,10 @@
       {
         "player": "Damien Inglis",
         "current_team": "Bahçeşehir Koleji",
-        "city": "Harvard",
+        "city": "Istanbul",
         "state": "",
-        "country": "",
-        "in_coords": false,
+        "country": "Turkey",
+        "in_coords": true,
         "last_updated": "2026-08-28"
       },
       {
@@ -54499,9 +54523,9 @@
       {
         "player": "Dexter Dennis",
         "current_team": "Shimane Susanoo Magic",
-        "city": "Matsue City",
-        "state": "",
-        "country": "",
+        "city": "Matsue",
+        "state": "Shimane",
+        "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-08-27"
       },
@@ -55256,8 +55280,8 @@
         "player": "Isaiah Todd",
         "current_team": "Kaohsiung Steelers",
         "city": "Kaohsiung",
-        "state": "Taiwan",
-        "country": "",
+        "state": "",
+        "country": "Taiwan",
         "in_coords": false,
         "last_updated": "2026-08-27"
       },
@@ -55454,8 +55478,8 @@
         "player": "Jake Layman",
         "current_team": "Sendai 89ers",
         "city": "Sendai",
-        "state": "",
-        "country": "",
+        "state": "Miyagi",
+        "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-08-27"
       },
@@ -55561,9 +55585,9 @@
       {
         "player": "James Michael McAdoo",
         "current_team": "Shimane Susanoo Magic",
-        "city": "Matsue City",
-        "state": "",
-        "country": "",
+        "city": "Matsue",
+        "state": "Shimane",
+        "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-08-27"
       },
@@ -55679,8 +55703,8 @@
         "player": "Jarrett Culver",
         "current_team": "Sendai 89ers",
         "city": "Sendai",
-        "state": "",
-        "country": "",
+        "state": "Miyagi",
+        "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-08-27"
       },
@@ -55698,7 +55722,7 @@
         "current_team": "Maccabi Ra'anana",
         "city": "Ra'anana",
         "state": "",
-        "country": "",
+        "country": "Israel",
         "in_coords": false,
         "last_updated": "2026-08-27"
       },
@@ -56094,8 +56118,8 @@
         "current_team": "Al-Difaa Al-Jawi",
         "city": "Baghdad",
         "state": "",
-        "country": "",
-        "in_coords": false,
+        "country": "Iraq",
+        "in_coords": true,
         "last_updated": "2026-08-27"
       },
       {
@@ -56704,10 +56728,10 @@
       {
         "player": "Malachi Flynn",
         "current_team": "Bahçeşehir Koleji",
-        "city": "Harvard",
+        "city": "Istanbul",
         "state": "",
-        "country": "",
-        "in_coords": false,
+        "country": "Turkey",
+        "in_coords": true,
         "last_updated": "2026-08-28"
       },
       {
@@ -57489,8 +57513,8 @@
         "current_team": "Al Ittihad Alexandria",
         "city": "Alexandria",
         "state": "",
-        "country": "",
-        "in_coords": false,
+        "country": "Egypt",
+        "in_coords": true,
         "last_updated": "2026-08-28"
       },
       {
@@ -57865,9 +57889,9 @@
       {
         "player": "Sim Bhullar",
         "current_team": "Hsinchu Toplus Lioneers",
-        "city": "Hsinchu County",
+        "city": "Hsinchu",
         "state": "",
-        "country": "",
+        "country": "Taiwan",
         "in_coords": false,
         "last_updated": "2026-08-28"
       },
@@ -58342,10 +58366,10 @@
       {
         "player": "Tyler Cavanaugh",
         "current_team": "Bahçeşehir Koleji",
-        "city": "Harvard",
+        "city": "Istanbul",
         "state": "",
-        "country": "",
-        "in_coords": false,
+        "country": "Turkey",
+        "in_coords": true,
         "last_updated": "2026-08-28"
       },
       {
@@ -59026,11 +59050,11 @@
     ],
     "coverage": {
       "total": 643,
-      "in_coords": 571,
-      "missing_from_coords": 72,
-      "missing_no_city": 34,
-      "missing_city_absent_from_coords": 38,
-      "distinct_missing_combos": 24
+      "in_coords": 576,
+      "missing_from_coords": 67,
+      "missing_no_city": 33,
+      "missing_city_absent_from_coords": 34,
+      "distinct_missing_combos": 22
     }
   },
   "latest_signings": [

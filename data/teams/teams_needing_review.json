@@ -173,15 +173,9 @@
     "city": "Manama",
     "country": ""
   },
-  "Al Ahly": {
-    "team": "Al Ahly",
-    "reason": "auto-added; needs location confirmation",
-    "city": "Cairo",
-    "country": ""
-  },
   "Al Arabi": {
     "team": "Al Arabi",
-    "reason": "auto-added; needs location confirmation",
+    "reason": "several unrelated clubs of this name (Kuwait, Qatar, Saudi Arabia) — which one is unclear from the stint alone",
     "city": "",
     "country": ""
   },
@@ -213,12 +207,6 @@
     "team": "Al Hilal",
     "reason": "auto-added; needs location confirmation",
     "city": "",
-    "country": ""
-  },
-  "Al Ittihad Alexandria": {
-    "team": "Al Ittihad Alexandria",
-    "reason": "missing city and/or country",
-    "city": "Alexandria",
     "country": ""
   },
   "Al Jalaa": {
@@ -297,12 +285,6 @@
     "team": "Al-Arabi SC",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Al-Difaa Al-Jawi": {
-    "team": "Al-Difaa Al-Jawi",
-    "reason": "missing city and/or country",
-    "city": "Baghdad",
     "country": ""
   },
   "Al-Fateh": {
@@ -501,12 +483,6 @@
     "team": "Anaheim Amigos/Los Angeles Stars",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Anchorage Northern Knights": {
-    "team": "Anchorage Northern Knights",
-    "reason": "missing city and/or country",
-    "city": "Anchorage",
     "country": ""
   },
   "Anderson Chiefs/ Packers": {
@@ -749,12 +725,6 @@
     "city": "",
     "country": ""
   },
-  "Bahçeşehir Koleji": {
-    "team": "Bahçeşehir Koleji",
-    "reason": "missing city and/or country",
-    "city": "Harvard",
-    "country": ""
-  },
   "Baltur Cento": {
     "team": "Baltur Cento",
     "reason": "auto-added; needs location confirmation",
@@ -801,12 +771,6 @@
     "team": "Basket Club Irpinia",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Basket Kwidzyn": {
-    "team": "Basket Kwidzyn",
-    "reason": "missing city and/or country",
-    "city": "Kwidzyn",
     "country": ""
   },
   "Basket Modena": {
@@ -921,12 +885,6 @@
     "team": "Blu:sens Monbús",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Boca Juniors": {
-    "team": "Boca Juniors",
-    "reason": "missing city and/or country",
-    "city": "La Boca",
     "country": ""
   },
   "Bodrumspor": {
@@ -1235,12 +1193,6 @@
     "city": "",
     "country": ""
   },
-  "Cañeros del Este": {
-    "team": "Cañeros del Este",
-    "reason": "missing city and/or country",
-    "city": "La Romana",
-    "country": ""
-  },
   "Cearense": {
     "team": "Cearense",
     "reason": "auto-added; needs location confirmation",
@@ -1401,12 +1353,6 @@
     "team": "Clinicas Rincón Axarquía",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Club Africain": {
-    "team": "Club Africain",
-    "reason": "missing city and/or country",
-    "city": "Tunis",
     "country": ""
   },
   "Club Atlético Peñarol": {
@@ -1661,12 +1607,6 @@
     "city": "Serang Regency",
     "country": ""
   },
-  "Diablos Rojos del México": {
-    "team": "Diablos Rojos del México",
-    "reason": "missing city and/or country",
-    "city": "Mexico City",
-    "country": ""
-  },
   "Diablos de La Vega": {
     "team": "Diablos de La Vega",
     "reason": "missing city and/or country",
@@ -1823,12 +1763,6 @@
     "city": "",
     "country": ""
   },
-  "Elmira Colonels": {
-    "team": "Elmira Colonels",
-    "reason": "missing city and/or country",
-    "city": "Elmira",
-    "country": ""
-  },
   "Emlakbank Ortaköy": {
     "team": "Emlakbank Ortaköy",
     "reason": "missing city and/or country",
@@ -1851,12 +1785,6 @@
     "team": "Erdenet Miners",
     "reason": "missing city and/or country",
     "city": "Erdenet",
-    "country": ""
-  },
-  "Español de Talca": {
-    "team": "Español de Talca",
-    "reason": "missing city and/or country",
-    "city": "Talca",
     "country": ""
   },
   "Esperos Kallitheas": {
@@ -1899,12 +1827,6 @@
     "team": "Eurofiditalia Calabria",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Ezzahra Sports": {
-    "team": "Ezzahra Sports",
-    "reason": "missing city and/or country",
-    "city": "Ezzahra",
     "country": ""
   },
   "FAP": {
@@ -2017,7 +1939,7 @@
   },
   "Fukushima Firebonds": {
     "team": "Fukushima Firebonds",
-    "reason": "missing city and/or country",
+    "reason": "B.League club in Fukushima prefecture; commonly associated with Koriyama, but the home city isn't confirmed here",
     "city": "Fukushima Prefecture",
     "country": ""
   },
@@ -2305,7 +2227,7 @@
   },
   "Hebei Xianglan": {
     "team": "Hebei Xianglan",
-    "reason": "auto-added; needs location confirmation",
+    "reason": "CBA-affiliated club in Hebei, China; the home city within the province isn't established",
     "city": "",
     "country": ""
   },
@@ -2417,20 +2339,8 @@
     "city": "",
     "country": ""
   },
-  "Hsinchu JKO Lioneers": {
-    "team": "Hsinchu JKO Lioneers",
-    "reason": "auto-added; needs location confirmation",
-    "city": "Hsinchu County",
-    "country": ""
-  },
   "Hsinchu Lioneers": {
     "team": "Hsinchu Lioneers",
-    "reason": "auto-added; needs location confirmation",
-    "city": "Hsinchu County",
-    "country": ""
-  },
-  "Hsinchu Toplus Lioneers": {
-    "team": "Hsinchu Toplus Lioneers",
     "reason": "auto-added; needs location confirmation",
     "city": "Hsinchu County",
     "country": ""
@@ -2657,12 +2567,6 @@
     "city": "",
     "country": ""
   },
-  "Japan Energy Griffins": {
-    "team": "Japan Energy Griffins",
-    "reason": "missing city and/or country",
-    "city": "Tokyo",
-    "country": ""
-  },
   "Jersey Reds": {
     "team": "Jersey Reds",
     "reason": "missing city and/or country",
@@ -2777,22 +2681,10 @@
     "city": "Kaohsiung",
     "country": ""
   },
-  "Kaohsiung Aquas": {
-    "team": "Kaohsiung Aquas",
-    "reason": "auto-added; needs location confirmation",
-    "city": "Kaohsiung City",
-    "country": ""
-  },
   "Kaohsiung Jeoutai Technology": {
     "team": "Kaohsiung Jeoutai Technology",
     "reason": "auto-added; needs location confirmation",
     "city": "",
-    "country": ""
-  },
-  "Kaohsiung Steelers": {
-    "team": "Kaohsiung Steelers",
-    "reason": "auto-added; needs location confirmation",
-    "city": "Kaohsiung",
     "country": ""
   },
   "Karlovac": {
@@ -2805,12 +2697,6 @@
     "team": "Kataja",
     "reason": "auto-added; needs location confirmation",
     "city": "",
-    "country": ""
-  },
-  "Kazma": {
-    "team": "Kazma",
-    "reason": "missing city and/or country",
-    "city": "Kuwait",
     "country": ""
   },
   "Kaštela": {
@@ -2947,7 +2833,7 @@
   },
   "La Palma": {
     "team": "La Palma",
-    "reason": "auto-added; needs location confirmation",
+    "reason": "ambiguous: the Canary Island, CB La Palma (Spain), and Palma clubs all fit the bare name",
     "city": "",
     "country": ""
   },
@@ -3203,12 +3089,6 @@
     "city": "",
     "country": ""
   },
-  "Maccabi Kiryat Motzkin": {
-    "team": "Maccabi Kiryat Motzkin",
-    "reason": "missing city and/or country",
-    "city": "Kiryat Motzkin",
-    "country": ""
-  },
   "Maccabi Nazareth": {
     "team": "Maccabi Nazareth",
     "reason": "missing city and/or country",
@@ -3219,12 +3099,6 @@
     "team": "Maccabi Petah Tikva",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Maccabi Ra'anana": {
-    "team": "Maccabi Ra'anana",
-    "reason": "missing city and/or country",
-    "city": "Ra'anana",
     "country": ""
   },
   "Maccabi Raanana": {
@@ -3277,7 +3151,7 @@
   },
   "Manchester British-Americans": {
     "team": "Manchester British-Americans",
-    "reason": "missing city and/or country",
+    "reason": "historical club; Manchester, New Hampshire and Manchester, England are both plausible readings",
     "city": "Manchester",
     "country": ""
   },
@@ -3367,20 +3241,8 @@
   },
   "Mega": {
     "team": "Mega",
-    "reason": "auto-added; needs location confirmation",
+    "reason": "probably KK Mega (Belgrade) but the bare name is also a common sponsor prefix — not confirmable from the stint",
     "city": "",
-    "country": ""
-  },
-  "Mega Vizura": {
-    "team": "Mega Vizura",
-    "reason": "missing city and/or country",
-    "city": "DNA repair",
-    "country": ""
-  },
-  "Memphis Rockers": {
-    "team": "Memphis Rockers",
-    "reason": "missing city and/or country",
-    "city": "Memphis",
     "country": ""
   },
   "Menorca": {
@@ -3725,12 +3587,6 @@
     "city": "",
     "country": ""
   },
-  "New Haven Elms": {
-    "team": "New Haven Elms",
-    "reason": "missing city and/or country",
-    "city": "New Haven",
-    "country": ""
-  },
   "New Haven Elms / Hamden Bics": {
     "team": "New Haven Elms / Hamden Bics",
     "reason": "missing city and/or country",
@@ -3753,12 +3609,6 @@
     "team": "New Jersey Turnpike",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "New Orleans Hornets": {
-    "team": "New Orleans Hornets",
-    "reason": "auto-added; needs location confirmation",
-    "city": "New Orleans",
     "country": ""
   },
   "New Orleans Hornets / Pelicans": {
@@ -3885,12 +3735,6 @@
     "team": "Ohod Al Madina",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Ohud Medina": {
-    "team": "Ohud Medina",
-    "reason": "missing city and/or country",
-    "city": "Medina",
     "country": ""
   },
   "Olimpia Asuncion": {
@@ -4257,12 +4101,6 @@
     "team": "Pico FC",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Pinheiros": {
-    "team": "Pinheiros",
-    "reason": "missing city and/or country",
-    "city": "São Paulo",
     "country": ""
   },
   "Pioneros Del Avila": {
@@ -5129,12 +4967,6 @@
     "city": "",
     "country": ""
   },
-  "Sendai 89ers": {
-    "team": "Sendai 89ers",
-    "reason": "missing city and/or country",
-    "city": "Sendai",
-    "country": ""
-  },
   "Shaanxi Xinda Wolves": {
     "team": "Shaanxi Xinda Wolves",
     "reason": "missing city and/or country",
@@ -5145,12 +4977,6 @@
     "team": "Sharp Montecatini",
     "reason": "missing city and/or country",
     "city": "",
-    "country": ""
-  },
-  "Shimane Susanoo Magic": {
-    "team": "Shimane Susanoo Magic",
-    "reason": "missing city and/or country",
-    "city": "Matsue City",
     "country": ""
   },
   "Shumen": {
@@ -5551,7 +5377,7 @@
   },
   "TNT Tropang 5G": {
     "team": "TNT Tropang 5G",
-    "reason": "auto-added; needs location confirmation",
+    "reason": "PBA (Philippines) club with no single home city — the league plays a rotating venue schedule",
     "city": "",
     "country": ""
   },
@@ -5781,12 +5607,6 @@
     "team": "Tindastóll",
     "reason": "missing city and/or country",
     "city": "Sauðárkrókur",
-    "country": ""
-  },
-  "Titanes del Licey": {
-    "team": "Titanes del Licey",
-    "reason": "missing city and/or country",
-    "city": "Santo Domingo",
     "country": ""
   },
   "Tizona Burgos": {
@@ -6425,28 +6245,10 @@
     "city": "Tijuana",
     "country": ""
   },
-  "Zrinjski Mostar": {
-    "team": "Zrinjski Mostar",
-    "reason": "missing city and/or country",
-    "city": "Mostar",
-    "country": ""
-  },
   "Zunder Palencia": {
     "team": "Zunder Palencia",
     "reason": "auto-added; needs location confirmation",
     "city": "",
-    "country": ""
-  },
-  "Álftanes": {
-    "team": "Álftanes",
-    "reason": "auto-added; needs location confirmation",
-    "city": "",
-    "country": ""
-  },
-  "Élan Béarnais": {
-    "team": "Élan Béarnais",
-    "reason": "auto-added; needs location confirmation",
-    "city": "Pau",
     "country": ""
   },
   "Élan Béarnais Pau-Lacq-Orthez": {
