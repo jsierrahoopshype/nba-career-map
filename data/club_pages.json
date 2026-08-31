@@ -917,7 +917,7 @@
       "city": "Seville",
       "state": "",
       "country": "Spain",
-      "count": 19,
+      "count": 30,
       "roster": [
         {
           "player": "A.J. Bramlett",
@@ -941,6 +941,27 @@
           "nationality": "United States"
         },
         {
+          "player": "Anzejs Pasecniks",
+          "years": "2021–2022, 2023",
+          "status": "overseas_active",
+          "last_team": "Petkim Spor",
+          "nationality": "Latvia"
+        },
+        {
+          "player": "BJ Johnson",
+          "years": "2022-2023",
+          "status": "overseas_active",
+          "last_team": "Lokomotiv Kuban",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dairis Bertans",
+          "years": "2021–2023",
+          "status": "overseas_active",
+          "last_team": "Dubai",
+          "nationality": "Latvian"
+        },
+        {
           "player": "Dan Godfread",
           "years": "1994-1995",
           "status": "retired",
@@ -955,11 +976,25 @@
           "nationality": "United States"
         },
         {
+          "player": "Erick Green",
+          "years": "2020",
+          "status": "overseas_active",
+          "last_team": "Pallacanestro Cantù",
+          "nationality": "United States"
+        },
+        {
           "player": "Francisco Elson",
           "years": "2002-2003",
           "status": "retired",
           "last_team": "Mahram Tehran",
           "nationality": "Netherlands"
+        },
+        {
+          "player": "Jacob Wiley",
+          "years": "2022",
+          "status": "overseas_active",
+          "last_team": "Ironi Nes Ziona",
+          "nationality": "American / Macedonian"
         },
         {
           "player": "James Donaldson",
@@ -984,11 +1019,39 @@
           "nationality": "United States"
         },
         {
+          "player": "Jeremy Pargo",
+          "years": "2023",
+          "status": "overseas_active",
+          "last_team": "Grindavík",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jerome Jordan",
+          "years": "2020, 2021",
+          "status": "retired",
+          "last_team": "RANS Simba Bogor",
+          "nationality": "Jamaica"
+        },
+        {
+          "player": "Josh Gray",
+          "years": "2023",
+          "status": "overseas_active",
+          "last_team": "Dorados de Chihuahua",
+          "nationality": "United States"
+        },
+        {
           "player": "Lou Roe",
           "years": "2004-2006",
           "status": "retired",
           "last_team": "Regatas Corrientes",
           "nationality": "United States"
+        },
+        {
+          "player": "Mile Ilic",
+          "years": "2008-2009",
+          "status": "retired",
+          "last_team": "Baniyas",
+          "nationality": "Serbia"
         },
         {
           "player": "Nikoloz Tskitishvili",
@@ -1016,6 +1079,20 @@
           "years": "2003",
           "status": "retired",
           "last_team": "Minnesota Timberwolves",
+          "nationality": "United States"
+        },
+        {
+          "player": "Rodions Kurucs",
+          "years": "2022",
+          "status": "overseas_active",
+          "last_team": "Baskonia",
+          "nationality": "Latvia"
+        },
+        {
+          "player": "Shayne Whittington",
+          "years": "2019-2020",
+          "status": "retired",
+          "last_team": "Nagoya Diamond Dolphins",
           "nationality": "United States"
         },
         {
@@ -1057,7 +1134,17 @@
       "related": [
         {
           "type": "club",
+          "name": "Long Island Nets",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Baskonia",
           "shared": 3
         },
         {
@@ -1067,33 +1154,23 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Fort Wayne Mad Ants",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Baskonia",
-          "shared": 2
+          "name": "Benetton Treviso",
+          "shared": 3
         },
         {
           "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 2
+          "name": "Valencia",
+          "shared": 3
         },
         {
           "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Virtus Roma",
-          "shared": 2
+          "name": "Valvi Girona",
+          "shared": 3
         }
       ]
     },
@@ -85987,17 +86064,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Reggio Emilia",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Śląsk Wrocław",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Caja San Fernando",
           "shared": 1
         },
         {
@@ -86128,12 +86205,12 @@
         },
         {
           "type": "club",
-          "name": "Śląsk Wrocław",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Śląsk Wrocław",
           "shared": 1
         },
         {
@@ -104992,7 +105069,7 @@
         },
         {
           "type": "club",
-          "name": "Valencia Basket",
+          "name": "Caja San Fernando",
           "shared": 1
         }
       ]
@@ -106734,6 +106811,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 2
         },
@@ -106755,11 +106837,6 @@
         {
           "type": "club",
           "name": "AEK Athens",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles D-Fenders",
           "shared": 2
         }
       ]
@@ -109407,12 +109484,12 @@
         },
         {
           "type": "club",
-          "name": "Gary Steelheads",
+          "name": "Caja San Fernando",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Gary Steelheads",
           "shared": 2
         },
         {
@@ -113346,17 +113423,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Basket Livorno",
           "shared": 1
         },
         {
           "type": "club",
           "name": "PAOK Thessaloniki",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Ülkerspor",
           "shared": 1
         }
       ]
@@ -117567,6 +117644,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Virtus Bologna",
           "shared": 2
         },
@@ -117593,11 +117675,6 @@
         {
           "type": "club",
           "name": "Delaware 87ers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Khimki",
           "shared": 2
         }
       ]
@@ -122125,7 +122202,7 @@
       "related": [
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Caja San Fernando",
           "shared": 3
         },
         {
@@ -122195,6 +122272,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Fort Worth Flyers",
           "shared": 1
         },
@@ -122220,142 +122302,16 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Petkim Spor",
-          "shared": 1
-        }
-      ]
-    },
-    "Real Betis": {
-      "club": "Real Betis",
-      "city": "Seville",
-      "state": "",
-      "country": "Spain",
-      "count": 10,
-      "roster": [
-        {
-          "player": "Anzejs Pasecniks",
-          "years": "2021–2022, 2023",
-          "status": "overseas_active",
-          "last_team": "Petkim Spor",
-          "nationality": "Latvia"
-        },
-        {
-          "player": "BJ Johnson",
-          "years": "2022-2023",
-          "status": "overseas_active",
-          "last_team": "Lokomotiv Kuban",
-          "nationality": "United States"
-        },
-        {
-          "player": "Dairis Bertans",
-          "years": "2021–2023",
-          "status": "overseas_active",
-          "last_team": "Dubai",
-          "nationality": "Latvian"
-        },
-        {
-          "player": "Erick Green",
-          "years": "2020",
-          "status": "overseas_active",
-          "last_team": "Pallacanestro Cantù",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jacob Wiley",
-          "years": "2022",
-          "status": "overseas_active",
-          "last_team": "Ironi Nes Ziona",
-          "nationality": "American / Macedonian"
-        },
-        {
-          "player": "Jeremy Pargo",
-          "years": "2023",
-          "status": "overseas_active",
-          "last_team": "Grindavík",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jerome Jordan",
-          "years": "2020, 2021",
-          "status": "retired",
-          "last_team": "RANS Simba Bogor",
-          "nationality": "Jamaica"
-        },
-        {
-          "player": "Josh Gray",
-          "years": "2023",
-          "status": "overseas_active",
-          "last_team": "Dorados de Chihuahua",
-          "nationality": "United States"
-        },
-        {
-          "player": "Rodions Kurucs",
-          "years": "2022",
-          "status": "overseas_active",
-          "last_team": "Baskonia",
-          "nationality": "Latvia"
-        },
-        {
-          "player": "Shayne Whittington",
-          "years": "2019-2020",
-          "status": "retired",
-          "last_team": "Nagoya Diamond Dolphins",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Long Island Nets",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Fort Wayne Mad Ants",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "VEF Rīga",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Reno Bighorns",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Lokomotiv Kuban",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Budućnost",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Andorra",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Baskonia",
           "shared": 1
         }
       ]
     },
     "Zunder Palencia": {
       "club": "Zunder Palencia",
-      "city": "",
+      "city": "Palencia",
       "state": "",
-      "country": "",
+      "country": "Spain",
       "count": 1,
       "roster": [
         {
@@ -122374,6 +122330,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Tofaş",
           "shared": 1
         },
@@ -122385,11 +122346,6 @@
         {
           "type": "club",
           "name": "VEF Rīga",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -125219,7 +125175,7 @@
         },
         {
           "type": "club",
-          "name": "Brisbane Bullets",
+          "name": "Caja San Fernando",
           "shared": 1
         }
       ]
@@ -148819,12 +148775,12 @@
         },
         {
           "type": "club",
-          "name": "Valencia Basket",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valencia Basket",
           "shared": 1
         },
         {
@@ -189765,7 +189721,7 @@
         },
         {
           "type": "club",
-          "name": "Rochester Renegade",
+          "name": "Caja San Fernando",
           "shared": 1
         }
       ]
@@ -190735,12 +190691,12 @@
         },
         {
           "type": "club",
-          "name": "VEF Rīga",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "VEF Rīga",
           "shared": 1
         },
         {
@@ -190875,17 +190831,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Budućnost",
           "shared": 1
         },
         {
           "type": "club",
           "name": "VEF Rīga",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Real Betis",
           "shared": 1
         }
       ]
@@ -193812,12 +193768,12 @@
         },
         {
           "type": "club",
-          "name": "Andorra",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Andorra",
           "shared": 1
         }
       ]
@@ -218710,7 +218666,7 @@
         },
         {
           "type": "club",
-          "name": "Basket Livorno",
+          "name": "Caja San Fernando",
           "shared": 1
         }
       ]
@@ -222120,9 +222076,9 @@
     },
     "Gifu Swoops": {
       "club": "Gifu Swoops",
-      "city": "",
+      "city": "Gifu",
       "state": "",
-      "country": "",
+      "country": "Japan",
       "count": 1,
       "roster": [
         {
@@ -224539,12 +224495,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Valencia Basket",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valencia Basket",
           "shared": 1
         },
         {
@@ -224646,9 +224602,9 @@
     },
     "Reims CAUFA": {
       "club": "Reims CAUFA",
-      "city": "",
+      "city": "Reims",
       "state": "",
-      "country": "",
+      "country": "France",
       "count": 1,
       "roster": [
         {
@@ -224672,32 +224628,32 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "ASVEL",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Pau-Orthez",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Paris Basket Racing",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "CSP Limoges",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Cholet Basket",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Limoges CSP",
           "shared": 0
         }
       ]
@@ -230026,6 +229982,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Peristeri",
           "shared": 1
         },
@@ -230037,11 +229998,6 @@
         {
           "type": "club",
           "name": "Colorado 14ers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maroussi",
           "shared": 1
         }
       ]
@@ -235117,17 +235073,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Sichuan Blue Whales",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Xinjiang Flying Tigers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Caja San Fernando",
           "shared": 1
         }
       ]
@@ -236724,17 +236680,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Fort Worth Flyers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Colorado 14ers",
           "shared": 1
         }
       ]
@@ -245138,12 +245094,12 @@
         },
         {
           "type": "club",
-          "name": "Breogán",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Breogán",
           "shared": 1
         },
         {
@@ -247592,12 +247548,12 @@
         },
         {
           "type": "club",
-          "name": "Gary Steelheads",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Gary Steelheads",
           "shared": 1
         },
         {
@@ -247650,12 +247606,12 @@
         },
         {
           "type": "club",
-          "name": "Gary Steelheads",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Gary Steelheads",
           "shared": 1
         },
         {
@@ -247708,12 +247664,12 @@
         },
         {
           "type": "club",
-          "name": "Gary Steelheads",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Gary Steelheads",
           "shared": 1
         },
         {
@@ -247783,17 +247739,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Gary Steelheads",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Springfield Armor",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Caja San Fernando",
           "shared": 1
         },
         {
@@ -247831,12 +247787,12 @@
         },
         {
           "type": "club",
-          "name": "Gary Steelheads",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Gary Steelheads",
           "shared": 1
         },
         {
@@ -251890,17 +251846,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Breogán",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Andorra",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sevilla",
           "shared": 1
         }
       ]
@@ -260145,17 +260101,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Northern Arizona Suns",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Changwon LG Sakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -260220,17 +260176,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Northern Arizona Suns",
           "shared": 1
         },
         {
           "type": "club",
           "name": "San Pablo Burgos",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Changwon LG Sakers",
           "shared": 1
         }
       ]
@@ -260268,17 +260224,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Northern Arizona Suns",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Changwon LG Sakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -275932,12 +275888,12 @@
         },
         {
           "type": "club",
-          "name": "Tenerife",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Tenerife",
           "shared": 1
         },
         {
@@ -275990,12 +275946,12 @@
         },
         {
           "type": "club",
-          "name": "Tenerife",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Tenerife",
           "shared": 1
         },
         {
@@ -276048,12 +276004,12 @@
         },
         {
           "type": "club",
-          "name": "Tenerife",
+          "name": "Caja San Fernando",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Tenerife",
           "shared": 1
         },
         {
@@ -277594,7 +277550,7 @@
         },
         {
           "type": "club",
-          "name": "Union Olimpija",
+          "name": "Caja San Fernando",
           "shared": 1
         }
       ]
@@ -287621,64 +287577,6 @@
         }
       ]
     },
-    "Cajasol": {
-      "club": "Cajasol",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Mile Ilic",
-          "years": "2008-2009",
-          "status": "retired",
-          "last_team": "Baniyas",
-          "nationality": "Serbia"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Crvena Zvezda",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Bilbao Basket",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Colorado 14ers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mahram Tehran",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "FMP",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Al-Ahli",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Al Mouttahed Tripoli",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tadamon Zouk",
-          "shared": 1
-        }
-      ]
-    },
     "Metalac Valjevo": {
       "club": "Metalac Valjevo",
       "city": "Valjevo",
@@ -287724,6 +287622,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -287735,11 +287638,6 @@
         {
           "type": "club",
           "name": "Mahram Tehran",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Petrochimi Bandar Imam",
           "shared": 1
         }
       ]
@@ -287767,6 +287665,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -287793,11 +287696,6 @@
         {
           "type": "club",
           "name": "Al Mouttahed Tripoli",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tadamon Zouk",
           "shared": 1
         }
       ]
@@ -287825,6 +287723,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -287851,11 +287754,6 @@
         {
           "type": "club",
           "name": "Al Mouttahed Tripoli",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tadamon Zouk",
           "shared": 1
         }
       ]
@@ -287883,6 +287781,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -287909,11 +287812,6 @@
         {
           "type": "club",
           "name": "Al Mouttahed Tripoli",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tadamon Zouk",
           "shared": 1
         }
       ]
@@ -287941,6 +287839,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -287967,11 +287870,6 @@
         {
           "type": "club",
           "name": "Al Mouttahed Tripoli",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tadamon Zouk",
           "shared": 1
         }
       ]
@@ -287999,6 +287897,11 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -288025,11 +287928,6 @@
         {
           "type": "club",
           "name": "Al Mouttahed Tripoli",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tadamon Zouk",
           "shared": 1
         }
       ]
@@ -295420,17 +295318,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Valencia Basket",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Apollon Patras",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cedar Rapids Silver Bullets",
           "shared": 1
         }
       ]
@@ -301867,17 +301765,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Basket Livorno",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Ülkerspor",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Caja San Fernando",
           "shared": 1
         },
         {
@@ -312244,17 +312142,17 @@
         },
         {
           "type": "club",
+          "name": "Caja San Fernando",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Basket Livorno",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Cholet",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Caja San Fernando",
           "shared": 1
         },
         {
@@ -325446,9 +325344,9 @@
     },
     "North Gold Coast Seahawks": {
       "club": "North Gold Coast Seahawks",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Gold Coast",
+      "state": "Queensland",
+      "country": "Australia",
       "count": 1,
       "roster": [
         {

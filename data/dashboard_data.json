@@ -1061,7 +1061,7 @@
     {
       "player": "Erik McCree",
       "current_team": "Gifu Swoops",
-      "country": "",
+      "country": "Japan",
       "last_updated": "2026-08-31"
     },
     {
@@ -4190,6 +4190,28 @@
       "status": "overseas_active"
     },
     {
+      "player": "Erik McCree",
+      "country_count": 14,
+      "stint_count": 17,
+      "countries": [
+        "USA",
+        "Italy",
+        "France",
+        "Denmark",
+        "Greece",
+        "Turkey",
+        "Philippines",
+        "Venezuela",
+        "Taiwan",
+        "Mexico",
+        "Saudi Arabia",
+        "Puerto Rico",
+        "Brazil",
+        "Japan"
+      ],
+      "status": "overseas_active"
+    },
+    {
       "player": "Arnett Moultrie",
       "country_count": 13,
       "stint_count": 23,
@@ -4335,27 +4357,6 @@
         "Poland"
       ],
       "status": "retired"
-    },
-    {
-      "player": "Erik McCree",
-      "country_count": 13,
-      "stint_count": 17,
-      "countries": [
-        "USA",
-        "Italy",
-        "France",
-        "Denmark",
-        "Greece",
-        "Turkey",
-        "Philippines",
-        "Venezuela",
-        "Taiwan",
-        "Mexico",
-        "Saudi Arabia",
-        "Puerto Rico",
-        "Brazil"
-      ],
-      "status": "overseas_active"
     },
     {
       "player": "Rawle Marshall",
@@ -5475,6 +5476,10 @@
       "players": 31
     },
     {
+      "team": "Caja San Fernando",
+      "players": 30
+    },
+    {
       "team": "Indianapolis Olympians",
       "players": 30
     },
@@ -5808,10 +5813,6 @@
     },
     {
       "team": "Andorra",
-      "players": 19
-    },
-    {
-      "team": "Caja San Fernando",
       "players": 19
     },
     {
@@ -6656,10 +6657,6 @@
     },
     {
       "team": "Pittsburgh Rens",
-      "players": 10
-    },
-    {
-      "team": "Real Betis",
       "players": 10
     },
     {
@@ -13560,10 +13557,6 @@
     },
     {
       "team": "Cajahuelva",
-      "players": 1
-    },
-    {
-      "team": "Cajasol",
       "players": 1
     },
     {
@@ -22105,11 +22098,11 @@
       "count": 40
     },
     {
-      "country": "Greece",
-      "count": 37
+      "country": "Japan",
+      "count": 38
     },
     {
-      "country": "Japan",
+      "country": "Greece",
       "count": 37
     },
     {
@@ -22308,7 +22301,7 @@
     },
     {
       "country": "France",
-      "players": 573
+      "players": 574
     },
     {
       "country": "Canada",
@@ -22355,12 +22348,12 @@
       "players": 176
     },
     {
-      "country": "Mexico",
+      "country": "Japan",
       "players": 173
     },
     {
-      "country": "Japan",
-      "players": 172
+      "country": "Mexico",
+      "players": 173
     },
     {
       "country": "Argentina",
@@ -28452,6 +28445,20 @@
       ]
     },
     {
+      "player": "Danuel House",
+      "teams": [
+        {
+          "team": "Rio Grande Valley Vipers",
+          "stints": 3,
+          "years": [
+            "2017",
+            "2018",
+            "2018–2019"
+          ]
+        }
+      ]
+    },
+    {
       "player": "Darrick Martin",
       "teams": [
         {
@@ -32737,7 +32744,7 @@
       "player": "Anzejs Pasecniks",
       "teams": [
         {
-          "team": "Real Betis",
+          "team": "Caja San Fernando",
           "stints": 2,
           "years": [
             "2021–2022",
@@ -36048,20 +36055,6 @@
           "years": [
             "1984",
             "1985-1988"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Danuel House",
-      "teams": [
-        {
-          "team": "Rio Grande Valley Vipers",
-          "stints": 2,
-          "years": [
-            "2017",
-            "2018",
-            "2018–2019"
           ]
         }
       ]
@@ -39596,6 +39589,14 @@
             "2017",
             "2019"
           ]
+        },
+        {
+          "team": "Rio Grande Valley Vipers",
+          "stints": 2,
+          "years": [
+            "2011-2012",
+            "2012-2013"
+          ]
         }
       ]
     },
@@ -39621,6 +39622,19 @@
           "years": [
             "2015–2016",
             "2017"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Gui Santos",
+      "teams": [
+        {
+          "team": "Santa Cruz Warriors",
+          "stints": 2,
+          "years": [
+            "2022–2023",
+            "2023–2025"
           ]
         }
       ]
@@ -41793,7 +41807,7 @@
       "player": "Jerome Jordan",
       "teams": [
         {
-          "team": "Real Betis",
+          "team": "Caja San Fernando",
           "stints": 2,
           "years": [
             "2020",
@@ -42810,14 +42824,6 @@
       "player": "Jordan Goodwin",
       "teams": [
         {
-          "team": "Capital City Go-Go",
-          "stints": 2,
-          "years": [
-            "2021–2023",
-            "2023"
-          ]
-        },
-        {
           "team": "Phoenix Suns",
           "stints": 2,
           "years": [
@@ -42869,14 +42875,6 @@
     {
       "player": "Jordan Schakel",
       "teams": [
-        {
-          "team": "Capital City Go-Go",
-          "stints": 2,
-          "years": [
-            "2021–2022",
-            "2022–2023"
-          ]
-        },
         {
           "team": "Maine Celtics",
           "stints": 2,
@@ -43074,6 +43072,19 @@
           "years": [
             "2017–2018",
             "2021–2022"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Josh Huestis",
+      "teams": [
+        {
+          "team": "Oklahoma City Blue",
+          "stints": 2,
+          "years": [
+            "2014-2015",
+            "2015-2017"
           ]
         }
       ]
@@ -43401,6 +43412,14 @@
             "2021",
             "2022"
           ]
+        },
+        {
+          "team": "Salt Lake City Stars",
+          "stints": 2,
+          "years": [
+            "2019",
+            "2019–2020"
+          ]
         }
       ]
     },
@@ -43507,6 +43526,19 @@
           "years": [
             "2018–19",
             "2026–present"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Keaton Wallace",
+      "teams": [
+        {
+          "team": "College Park Skyhawks",
+          "stints": 2,
+          "years": [
+            "2023–2024",
+            "2024–2025"
           ]
         }
       ]
@@ -46915,6 +46947,19 @@
       ]
     },
     {
+      "player": "Nae'Qwan Tomlin",
+      "teams": [
+        {
+          "team": "Cleveland Charge",
+          "stints": 2,
+          "years": [
+            "2024–2025",
+            "2025–2026"
+          ]
+        }
+      ]
+    },
+    {
       "player": "Nando De Colo",
       "teams": [
         {
@@ -47619,6 +47664,19 @@
           "years": [
             "1995-1998",
             "1999-2001"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Pat Spencer",
+      "teams": [
+        {
+          "team": "Santa Cruz Warriors",
+          "stints": 2,
+          "years": [
+            "2022–2024",
+            "2024–2025"
           ]
         }
       ]
@@ -50398,19 +50456,6 @@
       ]
     },
     {
-      "player": "Stanley Umude",
-      "teams": [
-        {
-          "team": "Austin Spurs",
-          "stints": 2,
-          "years": [
-            "2025–2026",
-            "2026"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Stefano Rusconi",
       "teams": [
         {
@@ -51277,6 +51322,19 @@
           "years": [
             "1999-2001",
             "2002-2003"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Tolu Smith",
+      "teams": [
+        {
+          "team": "Motor City Cruise",
+          "stints": 2,
+          "years": [
+            "2024–2025",
+            "2025–2026"
           ]
         }
       ]
@@ -54578,7 +54636,7 @@
         "current_team": "Gifu Swoops",
         "city": "Gifu",
         "state": "",
-        "country": "",
+        "country": "Japan",
         "in_coords": false,
         "last_updated": "2026-08-31"
       },
