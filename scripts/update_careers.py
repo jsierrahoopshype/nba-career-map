@@ -612,16 +612,19 @@ def _last_nba_team(record: dict, exclude_team: str = "") -> str:
 def _slack_sentence(mv: dict, db, locations: dict) -> str:
     """One natural-language line per move, e.g.:
 
-    "Jeenathan Williams, formerly with the Golden State Warriors, has
-    signed with Chiba Jets of Japan."
+    "Former Golden State Warriors player Jeenathan Williams has joined
+    Chiba Jets of Japan."
 
-    - "formerly with the X" names the player's most recent NBA franchise
+    - "Former X player" names the player's most recent NBA franchise
       EXCLUDING the one he just joined (see _last_nba_team) -- the record
       already contains the destination stint at this point. When the
       destination is his only NBA team, that lookup comes back empty and
       the ledger's from_team is used instead, which is the real previous
-      club (e.g. Caleb Houstan: College Park Skyhawks -> Pelicans).
-    - An NBA destination reads "has signed with the X" (no country); a
+      club (e.g. Caleb Houstan: College Park Skyhawks -> Pelicans). With no
+      previous team at all the sentence simply opens with the player's name.
+      The team takes no article in this shape ("Former Utah Jazz player",
+      never "Former the Utah Jazz player"), NBA or not.
+    - An NBA destination reads "has joined the X" (no country); a
       non-NBA destination appends "of <country>" from team_locations,
       omitted entirely when the country is unknown.
     """
@@ -636,21 +639,14 @@ def _slack_sentence(mv: dict, db, locations: dict) -> str:
     # a bug to anyone in the channel even when the underlying move is real.
     if former == to_team:
         former = ""
-    if former:
-        # Non-NBA club names don't take an article ("formerly with Chiba
-        # Jets"), NBA franchises do ("formerly with the Detroit Pistons").
-        article = "the " if former in _NBA_SLACK_NAMES else ""
-        formerly = f", formerly with {article}{former},"
-    else:
-        formerly = ""
-
     if to_team in _NBA_SLACK_NAMES:
         dest = f"the {to_team}"
     else:
         country = (locations.get(to_team) or {}).get("country", "")
         dest = f"{to_team} of {country}" if country else to_team
 
-    return f"{player}{formerly} has signed with {dest}."
+    subject = f"Former {former} player {player}" if former else player
+    return f"{subject} has joined {dest}."
 
 
 def _slack_payload(new_tx: list[dict], db, date: str) -> dict:
