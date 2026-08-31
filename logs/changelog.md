@@ -1,3 +1,13 @@
+## 2026-08-31 — incremental run
+
+- Players updated: **507** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Jonathan Kuminga: Atlanta Hawks → Minnesota Timberwolves
+  - Devin Robinson: Zaragoza → Śląsk Wrocław
+
 ## 2026-08-30 — incremental run
 
 - Players updated: **499** (0 new)
