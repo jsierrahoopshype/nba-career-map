@@ -7,6 +7,7 @@
     <meta name="description" content="A live dashboard of where every NBA player is playing now — overseas signings, country hotspots, most-traveled journeymen, and club alumni.">
     <link rel="canonical" href="https://jsierrahoopshype.github.io/nba-career-map/">
     <meta property="og:title" content="NBA Career Map: where every NBA player is playing now | HoopsHype">
+    <meta name="twitter:title" content="NBA Career Map: where every NBA player is playing now | HoopsHype">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jsierrahoopshype.github.io/nba-career-map/">
     
@@ -72,30 +73,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            white-space: nowrap;
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        .logo-img {
-            height: 32px;
-            width: auto;
-        }
-        
-        .logo-text {
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--text);
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            border-left: 2px solid var(--border);
-            padding-left: 10px;
         }
         
         .search-wrap {
@@ -2051,9 +2028,6 @@
 <body>
     <header>
         <div class="header-inner">
-            <a class="logo" href="index.html">
-                <span class="logo-text">Career Map</span>
-            </a>
             <div class="search-wrap">
                 <input type="text" id="search" placeholder="Search 5,000+ players..." autocomplete="off">
                 <div id="results"></div>
@@ -2133,7 +2107,7 @@
             <div id="botResults"></div>
         </div>
         <div class="contact-footer">
-            <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
+            <p>Anything wrong? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
             <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
         </div>
     </footer>
@@ -2515,6 +2489,7 @@
             ]);
             DASH = dd;
             NBA_ERAS = idx.eras || {}; NBA_FRANCHISES = idx.franchises || []; ERA_COLLISIONS = idx.collisions || {};
+            NBA_AFFILIATES = idx.affiliates || {};
             PLAYER_ALIASES = aliases || {};
             players = names || [];
             buildSearchItems();
@@ -2831,9 +2806,20 @@
         let NBA_ERAS = {};
         let NBA_FRANCHISES = [];
         let ERA_COLLISIONS = {};   // era name -> year cutoff (modern G-League club)
+        let NBA_AFFILIATES = {};   // G League club -> its NBA parent franchise
         let PLAYER_ALIASES = {};
         let SEARCH_ITEMS = [];
-        const setTitle = t => { document.title = t; };
+        // The document title and the social titles are one thing, not three:
+        // whatever a view sets, og:title and twitter:title follow. (Crawlers
+        // read the served HTML, so this matters for anything that renders the
+        // page — the static tags above remain the crawl-time fallback.)
+        const setTitle = t => {
+            document.title = t;
+            for (const sel of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) {
+                const m = document.querySelector(sel);
+                if (m) m.setAttribute('content', t);
+            }
+        };
 
         // Universal search index: players (+ aliases/display_name), teams
         // (franchises + non-NBA clubs), countries. `match` is searched; `label`
@@ -3067,13 +3053,51 @@
             else end = nums.length > 1 ? parseInt(nums[1], 10) : start;
             return { start, end };
         }
+        // THE PARENT-CLUB RULE, on top of (start, end). When a player is
+        // assigned to his NBA club's own G League affiliate, both stints start
+        // in the same year and both are ranges, so end-year ordering alone puts
+        // whichever ended first in front — Aaron Wiggins read as Oklahoma City
+        // Blue (2021-2023) before Oklahoma City Thunder (2021-2026), as though
+        // he played for the affiliate before the club that assigned him there.
+        // An affiliate stint sharing its start year with a range stint at its
+        // own parent borrows the PARENT's end year and takes rank 1, landing it
+        // immediately behind the parent.
+        //
+        // Rewriting keys, rather than special-casing a comparison of two
+        // stints, is what keeps the sort well defined: a pairwise "parent
+        // first" override is NOT transitive — with Thunder (2021-2026), Blue
+        // (2021-2023) and a third club (2021-2024) the pairwise rules give
+        // third < Thunder, Thunder < Blue, Blue < third, a cycle. Keys cannot
+        // cycle.
+        //
+        // The bare-year rule still wins: a bare "2007" precedes a "2007-2011",
+        // affiliate or not. A same-start tie with no NBA club on either side
+        // has nothing to anchor to and keeps the order it already had.
+        // NBA_AFFILIATES is data (data/nba_team_index.json), not name-matching.
+        function _careerKeys(stints) {
+            const raw = stints.map(careerBounds);
+            const nbaRanges = {};   // start year -> { franchise: end year }
+            raw.forEach((b, i) => {
+                if (b.start === b.end) return;          // bare years opt out
+                const t = stints[i] && stints[i].team;
+                const fr = NBA_FRANCHISES.includes(t) ? t : NBA_ERAS[t];
+                if (fr) (nbaRanges[b.start] ||= {})[fr] = b.end;
+            });
+            return raw.map((b, i) => {
+                let end = b.end, rank = 0;
+                if (b.start !== b.end) {
+                    const parent = NBA_AFFILIATES[stints[i] && stints[i].team];
+                    const pEnd = parent && nbaRanges[b.start] && nbaRanges[b.start][parent];
+                    if (pEnd != null) { end = pEnd; rank = 1; }
+                }
+                return { start: b.start, end, rank, i };
+            });
+        }
         function sortCareer(career) {
-            return (career || []).map((s, i) => ({ s, i })).sort((a, b) => {
-                const ka = careerBounds(a.s), kb = careerBounds(b.s);
-                if (ka.start !== kb.start) return ka.start - kb.start;   // start ascending
-                if (ka.end !== kb.end) return ka.end - kb.end;           // then end ascending
-                return a.i - b.i;                                        // stable
-            }).map(o => o.s);
+            const stints = career || [];
+            return _careerKeys(stints).sort((a, b) =>
+                (a.start - b.start) || (a.end - b.end) || (a.rank - b.rank) || (a.i - b.i)
+            ).map(k => stints[k.i]);
         }
         // The year the career actually begins: the earliest start across every
         // stint, not whichever stint happens to sit at index 0.
@@ -3098,7 +3122,7 @@
                 history.pushState({}, '', url);
                 inSiteNav = true;   // in-page navigation -> breadcrumb can go back
             }
-            setTitle(name + ' NBA Career Map | ' + TITLE_SUFFIX);
+            setTitle('Where Has ' + name + ' Played? Every Team, City and Country | ' + TITLE_SUFFIX);
             document.getElementById('welcome').style.display = 'none';
             document.getElementById('playerSection').classList.add('active');
             document.getElementById('pUpdated').textContent =
@@ -5141,7 +5165,7 @@ document.addEventListener('DOMContentLoaded', boot);
                  "▶ START" as soon as the data it needs exists. -->
             <button class="quiz-dark-start-btn" onclick="beginQuiz()" disabled>Loading…</button>
             <div class="quiz-contact-footer">
-                <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
+                <p>Anything wrong? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
                 <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
             </div>
         </div>
@@ -5279,7 +5303,7 @@ document.addEventListener('DOMContentLoaded', boot);
             </div>
 
             <div class="quiz-contact-footer">
-                <p>Anything wrong with the game? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
+                <p>Anything wrong? Email us at <a href="mailto:hoopshype@hoopshype.com">hoopshype@hoopshype.com</a></p>
                 <p>For business inquiries, contact us at <a href="mailto:ads@hoopshype.com">ads@hoopshype.com</a></p>
             </div>
         </div>

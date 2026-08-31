@@ -32,6 +32,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import stint_order  # noqa: E402
+from g_league_affiliates import AFFILIATE_PARENT  # noqa: E402
 from era_correct_teams import ERA_TABLE  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
 from sync_era_locations import LOC  # noqa: E402  (era-accurate team locations)
@@ -787,7 +788,11 @@ def main() -> None:
     # from ERA_TABLE) shared by both pages.
     NBA_TEAM_INDEX_OUT.write_text(json.dumps(
         {"franchises": sorted(NBA_TEAMS), "eras": _ERA_TO_CURRENT,
-         "collisions": ERA_COLLISIONS},
+         "collisions": ERA_COLLISIONS,
+         # G League club -> its NBA parent, so index.html can keep a parent
+         # club ahead of its own affiliate when both stints start in the same
+         # year. Curated (see g_league_affiliates), not name-matched.
+         "affiliates": dict(sorted(AFFILIATE_PARENT.items()))},
         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {NBA_TEAM_INDEX_OUT.relative_to(ROOT)}  "
           f"({NBA_TEAM_INDEX_OUT.stat().st_size:,} bytes)")
