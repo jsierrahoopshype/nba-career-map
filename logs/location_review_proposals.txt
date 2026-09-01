@@ -876,3 +876,27 @@ ROUND 5 -- head of the location-less distribution (34 teams applied,
     'TNT Tropang 5G': PBA (Philippines) club with no single home city — the league plays a rotating venue schedule
     'Manchester British-Americans': historical club; Manchester, New Hampshire and Manchester, England are both plausible readings
     'Fukushima Firebonds': B.League club in Fukushima prefecture; commonly associated with Koriyama, but the home city isn't confirmed here
+
+================================================================================
+ROUND 7 -- city-but-no-country entries (81 filled, 3 left blank for review)
+================================================================================
+  A blank country drops the map position entirely (getCoords has nothing to
+  fall back to) and silently drops the Slack sentence's "of <country>" suffix.
+
+  Corrected misparses in the CITY field along the way: a country in the city
+  slot (Netherlands, Turkey, Paraguay, Montenegro), a region rather than a city
+  (Fukushima Prefecture, Hiroshima Prefecture, Hsinchu County, Aragua), a
+  street address (Hollywood Fame), a stray word ("English", Sao Carlos) and a
+  sentence fragment (Hapoel Afula/Gilboa).
+
+  NOT guessed -- country genuinely unsettled:
+    'Manchester British-Americans': historical club; Manchester, New Hampshire and Manchester, England are both plausible readings and nothing in the record decides it
+    'BC Gand': the name is the French form of Ghent (Belgium) but the recorded city is Andorra la Vella; the two cannot both be right, so neither is applied
+    'Jersey Reds': recorded city Saint Peter is a parish of Jersey, a Crown Dependency rather than a country the map knows; the club's league is unconfirmed
+
+  Country filled, city flagged as disagreeing with the club's name:
+    'Alpella'
+    'Hapoel Tsfat'
+    'Sunderland Maestros'
+    'Sunderland Saints'
+    'Chautauqua Hurricane'

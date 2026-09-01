@@ -872,7 +872,7 @@
       "related": [
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 2
         },
         {
@@ -912,18 +912,25 @@
         }
       ]
     },
-    "Caja San Fernando": {
-      "club": "Caja San Fernando",
+    "Real Betis": {
+      "club": "Real Betis",
       "city": "Seville",
       "state": "",
       "country": "Spain",
-      "count": 30,
+      "count": 36,
       "roster": [
         {
           "player": "A.J. Bramlett",
           "years": "2005-2006",
           "status": "retired",
           "last_team": "ASK Riga",
+          "nationality": "United States"
+        },
+        {
+          "player": "Aaron Miles",
+          "years": "2007-2008",
+          "status": "retired",
+          "last_team": "Lokomotiv Kuban",
           "nationality": "United States"
         },
         {
@@ -1033,6 +1040,13 @@
           "nationality": "Jamaica"
         },
         {
+          "player": "John Holland",
+          "years": "2012-2013",
+          "status": "overseas_active",
+          "last_team": "Santeros de Aguada",
+          "nationality": "Puerto Rico"
+        },
+        {
           "player": "Josh Gray",
           "years": "2023",
           "status": "overseas_active",
@@ -1044,6 +1058,13 @@
           "years": "2004-2006",
           "status": "retired",
           "last_team": "Regatas Corrientes",
+          "nationality": "United States"
+        },
+        {
+          "player": "Maurice Ager",
+          "years": "2009-2010",
+          "status": "retired",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -1068,6 +1089,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Paul Davis",
+          "years": "2010-2012",
+          "status": "retired",
+          "last_team": "Khimki",
+          "nationality": "United States"
+        },
+        {
           "player": "Randy Woods",
           "years": "1998",
           "status": "retired",
@@ -1087,6 +1115,13 @@
           "status": "overseas_active",
           "last_team": "Baskonia",
           "nationality": "Latvia"
+        },
+        {
+          "player": "Ryan Kelly",
+          "years": "2017-2018",
+          "status": "overseas_active",
+          "last_team": "Fukui Blowinds",
+          "nationality": "United States"
         },
         {
           "player": "Shayne Whittington",
@@ -1117,6 +1152,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Travis Leslie",
+          "years": "2021–2022",
+          "status": "overseas_active",
+          "last_team": "CS Maristes",
+          "nationality": "United States"
+        },
+        {
           "player": "Tyus Edney",
           "years": "2008",
           "status": "retired",
@@ -1132,6 +1174,11 @@
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Fort Wayne Mad Ants",
+          "shared": 4
+        },
         {
           "type": "club",
           "name": "Long Island Nets",
@@ -1154,22 +1201,17 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Maine Red Claws",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Reno Bighorns",
           "shared": 3
         },
         {
           "type": "club",
           "name": "Benetton Treviso",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Valencia",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Valvi Girona",
           "shared": 3
         }
       ]
@@ -20538,78 +20580,6 @@
         }
       ]
     },
-    "Cajasol Sevilla": {
-      "club": "Cajasol Sevilla",
-      "city": "Seville",
-      "state": "",
-      "country": "Spain",
-      "count": 3,
-      "roster": [
-        {
-          "player": "Aaron Miles",
-          "years": "2007-2008",
-          "status": "retired",
-          "last_team": "Lokomotiv Kuban",
-          "nationality": "United States"
-        },
-        {
-          "player": "John Holland",
-          "years": "2012-2013",
-          "status": "overseas_active",
-          "last_team": "Santeros de Aguada",
-          "nationality": "Puerto Rico"
-        },
-        {
-          "player": "Maurice Ager",
-          "years": "2009-2010",
-          "status": "retired",
-          "last_team": "Minnesota Timberwolves",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Fort Worth Flyers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maine Red Claws",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Reno Bighorns",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Canton Charge",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Jerusalem",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Crvena Zvezda",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Tel Aviv",
-          "shared": 1
-        }
-      ]
-    },
     "Panionios": {
       "club": "Panionios",
       "city": "Athens",
@@ -26041,9 +26011,9 @@
     },
     "Qianwei Aoshen": {
       "club": "Qianwei Aoshen",
-      "city": "",
+      "city": "Beijing",
       "state": "",
-      "country": "",
+      "country": "China",
       "count": 1,
       "roster": [
         {
@@ -36027,6 +35997,11 @@
         },
         {
           "type": "club",
+          "name": "Tindastóll",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "ÍA",
           "shared": 0
         },
@@ -39845,9 +39820,9 @@
     },
     "Macau Black Bears": {
       "club": "Macau Black Bears",
-      "city": "",
+      "city": "Macau",
       "state": "",
-      "country": "",
+      "country": "China",
       "count": 1,
       "roster": [
         {
@@ -60738,7 +60713,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -60910,7 +60885,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -66612,9 +66587,9 @@
     },
     "Lovćen": {
       "club": "Lovćen",
-      "city": "",
+      "city": "Cetinje",
       "state": "",
-      "country": "",
+      "country": "Montenegro",
       "count": 1,
       "roster": [
         {
@@ -70270,9 +70245,9 @@
     },
     "Avancinos de Villalba": {
       "club": "Avancinos de Villalba",
-      "city": "",
+      "city": "Coamo",
       "state": "",
-      "country": "",
+      "country": "Puerto Rico",
       "count": 1,
       "roster": [
         {
@@ -74244,7 +74219,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -80047,12 +80022,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -80960,7 +80935,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -84892,7 +84867,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -85342,7 +85317,7 @@
       "club": "Igokea",
       "city": "Aleksandrovac",
       "state": "",
-      "country": "Bosnia",
+      "country": "Bosnia and Herzegovina",
       "count": 11,
       "roster": [
         {
@@ -86064,7 +86039,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -86157,7 +86132,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 2
         },
         {
@@ -86205,7 +86180,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -88404,11 +88379,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -88425,6 +88395,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -88474,11 +88449,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -88490,6 +88460,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -99105,9 +99080,9 @@
     },
     "Hapoel Afula/Gilboa": {
       "club": "Hapoel Afula/Gilboa",
-      "city": "",
+      "city": "Afula",
       "state": "",
-      "country": "",
+      "country": "Israel",
       "count": 1,
       "roster": [
         {
@@ -101190,9 +101165,9 @@
     },
     "Universidad Complutense": {
       "club": "Universidad Complutense",
-      "city": "",
+      "city": "Madrid",
       "state": "",
-      "country": "",
+      "country": "Spain",
       "count": 2,
       "roster": [
         {
@@ -101308,12 +101283,12 @@
         },
         {
           "type": "club",
-          "name": "Valladolid",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Granada",
+          "name": "Valladolid",
           "shared": 1
         }
       ]
@@ -105004,7 +104979,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -105064,12 +105039,12 @@
         },
         {
           "type": "club",
-          "name": "Manresa",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Manresa",
           "shared": 1
         }
       ]
@@ -106811,7 +106786,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 3
         },
         {
@@ -109393,11 +109368,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -109419,6 +109389,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -109479,12 +109454,12 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Real Betis",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valvi Girona",
           "shared": 2
         },
         {
@@ -109899,7 +109874,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 2
         },
         {
@@ -112025,11 +112000,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -112051,6 +112021,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -113413,17 +113388,17 @@
         },
         {
           "type": "club",
+          "name": "Real Betis",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Manresa",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Aris",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Caja San Fernando",
           "shared": 1
         },
         {
@@ -117644,7 +117619,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 3
         },
         {
@@ -121476,12 +121451,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -121855,7 +121830,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -122202,7 +122177,7 @@
       "related": [
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 3
         },
         {
@@ -122272,7 +122247,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -122330,7 +122305,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -124220,9 +124195,9 @@
     },
     "Al-Riffa SC": {
       "club": "Al-Riffa SC",
-      "city": "",
+      "city": "Riffa",
       "state": "",
-      "country": "",
+      "country": "Bahrain",
       "count": 1,
       "roster": [
         {
@@ -124382,12 +124357,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -125170,12 +125145,12 @@
         },
         {
           "type": "club",
-          "name": "Jiangsu Dragons",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Jiangsu Dragons",
           "shared": 1
         }
       ]
@@ -126202,12 +126177,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -126260,12 +126235,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -126892,17 +126867,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -128752,17 +128727,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -130464,9 +130439,9 @@
     },
     "ASC Ville de Dakar": {
       "club": "ASC Ville de Dakar",
-      "city": "",
+      "city": "Dakar",
       "state": "",
-      "country": "",
+      "country": "Senegal",
       "count": 1,
       "roster": [
         {
@@ -134005,17 +133980,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -134603,7 +134578,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -136885,11 +136860,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -136901,6 +136871,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -137257,11 +137232,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -137288,6 +137258,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -138164,17 +138139,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -138681,11 +138656,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -138712,6 +138682,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -138865,12 +138840,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -141046,12 +141021,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -141104,12 +141079,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -141876,9 +141851,9 @@
     },
     "Agua Caliente / Ontario Clippers": {
       "club": "Agua Caliente / Ontario Clippers",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Agua Caliente",
+      "state": "California",
+      "country": "USA",
       "count": 2,
       "roster": [
         {
@@ -141914,27 +141889,27 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Sioux Falls Skyforce",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Rio Grande Valley Vipers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Texas Legends",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Idaho Stampede",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Rockford Lightning",
           "shared": 0
         }
       ]
@@ -142315,12 +142290,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -142365,11 +142340,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -142386,6 +142356,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -143519,11 +143494,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -143535,6 +143505,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -145344,11 +145319,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -145370,6 +145340,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -147995,11 +147970,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -148011,6 +147981,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -148240,7 +148215,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -148775,7 +148750,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -149254,11 +149229,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -149270,6 +149240,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -149856,17 +149831,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -151915,7 +151890,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -153449,11 +153424,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -153480,6 +153450,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -155567,17 +155542,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -155635,7 +155610,7 @@
         },
         {
           "type": "club",
-          "name": "Oberwart Gunners",
+          "name": "Klosterneuburg Dukes",
           "shared": 0
         }
       ]
@@ -155792,11 +155767,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -155808,6 +155778,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -156614,9 +156589,9 @@
     },
     "Al-Seeb Club": {
       "club": "Al-Seeb Club",
-      "city": "",
+      "city": "Al-Seeb",
       "state": "",
-      "country": "",
+      "country": "Oman",
       "count": 1,
       "roster": [
         {
@@ -157906,11 +157881,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -157922,6 +157892,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -159353,11 +159328,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -159365,14 +159335,19 @@
           "type": "club",
           "name": "APR",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
+          "shared": 0
         }
       ]
     },
     "Hollywood Fame": {
       "club": "Hollywood Fame",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Los Angeles",
+      "state": "California",
+      "country": "USA",
       "count": 2,
       "roster": [
         {
@@ -159707,11 +159682,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -159738,6 +159708,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -159838,11 +159813,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -159854,6 +159824,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -160297,17 +160272,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -161187,12 +161162,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -161290,11 +161265,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -161316,6 +161286,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -162214,9 +162189,9 @@
     },
     "Yankey Ark": {
       "club": "Yankey Ark",
-      "city": "",
+      "city": "Hsinchu",
       "state": "",
-      "country": "",
+      "country": "Taiwan",
       "count": 1,
       "roster": [
         {
@@ -163820,9 +163795,9 @@
     },
     "Hiroshima Dragonflies": {
       "club": "Hiroshima Dragonflies",
-      "city": "",
+      "city": "Hiroshima",
       "state": "",
-      "country": "",
+      "country": "Japan",
       "count": 1,
       "roster": [
         {
@@ -163841,37 +163816,37 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "San-en NeoPhoenix",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "SeaHorses Mikawa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Kyoto Hannaryz",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Nagoya Diamond Dolphins",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Shimane Susanoo Magic",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Alvark Tokyo",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Chiba Jets",
           "shared": 0
         }
       ]
@@ -163977,17 +163952,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -167605,9 +167580,9 @@
     },
     "Fukushima Firebonds": {
       "club": "Fukushima Firebonds",
-      "city": "",
+      "city": "Fukushima",
       "state": "",
-      "country": "",
+      "country": "Japan",
       "count": 4,
       "roster": [
         {
@@ -168534,12 +168509,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -170443,7 +170418,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -170491,17 +170466,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -171268,17 +171243,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -173394,12 +173369,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -173505,17 +173480,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -173601,9 +173576,9 @@
     },
     "Viganello": {
       "club": "Viganello",
-      "city": "",
+      "city": "Lugano",
       "state": "",
-      "country": "",
+      "country": "Switzerland",
       "count": 1,
       "roster": [
         {
@@ -173642,17 +173617,17 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Lugano Tigers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Fribourg Olympic",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Fribourg Olympic Basket",
           "shared": 0
         }
       ]
@@ -173705,12 +173680,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -174116,17 +174091,17 @@
         },
         {
           "type": "club",
+          "name": "Real Betis",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "SIG Strasbourg",
           "shared": 1
         },
         {
           "type": "club",
           "name": "EWE Baskets Oldenburg",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "London Lions",
           "shared": 1
         }
       ]
@@ -174556,12 +174531,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -174654,11 +174629,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -174685,6 +174655,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -175681,17 +175656,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -176063,9 +176038,9 @@
     },
     "Lavovi 063": {
       "club": "Lavovi 063",
-      "city": "",
+      "city": "Belgrade",
       "state": "",
-      "country": "",
+      "country": "Serbia",
       "count": 1,
       "roster": [
         {
@@ -176084,37 +176059,37 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Crvena Zvezda",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Partizan",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "FMP",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Mega Basket",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Hemofarm",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Borac Čačak",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Mega Leks",
           "shared": 0
         }
       ]
@@ -178136,7 +178111,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -178174,11 +178149,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -178195,6 +178165,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -179601,12 +179576,12 @@
         },
         {
           "type": "club",
-          "name": "WBC Wels",
+          "name": "Klosterneuburg Dukes",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Zepter Vienna",
+          "name": "UBC St. Pölten",
           "shared": 0
         }
       ]
@@ -182480,9 +182455,9 @@
     },
     "Élan Béarnais Pau-Lacq-Orthez": {
       "club": "Élan Béarnais Pau-Lacq-Orthez",
-      "city": "",
+      "city": "Pau",
       "state": "",
-      "country": "",
+      "country": "France",
       "count": 2,
       "roster": [
         {
@@ -182662,11 +182637,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -182683,6 +182653,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -183588,7 +183563,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -183646,7 +183621,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -185082,11 +185057,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -185108,6 +185078,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -185957,12 +185932,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -186103,12 +186078,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -186161,12 +186136,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -186572,11 +186547,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -186593,6 +186563,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -188080,11 +188055,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -188101,6 +188071,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -189716,12 +189691,12 @@
         },
         {
           "type": "club",
-          "name": "Granada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Granada",
           "shared": 1
         }
       ]
@@ -190638,7 +190613,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -190686,12 +190661,12 @@
         },
         {
           "type": "club",
-          "name": "Darüşşafaka",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Darüşşafaka",
           "shared": 1
         },
         {
@@ -190826,12 +190801,12 @@
         },
         {
           "type": "club",
-          "name": "Darüşşafaka",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Darüşşafaka",
           "shared": 1
         },
         {
@@ -191498,11 +191473,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -191514,6 +191484,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -193763,12 +193738,12 @@
         },
         {
           "type": "club",
-          "name": "Granada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Granada",
           "shared": 1
         },
         {
@@ -194686,9 +194661,9 @@
     },
     "Reno Bighorns / Stockton Kings": {
       "club": "Reno Bighorns / Stockton Kings",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Reno",
+      "state": "Nevada",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -194902,9 +194877,9 @@
     },
     "Hsinchu Lioneers": {
       "club": "Hsinchu Lioneers",
-      "city": "",
+      "city": "Hsinchu",
       "state": "",
-      "country": "",
+      "country": "Taiwan",
       "count": 1,
       "roster": [
         {
@@ -195364,9 +195339,9 @@
     },
     "Hi-Tech Bangkok City": {
       "club": "Hi-Tech Bangkok City",
-      "city": "",
+      "city": "Bangkok",
       "state": "",
-      "country": "",
+      "country": "Thailand",
       "count": 1,
       "roster": [
         {
@@ -195595,11 +195570,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -195611,6 +195581,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -195718,11 +195693,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -195734,6 +195704,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -196056,9 +196031,9 @@
     },
     "Hapoel Migdal Ha'emek": {
       "club": "Hapoel Migdal Ha'emek",
-      "city": "",
+      "city": "Migdal HaEmek",
       "state": "",
-      "country": "",
+      "country": "Israel",
       "count": 1,
       "roster": [
         {
@@ -198055,11 +198030,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -198076,6 +198046,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -198123,17 +198098,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -198205,9 +198180,9 @@
     },
     "Pezoporikos Larnaca": {
       "club": "Pezoporikos Larnaca",
-      "city": "",
+      "city": "Larnaca",
       "state": "",
-      "country": "",
+      "country": "Cyprus",
       "count": 1,
       "roster": [
         {
@@ -198241,22 +198216,22 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "APOEL",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Keravnos",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Apollon Limassol",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Proteas EKA AEL",
           "shared": 0
         }
       ]
@@ -198430,11 +198405,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -198446,6 +198416,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -200839,17 +200814,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -202111,11 +202086,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -202127,6 +202097,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -204660,12 +204635,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -207162,9 +207137,9 @@
     },
     "HKK Široki": {
       "club": "HKK Široki",
-      "city": "",
+      "city": "Široki Brijeg",
       "state": "",
-      "country": "",
+      "country": "Bosnia and Herzegovina",
       "count": 2,
       "roster": [
         {
@@ -208212,9 +208187,9 @@
     },
     "Mens Sana 1871 Basket": {
       "club": "Mens Sana 1871 Basket",
-      "city": "",
+      "city": "Siena",
       "state": "",
-      "country": "",
+      "country": "Italy",
       "count": 1,
       "roster": [
         {
@@ -209485,7 +209460,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -209543,7 +209518,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -209903,9 +209878,9 @@
     },
     "Zonkeys de Tijuana": {
       "club": "Zonkeys de Tijuana",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Tijuana",
+      "state": "Baja California",
+      "country": "Mexico",
       "count": 2,
       "roster": [
         {
@@ -210635,17 +210610,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -211068,9 +211043,9 @@
     },
     "CPN Pueblo Nuevo": {
       "club": "CPN Pueblo Nuevo",
-      "city": "",
+      "city": "Calamonte",
       "state": "",
-      "country": "",
+      "country": "Spain",
       "count": 1,
       "roster": [
         {
@@ -211114,12 +211089,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Baskonia",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Real Madrid",
           "shared": 0
         }
       ]
@@ -211874,11 +211849,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -211900,6 +211870,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -212291,17 +212266,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -212466,11 +212441,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -212492,6 +212462,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -212590,11 +212565,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -212616,6 +212586,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -212803,9 +212778,9 @@
     },
     "Rīgas Laiks": {
       "club": "Rīgas Laiks",
-      "city": "",
+      "city": "Riga",
       "state": "",
-      "country": "",
+      "country": "Latvia",
       "count": 1,
       "roster": [
         {
@@ -212854,7 +212829,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "VEF Rīga",
           "shared": 0
         }
       ]
@@ -213337,9 +213312,9 @@
     },
     "KK Igokea": {
       "club": "KK Igokea",
-      "city": "",
+      "city": "Laktaši",
       "state": "",
-      "country": "",
+      "country": "Bosnia and Herzegovina",
       "count": 1,
       "roster": [
         {
@@ -213555,12 +213530,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -213656,11 +213631,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -213677,6 +213647,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -214757,11 +214732,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -214773,6 +214743,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -215187,17 +215162,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -215847,9 +215822,9 @@
     },
     "Klosterneuburg Dukes": {
       "club": "Klosterneuburg Dukes",
-      "city": "",
+      "city": "Klosterneuburg",
       "state": "",
-      "country": "",
+      "country": "Austria",
       "count": 1,
       "roster": [
         {
@@ -216070,9 +216045,9 @@
     },
     "Newcastle Eagles": {
       "club": "Newcastle Eagles",
-      "city": "",
+      "city": "Newcastle upon Tyne",
       "state": "",
-      "country": "",
+      "country": "England",
       "count": 2,
       "roster": [
         {
@@ -216156,11 +216131,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -216187,6 +216157,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -216219,11 +216194,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -216245,6 +216215,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -216309,9 +216284,9 @@
     },
     "Al-Shamal SC": {
       "club": "Al-Shamal SC",
-      "city": "",
+      "city": "Madinat ash Shamal",
       "state": "",
-      "country": "",
+      "country": "Qatar",
       "count": 2,
       "roster": [
         {
@@ -216576,9 +216551,9 @@
     },
     "Canton / Cleveland Charge": {
       "club": "Canton / Cleveland Charge",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Canton",
+      "state": "Ohio",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -216607,27 +216582,27 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Sioux Falls Skyforce",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Rio Grande Valley Vipers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Texas Legends",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Idaho Stampede",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Rockford Lightning",
           "shared": 0
         }
       ]
@@ -217315,11 +217290,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -217341,6 +217311,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -217812,11 +217787,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -217838,6 +217808,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -218536,9 +218511,9 @@
     },
     "Zhuhai Wolf Warriors": {
       "club": "Zhuhai Wolf Warriors",
-      "city": "",
+      "city": "Macau",
       "state": "",
-      "country": "",
+      "country": "China",
       "count": 2,
       "roster": [
         {
@@ -218656,6 +218631,11 @@
         },
         {
           "type": "club",
+          "name": "Real Betis",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Valvi Girona",
           "shared": 1
         },
@@ -218663,19 +218643,14 @@
           "type": "club",
           "name": "Aris",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Caja San Fernando",
-          "shared": 1
         }
       ]
     },
     "Chautauqua Hurricane": {
       "club": "Chautauqua Hurricane",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Erie",
+      "state": "Pennsylvania",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -218772,17 +218747,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -218835,12 +218810,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -219049,7 +219024,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -219107,7 +219082,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -219483,7 +219458,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -219840,9 +219815,9 @@
     },
     "Comunicaciones": {
       "club": "Comunicaciones",
-      "city": "",
+      "city": "Guatemala City",
       "state": "",
-      "country": "",
+      "country": "Guatemala",
       "count": 1,
       "roster": [
         {
@@ -219898,9 +219873,9 @@
     },
     "Olimpia Asuncion": {
       "club": "Olimpia Asuncion",
-      "city": "",
+      "city": "Asunción",
       "state": "",
-      "country": "",
+      "country": "Paraguay",
       "count": 1,
       "roster": [
         {
@@ -222175,17 +222150,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -223729,11 +223704,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -223755,6 +223725,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -223812,7 +223787,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -223948,11 +223923,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -223974,6 +223944,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -224495,7 +224470,7 @@
       "related": [
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -224696,11 +224671,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -224712,6 +224682,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -224812,11 +224787,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -224828,6 +224798,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -225090,11 +225065,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -225116,6 +225086,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -226293,11 +226268,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -226319,6 +226289,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -227446,9 +227421,9 @@
     },
     "Universitarios": {
       "club": "Universitarios",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Culiacán",
+      "state": "Sinaloa",
+      "country": "Mexico",
       "count": 1,
       "roster": [
         {
@@ -227540,11 +227515,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -227557,14 +227527,19 @@
           "type": "club",
           "name": "Al Arabi",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
+          "shared": 0
         }
       ]
     },
     "Rotterdam-Zuid": {
       "club": "Rotterdam-Zuid",
-      "city": "",
+      "city": "Rotterdam",
       "state": "",
-      "country": "",
+      "country": "Netherlands",
       "count": 2,
       "roster": [
         {
@@ -227605,22 +227580,22 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "EBBC Den Bosch",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Apollo Amsterdam",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "BV Amstelveen",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "EiffelTowers Den Bosch",
           "shared": 0
         }
       ]
@@ -227880,9 +227855,9 @@
     },
     "Club de Regatas Lima": {
       "club": "Club de Regatas Lima",
-      "city": "",
+      "city": "Lima",
       "state": "",
-      "country": "",
+      "country": "Peru",
       "count": 1,
       "roster": [
         {
@@ -228730,17 +228705,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -228894,11 +228869,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -228915,6 +228885,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -229496,11 +229471,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -229522,6 +229492,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -229564,11 +229539,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -229580,6 +229550,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -229622,11 +229597,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -229638,6 +229608,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -229982,7 +229957,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -230681,11 +230656,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -230707,6 +230677,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -230829,9 +230804,9 @@
     },
     "Filathlitikos": {
       "club": "Filathlitikos",
-      "city": "",
+      "city": "Zografou",
       "state": "",
-      "country": "",
+      "country": "Greece",
       "count": 2,
       "roster": [
         {
@@ -230879,17 +230854,17 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Olympiacos",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "AEK Athens",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Panionios",
           "shared": 0
         }
       ]
@@ -230995,17 +230970,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -231398,11 +231373,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -231419,6 +231389,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -231466,17 +231441,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -232023,17 +231998,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "APR",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -232507,7 +232482,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -233561,7 +233536,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -234118,7 +234093,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -234161,11 +234136,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -234177,6 +234147,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -235073,7 +235048,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -236075,9 +236050,9 @@
     },
     "Toros De Aragua": {
       "club": "Toros De Aragua",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Maracay",
+      "state": "Aragua",
+      "country": "Venezuela",
       "count": 1,
       "roster": [
         {
@@ -236243,11 +236218,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -236264,6 +236234,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -236301,11 +236276,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -236322,6 +236292,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -236444,9 +236419,9 @@
     },
     "Kaohsiung 17LIVE Steelers": {
       "club": "Kaohsiung 17LIVE Steelers",
-      "city": "",
+      "city": "Kaohsiung",
       "state": "",
-      "country": "",
+      "country": "Taiwan",
       "count": 2,
       "roster": [
         {
@@ -236675,12 +236650,12 @@
         },
         {
           "type": "club",
-          "name": "Guaros de Lara",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Guaros de Lara",
           "shared": 1
         },
         {
@@ -237255,12 +237230,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -237313,12 +237288,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -237432,6 +237407,11 @@
         },
         {
           "type": "club",
+          "name": "Real Betis",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Levallois Metropolitans",
           "shared": 2
         },
@@ -237458,11 +237438,6 @@
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -237986,17 +237961,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -238044,17 +238019,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -239168,12 +239143,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -240407,11 +240382,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -240423,6 +240393,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -240762,11 +240737,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -240778,6 +240748,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -241573,12 +241548,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -242075,7 +242050,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -242289,11 +242264,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -242315,6 +242285,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -242771,21 +242746,21 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
     },
     "Slovan Bratislava": {
       "club": "Slovan Bratislava",
-      "city": "",
+      "city": "Bratislava",
       "state": "",
-      "country": "",
+      "country": "Slovakia",
       "count": 1,
       "roster": [
         {
@@ -242824,17 +242799,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Inter Bratislava",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
+          "name": "Prievidza",
           "shared": 0
         }
       ]
@@ -242887,12 +242857,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -243180,7 +243150,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -243364,11 +243334,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -243390,6 +243355,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -243439,11 +243409,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -243455,6 +243420,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -244069,12 +244039,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -244443,9 +244413,9 @@
     },
     "Al Wahda": {
       "club": "Al Wahda",
-      "city": "",
+      "city": "Abu Dhabi",
       "state": "",
-      "country": "",
+      "country": "United Arab Emirates",
       "count": 2,
       "roster": [
         {
@@ -245094,7 +245064,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -245119,12 +245089,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -246524,7 +246494,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -246582,7 +246552,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -246640,7 +246610,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -246958,7 +246928,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -247495,7 +247465,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -247543,12 +247513,12 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -247601,12 +247571,12 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -247659,12 +247629,12 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -247734,12 +247704,12 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -247782,12 +247752,12 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -248078,11 +248048,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -248094,6 +248059,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -249155,11 +249125,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -249186,6 +249151,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -249272,11 +249242,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -249303,6 +249268,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -250853,7 +250823,7 @@
         },
         {
           "type": "club",
-          "name": "NBA G League Ignite",
+          "name": "Real Betis",
           "shared": 1
         }
       ]
@@ -251846,7 +251816,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -252339,11 +252309,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -252370,6 +252335,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -252873,11 +252843,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -252899,6 +252864,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -252951,12 +252921,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -253308,17 +253278,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -253672,11 +253642,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -253688,6 +253653,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -253730,11 +253700,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -253746,6 +253711,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -253846,11 +253816,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -253862,6 +253827,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -254395,9 +254365,9 @@
     },
     "Sparta Prague": {
       "club": "Sparta Prague",
-      "city": "",
+      "city": "Prague",
       "state": "",
-      "country": "",
+      "country": "Czech Republic",
       "count": 1,
       "roster": [
         {
@@ -254446,7 +254416,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Geofin Nový Jičín",
           "shared": 0
         }
       ]
@@ -254610,11 +254580,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -254622,14 +254587,19 @@
           "type": "club",
           "name": "APR",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
+          "shared": 0
         }
       ]
     },
     "Turun NMKY": {
       "club": "Turun NMKY",
-      "city": "",
+      "city": "Turku",
       "state": "",
-      "country": "",
+      "country": "Finland",
       "count": 1,
       "roster": [
         {
@@ -254663,22 +254633,22 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Torpan Pojat",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "KTP-Basket",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Korihait",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Pantterit",
           "shared": 0
         }
       ]
@@ -254931,7 +254901,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -255043,12 +255013,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -255817,12 +255787,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -255920,11 +255890,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -255946,6 +255911,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -256099,11 +256069,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -256120,6 +256085,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -257450,11 +257420,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -257466,6 +257431,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -257571,11 +257541,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -257597,6 +257562,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -258375,17 +258345,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -258450,9 +258420,9 @@
     },
     "Dewa United Banten": {
       "club": "Dewa United Banten",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Serang",
+      "state": "Banten",
+      "country": "Indonesia",
       "count": 1,
       "roster": [
         {
@@ -258853,17 +258823,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -259217,11 +259187,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -259233,6 +259198,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -259926,9 +259896,9 @@
     },
     "Al Riffa": {
       "club": "Al Riffa",
-      "city": "",
+      "city": "Riffa",
       "state": "",
-      "country": "",
+      "country": "Bahrain",
       "count": 1,
       "roster": [
         {
@@ -260101,7 +260071,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -260171,12 +260141,12 @@
         },
         {
           "type": "club",
-          "name": "Bayern Munich",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Bayern Munich",
           "shared": 1
         },
         {
@@ -260224,7 +260194,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -263983,9 +263953,9 @@
     },
     "Saskatoon Mamba": {
       "club": "Saskatoon Mamba",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Saskatoon",
+      "state": "Saskatchewan",
+      "country": "Canada",
       "count": 1,
       "roster": [
         {
@@ -264646,17 +264616,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -265368,17 +265338,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -265559,9 +265529,9 @@
     },
     "Worcester Counts": {
       "club": "Worcester Counts",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Worcester",
+      "state": "Massachusetts",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -265972,9 +265942,9 @@
     },
     "Maccabi Raanana": {
       "club": "Maccabi Raanana",
-      "city": "",
+      "city": "Ra'anana",
       "state": "",
-      "country": "",
+      "country": "Israel",
       "count": 1,
       "roster": [
         {
@@ -266023,7 +265993,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Maccabi Tel Aviv",
           "shared": 0
         }
       ]
@@ -266645,11 +266615,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -266676,6 +266641,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -266812,9 +266782,9 @@
     },
     "Fort Wayne / Indiana Mad Ants": {
       "club": "Fort Wayne / Indiana Mad Ants",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Fort Wayne",
+      "state": "Indiana",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -266838,32 +266808,32 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Sioux Falls Skyforce",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Rio Grande Valley Vipers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Texas Legends",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Idaho Stampede",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Rockford Lightning",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Rapid City Thrillers",
           "shared": 0
         }
       ]
@@ -267120,17 +267090,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -267318,7 +267288,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -267883,11 +267853,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -267899,6 +267864,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -268226,11 +268196,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -268247,6 +268212,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -269483,9 +269453,9 @@
     },
     "Erdenet Miners": {
       "club": "Erdenet Miners",
-      "city": "",
+      "city": "Erdenet",
       "state": "",
-      "country": "",
+      "country": "Mongolia",
       "count": 2,
       "roster": [
         {
@@ -269548,9 +269518,9 @@
     },
     "Ontario / San Diego Clippers": {
       "club": "Ontario / San Diego Clippers",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "San Diego",
+      "state": "California",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -269569,37 +269539,37 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Sioux Falls Skyforce",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Rio Grande Valley Vipers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Texas Legends",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Idaho Stampede",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Rockford Lightning",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Rapid City Thrillers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Santa Cruz Warriors",
           "shared": 0
         }
       ]
@@ -270311,16 +270281,16 @@
         },
         {
           "type": "club",
-          "name": "Íþróttafélag Reykjavíkur",
+          "name": "Tindastóll",
           "shared": 0
         }
       ]
     },
     "TTÜ-A. Le Coq": {
       "club": "TTÜ-A. Le Coq",
-      "city": "",
+      "city": "Tallinn",
       "state": "",
-      "country": "",
+      "country": "Estonia",
       "count": 1,
       "roster": [
         {
@@ -270364,12 +270334,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "BC Kalev",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Karesi Spor",
           "shared": 0
         }
       ]
@@ -270470,11 +270440,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -270486,6 +270451,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -271075,11 +271045,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -271096,6 +271061,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -271384,17 +271354,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -271459,9 +271429,9 @@
     },
     "Matsushita Denki": {
       "club": "Matsushita Denki",
-      "city": "",
+      "city": "Kadoma",
       "state": "",
-      "country": "",
+      "country": "Japan",
       "count": 1,
       "roster": [
         {
@@ -271475,42 +271445,42 @@
       "related": [
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "San-en NeoPhoenix",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "SeaHorses Mikawa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Kyoto Hannaryz",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Nagoya Diamond Dolphins",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Shimane Susanoo Magic",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Alvark Tokyo",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Chiba Jets",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Hitachi SunRockers",
           "shared": 0
         }
       ]
@@ -272280,7 +272250,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -272781,12 +272751,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -273113,12 +273083,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -273525,11 +273495,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -273546,6 +273511,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -274024,11 +273994,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -274045,6 +274010,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -275130,7 +275100,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -275888,7 +275858,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -275946,7 +275916,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -276004,7 +275974,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -276325,9 +276295,9 @@
     },
     "Hapoel Eliat": {
       "club": "Hapoel Eliat",
-      "city": "",
+      "city": "Eilat",
       "state": "",
-      "country": "",
+      "country": "Israel",
       "count": 1,
       "roster": [
         {
@@ -276832,11 +276802,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -276848,6 +276813,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -276969,11 +276939,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -276985,6 +276950,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -277107,7 +277077,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -277258,11 +277228,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -277284,6 +277249,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -277550,7 +277520,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         }
       ]
@@ -278063,9 +278033,9 @@
     },
     "RSSB Tigers": {
       "club": "RSSB Tigers",
-      "city": "",
+      "city": "Kigali",
       "state": "",
-      "country": "",
+      "country": "Rwanda",
       "count": 1,
       "roster": [
         {
@@ -278562,7 +278532,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -278665,11 +278635,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -278686,6 +278651,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -278791,17 +278761,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -279604,9 +279574,9 @@
     },
     "São Carlos": {
       "club": "São Carlos",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "São Carlos",
+      "state": "São Paulo",
+      "country": "Brazil",
       "count": 1,
       "roster": [
         {
@@ -279778,9 +279748,9 @@
     },
     "Altiri Chiba": {
       "club": "Altiri Chiba",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Chiba",
+      "state": "Chiba Prefecture",
+      "country": "Japan",
       "count": 1,
       "roster": [
         {
@@ -280128,12 +280098,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -280577,11 +280547,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -280598,6 +280563,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -281061,7 +281031,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -282284,9 +282254,9 @@
     },
     "Tartu Ülikool": {
       "club": "Tartu Ülikool",
-      "city": "",
+      "city": "Tartu",
       "state": "",
-      "country": "",
+      "country": "Estonia",
       "count": 1,
       "roster": [
         {
@@ -284223,17 +284193,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -284518,12 +284488,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -284616,11 +284586,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -284647,6 +284612,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -284769,7 +284739,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -286479,9 +286449,9 @@
     },
     "UBC St. Pölten": {
       "club": "UBC St. Pölten",
-      "city": "",
+      "city": "St. Pölten",
       "state": "",
-      "country": "",
+      "country": "Austria",
       "count": 1,
       "roster": [
         {
@@ -286742,11 +286712,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -286763,6 +286728,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -287622,7 +287592,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -287665,7 +287635,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -287723,7 +287693,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -287781,7 +287751,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -287839,7 +287809,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -287897,7 +287867,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -288413,9 +288383,9 @@
     },
     "Sloboda Tuzla": {
       "club": "Sloboda Tuzla",
-      "city": "",
+      "city": "Tuzla",
       "state": "",
-      "country": "",
+      "country": "Bosnia and Herzegovina",
       "count": 1,
       "roster": [
         {
@@ -288444,27 +288414,27 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Igokea",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "HKK Široki",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Zrinjski Mostar",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Borac Banja Luka",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "KK Igokea",
           "shared": 0
         }
       ]
@@ -288507,11 +288477,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -288523,6 +288488,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -290053,11 +290023,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -290070,14 +290035,19 @@
           "type": "club",
           "name": "Al Arabi",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
+          "shared": 0
         }
       ]
     },
     "Agua Caliente / Ontario / San Diego Clippers": {
       "club": "Agua Caliente / Ontario / San Diego Clippers",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "San Diego",
+      "state": "California",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -290106,27 +290076,27 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Sioux Falls Skyforce",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Rio Grande Valley Vipers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Texas Legends",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Idaho Stampede",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Rockford Lightning",
           "shared": 0
         }
       ]
@@ -290770,11 +290740,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -290786,6 +290751,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -290896,12 +290866,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -291060,11 +291030,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -291076,6 +291041,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -291118,11 +291088,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -291134,6 +291099,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -291171,7 +291141,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -291229,7 +291199,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -291287,7 +291257,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -291646,11 +291616,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -291677,6 +291642,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -291787,12 +291757,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -291845,12 +291815,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -291903,12 +291873,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -292291,9 +292261,9 @@
     },
     "Borac Banja Luka": {
       "club": "Borac Banja Luka",
-      "city": "",
+      "city": "Banja Luka",
       "state": "",
-      "country": "",
+      "country": "Bosnia and Herzegovina",
       "count": 1,
       "roster": [
         {
@@ -292407,9 +292377,9 @@
     },
     "Čelik Zenica": {
       "club": "Čelik Zenica",
-      "city": "",
+      "city": "Zenica",
       "state": "",
-      "country": "",
+      "country": "Bosnia and Herzegovina",
       "count": 1,
       "roster": [
         {
@@ -292516,7 +292486,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -293504,21 +293474,21 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
     },
     "Sagesse SC (basketball)": {
       "club": "Sagesse SC (basketball)",
-      "city": "",
+      "city": "Beirut",
       "state": "",
-      "country": "",
+      "country": "Lebanon",
       "count": 1,
       "roster": [
         {
@@ -293557,17 +293527,17 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Al Riyadi Beirut",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Beirut Club",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Champville SC",
           "shared": 0
         }
       ]
@@ -293605,11 +293575,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -293627,14 +293592,19 @@
           "type": "club",
           "name": "La Palma",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
         }
       ]
     },
     "Alpella": {
       "club": "Alpella",
-      "city": "",
+      "city": "Turkey",
       "state": "",
-      "country": "",
+      "country": "Turkey",
       "count": 1,
       "roster": [
         {
@@ -293658,32 +293628,32 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Anadolu Efes",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Galatasaray",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Beşiktaş",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Darüşşafaka",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Türk Telekom",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Pınar Karşıyaka",
           "shared": 0
         }
       ]
@@ -294458,7 +294428,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -294559,11 +294529,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -294575,6 +294540,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -294748,7 +294718,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -295045,9 +295015,9 @@
     },
     "Al Ahli Bahrein": {
       "club": "Al Ahli Bahrein",
-      "city": "",
+      "city": "Manama",
       "state": "",
-      "country": "",
+      "country": "Bahrain",
       "count": 1,
       "roster": [
         {
@@ -295318,7 +295288,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -295638,11 +295608,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -295654,6 +295619,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -295686,17 +295656,12 @@
         },
         {
           "type": "club",
-          "name": "Cajasol Banca Cívica",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
           "shared": 0
         },
         {
@@ -295713,63 +295678,10 @@
           "type": "club",
           "name": "Al Arabi",
           "shared": 0
-        }
-      ]
-    },
-    "Cajasol Banca Cívica": {
-      "club": "Cajasol Banca Cívica",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Paul Davis",
-          "years": "2010-2012",
-          "status": "retired",
-          "last_team": "Khimki",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Maine Red Claws",
-          "shared": 1
         },
         {
           "type": "club",
-          "name": "Khimki",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Xacobeo Blu:Sens",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "APR",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Arabi",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -296544,9 +296456,9 @@
     },
     "Iowa Energy / Wolves": {
       "club": "Iowa Energy / Wolves",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Des Moines",
+      "state": "Iowa",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -296841,9 +296753,9 @@
     },
     "Élan Béarnais Pau-Orthez": {
       "club": "Élan Béarnais Pau-Orthez",
-      "city": "",
+      "city": "Pau",
       "state": "",
-      "country": "",
+      "country": "France",
       "count": 1,
       "roster": [
         {
@@ -296887,12 +296799,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "ASVEL",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Pau-Orthez",
           "shared": 0
         }
       ]
@@ -297073,9 +296985,9 @@
     },
     "Sunderland Maestros": {
       "club": "Sunderland Maestros",
-      "city": "",
+      "city": "Newcastle upon Tyne",
       "state": "",
-      "country": "",
+      "country": "England",
       "count": 1,
       "roster": [
         {
@@ -297131,9 +297043,9 @@
     },
     "Tindastóll": {
       "club": "Tindastóll",
-      "city": "",
+      "city": "Sauðárkrókur",
       "state": "",
-      "country": "",
+      "country": "Iceland",
       "count": 1,
       "roster": [
         {
@@ -297278,11 +297190,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -297299,6 +297206,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -297882,11 +297794,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -297908,6 +297815,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -298426,17 +298338,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -298844,12 +298756,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -299180,11 +299092,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -299206,6 +299113,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -299253,17 +299165,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -299627,12 +299539,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -300149,12 +300061,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -300265,12 +300177,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -300323,12 +300235,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -300671,12 +300583,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -300903,12 +300815,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -301125,11 +301037,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -301141,6 +301048,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -301236,11 +301148,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -301257,6 +301164,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -301760,12 +301672,12 @@
         },
         {
           "type": "club",
-          "name": "Valvi Girona",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Valvi Girona",
           "shared": 1
         },
         {
@@ -302314,9 +302226,9 @@
     },
     "Pagrati": {
       "club": "Pagrati",
-      "city": "",
+      "city": "Athens",
       "state": "",
-      "country": "",
+      "country": "Greece",
       "count": 2,
       "roster": [
         {
@@ -303068,11 +302980,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -303084,6 +302991,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -303247,11 +303159,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -303259,14 +303166,19 @@
           "type": "club",
           "name": "APR",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
+          "shared": 0
         }
       ]
     },
     "Snohomish County Explosion": {
       "club": "Snohomish County Explosion",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Monroe",
+      "state": "Washington",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -303300,22 +303212,22 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Sioux Falls Skyforce",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Rio Grande Valley Vipers",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Texas Legends",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Idaho Stampede",
           "shared": 0
         }
       ]
@@ -303368,12 +303280,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -303580,11 +303492,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -303606,6 +303513,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -303786,9 +303698,9 @@
     },
     "Hebraica Macabi": {
       "club": "Hebraica Macabi",
-      "city": "",
+      "city": "Montevideo",
       "state": "",
-      "country": "",
+      "country": "Uruguay",
       "count": 1,
       "roster": [
         {
@@ -304165,11 +304077,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -304186,6 +304093,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -304344,11 +304256,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -304360,6 +304267,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -304482,9 +304394,9 @@
     },
     "Tulsa 66ers / Oklahoma City Blue": {
       "club": "Tulsa 66ers / Oklahoma City Blue",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Oklahoma City",
+      "state": "Oklahoma",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -304528,12 +304440,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Sioux Falls Skyforce",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Rio Grande Valley Vipers",
           "shared": 0
         }
       ]
@@ -304591,7 +304503,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -304649,7 +304561,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -305032,11 +304944,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -305063,6 +304970,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -305173,12 +305085,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -305532,11 +305444,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -305548,6 +305455,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -305892,17 +305804,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -306182,17 +306094,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -306259,64 +306171,6 @@
           "type": "club",
           "name": "Fayetteville Patriots",
           "shared": 1
-        }
-      ]
-    },
-    "Real Betis Energía Plus": {
-      "club": "Real Betis Energía Plus",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Ryan Kelly",
-          "years": "2017-2018",
-          "status": "overseas_active",
-          "last_team": "Fukui Blowinds",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Maine Red Claws",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles D-Fenders",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sun Rockers Shibuya",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fukui Blowinds",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "APR",
-          "shared": 0
         }
       ]
     },
@@ -307902,9 +307756,9 @@
     },
     "Al-Riffa": {
       "club": "Al-Riffa",
-      "city": "",
+      "city": "Riffa",
       "state": "",
-      "country": "",
+      "country": "Bahrain",
       "count": 2,
       "roster": [
         {
@@ -307998,11 +307852,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -308019,6 +307868,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -308129,12 +307983,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -309554,9 +309408,9 @@
     },
     "Maghreb de Fes": {
       "club": "Maghreb de Fes",
-      "city": "",
+      "city": "Fez",
       "state": "",
-      "country": "",
+      "country": "Morocco",
       "count": 1,
       "roster": [
         {
@@ -310117,17 +309971,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -310223,11 +310077,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -310244,6 +310093,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -311070,9 +310924,9 @@
     },
     "Sunderland Saints": {
       "club": "Sunderland Saints",
-      "city": "",
+      "city": "Newcastle upon Tyne",
       "state": "",
-      "country": "",
+      "country": "England",
       "count": 1,
       "roster": [
         {
@@ -311101,27 +310955,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Newcastle Eagles",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "APR",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Arabi",
+          "name": "Sunderland Maestros",
           "shared": 0
         }
       ]
@@ -311164,11 +311003,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -311180,6 +311014,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -311411,7 +311250,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -311459,17 +311298,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -311620,11 +311459,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -311651,6 +311485,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -312137,12 +311976,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Manresa",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Manresa",
           "shared": 1
         },
         {
@@ -312418,9 +312257,9 @@
     },
     "Tekelspor": {
       "club": "Tekelspor",
-      "city": "",
+      "city": "Istanbul",
       "state": "",
-      "country": "",
+      "country": "Turkey",
       "count": 2,
       "roster": [
         {
@@ -312824,7 +312663,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -313063,9 +312902,9 @@
     },
     "Hapoel Tsfat": {
       "club": "Hapoel Tsfat",
-      "city": "",
+      "city": "Tirat Carmel",
       "state": "",
-      "country": "",
+      "country": "Israel",
       "count": 1,
       "roster": [
         {
@@ -313747,12 +313586,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -313805,21 +313644,21 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
     },
     "RheinEnergie Köln / Köln 99ers": {
       "club": "RheinEnergie Köln / Köln 99ers",
-      "city": "",
+      "city": "Köln",
       "state": "",
-      "country": "",
+      "country": "Germany",
       "count": 1,
       "roster": [
         {
@@ -315244,7 +315083,7 @@
         },
         {
           "type": "club",
-          "name": "Caja San Fernando",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -315264,17 +315103,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -315375,11 +315214,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -315391,6 +315225,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -315496,17 +315335,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -315530,11 +315369,6 @@
         {
           "type": "club",
           "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
           "shared": 0
         },
         {
@@ -315565,6 +315399,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -315786,17 +315625,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -317190,12 +317029,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -318244,64 +318083,6 @@
         }
       ]
     },
-    "Coosur Real Betis": {
-      "club": "Coosur Real Betis",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Travis Leslie",
-          "years": "2021–2022",
-          "status": "overseas_active",
-          "last_team": "CS Maristes",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fort Wayne Mad Ants",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "ASVEL",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Bakersfield Jam",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Leones de Ponce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sydney Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Lietuvos rytas",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Astros de Jalisco",
-          "shared": 1
-        }
-      ]
-    },
     "Worcester Wolves": {
       "club": "Worcester Wolves",
       "city": "Worcester",
@@ -318398,11 +318179,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -318414,6 +318190,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -318499,11 +318280,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -318530,6 +318306,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -318893,12 +318674,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -319659,9 +319440,9 @@
     },
     "Club Atlético Peñarol": {
       "club": "Club Atlético Peñarol",
-      "city": "",
+      "city": "Montevideo",
       "state": "",
-      "country": "",
+      "country": "Uruguay",
       "count": 1,
       "roster": [
         {
@@ -319806,11 +319587,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -319827,6 +319603,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -320381,11 +320162,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -320407,6 +320183,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -320464,7 +320245,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -320925,17 +320706,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -321152,11 +320933,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -321168,6 +320944,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -321210,11 +320991,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -321226,6 +321002,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -321865,12 +321646,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -321976,17 +321757,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -322034,17 +321815,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -322341,9 +322122,9 @@
     },
     "Ironi Kiryat Ata B.C.": {
       "club": "Ironi Kiryat Ata B.C.",
-      "city": "",
+      "city": "Kiryat Ata",
       "state": "",
-      "country": "",
+      "country": "Israel",
       "count": 1,
       "roster": [
         {
@@ -322392,7 +322173,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Maccabi Tel Aviv",
           "shared": 0
         }
       ]
@@ -322425,11 +322206,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -322451,6 +322227,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -322783,17 +322564,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -322841,17 +322622,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -323117,11 +322898,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -323143,6 +322919,11 @@
         {
           "type": "club",
           "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
           "shared": 0
         }
       ]
@@ -323316,7 +323097,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -323601,12 +323382,12 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "APR",
           "shared": 0
         }
       ]
@@ -323722,7 +323503,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -324323,7 +324104,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -324438,11 +324219,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -324455,14 +324231,19 @@
           "type": "club",
           "name": "Al Arabi",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
+          "shared": 0
         }
       ]
     },
     "Körfez Basket": {
       "club": "Körfez Basket",
-      "city": "",
+      "city": "Kocaeli",
       "state": "",
-      "country": "",
+      "country": "Turkey",
       "count": 1,
       "roster": [
         {
@@ -324491,27 +324272,27 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Fenerbahçe",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Anadolu Efes",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Galatasaray",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Beşiktaş",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Darüşşafaka",
           "shared": 0
         }
       ]
@@ -324554,11 +324335,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -324570,6 +324346,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -324612,11 +324393,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -324628,6 +324404,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -324791,17 +324572,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
         {
           "type": "club",
           "name": "APR",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
           "shared": 0
         }
       ]
@@ -324839,11 +324620,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -324860,6 +324636,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -324924,7 +324705,7 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Mega",
           "shared": 0
         }
       ]
@@ -324962,11 +324743,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -324983,6 +324759,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -325191,11 +324972,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -325222,6 +324998,11 @@
         {
           "type": "club",
           "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -325438,11 +325219,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -325454,6 +325230,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -325619,11 +325400,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -325641,14 +325417,19 @@
           "type": "club",
           "name": "La Palma",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
         }
       ]
     },
     "Elitzur Kiryat Ata": {
       "club": "Elitzur Kiryat Ata",
-      "city": "",
+      "city": "Kiryat Ata",
       "state": "",
-      "country": "",
+      "country": "Israel",
       "count": 1,
       "roster": [
         {
@@ -325677,27 +325458,27 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Maccabi Tel Aviv",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Hapoel Jerusalem",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "Hapoel Tel Aviv",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Hapoel Holon",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Bnei Herzliya",
           "shared": 0
         }
       ]
@@ -325762,9 +325543,9 @@
     },
     "Cobra Sport": {
       "club": "Cobra Sport",
-      "city": "",
+      "city": "Juba",
       "state": "",
-      "country": "",
+      "country": "South Sudan",
       "count": 1,
       "roster": [
         {
@@ -325790,39 +325571,14 @@
           "type": "club",
           "name": "City Oilers",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "APR",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Arabi",
-          "shared": 0
         }
       ]
     },
     "City Oilers": {
       "club": "City Oilers",
-      "city": "",
+      "city": "Kampala",
       "state": "",
-      "country": "",
+      "country": "Uganda",
       "count": 1,
       "roster": [
         {
@@ -325848,31 +325604,6 @@
           "type": "club",
           "name": "Cobra Sport",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Mega",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "APR",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Arabi",
-          "shared": 0
         }
       ]
     },
@@ -325914,11 +325645,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -325930,6 +325656,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -325977,17 +325708,17 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "APR",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -326030,11 +325761,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -326046,6 +325772,11 @@
         {
           "type": "club",
           "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
           "shared": 0
         }
       ]
@@ -326180,9 +325911,9 @@
     },
     "Valencia B": {
       "club": "Valencia B",
-      "city": "",
+      "city": "Valencia",
       "state": "",
-      "country": "",
+      "country": "Spain",
       "count": 1,
       "roster": [
         {
@@ -326205,32 +325936,32 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Baskonia",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Real Madrid",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mega",
+          "name": "FC Barcelona",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "Joventut Badalona",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Zaragoza",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "Unicaja",
           "shared": 0
         }
       ]
@@ -326267,11 +325998,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Mega",
           "shared": 0
         },
@@ -326288,6 +326014,11 @@
         {
           "type": "club",
           "name": "La Palma",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -326373,7 +326104,37 @@
         },
         {
           "type": "club",
+          "name": "Igokea",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "HKK Široki",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Zrinjski Mostar",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Borac Banja Luka",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "KK Igokea",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Sloboda Tuzla",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Čelik Zenica",
           "shared": 0
         }
       ]
@@ -326478,11 +326239,6 @@
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "APR",
           "shared": 0
         },
@@ -326495,14 +326251,19 @@
           "type": "club",
           "name": "La Palma",
           "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
         }
       ]
     },
     "Rasta Vechta II": {
       "club": "Rasta Vechta II",
-      "city": "",
-      "state": "",
-      "country": "",
+      "city": "Vechta",
+      "state": "Lower Saxony",
+      "country": "Germany",
       "count": 1,
       "roster": [
         {
@@ -326530,27 +326291,27 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fukushima Firebonds",
+          "name": "Bayern Munich",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "APR",
+          "name": "EWE Baskets Oldenburg",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Arabi",
+          "name": "Skyliners Frankfurt",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "La Palma",
+          "name": "ratiopharm Ulm",
           "shared": 0
         }
       ]

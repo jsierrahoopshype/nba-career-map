@@ -125,7 +125,7 @@
     {
       "player": "Alex Reese",
       "current_team": "Körfez Basket",
-      "country": "",
+      "country": "Turkey",
       "last_updated": "2026-08-30"
     },
     {
@@ -275,7 +275,7 @@
     {
       "player": "Axel Toupane",
       "current_team": "ASC Ville de Dakar",
-      "country": "",
+      "country": "Senegal",
       "last_updated": "2026-08-31"
     },
     {
@@ -1649,7 +1649,7 @@
     {
       "player": "Jamel Artis",
       "current_team": "Al Wahda",
-      "country": "",
+      "country": "United Arab Emirates",
       "last_updated": "2026-08-31"
     },
     {
@@ -1997,7 +1997,7 @@
     {
       "player": "Jordan Adams",
       "current_team": "Dewa United Banten",
-      "country": "",
+      "country": "Indonesia",
       "last_updated": "2026-08-31"
     },
     {
@@ -2177,7 +2177,7 @@
     {
       "player": "Karim Mane",
       "current_team": "Saskatoon Mamba",
-      "country": "",
+      "country": "Canada",
       "last_updated": "2026-08-31"
     },
     {
@@ -2525,7 +2525,7 @@
     {
       "player": "Mangok Mathiang",
       "current_team": "RSSB Tigers",
-      "country": "",
+      "country": "Rwanda",
       "last_updated": "2026-08-30"
     },
     {
@@ -2999,7 +2999,7 @@
     {
       "player": "Perry Jones",
       "current_team": "Zonkeys de Tijuana",
-      "country": "",
+      "country": "Mexico",
       "last_updated": "2026-08-30"
     },
     {
@@ -4212,6 +4212,27 @@
       "status": "overseas_active"
     },
     {
+      "player": "Eric Dawson",
+      "country_count": 13,
+      "stint_count": 28,
+      "countries": [
+        "USA",
+        "Dominican Republic",
+        "Japan",
+        "South Korea",
+        "Philippines",
+        "Iran",
+        "France",
+        "Puerto Rico",
+        "Guatemala",
+        "Paraguay",
+        "Taiwan",
+        "Uruguay",
+        "Mexico"
+      ],
+      "status": "retired"
+    },
+    {
       "player": "Arnett Moultrie",
       "country_count": 13,
       "stint_count": 23,
@@ -4359,6 +4380,27 @@
       "status": "retired"
     },
     {
+      "player": "Gary Forbes",
+      "country_count": 13,
+      "stint_count": 19,
+      "countries": [
+        "USA",
+        "Philippines",
+        "Venezuela",
+        "Italy",
+        "Israel",
+        "Canada",
+        "China",
+        "Puerto Rico",
+        "Argentina",
+        "Greece",
+        "Mexico",
+        "Saudi Arabia",
+        "Vietnam"
+      ],
+      "status": "retired"
+    },
+    {
       "player": "Rawle Marshall",
       "country_count": 13,
       "stint_count": 17,
@@ -4394,7 +4436,7 @@
         "Egypt",
         "Croatia",
         "Poland",
-        "Bosnia",
+        "Bosnia and Herzegovina",
         "Lebanon"
       ],
       "status": "retired"
@@ -4550,7 +4592,7 @@
         "China",
         "Russia",
         "Lebanon",
-        "Bosnia",
+        "Bosnia and Herzegovina",
         "Taiwan",
         "Australia",
         "Dominican Republic",
@@ -4620,24 +4662,24 @@
       "status": "retired"
     },
     {
-      "player": "Gary Forbes",
+      "player": "Adonis Thomas",
       "country_count": 12,
-      "stint_count": 19,
+      "stint_count": 18,
       "countries": [
         "USA",
-        "Philippines",
-        "Venezuela",
         "Italy",
+        "Turkey",
+        "Germany",
+        "France",
+        "Mexico",
+        "Kazakhstan",
+        "Slovenia",
+        "Poland",
         "Israel",
-        "Canada",
         "China",
-        "Puerto Rico",
-        "Argentina",
-        "Greece",
-        "Saudi Arabia",
-        "Vietnam"
+        "Qatar"
       ],
-      "status": "retired"
+      "status": "overseas_active"
     },
     {
       "player": "Alex Blackwell",
@@ -4655,25 +4697,6 @@
         "Brazil",
         "Uruguay",
         "Chile"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Eric Dawson",
-      "country_count": 11,
-      "stint_count": 28,
-      "countries": [
-        "USA",
-        "Dominican Republic",
-        "Japan",
-        "South Korea",
-        "Philippines",
-        "Iran",
-        "France",
-        "Puerto Rico",
-        "Taiwan",
-        "Uruguay",
-        "Mexico"
       ],
       "status": "retired"
     },
@@ -4733,6 +4756,25 @@
         "Mexico"
       ],
       "status": "retired"
+    },
+    {
+      "player": "Diamond Stone",
+      "country_count": 11,
+      "stint_count": 26,
+      "countries": [
+        "USA",
+        "Philippines",
+        "Puerto Rico",
+        "Taiwan",
+        "Venezuela",
+        "Mongolia",
+        "Dominican Republic",
+        "China",
+        "Iran",
+        "Israel",
+        "Mexico"
+      ],
+      "status": "overseas_active"
     },
     {
       "player": "Isaiah Morris",
@@ -4861,49 +4903,11 @@
         "Italy",
         "Lebanon",
         "China",
-        "Bosnia",
+        "Bosnia and Herzegovina",
         "South Korea",
         "Finland"
       ],
       "status": "retired"
-    },
-    {
-      "player": "Stephen Howard",
-      "country_count": 11,
-      "stint_count": 23,
-      "countries": [
-        "USA",
-        "Italy",
-        "France",
-        "Greece",
-        "Spain",
-        "Turkey",
-        "Philippines",
-        "Puerto Rico",
-        "Israel",
-        "Lebanon",
-        "Saudi Arabia"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Archie Goodwin",
-      "country_count": 11,
-      "stint_count": 22,
-      "countries": [
-        "USA",
-        "China",
-        "Turkey",
-        "Germany",
-        "France",
-        "Ukraine",
-        "Israel",
-        "Puerto Rico",
-        "Lebanon",
-        "Mexico",
-        "Taiwan"
-      ],
-      "status": "overseas_active"
     }
   ],
   "teams_by_alltime_nba_alumni": [
@@ -5372,6 +5376,10 @@
       "players": 36
     },
     {
+      "team": "Real Betis",
+      "players": 36
+    },
+    {
       "team": "Allentown Jets",
       "players": 35
     },
@@ -5474,10 +5482,6 @@
     {
       "team": "Türk Telekom",
       "players": 31
-    },
-    {
-      "team": "Caja San Fernando",
-      "players": 30
     },
     {
       "team": "Indianapolis Olympians",
@@ -9165,10 +9169,6 @@
     },
     {
       "team": "Caja de Ronda",
-      "players": 3
-    },
-    {
-      "team": "Cajasol Sevilla",
       "players": 3
     },
     {
@@ -13560,10 +13560,6 @@
       "players": 1
     },
     {
-      "team": "Cajasol Banca Cívica",
-      "players": 1
-    },
-    {
       "team": "Calero de Villa Duarte",
       "players": 1
     },
@@ -13977,10 +13973,6 @@
     },
     {
       "team": "Cook's Texaco Oilers",
-      "players": 1
-    },
-    {
-      "team": "Coosur Real Betis",
       "players": 1
     },
     {
@@ -17421,10 +17413,6 @@
     },
     {
       "team": "Reading Rangers",
-      "players": 1
-    },
-    {
-      "team": "Real Betis Energía Plus",
       "players": 1
     },
     {
@@ -22079,7 +22067,7 @@
   "countries_live_snapshot": [
     {
       "country": "Turkey",
-      "count": 53
+      "count": 54
     },
     {
       "country": "USA",
@@ -22126,12 +22114,12 @@
       "count": 15
     },
     {
-      "country": "UAE",
+      "country": "Mexico",
       "count": 15
     },
     {
-      "country": "Mexico",
-      "count": 14
+      "country": "UAE",
+      "count": 15
     },
     {
       "country": "Serbia",
@@ -22146,12 +22134,12 @@
       "count": 13
     },
     {
-      "country": "Venezuela",
+      "country": "Canada",
       "count": 10
     },
     {
-      "country": "Canada",
-      "count": 9
+      "country": "Venezuela",
+      "count": 10
     },
     {
       "country": "Lebanon",
@@ -22166,12 +22154,12 @@
       "count": 7
     },
     {
-      "country": "Philippines",
+      "country": "Indonesia",
       "count": 5
     },
     {
-      "country": "Indonesia",
-      "count": 4
+      "country": "Philippines",
+      "count": 5
     },
     {
       "country": "Uruguay",
@@ -22270,6 +22258,14 @@
       "count": 1
     },
     {
+      "country": "Rwanda",
+      "count": 1
+    },
+    {
+      "country": "Senegal",
+      "count": 1
+    },
+    {
       "country": "Slovenia",
       "count": 1
     },
@@ -22279,6 +22275,10 @@
     },
     {
       "country": "Tanzania",
+      "count": 1
+    },
+    {
+      "country": "United Arab Emirates",
       "count": 1
     },
     {
@@ -22293,35 +22293,35 @@
     },
     {
       "country": "Italy",
-      "players": 923
+      "players": 924
     },
     {
       "country": "Spain",
-      "players": 805
+      "players": 809
     },
     {
       "country": "France",
       "players": 574
     },
     {
+      "country": "Greece",
+      "players": 524
+    },
+    {
       "country": "Canada",
       "players": 523
     },
     {
-      "country": "Greece",
-      "players": 523
-    },
-    {
       "country": "Turkey",
-      "players": 506
+      "players": 509
     },
     {
       "country": "Israel",
-      "players": 458
+      "players": 460
     },
     {
       "country": "China",
-      "players": 429
+      "players": 432
     },
     {
       "country": "Puerto Rico",
@@ -22344,23 +22344,23 @@
       "players": 209
     },
     {
+      "country": "Japan",
+      "players": 176
+    },
+    {
+      "country": "Mexico",
+      "players": 176
+    },
+    {
       "country": "Philippines",
       "players": 176
     },
     {
-      "country": "Japan",
-      "players": 173
-    },
-    {
-      "country": "Mexico",
-      "players": 173
+      "country": "Serbia",
+      "players": 148
     },
     {
       "country": "Argentina",
-      "players": 147
-    },
-    {
-      "country": "Serbia",
       "players": 147
     },
     {
@@ -22369,7 +22369,7 @@
     },
     {
       "country": "Lebanon",
-      "players": 118
+      "players": 119
     },
     {
       "country": "Lithuania",
@@ -22397,7 +22397,7 @@
     },
     {
       "country": "Taiwan",
-      "players": 80
+      "players": 82
     },
     {
       "country": "Dominican Republic",
@@ -22409,7 +22409,7 @@
     },
     {
       "country": "Cyprus",
-      "players": 49
+      "players": 50
     },
     {
       "country": "New Zealand",
@@ -22429,7 +22429,7 @@
     },
     {
       "country": "Uruguay",
-      "players": 36
+      "players": 38
     },
     {
       "country": "Saudi Arabia",
@@ -22453,7 +22453,7 @@
     },
     {
       "country": "Bahrain",
-      "players": 29
+      "players": 31
     },
     {
       "country": "Romania",
@@ -22465,15 +22465,15 @@
     },
     {
       "country": "Latvia",
-      "players": 25
+      "players": 26
     },
     {
       "country": "Netherlands",
-      "players": 24
+      "players": 25
     },
     {
       "country": "Switzerland",
-      "players": 24
+      "players": 25
     },
     {
       "country": "Bulgaria",
@@ -22485,27 +22485,35 @@
     },
     {
       "country": "Finland",
+      "players": 21
+    },
+    {
+      "country": "Qatar",
       "players": 20
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "players": 19
     },
     {
       "country": "Egypt",
       "players": 18
     },
     {
-      "country": "Qatar",
+      "country": "Estonia",
       "players": 18
     },
     {
-      "country": "Estonia",
-      "players": 17
+      "country": "Indonesia",
+      "players": 18
     },
     {
       "country": "Hungary",
       "players": 17
     },
     {
-      "country": "Indonesia",
-      "players": 17
+      "country": "Austria",
+      "players": 13
     },
     {
       "country": "North Macedonia",
@@ -22516,20 +22524,16 @@
       "players": 12
     },
     {
-      "country": "Austria",
-      "players": 11
-    },
-    {
-      "country": "Bosnia",
-      "players": 11
-    },
-    {
       "country": "Ireland",
       "players": 11
     },
     {
       "country": "Libya",
       "players": 11
+    },
+    {
+      "country": "Mongolia",
+      "players": 10
     },
     {
       "country": "Chile",
@@ -22545,10 +22549,6 @@
     },
     {
       "country": "Kosovo",
-      "players": 8
-    },
-    {
-      "country": "Mongolia",
       "players": 8
     },
     {
@@ -22572,6 +22572,10 @@
       "players": 6
     },
     {
+      "country": "Slovakia",
+      "players": 6
+    },
+    {
       "country": "Colombia",
       "players": 5
     },
@@ -22580,24 +22584,24 @@
       "players": 5
     },
     {
-      "country": "Slovakia",
+      "country": "Vietnam",
       "players": 5
     },
     {
-      "country": "Vietnam",
-      "players": 5
+      "country": "England",
+      "players": 4
     },
     {
       "country": "Iceland",
       "players": 4
     },
     {
-      "country": "Syria",
+      "country": "Morocco",
       "players": 4
     },
     {
-      "country": "Bosnia and Herzegovina",
-      "players": 3
+      "country": "Syria",
+      "players": 4
     },
     {
       "country": "Honduras",
@@ -22609,10 +22613,6 @@
     },
     {
       "country": "Jordan",
-      "players": 3
-    },
-    {
-      "country": "Morocco",
       "players": 3
     },
     {
@@ -22632,6 +22632,10 @@
       "players": 2
     },
     {
+      "country": "United Arab Emirates",
+      "players": 2
+    },
+    {
       "country": "Angola",
       "players": 1
     },
@@ -22648,6 +22652,10 @@
       "players": 1
     },
     {
+      "country": "Guatemala",
+      "players": 1
+    },
+    {
       "country": "Ivory Coast",
       "players": 1
     },
@@ -22656,7 +22664,39 @@
       "players": 1
     },
     {
+      "country": "Oman",
+      "players": 1
+    },
+    {
+      "country": "Paraguay",
+      "players": 1
+    },
+    {
+      "country": "Peru",
+      "players": 1
+    },
+    {
+      "country": "Rwanda",
+      "players": 1
+    },
+    {
+      "country": "Senegal",
+      "players": 1
+    },
+    {
+      "country": "South Sudan",
+      "players": 1
+    },
+    {
       "country": "Tanzania",
+      "players": 1
+    },
+    {
+      "country": "Thailand",
+      "players": 1
+    },
+    {
+      "country": "Uganda",
       "players": 1
     }
   ],
@@ -32744,7 +32784,7 @@
       "player": "Anzejs Pasecniks",
       "teams": [
         {
-          "team": "Caja San Fernando",
+          "team": "Real Betis",
           "stints": 2,
           "years": [
             "2021–2022",
@@ -41807,7 +41847,7 @@
       "player": "Jerome Jordan",
       "teams": [
         {
-          "team": "Caja San Fernando",
+          "team": "Real Betis",
           "stints": 2,
           "years": [
             "2020",
@@ -53484,7 +53524,7 @@
         "current_team": "ASC Ville de Dakar",
         "city": "Dakar",
         "state": "",
-        "country": "",
+        "country": "Senegal",
         "in_coords": false,
         "last_updated": "2026-08-31"
       },
@@ -55401,7 +55441,7 @@
         "current_team": "Al Wahda",
         "city": "Abu Dhabi",
         "state": "",
-        "country": "",
+        "country": "United Arab Emirates",
         "in_coords": false,
         "last_updated": "2026-08-31"
       },
@@ -55921,9 +55961,9 @@
       {
         "player": "Jordan Adams",
         "current_team": "Dewa United Banten",
-        "city": "Serang Regency",
-        "state": "",
-        "country": "",
+        "city": "Serang",
+        "state": "Banten",
+        "country": "Indonesia",
         "in_coords": false,
         "last_updated": "2026-08-31"
       },
@@ -56184,8 +56224,8 @@
         "current_team": "Saskatoon Mamba",
         "city": "Saskatoon",
         "state": "Saskatchewan",
-        "country": "",
-        "in_coords": false,
+        "country": "Canada",
+        "in_coords": true,
         "last_updated": "2026-08-31"
       },
       {
@@ -56670,7 +56710,7 @@
         "current_team": "RSSB Tigers",
         "city": "Kigali",
         "state": "",
-        "country": "",
+        "country": "Rwanda",
         "in_coords": false,
         "last_updated": "2026-08-30"
       },
@@ -57345,8 +57385,8 @@
         "current_team": "Zonkeys de Tijuana",
         "city": "Tijuana",
         "state": "Baja California",
-        "country": "",
-        "in_coords": false,
+        "country": "Mexico",
+        "in_coords": true,
         "last_updated": "2026-08-30"
       },
       {
@@ -58650,7 +58690,7 @@
         "current_team": "Körfez Basket",
         "city": "Kocaeli",
         "state": "",
-        "country": "",
+        "country": "Turkey",
         "in_coords": false,
         "last_updated": "2026-08-30"
       },
@@ -58900,11 +58940,11 @@
     ],
     "coverage": {
       "total": 643,
-      "in_coords": 575,
-      "missing_from_coords": 68,
+      "in_coords": 577,
+      "missing_from_coords": 66,
       "missing_no_city": 33,
-      "missing_city_absent_from_coords": 35,
-      "distinct_missing_combos": 23
+      "missing_city_absent_from_coords": 33,
+      "distinct_missing_combos": 21
     }
   },
   "latest_signings": [

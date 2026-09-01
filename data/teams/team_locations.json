@@ -276,7 +276,7 @@
     "team": "ASC Ville de Dakar",
     "city": "Dakar",
     "state": "",
-    "country": "",
+    "country": "Senegal",
     "league": ""
   },
   "ASGE": {
@@ -661,7 +661,7 @@
     "team": "Al Ahli Bahrein",
     "city": "Manama",
     "state": "",
-    "country": "",
+    "country": "Bahrain",
     "league": ""
   },
   "Al Ahli Dubai": {
@@ -906,7 +906,7 @@
     "team": "Al Riffa",
     "city": "Riffa",
     "state": "",
-    "country": "",
+    "country": "Bahrain",
     "league": ""
   },
   "Al Riyadi": {
@@ -990,7 +990,7 @@
     "team": "Al Wahda",
     "city": "Abu Dhabi",
     "state": "",
-    "country": "",
+    "country": "United Arab Emirates",
     "league": ""
   },
   "Al Wahda Damascus": {
@@ -1256,14 +1256,14 @@
     "team": "Al-Riffa",
     "city": "Riffa",
     "state": "",
-    "country": "",
+    "country": "Bahrain",
     "league": ""
   },
   "Al-Riffa SC": {
     "team": "Al-Riffa SC",
     "city": "Riffa",
     "state": "",
-    "country": "",
+    "country": "Bahrain",
     "league": ""
   },
   "Al-Riyadh SC": {
@@ -1277,7 +1277,7 @@
     "team": "Al-Seeb Club",
     "city": "Al-Seeb",
     "state": "",
-    "country": "",
+    "country": "Oman",
     "league": ""
   },
   "Al-Shabab": {
@@ -1298,7 +1298,7 @@
     "team": "Al-Shamal SC",
     "city": "Madinat ash Shamal",
     "state": "",
-    "country": "",
+    "country": "Qatar",
     "league": ""
   },
   "Al-Sharjah": {
@@ -1536,7 +1536,7 @@
     "team": "Alpella",
     "city": "Turkey",
     "state": "",
-    "country": "",
+    "country": "Turkey",
     "league": ""
   },
   "Alsace de Bagnolet": {
@@ -1564,7 +1564,7 @@
     "team": "Altiri Chiba",
     "city": "Chiba",
     "state": "Chiba Prefecture",
-    "country": "",
+    "country": "Japan",
     "league": ""
   },
   "Altoona Railroaders": {
@@ -2656,7 +2656,7 @@
     "team": "Avancinos de Villalba",
     "city": "Coamo",
     "state": "",
-    "country": "",
+    "country": "Puerto Rico",
     "league": ""
   },
   "Avellino": {
@@ -4420,7 +4420,7 @@
     "team": "Borac Banja Luka",
     "city": "Banja Luka",
     "state": "",
-    "country": "",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "Borac Čačak": {
@@ -5414,7 +5414,7 @@
     "team": "CPN Pueblo Nuevo",
     "city": "Calamonte",
     "state": "",
-    "country": "",
+    "country": "Spain",
     "league": ""
   },
   "CRO Lyon": {
@@ -5690,13 +5690,6 @@
     "country": "",
     "league": ""
   },
-  "Caja San Fernando": {
-    "team": "Caja San Fernando",
-    "city": "Seville",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
   "Caja de Ronda": {
     "team": "Caja de Ronda",
     "city": "Málaga",
@@ -5742,20 +5735,6 @@
   "Cajamadrid": {
     "team": "Cajamadrid",
     "city": "Madrid",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
-  "Cajasol Banca Cívica": {
-    "team": "Cajasol Banca Cívica",
-    "city": "",
-    "state": "",
-    "country": "",
-    "league": ""
-  },
-  "Cajasol Sevilla": {
-    "team": "Cajasol Sevilla",
-    "city": "Seville",
     "state": "",
     "country": "Spain",
     "league": ""
@@ -6484,8 +6463,8 @@
   "Chautauqua Hurricane": {
     "team": "Chautauqua Hurricane",
     "city": "Erie",
-    "state": "",
-    "country": "",
+    "state": "Pennsylvania",
+    "country": "USA",
     "league": ""
   },
   "Chelsea Gulls": {
@@ -6924,9 +6903,9 @@
   },
   "City Oilers": {
     "team": "City Oilers",
-    "city": "Lugogo",
-    "state": "Kampala",
-    "country": "",
+    "city": "Kampala",
+    "state": "",
+    "country": "Uganda",
     "league": ""
   },
   "City Reapers": {
@@ -7059,7 +7038,7 @@
     "team": "Club Atlético Peñarol",
     "city": "Montevideo",
     "state": "",
-    "country": "",
+    "country": "Uruguay",
     "league": ""
   },
   "Club Atlético Platense": {
@@ -7220,7 +7199,7 @@
     "team": "Club de Regatas Lima",
     "city": "Lima",
     "state": "",
-    "country": "",
+    "country": "Peru",
     "league": ""
   },
   "Clube Desportivo do Montijo": {
@@ -7247,8 +7226,8 @@
   "Cobra Sport": {
     "team": "Cobra Sport",
     "city": "Juba",
-    "state": "South Sudan",
-    "country": "",
+    "state": "",
+    "country": "South Sudan",
     "league": ""
   },
   "Coca-Cola Tigers": {
@@ -7381,7 +7360,7 @@
     "team": "Comunicaciones",
     "city": "Guatemala City",
     "state": "",
-    "country": "",
+    "country": "Guatemala",
     "league": ""
   },
   "Conad Rimini": {
@@ -7445,13 +7424,6 @@
     "city": "Trieste",
     "state": "",
     "country": "Italy",
-    "league": ""
-  },
-  "Coosur Real Betis": {
-    "team": "Coosur Real Betis",
-    "city": "",
-    "state": "",
-    "country": "",
     "league": ""
   },
   "Cordivari Roseto": {
@@ -8128,9 +8100,9 @@
   },
   "Dewa United Banten": {
     "team": "Dewa United Banten",
-    "city": "Serang Regency",
-    "state": "",
-    "country": "",
+    "city": "Serang",
+    "state": "Banten",
+    "country": "Indonesia",
     "league": ""
   },
   "Dexia Mons-Hainaut": {
@@ -8697,7 +8669,7 @@
     "team": "Elitzur Kiryat Ata",
     "city": "Kiryat Ata",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Elitzur Maccabi Netanya": {
@@ -8872,7 +8844,7 @@
     "team": "Erdenet Miners",
     "city": "Erdenet",
     "state": "",
-    "country": "",
+    "country": "Mongolia",
     "league": ""
   },
   "Erie BayHawks": {
@@ -9425,7 +9397,7 @@
     "team": "Filathlitikos",
     "city": "Zografou",
     "state": "",
-    "country": "",
+    "country": "Greece",
     "league": ""
   },
   "Fillattice Imola": {
@@ -9955,9 +9927,9 @@
   },
   "Fukushima Firebonds": {
     "team": "Fukushima Firebonds",
-    "city": "Fukushima Prefecture",
+    "city": "Fukushima",
     "state": "",
-    "country": "",
+    "country": "Japan",
     "league": ""
   },
   "Fulgor Libertas Forlì": {
@@ -10923,14 +10895,14 @@
     "team": "HKK Zrinjski Mostar",
     "city": "Mostar",
     "state": "",
-    "country": "",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "HKK Široki": {
     "team": "HKK Široki",
     "city": "Široki Brijeg",
     "state": "",
-    "country": "",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "HLA Alicante": {
@@ -11103,9 +11075,9 @@
   },
   "Hapoel Afula/Gilboa": {
     "team": "Hapoel Afula/Gilboa",
-    "city": "Hapoel Galil Elyon to form a new team",
+    "city": "Afula",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Hapoel Be'er Sheva": {
@@ -11126,7 +11098,7 @@
     "team": "Hapoel Eliat",
     "city": "Eilat",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Hapoel Galil Elyon": {
@@ -11231,7 +11203,7 @@
     "team": "Hapoel Migdal Ha'emek",
     "city": "Migdal HaEmek",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Hapoel Migdal Jerusalem": {
@@ -11273,7 +11245,7 @@
     "team": "Hapoel Tsfat",
     "city": "Tirat Carmel",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Hapoel Tzfat": {
@@ -11462,7 +11434,7 @@
     "team": "Hebraica Macabi",
     "city": "Montevideo",
     "state": "",
-    "country": "",
+    "country": "Uruguay",
     "league": ""
   },
   "Hebraica y Macabi": {
@@ -11588,7 +11560,7 @@
     "team": "Hi-Tech Bangkok City",
     "city": "Bangkok",
     "state": "",
-    "country": "",
+    "country": "Thailand",
     "league": ""
   },
   "Hickory Nutz": {
@@ -11614,9 +11586,9 @@
   },
   "Hiroshima Dragonflies": {
     "team": "Hiroshima Dragonflies",
-    "city": "Hiroshima Prefecture",
+    "city": "Hiroshima",
     "state": "",
-    "country": "",
+    "country": "Japan",
     "league": ""
   },
   "Hitachi Osaka": {
@@ -11684,9 +11656,9 @@
   },
   "Hollywood Fame": {
     "team": "Hollywood Fame",
-    "city": "6000 Santa Monica BoulevardLos Angeles",
-    "state": "",
-    "country": "",
+    "city": "Los Angeles",
+    "state": "California",
+    "country": "USA",
     "league": ""
   },
   "Hollywood Jammers": {
@@ -11817,9 +11789,9 @@
   },
   "Hsinchu Lioneers": {
     "team": "Hsinchu Lioneers",
-    "city": "Hsinchu County",
+    "city": "Hsinchu",
     "state": "",
-    "country": "",
+    "country": "Taiwan",
     "league": ""
   },
   "Hsinchu Toplus Lioneers": {
@@ -11994,7 +11966,7 @@
     "team": "Igokea",
     "city": "Aleksandrovac",
     "state": "",
-    "country": "Bosnia",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "Ikaros": {
@@ -12533,7 +12505,7 @@
     "team": "Ironi Kiryat Ata B.C.",
     "city": "Kiryat Ata",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Ironi Nahariya": {
@@ -13184,7 +13156,7 @@
     "team": "KK Igokea",
     "city": "Laktaši",
     "state": "",
-    "country": "",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "KK Sibenik": {
@@ -13393,8 +13365,8 @@
   "Kaohsiung 17LIVE Steelers": {
     "team": "Kaohsiung 17LIVE Steelers",
     "city": "Kaohsiung",
-    "state": "Taiwan",
-    "country": "",
+    "state": "",
+    "country": "Taiwan",
     "league": ""
   },
   "Kaohsiung Aquas": {
@@ -13695,7 +13667,7 @@
     "team": "Klosterneuburg Dukes",
     "city": "Klosterneuburg",
     "state": "",
-    "country": "",
+    "country": "Austria",
     "league": ""
   },
   "Knorr Bologna": {
@@ -13968,7 +13940,7 @@
     "team": "Körfez Basket",
     "city": "Kocaeli",
     "state": "",
-    "country": "",
+    "country": "Turkey",
     "league": ""
   },
   "L'Horta Godella": {
@@ -14353,7 +14325,7 @@
     "team": "Lavovi 063",
     "city": "Belgrade",
     "state": "",
-    "country": "",
+    "country": "Serbia",
     "league": ""
   },
   "Lavrio": {
@@ -15219,9 +15191,9 @@
   },
   "Lovćen": {
     "team": "Lovćen",
-    "city": "Montenegro",
+    "city": "Cetinje",
     "state": "",
-    "country": "",
+    "country": "Montenegro",
     "league": ""
   },
   "Lucentum Alicante": {
@@ -15382,7 +15354,7 @@
     "team": "Macau Black Bears",
     "city": "Macau",
     "state": "",
-    "country": "",
+    "country": "China",
     "league": ""
   },
   "Maccabi Ashdod": {
@@ -15508,7 +15480,7 @@
     "team": "Maccabi Raanana",
     "city": "Ra'anana",
     "state": "",
-    "country": "",
+    "country": "Israel",
     "league": ""
   },
   "Maccabi Ramat Gan": {
@@ -15557,7 +15529,7 @@
     "team": "Maghreb de Fes",
     "city": "Fez",
     "state": "",
-    "country": "",
+    "country": "Morocco",
     "league": ""
   },
   "Magia Huesca": {
@@ -15991,7 +15963,7 @@
     "team": "Matsushita Denki",
     "city": "Kadoma",
     "state": "",
-    "country": "",
+    "country": "Japan",
     "league": ""
   },
   "Matsushita Electric Panasonic Kangaroos": {
@@ -16229,7 +16201,7 @@
     "team": "Mens Sana 1871 Basket",
     "city": "Siena",
     "state": "",
-    "country": "",
+    "country": "Italy",
     "league": ""
   },
   "Meralco Bolts": {
@@ -17629,7 +17601,7 @@
     "team": "Newcastle Eagles",
     "city": "Newcastle upon Tyne",
     "state": "",
-    "country": "",
+    "country": "England",
     "league": ""
   },
   "Newcastle Falcons": {
@@ -18145,9 +18117,9 @@
   },
   "Olimpia Asuncion": {
     "team": "Olimpia Asuncion",
-    "city": "Paraguay",
+    "city": "Asunción",
     "state": "",
-    "country": "",
+    "country": "Paraguay",
     "league": ""
   },
   "Olimpia Basket Pistoia": {
@@ -18763,7 +18735,7 @@
     "team": "Pagrati",
     "city": "Athens",
     "state": "",
-    "country": "",
+    "country": "Greece",
     "league": ""
   },
   "Paisas": {
@@ -19512,7 +19484,7 @@
     "team": "Pezoporikos Larnaca",
     "city": "Larnaca",
     "state": "",
-    "country": "",
+    "country": "Cyprus",
     "league": ""
   },
   "Peñarol": {
@@ -20478,7 +20450,7 @@
     "team": "Qianwei Aoshen",
     "city": "Beijing",
     "state": "",
-    "country": "",
+    "country": "China",
     "league": ""
   },
   "Qingdao": {
@@ -20618,7 +20590,7 @@
     "team": "RSSB Tigers",
     "city": "Kigali",
     "state": "",
-    "country": "",
+    "country": "Rwanda",
     "league": ""
   },
   "Rabotnički": {
@@ -20772,7 +20744,7 @@
     "team": "Rasta Vechta II",
     "city": "Vechta",
     "state": "Lower Saxony",
-    "country": "",
+    "country": "Germany",
     "league": ""
   },
   "Ratiopharm Ulm": {
@@ -20810,11 +20782,11 @@
     "country": "",
     "league": ""
   },
-  "Real Betis Energía Plus": {
-    "team": "Real Betis Energía Plus",
-    "city": "",
+  "Real Betis": {
+    "team": "Real Betis",
+    "city": "Seville",
     "state": "",
-    "country": "",
+    "country": "Spain",
     "league": ""
   },
   "Real Estelí": {
@@ -21330,9 +21302,9 @@
   },
   "Rotterdam-Zuid": {
     "team": "Rotterdam-Zuid",
-    "city": "Netherlands",
+    "city": "Rotterdam",
     "state": "",
-    "country": "",
+    "country": "Netherlands",
     "league": ""
   },
   "Rouen Métropole": {
@@ -21423,7 +21395,7 @@
     "team": "Rīgas Laiks",
     "city": "Riga",
     "state": "",
-    "country": "",
+    "country": "Latvia",
     "league": ""
   },
   "S. Benedetto Gorizia": {
@@ -21780,7 +21752,7 @@
     "team": "Sagesse SC (basketball)",
     "city": "Beirut",
     "state": "",
-    "country": "",
+    "country": "Lebanon",
     "league": ""
   },
   "Sagesse Sports Club": {
@@ -22333,7 +22305,7 @@
     "team": "Saskatoon Mamba",
     "city": "Saskatoon",
     "state": "Saskatchewan",
-    "country": "",
+    "country": "Canada",
     "league": ""
   },
   "Saskatoon Slam": {
@@ -23159,7 +23131,7 @@
     "team": "Sloboda Tuzla",
     "city": "Tuzla",
     "state": "",
-    "country": "",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "Slodes": {
@@ -23187,7 +23159,7 @@
     "team": "Slovan Bratislava",
     "city": "Bratislava",
     "state": "",
-    "country": "",
+    "country": "Slovakia",
     "league": ""
   },
   "Slovan Ljubljana": {
@@ -23242,8 +23214,8 @@
   "Snohomish County Explosion": {
     "team": "Snohomish County Explosion",
     "city": "Monroe",
-    "state": "",
-    "country": "",
+    "state": "Washington",
+    "country": "USA",
     "league": ""
   },
   "Socar Petkim": {
@@ -23453,7 +23425,7 @@
     "team": "Sparta Prague",
     "city": "Prague",
     "state": "",
-    "country": "",
+    "country": "Czech Republic",
     "league": ""
   },
   "Spartak Pleven": {
@@ -24013,14 +23985,14 @@
     "team": "Sunderland Maestros",
     "city": "Newcastle upon Tyne",
     "state": "",
-    "country": "",
+    "country": "England",
     "league": ""
   },
   "Sunderland Saints": {
     "team": "Sunderland Saints",
     "city": "Newcastle upon Tyne",
     "state": "",
-    "country": "",
+    "country": "England",
     "league": ""
   },
   "Sundsvall Dragons": {
@@ -24207,9 +24179,9 @@
   },
   "São Carlos": {
     "team": "São Carlos",
-    "city": "English",
-    "state": "",
-    "country": "",
+    "city": "São Carlos",
+    "state": "São Paulo",
+    "country": "Brazil",
     "league": ""
   },
   "São Paulo": {
@@ -24398,7 +24370,7 @@
     "team": "TTÜ-A. Le Coq",
     "city": "Tallinn",
     "state": "",
-    "country": "",
+    "country": "Estonia",
     "league": ""
   },
   "Tabiat Eslamshahr": {
@@ -24643,7 +24615,7 @@
     "team": "Tartu Ülikool",
     "city": "Tartu",
     "state": "",
-    "country": "",
+    "country": "Estonia",
     "league": ""
   },
   "Tasmania JackJumpers": {
@@ -24727,7 +24699,7 @@
     "team": "Tekelspor",
     "city": "Istanbul",
     "state": "",
-    "country": "",
+    "country": "Turkey",
     "league": ""
   },
   "Teksüt Bandırma": {
@@ -25014,7 +24986,7 @@
     "team": "Tindastóll",
     "city": "Sauðárkrókur",
     "state": "",
-    "country": "",
+    "country": "Iceland",
     "league": ""
   },
   "Titanes de Barranquilla": {
@@ -25215,9 +25187,9 @@
   },
   "Toros De Aragua": {
     "team": "Toros De Aragua",
-    "city": "Aragua",
-    "state": "",
-    "country": "",
+    "city": "Maracay",
+    "state": "Aragua",
+    "country": "Venezuela",
     "league": ""
   },
   "Toros de Aragua": {
@@ -25707,7 +25679,7 @@
     "team": "Turun NMKY",
     "city": "Turku",
     "state": "",
-    "country": "",
+    "country": "Finland",
     "league": ""
   },
   "Turów Zgorzelec": {
@@ -26036,7 +26008,7 @@
     "team": "Universidad Complutense",
     "city": "Madrid",
     "state": "",
-    "country": "",
+    "country": "Spain",
     "league": ""
   },
   "Universidad de Concepción": {
@@ -26056,8 +26028,8 @@
   "Universitarios": {
     "team": "Universitarios",
     "city": "Culiacán",
-    "state": "",
-    "country": "",
+    "state": "Sinaloa",
+    "country": "Mexico",
     "league": ""
   },
   "Universitatea Cluj-Napoca": {
@@ -26309,7 +26281,7 @@
     "team": "Valencia B",
     "city": "Valencia",
     "state": "",
-    "country": "",
+    "country": "Spain",
     "league": ""
   },
   "Valencia BC": {
@@ -26589,7 +26561,7 @@
     "team": "Viganello",
     "city": "Lugano",
     "state": "",
-    "country": "",
+    "country": "Switzerland",
     "league": ""
   },
   "Vikos Falcons": {
@@ -27183,8 +27155,8 @@
   "Worcester Counts": {
     "team": "Worcester Counts",
     "city": "Worcester",
-    "state": "",
-    "country": "",
+    "state": "Massachusetts",
+    "country": "USA",
     "league": ""
   },
   "Worcester Wolves": {
@@ -27323,8 +27295,8 @@
   "Yankey Ark": {
     "team": "Yankey Ark",
     "city": "Hsinchu",
-    "state": "Taiwan",
-    "country": "",
+    "state": "",
+    "country": "Taiwan",
     "league": ""
   },
   "Yenisey Krasnoyarsk": {
@@ -27632,7 +27604,7 @@
     "team": "Zhuhai Wolf Warriors",
     "city": "Macau",
     "state": "",
-    "country": "",
+    "country": "China",
     "league": ""
   },
   "Zielona Góra": {
@@ -27667,7 +27639,7 @@
     "team": "Zonkeys de Tijuana",
     "city": "Tijuana",
     "state": "Baja California",
-    "country": "",
+    "country": "Mexico",
     "league": ""
   },
   "Zorka Šabac": {
@@ -27765,14 +27737,14 @@
     "team": "Élan Béarnais Pau-Lacq-Orthez",
     "city": "Pau",
     "state": "",
-    "country": "",
+    "country": "France",
     "league": ""
   },
   "Élan Béarnais Pau-Orthez": {
     "team": "Élan Béarnais Pau-Orthez",
     "city": "Pau",
     "state": "",
-    "country": "",
+    "country": "France",
     "league": ""
   },
   "Élan Chalon": {
@@ -27863,7 +27835,7 @@
     "team": "Čelik Zenica",
     "city": "Zenica",
     "state": "",
-    "country": "",
+    "country": "Bosnia and Herzegovina",
     "league": ""
   },
   "İTÜ": {
