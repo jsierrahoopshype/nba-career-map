@@ -1,3 +1,13 @@
+## 2026-09-01 — incremental run
+
+- Players updated: **503** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Josiah Allick
+  - Sindarius Thornwell: Astros de Jalisco → Dorados de Chihuahua
+
 ## 2026-08-31 — incremental run
 
 - Players updated: **507** (0 new)
