@@ -1,3 +1,16 @@
+## 2026-09-02 — incremental run
+
+- Players updated: **526** (2 new)
+- New teams discovered: **1**
+- Team moves detected: **2**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Matthew Murrell, Trey Townsend
+- New teams: Köping Basket
+  - Thanasis Antetokounmpo: Milwaukee Bucks → Aris Thessaloniki
+  - Justin Minaya: Osceola Magic → FC Barcelona
+  - Thanasis Antetokounmpo: [nba_active → overseas_active]
+
 ## 2026-09-01 — incremental run
 
 - Players updated: **503** (1 new)
