@@ -1,3 +1,16 @@
+## 2026-09-03 — incremental run
+
+- Players updated: **523** (2 new)
+- New teams discovered: **2**
+- Team moves detected: **2**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Khalifa Diop, Kyle Mangas
+- New teams: BC Roma, Šiauliai-7bet
+  - Nico Mannion: Roma SPQR → BC Roma
+  - Tacko Fall: Ningbo Rockets → Philadelphia 76ers
+  - Tacko Fall: [overseas_active → nba_active]
+
 ## 2026-09-02 — incremental run
 
 - Players updated: **526** (2 new)
