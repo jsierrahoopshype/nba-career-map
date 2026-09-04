@@ -1,3 +1,15 @@
+## 2026-09-04 — incremental run
+
+- Players updated: **528** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **2** (0 → overseas, 1 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Jarkel Joiner
+  - JD Davison: Rio Grande Valley Vipers → Orlando Magic
+  - Jared Sullinger: [overseas_active → retired]
+  - JD Davison: [overseas_active → nba_active]
+
 ## 2026-09-03 — incremental run
 
 - Players updated: **523** (2 new)

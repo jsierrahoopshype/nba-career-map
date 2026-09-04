@@ -8992,8 +8992,8 @@
           "player": "JD Davison",
           "years": "2022–2025",
           "stint_team": "Boston Celtics",
-          "status": "overseas_active",
-          "current_team": "Rio Grande Valley Vipers",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -9146,7 +9146,7 @@
           "player": "Jared Sullinger",
           "years": "2012–2016",
           "stint_team": "Boston Celtics",
-          "status": "overseas_active",
+          "status": "retired",
           "current_team": "Guangdong Southern Tigers",
           "current_country": "China",
           "nationality": "United States"
@@ -12064,8 +12064,8 @@
         },
         {
           "player": "JD Davison",
-          "status": "overseas_active",
-          "current_team": "Rio Grande Valley Vipers",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
           "country": "USA",
           "nationality": "United States"
         },
@@ -12109,13 +12109,6 @@
           "status": "overseas_active",
           "current_team": "Ipswich Force",
           "country": "Australia",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jared Sullinger",
-          "status": "overseas_active",
-          "current_team": "Guangdong Southern Tigers",
-          "country": "China",
           "nationality": "United States"
         },
         {
@@ -19706,6 +19699,14 @@
           "nationality": "United States"
         },
         {
+          "player": "Jarkel Joiner",
+          "years": "2026–present",
+          "stint_team": "Charlotte Hornets",
+          "status": "nba_active",
+          "current_team": "Charlotte Hornets",
+          "current_country": "USA"
+        },
+        {
           "player": "Jason Hart",
           "years": "2004-2005",
           "stint_team": "Charlotte Bobcats",
@@ -22118,8 +22119,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 359,
-      "alumni_count": 333,
+      "roster_count": 360,
+      "alumni_count": 334,
       "related": [
         {
           "type": "club",
@@ -36985,7 +36986,7 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Raptors 905",
           "shared": 10
         }
       ]
@@ -55900,8 +55901,8 @@
           "player": "JD Davison",
           "years": "2025–26",
           "stint_team": "Houston Rockets",
-          "status": "overseas_active",
-          "current_team": "Rio Grande Valley Vipers",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -58921,8 +58922,8 @@
         },
         {
           "player": "JD Davison",
-          "status": "overseas_active",
-          "current_team": "Rio Grande Valley Vipers",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
           "country": "USA",
           "nationality": "United States"
         },
@@ -78650,12 +78651,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Raptors 905",
           "shared": 13
         },
         {
           "type": "club",
-          "name": "Raptors 905",
+          "name": "Fort Wayne Mad Ants",
           "shared": 13
         }
       ]
@@ -106256,6 +106257,15 @@
           "current_country": "USA"
         },
         {
+          "player": "JD Davison",
+          "years": "2026–present",
+          "stint_team": "Orlando Magic",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "JJ Redick",
           "years": "2006-2013",
           "stint_team": "Orlando Magic",
@@ -108369,8 +108379,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 315,
-      "alumni_count": 298,
+      "roster_count": 316,
+      "alumni_count": 299,
       "related": [
         {
           "type": "club",
@@ -108394,6 +108404,11 @@
         },
         {
           "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 10
+        },
+        {
+          "type": "club",
           "name": "Olimpia Milano",
           "shared": 10
         },
@@ -108405,11 +108420,6 @@
         {
           "type": "club",
           "name": "Panathinaikos",
-          "shared": 10
-        },
-        {
-          "type": "club",
-          "name": "Osceola Magic",
           "shared": 10
         }
       ]
@@ -136901,7 +136911,7 @@
           "player": "Jared Sullinger",
           "years": "2016–17",
           "stint_team": "Toronto Raptors",
-          "status": "overseas_active",
+          "status": "retired",
           "current_team": "Guangdong Southern Tigers",
           "current_country": "China",
           "nationality": "United States"
@@ -138867,13 +138877,6 @@
           "status": "overseas_active",
           "current_team": "Paris Basketball",
           "country": "France",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jared Sullinger",
-          "status": "overseas_active",
-          "current_team": "Guangdong Southern Tigers",
-          "country": "China",
           "nationality": "United States"
         },
         {
