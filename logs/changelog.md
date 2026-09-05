@@ -1,3 +1,16 @@
+## 2026-09-05 — incremental run
+
+- Players updated: **523** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Grant Nelson
+  - Markel Brown: Pallacanestro Trieste → Napoli Basket
+  - Sekou Doumbouya: Sagesse SC → San Pablo Burgos
+  - Yuri Collins: Ironi Ness Ziona → Memphis Hustle
+  - Bruno Caboclo: Dubai Basketball → Hapoel Tel Aviv
+
 ## 2026-09-04 — incremental run
 
 - Players updated: **528** (1 new)
