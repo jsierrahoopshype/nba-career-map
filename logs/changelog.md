@@ -1,3 +1,15 @@
+## 2026-09-06 — incremental run
+
+- Players updated: **526** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Grant Jerrett: Utsunomiya Brex → Ryukyu Golden Kings
+  - Jabari Bird: Oberá Tenis Club → Johor Southern Tigers
+  - Josh Reaves: Rio Grande Valley Vipers → Paisas
+  - David Nwaba: San-en NeoPhoenix → Ryukyu Golden Kings
+
 ## 2026-09-05 — incremental run
 
 - Players updated: **523** (1 new)
