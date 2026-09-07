@@ -1,3 +1,13 @@
+## 2026-09-07 — incremental run
+
+- Players updated: **523** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Amari Bailey: Iowa Wolves → Hapoel Jerusalem
+  - Elijah Hughes: Gigantes de Carolina → Riesen Ludwigsburg
+
 ## 2026-09-06 — incremental run
 
 - Players updated: **526** (0 new)
