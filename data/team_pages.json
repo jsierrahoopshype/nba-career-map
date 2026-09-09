@@ -7915,18 +7915,18 @@
           "player": "Dalano Banton",
           "years": "2023–24",
           "stint_team": "Boston Celtics",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "current_country": "China",
           "nationality": "Canada"
         },
         {
           "player": "Dalano Banton",
           "years": "2026",
           "stint_team": "Boston Celtics",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "current_country": "China",
           "nationality": "Canada"
         },
         {
@@ -11999,6 +11999,13 @@
           "nationality": "American"
         },
         {
+          "player": "Dalano Banton",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "country": "China",
+          "nationality": "Canada"
+        },
+        {
           "player": "Daniel Theis",
           "status": "overseas_active",
           "current_team": "ASVEL",
@@ -15943,8 +15950,8 @@
           "years": "2019",
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
-          "current_team": "Vancouver Bandits",
-          "current_country": "Canada",
+          "current_team": "Al-Ula",
+          "current_country": "Saudi Arabia",
           "nationality": "Australia"
         },
         {
@@ -18000,8 +18007,8 @@
         {
           "player": "Mitch Creek",
           "status": "overseas_active",
-          "current_team": "Vancouver Bandits",
-          "country": "Canada",
+          "current_team": "Al-Ula",
+          "country": "Saudi Arabia",
           "nationality": "Australia"
         },
         {
@@ -21589,8 +21596,8 @@
           "years": "2023",
           "stint_team": "Charlotte Hornets",
           "status": "overseas_active",
-          "current_team": "Pallacanestro Cantù",
-          "current_country": "Italy",
+          "current_team": "Hapoel Jerusalem",
+          "current_country": "Israel",
           "nationality": "United States"
         },
         {
@@ -22107,8 +22114,8 @@
         {
           "player": "Xavier Sneed",
           "status": "overseas_active",
-          "current_team": "Pallacanestro Cantù",
-          "country": "Italy",
+          "current_team": "Hapoel Jerusalem",
+          "country": "Israel",
           "nationality": "United States"
         },
         {
@@ -23199,7 +23206,7 @@
           "years": "2021–2024",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States",
           "all_star": true,
@@ -26602,7 +26609,7 @@
         {
           "player": "DeMar DeRozan",
           "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States",
           "all_star": true,
@@ -27127,7 +27134,7 @@
           "years": "2014–15",
           "stint_team": "Cleveland Cavaliers",
           "status": "overseas_active",
-          "current_team": "Ryukyu Golden Kings",
+          "current_team": "Kawasaki Brave Thunders",
           "current_country": "Japan",
           "nationality": "American / Japanese"
         },
@@ -31621,7 +31628,7 @@
         {
           "player": "Alex Kirk",
           "status": "overseas_active",
-          "current_team": "Ryukyu Golden Kings",
+          "current_team": "Kawasaki Brave Thunders",
           "country": "Japan",
           "nationality": "American / Japanese"
         },
@@ -38021,6 +38028,17 @@
           "all_star_count": 1
         },
         {
+          "player": "DeMar DeRozan",
+          "years": "2026–present",
+          "stint_team": "Denver Nuggets",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
+          "nationality": "United States",
+          "all_star": true,
+          "all_star_count": 6
+        },
+        {
           "player": "DeMarcus Cousins",
           "years": "2022",
           "stint_team": "Denver Nuggets",
@@ -41551,8 +41569,8 @@
           "nationality": "Slovenia"
         }
       ],
-      "roster_count": 444,
-      "alumni_count": 417,
+      "roster_count": 445,
+      "alumni_count": 418,
       "related": [
         {
           "type": "club",
@@ -64375,9 +64393,9 @@
           "player": "Dalano Banton",
           "years": "2026",
           "stint_team": "LA Clippers",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "current_country": "China",
           "nationality": "Canada"
         },
         {
@@ -68430,9 +68448,9 @@
         },
         {
           "player": "Dalano Banton",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "country": "China",
           "nationality": "Canada"
         },
         {
@@ -77842,8 +77860,8 @@
           "years": "2021–22",
           "stint_team": "Memphis Grizzlies",
           "status": "overseas_active",
-          "current_team": "Pallacanestro Cantù",
-          "current_country": "Italy",
+          "current_team": "Hapoel Jerusalem",
+          "current_country": "Israel",
           "nationality": "United States"
         },
         {
@@ -78562,8 +78580,8 @@
         {
           "player": "Xavier Sneed",
           "status": "overseas_active",
-          "current_team": "Pallacanestro Cantù",
-          "country": "Italy",
+          "current_team": "Hapoel Jerusalem",
+          "country": "Israel",
           "nationality": "United States"
         },
         {
@@ -89522,8 +89540,8 @@
           "years": "2019",
           "stint_team": "Minnesota Timberwolves",
           "status": "overseas_active",
-          "current_team": "Vancouver Bandits",
-          "current_country": "Canada",
+          "current_team": "Al-Ula",
+          "current_country": "Saudi Arabia",
           "nationality": "Australia"
         },
         {
@@ -90875,8 +90893,8 @@
         {
           "player": "Mitch Creek",
           "status": "overseas_active",
-          "current_team": "Vancouver Bandits",
-          "country": "Canada",
+          "current_team": "Al-Ula",
+          "country": "Saudi Arabia",
           "nationality": "Australia"
         },
         {
@@ -95805,7 +95823,7 @@
           "years": "2026",
           "stint_team": "New York Knicks",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -99927,6 +99945,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Dillon Jones",
+          "status": "nba_active",
+          "current_team": "Philadelphia 76ers",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Dmytro Skapintsev",
           "status": "overseas_active",
           "current_team": "Básquet Coruña",
@@ -101599,7 +101624,7 @@
           "years": "2024–25",
           "stint_team": "Oklahoma City Thunder",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Philadelphia 76ers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -104556,7 +104581,7 @@
         {
           "player": "Dillon Jones",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Philadelphia 76ers",
           "country": "USA",
           "nationality": "United States"
         },
@@ -110078,6 +110103,15 @@
           "all_star_count": 8
         },
         {
+          "player": "Dillon Jones",
+          "years": "2026",
+          "stint_team": "Philadelphia 76ers",
+          "status": "nba_active",
+          "current_team": "Philadelphia 76ers",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Dolph Schayes",
           "years": "1948-1964",
           "stint_team": "Syracuse Nationals",
@@ -115268,8 +115302,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 653,
-      "alumni_count": 608,
+      "roster_count": 654,
+      "alumni_count": 609,
       "related": [
         {
           "type": "club",
@@ -120920,8 +120954,8 @@
           "years": "2020–2022",
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
-          "current_team": "Hapoel Be'er Sheva",
-          "current_country": "Israel",
+          "current_team": "Hapoel HaEmek",
+          "current_country": "",
           "nationality": "United States"
         },
         {
@@ -121230,9 +121264,9 @@
           "player": "Dalano Banton",
           "years": "2024–2025",
           "stint_team": "Portland Trail Blazers",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "current_country": "China",
           "nationality": "Canada"
         },
         {
@@ -124472,8 +124506,8 @@
         {
           "player": "CJ Elleby",
           "status": "overseas_active",
-          "current_team": "Hapoel Be'er Sheva",
-          "country": "Israel",
+          "current_team": "Hapoel HaEmek",
+          "country": "",
           "nationality": "United States"
         },
         {
@@ -124520,9 +124554,9 @@
         },
         {
           "player": "Dalano Banton",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "country": "China",
           "nationality": "Canada"
         },
         {
@@ -126437,7 +126471,7 @@
           "years": "2024–2026",
           "stint_team": "Sacramento Kings",
           "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States",
           "all_star": true,
@@ -130698,6 +130732,15 @@
           "all_star_count": 2
         },
         {
+          "player": "DeMar DeRozan",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "country": "USA",
+          "nationality": "United States",
+          "all_star": true,
+          "all_star_count": 6
+        },
+        {
           "player": "DeMarcus Cousins",
           "status": "overseas_active",
           "current_team": "Selenge Bodons",
@@ -132230,7 +132273,7 @@
           "years": "2018–2021",
           "stint_team": "San Antonio Spurs",
           "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States",
           "all_star": true,
@@ -135307,7 +135350,7 @@
         {
           "player": "DeMar DeRozan",
           "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States",
           "all_star": true,
@@ -136241,9 +136284,9 @@
           "player": "Dalano Banton",
           "years": "2021–2023",
           "stint_team": "Toronto Raptors",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "current_country": "China",
           "nationality": "Canada"
         },
         {
@@ -136341,7 +136384,7 @@
           "years": "2009–2018",
           "stint_team": "Toronto Raptors",
           "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States",
           "all_star": true,
@@ -138737,9 +138780,9 @@
         },
         {
           "player": "Dalano Banton",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Shandong Hi-Speed Kirin",
+          "country": "China",
           "nationality": "Canada"
         },
         {
@@ -138766,7 +138809,7 @@
         {
           "player": "DeMar DeRozan",
           "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States",
           "all_star": true,
@@ -142836,8 +142879,8 @@
           "years": "2022",
           "stint_team": "Utah Jazz",
           "status": "overseas_active",
-          "current_team": "Pallacanestro Cantù",
-          "current_country": "Italy",
+          "current_team": "Hapoel Jerusalem",
+          "current_country": "Israel",
           "nationality": "United States"
         },
         {
@@ -143440,8 +143483,8 @@
         {
           "player": "Xavier Sneed",
           "status": "overseas_active",
-          "current_team": "Pallacanestro Cantù",
-          "country": "Italy",
+          "current_team": "Hapoel Jerusalem",
+          "country": "Israel",
           "nationality": "United States"
         },
         {

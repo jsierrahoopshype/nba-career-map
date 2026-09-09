@@ -1,3 +1,20 @@
+## 2026-09-09 — incremental run
+
+- Players updated: **522** (0 new)
+- New teams discovered: **2**
+- Team moves detected: **7**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: Acqua S.Bernardo Cantù, Hapoel HaEmek
+  - Dalano Banton: Boston Celtics → Shandong Hi-Speed Kirin
+  - DeMar DeRozan: Sacramento Kings → Denver Nuggets
+  - Dillon Jones: New York Knicks → Philadelphia 76ers
+  - Mitch Creek: Vancouver Bandits → Al-Ula
+  - Xavier Sneed: Pallacanestro Cantù → Hapoel Jerusalem
+  - Alex Kirk: Ryukyu Golden Kings → Kawasaki Brave Thunders
+  - CJ Elleby: Hapoel Be'er Sheva → Hapoel HaEmek
+  - Dalano Banton: [nba_active → overseas_active]
+
 ## 2026-09-08 — incremental run
 
 - Players updated: **525** (0 new)
