@@ -1,3 +1,16 @@
+## 2026-09-10 — incremental run
+
+- Players updated: **524** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **4**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: APR Kigali
+  - Jacob Wiley: Ironi Nes Ziona → Ironi Ness Ziona
+  - Jalen Lecque: Büyükçekmece Basketbol → Iraklis Thessaloniki
+  - Langston Galloway: Esenler Erokspor → Pallacanestro Trieste
+  - Amari Bailey: Hapoel Jerusalem → Hapoel Be'er Sheva
+
 ## 2026-09-09 — incremental run
 
 - Players updated: **522** (0 new)
