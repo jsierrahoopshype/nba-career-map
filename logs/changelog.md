@@ -1,3 +1,12 @@
+## 2026-09-11 — incremental run
+
+- Players updated: **523** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Bez Mbeng: Utah Jazz → Charlotte Hornets
+
 ## 2026-09-10 — incremental run
 
 - Players updated: **524** (0 new)
