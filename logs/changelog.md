@@ -1,3 +1,14 @@
+## 2026-09-12 — incremental run
+
+- Players updated: **524** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **3**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Erick Green: Pallacanestro Cantù → Reyer Venezia
+  - Jacob Pullen: Napoli → MKE Ankaragücü
+  - Jarell Eddie: Vancouver Bandits → El Calor de Cancún
+
 ## 2026-09-11 — incremental run
 
 - Players updated: **523** (0 new)
