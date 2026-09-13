@@ -1,3 +1,14 @@
+## 2026-09-13 — incremental run
+
+- Players updated: **522** (0 new)
+- New teams discovered: **2**
+- Team moves detected: **2**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: Al Ahly Cairo, Al Ittihad Aleppo
+  - Willie Reed: Cocodrilos de Caracas → El Calor de Cancún
+  - Zach Lofton: Homenetmen Beirut → Al Riyadi Club Beirut
+
 ## 2026-09-12 — incremental run
 
 - Players updated: **524** (0 new)
