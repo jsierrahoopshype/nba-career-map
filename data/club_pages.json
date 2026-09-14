@@ -24113,7 +24113,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2016–2017, 2018",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         },
         {
@@ -35375,7 +35375,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2017",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         },
         {
@@ -50334,7 +50334,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         },
         {
@@ -75330,7 +75330,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         },
         {
@@ -75737,7 +75737,7 @@
           "player": "Alex Len",
           "years": "2010–2011",
           "status": "overseas_active",
-          "last_team": "Real Madrid",
+          "last_team": "Kosner Baskonia",
           "nationality": "Ukraine"
         },
         {
@@ -75872,7 +75872,7 @@
           "player": "Alex Len",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Real Madrid",
+          "last_team": "Kosner Baskonia",
           "nationality": "Ukraine"
         },
         {
@@ -76561,6 +76561,64 @@
           "type": "club",
           "name": "Khimki",
           "shared": 6
+        }
+      ]
+    },
+    "Kosner Baskonia": {
+      "club": "Kosner Baskonia",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Alex Len",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Kosner Baskonia",
+          "nationality": "Ukraine"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Real Madrid",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Dnipro",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Arabi SC",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Mega",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "South Bay/Coachella Valley Lakers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "La Palma",
+          "shared": 0
         }
       ]
     },
@@ -80415,7 +80473,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         },
         {
@@ -89370,7 +89428,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         },
         {
@@ -156472,7 +156530,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2022–2024",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         }
       ],
@@ -178618,7 +178676,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         }
       ],
@@ -178626,6 +178684,11 @@
         {
           "type": "club",
           "name": "Zhejiang Lions",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Al Riyadi Club Beirut",
           "shared": 2
         },
         {
@@ -178656,11 +178719,6 @@
         {
           "type": "club",
           "name": "Reno Bighorns",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -188452,7 +188510,7 @@
           "player": "Marcus Georges-Hunt",
           "years": "2020–2021, 2024–2025",
           "status": "overseas_active",
-          "last_team": "Al Riyadi",
+          "last_team": "Al Riyadi Club Beirut",
           "nationality": "American / U.S. Virgin Islander"
         },
         {
@@ -194319,7 +194377,7 @@
       "city": "Manara",
       "state": "",
       "country": "Lebanon",
-      "count": 5,
+      "count": 6,
       "roster": [
         {
           "player": "Daniel Ochefu",
@@ -194343,6 +194401,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Marcus Georges-Hunt",
+          "years": "2025, 2026–present",
+          "status": "overseas_active",
+          "last_team": "Al Riyadi Club Beirut",
+          "nationality": "American / U.S. Virgin Islander"
+        },
+        {
           "player": "Orlando Johnson",
           "years": "2017",
           "status": "retired",
@@ -194358,6 +194423,11 @@
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Maine Red Claws",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Reno Bighorns",
@@ -194385,17 +194455,12 @@
         },
         {
           "type": "club",
+          "name": "Shabab Al Ahli",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Baskonia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fort Wayne Mad Ants",
           "shared": 1
         }
       ]
@@ -210281,7 +210346,7 @@
       "city": "Manara",
       "state": "",
       "country": "Lebanon",
-      "count": 7,
+      "count": 6,
       "roster": [
         {
           "player": "Dion Glover",
@@ -210312,13 +210377,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Marcus Georges-Hunt",
-          "years": "2025, 2026–present",
-          "status": "overseas_active",
-          "last_team": "Al Riyadi",
-          "nationality": "American / U.S. Virgin Islander"
-        },
-        {
           "player": "Ricky Ledo",
           "years": "2022",
           "status": "overseas_active",
@@ -210336,17 +210394,7 @@
       "related": [
         {
           "type": "club",
-          "name": "Liaoning Flying Leopards",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Shanxi Loongs",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Guangzhou Loong Lions",
           "shared": 2
         },
         {
@@ -210372,6 +210420,16 @@
         {
           "type": "club",
           "name": "Santa Cruz Warriors",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Long Island Nets",
           "shared": 1
         }
       ]
@@ -213473,17 +213531,17 @@
         },
         {
           "type": "club",
+          "name": "Al Riyadi Club Beirut",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Al-Ahli Jeddah",
           "shared": 1
         },
         {
           "type": "club",
           "name": "TNT KaTropa",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Al Riyadi Club Beirut",
           "shared": 1
         }
       ]
@@ -213624,17 +213682,17 @@
         },
         {
           "type": "club",
+          "name": "Al Riyadi Club Beirut",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Al-Ahli Jeddah",
           "shared": 1
         },
         {
           "type": "club",
           "name": "TNT KaTropa",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Al Riyadi Club Beirut",
           "shared": 1
         }
       ]
@@ -283532,6 +283590,11 @@
         },
         {
           "type": "club",
+          "name": "Al Riyadi Club Beirut",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "ESSM Le Portel",
           "shared": 1
         },
@@ -283543,11 +283606,6 @@
         {
           "type": "club",
           "name": "Wellington Saints",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Al Riyadi Club Beirut",
           "shared": 1
         }
       ]
@@ -318359,12 +318417,12 @@
         },
         {
           "type": "club",
-          "name": "Taipei Taishin Mars",
+          "name": "Al Riyadi Club Beirut",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al Riyadi Club Beirut",
+          "name": "Taipei Taishin Mars",
           "shared": 1
         },
         {
@@ -318417,12 +318475,12 @@
         },
         {
           "type": "club",
-          "name": "Taipei Taishin Mars",
+          "name": "Al Riyadi Club Beirut",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al Riyadi Club Beirut",
+          "name": "Taipei Taishin Mars",
           "shared": 1
         },
         {

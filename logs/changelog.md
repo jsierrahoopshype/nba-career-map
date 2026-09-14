@@ -1,3 +1,15 @@
+## 2026-09-14 — incremental run
+
+- Players updated: **525** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **2**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: Kosner Baskonia
+  - Marcus Georges-Hunt: Al Riyadi → Al Riyadi Club Beirut
+  - Alex Len: Real Madrid → Kosner Baskonia
+
 ## 2026-09-13 — incremental run
 
 - Players updated: **522** (0 new)
