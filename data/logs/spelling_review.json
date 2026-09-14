@@ -1,0 +1,13 @@
+{
+  "pairs": [
+    {
+      "player": "Jacob Wiley",
+      "from": "Ironi Nes Ziona",
+      "to": "Ironi Ness Ziona",
+      "reason": "spelling-variant",
+      "posted": true,
+      "date": "2026-09-10",
+      "note": "logged as a transfer, then removed from transactions.json by prune_phantom_moves.py; both spellings now alias to \"Ironi Ness Ziona\""
+    }
+  ]
+}
