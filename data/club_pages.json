@@ -7516,7 +7516,7 @@
           "player": "Craig Smith",
           "years": "2014",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -61681,7 +61681,7 @@
           "player": "Daequan Cook",
           "years": "2008",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -88002,7 +88002,7 @@
           "player": "Craig Smith",
           "years": "2012-2013",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -114165,7 +114165,7 @@
           "player": "Daequan Cook",
           "years": "2013-2014",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -132635,7 +132635,7 @@
           "player": "Daequan Cook",
           "years": "2015-2016",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -133615,12 +133615,12 @@
         },
         {
           "type": "club",
-          "name": "Fargo-Moorhead Fever",
+          "name": "Ironi Ness Ziona",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "Fargo-Moorhead Fever",
           "shared": 2
         },
         {
@@ -162475,13 +162475,20 @@
         }
       ]
     },
-    "Ironi Nes Ziona": {
-      "club": "Ironi Nes Ziona",
+    "Ironi Ness Ziona": {
+      "club": "Ironi Ness Ziona",
       "city": "Ness Ziona",
       "state": "",
       "country": "Israel",
-      "count": 8,
+      "count": 25,
       "roster": [
+        {
+          "player": "CJ Williams",
+          "years": "2022-2023",
+          "status": "overseas_active",
+          "last_team": "Start Lublin",
+          "nationality": "United States"
+        },
         {
           "player": "Cameron Oliver",
           "years": "2020",
@@ -162493,15 +162500,71 @@
           "player": "Craig Smith",
           "years": "2014-2015",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
           "player": "Daequan Cook",
           "years": "2017-2020",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
+        },
+        {
+          "player": "Damion Lee",
+          "years": "2025",
+          "status": "retired",
+          "last_team": "Phoenix Suns",
+          "nationality": "United States"
+        },
+        {
+          "player": "Diante Garrett",
+          "years": "2021–2022",
+          "status": "retired",
+          "last_team": "CBet Jonava",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dusty Hannahs",
+          "years": "2023–2024",
+          "status": "overseas_active",
+          "last_team": "Bnei Herzliya",
+          "nationality": "United States"
+        },
+        {
+          "player": "Freddie Gillespie",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Ironi Ness Ziona",
+          "nationality": "United States"
+        },
+        {
+          "player": "George King",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "Guangzhou Loong Lions",
+          "nationality": "United States"
+        },
+        {
+          "player": "Isaiah Whitehead",
+          "years": "2023–2024, 2025–present",
+          "status": "overseas_active",
+          "last_team": "Ironi Ness Ziona",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jackson Rowe",
+          "years": "2025–present",
+          "status": "overseas_active",
+          "last_team": "Ironi Ness Ziona",
+          "nationality": "Canada"
+        },
+        {
+          "player": "Jacob Wiley",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Ironi Ness Ziona",
+          "nationality": "American / Macedonian"
         },
         {
           "player": "Jeff Withey",
@@ -162518,10 +162581,31 @@
           "nationality": "Canada"
         },
         {
+          "player": "Marques Bolden",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Levanga Hokkaido",
+          "nationality": "American / Indonesian"
+        },
+        {
           "player": "Mickell Gladness",
           "years": "2018",
           "status": "retired",
           "last_team": "Arka Gdynia",
+          "nationality": "United States"
+        },
+        {
+          "player": "Rawle Alkins",
+          "years": "2023–2024",
+          "status": "overseas_active",
+          "last_team": "Hapoel Galil Elyon",
+          "nationality": "United States"
+        },
+        {
+          "player": "Shaq Buchanan",
+          "years": "2022–2023",
+          "status": "overseas_active",
+          "last_team": "Panionios",
           "nationality": "United States"
         },
         {
@@ -162532,14 +162616,79 @@
           "nationality": "United States"
         },
         {
+          "player": "Tyler Bey",
+          "years": "2022–2023",
+          "status": "overseas_active",
+          "last_team": "Trotamundos de Carabobo",
+          "nationality": "United States"
+        },
+        {
           "player": "Tyler Honeycutt",
           "years": "2013-2014",
           "status": "retired",
           "last_team": "Khimki",
           "nationality": "United States"
+        },
+        {
+          "player": "Udoka Azubuike",
+          "years": "2025–present",
+          "status": "overseas_active",
+          "last_team": "Ironi Ness Ziona",
+          "nationality": "Nigeria"
+        },
+        {
+          "player": "Vincent Edwards",
+          "years": "2023",
+          "status": "retired",
+          "last_team": "Seoul Samsung Thunders",
+          "nationality": "United States"
+        },
+        {
+          "player": "Wayne Selden",
+          "years": "2020–2021, 2022",
+          "status": "retired",
+          "last_team": "Chorale Roanne",
+          "nationality": "United States"
+        },
+        {
+          "player": "Yuri Collins",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Memphis Hustle",
+          "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 6
+        },
+        {
+          "type": "club",
+          "name": "Long Island Nets",
+          "shared": 5
+        },
+        {
+          "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 5
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
+          "shared": 5
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 4
+        },
+        {
+          "type": "club",
+          "name": "Wisconsin Herd",
+          "shared": 3
+        },
         {
           "type": "club",
           "name": "Reno Bighorns",
@@ -162547,38 +162696,8 @@
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Wisconsin Herd",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Benfica",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Hong Kong Bulls",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 1
+          "name": "Iowa Wolves",
+          "shared": 3
         }
       ]
     },
@@ -162672,7 +162791,7 @@
           "player": "Craig Smith",
           "years": "2013",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -162712,12 +162831,12 @@
         },
         {
           "type": "club",
-          "name": "Liaoning Flying Leopards",
-          "shared": 2
+          "name": "Ironi Ness Ziona",
+          "shared": 3
         },
         {
           "type": "club",
-          "name": "Ironi Nes Ziona",
+          "name": "Liaoning Flying Leopards",
           "shared": 2
         },
         {
@@ -162805,6 +162924,11 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Vanoli Cremona",
           "shared": 2
         },
@@ -162831,11 +162955,6 @@
         {
           "type": "club",
           "name": "South Bay Lakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Varese",
           "shared": 1
         }
       ]
@@ -176434,6 +176553,11 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -176445,11 +176569,6 @@
         {
           "type": "club",
           "name": "Tofaş",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Andorra",
           "shared": 1
         }
       ]
@@ -183296,176 +183415,6 @@
         }
       ]
     },
-    "Ironi Ness Ziona": {
-      "club": "Ironi Ness Ziona",
-      "city": "Ness Ziona",
-      "state": "",
-      "country": "Israel",
-      "count": 17,
-      "roster": [
-        {
-          "player": "CJ Williams",
-          "years": "2022-2023",
-          "status": "overseas_active",
-          "last_team": "Start Lublin",
-          "nationality": "United States"
-        },
-        {
-          "player": "Damion Lee",
-          "years": "2025",
-          "status": "retired",
-          "last_team": "Phoenix Suns",
-          "nationality": "United States"
-        },
-        {
-          "player": "Diante Garrett",
-          "years": "2021–2022",
-          "status": "retired",
-          "last_team": "CBet Jonava",
-          "nationality": "United States"
-        },
-        {
-          "player": "Dusty Hannahs",
-          "years": "2023–2024",
-          "status": "overseas_active",
-          "last_team": "Bnei Herzliya",
-          "nationality": "United States"
-        },
-        {
-          "player": "Freddie Gillespie",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
-          "nationality": "United States"
-        },
-        {
-          "player": "George King",
-          "years": "2024",
-          "status": "overseas_active",
-          "last_team": "Guangzhou Loong Lions",
-          "nationality": "United States"
-        },
-        {
-          "player": "Isaiah Whitehead",
-          "years": "2023–2024, 2025–present",
-          "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jackson Rowe",
-          "years": "2025–present",
-          "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
-          "nationality": "Canada"
-        },
-        {
-          "player": "Jacob Wiley",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
-          "nationality": "American / Macedonian"
-        },
-        {
-          "player": "Marques Bolden",
-          "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
-          "nationality": "American / Indonesian"
-        },
-        {
-          "player": "Rawle Alkins",
-          "years": "2023–2024",
-          "status": "overseas_active",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        },
-        {
-          "player": "Shaq Buchanan",
-          "years": "2022–2023",
-          "status": "overseas_active",
-          "last_team": "Panionios",
-          "nationality": "United States"
-        },
-        {
-          "player": "Tyler Bey",
-          "years": "2022–2023",
-          "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
-          "nationality": "United States"
-        },
-        {
-          "player": "Udoka Azubuike",
-          "years": "2025–present",
-          "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
-          "nationality": "Nigeria"
-        },
-        {
-          "player": "Vincent Edwards",
-          "years": "2023",
-          "status": "retired",
-          "last_team": "Seoul Samsung Thunders",
-          "nationality": "United States"
-        },
-        {
-          "player": "Wayne Selden",
-          "years": "2020–2021, 2022",
-          "status": "retired",
-          "last_team": "Chorale Roanne",
-          "nationality": "United States"
-        },
-        {
-          "player": "Yuri Collins",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Long Island Nets",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Riesen Ludwigsburg",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Canton Charge",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Iowa Wolves",
-          "shared": 2
-        }
-      ]
-    },
     "CSM Corona Brașov": {
       "club": "CSM Corona Brașov",
       "city": "",
@@ -183514,12 +183463,12 @@
         },
         {
           "type": "club",
-          "name": "JDA Dijon",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Kleenex Pistoia",
+          "name": "JDA Dijon",
           "shared": 1
         }
       ]
@@ -190637,7 +190586,7 @@
           "player": "Daequan Cook",
           "years": "2014",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -190730,7 +190679,7 @@
           "player": "Daequan Cook",
           "years": "2014-2015",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -190769,17 +190718,17 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Maroussi",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Utah Flash",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Benfica",
           "shared": 1
         }
       ]
@@ -190795,7 +190744,7 @@
           "player": "Daequan Cook",
           "years": "2016-2017",
           "status": "retired",
-          "last_team": "Ironi Nes Ziona",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -190834,17 +190783,17 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Beirut Club",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Benfica",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mahram Tehran",
           "shared": 1
         }
       ]
@@ -202565,12 +202514,12 @@
         },
         {
           "type": "club",
-          "name": "Northern Arizona Suns",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "Northern Arizona Suns",
           "shared": 1
         },
         {
@@ -210219,12 +210168,12 @@
         },
         {
           "type": "club",
-          "name": "Auxilium Torino",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Tofaş",
+          "name": "Auxilium Torino",
           "shared": 1
         }
       ]
@@ -210272,17 +210221,17 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Auxilium Torino",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Tofaş",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Ironi Ness Ziona",
           "shared": 1
         }
       ]
@@ -210330,17 +210279,17 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Auxilium Torino",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Tofaş",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Ironi Ness Ziona",
           "shared": 1
         }
       ]
@@ -229341,12 +229290,12 @@
         },
         {
           "type": "club",
-          "name": "Northern Arizona Suns",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "Northern Arizona Suns",
           "shared": 1
         },
         {
@@ -240358,7 +240307,7 @@
         },
         {
           "type": "club",
-          "name": "Śląsk Wrocław",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         }
       ]
@@ -241030,6 +240979,11 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Union Olimpija",
           "shared": 1
         },
@@ -241041,11 +240995,6 @@
         {
           "type": "club",
           "name": "Jilin Northeast Tigers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Ironi Ness Ziona",
           "shared": 1
         }
       ]
@@ -250210,6 +250159,11 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Liaoning Flying Leopards",
           "shared": 1
         },
@@ -250226,11 +250180,6 @@
         {
           "type": "club",
           "name": "Barangay Ginebra Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Changwon LG Sakers",
           "shared": 1
         }
       ]
@@ -250333,12 +250282,12 @@
         },
         {
           "type": "club",
-          "name": "Chorale Roanne",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "Chorale Roanne",
           "shared": 1
         },
         {
@@ -285661,6 +285610,11 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -285672,11 +285626,6 @@
         {
           "type": "club",
           "name": "Maccabi Ashdod",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "San-en NeoPhoenix",
           "shared": 1
         }
       ]
@@ -285719,6 +285668,11 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Bilbao Basket",
           "shared": 1
         },
@@ -285730,11 +285684,6 @@
         {
           "type": "club",
           "name": "Maccabi Ashdod",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "San-en NeoPhoenix",
           "shared": 1
         }
       ]
@@ -312048,7 +311997,7 @@
         },
         {
           "type": "club",
-          "name": "Sidigas Avellino",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         }
       ]
@@ -319461,12 +319410,12 @@
         },
         {
           "type": "club",
-          "name": "Taipei Fubon Braves",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "Taipei Fubon Braves",
           "shared": 1
         },
         {
@@ -322201,17 +322150,17 @@
         },
         {
           "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Chorale Roanne",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Taipei Fubon Braves",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
@@ -325426,12 +325375,12 @@
         },
         {
           "type": "club",
-          "name": "Chorale Roanne",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "Chorale Roanne",
           "shared": 1
         },
         {

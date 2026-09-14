@@ -50,7 +50,8 @@ from pathlib import Path
 import split_combined_teams
 import stint_order
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
-from team_normalizer import TeamNormalizer
+from team_normalizer import (TeamNormalizer, edit_distance,
+                             is_spelling_variant, spelling_key)
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
 from era_correct_teams import ERA_TABLE
@@ -73,6 +74,7 @@ CHANGELOG = LOGS / "changelog.md"
 # captured going forward (past runs' previous values weren't kept, so this
 # cannot be backfilled). Feeds the dashboard "latest_signings" widget.
 TRANSACTIONS = DATA / "logs" / "transactions.json"
+SPELLING_REVIEW = DATA / "logs" / "spelling_review.json"
 ROOT_MAP_FILE = ROOT / "nba_players_careers_READY.json"
 # Cursor into TRANSACTIONS: how many ledger entries have already been posted
 # to Slack. Same append-only-ledger pattern as TRANSACTIONS itself; tracking
@@ -218,18 +220,61 @@ def _richer(a: list, b: list) -> bool:
     return len(a or []) >= len(b or [])
 
 
+# How close two club names may be before a transfer between them is merely
+# FLAGGED for review. Suppression is never distance-based (see below); this
+# only decides what a human gets asked to look at.
+NEAR_MISS_DISTANCE = 2
+
+
+def classify_move(normalizer: TeamNormalizer, prev: str, new: str) -> tuple[bool, str]:
+    """Decide whether prev -> new is a transfer, and say why.
+
+    Returns (is_real, reason). Reasons:
+      "incomplete"        one side is missing, nothing to compare
+      "same-club"         both sides resolve to the same canonical club
+      "spelling-variant"  the alias table does not know the pair, but the two
+                          names are the same name spelled differently
+      "near-miss"         a real move whose two clubs are suspiciously close
+      "real"              a real move
+
+    The spelling-variant arm is the one that catches what the alias table has
+    not been taught yet. "Ironi Nes Ziona" -> "Ironi Ness Ziona" is one club
+    and one S, but with neither spelling in team_aliases both sides normalize
+    to themselves, they differ, and a phantom transfer gets logged.
+
+    Suppression deliberately stops at spelling noise and does NOT extend to a
+    small edit distance. In this dataset Palencia/Valencia, Palma/Parma,
+    Iraklio/Iraklis and Chicago Rockers/Rockets are each ONE edit apart and
+    each a genuinely different club, so a distance-based rule would silently
+    swallow real transfers. Distance only raises a flag, and the move is still
+    logged.
+    """
+    if not prev or not new:
+        return False, "incomplete"
+    a, b = normalizer.normalize(prev), normalizer.normalize(new)
+    if a == b:
+        return False, "same-club"
+    if is_spelling_variant(a, b):
+        return False, "spelling-variant"
+    if edit_distance(spelling_key(a), spelling_key(b),
+                     cap=NEAR_MISS_DISTANCE) <= NEAR_MISS_DISTANCE:
+        return True, "near-miss"
+    return True, "real"
+
+
 def _is_real_move(normalizer: TeamNormalizer, prev: str, new: str) -> bool:
-    """True only when `prev` and `new` resolve to different CANONICAL clubs.
+    """True only when `prev` and `new` are different clubs, not the same club
+    written two ways.
 
     A raw string diff can fire on a club-name normalization rather than an
     actual transfer — e.g. a cached pre-alias spelling ("Beşiktaş Gain") next
     to a freshly-normalized one ("Beşiktaş"), or a club's infobox name
     changing without the player moving. Both sides go through the same
-    team_aliases-backed normalizer before comparing.
+    team_aliases-backed normalizer before comparing, and a pair the alias
+    table has never seen still gets caught if the two names differ only by
+    case, diacritics, punctuation or doubled letters.
     """
-    if not prev or not new:
-        return False
-    return normalizer.normalize(prev) != normalizer.normalize(new)
+    return classify_move(normalizer, prev, new)[0]
 
 
 def merge_player(db: Database, name: str, client: WikipediaClient,
@@ -400,6 +445,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
     current_year = dt.datetime.now(dt.timezone.utc).year
     summary = {"date": today(), "mode": mode, "players_updated": [],
                "new_players": [], "new_teams": [], "team_moves": [],
+               "spelling_review": [],
                "status_changes": [], "newly_overseas": [], "newly_retired": [],
                "requests": 0, "budget_exhausted": False,
                "queue_size": 0, "queue_completed": False}
@@ -435,9 +481,17 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
             summary["players_updated"].append(key)
             summary["new_teams"].extend(new_teams)
             new_current = rec.get("current_team")
-            if _is_real_move(db.normalizer, prev_current, new_current):
+            is_move, why = classify_move(db.normalizer, prev_current, new_current)
+            if is_move:
                 summary["team_moves"].append(
                     {"player": key, "from": prev_current, "to": new_current})
+            # A pair that looks like one club spelled two ways never reaches the
+            # ledger, but it is not discarded either: it goes to the review file
+            # so the alias table can be taught the pair. "near-miss" DID post.
+            if why in ("spelling-variant", "near-miss"):
+                summary["spelling_review"].append(
+                    {"player": key, "from": prev_current, "to": new_current,
+                     "reason": why, "posted": is_move})
             new_status = rec.get("status")
             if prev_status and new_status and prev_status != new_status:
                 summary["status_changes"].append(
@@ -547,6 +601,7 @@ def _persist(db: Database, summary: dict) -> None:
 
     _append_logs(summary)
     _append_transactions(summary)
+    _append_spelling_review(summary)
     _notify_slack(db, summary)
 
 
@@ -571,6 +626,26 @@ def _append_transactions(summary: dict) -> None:
             "date": date,
         })
     write_json(TRANSACTIONS, ledger)
+
+
+def _append_spelling_review(summary: dict) -> None:
+    """Append this run's suppressed / flagged club-name pairs, append-only.
+
+    These are the pairs the move detector would not vouch for: either it
+    refused to log a transfer because the two names are one club spelled two
+    ways, or it logged one but the names are close enough to be worth a look.
+    Each entry is a candidate row for data/teams/team_aliases.json.
+    """
+    pairs = summary.get("spelling_review", [])
+    if not pairs:
+        return
+    doc = load_json(SPELLING_REVIEW, {"pairs": []})
+    if isinstance(doc, list):
+        doc = {"pairs": doc}
+    date = summary.get("date", today())
+    for p in pairs:
+        doc["pairs"].append({**p, "date": date})
+    write_json(SPELLING_REVIEW, doc)
 
 
 # Every name that counts as "an NBA team" for Slack sentences: current
@@ -734,6 +809,8 @@ def _append_logs(summary: dict) -> None:
         f" ({len(summary['new_players'])} new)",
         f"- New teams discovered: **{len(summary['new_teams'])}**",
         f"- Team moves detected: **{len(summary['team_moves'])}**",
+        f"- Club-name pairs held for review: "
+        f"**{len(summary.get('spelling_review', []))}**",
         f"- Status changes: **{len(summary.get('status_changes', []))}**"
         f" ({len(summary.get('newly_overseas', []))} → overseas,"
         f" {len(summary.get('newly_retired', []))} → retired)",

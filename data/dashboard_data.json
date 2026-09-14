@@ -5616,6 +5616,10 @@
       "players": 25
     },
     {
+      "team": "Ironi Ness Ziona",
+      "players": 25
+    },
+    {
       "team": "Melbourne United",
       "players": 25
     },
@@ -5953,10 +5957,6 @@
     },
     {
       "team": "Huntsville Flight",
-      "players": 17
-    },
-    {
-      "team": "Ironi Ness Ziona",
       "players": 17
     },
     {
@@ -7013,10 +7013,6 @@
     },
     {
       "team": "Ironi Ashkelon",
-      "players": 8
-    },
-    {
-      "team": "Ironi Nes Ziona",
       "players": 8
     },
     {
@@ -59119,12 +59115,6 @@
       "date": "2026-09-10"
     },
     {
-      "player": "Jacob Wiley",
-      "from_team": "Ironi Nes Ziona",
-      "to_team": "Ironi Ness Ziona",
-      "date": "2026-09-10"
-    },
-    {
       "player": "CJ Elleby",
       "from_team": "Hapoel Be'er Sheva",
       "to_team": "Hapoel HaEmek",
@@ -59363,6 +59353,12 @@
       "from_team": "Hapoel Jerusalem",
       "to_team": "Rytas Vilnius",
       "date": "2026-08-27"
+    },
+    {
+      "player": "Cam Reynolds",
+      "from_team": "Maroussi",
+      "to_team": "Juventus Utena",
+      "date": "2026-08-26"
     }
   ]
 }

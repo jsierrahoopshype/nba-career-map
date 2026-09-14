@@ -4,15 +4,92 @@ Loads data/teams/team_aliases.json and maps any historical / sponsored team
 name to its most-recent canonical name. Also handles light cleanup that is
 common in Wikipedia wikitext (stripping wikilink markup, sponsor suffixes,
 whitespace) before consulting the alias table.
+
+Also exposes a SPELLING-VARIANT test (spelling_key / is_spelling_variant) for
+names the alias table has never been told about -- the case that produced the
+"Ironi Nes Ziona -> Ironi Ness Ziona" phantom transfer.
 """
 from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 ALIASES_PATH = DATA_DIR / "teams" / "team_aliases.json"
+
+
+def strip_diacritics(name: str) -> str:
+    """'Beşiktaş' -> 'Besiktas'. Decompose, then drop the combining marks."""
+    return "".join(c for c in unicodedata.normalize("NFKD", name or "")
+                   if not unicodedata.combining(c))
+
+
+def spelling_key(name: str) -> str:
+    """Reduce a club name to the part that survives spelling noise.
+
+    Folds away exactly the four things that distinguish a typo from a transfer:
+    letter case, diacritics, punctuation and spacing, and doubled letters. So
+    'Ironi Nes Ziona' and 'Ironi Ness Ziona' both key to 'ironinesziona', as do
+    'Besiktas'/'Beşiktaş' and 'PAOK'/'P.A.O.K.'.
+
+    Deliberately NOT a general fuzzy match. Two names one edit apart routinely
+    belong to different clubs -- Palencia/Valencia, Palma/Parma,
+    Iraklio/Iraklis, Chicago Rockers/Rockets are all real, distinct clubs in
+    this dataset -- so anything looser than "same letters, differently
+    written" would suppress genuine transfers.
+    """
+    key = strip_diacritics(name).casefold()
+    key = re.sub(r"[^a-z0-9]+", "", key)
+    return re.sub(r"(.)\1+", r"\1", key)
+
+
+# Pairs that collide on spelling_key but really are different clubs. Keyed on
+# the pair of canonical names, order-insensitive. Al Nasr plays in Dubai and
+# Al Nassr in Riyadh; a player moving between them IS a transfer.
+KNOWN_DISTINCT: set[frozenset[str]] = {
+    frozenset({"al nasr", "al nassr"}),
+}
+
+
+def is_spelling_variant(a: str, b: str) -> bool:
+    """True when two club names are the same name spelled differently."""
+    if not a or not b:
+        return False
+    ka, kb = spelling_key(a), spelling_key(b)
+    if not ka or not kb or ka != kb:
+        return False
+    pair = frozenset({strip_diacritics(a).casefold().strip(),
+                      strip_diacritics(b).casefold().strip()})
+    return pair not in KNOWN_DISTINCT
+
+
+def edit_distance(a: str, b: str, cap: int = 3) -> int:
+    """Levenshtein distance, abandoned once it is certain to exceed `cap`.
+
+    Used only to FLAG a pair for human review, never to suppress a transfer --
+    see the note in spelling_key about how often one edit separates two real
+    clubs.
+    """
+    a, b = a or "", b or ""
+    if a == b:
+        return 0
+    if abs(len(a) - len(b)) > cap:
+        return cap + 1
+    if len(a) < len(b):
+        a, b = b, a
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur, best = [i], i
+        for j, cb in enumerate(b, 1):
+            v = min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb))
+            cur.append(v)
+            best = min(best, v)
+        if best > cap:
+            return cap + 1
+        prev = cur
+    return prev[-1]
 
 
 class TeamNormalizer:
