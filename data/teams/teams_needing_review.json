@@ -1697,6 +1697,12 @@
     "city": "",
     "country": ""
   },
+  "Florida Beach Dogs": {
+    "team": "Florida Beach Dogs",
+    "reason": "recorded as Rapid City, South Dakota, USA; the other spelling 'Florida Beachdogs' correctly reads West Palm Beach, Florida",
+    "city": "Rapid City",
+    "country": "USA"
+  },
   "Fluminense": {
     "team": "Fluminense",
     "reason": "missing city and/or country",
@@ -1882,6 +1888,12 @@
     "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
+  },
+  "Guaiqueries de Margarita": {
+    "team": "Guaiqueries de Margarita",
+    "reason": "recorded as Erie, Pennsylvania, USA; the club is Venezuelan, and the other spelling 'Guaiqueríes de Margarita' correctly reads Porlamar, Venezuela",
+    "city": "Erie",
+    "country": "USA"
   },
   "Guizhou Guwutang Tea": {
     "team": "Guizhou Guwutang Tea",
@@ -2656,6 +2668,12 @@
     "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
+  },
+  "Lietuvos rytas": {
+    "team": "Lietuvos rytas",
+    "reason": "recorded city is 'Vilnius on Tuesday' in USA — an artefact of the 'based in <City>' parse, not a place; the other spelling 'Lietuvos Rytas' correctly reads Vilnius, Lithuania",
+    "city": "Vilnius on Tuesday",
+    "country": "USA"
   },
   "Lille Métropole": {
     "team": "Lille Métropole",
@@ -3478,6 +3496,18 @@
     "reason": "missing city and/or country",
     "city": "",
     "country": ""
+  },
+  "P.A.O.K.": {
+    "team": "P.A.O.K.",
+    "reason": "country recorded as North Macedonia; Thessaloniki is in Greece, and the other spelling 'PAOK' correctly reads Greece",
+    "city": "Thessaloniki",
+    "country": "North Macedonia"
+  },
+  "PAOK Thessaloníki": {
+    "team": "PAOK Thessaloníki",
+    "reason": "country recorded as North Macedonia; Thessaloniki is in Greece, and the sibling spellings 'PAOK Thessaloniki' and 'P.A.O.K. Thessaloniki' both correctly read Greece",
+    "city": "Thessaloniki",
+    "country": "North Macedonia"
   },
   "Paffoni Omegna": {
     "team": "Paffoni Omegna",
