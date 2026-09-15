@@ -1,0 +1,65 @@
+/* Styles for the generated player pages (scripts/prerender.py).
+
+   One shared file rather than inline CSS per page: 5,179 copies of this would
+   be ~4 MB of duplicated bytes, and a cached stylesheet makes every page after
+   the first render immediately. Tokens mirror index.html so a prerendered page
+   and the app look like the same site. */
+:root{
+  --page:#f5f5f7; --surface:#fff; --surface-hover:#f0f0f2; --border:#d1d1d6;
+  --text:#1d1d1f; --text-secondary:#6e6e73; --accent:#3b82f6;
+  --accent-dim:rgba(59,130,246,.15);
+  --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--page); color:var(--text); line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.ph{
+  background:var(--surface); padding:14px 20px; display:flex; align-items:center;
+  gap:16px; box-shadow:0 2px 20px rgba(0,0,0,.08); position:sticky; top:0; z-index:10;
+}
+.ph .brand{font-weight:700; letter-spacing:-.3px}
+.ph nav{margin-left:auto; display:flex; gap:8px}
+.ph nav a{
+  padding:8px 14px; border-radius:8px; font-size:14px; font-weight:600;
+  color:var(--text-secondary);
+}
+.ph nav a:hover{background:var(--surface-hover); color:var(--text)}
+main{max-width:860px; margin:0 auto; padding:28px 20px 56px}
+h1{font-size:1.75rem; line-height:1.2; letter-spacing:-.5px; margin-bottom:10px}
+.lede{color:var(--text-secondary); margin-bottom:18px}
+.facts{
+  display:flex; flex-wrap:wrap; gap:8px 22px; margin-bottom:20px;
+  font-size:14px; color:var(--text-secondary);
+}
+.facts dt{font-weight:600; color:var(--text); display:inline}
+.facts dt::after{content:':'}
+.facts dd{display:inline; margin-right:10px}
+.cta{margin:20px 0 26px}
+.btn{
+  display:inline-block; padding:11px 20px; border-radius:10px; font-weight:600;
+  background:var(--accent); color:#fff; font-size:15px;
+}
+.btn:hover{filter:brightness(1.08)}
+.ct{width:100%; border-collapse:collapse; background:var(--surface);
+    border:1px solid var(--border); border-radius:10px; overflow:hidden; font-size:14px}
+.ct th{
+  text-align:left; padding:10px 12px; background:var(--surface-hover);
+  font-size:12px; text-transform:uppercase; letter-spacing:.4px;
+  color:var(--text-secondary); border-bottom:1px solid var(--border);
+}
+.ct td{padding:10px 12px; border-bottom:1px solid var(--border)}
+.ct tr:last-child td{border-bottom:none}
+.ct .yr{font-family:var(--mono); white-space:nowrap; color:var(--text-secondary)}
+.empty{color:var(--text-secondary); font-style:italic}
+.foot{margin-top:26px; font-size:14px; color:var(--text-secondary)}
+.foot a{color:var(--accent); font-weight:600}
+@media (max-width:560px){
+  main{padding:20px 16px 44px}
+  h1{font-size:1.4rem}
+  .ct{font-size:13px}
+  .ct th,.ct td{padding:8px 9px}
+}

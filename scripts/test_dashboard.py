@@ -406,7 +406,11 @@ def test_sitemap():
     xml = b.build_sitemap(fix)
     assert xml.startswith("<?xml")
     assert "/teams.html?team=Atlanta%20Hawks" in xml
-    assert "/index.html?player=Test%20Player" in xml
+    # Players are listed as their PRERENDERED pages, not ?player= URLs: those
+    # are the ones that serve their own tags and self-canonical, so they are
+    # what should be indexed. Listing both would make them compete.
+    assert "/player/test-player.html" in xml
+    assert "/index.html?player=" not in xml
     assert "/teams.html?country=USA" in xml
     assert xml.count("<url>") == 2 + 30 + 1 + 1  # index+landing + 30 teams + 1 country + 1 player
     assert "https://jsierrahoopshype.github.io/nba-career-map/" in xml  # permanent base
