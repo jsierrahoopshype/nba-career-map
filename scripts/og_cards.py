@@ -419,17 +419,46 @@ def selected(players: list) -> list:
 
 def write_all(players: list, out_dir: Path = CARD_DIR,
               headshots: bool = True) -> dict:
+    """Draw a card per selected player, skipping any whose inputs are unchanged.
+
+    The skip is what makes a daily run viable. Without it every run re-renders
+    all 1,300 cards AND re-fetches every portrait purely to discover the bytes
+    are identical, which measured at roughly four minutes of CPU plus the whole
+    portrait download, every day, to change nothing.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
-    rings = load_rings()
+    sig_path = out_dir / SIGNATURES.name
+    try:
+        old_sigs = json.loads(sig_path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        old_sigs = {}
+    new_sigs: dict[str, str] = {}
+
     coords, shots = Coords(), Headshots(enabled=headshots)
+    rings = None          # geometry is only loaded if something needs drawing
     expected, written, unchanged, faces = set(), 0, 0, 0
 
     for p in selected(players):
         key = str(p.get("player") or "").strip()
         if not key:
             continue
+        name = p.get("display_name") or key
         path = out_dir / f"{slug(key)}.png"
         expected.add(path.name)
+
+        # Looked up, not downloaded: this is the filename, and knowing it is
+        # enough to decide whether the card needs redrawing at all.
+        face_file = shots.by_name.get(_norm(name)) if shots.enabled else None
+        if face_file:
+            faces += 1
+        sig = card_signature(p, face_file)
+        new_sigs[path.name] = sig
+        if old_sigs.get(path.name) == sig and path.exists():
+            unchanged += 1
+            continue
+
+        if rings is None:
+            rings = load_rings()
         im = render_card(p, rings, coords, shots)
         # Flattened to a fixed palette: with a vector map the card is a handful
         # of flat colours plus a portrait, so this costs nothing visible.

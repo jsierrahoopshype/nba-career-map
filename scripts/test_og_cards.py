@@ -98,23 +98,69 @@ def test_view_never_degenerates():
     print("test_view_never_degenerates PASS")
 
 
-def test_crop_past_the_edge_is_water_not_black():
-    base = Image.open(oc.BASEMAP).convert("RGB")
-    im = oc.crop_view(base, -500, -500, -500 + oc.BW, -500 + int(oc.BW * oc.H / oc.W))
+def test_map_past_the_edge_is_water_not_black():
+    """A view may sit partly outside the map band; beyond it is ocean."""
+    rings = oc.load_rings()
+    im = oc.draw_map(rings, -oc.BW, -oc.BH, 0, 0)     # entirely off the map
     assert im.size == (oc.W, oc.H)
     assert im.getpixel((2, 2)) == oc.WATER, im.getpixel((2, 2))
-    print("test_crop_past_the_edge_is_water_not_black PASS")
+    assert im.getpixel((oc.W // 2, oc.H // 2)) == oc.WATER
+    print("test_map_past_the_edge_is_water_not_black PASS")
+
+
+def test_map_is_drawn_flat_for_compression():
+    """Few colours is the whole reason the set fits: 25.6 MB, not 56.6 MB."""
+    rings = oc.load_rings()
+    im = oc.draw_map(rings, 0, 0, oc.BW, oc.BH)
+    assert len(im.getcolors(maxcolors=100000) or []) <= 8, \
+        "basemap gained colours; it must stay flat vector fill"
+    print("test_map_is_drawn_flat_for_compression PASS")
 
 
 def test_card_renders_without_a_headshot():
-    base = Image.open(oc.BASEMAP).convert("RGB")
+    rings = oc.load_rings()
     shots = oc.Headshots(enabled=False)
     assert shots.face("Anyone") is None, "must not reach the network when off"
-    im = oc.render_card(GLOBETROTTER, base, oc.Coords(), shots)
+    im = oc.render_card(GLOBETROTTER, rings, oc.Coords(), shots)
     assert im.size == (oc.W, oc.H)
     # the silhouette sits inside its circle, so the card's corner is panel white
     assert im.getpixel((oc.W - 4, oc.H - 4))[0] > 200
     print("test_card_renders_without_a_headshot PASS")
+
+
+def test_unchanged_cards_are_skipped_without_redrawing():
+    """The regression guard for a real bug: this shipped broken once.
+
+    A half-applied edit left write_all referencing a signature variable it
+    never defined, so the function raised NameError at the end of a full
+    re-render -- after four minutes of redrawing every card. The daily pipeline
+    depends on the second run being nearly free, so assert that directly.
+    """
+    import time
+    tmp = Path(tempfile.mkdtemp()) / "cards"
+    players = [dict(GLOBETROTTER, player=f"Player {i}",
+                    display_name=f"Player {i}") for i in range(12)]
+    t0 = time.time()
+    first = oc.write_all(players, out_dir=tmp, headshots=False)
+    t_first = time.time() - t0
+    t0 = time.time()
+    second = oc.write_all(players, out_dir=tmp, headshots=False)
+    t_second = time.time() - t0
+    assert first["written"] == 12, first
+    assert second["written"] == 0 and second["unchanged"] == 12, second
+    assert (tmp / "signatures.json").exists(), "signature sidecar not written"
+    assert t_second < max(t_first / 3, 0.05), \
+        f"second run redrew instead of skipping ({t_second:.2f}s vs {t_first:.2f}s)"
+
+    # a changed route must redraw exactly that one card
+    changed = [dict(p) for p in players]
+    changed[0] = json.loads(json.dumps(changed[0]))
+    changed[0]["career_history"].append(
+        {"years": "2030", "team": "New", "city": "Tokyo", "state": "",
+         "country": "Japan"})
+    third = oc.write_all(changed, out_dir=tmp, headshots=False)
+    assert third["written"] == 1, f"a changed card must redraw: {third}"
+    print("test_unchanged_cards_are_skipped_without_redrawing PASS")
 
 
 def test_write_all_is_incremental_and_cleans_up():
@@ -162,8 +208,10 @@ if __name__ == "__main__":
     test_selection_matches_the_agreed_scope()
     test_every_stop_stays_on_the_visible_map()
     test_view_never_degenerates()
-    test_crop_past_the_edge_is_water_not_black()
+    test_map_past_the_edge_is_water_not_black()
+    test_map_is_drawn_flat_for_compression()
     test_card_renders_without_a_headshot()
+    test_unchanged_cards_are_skipped_without_redrawing()
     test_write_all_is_incremental_and_cleans_up()
     test_page_points_at_its_own_card_when_one_exists()
     test_generated_page_carries_its_card()
