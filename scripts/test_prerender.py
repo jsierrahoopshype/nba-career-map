@@ -64,8 +64,12 @@ def test_head_tags_in_served_markup():
            "| HoopsHype</title>" in html
     assert f'<link rel="canonical" href="{canon}">' in html
     assert f'<meta property="og:url" content="{canon}">' in html
-    assert f'<meta property="og:image" content="{pr.OG_IMAGE}">' in html
-    assert f'<meta name="twitter:image" content="{pr.OG_IMAGE}">' in html
+    # A player with a generated card points at it; everyone else falls back to
+    # the shared career-map image. Both branches are covered in test_og_cards;
+    # here just assert the page carries whichever one applies, on both tags.
+    img, _alt = pr.player_card(SAMPLE["display_name"])
+    assert f'<meta property="og:image" content="{img}">' in html
+    assert f'<meta name="twitter:image" content="{img}">' in html
     assert '<meta name="twitter:card" content="summary_large_image">' in html
     assert '<meta property="og:type" content="profile">' in html
     print("test_head_tags_in_served_markup PASS")
