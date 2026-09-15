@@ -33,6 +33,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import stint_order  # noqa: E402
 from g_league_affiliates import AFFILIATE_PARENT  # noqa: E402
+import prerender
 from era_correct_teams import ERA_TABLE  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
 from sync_era_locations import LOC  # noqa: E402  (era-accurate team locations)
@@ -718,8 +719,12 @@ def build_sitemap(players: list) -> str:
                         for p in players for s in p.get("career_history", [])
                         if (s.get("country") or "").strip()})
     urls += [f"{SITE_BASE_URL}/teams.html?country={quote(c)}" for c in countries]
+    # Player URLs are the PRERENDERED pages, not ?player=. Those are the ones
+    # that serve their own title/description/OG tags, and each self-canonicals,
+    # so they are what should be indexed. The ?player= URLs keep working for
+    # every existing share link; index.html points their canonical here.
     names = sorted({p["player"] for p in players if str(p.get("player") or "").strip()})
-    urls += [f"{SITE_BASE_URL}/index.html?player={quote(n)}" for n in names]
+    urls += [prerender.player_url(n) for n in names]
     body = "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -811,6 +816,14 @@ def main() -> None:
                                 encoding="utf-8")
     print(f"wrote {PLAYER_INDEX_OUT.relative_to(ROOT)}  "
           f"({PLAYER_INDEX_OUT.stat().st_size:,} bytes, {len(names)} names)")
+
+    # Prerendered player pages: real HTML per player so crawlers see each
+    # player's own title/description/OG tags instead of the app shell's. Runs
+    # here so it stays current with every pipeline run, and rewrites only the
+    # players whose page bytes actually changed.
+    pre = prerender.write_all(players)
+    print(f"wrote player/  ({pre['total']} pages: {pre['written']} written, "
+          f"{pre['unchanged']} unchanged, {pre['removed']} removed)")
 
     # sitemap.xml (Phase 2.6-B): team + player URLs for search-engine discovery.
     SITEMAP_OUT.write_text(build_sitemap(players), encoding="utf-8")
