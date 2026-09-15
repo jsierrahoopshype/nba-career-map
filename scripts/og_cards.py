@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import hashlib
 import json
 import math
 import re
@@ -48,6 +49,11 @@ CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
 INDEX_HTML = ROOT / "index.html"
 WORLD = ROOT / "assets" / "world.geo.json"
 CARD_DIR = ROOT / "assets" / "og" / "player"
+# Sidecar of input signatures. Without it every pipeline run would re-render all
+# 1,300 cards AND re-fetch every portrait just to discover the bytes are
+# identical -- about 50 minutes a day to change nothing. With it a run touches
+# only the players whose card inputs actually moved.
+SIGNATURES = CARD_DIR / "signatures.json"
 
 W, H = 1200, 630
 PANEL_H = 150
@@ -386,6 +392,24 @@ def render_card(player: dict, rings: list, coords: Coords, shots: Headshots):
     return im
 
 
+def card_signature(player: dict, face_file: str | None) -> str:
+    """Everything a card is drawn from, hashed.
+
+    Anything that changes the image must appear here: the name, the route, the
+    counts, and which portrait file is used.
+    """
+    hist = player.get("career_history", []) or []
+    payload = [
+        player.get("display_name") or player.get("player"),
+        player.get("status"),
+        face_file or "",
+        [[s.get("years"), s.get("team"), s.get("city"), s.get("state"),
+          s.get("country")] for s in hist],
+    ]
+    return hashlib.sha1(json.dumps(payload, ensure_ascii=False,
+                                   sort_keys=True).encode()).hexdigest()
+
+
 def selected(players: list) -> list:
     """Currently active anywhere, plus every All-Star. See SCOPE above."""
     return [p for p in players
@@ -407,10 +431,8 @@ def write_all(players: list, out_dir: Path = CARD_DIR,
         path = out_dir / f"{slug(key)}.png"
         expected.add(path.name)
         im = render_card(p, rings, coords, shots)
-        if shots.face(p.get("display_name") or key) is not None:
-            faces += 1
-        # Flattened to a fixed palette: the card is flat colour plus a portrait,
-        # and this roughly halves the bytes with no visible change.
+        # Flattened to a fixed palette: with a vector map the card is a handful
+        # of flat colours plus a portrait, so this costs nothing visible.
         buf = io.BytesIO()
         im.quantize(colors=32, dither=Image.NONE).save(buf, "PNG", optimize=True)
         body = buf.getvalue()
@@ -425,6 +447,8 @@ def write_all(players: list, out_dir: Path = CARD_DIR,
         if stale.name not in expected:
             stale.unlink()
             removed += 1
+    sig_path.write_text(json.dumps(new_sigs, ensure_ascii=False, indent=0,
+                                   sort_keys=True) + "\n", encoding="utf-8")
     return {"total": len(expected), "written": written, "unchanged": unchanged,
             "removed": removed, "with_face": faces}
 
@@ -437,6 +461,8 @@ def main() -> None:
     ap.add_argument("--no-headshots", action="store_true",
                     help="skip the portrait fetch (silhouettes everywhere)")
     ap.add_argument("--limit", type=int, help="only the first N, for a quick look")
+    ap.add_argument("--force", action="store_true",
+                    help="ignore the signatures and redraw every card")
     args = ap.parse_args()
     if Image is None:
         sys.exit("Pillow is required:  pip install Pillow")
@@ -445,6 +471,8 @@ def main() -> None:
     players = json.loads(CAREERS.read_text(encoding="utf-8"))
     if args.limit:
         players = selected(players)[:args.limit]
+    if args.force and SIGNATURES.exists():
+        SIGNATURES.unlink()
     s = write_all(players, headshots=not args.no_headshots)
     print(f"player cards: {s['total']} total, {s['written']} written, "
           f"{s['unchanged']} unchanged, {s['removed']} removed, "
