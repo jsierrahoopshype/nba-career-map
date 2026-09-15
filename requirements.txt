@@ -1,5 +1,8 @@
-# The updater uses only the Python standard library (urllib, json, re,
-# argparse, datetime) so there are no runtime dependencies to install.
-# This file is intentionally empty of hard requirements; it exists so the
-# GitHub Actions workflow's `pip install -r requirements.txt` step is a no-op
-# that still documents the (lack of) dependencies.
+# The updater itself uses only the Python standard library (urllib, json, re,
+# argparse, datetime).
+#
+# Pillow is the one real dependency, and only for scripts/og_cards.py, which
+# draws the per-player Open Graph cards. The card step is wrapped in a
+# try/except in build_dashboard_data.py, so if this ever fails to install the
+# data build still completes and pages fall back to the shared image.
+Pillow>=10.0

@@ -48,6 +48,10 @@ COUNTRY_CLUB_CAP = 250
 # hand-written pages. One edit there, one here, on a domain switch.
 SITE_BASE_URL = "https://jsierrahoopshype.github.io/nba-career-map"
 OG_IMAGE = f"{SITE_BASE_URL}/assets/og-career-map.png"
+# Per-player cards (scripts/og_cards.py) exist for the shared-heavy slice of
+# players. A page uses its own card when one has been generated and the shared
+# career-map image otherwise, so a missing card is a fallback, never a 404.
+CARD_DIR = ROOT / "assets" / "og" / "player"
 OG_IMAGE_ALT = ("NBA career paths drawn as red arcs across a map of the United "
                 "States, with NBA team logos at each stop")
 
@@ -151,6 +155,7 @@ def build_title(player: dict) -> str:
 
 def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
            lede: str, extra: str, app_href: str, cta: str, pre_cta: str = "",
+           image: str | None = None, image_alt: str | None = None,
            depth: str = "..") -> str:
     """The markup every prerendered page shares: head tags, header, lede, CTA.
 
@@ -172,15 +177,15 @@ def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{esc(canon)}">
-<meta property="og:image" content="{esc(OG_IMAGE)}">
+<meta property="og:image" content="{esc(image or OG_IMAGE)}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{esc(OG_IMAGE_ALT)}">
+<meta property="og:image:alt" content="{esc(image_alt or OG_IMAGE_ALT)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
-<meta name="twitter:image" content="{esc(OG_IMAGE)}">
-<meta name="twitter:image:alt" content="{esc(OG_IMAGE_ALT)}">
+<meta name="twitter:image" content="{esc(image or OG_IMAGE)}">
+<meta name="twitter:image:alt" content="{esc(image_alt or OG_IMAGE_ALT)}">
 <link rel="stylesheet" href="{depth}/assets/prerender.css">
 </head>
 <body>
@@ -197,6 +202,15 @@ def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
 </body>
 </html>
 """
+
+
+def player_card(name: str) -> tuple[str, str]:
+    """(image_url, alt) for a player: their own card, else the shared image."""
+    if (CARD_DIR / f"{slug(name)}.png").exists():
+        return (f"{SITE_BASE_URL}/assets/og/player/{slug(name)}.png",
+                f"{name}'s NBA career path drawn as red arcs across a world map, "
+                f"with a marker at every club he has played for")
+    return OG_IMAGE, OG_IMAGE_ALT
 
 
 def render(player: dict) -> str:
@@ -226,9 +240,10 @@ def render(player: dict) -> str:
             facts.append(f"<dt>{label}</dt><dd>{esc(val)}</dd>")
     dl = f'<dl class="facts">{"".join(facts)}</dl>' if facts else ""
 
+    img, alt = player_card(name)
     return _shell(
         title=build_title(player), desc=build_description(player),
-        canon=player_url(key), og_type="profile",
+        canon=player_url(key), og_type="profile", image=img, image_alt=alt,
         h1=f"Where has {name} played?", lede=build_description(player),
         pre_cta=dl + "\n" if dl else "", extra=table,
         app_href=f"../index.html?player={quote(key)}",
