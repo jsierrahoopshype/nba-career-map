@@ -1,3 +1,15 @@
+## 2026-09-15 — incremental run
+
+- Players updated: **526** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (0 → overseas, 1 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+  - Devin Carter: Atlanta Hawks → Boston Celtics
+  - Nikola Mirotic: AS Monaco → Valencia Basket
+  - Taj Gibson: [nba_active → retired]
+
 ## 2026-09-14 — incremental run
 
 - Players updated: **525** (0 new)
