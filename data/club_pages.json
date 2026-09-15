@@ -3483,6 +3483,11 @@
         },
         {
           "type": "club",
+          "name": "Florida Beach Dogs",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Richmond Rhythm",
           "shared": 2
         },
@@ -3504,11 +3509,6 @@
         {
           "type": "club",
           "name": "Yakima Sun Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -34009,12 +34009,12 @@
         },
         {
           "type": "club",
-          "name": "Texas Legends",
-          "shared": 3
+          "name": "PAOK Thessaloniki",
+          "shared": 4
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 3
         }
       ]
@@ -45354,17 +45354,17 @@
         },
         {
           "type": "club",
+          "name": "Florida Beach Dogs",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Proteas EKA AEL",
           "shared": 3
         },
         {
           "type": "club",
           "name": "Olimpia Milano",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 2
         }
       ]
@@ -47396,7 +47396,7 @@
       "city": "Huntsville",
       "state": "Alabama",
       "country": "USA",
-      "count": 17,
+      "count": 18,
       "roster": [
         {
           "player": "AJ Guyton",
@@ -47410,6 +47410,13 @@
           "years": "2004",
           "status": "retired",
           "last_team": "Mumbai Challengers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Art Long",
+          "years": "2003",
+          "status": "retired",
+          "last_team": "Unión Alética",
           "nationality": "United States"
         },
         {
@@ -47546,17 +47553,17 @@
         },
         {
           "type": "club",
+          "name": "Idaho Stampede",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Reno Bighorns",
           "shared": 2
         },
         {
           "type": "club",
           "name": "Bakersfield Jam",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Atléticos de San Germán",
           "shared": 2
         }
       ]
@@ -59737,6 +59744,11 @@
         },
         {
           "type": "club",
+          "name": "Lietuvos rytas",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 1
         },
@@ -59753,11 +59765,6 @@
         {
           "type": "club",
           "name": "Fort Wayne Mad Ants",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Real Madrid",
           "shared": 1
         }
       ]
@@ -63033,7 +63040,7 @@
       "city": "Eilat",
       "state": "",
       "country": "Israel",
-      "count": 25,
+      "count": 26,
       "roster": [
         {
           "player": "Alando Tucker",
@@ -63153,6 +63160,13 @@
           "status": "retired",
           "last_team": "Chicago Bulls",
           "nationality": "United States"
+        },
+        {
+          "player": "Luis Flores",
+          "years": "2013",
+          "status": "retired",
+          "last_team": "Plaza Fernando Valerio",
+          "nationality": "Dominican Republic"
         },
         {
           "player": "Mangok Mathiang",
@@ -66949,6 +66963,11 @@
         },
         {
           "type": "club",
+          "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Union Olimpija",
           "shared": 1
         },
@@ -66965,11 +66984,6 @@
         {
           "type": "club",
           "name": "Budućnost Podgorica",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "P.A.O.K.",
           "shared": 1
         },
         {
@@ -67201,12 +67215,12 @@
         },
         {
           "type": "club",
-          "name": "Dynamo Moscow",
+          "name": "PAOK",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Azovmash",
+          "name": "Dynamo Moscow",
           "shared": 3
         }
       ]
@@ -67546,12 +67560,12 @@
         }
       ]
     },
-    "P.A.O.K.": {
-      "club": "P.A.O.K.",
+    "PAOK": {
+      "club": "PAOK",
       "city": "Thessaloniki",
       "state": "",
       "country": "Greece",
-      "count": 7,
+      "count": 25,
       "roster": [
         {
           "player": "Aleksandar Radojevic",
@@ -67561,10 +67575,24 @@
           "nationality": "Bosnia"
         },
         {
+          "player": "Andreas Glyniadakis",
+          "years": "2016-2017",
+          "status": "retired",
+          "last_team": "Ilysiakos",
+          "nationality": "Greece"
+        },
+        {
           "player": "Anthony Cook",
           "years": "1989-1990",
           "status": "retired",
           "last_team": "Florida Beach Dogs",
+          "nationality": "United States"
+        },
+        {
+          "player": "Brent Scott",
+          "years": "2002-2003",
+          "status": "retired",
+          "last_team": "AEK Athens",
           "nationality": "United States"
         },
         {
@@ -67575,10 +67603,31 @@
           "nationality": "United States"
         },
         {
+          "player": "Cliff Levingston",
+          "years": "1992-1993",
+          "status": "retired",
+          "last_team": "Denver Nuggets",
+          "nationality": "United States"
+        },
+        {
+          "player": "Darnell Jackson",
+          "years": "2017-2018",
+          "status": "retired",
+          "last_team": "Stal Ostrów Wielkopolski",
+          "nationality": "United States"
+        },
+        {
           "player": "Dean Garrett",
           "years": "1995-1996",
           "status": "retired",
           "last_team": "Golden State Warriors",
+          "nationality": "United States"
+        },
+        {
+          "player": "Delaney Rudd",
+          "years": "1986-1988",
+          "status": "retired",
+          "last_team": "ASVEL Villeurbanne",
           "nationality": "United States"
         },
         {
@@ -67589,10 +67638,81 @@
           "nationality": "United States"
         },
         {
+          "player": "Dionte Christmas",
+          "years": "2011",
+          "status": "retired",
+          "last_team": "Ciclista Olímpico",
+          "nationality": "United States"
+        },
+        {
+          "player": "Irving Thomas",
+          "years": "1990",
+          "status": "retired",
+          "last_team": "Gran Canaria",
+          "nationality": "United States"
+        },
+        {
           "player": "Lawrence Funderburke",
           "years": "1995-1996",
           "status": "retired",
           "last_team": "Chicago Bulls",
+          "nationality": "United States"
+        },
+        {
+          "player": "Martynas Andriuskevicius",
+          "years": "2011-2012",
+          "status": "retired",
+          "last_team": "S.C. Lusitânia",
+          "nationality": "Lithuania"
+        },
+        {
+          "player": "Matt Bullard",
+          "years": "1994-1995",
+          "status": "retired",
+          "last_team": "Charlotte Hornets",
+          "nationality": "United States"
+        },
+        {
+          "player": "Predrag Drobnjak",
+          "years": "2009-2010",
+          "status": "retired",
+          "last_team": "Iraklis",
+          "nationality": "Montenegro"
+        },
+        {
+          "player": "Predrag Stojakovic",
+          "years": "1993-1998",
+          "status": "retired",
+          "last_team": "Dallas Mavericks",
+          "nationality": "Serbia",
+          "all_star_count": 3
+        },
+        {
+          "player": "Radoslav Nesterovic",
+          "years": "1993-1995",
+          "status": "retired",
+          "last_team": "Olympiacos",
+          "nationality": "Slovenia"
+        },
+        {
+          "player": "Rawle Marshall",
+          "years": "2010-2011",
+          "status": "retired",
+          "last_team": "Shahrdari Gorgan",
+          "nationality": "Guyana"
+        },
+        {
+          "player": "Ron Rowan",
+          "years": "1997-1998",
+          "status": "retired",
+          "last_team": "Montepaschi Siena",
+          "nationality": "United States"
+        },
+        {
+          "player": "Terry Mills",
+          "years": "1990",
+          "status": "retired",
+          "last_team": "Indiana Pacers",
           "nationality": "United States"
         },
         {
@@ -67601,48 +67721,69 @@
           "status": "retired",
           "last_team": "Élan Chalon",
           "nationality": "United States"
+        },
+        {
+          "player": "Victor Alexander",
+          "years": "1999-2000",
+          "status": "retired",
+          "last_team": "Al Qadsia",
+          "nationality": "United States"
+        },
+        {
+          "player": "Walter Berry",
+          "years": "1993-1994, 1998-1999",
+          "status": "retired",
+          "last_team": "Panteras de Miranda",
+          "nationality": "United States"
+        },
+        {
+          "player": "William Avery",
+          "years": "2009",
+          "status": "retired",
+          "last_team": "Energa Czarni Slupsk",
+          "nationality": "United States"
         }
       ],
       "related": [
         {
           "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
+          "name": "AEK Athens",
+          "shared": 5
+        },
+        {
+          "type": "club",
+          "name": "Baskonia",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Olympiacos",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Virtus Bologna",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Union Olimpija",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Rapid City Thrillers",
+          "shared": 2
         },
         {
           "type": "club",
           "name": "Panathinaikos",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 1
+          "shared": 2
         },
         {
           "type": "club",
           "name": "Galatasaray",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Scavolini Pesaro",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pau-Orthez",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Oklahoma City Cavalry",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cedevita Zagreb",
-          "shared": 1
+          "shared": 2
         }
       ]
     },
@@ -67713,7 +67854,7 @@
         },
         {
           "type": "club",
-          "name": "Union Olimpija",
+          "name": "PAOK",
           "shared": 1
         }
       ]
@@ -68202,6 +68343,11 @@
         },
         {
           "type": "club",
+          "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Union Olimpija",
           "shared": 1
         },
@@ -68223,11 +68369,6 @@
         {
           "type": "club",
           "name": "Budućnost Podgorica",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "P.A.O.K.",
           "shared": 1
         }
       ]
@@ -68255,6 +68396,11 @@
         },
         {
           "type": "club",
+          "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Union Olimpija",
           "shared": 1
         },
@@ -68271,11 +68417,6 @@
         {
           "type": "club",
           "name": "Budućnost Podgorica",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "P.A.O.K.",
           "shared": 1
         },
         {
@@ -68313,6 +68454,11 @@
         },
         {
           "type": "club",
+          "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Union Olimpija",
           "shared": 1
         },
@@ -68329,11 +68475,6 @@
         {
           "type": "club",
           "name": "Budućnost Podgorica",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "P.A.O.K.",
           "shared": 1
         },
         {
@@ -71566,7 +71707,7 @@
       "city": "Porlamar",
       "state": "",
       "country": "Venezuela",
-      "count": 33,
+      "count": 34,
       "roster": [
         {
           "player": "Alex Blackwell",
@@ -71658,6 +71799,13 @@
           "status": "retired",
           "last_team": "Yulon Luxgen Dinos",
           "nationality": "United States"
+        },
+        {
+          "player": "Harold Keeling",
+          "years": "1987",
+          "status": "retired",
+          "last_team": "Marinos de Oriente",
+          "nationality": "Venezuela"
         },
         {
           "player": "Isaiah Morris",
@@ -72923,6 +73071,11 @@
         },
         {
           "type": "club",
+          "name": "Guruyú Waston",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 1
         },
@@ -72930,20 +73083,15 @@
           "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 1
         }
       ]
     },
-    "Guruyu Watson": {
-      "club": "Guruyu Watson",
+    "Guruyú Waston": {
+      "club": "Guruyú Waston",
       "city": "Montevideo",
       "state": "",
       "country": "Uruguay",
-      "count": 1,
+      "count": 2,
       "roster": [
         {
           "player": "Alex Blackwell",
@@ -72951,17 +73099,44 @@
           "status": "retired",
           "last_team": "Universidad de Los Lagos",
           "nationality": "United States"
+        },
+        {
+          "player": "Torraye Braggs",
+          "years": "2011",
+          "status": "retired",
+          "last_team": "Caribbean Heat",
+          "nationality": "United States"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Rockford Lightning",
-          "shared": 1
+          "shared": 2
         },
         {
           "type": "club",
           "name": "Yakima Sun Kings",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Cangrejeros de Santurce",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Club Malvín",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Hapoel Jerusalem",
           "shared": 1
         },
         {
@@ -72972,26 +73147,6 @@
         {
           "type": "club",
           "name": "Murcia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cangrejeros de Santurce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Vaqueros de Bayamón",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Omaha Racers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Trotamundos de Carabobo",
           "shared": 1
         }
       ]
@@ -86827,7 +86982,7 @@
       "city": "West Palm Beach",
       "state": "Florida",
       "country": "USA",
-      "count": 13,
+      "count": 26,
       "roster": [
         {
           "player": "Alvin Robertson",
@@ -86845,6 +87000,20 @@
           "nationality": "United States"
         },
         {
+          "player": "Anthony Miller",
+          "years": "1996",
+          "status": "retired",
+          "last_team": "Shanghai Sharks",
+          "nationality": "United States"
+        },
+        {
+          "player": "Anthony Tucker",
+          "years": "1996-1997",
+          "status": "retired",
+          "last_team": "La Crosse Bobcats",
+          "nationality": "United States"
+        },
+        {
           "player": "Chad Gallagher",
           "years": "1996-1997",
           "status": "retired",
@@ -86859,10 +87028,45 @@
           "nationality": "United States"
         },
         {
+          "player": "Corey Crowder",
+          "years": "1995-1996",
+          "status": "retired",
+          "last_team": "St. Quentin",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dave Johnson",
+          "years": "1996-1997",
+          "status": "retired",
+          "last_team": "Cangrejeros de Santurce",
+          "nationality": "United States"
+        },
+        {
           "player": "Dexter Boney",
           "years": "1996-1997, 1997",
           "status": "retired",
           "last_team": "Fargo-Moorhead Beez",
+          "nationality": "United States"
+        },
+        {
+          "player": "Keith Smart",
+          "years": "1995-1996",
+          "status": "retired",
+          "last_team": "Fort Wayne Fury",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kevin Salvadori",
+          "years": "1995-1996",
+          "status": "retired",
+          "last_team": "Spirou Charleroi",
+          "nationality": "United States"
+        },
+        {
+          "player": "Larry Robinson",
+          "years": "1996-1997",
+          "status": "retired",
+          "last_team": "Adirondack Wildcats",
           "nationality": "United States"
         },
         {
@@ -86880,6 +87084,13 @@
           "nationality": "South Sudan"
         },
         {
+          "player": "Mark Macon",
+          "years": "1996-1997",
+          "status": "retired",
+          "last_team": "Atlantic City Seagulls",
+          "nationality": "United States"
+        },
+        {
           "player": "Moochie Norris",
           "years": "1996",
           "status": "retired",
@@ -86887,10 +87098,38 @@
           "nationality": "United States"
         },
         {
+          "player": "Robert Churchwell",
+          "years": "1997",
+          "status": "retired",
+          "last_team": "Manchester Giants",
+          "nationality": "United States"
+        },
+        {
           "player": "Rodney Monroe",
           "years": "1995-1997",
           "status": "retired",
           "last_team": "Pepsi Caserta",
+          "nationality": "United States"
+        },
+        {
+          "player": "Ryan Lorthridge",
+          "years": "1995-1996",
+          "status": "retired",
+          "last_team": "Polonia Warszawa",
+          "nationality": "United States"
+        },
+        {
+          "player": "Shelton Jones",
+          "years": "1995-1996",
+          "status": "retired",
+          "last_team": "Great Lakes Storm",
+          "nationality": "United States"
+        },
+        {
+          "player": "Stanley Jackson",
+          "years": "1995-1996",
+          "status": "retired",
+          "last_team": "Strasbourg IG",
           "nationality": "United States"
         },
         {
@@ -86915,6 +87154,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Trevor Ruffin",
+          "years": "1996-1997",
+          "status": "retired",
+          "last_team": "Buffalo Rapids",
+          "nationality": "United States"
+        },
+        {
           "player": "Willie Burton",
           "years": "1995-1996",
           "status": "retired",
@@ -86926,42 +87172,42 @@
         {
           "type": "club",
           "name": "Rockford Lightning",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 2
+          "shared": 7
         },
         {
           "type": "club",
           "name": "Rapid City Thrillers",
-          "shared": 2
+          "shared": 6
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Fort Wayne Fury",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Omaha Racers",
-          "shared": 2
+          "name": "La Crosse Bobcats",
+          "shared": 4
         },
         {
           "type": "club",
           "name": "Florida Sharks",
-          "shared": 2
+          "shared": 4
         },
         {
           "type": "club",
-          "name": "Conad Rimini",
-          "shared": 2
+          "name": "Idaho Stampede",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Quad City Thunder",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Fort Wayne Fury",
+          "shared": 3
         }
       ]
     },
@@ -95317,7 +95563,7 @@
       "city": "Vilnius",
       "state": "",
       "country": "Lithuania",
-      "count": 16,
+      "count": 21,
       "roster": [
         {
           "player": "Andre Emmett",
@@ -95341,10 +95587,31 @@
           "nationality": "Australia"
         },
         {
+          "player": "D.J. Strawberry",
+          "years": "2010-2011",
+          "status": "retired",
+          "last_team": "Zamalek",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dickey Simpkins",
+          "years": "2003-2004",
+          "status": "retired",
+          "last_team": "Brose Bamberg",
+          "nationality": "United States"
+        },
+        {
           "player": "Drew Gordon",
           "years": "2016-2017",
           "status": "retired",
           "last_team": "Rizing Zephyr Fukuoka",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jackson Vroman",
+          "years": "2008",
+          "status": "retired",
+          "last_team": "Capitanes de Arecibo",
           "nationality": "United States"
         },
         {
@@ -95369,6 +95636,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Khalid El-Amin",
+          "years": "2010-2011",
+          "status": "retired",
+          "last_team": "Marinos de Anzoátegui",
+          "nationality": "United States"
+        },
+        {
           "player": "Lawrence Roberts",
           "years": "2011-2012",
           "status": "retired",
@@ -95381,6 +95655,13 @@
           "status": "retired",
           "last_team": "AEK Larnaca",
           "nationality": "Senegal"
+        },
+        {
+          "player": "Maurice Baker",
+          "years": "2006",
+          "status": "retired",
+          "last_team": "Santa Cruz Warriors",
+          "nationality": "United States"
         },
         {
           "player": "Milt Palacio",
@@ -95445,7 +95726,22 @@
         },
         {
           "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Panathinaikos",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Dakota Wizards",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Gran Canaria",
           "shared": 3
         },
         {
@@ -95455,22 +95751,7 @@
         },
         {
           "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Fort Wayne Mad Ants",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "FC Barcelona",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Olympiacos",
           "shared": 2
         }
       ]
@@ -104056,17 +104337,17 @@
         },
         {
           "type": "club",
-          "name": "Albuquerque Thunderbirds",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maroussi",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Lietuvos rytas",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Albuquerque Thunderbirds",
           "shared": 1
         }
       ]
@@ -104114,17 +104395,17 @@
         },
         {
           "type": "club",
-          "name": "Albuquerque Thunderbirds",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maroussi",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Lietuvos rytas",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Albuquerque Thunderbirds",
           "shared": 1
         }
       ]
@@ -104191,184 +104472,6 @@
           "type": "club",
           "name": "BCM Gravelines",
           "shared": 1
-        }
-      ]
-    },
-    "PAOK": {
-      "club": "PAOK",
-      "city": "Thessaloniki",
-      "state": "",
-      "country": "Greece",
-      "count": 18,
-      "roster": [
-        {
-          "player": "Andreas Glyniadakis",
-          "years": "2016-2017",
-          "status": "retired",
-          "last_team": "Ilysiakos",
-          "nationality": "Greece"
-        },
-        {
-          "player": "Brent Scott",
-          "years": "2002-2003",
-          "status": "retired",
-          "last_team": "AEK Athens",
-          "nationality": "United States"
-        },
-        {
-          "player": "Cliff Levingston",
-          "years": "1992-1993",
-          "status": "retired",
-          "last_team": "Denver Nuggets",
-          "nationality": "United States"
-        },
-        {
-          "player": "Darnell Jackson",
-          "years": "2017-2018",
-          "status": "retired",
-          "last_team": "Stal Ostrów Wielkopolski",
-          "nationality": "United States"
-        },
-        {
-          "player": "Delaney Rudd",
-          "years": "1986-1988",
-          "status": "retired",
-          "last_team": "ASVEL Villeurbanne",
-          "nationality": "United States"
-        },
-        {
-          "player": "Dionte Christmas",
-          "years": "2011",
-          "status": "retired",
-          "last_team": "Ciclista Olímpico",
-          "nationality": "United States"
-        },
-        {
-          "player": "Irving Thomas",
-          "years": "1990",
-          "status": "retired",
-          "last_team": "Gran Canaria",
-          "nationality": "United States"
-        },
-        {
-          "player": "Martynas Andriuskevicius",
-          "years": "2011-2012",
-          "status": "retired",
-          "last_team": "S.C. Lusitânia",
-          "nationality": "Lithuania"
-        },
-        {
-          "player": "Matt Bullard",
-          "years": "1994-1995",
-          "status": "retired",
-          "last_team": "Charlotte Hornets",
-          "nationality": "United States"
-        },
-        {
-          "player": "Predrag Drobnjak",
-          "years": "2009-2010",
-          "status": "retired",
-          "last_team": "Iraklis",
-          "nationality": "Montenegro"
-        },
-        {
-          "player": "Predrag Stojakovic",
-          "years": "1993-1998",
-          "status": "retired",
-          "last_team": "Dallas Mavericks",
-          "nationality": "Serbia",
-          "all_star_count": 3
-        },
-        {
-          "player": "Radoslav Nesterovic",
-          "years": "1993-1995",
-          "status": "retired",
-          "last_team": "Olympiacos",
-          "nationality": "Slovenia"
-        },
-        {
-          "player": "Rawle Marshall",
-          "years": "2010-2011",
-          "status": "retired",
-          "last_team": "Shahrdari Gorgan",
-          "nationality": "Guyana"
-        },
-        {
-          "player": "Ron Rowan",
-          "years": "1997-1998",
-          "status": "retired",
-          "last_team": "Montepaschi Siena",
-          "nationality": "United States"
-        },
-        {
-          "player": "Terry Mills",
-          "years": "1990",
-          "status": "retired",
-          "last_team": "Indiana Pacers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Victor Alexander",
-          "years": "1999-2000",
-          "status": "retired",
-          "last_team": "Al Qadsia",
-          "nationality": "United States"
-        },
-        {
-          "player": "Walter Berry",
-          "years": "1993-1994, 1998-1999",
-          "status": "retired",
-          "last_team": "Panteras de Miranda",
-          "nationality": "United States"
-        },
-        {
-          "player": "William Avery",
-          "years": "2009",
-          "status": "retired",
-          "last_team": "Energa Czarni Slupsk",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "AEK Athens",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Baskonia",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Olympiacos",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Virtus Bologna",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Partizan",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "CSKA Moscow",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
-          "shared": 2
         }
       ]
     },
@@ -106191,7 +106294,7 @@
         },
         {
           "type": "club",
-          "name": "Ülkerspor",
+          "name": "PAOK",
           "shared": 1
         }
       ]
@@ -108297,7 +108400,7 @@
       "city": "Thessaloniki",
       "state": "",
       "country": "Greece",
-      "count": 28,
+      "count": 30,
       "roster": [
         {
           "player": "Andrew Harrison",
@@ -108370,6 +108473,13 @@
           "nationality": "Turkish / Macedonian"
         },
         {
+          "player": "Darius Washington",
+          "years": "2006",
+          "status": "retired",
+          "last_team": "Peja",
+          "nationality": "United States"
+        },
+        {
           "player": "Efthimios Rentzias",
           "years": "1993-1997",
           "status": "retired",
@@ -108402,6 +108512,13 @@
           "years": "2006",
           "status": "retired",
           "last_team": "Snaidero Udine",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jerrod Mustaf",
+          "years": "1994-1995",
+          "status": "retired",
+          "last_team": "Egepen Altay",
           "nationality": "United States"
         },
         {
@@ -108504,12 +108621,17 @@
         },
         {
           "type": "club",
+          "name": "Galatasaray",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Panathinaikos",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Aris Thessaloniki",
           "shared": 4
         },
         {
@@ -108524,18 +108646,13 @@
         },
         {
           "type": "club",
-          "name": "Aris Thessaloniki",
+          "name": "FC Barcelona",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Baskonia",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 2
+          "name": "Virtus Roma",
+          "shared": 3
         }
       ]
     },
@@ -114106,12 +114223,12 @@
         },
         {
           "type": "club",
-          "name": "Basket Livorno",
+          "name": "PAOK Thessaloniki",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "PAOK Thessaloniki",
+          "name": "Basket Livorno",
           "shared": 1
         }
       ]
@@ -115242,7 +115359,7 @@
         },
         {
           "type": "club",
-          "name": "Gary Steelheads",
+          "name": "PAOK Thessaloniki",
           "shared": 2
         }
       ]
@@ -115346,12 +115463,12 @@
         },
         {
           "type": "club",
-          "name": "Manresa",
+          "name": "Guaiqueríes de Margarita",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Guaiqueríes de Margarita",
+          "name": "Manresa",
           "shared": 2
         },
         {
@@ -117765,7 +117882,7 @@
       "city": "Ramat HaSharon",
       "state": "",
       "country": "Israel",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "Anthony Grundy",
@@ -117780,9 +117897,21 @@
           "status": "retired",
           "last_team": "Capitanes de Arecibo",
           "nationality": "United States"
+        },
+        {
+          "player": "Norris Coleman",
+          "years": "1989-1990",
+          "status": "retired",
+          "last_team": "Hapoel Tel Aviv",
+          "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Bnei Herzliya",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
@@ -117795,7 +117924,17 @@
         },
         {
           "type": "club",
+          "name": "Maccabi Tel Aviv",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Erie BayHawks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Hapoel Jerusalem",
           "shared": 1
         },
         {
@@ -117806,21 +117945,6 @@
         {
           "type": "club",
           "name": "Bakersfield Jam",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles D-Fenders",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capitanes de Arecibo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mets de Guaynabo",
           "shared": 1
         }
       ]
@@ -119270,148 +119394,6 @@
         {
           "type": "club",
           "name": "Fortitudo Bologna",
-          "shared": 2
-        }
-      ]
-    },
-    "Florida Beachdogs": {
-      "club": "Florida Beachdogs",
-      "city": "West Palm Beach",
-      "state": "Florida",
-      "country": "USA",
-      "count": 13,
-      "roster": [
-        {
-          "player": "Anthony Miller",
-          "years": "1996",
-          "status": "retired",
-          "last_team": "Shanghai Sharks",
-          "nationality": "United States"
-        },
-        {
-          "player": "Anthony Tucker",
-          "years": "1996-1997",
-          "status": "retired",
-          "last_team": "La Crosse Bobcats",
-          "nationality": "United States"
-        },
-        {
-          "player": "Corey Crowder",
-          "years": "1995-1996",
-          "status": "retired",
-          "last_team": "St. Quentin",
-          "nationality": "United States"
-        },
-        {
-          "player": "Dave Johnson",
-          "years": "1996-1997",
-          "status": "retired",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
-        },
-        {
-          "player": "Keith Smart",
-          "years": "1995-1996",
-          "status": "retired",
-          "last_team": "Fort Wayne Fury",
-          "nationality": "United States"
-        },
-        {
-          "player": "Kevin Salvadori",
-          "years": "1995-1996",
-          "status": "retired",
-          "last_team": "Spirou Charleroi",
-          "nationality": "United States"
-        },
-        {
-          "player": "Larry Robinson",
-          "years": "1996-1997",
-          "status": "retired",
-          "last_team": "Adirondack Wildcats",
-          "nationality": "United States"
-        },
-        {
-          "player": "Mark Macon",
-          "years": "1996-1997",
-          "status": "retired",
-          "last_team": "Atlantic City Seagulls",
-          "nationality": "United States"
-        },
-        {
-          "player": "Robert Churchwell",
-          "years": "1997",
-          "status": "retired",
-          "last_team": "Manchester Giants",
-          "nationality": "United States"
-        },
-        {
-          "player": "Ryan Lorthridge",
-          "years": "1995-1996",
-          "status": "retired",
-          "last_team": "Polonia Warszawa",
-          "nationality": "United States"
-        },
-        {
-          "player": "Shelton Jones",
-          "years": "1995-1996",
-          "status": "retired",
-          "last_team": "Great Lakes Storm",
-          "nationality": "United States"
-        },
-        {
-          "player": "Stanley Jackson",
-          "years": "1995-1996",
-          "status": "retired",
-          "last_team": "Strasbourg IG",
-          "nationality": "United States"
-        },
-        {
-          "player": "Trevor Ruffin",
-          "years": "1996-1997",
-          "status": "retired",
-          "last_team": "Buffalo Rapids",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "La Crosse Bobcats",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Pau-Orthez",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Holon",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "San Miguel Beermen",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Connecticut Pride",
           "shared": 2
         }
       ]
@@ -126756,12 +126738,12 @@
         },
         {
           "type": "club",
-          "name": "EWE Baskets Oldenburg",
+          "name": "Lietuvos rytas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lietuvos rytas",
+          "name": "EWE Baskets Oldenburg",
           "shared": 1
         },
         {
@@ -126814,12 +126796,12 @@
         },
         {
           "type": "club",
-          "name": "EWE Baskets Oldenburg",
+          "name": "Lietuvos rytas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lietuvos rytas",
+          "name": "EWE Baskets Oldenburg",
           "shared": 1
         },
         {
@@ -128052,64 +128034,6 @@
         }
       ]
     },
-    "Hunstville Flight": {
-      "club": "Hunstville Flight",
-      "city": "Cleveland",
-      "state": "Ohio",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Art Long",
-          "years": "2003",
-          "status": "retired",
-          "last_team": "Unión Alética",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pau-Orthez",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Trotamundos de Carabobo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "San Miguel Beermen",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Brujos de Guayama",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Azovmash",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "ASVEL Villeurbanne",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
-          "shared": 1
-        }
-      ]
-    },
     "Ilisiakos Athens": {
       "club": "Ilisiakos Athens",
       "city": "Athens",
@@ -128153,17 +128077,17 @@
         },
         {
           "type": "club",
+          "name": "Huntsville Flight",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Azovmash",
           "shared": 1
         },
         {
           "type": "club",
           "name": "ASVEL Villeurbanne",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         }
       ]
@@ -128601,17 +128525,17 @@
         },
         {
           "type": "club",
+          "name": "Huntsville Flight",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Azovmash",
           "shared": 1
         },
         {
           "type": "club",
           "name": "ASVEL Villeurbanne",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         }
       ]
@@ -128789,17 +128713,17 @@
         },
         {
           "type": "club",
+          "name": "Huntsville Flight",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Azovmash",
           "shared": 1
         },
         {
           "type": "club",
           "name": "ASVEL Villeurbanne",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         }
       ]
@@ -128847,17 +128771,17 @@
         },
         {
           "type": "club",
+          "name": "Huntsville Flight",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Azovmash",
           "shared": 1
         },
         {
           "type": "club",
           "name": "ASVEL Villeurbanne",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         }
       ]
@@ -130711,7 +130635,7 @@
       "city": "Beirut",
       "state": "",
       "country": "Lebanon",
-      "count": 7,
+      "count": 8,
       "roster": [
         {
           "player": "Axel Toupane",
@@ -130756,6 +130680,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Tyler Bey",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Trotamundos de Carabobo",
+          "nationality": "United States"
+        },
+        {
           "player": "Zach Lofton",
           "years": "2024, 2026",
           "status": "overseas_active",
@@ -130767,6 +130698,11 @@
         {
           "type": "club",
           "name": "Trotamundos de Carabobo",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
           "shared": 2
         },
         {
@@ -130792,11 +130728,6 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
           "shared": 1
         },
         {
@@ -141011,7 +140942,7 @@
         },
         {
           "type": "club",
-          "name": "Maine Lumberjacks",
+          "name": "Huntsville Flight",
           "shared": 1
         }
       ]
@@ -147518,6 +147449,11 @@
         },
         {
           "type": "club",
+          "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Billings Volcanos",
           "shared": 1
         },
@@ -147529,11 +147465,6 @@
         {
           "type": "club",
           "name": "Albuquerque Silvers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "P.A.O.K.",
           "shared": 1
         },
         {
@@ -156368,17 +156299,17 @@
         },
         {
           "type": "club",
+          "name": "Florida Beach Dogs",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Hapoel Eilat",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Chicago Rockers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Florida Beachdogs",
           "shared": 1
         },
         {
@@ -160186,12 +160117,12 @@
         },
         {
           "type": "club",
-          "name": "Berwick Carbuilders",
+          "name": "Hazleton Hawks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hazleton Hawks",
+          "name": "Berwick Carbuilders",
           "shared": 1
         },
         {
@@ -160456,7 +160387,7 @@
       "city": "Hazleton",
       "state": "Pennsylvania",
       "country": "USA",
-      "count": 7,
+      "count": 8,
       "roster": [
         {
           "player": "Bucky McConnell",
@@ -160468,6 +160399,13 @@
         {
           "player": "Danny Finn",
           "years": "1960-1961",
+          "status": "retired",
+          "last_team": "Hazleton Hawks",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dick Duckett",
+          "years": "1960-1962",
           "status": "retired",
           "last_team": "Hazleton Hawks",
           "nationality": "United States"
@@ -165445,7 +165383,7 @@
         },
         {
           "type": "club",
-          "name": "Kyiv",
+          "name": "Hapoel Eilat",
           "shared": 1
         }
       ]
@@ -166393,6 +166331,11 @@
         },
         {
           "type": "club",
+          "name": "Florida Beach Dogs",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Santa Barbara Islanders",
           "shared": 2
         },
@@ -166414,11 +166357,6 @@
         {
           "type": "club",
           "name": "Real Madrid",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Jerusalem",
           "shared": 1
         }
       ]
@@ -170077,17 +170015,17 @@
         },
         {
           "type": "club",
+          "name": "Florida Beach Dogs",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Long Island Surf",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Málaga",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Libertad de Sunchales",
           "shared": 1
         }
       ]
@@ -171648,17 +171586,17 @@
         },
         {
           "type": "club",
+          "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Ülkerspor",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Fargo-Moorhead Fever",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "CRO Lyon",
           "shared": 1
         }
       ]
@@ -171749,6 +171687,11 @@
         },
         {
           "type": "club",
+          "name": "Florida Beach Dogs",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Rockford Lightning",
           "shared": 3
         },
@@ -171775,11 +171718,6 @@
         {
           "type": "club",
           "name": "Pallacanestro Trieste",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Florida Beach Dogs",
           "shared": 2
         }
       ]
@@ -177128,13 +177066,20 @@
       "city": "Benghazi",
       "state": "",
       "country": "Libya",
-      "count": 4,
+      "count": 5,
       "roster": [
         {
           "player": "Chris Crawford",
           "years": "2023",
           "status": "overseas_active",
           "last_team": "Urunani",
+          "nationality": "United States"
+        },
+        {
+          "player": "Orien Greene",
+          "years": "2013-2014",
+          "status": "retired",
+          "last_team": "Guaros de Lara",
           "nationality": "United States"
         },
         {
@@ -185503,17 +185448,17 @@
         },
         {
           "type": "club",
+          "name": "Guaiqueríes de Margarita",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Reggiana",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Valencia Basket",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Peristeri",
           "shared": 1
         }
       ]
@@ -189947,92 +189892,6 @@
           "type": "club",
           "name": "Quad City Thunder",
           "shared": 0
-        }
-      ]
-    },
-    "Lietuvos Rytas": {
-      "club": "Lietuvos Rytas",
-      "city": "Vilnius",
-      "state": "",
-      "country": "Lithuania",
-      "count": 5,
-      "roster": [
-        {
-          "player": "D.J. Strawberry",
-          "years": "2010-2011",
-          "status": "retired",
-          "last_team": "Zamalek",
-          "nationality": "United States"
-        },
-        {
-          "player": "Dickey Simpkins",
-          "years": "2003-2004",
-          "status": "retired",
-          "last_team": "Brose Bamberg",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jackson Vroman",
-          "years": "2008",
-          "status": "retired",
-          "last_team": "Capitanes de Arecibo",
-          "nationality": "United States"
-        },
-        {
-          "player": "Khalid El-Amin",
-          "years": "2010-2011",
-          "status": "retired",
-          "last_team": "Marinos de Anzoátegui",
-          "nationality": "United States"
-        },
-        {
-          "player": "Maurice Baker",
-          "years": "2006",
-          "status": "retired",
-          "last_team": "Santa Cruz Warriors",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Dakota Wizards",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Beşiktaş",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Gran Canaria",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Cedevita Zagreb",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olympiacos",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Jerusalem",
-          "shared": 1
         }
       ]
     },
@@ -196426,64 +196285,6 @@
         }
       ]
     },
-    "PAOK Thessaloníki": {
-      "club": "PAOK Thessaloníki",
-      "city": "Thessaloniki",
-      "state": "",
-      "country": "Greece",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Darius Washington",
-          "years": "2006",
-          "status": "retired",
-          "last_team": "Peja",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Virtus Roma",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Galatasaray",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Austin Toros",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Piratas de Quebradillas",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Aris Thessaloniki",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Türk Telekom",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Eilat",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Le Mans Sarthe",
-          "shared": 1
-        }
-      ]
-    },
     "Ural Great Perm": {
       "club": "Ural Great Perm",
       "city": "Perm",
@@ -196632,12 +196433,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Eilat",
+          "name": "PAOK Thessaloniki",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Le Mans Sarthe",
+          "name": "Hapoel Eilat",
           "shared": 1
         }
       ]
@@ -196828,6 +196629,11 @@
         },
         {
           "type": "club",
+          "name": "Hapoel Eilat",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Idaho Stampede",
           "shared": 1
         },
@@ -196849,11 +196655,6 @@
         {
           "type": "club",
           "name": "Hapoel Jerusalem",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -196906,12 +196707,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Eilat",
+          "name": "PAOK Thessaloniki",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Le Mans Sarthe",
+          "name": "Hapoel Eilat",
           "shared": 1
         }
       ]
@@ -197245,12 +197046,12 @@
         },
         {
           "type": "club",
-          "name": "Xinjiang",
+          "name": "PAOK",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Marinos de Anzoátegui",
+          "name": "Xinjiang",
           "shared": 1
         }
       ]
@@ -202843,12 +202644,12 @@
         },
         {
           "type": "club",
-          "name": "SLUC Nancy Basket",
+          "name": "PAOK",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "P.A.O.K.",
+          "name": "SLUC Nancy Basket",
           "shared": 1
         },
         {
@@ -209536,64 +209337,6 @@
         }
       ]
     },
-    "Hazelton Hawks": {
-      "club": "Hazelton Hawks",
-      "city": "Hazleton",
-      "state": "Pennsylvania",
-      "country": "USA",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Dick Duckett",
-          "years": "1960-1962",
-          "status": "retired",
-          "last_team": "Hazelton Hawks",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 0
-        }
-      ]
-    },
     "Kansas City–Omaha Kings": {
       "club": "Kansas City–Omaha Kings",
       "city": "Omaha",
@@ -209966,17 +209709,17 @@
         },
         {
           "type": "club",
+          "name": "Lietuvos rytas",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Maroussi",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Criollos de Caguas",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Alaska Aces",
           "shared": 1
         }
       ]
@@ -212475,12 +212218,12 @@
         },
         {
           "type": "club",
-          "name": "Xinjiang Flying Tigers",
+          "name": "PAOK",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "PAOK",
+          "name": "Xinjiang Flying Tigers",
           "shared": 1
         }
       ]
@@ -218292,7 +218035,7 @@
         },
         {
           "type": "club",
-          "name": "Reyer Venezia",
+          "name": "Guaiqueríes de Margarita",
           "shared": 1
         }
       ]
@@ -222022,9 +221765,9 @@
     },
     "Trouville": {
       "club": "Trouville",
-      "city": "",
+      "city": "Montevideo",
       "state": "",
-      "country": "",
+      "country": "Uruguay",
       "count": 2,
       "roster": [
         {
@@ -234444,62 +234187,9 @@
       "related": [
         {
           "type": "club",
-          "name": "Toros de Aragua",
+          "name": "Guaiqueríes de Margarita",
           "shared": 1
         },
-        {
-          "type": "club",
-          "name": "Marinos de Oriente",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mulhouse",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maccabi Ramat Gan",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "CRO Lyon Basket",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Barranquilla",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Bravos DeLara",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaiqueries de Margarita",
-          "shared": 1
-        }
-      ]
-    },
-    "Guaiqueries de Margarita": {
-      "club": "Guaiqueries de Margarita",
-      "city": "Porlamar",
-      "state": "",
-      "country": "Venezuela",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Harold Keeling",
-          "years": "1987",
-          "status": "retired",
-          "last_team": "Marinos de Oriente",
-          "nationality": "Venezuela"
-        }
-      ],
-      "related": [
         {
           "type": "club",
           "name": "Toros de Aragua",
@@ -234533,11 +234223,6 @@
         {
           "type": "club",
           "name": "Bravos DeLara",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "La Rochelle",
           "shared": 1
         }
       ]
@@ -234560,6 +234245,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Guaiqueríes de Margarita",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Toros de Aragua",
           "shared": 1
         },
@@ -234591,11 +234281,6 @@
         {
           "type": "club",
           "name": "Bravos DeLara",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaiqueries de Margarita",
           "shared": 1
         }
       ]
@@ -234618,6 +234303,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Guaiqueríes de Margarita",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Toros de Aragua",
           "shared": 1
         },
@@ -234650,11 +234340,6 @@
           "type": "club",
           "name": "Bravos DeLara",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaiqueries de Margarita",
-          "shared": 1
         }
       ]
     },
@@ -234674,6 +234359,11 @@
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Guaiqueríes de Margarita",
+          "shared": 1
+        },
         {
           "type": "club",
           "name": "Toros de Aragua",
@@ -234702,11 +234392,6 @@
         {
           "type": "club",
           "name": "Barranquilla",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaiqueries de Margarita",
           "shared": 1
         },
         {
@@ -234734,6 +234419,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Guaiqueríes de Margarita",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Toros de Aragua",
           "shared": 1
         },
@@ -234760,11 +234450,6 @@
         {
           "type": "club",
           "name": "Bravos DeLara",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaiqueries de Margarita",
           "shared": 1
         },
         {
@@ -237567,17 +237252,17 @@
         },
         {
           "type": "club",
+          "name": "PAOK",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Union Olimpija",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Tri-City Chinook",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Auxilium Torino",
           "shared": 1
         }
       ]
@@ -241086,6 +240771,11 @@
         },
         {
           "type": "club",
+          "name": "Lietuvos rytas",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Barangay Ginebra Kings",
           "shared": 1
         },
@@ -241102,11 +240792,6 @@
         {
           "type": "club",
           "name": "CB Girona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Lietuvos Rytas",
           "shared": 1
         }
       ]
@@ -250434,64 +250119,6 @@
         }
       ]
     },
-    "P.A.O.K. Thessaloniki": {
-      "club": "P.A.O.K. Thessaloniki",
-      "city": "Thessaloniki",
-      "state": "",
-      "country": "Greece",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Jerrod Mustaf",
-          "years": "1994-1995",
-          "status": "retired",
-          "last_team": "Egepen Altay",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "FC Barcelona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Paris Basket Racing",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Strasbourg IG",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Andorra",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Prokom Trefl Sopot",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Egepen Altay",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olympiacos",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Panathinaikos",
-          "shared": 0
-        }
-      ]
-    },
     "Egepen Altay": {
       "club": "Egepen Altay",
       "city": "",
@@ -250532,6 +250159,11 @@
         },
         {
           "type": "club",
+          "name": "PAOK Thessaloniki",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Strasbourg IG",
           "shared": 1
         },
@@ -250548,11 +250180,6 @@
         {
           "type": "club",
           "name": "Prokom Trefl Sopot",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Polluelos de Aibonito",
           "shared": 1
         }
       ]
@@ -263427,7 +263054,7 @@
         },
         {
           "type": "club",
-          "name": "Florida Beachdogs",
+          "name": "Florida Beach Dogs",
           "shared": 1
         },
         {
@@ -263485,7 +263112,7 @@
         },
         {
           "type": "club",
-          "name": "Florida Beachdogs",
+          "name": "Florida Beach Dogs",
           "shared": 1
         },
         {
@@ -263543,7 +263170,7 @@
         },
         {
           "type": "club",
-          "name": "Florida Beachdogs",
+          "name": "Florida Beach Dogs",
           "shared": 1
         },
         {
@@ -268345,7 +267972,7 @@
         },
         {
           "type": "club",
-          "name": "Lietuvos Rytas",
+          "name": "Šiauliai",
           "shared": 0
         }
       ]
@@ -273190,6 +272817,11 @@
         },
         {
           "type": "club",
+          "name": "Hapoel Eilat",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Kyiv",
           "shared": 1
         },
@@ -273201,11 +272833,6 @@
         {
           "type": "club",
           "name": "Marinos de Anzoátegui",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Metros de Santiago",
           "shared": 1
         }
       ]
@@ -273248,60 +272875,7 @@
         },
         {
           "type": "club",
-          "name": "Kyiv",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Reggio Emilia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Marinos de Anzoátegui",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Metros de Santiago",
-          "shared": 1
-        }
-      ]
-    },
-    "Hapoel Eliat": {
-      "club": "Hapoel Eliat",
-      "city": "Eilat",
-      "state": "",
-      "country": "Israel",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Luis Flores",
-          "years": "2013",
-          "status": "retired",
-          "last_team": "Plaza Fernando Valerio",
-          "nationality": "Dominican Republic"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Hapoel Holon",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Estudiantes",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaiqueríes de Margarita",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaros de Lara",
+          "name": "Hapoel Eilat",
           "shared": 1
         },
         {
@@ -273317,11 +272891,6 @@
         {
           "type": "club",
           "name": "Marinos de Anzoátegui",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Metros de Santiago",
           "shared": 1
         }
       ]
@@ -273364,6 +272933,11 @@
         },
         {
           "type": "club",
+          "name": "Hapoel Eilat",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Kyiv",
           "shared": 1
         },
@@ -273375,11 +272949,6 @@
         {
           "type": "club",
           "name": "Marinos de Anzoátegui",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Metros de Santiago",
           "shared": 1
         }
       ]
@@ -273422,6 +272991,11 @@
         },
         {
           "type": "club",
+          "name": "Hapoel Eilat",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Kyiv",
           "shared": 1
         },
@@ -273433,11 +273007,6 @@
         {
           "type": "club",
           "name": "Marinos de Anzoátegui",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Metros de Santiago",
           "shared": 1
         }
       ]
@@ -274163,7 +273732,7 @@
         },
         {
           "type": "club",
-          "name": "Paris-Levallois",
+          "name": "Lietuvos rytas",
           "shared": 1
         }
       ]
@@ -277920,12 +277489,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Toros de Aragua",
+          "name": "Florida Beach Dogs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Florida Beachdogs",
+          "name": "Toros de Aragua",
           "shared": 1
         },
         {
@@ -280006,12 +279575,12 @@
         },
         {
           "type": "club",
-          "name": "Paris-Levallois",
+          "name": "Lietuvos rytas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Talk 'N Text Tropang Texters",
+          "name": "Paris-Levallois",
           "shared": 1
         }
       ]
@@ -280064,12 +279633,12 @@
         },
         {
           "type": "club",
-          "name": "Paris-Levallois",
+          "name": "Lietuvos rytas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Talk 'N Text Tropang Texters",
+          "name": "Paris-Levallois",
           "shared": 1
         }
       ]
@@ -288415,64 +287984,6 @@
         }
       ]
     },
-    "S.A. Ramat Hasharon": {
-      "club": "S.A. Ramat Hasharon",
-      "city": "Ramat HaSharon",
-      "state": "",
-      "country": "Israel",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Norris Coleman",
-          "years": "1989-1990",
-          "status": "retired",
-          "last_team": "Hapoel Tel Aviv",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Maccabi Tel Aviv",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Jerusalem",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Tel Aviv",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Gran Canaria",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Bnei Herzliya",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pensacola Tornados",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maccabi Giv'at Shmuel",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maccabi Ramat Gan",
-          "shared": 1
-        }
-      ]
-    },
     "Knox Raiders": {
       "club": "Knox Raiders",
       "city": "Wantirna South",
@@ -290046,64 +289557,6 @@
         }
       ]
     },
-    "Al Alhy Benghazi": {
-      "club": "Al Alhy Benghazi",
-      "city": "Benghazi",
-      "state": "",
-      "country": "Libya",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Orien Greene",
-          "years": "2013-2014",
-          "status": "retired",
-          "last_team": "Guaros de Lara",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Reno Bighorns",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Jerusalem",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles D-Fenders",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaros de Lara",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "New Zealand Breakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Utah Flash",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fuerza Regia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Halifax Rainmen",
-          "shared": 1
-        }
-      ]
-    },
     "Louaize": {
       "club": "Louaize",
       "city": "Zouk Mosbeh",
@@ -291620,12 +291073,12 @@
         },
         {
           "type": "club",
-          "name": "Taipei Fubon Braves",
+          "name": "Lietuvos rytas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lietuvos rytas",
+          "name": "Taipei Fubon Braves",
           "shared": 1
         },
         {
@@ -296499,12 +295952,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Worth Flyers",
+          "name": "PAOK",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "PAOK",
+          "name": "Fort Worth Flyers",
           "shared": 1
         },
         {
@@ -300834,12 +300287,12 @@
         },
         {
           "type": "club",
-          "name": "Miami Tropics",
+          "name": "PAOK",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Baloncesto León",
+          "name": "Miami Tropics",
           "shared": 1
         }
       ]
@@ -302029,12 +301482,12 @@
         },
         {
           "type": "club",
-          "name": "Toros de Aragua",
+          "name": "Florida Beach Dogs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Libertad de Sunchales",
+          "name": "Toros de Aragua",
           "shared": 1
         }
       ]
@@ -302669,17 +302122,17 @@
         },
         {
           "type": "club",
-          "name": "Lietuvos Rytas",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Šiauliai",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Lietkabelis",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Lietuvos rytas Vilnius",
           "shared": 0
         }
       ]
@@ -302790,12 +302243,12 @@
         },
         {
           "type": "club",
-          "name": "Avtodor Saratov",
+          "name": "Hapoel Eilat",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hapoel Eilat",
+          "name": "Avtodor Saratov",
           "shared": 1
         }
       ]
@@ -304208,7 +303661,7 @@
         },
         {
           "type": "club",
-          "name": "Tulsa Fast Breakers",
+          "name": "Florida Beach Dogs",
           "shared": 1
         }
       ]
@@ -304266,7 +303719,7 @@
         },
         {
           "type": "club",
-          "name": "Tulsa Fast Breakers",
+          "name": "Florida Beach Dogs",
           "shared": 1
         }
       ]
@@ -305600,7 +305053,7 @@
         },
         {
           "type": "club",
-          "name": "Lietuvos Rytas",
+          "name": "Šiauliai",
           "shared": 0
         }
       ]
@@ -313019,64 +312472,6 @@
         }
       ]
     },
-    "Guruyú Waston": {
-      "club": "Guruyú Waston",
-      "city": "Montevideo",
-      "state": "",
-      "country": "Uruguay",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Torraye Braggs",
-          "years": "2011",
-          "status": "retired",
-          "last_team": "Caribbean Heat",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Jerusalem",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tulsa 66ers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cangrejeros de Santurce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Gran Canaria",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mets de Guaynabo",
-          "shared": 1
-        }
-      ]
-    },
     "Caribbean Heat": {
       "club": "Caribbean Heat",
       "city": "San Andres",
@@ -313559,7 +312954,7 @@
       "related": [
         {
           "type": "club",
-          "name": "Florida Beachdogs",
+          "name": "Florida Beach Dogs",
           "shared": 1
         },
         {
@@ -314262,64 +313657,6 @@
           "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
-        }
-      ]
-    },
-    "Homentemen Beirut": {
-      "club": "Homentemen Beirut",
-      "city": "Mezher",
-      "state": "",
-      "country": "Lebanon",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Tyler Bey",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Long Island Nets",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Trotamundos de Carabobo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Ironi Ness Ziona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Taipei Fubon Braves",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Haifa",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Magnolia Hotshots",
-          "shared": 1
         }
       ]
     },
@@ -317336,12 +316673,12 @@
         },
         {
           "type": "club",
-          "name": "Strasbourg IG",
+          "name": "PAOK",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "PAOK",
+          "name": "Strasbourg IG",
           "shared": 1
         }
       ]
@@ -318376,12 +317713,12 @@
         },
         {
           "type": "club",
-          "name": "SLUC Nancy",
+          "name": "Lietuvos rytas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lietuvos rytas",
+          "name": "SLUC Nancy",
           "shared": 1
         },
         {
@@ -318434,12 +317771,12 @@
         },
         {
           "type": "club",
-          "name": "Kazma",
+          "name": "Al Ahly Benghazi",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al Ahly Benghazi",
+          "name": "Kazma",
           "shared": 1
         },
         {
@@ -318492,12 +317829,12 @@
         },
         {
           "type": "club",
-          "name": "Kazma",
+          "name": "Al Ahly Benghazi",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al Ahly Benghazi",
+          "name": "Kazma",
           "shared": 1
         },
         {

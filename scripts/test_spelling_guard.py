@@ -34,6 +34,17 @@ SAME_CLUB = [
     ("medi bayreuth", "Medi Bayreuth"),
 ]
 
+# Same club, one adjacent transposition apart. All real pairs from the corpus.
+TRANSPOSED_SAME_CLUB = [
+    ("Guruyu Watson", "Guruyú Waston"),
+    ("Homenetmen Beirut", "Homentemen Beirut"),
+    ("Hunstville Flight", "Huntsville Flight"),
+    ("Hapoel Eilat", "Hapoel Eliat"),
+    ("Hazelton Hawks", "Hazleton Hawks"),
+    ("Al Ahly Benghazi", "Al Alhy Benghazi"),
+    ("A.S. Ramat HaSharon", "S.A. Ramat Hasharon"),
+]
+
 # Genuinely DIFFERENT clubs that a naive edit-distance rule would merge. Every
 # one of these must survive as a real move. All are real pairs from the
 # corpus, and all but the last two are a single edit apart.
@@ -47,6 +58,7 @@ DIFFERENT_CLUBS = [
     ("Grand Rapids Mackers", "Grand Rapids Tackers"),
     ("Tenerife AB", "Tenerife CB"),
     ("Al Nasr", "Al Nassr"),        # same spelling key, but Dubai vs Riyadh
+    ("Khimik", "Khimki"),           # one transposition, but Ukraine vs Russia
     ("Brooklyn Nets", "Chicago Bulls"),
 ]
 
@@ -72,6 +84,41 @@ def test_different_clubs_survive():
         assert not is_spelling_variant(a, b), \
             f"{a!r} vs {b!r} are different clubs and must stay a real move"
     print(f"test_different_clubs_survive PASS ({len(DIFFERENT_CLUBS)} pairs)")
+
+
+def test_transposed_pairs_are_one_club():
+    for a, b in TRANSPOSED_SAME_CLUB:
+        assert is_spelling_variant(a, b), f"{a!r} vs {b!r} should be one club"
+        assert is_spelling_variant(b, a), "must be symmetric"
+    print(f"test_transposed_pairs_are_one_club PASS "
+          f"({len(TRANSPOSED_SAME_CLUB)} pairs)")
+
+
+def test_transposition_needs_a_long_enough_name():
+    """Khimik/Khimki is the false positive that sets the floor.
+
+    Ukraine and Russia, one transposition apart, six characters. Short names
+    are where a swap lands on another real club, so the rule needs length --
+    and the pair is pinned in KNOWN_DISTINCT as well.
+    """
+    from team_normalizer import (TRANSPOSITION_MIN_KEY_LEN, spelling_key,
+                                 _one_adjacent_transposition)
+    assert _one_adjacent_transposition("khimik", "khimki"), "is a transposition"
+    assert len(spelling_key("Khimik")) < TRANSPOSITION_MIN_KEY_LEN
+    assert not is_spelling_variant("Khimik", "Khimki")
+    # every true positive clears the floor
+    for a, b in TRANSPOSED_SAME_CLUB:
+        assert len(spelling_key(a)) >= TRANSPOSITION_MIN_KEY_LEN, a
+    print("test_transposition_needs_a_long_enough_name PASS")
+
+
+def test_transposition_does_not_admit_substitutions():
+    """The rule is transpositions ONLY: same letters, two of them swapped."""
+    for a, b in [("Palencia", "Valencia"), ("Palma", "Parma"),
+                 ("Iraklio", "Iraklis"), ("Chicago Rockers", "Chicago Rockets"),
+                 ("Grand Rapids Mackers", "Grand Rapids Tackers")]:
+        assert not is_spelling_variant(a, b), f"{a!r}/{b!r} must stay distinct"
+    print("test_transposition_does_not_admit_substitutions PASS")
 
 
 def test_empty_and_degenerate():
@@ -165,6 +212,9 @@ if __name__ == "__main__":
     test_spelling_key_folds_only_noise()
     test_same_club_pairs_suppressed()
     test_different_clubs_survive()
+    test_transposed_pairs_are_one_club()
+    test_transposition_needs_a_long_enough_name()
+    test_transposition_does_not_admit_substitutions()
     test_empty_and_degenerate()
     test_classify_move_reasons()
     test_phantom_never_reaches_the_ledger()

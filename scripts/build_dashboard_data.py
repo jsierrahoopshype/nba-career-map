@@ -33,6 +33,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import stint_order  # noqa: E402
 from g_league_affiliates import AFFILIATE_PARENT  # noqa: E402
+import og_cards
 import prerender
 from era_correct_teams import ERA_TABLE  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
@@ -821,6 +822,17 @@ def main() -> None:
     # player's own title/description/OG tags instead of the app shell's. Runs
     # here so it stays current with every pipeline run, and rewrites only the
     # players whose page bytes actually changed.
+    # Per-player OG cards first: prerender reads the card directory to decide
+    # whether a page points at its own image or the shared one.
+    try:
+        cards = og_cards.write_all(players)
+        print(f"wrote assets/og/player/  ({cards['total']} cards: "
+              f"{cards['written']} written, {cards['unchanged']} unchanged, "
+              f"{cards['removed']} removed, {cards['with_face']} with a portrait)")
+    except Exception as exc:  # noqa: BLE001
+        # Cards are an enhancement: a failure here must not cost the data build.
+        print(f"  [og_cards] skipped ({exc}); pages fall back to the shared image")
+
     for label, stats in (("player/", prerender.write_all(players)),
                          ("team/", prerender.write_all_teams(team_pages["teams"])),
                          ("country/", prerender.write_all_countries(players))):

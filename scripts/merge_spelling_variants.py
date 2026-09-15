@@ -43,12 +43,26 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from backfill_locations import CAREERS, READY, LOCATIONS, REVIEW  # noqa: E402
 from era_correct_teams import ERA_TABLE  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
-from team_normalizer import (KNOWN_DISTINCT, TeamNormalizer,  # noqa: E402
+from team_normalizer import (KNOWN_DISTINCT, TRANSPOSITION_MIN_KEY_LEN,  # noqa: E402
+                             TeamNormalizer, _one_adjacent_transposition,
                              spelling_key, strip_diacritics)
 
 ROOT = Path(__file__).resolve().parent.parent
 ALIASES = ROOT / "data" / "teams" / "team_aliases.json"
 TRANSACTIONS = ROOT / "data" / "logs" / "transactions.json"
+
+# Groups the location guard would veto, where the disagreement is a bad geocode
+# on the minority spelling rather than evidence of two clubs. Each is a single
+# scrape typo one transposition from a well-attested name, and the variant's
+# location row is dropped by the merge anyway. {frozenset(names): reason}
+FORCE_MERGE = {
+    frozenset({"Homenetmen Beirut", "Homentemen Beirut"}):
+        "one stint against eight, and Mezher is a Beirut suburb, not a "
+        "different club's home",
+    frozenset({"Hunstville Flight", "Huntsville Flight"}):
+        "one stint against eighteen; the D-League club is in Huntsville and "
+        "the Cleveland geocode sits on the typo",
+}
 
 # Clubs where usage picks a spelling that is simply wrong. Value = the name to
 # canonicalise on; it must be one of the group's own members.
@@ -101,9 +115,39 @@ def plan(dbs: list, locations: dict) -> tuple[list, list]:
     """Return (merges, held_back). Each merge is (canonical, [variants...])."""
     names = sorted({s["team"] for db in dbs for p in db
                     for s in p.get("career_history", []) if s.get("team")})
-    groups = defaultdict(list)
+    by_key = defaultdict(list)
     for n in names:
-        groups[spelling_key(n)].append(n)
+        by_key[spelling_key(n)].append(n)
+
+    # Keys that differ by ONE adjacent transposition are the same club written
+    # two ways ("Guruyu Watson" / "Guruyú Waston"), so their groups join.
+    # Short keys are excluded: see TRANSPOSITION_MIN_KEY_LEN.
+    parent = {k: k for k in by_key}
+
+    def find(k):
+        while parent[k] != k:
+            parent[k] = parent[parent[k]]
+            k = parent[k]
+        return k
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[max(ra, rb)] = min(ra, rb)
+
+    long_keys = [k for k in by_key if len(k) >= TRANSPOSITION_MIN_KEY_LEN]
+    key_set = set(long_keys)
+    for k in long_keys:
+        for i in range(len(k) - 1):
+            if k[i] == k[i + 1]:
+                continue
+            t = k[:i] + k[i + 1] + k[i] + k[i + 2:]
+            if t in key_set and _one_adjacent_transposition(k, t):
+                union(k, t)
+
+    groups = defaultdict(list)
+    for k, members in by_key.items():
+        groups[find(k)].extend(members)
 
     merges, held = [], []
     for key, members in sorted(groups.items()):
@@ -122,7 +166,7 @@ def plan(dbs: list, locations: dict) -> tuple[list, list]:
 
         places = {m: _place(locations, m) for m in members}
         known = {p for p in places.values() if p}
-        if len(known) > 1:
+        if len(known) > 1 and frozenset(members) not in FORCE_MERGE:
             detail = ", ".join(f"{m}={locations.get(m, {}).get('city', '')}/"
                                f"{locations.get(m, {}).get('country', '')}"
                                for m in members)
