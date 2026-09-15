@@ -256,13 +256,57 @@
             return d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', timeZone:'UTC'}); };
         const oldestUpdate = rows => rows.reduce((m,r)=> (r.last_updated && (!m || r.last_updated < m)) ? r.last_updated : m, '');
 
-        // href builders — real query-param URLs; internal ones are same-document
-        // (?team=/?club=/?country=/?city=) so they get SPA-intercepted into pushState.
-        const teamHref    = n => '?team=' + encodeURIComponent(n);
+        // href builders. Players, franchises and countries have PRERENDERED pages
+        // (scripts/prerender.py) which are their canonical URLs, so the href is
+        // that page: internal links now point where the canonical tag points
+        // instead of at the query form.
+        //
+        // What a click DOES is unchanged. appTarget() below maps such an href
+        // back to the in-app destination, and both the click interceptor and the
+        // search dropdown consult it first -- so a franchise still renders in
+        // place via pushState, and a player still opens the interactive map,
+        // exactly as before. Clubs and cities have no prerendered pages yet and
+        // keep their query URLs.
+        //
+        // Must match prerender.slug(): strip diacritics, non-alphanumerics to
+        // hyphens, lowercase.
+        const slugify = n => (n || '')
+            .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '').toLowerCase() || 'player';
+        const teamHref    = n => 'team/' + slugify(n) + '.html';
         const clubHref    = n => '?club=' + encodeURIComponent(n);
-        const countryHref = n => '?country=' + encodeURIComponent(n);
+        const countryHref = n => 'country/' + slugify(n) + '.html';
         const cityHref    = n => '?city=' + encodeURIComponent(n);
-        const playerHref  = n => 'index.html?player=' + encodeURIComponent(n);
+        const playerHref  = n => 'player/' + slugify(n) + '.html';
+
+        // slug -> real name, so a canonical href can be resolved back to the
+        // in-app destination. Rebuilt whenever the data loads.
+        const SLUG_TO = { player:{}, team:{}, country:{} };
+        function buildSlugMaps(){
+            SLUG_TO.player = {}; SLUG_TO.team = {}; SLUG_TO.country = {};
+            for (const n of ALL_PLAYERS) SLUG_TO.player[slugify(n)] = n;
+            for (const n of Object.keys(PLAYER_ALIASES || {})) SLUG_TO.player[slugify(n)] = n;
+            for (const n of Object.keys(TEAMS || {})) SLUG_TO.team[slugify(n)] = n;
+            const seen = new Set();
+            for (const c of Object.values(CLUBS || {})) if (c.country) seen.add(c.country);
+            for (const a of (ACTIVE_ABROAD || [])) if (a.country) seen.add(a.country);
+            for (const n of seen) SLUG_TO.country[slugify(n)] = n;
+        }
+
+        // A canonical /player|team|country/<slug>.html href -> where the app
+        // should actually go. null for anything else (clubs, cities, offsite).
+        function appTarget(href){
+            let u;
+            try { u = new URL(href, location.href); } catch(e){ return null; }
+            if (u.origin !== location.origin) return null;
+            const m = u.pathname.match(/\/(player|team|country)\/([^/]+)\.html$/);
+            if (!m) return null;
+            const name = SLUG_TO[m[1]][m[2]];
+            if (!name) return null;                       // unknown slug: let it navigate
+            if (m[1] === 'player')
+                return { cross: 'index.html?player=' + encodeURIComponent(name) };
+            return { same: '?' + m[1] + '=' + encodeURIComponent(name) };
+        }
         // Every team resolves: NBA names (any era) -> franchise page, everything
         // else -> its club page (the all-time club index covers every club).
         const currentHref = n => (NBA_SET.has(n) || eraToFranchise[n]) ? teamHref(n) : clubHref(n);
@@ -362,6 +406,7 @@
             for (const c of Object.values(CLUBS))
                 for (const r of c.roster) names.add(r.player);
             ALL_PLAYERS = [...names].sort();
+            buildSlugMaps();
         }
 
         const TITLE_SUFFIX = 'HoopsHype Career Map';
@@ -396,6 +441,17 @@
                 e.preventDefault();
                 if (inSiteNav && history.length > 1) history.back();
                 else { history.pushState({}, '', a.getAttribute('href')); route(); window.scrollTo(0,0); }
+                return;
+            }
+            // A canonical prerendered href resolves to the same in-app
+            // destination the query URL used to point at, so the click behaves
+            // as it always did.
+            const t = appTarget(a.getAttribute('href'));
+            if (t){
+                e.preventDefault();
+                if (t.cross){ window.location.href = t.cross; return; }
+                inSiteNav = true;
+                history.pushState({}, '', t.same); route(); window.scrollTo(0,0);
                 return;
             }
             const u = new URL(a.href, location.href);
@@ -964,6 +1020,12 @@
             const close = () => { box.classList.remove('show'); box.innerHTML=''; active=-1; flat=[]; };
             const go = it => {
                 if (!it) return;
+                const t = appTarget(it.href);
+                if (t){
+                    if (t.cross){ window.location.href = t.cross; return; }
+                    history.pushState({}, '', t.same); route(); window.scrollTo(0,0);
+                    close(); input.value=''; return;
+                }
                 const u = new URL(it.href, location.href);
                 if (u.pathname===location.pathname){ history.pushState({}, '', u.href); route(); window.scrollTo(0,0); close(); input.value=''; }
                 else window.location.href = it.href;

@@ -405,13 +405,17 @@ def test_sitemap():
               [_stint("Boston Celtics", "2000", "Boston", "MA", "USA")])]
     xml = b.build_sitemap(fix)
     assert xml.startswith("<?xml")
-    assert "/teams.html?team=Atlanta%20Hawks" in xml
+    # Teams and countries are prerendered too, so the sitemap lists those
+    # canonical pages rather than the query views.
+    assert "/team/atlanta-hawks.html" in xml
+    assert "/teams.html?team=" not in xml
+    assert "/teams.html?country=" not in xml
     # Players are listed as their PRERENDERED pages, not ?player= URLs: those
     # are the ones that serve their own tags and self-canonical, so they are
     # what should be indexed. Listing both would make them compete.
     assert "/player/test-player.html" in xml
     assert "/index.html?player=" not in xml
-    assert "/teams.html?country=USA" in xml
+    assert "/country/usa.html" in xml
     assert xml.count("<url>") == 2 + 30 + 1 + 1  # index+landing + 30 teams + 1 country + 1 player
     assert "https://jsierrahoopshype.github.io/nba-career-map/" in xml  # permanent base
     print("test_sitemap PASS")

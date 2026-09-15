@@ -714,11 +714,11 @@ def build_sitemap(players: list) -> str:
     from urllib.parse import quote
     urls = [f"{SITE_BASE_URL}/index.html"]
     urls += [f"{SITE_BASE_URL}/teams.html"]
-    urls += [f"{SITE_BASE_URL}/teams.html?team={quote(fr)}" for fr in sorted(NBA_TEAMS)]
+    urls += [prerender.team_url(fr) for fr in sorted(NBA_TEAMS)]
     countries = sorted({(s.get("country") or "").strip()
                         for p in players for s in p.get("career_history", [])
                         if (s.get("country") or "").strip()})
-    urls += [f"{SITE_BASE_URL}/teams.html?country={quote(c)}" for c in countries]
+    urls += [prerender.country_url(c) for c in countries]
     # Player URLs are the PRERENDERED pages, not ?player=. Those are the ones
     # that serve their own title/description/OG tags, and each self-canonicals,
     # so they are what should be indexed. The ?player= URLs keep working for
@@ -821,9 +821,11 @@ def main() -> None:
     # player's own title/description/OG tags instead of the app shell's. Runs
     # here so it stays current with every pipeline run, and rewrites only the
     # players whose page bytes actually changed.
-    pre = prerender.write_all(players)
-    print(f"wrote player/  ({pre['total']} pages: {pre['written']} written, "
-          f"{pre['unchanged']} unchanged, {pre['removed']} removed)")
+    for label, stats in (("player/", prerender.write_all(players)),
+                         ("team/", prerender.write_all_teams(team_pages["teams"])),
+                         ("country/", prerender.write_all_countries(players))):
+        print(f"wrote {label}  ({stats['total']} pages: {stats['written']} written, "
+              f"{stats['unchanged']} unchanged, {stats['removed']} removed)")
 
     # sitemap.xml (Phase 2.6-B): team + player URLs for search-engine discovery.
     SITEMAP_OUT.write_text(build_sitemap(players), encoding="utf-8")

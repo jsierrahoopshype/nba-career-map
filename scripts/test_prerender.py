@@ -168,11 +168,97 @@ def test_sitemap_lists_canonical_urls():
     print("test_sitemap_lists_canonical_urls PASS")
 
 
+TEAM_FIX = {
+    "franchise": "Los Angeles Lakers", "alumni_count": 523,
+    "relocations": [{"name": "Minneapolis Lakers", "start_year": None,
+                     "end_year": 1960, "current": False},
+                    {"name": "Los Angeles Lakers", "start_year": 1960,
+                     "end_year": None, "current": True}],
+    "roster": [{"player": "A.C. Green", "years": "1985-1993",
+                "stint_team": "Los Angeles Lakers", "current_team": "Miami Heat"}],
+}
+
+
+def test_team_page():
+    html = pr.render_team("Los Angeles Lakers", TEAM_FIX)
+    canon = f"{pr.SITE_BASE_URL}/team/los-angeles-lakers.html"
+    assert "<title>Every Player Who Has Played for the Los Angeles Lakers " \
+           "| HoopsHype</title>" in html
+    assert f'<link rel="canonical" href="{canon}">' in html
+    assert f'<meta property="og:url" content="{canon}">' in html
+    assert "523 players" in html and "Minneapolis Lakers" in html
+    assert "A.C. Green" in html and "1985-1993" in html
+    # roster names link to the canonical player pages, not ?player=
+    assert 'href="../player/a-c-green.html"' in html
+    assert "?player=" not in html
+    assert 'href="../teams.html?team=Los%20Angeles%20Lakers"' in html
+    print("test_team_page PASS")
+
+
+def test_country_page():
+    clubs = [{"club": "Real Madrid", "city": "Madrid", "players": 40},
+             {"club": "Baskonia", "city": "Vitoria", "players": 25}]
+    html = pr.render_country("Spain", clubs, 820)
+    canon = f"{pr.SITE_BASE_URL}/country/spain.html"
+    assert f'<link rel="canonical" href="{canon}">' in html
+    assert "820 NBA players" in html and "2 clubs" in html
+    assert "Real Madrid" in html and "Vitoria" in html
+    # the title must not promise players when the page lists clubs
+    title = re.search(r"<title>(.*?)</title>", html).group(1)
+    assert "Every Club" in title and "Every Player" not in title, title
+    assert 'href="../teams.html?country=Spain"' in html
+    print("test_country_page PASS")
+
+
+def test_country_club_cap():
+    many = [{"club": f"Club {i}", "city": "X", "players": 300 - i}
+            for i in range(pr.COUNTRY_CLUB_CAP + 50)]
+    html = pr.render_country("USA", many, 5068)
+    assert html.count("<tr>") == pr.COUNTRY_CLUB_CAP + 1, "cap not applied"
+    assert f"of {len(many)}" in html, "must say how many were left out"
+    print("test_country_club_cap PASS")
+
+
+def test_internal_links_point_at_canonical_urls():
+    """Internal links must not feed the non-canonical ?player= form."""
+    idx = (ROOT / "index.html").read_text(encoding="utf-8")
+    assert 'href="player/${playerSlug(n)}.html"' in idx
+    assert 'href="player/${playerSlug(p.player)}.html"' in idx
+    assert 'href="player/${playerSlug(x)}.html"' in idx
+    assert 'href="?player=${_enc(n)}"' not in idx
+
+    tm = (ROOT / "teams.html").read_text(encoding="utf-8")
+    assert "const playerHref  = n => 'player/' + slugify(n) + '.html';" in tm
+    assert "const teamHref    = n => 'team/' + slugify(n) + '.html';" in tm
+    assert "const countryHref = n => 'country/' + slugify(n) + '.html';" in tm
+    # clubs and cities have no prerendered pages yet, so they keep query URLs
+    assert "const clubHref    = n => '?club=' + encodeURIComponent(n);" in tm
+    assert "const cityHref    = n => '?city=' + encodeURIComponent(n);" in tm
+    # ...and the click path must resolve them back to the app
+    assert "function appTarget(href)" in tm
+    assert "const t = appTarget(a.getAttribute('href'));" in tm, \
+        "click interceptor does not consult appTarget"
+    assert "const t = appTarget(it.href);" in tm, \
+        "search dropdown does not consult appTarget"
+    assert "buildSlugMaps();" in tm
+    print("test_internal_links_point_at_canonical_urls PASS")
+
+
+def test_sitemap_lists_teams_and_countries():
+    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+    assert "/team/los-angeles-lakers.html" in sm
+    assert "/country/spain.html" in sm
+    assert "teams.html?team=" not in sm and "teams.html?country=" not in sm
+    print("test_sitemap_lists_teams_and_countries PASS")
+
+
 def test_app_slug_matches_generator():
     """index.html builds the same slug client-side to set its canonical."""
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     assert "const playerSlug" in html, "app-side slug helper missing"
     assert "setPlayerCanonical(player)" in html, "router does not set the canonical"
+    teams = (ROOT / "teams.html").read_text(encoding="utf-8")
+    assert "const slugify" in teams, "teams.html slug helper missing"
     print("test_app_slug_matches_generator PASS")
 
 
@@ -188,4 +274,9 @@ if __name__ == "__main__":
     test_write_all_is_incremental_and_cleans_up()
     test_sitemap_lists_canonical_urls()
     test_app_slug_matches_generator()
+    test_team_page()
+    test_country_page()
+    test_country_club_cap()
+    test_internal_links_point_at_canonical_urls()
+    test_sitemap_lists_teams_and_countries()
     print("\nall prerender tests PASS")

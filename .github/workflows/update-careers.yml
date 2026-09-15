@@ -94,10 +94,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 'player' carries the prerendered per-player pages written by
-          # build_dashboard_data.py; without it they are generated every run
+          # player/, team/ and country/ carry the prerendered pages written by
+          # build_dashboard_data.py; without them they are generated every run
           # and committed never.
-          git add data logs nba_players_careers_READY.json sitemap.xml player
+          git add data logs nba_players_careers_READY.json sitemap.xml \
+                  player team country
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
