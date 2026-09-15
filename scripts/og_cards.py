@@ -22,7 +22,7 @@ silhouette -- deliberately in the same frame and position, so a card with a
 face and a card without read as the same design.
 
 Run:  python3 scripts/og_cards.py            # generate
-      python3 scripts/og_cards.py --basemap  # re-render assets/og-basemap.png
+      python3 scripts/og_cards.py --refresh-world   # re-download the outlines
 """
 from __future__ import annotations
 
@@ -46,7 +46,7 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
 INDEX_HTML = ROOT / "index.html"
-BASEMAP = ROOT / "assets" / "og-basemap.png"
+WORLD = ROOT / "assets" / "world.geo.json"
 CARD_DIR = ROOT / "assets" / "og" / "player"
 
 W, H = 1200, 630
@@ -62,9 +62,8 @@ BW, BH = W * SCALE, H * SCALE
 MIN_SPAN_X = BW * 0.18
 VIEW_PAD = 0.18
 
-# Public-domain simplified world outlines (Natural Earth derived). Only needed
-# to re-render the basemap, which is committed, so the pipeline never fetches
-# it on a normal run.
+# Public-domain simplified world outlines (Natural Earth derived), committed to
+# assets/ so a run never fetches geometry. --refresh-world re-downloads it.
 WORLD_GEOJSON = ("https://raw.githubusercontent.com/johan/world.geo.json/"
                  "master/countries.geo.json")
 HEADSHOT_INDEX = ("https://raw.githubusercontent.com/jsierrahoopshype/"
@@ -185,39 +184,54 @@ class Coords:
         return [base[0] + ((h % 100) - 50) / 30, base[1] + (((h >> 8) % 100) - 50) / 30]
 
 
-def crop_view(base, left: float, top: float, right: float, bottom: float):
-    """Crop the basemap to a box that may extend past its edges.
+def load_rings() -> list:
+    """Country outlines as (minx, miny, maxx, maxy, points) in map pixels.
 
-    Anything outside the map is water, which is what is actually there: the
-    projection is cropped to the inhabited band, so beyond its edges is ocean
-    and polar sea. Filling it lets a route sit where the composition wants it
-    rather than where the image happens to end.
+    Flattened once per run and reused by every card.
     """
-    l, t, r, b = int(left), int(top), int(right), int(bottom)
-    out = Image.new("RGB", (max(r - l, 1), max(b - t, 1)), WATER)
-    sl, st_, sr, sb = max(l, 0), max(t, 0), min(r, BW), min(b, BH)
-    if sr > sl and sb > st_:
-        out.paste(base.crop((sl, st_, sr, sb)), (sl - l, st_ - t))
-    return out.resize((W, H), Image.LANCZOS)
-
-
-def build_basemap() -> None:
-    """Rasterise the world once. The result is committed; this rarely runs."""
-    with urllib.request.urlopen(WORLD_GEOJSON, timeout=120) as r:
-        geo = json.loads(r.read().decode("utf-8"))
-    im = Image.new("RGB", (BW, BH), WATER)
-    d = ImageDraw.Draw(im)
+    geo = json.loads(WORLD.read_text(encoding="utf-8"))
+    out = []
     for f in geo["features"]:
         g = f["geometry"]
         rings = (g["coordinates"] if g["type"] == "Polygon"
                  else [c for part in g["coordinates"] for c in part])
         for ring in rings:
             pts = [project(p[0], p[1], BW, BH) for p in ring]
-            if len(pts) > 2:
-                d.polygon(pts, fill=LAND, outline=COAST)
-    BASEMAP.parent.mkdir(parents=True, exist_ok=True)
-    im.save(BASEMAP, "PNG", optimize=True)
-    print(f"wrote {BASEMAP.relative_to(ROOT)} ({BASEMAP.stat().st_size:,} bytes)")
+            if len(pts) < 3:
+                continue
+            xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+            out.append((min(xs), min(ys), max(xs), max(ys), pts))
+    return out
+
+
+def draw_map(rings: list, left: float, top: float, right: float, bottom: float):
+    """Draw the basemap AT the crop, straight from the vectors.
+
+    The obvious alternative -- rasterise the world once and scale the crop --
+    was measured and rejected: upscaling turns crisp coastlines into gradients,
+    which defeats the colour quantisation and more than doubles the bytes (50 KB
+    a card against 20 KB). Drawing at the target size keeps the map flat, a
+    handful of colours, and sharp at any zoom.
+
+    Anything outside the map band is water, which is what is actually there:
+    the projection is cropped to the inhabited latitudes, so beyond its edges
+    is ocean and polar sea.
+    """
+    im = Image.new("RGB", (W, H), WATER)
+    d = ImageDraw.Draw(im)
+    sx, sy = W / (right - left), H / (bottom - top)
+    for x0, y0, x1, y1, pts in rings:
+        if x1 < left or x0 > right or y1 < top or y0 > bottom:
+            continue
+        d.polygon([((x - left) * sx, (y - top) * sy) for x, y in pts],
+                  fill=LAND, outline=COAST)
+    return im
+
+
+def refresh_world() -> None:
+    with urllib.request.urlopen(WORLD_GEOJSON, timeout=120) as r:
+        WORLD.write_bytes(r.read())
+    print(f"wrote {WORLD.relative_to(ROOT)} ({WORLD.stat().st_size:,} bytes)")
 
 
 # --- headshots ---------------------------------------------------------------
@@ -307,7 +321,7 @@ def _years(hist) -> str:
     return f"{lo}–{hi}" if lo != hi else str(lo)
 
 
-def render_card(player: dict, base, coords: Coords, shots: Headshots):
+def render_card(player: dict, rings: list, coords: Coords, shots: Headshots):
     hist = player.get("career_history", []) or []
 
     hi = []
@@ -319,7 +333,7 @@ def render_card(player: dict, base, coords: Coords, shots: Headshots):
             hi.append(project(c[1], c[0], BW, BH))
 
     left, top, right, bottom = route_view(hi)
-    im = crop_view(base, left, top, right, bottom)
+    im = draw_map(rings, left, top, right, bottom)
     sx, sy = W / (right - left), H / (bottom - top)
     pts = [((x - left) * sx, (y - top) * sy) for x, y in hi]
     d = ImageDraw.Draw(im, "RGBA")
@@ -382,7 +396,7 @@ def selected(players: list) -> list:
 def write_all(players: list, out_dir: Path = CARD_DIR,
               headshots: bool = True) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
-    base = Image.open(BASEMAP).convert("RGB")
+    rings = load_rings()
     coords, shots = Coords(), Headshots(enabled=headshots)
     expected, written, unchanged, faces = set(), 0, 0, 0
 
@@ -392,13 +406,13 @@ def write_all(players: list, out_dir: Path = CARD_DIR,
             continue
         path = out_dir / f"{slug(key)}.png"
         expected.add(path.name)
-        im = render_card(p, base, coords, shots)
+        im = render_card(p, rings, coords, shots)
         if shots.face(p.get("display_name") or key) is not None:
             faces += 1
         # Flattened to a fixed palette: the card is flat colour plus a portrait,
         # and this roughly halves the bytes with no visible change.
         buf = io.BytesIO()
-        im.quantize(colors=64, dither=Image.NONE).save(buf, "PNG", optimize=True)
+        im.quantize(colors=32, dither=Image.NONE).save(buf, "PNG", optimize=True)
         body = buf.getvalue()
         if path.exists() and path.read_bytes() == body:
             unchanged += 1
@@ -418,16 +432,16 @@ def write_all(players: list, out_dir: Path = CARD_DIR,
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--basemap", action="store_true",
-                    help="re-render assets/og-basemap.png and exit")
+    ap.add_argument("--refresh-world", action="store_true",
+                    help="re-download assets/world.geo.json and exit")
     ap.add_argument("--no-headshots", action="store_true",
                     help="skip the portrait fetch (silhouettes everywhere)")
     ap.add_argument("--limit", type=int, help="only the first N, for a quick look")
     args = ap.parse_args()
     if Image is None:
         sys.exit("Pillow is required:  pip install Pillow")
-    if args.basemap:
-        return build_basemap()
+    if args.refresh_world:
+        return refresh_world()
     players = json.loads(CAREERS.read_text(encoding="utf-8"))
     if args.limit:
         players = selected(players)[:args.limit]
