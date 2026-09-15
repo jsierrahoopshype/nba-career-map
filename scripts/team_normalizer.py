@@ -39,27 +39,67 @@ def spelling_key(name: str) -> str:
     Iraklio/Iraklis, Chicago Rockers/Rockets are all real, distinct clubs in
     this dataset -- so anything looser than "same letters, differently
     written" would suppress genuine transfers.
+
+    Transpositions are handled separately by is_spelling_variant, because they
+    are the one edit that keeps the letters identical. See the note on
+    TRANSPOSITION_MIN_KEY_LEN.
     """
     key = strip_diacritics(name).casefold()
     key = re.sub(r"[^a-z0-9]+", "", key)
     return re.sub(r"(.)\1+", r"\1", key)
 
 
-# Pairs that collide on spelling_key but really are different clubs. Keyed on
-# the pair of canonical names, order-insensitive. Al Nasr plays in Dubai and
-# Al Nassr in Riyadh; a player moving between them IS a transfer.
+# Pairs that look like one name written two ways but really are different
+# clubs. Keyed on the pair of canonical names, order-insensitive.
 KNOWN_DISTINCT: set[frozenset[str]] = {
+    # Al Nasr plays in Dubai, Al Nassr in Riyadh.
     frozenset({"al nasr", "al nassr"}),
+    # One adjacent transposition apart, and two different clubs in two
+    # different countries: Khimik is in Pivdenne, Ukraine, BC Khimki in Khimki,
+    # Russia. Below the length floor below anyway; pinned so that lowering the
+    # floor could never merge them.
+    frozenset({"khimik", "khimki"}),
 }
+
+# A transposition ("Watson"/"Waston") is a typo, not a different club -- but
+# only once the name is long enough to carry the information. Swapping two
+# characters in a SHORT name lands on another real name often enough to matter:
+# the one false positive in this dataset, Khimik/Khimki, is a 6-character key,
+# while all seven true positives are 11 characters or more. Short names are
+# also where the space of real club names is densest, so this floor is not
+# merely fitted to the one case.
+TRANSPOSITION_MIN_KEY_LEN = 10
+
+
+def _one_adjacent_transposition(a: str, b: str) -> bool:
+    """True when b is a with exactly one neighbouring pair of chars swapped."""
+    if len(a) != len(b) or a == b:
+        return False
+    diff = [i for i, (x, y) in enumerate(zip(a, b)) if x != y]
+    if len(diff) != 2:
+        return False
+    i, j = diff
+    return j == i + 1 and a[i] == b[j] and a[j] == b[i]
 
 
 def is_spelling_variant(a: str, b: str) -> bool:
-    """True when two club names are the same name spelled differently."""
+    """True when two club names are the same name spelled differently.
+
+    Two ways that can be true: the spelling keys match outright (case,
+    diacritics, punctuation, doubled letters), or they differ by a single
+    adjacent transposition in a key long enough to trust -- "Guruyu Watson" vs
+    "Guruyú Waston", the pair that slipped past the key-equality rule.
+    """
     if not a or not b:
         return False
     ka, kb = spelling_key(a), spelling_key(b)
-    if not ka or not kb or ka != kb:
+    if not ka or not kb:
         return False
+    if ka != kb:
+        if len(ka) < TRANSPOSITION_MIN_KEY_LEN or len(kb) < TRANSPOSITION_MIN_KEY_LEN:
+            return False
+        if not _one_adjacent_transposition(ka, kb):
+            return False
     pair = frozenset({strip_diacritics(a).casefold().strip(),
                       strip_diacritics(b).casefold().strip()})
     return pair not in KNOWN_DISTINCT

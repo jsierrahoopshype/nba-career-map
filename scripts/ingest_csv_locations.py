@@ -5,6 +5,8 @@ were right not to: "Al Arabi" is not in Ethiopia, and "Barangay Ginebra" is in
 Araneta City, not Geneva. Those answers came back checked by hand, so this
 ingests them rather than re-deriving anything.
 
+One row is corrected rather than taken as given: see CSV_OVERRIDE.
+
 The CSV is a per-stint export for the 25+ stop players, with a `missing` column
 marking the rows whose club had no location. Only those rows are read, and only
 for clubs that STILL have no location -- a club located since the export was
@@ -36,16 +38,17 @@ from team_normalizer import TeamNormalizer  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 INDEX_HTML = ROOT / "index.html"
 
-# Rows held back because the supplied place looks like the very error this CSV
-# exists to correct. Not applied, not guessed at: left in the review file with
-# the reason, for a person to settle. {club: reason}
-HOLD = {
+# Rows where the CSV's place is wrong and the right one is known. The CSV is
+# hand-checked but not infallible, and this is the very error class it exists to
+# fix, so the row is corrected rather than ingested or dropped.
+# {club: (city, state, country, why)}
+CSV_OVERRIDE = {
     "Trouville": (
-        "CSV says Trouville, France, but this is Club Trouville of Montevideo: "
-        "the only player with the stint is Esteban Batista, a Uruguayan whose "
-        "stops either side of it are Club Nacional de Football and Club "
-        "Atlético Welcome, both Montevideo. Same class of error as "
-        "Ginebra/Geneva. Left unlocated rather than guessed at"
+        "Montevideo", "", "Uruguay",
+        "CSV said Trouville, France. This is Club Trouville of Montevideo: the "
+        "only player with the stint is Esteban Batista, a Uruguayan whose stops "
+        "either side are Club Nacional de Football and Club Atlético Welcome, "
+        "both Montevideo. Same class of error as Ginebra/Geneva"
     ),
 }
 
@@ -100,9 +103,9 @@ def read_plan(csv_path: Path, locations: dict, tn: TeamNormalizer) -> tuple[dict
             if have and have.get("city") and have.get("country"):
                 skipped[club] = (have.get("city"), have.get("country"))
                 continue
-            if club in HOLD:
-                continue
-            place = (city, (row.get("state") or "").strip(), country)
+            over = CSV_OVERRIDE.get(club)
+            place = ((over[0], over[1], over[2]) if over
+                     else (city, (row.get("state") or "").strip(), country))
             if club in plan and plan[club] != place:
                 raise SystemExit(f"CSV disagrees with itself about {club!r}: "
                                  f"{plan[club]} vs {place}")
@@ -124,10 +127,10 @@ def main() -> None:
     ready = json.loads(READY.read_text(encoding="utf-8"))
 
     plan, skipped = read_plan(Path(args.csv), locations, tn)
-    if HOLD:
-        print("held back (supplied place looks wrong; left for review):")
-        for club, why in sorted(HOLD.items()):
-            print(f"  {club}: {why}")
+    if CSV_OVERRIDE:
+        print("corrected against the CSV:")
+        for club, (city, _st, country, why) in sorted(CSV_OVERRIDE.items()):
+            print(f"  {club} -> {city}, {country}: {why}")
         print()
     coords, fallback = _js_object("COORDS"), _js_object("FALLBACK")
 
@@ -174,14 +177,6 @@ def main() -> None:
                     stamped += 1
 
     cleared = sum(1 for club in plan if review.pop(club, None) is not None)
-    # A held-back club stays in review, but with the reason recorded so the
-    # next person does not have to re-derive it.
-    for club, why in HOLD.items():
-        if club in locations and locations[club].get("city"):
-            continue
-        entry = review.get(club) or {"team": club, "city": "", "country": ""}
-        entry["reason"] = why
-        review[club] = entry
 
     LOCATIONS.write_text(json.dumps(dict(sorted(locations.items())),
                                     ensure_ascii=False, indent=2) + "\n",
