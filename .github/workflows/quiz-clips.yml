@@ -1,0 +1,75 @@
+name: Build guess-the-player clips
+
+# Manual only. Clips are for hand-posting, so they are never committed: the run
+# uploads out/clips as a downloadable artifact and the repo stays clean.
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many clips (25-50 is a sensible batch)"
+        type: string
+        default: "25"
+      offset:
+        description: "Skip this many from the top of the ranking, to get a different batch next time"
+        type: string
+        default: "0"
+      players:
+        description: "Optional: specific players, comma-separated. Overrides count/offset."
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  clips:
+    runs-on: ubuntu-latest
+    # ~16s a clip plus the portrait fetches; 50 clips sits well inside this.
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        # imageio-ffmpeg ships a static ffmpeg, so the clip build does not
+        # depend on what this runner image happens to include.
+        run: pip install Pillow imageio-ffmpeg
+
+      - name: Build clips
+        run: |
+          if [ -n "${{ inputs.players }}" ]; then
+            ARGS=""
+            IFS=',' read -ra NAMES <<< "${{ inputs.players }}"
+            for n in "${NAMES[@]}"; do
+              ARGS="$ARGS --player \"$(echo "$n" | sed 's/^ *//;s/ *$//')\""
+            done
+            eval python3 scripts/quiz_clips.py $ARGS
+          else
+            python3 scripts/quiz_clips.py \
+              --count "${{ inputs.count }}" --offset "${{ inputs.offset }}"
+          fi
+
+      - name: Summarise
+        run: |
+          echo "### Clips built" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| file | MB |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          for f in out/clips/*.mp4; do
+            printf "| %s | %.2f |\n" "$(basename "$f")" \
+              "$(echo "scale=2; $(stat -c%s "$f")/1048576" | bc)" \
+              >> $GITHUB_STEP_SUMMARY
+          done
+          echo "" >> $GITHUB_STEP_SUMMARY
+          du -sh out/clips >> $GITHUB_STEP_SUMMARY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: quiz-clips
+          path: out/clips/*.mp4
+          # Long enough to grab them at leisure, short enough not to pile up.
+          retention-days: 14
+          if-no-files-found: error

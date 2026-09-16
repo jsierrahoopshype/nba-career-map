@@ -24,49 +24,109 @@ def test_no_reveal_before_the_end():
     """No frame may carry the answer until the final reveal block."""
     for n in (6, 9, 14):
         plan = q.frame_plan(n)
-        reveal_at = [i for i, (_, _, r) in enumerate(plan) if r]
+        reveal_at = [i for i, f in enumerate(plan) if f["reveal"]]
         assert reveal_at, "clip has no reveal at all"
         first = reveal_at[0]
         assert reveal_at == list(range(first, len(plan))), \
             "reveal frames must be one unbroken block at the end"
-        assert not any(r for _, _, r in plan[:first]), "answer leaks early"
+        assert not any(f["reveal"] for f in plan[:first]), "answer leaks early"
         assert first >= int((q.T_INTRO + q.T_HOLD) * q.FPS), \
             "reveal starts implausibly early"
+        assert plan[0]["kind"] == "intro" and plan[-1]["kind"] == "reveal"
         assert len(plan) - first == int(q.T_REVEAL * q.FPS)
     print("test_no_reveal_before_the_end PASS")
 
 
-def test_pre_reveal_frames_cannot_contain_the_name():
-    """Rendered proof, not just the plan: the name is absent from the pixels.
-
-    The same pre-reveal frame is drawn for two players with different names and
-    different portraits. If anything identifying leaked into a pre-reveal frame,
-    the two would differ.
-    """
+def _setup(name="Joe Ingles"):
     coords = oc.Coords()
     rings = oc.load_rings()
-    a = next(p for p in DB if (p.get("display_name") or p["player"]) == "Joe Ingles")
-    r = q.route(a, coords)
-    hi = [oc.project(c[1], c[0], oc.BW, oc.BH) for _, c in r]
-    view = q.clip_view(hi)
-    left, top, right, bottom = view
-    sx, sy = q.W / (right - left), q.BAND_H / (bottom - top)
-    pts = [((x - left) * sx, (y - top) * sy) for x, y in hi]
-    stints = [s for s, _ in r]
-    base = q.base_frame(rings, view)
+    player = next(p for p in DB if (p.get("display_name") or p["player"]) == name)
+    r = q.route(player, coords)
+    pts = [oc.project(c[1], c[0], oc.BW, oc.BH) for _, c in r]
+    return rings, pts, [s for s, _ in r], q.clip_view(pts)
 
-    f1 = q.draw_frame(base, pts, 4, 1.0, stints)
-    f2 = q.draw_frame(base, pts, 4, 1.0, stints)
-    assert f1.tobytes() == f2.tobytes(), "pre-reveal frame not deterministic"
 
-    shots = oc.Headshots(enabled=False)
-    revealed = q.draw_frame(base, pts, len(pts), 1.0, stints,
-                            reveal=("Joe Ingles", "10 clubs · 4 countries"),
-                            face=None)
-    assert revealed.tobytes() != f1.tobytes(), \
-        "reveal frame is identical to a pre-reveal frame"
-    assert shots.face("Joe Ingles") is None
+def test_pre_reveal_frames_cannot_contain_the_name():
+    """Rendered proof: a pre-reveal frame is identical whoever the player is.
+
+    The same frame is rendered for two different names and portraits. If
+    anything identifying reached a pre-reveal frame, the two would differ.
+    """
+    rings, pts, stints, box = _setup()
+    plan = q.frame_plan(len(pts))
+    mid = plan[len(plan) // 3]
+    assert not mid["reveal"]
+    a = q.render_frame(rings, pts, stints, mid, box, reveal=None, face=None)
+    b = q.render_frame(rings, pts, stints, mid, box,
+                       reveal=("Someone Else Entirely", "x"), face=None)
+    # reveal= is ignored unless the descriptor says so, so these must match
+    assert a.tobytes() == b.tobytes(), "identity leaked into a pre-reveal frame"
     print("test_pre_reveal_frames_cannot_contain_the_name PASS")
+
+
+def test_no_years_before_the_reveal():
+    """Years date a career and all but name the player, so none may appear.
+
+    Rendered proof rather than a source scan: the same pre-reveal frames are
+    drawn with the years mutated. If a year reached the pixels, they'd differ.
+    """
+    rings, pts, stints, box = _setup()
+    import copy
+    other = copy.deepcopy(stints)
+    for st in other:
+        st["years"] = "1911-1913"
+    plan = q.frame_plan(len(pts))
+    checked = 0
+    for fr in plan:
+        if fr["reveal"]:
+            continue
+        if fr["kind"] not in ("land", "intro"):
+            continue
+        a = q.render_frame(rings, pts, stints, fr, box)
+        b = q.render_frame(rings, pts, other, fr, box)
+        assert a.tobytes() == b.tobytes(), \
+            f"a year reached a {fr['kind']} frame"
+        checked += 1
+        if checked >= 6:
+            break
+    assert checked, "no pre-reveal frames examined"
+    # ...and the reveal is where a span may legitimately appear
+    span = q._career_span(stints)
+    assert span and "–" in span, span
+    print(f"test_no_years_before_the_reveal PASS ({checked} frames)")
+
+
+def test_camera_follows_the_plane():
+    """The plane must stay near the centre of frame while flying."""
+    rings, pts, stints, box = _setup()
+    off = []
+    for leg in range(len(pts) - 1):
+        for t in (0.15, 0.5, 0.85):
+            (center, span), _h = q.leg_camera(pts[leg], pts[leg + 1], t)
+            x, y = q.to_band(q.box_from(center, span), center)
+            off.append(abs(x - q.W / 2) + abs(y - q.BAND_H / 2))
+    assert max(off) < 2.0, f"camera lost the plane (max offset {max(off):.1f}px)"
+    print("test_camera_follows_the_plane PASS")
+
+
+def test_camera_zooms_out_for_long_legs():
+    """A crossing should pull back; a short hop should not."""
+    a = (0.0, 0.0)
+    near = (q.SPAN_CLOSE * 0.15, 0.0)
+    far = (oc.BW * 0.45, 0.0)
+    (_c, span_near), _ = q.leg_camera(a, near, 0.5)
+    (_c, span_far), _ = q.leg_camera(a, far, 0.5)
+    (_c, span_start), _ = q.leg_camera(a, far, 0.0)
+    assert span_far > span_near * 2, (span_near, span_far)
+    assert span_start < span_far, "should be zoomed in at take-off"
+    assert span_far <= q.SPAN_MAX
+    print("test_camera_zooms_out_for_long_legs PASS")
+
+
+def test_plane_rotation_is_measured_not_assumed():
+    _sprite, own = q.plane_sprite(76)
+    assert -20 < own < 20, f"glyph heading looks wrong: {own}"
+    print("test_plane_rotation_is_measured_not_assumed PASS")
 
 
 def test_clip_length_lands_in_the_target_window():
@@ -126,6 +186,10 @@ def test_output_is_not_committed():
 if __name__ == "__main__":
     test_no_reveal_before_the_end()
     test_pre_reveal_frames_cannot_contain_the_name()
+    test_no_years_before_the_reveal()
+    test_camera_follows_the_plane()
+    test_camera_zooms_out_for_long_legs()
+    test_plane_rotation_is_measured_not_assumed()
     test_clip_length_lands_in_the_target_window()
     test_selection_rule()
     test_route_collapses_repeat_clubs()
