@@ -329,7 +329,7 @@ def test_every_photo_source_fills_the_panel_the_same():
     # against the frame; an opaque photo has no margin of its own to give, so
     # it fills edge to edge. That is the whole of the allowed difference, and
     # it is derived from the constant rather than guessed at.
-    inset = 1.0 / (1.0 + 2 * q.PORTRAIT_PAD)
+    inset = 1.0 / (1.0 + 2 * oc.PORTRAIT_PAD)
     boxes = {}
     for label, src in (("cut-out", cut), ("photo", photo)):
         x0, y0, x1, y1 = subject_box(q._portrait(src, SIZE))

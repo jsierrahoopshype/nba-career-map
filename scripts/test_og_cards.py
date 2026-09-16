@@ -203,7 +203,54 @@ def test_generated_page_carries_its_card():
     print("test_generated_page_carries_its_card PASS")
 
 
+def test_portrait_fills_its_circle():
+    """The card's portrait must fit the SUBJECT, not the image it came in.
+
+    An official NBA "face" crop is a 256x256 PNG whose cut-out subject occupies
+    about 111x152 of it. Scaling the whole image into a 112px circle put a
+    ~48px head in it; cover-cropping to the content box fills it.
+    """
+    from PIL import Image
+
+    SUBJECT = (210, 120, 60)
+    cut = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+    cut.paste(SUBJECT + (255,), (71, 52, 71 + 111, 52 + 152))
+
+    got = oc.cover_square(cut, 112)
+    assert got.size == (112, 112)
+    px = got.load()
+    hits = [(x, y) for y in range(112) for x in range(112)
+            if px[x, y][3] > 0]
+    xs = [x for x, _ in hits]
+    span = max(xs) - min(xs) + 1
+    inset = 1.0 / (1.0 + 2 * oc.PORTRAIT_PAD)
+    assert span >= 112 * inset * 0.97, f"subject spans {span}px of 112"
+    assert min(y for _, y in hits) > 0, "the crop cut into the top of the head"
+    print(f"test_portrait_fills_its_circle PASS ({span}px of 112)")
+
+
+def test_card_version_is_in_the_signature():
+    """A change to how a card is DRAWN moves no input.
+
+    Without a version in the hash the incremental short-circuit would skip
+    every card and the redesign would never reach disk -- which is exactly how
+    a renderer change goes out looking like a no-op.
+    """
+    p = {"player": "A B", "status": "nba_active", "career_history": []}
+    before = oc.card_signature(p, "x.png")
+    real = oc.CARD_VERSION
+    try:
+        oc.CARD_VERSION = real + 1
+        after = oc.card_signature(p, "x.png")
+    finally:
+        oc.CARD_VERSION = real
+    assert before != after, "CARD_VERSION does not reach the signature"
+    print("test_card_version_is_in_the_signature PASS")
+
+
 if __name__ == "__main__":
+    test_portrait_fills_its_circle()
+    test_card_version_is_in_the_signature()
     test_selection_rule()
     test_selection_matches_the_agreed_scope()
     test_every_stop_stays_on_the_visible_map()

@@ -704,33 +704,12 @@ def draw_caption(im, *, landed, total, club, place, thinking=False, left=None):
                anchor="lm")
 
 
-PORTRAIT_PAD = 0.08    # breathing room around the subject, as a share of it
-HEAD_BIAS = 0.08       # where in the vertical overflow the square crop starts
-
-
-def _content_box(im):
-    """The part of the image that actually has something in it.
-
-    An official NBA "face" crop is a 256x256 PNG whose cut-out subject occupies
-    about 111x152 of it -- 43% of the width -- and the rest is transparent
-    padding. A Commons photo is a JPEG that is opaque edge to edge. Cover-crop
-    both to their image bounds and the first fills the panel with mostly
-    nothing while the second fills it completely, which is exactly the
-    difference that showed up between Gallinari and Kirilenko.
-    """
-    box = im.getchannel("A").getbbox() if im.mode == "RGBA" else None
-    if box is None:
-        box = im.getbbox()
-    return box or (0, 0, im.width, im.height)
-
-
 def _portrait(face, size: int):
     """The portrait square: a real photo when there is one, else a mark.
 
-    Every source fills the panel the same way: crop to what is actually in the
-    image, cover-crop that to the square rather than fitting it inside, and
-    take the vertical crop from near the top so a tall subject loses its feet
-    rather than the top of its head.
+    The fitting itself lives in og_cards.cover_square, which the site's own
+    cards use too -- one rule for what "fills the frame" means, rather than two
+    that drift.
     """
     # A subtle lit tile rather than flat card colour. Only visible where the
     # image is transparent, which is exactly the case that used to read as a
@@ -747,22 +726,8 @@ def _portrait(face, size: int):
         br = size * 0.42
         d.ellipse([hx - br, size * 0.58, hx + br, size * 1.45], fill=MAP_COAST)
         return base
-
-    x0, y0, x1, y1 = _content_box(face)
-    pad = int(min(x1 - x0, y1 - y0) * PORTRAIT_PAD)
-    box = (max(0, x0 - pad), max(0, y0 - pad),
-           min(face.width, x1 + pad), min(face.height, y1 + pad))
-    face = face.crop(box)
-
-    fw, fh = face.size
-    k = size / max(1, min(fw, fh))
-    face = face.resize((max(size, round(fw * k)), max(size, round(fh * k))),
-                       Image.LANCZOS)
-    fw, fh = face.size
-    left = int(round((fw - size) / 2))
-    top = int(round((fh - size) * HEAD_BIAS))
-    face = face.crop((left, top, left + size, top + size))
-    base.paste(face, (0, 0), face if face.mode == "RGBA" else None)
+    cut = oc.cover_square(face, size)
+    base.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
     return base
 
 
