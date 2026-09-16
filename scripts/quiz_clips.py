@@ -704,30 +704,65 @@ def draw_caption(im, *, landed, total, club, place, thinking=False, left=None):
                anchor="lm")
 
 
-def _portrait(face, size: int):
-    """The portrait square: a real headshot when there is one, else a mark.
+PORTRAIT_PAD = 0.08    # breathing room around the subject, as a share of it
+HEAD_BIAS = 0.08       # where in the vertical overflow the square crop starts
 
-    Headshots arrive as RGBA with a transparent background, so they are
-    composited onto the card colour -- a plain convert("RGB") would flatten
-    the alpha onto black and leave a hole in the layout. Aspect is kept by
-    cover-cropping rather than squashing the face into a square.
+
+def _content_box(im):
+    """The part of the image that actually has something in it.
+
+    An official NBA "face" crop is a 256x256 PNG whose cut-out subject occupies
+    about 111x152 of it -- 43% of the width -- and the rest is transparent
+    padding. A Commons photo is a JPEG that is opaque edge to edge. Cover-crop
+    both to their image bounds and the first fills the panel with mostly
+    nothing while the second fills it completely, which is exactly the
+    difference that showed up between Gallinari and Kirilenko.
     """
-    base = Image.new("RGB", (size, size), CARD)
+    box = im.getchannel("A").getbbox() if im.mode == "RGBA" else None
+    if box is None:
+        box = im.getbbox()
+    return box or (0, 0, im.width, im.height)
+
+
+def _portrait(face, size: int):
+    """The portrait square: a real photo when there is one, else a mark.
+
+    Every source fills the panel the same way: crop to what is actually in the
+    image, cover-crop that to the square rather than fitting it inside, and
+    take the vertical crop from near the top so a tall subject loses its feet
+    rather than the top of its head.
+    """
+    # A subtle lit tile rather than flat card colour. Only visible where the
+    # image is transparent, which is exactly the case that used to read as a
+    # hole: an NBA cut-out has no background of its own, so next to an opaque
+    # Commons photo its corners looked like missing image rather than a tile.
+    base = _gradient((size, size), CARD_EDGE, CARD)
     if face is None:
+        # Drawn to the same weight a photo lands at, so the three sources read
+        # as one treatment rather than one of them looking undersized.
         d = ImageDraw.Draw(base)
-        hr = size * 0.20
-        hx, hy = size / 2, size * 0.36
+        hr = size * 0.235
+        hx, hy = size / 2, size * 0.30
         d.ellipse([hx - hr, hy - hr, hx + hr, hy + hr], fill=MAP_COAST)
-        br = size * 0.34
-        d.ellipse([hx - br, size * 0.62, hx + br, size * 1.35], fill=MAP_COAST)
+        br = size * 0.42
+        d.ellipse([hx - br, size * 0.58, hx + br, size * 1.45], fill=MAP_COAST)
         return base
+
+    x0, y0, x1, y1 = _content_box(face)
+    pad = int(min(x1 - x0, y1 - y0) * PORTRAIT_PAD)
+    box = (max(0, x0 - pad), max(0, y0 - pad),
+           min(face.width, x1 + pad), min(face.height, y1 + pad))
+    face = face.crop(box)
+
     fw, fh = face.size
-    k = size / min(fw, fh)
-    face = face.resize((max(1, round(fw * k)), max(1, round(fh * k))),
+    k = size / max(1, min(fw, fh))
+    face = face.resize((max(size, round(fw * k)), max(size, round(fh * k))),
                        Image.LANCZOS)
-    left = (face.size[0] - size) // 2
-    face = face.crop((left, 0, left + size, size))
-    base.paste(face, (0, 0), face)
+    fw, fh = face.size
+    left = int(round((fw - size) / 2))
+    top = int(round((fh - size) * HEAD_BIAS))
+    face = face.crop((left, top, left + size, top + size))
+    base.paste(face, (0, 0), face if face.mode == "RGBA" else None)
     return base
 
 
