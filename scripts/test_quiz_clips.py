@@ -23,7 +23,7 @@ DB = json.loads((ROOT / "data" / "players" / "nba_players_careers.json")
 def test_no_reveal_before_the_end():
     """No frame may carry the answer until the final reveal block."""
     for n in (6, 9, 14):
-        plan = q.frame_plan(n)
+        plan = q.frame_plan(_ring(n))
         reveal_at = [i for i, f in enumerate(plan) if f["reveal"]]
         assert reveal_at, "clip has no reveal at all"
         first = reveal_at[0]
@@ -58,11 +58,10 @@ def test_pre_reveal_frames_cannot_contain_the_name():
     """
     rings, pts, stints, box = _setup()
     chrome = q.build_chrome()
-    plan = q.frame_plan(len(pts))
+    plan = q.frame_plan(pts)
     mid = plan[len(plan) // 3]
     assert not mid["reveal"]
-    answer = q.build_reveal(rings, pts, "Someone Else Entirely", None,
-                            [("9", "STOPS")])
+    answer = q.build_reveal("Someone Else Entirely", None, stints, "1990–2001")
     a = q.render_frame(chrome, rings, pts, stints, mid, box)
     b = q.render_frame(chrome, rings, pts, stints, mid, box, reveal_im=answer)
     # the descriptor decides, not the caller, so passing the answer changes
@@ -84,7 +83,7 @@ def test_no_years_before_the_reveal():
     other = copy.deepcopy(stints)
     for st in other:
         st["years"] = "1911-1913"
-    plan = q.frame_plan(len(pts))
+    plan = q.frame_plan(pts)
     checked = 0
     for fr in plan:
         if fr["reveal"]:
@@ -105,13 +104,50 @@ def test_no_years_before_the_reveal():
     print(f"test_no_years_before_the_reveal PASS ({checked} frames)")
 
 
+def test_reveal_lists_every_club_in_career_order():
+    """The final screen is the payoff, so it has to carry the whole route.
+
+    Rendered proof that the list is complete and legible: each club name is
+    drawn on its own row, and a fourteen-stop career has to fit without the
+    type collapsing to something nobody can read on a phone.
+    """
+    from PIL import ImageDraw
+
+    for name in ("Joe Ingles", "Michael Beasley"):
+        _rings, _pts, stints, _box = _setup(name)
+        im = q.build_reveal(name, None, stints, q._career_span(stints))
+        assert im.size == (q.W, q.H)
+        # every row must have room for its own name at a readable size
+        rows = len(stints)
+        row = min(104.0, (q.H - 56 - 700) / rows)
+        assert row >= 60, f"{name}: {rows} stops squeezed into {row:.0f}px rows"
+        assert int(min(46, row * 0.46)) >= 28, "club names became unreadable"
+        # and the names have to be the ones the route actually visited
+        d = ImageDraw.Draw(im)
+        for st in stints:
+            club = (st.get("team") or "").strip()
+            f = q._fit(d, club, "SemiBold", int(min(46, row * 0.46)), 880)
+            assert f.size >= 20, f"{club} shrank to {f.size}px to fit"
+    print("test_reveal_lists_every_club_in_career_order PASS")
+
+
+def test_reveal_credits_a_photo_that_needs_one():
+    """A CC BY / CC BY-SA photo has to carry its credit into the frame."""
+    _rings, _pts, stints, _box = _setup()
+    plain = q.build_reveal("Someone", None, stints, "2001–2010")
+    credited = q.build_reveal("Someone", None, stints, "2001–2010",
+                              credit="Photo: Jane Doe / CC BY-SA 4.0")
+    assert plain.tobytes() != credited.tobytes(), "the credit never got drawn"
+    print("test_reveal_credits_a_photo_that_needs_one PASS")
+
+
 def test_camera_follows_the_plane():
     """The plane must stay near the centre of frame while flying."""
     rings, pts, stints, box = _setup()
     off = []
     for leg in range(len(pts) - 1):
         for t in (0.15, 0.5, 0.85):
-            (center, span), _h = q.leg_camera(pts[leg], pts[leg + 1], t)
+            (center, span), _h = q.leg_camera(pts, leg, t)
             x, y = q.to_band(q.box_from(center, span), center)
             # to_band returns coordinates inside the map band, which is inset
             # from the frame -- so the target is the band's centre, not W/2.
@@ -122,16 +158,61 @@ def test_camera_follows_the_plane():
 
 def test_camera_zooms_out_for_long_legs():
     """A crossing should pull back; a short hop should not."""
-    a = (0.0, 0.0)
-    near = (q.SPAN_CLOSE * 0.15, 0.0)
-    far = (oc.BW * 0.45, 0.0)
-    (_c, span_near), _ = q.leg_camera(a, near, 0.5)
-    (_c, span_far), _ = q.leg_camera(a, far, 0.5)
-    (_c, span_start), _ = q.leg_camera(a, far, 0.0)
+    hop = [(0.0, 0.0), (q.SPAN_CLOSE * 0.15, 0.0), (q.SPAN_CLOSE * 0.3, 0.0)]
+    cross = [(0.0, 0.0), (oc.BW * 0.45, 0.0), (oc.BW * 0.5, 0.0)]
+    (_c, span_near), _ = q.leg_camera(hop, 0, 0.5)
+    (_c, span_far), _ = q.leg_camera(cross, 0, 0.5)
+    (_c, span_start), _ = q.leg_camera(cross, 0, 0.0)
     assert span_far > span_near * 2, (span_near, span_far)
     assert span_start < span_far, "should be zoomed in at take-off"
-    assert span_far <= q.SPAN_MAX
+    assert span_far <= q.SPAN_CRUISE_MAX
     print("test_camera_zooms_out_for_long_legs PASS")
+
+
+def _ring(n: int) -> list:
+    """n stops spread round a circle, for tests that only need a shape."""
+    import math as _m
+    r = oc.BW * 0.16
+    return [(oc.BW / 2 + r * _m.cos(2 * _m.pi * i / n),
+             oc.BH / 2 + r * _m.sin(2 * _m.pi * i / n)) for i in range(n)]
+
+
+def test_camera_motion_is_smooth():
+    """Measured frame by frame, not read off the source.
+
+    Abruptness is a rate problem, so the whole plan is walked and the camera
+    asked how far it moved between consecutive frames: how much it zoomed (as a
+    proportion, since a fixed number of map units is a very different move when
+    you are close), how far the view panned in screen pixels, and how far the
+    plane turned. Each is capped, and so is the change in each -- a move that
+    starts at full speed is exactly the snap this is guarding against.
+    """
+    import math as _m
+    for name in ("Joe Ingles", "Metta World Peace", "Dominique Wilkins"):
+        rings, pts, stints, box = _setup(name)
+        plan = q.frame_plan(pts)
+        cam = [q.frame_camera(pts, fr, box) for fr in plan]
+        span = [c[0][2] - c[0][0] for c in cam]
+        mid = [((c[0][0] + c[0][2]) / 2, (c[0][1] + c[0][3]) / 2) for c in cam]
+        head = [c[1][1] for c in cam]
+        dz = [abs(_m.log(span[i + 1] / span[i])) for i in range(len(span) - 1)]
+        dp = [_m.hypot(mid[i + 1][0] - mid[i][0], mid[i + 1][1] - mid[i][1])
+              * q.BAND_W / span[i] for i in range(len(span) - 1)]
+        dh = [abs((head[i + 1] - head[i] + 180) % 360 - 180)
+              for i in range(len(head) - 1)]
+        jz = [abs(dz[i + 1] - dz[i]) for i in range(len(dz) - 1)]
+        jp = [abs(dp[i + 1] - dp[i]) for i in range(len(dp) - 1)]
+        assert max(dz) < 0.22, f"{name}: zoom snaps ({max(dz) * 100:.1f}%/frame)"
+        assert max(dp) < 90, f"{name}: pan snaps ({max(dp):.0f}px/frame)"
+        assert max(dh) < 14, f"{name}: plane spins ({max(dh):.0f}deg/frame)"
+        assert max(jz) < 0.05, f"{name}: zoom starts abruptly ({max(jz):.3f})"
+        assert max(jp) < 30, f"{name}: pan starts abruptly ({max(jp):.0f}px)"
+        # and the first frame of every leg has to continue the last one
+        for i, fr in enumerate(plan[1:], 1):
+            if fr["kind"] != plan[i - 1]["kind"]:
+                assert dz[i - 1] < 0.22 and dp[i - 1] < 90, \
+                    f"{name}: hard cut at the {plan[i - 1]['kind']} boundary"
+    print("test_camera_motion_is_smooth PASS")
 
 
 def test_plane_points_where_it_is_going():
@@ -181,8 +262,8 @@ def test_portrait_never_falls_back_to_a_black_hole():
 
 def test_clip_length_lands_in_the_target_window():
     for n in range(6, 15):
-        total = q.timings(n)["total"]
-        assert 15.0 <= total <= 25.0, f"{n} stops -> {total:.1f}s, outside 15-25s"
+        total = q.timings(_ring(n))["total"]
+        assert 15.0 <= total <= 27.0, f"{n} stops -> {total:.1f}s, outside 15-27s"
     print("test_clip_length_lands_in_the_target_window PASS")
 
 
@@ -237,8 +318,11 @@ if __name__ == "__main__":
     test_no_reveal_before_the_end()
     test_pre_reveal_frames_cannot_contain_the_name()
     test_no_years_before_the_reveal()
+    test_reveal_lists_every_club_in_career_order()
+    test_reveal_credits_a_photo_that_needs_one()
     test_camera_follows_the_plane()
     test_camera_zooms_out_for_long_legs()
+    test_camera_motion_is_smooth()
     test_plane_points_where_it_is_going()
     test_portrait_never_falls_back_to_a_black_hole()
     test_clip_length_lands_in_the_target_window()

@@ -1,0 +1,77 @@
+name: Find freely licensed player photos
+
+# Manual. Walks the clip candidates who have no official NBA headshot, looks
+# for the lead image of their English Wikipedia article, and keeps it only if
+# the file is hosted on Commons (which does not accept non-free content) AND
+# its machine-readable licence is on a default-deny allowlist.
+#
+# The photos and the manifest are committed so that clip rendering is offline,
+# reproducible and does not hit Commons once per batch.
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Only look at this many players (0 = everyone who needs one)"
+        type: string
+        default: "0"
+      allow_restricted:
+        description: "Keep files flagged with trademark/personality restrictions"
+        type: boolean
+        default: false
+      redownload:
+        description: "Re-fetch photos that are already cached"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install Pillow
+
+      - name: Look for photos
+        run: |
+          ARGS="--limit ${{ inputs.limit }}"
+          if [ "${{ inputs.allow_restricted }}" = "true" ]; then
+            ARGS="$ARGS --allow-restricted"
+          fi
+          if [ "${{ inputs.redownload }}" = "true" ]; then
+            ARGS="$ARGS --redownload"
+          fi
+          python3 scripts/commons_photos.py $ARGS | tee /tmp/photos.log
+
+      - name: Check the gate still holds
+        run: python3 scripts/test_commons_photos.py
+
+      - name: Summarise
+        run: |
+          echo '### Commons photo search' >> $GITHUB_STEP_SUMMARY
+          echo '' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat /tmp/photos.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/commons_photos.json assets/photos
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            n=$(python3 -c "import json;print(len(json.load(open('data/commons_photos.json'))['players']))")
+            git commit -m "Cache $n freely licensed player photos from Wikimedia Commons"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
