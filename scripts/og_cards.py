@@ -74,6 +74,12 @@ WORLD_GEOJSON = ("https://raw.githubusercontent.com/johan/world.geo.json/"
                  "master/countries.geo.json")
 HEADSHOT_INDEX = ("https://raw.githubusercontent.com/jsierrahoopshype/"
                   "nba-headshots/main/players/metadata/players.json")
+# The same repo also ships players_all.json: the current roster PLUS retired and
+# historical players, 1,788 face crops against players.json's 572. The site's
+# cards keep the current-roster index they have always used; callers that want
+# the wider net ask for it (see Headshots(index_url=...)).
+HEADSHOT_INDEX_ALL = ("https://raw.githubusercontent.com/jsierrahoopshype/"
+                      "nba-headshots/main/players/metadata/players_all.json")
 HEADSHOT_FACE = ("https://raw.githubusercontent.com/jsierrahoopshype/"
                  "nba-headshots/main/players/headshots/face/")
 
@@ -251,14 +257,15 @@ def _norm(name: str) -> str:
 class Headshots:
     """Lazy, failure-tolerant access to the nba-headshots repo."""
 
-    def __init__(self, enabled: bool = True):
+    def __init__(self, enabled: bool = True, index_url: str = HEADSHOT_INDEX):
         self.by_name: dict[str, str] = {}
         self.cache: dict[str, object] = {}
         self.enabled = enabled
+        self.index_url = index_url
         if not enabled:
             return
         try:
-            with urllib.request.urlopen(HEADSHOT_INDEX, timeout=60) as r:
+            with urllib.request.urlopen(self.index_url, timeout=60) as r:
                 doc = json.loads(r.read().decode("utf-8"))
             for rec in doc.get("players", []):
                 shot = rec.get("headshot") or {}
@@ -284,6 +291,48 @@ class Headshots:
             im = None
         self.cache[fn] = im
         return im
+
+
+# How a portrait is fitted into its frame. Shared with scripts/quiz_clips.py.
+PORTRAIT_PAD = 0.08    # breathing room around the subject, as a share of it
+HEAD_BIAS = 0.08       # where in the vertical overflow the square crop starts
+
+
+def content_box(im):
+    """The part of the image that actually has something in it.
+
+    An official NBA "face" crop is a 256x256 PNG whose cut-out subject occupies
+    about 111x152 of it -- 43% of the width -- and the rest is transparent
+    padding. Scaling the whole image into the frame therefore puts a small head
+    in a big circle. The bounding box of the opaque pixels is what should be
+    fitted instead.
+    """
+    box = im.getchannel("A").getbbox() if im.mode == "RGBA" else None
+    if box is None:
+        box = im.getbbox()
+    return box or (0, 0, im.width, im.height)
+
+
+def cover_square(im, size: int, *, pad: float = PORTRAIT_PAD,
+                 bias: float = HEAD_BIAS):
+    """Crop to the subject and cover-crop that to a square of `size`.
+
+    Cover, not fit: the square is filled and the overflow is cropped away. The
+    vertical crop is taken from near the top, so a tall subject loses its feet
+    rather than the top of its head.
+    """
+    x0, y0, x1, y1 = content_box(im)
+    p = int(min(x1 - x0, y1 - y0) * pad)
+    im = im.crop((max(0, x0 - p), max(0, y0 - p),
+                  min(im.width, x1 + p), min(im.height, y1 + p)))
+    fw, fh = im.size
+    k = size / max(1, min(fw, fh))
+    im = im.resize((max(size, round(fw * k)), max(size, round(fh * k))),
+                   Image.LANCZOS)
+    fw, fh = im.size
+    left = int(round((fw - size) / 2))
+    top = int(round((fh - size) * bias))
+    return im.crop((left, top, left + size, top + size))
 
 
 def _draw_silhouette(im, box):
@@ -361,12 +410,15 @@ def render_card(player: dict, rings: list, coords: Coords, shots: Headshots):
     px, py = W - portrait - 48, H - PANEL_H + (PANEL_H - portrait) // 2
     face = shots.face(player.get("display_name") or player.get("player") or "")
     if face is not None:
-        face = face.resize((portrait, portrait), Image.LANCZOS)
+        cut = cover_square(face, portrait)
+        # The same light frame the drawn silhouette sits on, so a card with a
+        # portrait and a card without read as one design. It shows only where
+        # the cut-out is transparent, which on a circular crop is the corners.
+        tile = Image.new("RGB", (portrait, portrait), (226, 228, 232))
+        tile.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
         mask = Image.new("L", (portrait, portrait), 0)
         ImageDraw.Draw(mask).ellipse([0, 0, portrait, portrait], fill=255)
-        ring = Image.new("RGBA", (portrait, portrait), (0, 0, 0, 0))
-        ring.paste(face, (0, 0), face)
-        im.paste(ring, (px, py), mask)
+        im.paste(tile, (px, py), mask)
         d.ellipse([px, py, px + portrait, py + portrait],
                   outline=(226, 228, 232), width=3)
     else:
@@ -392,14 +444,22 @@ def render_card(player: dict, rings: list, coords: Coords, shots: Headshots):
     return im
 
 
+# Bumped whenever render_card's output changes for unchanged inputs.
+# 2: portraits cover-crop to the subject instead of scaling the whole image.
+CARD_VERSION = 2
+
+
 def card_signature(player: dict, face_file: str | None) -> str:
     """Everything a card is drawn from, hashed.
 
     Anything that changes the image must appear here: the name, the route, the
-    counts, and which portrait file is used.
+    counts, and which portrait file is used -- plus CARD_VERSION, because a
+    change to how the card is DRAWN moves no input and would otherwise leave
+    every card untouched behind the incremental short-circuit.
     """
     hist = player.get("career_history", []) or []
     payload = [
+        CARD_VERSION,
         player.get("display_name") or player.get("player"),
         player.get("status"),
         face_file or "",

@@ -64,10 +64,13 @@ CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
 # the workflow uploads the folder as a downloadable artifact instead.
 OUT_DIR = ROOT / "out" / "clips"
 COMMONS_MANIFEST = ROOT / "data" / "commons_photos.json"
-# Which Commons licences a clip is allowed to use. CC BY-SA carries a
-# share-alike condition that arguably extends to a clip built around the photo;
-# drop it from this set to restrict the clips to photos with no such condition.
-CLIP_LICENSES = ("public-domain", "cc-by", "cc-by-sa")
+# Which Commons licences a clip is allowed to use. CC BY-SA is deliberately
+# NOT here: a clip built around a share-alike photo is arguably a derivative,
+# which would put the video itself under share-alike -- not a complication
+# worth taking on for a commercial publisher. The fetcher still collects and
+# records BY-SA files so the cost of that choice stays visible in the manifest;
+# this is the line that decides what actually reaches a clip.
+CLIP_LICENSES = ("public-domain", "cc-by")
 
 W, H = 1080, 1920
 FPS = 30
@@ -104,9 +107,15 @@ VIEW_PAD = 0.12
 # Timing. The ending carries most of the change: a real beat to think, then a
 # full-screen answer held long enough to read and screenshot.
 T_INTRO = 1.2
-T_THINK = 3.6          # finished route, "Who is it?", no answer
+# The thinking beat is the countdown: five seconds, one per number, and the
+# reveal fires as it hits zero. A silent hold left the viewer guessing how long
+# they had; a clock tells them, and running it at one number a second is what
+# makes it read as a countdown rather than a flicker.
+T_THINK = 5.0
+COUNTDOWN_FROM = 5
+T_PULLBACK = 2.0       # how long the camera takes to show the whole route
 T_REVEAL = 4.6         # full-screen answer
-BODY_MAX = 17.0        # all the flying, before the ending
+BODY_MAX = 16.0        # all the flying, before the ending
 PER_LEG_MIN, PER_LEG_MAX = 0.85, 2.60
 FLIGHT_SHARE = 0.66
 
@@ -639,16 +648,48 @@ def compose_map_frame(chrome, rings, box, pts, landed, flying, plane):
     return im
 
 
-def draw_caption(im, *, landed, total, club, place, thinking=False):
+def countdown_number(left: float) -> int:
+    """The number on screen with `left` seconds to run.
+
+    Ceiling, so 5 is up for the whole first second and 1 for the whole last
+    one. Zero is never drawn -- it is the reveal.
+    """
+    return max(1, min(COUNTDOWN_FROM, math.ceil(left - 1e-9)))
+
+
+def draw_countdown(im, xy, left: float, *, radius=48, width=8):
+    """A depleting ring with the number inside it."""
+    cx, cy = xy
+    d = ImageDraw.Draw(im)
+    box = [cx - radius, cy - radius, cx + radius, cy + radius]
+    d.ellipse(box, outline=CARD_EDGE, width=width)
+    frac = max(0.0, min(1.0, left / T_THINK))
+    if frac > 0:
+        # The arc is drawn into a mask and the gradient pasted through it:
+        # Pillow will not stroke an arc with anything but a flat colour.
+        size = (radius * 2 + width * 2, radius * 2 + width * 2)
+        mask = Image.new("L", size, 0)
+        ImageDraw.Draw(mask).arc(
+            [width, width, size[0] - width - 1, size[1] - width - 1],
+            start=-90, end=-90 + 360 * frac, fill=255, width=width)
+        im.paste(_gradient(size, ACCENT_A, ACCENT_B, horizontal=True),
+                 (int(cx - size[0] / 2), int(cy - size[1] / 2)), mask)
+        d = ImageDraw.Draw(im)
+    d.text((cx, cy + 2), str(countdown_number(left)), font=_font("Bold", 54),
+           fill=TEXT, anchor="mm")
+
+
+def draw_caption(im, *, landed, total, club, place, thinking=False, left=None):
     d = ImageDraw.Draw(im)
     _accent_pill(im, (MAP_X0, 92), "GUESS THE PLAYER")
     d = ImageDraw.Draw(im)
     if thinking:
-        d.text((MAP_X0, 210), "Route complete", font=_font("Medium", 34),
-               fill=MUTED)
+        if left is not None:
+            draw_countdown(im, (MAP_X1 - 52, 122), left)
+            d = ImageDraw.Draw(im)
         f = _font("Bold", 96)
-        d.text((MAP_X0 + 8, (MAP_BOTTOM + 44 + H - 60) // 2), "Who is it?",
-               font=f, fill=TEXT, anchor="lm")
+        d.text(((MAP_X0 + MAP_X1) / 2, (MAP_BOTTOM + 44 + H - 60) / 2),
+               "Who is it?", font=f, fill=TEXT, anchor="mm")
         return
     d.text((MAP_X0, 210), f"STOP {landed} OF {total}",
            font=_font("Medium", 34), fill=MUTED)
@@ -664,29 +705,29 @@ def draw_caption(im, *, landed, total, club, place, thinking=False):
 
 
 def _portrait(face, size: int):
-    """The portrait square: a real headshot when there is one, else a mark.
+    """The portrait square: a real photo when there is one, else a mark.
 
-    Headshots arrive as RGBA with a transparent background, so they are
-    composited onto the card colour -- a plain convert("RGB") would flatten
-    the alpha onto black and leave a hole in the layout. Aspect is kept by
-    cover-cropping rather than squashing the face into a square.
+    The fitting itself lives in og_cards.cover_square, which the site's own
+    cards use too -- one rule for what "fills the frame" means, rather than two
+    that drift.
     """
-    base = Image.new("RGB", (size, size), CARD)
+    # A subtle lit tile rather than flat card colour. Only visible where the
+    # image is transparent, which is exactly the case that used to read as a
+    # hole: an NBA cut-out has no background of its own, so next to an opaque
+    # Commons photo its corners looked like missing image rather than a tile.
+    base = _gradient((size, size), CARD_EDGE, CARD)
     if face is None:
+        # Drawn to the same weight a photo lands at, so the three sources read
+        # as one treatment rather than one of them looking undersized.
         d = ImageDraw.Draw(base)
-        hr = size * 0.20
-        hx, hy = size / 2, size * 0.36
+        hr = size * 0.235
+        hx, hy = size / 2, size * 0.30
         d.ellipse([hx - hr, hy - hr, hx + hr, hy + hr], fill=MAP_COAST)
-        br = size * 0.34
-        d.ellipse([hx - br, size * 0.62, hx + br, size * 1.35], fill=MAP_COAST)
+        br = size * 0.42
+        d.ellipse([hx - br, size * 0.58, hx + br, size * 1.45], fill=MAP_COAST)
         return base
-    fw, fh = face.size
-    k = size / min(fw, fh)
-    face = face.resize((max(1, round(fw * k)), max(1, round(fh * k))),
-                       Image.LANCZOS)
-    left = (face.size[0] - size) // 2
-    face = face.crop((left, 0, left + size, size))
-    base.paste(face, (0, 0), face)
+    cut = oc.cover_square(face, size)
+    base.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
     return base
 
 
@@ -780,12 +821,6 @@ def build_reveal(name, face, stints, span, *, credit=""):
     d = ImageDraw.Draw(im)
     d.rounded_rectangle([px, py, px + pt, py + pt], radius=34,
                         outline=CARD_EDGE, width=3)
-    if credit:
-        # CC BY and CC BY-SA require the credit to travel with the picture, so
-        # it is rendered into the frame rather than left to a post caption.
-        f_cr = _fit(d, credit, "Regular", 19, REVEAL_W - 60)
-        d.text((REVEAL_X0 + 30, hy1 + 22), credit, font=f_cr, fill=MUTED,
-               anchor="lt")
 
     nx = px + pt + 34
     nw = REVEAL_X1 - 34 - nx
@@ -822,7 +857,16 @@ def build_reveal(name, face, stints, span, *, credit=""):
                        horizontal=True), (rule_x, 651))
     d = ImageDraw.Draw(im)
 
-    ly0, ly1 = 700, H - 56
+    # CC BY and CC BY-SA require the credit to travel with the picture, so it
+    # is rendered into the frame rather than left to a post caption. It sits at
+    # the foot, where a photo credit belongs, and the list gives up the room
+    # rather than overlapping it.
+    foot = 40 if credit else 0
+    if credit:
+        f_cr = _fit(d, credit, "Regular", 20, REVEAL_W - 8)
+        d.text((REVEAL_X0 + 4, H - 34), credit, font=f_cr, fill=MUTED,
+               anchor="lm")
+    ly0, ly1 = 700, H - 56 - foot
     n = max(1, len(stints))
     row = min(104.0, (ly1 - ly0) / n)
     top = ly0 + max(0.0, ((ly1 - ly0) - row * n) / 2)
@@ -909,8 +953,10 @@ def frame_plan(pts: list) -> list:
                          "t": (k + 1) / n_l, "reveal": False})
     n_t = int(T_THINK * FPS)
     for k in range(n_t):
+        left = T_THINK - (k + 1) / FPS
         plan.append({"kind": "think", "landed": n_stops, "leg": None,
-                     "t": min(1.0, (k + 1) / (n_t * 0.45)), "reveal": False})
+                     "t": min(1.0, (k + 1) / (T_PULLBACK * FPS)),
+                     "left": left, "reveal": False})
     for _ in range(int(T_REVEAL * FPS)):
         plan.append({"kind": "reveal", "landed": n_stops, "leg": None,
                      "t": 1.0, "reveal": True})
@@ -966,7 +1012,8 @@ def render_frame(chrome, rings, pts, stints, fr, final_box, *, reveal_im=None):
         place = ", ".join(x for x in [(st.get("city") or "").strip(),
                                       (st.get("country") or "").strip()] if x)
     draw_caption(im, landed=min(landed, len(pts)), total=len(pts), club=club,
-                 place=place, thinking=(kind == "think"))
+                 place=place, thinking=(kind == "think"),
+                 left=fr.get("left"))
     return im
 
 
@@ -984,7 +1031,7 @@ class Photos:
     clips take the wider net.
     """
 
-    def __init__(self, shots, *, licenses: set | None = None):
+    def __init__(self, shots, *, licenses=None):
         self.shots = shots
         self.licenses = licenses or set(CLIP_LICENSES)
         self.commons = {}
@@ -1108,7 +1155,8 @@ def main() -> None:
         picks = [ranked[i * step] for i in range(k)]
 
     rings = oc.load_rings()
-    shots = Photos(oc.Headshots(enabled=True))
+    shots = Photos(oc.Headshots(enabled=True,
+                                index_url=oc.HEADSHOT_INDEX_ALL))
     out_dir = Path(args.out)
     total = 0
     for p in picks:

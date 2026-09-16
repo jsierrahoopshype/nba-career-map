@@ -110,7 +110,8 @@ def test_end_to_end_with_a_stubbed_api():
     from PIL import Image
 
     pages = {
-        "Free Player": dict(title="Free Player", pageimage="Free.jpg",
+        "Free Player": dict(title="Free Player",
+                            pageimage="Free_Player_2011.jpg",
                             categories=[{"title": "Category: "
                                          "American basketball players"}]),
         "Fairuse Player": dict(title="Fairuse Player", pageimage="Fair.jpg",
@@ -122,8 +123,10 @@ def test_end_to_end_with_a_stubbed_api():
         "No Article": dict(title="No Article", missing=True),
     }
     files = {
-        # on Commons, freely licensed
-        "File:Free.jpg": {
+        # on Commons, freely licensed. Commons echoes the title back with
+        # SPACES where pageimages used underscores -- the join has to survive
+        # that, which is exactly what silently lost 90% of the first run.
+        "File:Free Player 2011.jpg": {
             "mime": "image/jpeg", "thumburl": "https://x/free.jpg",
             "descriptionurl": "https://commons/File:Free.jpg",
             "extmetadata": {"License": {"value": "cc-by-sa-4.0"},
@@ -139,6 +142,8 @@ def test_end_to_end_with_a_stubbed_api():
     }
 
     def fake_api(endpoint, **params):
+        if params.get("list") == "search":
+            return {"query": {"search": []}}      # nothing to recover
         if endpoint == cp.WP_API:
             want = params["titles"].split("|")
             return {"query": {"pages": [pages[t] for t in want if t in pages]}}
@@ -166,10 +171,14 @@ def test_end_to_end_with_a_stubbed_api():
     assert rec["license"] == "cc-by-sa" and rec["attribution_required"]
     assert rec["attribution"] == "Jane Doe / CC BY-SA 4.0", rec["attribution"]
     rejected = " ".join(doc["rejected"])
+    assert rec["file"] == "File:Free Player 2011.jpg", rec["file"]
     assert "not on Commons" in rejected, doc["rejected"]
     assert "allowlist" in rejected, doc["rejected"]
-    # the cyclist and the missing article never even reached the licence gate
-    assert sum(doc["rejected"].values()) == 2, doc["rejected"]
+    # every player who did not get a photo is accounted for
+    assert sum(doc["rejected"].values()) == len(pages) - 1, doc["rejected"]
+    # the cyclist and the article-less name are folded into one bucket once
+    # the search pass has had its go at them
+    assert doc["rejected"].get("unresolved after search") == 2, doc["rejected"]
     print("test_end_to_end_with_a_stubbed_api PASS")
 
 

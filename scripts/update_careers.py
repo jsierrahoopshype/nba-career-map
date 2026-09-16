@@ -51,7 +51,8 @@ import split_combined_teams
 import stint_order
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import (TeamNormalizer, edit_distance,
-                             is_spelling_variant, spelling_key)
+                             is_spelling_variant, rename_containment,
+                             spelling_key, spelling_tokens)
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
 from era_correct_teams import ERA_TABLE
@@ -226,7 +227,36 @@ def _richer(a: list, b: list) -> bool:
 NEAR_MISS_DISTANCE = 2
 
 
-def classify_move(normalizer: TeamNormalizer, prev: str, new: str) -> tuple[bool, str]:
+def place_index(players: list) -> tuple[dict, dict]:
+    """Where each club plays, and which cities each country is known to have.
+
+    Both come from the careers data itself rather than a gazetteer: the second
+    is what lets the rename guard recognise "Beirut" in "Al Riyadi Club Beirut"
+    as a place rather than a word that distinguishes two clubs.
+    """
+    from collections import Counter, defaultdict
+    seen: dict = defaultdict(Counter)
+    cities: dict = defaultdict(set)
+    for p in players:
+        for st in p.get("career_history") or []:
+            team = (st.get("team") or "").strip()
+            city = (st.get("city") or "").strip()
+            country = (st.get("country") or "").strip()
+            if team and (city or country):
+                seen[team][(city, country)] += 1
+            if city and country:
+                cities[_country_key(country)].update(spelling_tokens(city))
+    club = {t: c.most_common(1)[0][0] for t, c in seen.items()}
+    return club, cities
+
+
+def _country_key(country: str) -> str:
+    return "".join(spelling_tokens(country))
+
+
+def classify_move(normalizer: TeamNormalizer, prev: str, new: str, *,
+                  club_places: dict | None = None,
+                  cities_by_country: dict | None = None) -> tuple[bool, str]:
     """Decide whether prev -> new is a transfer, and say why.
 
     Returns (is_real, reason). Reasons:
@@ -234,6 +264,11 @@ def classify_move(normalizer: TeamNormalizer, prev: str, new: str) -> tuple[bool
       "same-club"         both sides resolve to the same canonical club
       "spelling-variant"  the alias table does not know the pair, but the two
                           names are the same name spelled differently
+      "club-rename"       one side is the other with descriptive words added,
+                          which is an editor lengthening a club's name rather
+                          than a player going anywhere
+      "rename-ambiguous"  looks like a rename but is not safe to call one, so
+                          the move IS posted and a human is asked
       "near-miss"         a real move whose two clubs are suspiciously close
       "real"              a real move
 
@@ -256,6 +291,20 @@ def classify_move(normalizer: TeamNormalizer, prev: str, new: str) -> tuple[bool
         return False, "same-club"
     if is_spelling_variant(a, b):
         return False, "spelling-variant"
+    # A club that gains words is usually a club whose article was renamed, not
+    # a player who moved. Guarded hard on the other side: a reserve-side marker
+    # vetoes it outright, and two clubs in different countries that merely
+    # share a name are reported rather than merged.
+    places = club_places or {}
+    pa, pb = places.get(a, ()), places.get(b, ())
+    country = _country_key(pa[-1] if pa else (pb[-1] if pb else ""))
+    same, _why = rename_containment(
+        a, b, place_a=pa, place_b=pb,
+        known_cities=(cities_by_country or {}).get(country, frozenset()))
+    if same is True:
+        return False, "club-rename"
+    if same is None:
+        return True, "rename-ambiguous"
     if edit_distance(spelling_key(a), spelling_key(b),
                      cap=NEAR_MISS_DISTANCE) <= NEAR_MISS_DISTANCE:
         return True, "near-miss"
@@ -459,6 +508,10 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
             for team_players in rosters.values():
                 roster_players.update(team_players)
         queue = build_queue(db, mode, player, roster_players)
+        # Built once from the database as it stands: the rename guard needs to
+        # know where a club plays and which cities a country is known to have.
+        club_places, cities_by_country = place_index(
+            [db.by_name[n] for n in db.order])
         summary["queue_size"] = len(queue)
         summary["queue_completed"] = True   # cleared below if the budget cuts the run short
         discovered: dict = {}
@@ -481,14 +534,18 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
             summary["players_updated"].append(key)
             summary["new_teams"].extend(new_teams)
             new_current = rec.get("current_team")
-            is_move, why = classify_move(db.normalizer, prev_current, new_current)
+            is_move, why = classify_move(db.normalizer, prev_current,
+                                         new_current,
+                                         club_places=club_places,
+                                         cities_by_country=cities_by_country)
             if is_move:
                 summary["team_moves"].append(
                     {"player": key, "from": prev_current, "to": new_current})
             # A pair that looks like one club spelled two ways never reaches the
             # ledger, but it is not discarded either: it goes to the review file
             # so the alias table can be taught the pair. "near-miss" DID post.
-            if why in ("spelling-variant", "near-miss"):
+            if why in ("spelling-variant", "near-miss", "club-rename",
+                       "rename-ambiguous"):
                 summary["spelling_review"].append(
                     {"player": key, "from": prev_current, "to": new_current,
                      "reason": why, "posted": is_move})

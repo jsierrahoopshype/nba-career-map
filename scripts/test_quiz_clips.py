@@ -119,7 +119,7 @@ def test_reveal_lists_every_club_in_career_order():
         assert im.size == (q.W, q.H)
         # every row must have room for its own name at a readable size
         rows = len(stints)
-        row = min(104.0, (q.H - 56 - 700) / rows)
+        row = min(104.0, (q.H - 96 - 700) / rows)   # worst case: with a credit
         assert row >= 60, f"{name}: {rows} stops squeezed into {row:.0f}px rows"
         assert int(min(46, row * 0.46)) >= 28, "club names became unreadable"
         # and the names have to be the ones the route actually visited
@@ -139,6 +139,63 @@ def test_reveal_credits_a_photo_that_needs_one():
                               credit="Photo: Jane Doe / CC BY-SA 4.0")
     assert plain.tobytes() != credited.tobytes(), "the credit never got drawn"
     print("test_reveal_credits_a_photo_that_needs_one PASS")
+
+
+def test_countdown_runs_one_number_a_second_and_never_shows_zero():
+    """The beat is the clock, so the clock has to be right.
+
+    Each number holds for a second, the sequence is strictly decreasing, it
+    starts at COUNTDOWN_FROM and ends at 1 -- zero is the reveal, not a frame.
+    """
+    from itertools import groupby
+
+    plan = [f for f in q.frame_plan(_ring(9)) if f["kind"] == "think"]
+    assert plan, "no thinking beat"
+    seq = [q.countdown_number(f["left"]) for f in plan]
+    runs = [(v, len(list(g))) for v, g in groupby(seq)]
+    assert [v for v, _ in runs] == list(range(q.COUNTDOWN_FROM, 0, -1)), runs
+    for value, frames in runs:
+        assert abs(frames - q.FPS) <= 1, \
+            f"{value} is on screen for {frames} frames, not about {q.FPS}"
+    assert 0 not in seq, "zero got drawn instead of triggering the reveal"
+    # and the reveal starts on the very next frame after the last 1
+    whole = q.frame_plan(_ring(9))
+    last_think = max(i for i, f in enumerate(whole) if f["kind"] == "think")
+    assert whole[last_think + 1]["reveal"], "the countdown does not fire it"
+    print(f"test_countdown_runs_one_number_a_second_and_never_shows_zero PASS "
+          f"({runs})")
+
+
+def test_countdown_is_visible_and_changes():
+    """Rendered proof: consecutive numbers look different, and it is drawn."""
+    rings, pts, stints, box = _setup()
+    chrome = q.build_chrome()
+    plan = [f for f in q.frame_plan(pts) if f["kind"] == "think"]
+    seen = {}
+    for fr in plan:
+        n = q.countdown_number(fr["left"])
+        seen.setdefault(n, q.render_frame(chrome, rings, pts, stints, fr, box))
+    assert len(seen) == q.COUNTDOWN_FROM, sorted(seen)
+    blobs = {n: im.tobytes() for n, im in seen.items()}
+    assert len(set(blobs.values())) == len(blobs), "the number never changed"
+    print("test_countdown_is_visible_and_changes PASS")
+
+
+def test_the_prompt_is_centred_in_its_card():
+    """"Who is it?" sits in the middle of the caption card, not off to a side."""
+    from PIL import ImageDraw
+
+    im = q._gradient((q.W, q.H), q.BG_TOP, q.BG_BOT).convert("RGB")
+    q.draw_caption(im, landed=9, total=9, club="", place="", thinking=True)
+    d = ImageDraw.Draw(im)
+    x0, _y0, x1, _y1 = d.textbbox(
+        ((q.MAP_X0 + q.MAP_X1) / 2, (q.MAP_BOTTOM + 44 + q.H - 60) / 2),
+        "Who is it?", font=q._font("Bold", 96), anchor="mm")
+    card_mid = (q.MAP_X0 + q.MAP_X1) / 2
+    assert abs((x0 + x1) / 2 - card_mid) < 2, "not horizontally centred"
+    gaps = (x0 - q.MAP_X0, q.MAP_X1 - x1)
+    assert abs(gaps[0] - gaps[1]) < 4, f"uneven margins {gaps}"
+    print("test_the_prompt_is_centred_in_its_card PASS")
 
 
 def test_camera_follows_the_plane():
@@ -238,6 +295,70 @@ def test_plane_points_where_it_is_going():
     print("test_plane_points_where_it_is_going PASS")
 
 
+def test_every_photo_source_fills_the_panel_the_same():
+    """The subject has to end up the same size whatever the source was.
+
+    An official NBA "face" crop is a 256x256 PNG whose cut-out subject occupies
+    about 111x152 of it, the rest transparent; a Commons photo is an opaque
+    square. Cover-cropping to the IMAGE bounds made the first fill 43% of the
+    panel width and the second 100%, which is what showed as a small headshot
+    in a big panel. Both are measured here from the rendered panel.
+    """
+    from PIL import Image
+
+    SIZE = 252
+    SUBJECT = (210, 120, 60)
+
+    def subject_box(panel):
+        px = panel.load()
+        hits = [(x, y) for y in range(SIZE) for x in range(SIZE)
+                if abs(px[x, y][0] - SUBJECT[0]) < 40
+                and abs(px[x, y][2] - SUBJECT[2]) < 40]
+        assert hits, "the subject never got drawn"
+        xs = [x for x, _ in hits]
+        ys = [y for _, y in hits]
+        return min(xs), min(ys), max(xs), max(ys)
+
+    # a cut-out with the real NBA geometry: mostly transparent padding
+    cut = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+    cut.paste(SUBJECT + (255,), (71, 52, 71 + 111, 52 + 152))
+    # and an opaque photo that already fills its own frame
+    photo = Image.new("RGBA", (512, 512), SUBJECT + (255,))
+
+    # A cut-out is inset by PORTRAIT_PAD on each side so the head is not flush
+    # against the frame; an opaque photo has no margin of its own to give, so
+    # it fills edge to edge. That is the whole of the allowed difference, and
+    # it is derived from the constant rather than guessed at.
+    inset = 1.0 / (1.0 + 2 * oc.PORTRAIT_PAD)
+    boxes = {}
+    for label, src in (("cut-out", cut), ("photo", photo)):
+        x0, y0, x1, y1 = subject_box(q._portrait(src, SIZE))
+        boxes[label] = (x1 - x0 + 1, y1 - y0 + 1)
+        assert boxes[label][0] >= SIZE * inset * 0.97, \
+            f"{label}: subject spans {boxes[label][0]}px of {SIZE}"
+        if label == "cut-out":
+            # The head bias must leave the top of the subject in frame. An
+            # opaque photo is its own subject edge to edge, so it has no
+            # headroom to check.
+            assert y0 > 0, "the head bias cropped into the top of the subject"
+            assert y0 < SIZE * 0.12, f"too much dead space above ({y0}px)"
+    wide = max(b[0] for b in boxes.values())
+    narrow = min(b[0] for b in boxes.values())
+    assert wide - narrow <= SIZE * (1 - inset) + 2, \
+        f"sources fill differently: {boxes}"
+
+    # the drawn mark has to carry comparable weight, not sit small in the frame
+    mark = q._portrait(None, SIZE)
+    px = mark.load()
+    ink = [(x, y) for y in range(SIZE) for x in range(SIZE)
+           if px[x, y] == q.MAP_COAST]
+    assert ink, "the mark never got drawn"
+    span = max(x for x, _ in ink) - min(x for x, _ in ink) + 1
+    assert span >= SIZE * 0.7, f"the mark spans only {span}px of {SIZE}"
+    print(f"test_every_photo_source_fills_the_panel_the_same PASS "
+          f"({boxes}, mark {span}px)")
+
+
 def test_portrait_never_falls_back_to_a_black_hole():
     """Headshots are RGBA with a transparent background.
 
@@ -245,13 +366,20 @@ def test_portrait_never_falls_back_to_a_black_hole():
     card, so the compositing is checked at the corners; and a player with no
     headshot has to get the drawn mark, not an empty square.
     """
-    from PIL import Image
+    from PIL import Image, ImageDraw
 
+    # A ring, so transparent pixels survive the crop to the content box and
+    # land inside the panel where they can be inspected.
     shot = Image.new("RGBA", (200, 260), (0, 0, 0, 0))
-    shot.paste((240, 120, 40, 255), (60, 60, 140, 200))
+    ImageDraw.Draw(shot).ellipse([40, 60, 160, 180], fill=(240, 120, 40, 255))
+    ImageDraw.Draw(shot).ellipse([75, 95, 125, 145], fill=(0, 0, 0, 0))
     have = q._portrait(shot, 120)
-    for xy in ((2, 2), (117, 2), (2, 117), (117, 117)):
-        assert have.getpixel(xy) == q.CARD, f"transparent pixel went black at {xy}"
+    hole = have.getpixel((60, 60))
+    assert sum(hole) > 90, f"transparent pixel went black: {hole}"
+    lo = [min(a, b) for a, b in zip(q.CARD, q.CARD_EDGE)]
+    hi = [max(a, b) for a, b in zip(q.CARD, q.CARD_EDGE)]
+    assert all(l - 2 <= c <= h + 2 for c, l, h in zip(hole, lo, hi)), \
+        f"transparent pixel is not the tile colour: {hole}"
 
     none = q._portrait(None, 120)
     assert none.size == (120, 120)
@@ -320,10 +448,14 @@ if __name__ == "__main__":
     test_no_years_before_the_reveal()
     test_reveal_lists_every_club_in_career_order()
     test_reveal_credits_a_photo_that_needs_one()
+    test_countdown_runs_one_number_a_second_and_never_shows_zero()
+    test_countdown_is_visible_and_changes()
+    test_the_prompt_is_centred_in_its_card()
     test_camera_follows_the_plane()
     test_camera_zooms_out_for_long_legs()
     test_camera_motion_is_smooth()
     test_plane_points_where_it_is_going()
+    test_every_photo_source_fills_the_panel_the_same()
     test_portrait_never_falls_back_to_a_black_hole()
     test_clip_length_lands_in_the_target_window()
     test_selection_rule()
