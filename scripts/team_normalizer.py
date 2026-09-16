@@ -188,3 +188,128 @@ if __name__ == "__main__":
     for t in ["Tau Cerámica", "New Jersey Nets", "Seattle SuperSonics",
               "[[Charlotte Bobcats]]", "Fenerbahçe Beko", "Los Angeles Lakers"]:
         print(f"{t!r:35} -> {tn.normalize(t)!r}")
+
+
+# --- club renames: the same club, described at more length ------------------
+#
+# "Al Riyadi" -> "Al Riyadi Club Beirut" is not a transfer. One Wikipedia
+# editor expanded the club's name to its formal form and every stint scraped
+# after that carries the longer string, so the diff between two scrapes looks
+# like a move. The spelling guard cannot see it: the letters are not the same,
+# the name GAINED tokens.
+#
+# The test is containment of the TOKEN sets, never of the collapsed key. On the
+# collapsed key "aris" sits inside "marisa" and "parma" nearly inside "palma";
+# on tokens, gaining a word is gaining a word.
+
+def spelling_tokens(name: str) -> tuple:
+    """A club name as normalized words.
+
+    Each token is folded the way spelling_key folds a whole name -- diacritics,
+    case, punctuation, doubled letters -- but the word boundaries survive, so
+    "P.A.O.K." stays one token rather than becoming four.
+    """
+    out = []
+    for part in re.split(r"[\s\-/_]+", strip_diacritics(name or "").casefold()):
+        tok = re.sub(r"[^a-z0-9]+", "", part)
+        # Doubled letters are folded the way spelling_key folds them, but NOT
+        # in a token short enough to be an acronym: collapsing "KK" to "k"
+        # turns a club-type abbreviation into a stray letter that no longer
+        # matches anything.
+        if len(tok) > 3:
+            tok = re.sub(r"(.)\1+", r"\1", tok)
+        if tok:
+            out.append(tok)
+    return tuple(out)
+
+
+# Words that describe a club rather than name it. An allowlist, not a
+# denylist: an extra token that is not here (or a place, see below) means the
+# two names are not the same club as far as this guard is concerned.
+# Already doubled-letter-folded, as spelling_tokens produces them.
+GENERIC_TOKENS = frozenset({
+    # club-type words and their abbreviations
+    "club", "clube", "cf", "fc", "bc", "bbc", "kk", "sc", "sk", "cd", "cb",
+    "ca", "ac", "as", "cs", "ub", "bk", "bcm", "tj", "sd", "ce", "ad",
+    "basket", "basketbal", "baloncesto", "basquete", "basquet", "basquetbol",
+    "palacanestro", "kosarka", "kosarkaski", "korfbal", "sport", "sports",
+    "sportif", "sportiva", "sportive", "deportivo", "deportiva", "atletico",
+    "athletic", "atletica", "team", "bbal", "bal",
+    # articles and particles
+    "al", "el", "la", "le", "les", "lo", "los", "las", "de", "del", "della",
+    "di", "da", "do", "dos", "das", "der", "die", "das", "den", "the", "of",
+    "und", "et", "y", "e",
+})
+
+# Words that mark a SECOND team, not a longer name for the first one. Real
+# Madrid and Real Madrid Castilla are a first team and its reserve side; so are
+# Barcelona and Barcelona B. These veto a containment match outright, ahead of
+# every other rule, because the alternative is quietly merging a farm team into
+# its parent and losing every transfer between them.
+RESERVE_TOKENS = frozenset({
+    "b", "c", "ii", "iii", "2", "3", "two", "three",
+    "castilla", "reserve", "reserves", "reserva", "filial", "cantera",
+    "academy", "academia", "youth", "junior", "juniors", "jr", "jnr",
+    "development", "dev", "farm", "affiliate", "feeder", "segunda",
+    "u14", "u15", "u16", "u17", "u18", "u19", "u20", "u21", "u22", "u23",
+})
+
+
+def _place_tokens(place) -> set:
+    """City and country of a stint, as normalized tokens."""
+    out = set()
+    for part in place or ():
+        out.update(spelling_tokens(part))
+    return out
+
+
+def rename_containment(a: str, b: str, *, place_a=(), place_b=(),
+                       known_cities=frozenset()) -> tuple:
+    """Is `b` just `a` with descriptive words added (or the other way round)?
+
+    Returns (verdict, reason) where verdict is True (same club), False (not
+    this rule's business) or None (looks like a rename but is not safe to call
+    automatically -- send it to review).
+
+    A place token counts as a descriptor only when it is where one of these
+    two clubs actually plays. Accepting any city attested in the country was
+    tried and is far too loose: it merged Al Ahly into Al Ahly Cairo and Isuzu
+    Motors into Akita Isuzu Motors purely because Cairo and Akita are cities
+    somewhere in the same country. known_cities widens it back out for a caller
+    that has a reason to; the default is the strict reading.
+    """
+    ta, tb = set(spelling_tokens(a)), set(spelling_tokens(b))
+    if not ta or not tb or ta == tb:
+        return False, ""
+    if ta < tb:
+        extra = tb - ta
+    elif tb < ta:
+        extra = ta - tb
+    else:
+        return False, ""
+
+    if extra & RESERVE_TOKENS:
+        marker = sorted(extra & RESERVE_TOKENS)[0]
+        return False, f"reserve-side marker ({marker})"
+
+    pa, pb = _place_tokens(place_a), _place_tokens(place_b)
+    places = pa | pb | set(known_cities)
+    unknown = sorted(t for t in extra
+                     if t not in GENERIC_TOKENS and t not in places)
+    if unknown:
+        return False, f"distinguishing word ({', '.join(unknown)})"
+
+    # Different countries is the strongest evidence of two clubs that merely
+    # share a name -- Al-Nasr Benghazi and Al Nasr Dubai are not one club.
+    ca = {t for t in spelling_tokens(place_a[-1] if place_a else "")}
+    cb = {t for t in spelling_tokens(place_b[-1] if place_b else "")}
+    if ca and cb and ca != cb:
+        return None, "same name, different countries"
+    # Two clubs in the same country whose cities disagree are two clubs, even
+    # when the only extra token is an article: Palma is in Mallorca and La
+    # Palma is in the Canaries.
+    ta_city = set(spelling_tokens(place_a[0] if place_a else ""))
+    tb_city = set(spelling_tokens(place_b[0] if place_b else ""))
+    if ta_city and tb_city and ta_city != tb_city:
+        return None, "same name, different cities"
+    return True, "rename"

@@ -191,40 +191,16 @@ def plan(dbs: list, locations: dict) -> tuple[list, list]:
     return merges, held
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--apply", action="store_true", help="write the merges")
-    args = ap.parse_args()
+def apply_merges(merges: list, careers: list, ready: list,
+                 locations: dict) -> None:
+    """Write a set of merges through every file a club name appears in.
 
-    careers = json.loads(CAREERS.read_text(encoding="utf-8"))
-    ready = json.loads(READY.read_text(encoding="utf-8"))
-    locations = json.loads(LOCATIONS.read_text(encoding="utf-8"))
+    Extracted from main() so scripts/merge_club_renames.py writes its merges
+    exactly the way this one does -- alias rows, chain flattening, stints,
+    current_team, the location table, the review file and the ledger -- rather
+    than growing a second, subtly different copy.
+    """
     dbs = [careers, ready]
-
-    merges, held = plan(dbs, locations)
-
-    print(f"=== merges: {len(merges)} ===")
-    overridden = []
-    for canonical, variants in merges:
-        st, al = _usage(dbs, canonical)
-        detail = ", ".join(f"{v!r} ({_usage(dbs, v)[0]})" for v in variants)
-        flag = ""
-        if CANONICAL_OVERRIDE.get(spelling_key(canonical)) == canonical:
-            flag = "   [override: usage favoured the other spelling]"
-            overridden.append((canonical, variants))
-        print(f"  {canonical!r} ({st} stints, {al} alumni)  <-  {detail}{flag}")
-    if overridden:
-        print(f"\n  ({len(overridden)} canonical name(s) set against usage "
-              f"— see CANONICAL_OVERRIDE)")
-    print(f"\n=== held back: {len(held)} ===")
-    for members, why in held:
-        print(f"  {members}\n      {why}")
-
-    if not args.apply:
-        print("\n(report only — pass --apply to write)")
-        return
-
     alias_doc = json.loads(ALIASES.read_text(encoding="utf-8"))
     aliases = alias_doc["aliases"]
     added = removed = 0
@@ -300,6 +276,17 @@ def main() -> None:
                 t[side] = c
                 ledger_fixed += 1
 
+    # A merge can turn a ledger row into a move from a club to itself -- which
+    # is what the phantom transfer always was. Renaming both sides to the
+    # canonical makes that visible; dropping it is the point of the exercise.
+    phantoms = [t for t in txns if t.get("from_team") == t.get("to_team")]
+    if phantoms:
+        txns[:] = [t for t in txns if t.get("from_team") != t.get("to_team")]
+        ledger_fixed += len(phantoms)
+        for t in phantoms:
+            print(f"  phantom dropped: {t.get('player')}: "
+                  f"{t.get('from_team')} -> {t.get('to_team')}")
+
     CAREERS.write_text(json.dumps(careers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     READY.write_text(json.dumps(ready, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     LOCATIONS.write_text(json.dumps(dict(sorted(locations.items())),
@@ -319,8 +306,45 @@ def main() -> None:
     print(f"current_team fields renamed: {current_fixed}")
     print(f"variant location rows dropped: {loc_dropped}")
     print(f"names removed from review: {rev_dropped}")
-    print(f"ledger team names renamed: {ledger_fixed}")
+    print(f"ledger rows renamed or dropped: {ledger_fixed}")
     print(f"distinct non-NBA clubs remaining: {len(clubs)}")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--apply", action="store_true", help="write the merges")
+    args = ap.parse_args()
+
+    careers = json.loads(CAREERS.read_text(encoding="utf-8"))
+    ready = json.loads(READY.read_text(encoding="utf-8"))
+    locations = json.loads(LOCATIONS.read_text(encoding="utf-8"))
+    dbs = [careers, ready]
+
+    merges, held = plan(dbs, locations)
+
+    print(f"=== merges: {len(merges)} ===")
+    overridden = []
+    for canonical, variants in merges:
+        st, al = _usage(dbs, canonical)
+        detail = ", ".join(f"{v!r} ({_usage(dbs, v)[0]})" for v in variants)
+        flag = ""
+        if CANONICAL_OVERRIDE.get(spelling_key(canonical)) == canonical:
+            flag = "   [override: usage favoured the other spelling]"
+            overridden.append((canonical, variants))
+        print(f"  {canonical!r} ({st} stints, {al} alumni)  <-  {detail}{flag}")
+    if overridden:
+        print(f"\n  ({len(overridden)} canonical name(s) set against usage "
+              f"— see CANONICAL_OVERRIDE)")
+    print(f"\n=== held back: {len(held)} ===")
+    for members, why in held:
+        print(f"  {members}\n      {why}")
+
+    if not args.apply:
+        print("\n(report only — pass --apply to write)")
+        return
+
+    apply_merges(merges, careers, ready, locations)
 
 
 if __name__ == "__main__":
