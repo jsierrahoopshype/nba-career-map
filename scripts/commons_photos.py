@@ -132,35 +132,83 @@ def api(endpoint: str, **params) -> dict:
         return json.loads(r.read().decode("utf-8"))
 
 
-def lead_images(names: list) -> dict:
+def _title_key(title: str) -> str:
+    """MediaWiki treats underscores and spaces as the same character.
+
+    pageimages hands back a filename with underscores; Commons echoes the title
+    back with spaces. Joining the two on the raw strings silently matched only
+    the filenames that happened to contain neither.
+    """
+    return (title or "").replace("_", " ").strip()
+
+
+def _query_all(endpoint: str, **params) -> dict:
+    """One query, following continuation and merging the list props.
+
+    A batch of forty articles blows past the category limit in a single
+    response, and without following `continue` the pages at the end of the
+    batch came back with no categories at all -- so they failed the
+    is-this-a-basketball-article check for the wrong reason.
+    """
+    pages: dict = {}
+    cont: dict = {}
+    for _ in range(12):
+        doc = api(endpoint, **params, **cont)
+        q = doc.get("query", {})
+        for page in q.get("pages", []) or []:
+            key = page.get("title")
+            if key not in pages:
+                pages[key] = dict(page)
+            else:
+                for prop in ("categories", "imageinfo"):
+                    if page.get(prop):
+                        pages[key].setdefault(prop, [])
+                        pages[key][prop] += page[prop]
+        for name in ("normalized", "redirects"):
+            if q.get(name):
+                pages.setdefault("__" + name, []).extend(q[name])
+        if "continue" not in doc:
+            break
+        cont = doc["continue"]
+        time.sleep(PAUSE)
+    return pages
+
+
+def lead_images(names: list) -> tuple[dict, Counter]:
     """name -> (file title, wikipedia title), for basketball articles only."""
-    out = {}
+    out, lost = {}, Counter()
     for i in range(0, len(names), BATCH):
         chunk = names[i:i + BATCH]
-        doc = api(WP_API, action="query", redirects=1, titles="|".join(chunk),
-                  prop="pageimages|categories|pageprops",
-                  piprop="name", cllimit="500", clcategories="",
-                  ppprop="disambiguation")
-        q = doc.get("query", {})
+        pages = _query_all(WP_API, action="query", redirects=1,
+                           titles="|".join(chunk),
+                           prop="pageimages|categories|pageprops",
+                           piprop="name", cllimit="max",
+                           ppprop="disambiguation")
         back = {}
-        for n in q.get("normalized", []) or []:
+        for n in pages.pop("__normalized", []):
             back[n["to"]] = n["from"]
-        for rd in q.get("redirects", []) or []:
+        for rd in pages.pop("__redirects", []):
             back[rd["to"]] = back.get(rd["from"], rd["from"])
-        for page in q.get("pages", []) or []:
+        for page in pages.values():
             asked = back.get(page.get("title"), page.get("title"))
-            if page.get("missing") or "disambiguation" in (page.get("pageprops")
-                                                           or {}):
+            if page.get("missing"):
+                lost["no English Wikipedia article"] += 1
+                continue
+            if "disambiguation" in (page.get("pageprops") or {}):
+                lost["article is a disambiguation page"] += 1
                 continue
             cats = " ".join(c.get("title", "")
                             for c in page.get("categories", []) or [])
             if "basketball" not in cats.lower():
+                lost["article is not about basketball"] += 1
                 continue
             fn = page.get("pageimage")
-            if fn:
-                out[asked] = (f"File:{fn}", page.get("title"))
+            if not fn:
+                lost["article has no lead image"] += 1
+                continue
+            out[asked] = (f"File:{_title_key(fn)}", page.get("title"))
         time.sleep(PAUSE)
-    return out
+    return out, lost
 
 
 def commons_files(titles: list) -> dict:
@@ -168,16 +216,19 @@ def commons_files(titles: list) -> dict:
     out = {}
     for i in range(0, len(titles), BATCH):
         chunk = titles[i:i + BATCH]
-        doc = api(COMMONS_API, action="query", titles="|".join(chunk),
-                  prop="imageinfo", iiprop="extmetadata|url|mime|size",
-                  iiurlwidth=str(PHOTO_PX * 2),
-                  iiextmetadatafilter=("License|LicenseShortName|UsageTerms|"
-                                       "Artist|Credit|LicenseUrl|Restrictions|"
-                                       "AttributionRequired|Copyrighted"))
-        for page in doc.get("query", {}).get("pages", []) or []:
+        pages = _query_all(
+            COMMONS_API, action="query", titles="|".join(chunk),
+            prop="imageinfo", iiprop="extmetadata|url|mime|size",
+            iiurlwidth=str(PHOTO_PX * 2),
+            iiextmetadatafilter=("License|LicenseShortName|UsageTerms|"
+                                 "Artist|Credit|LicenseUrl|Restrictions|"
+                                 "AttributionRequired|Copyrighted"))
+        pages.pop("__normalized", None)
+        pages.pop("__redirects", None)
+        for page in pages.values():
             if page.get("missing") or not page.get("imageinfo"):
                 continue
-            out[page["title"]] = page["imageinfo"][0]
+            out[_title_key(page["title"])] = page["imageinfo"][0]
         time.sleep(PAUSE)
     return out
 
@@ -217,15 +268,17 @@ def needing_photos(db: list, coords) -> list:
 
 
 def build(names: list, *, allow_restricted: bool, redownload: bool) -> dict:
-    found = lead_images(names)
+    found, rejects = lead_images(names)
     print(f"  {len(found)}/{len(names)} have a basketball article with a lead "
           f"image")
+    for why, n in sorted(rejects.items(), key=lambda kv: -kv[1]):
+        print(f"      {n:5d}  {why}")
     info = commons_files(sorted({f for f, _ in found.values()}))
     print(f"  {len(info)}/{len(found)} of those files are hosted on Commons "
           f"(the rest are local non-free uploads)")
 
     PHOTO_DIR.mkdir(parents=True, exist_ok=True)
-    players, rejects = {}, Counter()
+    players = {}
     for name, (file_title, wp_title) in sorted(found.items()):
         ii = info.get(file_title)
         if ii is None:

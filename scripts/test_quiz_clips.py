@@ -141,6 +141,63 @@ def test_reveal_credits_a_photo_that_needs_one():
     print("test_reveal_credits_a_photo_that_needs_one PASS")
 
 
+def test_countdown_runs_one_number_a_second_and_never_shows_zero():
+    """The beat is the clock, so the clock has to be right.
+
+    Each number holds for a second, the sequence is strictly decreasing, it
+    starts at COUNTDOWN_FROM and ends at 1 -- zero is the reveal, not a frame.
+    """
+    from itertools import groupby
+
+    plan = [f for f in q.frame_plan(_ring(9)) if f["kind"] == "think"]
+    assert plan, "no thinking beat"
+    seq = [q.countdown_number(f["left"]) for f in plan]
+    runs = [(v, len(list(g))) for v, g in groupby(seq)]
+    assert [v for v, _ in runs] == list(range(q.COUNTDOWN_FROM, 0, -1)), runs
+    for value, frames in runs:
+        assert abs(frames - q.FPS) <= 1, \
+            f"{value} is on screen for {frames} frames, not about {q.FPS}"
+    assert 0 not in seq, "zero got drawn instead of triggering the reveal"
+    # and the reveal starts on the very next frame after the last 1
+    whole = q.frame_plan(_ring(9))
+    last_think = max(i for i, f in enumerate(whole) if f["kind"] == "think")
+    assert whole[last_think + 1]["reveal"], "the countdown does not fire it"
+    print(f"test_countdown_runs_one_number_a_second_and_never_shows_zero PASS "
+          f"({runs})")
+
+
+def test_countdown_is_visible_and_changes():
+    """Rendered proof: consecutive numbers look different, and it is drawn."""
+    rings, pts, stints, box = _setup()
+    chrome = q.build_chrome()
+    plan = [f for f in q.frame_plan(pts) if f["kind"] == "think"]
+    seen = {}
+    for fr in plan:
+        n = q.countdown_number(fr["left"])
+        seen.setdefault(n, q.render_frame(chrome, rings, pts, stints, fr, box))
+    assert len(seen) == q.COUNTDOWN_FROM, sorted(seen)
+    blobs = {n: im.tobytes() for n, im in seen.items()}
+    assert len(set(blobs.values())) == len(blobs), "the number never changed"
+    print("test_countdown_is_visible_and_changes PASS")
+
+
+def test_the_prompt_is_centred_in_its_card():
+    """"Who is it?" sits in the middle of the caption card, not off to a side."""
+    from PIL import ImageDraw
+
+    im = q._gradient((q.W, q.H), q.BG_TOP, q.BG_BOT).convert("RGB")
+    q.draw_caption(im, landed=9, total=9, club="", place="", thinking=True)
+    d = ImageDraw.Draw(im)
+    x0, _y0, x1, _y1 = d.textbbox(
+        ((q.MAP_X0 + q.MAP_X1) / 2, (q.MAP_BOTTOM + 44 + q.H - 60) / 2),
+        "Who is it?", font=q._font("Bold", 96), anchor="mm")
+    card_mid = (q.MAP_X0 + q.MAP_X1) / 2
+    assert abs((x0 + x1) / 2 - card_mid) < 2, "not horizontally centred"
+    gaps = (x0 - q.MAP_X0, q.MAP_X1 - x1)
+    assert abs(gaps[0] - gaps[1]) < 4, f"uneven margins {gaps}"
+    print("test_the_prompt_is_centred_in_its_card PASS")
+
+
 def test_camera_follows_the_plane():
     """The plane must stay near the centre of frame while flying."""
     rings, pts, stints, box = _setup()
@@ -320,6 +377,9 @@ if __name__ == "__main__":
     test_no_years_before_the_reveal()
     test_reveal_lists_every_club_in_career_order()
     test_reveal_credits_a_photo_that_needs_one()
+    test_countdown_runs_one_number_a_second_and_never_shows_zero()
+    test_countdown_is_visible_and_changes()
+    test_the_prompt_is_centred_in_its_card()
     test_camera_follows_the_plane()
     test_camera_zooms_out_for_long_legs()
     test_camera_motion_is_smooth()
