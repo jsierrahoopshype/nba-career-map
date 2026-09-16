@@ -30,8 +30,12 @@ def test_no_reveal_before_the_end():
         assert reveal_at == list(range(first, len(plan))), \
             "reveal frames must be one unbroken block at the end"
         assert not any(f["reveal"] for f in plan[:first]), "answer leaks early"
-        assert first >= int((q.T_INTRO + q.T_HOLD) * q.FPS), \
+        assert first >= int((q.T_INTRO + q.T_THINK) * q.FPS), \
             "reveal starts implausibly early"
+        think = [f for f in plan if f["kind"] == "think"]
+        assert len(think) == int(q.T_THINK * q.FPS), \
+            "the thinking beat must sit between the last stop and the answer"
+        assert not any(f["reveal"] for f in think), "the beat gives it away"
         assert plan[0]["kind"] == "intro" and plan[-1]["kind"] == "reveal"
         assert len(plan) - first == int(q.T_REVEAL * q.FPS)
     print("test_no_reveal_before_the_end PASS")
@@ -53,14 +57,18 @@ def test_pre_reveal_frames_cannot_contain_the_name():
     anything identifying reached a pre-reveal frame, the two would differ.
     """
     rings, pts, stints, box = _setup()
+    chrome = q.build_chrome()
     plan = q.frame_plan(len(pts))
     mid = plan[len(plan) // 3]
     assert not mid["reveal"]
-    a = q.render_frame(rings, pts, stints, mid, box, reveal=None, face=None)
-    b = q.render_frame(rings, pts, stints, mid, box,
-                       reveal=("Someone Else Entirely", "x"), face=None)
-    # reveal= is ignored unless the descriptor says so, so these must match
+    answer = q.build_reveal(rings, pts, "Someone Else Entirely", None,
+                            [("9", "STOPS")])
+    a = q.render_frame(chrome, rings, pts, stints, mid, box)
+    b = q.render_frame(chrome, rings, pts, stints, mid, box, reveal_im=answer)
+    # the descriptor decides, not the caller, so passing the answer changes
+    # nothing on a pre-reveal frame
     assert a.tobytes() == b.tobytes(), "identity leaked into a pre-reveal frame"
+    assert b.tobytes() != answer.tobytes(), "the answer screen was substituted"
     print("test_pre_reveal_frames_cannot_contain_the_name PASS")
 
 
@@ -71,6 +79,7 @@ def test_no_years_before_the_reveal():
     drawn with the years mutated. If a year reached the pixels, they'd differ.
     """
     rings, pts, stints, box = _setup()
+    chrome = q.build_chrome()
     import copy
     other = copy.deepcopy(stints)
     for st in other:
@@ -82,8 +91,8 @@ def test_no_years_before_the_reveal():
             continue
         if fr["kind"] not in ("land", "intro"):
             continue
-        a = q.render_frame(rings, pts, stints, fr, box)
-        b = q.render_frame(rings, pts, other, fr, box)
+        a = q.render_frame(chrome, rings, pts, stints, fr, box)
+        b = q.render_frame(chrome, rings, pts, other, fr, box)
         assert a.tobytes() == b.tobytes(), \
             f"a year reached a {fr['kind']} frame"
         checked += 1
@@ -104,7 +113,9 @@ def test_camera_follows_the_plane():
         for t in (0.15, 0.5, 0.85):
             (center, span), _h = q.leg_camera(pts[leg], pts[leg + 1], t)
             x, y = q.to_band(q.box_from(center, span), center)
-            off.append(abs(x - q.W / 2) + abs(y - q.BAND_H / 2))
+            # to_band returns coordinates inside the map band, which is inset
+            # from the frame -- so the target is the band's centre, not W/2.
+            off.append(abs(x - q.BAND_W / 2) + abs(y - q.BAND_H / 2))
     assert max(off) < 2.0, f"camera lost the plane (max offset {max(off):.1f}px)"
     print("test_camera_follows_the_plane PASS")
 
@@ -123,10 +134,49 @@ def test_camera_zooms_out_for_long_legs():
     print("test_camera_zooms_out_for_long_legs PASS")
 
 
-def test_plane_rotation_is_measured_not_assumed():
-    _sprite, own = q.plane_sprite(76)
-    assert -20 < own < 20, f"glyph heading looks wrong: {own}"
-    print("test_plane_rotation_is_measured_not_assumed PASS")
+def test_plane_points_where_it_is_going():
+    """The rotation offset is checked against pixels, not taken on trust.
+
+    A wrong offset is invisible in the source and obvious on screen, so the
+    sprite is rotated east and west and the ink asked which way it leans: flying
+    east, the nose has to be right of the tail.
+    """
+    from PIL import Image, ImageDraw
+
+    def nose_bias(heading):
+        im = Image.new("RGB", (400, 400), (0, 0, 0))
+        q.draw_plane(im, (200, 200), heading, size=92)
+        px = im.load()
+        xs = [x for y in range(400) for x in range(400) if sum(px[x, y]) > 90]
+        assert xs, "the plane drew nothing"
+        # the nose is the narrow end: compare ink mass either side of centre
+        return sum(1 for x in xs if x > 200) - sum(1 for x in xs if x < 200)
+
+    east, west = nose_bias(0.0), nose_bias(180.0)
+    assert east > 0 > west, f"plane faces the wrong way (E {east}, W {west})"
+    print("test_plane_points_where_it_is_going PASS")
+
+
+def test_portrait_never_falls_back_to_a_black_hole():
+    """Headshots are RGBA with a transparent background.
+
+    convert("RGB") would flatten that alpha onto black and punch a hole in the
+    card, so the compositing is checked at the corners; and a player with no
+    headshot has to get the drawn mark, not an empty square.
+    """
+    from PIL import Image
+
+    shot = Image.new("RGBA", (200, 260), (0, 0, 0, 0))
+    shot.paste((240, 120, 40, 255), (60, 60, 140, 200))
+    have = q._portrait(shot, 120)
+    for xy in ((2, 2), (117, 2), (2, 117), (117, 117)):
+        assert have.getpixel(xy) == q.CARD, f"transparent pixel went black at {xy}"
+
+    none = q._portrait(None, 120)
+    assert none.size == (120, 120)
+    assert len(none.getcolors(maxcolors=4096) or []) > 1, \
+        "no-headshot players get a blank square"
+    print("test_portrait_never_falls_back_to_a_black_hole PASS")
 
 
 def test_clip_length_lands_in_the_target_window():
@@ -189,7 +239,8 @@ if __name__ == "__main__":
     test_no_years_before_the_reveal()
     test_camera_follows_the_plane()
     test_camera_zooms_out_for_long_legs()
-    test_plane_rotation_is_measured_not_assumed()
+    test_plane_points_where_it_is_going()
+    test_portrait_never_falls_back_to_a_black_hole()
     test_clip_length_lands_in_the_target_window()
     test_selection_rule()
     test_route_collapses_repeat_clubs()
