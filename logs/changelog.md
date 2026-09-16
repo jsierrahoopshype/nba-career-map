@@ -1,3 +1,18 @@
+## 2026-09-16 — incremental run
+
+- Players updated: **528** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **4**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: Büyükşehir Belediyesi
+  - Lindy Waters III: San Antonio Spurs → Beijing Ducks
+  - Gian Clavell: Piratas de Quebradillas → Bashkimi
+  - Alex Len: Kosner Baskonia → Baskonia
+  - Armoni Brooks: Valencia Basket → Valencia
+  - Lindy Waters III: [nba_active → overseas_active]
+
 ## 2026-09-15 — incremental run
 
 - Players updated: **526** (0 new)
