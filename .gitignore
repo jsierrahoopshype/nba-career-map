@@ -4,3 +4,7 @@ scripts/last_commit_message.txt
 logs/last_commit_message.txt
 worker/node_modules/
 worker/.wrangler/
+
+# Generated social clips: for hand-posting, never committed. The workflow
+# uploads this folder as a downloadable artifact instead.
+out/
