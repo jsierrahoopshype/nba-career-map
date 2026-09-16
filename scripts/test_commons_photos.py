@@ -142,6 +142,8 @@ def test_end_to_end_with_a_stubbed_api():
     }
 
     def fake_api(endpoint, **params):
+        if params.get("list") == "search":
+            return {"query": {"search": []}}      # nothing to recover
         if endpoint == cp.WP_API:
             want = params["titles"].split("|")
             return {"query": {"pages": [pages[t] for t in want if t in pages]}}
@@ -172,11 +174,11 @@ def test_end_to_end_with_a_stubbed_api():
     assert rec["file"] == "File:Free Player 2011.jpg", rec["file"]
     assert "not on Commons" in rejected, doc["rejected"]
     assert "allowlist" in rejected, doc["rejected"]
-    # every player who did not get a photo is accounted for by name
+    # every player who did not get a photo is accounted for
     assert sum(doc["rejected"].values()) == len(pages) - 1, doc["rejected"]
-    assert "article is not about basketball" in doc["rejected"], \
-        "the cyclist should be refused before the licence gate"
-    assert "no English Wikipedia article" in doc["rejected"], doc["rejected"]
+    # the cyclist and the article-less name are folded into one bucket once
+    # the search pass has had its go at them
+    assert doc["rejected"].get("unresolved after search") == 2, doc["rejected"]
     print("test_end_to_end_with_a_stubbed_api PASS")
 
 

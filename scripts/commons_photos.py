@@ -73,6 +73,7 @@ PHOTO_PX = 512
 CROP_TOP = 0.06        # square crop taken from near the top: heads sit high
 BATCH = 40
 PAUSE = 0.15           # courtesy gap between API calls
+DOWNLOAD_PAUSE = 0.35  # and a longer one between image downloads
 
 
 # --- licence gate ------------------------------------------------------------
@@ -174,6 +175,41 @@ def _query_all(endpoint: str, **params) -> dict:
     return pages
 
 
+def search_titles(names: list) -> dict:
+    """name -> best-guess article title, for names that resolved to nothing.
+
+    A common name lands on a disambiguation page ("Mike Smith") rather than the
+    player, and some players are filed under a different spelling than our own
+    ("Hidayet Turkoglu" vs "Hedo Turkoglu"). The search is constrained to
+    basketball and the result must still carry the player's surname, so it
+    narrows the candidate rather than picking a stranger.
+    """
+    out = {}
+    for name in names:
+        surname = _norm_word(name.split()[-1]) if name.split() else ""
+        if len(surname) < 3:
+            continue
+        try:
+            doc = api(WP_API, action="query", list="search",
+                      srsearch=f'"{name}" basketball', srlimit="3",
+                      srnamespace="0")
+        except Exception:  # noqa: BLE001
+            continue
+        for hit in doc.get("query", {}).get("search", []) or []:
+            title = hit.get("title", "")
+            if surname in _norm_word(title):
+                out[name] = title
+                break
+        time.sleep(PAUSE)
+    return out
+
+
+def _norm_word(s: str) -> str:
+    import unicodedata
+    s = unicodedata.normalize("NFKD", s or "")
+    return "".join(c for c in s if not unicodedata.combining(c)).casefold()
+
+
 def lead_images(names: list) -> tuple[dict, Counter]:
     """name -> (file title, wikipedia title), for basketball articles only."""
     out, lost = {}, Counter()
@@ -235,14 +271,28 @@ def commons_files(titles: list) -> dict:
 
 # --- image -------------------------------------------------------------------
 def fetch_square(url: str) -> "Image.Image | None":
+    """Fetch and square-crop, politely.
+
+    Wikimedia throttles a client that fires several hundred image requests
+    back to back -- the first full run lost 119 of 378 photos that way, which
+    looked like missing files and was really rate limiting. Requests are spaced
+    out and retried with backoff.
+    """
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            im = Image.open(io.BytesIO(r.read()))
-            im.load()
-    except Exception as exc:  # noqa: BLE001
-        print(f"    download failed: {exc}")
+    last = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=90) as r:
+                im = Image.open(io.BytesIO(r.read()))
+                im.load()
+            break
+        except Exception as exc:  # noqa: BLE001
+            last = exc
+            time.sleep(1.5 * (attempt + 1) ** 2)
+    else:
+        print(f"    download failed after 3 tries: {last}")
         return None
+    time.sleep(DOWNLOAD_PAUSE)
     im = im.convert("RGB")
     w, h = im.size
     side = min(w, h)
@@ -258,7 +308,9 @@ def fetch_square(url: str) -> "Image.Image | None":
 def needing_photos(db: list, coords) -> list:
     """Clip candidates with no official NBA headshot."""
     import quiz_clips as q
-    shots = oc.Headshots(enabled=True)
+    # Against the FULL headshot index, not the current-roster one: there is no
+    # point going to Commons for a player the official CDN already covers.
+    shots = oc.Headshots(enabled=True, index_url=oc.HEADSHOT_INDEX_ALL)
     out = []
     for p in q.candidates(db, coords):
         name = p.get("display_name") or p.get("player") or ""
@@ -269,6 +321,29 @@ def needing_photos(db: list, coords) -> list:
 
 def build(names: list, *, allow_restricted: bool, redownload: bool) -> dict:
     found, rejects = lead_images(names)
+    retry = [n for n in names if n not in found]
+    if retry:
+        alt = search_titles(retry)
+        print(f"  {len(retry)} names did not resolve; searching found "
+              f"{len(alt)} plausible titles")
+        second, _why = lead_images(sorted(set(alt.values())))
+        by_title = {t: n for n, t in alt.items()}
+        recovered = 0
+        for title, rec in second.items():
+            asked = by_title.get(title)
+            if asked and asked not in found:
+                found[asked] = rec
+                recovered += 1
+        print(f"  recovered {recovered} of them")
+        # The counter says why each name failed on the FIRST pass, so it is
+        # rebuilt against who is still missing rather than patched.
+        rejects = Counter({k: v for k, v in rejects.items() if v})
+        rejects["unresolved after search"] = len(retry) - recovered
+        for k in ("no English Wikipedia article",
+                  "article is a disambiguation page",
+                  "article is not about basketball",
+                  "article has no lead image"):
+            rejects.pop(k, None)
     print(f"  {len(found)}/{len(names)} have a basketball article with a lead "
           f"image")
     for why, n in sorted(rejects.items(), key=lambda kv: -kv[1]):

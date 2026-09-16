@@ -1028,7 +1028,7 @@ class Photos:
     clips take the wider net.
     """
 
-    def __init__(self, shots, *, licenses: set | None = None):
+    def __init__(self, shots, *, licenses=None):
         self.shots = shots
         self.licenses = licenses or set(CLIP_LICENSES)
         self.commons = {}
@@ -1152,7 +1152,8 @@ def main() -> None:
         picks = [ranked[i * step] for i in range(k)]
 
     rings = oc.load_rings()
-    shots = Photos(oc.Headshots(enabled=True))
+    shots = Photos(oc.Headshots(enabled=True,
+                                index_url=oc.HEADSHOT_INDEX_ALL))
     out_dir = Path(args.out)
     total = 0
     for p in picks:

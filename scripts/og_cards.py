@@ -74,6 +74,12 @@ WORLD_GEOJSON = ("https://raw.githubusercontent.com/johan/world.geo.json/"
                  "master/countries.geo.json")
 HEADSHOT_INDEX = ("https://raw.githubusercontent.com/jsierrahoopshype/"
                   "nba-headshots/main/players/metadata/players.json")
+# The same repo also ships players_all.json: the current roster PLUS retired and
+# historical players, 1,788 face crops against players.json's 572. The site's
+# cards keep the current-roster index they have always used; callers that want
+# the wider net ask for it (see Headshots(index_url=...)).
+HEADSHOT_INDEX_ALL = ("https://raw.githubusercontent.com/jsierrahoopshype/"
+                      "nba-headshots/main/players/metadata/players_all.json")
 HEADSHOT_FACE = ("https://raw.githubusercontent.com/jsierrahoopshype/"
                  "nba-headshots/main/players/headshots/face/")
 
@@ -251,14 +257,15 @@ def _norm(name: str) -> str:
 class Headshots:
     """Lazy, failure-tolerant access to the nba-headshots repo."""
 
-    def __init__(self, enabled: bool = True):
+    def __init__(self, enabled: bool = True, index_url: str = HEADSHOT_INDEX):
         self.by_name: dict[str, str] = {}
         self.cache: dict[str, object] = {}
         self.enabled = enabled
+        self.index_url = index_url
         if not enabled:
             return
         try:
-            with urllib.request.urlopen(HEADSHOT_INDEX, timeout=60) as r:
+            with urllib.request.urlopen(self.index_url, timeout=60) as r:
                 doc = json.loads(r.read().decode("utf-8"))
             for rec in doc.get("players", []):
                 shot = rec.get("headshot") or {}
