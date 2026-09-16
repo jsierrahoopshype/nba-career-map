@@ -400,6 +400,23 @@ def build(names: list, *, allow_restricted: bool, redownload: bool) -> dict:
             "rejected": dict(rejects)}
 
 
+def prune_orphans(doc: dict) -> int:
+    """Delete cached photos no longer in the manifest.
+
+    A player who gains an official headshot drops out of the search, and an
+    earlier run's file would otherwise sit in the repo forever with no credit
+    line pointing at it -- which for an attribution-required photo is the one
+    state that must not happen.
+    """
+    keep = {(ROOT / r["local"]).resolve() for r in doc["players"].values()}
+    gone = 0
+    for f in sorted(PHOTO_DIR.glob("*.jpg")):
+        if f.resolve() not in keep:
+            f.unlink()
+            gone += 1
+    return gone
+
+
 def write_credits(doc: dict) -> None:
     by = Counter(r["license"] for r in doc["players"].values())
     lines = [
@@ -479,6 +496,9 @@ def main() -> int:
                 redownload=a.redownload)
     MANIFEST.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n",
                         encoding="utf-8")
+    gone = prune_orphans(doc)
+    if gone:
+        print(f"  removed {gone} cached photos no longer in the manifest")
     write_credits(doc)
     report(doc)
     print(f"\n  -> {MANIFEST.relative_to(ROOT)}  {CREDITS.relative_to(ROOT)}")

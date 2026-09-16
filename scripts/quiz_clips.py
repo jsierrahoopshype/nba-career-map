@@ -821,12 +821,6 @@ def build_reveal(name, face, stints, span, *, credit=""):
     d = ImageDraw.Draw(im)
     d.rounded_rectangle([px, py, px + pt, py + pt], radius=34,
                         outline=CARD_EDGE, width=3)
-    if credit:
-        # CC BY and CC BY-SA require the credit to travel with the picture, so
-        # it is rendered into the frame rather than left to a post caption.
-        f_cr = _fit(d, credit, "Regular", 19, REVEAL_W - 60)
-        d.text((REVEAL_X0 + 30, hy1 + 22), credit, font=f_cr, fill=MUTED,
-               anchor="lt")
 
     nx = px + pt + 34
     nw = REVEAL_X1 - 34 - nx
@@ -863,7 +857,16 @@ def build_reveal(name, face, stints, span, *, credit=""):
                        horizontal=True), (rule_x, 651))
     d = ImageDraw.Draw(im)
 
-    ly0, ly1 = 700, H - 56
+    # CC BY and CC BY-SA require the credit to travel with the picture, so it
+    # is rendered into the frame rather than left to a post caption. It sits at
+    # the foot, where a photo credit belongs, and the list gives up the room
+    # rather than overlapping it.
+    foot = 40 if credit else 0
+    if credit:
+        f_cr = _fit(d, credit, "Regular", 20, REVEAL_W - 8)
+        d.text((REVEAL_X0 + 4, H - 34), credit, font=f_cr, fill=MUTED,
+               anchor="lm")
+    ly0, ly1 = 700, H - 56 - foot
     n = max(1, len(stints))
     row = min(104.0, (ly1 - ly0) / n)
     top = ly0 + max(0.0, ((ly1 - ly0) - row * n) / 2)

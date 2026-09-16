@@ -119,7 +119,7 @@ def test_reveal_lists_every_club_in_career_order():
         assert im.size == (q.W, q.H)
         # every row must have room for its own name at a readable size
         rows = len(stints)
-        row = min(104.0, (q.H - 56 - 700) / rows)
+        row = min(104.0, (q.H - 96 - 700) / rows)   # worst case: with a credit
         assert row >= 60, f"{name}: {rows} stops squeezed into {row:.0f}px rows"
         assert int(min(46, row * 0.46)) >= 28, "club names became unreadable"
         # and the names have to be the ones the route actually visited
