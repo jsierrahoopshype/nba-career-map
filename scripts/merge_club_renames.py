@@ -74,6 +74,222 @@ FORCE_MERGE = {
         "same Lebanese club; Manara is a district of Beirut",
 }
 
+# --- sponsor names ---------------------------------------------------------
+#
+# A club name that is another club's name plus a COMMERCIAL token. Nothing
+# about the string says whether "Kosner Baskonia" is a sponsor or a different
+# club, so these are named one at a time rather than detected. Built from
+# scripts/sponsor_report.py, which lists every containment pair whose extra
+# token is neither a descriptor nor a place and whose two sides sit in the same
+# city -- then read by hand, because same-city is necessary and nowhere near
+# sufficient. Beijing has four different clubs, Larissa two, Manama two, and
+# every one of them passes the same-city test.
+#
+# Sponsors change often. An entry that goes stale merges two real clubs, so
+# each one says which token it is claiming and why.
+SPONSOR_PAIRS = {
+    # --- the two that reached the ledger as phantoms ---
+    frozenset({"Baskonia", "Kosner Baskonia"}): "Kosner, shirt sponsor",
+    frozenset({"Valencia", "Valencia Hoja del Lunes"}):
+        "Hoja del Lunes, newspaper sponsor of the 1970s side",
+
+    # --- Spain ---
+    frozenset({"FC Barcelona", "FC Barcelona Lassa"}): "Lassa Tyres",
+    frozenset({"FC Barcelona", "FC Barcelona Regal"}): "Regal",
+    frozenset({"Granada", "Puleva Granada"}): "Puleva, dairy",
+    frozenset({"Alicante", "Lucentum Alicante"}): "CB Lucentum Alicante",
+    frozenset({"Alicante", "Etosa Alicante"}): "Etosa",
+    frozenset({"Alicante", "HLA Alicante"}): "HLA",
+    frozenset({"Palencia", "Zunder Palencia"}): "Zunder, energy",
+    frozenset({"Palencia", "Faymasa Palencia"}): "Faymasa",
+    frozenset({"Ourense", "Caixa Ourense"}): "Caixa, bank",
+    frozenset({"Ourense", "Coren Ourense"}): "Coren, food",
+    frozenset({"Ourense", "Xacobeo 99 Ourense"}): "Xacobeo 99",
+    frozenset({"Lleida", "Caprabo Lleida"}): "Caprabo, supermarkets",
+    frozenset({"Lleida", "Plus Pujol Lleida"}): "Plus Pujol",
+    frozenset({"Gijón", "Cabitel Gijón"}): "Cabitel",
+    frozenset({"Cantabria", "Alerta Cantabria"}): "Alerta, newspaper",
+    frozenset({"Inca", "Drac Inca"}): "Drac",
+    frozenset({"Collado Villalba", "BBV Collado Villalba"}): "BBV, bank",
+    frozenset({"Obradoiro", "Obradoiro CAB"}): "club abbreviation",
+    frozenset({"Cáceres", "Cáceres Ciudad del Baloncesto"}): "club's full name",
+
+    # --- Italy: long sponsor histories on one club each ---
+    frozenset({"Verona", "Scaligera Verona"}): "Scaligera, the club itself",
+    frozenset({"Verona", "Scaligera Basket Verona"}): "Scaligera",
+    frozenset({"Verona", "Glaxo Verona"}): "Glaxo, pharma",
+    frozenset({"Verona", "Tezenis Verona"}): "Tezenis, clothing",
+    frozenset({"Verona", "Müller Verona"}): "Müller, dairy",
+    frozenset({"Verona", "Citrosil Verona"}): "Citrosil",
+    frozenset({"Verona", "Mash J. Verona"}): "Mash Jeans",
+    frozenset({"Montegranaro", "Sutor Montegranaro"}): "Sutor, the club itself",
+    frozenset({"Montegranaro", "Premiata Montegranaro"}): "Premiata, footwear",
+    frozenset({"Montegranaro", "Fabi Shoes Montegranaro"}): "Fabi Shoes",
+    frozenset({"Montegranaro", "Sigma Coatings Montegranaro"}): "Sigma Coatings",
+    frozenset({"Montegranaro", "Supernova Montegranaro"}): "Supernova",
+    frozenset({"Fabriano", "Indesit Fabriano"}): "Indesit, appliances",
+    frozenset({"Fabriano", "Faber Fabriano"}): "Faber, appliances",
+    frozenset({"Fabriano", "Alno Fabriano"}): "Alno",
+    frozenset({"Fabriano", "Carifac Fabriano"}): "Carifac, bank",
+    frozenset({"Fabriano", "Turboair Fabriano"}): "Turboair",
+    frozenset({"Fabriano", "Teamsystem Fabriano"}): "TeamSystem, software",
+    frozenset({"Fabriano", "Zara Imballaggi Fabriano"}): "Zara Imballaggi",
+    frozenset({"Forlì", "Olitalia Forlì"}): "Olitalia, oil",
+    frozenset({"Forlì", "Filanto Forlì"}): "Filanto",
+    frozenset({"Forlì", "Telemarket Forlì"}): "Telemarket",
+    frozenset({"Forlì", "Montana Forlì"}): "Montana, food",
+    frozenset({"Forlì", "Latini Forlì"}): "Latini",
+    frozenset({"Forlì", "Jollycolombani Forlì"}): "Jolly Colombani",
+    frozenset({"Scafati", "Givova Scafati"}): "Givova, sportswear",
+    frozenset({"Scafati", "Legea Scafati"}): "Legea, sportswear",
+    frozenset({"Scafati", "Eurorida Scafati"}): "Eurorida",
+    frozenset({"Scafati", "Rida Scafati"}): "Rida",
+    frozenset({"Scafati", "Longobardi Scafati"}): "Longobardi",
+    frozenset({"Teramo", "Bancatercas Teramo"}): "Banca Tercas",
+    frozenset({"Teramo", "Navigo.it Teramo"}): "Navigo.it",
+    frozenset({"Teramo", "Siviglia Wear Teramo"}): "Siviglia Wear",
+    frozenset({"Casale Monferrato", "Novipiù Casale Monferrato"}): "Novipiù",
+    frozenset({"Casale Monferrato", "Fastweb Casale Monferrato"}): "Fastweb",
+    frozenset({"Pavia", "Edimes Pavia"}): "Edimes",
+    frozenset({"Pavia", "Annabella Pavia"}): "Annabella",
+    frozenset({"Pavia", "Fernet Branca Pavia"}): "Fernet-Branca",
+    frozenset({"Ferrara", "Carife Ferrara"}): "Carife, bank",
+    frozenset({"Ferrara", "Cercom Ferrara"}): "Cercom",
+    frozenset({"Ferrara", "Kleb Basket Ferrara"}): "Kleb, adhesives",
+    frozenset({"Imola", "Andrea Costa Imola"}): "Andrea Costa, the club itself",
+    frozenset({"Imola", "Fillattice Imola"}): "Fillattice",
+    frozenset({"Imola", "Lineltex Imola"}): "Lineltex",
+    frozenset({"Imola", "Casetti Imola"}): "Casetti",
+    frozenset({"Dinamo Sassari", "Dinamo Banco di Sardegna Sassari"}):
+        "Banco di Sardegna, bank",
+    frozenset({"Auxilium Torino", "Auxilium CUS Torino"}): "CUS, university club",
+    frozenset({"Reyer Venezia", "Reyer Venezia Mestre"}): "Mestre, the district",
+    frozenset({"Roseto", "Roseto Sharks"}): "the club's nickname",
+    frozenset({"Pistoia Basket", "Pistoia Basket 2000"}): "founding year",
+
+    # --- rest of Europe ---
+    frozenset({"Beşiktaş", "Beşiktaş Icrypex"}): "Icrypex, exchange",
+    frozenset({"Bahçeşehir", "Bahçeşehir Koleji"}): "Koleji, the school behind it",
+    frozenset({"Manisa Basket", "Glint Manisa Basket"}): "Glint",
+    frozenset({"Budućnost", "Budućnost VOLI"}): "Voli, supermarkets",
+    frozenset({"FMP", "FMP Železnik"}): "Železnik, the district",
+    frozenset({"Nymburk", "ČEZ Nymburk"}): "ČEZ, energy",
+    frozenset({"BK Pardubice", "BK JIP Pardubice"}): "JIP, paper",
+    frozenset({"Starogard Gdański", "Polpharma Starogard Gdański"}): "Polpharma",
+    frozenset({"Prokom Trefl", "Prokom Trefl Sopot"}): "Sopot, the town",
+    frozenset({"Skyliners Frankfurt", "Frankfurt Opel Skyliners"}): "Opel",
+    frozenset({"Telekom Bonn", "Telekom Baskets Bonn"}): "Baskets, the club name",
+    frozenset({"Heidelberg", "MLP Academics Heidelberg"}): "MLP, finance",
+    frozenset({"Heidelberg", "USC Heidelberg"}): "USC, university club",
+    frozenset({"Bayer Leverkusen", "TSV Bayer 04 Leverkusen"}): "full club name",
+    frozenset({"Bayer Leverkusen", "Bayer 04 Leverkusen"}): "full club name",
+    frozenset({"Bayer Leverkusen", "Bayer Giants Leverkusen"}): "the nickname",
+    frozenset({"Antwerp Giants", "Antwerp Diamond Giants"}): "Diamond",
+    frozenset({"Leuven", "Leuven Bears"}): "the club's nickname",
+    frozenset({"Leuven", "Spotter Leuven"}): "Spotter",
+    frozenset({"Racing Mechelen", "Racing Maes Pils Mechelen"}): "Maes Pils, beer",
+    frozenset({"Charleroi", "Spirou Charleroi"}): "Spirou, the club itself",
+    frozenset({"Liège", "Belgacom Liège"}): "Belgacom, telecoms",
+    frozenset({"Leiden", "Elmex Leiden"}): "Elmex",
+    frozenset({"Leiden", "Parker Leiden"}): "Parker",
+    frozenset({"AEK Larnaca", "Petrolina AEK Larnaca"}): "Petrolina, fuel",
+    frozenset({"Roanne", "Chorale Roanne"}): "Chorale, the club itself",
+    frozenset({"Antibes", "Olympique Antibes"}): "the club's full name",
+    frozenset({"Antibes", "Antibes Sharks"}): "the club's nickname",
+    frozenset({"Le Mans", "Le Mans Sarthe"}): "Sarthe, the department",
+    frozenset({"Le Havre", "STB Le Havre"}): "STB, the club abbreviation",
+    frozenset({"Boulazac", "Boulazac Basket Dordogne"}): "Dordogne, the department",
+    frozenset({"BCM Gravelines", "BCM Gravelines-Dunkerque"}): "the paired town",
+    frozenset({"Poitiers", "Poitiers 86"}): "86, the department number",
+    frozenset({"Chalon", "Chalon-sur-Saône"}): "the town's full name",
+    frozenset({"Fos Provence", "Fos Ouest Provence"}): "the district",
+    frozenset({"İTÜ", "Sigortam.net İTÜ BB"}): "Sigortam.net, insurance",
+
+    # --- Asia and the Pacific ---
+    frozenset({"Seoul Thunders", "Seoul Samsung Thunders"}): "Samsung",
+    frozenset({"Ulsan Mobis Phoebus", "Ulsan Hyundai Mobis Phoebus"}): "Hyundai",
+    frozenset({"Goyang Orions", "Goyang Orion Orions"}): "Orion, confectionery",
+    frozenset({"Shanghai Sharks", "Shanghai Xiyang Sharks"}): "Xiyang",
+    frozenset({"Xinjiang", "Xinjiang Flying Tigers"}): "the club's nickname",
+    frozenset({"Qingdao", "Qingdao Eagles"}): "the club's nickname",
+    frozenset({"Qingdao", "Qingdao DoubleStar"}): "DoubleStar, tyres",
+    frozenset({"Qingdao", "Qingdao DoubleStar Eagles"}): "DoubleStar",
+    frozenset({"Shanxi Brave Dragons", "Shanxi Zhongyu Brave Dragons"}): "Zhongyu",
+    frozenset({"Shaanxi Kylins", "Shaanxi Dongsheng Kylins"}): "Dongsheng",
+    frozenset({"Shaanxi Kylins", "Shaanxi Gaitianli Kylins"}): "Gaitianli",
+    frozenset({"Zhejiang Cyclones", "Zhejiang Wanma Cyclones"}): "Wanma",
+    frozenset({"Liaoning Hunters", "Liaoning Panpan Hunters"}): "Panpan",
+    frozenset({"Guangdong", "Guangdong Southern Tigers"}): "the club's nickname",
+    frozenset({"Nagoya Diamond", "Nagoya Diamond Dolphins"}): "the nickname",
+    frozenset({"Formosa Dreamers", "Formosa Taishin Dreamers"}): "Taishin, bank",
+    frozenset({"Taipei Mars", "Taipei Taishin Mars"}): "Taishin, bank",
+    frozenset({"Hsinchu Lioneers", "Hsinchu Toplus Lioneers"}): "Toplus",
+    frozenset({"Hsinchu Lioneers", "Hsinchu JKO Lioneers"}): "JKO",
+    frozenset({"Kaohsiung Steelers", "Kaohsiung 17LIVE Steelers"}): "17LIVE",
+    frozenset({"Taichung Suns", "Taichung Wagor Suns"}): "Wagor",
+    frozenset({"Phoenix Fuel Masters", "Phoenix Super LPG Fuel Masters"}):
+        "Super LPG",
+    frozenset({"Phoenix Fuel Masters", "Phoenix Pulse Fuel Masters"}): "Pulse",
+    frozenset({"Manila Beer", "Manila Beer Brewmasters"}): "the nickname",
+
+    # --- the Americas ---
+    frozenset({"Akron Wingfoots", "Akron Goodyear Wingfoots"}): "Goodyear",
+    frozenset({"Anderson Packers", "Anderson Duffey Packers"}): "Duffey Packers",
+    frozenset({"Wilmington Bombers", "Wilmington Blue Bombers"}): "the nickname",
+    frozenset({"Cangrejeros", "Cangrejeros de Santurce"}): "Santurce, the district",
+    frozenset({"Aguada", "Santeros de Aguada"}): "the club's full name",
+    frozenset({"Trotamundos", "Trotamundos de Carabobo"}): "Carabobo, the state",
+    frozenset({"Barranquilla", "Titanes de Barranquilla"}): "the club's full name",
+    frozenset({"Quimsa", "Asociacion Quimsa Santiago del Estero"}): "full name",
+    frozenset({"San Lorenzo", "San Lorenzo de Almagro"}): "Almagro, the district",
+    frozenset({"Halcones Xalapa", "Halcones UV Xalapa"}):
+        "UV, Universidad Veracruzana",
+    frozenset({"Lobos Grises", "Lobos Grises UAD"}): "UAD, the university",
+    frozenset({"Pioneros de Quintana", "Pioneros de Quintana Roo"}): "the state",
+    frozenset({"Indios de San Francisco", "Indios de San Francisco de Macorís"}):
+        "the town's full name",
+    frozenset({"Minas", "Minas Tênis Clube"}): "the club's full name",
+    frozenset({"Franca", "Franca Basquetebol Clube"}): "the club's full name",
+    frozenset({"Temuco", "Unión Deportiva Española Temuco"}): "the club's full name",
+}
+
+# Read but NOT merged, recorded so the next person does not have to work them
+# out again. Every one passes the same-city test and every one is two clubs.
+NOT_SPONSORS = {
+    frozenset({"Beijing", "Beijing Ducks"}):
+        "Beijing has four different clubs -- Ducks, Royal Fighters, Olympians, "
+        "Fly Dragons -- and a bare 'Beijing' stint cannot be assigned to one",
+    frozenset({"Larisa", "Olympia Larissa"}):
+        "Olympia Larissa and Gymnastikos Larissa are separate clubs",
+    frozenset({"Maccabi Tel Aviv", "Maccabi Darom Tel Aviv"}):
+        "Maccabi Darom is its own club, not a sponsored Maccabi Tel Aviv",
+    frozenset({"Dubai", "Al Nasr Dubai"}):
+        "Al Nasr, Al Ahli and Al Naser all play in Dubai",
+    frozenset({"Manama", "Al-Ahli Manama"}):
+        "Al-Ahli and Al-Ittihad both play in Manama",
+    frozenset({"Khimik", "Khimik Engels"}):
+        "Khimik Engels is in Russia, Khimik in Pivdenne, Ukraine",
+    frozenset({"Atletico Madrid", "Atlético Madrid Villalba"}):
+        "Villalba is a separate club, not a sponsored Atletico",
+    frozenset({"Sporting", "Sporting CP"}):
+        "bare 'Sporting' sits inside nine clubs across six countries",
+    frozenset({"Liège", "Standard Liège"}):
+        "Standard Liège is not RBC Liège",
+    frozenset({"Dynamo Moscow", "Dynamo Moscow Region"}):
+        "Dynamo Moscow Region is a separate club",
+    frozenset({"Žalgiris", "Žalgiris -Arvydas Sabonis School"}):
+        "the Sabonis school is an academy, not the first team",
+    frozenset({"Pittsburgh Pirates", "East Pittsburgh Pirates"}):
+        "two stints each and no evidence either way",
+    frozenset({"Soles de Santo Domingo", "Soles de Santo Domingo Este"}):
+        "Santo Domingo Este is its own municipality",
+}
+
+
+# Both lists feed the same machinery: a pair named here is merged whether or
+# not the automatic rule would have found it.
+FORCE_MERGE.update(SPONSOR_PAIRS)
+
 _NBA_NAMES = set(NBA_TEAMS)
 for _eras in ERA_TABLE.values():
     for _b, _n in _eras:
