@@ -118,16 +118,28 @@ def test_groups_are_chains_not_stars():
     Las Vegas Silvers and Albuquerque Silvers both sit inside
     "Las Vegas/Albuquerque Silvers" and neither sits inside the other. Left to
     union-find they became one club in two cities.
+
+    The test is not plain containment, because "Valencia BC" and "Valencia
+    Basket" are one club written twice and neither contains the other either.
+    What separates the two cases is WHAT the names disagree about: descriptors
+    (one club) or place and mascot names (two).
     """
+    from team_normalizer import GENERIC_TOKENS
+
     merges, _held = mcr.plan([DB])
     for canonical, variants in merges:
         members = sorted([canonical, *variants])
         toks = {m: set(spelling_tokens(m)) for m in members}
         for i, a in enumerate(members):
             for b in members[i + 1:]:
-                assert toks[a] < toks[b] or toks[b] < toks[a], \
-                    f"{a!r} and {b!r} are in one group but neither contains " \
-                    f"the other"
+                ok = (toks[a] < toks[b] or toks[b] < toks[a]
+                      or not (toks[a] ^ toks[b]) - GENERIC_TOKENS)
+                assert ok, (f"{a!r} and {b!r} are in one group and differ by "
+                            f"{sorted((toks[a] ^ toks[b]) - GENERIC_TOKENS)}")
+    # the case this was written for stays refused
+    names = {m for c, vs in merges for m in (c, *vs)}
+    assert not {"Las Vegas Silvers", "Albuquerque Silvers"} <= names, \
+        "two cities were folded into one club"
     print(f"test_groups_are_chains_not_stars PASS ({len(merges)} groups)")
 
 

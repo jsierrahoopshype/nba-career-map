@@ -127,7 +127,11 @@ def test_merge_player_sticky_and_comeback():
     rec3, *_ = uc.merge_player(db, "Alex Abrines", client, {}, set(), 2026)
     assert not rec3.get("retirement_announced", False)
     assert rec3["status"] == "overseas_active", rec3["status"]
-    assert rec3["current_team"] == "Valencia Basket"
+    # Through the alias table, not against a literal: this test is about the
+    # comeback, and the club's canonical name is the club merger's business.
+    # "Valencia Basket" folds into "Valencia".
+    assert rec3["current_team"] == db.normalizer.normalize("Valencia Basket"), \
+        rec3["current_team"]
     print("test_merge_player_sticky_and_comeback PASS")
 
 

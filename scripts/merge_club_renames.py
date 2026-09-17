@@ -59,8 +59,9 @@ from update_careers import _is_slash_joined  # noqa: E402
 from merge_spelling_variants import (_diacritic_count, _usage,  # noqa: E402
                                      apply_merges)
 from rosters import NBA_TEAMS  # noqa: E402
-from team_normalizer import (KNOWN_DISTINCT, rename_containment,  # noqa: E402
-                             spelling_key, spelling_tokens, strip_diacritics)
+from team_normalizer import (GENERIC_TOKENS, KNOWN_DISTINCT,  # noqa: E402
+                             RESERVE_TOKENS, rename_containment, spelling_key,
+                             spelling_tokens, strip_diacritics)
 
 # Pairs the automatic rule reports rather than merges, confirmed by hand.
 # Each is a sponsor prefix on an otherwise identical name.
@@ -286,6 +287,23 @@ NOT_SPONSORS = {
 }
 
 
+# Usage decides the canonical name, as in the spelling rounds -- except where
+# usage would enshrine a sponsor that has since lapsed. A club scraped more
+# often while a sponsor's name was on the shirt is not thereby named after that
+# sponsor. Naming the club here wins its group outright.
+#
+# Deliberately NOT here: Seoul Samsung Thunders, Ulsan Hyundai Mobis Phoebus
+# and ČEZ Nymburk. Those companies own or have long backed the clubs and the
+# names are how the clubs are actually known, so usage gets them right.
+CANONICAL_OVERRIDE = {
+    "Cantabria",          # not Alerta Cantabria: Alerta is a newspaper
+    "Liège",              # not Belgacom Liège
+    "Racing Mechelen",    # not Racing Maes Pils Mechelen
+    "İTÜ",                # not Sigortam.net İTÜ BB
+    "Taipei Mars",        # not Taipei Taishin Mars
+    "Zhejiang Cyclones",  # not Zhejiang Wanma Cyclones
+}
+
 # Both lists feed the same machinery: a pair named here is merged whether or
 # not the automatic rule would have found it.
 FORCE_MERGE.update(SPONSOR_PAIRS)
@@ -334,12 +352,19 @@ def edges(names: list, places: dict, cities: dict) -> tuple[dict, dict, list]:
         for b in names:
             if a == b or not toks[a] or not toks[b] or not toks[a] < toks[b]:
                 continue
-            # Recorded before any filter: the ambiguity guard has to see EVERY
-            # club a bare name sits inside, not just the ones that survived the
-            # country and descriptor checks. Counting only the survivors is
-            # what let "Al Ahly" merge into Al Ahly Cairo while Al Ahly
-            # Benghazi and Al Ahly Ly were quietly filtered out first.
-            every[a].append(b)
+            # Recorded before the country and descriptor checks: the ambiguity
+            # guard has to see EVERY club a bare name sits inside, not just the
+            # ones that survived them. Counting only the survivors is what let
+            # "Al Ahly" merge into Al Ahly Cairo while Al Ahly Benghazi and Al
+            # Ahly Ly were quietly filtered out first.
+            #
+            # A reserve side is the exception. "Valencia B" does not make
+            # "Valencia" ambiguous -- a bare stint at Valencia means the first
+            # team, and the B side is already refused on its own account. Left
+            # in the tally it blocked the first team from merging with its own
+            # longer names.
+            if not (toks[b] - toks[a]) & RESERVE_TOKENS:
+                every[a].append(b)
             pair = frozenset({strip_diacritics(a).casefold().strip(),
                               strip_diacritics(b).casefold().strip()})
             if pair in KNOWN_DISTINCT:
@@ -369,19 +394,32 @@ def plan(dbs: list) -> tuple[list, list]:
     ok, every, held = edges(names, places, cities)
     toks = {n: set(spelling_tokens(n)) for n in names}
 
+    def one_club(a: str, b: str) -> bool:
+        """Could these two names be the same club?
+
+        Either one contains the other, or the only things separating them are
+        descriptors -- "Valencia BC" and "Valencia Basket" are one club twice.
+        "Al Ahly Cairo" and "Al Ahly Benghazi" differ by two place names and
+        are two clubs; "Las Vegas Silvers" and "Albuquerque Silvers" by two
+        city names and are the same franchise in two towns, which is not
+        something to fold into one name either.
+        """
+        if toks[a] < toks[b] or toks[b] < toks[a]:
+            return True
+        return not (toks[a] ^ toks[b]) - GENERIC_TOKENS
+
     # A name inside SEVERAL others is only safe when those others are one club
     # between themselves -- Al Riyadi Beirut and Al Riyadi Club Beirut are,
     # Al Ahly Cairo and Al Ahly Benghazi are not.
     accepted: list = []
     for sub, sups in ok.items():
         allsups = every.get(sub, [])
-        if len(allsups) > 1:
-            chain = all(toks[a] < toks[b] or toks[b] < toks[a]
-                        for i, a in enumerate(allsups) for b in allsups[i + 1:])
-            if not chain:
-                held.append(((sub, " / ".join(sorted(allsups))),
-                             f"name shared by {len(allsups)} clubs"))
-                continue
+        if len(allsups) > 1 and not all(
+                one_club(a, b) for i, a in enumerate(allsups)
+                for b in allsups[i + 1:]):
+            held.append(((sub, " / ".join(sorted(allsups))),
+                         f"name shared by {len(allsups)} clubs"))
+            continue
         accepted.extend((sub, s) for s in sups)
 
     forced = {tuple(sorted(p)) for p in FORCE_MERGE}
@@ -420,7 +458,7 @@ def plan(dbs: list) -> tuple[list, list]:
         # two cities into one group. A group has to be a chain: every pair
         # ordered by containment, or it is not one club getting longer.
         pairs = [(a, b) for i, a in enumerate(members) for b in members[i + 1:]]
-        if not all(toks[a] < toks[b] or toks[b] < toks[a] for a, b in pairs):
+        if not all(one_club(a, b) for a, b in pairs):
             held.append((tuple(members), "not a containment chain"))
             continue
         # KNOWN_DISTINCT pins pairs, and a third name must not be allowed to
@@ -435,7 +473,8 @@ def plan(dbs: list) -> tuple[list, list]:
                          f"pinned as distinct clubs ({pinned[0][0]} / "
                          f"{pinned[0][1]})"))
             continue
-        canonical = sorted(
+        pick = [m for m in members if m in CANONICAL_OVERRIDE]
+        canonical = pick[0] if pick else sorted(
             members,
             key=lambda n: (-_usage(dbs, n)[0], -_usage(dbs, n)[1],
                            -_diacritic_count(n), n))[0]
