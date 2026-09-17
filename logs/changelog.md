@@ -1,3 +1,21 @@
+## 2026-09-17 — incremental run
+
+- Players updated: **530** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **8**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: Paks Atomerőmű
+  - Drew Eubanks: Sacramento Kings → New York Knicks
+  - Duop Reath: Portland Trail Blazers → Phoenix Suns
+  - James Wiseman: Indiana Pacers → New York Knicks
+  - John Konchar: Utah Jazz → New York Knicks
+  - Ochai Agbaji: Brooklyn Nets → New York Knicks
+  - Michael Frazier: Taipei Mars → Beirut Club
+  - Rodney McGruder: Reyer Venezia → Scafati Basket
+  - Devin Ebanks: Al-Ahli → Manama Club
+
 ## 2026-09-16 — incremental run
 
 - Players updated: **528** (0 new)
