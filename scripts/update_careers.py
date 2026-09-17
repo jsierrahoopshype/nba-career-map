@@ -267,8 +267,10 @@ def classify_move(normalizer: TeamNormalizer, prev: str, new: str, *,
       "club-rename"       one side is the other with descriptive words added,
                           which is an editor lengthening a club's name rather
                           than a player going anywhere
-      "rename-ambiguous"  looks like a rename but is not safe to call one, so
-                          the move IS posted and a human is asked
+      "rename-review"     one name contains the other but the pair is not safe
+                          to merge -- a sponsor, a reserve side, or two clubs
+                          that share a name. Not posted either: a pair we will
+                          not merge is still not a signing
       "near-miss"         a real move whose two clubs are suspiciously close
       "real"              a real move
 
@@ -298,13 +300,17 @@ def classify_move(normalizer: TeamNormalizer, prev: str, new: str, *,
     places = club_places or {}
     pa, pb = places.get(a, ()), places.get(b, ())
     country = _country_key(pa[-1] if pa else (pb[-1] if pb else ""))
-    same, _why = rename_containment(
+    same, why = rename_containment(
         a, b, place_a=pa, place_b=pb,
         known_cities=(cities_by_country or {}).get(country, frozenset()))
-    if same is True:
-        return False, "club-rename"
-    if same is None:
-        return True, "rename-ambiguous"
+    # A non-empty reason means containment fired in SOME form -- the same club
+    # renamed, a sponsor added, a reserve side, or two clubs that share a name.
+    # None of those is a signing, so none of them is posted. The merger is a
+    # much stricter judge than this: it has to be sure enough to fold two club
+    # pages into one, and being unsure there is not a reason to announce a
+    # transfer here. Every case is still written to the review file.
+    if why:
+        return False, "club-rename" if same is True else "rename-review"
     if edit_distance(spelling_key(a), spelling_key(b),
                      cap=NEAR_MISS_DISTANCE) <= NEAR_MISS_DISTANCE:
         return True, "near-miss"
@@ -545,7 +551,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
             # ledger, but it is not discarded either: it goes to the review file
             # so the alias table can be taught the pair. "near-miss" DID post.
             if why in ("spelling-variant", "near-miss", "club-rename",
-                       "rename-ambiguous"):
+                       "rename-review"):
                 summary["spelling_review"].append(
                     {"player": key, "from": prev_current, "to": new_current,
                      "reason": why, "posted": is_move})
