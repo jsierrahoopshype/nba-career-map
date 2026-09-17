@@ -755,68 +755,78 @@ def build(players: list | None = None, today: datetime.date | None = None) -> di
     }
 
 
+def derived_files(players: list) -> dict:
+    """Every file this script derives from the career database, as bytes.
+
+    Built in one place and returned rather than written, so --check can compare
+    them against what is on disk without a second, subtly different code path.
+    Anything added here is automatically covered by the staleness check.
+    """
+    def js(obj, indent=2):
+        return (json.dumps(obj, ensure_ascii=False, indent=indent) + "\n").encode()
+
+    related = compute_related(players)
+    team_pages = {"generated_from": "data/players/nba_players_careers.json",
+                  "teams": w_team_pages(players, related)}
+    club_pages = {"generated_from": "data/players/nba_players_careers.json",
+                  "clubs": w_club_pages(players, related)}
+    names = sorted(p["player"] for p in players
+                   if str(p.get("player") or "").strip())
+    return {
+        OUT: js(build(players)),
+        TEAM_PAGES_OUT: js(team_pages),
+        CLUB_PAGES_OUT: js(club_pages),
+        NBA_TEAM_INDEX_OUT: js(
+            {"franchises": sorted(NBA_TEAMS), "eras": _ERA_TO_CURRENT,
+             "collisions": ERA_COLLISIONS,
+             # G League club -> its NBA parent, so index.html can keep a parent
+             # club ahead of its own affiliate when both stints start in the
+             # same year. Curated (see g_league_affiliates), not name-matched.
+             "affiliates": dict(sorted(AFFILIATE_PARENT.items()))}),
+        PLAYER_ALIASES_OUT: js(w_player_aliases(players)),
+        PLAYER_INDEX_OUT: js(names, indent=0),
+        SITEMAP_OUT: build_sitemap(players).encode(),
+    }
+
+
+def check(players: list) -> list:
+    """Paths whose contents on disk differ from what the data says they are."""
+    stale = []
+    for path, body in derived_files(players).items():
+        try:
+            same = path.read_bytes() == body
+        except OSError:
+            same = False
+        if not same:
+            stale.append(path)
+    return stale
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--report", action="store_true",
                     help="print a top-10-ish sample of each widget after writing")
+    ap.add_argument("--check", action="store_true",
+                    help="write nothing; exit 1 if any derived file is stale")
     args = ap.parse_args()
 
     players = json.loads(CAREERS.read_text(encoding="utf-8"))
-    data = build(players)
+
+    if args.check:
+        stale = check(players)
+        for path in stale:
+            print(f"STALE  {path.relative_to(ROOT)}")
+        print(f"{len(stale)} of {len(derived_files(players))} derived files "
+              f"are stale")
+        raise SystemExit(1 if stale else 0)
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"wrote {OUT.relative_to(ROOT)}  ({OUT.stat().st_size:,} bytes)")
-
-    # Related-teams suggestions (shared alumni, then same-country fill), computed
-    # once and attached to both franchise and club pages.
-    related = compute_related(players)
-
-    # Team pages (Phase 2): a separate file so dashboard_data.json stays lean.
-    team_pages = {"generated_from": "data/players/nba_players_careers.json",
-                  "teams": w_team_pages(players, related)}
-    TEAM_PAGES_OUT.write_text(json.dumps(team_pages, ensure_ascii=False, indent=2) + "\n",
-                              encoding="utf-8")
-    print(f"wrote {TEAM_PAGES_OUT.relative_to(ROOT)}  ({TEAM_PAGES_OUT.stat().st_size:,} bytes)")
-
-    # Club pages (Phase 2.6-B): all-time NBA alumni per non-NBA club.
-    club_pages = {"generated_from": "data/players/nba_players_careers.json",
-                  "clubs": w_club_pages(players, related)}
-    CLUB_PAGES_OUT.write_text(json.dumps(club_pages, ensure_ascii=False, indent=2) + "\n",
-                              encoding="utf-8")
-    truncated = sum(1 for c in club_pages["clubs"].values() if c.get("truncated"))
-    print(f"wrote {CLUB_PAGES_OUT.relative_to(ROOT)}  "
-          f"({CLUB_PAGES_OUT.stat().st_size:,} bytes, {len(club_pages['clubs'])} clubs, "
-          f"{truncated} truncated at {CLUB_ROSTER_CAP})")
-
-    # Tiny NBA-name -> current-franchise index (Phase 2.6-B): lets index.html
-    # resolve a stint's team to its canonical team-page URL (or detect a club)
-    # without loading the multi-MB team_pages file. One source of truth (derived
-    # from ERA_TABLE) shared by both pages.
-    NBA_TEAM_INDEX_OUT.write_text(json.dumps(
-        {"franchises": sorted(NBA_TEAMS), "eras": _ERA_TO_CURRENT,
-         "collisions": ERA_COLLISIONS,
-         # G League club -> its NBA parent, so index.html can keep a parent
-         # club ahead of its own affiliate when both stints start in the same
-         # year. Curated (see g_league_affiliates), not name-matched.
-         "affiliates": dict(sorted(AFFILIATE_PARENT.items()))},
-        ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"wrote {NBA_TEAM_INDEX_OUT.relative_to(ROOT)}  "
-          f"({NBA_TEAM_INDEX_OUT.stat().st_size:,} bytes)")
-
-    # Player aliases (Phase 2.6-E): alias-aware search on both pages.
-    aliases = w_player_aliases(players)
-    PLAYER_ALIASES_OUT.write_text(json.dumps(aliases, ensure_ascii=False, indent=2) + "\n",
-                                  encoding="utf-8")
-    print(f"wrote {PLAYER_ALIASES_OUT.relative_to(ROOT)}  "
-          f"({PLAYER_ALIASES_OUT.stat().st_size:,} bytes, {len(aliases)} players)")
-
-    # Player index (Phase 3): the full name list, so the dashboard homepage has
-    # complete search without loading the multi-MB career file.
-    names = sorted(p["player"] for p in players if str(p.get("player") or "").strip())
-    PLAYER_INDEX_OUT.write_text(json.dumps(names, ensure_ascii=False, indent=0) + "\n",
-                                encoding="utf-8")
-    print(f"wrote {PLAYER_INDEX_OUT.relative_to(ROOT)}  "
-          f"({PLAYER_INDEX_OUT.stat().st_size:,} bytes, {len(names)} names)")
+    files = derived_files(players)
+    for path, body in files.items():
+        path.write_bytes(body)
+        print(f"wrote {path.relative_to(ROOT)}  ({len(body):,} bytes)")
+    team_pages = json.loads(TEAM_PAGES_OUT.read_text(encoding="utf-8"))
+    data = json.loads(OUT.read_text(encoding="utf-8"))
 
     # Prerendered player pages: real HTML per player so crawlers see each
     # player's own title/description/OG tags instead of the app shell's. Runs
@@ -838,11 +848,6 @@ def main() -> None:
                          ("country/", prerender.write_all_countries(players))):
         print(f"wrote {label}  ({stats['total']} pages: {stats['written']} written, "
               f"{stats['unchanged']} unchanged, {stats['removed']} removed)")
-
-    # sitemap.xml (Phase 2.6-B): team + player URLs for search-engine discovery.
-    SITEMAP_OUT.write_text(build_sitemap(players), encoding="utf-8")
-    print(f"wrote {SITEMAP_OUT.relative_to(ROOT)}  ({SITEMAP_OUT.stat().st_size:,} bytes, "
-          f"base={SITE_BASE_URL})")
 
     if args.report:
         _report(data)
