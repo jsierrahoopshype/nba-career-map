@@ -412,6 +412,19 @@ def write_all(players: list, out_dir: Path = PLAYER_DIR) -> dict:
 
 
 if __name__ == "__main__":
+    # NOT the regeneration entry point. scripts/build_dashboard_data.py is:
+    # it writes the seven derived data files AND calls into here and og_cards,
+    # so running it is what keeps the whole set consistent.
+    #
+    # The trap this warning exists for: team pages are rendered from
+    # data/team_pages.json, which build_dashboard_data.py writes. Run standalone
+    # after the career data changed, this reads the OLD team_pages.json, renders
+    # pages that match it, and reports "30 unchanged" -- a green count measured
+    # against a stale input. That is how a club-merge round shipped with the
+    # dashboard and every team page still carrying pre-merge club names.
+    print("note: this is a partial regeneration. Run "
+          "scripts/build_dashboard_data.py to rebuild everything, or "
+          "--check it afterwards.\n")
     CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
     TEAM_PAGES = ROOT / "data" / "team_pages.json"
     players = json.loads(CAREERS.read_text(encoding="utf-8"))

@@ -543,6 +543,9 @@ def write_all(players: list, out_dir: Path = CARD_DIR,
 
 
 def main() -> None:
+    # Partial: scripts/build_dashboard_data.py calls write_all() here and also
+    # writes the seven derived data files. Running this alone leaves those
+    # behind -- see the note in prerender.py.
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--refresh-world", action="store_true",
