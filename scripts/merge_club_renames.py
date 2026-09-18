@@ -302,6 +302,27 @@ CANONICAL_OVERRIDE = {
     "İTÜ",                # not Sigortam.net İTÜ BB
     "Taipei Mars",        # not Taipei Taishin Mars
     "Zhejiang Cyclones",  # not Zhejiang Wanma Cyclones
+
+    # Clubs whose shirt sponsors out-scraped them. The rule is that the
+    # enduring club name wins over a jersey deal that came and went -- which
+    # is not the same as the shortest name winning, so where a sponsor-free
+    # CLUB name exists it beats the bare town too.
+    "Forlì",              # not Jollycolombani / Filanto / Olitalia / Telemarket
+    "Pavia",              # not Edimes / Annabella / Fernet Branca
+    "Leiden",             # not Elmex / Parker
+    "Casale Monferrato",  # not Novipiù / Fastweb
+    "Lleida",             # not Plus Pujol / Caprabo. Força Lleida CE is a
+                          # different club founded in 2010 and stays out.
+    "Hsinchu Lioneers",   # not Toplus / JKO, consecutive jersey sponsors
+    "Phoenix Fuel Masters",   # Phoenix the owner stays; Super LPG and Pulse
+                              # are product lines that rotate
+    "USC Heidelberg",     # the club; MLP is the sponsor, and a bare town is
+                          # not a club name
+    "Club Ourense Baloncesto",   # the club; Caixa, Coren and Xacobeo 99 are
+                                 # sponsors, and again a town is not a club
+    "Pallacanestro Ferrara",     # Carife is a bank and Kleb an adhesives
+                                 # brand -- both sponsors, so neither is the
+                                 # enduring name
 }
 
 # Both lists feed the same machinery: a pair named here is merged whether or
@@ -411,12 +432,50 @@ def plan(dbs: list) -> tuple[list, list]:
     # A name inside SEVERAL others is only safe when those others are one club
     # between themselves -- Al Riyadi Beirut and Al Riyadi Club Beirut are,
     # Al Ahly Cairo and Al Ahly Benghazi are not.
+    def restatement(sub: str, sup: str) -> bool:
+        """sup is sub said at more length, not a candidate for a second club.
+
+        "Scafati Basket" and "Valencia BC" add nothing but a descriptor, so
+        they are the bare name restated. Counting them as rival clubs is what
+        stopped a club merging with its own name.
+        """
+        return not (toks[sup] - toks[sub]) - GENERIC_TOKENS
+
+    def confirmed(x: str, y: str) -> bool:
+        return frozenset({x, y}) in FORCE_MERGE
+
+    def one_club_between(sub: str, sups: list) -> bool:
+        """Are the rival names for `sub` all the same club as each other?
+
+        Judged BETWEEN them, never through `sub`. Every superset contains the
+        bare name by construction, so allowing it as a hub answers yes for
+        anything and the guard stops guarding: that is how "Al Ahly" merged
+        into Al Ahly Cairo while Al Ahly Benghazi and Al Ahly Ly sat next to it.
+
+        A human assertion is the exception. Each of Scafati's five jersey
+        sponsors was confirmed against "Scafati" by hand, which links them to
+        each other; no two of them resemble each other at all, and a pairwise
+        resemblance test threw the group away.
+        """
+        rivals = [x for x in sups if not restatement(sub, x)]
+        if len(rivals) < 2:
+            return True
+        seen, stack = {rivals[0]}, [rivals[0]]
+        while stack:
+            a = stack.pop()
+            for b in rivals:
+                if b in seen:
+                    continue
+                if (confirmed(a, b) or one_club(a, b)
+                        or (confirmed(a, sub) and confirmed(b, sub))):
+                    seen.add(b)
+                    stack.append(b)
+        return len(seen) == len(rivals)
+
     accepted: list = []
     for sub, sups in ok.items():
         allsups = every.get(sub, [])
-        if len(allsups) > 1 and not all(
-                one_club(a, b) for i, a in enumerate(allsups)
-                for b in allsups[i + 1:]):
+        if len(allsups) > 1 and not one_club_between(sub, allsups):
             held.append(((sub, " / ".join(sorted(allsups))),
                          f"name shared by {len(allsups)} clubs"))
             continue
@@ -457,8 +516,36 @@ def plan(dbs: list) -> tuple[list, list]:
         # and neither sits inside the other, so the chain dragged two clubs in
         # two cities into one group. A group has to be a chain: every pair
         # ordered by containment, or it is not one club getting longer.
+        def same_as(x: str, y: str) -> bool:
+            return frozenset({x, y}) in FORCE_MERGE or one_club(x, y)
+
+        def connected(group: list) -> bool:
+            """Is every name in the group linked to the rest by a verified edge?
+
+            Union-find already assumes transitivity. This guard exists to catch
+            it running through an UNVERIFIED hub: "Las Vegas Silvers" and
+            "Albuquerque Silvers" both sit inside "Las Vegas/Albuquerque
+            Silvers" and became one club in two cities that way.
+
+            Transitivity through a hub a HUMAN confirmed is a different matter,
+            and testing every PAIR instead of every edge threw those away. Seven
+            of Verona's names are jersey sponsors -- Glaxo, Tezenis, Müller,
+            Citrosil -- and no two resemble each other at all, so the pairwise
+            test rejected the whole group and 77 of the 147 reviewed sponsor
+            pairs silently did nothing. Each was confirmed against "Verona"
+            individually, and that is what makes them one club.
+            """
+            seen, stack = {group[0]}, [group[0]]
+            while stack:
+                x = stack.pop()
+                for y in group:
+                    if y not in seen and same_as(x, y):
+                        seen.add(y)
+                        stack.append(y)
+            return len(seen) == len(group)
+
         pairs = [(a, b) for i, a in enumerate(members) for b in members[i + 1:]]
-        if not all(one_club(a, b) for a, b in pairs):
+        if not connected(members):
             held.append((tuple(members), "not a containment chain"))
             continue
         # KNOWN_DISTINCT pins pairs, and a third name must not be allowed to

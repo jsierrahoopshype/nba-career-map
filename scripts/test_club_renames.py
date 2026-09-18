@@ -119,28 +119,66 @@ def test_groups_are_chains_not_stars():
     "Las Vegas/Albuquerque Silvers" and neither sits inside the other. Left to
     union-find they became one club in two cities.
 
-    The test is not plain containment, because "Valencia BC" and "Valencia
-    Basket" are one club written twice and neither contains the other either.
-    What separates the two cases is WHAT the names disagree about: descriptors
-    (one club) or place and mascot names (two).
+    The test is connectivity, not every pair. "Casetti Imola" and "Andrea Costa
+    Imola" are one club and share nothing but the town -- each was confirmed
+    against "Imola" by hand, and that is the link. What must not exist is a
+    group held together only by an UNVERIFIED hub.
     """
+    from merge_club_renames import FORCE_MERGE
     from team_normalizer import GENERIC_TOKENS
 
     merges, _held = mcr.plan([DB])
+
+    def same_as(a, b, toks):
+        if frozenset({a, b}) in FORCE_MERGE:
+            return True
+        if toks[a] < toks[b] or toks[b] < toks[a]:
+            return True
+        return not (toks[a] ^ toks[b]) - GENERIC_TOKENS
+
     for canonical, variants in merges:
         members = sorted([canonical, *variants])
         toks = {m: set(spelling_tokens(m)) for m in members}
-        for i, a in enumerate(members):
-            for b in members[i + 1:]:
-                ok = (toks[a] < toks[b] or toks[b] < toks[a]
-                      or not (toks[a] ^ toks[b]) - GENERIC_TOKENS)
-                assert ok, (f"{a!r} and {b!r} are in one group and differ by "
-                            f"{sorted((toks[a] ^ toks[b]) - GENERIC_TOKENS)}")
+        seen, stack = {members[0]}, [members[0]]
+        while stack:
+            x = stack.pop()
+            for y in members:
+                if y not in seen and same_as(x, y, toks):
+                    seen.add(y)
+                    stack.append(y)
+        missing = sorted(set(members) - seen)
+        assert not missing, (f"{missing} joined the {canonical!r} group with no "
+                             f"verified link to it")
     # the case this was written for stays refused
     names = {m for c, vs in merges for m in (c, *vs)}
     assert not {"Las Vegas Silvers", "Albuquerque Silvers"} <= names, \
         "two cities were folded into one club"
     print(f"test_groups_are_chains_not_stars PASS ({len(merges)} groups)")
+
+
+def test_an_unverified_hub_still_cannot_join_two_clubs():
+    """The guard is only as good as what counts as a verified link.
+
+    Directly: two names that share nothing but a third name they both sit
+    inside, where that third name was NOT confirmed by hand, must not form a
+    group. This is the Silvers shape, stated without relying on the dataset
+    happening to contain it.
+    """
+    from merge_club_renames import FORCE_MERGE
+    from team_normalizer import GENERIC_TOKENS
+
+    def same_as(a, b):
+        if frozenset({a, b}) in FORCE_MERGE:
+            return True
+        ta, tb = set(spelling_tokens(a)), set(spelling_tokens(b))
+        return ta < tb or tb < ta or not (ta ^ tb) - GENERIC_TOKENS
+
+    hub = "Las Vegas Albuquerque Silvers"
+    a, b = "Las Vegas Silvers", "Albuquerque Silvers"
+    assert same_as(a, hub) and same_as(b, hub), "the hub does contain both"
+    assert not same_as(a, b), "and the two ends are not each other"
+    assert frozenset({a, hub}) not in FORCE_MERGE, "nobody confirmed this hub"
+    print("test_an_unverified_hub_still_cannot_join_two_clubs PASS")
 
 
 def test_the_move_guard_suppresses_the_rename_and_keeps_the_real_move():
@@ -290,6 +328,7 @@ if __name__ == "__main__":
     test_clubs_that_merely_share_a_name_are_reported_not_merged()
     test_a_bare_name_inside_several_clubs_goes_to_review()
     test_groups_are_chains_not_stars()
+    test_an_unverified_hub_still_cannot_join_two_clubs()
     test_the_move_guard_suppresses_the_rename_and_keeps_the_real_move()
     test_the_sponsor_list_still_describes_real_clubs()
     test_containment_is_never_posted_however_it_resolves()
