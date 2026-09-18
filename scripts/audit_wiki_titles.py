@@ -42,42 +42,55 @@ def stored_title(rec: dict) -> str:
 
 
 def sweep(client: WikipediaClient, players: list, limit: int = 0) -> dict:
-    """Resolve what every record's NAME reaches, and classify what comes back.
+    """Resolve what every record reaches, from both ends, and classify it.
 
-    The name, not the stored URL: the name is what the pipeline asks Wikipedia
-    for on the next run, so resolving it says what the pipeline is about to do.
-    The stored URL is checked too, but only to report the ones that no longer
-    agree -- the seed wrote a guessed URL for many records (all three Charles
-    Joneses point at the bare title), and a guessed URL is not evidence about
-    the career the record actually holds.
+    Two different questions, and the six known fabrications answer them
+    differently:
+
+      the NAME     is what the pipeline will ask for on the next run, so
+                   resolving it says what the pipeline is about to do
+      the URL      is where the career in the record came from, so resolving it
+                   says whether what is already stored is somebody else's
+
+    Scotty Pippen Jr fails only the second: his name reaches his own article
+    today, while the career in his record was taken from his father's.
     """
     recs = players[:limit] if limit else players
+    stored = {r["player"]: stored_title(r) for r in recs}
     resolved = client.resolve_titles([r["player"] for r in recs]
-                                     + [t for t in (stored_title(r) for r in recs) if t])
+                                     + [t for t in stored.values() if t])
 
-    report = {"checked": len(recs), "wrong_person": [], "missing": [],
-              "soft": [], "url_disagrees": [], "duplicates": [], "resolved": {}}
+    report = {"checked": len(recs), "bad_source": [], "wrong_person": [],
+              "missing": [], "soft": [], "url_disagrees": [], "duplicates": [],
+              "resolved": {}, "resolved_url": {}}
     by_article = defaultdict(list)
     for rec in recs:
         key = rec["player"]
-        got = resolved.get(key)
+        got, url_got = resolved.get(key), resolved.get(stored[key])
         report["resolved"][key] = got or ""
-        stored = stored_title(rec)
-        row = {"player": key, "stored": stored, "resolved": got or "",
+        report["resolved_url"][key] = url_got or ""
+        row = {"player": key, "stored": stored[key], "resolved": got or "",
+               "url_resolves_to": url_got or "",
                "stints": len(rec.get("career_history") or [])}
+
+        # what the record was built from
+        if url_got and not same_person(key, url_got)[0]:
+            report["bad_source"].append(
+                {**row, "reason": same_person(key, url_got)[1]})
+
+        # what the next run would do
         if not got:
             report["missing"].append(row)
             continue
         by_article[got].append(key)
         ok, why = same_person(key, got)
-        row["reason"] = why
+        row = {**row, "reason": why}
         if not ok:
             report["wrong_person"].append(row)
         elif why:
             report["soft"].append(row)
-        if stored and resolved.get(stored) and resolved[stored] != got:
-            report["url_disagrees"].append(
-                {**row, "url_resolves_to": resolved[stored]})
+        if url_got and url_got != got:
+            report["url_disagrees"].append(row)
 
     for article, keys in sorted(by_article.items()):
         if len(keys) > 1:
@@ -88,7 +101,11 @@ def sweep(client: WikipediaClient, players: list, limit: int = 0) -> dict:
 
 def _print_sweep(report: dict) -> None:
     print(f"checked {report['checked']} records")
-    print(f"  wrong person : {len(report['wrong_person'])}")
+    print(f"  built from somebody else's article: {len(report['bad_source'])}")
+    for r in report["bad_source"]:
+        print(f"      {r['player']!r} <- {r['url_resolves_to']!r}  "
+              f"({r['reason']}, {r['stints']} stints)")
+    print(f"  name now reaches somebody else: {len(report['wrong_person'])}")
     for r in report["wrong_person"]:
         print(f"      {r['player']!r} -> {r['resolved']!r}  ({r['reason']}, "
               f"{r['stints']} stints)")
@@ -194,8 +211,10 @@ def main() -> int:
     if not names:
         if not REPORT.exists():
             sys.exit("no sweep report; run `sweep` first or pass --player")
-        names = [r["player"] for r in
-                 json.loads(REPORT.read_text(encoding="utf-8"))["wrong_person"]]
+        doc = json.loads(REPORT.read_text(encoding="utf-8"))
+        names = list(dict.fromkeys(
+            [r["player"] for r in doc.get("bad_source", [])]
+            + [r["player"] for r in doc.get("wrong_person", [])]))
     result = fix(client, db, names, current_year)
     for row in result["fixed"]:
         print(f"\n{row['player']!r} <- {row['article']!r}  [{row['status']}]")

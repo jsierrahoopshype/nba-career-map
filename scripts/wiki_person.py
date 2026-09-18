@@ -23,12 +23,19 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from names import normkey
+
 SUFFIXES = ("jr", "sr", "ii", "iii", "iv", "v")
 
 # Transliterations that a redirect legitimately crosses. Folding to the bare
 # vowel is not enough: "Poeltl" and "Pöltl" only meet if ö can become "oe".
-_TRANSLIT = ((r"ö", "oe"), (r"ü", "ue"), (r"ä", "ae"), (r"ß", "ss"),
-             (r"å", "aa"), (r"ø", "oe"), (r"æ", "ae"), (r"œ", "oe"))
+_TRANSLIT = (("ö", "oe"), ("ü", "ue"), ("ä", "ae"), ("ß", "ss"),
+             ("å", "aa"), ("ø", "oe"), ("æ", "ae"), ("œ", "oe"),
+             # NFKD leaves these whole -- they are letters, not letters with
+             # marks -- so Rađa, Guðmundsson and Aşık never reached their ASCII
+             # spellings without them
+             ("đ", "dj"), ("Đ", "dj"), ("ð", "d"), ("Ð", "d"),
+             ("ı", "i"), ("ł", "l"), ("þ", "th"), ("ħ", "h"))
 
 
 class Person:
@@ -55,8 +62,14 @@ class Person:
 
 
 def _suffix_of(token: str) -> str:
-    t = re.sub(r"[^a-z]", "", token.lower())
-    return t if t in SUFFIXES else ""
+    """Is this token a generational suffix, and which one?
+
+    Tested against the whole token, never against the ASCII letters left after
+    stripping the rest: "Žižić" keeps only its two i's, and reading those as the
+    Roman numeral II cost Ante Žižić his surname.
+    """
+    m = re.fullmatch(r"([a-z]+)\.?", token.lower())
+    return m.group(1) if m and m.group(1) in SUFFIXES else ""
 
 
 def _fold(token: str) -> frozenset:
@@ -101,8 +114,58 @@ def _surnames_meet(a: frozenset, b: frozenset) -> bool:
     return False
 
 
+# Players Wikipedia files under a name that shares nothing with ours, confirmed
+# by hand one at a time. A title cannot tell a legal name change from a wrong
+# article, so these are the only surname changes allowed through on trust.
+KNOWN_RENAMES = (
+    ("J.R. Henderson", "J. R. Sakuragi"),     # naturalised in Japan in 2007
+    ("Jerome Harmon", "J-Roc"),               # filed under his nickname
+    ("Metta World Peace", "Metta Sandiford-Artest"),
+)
+
+
+def _close(a: str, b: str) -> bool:
+    """One typo apart: a substitution, an insertion, or a transposition.
+
+    Monya/Monia, Bazarevitch/Bazarevich, Englestad/Engelstad -- one romanisation
+    against another. Kept to a single edit on names of five letters or more,
+    because at two edits Wilson reaches Gibson.
+    """
+    if abs(len(a) - len(b)) > 1 or min(len(a), len(b)) < 5:
+        return False
+    if a == b:
+        return True
+    if len(a) == len(b):
+        diff = [i for i in range(len(a)) if a[i] != b[i]]
+        if len(diff) == 1:
+            return True
+        if len(diff) == 2 and diff[1] == diff[0] + 1:
+            i = diff[0]
+            return a[i] == b[i + 1] and a[i + 1] == b[i]
+        return False
+    lo, hi = sorted((a, b), key=len)
+    return any(hi[:i] + hi[i + 1:] == lo for i in range(len(hi)))
+
+
 def _show(forms: frozenset) -> str:
     return "/".join(sorted(forms)) or "?"
+
+
+def _shares_a_name(a: "Person", b: "Person") -> bool:
+    """One side's surname is somewhere in the other's name.
+
+    "Enes Kanter" -> "Enes Kanter Freedom" (a name added), "Horacio Llamas
+    Grey" -> "Horacio Llamas" (one dropped), "Hansen Yang" -> "Yang Hansen"
+    (written the other way round).
+    """
+    all_a = set().union(*a.given, a.surname) if a.surname else set()
+    all_b = set().union(*b.given, b.surname) if b.surname else set()
+    return bool((a.surname & all_b) or (b.surname & all_a))
+
+
+def _renamed(requested: str, resolved: str) -> bool:
+    x, y = normkey(requested), normkey(resolved)
+    return any({x, y} == {normkey(a), normkey(b)} for a, b in KNOWN_RENAMES)
 
 
 def same_person(requested: str, resolved: str, *,
@@ -123,14 +186,21 @@ def same_person(requested: str, resolved: str, *,
         return False, "no article"
     a, b = Person(requested), Person(resolved)
 
+    if resolved.endswith("(disambiguation)"):
+        # Not an article about anybody; parsing one yields nothing at best.
+        return False, "disambiguation page"
     if a.year and b.year and a.year != b.year:
         return False, f"born {a.year} vs {b.year}"
-    if not _surnames_meet(a.surname, b.surname):
-        return False, (f"surname {_show(a.surname)} vs {_show(b.surname)}")
     if a.suffix and a.suffix != b.suffix:
         # Jr asked for, someone else answered. Always the father, never a
         # spelling: this is the Scotty Pippen Jr case.
         return False, f"suffix {a.suffix} vs {b.suffix or 'none'}"
+    if not _surnames_meet(a.surname, b.surname):
+        # A surname can still be the same person's: an added married or adopted
+        # name, a name written the other way round, a second romanisation.
+        if not (_shares_a_name(a, b) or _renamed(requested, resolved)
+                or any(_close(x, y) for x in a.surname for y in b.surname)):
+            return False, f"surname {_show(a.surname)} vs {_show(b.surname)}"
     if b.suffix and not a.suffix:
         # Our key may simply predate the suffix ("Craig Porter" ->
         # "Craig Porter Jr."), or it may be the father being handed his son.

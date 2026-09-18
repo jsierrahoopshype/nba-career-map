@@ -32,6 +32,16 @@ RECORDS = [
     {"player": "Scotty Pippen Jr", "status": "retired",
      "wikipedia_url": "https://en.wikipedia.org/wiki/Scotty_Pippen",
      "career_history": [dict(s) for s in FATHER]},
+    # the other shape: his name reaches nothing but his father's article, so
+    # both records answer to it and they look like a duplicate pair
+    {"player": "Ron Harper", "status": "retired",
+     "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Harper",
+     "career_history": [{"years": "1986-1989", "team": "Cleveland Cavaliers",
+                         "city": "Cleveland", "country": "USA"}]},
+    {"player": "Ron Harper Jr", "status": "retired",
+     "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Harper",
+     "career_history": [{"years": "1986-1989", "team": "Cleveland Cavaliers",
+                         "city": "Cleveland", "country": "USA"}]},
     {"player": "Pat Ewing", "status": "retired",
      "wikipedia_url": "https://en.wikipedia.org/wiki/Pat_Ewing",
      "all_star_count": 11,
@@ -48,9 +58,13 @@ RECORDS = [
 # what Wikipedia answers: title asked -> title reached
 WIKI = {
     "Scottie Pippen": "Scottie Pippen",
-    "Scotty Pippen Jr": "Scottie Pippen",     # the redirect that caused the bug
+    # his name reaches his own article today; the career in his record does
+    # not come from it, which is the whole point of checking both ends
+    "Scotty Pippen Jr": "Scotty Pippen Jr.",
     "Scotty Pippen Jr.": "Scotty Pippen Jr.",  # the article that fixes it
     "Scotty Pippen": "Scottie Pippen",
+    "Ron Harper": "Ron Harper",
+    "Ron Harper Jr": "Ron Harper",
     "Pat Ewing": "Patrick Ewing",
     "Patrick Ewing": "Patrick Ewing",
 }
@@ -91,11 +105,14 @@ def test_the_sweep_names_the_record_built_from_the_wrong_article():
     players = [db.by_name[n] for n in db.order]
     report = aud.sweep(FakeClient(), players)
 
-    wrong = {r["player"] for r in report["wrong_person"]}
-    assert wrong == {"Scotty Pippen Jr"}, wrong
-    assert "suffix" in report["wrong_person"][0]["reason"]
+    # Pippen Jr's name resolves fine, so only the stored article condemns him;
+    # Harper Jr's name lands on his father too, so both ends condemn him
+    assert {r["player"] for r in report["wrong_person"]} == {"Ron Harper Jr"}
+    bad = {r["player"] for r in report["bad_source"]}
+    assert bad == {"Scotty Pippen Jr", "Ron Harper Jr"}, bad
+    assert all("suffix" in r["reason"] for r in report["bad_source"])
     # the father is not accused of anything
-    assert "Scottie Pippen" not in wrong
+    assert "Scottie Pippen" not in bad
     # and the two Ewings are reported as one article held by two records
     dups = {tuple(d["players"]) for d in report["duplicates"]}
     assert ("Pat Ewing", "Patrick Ewing") in dups, report["duplicates"]
@@ -138,7 +155,7 @@ def test_dedupe_unions_the_stints_and_keeps_the_canonical_key():
 
 
 def test_dedupe_refuses_to_bury_a_wrong_article_record():
-    """Father and son share an article only because the son's is wrong.
+    """Ron Harper and his son share an article only because the son's is wrong.
 
     Merging them would make the duplicate go away and the fabrication
     permanent, so the group is skipped until the fix has run.
@@ -147,8 +164,8 @@ def test_dedupe_refuses_to_bury_a_wrong_article_record():
     report = aud.sweep(FakeClient(), [db.by_name[n] for n in db.order])
     _ready, blocked = ded.groups([db.by_name[n] for n in db.order], report)
     skipped = {tuple(b["players"]) for b in blocked}
-    assert ("Scottie Pippen", "Scotty Pippen Jr") in skipped, blocked
-    assert "Scottie Pippen" in db.by_name and "Scotty Pippen Jr" in db.by_name
+    assert ("Ron Harper", "Ron Harper Jr") in skipped, blocked
+    assert "Ron Harper" in db.by_name and "Ron Harper Jr" in db.by_name
     print("test_dedupe_refuses_to_bury_a_wrong_article_record PASS")
 
 
