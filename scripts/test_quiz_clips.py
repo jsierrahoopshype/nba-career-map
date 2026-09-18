@@ -198,6 +198,33 @@ def test_the_prompt_is_centred_in_its_card():
     print("test_the_prompt_is_centred_in_its_card PASS")
 
 
+def test_the_reveal_drops_the_disambiguator_but_the_key_keeps_it():
+    """"Charles Jones (1957)" is a record key, not a name anyone would say.
+
+    Display only. Three Charles Joneses share this dataset and the key is the
+    only thing keeping their photos and their output files apart, so it has to
+    survive untouched.
+    """
+    assert q.reveal_name("Charles Jones (1957)") == "Charles Jones"
+    assert q.reveal_name("Chris Johnson (basketball, born 1990)") == "Chris Johnson"
+    assert q.reveal_name("Joe Ingles") == "Joe Ingles"
+    assert q.reveal_name("(1957)") == "(1957)", "never strip a name to nothing"
+
+    _rings, _pts, stints, _box = _setup()
+    keyed = q.build_reveal(q.reveal_name("Charles Jones (1957)"), None, stints, "")
+    plain = q.build_reveal("Charles Jones", None, stints, "")
+    assert keyed.tobytes() == plain.tobytes(), "the year still reached the frame"
+
+    # the keys themselves stay distinct, in the data and in the filenames
+    keys = [p.get("player") for p in DB
+            if q.reveal_name(p.get("player") or "") == "Charles Jones"]
+    assert len(keys) > 1, "expected several Charles Joneses to tell apart"
+    assert len(set(q.slug(k) for k in keys)) == len(keys), \
+        f"two of {keys} would write to the same file"
+    print("test_the_reveal_drops_the_disambiguator_but_the_key_keeps_it PASS "
+          f"({len(keys)} keys kept apart)")
+
+
 def test_camera_follows_the_plane():
     """The plane must stay near the centre of frame while flying."""
     rings, pts, stints, box = _setup()
@@ -451,6 +478,7 @@ if __name__ == "__main__":
     test_countdown_runs_one_number_a_second_and_never_shows_zero()
     test_countdown_is_visible_and_changes()
     test_the_prompt_is_centred_in_its_card()
+    test_the_reveal_drops_the_disambiguator_but_the_key_keeps_it()
     test_camera_follows_the_plane()
     test_camera_zooms_out_for_long_legs()
     test_camera_motion_is_smooth()

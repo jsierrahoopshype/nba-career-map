@@ -792,6 +792,20 @@ REVEAL_X0, REVEAL_X1 = 40, W - 40
 REVEAL_W = REVEAL_X1 - REVEAL_X0
 
 
+_DISAMBIG = re.compile(r"\s*\([^()]*\)\s*$")
+
+
+def reveal_name(name: str) -> str:
+    """The name a viewer would recognise, not the record key.
+
+    Wikipedia tells three Charles Joneses apart by birth year, and the key
+    carries that through to us. On screen it reads like part of his name,
+    so the reveal drops it. Only the reveal: the key still drives the photo
+    lookup and the output filename, where the three of them must stay apart.
+    """
+    return _DISAMBIG.sub("", name).strip() or name
+
+
 def build_reveal(name, face, stints, span, *, credit=""):
     """The answer as its own screen: who it was, and every club in order.
 
@@ -1076,7 +1090,8 @@ def build_clip(player: dict, rings, coords, shots, out_dir: Path) -> dict:
     span = _career_span(stints)
 
     chrome = build_chrome()
-    reveal_im = build_reveal(name, face, stints, span, credit=credit)
+    reveal_im = build_reveal(reveal_name(name), face, stints, span,
+                             credit=credit)
 
     plan = frame_plan(pts)
     out_dir.mkdir(parents=True, exist_ok=True)
