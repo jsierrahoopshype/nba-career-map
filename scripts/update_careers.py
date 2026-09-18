@@ -60,7 +60,8 @@ from player_status import (classify_status, last_active_year, PRESENT,
                            NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
-from names import normkey, url_key, canonical_url
+from names import normkey, url_key, canonical_url, title_from_url
+from wiki_person import same_person, candidate_titles
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA, LOGS = ROOT / "data", ROOT / "logs"
@@ -76,6 +77,7 @@ CHANGELOG = LOGS / "changelog.md"
 # cannot be backfilled). Feeds the dashboard "latest_signings" widget.
 TRANSACTIONS = DATA / "logs" / "transactions.json"
 SPELLING_REVIEW = DATA / "logs" / "spelling_review.json"
+ARTICLE_REVIEW = DATA / "logs" / "wrong_article_review.json"
 ROOT_MAP_FILE = ROOT / "nba_players_careers_READY.json"
 # Cursor into TRANSACTIONS: how many ledger entries have already been posted
 # to Slack. Same append-only-ledger pattern as TRANSACTIONS itself; tracking
@@ -332,6 +334,56 @@ def _is_real_move(normalizer: TeamNormalizer, prev: str, new: str) -> bool:
     return classify_move(normalizer, prev, new)[0]
 
 
+# Fetches refused because the article was about somebody else. Cleared at the
+# start of every run(); read back into the summary and written to the review
+# log, because a refusal means a record went un-updated and somebody should
+# know which.
+REFUSED: list[dict] = []
+
+
+def _birth_year(rec: dict) -> int | None:
+    m = re.search(r"\b(1[89]\d\d|20\d\d)\b", rec.get("birth_date", "") or "")
+    return int(m.group()) if m else None
+
+
+def right_article(db: "Database", name: str,
+                  client: WikipediaClient) -> tuple[str | None, str | None, dict | None]:
+    """Fetch the article for `name`, or refuse it.
+
+    Wikipedia answers every request with something, and for a name it does not
+    have it answers with the nearest thing it does: "Scotty Pippen Jr" lands on
+    his father, whose career then becomes the son's. So the answer is checked
+    against the question, and when it names somebody else we go looking for the
+    disambiguated title instead ("Scotty Pippen Jr." -- the period is the whole
+    difference) before giving up.
+
+    Returns (wikitext, canonical_title, refusal). A refusal means no record is
+    written at all: stale data beats invented data.
+    """
+    wt, title = client.get_wikitext_and_title(name)
+    tried = [{"title": name, "resolved": title}]
+    ok, why = same_person(name, title) if title else (False, "no article")
+    if ok and why == "suffix-added":
+        # Our key catching up with the article ("Craig Porter" ->
+        # "Craig Porter Jr."), unless another record already IS that article,
+        # in which case the suffix belongs to the son and this is his father.
+        owner = db.resolve_canonical(title)
+        if owner and owner != name:
+            ok, why = False, f"{title} already belongs to {owner}"
+    if ok:
+        return wt, title, None
+
+    for cand in candidate_titles(name, _birth_year(db.by_name.get(name, {}))):
+        wt2, title2 = client.get_wikitext_and_title(cand)
+        tried.append({"title": cand, "resolved": title2})
+        if title2 and same_person(name, title2)[0]:
+            return wt2, title2, None
+
+    kind = "missing" if not title else "wrong-person"
+    return None, title, {"player": name, "resolved": title or "", "kind": kind,
+                         "reason": why, "tried": tried, "date": today()}
+
+
 def merge_player(db: Database, name: str, client: WikipediaClient,
                  discovered: dict, roster_players: set[str],
                  current_year: int) -> tuple[dict | None, list[str], bool]:
@@ -342,7 +394,16 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     existing record (diacritics, suffix, nickname, redirect) is MERGED into it
     rather than inserted as a duplicate.
     """
-    wt, canonical_title = client.get_wikitext_and_title(name)
+    wt, canonical_title, refusal = right_article(db, name, client)
+    if refusal:
+        # Nothing to merge. A name Wikipedia simply does not have is the old,
+        # quiet skip; an article about somebody else is a refusal, and that one
+        # goes in the review log because a record went un-updated.
+        if refusal["kind"] != "missing":
+            REFUSED.append(refusal)
+            print(f"[update] {name}: refused -> {refusal['resolved']} "
+                  f"({refusal['reason']})")
+        return None, [], False, None, None
     if not wt:
         # page not found (e.g. a "(1990)" disambiguated title with no matching
         # article/redirect) — skip cleanly. Return the full 5-tuple so the
@@ -359,6 +420,15 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     existing_name = (name if name in db.by_name
                      else db.resolve_canonical(canonical_title)
                      or db.resolve_by_name(name))
+    # ...but only if that record is about this same person. The name index
+    # folds Jr and Sr away, so "Jabari Smith Jr." matches his father's record;
+    # letting that stand would write the son's career over the father's. Two
+    # different articles are two different people, whatever the names fold to.
+    if existing_name and canonical_title:
+        held = db.by_name.get(existing_name, {})
+        prev_title = title_from_url(held.get("wikipedia_url", "")) or existing_name
+        if not same_person(prev_title, canonical_title, strict_suffix=True)[0]:
+            existing_name = None
     is_new = existing_name is None
     base = db.by_name.get(existing_name, {}) if existing_name else {}
     prev_status = base.get("status")
@@ -498,6 +568,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
     db = Database()
     client = WikipediaClient(delay=delay, max_requests=max_requests)
     current_year = dt.datetime.now(dt.timezone.utc).year
+    REFUSED.clear()
     summary = {"date": today(), "mode": mode, "players_updated": [],
                "new_players": [], "new_teams": [], "team_moves": [],
                "spelling_review": [],
@@ -564,6 +635,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                 elif new_status == RETIRED_STATUS:
                     summary["newly_retired"].append(key)
 
+    summary["wrong_article"] = list(REFUSED)
     summary["requests"] = client.requests_made
     summary["new_teams"] = sorted(set(summary["new_teams"]))
     _persist(db, summary)
@@ -665,6 +737,7 @@ def _persist(db: Database, summary: dict) -> None:
     _append_logs(summary)
     _append_transactions(summary)
     _append_spelling_review(summary)
+    _append_article_review(summary)
     _notify_slack(db, summary)
 
 
@@ -689,6 +762,20 @@ def _append_transactions(summary: dict) -> None:
             "date": date,
         })
     write_json(TRANSACTIONS, ledger)
+
+
+def _append_article_review(summary: dict) -> None:
+    """Append the fetches refused because the article named somebody else.
+
+    A refusal is a record that did not update, so it cannot be silent. Each row
+    carries what was asked for, what came back, and every title tried after.
+    """
+    rows = summary.get("wrong_article", [])
+    if not rows:
+        return
+    doc = load_json(ARTICLE_REVIEW, {"refusals": []})
+    doc["refusals"].extend(rows)
+    write_json(ARTICLE_REVIEW, doc)
 
 
 def _append_spelling_review(summary: dict) -> None:
