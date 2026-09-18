@@ -46,7 +46,8 @@ def groups(players: list, report: dict | None) -> tuple[list, list]:
     those store the same article under two names.
     """
     resolved = (report or {}).get("resolved") or {}
-    condemned = {r["player"] for r in (report or {}).get("wrong_person", [])}
+    condemned = {r["player"] for kind in ("bad_source", "wrong_person")
+                 for r in (report or {}).get(kind, [])}
     by_article = defaultdict(list)
     for rec in players:
         key = rec["player"]

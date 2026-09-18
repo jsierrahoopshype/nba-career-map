@@ -30,6 +30,22 @@ def test_a_redirect_may_respell_a_name_but_not_change_the_person():
         ("Charles Jones (1957)", "Charles Jones (basketball, born 1957)"),
         ("Craig Porter", "Craig Porter Jr."),        # our key catching up
         ("Trayce Jackson", "Trayce Jackson-Davis"),  # compound surname
+        # letters NFKD will not take apart, which cost Žižić his surname
+        ("Ante Zizic", "Ante Žižić"),
+        ("Dino Radja", "Dino Rađa"),
+        ("Omer Asik", "Ömer Aşık"),
+        ("Petur Gudmundsson", "Pétur Guðmundsson"),
+        ("Sasa Djordjevic", "Aleksandar Đorđević"),
+        # a name added, dropped, or written the other way round
+        ("Enes Kanter", "Enes Kanter Freedom"),
+        ("Horacio Llamas Grey", "Horacio Llamas"),
+        ("Hansen Yang", "Yang Hansen"),
+        # one romanisation against another
+        ("Sergey Monya", "Sergei Monia"),
+        ("Serguei Bazarevitch", "Sergei Bazarevich"),
+        ("Wayne Englestad", "Wayne Engelstad"),
+        # a legal name change, confirmed by hand in KNOWN_RENAMES
+        ("Metta World Peace", "Metta Sandiford-Artest"),
     ]
     refused = [
         ("Scotty Pippen Jr", "Scottie Pippen", "suffix"),
@@ -37,6 +53,8 @@ def test_a_redirect_may_respell_a_name_but_not_change_the_person():
         ("Gary Payton II", "Gary Payton", "suffix"),
         ("Jabari Smith Jr.", "Jabari Smith", "suffix"),
         ("Michael Wilson", "Michael Gibson (basketball)", "surname"),
+        ("Michael Wilson", "Mike Gibson (basketball)", "surname"),
+        ("Ben Sheppard", "Ben Shephard (disambiguation)", "disambiguation"),
         ("Charles Jones (1957)", "Charles Jones (basketball, born 1962)", "born"),
         ("Freddie Lewis (1921)", "Freddie Lewis (basketball, born 1943)", "born"),
     ]
@@ -49,6 +67,21 @@ def test_a_redirect_may_respell_a_name_but_not_change_the_person():
         assert signal in why, f"{a} -> {b}: expected {signal}, got {why}"
     print(f"test_a_redirect_may_respell_a_name_but_not_change_the_person PASS "
           f"({len(allowed)} allowed, {len(refused)} refused)")
+
+
+def test_one_typo_is_a_romanisation_and_two_is_a_different_name():
+    """The tolerance that lets Monya meet Monia must not let Wilson meet Gibson.
+
+    Wilson and Gibson are two edits apart, which is why the limit is one.
+    """
+    from wiki_person import _close
+    assert _close("monya", "monia") and _close("bazarevitch", "bazarevich")
+    assert _close("englestad", "engelstad"), "a transposition is one typo"
+    assert _close("gillette", "gallette") and _close("sheppard", "shephard")
+    assert not _close("wilson", "gibson")
+    assert not _close("jones", "james"), "two edits is a different name"
+    assert not _close("cruz", "crus"), "four letters is too short to guess"
+    print("test_one_typo_is_a_romanisation_and_two_is_a_different_name PASS")
 
 
 def test_two_articles_that_differ_by_a_suffix_are_two_people():
@@ -194,6 +227,7 @@ def test_an_ordinary_redirect_still_merges():
 
 if __name__ == "__main__":
     test_a_redirect_may_respell_a_name_but_not_change_the_person()
+    test_one_typo_is_a_romanisation_and_two_is_a_different_name()
     test_two_articles_that_differ_by_a_suffix_are_two_people()
     test_the_ladder_tries_the_disambiguated_title()
     test_a_son_is_never_handed_his_fathers_article()
