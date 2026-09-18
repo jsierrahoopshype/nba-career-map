@@ -306,7 +306,7 @@
         },
         {
           "player": "Joe Stephens",
-          "years": "1996-1997",
+          "years": "1996–1997",
           "status": "retired",
           "last_team": "Sagesse",
           "nationality": "United States"
@@ -3414,7 +3414,7 @@
         },
         {
           "player": "Eddie Phillips",
-          "years": "1983-1984",
+          "years": "1983–1984",
           "status": "retired",
           "last_team": "Hapoel Holon",
           "nationality": "United States"
@@ -5750,7 +5750,7 @@
       "city": "Moline",
       "state": "Illinois",
       "country": "USA",
-      "count": 98,
+      "count": 97,
       "roster": [
         {
           "player": "A.J. Wynder",
@@ -6206,13 +6206,6 @@
           "years": "1990-1991",
           "status": "retired",
           "last_team": "Sioux Falls Skyforce",
-          "nationality": "United States"
-        },
-        {
-          "player": "Michael Wilson",
-          "years": "1987-1988",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
           "nationality": "United States"
         },
         {
@@ -9298,7 +9291,7 @@
       "city": "Edinburg",
       "state": "Texas",
       "country": "USA",
-      "count": 147,
+      "count": 146,
       "roster": [
         {
           "player": "Aaron Brooks",
@@ -9774,13 +9767,6 @@
           "years": "2009",
           "status": "retired",
           "last_team": "Yamagata Wyverns",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jeenathan Williams",
-          "years": "2023–2025",
-          "status": "overseas_active",
-          "last_team": "Chiba Jets",
           "nationality": "United States"
         },
         {
@@ -10362,12 +10348,12 @@
         },
         {
           "type": "club",
-          "name": "Long Island Nets",
+          "name": "Wisconsin Herd",
           "shared": 9
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Xinjiang",
           "shared": 9
         }
       ]
@@ -16463,12 +16449,12 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Raptors 905",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Raptors 905",
+          "name": "Quad City Thunder",
           "shared": 2
         },
         {
@@ -17793,7 +17779,7 @@
         },
         {
           "player": "Charlie Bell",
-          "years": "2002-2003",
+          "years": "2002–2003",
           "status": "retired",
           "last_team": "Otto Caserta",
           "nationality": "United States"
@@ -22166,7 +22152,7 @@
       "city": "Portland",
       "state": "Maine",
       "country": "USA",
-      "count": 52,
+      "count": 53,
       "roster": [
         {
           "player": "Aaron Nesmith",
@@ -22477,6 +22463,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Ron Harper Jr",
+          "years": "2024–2025, 2025–2026",
+          "status": "nba_active",
+          "last_team": "Boston Celtics",
+          "nationality": "United States"
+        },
+        {
           "player": "Ryan Arcidiacono",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -22537,7 +22530,7 @@
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 7
+          "shared": 8
         },
         {
           "type": "club",
@@ -28825,12 +28818,12 @@
         },
         {
           "type": "club",
-          "name": "Long Island Nets",
+          "name": "Yakima Sun Kings",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Long Island Nets",
           "shared": 2
         },
         {
@@ -28860,7 +28853,7 @@
       "city": "Traiskirchen",
       "state": "",
       "country": "Austria",
-      "count": 4,
+      "count": 3,
       "roster": [
         {
           "player": "Acie Earl",
@@ -28877,12 +28870,6 @@
           "nationality": "Austria"
         },
         {
-          "player": "Jakob Pöltl",
-          "years": "2013–2014",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors"
-        },
-        {
           "player": "Nemanja Bjelica",
           "years": "2007-2008",
           "status": "retired",
@@ -28893,12 +28880,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Raptors 905",
-          "shared": 2
+          "name": "Baskonia",
+          "shared": 1
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Raptors 905",
           "shared": 1
         },
         {
@@ -30763,12 +30750,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "South Bay Lakers",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Capital City Go-Go",
           "shared": 6
         },
         {
@@ -32690,12 +32677,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 3
         }
       ]
@@ -36260,7 +36247,7 @@
         },
         {
           "player": "Eddie Phillips",
-          "years": "1988-1989, 1994-1995",
+          "years": "1988–1989, 1994–1995",
           "status": "retired",
           "last_team": "Hapoel Holon",
           "nationality": "United States"
@@ -36513,12 +36500,12 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Quad City Thunder",
           "shared": 5
         },
         {
@@ -48563,7 +48550,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1994-1996",
+          "years": "1994–1996",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -49661,7 +49648,7 @@
       "city": "Tel Aviv",
       "state": "",
       "country": "Israel",
-      "count": 54,
+      "count": 53,
       "roster": [
         {
           "player": "AJ Guyton",
@@ -49938,13 +49925,6 @@
           "nationality": "Germany"
         },
         {
-          "player": "Michael Wilson",
-          "years": "1990",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        },
-        {
           "player": "Mike Gibson",
           "years": "1990",
           "status": "retired",
@@ -50081,7 +50061,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 4
         }
       ]
@@ -50708,7 +50688,7 @@
       "city": "Sundsvall",
       "state": "",
       "country": "Sweden",
-      "count": 4,
+      "count": 3,
       "roster": [
         {
           "player": "AJ Guyton",
@@ -50726,13 +50706,6 @@
           "all_star_count": 7
         },
         {
-          "player": "Scotty Pippen Jr",
-          "years": "2008",
-          "status": "retired",
-          "last_team": "Sundsvall Dragons",
-          "nationality": "United States"
-        },
-        {
           "player": "Shane Edwards",
           "years": "2014-2015",
           "status": "retired",
@@ -50741,11 +50714,6 @@
         }
       ],
       "related": [
-        {
-          "type": "club",
-          "name": "Torpan Pojat",
-          "shared": 2
-        },
         {
           "type": "club",
           "name": "Virtus Bologna",
@@ -50779,6 +50747,11 @@
         {
           "type": "club",
           "name": "Cedevita Zagreb",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Viola Reggio Calabria",
           "shared": 1
         }
       ]
@@ -52213,7 +52186,7 @@
       "city": "Uniondale",
       "state": "New York",
       "country": "USA",
-      "count": 86,
+      "count": 85,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -52479,13 +52452,6 @@
           "years": "2024–2025",
           "status": "overseas_active",
           "last_team": "Rip City Remix",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jeenathan Williams",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Chiba Jets",
           "nationality": "United States"
         },
         {
@@ -52820,11 +52786,6 @@
       "related": [
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 9
-        },
-        {
-          "type": "club",
           "name": "Raptors 905",
           "shared": 9
         },
@@ -52837,6 +52798,11 @@
           "type": "club",
           "name": "Lokomotiv Kuban",
           "shared": 9
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 8
         },
         {
           "type": "club",
@@ -53112,12 +53078,6 @@
           "status": "nba_active",
           "last_team": "Toronto Raptors",
           "nationality": "Austria"
-        },
-        {
-          "player": "Jakob Pöltl",
-          "years": "2016–2017",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors"
         },
         {
           "player": "Jalen Harris",
@@ -53470,6 +53430,13 @@
           "years": "2021-2022, 2022-2023",
           "status": "overseas_active",
           "last_team": "Greensboro Swarm",
+          "nationality": "United States"
+        },
+        {
+          "player": "Ron Harper Jr",
+          "years": "2022–2023",
+          "status": "nba_active",
+          "last_team": "Boston Celtics",
           "nationality": "United States"
         },
         {
@@ -55123,7 +55090,7 @@
       "roster": [
         {
           "player": "Al Fleming",
-          "years": "1977-1978",
+          "years": "1977–1978",
           "status": "retired",
           "last_team": "Anchorage Northern Knights",
           "nationality": "United States"
@@ -55207,7 +55174,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1977-1980, 1981-1982",
+          "years": "1977–1980, 1981–1982",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -58314,12 +58281,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 2
         },
         {
@@ -59324,7 +59291,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1987-1990",
+          "years": "1987–1990",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -59602,7 +59569,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1993-1994",
+          "years": "1993–1994",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -60075,7 +60042,7 @@
         },
         {
           "player": "Joe Stephens",
-          "years": "1998-1999, 2000",
+          "years": "1998–1999, 2000",
           "status": "retired",
           "last_team": "Sagesse",
           "nationality": "United States"
@@ -62350,7 +62317,7 @@
       "city": "Savannah",
       "state": "",
       "country": "Georgia",
-      "count": 26,
+      "count": 25,
       "roster": [
         {
           "player": "Alan Hardy",
@@ -62459,13 +62426,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Michael Wilson",
-          "years": "1986",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        },
-        {
           "player": "Michael Young",
           "years": "1984-1986",
           "status": "retired",
@@ -62545,16 +62505,6 @@
         {
           "type": "club",
           "name": "Pensacola Tornados",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Maine Lumberjacks",
           "shared": 3
         },
         {
@@ -62575,6 +62525,16 @@
         {
           "type": "club",
           "name": "Rapid City Thrillers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Quad City Thunder",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Grand Rapids Hoops",
           "shared": 2
         }
       ]
@@ -66887,7 +66847,7 @@
       "city": "Salt Lake City",
       "state": "Utah",
       "country": "USA",
-      "count": 80,
+      "count": 79,
       "roster": [
         {
           "player": "Alec Burks",
@@ -67083,13 +67043,6 @@
           "years": "2024",
           "status": "overseas_active",
           "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jeenathan Williams",
-          "years": "2022–2023",
-          "status": "overseas_active",
-          "last_team": "Chiba Jets",
           "nationality": "United States"
         },
         {
@@ -67455,22 +67408,17 @@
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 7
-        },
-        {
-          "type": "club",
           "name": "Žalgiris",
           "shared": 7
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Rio Grande Valley Vipers",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Long Island Nets",
+          "name": "Erie BayHawks",
           "shared": 6
         },
         {
@@ -67486,6 +67434,11 @@
         {
           "type": "club",
           "name": "Texas Legends",
+          "shared": 5
+        },
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
           "shared": 5
         }
       ]
@@ -69537,7 +69490,7 @@
         },
         {
           "player": "Charlie Bell",
-          "years": "2003-2004",
+          "years": "2003–2004",
           "status": "retired",
           "last_team": "Otto Caserta",
           "nationality": "United States"
@@ -69733,17 +69686,17 @@
         },
         {
           "type": "club",
-          "name": "Benetton Treviso",
-          "shared": 3
-        },
-        {
-          "type": "club",
           "name": "Napoli Basket",
           "shared": 3
         },
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Olimpia Milano",
           "shared": 2
         }
       ]
@@ -76739,7 +76692,7 @@
       "city": "El Segundo",
       "state": "California",
       "country": "USA",
-      "count": 68,
+      "count": 69,
       "roster": [
         {
           "player": "Adou Thiero",
@@ -77111,6 +77064,13 @@
           "status": "overseas_active",
           "last_team": "Minas",
           "nationality": "Brazilian / American"
+        },
+        {
+          "player": "Scotty Pippen Jr",
+          "years": "2022–2023, 2023–2024",
+          "status": "nba_active",
+          "last_team": "Memphis Grizzlies",
+          "nationality": "United States"
         },
         {
           "player": "Sekou Doumbouya",
@@ -82750,7 +82710,7 @@
         },
         {
           "player": "Eddie Phillips",
-          "years": "1984-1988",
+          "years": "1984–1988",
           "status": "retired",
           "last_team": "Hapoel Holon",
           "nationality": "United States"
@@ -82832,7 +82792,7 @@
       "city": "Desio",
       "state": "",
       "country": "Italy",
-      "count": 9,
+      "count": 8,
       "roster": [
         {
           "player": "Alex Stivrins",
@@ -82846,13 +82806,6 @@
           "years": "1992-1994",
           "status": "retired",
           "last_team": "La Crosse Catbirds",
-          "nationality": "United States"
-        },
-        {
-          "player": "Michael Wilson",
-          "years": "1989",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
           "nationality": "United States"
         },
         {
@@ -82902,21 +82855,16 @@
         {
           "type": "club",
           "name": "Pensacola Tornados",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Mississippi Jets",
-          "shared": 3
+          "shared": 4
         },
         {
           "type": "club",
           "name": "Rapid City Thrillers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Quad City Thunder",
           "shared": 2
         },
         {
@@ -82926,17 +82874,22 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "La Crosse Catbirds",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Detroit Spirits",
+          "name": "Tenerife",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Pallacanestro Ferrara",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Mississippi Jets",
           "shared": 2
         }
       ]
@@ -83114,7 +83067,7 @@
         },
         {
           "player": "Charlie Bell",
-          "years": "2004-2005",
+          "years": "2004–2005",
           "status": "retired",
           "last_team": "Otto Caserta",
           "nationality": "United States"
@@ -84731,7 +84684,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1991-1992",
+          "years": "1991–1992",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -88519,7 +88472,7 @@
       "city": "Detroit",
       "state": "Michigan",
       "country": "USA",
-      "count": 40,
+      "count": 41,
       "roster": [
         {
           "player": "Alondes Williams",
@@ -88746,6 +88699,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Ron Harper Jr",
+          "years": "2025",
+          "status": "nba_active",
+          "last_team": "Boston Celtics",
+          "nationality": "United States"
+        },
+        {
           "player": "Saben Lee",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -88814,17 +88774,17 @@
         },
         {
           "type": "club",
+          "name": "Raptors 905",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Capital City Go-Go",
           "shared": 5
         },
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Raptors 905",
           "shared": 4
         },
         {
@@ -88839,7 +88799,7 @@
         },
         {
           "type": "club",
-          "name": "Cleveland Charge",
+          "name": "Maine Celtics",
           "shared": 4
         }
       ]
@@ -89170,17 +89130,17 @@
         },
         {
           "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Galatasaray",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
           "shared": 1
         },
         {
@@ -91718,12 +91678,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 2
         },
         {
@@ -93457,12 +93417,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 4
         },
         {
@@ -93805,13 +93765,6 @@
           "nationality": "American / Montenegrin"
         },
         {
-          "player": "Jeenathan Williams",
-          "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Chiba Jets",
-          "nationality": "United States"
-        },
-        {
           "player": "Jeff Dowtin",
           "years": "2021",
           "status": "overseas_active",
@@ -94033,6 +93986,13 @@
           "years": "2021",
           "status": "overseas_active",
           "last_team": "Memphis Hustle",
+          "nationality": "United States"
+        },
+        {
+          "player": "Nate Williams",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Long Island Nets",
           "nationality": "United States"
         },
         {
@@ -97164,7 +97124,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1992-1993",
+          "years": "1992–1993",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -98793,7 +98753,7 @@
       "city": "Torino",
       "state": "",
       "country": "Italy",
-      "count": 23,
+      "count": 22,
       "roster": [
         {
           "player": "Andre Dawkins",
@@ -98899,13 +98859,6 @@
           "years": "2017–2018",
           "status": "overseas_active",
           "last_team": "Illawarra Hawks",
-          "nationality": "United States"
-        },
-        {
-          "player": "Michael Wilson",
-          "years": "1984-1985",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
           "nationality": "United States"
         },
         {
@@ -101135,7 +101088,7 @@
       "city": "Maine",
       "state": "Maine",
       "country": "USA",
-      "count": 18,
+      "count": 17,
       "roster": [
         {
           "player": "Andre McCarter",
@@ -101229,13 +101182,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Michael Wilson",
-          "years": "1982-1983",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        },
-        {
           "player": "Mike Gibson",
           "years": "1982-1983",
           "status": "retired",
@@ -101268,27 +101214,12 @@
         {
           "type": "club",
           "name": "Pensacola Tornados",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Detroit Spirits",
-          "shared": 3
+          "shared": 4
         },
         {
           "type": "club",
           "name": "Bay State Bombardiers",
           "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Tel Aviv",
-          "shared": 2
         },
         {
           "type": "club",
@@ -101302,7 +101233,22 @@
         },
         {
           "type": "club",
-          "name": "Auxilium Torino",
+          "name": "Detroit Spirits",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Tampa Bay Thrillers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Atlantic City Hi-Rollers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Lehigh Valley Jets",
           "shared": 2
         }
       ]
@@ -106323,7 +106269,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1982-1983",
+          "years": "1982–1983",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -106377,7 +106323,7 @@
       "city": "Treviso",
       "state": "",
       "country": "Italy",
-      "count": 52,
+      "count": 51,
       "roster": [
         {
           "player": "Andrea Bargnani",
@@ -106447,13 +106393,6 @@
           "years": "2003",
           "status": "retired",
           "last_team": "Panasonic Trians",
-          "nationality": "United States"
-        },
-        {
-          "player": "Charlie Bell",
-          "years": "2002",
-          "status": "retired",
-          "last_team": "Otto Caserta",
           "nationality": "United States"
         },
         {
@@ -112245,7 +112184,7 @@
       "roster": [
         {
           "player": "Andy Johnson",
-          "years": "1962-1963",
+          "years": "1962–1963",
           "status": "retired",
           "last_team": "Camden Bullets",
           "nationality": "United States"
@@ -112324,7 +112263,7 @@
       "roster": [
         {
           "player": "Andy Johnson",
-          "years": "1962-1969",
+          "years": "1962–1969",
           "status": "retired",
           "last_team": "Camden Bullets",
           "nationality": "United States"
@@ -112619,7 +112558,7 @@
       "roster": [
         {
           "player": "Andy Johnson",
-          "years": "1970-1971",
+          "years": "1970–1971",
           "status": "retired",
           "last_team": "Camden Bullets",
           "nationality": "United States"
@@ -119523,7 +119462,7 @@
       "city": "La Crosse",
       "state": "Wisconsin",
       "country": "USA",
-      "count": 12,
+      "count": 11,
       "roster": [
         {
           "player": "Anthony Frederick",
@@ -119575,13 +119514,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Michael Wilson",
-          "years": "1987",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        },
-        {
           "player": "Mike Gibson",
           "years": "1987",
           "status": "retired",
@@ -119614,17 +119546,12 @@
         {
           "type": "club",
           "name": "Quad City Thunder",
-          "shared": 6
+          "shared": 5
         },
         {
           "type": "club",
           "name": "Wichita Falls Texans",
           "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Aurora Desio",
-          "shared": 3
         },
         {
           "type": "club",
@@ -119643,12 +119570,17 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Oklahoma City Cavalry",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Oklahoma City Cavalry",
+          "name": "Aurora Desio",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Winnipeg Thunder",
           "shared": 2
         }
       ]
@@ -120383,12 +120315,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "South Bay Lakers",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "AEK Athens",
           "shared": 2
         }
       ]
@@ -120964,12 +120896,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -125517,12 +125449,12 @@
         },
         {
           "type": "club",
-          "name": "Auxilium Torino",
+          "name": "Fort Worth Flyers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fort Worth Flyers",
+          "name": "Auxilium Torino",
           "shared": 1
         },
         {
@@ -127421,7 +127353,7 @@
         },
         {
           "player": "Ron Davis",
-          "years": "1999-2000",
+          "years": "1999–2000",
           "status": "retired",
           "last_team": "Neptūnas Klaipėda",
           "nationality": "United States"
@@ -127732,7 +127664,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -128237,12 +128169,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -134714,12 +134646,12 @@
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Crvena Zvezda",
           "shared": 1
         }
       ]
@@ -136490,12 +136422,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -137428,7 +137360,7 @@
       "roster": [
         {
           "player": "Ben Sheppard",
-          "years": "2023-2024",
+          "years": "2023–2024",
           "status": "nba_active",
           "last_team": "Indiana Pacers",
           "nationality": "United States"
@@ -143078,7 +143010,7 @@
         },
         {
           "type": "club",
-          "name": "Pensacola Tornados",
+          "name": "Club Ourense Baloncesto",
           "shared": 1
         }
       ]
@@ -143299,7 +143231,7 @@
         },
         {
           "type": "club",
-          "name": "Pensacola Tornados",
+          "name": "Club Ourense Baloncesto",
           "shared": 1
         }
       ]
@@ -143544,7 +143476,7 @@
       "city": "Pensacola",
       "state": "Florida",
       "country": "USA",
-      "count": 25,
+      "count": 24,
       "roster": [
         {
           "player": "Billy Ray Bates",
@@ -143652,13 +143584,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Michael Wilson",
-          "years": "1988-1989",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        },
-        {
           "player": "Mike Brittain",
           "years": "1988-1989",
           "status": "retired",
@@ -143750,17 +143675,17 @@
         },
         {
           "type": "club",
+          "name": "Tampa Bay Thrillers",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Maine Lumberjacks",
-          "shared": 5
+          "shared": 4
         },
         {
           "type": "club",
-          "name": "Aurora Desio",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Bay State Bombardiers",
           "shared": 4
         }
       ]
@@ -145152,7 +145077,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -145290,7 +145215,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -146594,12 +146519,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Montepaschi Siena",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Montepaschi Siena",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         }
       ]
@@ -146609,7 +146534,7 @@
       "city": "Ferrol",
       "state": "",
       "country": "Spain",
-      "count": 9,
+      "count": 8,
       "roster": [
         {
           "player": "Bob McCann",
@@ -146637,13 +146562,6 @@
           "years": "1993-1994",
           "status": "retired",
           "last_team": "Gijón",
-          "nationality": "United States"
-        },
-        {
-          "player": "Michael Wilson",
-          "years": "1989-1990",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
           "nationality": "United States"
         },
         {
@@ -146678,16 +146596,6 @@
       "related": [
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Pensacola Tornados",
-          "shared": 3
-        },
-        {
-          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 2
         },
@@ -146698,23 +146606,33 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "FC Barcelona",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Detroit Spirits",
+          "name": "Hapoel Tel Aviv",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Auxilium Torino",
+          "name": "Pensacola Tornados",
           "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Olimpia Milano",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Quad City Thunder",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Real Madrid",
+          "shared": 1
         }
       ]
     },
@@ -146863,12 +146781,12 @@
         },
         {
           "type": "club",
-          "name": "Pensacola Tornados",
+          "name": "Club Ourense Baloncesto",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Club Ourense Baloncesto",
+          "name": "Pensacola Tornados",
           "shared": 1
         },
         {
@@ -148428,10 +148346,10 @@
         },
         {
           "player": "Joe Kennedy",
-          "years": "1970-1971",
+          "years": "",
           "status": "retired",
-          "last_team": "Pittsburgh Condors",
-          "nationality": "United States"
+          "last_team": "Seattle SuperSonics",
+          "nationality": "American"
         },
         {
           "player": "Mickey Davis",
@@ -149921,12 +149839,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -153288,12 +153206,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Capitanes de Arecibo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capitanes de Arecibo",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -153672,7 +153590,7 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Capitanes de Arecibo",
           "shared": 1
         }
       ]
@@ -155682,7 +155600,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -155781,12 +155699,12 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Quad City Thunder",
           "shared": 1
         },
         {
@@ -156295,7 +156213,7 @@
       "city": "Helsinki",
       "state": "",
       "country": "Finland",
-      "count": 6,
+      "count": 5,
       "roster": [
         {
           "player": "Brett Vroman",
@@ -156333,24 +156251,12 @@
           "last_team": "Sundsvall Dragons",
           "nationality": "United States",
           "all_star_count": 7
-        },
-        {
-          "player": "Scotty Pippen Jr",
-          "years": "2008",
-          "status": "retired",
-          "last_team": "Sundsvall Dragons",
-          "nationality": "United States"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Aris Thessaloniki",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Sundsvall Dragons",
           "shared": 2
         },
         {
@@ -156381,6 +156287,11 @@
         {
           "type": "club",
           "name": "Napoli Basket",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Dynamo Moscow",
           "shared": 1
         }
       ]
@@ -156524,13 +156435,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Jeenathan Williams",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Chiba Jets",
-          "nationality": "United States"
-        },
-        {
           "player": "Johnathan Williams",
           "years": "2024–2025",
           "status": "overseas_active",
@@ -156549,6 +156453,13 @@
           "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Saga Ballooners",
+          "nationality": "United States"
+        },
+        {
+          "player": "Nate Williams",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Long Island Nets",
           "nationality": "United States"
         },
         {
@@ -158401,12 +158312,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -158459,12 +158370,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -163339,12 +163250,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -163419,12 +163330,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -163462,12 +163373,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -163763,12 +163674,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 5
         },
         {
@@ -163850,12 +163761,12 @@
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
@@ -164390,7 +164301,7 @@
         },
         {
           "player": "Eddie Phillips",
-          "years": "1989-1990",
+          "years": "1989–1990",
           "status": "retired",
           "last_team": "Hapoel Holon",
           "nationality": "United States"
@@ -166833,7 +166744,7 @@
       "city": "Manila",
       "state": "",
       "country": "Philippines",
-      "count": 3,
+      "count": 2,
       "roster": [
         {
           "player": "Carlos Terry",
@@ -166844,13 +166755,6 @@
         },
         {
           "player": "Kevin Porter",
-          "years": "1983",
-          "status": "retired",
-          "last_team": "Toyota Super Corollas",
-          "nationality": "United States"
-        },
-        {
-          "player": "Kevin Porter (1950)",
           "years": "1983",
           "status": "retired",
           "last_team": "Toyota Super Corollas",
@@ -172668,7 +172572,7 @@
         },
         {
           "player": "Joe Stephens",
-          "years": "2002-2003",
+          "years": "2002–2003",
           "status": "retired",
           "last_team": "Sagesse",
           "nationality": "United States"
@@ -173409,7 +173313,7 @@
       "roster": [
         {
           "player": "Charlie Bell",
-          "years": "2001-2002",
+          "years": "2001–2002",
           "status": "retired",
           "last_team": "Otto Caserta",
           "nationality": "United States"
@@ -173511,13 +173415,78 @@
         },
         {
           "type": "club",
-          "name": "Benetton Treviso",
+          "name": "Basket Livorno",
           "shared": 2
         },
         {
           "type": "club",
+          "name": "Baskonia",
+          "shared": 1
+        }
+      ]
+    },
+    "Benetton Basket": {
+      "club": "Benetton Basket",
+      "city": "Treviso",
+      "state": "Veneto",
+      "country": "Italy",
+      "count": 2,
+      "roster": [
+        {
+          "player": "Charlie Bell",
+          "years": "2002",
+          "status": "retired",
+          "last_team": "Otto Caserta",
+          "nationality": "United States"
+        },
+        {
+          "player": "Donatas Motiejunas",
+          "years": "2009–2012",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
+          "nationality": "Lithuania"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Virtus Bologna",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Crvena Zvezda",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Žalgiris",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Xinjiang",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Shanghai Sharks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "AS Monaco",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Basket Livorno",
-          "shared": 2
+          "shared": 1
         }
       ]
     },
@@ -173544,11 +173513,6 @@
         },
         {
           "type": "club",
-          "name": "Benetton Treviso",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Basket Livorno",
           "shared": 1
         },
@@ -173560,6 +173524,11 @@
         {
           "type": "club",
           "name": "Phoenix Eclipse",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Benetton Basket",
           "shared": 1
         },
         {
@@ -173945,12 +173914,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -174204,12 +174173,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -179850,7 +179819,7 @@
       "city": "Kfar Blum",
       "state": "",
       "country": "Israel",
-      "count": 17,
+      "count": 16,
       "roster": [
         {
           "player": "Chris Smith (1987)",
@@ -179906,13 +179875,6 @@
           "years": "1993-1994",
           "status": "retired",
           "last_team": "Sportino Inowrocław",
-          "nationality": "United States"
-        },
-        {
-          "player": "Michael Wilson",
-          "years": "1991-1994",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
           "nationality": "United States"
         },
         {
@@ -179990,11 +179952,6 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Aris Thessaloniki",
           "shared": 2
         },
@@ -180005,12 +179962,17 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Hapoel Holon",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Bnei Herzliya",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Maccabi Rishon LeZion",
           "shared": 2
         }
       ]
@@ -180342,7 +180304,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -180475,12 +180437,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -182739,7 +182701,7 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         }
       ]
@@ -188189,7 +188151,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -191187,7 +191149,7 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Anadolu Efes",
           "shared": 1
         }
       ]
@@ -195060,11 +195022,6 @@
         },
         {
           "type": "club",
-          "name": "Sundsvall Dragons",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Alvik BK",
           "shared": 0
         },
@@ -195076,6 +195033,11 @@
         {
           "type": "club",
           "name": "Borås Basket",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Sundsvall Dragons",
           "shared": 0
         }
       ]
@@ -198475,12 +198437,12 @@
         },
         {
           "type": "club",
-          "name": "Benetton Treviso",
+          "name": "Dakota Wizards",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Dakota Wizards",
+          "name": "Benetton Treviso",
           "shared": 1
         }
       ]
@@ -208514,64 +208476,6 @@
         }
       ]
     },
-    "Benetton Basket": {
-      "club": "Benetton Basket",
-      "city": "Treviso",
-      "state": "Veneto",
-      "country": "Italy",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Donatas Motiejunas",
-          "years": "2009–2012",
-          "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
-          "nationality": "Lithuania"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Crvena Zvezda",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Žalgiris",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Xinjiang",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Shanghai Sharks",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "AS Monaco",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Shandong Golden Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Asseco Prokom",
-          "shared": 1
-        }
-      ]
-    },
     "Junior Casale": {
       "club": "Junior Casale",
       "city": "Casale Monferrato",
@@ -210283,7 +210187,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -211562,7 +211466,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -213181,7 +213085,7 @@
       "roster": [
         {
           "player": "Eddie Phillips",
-          "years": "1993-1994",
+          "years": "1993–1994",
           "status": "retired",
           "last_team": "Hapoel Holon",
           "nationality": "United States"
@@ -216071,7 +215975,7 @@
         },
         {
           "type": "club",
-          "name": "Long Island Nets",
+          "name": "Fenerbahçe",
           "shared": 1
         }
       ]
@@ -220112,12 +220016,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -227678,12 +227582,12 @@
         },
         {
           "type": "club",
-          "name": "Benetton Treviso",
+          "name": "Dakota Wizards",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Dakota Wizards",
+          "name": "Benetton Treviso",
           "shared": 1
         },
         {
@@ -227884,7 +227788,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -229700,12 +229604,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -229794,12 +229698,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -229827,12 +229731,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Roma",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -230974,7 +230878,7 @@
         },
         {
           "type": "club",
-          "name": "Auxilium Torino",
+          "name": "Iraklis Thessaloniki",
           "shared": 1
         }
       ]
@@ -232093,7 +231997,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -234425,12 +234329,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Capitanes de Arecibo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capitanes de Arecibo",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -237281,12 +237185,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -238705,12 +238609,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -241843,12 +241747,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -244044,7 +243948,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -245130,7 +245034,7 @@
       "roster": [
         {
           "player": "Joe Stephens",
-          "years": "2001-2002",
+          "years": "2001–2002",
           "status": "retired",
           "last_team": "Sagesse",
           "nationality": "United States"
@@ -246700,17 +246604,17 @@
       "related": [
         {
           "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Galatasaray",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
           "shared": 1
         },
         {
@@ -247151,12 +247055,12 @@
         },
         {
           "type": "club",
-          "name": "Sundsvall Dragons",
+          "name": "Alvik BK",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Alvik BK",
+          "name": "BC Luleå",
           "shared": 0
         }
       ]
@@ -250706,12 +250610,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -252033,12 +251937,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -254400,7 +254304,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -262788,11 +262692,6 @@
         },
         {
           "type": "club",
-          "name": "Sundsvall Dragons",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Alvik BK",
           "shared": 0
         },
@@ -262804,6 +262703,11 @@
         {
           "type": "club",
           "name": "Borås Basket",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Sundsvall Dragons",
           "shared": 0
         },
         {
@@ -268734,71 +268638,6 @@
         }
       ]
     },
-    "Jacksonville Jets": {
-      "club": "Jacksonville Jets",
-      "city": "Jacksonville",
-      "state": "Florida",
-      "country": "USA",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Michael Wilson",
-          "years": "1986",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        },
-        {
-          "player": "Mike Gibson",
-          "years": "1986",
-          "status": "retired",
-          "last_team": "Hapoel Galil Elyon",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Tel Aviv",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Detroit Spirits",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Pensacola Tornados",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Auxilium Torino",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Maine Lumberjacks",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Galil Elyon",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Mississippi Jets",
-          "shared": 2
-        }
-      ]
-    },
     "Great Taste Coffee Makers": {
       "club": "Great Taste Coffee Makers",
       "city": "",
@@ -269100,6 +268939,64 @@
         {
           "type": "club",
           "name": "Washington Brewers",
+          "shared": 1
+        }
+      ]
+    },
+    "Jacksonville Jets": {
+      "club": "Jacksonville Jets",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "country": "USA",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Mike Gibson",
+          "years": "1986",
+          "status": "retired",
+          "last_team": "Hapoel Galil Elyon",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Quad City Thunder",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Hapoel Tel Aviv",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Detroit Spirits",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Pensacola Tornados",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Auxilium Torino",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Maine Lumberjacks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Hapoel Galil Elyon",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Mississippi Jets",
           "shared": 1
         }
       ]
@@ -279501,12 +279398,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -286433,7 +286330,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -288136,7 +288033,7 @@
         },
         {
           "type": "club",
-          "name": "Sundsvall Dragons",
+          "name": "Náuticos de Mazatlán",
           "shared": 1
         }
       ]
@@ -288194,7 +288091,7 @@
         },
         {
           "type": "club",
-          "name": "Sundsvall Dragons",
+          "name": "Náuticos de Mazatlán",
           "shared": 1
         }
       ]
@@ -293963,7 +293860,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -294389,7 +294286,7 @@
         },
         {
           "type": "club",
-          "name": "Pensacola Tornados",
+          "name": "Apollon Patras",
           "shared": 1
         }
       ]
@@ -296426,7 +296323,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -298238,7 +298135,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -301632,17 +301529,17 @@
         },
         {
           "type": "club",
-          "name": "Sundsvall Dragons",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Alvik BK",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Borås Basket",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Sundsvall Dragons",
           "shared": 0
         },
         {
@@ -302854,7 +302751,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Fort Wayne Mad Ants",
           "shared": 0
         }
       ]
@@ -303010,11 +302907,6 @@
         },
         {
           "type": "club",
-          "name": "Sundsvall Dragons",
-          "shared": 0
-        },
-        {
-          "type": "club",
           "name": "Alvik BK",
           "shared": 0
         },
@@ -303026,6 +302918,11 @@
         {
           "type": "club",
           "name": "Borås Basket",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Sundsvall Dragons",
           "shared": 0
         }
       ]

@@ -2,14 +2,6 @@
   "checked": 5179,
   "bad_source": [
     {
-      "player": "Ben Sheppard",
-      "stored": "Ben Shephard (disambiguation)",
-      "resolved": "Ben Shephard (disambiguation)",
-      "url_resolves_to": "Ben Shephard (disambiguation)",
-      "stints": 2,
-      "reason": "disambiguation page"
-    },
-    {
       "player": "Derrick Alston Sr",
       "stored": "Derrick Alston",
       "resolved": "",
@@ -32,30 +24,6 @@
       "url_resolves_to": "Jabari Smith",
       "stints": 10,
       "reason": "suffix sr vs none"
-    },
-    {
-      "player": "Michael Wilson",
-      "stored": "Michael Gibson (basketball)",
-      "resolved": "Michael Wilson",
-      "url_resolves_to": "Mike Gibson (basketball)",
-      "stints": 13,
-      "reason": "surname wilson vs gibson"
-    },
-    {
-      "player": "Ron Harper Jr",
-      "stored": "Ron Harper",
-      "resolved": "",
-      "url_resolves_to": "Ron Harper",
-      "stints": 4,
-      "reason": "suffix jr vs none"
-    },
-    {
-      "player": "Scotty Pippen Jr",
-      "stored": "Scotty Pippen",
-      "resolved": "Scotty Pippen Jr.",
-      "url_resolves_to": "Scottie Pippen",
-      "stints": 6,
-      "reason": "suffix jr vs none"
     },
     {
       "player": "Walker Russell Sr",
@@ -85,9 +53,9 @@
     },
     {
       "player": "Ben Sheppard",
-      "stored": "Ben Shephard (disambiguation)",
+      "stored": "Ben Sheppard (basketball)",
       "resolved": "Ben Shephard (disambiguation)",
-      "url_resolves_to": "Ben Shephard (disambiguation)",
+      "url_resolves_to": "Ben Sheppard (basketball)",
       "stints": 2,
       "reason": "disambiguation page"
     },
@@ -659,10 +627,10 @@
     },
     {
       "player": "Ron Harper Jr",
-      "stored": "Ron Harper",
+      "stored": "Ron Harper Jr.",
       "resolved": "",
-      "url_resolves_to": "Ron Harper",
-      "stints": 4
+      "url_resolves_to": "Ron Harper Jr.",
+      "stints": 7
     },
     {
       "player": "Ron Sobiezczyk",
@@ -3522,6 +3490,14 @@
       "url_resolves_to": "Ben McDonald (basketball)",
       "stints": 11,
       "reason": ""
+    },
+    {
+      "player": "Ben Sheppard",
+      "stored": "Ben Sheppard (basketball)",
+      "resolved": "Ben Shephard (disambiguation)",
+      "url_resolves_to": "Ben Sheppard (basketball)",
+      "stints": 2,
+      "reason": "disambiguation page"
     },
     {
       "player": "Ben Wallace",
@@ -7412,14 +7388,6 @@
       "reason": ""
     },
     {
-      "player": "Michael Wilson",
-      "stored": "Michael Gibson (basketball)",
-      "resolved": "Michael Wilson",
-      "url_resolves_to": "Mike Gibson (basketball)",
-      "stints": 13,
-      "reason": ""
-    },
-    {
       "player": "Michael Young",
       "stored": "Michael Young (basketball player)",
       "resolved": "Michael Young",
@@ -8345,14 +8313,6 @@
       "resolved": "Scott Williams",
       "url_resolves_to": "Scott Williams (basketball)",
       "stints": 7,
-      "reason": ""
-    },
-    {
-      "player": "Scotty Pippen Jr",
-      "stored": "Scotty Pippen",
-      "resolved": "Scotty Pippen Jr.",
-      "url_resolves_to": "Scottie Pippen",
-      "stints": 6,
       "reason": ""
     },
     {
@@ -14635,7 +14595,7 @@
     "Ben Poquette": "Ben Poquette",
     "Ben Schadler": "Ben Schadler",
     "Ben Scharnus": "Ben Scharnus",
-    "Ben Sheppard": "Ben Shephard (disambiguation)",
+    "Ben Sheppard": "Ben Sheppard (basketball)",
     "Ben Simmons": "Ben Simmons",
     "Ben Swain": "Ben Swain",
     "Ben Uzoh": "Ben Uzoh",
@@ -17701,7 +17661,7 @@
     "Michael Smith (1972)": "Michael Smith (basketball, born 1972)",
     "Michael Stewart": "Michael Stewart (basketball)",
     "Michael Wiley": "Michael Wiley (basketball)",
-    "Michael Wilson": "Mike Gibson (basketball)",
+    "Michael Wilson": "Michael Wilson",
     "Michael Young": "Michael Young (basketball, born 1961)",
     "Micheal Ray Richardson": "Micheal Ray Richardson",
     "Micheal Williams": "Micheal Williams",
@@ -18374,7 +18334,7 @@
     "Ron Feiereisel": "Ron Feiereisel",
     "Ron Filipek": "Ron Filipek",
     "Ron Harper": "Ron Harper",
-    "Ron Harper Jr": "Ron Harper",
+    "Ron Harper Jr": "Ron Harper Jr.",
     "Ron Horn": "Ron Horn",
     "Ron Johnson": "Ron Johnson (basketball)",
     "Ron Knight": "Ron Knight (basketball)",
@@ -18513,7 +18473,7 @@
     "Scottie Lewis": "Scottie Lewis",
     "Scottie Pippen": "Scottie Pippen",
     "Scotty Hopson": "Scotty Hopson",
-    "Scotty Pippen Jr": "Scottie Pippen",
+    "Scotty Pippen Jr": "Scotty Pippen Jr.",
     "Sean Colson": "Sean Colson",
     "Sean Elliott": "Sean Elliott",
     "Sean Green": "Sean Green (basketball)",

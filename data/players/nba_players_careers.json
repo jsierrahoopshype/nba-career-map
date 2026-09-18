@@ -3680,15 +3680,17 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1977-1978",
         "team": "Seattle SuperSonics",
+        "team_raw": "Seattle SuperSonics",
+        "years": "1977–78",
         "city": "Seattle",
-        "state": "Washington",
-        "country": "USA"
+        "state": "",
+        "country": ""
       },
       {
-        "years": "1977-1978",
         "team": "Anchorage Northern Knights",
+        "team_raw": "Anchorage Northern Knights",
+        "years": "1977–1978",
         "city": "Anchorage",
         "state": "Alaska",
         "country": "USA"
@@ -3696,7 +3698,23 @@
     ],
     "current_team": "Anchorage Northern Knights",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "position": "Small forward",
+    "number": [
+      "30"
+    ],
+    "birth_date": "1954-04-05",
+    "birth_place": "Chicago, Illinois, U.S.",
+    "death_date": "2003-05-14",
+    "death_place": "Michigan City, Indiana, U.S.",
+    "college": "Arizona (1972–1976)",
+    "draft": {
+      "year": "1976",
+      "round": "2",
+      "pick": "30",
+      "team": "Phoenix Suns"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Al Guokas",
@@ -13248,36 +13266,41 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1958-1961",
         "team": "Philadelphia Warriors",
-        "city": "Philadelphia",
-        "state": "Pennsylvania",
-        "country": "USA"
+        "team_raw": "Philadelphia Warriors",
+        "years": "1958–1961",
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
-        "years": "1961-1962",
         "team": "Chicago Packers",
-        "city": "Chicago",
-        "state": "Illinois",
-        "country": "USA"
+        "team_raw": "Chicago Packers",
+        "years": "1961–62",
+        "city": "Washington",
+        "state": "D.C",
+        "country": ""
       },
       {
-        "years": "1962-1963",
         "team": "Philadelphia Tapers",
+        "team_raw": "Philadelphia Tapers",
+        "years": "1962–1963",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "1962-1969",
         "team": "Allentown Jets",
+        "team_raw": "Allentown Jets",
+        "years": "1962–1969",
         "city": "Allentown",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "1970-1971",
         "team": "Camden Bullets",
+        "team_raw": "Camden Bullets",
+        "years": "1970–1971",
         "city": "Camden",
         "state": "New Jersey",
         "country": "USA"
@@ -13285,7 +13308,16 @@
     ],
     "current_team": "Camden Bullets",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1932-11-08",
+    "birth_place": "Los Angeles, California, U.S.",
+    "death_date": "2002-08-30",
+    "high_school": "North Hollywood, (North Hollywood, California)",
+    "college": "Portland (1950–1953)",
+    "draft": {
+      "year": "1953"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Andy Kostecka",
@@ -22910,19 +22942,22 @@
   },
   {
     "player": "Ben Sheppard",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Shephard_(disambiguation)",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Sheppard_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2023-2026",
         "team": "Indiana Pacers",
+        "team_raw": "Indiana Pacers",
+        "years": "2023–present",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Indiana Mad Ants",
+        "team_raw": "Indiana Mad Ants",
+        "years": "2023–2024",
+        "loan": true,
         "city": "Noblesville",
         "state": "Indiana",
         "country": "USA"
@@ -22934,8 +22969,22 @@
     "aliases": [
       "Ben Shephard (disambiguation)"
     ],
-    "last_updated": "2026-08-26",
-    "nationality": "United States"
+    "last_updated": "2026-09-18",
+    "nationality": "United States",
+    "position": "Shooting guard",
+    "number": [
+      "26"
+    ],
+    "birth_date": "2001-07-16",
+    "birth_place": "Atlanta, Georgia, U.S.",
+    "high_school": "Greater Atlanta Christian, (Norcross, Georgia)",
+    "college": "Belmont (2019–2023)",
+    "draft": {
+      "year": "2023",
+      "round": "1",
+      "pick": "26",
+      "team": "Indiana Pacers"
+    }
   },
   {
     "player": "Ben Simmons",
@@ -25744,36 +25793,41 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1978-1980",
         "team": "Kansas City Kings",
-        "city": "Kansas City",
-        "state": "Missouri",
+        "team_raw": "Kansas City Kings",
+        "years": "1978–1980",
+        "city": "Sacramento",
+        "state": "California",
         "country": "USA"
       },
       {
-        "years": "1980",
         "team": "Utah Jazz",
+        "team_raw": "Utah Jazz",
+        "years": "1980",
         "city": "Salt Lake City",
         "state": "Utah",
         "country": "USA"
       },
       {
-        "years": "1980-1983",
         "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "1980–1983",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       },
       {
-        "years": "1983-1984",
         "team": "San Diego Clippers",
+        "team_raw": "San Diego Clippers",
+        "years": "1983–84",
         "city": "San Diego",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "1985",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "1985",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
@@ -25781,7 +25835,18 @@
     ],
     "current_team": "Chicago Bulls",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1955-06-05",
+    "birth_place": "Waukegan, Illinois, U.S.",
+    "high_school": "Zion-Benton (Zion, Illinois)",
+    "college": "Northwestern (1973–1977)",
+    "draft": {
+      "year": "1977",
+      "round": "6",
+      "pick": "115",
+      "team": "Phoenix Suns"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Billy Owens",
@@ -46300,71 +46365,81 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "2001",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2001",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2001-2002",
         "team": "Phoenix Eclipse",
+        "team_raw": "Phoenix Eclipse",
+        "years": "2001–2002",
         "city": "Indianapolis",
         "state": "",
         "country": "USA"
       },
       {
-        "years": "2002",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2002",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
       },
       {
+        "team": "Benetton Basket",
+        "team_raw": "Benetton Basket",
         "years": "2002",
-        "team": "Benetton Treviso",
         "city": "Treviso",
-        "state": "",
+        "state": "Veneto",
         "country": "Italy"
       },
       {
-        "years": "2002-2003",
         "team": "Virtus Bologna",
+        "team_raw": "Virtus Bologna",
+        "years": "2002–2003",
         "city": "Bologna",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2003-2004",
         "team": "Basket Livorno",
+        "team_raw": "Mabo Livorno",
+        "years": "2003–2004",
         "city": "Livorno",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2004-2005",
         "team": "Breogán",
+        "team_raw": "Leche Río Breogán",
+        "years": "2004–2005",
         "city": "Lugo",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2005-2010",
         "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2005–2010",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2010-2011",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2010–11",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2012",
         "team": "Otto Caserta",
+        "team_raw": "Otto Caserta",
+        "years": "2012",
         "city": "Caserta",
         "state": "",
         "country": "Italy"
@@ -46372,7 +46447,15 @@
     ],
     "current_team": "Otto Caserta",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1979-03-12",
+    "birth_place": "Flint, Michigan, U.S.",
+    "high_school": "Flint Southwestern (Flint, Michigan)",
+    "college": "Michigan State (1997–2001)",
+    "draft": {
+      "year": "2001"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Charlie Black",
@@ -87795,50 +87878,57 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1992-1995",
         "team": "Washington Bullets",
+        "team_raw": "Washington Bullets",
+        "years": "1992–1995",
         "city": "Washington",
-        "state": "D.C.",
-        "country": "USA"
+        "state": "D.C",
+        "country": ""
       },
       {
-        "years": "1995-1996",
         "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "1995–96",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       },
       {
-        "years": "1996-1997",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "1996–97",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "1997-1998",
         "team": "New Jersey Nets",
-        "city": "East Rutherford",
-        "state": "New Jersey",
-        "country": "USA"
+        "team_raw": "New Jersey Nets",
+        "years": "1997–98",
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
-        "years": "1999",
         "team": "Seattle SuperSonics",
+        "team_raw": "Seattle SuperSonics",
+        "years": "1999",
         "city": "Seattle",
-        "state": "Washington",
-        "country": "USA"
+        "state": "",
+        "country": ""
       },
       {
-        "years": "2000",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2000",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2000-2001",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2000–01",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
@@ -87846,7 +87936,18 @@
     ],
     "current_team": "Miami Heat",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1970-01-16",
+    "birth_place": "Palo Alto, California, U.S.",
+    "high_school": "Simi Valley (Simi Valley, California)",
+    "college": "UCLA (1988–1992)",
+    "draft": {
+      "year": "1992",
+      "round": "1",
+      "pick": "19",
+      "team": "Detroit Pistons"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Don Martin",
@@ -97362,50 +97463,57 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1982-1983",
         "team": "New Jersey Nets",
-        "city": "East Rutherford",
-        "state": "New Jersey",
-        "country": "USA"
+        "team_raw": "New Jersey Nets",
+        "years": "1982–83",
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
-        "years": "1983-1984",
         "team": "Forlì",
+        "team_raw": "Latini Forlì",
+        "years": "1983–1984",
         "city": "Forlì",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "1984-1988",
         "team": "Canarias",
+        "team_raw": "Canarias",
+        "years": "1984–1988",
         "city": "Las Palmas",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "1988-1989",
         "team": "Hapoel Holon",
+        "team_raw": "Hapoel Holon",
+        "years": "1988–1989",
         "city": "Holon",
         "state": "",
         "country": "Israel"
       },
       {
-        "years": "1989-1990",
         "team": "Ferro Carril Oeste",
+        "team_raw": "Ferro Carril Oeste",
+        "years": "1989–1990",
         "city": "Caballito",
         "state": "",
         "country": "Argentina"
       },
       {
-        "years": "1993-1994",
         "team": "Beitar Ramat Gan",
+        "team_raw": "Beitar Ramat Gan",
+        "years": "1993–1994",
         "city": "Ramat Gan",
         "state": "",
         "country": "Israel"
       },
       {
-        "years": "1994-1995",
         "team": "Hapoel Holon",
+        "team_raw": "Hapoel Holon",
+        "years": "1994–1995",
         "city": "Holon",
         "state": "",
         "country": "Israel"
@@ -97413,7 +97521,18 @@
     ],
     "current_team": "Hapoel Holon",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1961-09-29",
+    "birth_place": "Birmingham, Alabama, U.S.",
+    "high_school": "A. H. Parker, (Birmingham, Alabama)",
+    "college": "Alabama (1978–1982)",
+    "draft": {
+      "year": "1982",
+      "round": "1",
+      "pick": "21",
+      "team": "New Jersey Nets"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Eddie Robinson",
@@ -134696,7 +134815,7 @@
     "aliases": [
       "Jakob Pöltl"
     ],
-    "last_updated": "2026-08-26",
+    "last_updated": "2026-09-18",
     "nationality": "Austria"
   },
   {
@@ -146666,98 +146785,6 @@
     "display_name": "JD Davison",
     "last_updated": "2026-09-04",
     "nationality": "United States"
-  },
-  {
-    "player": "Jeenathan Williams",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Nate_Williams_(basketball,_born_1999)",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "team": "Salt Lake City Stars",
-        "team_raw": "Salt Lake City Stars",
-        "years": "2022–2023",
-        "city": "Salt Lake City",
-        "state": "Utah",
-        "country": "USA"
-      },
-      {
-        "team": "Portland Trail Blazers",
-        "team_raw": "Portland Trail Blazers",
-        "years": "2023",
-        "city": "Portland",
-        "state": "Oregon",
-        "country": "USA"
-      },
-      {
-        "team": "Houston Rockets",
-        "team_raw": "Houston Rockets",
-        "years": "2023–2025",
-        "city": "Houston",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "team": "Rio Grande Valley Vipers",
-        "team_raw": "Rio Grande Valley Vipers",
-        "years": "2023–2025",
-        "loan": true,
-        "city": "Edinburg",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "team": "Long Island Nets",
-        "team_raw": "Long Island Nets",
-        "years": "2025–2026",
-        "city": "Uniondale",
-        "state": "New York",
-        "country": "USA"
-      },
-      {
-        "team": "Golden State Warriors",
-        "team_raw": "Golden State Warriors",
-        "years": "2026",
-        "city": "San Francisco",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "team": "Santa Cruz Warriors",
-        "team_raw": "Santa Cruz Warriors",
-        "years": "2026",
-        "loan": true,
-        "city": "Santa Cruz",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "team": "Chiba Jets",
-        "team_raw": "Chiba Jets",
-        "years": "2026–present",
-        "city": "Funabashi",
-        "state": "",
-        "country": "Japan"
-      }
-    ],
-    "current_team": "Chiba Jets",
-    "status": "overseas_active",
-    "position": "Shooting guard / small forward",
-    "birth_date": "1999-02-12",
-    "birth_place": "Rochester, New York, U.S.",
-    "high_school": "* University Prep Charter, (Rochester, New York) * Prolific Prep, (Napa, California)",
-    "college": "Buffalo (2018–2022)",
-    "draft": {
-      "year": "2022"
-    },
-    "display_name": "Nate Williams (basketball, born 1999)",
-    "aliases": [
-      "Nate Williams (basketball, born 1999)"
-    ],
-    "last_updated": "2026-09-16",
-    "nationality": "United States",
-    "number": [
-      "19"
-    ]
   },
   {
     "player": "Jeff Adrien",
@@ -159119,23 +159146,35 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1968-1970",
         "team": "Seattle SuperSonics",
+        "team_raw": "Seattle SuperSonics",
+        "years": "1968–1970",
         "city": "Seattle",
-        "state": "Washington",
-        "country": "USA"
+        "state": "",
+        "country": ""
       },
       {
-        "years": "1970-1971",
         "team": "Pittsburgh Condors",
+        "team_raw": "Pittsburgh Condors",
+        "years": "",
         "city": "Pittsburgh",
         "state": "Pennsylvania",
         "country": "USA"
       }
     ],
-    "current_team": "Pittsburgh Condors",
+    "current_team": "Seattle SuperSonics",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "American",
+    "birth_date": "1947-01-12",
+    "high_school": "DeMatha (Hyattsville, Maryland)",
+    "college": "Duke (1965–1968)",
+    "draft": {
+      "year": "1968",
+      "round": "10",
+      "pick": "122",
+      "team": "Seattle SuperSonics"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Joe Kleine",
@@ -159485,106 +159524,121 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1995-1998",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "1995–1998",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "1998",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "1998",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "1999-2000",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "1999–2000",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2000-2001",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2000–01",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2001-2003",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2001–2003",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2003-2006",
         "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2003–2006",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2006",
         "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "2006",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       },
       {
-        "years": "2006-2007",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2006–07",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2007-2008",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2007–08",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2008",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2008",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2008-2009",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2008–09",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2009",
         "team": "Cleveland Cavaliers",
+        "team_raw": "Cleveland Cavaliers",
+        "years": "2009",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
       },
       {
-        "years": "2009-2010",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2009–10",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "2010",
         "team": "New Jersey Nets",
-        "city": "East Rutherford",
-        "state": "New Jersey",
-        "country": "USA"
+        "team_raw": "New Jersey Nets",
+        "years": "2010",
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
-        "years": "2010-2011",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2010–11",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
@@ -159592,7 +159646,18 @@
     ],
     "current_team": "Los Angeles Lakers",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1975-07-26",
+    "birth_place": "Norfolk, Virginia, U.S.",
+    "high_school": "Matthew Fontaine Maury, (Norfolk, Virginia)",
+    "college": "Maryland (1993–1995)",
+    "draft": {
+      "year": "1995",
+      "round": "1",
+      "pick": "1",
+      "team": "Golden State Warriors"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Joe Smyth",
@@ -159624,78 +159689,89 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1996-1997",
         "team": "La Crosse Bobcats",
+        "team_raw": "La Crosse Bobcats",
+        "years": "1996–1997",
         "city": "La Crosse",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "1997",
         "team": "Panteras de Miranda",
+        "team_raw": "Panteras de Miranda",
+        "years": "1997",
         "city": "Miranda",
         "state": "",
         "country": "Venezuela"
       },
       {
-        "years": "1997-1998",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "1997–1998",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "1998",
         "team": "Independiente",
+        "team_raw": "Independiente",
+        "years": "1998",
         "city": "",
         "state": "",
         "country": ""
       },
       {
-        "years": "1998-1999",
         "team": "Idaho Stampede",
+        "team_raw": "Idaho Stampede",
+        "years": "1998–1999",
         "city": "Boise",
         "state": "Idaho",
         "country": "USA"
       },
       {
-        "years": "1999",
         "team": "Vancouver Grizzlies",
+        "team_raw": "Vancouver Grizzlies",
+        "years": "1999",
         "city": "Vancouver",
-        "state": "British Columbia",
-        "country": "Canada"
+        "state": "",
+        "country": ""
       },
       {
-        "years": "2000",
         "team": "Idaho Stampede",
+        "team_raw": "Idaho Stampede",
+        "years": "2000",
         "city": "Boise",
         "state": "Idaho",
         "country": "USA"
       },
       {
-        "years": "2000",
         "team": "Purefoods",
+        "team_raw": "Purefoods",
+        "years": "2000",
         "city": "",
         "state": "",
         "country": ""
       },
       {
-        "years": "2000",
         "team": "ASVEL",
+        "team_raw": "ASVEL Basket",
+        "years": "2000",
         "city": "Villeurbanne",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2001-2002",
         "team": "Toshiba Brave Thunders",
+        "team_raw": "Toshiba Brave Thunders",
+        "years": "2001–2002",
         "city": "Kawasaki",
         "state": "",
         "country": "Japan"
       },
       {
-        "years": "2002-2003",
         "team": "Sagesse",
+        "team_raw": "Sagesse",
+        "years": "2002–2003",
         "city": "Beirut",
         "state": "",
         "country": "Lebanon"
@@ -159703,7 +159779,15 @@
     ],
     "current_team": "Sagesse",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1973-01-28",
+    "birth_place": "Riverside, California, U.S.",
+    "high_school": "North Shore (Houston, Texas)",
+    "college": "*Colorado (1991–1993) *Little Rock (1994–1996)",
+    "draft": {
+      "year": "1996"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Joe Strawder",
@@ -165132,51 +165216,6 @@
     "nationality": "United States"
   },
   {
-    "player": "Johnny Davis (1955)",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Johnny_Davis_(NBA)",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "years": "1976-1978",
-        "team": "Portland Trail Blazers",
-        "city": "Portland",
-        "state": "Oregon",
-        "country": "USA"
-      },
-      {
-        "years": "1978-1982",
-        "team": "Indiana Pacers",
-        "city": "Indianapolis",
-        "state": "Indiana",
-        "country": "USA"
-      },
-      {
-        "years": "1982-1984",
-        "team": "Atlanta Hawks",
-        "city": "Atlanta",
-        "state": "Georgia",
-        "country": "USA"
-      },
-      {
-        "years": "1984-1986",
-        "team": "Cleveland Cavaliers",
-        "city": "Cleveland",
-        "state": "Ohio",
-        "country": "USA"
-      },
-      {
-        "years": "1986",
-        "team": "Atlanta Hawks",
-        "city": "Atlanta",
-        "state": "Georgia",
-        "country": "USA"
-      }
-    ],
-    "current_team": "Atlanta Hawks",
-    "status": "retired",
-    "nationality": "United States"
-  },
-  {
     "player": "Johnny Davis",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Johnny_Davis_(NBA)",
     "parse_status": "success",
@@ -165219,7 +165258,12 @@
     ],
     "current_team": "Atlanta Hawks",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "display_name": "Johnny Davis (NBA)",
+    "aliases": [
+      "Johnny Davis (1955)"
+    ],
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Johnny Dawkins",
@@ -185966,59 +186010,12 @@
     ],
     "current_team": "Toyota Super Corollas",
     "status": "retired",
-    "nationality": "United States"
-  },
-  {
-    "player": "Kevin Porter (1950)",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Porter_%28basketball%2C_born_1950%29",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "years": "1972-1975",
-        "team": "Washington Bullets",
-        "city": "Washington",
-        "state": "D.C.",
-        "country": "USA"
-      },
-      {
-        "years": "1975-1977",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "years": "1977-1978",
-        "team": "New Jersey Nets",
-        "city": "East Rutherford",
-        "state": "New Jersey",
-        "country": "USA"
-      },
-      {
-        "years": "1978-1979",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "years": "1979-1983",
-        "team": "Washington Bullets",
-        "city": "Washington",
-        "state": "D.C.",
-        "country": "USA"
-      },
-      {
-        "years": "1983",
-        "team": "Toyota Super Corollas",
-        "city": "Manila",
-        "state": "",
-        "country": "Philippines"
-      }
+    "nationality": "United States",
+    "display_name": "Kevin Porter (basketball, born 1950)",
+    "aliases": [
+      "Kevin Porter (1950)"
     ],
-    "current_team": "Toyota Super Corollas",
-    "status": "retired",
-    "nationality": "United States"
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Kevin Pritchard",
@@ -221750,104 +221747,13 @@
   },
   {
     "player": "Michael Wilson",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Gibson_(basketball)",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "years": "1982-1983",
-        "team": "Maine Lumberjacks",
-        "city": "Maine",
-        "state": "Maine",
-        "country": "USA"
-      },
-      {
-        "years": "1983-1984",
-        "team": "Washington Bullets",
-        "city": "Washington",
-        "state": "D.C.",
-        "country": "USA"
-      },
-      {
-        "years": "1984-1985",
-        "team": "Auxilium Torino",
-        "city": "Torino",
-        "state": "",
-        "country": "Italy"
-      },
-      {
-        "years": "1985-1986",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "years": "1986",
-        "team": "Detroit Spirits",
-        "city": "Savannah",
-        "state": "",
-        "country": "Georgia"
-      },
-      {
-        "years": "1986",
-        "team": "Jacksonville Jets",
-        "city": "Jacksonville",
-        "state": "Florida",
-        "country": "USA"
-      },
-      {
-        "years": "1987",
-        "team": "Mississippi Jets",
-        "city": "La Crosse",
-        "state": "Wisconsin",
-        "country": "USA"
-      },
-      {
-        "years": "1987-1988",
-        "team": "Quad City Thunder",
-        "city": "Moline",
-        "state": "Illinois",
-        "country": "USA"
-      },
-      {
-        "years": "1988-1989",
-        "team": "Pensacola Tornados",
-        "city": "Pensacola",
-        "state": "Florida",
-        "country": "USA"
-      },
-      {
-        "years": "1989",
-        "team": "Aurora Desio",
-        "city": "Desio",
-        "state": "",
-        "country": "Italy"
-      },
-      {
-        "years": "1989-1990",
-        "team": "OAR Ferrol",
-        "city": "Ferrol",
-        "state": "",
-        "country": "Spain"
-      },
-      {
-        "years": "1990",
-        "team": "Hapoel Tel Aviv",
-        "city": "Tel Aviv",
-        "state": "",
-        "country": "Israel"
-      },
-      {
-        "years": "1991-1994",
-        "team": "Hapoel Galil Elyon",
-        "city": "Kfar Blum",
-        "state": "",
-        "country": "Israel"
-      }
-    ],
-    "current_team": "Hapoel Galil Elyon",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Wilson",
+    "parse_status": "no_career_data",
+    "career_history": [],
+    "current_team": "",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Michael Young",
@@ -232827,7 +232733,7 @@
   },
   {
     "player": "Nate Williams",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Nate_Williams",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Nate_Williams_(basketball,_born_1999)",
     "parse_status": "no_career_data",
     "career_history": [
       {
@@ -232864,13 +232770,53 @@
         "city": "Uniondale",
         "state": "New York",
         "country": "USA"
+      },
+      {
+        "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2026",
+        "city": "San Francisco",
+        "state": "California",
+        "country": "USA"
+      },
+      {
+        "team": "Santa Cruz Warriors",
+        "team_raw": "Santa Cruz Warriors",
+        "years": "2026",
+        "loan": true,
+        "city": "Santa Cruz",
+        "state": "California",
+        "country": "USA"
+      },
+      {
+        "team": "Chiba Jets",
+        "team_raw": "Chiba Jets",
+        "years": "2026–present",
+        "city": "Funabashi",
+        "state": "",
+        "country": "Japan"
       }
     ],
     "current_team": "Long Island Nets",
     "status": "overseas_active",
     "display_name": "Nate Williams",
-    "last_updated": "2026-09-17",
-    "nationality": "United States"
+    "last_updated": "2026-09-18",
+    "nationality": "United States",
+    "position": "Shooting guard / small forward",
+    "birth_date": "1999-02-12",
+    "birth_place": "Rochester, New York, U.S.",
+    "high_school": "* University Prep Charter, (Rochester, New York) * Prolific Prep, (Napa, California)",
+    "college": "Buffalo (2018–2022)",
+    "draft": {
+      "year": "2022"
+    },
+    "number": [
+      "19"
+    ],
+    "aliases": [
+      "Jeenathan Williams",
+      "Nate Williams (basketball, born 1999)"
+    ]
   },
   {
     "player": "Nate Wolters",
@@ -243085,37 +243031,6 @@
     "nationality": "United States"
   },
   {
-    "player": "Pat Ewing",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Pat_Ewing",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "years": "1985-2000",
-        "team": "New York Knicks",
-        "city": "New York",
-        "state": "New York",
-        "country": "USA"
-      },
-      {
-        "years": "2000-2001",
-        "team": "Seattle SuperSonics",
-        "city": "Seattle",
-        "state": "Washington",
-        "country": "USA"
-      },
-      {
-        "years": "2001-2002",
-        "team": "Orlando Magic",
-        "city": "Orlando",
-        "state": "Florida",
-        "country": "USA"
-      }
-    ],
-    "current_team": "Orlando Magic",
-    "status": "retired",
-    "nationality": "Jamaica"
-  },
-  {
     "player": "Pat Frink",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pat_Frink",
     "parse_status": "success",
@@ -243735,7 +243650,12 @@
     "current_team": "Orlando Magic",
     "status": "retired",
     "nationality": "United States",
-    "all_star_count": 11
+    "all_star_count": 11,
+    "display_name": "Patrick Ewing",
+    "aliases": [
+      "Pat Ewing"
+    ],
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Patrick McCaw",
@@ -265883,85 +265803,97 @@
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1976-1977",
         "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "1976–77",
         "city": "Atlanta",
         "state": "Georgia",
         "country": "USA"
       },
       {
-        "years": "1977-1980",
         "team": "Anchorage Northern Knights",
+        "team_raw": "Anchorage Northern Knights",
+        "years": "1977–1980",
         "city": "Anchorage",
         "state": "Alaska",
         "country": "USA"
       },
       {
-        "years": "1980-1981",
         "team": "San Diego Clippers",
+        "team_raw": "San Diego Clippers",
+        "years": "1980–1981",
         "city": "San Diego",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "1981-1982",
         "team": "Anchorage Northern Knights",
+        "team_raw": "Anchorage Northern Knights",
+        "years": "1981–1982",
         "city": "Anchorage",
         "state": "Alaska",
         "country": "USA"
       },
       {
-        "years": "1982-1983",
         "team": "Billings Volcanos",
+        "team_raw": "Billings Volcanos",
+        "years": "1982–1983",
         "city": "Billings",
         "state": "Montana",
         "country": "USA"
       },
       {
-        "years": "1987-1990",
         "team": "Mulhouse",
+        "team_raw": "Mulhouse",
+        "years": "1987–1990",
         "city": "Mulhouse",
         "state": "",
         "country": "France"
       },
       {
-        "years": "1991",
         "team": "Ginebra San Miguel",
+        "team_raw": "Ginebra San Miguel",
+        "years": "1991",
         "city": "San Miguel Properties Centre",
         "state": "",
         "country": "Philippines"
       },
       {
-        "years": "1991-1992",
         "team": "SIG Strasbourg",
+        "team_raw": "Strasbourg",
+        "years": "1991–1992",
         "city": "Strasbourg",
         "state": "",
         "country": "France"
       },
       {
-        "years": "1992-1993",
         "team": "Chorale Roanne",
+        "team_raw": "Roanne",
+        "years": "1992–1993",
         "city": "Roanne",
         "state": "",
         "country": "France"
       },
       {
-        "years": "1993-1994",
         "team": "Olympique Antibes",
+        "team_raw": "Antibes",
+        "years": "1993–1994",
         "city": "Antibes",
         "state": "",
         "country": "France"
       },
       {
-        "years": "1994-1996",
         "team": "JDA Dijon",
+        "team_raw": "Dijon",
+        "years": "1994–1996",
         "city": "Dijon",
         "state": "",
         "country": "France"
       },
       {
-        "years": "1999-2000",
         "team": "Neptūnas Klaipėda",
+        "team_raw": "Neptūnas",
+        "years": "1999–2000",
         "city": "Klaipėda",
         "state": "",
         "country": "Lithuania"
@@ -265969,7 +265901,18 @@
     ],
     "current_team": "Neptūnas Klaipėda",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1954-05-01",
+    "birth_place": "Phoenix, Arizona, U.S.",
+    "high_school": "Maryvale (Phoenix, Arizona)",
+    "college": "*Glendale CC (1972–1974) *Washington State (1974–1976)",
+    "draft": {
+      "year": "1976",
+      "round": "5",
+      "pick": "70",
+      "team": "Atlanta Hawks"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Ron Feiereisel",
@@ -266052,41 +265995,84 @@
   },
   {
     "player": "Ron Harper Jr",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Harper",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Harper_Jr.",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1986-1989",
-        "team": "Cleveland Cavaliers",
-        "city": "Cleveland",
-        "state": "Ohio",
+        "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2022–2023",
+        "city": "Toronto",
+        "state": "Ontario",
+        "country": "Canada"
+      },
+      {
+        "team": "Raptors 905",
+        "team_raw": "Raptors 905",
+        "years": "2022–2023",
+        "loan": true,
+        "city": "Mississauga",
+        "state": "Ontario",
+        "country": "Canada"
+      },
+      {
+        "team": "Maine Celtics",
+        "team_raw": "Maine Celtics",
+        "years": "2024–2025",
+        "city": "Portland",
+        "state": "Maine",
         "country": "USA"
       },
       {
-        "years": "1989-1994",
-        "team": "LA Clippers",
-        "city": "Los Angeles",
-        "state": "California",
+        "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2025",
+        "city": "Detroit",
+        "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "1994-1999",
-        "team": "Chicago Bulls",
-        "city": "Chicago",
-        "state": "Illinois",
+        "team": "Motor City Cruise",
+        "team_raw": "Motor City Cruise",
+        "years": "2025",
+        "loan": true,
+        "city": "Detroit",
+        "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "1999-2001",
-        "team": "Los Angeles Lakers",
-        "city": "Los Angeles",
-        "state": "California",
+        "team": "Boston Celtics",
+        "team_raw": "Boston Celtics",
+        "years": "2025–present",
+        "city": "Boston",
+        "state": "Massachusetts",
+        "country": "USA"
+      },
+      {
+        "team": "Maine Celtics",
+        "team_raw": "Maine Celtics",
+        "years": "2025–2026",
+        "loan": true,
+        "city": "Portland",
+        "state": "Maine",
         "country": "USA"
       }
     ],
-    "current_team": "Los Angeles Lakers",
-    "status": "retired",
-    "nationality": "United States"
+    "current_team": "Boston Celtics",
+    "status": "nba_active",
+    "nationality": "United States",
+    "position": "Small forward / shooting guard",
+    "number": [
+      "8"
+    ],
+    "birth_date": "2000-04-12",
+    "birth_place": "Paterson, New Jersey, U.S.",
+    "high_school": "Don Bosco Prep, (Ramsey, New Jersey)",
+    "college": "Rutgers (2018–2022)",
+    "draft": {
+      "year": "2022"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Ron Horn",
@@ -274690,55 +274676,58 @@
   },
   {
     "player": "Scotty Pippen Jr",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Scotty_Pippen",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Scotty_Pippen_Jr.",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1987-1998",
-        "team": "Chicago Bulls",
-        "city": "Chicago",
-        "state": "Illinois",
+        "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2022–23",
+        "city": "Los Angeles",
+        "state": "California",
         "country": "USA"
       },
       {
-        "years": "1999",
-        "team": "Houston Rockets",
-        "city": "Houston",
-        "state": "Texas",
+        "team": "South Bay Lakers",
+        "team_raw": "South Bay Lakers",
+        "years": "2022–2023",
+        "loan": true,
+        "city": "El Segundo",
+        "state": "California",
         "country": "USA"
       },
       {
-        "years": "1999-2003",
-        "team": "Portland Trail Blazers",
-        "city": "Portland",
-        "state": "Oregon",
+        "team": "South Bay Lakers",
+        "team_raw": "South Bay Lakers",
+        "years": "2023–2024",
+        "city": "El Segundo",
+        "state": "California",
         "country": "USA"
       },
       {
-        "years": "2003-2004",
-        "team": "Chicago Bulls",
-        "city": "Chicago",
-        "state": "Illinois",
+        "team": "Memphis Grizzlies",
+        "team_raw": "Memphis Grizzlies",
+        "years": "2024–present",
+        "city": "Memphis",
+        "state": "Tennessee",
         "country": "USA"
-      },
-      {
-        "years": "2008",
-        "team": "Torpan Pojat",
-        "city": "Helsinki",
-        "state": "",
-        "country": "Finland"
-      },
-      {
-        "years": "2008",
-        "team": "Sundsvall Dragons",
-        "city": "Sundsvall",
-        "state": "",
-        "country": "Sweden"
       }
     ],
-    "current_team": "Sundsvall Dragons",
-    "status": "retired",
-    "nationality": "United States"
+    "current_team": "Memphis Grizzlies",
+    "status": "nba_active",
+    "nationality": "United States",
+    "position": "Point guard",
+    "number": [
+      "1"
+    ],
+    "birth_date": "2000-11-10",
+    "birth_place": "Portland, Oregon, U.S.",
+    "high_school": "* Pine Crest School, (Fort Lauderdale, Florida) * Sierra Canyon, (Chatsworth, California)",
+    "college": "Vanderbilt (2019–2022)",
+    "draft": {
+      "year": "2022"
+    },
+    "last_updated": "2026-09-18"
   },
   {
     "player": "Sean Colson",
@@ -332126,71 +332115,6 @@
     "status": "nba_active",
     "last_updated": "2026-08-26",
     "nationality": "United States"
-  },
-  {
-    "career_history": [
-      {
-        "team": "Traiskirchen Lions",
-        "team_raw": "Traiskirchen Lions",
-        "years": "2013–2014",
-        "city": "Traiskirchen",
-        "state": "",
-        "country": "Austria"
-      },
-      {
-        "team": "Toronto Raptors",
-        "team_raw": "Toronto Raptors",
-        "years": "2016–2018",
-        "city": "Toronto",
-        "state": "Ontario",
-        "country": "Canada"
-      },
-      {
-        "team": "Raptors 905",
-        "team_raw": "Raptors 905",
-        "years": "2016–2017",
-        "loan": true,
-        "city": "Mississauga",
-        "state": "Ontario",
-        "country": "Canada"
-      },
-      {
-        "team": "San Antonio Spurs",
-        "team_raw": "San Antonio Spurs",
-        "years": "2018–2023",
-        "city": "San Antonio",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "team": "Toronto Raptors",
-        "team_raw": "Toronto Raptors",
-        "years": "2023–present",
-        "city": "Toronto",
-        "state": "Ontario",
-        "country": "Canada"
-      }
-    ],
-    "current_team": "Toronto Raptors",
-    "position": "Center",
-    "number": [
-      "19"
-    ],
-    "birth_date": "1995-10-15",
-    "birth_place": "Vienna, Austria",
-    "college": "Utah (2014–2016)",
-    "draft": {
-      "year": "2016",
-      "round": "1",
-      "pick": "9",
-      "team": "Toronto Raptors"
-    },
-    "parse_status": "success",
-    "player": "Jakob Pöltl",
-    "display_name": "Jakob Pöltl",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Jakob_P%C3%B6ltl",
-    "status": "nba_active",
-    "last_updated": "2026-09-17"
   },
   {
     "career_history": [
