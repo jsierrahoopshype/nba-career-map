@@ -1,0 +1,127 @@
+name: Audit Wikipedia articles
+
+# Manual. Asks Wikipedia what article every record's name actually reaches,
+# reports the ones that name somebody else, and (when asked) repairs them and
+# folds together the records that turn out to be one player twice.
+#
+# Read-only by default: `sweep` writes a report and nothing else. The fix and
+# dedupe passes have to be asked for.
+on:
+  workflow_dispatch:
+    inputs:
+      fix:
+        description: "Re-scrape the records the sweep condemns"
+        type: boolean
+        default: false
+      dedupe:
+        description: "Merge records that resolve to the same article"
+        type: boolean
+        default: false
+      players:
+        description: "Fix only these records (comma-separated; default: all condemned)"
+        type: string
+        default: ""
+      max_requests:
+        description: "Max Wikipedia requests this run"
+        type: string
+        default: "400"
+
+concurrency:
+  group: update-careers          # never run alongside the daily career update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - name: Guard tests
+        run: |
+          python3 scripts/test_wiki_person.py
+          python3 scripts/test_wiki_audit.py
+
+      - name: Sweep
+        run: |
+          python3 scripts/audit_wiki_titles.py sweep \
+            --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
+            | tee /tmp/sweep.log
+
+      - name: Fix the wrong articles
+        if: inputs.fix
+        env:
+          # through the environment, never interpolated into the shell: a
+          # player name is somebody else's text
+          PLAYERS: ${{ inputs.players }}
+        run: |
+          python3 scripts/audit_wiki_titles.py fix --players-csv "$PLAYERS" \
+            --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
+            | tee /tmp/fix.log
+
+      - name: Sweep again
+        if: inputs.fix
+        # The repaired records have new articles; the dedupe pass reads this
+        # report, so it has to describe the database as it is now.
+        run: |
+          python3 scripts/audit_wiki_titles.py sweep \
+            --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
+            | tee /tmp/sweep2.log
+
+      - name: Merge the duplicate records
+        if: inputs.dedupe
+        run: python3 scripts/dedupe_alias_records.py --apply | tee /tmp/dedupe.log
+
+      - name: Regenerate every derived artifact
+        if: inputs.fix || inputs.dedupe
+        # One entry point on purpose: it writes the seven data files, the OG
+        # cards, the prerendered pages and the sitemap together, so none of
+        # them can be left describing the database as it was before this run.
+        run: |
+          python3 scripts/build_dashboard_data.py
+          python3 scripts/build_dashboard_data.py --check
+
+      - name: Tests
+        if: inputs.fix || inputs.dedupe
+        run: |
+          python3 scripts/test_dedupe.py > /dev/null && echo "dedupe PASS"
+          python3 scripts/test_qa_bugs.py > /dev/null && echo "qa-bugs PASS"
+          python3 scripts/test_nbay.py > /dev/null && echo "nbay PASS"
+          python3 scripts/test_dashboard.py
+
+      - name: Summarise
+        run: |
+          {
+            echo '### Article audit'
+            echo '```'
+            cat /tmp/sweep.log
+            for f in /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
+              [ -f "$f" ] && { echo; echo "--- $(basename $f) ---"; cat "$f"; }
+            done
+            echo '```'
+          } >> $GITHUB_STEP_SUMMARY
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data logs nba_players_careers_READY.json sitemap.xml \
+                  player team country assets
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "Audit Wikipedia articles: repair wrong-article records, merge duplicates"
+            for i in 1 2 3 4; do
+              if git push origin HEAD:${{ github.ref_name }}; then break; fi
+              echo "push failed, retry $i"; sleep $((2 ** i))
+            done
+          fi

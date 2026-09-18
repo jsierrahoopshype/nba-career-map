@@ -108,6 +108,40 @@ class WikipediaClient:
             return None
         return pages[0].get("title")
 
+    def resolve_titles(self, titles: list[str],
+                       batch: int = 50) -> dict[str, str | None]:
+        """Resolve many titles at once: {requested: canonical or None}.
+
+        The API takes 50 titles a request and answers with the normalization
+        and redirect chains, so auditing five thousand records costs a hundred
+        requests rather than five thousand. A title nothing resolves to comes
+        back None (missing article), which is itself worth knowing.
+        """
+        out: dict[str, str | None] = {}
+        titles = [t for t in dict.fromkeys(titles) if t]
+        for i in range(0, len(titles), batch):
+            chunk = titles[i:i + batch]
+            data = self._get({
+                "action": "query",
+                "titles": "|".join(chunk),
+                "redirects": 1,
+            })
+            q = data.get("query", {})
+            # requested -> normalized -> (redirect)* -> final
+            hop = {}
+            for kind in ("normalized", "redirects"):
+                for h in q.get(kind, []) or []:
+                    hop[h["from"]] = h["to"]
+            live = {p["title"] for p in q.get("pages", [])
+                    if not p.get("missing")}
+            for t in chunk:
+                cur, seen = t, set()
+                while cur in hop and cur not in seen:
+                    seen.add(cur)
+                    cur = hop[cur]
+                out[t] = cur if cur in live else None
+        return out
+
     def get_extract(self, title: str) -> str | None:
         """Return the plain-text lead extract of a page (used for team pages)."""
         data = self._get({
