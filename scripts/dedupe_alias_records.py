@@ -38,16 +38,90 @@ REPORT = ROOT / "logs" / "wiki_title_audit.json"
 _RANK = {"nba_active": 3, "overseas_active": 2, "retired": 1}
 
 
-def groups(players: list, report: dict | None) -> tuple[list, list]:
-    """Group records by the article they resolve to.
+def _sig(stint: dict) -> tuple:
+    """A stint's identity, dash-insensitive.
 
-    With a sweep report, the articles are Wikipedia's own answers. Without one,
-    fall back to the stored URLs -- enough to find the seed's duplicates, since
-    those store the same article under two names.
+    One row writes "2022-2023" and the other "2022–2023"; the same stint under
+    two dashes would union into two.
+    """
+    years = re.sub(r"[\u2010-\u2015]", "-", stint.get("years", "") or "")
+    return (years.strip(), (stint.get("team", "") or "").strip())
+
+
+def _stints(rec: dict) -> set:
+    return {_sig(s) for s in rec.get("career_history") or []}
+
+
+def compatible(a: dict, b: dict) -> tuple[bool, str]:
+    """Could these two records be one player?
+
+    A shared article is not evidence. Cliff Robinson and Clifford Robinson both
+    resolve to the same title and are two different players; so are Bob, Rob and
+    Robert Williams. What Wikipedia is saying is that one of them has no article
+    of its own, not that they are the same man.
+
+    The careers decide. One player's two rows describe the same career, so they
+    share stints; two players' rows do not. A row with no career at all is a
+    stub and folds into the real one, provided the names can be the same
+    person's.
+    """
+    if not same_person(a["player"], b["player"])[0]:
+        # Both may answer to one article and still be two people: the two
+        # Freddie Lewises, born twenty-two years apart, have the same career in
+        # both rows because one of them was copied from the other.
+        return False, f"{a['player']} is not {b['player']}"
+    sa, sb = _stints(a), _stints(b)
+    if not sa or not sb:
+        # An empty record is missing data, not a duplicate. John Lucas has no
+        # stints and his son has nineteen; folding the father into the son
+        # would lose a player rather than merge one.
+        return False, "one of them has no career at all"
+    if sa == sb:
+        return True, "identical careers"
+    if sa & sb:
+        return True, f"{len(sa & sb)} shared stint(s)"
+    return False, "careers do not overlap"
+
+
+def clusters(members: list, by_name: dict) -> tuple[list, list]:
+    """Split one article's records into who is actually who."""
+    keys = sorted(members)
+    parent = {k: k for k in keys}
+
+    def find(k):
+        while parent[k] != k:
+            parent[k] = parent[parent[k]]
+            k = parent[k]
+        return k
+
+    reasons, apart = {}, []
+    for i, a in enumerate(keys):
+        for b in keys[i + 1:]:
+            ok, why = compatible(by_name[a], by_name[b])
+            if ok:
+                parent[find(a)] = find(b)
+                reasons[(a, b)] = why
+            else:
+                apart.append((a, b, why))
+    out = defaultdict(list)
+    for k in keys:
+        out[find(k)].append(k)
+    joined = [sorted(v) for v in out.values() if len(v) > 1]
+    return joined, apart
+
+
+def groups(players: list, report: dict | None) -> tuple[list, list]:
+    """Group records by the article they resolve to, then by who they are.
+
+    Two records that resolve to one article are candidates, not duplicates;
+    `compatible` decides. A group holding a record the audit condemned is set
+    aside entirely -- merging Scotty Pippen Jr into his father would make the
+    duplicate go away and the fabrication permanent.
     """
     resolved = (report or {}).get("resolved") or {}
     condemned = {r["player"] for kind in ("bad_source", "wrong_person")
                  for r in (report or {}).get(kind, [])}
+    by_name = {r["player"]: r for r in players}
     by_article = defaultdict(list)
     for rec in players:
         key = rec["player"]
@@ -70,12 +144,30 @@ def groups(players: list, report: dict | None) -> tuple[list, list]:
             blocked.append({"article": article, "players": keys,
                             "why": f"not the same person: {', '.join(bad)}"})
             continue
-        ready.append({"article": article, "players": keys})
+        joined, apart = clusters(keys, by_name)
+        for cluster in joined:
+            ready.append({"article": article, "players": cluster,
+                          "why": compatible(by_name[cluster[0]],
+                                            by_name[cluster[1]])[1]})
+        for a, b, why in apart:
+            if not any(a in c and b in c for c in joined):
+                blocked.append({"article": article, "players": [a, b],
+                                "why": why})
     return ready, blocked
 
 
 def _survivor(keys: list, article: str) -> str:
-    """The key to keep: the one that reads like the article's own title."""
+    """The key to keep.
+
+    The primary key is what the map and the quiz index on and what a player's
+    page is addressed by, and the repo keeps those ASCII on purpose -- the
+    diacritics live in display_name. So an ASCII key wins over an accented one
+    ("Jakob Poeltl" over "Jakob Pöltl"); otherwise the article's own title
+    decides.
+    """
+    plain = [k for k in keys if k.isascii()]
+    if plain and len(plain) < len(keys):
+        keys = plain
     bare = re.sub(r"\s*\(.*?\)", "", article).strip()
     for k in keys:
         if k == article:
@@ -91,13 +183,12 @@ def _merge(db, article: str, keys: list) -> dict:
     rec = db.by_name[keep]
     dropped = [k for k in keys if k != keep]
 
-    stints = {(s.get("years", ""), s.get("team", "")): s
-              for s in rec.get("career_history") or []}
+    stints = {_sig(s): s for s in rec.get("career_history") or []}
     added = 0
     for other_key in dropped:
         other = db.by_name[other_key]
         for s in other.get("career_history") or []:
-            sig = (s.get("years", ""), s.get("team", ""))
+            sig = _sig(s)
             if sig not in stints:
                 stints[sig] = s
                 added += 1
@@ -159,9 +250,9 @@ def main() -> int:
                             _survivor(g["players"], g["article"]),
                             "dropped": [k for k in g["players"]
                                         if k != _survivor(g["players"], g["article"])]})
-    for row in merged:
+    for g, row in zip(ready, merged):
         print(f"{row['kept']!r} <- {', '.join(repr(d) for d in row['dropped'])}"
-              f"   [{row['article']}]"
+              f"   [{g['article']}: {g['why']}]"
               + (f"  +{row['stints_gained']} stints" if args.apply else ""))
     for b in blocked:
         print(f"SKIPPED {b['players']}: {b['why']}")

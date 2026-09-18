@@ -119,18 +119,40 @@ def _print_sweep(report: dict) -> None:
 
 # --- fix ---------------------------------------------------------------------
 
-def _replace_career(db, rec: dict, title: str, wt: str, client,
-                    current_year: int) -> dict:
-    """Overwrite a record from the article that is actually about this person.
+def _stints(rec_or_parse: dict) -> set:
+    return {(re.sub(r"[\u2010-\u2015]", "-", (s.get("years") or "")).strip(),
+             (s.get("team") or "").strip())
+            for s in rec_or_parse.get("career_history") or []}
 
-    A straight replacement, not a merge: what is there was built from somebody
-    else's article, so there is nothing in it worth keeping. _richer() exists to
-    stop a thin parse clobbering good data, and would stop this.
+
+def _replace_career(db, rec: dict, title: str, wt: str, client,
+                    current_year: int, *, replace: bool) -> dict:
+    """Rebuild a record from the article that is actually about this person.
+
+    Two different jobs. A record built from somebody else's article holds
+    nothing worth keeping, so it is replaced outright -- _richer() exists to
+    stop a thin parse clobbering good data, and would stop exactly this repair.
+    A record that merely points at a disambiguation page probably holds a fine
+    career from the seed, so its new article has to agree with what is already
+    there before anything is overwritten: a "Joe Smith (basketball)" who shares
+    no stint with our Joe Smith is a different Joe Smith.
     """
     fresh = parse_player(wt, rec["player"], db.normalizer)
     fresh.pop("_raw_teams", None)
     before = [f"{s.get('years')} {s.get('team')}"
               for s in rec.get("career_history") or []]
+    if not replace:
+        here, there = _stints(rec), _stints(fresh)
+        if here and there and not (here & there):
+            return {"player": rec["player"], "article": title,
+                    "before": before, "after": None, "new_teams": [],
+                    "conflict": "shares no stint with the article",
+                    "status": rec.get("status")}
+        if here and not there:
+            return {"player": rec["player"], "article": title,
+                    "before": before, "after": None, "new_teams": [],
+                    "conflict": "the article parsed to nothing",
+                    "status": rec.get("status")}
     rec["career_history"] = fresh.get("career_history", [])
     rec["current_team"] = fresh.get("current_team", "")
     rec["wikipedia_url"] = canonical_url(title)
@@ -153,11 +175,14 @@ def _replace_career(db, rec: dict, title: str, wt: str, client,
     return {"player": rec["player"], "article": title, "before": before,
             "after": [f"{s.get('years')} {s.get('team')}"
                       for s in rec["career_history"]],
-            "new_teams": new_teams, "status": rec["status"]}
+            "new_teams": new_teams, "conflict": "", "status": rec["status"]}
 
 
-def fix(client: WikipediaClient, db, names: list, current_year: int) -> dict:
-    out = {"fixed": [], "unresolved": []}
+def fix(client: WikipediaClient, db, names: list, current_year: int,
+        replace: set | None = None) -> dict:
+    """Repair records. `replace` names the ones whose careers are known bad."""
+    replace = set(names) if replace is None else replace
+    out = {"fixed": [], "unresolved": [], "conflicts": []}
     for name in names:
         rec = db.by_name.get(name)
         if not rec:
@@ -169,8 +194,9 @@ def fix(client: WikipediaClient, db, names: list, current_year: int) -> dict:
             tried.append({"title": cand, "resolved": title or ""})
             if not (wt and title and same_person(name, title)[0]):
                 continue
-            out["fixed"].append(_replace_career(db, rec, title, wt, client,
-                                                current_year))
+            row = _replace_career(db, rec, title, wt, client, current_year,
+                                  replace=name in replace)
+            (out["conflicts"] if row["conflict"] else out["fixed"]).append(row)
             break
         else:
             out["unresolved"].append({"player": name, "tried": tried})
@@ -208,24 +234,34 @@ def main() -> int:
 
     names = list(args.player) + [n.strip() for n in args.players_csv.split(",")
                                  if n.strip()]
+    replace = None
     if not names:
         if not REPORT.exists():
             sys.exit("no sweep report; run `sweep` first or pass --player")
         doc = json.loads(REPORT.read_text(encoding="utf-8"))
+        # a record built from the wrong article is replaced; one that merely
+        # points at a disambiguation page is only repointed, and only if the
+        # article agrees with the career already stored
+        replace = {r["player"] for r in doc.get("bad_source", [])}
         names = list(dict.fromkeys(
-            [r["player"] for r in doc.get("bad_source", [])]
-            + [r["player"] for r in doc.get("wrong_person", [])]))
-    result = fix(client, db, names, current_year)
+            sorted(replace) + [r["player"] for r in doc.get("wrong_person", [])]))
+    result = fix(client, db, names, current_year,
+                 replace if not args.player and not args.players_csv else None)
     for row in result["fixed"]:
         print(f"\n{row['player']!r} <- {row['article']!r}  [{row['status']}]")
         print(f"    was: {' | '.join(row['before']) or '(nothing)'}")
         print(f"    now: {' | '.join(row['after']) or '(nothing)'}")
         if row["new_teams"]:
             print(f"    new teams: {', '.join(row['new_teams'])}")
+    for row in result["conflicts"]:
+        print(f"\n{row['player']!r}: left alone -- {row['conflict']}")
+        print(f"    stored:  {' | '.join(row['before']) or '(nothing)'}")
+        print(f"    article: {row['article']!r}")
     for row in result["unresolved"]:
         print(f"\n{row['player']!r}: no article found "
               f"({row.get('why') or row.get('tried')})")
-    print(f"\nfixed {len(result['fixed'])}, unresolved "
+    print(f"\nfixed {len(result['fixed'])}, left alone "
+          f"{len(result['conflicts'])}, unresolved "
           f"{len(result['unresolved'])} ({client.requests_made} requests)")
     if result["fixed"] and not args.dry_run:
         uc._persist(db, {"date": uc.today(), "mode": "article-fix",

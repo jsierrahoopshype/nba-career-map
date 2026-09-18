@@ -135,6 +135,37 @@ def test_the_fix_replaces_the_invented_career_with_the_real_one():
     print("test_the_fix_replaces_the_invented_career_with_the_real_one PASS")
 
 
+def test_a_record_is_not_overwritten_by_an_article_that_disagrees_with_it():
+    """Fourteen records point at a disambiguation page, with fine careers.
+
+    Repointing those is worth doing, but "Joe Smith (basketball)" is not
+    necessarily our Joe Smith. When the article shares no stint with what is
+    stored, the record is left exactly as it was and reported instead.
+    """
+    records = [{"player": "Joe Smith", "status": "retired",
+                "wikipedia_url": "https://en.wikipedia.org/wiki/Joseph_Smith",
+                "career_history": [{"years": "1995-1998", "team": "Golden State Warriors",
+                                    "city": "Oakland", "country": "USA"}]}]
+    db, _sb = _db(records)
+    other = ("{{Infobox basketball biography\n| name = Joe Smith\n"
+             "| years1 = 1951\u20131952\n| team1 = [[Baltimore Bullets]]\n}}")
+    WIKI["Joe Smith (basketball)"] = "Joe Smith (basketball)"
+    try:
+        client = FakeClient()
+        client.get_wikitext_and_title = lambda t: (
+            (other, "Joe Smith (basketball)") if t == "Joe Smith (basketball)"
+            else (None, None))
+        result = aud.fix(client, db, ["Joe Smith"], 2026, replace=set())
+        assert not result["fixed"], result["fixed"]
+        assert result["conflicts"], result
+        assert "shares no stint" in result["conflicts"][0]["conflict"]
+        teams = [s["team"] for s in db.by_name["Joe Smith"]["career_history"]]
+        assert teams == ["Golden State Warriors"], teams
+    finally:
+        WIKI.pop("Joe Smith (basketball)", None)
+    print("test_a_record_is_not_overwritten_by_an_article_that_disagrees_with_it PASS")
+
+
 def test_dedupe_unions_the_stints_and_keeps_the_canonical_key():
     db, _sb = _db([dict(r) for r in RECORDS])
     report = aud.sweep(FakeClient(), [db.by_name[n] for n in db.order])
@@ -169,9 +200,57 @@ def test_dedupe_refuses_to_bury_a_wrong_article_record():
     print("test_dedupe_refuses_to_bury_a_wrong_article_record PASS")
 
 
+def test_one_article_does_not_make_two_players_one():
+    """Cliff Robinson and Clifford Robinson resolve to the same title.
+
+    They are two different players, and so are the two Freddie Lewises, whose
+    rows hold the same career only because one was copied from the other. A
+    shared article is a question, not an answer; the careers answer it.
+    """
+    records = [
+        {"player": "Cliff Robinson", "status": "retired",
+         "wikipedia_url": "https://en.wikipedia.org/wiki/Clifford_Robinson",
+         "career_history": [{"years": "1979-1981", "team": "New Jersey Nets"}]},
+        {"player": "Clifford Robinson", "status": "retired",
+         "wikipedia_url": "https://en.wikipedia.org/wiki/Clifford_Robinson",
+         "career_history": [{"years": "1989-1997", "team": "Portland Trail Blazers"}]},
+        {"player": "Freddie Lewis (1921)", "status": "retired",
+         "wikipedia_url": "https://en.wikipedia.org/wiki/Freddie_Lewis",
+         "career_history": [{"years": "1967-1974", "team": "Indiana Pacers"}]},
+        {"player": "Freddie Lewis (1943)", "status": "retired",
+         "wikipedia_url": "https://en.wikipedia.org/wiki/Freddie_Lewis",
+         "career_history": [{"years": "1967-1974", "team": "Indiana Pacers"}]},
+    ]
+    db, _sb = _db(records)
+    players = [db.by_name[n] for n in db.order]
+    ready, blocked = ded.groups(players, {"resolved": {
+        "Cliff Robinson": "Clifford Robinson",
+        "Clifford Robinson": "Clifford Robinson",
+        "Freddie Lewis (1921)": "Freddie Lewis",
+        "Freddie Lewis (1943)": "Freddie Lewis"}})
+    assert not ready, ready
+    whys = {b["why"] for b in blocked}
+    assert "careers do not overlap" in whys, whys
+    assert any("is not" in w for w in whys), whys
+    print("test_one_article_does_not_make_two_players_one PASS")
+
+
+def test_the_surviving_key_stays_ascii():
+    """The primary key addresses a page and indexes the map; diacritics go in
+    display_name, which is the convention the rest of the database follows."""
+    assert ded._survivor(["Jakob Poeltl", "Jakob Pöltl"], "Jakob Pöltl") == \
+        "Jakob Poeltl"
+    assert ded._survivor(["Pat Ewing", "Patrick Ewing"], "Patrick Ewing") == \
+        "Patrick Ewing"
+    print("test_the_surviving_key_stays_ascii PASS")
+
+
 if __name__ == "__main__":
     test_the_sweep_names_the_record_built_from_the_wrong_article()
     test_the_fix_replaces_the_invented_career_with_the_real_one()
+    test_a_record_is_not_overwritten_by_an_article_that_disagrees_with_it()
     test_dedupe_unions_the_stints_and_keeps_the_canonical_key()
     test_dedupe_refuses_to_bury_a_wrong_article_record()
+    test_one_article_does_not_make_two_players_one()
+    test_the_surviving_key_stays_ascii()
     print("\nALL ARTICLE AUDIT TESTS PASS")
