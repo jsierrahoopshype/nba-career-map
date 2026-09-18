@@ -302,6 +302,27 @@ CANONICAL_OVERRIDE = {
     "İTÜ",                # not Sigortam.net İTÜ BB
     "Taipei Mars",        # not Taipei Taishin Mars
     "Zhejiang Cyclones",  # not Zhejiang Wanma Cyclones
+
+    # Clubs whose shirt sponsors out-scraped them. The rule is that the
+    # enduring club name wins over a jersey deal that came and went -- which
+    # is not the same as the shortest name winning, so where a sponsor-free
+    # CLUB name exists it beats the bare town too.
+    "Forlì",              # not Jollycolombani / Filanto / Olitalia / Telemarket
+    "Pavia",              # not Edimes / Annabella / Fernet Branca
+    "Leiden",             # not Elmex / Parker
+    "Casale Monferrato",  # not Novipiù / Fastweb
+    "Lleida",             # not Plus Pujol / Caprabo. Força Lleida CE is a
+                          # different club founded in 2010 and stays out.
+    "Hsinchu Lioneers",   # not Toplus / JKO, consecutive jersey sponsors
+    "Phoenix Fuel Masters",   # Phoenix the owner stays; Super LPG and Pulse
+                              # are product lines that rotate
+    "USC Heidelberg",     # the club; MLP is the sponsor, and a bare town is
+                          # not a club name
+    "Club Ourense Baloncesto",   # the club; Caixa, Coren and Xacobeo 99 are
+                                 # sponsors, and again a town is not a club
+    "Pallacanestro Ferrara",     # Carife is a bank and Kleb an adhesives
+                                 # brand -- both sponsors, so neither is the
+                                 # enduring name
 }
 
 # Both lists feed the same machinery: a pair named here is merged whether or
