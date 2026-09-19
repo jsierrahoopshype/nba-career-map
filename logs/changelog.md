@@ -1,3 +1,20 @@
+## 2026-09-19 — incremental run
+
+- Players updated: **524** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **5**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Kalamunda Eastern Suns
+  - Vince Williams Jr: Memphis Grizzlies → Utah Jazz
+  - Cam Whitmore: Washington Wizards → Denver Nuggets
+  - Duop Reath: Phoenix Suns → Portland Trail Blazers
+  - Tristen Newton: Houston Rockets → Stockton Kings
+  - Kennedy Chandler: Delaware Blue Coats → Valley Suns
+  - Tristen Newton: [nba_active → overseas_active]
+
 ## 2026-09-18 — alias-dedupe run
 
 - Players updated: **5** (0 new)
