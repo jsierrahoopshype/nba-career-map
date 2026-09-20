@@ -9919,8 +9919,8 @@
         {
           "player": "Markquis Nowell",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Baskonia",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
           "nationality": "United States"
         },
         {
@@ -22172,7 +22172,7 @@
           "player": "Anton Watson",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "South Bay/Coachella Valley Lakers",
+          "last_team": "South Bay Lakers",
           "nationality": "United States"
         },
         {
@@ -26681,8 +26681,8 @@
         {
           "player": "Markquis Nowell",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Baskonia",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
           "nationality": "United States"
         },
         {
@@ -29856,7 +29856,7 @@
         },
         {
           "player": "Elfrid Payton",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Austin Spurs",
           "nationality": "United States"
@@ -34597,7 +34597,7 @@
           "player": "Trentyn Flowers",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Brampton Honey Badgers",
+          "last_team": "BC Roma",
           "nationality": "United States"
         },
         {
@@ -53363,8 +53363,8 @@
         {
           "player": "Markquis Nowell",
           "years": "2023–2024, 2024",
-          "status": "overseas_active",
-          "last_team": "Baskonia",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
           "nationality": "United States"
         },
         {
@@ -76735,7 +76735,7 @@
       "city": "El Segundo",
       "state": "California",
       "country": "USA",
-      "count": 69,
+      "count": 70,
       "roster": [
         {
           "player": "Adou Thiero",
@@ -76762,6 +76762,13 @@
           "player": "Andre Ingram",
           "years": "2021-2022",
           "status": "retired",
+          "last_team": "South Bay Lakers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Anton Watson",
+          "years": "2025–2026",
+          "status": "overseas_active",
           "last_team": "South Bay Lakers",
           "nationality": "United States"
         },
@@ -77239,17 +77246,17 @@
         },
         {
           "type": "club",
+          "name": "Westchester Knicks",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Santa Cruz Warriors",
           "shared": 6
         },
         {
           "type": "club",
           "name": "Austin Spurs",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Westchester Knicks",
           "shared": 6
         },
         {
@@ -83948,7 +83955,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -87280,7 +87287,7 @@
           "player": "Anton Watson",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "South Bay/Coachella Valley Lakers",
+          "last_team": "South Bay Lakers",
           "nationality": "United States"
         },
         {
@@ -87889,6 +87896,11 @@
         },
         {
           "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Iowa Wolves",
           "shared": 7
         },
@@ -87900,11 +87912,6 @@
         {
           "type": "club",
           "name": "Maine Red Claws",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
           "shared": 6
         }
       ]
@@ -92479,12 +92486,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -92549,12 +92556,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -113071,12 +113078,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -115815,12 +115822,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -124723,7 +124730,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -125295,7 +125302,7 @@
           "player": "Trentyn Flowers",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Brampton Honey Badgers",
+          "last_team": "BC Roma",
           "nationality": "United States"
         },
         {
@@ -127797,7 +127804,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -129493,7 +129500,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -129551,7 +129558,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -139877,12 +139884,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -141446,12 +141453,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -141630,7 +141637,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -143818,7 +143825,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -143876,7 +143883,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -144705,12 +144712,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -145029,7 +145036,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -145079,12 +145086,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -146175,12 +146182,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -147817,12 +147824,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -150277,12 +150284,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -151378,12 +151385,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -155416,12 +155423,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -155561,7 +155568,7 @@
           "player": "Trentyn Flowers",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Brampton Honey Badgers",
+          "last_team": "BC Roma",
           "nationality": "United States"
         },
         {
@@ -157627,12 +157634,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -157852,12 +157859,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -161323,12 +161330,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -161920,12 +161927,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -163709,7 +163716,7 @@
         },
         {
           "player": "Udoka Azubuike",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Ironi Ness Ziona",
           "nationality": "Nigeria"
@@ -171708,12 +171715,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -173736,12 +173743,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -173936,7 +173943,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -173991,12 +173998,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
@@ -174780,7 +174787,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -174892,12 +174899,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -175975,12 +175982,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -183638,12 +183645,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -184434,7 +184441,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -186043,12 +186050,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -189366,12 +189373,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -190423,7 +190430,7 @@
       "city": "",
       "state": "",
       "country": "",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "Damjan Rudez",
@@ -190438,6 +190445,12 @@
           "status": "retired",
           "last_team": "Supersónicos de Miranda",
           "nationality": "United States"
+        },
+        {
+          "player": "Rienk Mast",
+          "years": "2017–2019",
+          "status": "nba_active",
+          "last_team": "Indiana Pacers"
         }
       ],
       "related": [
@@ -193139,12 +193152,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -194893,12 +194906,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -197541,12 +197554,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -198727,12 +198740,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -201121,7 +201134,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -206385,12 +206398,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -207415,12 +207428,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -207832,12 +207845,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -208131,12 +208144,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -208924,7 +208937,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -209042,12 +209055,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -210075,12 +210088,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -211209,12 +211222,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -211272,12 +211285,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -211672,12 +211685,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -212777,12 +212790,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -213628,12 +213641,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -216590,12 +216603,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -217977,12 +217990,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -218196,12 +218209,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -219287,12 +219300,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -220311,12 +220324,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -221402,7 +221415,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -222401,12 +222414,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -222565,12 +222578,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -223088,12 +223101,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -223168,12 +223181,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -223221,12 +223234,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -224572,12 +224585,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -224640,12 +224653,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -227068,12 +227081,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -228712,12 +228725,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -229723,7 +229736,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -230331,12 +230344,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -230389,12 +230402,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -231295,7 +231308,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -233661,7 +233674,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -234787,7 +234800,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -235301,12 +235314,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -235376,12 +235389,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -235948,7 +235961,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -239397,12 +239410,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -240300,12 +240313,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -240417,12 +240430,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -242553,12 +242566,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -243478,12 +243491,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -243784,12 +243797,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -243842,12 +243855,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -243958,12 +243971,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -244541,12 +244554,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -245631,7 +245644,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -245797,12 +245810,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -247030,12 +247043,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -247864,12 +247877,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -248170,12 +248183,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -252683,12 +252696,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -254641,12 +254654,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -254853,12 +254866,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -255377,12 +255390,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -255604,12 +255617,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -257421,12 +257434,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -259587,7 +259600,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -260649,12 +260662,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -262631,12 +262644,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -262696,12 +262709,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -262920,12 +262933,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -263930,12 +263943,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -264966,7 +264979,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -265125,12 +265138,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -265975,6 +265988,64 @@
           "type": "club",
           "name": "Mahram Tehran",
           "shared": 1
+        }
+      ]
+    },
+    "Toronto Raptorsm": {
+      "club": "Toronto Raptorsm",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Markquis Nowell",
+          "years": "2023–24",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Baskonia",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Raptors 905",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Mega",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Gharafa",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Donar",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Lakeland / Osceola Magic",
+          "shared": 0
         }
       ]
     },
@@ -267357,17 +267428,17 @@
         },
         {
           "type": "club",
+          "name": "Donar",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "GTK Gliwice",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Kymis",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 1
         },
         {
@@ -267415,17 +267486,17 @@
         },
         {
           "type": "club",
+          "name": "Donar",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "GTK Gliwice",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Kymis",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 1
         },
         {
@@ -268256,12 +268327,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -268493,7 +268564,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -270108,12 +270179,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -271511,12 +271582,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -272999,12 +273070,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -273057,12 +273128,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -273658,12 +273729,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -273736,7 +273807,7 @@
       "city": "Rome",
       "state": "Lazio",
       "country": "Italy",
-      "count": 1,
+      "count": 2,
       "roster": [
         {
           "player": "Nico Mannion",
@@ -273744,6 +273815,13 @@
           "status": "overseas_active",
           "last_team": "BC Roma",
           "nationality": "Italian / American"
+        },
+        {
+          "player": "Trentyn Flowers",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "United States"
         }
       ],
       "related": [
@@ -273764,6 +273842,11 @@
         },
         {
           "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Virtus Bologna",
           "shared": 1
         },
@@ -273774,18 +273857,13 @@
         },
         {
           "type": "club",
-          "name": "Virtus Roma",
-          "shared": 0
+          "name": "Adelaide 36ers",
+          "shared": 1
         },
         {
           "type": "club",
-          "name": "Fortitudo Bologna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
-          "shared": 0
+          "name": "San Diego Clippers",
+          "shared": 1
         }
       ]
     },
@@ -273948,12 +274026,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -274006,12 +274084,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -274534,12 +274612,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -274675,7 +274753,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -274733,7 +274811,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -274791,7 +274869,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -276037,7 +276115,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -276080,12 +276158,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -276925,12 +277003,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -277895,12 +277973,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -279296,12 +279374,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -279726,12 +279804,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -280270,12 +280348,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -280354,9 +280432,9 @@
         },
         {
           "player": "Trentyn Flowers",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
-          "last_team": "Brampton Honey Badgers",
+          "last_team": "BC Roma",
           "nationality": "United States"
         }
       ],
@@ -280908,12 +280986,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -281587,7 +281665,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -281703,7 +281781,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -281761,7 +281839,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -282109,7 +282187,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -282563,12 +282641,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -282674,12 +282752,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -284143,12 +284221,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -284597,12 +284675,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -284733,7 +284811,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -285182,12 +285260,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -285303,12 +285381,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -285694,12 +285772,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -285835,7 +285913,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -286431,12 +286509,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -286721,12 +286799,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -287900,7 +287978,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -289584,12 +289662,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -289690,12 +289768,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -290794,12 +290872,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -290955,12 +291033,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -292741,7 +292819,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -293956,12 +294034,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -294077,12 +294155,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -294154,7 +294232,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -294387,12 +294465,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -296361,12 +296439,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -297756,12 +297834,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -298184,12 +298262,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -298411,12 +298489,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -299060,12 +299138,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299118,12 +299196,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299393,12 +299471,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -299640,12 +299718,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299698,12 +299776,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299974,12 +300052,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -300342,7 +300420,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -300997,15 +301075,8 @@
       "city": "",
       "state": "",
       "country": "",
-      "count": 4,
+      "count": 3,
       "roster": [
-        {
-          "player": "Anton Watson",
-          "years": "2025–present",
-          "status": "overseas_active",
-          "last_team": "South Bay/Coachella Valley Lakers",
-          "nationality": "United States"
-        },
         {
           "player": "Bronny James",
           "years": "2024–2026",
@@ -301031,11 +301102,6 @@
       "related": [
         {
           "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Long Island Nets",
           "shared": 1
         },
@@ -301056,17 +301122,22 @@
         },
         {
           "type": "club",
-          "name": "Maine Celtics",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Mega",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Gharafa",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -301186,12 +301257,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -301302,12 +301373,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -301360,12 +301431,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -301539,12 +301610,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -301587,12 +301658,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -302070,12 +302141,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -302251,12 +302322,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -302438,12 +302509,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -302496,12 +302567,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -302733,12 +302804,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -302969,12 +303040,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         },
         {
@@ -303150,12 +303221,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay/Coachella Valley Lakers",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Donar",
           "shared": 0
         }
       ]

@@ -20,6 +20,27 @@
         }
       ],
       "date": "2026-09-19"
+    },
+    {
+      "player": "KJ Martin",
+      "resolved": "Kenyon Martin Jr.",
+      "kind": "wrong-person",
+      "reason": "Kenyon Martin Jr. already belongs to Kenyon Martin",
+      "tried": [
+        {
+          "title": "KJ Martin",
+          "resolved": "Kenyon Martin Jr."
+        },
+        {
+          "title": "KJ Martin (basketball, born 2001)",
+          "resolved": null
+        },
+        {
+          "title": "KJ Martin (basketball)",
+          "resolved": null
+        }
+      ],
+      "date": "2026-09-20"
     }
   ]
 }

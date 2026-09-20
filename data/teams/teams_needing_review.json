@@ -1261,7 +1261,7 @@
   },
   "Donar": {
     "team": "Donar",
-    "reason": "missing city and/or country",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },
@@ -4490,6 +4490,12 @@
   "Torku Selçuk Üniversitesi/Torku Konyaspor": {
     "team": "Torku Selçuk Üniversitesi/Torku Konyaspor",
     "reason": "missing city and/or country",
+    "city": "",
+    "country": ""
+  },
+  "Toronto Raptorsm": {
+    "team": "Toronto Raptorsm",
+    "reason": "auto-added; needs location confirmation",
     "city": "",
     "country": ""
   },

@@ -1,3 +1,17 @@
+## 2026-09-20 — incremental run
+
+- Players updated: **518** (3 new)
+- New teams discovered: **1**
+- Team moves detected: **2**
+- Club-name pairs held for review: **1**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Jake Stephens, Rienk Mast, Walt Lemon Jr.
+- New teams: Toronto Raptorsm
+  - Markquis Nowell: Baskonia → New Orleans Pelicans
+  - Trentyn Flowers: Brampton Honey Badgers → BC Roma
+  - Markquis Nowell: [overseas_active → nba_active]
+
 ## 2026-09-19 — incremental run
 
 - Players updated: **524** (1 new)
