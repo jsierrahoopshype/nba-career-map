@@ -17,6 +17,14 @@ on:
         description: "Merge records that resolve to the same article"
         type: boolean
         default: false
+      propose:
+        description: "Search for the real article behind each disambiguation page (read-only)"
+        type: boolean
+        default: false
+      from_proposals:
+        description: "Apply the articles a previous propose run settled on"
+        type: boolean
+        default: false
       players:
         description: "Fix only these records (comma-separated; default: all condemned)"
         type: string
@@ -57,6 +65,13 @@ jobs:
             --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
             | tee /tmp/sweep.log
 
+      - name: Propose the real articles
+        if: inputs.propose
+        run: |
+          python3 scripts/audit_wiki_titles.py propose \
+            --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
+            | tee /tmp/propose.log
+
       - name: Fix the wrong articles
         if: inputs.fix
         env:
@@ -64,8 +79,12 @@ jobs:
           # player name is somebody else's text
           PLAYERS: ${{ inputs.players }}
         run: |
+          ARGS=""
+          if [ "${{ inputs.from_proposals }}" = "true" ]; then
+            ARGS="--from-proposals"
+          fi
           python3 scripts/audit_wiki_titles.py fix --players-csv "$PLAYERS" \
-            --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
+            $ARGS --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
             | tee /tmp/fix.log
 
       - name: Sweep again
@@ -104,7 +123,7 @@ jobs:
             echo '### Article audit'
             echo '```'
             cat /tmp/sweep.log
-            for f in /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
+            for f in /tmp/propose.log /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
               [ -f "$f" ] && { echo; echo "--- $(basename $f) ---"; cat "$f"; }
             done
             echo '```'

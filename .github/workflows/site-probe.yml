@@ -1,0 +1,31 @@
+name: Probe the live site
+
+# Manual, read-only. Asks hoopsmatic.com which path it actually serves this
+# section at, so the canonical tags can name the address a reader reaches
+# rather than the GitHub copy. Writes nothing and commits nothing.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Space-separated URLs to probe (default: the candidates in the script)"
+        type: string
+        default: ""
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Probe
+        env:
+          URLS: ${{ inputs.urls }}
+        run: |
+          python3 scripts/site_probe.py $URLS | tee /tmp/probe.log
+      - name: Summarise
+        run: |
+          { echo '### Live site probe'; echo '```'; cat /tmp/probe.log; echo '```'; } \
+            >> $GITHUB_STEP_SUMMARY
