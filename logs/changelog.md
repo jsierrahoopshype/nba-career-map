@@ -1,3 +1,17 @@
+## 2026-09-21 — incremental run
+
+- Players updated: **518** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Hunter Tyson: Gigantes de Carolina → Maxima Roma
+  - Jared Cunningham: Al Shurtah → Héroes de Falcón
+  - Jaylen Adams: Shijiazhuang Xianglan → Maccabi Ramat Gan
+  - Axel Toupane: ASC Ville de Dakar → Saint-Quentin
+
 ## 2026-09-20 — incremental run
 
 - Players updated: **518** (3 new)
