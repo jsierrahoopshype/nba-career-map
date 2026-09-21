@@ -1,6 +1,6 @@
 {
   "generated_from": "data/players/nba_players_careers.json",
-  "player_count": 5177,
+  "player_count": 5173,
   "where_are_they_now": [
     {
       "player": "AJ Lawson",
@@ -5190,15 +5190,15 @@
       "players": 57
     },
     {
-      "team": "Beşiktaş",
-      "players": 56
-    },
-    {
       "team": "Unicaja",
       "players": 56
     },
     {
       "team": "Austin Toros",
+      "players": 55
+    },
+    {
+      "team": "Beşiktaş",
       "players": 55
     },
     {
@@ -5370,10 +5370,6 @@
       "players": 40
     },
     {
-      "team": "Vaqueros de Bayamón",
-      "players": 40
-    },
-    {
       "team": "Agua Caliente Clippers",
       "players": 39
     },
@@ -5387,6 +5383,10 @@
     },
     {
       "team": "Sydney Kings",
+      "players": 39
+    },
+    {
+      "team": "Vaqueros de Bayamón",
       "players": 39
     },
     {
@@ -5499,7 +5499,7 @@
     },
     {
       "team": "Granada",
-      "players": 33
+      "players": 32
     },
     {
       "team": "Guaros de Lara",
@@ -5698,10 +5698,6 @@
       "players": 25
     },
     {
-      "team": "Detroit Spirits",
-      "players": 25
-    },
-    {
       "team": "Ironi Ness Ziona",
       "players": 25
     },
@@ -5739,6 +5735,10 @@
     },
     {
       "team": "Club Ourense Baloncesto",
+      "players": 24
+    },
+    {
+      "team": "Detroit Spirits",
       "players": 24
     },
     {
@@ -6706,10 +6706,6 @@
       "players": 10
     },
     {
-      "team": "Kansas City Sizzlers",
-      "players": 10
-    },
-    {
       "team": "Keravnos",
       "players": 10
     },
@@ -6871,6 +6867,10 @@
     },
     {
       "team": "Kansas City Hi-Spots",
+      "players": 9
+    },
+    {
+      "team": "Kansas City Sizzlers",
       "players": 9
     },
     {
@@ -7186,10 +7186,6 @@
       "players": 8
     },
     {
-      "team": "Savannah Spirits",
-      "players": 8
-    },
-    {
       "team": "Shimane Susanoo Magic",
       "players": 8
     },
@@ -7474,6 +7470,10 @@
       "players": 7
     },
     {
+      "team": "Savannah Spirits",
+      "players": 7
+    },
+    {
       "team": "Scandone Avellino",
       "players": 7
     },
@@ -7750,19 +7750,11 @@
       "players": 6
     },
     {
-      "team": "Pioneros de Quintana Roo",
-      "players": 6
-    },
-    {
       "team": "Pittsburgh Pipers",
       "players": 6
     },
     {
       "team": "Pottsville Packers",
-      "players": 6
-    },
-    {
-      "team": "Purefoods TJ Hotdogs",
       "players": 6
     },
     {
@@ -8146,6 +8138,10 @@
       "players": 5
     },
     {
+      "team": "Pioneros de Quintana Roo",
+      "players": 5
+    },
+    {
       "team": "Piratas de La Guaira",
       "players": 5
     },
@@ -8159,6 +8155,10 @@
     },
     {
       "team": "Proteas EKA AEL",
+      "players": 5
+    },
+    {
+      "team": "Purefoods TJ Hotdogs",
       "players": 5
     },
     {
@@ -9210,10 +9210,6 @@
       "players": 3
     },
     {
-      "team": "Conquistadores de Guaynabo",
-      "players": 3
-    },
-    {
       "team": "Corona Cremona",
       "players": 3
     },
@@ -9750,10 +9746,6 @@
       "players": 3
     },
     {
-      "team": "Tucson Gunners",
-      "players": 3
-    },
-    {
       "team": "US Monastir",
       "players": 3
     },
@@ -10231,6 +10223,10 @@
     },
     {
       "team": "Connecticut Skyhawks",
+      "players": 2
+    },
+    {
+      "team": "Conquistadores de Guaynabo",
       "players": 2
     },
     {
@@ -11070,10 +11066,6 @@
       "players": 2
     },
     {
-      "team": "Pardis Mottahed Qazvin BC",
-      "players": 2
-    },
-    {
       "team": "Parma",
       "players": 2
     },
@@ -11151,10 +11143,6 @@
     },
     {
       "team": "Portland Reign",
-      "players": 2
-    },
-    {
-      "team": "Presto Ice Cream Makers",
       "players": 2
     },
     {
@@ -11535,6 +11523,10 @@
     },
     {
       "team": "Trotamundos B.B.C.",
+      "players": 2
+    },
+    {
+      "team": "Tucson Gunners",
       "players": 2
     },
     {
@@ -15598,6 +15590,10 @@
       "players": 1
     },
     {
+      "team": "Pardis Mottahed Qazvin BC",
+      "players": 1
+    },
+    {
       "team": "Parris Island Marines",
       "players": 1
     },
@@ -15795,6 +15791,10 @@
     },
     {
       "team": "Presto Ice Cream Kings",
+      "players": 1
+    },
+    {
+      "team": "Presto Ice Cream Makers",
       "players": 1
     },
     {
@@ -20451,7 +20451,7 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5063
+      "players": 5060
     },
     {
       "country": "Italy",
@@ -20459,7 +20459,7 @@
     },
     {
       "country": "Spain",
-      "players": 819
+      "players": 818
     },
     {
       "country": "France",
@@ -20475,7 +20475,7 @@
     },
     {
       "country": "Turkey",
-      "players": 517
+      "players": 516
     },
     {
       "country": "Israel",
@@ -20487,7 +20487,7 @@
     },
     {
       "country": "Puerto Rico",
-      "players": 375
+      "players": 374
     },
     {
       "country": "Germany",
@@ -20511,11 +20511,11 @@
     },
     {
       "country": "Mexico",
-      "players": 179
+      "players": 178
     },
     {
       "country": "Philippines",
-      "players": 176
+      "players": 175
     },
     {
       "country": "Argentina",
@@ -20547,7 +20547,7 @@
     },
     {
       "country": "Georgia",
-      "players": 88
+      "players": 87
     },
     {
       "country": "Ukraine",
@@ -20567,7 +20567,7 @@
     },
     {
       "country": "Iran",
-      "players": 53
+      "players": 52
     },
     {
       "country": "Cyprus",
@@ -29655,28 +29655,6 @@
       ]
     },
     {
-      "player": "Walker Russell Sr",
-      "teams": [
-        {
-          "team": "Detroit Pistons",
-          "stints": 3,
-          "years": [
-            "1982-1983",
-            "1985",
-            "1988"
-          ]
-        },
-        {
-          "team": "Detroit Spirits",
-          "stints": 2,
-          "years": [
-            "1983-1984",
-            "1985-1986"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Walter Herrmann",
       "teams": [
         {
@@ -35278,7 +35256,7 @@
       ]
     },
     {
-      "player": "Derrick Alston Sr",
+      "player": "Derrick Alston",
       "teams": [
         {
           "team": "Boca Juniors",
@@ -37598,19 +37576,6 @@
       ]
     },
     {
-      "player": "Gerald Henderson Sr",
-      "teams": [
-        {
-          "team": "Detroit Pistons",
-          "stints": 2,
-          "years": [
-            "1989-1991",
-            "1992"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Gerald Madkins",
       "teams": [
         {
@@ -38846,19 +38811,6 @@
     },
     {
       "player": "Jabari Smith",
-      "teams": [
-        {
-          "team": "Sacramento Kings",
-          "stints": 2,
-          "years": [
-            "2000-2001",
-            "2003-2004"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Jabari Smith Sr",
       "teams": [
         {
           "team": "Sacramento Kings",

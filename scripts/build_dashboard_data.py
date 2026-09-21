@@ -52,12 +52,9 @@ PLAYER_ALIASES_OUT = ROOT / "data" / "player_aliases.json"
 PLAYER_INDEX_OUT = ROOT / "data" / "player_index.json"  # all names, light homepage search
 SITEMAP_OUT = ROOT / "sitemap.xml"
 
-# Absolute origin the site is served from, used only for sitemap.xml. This is
-# the permanent production origin (do not revert to a placeholder); an env
-# override is allowed for non-prod builds.
-import os  # noqa: E402
-SITE_BASE_URL = os.environ.get(
-    "SITE_BASE_URL", "https://jsierrahoopshype.github.io/nba-career-map").rstrip("/")
+# Absolute address the site is served from, used here for sitemap.xml. Owned
+# by scripts/site_config.py, which the prerendered pages and the share tags read too.
+from site_config import SITE_BASE_URL  # noqa: E402
 
 OVERSEAS = "overseas_active"
 

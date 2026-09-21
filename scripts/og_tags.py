@@ -26,12 +26,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-# ---------------------------------------------------------------------------
-# The single constant. Live GitHub Pages origin, no trailing slash.
-# A custom domain later (e.g. https://hoopsmatic.com/nba-career-map) is one
-# edit here + a re-run of this script.
-# ---------------------------------------------------------------------------
-SITE_ORIGIN = "https://jsierrahoopshype.github.io/nba-career-map"
+# The address the pages are served at, owned by scripts/site_config.py and shared
+# with prerender.py and build_dashboard_data.py.
+import sys  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from site_config import SITE_BASE_URL as SITE_ORIGIN  # noqa: E402
 
 SITE_NAME = "NBA Career Map"
 
@@ -48,6 +47,10 @@ OG_IMAGE_ALT = ("NBA career paths drawn as red arcs across a map of the United "
 # that setTitle() writes once the app boots.
 PAGES = {
     "index.html": {
+        # index.html keeps its own hand-written canonical, which the app
+        # rewrites per player as you browse -- emitting a second one here
+        # would leave the page with two.
+        "canonical": False,
         "path": "/",
         "title": "NBA Career Map: where every NBA player is playing now | HoopsHype",
         "description": (
@@ -122,6 +125,10 @@ def build_block(page):
     lines = [INDENT + BEGIN]
     lines += [f'{INDENT}<meta {kind}="{key}" content="{val}">'
               for kind, key, val in tags]
+    if page.get("canonical", True):
+        # Self-canonical: the address this page is served at, which is the
+        # whole point of the constant above.
+        lines.append(f'{INDENT}<link rel="canonical" href="{url}">')
     lines.append(INDENT + END)
     return "\n".join(lines) + "\n"
 
