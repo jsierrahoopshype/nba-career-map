@@ -8,6 +8,14 @@
       "posted": true,
       "date": "2026-09-10",
       "note": "logged as a transfer, then removed from transactions.json by prune_phantom_moves.py; both spellings now alias to \"Ironi Ness Ziona\""
+    },
+    {
+      "player": "Anton Watson",
+      "from": "South Bay/Coachella Valley Lakers",
+      "to": "South Bay Lakers",
+      "reason": "rename-review",
+      "posted": false,
+      "date": "2026-09-20"
     }
   ]
 }
