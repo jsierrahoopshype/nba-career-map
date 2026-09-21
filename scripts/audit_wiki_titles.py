@@ -34,6 +34,7 @@ from player_status import classify_status  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 REPORT = ROOT / "logs" / "wiki_title_audit.json"
+PROPOSALS = ROOT / "logs" / "article_proposals.json"
 
 
 def stored_title(rec: dict) -> str:
@@ -117,6 +118,75 @@ def _print_sweep(report: dict) -> None:
     print(f"  respelled (allowed, listed for eyeballing): {len(report['soft'])}")
 
 
+
+# --- propose -----------------------------------------------------------------
+
+def _overlap(rec: dict, parsed: dict) -> tuple[int, int, int]:
+    here, there = _stints(rec), _stints(parsed)
+    return len(here & there), len(here), len(there)
+
+
+def propose(client: WikipediaClient, db, names: list) -> dict:
+    """For a record pointing at a disambiguation page, find the real article.
+
+    A disambiguation page is Wikipedia saying "which one?", and the answer is
+    usually one search away -- but "Joe Smith (basketball)" is not necessarily
+    our Joe Smith, so every candidate is parsed and its career compared with
+    what the record already holds. Shared stints are the evidence; the count is
+    reported rather than assumed.
+    """
+    out = {"proposals": [], "none": []}
+    for name in names:
+        rec = db.by_name.get(name)
+        if not rec:
+            out["none"].append({"player": name, "why": "no such record"})
+            continue
+        tried, best = [], None
+        seen = set()
+        ladder = candidate_titles(name, uc._birth_year(rec))
+        try:
+            ladder += [t for t in client.search(f"{name} basketball", limit=6)]
+        except Exception as exc:  # noqa: BLE001
+            print(f"[propose] {name}: search failed ({exc})")
+        for cand in ladder:
+            if cand in seen:
+                continue
+            seen.add(cand)
+            wt, title = client.get_wikitext_and_title(cand)
+            if not (wt and title):
+                continue
+            ok, why = same_person(name, title)
+            if not ok:
+                tried.append({"title": cand, "resolved": title, "why": why})
+                continue
+            parsed = parse_player(wt, name, db.normalizer)
+            shared, here, there = _overlap(rec, parsed)
+            row = {"title": title, "shared": shared, "stored": here,
+                   "article": there, "reason": why,
+                   "teams": [s.get("team") for s in
+                             (parsed.get("career_history") or [])][:6]}
+            tried.append(row)
+            if best is None or (shared, there) > (best["shared"], best["article"]):
+                best = row
+        if best and best["shared"]:
+            out["proposals"].append({"player": name, **best, "tried": tried})
+        else:
+            out["none"].append({"player": name, "why": "nothing shares a stint",
+                                "tried": tried})
+    return out
+
+
+def _print_proposals(doc: dict) -> None:
+    print(f"\n{len(doc['proposals'])} proposal(s):")
+    for r in doc["proposals"]:
+        print(f"  {r['player']!r:18} -> {r['title']!r:38} "
+              f"{r['shared']}/{r['stored']} stored stints shared "
+              f"({r['article']} in the article)")
+    print(f"\n{len(doc['none'])} with nothing confident:")
+    for r in doc["none"]:
+        print(f"  {r['player']!r:18} {r['why']}")
+
+
 # --- fix ---------------------------------------------------------------------
 
 def _stints(rec_or_parse: dict) -> set:
@@ -183,9 +253,10 @@ def _replace_career(db, rec: dict, title: str, wt: str, client,
 
 
 def fix(client: WikipediaClient, db, names: list, current_year: int,
-        replace: set | None = None) -> dict:
+        replace: set | None = None, extra: dict | None = None) -> dict:
     """Repair records. `replace` names the ones whose careers are known bad."""
     replace = set(names) if replace is None else replace
+    extra = extra or {}
     out = {"fixed": [], "unresolved": [], "conflicts": []}
     for name in names:
         rec = db.by_name.get(name)
@@ -193,7 +264,11 @@ def fix(client: WikipediaClient, db, names: list, current_year: int,
             out["unresolved"].append({"player": name, "why": "no such record"})
             continue
         tried = []
-        for cand in [name] + candidate_titles(name, uc._birth_year(rec)):
+        ladder = [name] + candidate_titles(name, uc._birth_year(rec))
+        if extra.get(name):
+            # the article a proposal settled on, tried before the guesses
+            ladder.insert(1, extra[name])
+        for cand in ladder:
             wt, title = client.get_wikitext_and_title(cand)
             tried.append({"title": cand, "resolved": title or ""})
             if not (wt and title and same_person(name, title)[0]):
@@ -209,7 +284,9 @@ def fix(client: WikipediaClient, db, names: list, current_year: int,
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("action", choices=["sweep", "fix"])
+    ap.add_argument("action", choices=["sweep", "propose", "fix"])
+    ap.add_argument("--from-proposals", action="store_true",
+                    help="fix the records named in logs/article_proposals.json")
     ap.add_argument("--player", action="append", default=[],
                     help="fix only these records (default: everything the "
                          "sweep report condemns)")
@@ -239,6 +316,24 @@ def main() -> int:
     names = list(args.player) + [n.strip() for n in args.players_csv.split(",")
                                  if n.strip()]
     replace = None
+    if args.action == "propose":
+        if not names:
+            if not REPORT.exists():
+                sys.exit("no sweep report; run `sweep` first or pass --player")
+            doc = json.loads(REPORT.read_text(encoding="utf-8"))
+            names = [r["player"] for r in doc.get("wrong_person", [])]
+        found = propose(client, db, names)
+        _print_proposals(found)
+        PROPOSALS.parent.mkdir(parents=True, exist_ok=True)
+        PROPOSALS.write_text(json.dumps(found, indent=2, ensure_ascii=False),
+                             encoding="utf-8")
+        print(f"\nwrote {PROPOSALS.relative_to(ROOT)}  "
+              f"({client.requests_made} requests)")
+        return 0
+    if args.from_proposals and not names:
+        doc = json.loads(PROPOSALS.read_text(encoding="utf-8"))
+        names = [r["player"] for r in doc["proposals"]]
+        replace = set()          # careful mode: the stored career is good
     if not names:
         if not REPORT.exists():
             sys.exit("no sweep report; run `sweep` first or pass --player")
@@ -249,8 +344,15 @@ def main() -> int:
         replace = {r["player"] for r in doc.get("bad_source", [])}
         names = list(dict.fromkeys(
             sorted(replace) + [r["player"] for r in doc.get("wrong_person", [])]))
+    chosen = {}
+    if args.from_proposals and PROPOSALS.exists():
+        chosen = {r["player"]: r["title"] for r in
+                  json.loads(PROPOSALS.read_text(encoding="utf-8"))["proposals"]}
+        replace = set()
     result = fix(client, db, names, current_year,
-                 replace if not args.player and not args.players_csv else None)
+                 replace if (args.from_proposals or not
+                             (args.player or args.players_csv)) else None,
+                 extra=chosen)
     for row in result["fixed"]:
         print(f"\n{row['player']!r} <- {row['article']!r}  [{row['status']}]")
         print(f"    was: {' | '.join(row['before']) or '(nothing)'}")
