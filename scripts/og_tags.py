@@ -27,11 +27,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # ---------------------------------------------------------------------------
-# The single constant. Live GitHub Pages origin, no trailing slash.
-# A custom domain later (e.g. https://hoopsmatic.com/nba-career-map) is one
-# edit here + a re-run of this script.
+# The single constant. Canonical production origin, no trailing slash: the
+# site is served at hoopsmatic.com/career-maps, so that is where the canonical
+# tag, og:url and the share card point. The GitHub Pages deploy stays live and
+# remains the origin the content is built and served FROM -- it just isn't the
+# address that gets indexed or credited. A later address change is one edit
+# here + a re-run of this script.
 # ---------------------------------------------------------------------------
-SITE_ORIGIN = "https://jsierrahoopshype.github.io/nba-career-map"
+SITE_ORIGIN = "https://hoopsmatic.com/career-maps"
 
 SITE_NAME = "NBA Career Map"
 

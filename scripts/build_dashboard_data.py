@@ -57,7 +57,7 @@ SITEMAP_OUT = ROOT / "sitemap.xml"
 # override is allowed for non-prod builds.
 import os  # noqa: E402
 SITE_BASE_URL = os.environ.get(
-    "SITE_BASE_URL", "https://jsierrahoopshype.github.io/nba-career-map").rstrip("/")
+    "SITE_BASE_URL", "https://hoopsmatic.com/career-maps").rstrip("/")
 
 OVERSEAS = "overseas_active"
 

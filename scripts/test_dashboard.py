@@ -417,7 +417,7 @@ def test_sitemap():
     assert "/index.html?player=" not in xml
     assert "/country/usa.html" in xml
     assert xml.count("<url>") == 2 + 30 + 1 + 1  # index+landing + 30 teams + 1 country + 1 player
-    assert "https://jsierrahoopshype.github.io/nba-career-map/" in xml  # permanent base
+    assert "https://hoopsmatic.com/career-maps/" in xml  # permanent base
     print("test_sitemap PASS")
 
 

@@ -46,7 +46,7 @@ COUNTRY_CLUB_CAP = 250
 
 # Kept in step with scripts/og_tags.py, which owns the same constant for the
 # hand-written pages. One edit there, one here, on a domain switch.
-SITE_BASE_URL = "https://jsierrahoopshype.github.io/nba-career-map"
+SITE_BASE_URL = "https://hoopsmatic.com/career-maps"
 OG_IMAGE = f"{SITE_BASE_URL}/assets/og-career-map.png"
 # Per-player cards (scripts/og_cards.py) exist for the shared-heavy slice of
 # players. A page uses its own card when one has been generated and the shared
