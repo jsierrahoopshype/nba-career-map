@@ -60,7 +60,8 @@ from player_status import (classify_status, last_active_year, PRESENT,
                            NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
-from names import normkey, url_key, canonical_url, title_from_url
+from names import (normkey, url_key, canonical_url, title_from_url,
+                   exact_article_key)
 from wiki_person import same_person, candidate_titles
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -118,6 +119,8 @@ class Database:
         # dedupe indexes: normalized name / aliases, and canonical Wikipedia URL
         self.norm_index: dict[str, str] = {}
         self.url_index: dict[str, str] = {}
+        # exact article titles, suffix and all -- see owner_of_article
+        self.article_index: dict[str, str] = {}
         for p in players:
             self._index(p)
 
@@ -133,6 +136,19 @@ class Database:
         u = url_key(rec.get("wikipedia_url", ""))
         if u:
             self.url_index.setdefault(u, name)
+        a = exact_article_key(title_from_url(rec.get("wikipedia_url", "")))
+        if a:
+            self.article_index.setdefault(a, name)
+
+    def owner_of_article(self, title: str) -> str | None:
+        """Which record, if any, is already built from this exact article.
+
+        Exact: "Kenyon Martin Jr." is not "Kenyon Martin", however alike the
+        two fold. Asking the name-based index instead told the scraper that
+        KJ Martin's own article belonged to his father, and his record stopped
+        updating for three days.
+        """
+        return self.article_index.get(exact_article_key(title))
 
     def resolve_by_name(self, candidate: str) -> str | None:
         """Existing player matching a candidate by normalized name, else None."""
@@ -367,8 +383,8 @@ def right_article(db: "Database", name: str,
         # Our key catching up with the article ("Craig Porter" ->
         # "Craig Porter Jr."), unless another record already IS that article,
         # in which case the suffix belongs to the son and this is his father.
-        owner = db.resolve_canonical(title)
-        if owner and owner != name:
+        owner = db.owner_of_article(title)
+        if owner and owner != name and owner != db.resolve_by_name(name):
             ok, why = False, f"{title} already belongs to {owner}"
     if ok:
         return wt, title, None

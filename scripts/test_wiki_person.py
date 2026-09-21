@@ -207,6 +207,40 @@ def test_a_jr_is_not_merged_into_the_record_of_a_name_that_folds_to_his():
     print("test_a_jr_is_not_merged_into_the_record_of_a_name_that_folds_to_his PASS")
 
 
+def test_a_sons_own_article_is_not_said_to_belong_to_his_father():
+    """The guard's own false positive, caught in production.
+
+    "KJ Martin" resolves to "Kenyon Martin Jr.", which is exactly his record's
+    article -- but the name index folds the Jr. away and answered with his
+    father, so the fetch was refused and his record stopped updating for three
+    days. Article ownership is now judged on the exact title.
+    """
+    import update_careers as uc
+    db = _db([
+        {"player": "Kenyon Martin", "status": "retired",
+         "wikipedia_url": "https://en.wikipedia.org/wiki/Kenyon_Martin",
+         "career_history": [{"years": "2000-2004", "team": "New Jersey Nets"}]},
+        {"player": "KJ Martin", "status": "nba_active",
+         "wikipedia_url": "https://en.wikipedia.org/wiki/Kenyon_Martin_Jr.",
+         "career_history": [{"years": "2020-2023", "team": "Houston Rockets"}]},
+    ])
+    uc.REFUSED.clear()
+    wt = ("{{Infobox basketball biography\n| name = Kenyon Martin Jr.\n"
+          "| years1 = 2020\u20132023\n| team1 = [[Houston Rockets]]\n"
+          "| years2 = 2025\u2013present\n| team2 = [[Ningbo Rockets]]\n}}")
+    client = _client({"KJ Martin": ("Kenyon Martin Jr.", wt)})
+    rec, _teams, is_new, *_ = uc.merge_player(db, "KJ Martin", client, {},
+                                              set(), 2026)
+    assert not uc.REFUSED, uc.REFUSED
+    assert rec is not None and not is_new
+    assert rec["player"] == "KJ Martin", rec["player"]
+    teams = [s["team"] for s in rec["career_history"]]
+    assert "Ningbo Rockets" in teams, teams
+    assert len(db.by_name["Kenyon Martin"]["career_history"]) == 1, \
+        "the father's record was touched"
+    print("test_a_sons_own_article_is_not_said_to_belong_to_his_father PASS")
+
+
 def test_an_ordinary_redirect_still_merges():
     """The guard must not cost the pipeline its reason for following redirects."""
     import update_careers as uc
@@ -233,5 +267,6 @@ if __name__ == "__main__":
     test_a_son_is_never_handed_his_fathers_article()
     test_the_ladder_finds_the_son_when_his_article_exists()
     test_a_jr_is_not_merged_into_the_record_of_a_name_that_folds_to_his()
+    test_a_sons_own_article_is_not_said_to_belong_to_his_father()
     test_an_ordinary_redirect_still_merges()
     print("\nALL WRONG-ARTICLE GUARD TESTS PASS")

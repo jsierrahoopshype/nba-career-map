@@ -65,3 +65,16 @@ def canonical_url(title: str) -> str:
     if not title:
         return ""
     return WIKI_PREFIX + quote(title.replace(" ", "_"), safe="_(),.'-")
+
+
+def exact_article_key(title: str) -> str:
+    """An article's identity, keeping what normkey folds away.
+
+    normkey answers "same person?" and so drops Jr., Sr. and disambiguators --
+    which makes it useless for "is this the same ARTICLE?". Kenyon Martin and
+    Kenyon Martin Jr. share a normkey, and reading that as one article told the
+    scraper the son's page already belonged to his father.
+    """
+    t = (title or "").replace("_", " ")
+    t = re.sub(r"\s+", " ", t.replace(".", "")).strip().casefold()
+    return t
