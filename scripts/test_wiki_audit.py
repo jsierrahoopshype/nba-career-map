@@ -166,6 +166,30 @@ def test_a_record_is_not_overwritten_by_an_article_that_disagrees_with_it():
     print("test_a_record_is_not_overwritten_by_an_article_that_disagrees_with_it PASS")
 
 
+def test_an_empty_parse_never_replaces_a_career():
+    """What went wrong on the first apply run.
+
+    Michael Wilson's thirteen stints were Mike Gibson's, so the record was
+    condemned and replaced -- with an article that parses to nothing. A wrong
+    career is bad; no career is not better. The record is left alone and
+    reported instead.
+    """
+    records = [{"player": "Michael Wilson", "status": "retired",
+                "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Gibson_(basketball)",
+                "career_history": [{"years": "1997", "team": "Memphis Tigers",
+                                    "city": "Memphis", "country": "USA"}]}]
+    db, _sb = _db(records)
+    client = FakeClient()
+    client.get_wikitext_and_title = lambda t: (
+        ("== Career ==\nNo infobox here.\n", "Michael Wilson")
+        if t == "Michael Wilson" else (None, None))
+    result = aud.fix(client, db, ["Michael Wilson"], 2026)
+    assert not result["fixed"], result["fixed"]
+    assert result["conflicts"][0]["conflict"] == "the article parsed to nothing"
+    assert len(db.by_name["Michael Wilson"]["career_history"]) == 1
+    print("test_an_empty_parse_never_replaces_a_career PASS")
+
+
 def test_dedupe_unions_the_stints_and_keeps_the_canonical_key():
     db, _sb = _db([dict(r) for r in RECORDS])
     report = aud.sweep(FakeClient(), [db.by_name[n] for n in db.order])
@@ -180,6 +204,8 @@ def test_dedupe_unions_the_stints_and_keeps_the_canonical_key():
     teams = sorted(s["team"] for s in kept["career_history"])
     assert teams == ["New York Knicks", "Orlando Magic"], teams
     assert "Pat Ewing" in kept["aliases"]
+    # the display name is a name, not an article's disambiguator
+    assert "(" not in (kept.get("display_name") or ""), kept.get("display_name")
     # the all-star count only one row carried is not lost in the merge
     assert kept["all_star_count"] == 11, kept.get("all_star_count")
     print("test_dedupe_unions_the_stints_and_keeps_the_canonical_key PASS")
@@ -249,6 +275,7 @@ if __name__ == "__main__":
     test_the_sweep_names_the_record_built_from_the_wrong_article()
     test_the_fix_replaces_the_invented_career_with_the_real_one()
     test_a_record_is_not_overwritten_by_an_article_that_disagrees_with_it()
+    test_an_empty_parse_never_replaces_a_career()
     test_dedupe_unions_the_stints_and_keeps_the_canonical_key()
     test_dedupe_refuses_to_bury_a_wrong_article_record()
     test_one_article_does_not_make_two_players_one()

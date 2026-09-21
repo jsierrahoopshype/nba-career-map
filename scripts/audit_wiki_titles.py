@@ -141,17 +141,21 @@ def _replace_career(db, rec: dict, title: str, wt: str, client,
     fresh.pop("_raw_teams", None)
     before = [f"{s.get('years')} {s.get('team')}"
               for s in rec.get("career_history") or []]
+    here, there = _stints(rec), _stints(fresh)
+    if here and not there:
+        # An article that parses to nothing is not an improvement on a career,
+        # even a wrong one: Michael Wilson's thirteen stints were another man's,
+        # and replacing them with an empty list lost the record instead of
+        # repairing it.
+        return {"player": rec["player"], "article": title, "before": before,
+                "after": None, "new_teams": [],
+                "conflict": "the article parsed to nothing",
+                "status": rec.get("status")}
     if not replace:
-        here, there = _stints(rec), _stints(fresh)
         if here and there and not (here & there):
             return {"player": rec["player"], "article": title,
                     "before": before, "after": None, "new_teams": [],
                     "conflict": "shares no stint with the article",
-                    "status": rec.get("status")}
-        if here and not there:
-            return {"player": rec["player"], "article": title,
-                    "before": before, "after": None, "new_teams": [],
-                    "conflict": "the article parsed to nothing",
                     "status": rec.get("status")}
     rec["career_history"] = fresh.get("career_history", [])
     rec["current_team"] = fresh.get("current_team", "")

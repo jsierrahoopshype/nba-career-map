@@ -208,7 +208,10 @@ def _merge(db, article: str, keys: list) -> dict:
 
     rec["career_history"] = list(stints.values())
     rec["wikipedia_url"] = canonical_url(article)
-    rec["display_name"] = rec.get("display_name") or article
+    # the article's title, not its disambiguator: the frontend prints this,
+    # and nobody is called "Johnny Davis (NBA)"
+    rec["display_name"] = (rec.get("display_name")
+                           or re.sub(r"\s*\(.*?\)", "", article).strip())
     aliases = set(rec.get("aliases") or [])
     for k in dropped:
         aliases.add(k)
