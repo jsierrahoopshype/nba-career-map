@@ -44,7 +44,12 @@ def probe(url: str, *, follow: bool) -> dict:
     try:
         with opener.open(req, timeout=30) as resp:
             body = resp.read(200_000).decode("utf-8", "replace")
+            ctype = resp.headers.get("Content-Type", "")
             return {"url": url, "status": resp.status, "final": resp.geturl(),
+                    "ctype": ctype,
+                    "head": (body[:400] if ctype.startswith(("text/plain",
+                                                             "application/xml",
+                                                             "text/xml")) else ""),
                     "title": _one(r"<title>(.*?)</title>", body),
                     "canonical": _one(r'rel=["\']canonical["\'][^>]*href=["\']([^"\']+)', body)
                                  or _one(r'href=["\']([^"\']+)["\'][^>]*rel=["\']canonical', body),
@@ -52,10 +57,12 @@ def probe(url: str, *, follow: bool) -> dict:
                     "bytes": len(body)}
     except urllib.error.HTTPError as exc:
         return {"url": url, "status": exc.code, "final": str(exc.reason),
-                "title": "", "canonical": "", "og_url": "", "bytes": 0}
+                "title": "", "canonical": "", "og_url": "", "bytes": 0,
+                "ctype": "", "head": ""}
     except Exception as exc:  # noqa: BLE001
         return {"url": url, "status": 0, "final": f"{type(exc).__name__}: {exc}",
-                "title": "", "canonical": "", "og_url": "", "bytes": 0}
+                "title": "", "canonical": "", "og_url": "", "bytes": 0,
+                "ctype": "", "head": ""}
 
 
 def _one(pattern: str, text: str) -> str:
@@ -76,7 +83,12 @@ def main() -> int:
             print(f"   title     : {out['title'][:90]}")
             print(f"   canonical : {out['canonical'] or '(none)'}")
             print(f"   og:url    : {out['og_url'] or '(none)'}")
-            print(f"   size      : {out['bytes']} bytes")
+            print(f"   size      : {out['bytes']} bytes  [{out.get('ctype','')}]")
+            if out.get("head"):
+                # robots.txt and sitemaps say what they say; print it rather
+                # than infer indexability from a byte count
+                for line in out["head"].splitlines()[:8]:
+                    print(f"   | {line}")
     return 0
 
 
