@@ -1,5 +1,5 @@
 {
-  "checked": 5179,
+  "checked": 5177,
   "bad_source": [
     {
       "player": "Derrick Alston Sr",
@@ -465,13 +465,6 @@
       "stints": 3
     },
     {
-      "player": "Johnny Davis (1955)",
-      "stored": "Johnny Davis (NBA)",
-      "resolved": "",
-      "url_resolves_to": "Johnny Davis (basketball, born 1955)",
-      "stints": 5
-    },
-    {
       "player": "Juan Hernangomez",
       "stored": "Juan Hernangómez",
       "resolved": "",
@@ -491,13 +484,6 @@
       "resolved": "",
       "url_resolves_to": "Ken Johnson (basketball, born 1978)",
       "stints": 13
-    },
-    {
-      "player": "Kevin Porter (1950)",
-      "stored": "Kevin Porter (basketball, born 1950)",
-      "resolved": "",
-      "url_resolves_to": "Kevin Porter (basketball, born 1950)",
-      "stints": 6
     },
     {
       "player": "Larry Johnson (1954)",
@@ -592,9 +578,9 @@
     },
     {
       "player": "Mike James (1990)",
-      "stored": "Mike James (basketball, born 1990)",
+      "stored": "Mike James",
       "resolved": "",
-      "url_resolves_to": "Mike James (basketball, born 1990)",
+      "url_resolves_to": "Mike James",
       "stints": 13
     },
     {
@@ -655,9 +641,9 @@
     },
     {
       "player": "Tony Mitchell (1989)",
-      "stored": "Tony Mitchell (basketball, born 1989)",
+      "stored": "Tony Mitchell",
       "resolved": "",
-      "url_resolves_to": "Tony Mitchell (basketball, born 1989)",
+      "url_resolves_to": "Tony Mitchell",
       "stints": 33
     },
     {
@@ -665,7 +651,7 @@
       "stored": "Vince Williams Jr.",
       "resolved": "",
       "url_resolves_to": "Vince Williams Jr.",
-      "stints": 2
+      "stints": 3
     },
     {
       "player": "Walker Russell Sr",
@@ -1674,14 +1660,6 @@
       "reason": "suffix-added"
     },
     {
-      "player": "Jeenathan Williams",
-      "stored": "Nate Williams (basketball, born 1999)",
-      "resolved": "Nate Williams (basketball, born 1999)",
-      "url_resolves_to": "Nate Williams (basketball, born 1999)",
-      "stints": 8,
-      "reason": "given-name-changed"
-    },
-    {
       "player": "Jeff Dowtin",
       "stored": "Jeff Dowtin Jr.",
       "resolved": "Jeff Dowtin Jr.",
@@ -2376,14 +2354,6 @@
       "url_resolves_to": "Otto Porter Jr.",
       "stints": 5,
       "reason": "suffix-added"
-    },
-    {
-      "player": "Pat Ewing",
-      "stored": "Pat Ewing",
-      "resolved": "Patrick Ewing",
-      "url_resolves_to": "Patrick Ewing",
-      "stints": 3,
-      "reason": "given-name-changed"
     },
     {
       "player": "Patrick Baldwin",
@@ -9034,24 +9004,10 @@
       ]
     },
     {
-      "article": "Jakob Pöltl",
-      "players": [
-        "Jakob Poeltl",
-        "Jakob Pöltl"
-      ]
-    },
-    {
       "article": "Ken Green",
       "players": [
         "Ken Green",
         "Kenny Green"
-      ]
-    },
-    {
-      "article": "Patrick Ewing",
-      "players": [
-        "Pat Ewing",
-        "Patrick Ewing"
       ]
     },
     {
@@ -11361,7 +11317,6 @@
     "Jayson Tatum": "Jayson Tatum",
     "Jayson Williams": "Jayson Williams",
     "JD Davison": "JD Davison",
-    "Jeenathan Williams": "Nate Williams (basketball, born 1999)",
     "Jeff Adrien": "Jeff Adrien",
     "Jeff Ayres": "Jeff Ayres",
     "Jeff Cook": "Jeff Cook",
@@ -11687,7 +11642,6 @@
     "Johnny Bach": "Johnny Bach",
     "Johnny Baum": "Johnny Baum",
     "Johnny Cox": "Johnny Cox",
-    "Johnny Davis (1955)": "",
     "Johnny Davis": "Johnny Davis",
     "Johnny Dawkins": "Johnny Dawkins",
     "Johnny Egan": "John Egan",
@@ -11968,7 +11922,6 @@
     "Kevin Ollie": "Kevin Ollie",
     "Kevin Pangos": "Kevin Pangos",
     "Kevin Porter": "Kevin Porter",
-    "Kevin Porter (1950)": "",
     "Kevin Pritchard": "Kevin Pritchard",
     "Kevin Restani": "Kevin Restani",
     "Kevin Salvadori": "Kevin Salvadori",
@@ -12778,7 +12731,6 @@
     "Pat Cummings": "Pat Cummings",
     "Pat Dunn": "Pat Dunn",
     "Pat Durham": "Pat Durham",
-    "Pat Ewing": "Patrick Ewing",
     "Pat Frink": "Pat Frink",
     "Pat Garrity": "Pat Garrity",
     "Pat Riley": "Pat Riley",
@@ -14149,7 +14101,6 @@
     "Ja'Kobi Gillespie": "Ja'Kobi Gillespie",
     "Jaden Bradley": "Jaden Bradley",
     "Jahmai Mashack": "Jahmai Mashack",
-    "Jakob Pöltl": "Jakob Pöltl",
     "Jamir Watkins": "Jamir Watkins",
     "Jase Richardson": "Jase Richardson",
     "Javon Small": "Javon Small",
@@ -14264,7 +14215,10 @@
     "Khalifa Diop": "Khalifa Diop",
     "Kyle Mangas": "Kyle Mangas",
     "Jarkel Joiner": "Jarkel Joiner",
-    "Grant Nelson": "Grant Nelson"
+    "Grant Nelson": "Grant Nelson",
+    "Walt Lemon Jr.": "Walt Lemon Jr.",
+    "Jake Stephens": "Jake Stephens",
+    "Rienk Mast": "Rienk Mast"
   },
   "resolved_url": {
     "A.C. Green": "A. C. Green",
@@ -16542,7 +16496,6 @@
     "Jayson Tatum": "Jayson Tatum",
     "Jayson Williams": "Jayson Williams",
     "JD Davison": "JD Davison",
-    "Jeenathan Williams": "Nate Williams (basketball, born 1999)",
     "Jeff Adrien": "Jeff Adrien",
     "Jeff Ayres": "Jeff Ayres",
     "Jeff Cook": "Jeff Cook (basketball)",
@@ -16868,7 +16821,6 @@
     "Johnny Bach": "Johnny Bach",
     "Johnny Baum": "Johnny Baum",
     "Johnny Cox": "Johnny Cox",
-    "Johnny Davis (1955)": "Johnny Davis (basketball, born 1955)",
     "Johnny Davis": "Johnny Davis (basketball, born 1955)",
     "Johnny Dawkins": "Johnny Dawkins",
     "Johnny Egan": "Johnny Egan (basketball)",
@@ -17149,7 +17101,6 @@
     "Kevin Ollie": "Kevin Ollie",
     "Kevin Pangos": "Kevin Pangos",
     "Kevin Porter": "Kevin Porter (basketball, born 1950)",
-    "Kevin Porter (1950)": "Kevin Porter (basketball, born 1950)",
     "Kevin Pritchard": "Kevin Pritchard",
     "Kevin Restani": "Kevin Restani",
     "Kevin Salvadori": "Kevin Salvadori",
@@ -17703,7 +17654,7 @@
     "Mike Holton": "Michael Holton",
     "Mike Iuzzolino": "Mike Iuzzolino",
     "Mike James (1975)": "Mike James (basketball, born 1975)",
-    "Mike James (1990)": "Mike James (basketball, born 1990)",
+    "Mike James (1990)": "Mike James",
     "Mike Kearns": "Mike Kearns",
     "Mike Lynn": "Mike Lynn",
     "Mike Macaluso": "Mike Macaluso",
@@ -17959,7 +17910,6 @@
     "Pat Cummings": "Pat Cummings",
     "Pat Dunn": "Pat Dunn (basketball)",
     "Pat Durham": "Pat Durham",
-    "Pat Ewing": "Patrick Ewing",
     "Pat Frink": "Pat Frink",
     "Pat Garrity": "Pat Garrity",
     "Pat Riley": "Pat Riley",
@@ -18839,7 +18789,7 @@
     "Tony Lavelli": "Tony Lavelli",
     "Tony Massenburg": "Tony Massenburg",
     "Tony Mitchell (1992)": "Tony Mitchell (basketball, born 1992)",
-    "Tony Mitchell (1989)": "Tony Mitchell (basketball, born 1989)",
+    "Tony Mitchell (1989)": "Tony Mitchell",
     "Tony Parker": "Tony Parker",
     "Tony Price": "Tony Price (basketball)",
     "Tony Robertson": "Tony Robertson",
@@ -19330,7 +19280,6 @@
     "Ja'Kobi Gillespie": "Ja'Kobi Gillespie",
     "Jaden Bradley": "Jaden Bradley",
     "Jahmai Mashack": "Jahmai Mashack",
-    "Jakob Pöltl": "Jakob Pöltl",
     "Jamir Watkins": "Jamir Watkins",
     "Jase Richardson": "Jase Richardson",
     "Javon Small": "Javon Small",
@@ -19445,6 +19394,9 @@
     "Khalifa Diop": "Khalifa Diop",
     "Kyle Mangas": "Kyle Mangas",
     "Jarkel Joiner": "Jarkel Joiner",
-    "Grant Nelson": "Grant Nelson"
+    "Grant Nelson": "Grant Nelson",
+    "Walt Lemon Jr.": "Walt Lemon Jr.",
+    "Jake Stephens": "Jake Stephens",
+    "Rienk Mast": "Rienk Mast"
   }
 }

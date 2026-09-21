@@ -1,3 +1,12 @@
+## 2026-09-21 — article-fix run
+
+- Players updated: **1** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 1
+
 ## 2026-09-21 — incremental run
 
 - Players updated: **518** (1 new)
