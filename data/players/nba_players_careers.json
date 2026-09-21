@@ -79111,7 +79111,7 @@
     "nationality": "United States"
   },
   {
-    "player": "Derrick Alston Sr",
+    "player": "Derrick Alston",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Derrick_Alston",
     "parse_status": "success",
     "career_history": [
@@ -79230,7 +79230,11 @@
     ],
     "current_team": "Boca Juniors",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "aliases": [
+      "Derrick Alston Sr"
+    ],
+    "last_updated": "2026-09-21"
   },
   {
     "player": "Derrick Brown",
@@ -114393,79 +114397,6 @@
     "nationality": "United States"
   },
   {
-    "player": "Gerald Henderson Sr",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Gerald_Henderson",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "years": "1978-1979",
-        "team": "Tucson Gunners",
-        "city": "Tucson",
-        "state": "Arizona",
-        "country": "USA"
-      },
-      {
-        "years": "1979-1984",
-        "team": "Boston Celtics",
-        "city": "Boston",
-        "state": "Massachusetts",
-        "country": "USA"
-      },
-      {
-        "years": "1984-1986",
-        "team": "Seattle SuperSonics",
-        "city": "Seattle",
-        "state": "Washington",
-        "country": "USA"
-      },
-      {
-        "years": "1986-1987",
-        "team": "New York Knicks",
-        "city": "New York",
-        "state": "New York",
-        "country": "USA"
-      },
-      {
-        "years": "1987-1989",
-        "team": "Philadelphia 76ers",
-        "city": "Philadelphia",
-        "state": "Pennsylvania",
-        "country": "USA"
-      },
-      {
-        "years": "1989",
-        "team": "Milwaukee Bucks",
-        "city": "Milwaukee",
-        "state": "Wisconsin",
-        "country": "USA"
-      },
-      {
-        "years": "1989-1991",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "years": "1991-1992",
-        "team": "Houston Rockets",
-        "city": "Houston",
-        "state": "Texas",
-        "country": "USA"
-      },
-      {
-        "years": "1992",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      }
-    ],
-    "current_team": "Detroit Pistons",
-    "status": "retired",
-    "nationality": "United States"
-  },
-  {
     "player": "Gerald Henderson",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Gerald_Henderson",
     "parse_status": "success",
@@ -114536,7 +114467,12 @@
     ],
     "current_team": "Detroit Pistons",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "display_name": "Gerald Henderson",
+    "aliases": [
+      "Gerald Henderson Sr"
+    ],
+    "last_updated": "2026-09-21"
   },
   {
     "player": "Gerald Madkins",
@@ -131027,87 +130963,12 @@
     ],
     "current_team": "Pioneros de Quintana Roo",
     "status": "retired",
-    "nationality": "United States"
-  },
-  {
-    "player": "Jabari Smith Sr",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Jabari_Smith",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "years": "2000-2001",
-        "team": "Sacramento Kings",
-        "city": "Sacramento",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "years": "2001-2002",
-        "team": "Philadelphia 76ers",
-        "city": "Philadelphia",
-        "state": "Pennsylvania",
-        "country": "USA"
-      },
-      {
-        "years": "2002",
-        "team": "Granada",
-        "city": "Granada",
-        "state": "",
-        "country": "Spain"
-      },
-      {
-        "years": "2003-2004",
-        "team": "Sacramento Kings",
-        "city": "Sacramento",
-        "state": "California",
-        "country": "USA"
-      },
-      {
-        "years": "2004-2005",
-        "team": "New Jersey Nets",
-        "city": "East Rutherford",
-        "state": "New Jersey",
-        "country": "USA"
-      },
-      {
-        "years": "2006-2007",
-        "team": "Beşiktaş",
-        "city": "Istanbul",
-        "state": "",
-        "country": "Turkey"
-      },
-      {
-        "years": "2007-2008",
-        "team": "Pardis Mottahed Qazvin BC",
-        "city": "Qazvin",
-        "state": "",
-        "country": "Iran"
-      },
-      {
-        "years": "2009",
-        "team": "Vaqueros de Bayamón",
-        "city": "Bayamón",
-        "state": "",
-        "country": "Puerto Rico"
-      },
-      {
-        "years": "2009",
-        "team": "Conquistadores de Guaynabo",
-        "city": "Guaynabo",
-        "state": "",
-        "country": "Puerto Rico"
-      },
-      {
-        "years": "2010",
-        "team": "Pioneros de Quintana Roo",
-        "city": "Cancún",
-        "state": "",
-        "country": "Mexico"
-      }
+    "nationality": "United States",
+    "display_name": "Jabari Smith",
+    "aliases": [
+      "Jabari Smith Sr"
     ],
-    "current_team": "Pioneros de Quintana Roo",
-    "status": "retired",
-    "nationality": "United States"
+    "last_updated": "2026-09-21"
   },
   {
     "player": "Jabari Walker",
@@ -221829,16 +221690,6 @@
     "current_team": "Vevey Basket",
     "status": "retired",
     "nationality": "United States"
-  },
-  {
-    "player": "Michael Wilson",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Wilson",
-    "parse_status": "no_career_data",
-    "career_history": [],
-    "current_team": "",
-    "status": "retired",
-    "nationality": "United States",
-    "last_updated": "2026-09-21"
   },
   {
     "player": "Michael Young",
@@ -313560,94 +313411,12 @@
     ],
     "current_team": "Purefoods TJ Hotdogs",
     "status": "retired",
-    "nationality": "United States"
-  },
-  {
-    "player": "Walker Russell Sr",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Walker_Russell",
-    "parse_status": "success",
-    "career_history": [
-      {
-        "years": "1982-1983",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "years": "1983-1984",
-        "team": "Detroit Spirits",
-        "city": "Savannah",
-        "state": "",
-        "country": "Georgia"
-      },
-      {
-        "years": "1984",
-        "team": "Atlanta Hawks",
-        "city": "Atlanta",
-        "state": "Georgia",
-        "country": "USA"
-      },
-      {
-        "years": "1985",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "years": "1985-1986",
-        "team": "Detroit Spirits",
-        "city": "Savannah",
-        "state": "",
-        "country": "Georgia"
-      },
-      {
-        "years": "1986",
-        "team": "Kansas City Sizzlers",
-        "city": "Kansas City",
-        "state": "Missouri",
-        "country": "USA"
-      },
-      {
-        "years": "1986-1987",
-        "team": "Indiana Pacers",
-        "city": "Indianapolis",
-        "state": "Indiana",
-        "country": "USA"
-      },
-      {
-        "years": "1987-1988",
-        "team": "Savannah Spirits",
-        "city": "Savannah",
-        "state": "",
-        "country": "Georgia"
-      },
-      {
-        "years": "1988",
-        "team": "Detroit Pistons",
-        "city": "Detroit",
-        "state": "Michigan",
-        "country": "USA"
-      },
-      {
-        "years": "1989",
-        "team": "Presto Ice Cream Makers",
-        "city": "",
-        "state": "",
-        "country": ""
-      },
-      {
-        "years": "1990",
-        "team": "Purefoods TJ Hotdogs",
-        "city": "Manila",
-        "state": "",
-        "country": "Philippines"
-      }
+    "nationality": "United States",
+    "display_name": "Walker Russell",
+    "aliases": [
+      "Walker Russell Sr"
     ],
-    "current_team": "Purefoods TJ Hotdogs",
-    "status": "retired",
-    "nationality": "United States"
+    "last_updated": "2026-09-21"
   },
   {
     "player": "Wallace Bryant",

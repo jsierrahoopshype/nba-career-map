@@ -417,8 +417,49 @@ def test_sitemap():
     assert "/index.html?player=" not in xml
     assert "/country/usa.html" in xml
     assert xml.count("<url>") == 2 + 30 + 1 + 1  # index+landing + 30 teams + 1 country + 1 player
-    assert "https://jsierrahoopshype.github.io/nba-career-map/" in xml  # permanent base
+    # the address the section is SERVED at, not the GitHub copy of the files
+    assert f"{b.SITE_BASE_URL}/" in xml
+    assert "github.io" not in xml, "the sitemap is advertising the GitHub copy"
     print("test_sitemap PASS")
+
+
+def test_every_page_points_at_the_address_it_is_served_from():
+    """A canonical naming another domain hands that domain the ranking.
+
+    Every generated page, and the three hand-written ones, must self-canonical
+    to hoopsmatic.com/nba-career-map -- the path the live site answers on and
+    already canonicalises to. The GitHub Pages copy serves the same files, so
+    it now points here too, which is what consolidates the two into one page.
+    """
+    import re
+    root = Path(__file__).resolve().parent.parent
+    base = b.SITE_BASE_URL
+    assert base.startswith("https://hoopsmatic.com/"), base
+
+    checked = 0
+    samples = ["index.html", "quiz.html", "teams.html", "sitemap.xml"]
+    for rel in ("player", "team", "country"):
+        d = root / rel
+        page = next(iter(sorted(d.glob("*.html"))), None)
+        if page:
+            samples.append(str(page.relative_to(root)))
+    for rel in samples:
+        path = root / rel
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        assert "jsierrahoopshype.github.io" not in text, \
+            f"{rel} still names the GitHub copy"
+        if path.suffix == ".html":
+            hrefs = re.findall(r'<link rel="canonical" href="([^"]+)"', text)
+            assert len(hrefs) == 1, f"{rel} has {len(hrefs)} canonical tags"
+            assert hrefs[0].startswith(base), f"{rel}: {hrefs[0]}"
+            og = re.findall(r'property="og:url" content="([^"]+)"', text)
+            assert og and og[0].startswith(base), f"{rel}: {og}"
+        checked += 1
+    assert checked >= 6, checked
+    print(f"test_every_page_points_at_the_address_it_is_served_from PASS "
+          f"({checked} files)")
 
 
 def test_relocation_timeline():
@@ -510,5 +551,6 @@ if __name__ == "__main__":
     test_era_gleague_collision()
     test_collision_team_vs_club()
     test_sitemap()
+    test_every_page_points_at_the_address_it_is_served_from()
     test_relocation_timeline()
     print("\nALL DASHBOARD TESTS PASS")

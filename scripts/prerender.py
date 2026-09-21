@@ -44,9 +44,10 @@ COUNTRY_DIR = ROOT / "country"
 # one. The real player total is still stated.
 COUNTRY_CLUB_CAP = 250
 
-# Kept in step with scripts/og_tags.py, which owns the same constant for the
-# hand-written pages. One edit there, one here, on a domain switch.
-SITE_BASE_URL = "https://jsierrahoopshype.github.io/nba-career-map"
+# scripts/site_config.py owns this now -- it used to be written out here, in
+# og_tags.py and in build_dashboard_data.py, and three copies of an address is
+# how one of them ends up pointing at the wrong domain.
+from site_config import SITE_BASE_URL  # noqa: E402
 OG_IMAGE = f"{SITE_BASE_URL}/assets/og-career-map.png"
 # Per-player cards (scripts/og_cards.py) exist for the shared-heavy slice of
 # players. A page uses its own card when one has been generated and the shared

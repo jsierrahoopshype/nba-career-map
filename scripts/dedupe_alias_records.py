@@ -34,6 +34,36 @@ from wiki_person import same_person  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 REPORT = ROOT / "logs" / "wiki_title_audit.json"
 
+
+# --- decided by hand ---------------------------------------------------------
+#
+# The automatic rule refuses a suffix difference, because Jr and Sr are
+# different people and a father's career written into his son's record is the
+# bug this whole pass exists for. These four were checked one at a time: each
+# "Sr" key holds the FATHER's career, correctly, under a suffix Wikipedia does
+# not use in the article title. They are the bare record twice over, not two
+# people, and the careers are identical stint for stint.
+FORCE_MERGE = (
+    ("Jabari Smith", "Jabari Smith Sr"),
+    ("Gerald Henderson", "Gerald Henderson Sr"),
+    ("Walker Russell", "Walker Russell Sr"),
+)
+
+# Derrick Alston Sr has no bare record to merge into: he IS the only Derrick
+# Alston here, keyed with a suffix his article does not carry. The equivalent
+# of merging him is keying him the way every other single-record player is.
+RENAME = {
+    "Derrick Alston Sr": "Derrick Alston",
+}
+
+# A record whose career belonged to somebody else and for which no article of
+# his own exists. Mike Gibson keeps the thirteen stints it was copied from; an
+# empty page under a name nothing can source is worse than no page.
+DROP = {
+    "Michael Wilson": "career was Mike Gibson's; no article of his own parses",
+}
+
+
 # most active wins when two rows disagree
 _RANK = {"nba_active": 3, "overseas_active": 2, "retired": 1}
 
@@ -229,6 +259,35 @@ def _merge(db, article: str, keys: list) -> dict:
             "status": rec.get("status")}
 
 
+
+def forced(db) -> list:
+    """The hand-decided merges, in the same shape as the automatic ones."""
+    out = []
+    for keep, drop in FORCE_MERGE:
+        if keep in db.by_name and drop in db.by_name:
+            out.append({"article": keep, "players": sorted([keep, drop]),
+                        "why": "decided by hand", "keep": keep})
+    return out
+
+
+def rename(db, old: str, new: str) -> dict:
+    """Re-key a record, keeping the old key as an alias."""
+    rec = db.by_name.pop(old)
+    db.order[db.order.index(old)] = new
+    rec["player"] = new
+    rec["aliases"] = sorted(set(rec.get("aliases") or []) | {old})
+    rec["last_updated"] = uc.today()
+    db.by_name[new] = rec
+    return {"from": old, "to": new,
+            "stints": len(rec.get("career_history") or [])}
+
+
+def drop(db, key: str) -> dict:
+    rec = db.by_name.pop(key)
+    db.order.remove(key)
+    return {"player": key, "stints": len(rec.get("career_history") or [])}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--apply", action="store_true")
@@ -245,6 +304,7 @@ def main() -> int:
         if args.apply:
             return 2
     ready, blocked = groups(players, report)
+    ready = forced(db) + ready
 
     merged = []
     for g in ready:
@@ -262,9 +322,33 @@ def main() -> int:
     print(f"\n{len(merged)} group(s) {'merged' if args.apply else 'to merge'}, "
           f"{len(blocked)} skipped")
 
+    for old, new in RENAME.items():
+        if old not in db.by_name:
+            continue
+        if new in db.by_name:
+            print(f"SKIPPED rename {old!r} -> {new!r}: {new!r} already exists")
+            continue
+        row = rename(db, old, new) if args.apply else {"from": old, "to": new}
+        print(f"{row['from']!r} re-keyed as {row['to']!r}"
+              + ("" if args.apply else "  (dry run)"))
+        merged.append(row)
+
+    for key, why in DROP.items():
+        if key not in db.by_name:
+            continue
+        rec = db.by_name[key]
+        if rec.get("career_history"):
+            print(f"SKIPPED drop {key!r}: it has a career now "
+                  f"({len(rec['career_history'])} stints) -- look again")
+            continue
+        row = drop(db, key) if args.apply else {"player": key}
+        print(f"{key!r} dropped -- {why}" + ("" if args.apply else "  (dry run)"))
+        merged.append(row)
+
     if args.apply and merged:
         uc._persist(db, {"date": uc.today(), "mode": "alias-dedupe",
-                         "players_updated": [r["kept"] for r in merged],
+                         "players_updated": [r.get("kept") or r.get("to")
+                                             or r.get("player") for r in merged],
                          "new_players": [], "new_teams": [], "team_moves": [],
                          "status_changes": [], "newly_overseas": [],
                          "newly_retired": [], "requests": 0,
