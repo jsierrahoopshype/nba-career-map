@@ -1,39 +1,6 @@
 {
-  "checked": 5177,
-  "bad_source": [
-    {
-      "player": "Derrick Alston Sr",
-      "stored": "Derrick Alston",
-      "resolved": "",
-      "url_resolves_to": "Derrick Alston",
-      "stints": 16,
-      "reason": "suffix sr vs none"
-    },
-    {
-      "player": "Gerald Henderson Sr",
-      "stored": "Gerald Henderson",
-      "resolved": "",
-      "url_resolves_to": "Gerald Henderson",
-      "stints": 9,
-      "reason": "suffix sr vs none"
-    },
-    {
-      "player": "Jabari Smith Sr",
-      "stored": "Jabari Smith",
-      "resolved": "",
-      "url_resolves_to": "Jabari Smith",
-      "stints": 10,
-      "reason": "suffix sr vs none"
-    },
-    {
-      "player": "Walker Russell Sr",
-      "stored": "Walker Russell",
-      "resolved": "",
-      "url_resolves_to": "Walker Russell",
-      "stints": 11,
-      "reason": "suffix sr vs none"
-    }
-  ],
+  "checked": 5174,
+  "bad_source": [],
   "wrong_person": [
     {
       "player": "Al Fleming",
@@ -311,13 +278,6 @@
       "stints": 13
     },
     {
-      "player": "Derrick Alston Sr",
-      "stored": "Derrick Alston",
-      "resolved": "",
-      "url_resolves_to": "Derrick Alston",
-      "stints": 16
-    },
-    {
       "player": "DJ Carton",
       "stored": "DJ Carton",
       "resolved": "",
@@ -388,13 +348,6 @@
       "stints": 3
     },
     {
-      "player": "Gerald Henderson Sr",
-      "stored": "Gerald Henderson",
-      "resolved": "",
-      "url_resolves_to": "Gerald Henderson",
-      "stints": 9
-    },
-    {
       "player": "Greg Smith (1947)",
       "stored": "Greg Smith (basketball, born 1947)",
       "resolved": "",
@@ -421,13 +374,6 @@
       "resolved": "",
       "url_resolves_to": "",
       "stints": 0
-    },
-    {
-      "player": "Jabari Smith Sr",
-      "stored": "Jabari Smith",
-      "resolved": "",
-      "url_resolves_to": "Jabari Smith",
-      "stints": 10
     },
     {
       "player": "Jack Turner (1930)",
@@ -652,13 +598,6 @@
       "resolved": "",
       "url_resolves_to": "Vince Williams Jr.",
       "stints": 3
-    },
-    {
-      "player": "Walker Russell Sr",
-      "stored": "Walker Russell",
-      "resolved": "",
-      "url_resolves_to": "Walker Russell",
-      "stints": 11
     },
     {
       "player": "Walter Lemon Jr",
@@ -10263,7 +10202,7 @@
     "Dermie O'Connell": "Dermie O'Connell",
     "Deron Williams": "Deron Williams",
     "Derrek Dickey": "Derrek Dickey",
-    "Derrick Alston Sr": "",
+    "Derrick Alston": "Derrick Alston",
     "Derrick Brown": "Derrick Brown",
     "Derrick Byars": "Derrick Byars",
     "Derrick Caracter": "Derrick Caracter",
@@ -10832,7 +10771,6 @@
     "Gerald Fitch": "Gerald Fitch",
     "Gerald Glass": "Gerald Glass",
     "Gerald Green": "Gerald Green",
-    "Gerald Henderson Sr": "",
     "Gerald Henderson": "Gerald Henderson",
     "Gerald Madkins": "Gerald Madkins",
     "Gerald Paddio": "Gerald Paddio",
@@ -11094,7 +11032,6 @@
     "Jabari Brown": "Jabari Brown",
     "Jabari Parker": "Jabari Parker",
     "Jabari Smith": "Jabari Smith",
-    "Jabari Smith Sr": "",
     "Jabari Walker": "Jabari Walker",
     "Jack Burmaster": "Jack Burmaster",
     "Jack Coleman": "Jack Coleman",
@@ -12433,7 +12370,6 @@
     "Michael Smith (1972)": "",
     "Michael Stewart": "Michael Stewart",
     "Michael Wiley": "Michael Wiley",
-    "Michael Wilson": "Michael Wilson",
     "Michael Young": "Michael Young",
     "Micheal Ray Richardson": "Micheal Ray Richardson",
     "Micheal Williams": "Micheal Williams",
@@ -13772,7 +13708,6 @@
     "Wali Jones": "Wali Jones",
     "Walker Kessler": "Walker Kessler",
     "Walker Russell": "Walker Russell",
-    "Walker Russell Sr": "",
     "Wallace Bryant": "Wallace Bryant",
     "Wally Anderzunas": "Wally Anderzunas",
     "Wally Osterkorn": "Wally Osterkorn",
@@ -14218,7 +14153,8 @@
     "Grant Nelson": "Grant Nelson",
     "Walt Lemon Jr.": "Walt Lemon Jr.",
     "Jake Stephens": "Jake Stephens",
-    "Rienk Mast": "Rienk Mast"
+    "Rienk Mast": "Rienk Mast",
+    "Graham Ike": "Graham Ike"
   },
   "resolved_url": {
     "A.C. Green": "A. C. Green",
@@ -15442,7 +15378,7 @@
     "Dermie O'Connell": "Dermie O'Connell",
     "Deron Williams": "Deron Williams",
     "Derrek Dickey": "Derrek Dickey",
-    "Derrick Alston Sr": "Derrick Alston",
+    "Derrick Alston": "Derrick Alston",
     "Derrick Brown": "Derrick Brown (basketball, born 1987)",
     "Derrick Byars": "Derrick Byars",
     "Derrick Caracter": "Derrick Caracter",
@@ -16011,7 +15947,6 @@
     "Gerald Fitch": "Gerald Fitch",
     "Gerald Glass": "Gerald Glass",
     "Gerald Green": "Gerald Green",
-    "Gerald Henderson Sr": "Gerald Henderson",
     "Gerald Henderson": "Gerald Henderson",
     "Gerald Madkins": "Gerald Madkins",
     "Gerald Paddio": "Gerald Paddio",
@@ -16273,7 +16208,6 @@
     "Jabari Brown": "Jabari Brown",
     "Jabari Parker": "Jabari Parker",
     "Jabari Smith": "Jabari Smith",
-    "Jabari Smith Sr": "Jabari Smith",
     "Jabari Walker": "Jabari Walker",
     "Jack Burmaster": "Jack Burmaster",
     "Jack Coleman": "Jack Coleman (basketball)",
@@ -17612,7 +17546,6 @@
     "Michael Smith (1972)": "Michael Smith (basketball, born 1972)",
     "Michael Stewart": "Michael Stewart (basketball)",
     "Michael Wiley": "Michael Wiley (basketball)",
-    "Michael Wilson": "Michael Wilson",
     "Michael Young": "Michael Young (basketball, born 1961)",
     "Micheal Ray Richardson": "Micheal Ray Richardson",
     "Micheal Williams": "Micheal Williams",
@@ -18951,7 +18884,6 @@
     "Wali Jones": "Wali Jones",
     "Walker Kessler": "Walker Kessler",
     "Walker Russell": "Walker Russell",
-    "Walker Russell Sr": "Walker Russell",
     "Wallace Bryant": "Wallace Bryant",
     "Wally Anderzunas": "Wally Anderzunas",
     "Wally Osterkorn": "Wally Osterkorn",
@@ -19397,6 +19329,7 @@
     "Grant Nelson": "Grant Nelson",
     "Walt Lemon Jr.": "Walt Lemon Jr.",
     "Jake Stephens": "Jake Stephens",
-    "Rienk Mast": "Rienk Mast"
+    "Rienk Mast": "Rienk Mast",
+    "Graham Ike": "Graham Ike"
   }
 }
