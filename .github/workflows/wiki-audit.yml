@@ -29,6 +29,10 @@ on:
         description: "Fix only these records (comma-separated; default: all condemned)"
         type: string
         default: ""
+      place_audit:
+        description: "Instead of the article sweep: audit the clubs queued for a location (read-only)"
+        type: boolean
+        default: false
       max_requests:
         description: "Max Wikipedia requests this run"
         type: string
@@ -60,10 +64,21 @@ jobs:
           python3 scripts/test_wiki_audit.py
 
       - name: Sweep
+        if: ${{ !inputs.place_audit }}
         run: |
           python3 scripts/audit_wiki_titles.py sweep \
             --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
             | tee /tmp/sweep.log
+
+      # A different question against the same API, run from here because this
+      # is the workflow that is allowed to talk to Wikipedia. Read-only: it
+      # only says what the sports-club guard would refuse.
+      - name: Audit the clubs queued for a location
+        if: inputs.place_audit
+        run: |
+          python3 scripts/audit_queued_places.py \
+            --max-requests "${{ inputs.max_requests }}" --delay 0.3 \
+            | tee /tmp/place.log
 
       - name: Propose the real articles
         if: inputs.propose
@@ -125,8 +140,8 @@ jobs:
           {
             echo '### Article audit'
             echo '```'
-            cat /tmp/sweep.log
-            for f in /tmp/propose.log /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
+            [ -f /tmp/sweep.log ] && cat /tmp/sweep.log
+            for f in /tmp/place.log /tmp/propose.log /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
               [ -f "$f" ] && { echo; echo "--- $(basename $f) ---"; cat "$f"; }
             done
             echo '```'
