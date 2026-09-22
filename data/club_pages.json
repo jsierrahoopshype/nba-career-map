@@ -26076,7 +26076,7 @@
       "city": "Rome",
       "state": "",
       "country": "Italy",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "Abdul Jeelani",
@@ -26090,6 +26090,13 @@
           "years": "1980-1981",
           "status": "retired",
           "last_team": "Lazio",
+          "nationality": "United States"
+        },
+        {
+          "player": "Tom Kozelko",
+          "years": "1976-1977",
+          "status": "retired",
+          "last_team": "Lazio Basket",
           "nationality": "United States"
         }
       ],
@@ -46780,7 +46787,7 @@
       "city": "Córdoba",
       "state": "",
       "country": "Argentina",
-      "count": 17,
+      "count": 18,
       "roster": [
         {
           "player": "Adrian Caldwell",
@@ -46853,6 +46860,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Ron Moore",
+          "years": "1992-1992",
+          "status": "retired",
+          "last_team": "Long Island Surf",
+          "nationality": "United States"
+        },
+        {
           "player": "Ryan Humphrey",
           "years": "2012",
           "status": "retired",
@@ -46915,6 +46929,11 @@
         },
         {
           "type": "club",
+          "name": "Oklahoma City Cavalry",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Valladolid",
           "shared": 3
         },
@@ -46925,22 +46944,17 @@
         },
         {
           "type": "club",
+          "name": "Rockford Lightning",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Olympiacos",
           "shared": 2
         },
         {
           "type": "club",
           "name": "Grand Rapids Hoops",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "La Crosse Bobcats",
           "shared": 2
         }
       ]
@@ -58406,7 +58420,7 @@
       "city": "Montevideo",
       "state": "",
       "country": "Uruguay",
-      "count": 8,
+      "count": 9,
       "roster": [
         {
           "player": "Al Thornton",
@@ -58420,6 +58434,13 @@
           "years": "2013",
           "status": "retired",
           "last_team": "Club Atlético Aguada",
+          "nationality": "United States"
+        },
+        {
+          "player": "Brian Cook",
+          "years": "2015",
+          "status": "retired",
+          "last_team": "Chiba Jets",
           "nationality": "United States"
         },
         {
@@ -58503,7 +58524,7 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Piratas de Quebradillas",
           "shared": 2
         }
       ]
@@ -136717,12 +136738,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Be'er Sheva",
+          "name": "Club Atlético Aguada",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Club Atlético Aguada",
+          "name": "Hapoel Be'er Sheva",
           "shared": 2
         }
       ]
@@ -140706,7 +140727,7 @@
         },
         {
           "type": "club",
-          "name": "Peñas Huesca",
+          "name": "CB Peñas Huesca",
           "shared": 1
         },
         {
@@ -156466,64 +156487,6 @@
           "type": "club",
           "name": "Pallacanestro Cantù",
           "shared": 1
-        }
-      ]
-    },
-    "Atlético Aguada": {
-      "club": "Atlético Aguada",
-      "city": "Montevideo",
-      "state": "",
-      "country": "Uruguay",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Brian Cook",
-          "years": "2015",
-          "status": "retired",
-          "last_team": "Chiba Jets",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Piratas de Quebradillas",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Al Riyadi Beirut",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Chiba Jets",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Club Atlético Aguada",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Peñarol",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Club Malvín",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Hebraica y Macabi",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Club Atlético Atenas",
-          "shared": 0
         }
       ]
     },
@@ -213474,12 +213437,12 @@
         }
       ]
     },
-    "Peñas Huesca": {
-      "club": "Peñas Huesca",
+    "CB Peñas Huesca": {
+      "club": "CB Peñas Huesca",
       "city": "Huesca",
       "state": "Aragon",
       "country": "Spain",
-      "count": 3,
+      "count": 4,
       "roster": [
         {
           "player": "Edgar Jones",
@@ -213493,6 +213456,13 @@
           "years": "1985-1986",
           "status": "retired",
           "last_team": "Fenerbahçe",
+          "nationality": "United States"
+        },
+        {
+          "player": "Randy Allen",
+          "years": "1996",
+          "status": "retired",
+          "last_team": "CB Peñas Huesca",
           "nationality": "United States"
         },
         {
@@ -213526,6 +213496,11 @@
         },
         {
           "type": "club",
+          "name": "Albany Patroons",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Unicaja",
           "shared": 1
         },
@@ -213536,12 +213511,7 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Valvi Girona",
+          "name": "Cholet Basket",
           "shared": 1
         }
       ]
@@ -234012,12 +233982,12 @@
         },
         {
           "type": "club",
-          "name": "Peñarol de Mar del Plata",
+          "name": "Atenas de Córdoba",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Atenas de Córdoba",
+          "name": "Peñarol de Mar del Plata",
           "shared": 0
         }
       ]
@@ -236313,7 +236283,7 @@
         },
         {
           "type": "club",
-          "name": "Levallois Metropolitans",
+          "name": "Club Atlético Aguada",
           "shared": 1
         }
       ]
@@ -253333,12 +253303,12 @@
         },
         {
           "type": "club",
-          "name": "Peñarol de Mar del Plata",
+          "name": "Atenas de Córdoba",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Atenas de Córdoba",
+          "name": "Peñarol de Mar del Plata",
           "shared": 0
         },
         {
@@ -281182,64 +281152,6 @@
         }
       ]
     },
-    "CB Peñas Huesca": {
-      "club": "CB Peñas Huesca",
-      "city": "Huesca",
-      "state": "",
-      "country": "Spain",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Randy Allen",
-          "years": "1996",
-          "status": "retired",
-          "last_team": "CB Peñas Huesca",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Albany Patroons",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cholet Basket",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Omaha Racers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Breogán",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cedar Rapids Silver Bullets",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "CB Girona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pavia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fulgor Libertas Forlì",
-          "shared": 1
-        }
-      ]
-    },
     "Fresno Heatwave": {
       "club": "Fresno Heatwave",
       "city": "Fresno",
@@ -285362,12 +285274,12 @@
         },
         {
           "type": "club",
-          "name": "Peñarol de Mar del Plata",
+          "name": "Atenas de Córdoba",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Atenas de Córdoba",
+          "name": "Peñarol de Mar del Plata",
           "shared": 0
         }
       ]
@@ -285488,64 +285400,6 @@
         }
       ]
     },
-    "Atenas Cordoba": {
-      "club": "Atenas Cordoba",
-      "city": "Córdoba",
-      "state": "",
-      "country": "Argentina",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Ron Moore",
-          "years": "1992-1992",
-          "status": "retired",
-          "last_team": "Long Island Surf",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Oklahoma City Cavalry",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Omaha Racers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Miami Tropics",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Long Island Surf",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Keravnos",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Jersey Jammers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tours Joué",
-          "shared": 1
-        }
-      ]
-    },
     "Westchester Kings": {
       "club": "Westchester Kings",
       "city": "Westchester",
@@ -285584,6 +285438,11 @@
         },
         {
           "type": "club",
+          "name": "Atenas de Córdoba",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Long Island Surf",
           "shared": 1
         },
@@ -285595,11 +285454,6 @@
         {
           "type": "club",
           "name": "Jersey Jammers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tours Joué",
           "shared": 1
         }
       ]
@@ -287173,12 +287027,12 @@
         },
         {
           "type": "club",
-          "name": "Peñarol de Mar del Plata",
+          "name": "Atenas de Córdoba",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Atenas de Córdoba",
+          "name": "Peñarol de Mar del Plata",
           "shared": 0
         },
         {
@@ -293905,64 +293759,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        }
-      ]
-    },
-    "Lazio Basket": {
-      "club": "Lazio Basket",
-      "city": "Rome",
-      "state": "Lazio",
-      "country": "Italy",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Tom Kozelko",
-          "years": "1976-1977",
-          "status": "retired",
-          "last_team": "Lazio Basket",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Virtus Roma",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Virtus Bologna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Varese",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Fortitudo Bologna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Scavolini Pesaro",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Montepaschi Siena",
           "shared": 0
         }
       ]

@@ -333,7 +333,10 @@ def test_the_do_not_merge_list_is_read_by_the_merge_pass():
     from merge_club_renames import edges
 
     pairs = [("Al Nasr", "Al-Nasr"), ("Al-Ahli", "Al-Ahli Club"),
-             ("San Carlos", "Club San Carlos")]
+             ("San Carlos", "Club San Carlos"),
+             # unresolved rather than settled, and pinned for that reason:
+             # see docs/unresolved-clubs.md
+             ("Libertas Forli", "Fulgor Libertas Forli")]
     for a, b in pairs:
         key = frozenset({a.casefold(), b.casefold()})
         assert key in KNOWN_DISTINCT, f"{a}/{b} is not pinned"
@@ -341,9 +344,13 @@ def test_the_do_not_merge_list_is_read_by_the_merge_pass():
 
     # and through the containment pass, which is the route that would have
     # folded "Al-Ahli" into "Al-Ahli Club"
-    names = ["Al-Ahli", "Al-Ahli Club", "San Carlos", "Club San Carlos"]
+    # Libertas is the hard case: one city, so a containment pass has nothing
+    # to object to. Only the pin holds it.
+    names = ["Al-Ahli", "Al-Ahli Club", "San Carlos", "Club San Carlos",
+             "Libertas Forli", "Fulgor Libertas Forli"]
     places = {"Al-Ahli": ("jeddah",), "Al-Ahli Club": ("dubai",),
-              "San Carlos": ("mexico city",), "Club San Carlos": ("san carlos",)}
+              "San Carlos": ("mexico city",), "Club San Carlos": ("san carlos",),
+              "Libertas Forli": ("forli",), "Fulgor Libertas Forli": ("forli",)}
     ok, _every, held = edges(names, places, {})
     assert not ok, f"a pinned pair was accepted for merging: {dict(ok)}"
     whys = {w for _p, w in held}

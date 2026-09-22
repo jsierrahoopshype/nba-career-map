@@ -71,6 +71,11 @@ KNOWN_DISTINCT: set[frozenset[str]] = {
     #   San Carlos is in Mexico City; Club San Carlos in the Dominican
     #   Republic.
     frozenset({"san carlos", "club san carlos"}),
+    #   Libertas Forlì / Fulgor Libertas Forlì: UNRESOLVED, pinned so that
+    #   nothing fuses them while it stays that way. The name reads like one
+    #   club before and after a merger; the stints say otherwise, overlapping
+    #   for thirteen years. See docs/unresolved-clubs.md before touching it.
+    frozenset({"libertas forli", "fulgor libertas forli"}),
 }
 
 # A transposition ("Watson"/"Waston") is a typo, not a different club -- but
