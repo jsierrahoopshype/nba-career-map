@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -25,6 +26,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from update_careers import same_article  # noqa: E402
 from wikipedia_api import WikipediaClient  # noqa: E402
 from team_normalizer import strip_diacritics  # noqa: E402
+
+# Words that say what kind of thing a club is, not which club it is. A shared
+# "BC" or "basketball" means nothing; a shared "Cantu" or "Seahorses" is the
+# club's identity surviving a rename.
+GENERIC = {"bc", "kk", "cb", "fc", "sc", "ac", "as", "bk", "cd", "ca", "sk",
+           "club", "basket", "basketball", "baloncesto", "pallacanestro",
+           "sports", "sport", "society", "association", "team", "nba", "league",
+           "spor", "kulubu", "the", "de", "of"}
 
 ROOT = Path(__file__).resolve().parent.parent
 LOCATIONS = ROOT / "data" / "teams" / "team_locations.json"
@@ -41,6 +50,28 @@ def looks_like_the_same_club(team: str, title: str) -> bool:
     a = strip_diacritics(team).casefold()
     b = strip_diacritics(title).casefold()
     return a in b or b in a
+
+
+def _words(name: str) -> set:
+    s = re.sub(r"\(.*?\)", " ", strip_diacritics(name or "").casefold())
+    return {w for w in re.split(r"[^a-z0-9]+", s)
+            if len(w) > 2 and w not in GENERIC}
+
+
+def shares_a_word(team: str, title: str) -> bool:
+    """Would a shared-word tolerance let this redirect through?
+
+    The strict rule refuses every redirect, and most redirects in this data
+    are a sponsor name or a short name reaching the club's own article --
+    "Acqua S.Bernardo Cantu" to "Pallacanestro Cantu", "Aisin Seahorses" to
+    "SeaHorses Mikawa". Those keep a word that names the club. The failures we
+    care about do not: "Chicago Packers" and "Washington Wizards" have nothing
+    in common, and neither do "Anaheim Arsenal" and "Grand Rapids Gold".
+
+    Measured here, not enforced: the number it produces is what should decide
+    whether the guard is narrowed to it.
+    """
+    return bool(_words(team) & _words(title))
 
 
 def main() -> int:
@@ -84,6 +115,16 @@ def main() -> int:
     print(f"       ... to a fuller form of the same name : {len(fuller):4}")
     print(f"       ... to a different name entirely      : {len(other):4}")
 
+    narrowed = [r for r in refused if not shares_a_word(r["team"], r["resolves_to"])]
+    print(f"\n   a shared-word tolerance would refuse : {len(narrowed):4}"
+          f"   instead of {len(refused)}")
+    print("\nwhat a shared-word tolerance would still refuse, sample:")
+    for r in narrowed[:30]:
+        print(f"   {r['team']!r:30} -> {r['resolves_to']!r:40} "
+              f"({r['city']}, {r['country']})")
+    if len(narrowed) > 30:
+        print(f"   ... and {len(narrowed) - 30} more")
+
     print("\nrefused, redirecting to a fuller form of the same name:")
     for r in fuller[:20]:
         print(f"   {r['team']!r:30} -> {r['resolves_to']!r:44} "
@@ -98,6 +139,8 @@ def main() -> int:
     if len(other) > 30:
         print(f"   ... and {len(other) - 30} more")
 
+    for r in refused:
+        r["shares_a_word"] = shares_a_word(r["team"], r["resolves_to"])
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"checked": len(teams), "no_article": no_article,
                                "kept": len(kept), "refused": refused},
