@@ -33,6 +33,10 @@ on:
         description: "Instead of the article sweep: audit the clubs queued for a location (read-only)"
         type: boolean
         default: false
+      place_rule:
+        description: "Instead of the article sweep: what the place-article rule would recover (read-only)"
+        type: boolean
+        default: false
       max_requests:
         description: "Max Wikipedia requests this run"
         type: string
@@ -64,7 +68,7 @@ jobs:
           python3 scripts/test_wiki_audit.py
 
       - name: Sweep
-        if: ${{ !inputs.place_audit }}
+        if: ${{ !inputs.place_audit && !inputs.place_rule }}
         run: |
           python3 scripts/audit_wiki_titles.py sweep \
             --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
@@ -79,6 +83,16 @@ jobs:
           python3 scripts/audit_queued_places.py \
             --max-requests "${{ inputs.max_requests }}" --delay 0.3 \
             | tee /tmp/place.log
+
+      # The second, narrower rule for the clubs the sports-club guard refuses.
+      # Read-only: it reports what it would set and writes nothing.
+      - name: What the place-article rule would recover
+        if: inputs.place_rule
+        run: |
+          python3 scripts/test_place_article_rule.py
+          python3 scripts/place_article_rule.py --live \
+            --max-requests "${{ inputs.max_requests }}" --delay 0.3 \
+            | tee /tmp/place-rule.log
 
       - name: Propose the real articles
         if: inputs.propose
@@ -141,7 +155,7 @@ jobs:
             echo '### Article audit'
             echo '```'
             [ -f /tmp/sweep.log ] && cat /tmp/sweep.log
-            for f in /tmp/place.log /tmp/propose.log /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
+            for f in /tmp/place.log /tmp/place-rule.log /tmp/propose.log /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
               [ -f "$f" ] && { echo; echo "--- $(basename $f) ---"; cat "$f"; }
             done
             echo '```'
