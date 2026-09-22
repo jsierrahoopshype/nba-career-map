@@ -19,6 +19,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DB = json.loads((ROOT / "data" / "players" / "nba_players_careers.json")
                 .read_text(encoding="utf-8"))
 COORDS = oc.Coords()
+STINTS = [{"team": "Utah Jazz", "years": "2013-2014", "country": "USA"},
+          {"team": "Fenerbahce", "years": "2014-2015", "country": "Turkey"},
+          {"team": "Real Madrid", "years": "2015-2016", "country": "Spain"}]
 
 
 def test_no_reveal_before_the_end():
@@ -323,92 +326,79 @@ def test_plane_points_where_it_is_going():
     print("test_plane_points_where_it_is_going PASS")
 
 
-def test_a_cutout_stands_on_the_card_and_a_photograph_gets_a_ring():
-    """Two sources, two treatments, and the reason is transparency.
+def test_every_card_carries_the_same_disc():
+    """One shape, three fills, identical geometry.
 
-    An official headshot is a subject on nothing, so it is rendered as a
-    cut-out standing on the rule: no photo box, nothing behind it but the card.
-    A Commons photograph is opaque to its own edges, so the same treatment
-    would paste a rectangle of somebody's back garden onto the card -- it gets
-    a circular crop and a gradient ring instead.
+    A headshot, a photograph and a player with neither must all produce the
+    same ringed disc in the same place, because a reveal that changes shape
+    with the picture it happened to find reads as a different design each
+    time. Measured off the rendered card, not from the source.
     """
     from PIL import Image, ImageDraw
 
     cut = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
     ImageDraw.Draw(cut).ellipse([69, 51, 190, 204], fill=(210, 120, 60, 255))
-    photo = Image.new("RGBA", (512, 512), (210, 120, 60, 255))
-    assert q._is_cutout(cut), "a transparent cut-out was read as a photograph"
-    assert not q._is_cutout(photo), "an opaque photo was read as a cut-out"
-    assert not q._is_cutout(None)
+    photo = Image.new("RGBA", (512, 512), (60, 200, 120, 255))
+    assert q._is_cutout(cut) and not q._is_cutout(photo)
 
-    _rings, _pts, stints, _box = _setup()
-    im_cut = q.build_reveal("Someone", cut, stints, "2001–2010")
-    im_pic = q.build_reveal("Someone", photo, stints, "2001–2010")
-
-    def subject_rows(im, x):
+    cards = {"headshot": q.build_reveal("Ann Baker", cut, STINTS, ""),
+             "photo": q.build_reveal("Ann Baker", photo, STINTS, ""),
+             "none": q.build_reveal("Ann Baker", None, STINTS, "")}
+    rings = {}
+    for label, im in cards.items():
         px = im.load()
-        return [y for y in range(q.H)
-                if abs(px[x, y][0] - 210) < 45 and abs(px[x, y][2] - 60) < 45]
+        cy = int((178 + 30 + (178 + 30 + 252 + 46 - 30)) / 2)
+        # from inside the panel: its own gradient border is the same colour
+        lit = [x for x in range(q.REVEAL_X0 + 12, q.REVEAL_X0 + 340)
+               if px[x, cy][0] > 110 and px[x, cy][2] > 130
+               and px[x, cy][1] < 110]
+        assert lit, f"{label}: no ring on the card"
+        rings[label] = (min(lit), max(lit))
+    assert len(set(rings.values())) == 1, f"the disc moves or resizes: {rings}"
+    width = rings["none"][1] - rings["none"][0] + 1
+    assert abs(width - q.PORTRAIT_D) <= 4, f"disc is {width}px, not {q.PORTRAIT_D}"
 
-    # the cut-out reaches the rule it stands on, and its own bottom edge is
-    # faded rather than ending on a hard line
-    col = q.REVEAL_X0 + 30 + q.PORTRAIT_W // 2
-    rows = subject_rows(im_cut, col)
-    assert rows, "the cut-out never got drawn"
-    rule_y = (178 + 30) + 252 + 46 - 30
-    assert min(rows) > 178, "the cut-out escaped the top of the panel"
-    assert max(rows) - min(rows) > 180, "the head is not filling the height"
-    # It reaches the rule, but the last rows are faded into the card rather
-    # than ending on a hard edge -- so the full-strength colour stops short
-    # while SOMETHING is still there right down at the rule.
-    assert max(rows) >= rule_y - 60, \
-        f"the cut-out floats {rule_y - max(rows)}px above the rule"
-    near = im_cut.load()[col, rule_y - 6]
-    assert near != q.CARD, "nothing reaches the rule at all"
-    assert abs(near[0] - 210) > 8, "the bottom edge was not faded"
+    # the face fills the disc the way a photograph does
+    px = cards["headshot"].load()
+    cx = q.REVEAL_X0 + 30 + q.PORTRAIT_W // 2
+    face_rows = [y for y in range(178, 520)
+                 if abs(px[cx, y][0] - 210) < 45 and abs(px[cx, y][2] - 60) < 45]
+    fill = (max(face_rows) - min(face_rows) + 1) / q.PORTRAIT_D
+    assert 0.70 <= fill <= 0.90, f"the face fills {fill:.0%} of the disc"
 
-    # the photograph is round: its widest row is well inside the column
-    rows_pic = subject_rows(im_pic, col)
-    assert rows_pic, "the photo never got drawn"
-    px = im_pic.load()
-    mid = (min(rows_pic) + max(rows_pic)) // 2
-    span_mid = [x for x in range(q.REVEAL_X0, q.REVEAL_X0 + 320)
-                if abs(px[x, mid][0] - 210) < 45]
-    span_top = [x for x in range(q.REVEAL_X0, q.REVEAL_X0 + 320)
-                if abs(px[x, min(rows_pic) + 6][0] - 210) < 45]
-    assert len(span_mid) > len(span_top) + 20, \
-        "the photo is square, not circular"
-    print("test_a_cutout_stands_on_the_card_and_a_photograph_gets_a_ring PASS")
+    # and the initials are drawn for the player who has no picture at all
+    assert q._initials("Al Harrington") == "AH"
+    assert q._initials("Metta World Peace") == "MP"
+    assert q._initials("Nene") == "NE"
+    px = cards["none"].load()
+    ink = [y for y in range(178, 520)
+           if px[cx, y] != q.CARD and px[cx, y] != q._lift(q.CARD, 0.14)]
+    assert ink, "the initials disc is empty"
+    print(f"test_every_card_carries_the_same_disc PASS "
+          f"(disc {width}px, face {fill:.0%} of it)")
 
 
-def test_no_photo_means_no_portrait_slot():
-    """A generic silhouette says nothing; the name is worth the room.
-
-    Measured as the reader would see it: where the name starts. With a picture
-    it begins a portrait's width in; without one it begins at the margin.
-    """
+def test_the_layout_never_collapses():
+    """The name starts in the same place whatever the picture turned out to be."""
     from PIL import Image, ImageDraw
 
     cut = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
     ImageDraw.Draw(cut).ellipse([69, 51, 190, 204], fill=(210, 120, 60, 255))
-    _rings, _pts, stints, _box = _setup()
 
-    def name_starts_at(im, y):
+    def name_x(face):
+        im = q.build_reveal("Ann Baker", face, STINTS, "")
         px = im.load()
         ink = [x for x in range(q.REVEAL_X0, q.REVEAL_X1)
-               for yy in range(y - 40, y + 40)
-               if px[x, yy] == q.TEXT]
+               for y in range(250, 320) if px[x, y] == q.TEXT]
         assert ink, "the name never got drawn"
         return min(ink)
 
-    bare = name_starts_at(q.build_reveal("Someone", None, stints, ""), 309)
-    shot = name_starts_at(q.build_reveal("Someone", cut, stints, ""), 282)
-    assert bare < q.REVEAL_X0 + 80, f"the name starts {bare}px in"
-    assert shot >= q.REVEAL_X0 + 30 + q.PORTRAIT_W, \
-        f"the name overlaps the portrait ({shot}px)"
-    assert shot - bare > 200, "the name did not take the vacated room"
-    print(f"test_no_photo_means_no_portrait_slot PASS "
-          f"(name at x={bare} without a photo, x={shot} with one)")
+    xs = {label: name_x(f) for label, f in
+          (("headshot", cut), ("none", None))}
+    assert len(set(xs.values())) == 1, f"the name moves: {xs}"
+    assert xs["none"] >= q.REVEAL_X0 + 30 + q.PORTRAIT_W, \
+        f"the name runs under the disc ({xs})"
+    print(f"test_the_layout_never_collapses PASS (name at x={xs['none']})")
 
 
 def test_the_longest_career_in_the_pool_fits_on_screen():
@@ -519,8 +509,8 @@ if __name__ == "__main__":
     test_camera_zooms_out_for_long_legs()
     test_camera_motion_is_smooth()
     test_plane_points_where_it_is_going()
-    test_a_cutout_stands_on_the_card_and_a_photograph_gets_a_ring()
-    test_no_photo_means_no_portrait_slot()
+    test_every_card_carries_the_same_disc()
+    test_the_layout_never_collapses()
     test_the_longest_career_in_the_pool_fits_on_screen()
     test_clip_length_lands_in_the_target_window()
     test_selection_rule()

@@ -727,55 +727,64 @@ def _is_cutout(face) -> bool:
     return clear >= 0.10
 
 
-def _draw_cutout(im, face, box):
-    """Stand the cut-out on the floor of `box`, as tall as it will fit.
-
-    Bottom-anchored on purpose: the shoulders meet the rule under the portrait
-    instead of being sliced off by the edge of a photo box, and the head gets
-    the height. Horizontally centred within the column.
-    """
-    x0, y0, x1, y1 = (int(v) for v in box)
-    sub = face.crop(oc.content_box(face))
-    bw, bh = x1 - x0, y1 - y0
-    scale = min(bh / sub.height, bw / sub.width)
-    w = max(1, int(sub.width * scale))
-    h = max(1, int(sub.height * scale))
-    sub = sub.resize((w, h), Image.LANCZOS)
-    sub.putalpha(_fade_bottom(sub.getchannel("A"), int(h * 0.14)))
-    im.paste(sub, (x0 + (bw - w) // 2, y1 - h), sub)
+def _lift(color, amount: float):
+    """The same colour, that much of the way to white."""
+    return tuple(int(c + (255 - c) * amount) for c in color)
 
 
-def _fade_bottom(alpha, depth: int):
-    """Dissolve the last few rows of a cut-out into whatever is behind it.
-
-    The published headshots are face crops: they end at the neck, because
-    that is where the crop ends, not because the player does. Anchored on the
-    rule that hard edge reads as a slice, so it is faded out instead.
-    """
-    w, h = alpha.size
-    depth = max(1, min(depth, h))
-    ramp = Image.new("L", (1, depth))
-    ramp.putdata([int(255 * (1 - i / max(1, depth - 1))) for i in range(depth)])
-    ramp = ramp.resize((w, depth))
-    tail = ImageChops.multiply(alpha.crop((0, h - depth, w, h)), ramp)
-    alpha.paste(tail, (0, h - depth))
-    return alpha
+def _initials(name: str) -> str:
+    """The letters a player is known by, for the disc when there is no photo."""
+    words = [w for w in re.split(r"[\s\-]+", name or "") if w[:1].isalpha()]
+    if not words:
+        return "?"
+    if len(words) == 1:
+        return words[0][:2].upper()
+    return (words[0][0] + words[-1][0]).upper()
 
 
-def _draw_ringed_circle(im, face, center, size: int):
-    """The fallback: a circular crop with the card's own gradient as its ring.
+def _portrait_disc(im, face, center, size: int, *, initials=""):
+    """One treatment for every player: a disc with the card's gradient ring.
 
-    For a photograph, or for a cut-out that does not look like one. The crop
-    rule is og_cards.cover_square, the same one the site's cards use.
+    Three fills, one shape. An NBA headshot is a cut-out with no background of
+    its own, so it gets the disc's own lighter shade behind it and is scaled to
+    fill the circle the way a photograph does. A Commons photograph is opaque
+    and cover-cropped. No picture at all gets the player's initials -- the card
+    keeps its structure either way, which is what stops one reveal looking like
+    a different design from the next.
     """
     cx, cy = center
     x, y = int(cx - size / 2), int(cy - size / 2)
-    cut = oc.cover_square(face, size)
-    tile = Image.new("RGB", (size, size), CARD)
-    tile.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
+    tile = Image.new("RGB", (size, size), _lift(CARD, 0.14))
+
+    if face is None:
+        td = ImageDraw.Draw(tile)
+        f = _fit(td, initials or "?", "Bold", int(size * 0.40),
+                 int(size * 0.62))
+        td.text((size / 2, size / 2 + 2), initials or "?", font=f,
+                fill=_lift(MUTED, 0.10), anchor="mm")
+    elif _is_cutout(face):
+        # The subject, not the 256x256 frame it came in: a face crop is mostly
+        # transparent padding, and scaling the frame puts a small head in a
+        # big circle.
+        sub = face.crop(oc.content_box(face))
+        scale = min(size * PORTRAIT_FILL / sub.height,
+                    size * 0.82 / sub.width)
+        w = max(1, int(sub.width * scale))
+        h = max(1, int(sub.height * scale))
+        sub = sub.resize((w, h), Image.LANCZOS)
+        # Slightly low rather than dead centre: the crop ends at the collar,
+        # and sitting it near the bottom of the disc puts that straight edge
+        # against the ring instead of in open space, while the chin stays
+        # inside it.
+        tile.paste(sub, ((size - w) // 2, int((size - h) * 0.68)), sub)
+    else:
+        cut = oc.cover_square(face, size)
+        tile.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
+
     mask = Image.new("L", (size, size), 0)
     ImageDraw.Draw(mask).ellipse([0, 0, size - 1, size - 1], fill=255)
     im.paste(tile, (x, y), mask)
+
     ring = Image.new("L", (size, size), 0)
     rd = ImageDraw.Draw(ring)
     rd.ellipse([0, 0, size - 1, size - 1], fill=255)
@@ -855,6 +864,8 @@ BOTTOM_SAFE = 140
 ROW_MAX = 132.0
 NAME_MAX, NAME_MIN = 50, 28
 PORTRAIT_W = 252
+PORTRAIT_D = 236        # the disc every reveal card carries
+PORTRAIT_FILL = 0.80    # how much of its height the face takes
 
 
 _DISAMBIG = re.compile(r"\s*\([^()]*\)\s*$")
@@ -894,32 +905,21 @@ def build_reveal(name, face, stints, span, *, credit=""):
     _grad_edge(im, [REVEAL_X0, hy0, REVEAL_X1, hy1], CARD_R, width=3)
     d = ImageDraw.Draw(im)
 
-    # The portrait, when there is one. A cut-out stands on the rule above the
-    # scoreboard, which is what makes it part of the card rather than a photo
-    # dropped into a box with the shoulders sliced off. No picture means no
-    # portrait column at all: a generic silhouette says nothing, and the name
-    # is better for the room.
+    # Every card carries the same disc in the same place, whatever the picture
+    # turned out to be -- or whether there is one.
     py = hy0 + 30
     sy = py + 252 + 46            # the scoreboard row, unchanged
     rule_y = sy - 30              # the line it stands on
     px = REVEAL_X0 + 30
-    if face is not None:
-        if _is_cutout(face):
-            _draw_cutout(im, face, (px, hy0 + 14, px + PORTRAIT_W, rule_y - 2))
-        else:
-            _draw_ringed_circle(im, face,
-                                (px + PORTRAIT_W / 2, (py + rule_y) / 2), 236)
-        d = ImageDraw.Draw(im)
-        nx, drop = px + PORTRAIT_W + 34, 0
-    else:
-        # Without a portrait the name has the panel to itself, so it sits in
-        # the middle of it rather than keeping the height a picture vacated.
-        nx, drop = REVEAL_X0 + 44, 27
+    _portrait_disc(im, face, (px + PORTRAIT_W / 2, (py + rule_y) / 2),
+                   PORTRAIT_D, initials=_initials(name))
+    d = ImageDraw.Draw(im)
+    nx = px + PORTRAIT_W + 34
     nw = REVEAL_X1 - 34 - nx
     f_name = _fit(d, name, "Bold", 82, nw)
-    d.text((nx, py + 74 + drop), name, font=f_name, fill=TEXT, anchor="lm")
+    d.text((nx, py + 74), name, font=f_name, fill=TEXT, anchor="lm")
     if span:
-        _grad_pill(im, (nx, py + 118 + drop), span, size=32)
+        _grad_pill(im, (nx, py + 118), span, size=32)
         d = ImageDraw.Draw(im)
 
     # counts as a scoreboard rather than three identical boxes
