@@ -54,7 +54,7 @@ from prerender import slug  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
 
 try:
-    from PIL import Image, ImageDraw, ImageFont
+    from PIL import Image, ImageChops, ImageDraw, ImageFont
 except ImportError:
     Image = None
 
@@ -704,31 +704,99 @@ def draw_caption(im, *, landed, total, club, place, thinking=False, left=None):
                anchor="lm")
 
 
-def _portrait(face, size: int):
-    """The portrait square: a real photo when there is one, else a mark.
+def _is_cutout(face) -> bool:
+    """Is this a subject on nothing, the way an NBA headshot is?
 
-    The fitting itself lives in og_cards.cover_square, which the site's own
-    cards use too -- one rule for what "fills the frame" means, rather than two
-    that drift.
+    The official PNGs are cut out: the player, and transparency everywhere
+    else. A Commons photograph is a rectangle of pixels all the way to its
+    edges. The first can stand on the card as if it belonged there; the second
+    needs a frame, or its background reads as a photo pasted on.
     """
-    # A subtle lit tile rather than flat card colour. Only visible where the
-    # image is transparent, which is exactly the case that used to read as a
-    # hole: an NBA cut-out has no background of its own, so next to an opaque
-    # Commons photo its corners looked like missing image rather than a tile.
-    base = _gradient((size, size), CARD_EDGE, CARD)
+    if face is None or face.mode != "RGBA":
+        return False
+    alpha = face.getchannel("A")
+    box = alpha.getbbox()
+    if box is None:
+        return False
+    w, h = box[2] - box[0], box[3] - box[1]
+    if w < 16 or h < 16:
+        return False
+    hist = alpha.histogram()
+    clear = sum(hist[:16]) / float(face.width * face.height)
+    # a photograph has no transparent margin at all; a cut-out is mostly margin
+    return clear >= 0.10
+
+
+def _lift(color, amount: float):
+    """The same colour, that much of the way to white."""
+    return tuple(int(c + (255 - c) * amount) for c in color)
+
+
+def _initials(name: str) -> str:
+    """The letters a player is known by, for the disc when there is no photo."""
+    words = [w for w in re.split(r"[\s\-]+", name or "") if w[:1].isalpha()]
+    if not words:
+        return "?"
+    if len(words) == 1:
+        return words[0][:2].upper()
+    return (words[0][0] + words[-1][0]).upper()
+
+
+def _portrait_disc(im, face, center, size: int, *, initials=""):
+    """One treatment for every player: a disc with the card's gradient ring.
+
+    Three fills, one shape. An NBA headshot is a cut-out with no background of
+    its own, so it gets the disc's own lighter shade behind it and is scaled to
+    fill the circle the way a photograph does. A Commons photograph is opaque
+    and cover-cropped. No picture at all gets the player's initials -- the card
+    keeps its structure either way, which is what stops one reveal looking like
+    a different design from the next.
+    """
+    cx, cy = center
+    x, y = int(cx - size / 2), int(cy - size / 2)
+    tile = Image.new("RGB", (size, size), _lift(CARD, 0.14))
+
     if face is None:
-        # Drawn to the same weight a photo lands at, so the three sources read
-        # as one treatment rather than one of them looking undersized.
-        d = ImageDraw.Draw(base)
-        hr = size * 0.235
-        hx, hy = size / 2, size * 0.30
-        d.ellipse([hx - hr, hy - hr, hx + hr, hy + hr], fill=MAP_COAST)
-        br = size * 0.42
-        d.ellipse([hx - br, size * 0.58, hx + br, size * 1.45], fill=MAP_COAST)
-        return base
-    cut = oc.cover_square(face, size)
-    base.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
-    return base
+        td = ImageDraw.Draw(tile)
+        f = _fit(td, initials or "?", "Bold", int(size * 0.40),
+                 int(size * 0.62))
+        td.text((size / 2, size / 2 + 2), initials or "?", font=f,
+                fill=_lift(MUTED, 0.10), anchor="mm")
+    elif _is_cutout(face):
+        # The subject, not the 256x256 frame it came in: a face crop is mostly
+        # transparent padding, and scaling the frame puts a small head in a
+        # big circle.
+        sub = face.crop(oc.content_box(face))
+        # Height decides the scale; a very wide subject is capped so the head
+        # cannot outgrow the disc it sits in.
+        scale = min(size * PORTRAIT_FILL / sub.height,
+                    size * 1.30 / sub.width)
+        w = max(1, int(sub.width * scale))
+        h = max(1, int(sub.height * scale))
+        sub = sub.resize((w, h), Image.LANCZOS)
+        x0 = (size - w) // 2
+        base = int(size * PORTRAIT_BASE)
+        tile.paste(sub, (x0, base - h), sub)
+        # Carry the collar on past the mask. It keeps the silhouette of the
+        # row it came from, so the sides stay the subject's own outline and
+        # only the circle decides where the picture ends.
+        tail = sub.crop((0, h - 2, w, h)).resize(
+            (w, size + PORTRAIT_DROP - base), Image.NEAREST)
+        tile.paste(tail, (x0, base), tail)
+    else:
+        cut = oc.cover_square(face, size)
+        tile.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
+
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).ellipse([0, 0, size - 1, size - 1], fill=255)
+    im.paste(tile, (x, y), mask)
+
+    ring = Image.new("L", (size, size), 0)
+    rd = ImageDraw.Draw(ring)
+    rd.ellipse([0, 0, size - 1, size - 1], fill=255)
+    rd.ellipse([3, 3, size - 4, size - 4], fill=0)
+    im.paste(_gradient((size, size), ACCENT_A, ACCENT_B, horizontal=True),
+             (x, y), ring)
 
 
 # --- full-screen reveal ------------------------------------------------------
@@ -791,6 +859,27 @@ def _grad_pill(im, xy, text, *, size=34, pad=(24, 10)):
 REVEAL_X0, REVEAL_X1 = 40, W - 40
 REVEAL_W = REVEAL_X1 - REVEAL_X0
 
+# The club list. Vertical video has its bottom edge covered by player chrome
+# on every platform this gets posted to, so the list stops well short of it
+# rather than ending flush against the frame -- which is what put the last
+# stop of a long career half under the UI.
+LIST_TOP = 700
+BOTTOM_SAFE = 140
+# A six-stop career gets taller rows and bigger type rather than a short list
+# marooned at the top of the screen; a fourteen-stop one divides the room.
+ROW_MAX = 132.0
+NAME_MAX, NAME_MIN = 50, 28
+PORTRAIT_W = 252
+PORTRAIT_D = 236        # the disc every reveal card carries
+# The headshots are crops: they end in a straight line, and on some of them
+# (Trey Burke) that line is barely below the chin. Simply hanging the crop
+# lower so the line clears the mask would take the chin with it, so the last
+# row is drawn on downwards instead -- the collar continues past the mask and
+# the circle clips it, as it would any avatar.
+PORTRAIT_FILL = 0.88    # face height as a share of the disc
+PORTRAIT_BASE = 0.95    # where the crop's own bottom sits in the disc
+PORTRAIT_DROP = 12      # how far the continuation runs past the disc
+
 
 _DISAMBIG = re.compile(r"\s*\([^()]*\)\s*$")
 
@@ -829,14 +918,16 @@ def build_reveal(name, face, stints, span, *, credit=""):
     _grad_edge(im, [REVEAL_X0, hy0, REVEAL_X1, hy1], CARD_R, width=3)
     d = ImageDraw.Draw(im)
 
-    pt = 252
-    px, py = REVEAL_X0 + 30, hy0 + 30
-    im.paste(_portrait(face, pt), (px, py), _round_mask((pt, pt), 34))
+    # Every card carries the same disc in the same place, whatever the picture
+    # turned out to be -- or whether there is one.
+    py = hy0 + 30
+    sy = py + 252 + 46            # the scoreboard row, unchanged
+    rule_y = sy - 30              # the line it stands on
+    px = REVEAL_X0 + 30
+    _portrait_disc(im, face, (px + PORTRAIT_W / 2, (py + rule_y) / 2),
+                   PORTRAIT_D, initials=_initials(name))
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle([px, py, px + pt, py + pt], radius=34,
-                        outline=CARD_EDGE, width=3)
-
-    nx = px + pt + 34
+    nx = px + PORTRAIT_W + 34
     nw = REVEAL_X1 - 34 - nx
     f_name = _fit(d, name, "Bold", 82, nw)
     d.text((nx, py + 74), name, font=f_name, fill=TEXT, anchor="lm")
@@ -845,7 +936,6 @@ def build_reveal(name, face, stints, span, *, credit=""):
         d = ImageDraw.Draw(im)
 
     # counts as a scoreboard rather than three identical boxes
-    sy = py + pt + 46
     d.line([REVEAL_X0 + 40, sy - 30, REVEAL_X1 - 40, sy - 30], fill=CARD_EDGE,
            width=2)
     cols = [(len(stints), "STOPS"), (len({c for c in countries if c}),
@@ -880,10 +970,17 @@ def build_reveal(name, face, stints, span, *, credit=""):
         f_cr = _fit(d, credit, "Regular", 20, REVEAL_W - 8)
         d.text((REVEAL_X0 + 4, H - 34), credit, font=f_cr, fill=MUTED,
                anchor="lm")
-    ly0, ly1 = 700, H - 56 - foot
+    # Fit by construction: the rows divide the room that is left, so every
+    # stop is on screen whatever the career length. The floor is on the TYPE,
+    # not on the row -- if a route ever gets long enough to push the club names
+    # under NAME_MIN, that is the point at which this needs two columns, and
+    # the test that walks the whole pool is what will say so.
+    ly0, ly1 = LIST_TOP, H - BOTTOM_SAFE - foot
     n = max(1, len(stints))
-    row = min(104.0, (ly1 - ly0) / n)
-    top = ly0 + max(0.0, ((ly1 - ly0) - row * n) / 2)
+    row = min(ROW_MAX, (ly1 - ly0) / n)
+    # Top-aligned, not centred: a short career used to float a long way below
+    # its own heading while the room went to a gap nobody asked for.
+    top = ly0
 
     # the spine: the route, redrawn as a timeline
     spine_x = REVEAL_X0 + 26
@@ -893,7 +990,7 @@ def build_reveal(name, face, stints, span, *, credit=""):
         im.paste(strip, (spine_x - 3, int(y_a)))
         d = ImageDraw.Draw(im)
 
-    name_size = int(min(46, row * 0.46))
+    name_size = max(NAME_MIN, int(min(NAME_MAX, row * 0.46)))
     for i, st in enumerate(stints):
         cy = top + row * (i + 0.5)
         r = 11 if i in (0, n - 1) else 8
