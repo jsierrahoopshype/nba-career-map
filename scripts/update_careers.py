@@ -241,6 +241,18 @@ class Database:
                 "city": stint.get("city", ""), "country": stint.get("country", "")})
 
     def _discover_location(self, team: str, client: WikipediaClient) -> dict:
+        # Ask what article this name actually reaches before reading anything
+        # off it. Wikipedia answers a name it does not have by redirecting to
+        # the nearest thing it does, and for a club that is usually its
+        # successor: "Chicago Packers" reaches the Washington Wizards, whose
+        # article is about a basketball team and so sails past the sports-club
+        # guard below. A title that redirected away from the name requested is
+        # a different subject, whatever it is about.
+        if not same_article(team, resolved := _resolve_quietly(team, client)):
+            REFUSED_PLACE.append({"team": team, "date": today(),
+                                  "reason": "the title redirected to another article",
+                                  "extract": f"-> {resolved!r}"})
+            return {"city": "", "state": "", "country": ""}
         try:
             extract = client.get_extract(team)
         except RequestBudgetExceeded:
@@ -271,6 +283,41 @@ class Database:
             state, country = resolve_location(m.group(2) or "", city)
             return {"city": city, "state": state, "country": country}
         return {"city": "", "state": "", "country": ""}
+
+
+def _resolve_quietly(team: str, client: WikipediaClient) -> str | None:
+    """The article a club name reaches, or None if the lookup cannot say.
+
+    A lookup that fails for any reason other than the budget returns None,
+    which same_article() reads as "cannot tell" and lets through: a guard that
+    refuses on a network error would silently stop discovering anything.
+    """
+    try:
+        return client.resolve_title(team)
+    except RequestBudgetExceeded:
+        raise
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def same_article(requested: str, resolved: str | None) -> bool:
+    """True when a club name reached the article it asked for.
+
+    Tolerates the rewriting Wikipedia does to every title -- underscores,
+    leading case, whitespace -- and nothing else. In particular it does NOT
+    tolerate a club's short name reaching its full name: "Cantù" reaching
+    "Pallacanestro Cantù" is the same club, but "Chicago Packers" reaching
+    "Washington Wizards" is not, and nothing in the two titles distinguishes
+    those cases. Both are refused; a club refused this way keeps its blank
+    field and goes to review, where a person can settle it.
+    """
+    if resolved is None:            # nothing was learned, so nothing is refused
+        return True
+    a = (requested or "").replace("_", " ").strip()
+    b = (resolved or "").replace("_", " ").strip()
+    if not b:
+        return False
+    return a == b or a[:1].upper() + a[1:] == b[:1].upper() + b[1:]
 
 
 def _richer(a: list, b: list) -> bool:

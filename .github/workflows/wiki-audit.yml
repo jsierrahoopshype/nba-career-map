@@ -33,6 +33,10 @@ on:
         description: "Instead of the article sweep: audit the clubs queued for a location (read-only)"
         type: boolean
         default: false
+      redirect_guard:
+        description: "Instead of the article sweep: what the redirect guard would cost (read-only)"
+        type: boolean
+        default: false
       max_requests:
         description: "Max Wikipedia requests this run"
         type: string
@@ -64,7 +68,7 @@ jobs:
           python3 scripts/test_wiki_audit.py
 
       - name: Sweep
-        if: ${{ !inputs.place_audit }}
+        if: ${{ !inputs.place_audit && !inputs.redirect_guard }}
         run: |
           python3 scripts/audit_wiki_titles.py sweep \
             --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
@@ -79,6 +83,15 @@ jobs:
           python3 scripts/audit_queued_places.py \
             --max-requests "${{ inputs.max_requests }}" --delay 0.3 \
             | tee /tmp/place.log
+
+      # How many of the locations we already have would the redirect guard
+      # refuse if they were being discovered today. Read-only.
+      - name: What the redirect guard would cost
+        if: inputs.redirect_guard
+        run: |
+          python3 scripts/audit_redirect_guard.py \
+            --max-requests "${{ inputs.max_requests }}" --delay 0.3 \
+            | tee /tmp/redirect-guard.log
 
       - name: Propose the real articles
         if: inputs.propose
@@ -141,7 +154,7 @@ jobs:
             echo '### Article audit'
             echo '```'
             [ -f /tmp/sweep.log ] && cat /tmp/sweep.log
-            for f in /tmp/place.log /tmp/propose.log /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
+            for f in /tmp/place.log /tmp/redirect-guard.log /tmp/propose.log /tmp/fix.log /tmp/sweep2.log /tmp/dedupe.log; do
               [ -f "$f" ] && { echo; echo "--- $(basename $f) ---"; cat "$f"; }
             done
             echo '```'

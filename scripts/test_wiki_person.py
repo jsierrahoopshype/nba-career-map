@@ -290,6 +290,9 @@ def test_a_location_is_not_taken_from_an_article_about_something_else():
             "based in Cantù, Lombardy.")
     answers = {"Libertas Forlì": party, "Cantù": club}
     wikipedia_api.WikipediaClient.get_extract = lambda self, t: answers.get(t, "")
+    # Both names reach their own article here, so the redirect guard has
+    # nothing to say and this test stays about the sports-club rule alone.
+    wikipedia_api.WikipediaClient.resolve_title = lambda self, t: t
     client = wikipedia_api.WikipediaClient(delay=0, max_requests=10)
 
     uc.REFUSED_PLACE.clear()
@@ -333,6 +336,43 @@ def test_a_franchise_era_name_never_reaches_discovery():
     print("test_a_franchise_era_name_never_reaches_discovery PASS")
 
 
+def test_a_place_is_not_taken_from_an_article_the_name_redirected_away_to():
+    """The guard the sports-club rule cannot be, enforced at the source.
+
+    "Chicago Packers" redirects to "Washington Wizards", whose article is
+    about a basketball team and passes the sports-club guard. Only the title
+    says anything is wrong.
+    """
+    import update_careers as uc
+    import wikipedia_api
+
+    db = _db([])
+    titles = {"Chicago Packers": "Washington Wizards", "Cantù": "Cantù"}
+    club = ("Pallacanestro Cantù is an Italian professional basketball club "
+            "based in Cantù, Lombardy.")
+    wizards = ("The Washington Wizards are an American professional "
+               "basketball team based in Washington, D.C.")
+    extracts = {"Chicago Packers": wizards, "Cantù": club}
+    wikipedia_api.WikipediaClient.resolve_title = lambda self, t: titles.get(t)
+    wikipedia_api.WikipediaClient.get_extract = lambda self, t: extracts.get(t, "")
+    client = wikipedia_api.WikipediaClient(delay=0, max_requests=10)
+
+    uc.REFUSED_PLACE.clear()
+    got = db._discover_location("Chicago Packers", client)
+    assert got == {"city": "", "state": "", "country": ""}, got
+    assert uc.REFUSED_PLACE and "redirected" in uc.REFUSED_PLACE[0]["reason"]
+
+    uc.REFUSED_PLACE.clear()
+    got = db._discover_location("Cantù", client)
+    assert got["city"] == "Cantù", got
+    assert not uc.REFUSED_PLACE, "a name that reached its own article was refused"
+
+    # A lookup that cannot answer must not refuse: a guard that fails closed
+    # on a network error stops discovery altogether.
+    assert uc.same_article("Anything", None)
+    print("test_a_place_is_not_taken_from_an_article_the_name_redirected_away_to PASS")
+
+
 def test_an_ordinary_redirect_still_merges():
     """The guard must not cost the pipeline its reason for following redirects."""
     import update_careers as uc
@@ -363,5 +403,6 @@ if __name__ == "__main__":
     test_a_record_is_fetched_by_the_article_it_was_built_from()
     test_a_location_is_not_taken_from_an_article_about_something_else()
     test_a_franchise_era_name_never_reaches_discovery()
+    test_a_place_is_not_taken_from_an_article_the_name_redirected_away_to()
     test_an_ordinary_redirect_still_merges()
     print("\nALL WRONG-ARTICLE GUARD TESTS PASS")
