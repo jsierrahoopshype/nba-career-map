@@ -24,7 +24,7 @@ ACCEPT = [
     ("Tortona",
      "Tortona (Italian: [torˈtoːna]; Latin: Dertona) is a comune of "
      "Piemonte, in the Province of Alessandria, Italy.",
-     ("Tortona", "", "Italy")),
+     ("Tortona", "Piemonte", "Italy")),
     # two names for one place: the first is the one that must be tested
     ("Mogi das Cruzes",
      "Mogi das Cruzes (Portuguese pronunciation: [moˈʒi] or [muˈʒi das "

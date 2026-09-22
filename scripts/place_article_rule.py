@@ -58,9 +58,12 @@ _IS_PLACE = re.compile(
     rf"^(?P<subject>.{{1,60}}?)\s+(?:is|was)\s+(?:the|a|an)\s[^.]{{0,120}}?"
     rf"\b(?:{PLACE_WORDS})\b(?P<rest>[^.]*)", re.I)
 
-# "... in Spain", "... of Corsica, France", "... in the province of Salerno,
-# Campania, Italy" -- the chain of places the town sits inside.
-_CHAIN = re.compile(r"\b(?:in|of)\s+(?P<chain>[^.]+)", re.I)
+# The proper nouns in the rest of the sentence -- the chain of places the town
+# sits inside. Splitting on commas alone is not enough: "a city in the region
+# of Emilia-Romagna in northern Italy" and "a university city on the river
+# Clain in west-central France" put the country behind a preposition, not a
+# comma, and a comma-only parse reads neither.
+_PROPER = re.compile(r"[A-Z\u00C0-\u00DD][\w.'\u2019-]*(?:[ -][A-Z\u00C0-\u00DD][\w.'\u2019-]*)*")
 
 # Innermost bracket pair, removed repeatedly. A single pass cannot do it:
 # "Kuşadası (Turkish: [ˈkuʃadasɯ])" nests square brackets inside round ones,
@@ -122,22 +125,22 @@ def place_chain(extract: str) -> tuple[str, str]:
     head = strip_brackets(extract or "")
     m = _IS_PLACE.match(head.strip())
     rest = m.group("rest") if m else ""
-    c = _CHAIN.search(rest)
-    if not c:
-        return "", ""
-    parts = [_NOISE.sub("", p).strip(" ,;:")
-             for p in c.group("chain").split(",")]
+    parts = [_NOISE.sub("", p).strip(" ,;:") for p in _PROPER.findall(rest)]
     parts = [p for p in parts if p]
-    # Walk from the outermost place inwards: the last token that names a
-    # country is the country, and the one inside it is the region.
+    # Walk from the outermost place inwards: the last name that resolves to a
+    # country is the country, and the innermost name that resolves to a region
+    # of that same country is the region.
     for i in range(len(parts) - 1, -1, -1):
         state, country = resolve_location(parts[i])
-        if country:
-            if not state and i:
-                inner_state, inner_country = resolve_location(parts[i - 1])
-                if inner_country == country:
-                    state = inner_state or parts[i - 1]
-            return state, country
+        if not country:
+            continue
+        if not state:
+            for j in range(i - 1, -1, -1):
+                inner_state, inner_country = resolve_location(parts[j])
+                if inner_country == country and inner_state:
+                    state = inner_state
+                    break
+        return state, country
     return "", ""
 
 

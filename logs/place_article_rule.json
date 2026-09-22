@@ -92,8 +92,11 @@
   },
   {
     "team": "Blonay",
-    "verdict": "place matched, country unreadable",
-    "place": "Blonay"
+    "verdict": "accept",
+    "place": "Blonay",
+    "city": "Blonay",
+    "state": "",
+    "country": "Switzerland"
   },
   {
     "team": "Bosna",
@@ -110,8 +113,11 @@
   },
   {
     "team": "Casalpusterlengo",
-    "verdict": "place matched, country unreadable",
-    "place": "Casalpusterlengo"
+    "verdict": "accept",
+    "place": "Casalpusterlengo",
+    "city": "Casalpusterlengo",
+    "state": "Lombardy",
+    "country": "Italy"
   },
   {
     "team": "Cefalù",
@@ -195,8 +201,11 @@
   },
   {
     "team": "Gragnano",
-    "verdict": "place matched, country unreadable",
-    "place": "Gragnano"
+    "verdict": "accept",
+    "place": "Gragnano",
+    "city": "Gragnano",
+    "state": "Campania",
+    "country": "Italy"
   },
   {
     "team": "Grindavík",
@@ -272,8 +281,11 @@
   },
   {
     "team": "Killester",
-    "verdict": "place matched, country unreadable",
-    "place": "Killester"
+    "verdict": "accept",
+    "place": "Killester",
+    "city": "Killester",
+    "state": "",
+    "country": "Ireland"
   },
   {
     "team": "Koroivos",
@@ -301,8 +313,11 @@
   },
   {
     "team": "La Rochelle",
-    "verdict": "place matched, country unreadable",
-    "place": "La Rochelle"
+    "verdict": "accept",
+    "place": "La Rochelle",
+    "city": "La Rochelle",
+    "state": "",
+    "country": "France"
   },
   {
     "team": "La Villa",
@@ -322,8 +337,7 @@
   },
   {
     "team": "Lille Métropole",
-    "verdict": "name does not contain the place",
-    "place": "The Métropole Européenne de Lille"
+    "verdict": "not a place article"
   },
   {
     "team": "Londrina",
@@ -405,8 +419,11 @@
   },
   {
     "team": "Palencia",
-    "verdict": "place matched, country unreadable",
-    "place": "Palencia"
+    "verdict": "accept",
+    "place": "Palencia",
+    "city": "Palencia",
+    "state": "",
+    "country": "Spain"
   },
   {
     "team": "Palma",
@@ -414,8 +431,11 @@
   },
   {
     "team": "Parma",
-    "verdict": "place matched, country unreadable",
-    "place": "Parma"
+    "verdict": "accept",
+    "place": "Parma",
+    "city": "Parma",
+    "state": "Emilia-Romagna",
+    "country": "Italy"
   },
   {
     "team": "Patriots",
@@ -472,13 +492,19 @@
   },
   {
     "team": "Poitiers",
-    "verdict": "place matched, country unreadable",
-    "place": "Poitiers"
+    "verdict": "accept",
+    "place": "Poitiers",
+    "city": "Poitiers",
+    "state": "",
+    "country": "France"
   },
   {
     "team": "Prienai",
-    "verdict": "place matched, country unreadable",
-    "place": "Prienai"
+    "verdict": "accept",
+    "place": "Prienai",
+    "city": "Prienai",
+    "state": "",
+    "country": "Lithuania"
   },
   {
     "team": "Prishtina",
@@ -491,8 +517,11 @@
   },
   {
     "team": "Pully",
-    "verdict": "place matched, country unreadable",
-    "place": "Pully"
+    "verdict": "accept",
+    "place": "Pully",
+    "city": "Pully",
+    "state": "",
+    "country": "Switzerland"
   },
   {
     "team": "Purefoods",
@@ -516,13 +545,19 @@
   },
   {
     "team": "Ravenna",
-    "verdict": "place matched, country unreadable",
-    "place": "Ravenna"
+    "verdict": "accept",
+    "place": "Ravenna",
+    "city": "Ravenna",
+    "state": "Emilia-Romagna",
+    "country": "Italy"
   },
   {
     "team": "Roche-la-Moliere",
-    "verdict": "place matched, country unreadable",
-    "place": "Roche-la-Molière"
+    "verdict": "accept",
+    "place": "Roche-la-Molière",
+    "city": "Roche-la-Molière",
+    "state": "",
+    "country": "France"
   },
   {
     "team": "Royal Tru-Orange",
@@ -550,8 +585,11 @@
   },
   {
     "team": "Sant'Antimo",
-    "verdict": "place matched, country unreadable",
-    "place": "Sant'Antimo"
+    "verdict": "accept",
+    "place": "Sant'Antimo",
+    "city": "Sant'Antimo",
+    "state": "Campania",
+    "country": "Italy"
   },
   {
     "team": "Savio",
@@ -564,13 +602,19 @@
   },
   {
     "team": "Shumen",
-    "verdict": "place matched, country unreadable",
-    "place": "Shumen"
+    "verdict": "accept",
+    "place": "Shumen",
+    "city": "Shumen",
+    "state": "",
+    "country": "Bulgaria"
   },
   {
     "team": "Smederevo",
-    "verdict": "place matched, country unreadable",
-    "place": "Smederevo"
+    "verdict": "accept",
+    "place": "Smederevo",
+    "city": "Smederevo",
+    "state": "",
+    "country": "Serbia"
   },
   {
     "team": "South China",
@@ -607,15 +651,18 @@
   },
   {
     "team": "Tolentino",
-    "verdict": "place matched, country unreadable",
-    "place": "Tolentino"
+    "verdict": "accept",
+    "place": "Tolentino",
+    "city": "Tolentino",
+    "state": "Marche",
+    "country": "Italy"
   },
   {
     "team": "Tortona",
     "verdict": "accept",
     "place": "Tortona",
     "city": "Tortona",
-    "state": "",
+    "state": "Piemonte",
     "country": "Italy"
   },
   {
@@ -646,8 +693,11 @@
   },
   {
     "team": "Yambol",
-    "verdict": "place matched, country unreadable",
-    "place": "Yambol"
+    "verdict": "accept",
+    "place": "Yambol",
+    "city": "Yambol",
+    "state": "",
+    "country": "Bulgaria"
   },
   {
     "team": "Yeşilyurt",
