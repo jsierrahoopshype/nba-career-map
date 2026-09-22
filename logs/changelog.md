@@ -1,3 +1,16 @@
+## 2026-09-22 — incremental run
+
+- Players updated: **522** (2 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (1 → overseas, 1 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Graham Ike, Walt Lemon Jr.
+  - Lajae Jones: Golden State Warriors → Pallacanestro Trieste
+  - Lajae Jones: [nba_active → overseas_active]
+  - Nicolas Batum: [nba_active → retired]
+
 ## 2026-09-21 — alias-dedupe run
 
 - Players updated: **5** (0 new)
