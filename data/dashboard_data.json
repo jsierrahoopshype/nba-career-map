@@ -4889,25 +4889,6 @@
       "status": "retired"
     },
     {
-      "player": "Jamario Moon",
-      "country_count": 11,
-      "stint_count": 29,
-      "countries": [
-        "USA",
-        "Italy",
-        "Georgia",
-        "Mexico",
-        "Canada",
-        "Greece",
-        "Venezuela",
-        "UAE",
-        "Puerto Rico",
-        "Brazil",
-        "Uruguay"
-      ],
-      "status": "retired"
-    },
-    {
       "player": "Luis Flores",
       "country_count": 11,
       "stint_count": 28,
@@ -4942,6 +4923,25 @@
         "South Korea",
         "Qatar",
         "UAE"
+      ],
+      "status": "retired"
+    },
+    {
+      "player": "Junior Burrough",
+      "country_count": 11,
+      "stint_count": 27,
+      "countries": [
+        "USA",
+        "Italy",
+        "Argentina",
+        "Venezuela",
+        "Germany",
+        "Japan",
+        "France",
+        "Puerto Rico",
+        "Greece",
+        "South Korea",
+        "Mexico"
       ],
       "status": "retired"
     }
@@ -5016,6 +5016,10 @@
       "players": 92
     },
     {
+      "team": "Yakima Sun Kings",
+      "players": 91
+    },
+    {
       "team": "Erie BayHawks",
       "players": 90
     },
@@ -5026,10 +5030,6 @@
     {
       "team": "Westchester Knicks",
       "players": 87
-    },
-    {
-      "team": "Yakima Sun Kings",
-      "players": 86
     },
     {
       "team": "Fenerbahçe",
@@ -7513,10 +7513,6 @@
     },
     {
       "team": "Winnipeg Thunder",
-      "players": 7
-    },
-    {
-      "team": "Yakama Sun Kings",
       "players": 7
     },
     {
@@ -20462,11 +20458,11 @@
     },
     {
       "country": "Italy",
-      "players": 934
+      "players": 936
     },
     {
       "country": "Spain",
-      "players": 818
+      "players": 820
     },
     {
       "country": "France",
@@ -20478,7 +20474,7 @@
     },
     {
       "country": "Canada",
-      "players": 526
+      "players": 524
     },
     {
       "country": "Turkey",
@@ -20518,7 +20514,7 @@
     },
     {
       "country": "Mexico",
-      "players": 178
+      "players": 177
     },
     {
       "country": "Philippines",
@@ -20526,7 +20522,7 @@
     },
     {
       "country": "Argentina",
-      "players": 156
+      "players": 157
     },
     {
       "country": "Serbia",
@@ -20551,10 +20547,6 @@
     {
       "country": "South Korea",
       "players": 96
-    },
-    {
-      "country": "Georgia",
-      "players": 87
     },
     {
       "country": "Ukraine",
@@ -20598,7 +20590,7 @@
     },
     {
       "country": "Uruguay",
-      "players": 40
+      "players": 41
     },
     {
       "country": "Saudi Arabia",
@@ -20686,14 +20678,10 @@
     },
     {
       "country": "Chile",
-      "players": 14
+      "players": 13
     },
     {
       "country": "Austria",
-      "players": 12
-    },
-    {
-      "country": "Ireland",
       "players": 12
     },
     {
@@ -20745,6 +20733,10 @@
       "players": 6
     },
     {
+      "country": "Georgia",
+      "players": 6
+    },
+    {
       "country": "North Macedonia",
       "players": 6
     },
@@ -20761,15 +20753,15 @@
       "players": 4
     },
     {
-      "country": "Honduras",
-      "players": 4
-    },
-    {
       "country": "Iceland",
       "players": 4
     },
     {
       "country": "India",
+      "players": 4
+    },
+    {
+      "country": "Ireland",
       "players": 4
     },
     {
@@ -20783,6 +20775,10 @@
     {
       "country": "Syria",
       "players": 4
+    },
+    {
+      "country": "Honduras",
+      "players": 3
     },
     {
       "country": "Singapore",
@@ -25158,6 +25154,37 @@
       ]
     },
     {
+      "player": "Anthony Goldwire",
+      "teams": [
+        {
+          "team": "Yakima Sun Kings",
+          "stints": 4,
+          "years": [
+            "1994-1996",
+            "2002-2003",
+            "2003-2004",
+            "2005-2006"
+          ]
+        },
+        {
+          "team": "Denver Nuggets",
+          "stints": 2,
+          "years": [
+            "1997-1998",
+            "2001"
+          ]
+        },
+        {
+          "team": "Milwaukee Bucks",
+          "stints": 2,
+          "years": [
+            "2004",
+            "2005"
+          ]
+        }
+      ]
+    },
+    {
       "player": "Antonis Fotsis",
       "teams": [
         {
@@ -26141,36 +26168,6 @@
           "years": [
             "1999-2000",
             "2000-2001"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Anthony Goldwire",
-      "teams": [
-        {
-          "team": "Yakima Sun Kings",
-          "stints": 3,
-          "years": [
-            "1994-1996",
-            "2002-2003",
-            "2003-2004"
-          ]
-        },
-        {
-          "team": "Denver Nuggets",
-          "stints": 2,
-          "years": [
-            "1997-1998",
-            "2001"
-          ]
-        },
-        {
-          "team": "Milwaukee Bucks",
-          "stints": 2,
-          "years": [
-            "2004",
-            "2005"
           ]
         }
       ]
@@ -35892,6 +35889,19 @@
           "years": [
             "2011-2012",
             "2012-2013"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Donnie Boyce",
+      "teams": [
+        {
+          "team": "Yakima Sun Kings",
+          "stints": 2,
+          "years": [
+            "1997-1998",
+            "2003-2004"
           ]
         }
       ]
@@ -56378,10 +56388,10 @@
       {
         "player": "Terrance Ferguson",
         "current_team": "Club Atlético Welcome",
-        "city": "Emilio Frugoni 924",
+        "city": "Montevideo",
         "state": "",
         "country": "Uruguay",
-        "in_coords": false,
+        "in_coords": true,
         "last_updated": "2026-09-22"
       },
       {
@@ -57404,11 +57414,11 @@
     ],
     "coverage": {
       "total": 646,
-      "in_coords": 586,
-      "missing_from_coords": 60,
+      "in_coords": 587,
+      "missing_from_coords": 59,
       "missing_no_city": 22,
-      "missing_city_absent_from_coords": 38,
-      "distinct_missing_combos": 24
+      "missing_city_absent_from_coords": 37,
+      "distinct_missing_combos": 23
     }
   },
   "latest_signings": [

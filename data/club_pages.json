@@ -519,12 +519,12 @@
         },
         {
           "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 7
+          "name": "Yakima Sun Kings",
+          "shared": 8
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Rapid City Thrillers",
           "shared": 7
         },
         {
@@ -1239,7 +1239,7 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Yakima Sun Kings",
           "shared": 3
         }
       ]
@@ -1332,7 +1332,7 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Yakima Sun Kings",
           "shared": 1
         }
       ]
@@ -6900,6 +6900,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "La Crosse Bobcats",
           "shared": 4
         },
@@ -6911,11 +6916,6 @@
         {
           "type": "club",
           "name": "Rockford Lightning",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 3
         }
       ]
@@ -7011,7 +7011,7 @@
       "city": "Yakima",
       "state": "Washington",
       "country": "USA",
-      "count": 86,
+      "count": 91,
       "roster": [
         {
           "player": "A.J. Wynder",
@@ -7043,7 +7043,7 @@
         },
         {
           "player": "Anthony Goldwire",
-          "years": "1994-1996, 2002-2003, 2003-2004",
+          "years": "1994-1996, 2002-2003, 2003-2004, 2005-2006",
           "status": "retired",
           "last_team": "Aigaleo",
           "nationality": "United States"
@@ -7053,6 +7053,13 @@
           "years": "2002-2004",
           "status": "retired",
           "last_team": "Shanghai Sharks",
+          "nationality": "United States"
+        },
+        {
+          "player": "Art Long",
+          "years": "1999-2000",
+          "status": "retired",
+          "last_team": "Unión Alética",
           "nationality": "United States"
         },
         {
@@ -7197,7 +7204,7 @@
         },
         {
           "player": "Donnie Boyce",
-          "years": "1997-1998",
+          "years": "1997-1998, 2003-2004",
           "status": "retired",
           "last_team": "Albany Patroons",
           "nationality": "United States"
@@ -7273,10 +7280,24 @@
           "nationality": "United States"
         },
         {
+          "player": "Geno Carlisle",
+          "years": "2005-2006",
+          "status": "retired",
+          "last_team": "Anaheim Arsenal",
+          "nationality": "United States"
+        },
+        {
           "player": "Ivano Newbill",
           "years": "1999-2000",
           "status": "retired",
           "last_team": "Yakima Sun Kings",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jason Sasser",
+          "years": "2007-2008",
+          "status": "retired",
+          "last_team": "Pusan KTF Magic Wings",
           "nationality": "United States"
         },
         {
@@ -7532,6 +7553,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Sharone Wright",
+          "years": "2006",
+          "status": "retired",
+          "last_team": "EiffelTowers",
+          "nationality": "United States"
+        },
+        {
           "player": "Sherell Ford",
           "years": "1997-1999",
           "status": "retired",
@@ -7609,6 +7637,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Walter Bond",
+          "years": "1997-1998",
+          "status": "retired",
+          "last_team": "Bayer Giants Leverkusen",
+          "nationality": "United States"
+        },
+        {
           "player": "Zendon Hamilton",
           "years": "2003",
           "status": "retired",
@@ -7620,12 +7655,12 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 18
+          "shared": 20
         },
         {
           "type": "club",
           "name": "Rockford Lightning",
-          "shared": 18
+          "shared": 19
         },
         {
           "type": "club",
@@ -7650,12 +7685,12 @@
         {
           "type": "club",
           "name": "Idaho Stampede",
-          "shared": 7
+          "shared": 8
         },
         {
           "type": "club",
           "name": "La Crosse Bobcats",
-          "shared": 7
+          "shared": 8
         }
       ]
     },
@@ -9251,7 +9286,7 @@
         {
           "type": "club",
           "name": "Yakima Sun Kings",
-          "shared": 18
+          "shared": 20
         },
         {
           "type": "club",
@@ -16599,12 +16634,12 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -21295,7 +21330,7 @@
         {
           "type": "club",
           "name": "Yakima Sun Kings",
-          "shared": 4
+          "shared": 5
         },
         {
           "type": "club",
@@ -30860,12 +30895,12 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -33252,6 +33287,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Virtus Roma",
           "shared": 4
         },
@@ -33273,11 +33313,6 @@
         {
           "type": "club",
           "name": "Rapid City Thrillers",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 3
         },
         {
@@ -46716,7 +46751,7 @@
         {
           "type": "club",
           "name": "Yakima Sun Kings",
-          "shared": 18
+          "shared": 19
         },
         {
           "type": "club",
@@ -49204,12 +49239,12 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Yakima Sun Kings",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Bakersfield Jam",
+          "name": "Reno Bighorns",
           "shared": 2
         }
       ]
@@ -51846,8 +51881,8 @@
     "College Park Skyhawks": {
       "club": "College Park Skyhawks",
       "city": "College Park",
-      "state": "",
-      "country": "Georgia",
+      "state": "Georgia",
+      "country": "USA",
       "count": 38,
       "roster": [
         {
@@ -60570,6 +60605,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Galatasaray",
           "shared": 8
         },
@@ -60581,11 +60621,6 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
           "shared": 7
         }
       ]
@@ -62365,8 +62400,8 @@
     "Detroit Spirits": {
       "club": "Detroit Spirits",
       "city": "Savannah",
-      "state": "",
-      "country": "Georgia",
+      "state": "Georgia",
+      "country": "USA",
       "count": 24,
       "roster": [
         {
@@ -83057,6 +83092,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Virtus Bologna",
           "shared": 3
         },
@@ -83078,11 +83118,6 @@
         {
           "type": "club",
           "name": "Rapid City Thrillers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 2
         },
         {
@@ -84946,12 +84981,12 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -89663,6 +89698,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Pallacanestro Trieste",
           "shared": 2
         },
@@ -89674,11 +89714,6 @@
         {
           "type": "club",
           "name": "JDA Dijon",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Igokea",
           "shared": 2
         }
       ]
@@ -96165,12 +96200,12 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -101820,6 +101855,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Maine Red Claws",
           "shared": 3
         },
@@ -101846,11 +101886,6 @@
         {
           "type": "club",
           "name": "Caciques de Humacao",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Long Beach Jam",
           "shared": 3
         }
       ]
@@ -108597,12 +108632,12 @@
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Yakima Sun Kings",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Westchester Knicks",
           "shared": 2
         },
         {
@@ -120103,7 +120138,7 @@
         {
           "type": "club",
           "name": "Yakima Sun Kings",
-          "shared": 5
+          "shared": 6
         },
         {
           "type": "club",
@@ -120139,106 +120174,6 @@
           "type": "club",
           "name": "Idaho Stampede",
           "shared": 2
-        }
-      ]
-    },
-    "Yakama Sun Kings": {
-      "club": "Yakama Sun Kings",
-      "city": "Yakima",
-      "state": "",
-      "country": "USA",
-      "count": 7,
-      "roster": [
-        {
-          "player": "Anthony Goldwire",
-          "years": "2005-2006",
-          "status": "retired",
-          "last_team": "Aigaleo",
-          "nationality": "United States"
-        },
-        {
-          "player": "Art Long",
-          "years": "1999-2000",
-          "status": "retired",
-          "last_team": "Unión Alética",
-          "nationality": "United States"
-        },
-        {
-          "player": "Donnie Boyce",
-          "years": "2003-2004",
-          "status": "retired",
-          "last_team": "Albany Patroons",
-          "nationality": "United States"
-        },
-        {
-          "player": "Geno Carlisle",
-          "years": "2005-2006",
-          "status": "retired",
-          "last_team": "Anaheim Arsenal",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jason Sasser",
-          "years": "2007-2008",
-          "status": "retired",
-          "last_team": "Pusan KTF Magic Wings",
-          "nationality": "United States"
-        },
-        {
-          "player": "Sharone Wright",
-          "years": "2006",
-          "status": "retired",
-          "last_team": "EiffelTowers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Walter Bond",
-          "years": "1997-1998",
-          "status": "retired",
-          "last_team": "Bayer Giants Leverkusen",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Kansas City Knights",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olympiacos",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "FC Barcelona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Valencia",
-          "shared": 1
         }
       ]
     },
@@ -121533,13 +121468,13 @@
         },
         {
           "type": "club",
-          "name": "La Crosse Bobcats",
+          "name": "Yakima Sun Kings",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 2
+          "name": "La Crosse Bobcats",
+          "shared": 3
         },
         {
           "type": "club",
@@ -122147,6 +122082,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 2
         },
@@ -122158,11 +122098,6 @@
         {
           "type": "club",
           "name": "Quad City Thunder",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 2
         },
         {
@@ -127484,7 +127419,7 @@
     },
     "Chongqing Flying Dragons": {
       "club": "Chongqing Flying Dragons",
-      "city": "Beijing",
+      "city": "Chongqing",
       "state": "",
       "country": "China",
       "count": 2,
@@ -130386,6 +130321,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Reno Bighorns",
           "shared": 1
         },
@@ -130397,11 +130337,6 @@
         {
           "type": "club",
           "name": "Grand Rapids Hoops",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Joventut Badalona",
           "shared": 1
         }
       ]
@@ -130522,6 +130457,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "ASVEL",
           "shared": 1
         },
@@ -130548,11 +130488,6 @@
         {
           "type": "club",
           "name": "Brujos de Guayama",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Huntsville Flight",
           "shared": 1
         }
       ]
@@ -130777,6 +130712,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Iowa Energy",
           "shared": 4
         },
@@ -130803,11 +130743,6 @@
         {
           "type": "club",
           "name": "Rapid City Thrillers",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 3
         }
       ]
@@ -131068,6 +131003,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "ASVEL",
           "shared": 1
         },
@@ -131094,11 +131034,6 @@
         {
           "type": "club",
           "name": "Brujos de Guayama",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Huntsville Flight",
           "shared": 1
         }
       ]
@@ -131138,6 +131073,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Valencia",
           "shared": 1
         },
@@ -131159,11 +131099,6 @@
         {
           "type": "club",
           "name": "Trotamundos de Carabobo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Gary Steelheads",
           "shared": 1
         }
       ]
@@ -131191,6 +131126,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "ASVEL",
           "shared": 1
         },
@@ -131217,11 +131157,6 @@
         {
           "type": "club",
           "name": "Brujos de Guayama",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Huntsville Flight",
           "shared": 1
         }
       ]
@@ -131249,6 +131184,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "ASVEL",
           "shared": 1
         },
@@ -131275,11 +131215,6 @@
         {
           "type": "club",
           "name": "Brujos de Guayama",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Huntsville Flight",
           "shared": 1
         }
       ]
@@ -131616,6 +131551,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Montepaschi Siena",
           "shared": 2
         },
@@ -131632,11 +131572,6 @@
         {
           "type": "club",
           "name": "Wichita Falls Texans",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Telekom Baskets Bonn",
           "shared": 2
         }
       ]
@@ -135496,12 +135431,12 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Yakima Sun Kings",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Iowa Energy",
+          "name": "Reno Bighorns",
           "shared": 2
         }
       ]
@@ -142037,8 +141972,8 @@
     "Atlanta Crackers": {
       "club": "Atlanta Crackers",
       "city": "Atlanta",
-      "state": "",
-      "country": "Georgia",
+      "state": "Georgia",
+      "country": "USA",
       "count": 6,
       "roster": [
         {
@@ -144276,7 +144211,7 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         }
       ]
@@ -148322,17 +148257,17 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Valvi Girona",
           "shared": 3
         },
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 2
         },
         {
@@ -153232,12 +153167,12 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -156536,9 +156471,9 @@
     },
     "Atlético Aguada": {
       "club": "Atlético Aguada",
-      "city": "Gualala",
+      "city": "Montevideo",
       "state": "",
-      "country": "Honduras",
+      "country": "Uruguay",
       "count": 1,
       "roster": [
         {
@@ -156567,7 +156502,27 @@
         },
         {
           "type": "club",
-          "name": "Atlético Biguá",
+          "name": "Club Atlético Aguada",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Peñarol",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Club Malvín",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Hebraica y Macabi",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Club Atlético Atenas",
           "shared": 0
         }
       ]
@@ -160036,13 +159991,13 @@
         },
         {
           "type": "club",
-          "name": "Kansas City Knights",
+          "name": "Yakima Sun Kings",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 4
+          "name": "Kansas City Knights",
+          "shared": 5
         },
         {
           "type": "club",
@@ -167461,8 +167416,8 @@
     },
     "Canturina Cantù": {
       "club": "Canturina Cantù",
-      "city": "Turin",
-      "state": "",
+      "city": "Cantù",
+      "state": "Lombardy",
       "country": "Italy",
       "count": 2,
       "roster": [
@@ -168956,17 +168911,17 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Pallacanestro Varese",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Zaragoza",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Scavolini Pesaro",
           "shared": 1
         }
       ]
@@ -174945,12 +174900,12 @@
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Westchester Knicks",
           "shared": 1
         }
       ]
@@ -179130,8 +179085,8 @@
     },
     "Banca Nuova Trapani": {
       "club": "Banca Nuova Trapani",
-      "city": "Palermo",
-      "state": "",
+      "city": "Trapani",
+      "state": "Sicily",
       "country": "Italy",
       "count": 1,
       "roster": [
@@ -179831,6 +179786,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Maine Red Claws",
           "shared": 2
         },
@@ -179852,11 +179812,6 @@
         {
           "type": "club",
           "name": "Guangxi Rhinos",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Ottawa BlackJacks",
           "shared": 2
         }
       ]
@@ -180229,12 +180184,12 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -185260,6 +185215,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Anaheim Arsenal",
           "shared": 3
         },
@@ -185267,11 +185227,6 @@
           "type": "club",
           "name": "Fuerza Regia",
           "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
-          "shared": 2
         },
         {
           "type": "club",
@@ -187691,9 +187646,9 @@
     },
     "Libertas Forlì": {
       "club": "Libertas Forlì",
-      "city": "Registered at Moyne Park",
-      "state": "",
-      "country": "Ireland",
+      "city": "Forlì",
+      "state": "Emilia-Romagna",
+      "country": "Italy",
       "count": 8,
       "roster": [
         {
@@ -197987,6 +197942,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Pallacanestro Varese",
           "shared": 2
         },
@@ -198003,11 +197963,6 @@
         {
           "type": "club",
           "name": "Baskonia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
@@ -198665,6 +198620,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "La Crosse Bobcats",
           "shared": 1
         },
@@ -198686,11 +198646,6 @@
         {
           "type": "club",
           "name": "Jiangsu Dragons",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Limoges CSP",
           "shared": 1
         }
       ]
@@ -207749,8 +207704,8 @@
     "Savannah Spirits": {
       "club": "Savannah Spirits",
       "city": "Savannah",
-      "state": "",
-      "country": "Georgia",
+      "state": "Georgia",
+      "country": "USA",
       "count": 7,
       "roster": [
         {
@@ -208973,11 +208928,6 @@
         },
         {
           "type": "club",
-          "name": "Yakama Sun Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Nebraska Cranes",
           "shared": 1
         },
@@ -208994,6 +208944,11 @@
         {
           "type": "club",
           "name": "Al Gharafa",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -209031,11 +208986,6 @@
         },
         {
           "type": "club",
-          "name": "Yakama Sun Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Pico FC",
           "shared": 1
         },
@@ -209052,6 +209002,11 @@
         {
           "type": "club",
           "name": "Texas Legends",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Idaho Stampede",
           "shared": 0
         }
       ]
@@ -213521,9 +213476,9 @@
     },
     "Peñas Huesca": {
       "club": "Peñas Huesca",
-      "city": "Newfoundland and Labrador",
-      "state": "",
-      "country": "Canada",
+      "city": "Huesca",
+      "state": "Aragon",
+      "country": "Spain",
       "count": 3,
       "roster": [
         {
@@ -215593,17 +215548,17 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Hapoel Jerusalem",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Pallacanestro Varese",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Joventut Badalona",
           "shared": 1
         }
       ]
@@ -217019,7 +216974,7 @@
     },
     "Club Atlético Welcome": {
       "club": "Club Atlético Welcome",
-      "city": "Emilio Frugoni 924",
+      "city": "Montevideo",
       "state": "",
       "country": "Uruguay",
       "count": 2,
@@ -217727,9 +217682,9 @@
     },
     "Caballeros de Santiago": {
       "club": "Caballeros de Santiago",
-      "city": "Spain",
+      "city": "Santiago de los Caballeros",
       "state": "",
-      "country": "Chile",
+      "country": "Dominican Republic",
       "count": 1,
       "roster": [
         {
@@ -219449,8 +219404,8 @@
     "Atlanta Trojans": {
       "club": "Atlanta Trojans",
       "city": "Atlanta",
-      "state": "",
-      "country": "Georgia",
+      "state": "Georgia",
+      "country": "USA",
       "count": 6,
       "roster": [
         {
@@ -222014,12 +221969,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 2
+          "name": "Yakima Sun Kings",
+          "shared": 3
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Sioux Falls Skyforce",
           "shared": 2
         },
         {
@@ -222082,6 +222037,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Pallacanestro Varese",
           "shared": 1
         },
@@ -222103,11 +222063,6 @@
         {
           "type": "club",
           "name": "Mobile Revelers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Benfica",
           "shared": 1
         }
       ]
@@ -225133,22 +225088,22 @@
         },
         {
           "type": "club",
-          "name": "College Park Skyhawks",
+          "name": "BC Armia",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Detroit Spirits",
+          "name": "BC Rustavi",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Savannah Spirits",
+          "name": "BC Sokhumi",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Atlanta Crackers",
+          "name": "Dinamo Tbilisi",
           "shared": 0
         }
       ]
@@ -235983,8 +235938,8 @@
     "Marietta Storm": {
       "club": "Marietta Storm",
       "city": "Marietta",
-      "state": "",
-      "country": "Georgia",
+      "state": "Georgia",
+      "country": "USA",
       "count": 1,
       "roster": [
         {
@@ -238956,6 +238911,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Real Betis",
           "shared": 1
         },
@@ -238977,11 +238937,6 @@
         {
           "type": "club",
           "name": "Al Arabi",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         },
         {
@@ -239014,6 +238969,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Real Betis",
           "shared": 1
         },
@@ -239035,11 +238995,6 @@
         {
           "type": "club",
           "name": "Al Arabi",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         },
         {
@@ -239072,6 +239027,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Real Betis",
           "shared": 1
         },
@@ -239093,11 +239053,6 @@
         {
           "type": "club",
           "name": "Al Arabi",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         },
         {
@@ -239130,6 +239085,11 @@
         },
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Real Betis",
           "shared": 1
         },
@@ -239151,11 +239111,6 @@
         {
           "type": "club",
           "name": "Al Arabi",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         },
         {
@@ -245498,8 +245453,8 @@
     },
     "Mitteldeutscher": {
       "club": "Mitteldeutscher",
-      "city": "Leipzig",
-      "state": "",
+      "city": "Weißenfels",
+      "state": "Saxony-Anhalt",
       "country": "Germany",
       "count": 1,
       "roster": [
@@ -247381,7 +247336,7 @@
         },
         {
           "type": "club",
-          "name": "Libertas Forlì",
+          "name": "Johnstown C-J's",
           "shared": 0
         }
       ]
@@ -250022,12 +249977,12 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         }
       ]
@@ -253416,12 +253371,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -253474,12 +253429,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -253532,12 +253487,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Erie BayHawks",
+          "name": "Yakima Sun Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Yakima Sun Kings",
+          "name": "Erie BayHawks",
           "shared": 1
         },
         {
@@ -285535,9 +285490,9 @@
     },
     "Atenas Cordoba": {
       "club": "Atenas Cordoba",
-      "city": "Veracruz",
+      "city": "Córdoba",
       "state": "",
-      "country": "Mexico",
+      "country": "Argentina",
       "count": 1,
       "roster": [
         {
@@ -288261,6 +288216,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Jiangsu Dragons",
           "shared": 1
         },
@@ -288282,11 +288242,6 @@
         {
           "type": "club",
           "name": "Jeonju KCC Egis",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         },
         {
@@ -293740,6 +293695,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Virtus Roma",
           "shared": 1
         },
@@ -293771,11 +293731,6 @@
         {
           "type": "club",
           "name": "Wichita Falls Texans",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Kleenex Pistoia",
           "shared": 1
         }
       ]
@@ -293956,9 +293911,9 @@
     },
     "Lazio Basket": {
       "club": "Lazio Basket",
-      "city": "America and the Caribbean",
-      "state": "",
-      "country": "USA",
+      "city": "Rome",
+      "state": "Lazio",
+      "country": "Italy",
       "count": 1,
       "roster": [
         {
@@ -293972,42 +293927,42 @@
       "related": [
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
+          "name": "Olimpia Milano",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
+          "name": "Virtus Roma",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Virtus Bologna",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Idaho Stampede",
+          "name": "Pallacanestro Varese",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Rockford Lightning",
+          "name": "Fortitudo Bologna",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Rapid City Thrillers",
+          "name": "Pallacanestro Cantù",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Santa Cruz Warriors",
+          "name": "Scavolini Pesaro",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Montepaschi Siena",
           "shared": 0
         }
       ]
@@ -298420,6 +298375,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "La Crosse Bobcats",
           "shared": 1
         },
@@ -298441,11 +298401,6 @@
         {
           "type": "club",
           "name": "Bayer Giants Leverkusen",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yakama Sun Kings",
           "shared": 1
         },
         {
@@ -299744,7 +299699,7 @@
     },
     "Chongqing Fly Dragons": {
       "club": "Chongqing Fly Dragons",
-      "city": "Beijing",
+      "city": "Chongqing",
       "state": "",
       "country": "China",
       "count": 1,

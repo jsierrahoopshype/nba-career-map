@@ -78,6 +78,7 @@ CHANGELOG = LOGS / "changelog.md"
 # cannot be backfilled). Feeds the dashboard "latest_signings" widget.
 TRANSACTIONS = DATA / "logs" / "transactions.json"
 SPELLING_REVIEW = DATA / "logs" / "spelling_review.json"
+PLACE_REVIEW = DATA / "logs" / "wrong_place_review.json"
 ARTICLE_REVIEW = DATA / "logs" / "wrong_article_review.json"
 ROOT_MAP_FILE = ROOT / "nba_players_careers_READY.json"
 # Cursor into TRANSACTIONS: how many ledger entries have already been posted
@@ -221,6 +222,17 @@ class Database:
             extract = None
         if not extract:
             return {"city": "", "state": "", "country": ""}
+        # The same guard the article fetch has, for the same reason. Wikipedia
+        # answers a club name it does not have with the nearest thing it does:
+        # "Libertas" is an Irish political party, and the seed took its
+        # registered office as the club's home, putting nine stints of Italian
+        # basketball in County Galway. An extract that says nothing about a
+        # sport is not about a club, whatever the name matched.
+        if not SPORTS_CLUB.search(extract):
+            REFUSED_PLACE.append({"team": team, "date": today(),
+                                  "reason": "the article is not about a sports club",
+                                  "extract": extract[:180]})
+            return {"city": "", "state": "", "country": ""}
         # light heuristic: "... based in <City>, <Region-or-Country>"
         m = re.search(r"based in ([A-Z][\w.\- ]+?)(?:,\s*([A-Z][\w.\- ]+?))?[.,]",
                       extract)
@@ -348,6 +360,19 @@ def _is_real_move(normalizer: TeamNormalizer, prev: str, new: str) -> bool:
     case, diacritics, punctuation or doubled letters.
     """
     return classify_move(normalizer, prev, new)[0]
+
+
+# Words that say an article is about a sport, any sport: a club, a team, a
+# league, a competition. Deliberately broad -- the job is to exclude political
+# parties, companies and villages, not to identify basketball.
+SPORTS_CLUB = re.compile(
+    r"\b(basketball|football|soccer|volleyball|handball|sports?|athletic|"
+    r"basket|club|team|league|championship|division|arena|players?)\b", re.I)
+
+# Location lookups refused by that guard. Cleared per run and written to
+# data/logs/wrong_place_review.json, so a club with no location because its
+# article was about something else is visible rather than merely blank.
+REFUSED_PLACE: list[dict] = []
 
 
 # Fetches refused because the article was about somebody else. Cleared at the
@@ -602,6 +627,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
     client = WikipediaClient(delay=delay, max_requests=max_requests)
     current_year = dt.datetime.now(dt.timezone.utc).year
     REFUSED.clear()
+    REFUSED_PLACE.clear()
     summary = {"date": today(), "mode": mode, "players_updated": [],
                "new_players": [], "new_teams": [], "team_moves": [],
                "spelling_review": [],
@@ -669,6 +695,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                     summary["newly_retired"].append(key)
 
     summary["wrong_article"] = list(REFUSED)
+    summary["wrong_place"] = list(REFUSED_PLACE)
     summary["requests"] = client.requests_made
     summary["new_teams"] = sorted(set(summary["new_teams"]))
     _persist(db, summary)
@@ -771,6 +798,7 @@ def _persist(db: Database, summary: dict) -> None:
     _append_transactions(summary)
     _append_spelling_review(summary)
     _append_article_review(summary)
+    _append_place_review(summary)
     _notify_slack(db, summary)
 
 
@@ -795,6 +823,16 @@ def _append_transactions(summary: dict) -> None:
             "date": date,
         })
     write_json(TRANSACTIONS, ledger)
+
+
+def _append_place_review(summary: dict) -> None:
+    """Append the location lookups the sports-club guard refused."""
+    rows = summary.get("wrong_place", [])
+    if not rows:
+        return
+    doc = load_json(PLACE_REVIEW, {"refusals": []})
+    doc["refusals"].extend(rows)
+    write_json(PLACE_REVIEW, doc)
 
 
 def _append_article_review(summary: dict) -> None:

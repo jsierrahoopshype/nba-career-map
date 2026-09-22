@@ -321,6 +321,37 @@ def test_no_phantom_rename_survives_in_the_ledger():
           f"({len(txns)} rows)")
 
 
+def test_the_do_not_merge_list_is_read_by_the_merge_pass():
+    """A pinned pair must never reach a merge, by either route.
+
+    The place audit turned up three pairs that look like one club written two
+    ways and are two clubs in two cities. Recording them is only useful if the
+    code consults the record: the spelling rule and the containment pass both
+    do, and this is what says so.
+    """
+    from team_normalizer import KNOWN_DISTINCT, is_spelling_variant
+    from merge_club_renames import edges
+
+    pairs = [("Al Nasr", "Al-Nasr"), ("Al-Ahli", "Al-Ahli Club"),
+             ("San Carlos", "Club San Carlos")]
+    for a, b in pairs:
+        key = frozenset({a.casefold(), b.casefold()})
+        assert key in KNOWN_DISTINCT, f"{a}/{b} is not pinned"
+        assert not is_spelling_variant(a, b), f"{a}/{b} merged as a spelling"
+
+    # and through the containment pass, which is the route that would have
+    # folded "Al-Ahli" into "Al-Ahli Club"
+    names = ["Al-Ahli", "Al-Ahli Club", "San Carlos", "Club San Carlos"]
+    places = {"Al-Ahli": ("jeddah",), "Al-Ahli Club": ("dubai",),
+              "San Carlos": ("mexico city",), "Club San Carlos": ("san carlos",)}
+    ok, _every, held = edges(names, places, {})
+    assert not ok, f"a pinned pair was accepted for merging: {dict(ok)}"
+    whys = {w for _p, w in held}
+    assert "pinned as distinct clubs" in whys, held
+    print("test_the_do_not_merge_list_is_read_by_the_merge_pass PASS "
+          f"({len(pairs)} pairs)")
+
+
 if __name__ == "__main__":
     test_a_longer_name_for_the_same_club_is_not_a_transfer()
     test_reserve_sides_are_never_merged_into_their_parent()
@@ -334,4 +365,5 @@ if __name__ == "__main__":
     test_containment_is_never_posted_however_it_resolves()
     test_sharing_a_word_is_not_containment()
     test_no_phantom_rename_survives_in_the_ledger()
+    test_the_do_not_merge_list_is_read_by_the_merge_pass()
     print("\nall club-rename tests PASS")

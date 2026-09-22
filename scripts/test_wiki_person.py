@@ -271,6 +271,40 @@ def test_a_record_is_fetched_by_the_article_it_was_built_from():
     print("test_a_record_is_fetched_by_the_article_it_was_built_from PASS")
 
 
+def test_a_location_is_not_taken_from_an_article_about_something_else():
+    """The place-lookup twin of the wrong-article guard.
+
+    "Libertas" is an Irish political party as well as a dozen Italian
+    basketball clubs, and the seed took the party's registered office as the
+    club's home: nine stints of Italian basketball plotted in County Galway.
+    An extract that says nothing about a sport is refused, and the refusal is
+    recorded rather than left as a blank field.
+    """
+    import update_careers as uc
+    import wikipedia_api
+
+    db = _db([])
+    party = ("Libertas was an Irish political party founded in 2008. "
+             "Registered at Moyne Park, Abbeyknockmoy, County Galway.")
+    club = ("Pallacanestro Cantù is an Italian professional basketball club "
+            "based in Cantù, Lombardy.")
+    answers = {"Libertas Forlì": party, "Cantù": club}
+    wikipedia_api.WikipediaClient.get_extract = lambda self, t: answers.get(t, "")
+    client = wikipedia_api.WikipediaClient(delay=0, max_requests=10)
+
+    uc.REFUSED_PLACE.clear()
+    got = db._discover_location("Libertas Forlì", client)
+    assert got == {"city": "", "state": "", "country": ""}, got
+    assert uc.REFUSED_PLACE and uc.REFUSED_PLACE[0]["team"] == "Libertas Forlì"
+    assert "not about a sports club" in uc.REFUSED_PLACE[0]["reason"]
+
+    uc.REFUSED_PLACE.clear()
+    got = db._discover_location("Cantù", client)
+    assert got["city"] == "Cantù", got
+    assert not uc.REFUSED_PLACE, "a real club was refused"
+    print("test_a_location_is_not_taken_from_an_article_about_something_else PASS")
+
+
 def test_an_ordinary_redirect_still_merges():
     """The guard must not cost the pipeline its reason for following redirects."""
     import update_careers as uc
@@ -299,5 +333,6 @@ if __name__ == "__main__":
     test_a_jr_is_not_merged_into_the_record_of_a_name_that_folds_to_his()
     test_a_sons_own_article_is_not_said_to_belong_to_his_father()
     test_a_record_is_fetched_by_the_article_it_was_built_from()
+    test_a_location_is_not_taken_from_an_article_about_something_else()
     test_an_ordinary_redirect_still_merges()
     print("\nALL WRONG-ARTICLE GUARD TESTS PASS")

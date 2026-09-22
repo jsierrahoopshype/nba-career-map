@@ -59,6 +59,18 @@ KNOWN_DISTINCT: set[frozenset[str]] = {
     # Russia. Below the length floor below anyway; pinned so that lowering the
     # floor could never merge them.
     frozenset({"khimik", "khimki"}),
+    # Found by the place audit: three pairs a containment or spelling rule
+    # would read as one club written two ways, each of which is two clubs in
+    # two cities. Pinned before anything tries.
+    #   Al Nasr plays in Dubai; Al-Nasr in Riyadh. (Distinct from the
+    #   al nasr / al nassr pair above, which is the same confusion spelled
+    #   differently again.)
+    frozenset({"al nasr", "al-nasr"}),
+    #   Al-Ahli is in Jeddah; Al-Ahli Club in Dubai.
+    frozenset({"al-ahli", "al-ahli club"}),
+    #   San Carlos is in Mexico City; Club San Carlos in the Dominican
+    #   Republic.
+    frozenset({"san carlos", "club san carlos"}),
 }
 
 # A transposition ("Watson"/"Waston") is a typo, not a different club -- but

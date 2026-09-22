@@ -157,6 +157,38 @@ class WikipediaClient:
             return None
         return pages[0].get("extract")
 
+    def get_extracts(self, titles: list[str],
+                     batch: int = 20) -> dict[str, str]:
+        """Lead extracts for many titles at once: {requested: extract}.
+
+        The extracts API caps a batch at 20, so auditing eight hundred clubs
+        costs forty requests rather than eight hundred. A title with no article
+        comes back as an empty string.
+        """
+        out: dict[str, str] = {}
+        titles = [t for t in dict.fromkeys(titles) if t]
+        for i in range(0, len(titles), batch):
+            chunk = titles[i:i + batch]
+            data = self._get({
+                "action": "query", "prop": "extracts", "exintro": 1,
+                "explaintext": 1, "exlimit": len(chunk),
+                "titles": "|".join(chunk), "redirects": 1,
+            })
+            q = data.get("query", {})
+            hop = {}
+            for kind in ("normalized", "redirects"):
+                for h in q.get(kind, []) or []:
+                    hop[h["from"]] = h["to"]
+            by_title = {p["title"]: p.get("extract", "")
+                        for p in q.get("pages", []) if not p.get("missing")}
+            for t in chunk:
+                cur, seen = t, set()
+                while cur in hop and cur not in seen:
+                    seen.add(cur)
+                    cur = hop[cur]
+                out[t] = by_title.get(cur, "")
+        return out
+
     def search(self, query: str, limit: int = 5) -> list[str]:
         data = self._get({
             "action": "query",
