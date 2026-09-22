@@ -67,8 +67,11 @@ jobs:
 
       - name: Propose the real articles
         if: inputs.propose
+        env:
+          PLAYERS: ${{ inputs.players }}
         run: |
           python3 scripts/audit_wiki_titles.py propose \
+            --players-csv "$PLAYERS" \
             --max-requests "${{ inputs.max_requests }}" --delay 0.5 \
             | tee /tmp/propose.log
 

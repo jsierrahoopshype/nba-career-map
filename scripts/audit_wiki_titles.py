@@ -163,6 +163,11 @@ def propose(client: WikipediaClient, db, names: list) -> dict:
             shared, here, there = _overlap(rec, parsed)
             row = {"title": title, "shared": shared, "stored": here,
                    "article": there, "reason": why,
+                   # the whole career, not a sample of it: a partial match is
+                   # decided stint by stint, and fetching it twice to find out
+                   # which four differ is a waste of a run
+                   "career": [{"years": s.get("years"), "team": s.get("team")}
+                              for s in (parsed.get("career_history") or [])],
                    "teams": [s.get("team") for s in
                              (parsed.get("career_history") or [])][:6]}
             tried.append(row)
