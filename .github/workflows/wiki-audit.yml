@@ -142,8 +142,19 @@ jobs:
             echo "nothing changed"
           else
             git commit -m "Audit Wikipedia articles: repair wrong-article records, merge duplicates"
+            # A run that pushed nothing must not report success: this one raced
+            # a merge, lost four times, and still went green with its result
+            # left on the runner. Rebase onto whatever landed meanwhile, and
+            # fail the job if it still will not go.
+            pushed=
             for i in 1 2 3 4; do
-              if git push origin HEAD:${{ github.ref_name }}; then break; fi
-              echo "push failed, retry $i"; sleep $((2 ** i))
+              if git push origin HEAD:${{ github.ref_name }}; then pushed=yes; break; fi
+              echo "push failed, retry $i"
+              git pull --rebase origin ${{ github.ref_name }} || true
+              sleep $((2 ** i))
             done
+            if [ -z "$pushed" ]; then
+              echo "::error::could not push the result"
+              exit 1
+            fi
           fi
