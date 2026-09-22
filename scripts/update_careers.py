@@ -56,6 +56,7 @@ from team_normalizer import (TeamNormalizer, edit_distance,
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
 from era_correct_teams import ERA_TABLE
+from sync_era_locations import LOC as ERA_LOCATIONS
 from player_status import (classify_status, last_active_year, PRESENT,
                            NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
@@ -115,6 +116,7 @@ class Database:
         self.by_name = {p["player"]: p for p in players}
         self.order = [p["player"] for p in players]
         self.locations = load_json(LOCATIONS, {})
+        self._pin_era_locations()
         self.review = load_json(REVIEW, {})
         self.normalizer = TeamNormalizer()
         # dedupe indexes: normalized name / aliases, and canonical Wikipedia URL
@@ -124,6 +126,31 @@ class Database:
         self.article_index: dict[str, str] = {}
         for p in players:
             self._index(p)
+
+    def _pin_era_locations(self) -> None:
+        """Give every franchise-era name its place before discovery can guess.
+
+        Wikipedia answers a defunct team's name with the article for the
+        franchise as it exists today: "Chicago Packers" reaches the Washington
+        Wizards, and _discover_location reads "based in Washington, D.C." off
+        it. A 1961 Chicago team then gets a location record in Washington, and
+        the stint plots 700 miles from where it was played. Eight records had
+        already gone that way, three of them holding nothing at all.
+
+        The sports-club guard cannot catch this -- the Wizards article IS
+        about a basketball team. But these teams have an authority for where
+        they played, so consult it first and the guess never happens. Pinned
+        rather than merely seeded, because a record that drifted once can
+        drift again.
+        """
+        for team, (city, state, country) in ERA_LOCATIONS.items():
+            entry = self.locations.get(team) or {"team": team, "league": ""}
+            if (entry.get("city"), entry.get("state"),
+                    entry.get("country")) == (city, state, country):
+                continue
+            entry.update({"team": team, "city": city, "state": state,
+                          "country": country})
+            self.locations[team] = entry
 
     # -- dedupe index -------------------------------------------------------
 

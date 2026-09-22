@@ -13,11 +13,12 @@ sync_era_locations.LOC. This does not invent a second one -- it names the two
 records to correct and asserts them against that table, so the two can never
 drift apart.
 
-Only these two entries and the stints carrying them are touched. Other
-franchise-era records disagree with LOC too (see the report this prints);
-they are deliberately left alone, because several of them would ADD a stop to
-a route that currently has none, which moves players in and out of the quiz
-pool and invalidates rendered clips. That is a separate decision.
+Every record here disagreed with LOC, and the stints carrying them are
+corrected with them. Five of the eight give a location to a stint that had
+none or had the wrong city, so a route gains or moves a stop -- which moves
+players through the quiz pool and can invalidate rendered clips. That is why
+each entry is written out with what it said and why, and why the pool is
+diffed before any of this is merged.
 
 Idempotent. Run:  python3 scripts/fix_shadow_locations.py [--apply]
 """
@@ -43,6 +44,21 @@ FIXING = {
                        "this 1961 team became, read off the Wizards' article",
     "Washington Bullets": "Washington, D.C — the city and country right, the "
                           "state written 'D.C' where every other stint says 'D.C.'",
+
+    # The same failure, six more times. Each is a franchise-era name whose
+    # record came from somewhere other than the era table: either the
+    # franchise's later home, or a discovery that stopped before the country.
+    "Kansas City Kings": "Sacramento, California — where the franchise plays "
+                         "NOW, forty years after it left Kansas City",
+    "New York Nets": "Uniondale, New York — one of the several arenas the "
+                     "team used; the era table names the city, not the arena",
+    "New Jersey Nets": "nothing at all — an empty record, so every stint "
+                       "carrying it had no place and never reached the map",
+    "Philadelphia Warriors": "nothing at all — the same empty record",
+    "Seattle SuperSonics": "Seattle with no state and no country, which is "
+                           "not enough to resolve to coordinates",
+    "Vancouver Grizzlies": "Vancouver with no state and no country — and two "
+                           "countries have a Vancouver",
 }
 
 
@@ -66,9 +82,13 @@ def main() -> int:
         city, state, country = LOC[team]
         entry = loc.get(team) or {}
         print(f"{team!r}")
-        print(f"    was  {entry.get('city')!r}, {entry.get('state')!r}, "
-              f"{entry.get('country')!r}   ({was})")
-        print(f"    now  {city!r}, {state!r}, {country!r}")
+        # The note says what the record originally held. Once applied the
+        # record reads correctly, so it is printed separately from the note
+        # rather than as "was", which would contradict itself on a re-run.
+        print(f"    originally  {was}")
+        print(f"    record      {entry.get('city')!r}, {entry.get('state')!r}, "
+              f"{entry.get('country')!r}")
+        print(f"    era table   {city!r}, {state!r}, {country!r}")
         for path, db in dbs:
             for p in db:
                 for s in p.get("career_history") or []:

@@ -305,6 +305,34 @@ def test_a_location_is_not_taken_from_an_article_about_something_else():
     print("test_a_location_is_not_taken_from_an_article_about_something_else PASS")
 
 
+def test_a_franchise_era_name_never_reaches_discovery():
+    """The guard the sports-club rule cannot be: the article is a real club.
+
+    Wikipedia answers "Chicago Packers" with the Washington Wizards, and the
+    extract is about a basketball team, so the sports-club guard passes it
+    happily and the 1961 Chicago team acquires a location in Washington. The
+    era table is consulted first, so the question is never asked.
+    """
+    import update_careers as uc
+
+    db = _db([])
+    for team, want in (("Chicago Packers", ("Chicago", "Illinois", "USA")),
+                       ("New Jersey Nets", ("East Rutherford", "New Jersey", "USA")),
+                       ("Vancouver Grizzlies", ("Vancouver", "British Columbia", "Canada"))):
+        got = db.locations.get(team) or {}
+        assert (got.get("city"), got.get("state"), got.get("country")) == want, (team, got)
+
+    # and enrich_stint takes the pinned record without asking anybody
+    class Exploding:
+        def get_extract(self, title):
+            raise AssertionError(f"discovery ran for {title!r}")
+
+    stint = {"team": "Chicago Packers"}
+    db.enrich_stint(stint, Exploding(), {})
+    assert stint["city"] == "Chicago" and stint["country"] == "USA", stint
+    print("test_a_franchise_era_name_never_reaches_discovery PASS")
+
+
 def test_an_ordinary_redirect_still_merges():
     """The guard must not cost the pipeline its reason for following redirects."""
     import update_careers as uc
@@ -334,5 +362,6 @@ if __name__ == "__main__":
     test_a_sons_own_article_is_not_said_to_belong_to_his_father()
     test_a_record_is_fetched_by_the_article_it_was_built_from()
     test_a_location_is_not_taken_from_an_article_about_something_else()
+    test_a_franchise_era_name_never_reaches_discovery()
     test_an_ordinary_redirect_still_merges()
     print("\nALL WRONG-ARTICLE GUARD TESTS PASS")
