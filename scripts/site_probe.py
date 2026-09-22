@@ -43,7 +43,7 @@ def probe(url: str, *, follow: bool) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     try:
         with opener.open(req, timeout=30) as resp:
-            body = resp.read(200_000).decode("utf-8", "replace")
+            body = resp.read(4_000_000).decode("utf-8", "replace")
             ctype = resp.headers.get("Content-Type", "")
             return {"url": url, "status": resp.status, "final": resp.geturl(),
                     "ctype": ctype,
@@ -54,15 +54,17 @@ def probe(url: str, *, follow: bool) -> dict:
                     "canonical": _one(r'rel=["\']canonical["\'][^>]*href=["\']([^"\']+)', body)
                                  or _one(r'href=["\']([^"\']+)["\'][^>]*rel=["\']canonical', body),
                     "og_url": _one(r'property=["\']og:url["\'][^>]*content=["\']([^"\']+)', body),
-                    "bytes": len(body)}
+                    "bytes": len(body),
+                    "hits": (body.count(globals().get("_NEEDLE") or "\0")
+                             if globals().get("_NEEDLE") else -1)}
     except urllib.error.HTTPError as exc:
         return {"url": url, "status": exc.code, "final": str(exc.reason),
                 "title": "", "canonical": "", "og_url": "", "bytes": 0,
-                "ctype": "", "head": ""}
+                "ctype": "", "head": "", "hits": -1}
     except Exception as exc:  # noqa: BLE001
         return {"url": url, "status": 0, "final": f"{type(exc).__name__}: {exc}",
                 "title": "", "canonical": "", "og_url": "", "bytes": 0,
-                "ctype": "", "head": ""}
+                "ctype": "", "head": "", "hits": -1}
 
 
 def _one(pattern: str, text: str) -> str:
@@ -71,7 +73,17 @@ def _one(pattern: str, text: str) -> str:
 
 
 def main() -> int:
-    urls = sys.argv[1:] or CANDIDATES
+    # `--contains WORD` searches the whole body rather than printing its head:
+    # "is this section in that sitemap at all" is not a question the first few
+    # lines of a 76KB file can answer.
+    needle = ""
+    argv = sys.argv[1:]
+    if "--contains" in argv:
+        i = argv.index("--contains")
+        needle = argv[i + 1]
+        argv = argv[:i] + argv[i + 2:]
+    urls = argv or CANDIDATES
+    globals()["_NEEDLE"] = needle
     for url in urls:
         hop = probe(url, follow=False)
         out = hop if hop["status"] == 200 else probe(url, follow=True)
@@ -84,6 +96,9 @@ def main() -> int:
             print(f"   canonical : {out['canonical'] or '(none)'}")
             print(f"   og:url    : {out['og_url'] or '(none)'}")
             print(f"   size      : {out['bytes']} bytes  [{out.get('ctype','')}]")
+            if out.get("hits", -1) >= 0:
+                print(f"   contains  : {out['hits']} occurrence(s) of "
+                      f"{globals().get('_NEEDLE')!r}")
             if out.get("head"):
                 # robots.txt and sitemaps say what they say; print it rather
                 # than infer indexability from a byte count
