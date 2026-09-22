@@ -18,6 +18,7 @@ import quiz_clips as q  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DB = json.loads((ROOT / "data" / "players" / "nba_players_careers.json")
                 .read_text(encoding="utf-8"))
+COORDS = oc.Coords()
 
 
 def test_no_reveal_before_the_end():
@@ -322,97 +323,132 @@ def test_plane_points_where_it_is_going():
     print("test_plane_points_where_it_is_going PASS")
 
 
-def test_every_photo_source_fills_the_panel_the_same():
-    """The subject has to end up the same size whatever the source was.
+def test_a_cutout_stands_on_the_card_and_a_photograph_gets_a_ring():
+    """Two sources, two treatments, and the reason is transparency.
 
-    An official NBA "face" crop is a 256x256 PNG whose cut-out subject occupies
-    about 111x152 of it, the rest transparent; a Commons photo is an opaque
-    square. Cover-cropping to the IMAGE bounds made the first fill 43% of the
-    panel width and the second 100%, which is what showed as a small headshot
-    in a big panel. Both are measured here from the rendered panel.
-    """
-    from PIL import Image
-
-    SIZE = 252
-    SUBJECT = (210, 120, 60)
-
-    def subject_box(panel):
-        px = panel.load()
-        hits = [(x, y) for y in range(SIZE) for x in range(SIZE)
-                if abs(px[x, y][0] - SUBJECT[0]) < 40
-                and abs(px[x, y][2] - SUBJECT[2]) < 40]
-        assert hits, "the subject never got drawn"
-        xs = [x for x, _ in hits]
-        ys = [y for _, y in hits]
-        return min(xs), min(ys), max(xs), max(ys)
-
-    # a cut-out with the real NBA geometry: mostly transparent padding
-    cut = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
-    cut.paste(SUBJECT + (255,), (71, 52, 71 + 111, 52 + 152))
-    # and an opaque photo that already fills its own frame
-    photo = Image.new("RGBA", (512, 512), SUBJECT + (255,))
-
-    # A cut-out is inset by PORTRAIT_PAD on each side so the head is not flush
-    # against the frame; an opaque photo has no margin of its own to give, so
-    # it fills edge to edge. That is the whole of the allowed difference, and
-    # it is derived from the constant rather than guessed at.
-    inset = 1.0 / (1.0 + 2 * oc.PORTRAIT_PAD)
-    boxes = {}
-    for label, src in (("cut-out", cut), ("photo", photo)):
-        x0, y0, x1, y1 = subject_box(q._portrait(src, SIZE))
-        boxes[label] = (x1 - x0 + 1, y1 - y0 + 1)
-        assert boxes[label][0] >= SIZE * inset * 0.97, \
-            f"{label}: subject spans {boxes[label][0]}px of {SIZE}"
-        if label == "cut-out":
-            # The head bias must leave the top of the subject in frame. An
-            # opaque photo is its own subject edge to edge, so it has no
-            # headroom to check.
-            assert y0 > 0, "the head bias cropped into the top of the subject"
-            assert y0 < SIZE * 0.12, f"too much dead space above ({y0}px)"
-    wide = max(b[0] for b in boxes.values())
-    narrow = min(b[0] for b in boxes.values())
-    assert wide - narrow <= SIZE * (1 - inset) + 2, \
-        f"sources fill differently: {boxes}"
-
-    # the drawn mark has to carry comparable weight, not sit small in the frame
-    mark = q._portrait(None, SIZE)
-    px = mark.load()
-    ink = [(x, y) for y in range(SIZE) for x in range(SIZE)
-           if px[x, y] == q.MAP_COAST]
-    assert ink, "the mark never got drawn"
-    span = max(x for x, _ in ink) - min(x for x, _ in ink) + 1
-    assert span >= SIZE * 0.7, f"the mark spans only {span}px of {SIZE}"
-    print(f"test_every_photo_source_fills_the_panel_the_same PASS "
-          f"({boxes}, mark {span}px)")
-
-
-def test_portrait_never_falls_back_to_a_black_hole():
-    """Headshots are RGBA with a transparent background.
-
-    convert("RGB") would flatten that alpha onto black and punch a hole in the
-    card, so the compositing is checked at the corners; and a player with no
-    headshot has to get the drawn mark, not an empty square.
+    An official headshot is a subject on nothing, so it is rendered as a
+    cut-out standing on the rule: no photo box, nothing behind it but the card.
+    A Commons photograph is opaque to its own edges, so the same treatment
+    would paste a rectangle of somebody's back garden onto the card -- it gets
+    a circular crop and a gradient ring instead.
     """
     from PIL import Image, ImageDraw
 
-    # A ring, so transparent pixels survive the crop to the content box and
-    # land inside the panel where they can be inspected.
-    shot = Image.new("RGBA", (200, 260), (0, 0, 0, 0))
-    ImageDraw.Draw(shot).ellipse([40, 60, 160, 180], fill=(240, 120, 40, 255))
-    ImageDraw.Draw(shot).ellipse([75, 95, 125, 145], fill=(0, 0, 0, 0))
-    have = q._portrait(shot, 120)
-    hole = have.getpixel((60, 60))
-    assert sum(hole) > 90, f"transparent pixel went black: {hole}"
-    lo = [min(a, b) for a, b in zip(q.CARD, q.CARD_EDGE)]
-    hi = [max(a, b) for a, b in zip(q.CARD, q.CARD_EDGE)]
-    assert all(l - 2 <= c <= h + 2 for c, l, h in zip(hole, lo, hi)), \
-        f"transparent pixel is not the tile colour: {hole}"
+    cut = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+    ImageDraw.Draw(cut).ellipse([69, 51, 190, 204], fill=(210, 120, 60, 255))
+    photo = Image.new("RGBA", (512, 512), (210, 120, 60, 255))
+    assert q._is_cutout(cut), "a transparent cut-out was read as a photograph"
+    assert not q._is_cutout(photo), "an opaque photo was read as a cut-out"
+    assert not q._is_cutout(None)
 
-    none = q._portrait(None, 120)
-    assert none.size == (120, 120)
-    assert len(none.getcolors(maxcolors=4096) or []) > 1, \
-        "no-headshot players get a blank square"
-    print("test_portrait_never_falls_back_to_a_black_hole PASS")
+    _rings, _pts, stints, _box = _setup()
+    im_cut = q.build_reveal("Someone", cut, stints, "2001–2010")
+    im_pic = q.build_reveal("Someone", photo, stints, "2001–2010")
+
+    def subject_rows(im, x):
+        px = im.load()
+        return [y for y in range(q.H)
+                if abs(px[x, y][0] - 210) < 45 and abs(px[x, y][2] - 60) < 45]
+
+    # the cut-out reaches the rule it stands on, and its own bottom edge is
+    # faded rather than ending on a hard line
+    col = q.REVEAL_X0 + 30 + q.PORTRAIT_W // 2
+    rows = subject_rows(im_cut, col)
+    assert rows, "the cut-out never got drawn"
+    rule_y = (178 + 30) + 252 + 46 - 30
+    assert min(rows) > 178, "the cut-out escaped the top of the panel"
+    assert max(rows) - min(rows) > 180, "the head is not filling the height"
+    # It reaches the rule, but the last rows are faded into the card rather
+    # than ending on a hard edge -- so the full-strength colour stops short
+    # while SOMETHING is still there right down at the rule.
+    assert max(rows) >= rule_y - 60, \
+        f"the cut-out floats {rule_y - max(rows)}px above the rule"
+    near = im_cut.load()[col, rule_y - 6]
+    assert near != q.CARD, "nothing reaches the rule at all"
+    assert abs(near[0] - 210) > 8, "the bottom edge was not faded"
+
+    # the photograph is round: its widest row is well inside the column
+    rows_pic = subject_rows(im_pic, col)
+    assert rows_pic, "the photo never got drawn"
+    px = im_pic.load()
+    mid = (min(rows_pic) + max(rows_pic)) // 2
+    span_mid = [x for x in range(q.REVEAL_X0, q.REVEAL_X0 + 320)
+                if abs(px[x, mid][0] - 210) < 45]
+    span_top = [x for x in range(q.REVEAL_X0, q.REVEAL_X0 + 320)
+                if abs(px[x, min(rows_pic) + 6][0] - 210) < 45]
+    assert len(span_mid) > len(span_top) + 20, \
+        "the photo is square, not circular"
+    print("test_a_cutout_stands_on_the_card_and_a_photograph_gets_a_ring PASS")
+
+
+def test_no_photo_means_no_portrait_slot():
+    """A generic silhouette says nothing; the name is worth the room.
+
+    Measured as the reader would see it: where the name starts. With a picture
+    it begins a portrait's width in; without one it begins at the margin.
+    """
+    from PIL import Image, ImageDraw
+
+    cut = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+    ImageDraw.Draw(cut).ellipse([69, 51, 190, 204], fill=(210, 120, 60, 255))
+    _rings, _pts, stints, _box = _setup()
+
+    def name_starts_at(im, y):
+        px = im.load()
+        ink = [x for x in range(q.REVEAL_X0, q.REVEAL_X1)
+               for yy in range(y - 40, y + 40)
+               if px[x, yy] == q.TEXT]
+        assert ink, "the name never got drawn"
+        return min(ink)
+
+    bare = name_starts_at(q.build_reveal("Someone", None, stints, ""), 309)
+    shot = name_starts_at(q.build_reveal("Someone", cut, stints, ""), 282)
+    assert bare < q.REVEAL_X0 + 80, f"the name starts {bare}px in"
+    assert shot >= q.REVEAL_X0 + 30 + q.PORTRAIT_W, \
+        f"the name overlaps the portrait ({shot}px)"
+    assert shot - bare > 200, "the name did not take the vacated room"
+    print(f"test_no_photo_means_no_portrait_slot PASS "
+          f"(name at x={bare} without a photo, x={shot} with one)")
+
+
+def test_the_longest_career_in_the_pool_fits_on_screen():
+    """Every stop visible, for every player a batch can pick.
+
+    Not Dorell Wright alone: the whole eligible pool, at its longest. The rows
+    divide the room so the list always fits by construction -- what can fail is
+    the TYPE, if a route ever gets long enough to squeeze club names below the
+    floor. That is the point at which this needs two columns, and this is what
+    will say so.
+    """
+    longest = 0
+    for p in q.candidates(DB, COORDS):
+        longest = max(longest, len(q.route(p, COORDS)))
+    assert longest >= 12, f"pool tops out at {longest} stops -- is this right?"
+
+    for n in range(1, longest + 1):
+        for foot in (0, 40):
+            avail = q.H - q.BOTTOM_SAFE - foot - q.LIST_TOP
+            row = min(q.ROW_MAX, avail / n)
+            size = int(min(q.NAME_MAX, row * 0.46))
+            bottom = q.LIST_TOP + row * n
+            assert bottom <= q.H - q.BOTTOM_SAFE - foot + 0.5, \
+                f"{n} stops run {bottom - (q.H - q.BOTTOM_SAFE)}px past the line"
+            assert bottom <= q.H - 100, f"{n} stops reach the frame edge"
+            assert size >= q.NAME_MIN, \
+                f"{n} stops squeeze the club names to {size}px"
+
+    # and rendered, at the longest: the last club is drawn where it is claimed
+    worst = max(q.candidates(DB, COORDS), key=lambda p: len(q.route(p, COORDS)))
+    stints = [s for s, _ in q.route(worst, COORDS)]
+    im = q.build_reveal("Someone", None, stints, "2001–2010")
+    px = im.load()
+    rows = [y for y in range(q.LIST_TOP, q.H)
+            if any(px[x, y] == q.TEXT for x in range(140, q.REVEAL_X1))]
+    assert rows, "the list never got drawn"
+    assert max(rows) <= q.H - q.BOTTOM_SAFE, \
+        f"club names reach y={max(rows)} of {q.H}"
+    print(f"test_the_longest_career_in_the_pool_fits_on_screen PASS "
+          f"({longest} stops, last row ends at y={max(rows)})")
 
 
 def test_clip_length_lands_in_the_target_window():
@@ -483,8 +519,9 @@ if __name__ == "__main__":
     test_camera_zooms_out_for_long_legs()
     test_camera_motion_is_smooth()
     test_plane_points_where_it_is_going()
-    test_every_photo_source_fills_the_panel_the_same()
-    test_portrait_never_falls_back_to_a_black_hole()
+    test_a_cutout_stands_on_the_card_and_a_photograph_gets_a_ring()
+    test_no_photo_means_no_portrait_slot()
+    test_the_longest_career_in_the_pool_fits_on_screen()
     test_clip_length_lands_in_the_target_window()
     test_selection_rule()
     test_route_collapses_repeat_clubs()

@@ -54,7 +54,7 @@ from prerender import slug  # noqa: E402
 from rosters import NBA_TEAMS  # noqa: E402
 
 try:
-    from PIL import Image, ImageDraw, ImageFont
+    from PIL import Image, ImageChops, ImageDraw, ImageFont
 except ImportError:
     Image = None
 
@@ -704,31 +704,84 @@ def draw_caption(im, *, landed, total, club, place, thinking=False, left=None):
                anchor="lm")
 
 
-def _portrait(face, size: int):
-    """The portrait square: a real photo when there is one, else a mark.
+def _is_cutout(face) -> bool:
+    """Is this a subject on nothing, the way an NBA headshot is?
 
-    The fitting itself lives in og_cards.cover_square, which the site's own
-    cards use too -- one rule for what "fills the frame" means, rather than two
-    that drift.
+    The official PNGs are cut out: the player, and transparency everywhere
+    else. A Commons photograph is a rectangle of pixels all the way to its
+    edges. The first can stand on the card as if it belonged there; the second
+    needs a frame, or its background reads as a photo pasted on.
     """
-    # A subtle lit tile rather than flat card colour. Only visible where the
-    # image is transparent, which is exactly the case that used to read as a
-    # hole: an NBA cut-out has no background of its own, so next to an opaque
-    # Commons photo its corners looked like missing image rather than a tile.
-    base = _gradient((size, size), CARD_EDGE, CARD)
-    if face is None:
-        # Drawn to the same weight a photo lands at, so the three sources read
-        # as one treatment rather than one of them looking undersized.
-        d = ImageDraw.Draw(base)
-        hr = size * 0.235
-        hx, hy = size / 2, size * 0.30
-        d.ellipse([hx - hr, hy - hr, hx + hr, hy + hr], fill=MAP_COAST)
-        br = size * 0.42
-        d.ellipse([hx - br, size * 0.58, hx + br, size * 1.45], fill=MAP_COAST)
-        return base
+    if face is None or face.mode != "RGBA":
+        return False
+    alpha = face.getchannel("A")
+    box = alpha.getbbox()
+    if box is None:
+        return False
+    w, h = box[2] - box[0], box[3] - box[1]
+    if w < 16 or h < 16:
+        return False
+    hist = alpha.histogram()
+    clear = sum(hist[:16]) / float(face.width * face.height)
+    # a photograph has no transparent margin at all; a cut-out is mostly margin
+    return clear >= 0.10
+
+
+def _draw_cutout(im, face, box):
+    """Stand the cut-out on the floor of `box`, as tall as it will fit.
+
+    Bottom-anchored on purpose: the shoulders meet the rule under the portrait
+    instead of being sliced off by the edge of a photo box, and the head gets
+    the height. Horizontally centred within the column.
+    """
+    x0, y0, x1, y1 = (int(v) for v in box)
+    sub = face.crop(oc.content_box(face))
+    bw, bh = x1 - x0, y1 - y0
+    scale = min(bh / sub.height, bw / sub.width)
+    w = max(1, int(sub.width * scale))
+    h = max(1, int(sub.height * scale))
+    sub = sub.resize((w, h), Image.LANCZOS)
+    sub.putalpha(_fade_bottom(sub.getchannel("A"), int(h * 0.14)))
+    im.paste(sub, (x0 + (bw - w) // 2, y1 - h), sub)
+
+
+def _fade_bottom(alpha, depth: int):
+    """Dissolve the last few rows of a cut-out into whatever is behind it.
+
+    The published headshots are face crops: they end at the neck, because
+    that is where the crop ends, not because the player does. Anchored on the
+    rule that hard edge reads as a slice, so it is faded out instead.
+    """
+    w, h = alpha.size
+    depth = max(1, min(depth, h))
+    ramp = Image.new("L", (1, depth))
+    ramp.putdata([int(255 * (1 - i / max(1, depth - 1))) for i in range(depth)])
+    ramp = ramp.resize((w, depth))
+    tail = ImageChops.multiply(alpha.crop((0, h - depth, w, h)), ramp)
+    alpha.paste(tail, (0, h - depth))
+    return alpha
+
+
+def _draw_ringed_circle(im, face, center, size: int):
+    """The fallback: a circular crop with the card's own gradient as its ring.
+
+    For a photograph, or for a cut-out that does not look like one. The crop
+    rule is og_cards.cover_square, the same one the site's cards use.
+    """
+    cx, cy = center
+    x, y = int(cx - size / 2), int(cy - size / 2)
     cut = oc.cover_square(face, size)
-    base.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
-    return base
+    tile = Image.new("RGB", (size, size), CARD)
+    tile.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).ellipse([0, 0, size - 1, size - 1], fill=255)
+    im.paste(tile, (x, y), mask)
+    ring = Image.new("L", (size, size), 0)
+    rd = ImageDraw.Draw(ring)
+    rd.ellipse([0, 0, size - 1, size - 1], fill=255)
+    rd.ellipse([3, 3, size - 4, size - 4], fill=0)
+    im.paste(_gradient((size, size), ACCENT_A, ACCENT_B, horizontal=True),
+             (x, y), ring)
 
 
 # --- full-screen reveal ------------------------------------------------------
@@ -791,6 +844,18 @@ def _grad_pill(im, xy, text, *, size=34, pad=(24, 10)):
 REVEAL_X0, REVEAL_X1 = 40, W - 40
 REVEAL_W = REVEAL_X1 - REVEAL_X0
 
+# The club list. Vertical video has its bottom edge covered by player chrome
+# on every platform this gets posted to, so the list stops well short of it
+# rather than ending flush against the frame -- which is what put the last
+# stop of a long career half under the UI.
+LIST_TOP = 700
+BOTTOM_SAFE = 140
+# A six-stop career gets taller rows and bigger type rather than a short list
+# marooned at the top of the screen; a fourteen-stop one divides the room.
+ROW_MAX = 132.0
+NAME_MAX, NAME_MIN = 50, 28
+PORTRAIT_W = 252
+
 
 _DISAMBIG = re.compile(r"\s*\([^()]*\)\s*$")
 
@@ -829,23 +894,35 @@ def build_reveal(name, face, stints, span, *, credit=""):
     _grad_edge(im, [REVEAL_X0, hy0, REVEAL_X1, hy1], CARD_R, width=3)
     d = ImageDraw.Draw(im)
 
-    pt = 252
-    px, py = REVEAL_X0 + 30, hy0 + 30
-    im.paste(_portrait(face, pt), (px, py), _round_mask((pt, pt), 34))
-    d = ImageDraw.Draw(im)
-    d.rounded_rectangle([px, py, px + pt, py + pt], radius=34,
-                        outline=CARD_EDGE, width=3)
-
-    nx = px + pt + 34
+    # The portrait, when there is one. A cut-out stands on the rule above the
+    # scoreboard, which is what makes it part of the card rather than a photo
+    # dropped into a box with the shoulders sliced off. No picture means no
+    # portrait column at all: a generic silhouette says nothing, and the name
+    # is better for the room.
+    py = hy0 + 30
+    sy = py + 252 + 46            # the scoreboard row, unchanged
+    rule_y = sy - 30              # the line it stands on
+    px = REVEAL_X0 + 30
+    if face is not None:
+        if _is_cutout(face):
+            _draw_cutout(im, face, (px, hy0 + 14, px + PORTRAIT_W, rule_y - 2))
+        else:
+            _draw_ringed_circle(im, face,
+                                (px + PORTRAIT_W / 2, (py + rule_y) / 2), 236)
+        d = ImageDraw.Draw(im)
+        nx, drop = px + PORTRAIT_W + 34, 0
+    else:
+        # Without a portrait the name has the panel to itself, so it sits in
+        # the middle of it rather than keeping the height a picture vacated.
+        nx, drop = REVEAL_X0 + 44, 27
     nw = REVEAL_X1 - 34 - nx
     f_name = _fit(d, name, "Bold", 82, nw)
-    d.text((nx, py + 74), name, font=f_name, fill=TEXT, anchor="lm")
+    d.text((nx, py + 74 + drop), name, font=f_name, fill=TEXT, anchor="lm")
     if span:
-        _grad_pill(im, (nx, py + 118), span, size=32)
+        _grad_pill(im, (nx, py + 118 + drop), span, size=32)
         d = ImageDraw.Draw(im)
 
     # counts as a scoreboard rather than three identical boxes
-    sy = py + pt + 46
     d.line([REVEAL_X0 + 40, sy - 30, REVEAL_X1 - 40, sy - 30], fill=CARD_EDGE,
            width=2)
     cols = [(len(stints), "STOPS"), (len({c for c in countries if c}),
@@ -880,10 +957,17 @@ def build_reveal(name, face, stints, span, *, credit=""):
         f_cr = _fit(d, credit, "Regular", 20, REVEAL_W - 8)
         d.text((REVEAL_X0 + 4, H - 34), credit, font=f_cr, fill=MUTED,
                anchor="lm")
-    ly0, ly1 = 700, H - 56 - foot
+    # Fit by construction: the rows divide the room that is left, so every
+    # stop is on screen whatever the career length. The floor is on the TYPE,
+    # not on the row -- if a route ever gets long enough to push the club names
+    # under NAME_MIN, that is the point at which this needs two columns, and
+    # the test that walks the whole pool is what will say so.
+    ly0, ly1 = LIST_TOP, H - BOTTOM_SAFE - foot
     n = max(1, len(stints))
-    row = min(104.0, (ly1 - ly0) / n)
-    top = ly0 + max(0.0, ((ly1 - ly0) - row * n) / 2)
+    row = min(ROW_MAX, (ly1 - ly0) / n)
+    # Top-aligned, not centred: a short career used to float a long way below
+    # its own heading while the room went to a gap nobody asked for.
+    top = ly0
 
     # the spine: the route, redrawn as a timeline
     spine_x = REVEAL_X0 + 26
@@ -893,7 +977,7 @@ def build_reveal(name, face, stints, span, *, credit=""):
         im.paste(strip, (spine_x - 3, int(y_a)))
         d = ImageDraw.Draw(im)
 
-    name_size = int(min(46, row * 0.46))
+    name_size = max(NAME_MIN, int(min(NAME_MAX, row * 0.46)))
     for i, st in enumerate(stints):
         cy = top + row * (i + 0.5)
         r = 11 if i in (0, n - 1) else 8
