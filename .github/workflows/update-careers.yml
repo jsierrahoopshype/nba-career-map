@@ -105,7 +105,16 @@ jobs:
           fi
           MSG="$(cat logs/last_commit_message.txt 2>/dev/null || echo 'Auto-update career database')"
           git commit -m "$MSG"
+          # Same as the audit workflow: a push that never lands is a failed
+          # run, not a quiet one.
+          pushed=
           for i in 1 2 3 4; do
-            if git push; then break; fi
-            echo "push failed, retry $i"; sleep $((2 ** i))
+            if git push; then pushed=yes; break; fi
+            echo "push failed, retry $i"
+            git pull --rebase origin "${{ github.ref_name }}" || true
+            sleep $((2 ** i))
           done
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push the update"
+            exit 1
+          fi
