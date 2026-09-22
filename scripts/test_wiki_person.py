@@ -347,12 +347,24 @@ def test_a_place_is_not_taken_from_an_article_the_name_redirected_away_to():
     import wikipedia_api
 
     db = _db([])
-    titles = {"Chicago Packers": "Washington Wizards", "Cantù": "Cantù"}
+    titles = {"Chicago Packers": "Washington Wizards",
+              "Anaheim Arsenal": "Grand Rapids Gold",
+              "Cantù": "Cantù",
+              # a sponsor prefix falling away, and a club that moved city
+              # keeping its name: both still about the club asked for
+              "Acqua S.Bernardo Cantù": "Pallacanestro Cantù",
+              "Aisin Seahorses": "SeaHorses Mikawa"}
     club = ("Pallacanestro Cantù is an Italian professional basketball club "
             "based in Cantù, Lombardy.")
+    horses = ("The SeaHorses Mikawa are a Japanese professional basketball "
+              "club based in Kariya, Aichi.")
     wizards = ("The Washington Wizards are an American professional "
                "basketball team based in Washington, D.C.")
-    extracts = {"Chicago Packers": wizards, "Cantù": club}
+    gold = ("The Grand Rapids Gold are an American professional basketball "
+            "team based in Grand Rapids, Michigan.")
+    extracts = {"Chicago Packers": wizards, "Anaheim Arsenal": gold,
+                "Cantù": club, "Acqua S.Bernardo Cantù": club,
+                "Aisin Seahorses": horses}
     wikipedia_api.WikipediaClient.resolve_title = lambda self, t: titles.get(t)
     wikipedia_api.WikipediaClient.get_extract = lambda self, t: extracts.get(t, "")
     client = wikipedia_api.WikipediaClient(delay=0, max_requests=10)
@@ -362,10 +374,25 @@ def test_a_place_is_not_taken_from_an_article_the_name_redirected_away_to():
     assert got == {"city": "", "state": "", "country": ""}, got
     assert uc.REFUSED_PLACE and "redirected" in uc.REFUSED_PLACE[0]["reason"]
 
+    # the same failure in the G League, where the article is equally real
+    uc.REFUSED_PLACE.clear()
+    assert db._discover_location("Anaheim Arsenal", client) == {
+        "city": "", "state": "", "country": ""}
+    assert uc.REFUSED_PLACE, "a relocated franchise's successor was accepted"
+
     uc.REFUSED_PLACE.clear()
     got = db._discover_location("Cantù", client)
     assert got["city"] == "Cantù", got
     assert not uc.REFUSED_PLACE, "a name that reached its own article was refused"
+
+    # A redirect that keeps a word naming the club is the club, and refusing
+    # it would cost 718 of the locations we already hold.
+    for name, city in (("Acqua S.Bernardo Cantù", "Cantù"),
+                       ("Aisin Seahorses", "Kariya")):
+        uc.REFUSED_PLACE.clear()
+        got = db._discover_location(name, client)
+        assert got["city"] == city, (name, got)
+        assert not uc.REFUSED_PLACE, f"{name} was refused for keeping its name"
 
     # A lookup that cannot answer must not refuse: a guard that fails closed
     # on a network error stops discovery altogether.

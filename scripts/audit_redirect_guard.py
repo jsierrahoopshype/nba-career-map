@@ -1,15 +1,15 @@
 """What the redirect guard would cost, measured against the locations we have.
 
-_discover_location now refuses an article whose title redirected away from the
-name requested. That is what would have stopped "Chicago Packers" taking the
-Washington Wizards' city. It is also the strictest guard in the pipeline, and
-a club whose short name redirects to its full name -- "Cantù" to
-"Pallacanestro Cantù" -- is refused along with the wrong ones, because nothing
-in the two titles tells those cases apart.
+_discover_location refuses an article whose title redirected away from the
+name requested, unless the title it landed on still keeps a word that names
+the club. That is what stops "Chicago Packers" taking the Washington Wizards'
+city while letting "Acqua S.Bernardo Cantù" reach "Pallacanestro Cantù".
 
-So before it runs anywhere, ask the question the other way round: of the club
-locations we ALREADY have and rely on, how many would this guard refuse if
-they were being discovered today? That number is the cost.
+This asks the question the other way round: of the club locations we ALREADY
+have and rely on, how many would the guard refuse if they were being
+discovered today? That number is the cost. It reports the strict
+title-equality rule alongside it, because the gap between the two is the
+whole argument for the shared-word tolerance.
 
 Read-only. Run:  python3 scripts/audit_redirect_guard.py [--limit N]
 """
@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -26,14 +25,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from update_careers import same_article  # noqa: E402
 from wikipedia_api import WikipediaClient  # noqa: E402
 from team_normalizer import strip_diacritics  # noqa: E402
-
-# Words that say what kind of thing a club is, not which club it is. A shared
-# "BC" or "basketball" means nothing; a shared "Cantu" or "Seahorses" is the
-# club's identity surviving a rename.
-GENERIC = {"bc", "kk", "cb", "fc", "sc", "ac", "as", "bk", "cd", "ca", "sk",
-           "club", "basket", "basketball", "baloncesto", "pallacanestro",
-           "sports", "sport", "society", "association", "team", "nba", "league",
-           "spor", "kulubu", "the", "de", "of"}
 
 ROOT = Path(__file__).resolve().parent.parent
 LOCATIONS = ROOT / "data" / "teams" / "team_locations.json"
@@ -52,26 +43,14 @@ def looks_like_the_same_club(team: str, title: str) -> bool:
     return a in b or b in a
 
 
-def _words(name: str) -> set:
-    s = re.sub(r"\(.*?\)", " ", strip_diacritics(name or "").casefold())
-    return {w for w in re.split(r"[^a-z0-9]+", s)
-            if len(w) > 2 and w not in GENERIC}
+def titles_equal(team: str, title: str) -> bool:
+    """The strict rule the guard used to be: same title or nothing.
 
-
-def shares_a_word(team: str, title: str) -> bool:
-    """Would a shared-word tolerance let this redirect through?
-
-    The strict rule refuses every redirect, and most redirects in this data
-    are a sponsor name or a short name reaching the club's own article --
-    "Acqua S.Bernardo Cantu" to "Pallacanestro Cantu", "Aisin Seahorses" to
-    "SeaHorses Mikawa". Those keep a word that names the club. The failures we
-    care about do not: "Chicago Packers" and "Washington Wizards" have nothing
-    in common, and neither do "Anaheim Arsenal" and "Grand Rapids Gold".
-
-    Measured here, not enforced: the number it produces is what should decide
-    whether the guard is narrowed to it.
+    Kept only to report what the shared-word tolerance saved.
     """
-    return bool(_words(team) & _words(title))
+    a = (team or "").replace("_", " ").strip()
+    b = (title or "").replace("_", " ").strip()
+    return bool(b) and (a == b or a[:1].upper() + a[1:] == b[:1].upper() + b[1:])
 
 
 def main() -> int:
@@ -91,59 +70,52 @@ def main() -> int:
     client = WikipediaClient(delay=args.delay, max_requests=args.max_requests)
     resolved = client.resolve_titles(teams)
 
-    no_article, kept, refused = [], [], []
+    no_article, kept, refused, strict_only = [], [], [], []
     for team in teams:
         title = resolved.get(team)
         if title is None:
             no_article.append(team)
-        elif same_article(team, title):
-            kept.append(team)
+            continue
+        row = {"team": team, "resolves_to": title,
+               "same_club": looks_like_the_same_club(team, title),
+               "city": loc[team].get("city", ""),
+               "country": loc[team].get("country", "")}
+        if not same_article(team, title):
+            refused.append(row)
         else:
-            refused.append({"team": team, "resolves_to": title,
-                            "same_club": looks_like_the_same_club(team, title),
-                            "city": loc[team].get("city", ""),
-                            "country": loc[team].get("country", "")})
-
-    fuller = [r for r in refused if r["same_club"]]
-    other = [r for r in refused if not r["same_club"]]
+            kept.append(team)
+            # kept by the shared-word tolerance, and only by it
+            if not titles_equal(team, title):
+                strict_only.append(row)
 
     print(f"{len(teams)} club location(s) that carry a place\n")
     print(f"   no article under that name : {len(no_article):4}"
           f"   (the guard never sees these)")
-    print(f"   reaches its own article    : {len(kept):4}   kept")
-    print(f"   redirects elsewhere        : {len(refused):4}   REFUSED")
-    print(f"       ... to a fuller form of the same name : {len(fuller):4}")
-    print(f"       ... to a different name entirely      : {len(other):4}")
+    print(f"   kept                       : {len(kept):4}")
+    print(f"       of which, kept only because a word survived the redirect:"
+          f" {len(strict_only)}")
+    print(f"   REFUSED                    : {len(refused):4}")
+    print(f"   (strict title equality would have refused "
+          f"{len(refused) + len(strict_only)})")
 
-    narrowed = [r for r in refused if not shares_a_word(r["team"], r["resolves_to"])]
-    print(f"\n   a shared-word tolerance would refuse : {len(narrowed):4}"
-          f"   instead of {len(refused)}")
-    print("\nwhat a shared-word tolerance would still refuse, sample:")
-    for r in narrowed[:30]:
-        print(f"   {r['team']!r:30} -> {r['resolves_to']!r:40} "
+    print("\nrefused, sample:")
+    for r in refused[:30]:
+        print(f"   {r['team']!r:32} -> {r['resolves_to']!r:44} "
               f"({r['city']}, {r['country']})")
-    if len(narrowed) > 30:
-        print(f"   ... and {len(narrowed) - 30} more")
+    if len(refused) > 30:
+        print(f"   ... and {len(refused) - 30} more")
 
-    print("\nrefused, redirecting to a fuller form of the same name:")
-    for r in fuller[:20]:
-        print(f"   {r['team']!r:30} -> {r['resolves_to']!r:44} "
+    print("\nkept only by the shared-word tolerance, sample:")
+    for r in strict_only[:15]:
+        print(f"   {r['team']!r:32} -> {r['resolves_to']!r:44} "
               f"({r['city']}, {r['country']})")
-    if len(fuller) > 20:
-        print(f"   ... and {len(fuller) - 20} more")
+    if len(strict_only) > 15:
+        print(f"   ... and {len(strict_only) - 15} more")
 
-    print("\nrefused, redirecting to a different name entirely:")
-    for r in other[:30]:
-        print(f"   {r['team']!r:30} -> {r['resolves_to']!r:44} "
-              f"({r['city']}, {r['country']})")
-    if len(other) > 30:
-        print(f"   ... and {len(other) - 30} more")
-
-    for r in refused:
-        r["shares_a_word"] = shares_a_word(r["team"], r["resolves_to"])
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"checked": len(teams), "no_article": no_article,
-                               "kept": len(kept), "refused": refused},
+                               "kept": len(kept), "refused": refused,
+                               "kept_by_shared_word": strict_only},
                               indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
     print(f"\nwrote {OUT.relative_to(ROOT)}  ({client.requests_made} requests)")

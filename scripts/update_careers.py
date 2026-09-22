@@ -52,7 +52,7 @@ import stint_order
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import (TeamNormalizer, edit_distance,
                              is_spelling_variant, rename_containment,
-                             spelling_key, spelling_tokens)
+                             spelling_key, spelling_tokens, strip_diacritics)
 from wiki_parser import parse_player
 from rosters import fetch_all_rosters, NBA_TEAMS
 from era_correct_teams import ERA_TABLE
@@ -300,16 +300,46 @@ def _resolve_quietly(team: str, client: WikipediaClient) -> str | None:
         return None
 
 
-def same_article(requested: str, resolved: str | None) -> bool:
-    """True when a club name reached the article it asked for.
+# Words that say what KIND of thing a club is, not WHICH club it is. A shared
+# "BC" or "basketball" means nothing; a shared "Cantù" or "Seahorses" is the
+# club's identity surviving a rename.
+GENERIC_CLUB_WORDS = {
+    "bc", "kk", "cb", "fc", "sc", "ac", "as", "bk", "cd", "ca", "sk", "bbc",
+    "club", "basket", "basketball", "baloncesto", "pallacanestro", "basquete",
+    "sports", "sport", "society", "association", "team", "nba", "league",
+    "spor", "kulubu", "the", "de", "of", "and",
+}
 
-    Tolerates the rewriting Wikipedia does to every title -- underscores,
-    leading case, whitespace -- and nothing else. In particular it does NOT
-    tolerate a club's short name reaching its full name: "Cantù" reaching
-    "Pallacanestro Cantù" is the same club, but "Chicago Packers" reaching
-    "Washington Wizards" is not, and nothing in the two titles distinguishes
-    those cases. Both are refused; a club refused this way keeps its blank
-    field and goes to review, where a person can settle it.
+
+def significant_words(name: str) -> set:
+    """The words in a club name that identify the club, diacritics folded."""
+    s = re.sub(r"\(.*?\)", " ", strip_diacritics(name or "").casefold())
+    return {w for w in re.split(r"[^a-z0-9]+", s)
+            if len(w) > 2 and w not in GENERIC_CLUB_WORDS}
+
+
+def same_article(requested: str, resolved: str | None) -> bool:
+    """True when a club name reached an article that is still about that club.
+
+    Two things count as reaching it. The title is the one asked for, allowing
+    for the rewriting Wikipedia does to every title -- underscores, leading
+    case, whitespace. Or the title it redirected to keeps a word that NAMES
+    the club: "Acqua S.Bernardo Cantù" reaching "Pallacanestro Cantù" is a
+    sponsor prefix falling away, and "Aisin Seahorses" reaching "SeaHorses
+    Mikawa" is a club that moved city keeping its name.
+
+    What that leaves refused is the failure this guard exists for: a defunct
+    club's name redirecting to its successor, which shares nothing with it.
+    "Chicago Packers" reaches "Washington Wizards"; "Anaheim Arsenal" reaches
+    "Grand Rapids Gold"; "Asheville Altitude" reaches "Oklahoma City Blue".
+    Each of those articles is about a real basketball team in a real city, so
+    the sports-club guard passes them and only the title objects.
+
+    Requiring the titles to match outright instead would refuse 990 of the
+    2,254 club locations we already hold, against 272 for this rule -- and
+    almost all of those 718 are a sponsor or short name reaching its own club.
+    A club refused here keeps its blank field and goes to review, where a
+    person settles it.
     """
     if resolved is None:            # nothing was learned, so nothing is refused
         return True
@@ -317,7 +347,9 @@ def same_article(requested: str, resolved: str | None) -> bool:
     b = (resolved or "").replace("_", " ").strip()
     if not b:
         return False
-    return a == b or a[:1].upper() + a[1:] == b[:1].upper() + b[1:]
+    if a == b or a[:1].upper() + a[1:] == b[:1].upper() + b[1:]:
+        return True
+    return bool(significant_words(a) & significant_words(b))
 
 
 def _richer(a: list, b: list) -> bool:
