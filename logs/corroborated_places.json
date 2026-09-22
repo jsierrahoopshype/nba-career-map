@@ -1,0 +1,511 @@
+[
+  {
+    "team": "Agropoli",
+    "verdict": "accept",
+    "place": "Agropoli",
+    "city": "Agropoli",
+    "state": "Campania",
+    "country": "Italy",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Bulgaria"
+    ]
+  },
+  {
+    "team": "Ajaccio",
+    "verdict": "accept",
+    "place": "Ajaccio",
+    "city": "Ajaccio",
+    "state": "",
+    "country": "France",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "France",
+      "Israel"
+    ]
+  },
+  {
+    "team": "Bejjeh",
+    "verdict": "accept",
+    "place": "Bejjeh",
+    "city": "Bejjeh",
+    "state": "",
+    "country": "Lebanon",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Lebanon",
+      "Ukraine"
+    ]
+  },
+  {
+    "team": "Beverly Hills",
+    "verdict": "accept",
+    "place": "Beverly Hills",
+    "city": "Beverly Hills",
+    "state": "California",
+    "country": "USA",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "USA"
+    ]
+  },
+  {
+    "team": "Blonay",
+    "verdict": "accept",
+    "place": "Blonay",
+    "city": "Blonay",
+    "state": "",
+    "country": "Switzerland",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Israel"
+    ]
+  },
+  {
+    "team": "Casalpusterlengo",
+    "verdict": "accept",
+    "place": "Casalpusterlengo",
+    "city": "Casalpusterlengo",
+    "state": "Lombardy",
+    "country": "Italy",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Italy"
+    ]
+  },
+  {
+    "team": "Chernomorets",
+    "verdict": "accept",
+    "place": "Chernomorets",
+    "city": "Chernomorets",
+    "state": "",
+    "country": "Bulgaria",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Bulgaria"
+    ]
+  },
+  {
+    "team": "Gragnano",
+    "verdict": "accept",
+    "place": "Gragnano",
+    "city": "Gragnano",
+    "state": "Campania",
+    "country": "Italy",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Italy"
+    ]
+  },
+  {
+    "team": "Karlovac",
+    "verdict": "accept",
+    "place": "Karlovac",
+    "city": "Karlovac",
+    "state": "",
+    "country": "Croatia",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Croatia"
+    ]
+  },
+  {
+    "team": "Kaštela",
+    "verdict": "accept",
+    "place": "Kaštela",
+    "city": "Kaštela",
+    "state": "",
+    "country": "Croatia",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Croatia",
+      "Israel"
+    ]
+  },
+  {
+    "team": "Killester",
+    "verdict": "accept",
+    "place": "Killester",
+    "city": "Killester",
+    "state": "",
+    "country": "Ireland",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "USA"
+    ]
+  },
+  {
+    "team": "Koroivos",
+    "verdict": "accept",
+    "place": "Koroivos",
+    "city": "Koroivos",
+    "state": "",
+    "country": "Greece",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "USA"
+    ]
+  },
+  {
+    "team": "Kuşadası",
+    "verdict": "accept",
+    "place": "Kuşadası",
+    "city": "Kuşadası",
+    "state": "",
+    "country": "Turkey",
+    "check": "contradicted",
+    "strict": "contradicted",
+    "neighbours": [
+      "France"
+    ]
+  },
+  {
+    "team": "La Rochelle",
+    "verdict": "accept",
+    "place": "La Rochelle",
+    "city": "La Rochelle",
+    "state": "",
+    "country": "France",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "France",
+      "Israel"
+    ]
+  },
+  {
+    "team": "Londrina",
+    "verdict": "accept",
+    "place": "Londrina",
+    "city": "Londrina",
+    "state": "",
+    "country": "Brazil",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Brazil",
+      "Spain"
+    ]
+  },
+  {
+    "team": "Mariembourg",
+    "verdict": "accept",
+    "place": "Mariembourg",
+    "city": "Mariembourg",
+    "state": "",
+    "country": "Belgium",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Italy",
+      "USA"
+    ]
+  },
+  {
+    "team": "Mogi das Cruzes",
+    "verdict": "accept",
+    "place": "Mogi das Cruzes",
+    "city": "Mogi das Cruzes",
+    "state": "",
+    "country": "Brazil",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Brazil"
+    ]
+  },
+  {
+    "team": "Palencia",
+    "verdict": "accept",
+    "place": "Palencia",
+    "city": "Palencia",
+    "state": "",
+    "country": "Spain",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Israel",
+      "Latvia",
+      "Spain",
+      "Turkey",
+      "USA"
+    ]
+  },
+  {
+    "team": "Parma",
+    "verdict": "accept",
+    "place": "Parma",
+    "city": "Parma",
+    "state": "Emilia-Romagna",
+    "country": "Italy",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "China",
+      "Estonia",
+      "Russia",
+      "Spain"
+    ]
+  },
+  {
+    "team": "Pavia",
+    "verdict": "accept",
+    "place": "Pavia",
+    "city": "Pavia",
+    "state": "Lombardy",
+    "country": "Italy",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "France",
+      "Germany",
+      "Italy",
+      "Spain",
+      "USA"
+    ]
+  },
+  {
+    "team": "Pazi",
+    "verdict": "accept",
+    "place": "Pazi",
+    "city": "Pazi",
+    "state": "",
+    "country": "Iran",
+    "check": "contradicted",
+    "strict": "contradicted",
+    "neighbours": [
+      "Taiwan"
+    ]
+  },
+  {
+    "team": "Pezinok",
+    "verdict": "accept",
+    "place": "Pezinok",
+    "city": "Pezinok",
+    "state": "",
+    "country": "Slovakia",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Poland",
+      "Slovakia"
+    ]
+  },
+  {
+    "team": "Plasencia",
+    "verdict": "accept",
+    "place": "Plasencia",
+    "city": "Plasencia",
+    "state": "",
+    "country": "Spain",
+    "check": "contradicted",
+    "strict": "contradicted",
+    "neighbours": [
+      "Italy"
+    ]
+  },
+  {
+    "team": "Poitiers",
+    "verdict": "accept",
+    "place": "Poitiers",
+    "city": "Poitiers",
+    "state": "",
+    "country": "France",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "France",
+      "USA"
+    ]
+  },
+  {
+    "team": "Prienai",
+    "verdict": "accept",
+    "place": "Prienai",
+    "city": "Prienai",
+    "state": "",
+    "country": "Lithuania",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "USA"
+    ]
+  },
+  {
+    "team": "Pully",
+    "verdict": "accept",
+    "place": "Pully",
+    "city": "Pully",
+    "state": "",
+    "country": "Switzerland",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "France",
+      "Spain"
+    ]
+  },
+  {
+    "team": "Quilmes",
+    "verdict": "accept",
+    "place": "Quilmes",
+    "city": "Quilmes",
+    "state": "",
+    "country": "Argentina",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Cyprus",
+      "Greece",
+      "Peru",
+      "Puerto Rico"
+    ]
+  },
+  {
+    "team": "Ravenna",
+    "verdict": "accept",
+    "place": "Ravenna",
+    "city": "Ravenna",
+    "state": "Emilia-Romagna",
+    "country": "Italy",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Italy",
+      "Venezuela"
+    ]
+  },
+  {
+    "team": "Roche-la-Moliere",
+    "verdict": "accept",
+    "place": "Roche-la-Molière",
+    "city": "Roche-la-Molière",
+    "state": "",
+    "country": "France",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Mexico",
+      "Switzerland"
+    ]
+  },
+  {
+    "team": "Râmnicu Vâlcea",
+    "verdict": "accept",
+    "place": "Râmnicu Vâlcea",
+    "city": "Râmnicu Vâlcea",
+    "state": "",
+    "country": "Romania",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Greece"
+    ]
+  },
+  {
+    "team": "Sant'Antimo",
+    "verdict": "accept",
+    "place": "Sant'Antimo",
+    "city": "Sant'Antimo",
+    "state": "Campania",
+    "country": "Italy",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Italy"
+    ]
+  },
+  {
+    "team": "Shumen",
+    "verdict": "accept",
+    "place": "Shumen",
+    "city": "Shumen",
+    "state": "",
+    "country": "Bulgaria",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Ivory Coast",
+      "USA"
+    ]
+  },
+  {
+    "team": "Smederevo",
+    "verdict": "accept",
+    "place": "Smederevo",
+    "city": "Smederevo",
+    "state": "",
+    "country": "Serbia",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Georgia"
+    ]
+  },
+  {
+    "team": "Suzano",
+    "verdict": "accept",
+    "place": "Suzano",
+    "city": "Suzano",
+    "state": "",
+    "country": "Brazil",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Dominican Republic",
+      "Italy"
+    ]
+  },
+  {
+    "team": "Tolentino",
+    "verdict": "accept",
+    "place": "Tolentino",
+    "city": "Tolentino",
+    "state": "Marche",
+    "country": "Italy",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Italy"
+    ]
+  },
+  {
+    "team": "Tortona",
+    "verdict": "accept",
+    "place": "Tortona",
+    "city": "Tortona",
+    "state": "Piemonte",
+    "country": "Italy",
+    "check": "contradicted",
+    "strict": "no evidence",
+    "neighbours": [
+      "Mexico",
+      "Turkey"
+    ]
+  },
+  {
+    "team": "Yambol",
+    "verdict": "accept",
+    "place": "Yambol",
+    "city": "Yambol",
+    "state": "",
+    "country": "Bulgaria",
+    "check": "corroborated",
+    "strict": "corroborated",
+    "neighbours": [
+      "Bulgaria"
+    ]
+  }
+]
