@@ -241,6 +241,36 @@ def test_a_sons_own_article_is_not_said_to_belong_to_his_father():
     print("test_a_sons_own_article_is_not_said_to_belong_to_his_father PASS")
 
 
+def test_a_record_is_fetched_by_the_article_it_was_built_from():
+    """"Joe Smith" is forty people, and Wikipedia says so.
+
+    Fourteen records are keyed on a name that answers with a disambiguation
+    page. Asking by name refuses them every run, which freezes the record --
+    and one of them, Ben Sheppard, is still playing. The article already worked
+    out and stored on the record is asked for first.
+    """
+    import update_careers as uc
+    db = _db([{"player": "Ben Sheppard", "status": "nba_active",
+               "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Sheppard_(basketball)",
+               "career_history": [{"years": "2023-present", "team": "Indiana Pacers"}]}])
+    uc.REFUSED.clear()
+    wt = ("{{Infobox basketball biography\n| name = Ben Sheppard\n"
+          "| years1 = 2023\u2013present\n| team1 = [[Indiana Pacers]]\n"
+          "| years2 = 2026\n| team2 = [[Indiana Mad Ants]]\n}}")
+    client = _client({
+        # the name still lands on a British TV presenter's disambiguation page
+        "Ben Sheppard": ("Ben Shephard (disambiguation)", "{{Infobox}}\n"),
+        "Ben Sheppard (basketball)": ("Ben Sheppard (basketball)", wt),
+    })
+    rec, _teams, is_new, *_ = uc.merge_player(db, "Ben Sheppard", client, {},
+                                              set(), 2026)
+    assert not uc.REFUSED, uc.REFUSED
+    assert rec is not None and not is_new
+    teams = [s["team"] for s in rec["career_history"]]
+    assert "Indiana Mad Ants" in teams, teams
+    print("test_a_record_is_fetched_by_the_article_it_was_built_from PASS")
+
+
 def test_an_ordinary_redirect_still_merges():
     """The guard must not cost the pipeline its reason for following redirects."""
     import update_careers as uc
@@ -268,5 +298,6 @@ if __name__ == "__main__":
     test_the_ladder_finds_the_son_when_his_article_exists()
     test_a_jr_is_not_merged_into_the_record_of_a_name_that_folds_to_his()
     test_a_sons_own_article_is_not_said_to_belong_to_his_father()
+    test_a_record_is_fetched_by_the_article_it_was_built_from()
     test_an_ordinary_redirect_still_merges()
     print("\nALL WRONG-ARTICLE GUARD TESTS PASS")

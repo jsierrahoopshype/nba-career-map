@@ -376,9 +376,26 @@ def right_article(db: "Database", name: str,
     Returns (wikitext, canonical_title, refusal). A refusal means no record is
     written at all: stale data beats invented data.
     """
-    wt, title = client.get_wikitext_and_title(name)
-    tried = [{"title": name, "resolved": title}]
+    # The article this record was built from, when it has one and it is about
+    # this person. Fourteen records are keyed on a name Wikipedia answers with
+    # a disambiguation page -- "Joe Smith" is forty people -- so asking by name
+    # would refuse them every run and freeze them, which for an active player
+    # like Ben Sheppard means his record stops following his career. The stored
+    # article is the answer we already worked out; ask for it first.
+    stored = title_from_url(db.by_name.get(name, {}).get("wikipedia_url", ""))
+    first = name
+    if stored and stored != name and same_person(name, stored)[0]:
+        first = stored
+
+    wt, title = client.get_wikitext_and_title(first)
+    tried = [{"title": first, "resolved": title}]
     ok, why = same_person(name, title) if title else (False, "no article")
+    if not ok and first != name:
+        # the stored article stopped being about him (renamed, merged away):
+        # fall back to the name and let the usual checks judge the answer
+        wt, title = client.get_wikitext_and_title(name)
+        tried.append({"title": name, "resolved": title})
+        ok, why = same_person(name, title) if title else (False, "no article")
     if ok and why == "suffix-added":
         # Our key catching up with the article ("Craig Porter" ->
         # "Craig Porter Jr."), unless another record already IS that article,
