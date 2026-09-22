@@ -56,15 +56,33 @@ def probe(url: str, *, follow: bool) -> dict:
                     "og_url": _one(r'property=["\']og:url["\'][^>]*content=["\']([^"\']+)', body),
                     "bytes": len(body),
                     "hits": (body.count(globals().get("_NEEDLE") or "\0")
-                             if globals().get("_NEEDLE") else -1)}
+                             if globals().get("_NEEDLE") else -1),
+                    "matches": _matches(body, globals().get("_NEEDLE") or "")}
     except urllib.error.HTTPError as exc:
         return {"url": url, "status": exc.code, "final": str(exc.reason),
                 "title": "", "canonical": "", "og_url": "", "bytes": 0,
-                "ctype": "", "head": "", "hits": -1}
+                "ctype": "", "head": "", "hits": -1, "matches": []}
     except Exception as exc:  # noqa: BLE001
         return {"url": url, "status": 0, "final": f"{type(exc).__name__}: {exc}",
                 "title": "", "canonical": "", "og_url": "", "bytes": 0,
-                "ctype": "", "head": "", "hits": -1}
+                "ctype": "", "head": "", "hits": -1, "matches": []}
+
+
+def _matches(body: str, needle: str, limit: int = 4) -> list:
+    """The lines a search actually hit. A count says a section is in there
+    somewhere; the line says whether that is the whole section or one page."""
+    if not needle:
+        return []
+    out, start = [], 0
+    while len(out) < limit:
+        i = body.find(needle, start)
+        if i < 0:
+            break
+        a = body.rfind("\n", 0, i) + 1
+        b = body.find("\n", i)
+        out.append(body[a:b if b > 0 else i + 120].strip()[:160])
+        start = i + len(needle)
+    return out
 
 
 def _one(pattern: str, text: str) -> str:
@@ -99,6 +117,8 @@ def main() -> int:
             if out.get("hits", -1) >= 0:
                 print(f"   contains  : {out['hits']} occurrence(s) of "
                       f"{globals().get('_NEEDLE')!r}")
+                for m in out.get("matches") or []:
+                    print(f"   > {m}")
             if out.get("head"):
                 # robots.txt and sitemaps say what they say; print it rather
                 # than infer indexability from a byte count
