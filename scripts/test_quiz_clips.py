@@ -358,13 +358,23 @@ def test_every_card_carries_the_same_disc():
     width = rings["none"][1] - rings["none"][0] + 1
     assert abs(width - q.PORTRAIT_D) <= 4, f"disc is {width}px, not {q.PORTRAIT_D}"
 
-    # the face fills the disc the way a photograph does
+    # The picture has to reach the bottom of the disc. A headshot is a crop
+    # that ends in a straight line, and any gap between that line and the mask
+    # shows the line: this is what that looks like as a measurement.
     px = cards["headshot"].load()
     cx = q.REVEAL_X0 + 30 + q.PORTRAIT_W // 2
-    face_rows = [y for y in range(178, 520)
+    disc_top = int((178 + 30 + (178 + 30 + 252 + 46 - 30)) / 2 - q.PORTRAIT_D / 2)
+    disc_bot = disc_top + q.PORTRAIT_D
+    face_rows = [y for y in range(disc_top, disc_bot)
                  if abs(px[cx, y][0] - 210) < 45 and abs(px[cx, y][2] - 60) < 45]
+    assert face_rows, "the face never got drawn"
+    assert disc_bot - max(face_rows) <= 5, \
+        f"the crop stops {disc_bot - max(face_rows)}px short of the mask"
+    # ...and it must not have been blown up past the disc to get there
+    assert min(face_rows) - disc_top >= 6, \
+        "the head is bigger than the disc it sits in"
     fill = (max(face_rows) - min(face_rows) + 1) / q.PORTRAIT_D
-    assert 0.70 <= fill <= 0.90, f"the face fills {fill:.0%} of the disc"
+    assert 0.85 <= fill <= 1.0, f"the face fills {fill:.0%} of the disc"
 
     # and the initials are drawn for the player who has no picture at all
     assert q._initials("Al Harrington") == "AH"

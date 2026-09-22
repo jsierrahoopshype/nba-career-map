@@ -767,16 +767,22 @@ def _portrait_disc(im, face, center, size: int, *, initials=""):
         # transparent padding, and scaling the frame puts a small head in a
         # big circle.
         sub = face.crop(oc.content_box(face))
+        # Height decides the scale; a very wide subject is capped so the head
+        # cannot outgrow the disc it sits in.
         scale = min(size * PORTRAIT_FILL / sub.height,
-                    size * 0.82 / sub.width)
+                    size * 1.30 / sub.width)
         w = max(1, int(sub.width * scale))
         h = max(1, int(sub.height * scale))
         sub = sub.resize((w, h), Image.LANCZOS)
-        # Slightly low rather than dead centre: the crop ends at the collar,
-        # and sitting it near the bottom of the disc puts that straight edge
-        # against the ring instead of in open space, while the chin stays
-        # inside it.
-        tile.paste(sub, ((size - w) // 2, int((size - h) * 0.68)), sub)
+        x0 = (size - w) // 2
+        base = int(size * PORTRAIT_BASE)
+        tile.paste(sub, (x0, base - h), sub)
+        # Carry the collar on past the mask. It keeps the silhouette of the
+        # row it came from, so the sides stay the subject's own outline and
+        # only the circle decides where the picture ends.
+        tail = sub.crop((0, h - 2, w, h)).resize(
+            (w, size + PORTRAIT_DROP - base), Image.NEAREST)
+        tile.paste(tail, (x0, base), tail)
     else:
         cut = oc.cover_square(face, size)
         tile.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
@@ -865,7 +871,14 @@ ROW_MAX = 132.0
 NAME_MAX, NAME_MIN = 50, 28
 PORTRAIT_W = 252
 PORTRAIT_D = 236        # the disc every reveal card carries
-PORTRAIT_FILL = 0.80    # how much of its height the face takes
+# The headshots are crops: they end in a straight line, and on some of them
+# (Trey Burke) that line is barely below the chin. Simply hanging the crop
+# lower so the line clears the mask would take the chin with it, so the last
+# row is drawn on downwards instead -- the collar continues past the mask and
+# the circle clips it, as it would any avatar.
+PORTRAIT_FILL = 0.88    # face height as a share of the disc
+PORTRAIT_BASE = 0.95    # where the crop's own bottom sits in the disc
+PORTRAIT_DROP = 12      # how far the continuation runs past the disc
 
 
 _DISAMBIG = re.compile(r"\s*\([^()]*\)\s*$")
