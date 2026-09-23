@@ -2037,7 +2037,7 @@
         })();
     </script>
 
-    <script src="https://hoopsmatic.com/hoopsmatic-games.js" data-hm-game="careermap" data-hm-footer="auto" data-hm-cards="auto" defer></script>
+    <script src="https://hoopsmatic.com/hoopsmatic-games.js" data-hm-game="careermap" data-hm-footer="auto" defer></script>
 </head>
 <body>
     <header>
@@ -4286,6 +4286,9 @@
             // overrides its centered/dimmed presentation (see CSS) -- the
             // intro screen itself is untouched since it never gets this class.
             document.getElementById('quizOverlay').classList.add('show', 'results-mode');
+            // Cross-promo cards render only here, at the end of a run: the
+            // module re-renders on each call, so reopening results is safe.
+            if (window.HMGames) HMGames.cards(document.getElementById('quizFinal'));
             document.getElementById('quizIntro').style.display = 'none';
             document.getElementById('quizFinal').style.display = 'block';
             document.getElementById('quizOverlay').scrollTop = 0;
