@@ -1,3 +1,17 @@
+## 2026-09-23 — incremental run
+
+- Players updated: **468** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Ike Anigbogu: Vanoli Cremona → Benetton Treviso
+  - Jalen Crutcher: Leones de Ponce → Iowa Wolves
+  - Keyontae Johnson: Shandong Hi-Speed Kirin → Alvark Tokyo
+  - Lonnie Walker: Maccabi Tel Aviv → Partizan
+
 ## 2026-09-22 — article-fix run
 
 - Players updated: **11** (0 new)
