@@ -25,6 +25,7 @@ data/
     retired_players.json       # no longer playing anywhere
     player_bio.json            # birth/death dates + places (Basketball-Reference + Wikidata)
     bio_needs_review.json      # birth dates that disagree with Basketball-Reference
+    player_url_overrides.json  # curated Wikipedia article per player (see below)
   teams/
     team_aliases.json          # historical/sponsored name -> current name
     team_locations.json        # canonical team -> city/state/country/league
@@ -45,6 +46,8 @@ scripts/
   signing_guard.py             # newly-DETECTED vs newly-STARTED stint (ledger)
   stint_corrections.py         # re-applies stint_corrections.json after every parse
   fetch_bio_wikidata.py        # birth/death facts from Wikidata (see below)
+  player_urls.py               # reads player_url_overrides.json (curated articles)
+  resolve_player_urls.py       # finds the real article for a wrong-person record
   merge_club_groups.py         # fold club-name variants into one club
   fix_club_countries.py        # curated place corrections + the UK label sweep
   audit_club_countries.py      # REPORT ONLY: clubs whose country looks wrong
@@ -58,6 +61,7 @@ tests/
 nba_players_careers_READY.json # map data file (kept in sync by the updater)
 .github/workflows/update-careers.yml
 .github/workflows/player-bio.yml
+.github/workflows/fix-player-urls.yml
 ```
 
 ## Data extracted per player
@@ -216,9 +220,13 @@ source) — plus `wikipedia_url_wrong_person`, the wrong-entity players whose
 stored Wikipedia URL is the namesake's article, so their **club history** may
 be wrong too. Nothing in it edits the career database.
 
-The facts do not print on the page. They feed the schema.org `Person` block in
-each player page's JSON-LD, where a year-only date is published as the year
-rather than padded to a day that is not a fact.
+The facts reach no Career Map page. They are not printed, and they are **not**
+in each page's schema.org `Person` block either: `birthDate`, `birthPlace`,
+`deathDate` and `deathPlace` were published there and have been removed, because
+that data belongs to a separate section of the site. The `Person` block keeps the
+player's name, page URL, nationality and (when it is his — see below) Wikipedia
+link. `player_bio.json` and `.github/workflows/player-bio.yml` are unchanged and
+still kept current — `scripts/prerender.py` simply does not read them.
 
 ```bash
 python3 scripts/fetch_bio_wikidata.py                   # incremental
@@ -228,6 +236,77 @@ python3 scripts/fetch_bio_wikidata.py --reapply         # offline re-apply
 python3 scripts/fetch_bio_wikidata.py --fixtures tests/fixtures --dry-run
 python3 scripts/test_fetch_bio_wikidata.py              # offline, no network
 ```
+
+## Wrong-person Wikipedia articles
+
+The scraper asks Wikipedia for a name and takes the article it gets back. For
+`David Duke`, `Jack White`, `Ace Bailey`, `Michael Phelps` or `Mike Lynn` that
+article is the Klansman, the guitarist, the ice hockey player, the swimmer and
+the Minnesota Vikings general manager — and the club history parsed off it became
+the NBA player's. `same_person()` cannot help: the names are identical.
+
+`data/players/player_url_overrides.json` is the fix that sticks. It holds one
+curated article per player and is read by `scripts/player_urls.py`, which both
+`update_careers.py` (in `right_article`) and `fetch_bio_wikidata.py` (in
+`_title_of`) consult **before** asking Wikipedia anything, so a daily run cannot
+revert it. Two tiers, and only one is live:
+
+- **`overrides`** — verified. Written by `scripts/resolve_player_urls.py` only
+  after Wikidata vouched for the article: `P106 = Q3665646` (basketball player)
+  **and** a birth year within 1 of Basketball-Reference's for this player. These
+  are what the pipeline uses. A hand-written entry whose value is a bare URL
+  string also counts as verified — a human typing an article in *is* the
+  verification.
+- **`candidates`** — un-verified guesses from Wikipedia's naming conventions
+  (`Ron Holland II`, `A. J. Green (basketball)`). The resolver tries them first;
+  nothing here reaches the site.
+
+An overridden record's career is **replaced**, not merged: `_richer()` exists to
+stop a thin parse clobbering good data, and would otherwise protect the wrong
+man's career. An article that parses to nothing is still refused.
+
+### `sameAs` on the player pages
+
+`sameAs` tells a crawler "this page and that page are about the same person", so
+it is the one field on a prerendered page that can actively assert something
+false. `prerender.wikipedia_link()` decides it from the same two files:
+
+1. a curated article in `player_url_overrides.json` **is** the link, whatever the
+   career record still says;
+2. otherwise, a player listed in `wikipedia_url_wrong_person` gets **no `sameAs`
+   at all** — silence is a missing field, a namesake's URL is a false claim;
+3. otherwise, the record's `wikipedia_url`, as before.
+
+A player drops off that list once his record is re-read against the curated
+article, so the suppression lifts by itself as the repairs land.
+
+```bash
+python3 scripts/resolve_player_urls.py audit      # offline: what the flagged records show
+python3 scripts/resolve_player_urls.py resolve    # dry run
+python3 scripts/resolve_player_urls.py resolve --apply
+python3 scripts/update_careers.py --mode override # re-scrape the repaired players
+python3 scripts/test_player_urls.py               # offline, no network
+```
+
+`.github/workflows/fix-player-urls.yml` (Actions → Run workflow) does the whole
+sequence: audit, resolve, write the overrides, re-scrape, rebuild the pages,
+commit.
+
+| Input | Purpose |
+|-------|---------|
+| `players` | only these players (comma-separated; default: everything flagged) |
+| `dry_run` | resolve and report only — write nothing, commit nothing |
+| `rescrape` | re-scrape the repaired players' careers (default true) |
+| `max_requests` | Wikipedia request budget for the re-scrape (default 200) |
+| `search_limit` | Wikipedia search hits considered per player (default 8) |
+
+Players the resolver cannot settle — no candidate passes, or two basketball
+players of the name were born in the same year — are listed in the run summary
+and in `logs/player_url_resolution.json`. It never guesses.
+
+Repaired players keep their rejected-item note in `player_bio.json` until their
+bio record is re-read, so `wikipedia_url_wrong_person` only empties out after
+`player-bio.yml` has run with `mode = full`.
 
 ## Team-name normalization
 
@@ -350,6 +429,7 @@ the first full backfill, a re-run after an outage, or a `--full` re-fetch.
 | `mode = full` | refresh all active players, NBA + overseas (bounded by budget) |
 | `mode = full_overseas` | re-check **all** `overseas_active` players (runs monthly on schedule) |
 | `mode = single` + `player` | refresh one player by name |
+| `mode = override` | re-scrape only the players with a curated article in `player_url_overrides.json` |
 | `mode = review` | try to resolve locations for `teams_needing_review.json` |
 
 ## Local usage

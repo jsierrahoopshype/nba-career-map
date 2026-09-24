@@ -79,7 +79,10 @@ Wikidata and Basketball-Reference state different birth dates -- and which
 one the record uses), and `still_missing` (no birth date from either source).
 It also carries `wikipedia_url_wrong_person`: the wrong-entity players whose
 stored Wikipedia URL is the namesake's article, so their CLUB HISTORY may be
-wrong too. Nothing in the review file edits the career database.
+wrong too. Nothing in the review file edits the career database. The fix for
+that list is data/players/player_url_overrides.json -- a curated article per
+player, written by scripts/resolve_player_urls.py and consulted here (see
+_title_of) before the stored URL, so a run cannot resolve back to the namesake.
 
 Run:
     python3 scripts/fetch_bio_wikidata.py                 # incremental
@@ -106,6 +109,7 @@ import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import player_urls  # noqa: E402
 from names import normkey, title_from_url  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -492,6 +496,16 @@ def select_targets(players: list, bio: dict, *, full: bool, limit: int | None,
 
 
 def _title_of(player: dict) -> str:
+    """The article to read this player's item off.
+
+    A curated article (data/players/player_url_overrides.json) comes first, so
+    a bio run that happens before the career pipeline has re-scraped the record
+    still reads the right item instead of re-deriving the namesake's -- and so
+    a run can never hand the rejected item back.
+    """
+    forced = player_urls.override_title(player.get("player") or "")
+    if forced:
+        return forced
     url = player.get("wikipedia_url") or ""
     return title_from_url(url) or (player.get("display_name")
                                    or player.get("player") or "")
@@ -631,7 +645,12 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
     description the previous review file recorded, so an incremental run never
     silently shortens the list.
     """
-    url_of = {p.get("player"): (p.get("wikipedia_url") or "") for p in careers}
+    # The override, when there is one, is the article this player is actually
+    # read from -- so a repaired player stops being reported as pointing at the
+    # namesake even before the career pipeline has written the new URL back.
+    url_of = {p.get("player"): (player_urls.override_url(p.get("player") or "")
+                                or p.get("wikipedia_url") or "")
+              for p in careers}
     carried = {row.get("player"): row
                for row in ((previous or {}).get("wrong_entity") or [])}
 
