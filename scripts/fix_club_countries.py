@@ -6,11 +6,12 @@ for every team it already knows, so that file -- not the stints -- is where a
 location correction has to land. The stints are rewritten here as well, so the
 site is right before the next pipeline run rather than after it.
 
-THE FOUR CORRECTIONS. Three clubs carried country "USA" with a city that is
-not in the United States (Skopje, Anyang, St. John's) -- the sports-club
-location guard had matched the wrong article. The fourth is a label, not a
-place: Newcastle Eagles sat under "England" while most UK clubs sit under
-"United Kingdom".
+THE CORRECTIONS. Three clubs carried country "USA" with a city that is not in
+the United States (Skopje, Anyang, St. John's) -- the sports-club location
+guard had matched the wrong article. One is a label, not a place: Newcastle
+Eagles sat under "England" while most UK clubs sit under "United Kingdom".
+The last is the wrong city on the right continent: Newcastle Falcons is the
+Australian NBL club, not anything in Newcastle upon Tyne.
 
 THE UK LABEL. "United Kingdom" wins on two counts, so there is no judgement
 call to record: it is what the majority of UK clubs already carry, and it is
@@ -51,6 +52,16 @@ CORRECTIONS = {
     "Newcastle Eagles": (
         "Newcastle upon Tyne", "", "United Kingdom",
         "label only: moved onto the UK convention below",
+    ),
+    "Newcastle Falcons": (
+        "Newcastle", "New South Wales", "Australia",
+        "the wrong Newcastle: this is the Australian NBL club (Newcastle, NSW, "
+        "1979-1999), filed under Newcastle upon Tyne because it shares a name "
+        "with the English rugby club. The six stints on file run 1980-1999, "
+        "matching the NBL club's lifespan; the last of them postdates the "
+        "Newcastle Eagles already existing under that name, so they are not "
+        "one club. The Eagles' own line is Sunderland -> Newcastle Comets "
+        "(1995) -> Newcastle Eagles (1996)",
     ),
 }
 
