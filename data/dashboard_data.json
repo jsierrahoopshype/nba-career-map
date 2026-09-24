@@ -364,7 +364,7 @@
     },
     {
       "player": "Briante Weber",
-      "current_team": "Karşıyaka Basket",
+      "current_team": "Pınar Karşıyaka",
       "country": "Turkey",
       "last_updated": "2026-09-24"
     },
@@ -454,7 +454,7 @@
     },
     {
       "player": "Cassius Winston",
-      "current_team": "Rytas Vilnius",
+      "current_team": "Lietuvos rytas",
       "country": "Lithuania",
       "last_updated": "2026-09-24"
     },
@@ -3508,7 +3508,7 @@
     },
     {
       "player": "Tre Scott",
-      "current_team": "Bamberg Baskets",
+      "current_team": "Brose Bamberg",
       "country": "Germany",
       "last_updated": "2026-09-24"
     },
@@ -3784,7 +3784,7 @@
     },
     {
       "player": "Xavier Munford",
-      "current_team": "Karşıyaka Basket",
+      "current_team": "Pınar Karşıyaka",
       "country": "Turkey",
       "last_updated": "2026-09-24"
     },
@@ -4382,6 +4382,27 @@
       "status": "retired"
     },
     {
+      "player": "Darius Washington",
+      "country_count": 13,
+      "stint_count": 22,
+      "countries": [
+        "Greece",
+        "Czech Republic",
+        "USA",
+        "Russia",
+        "Turkey",
+        "Italy",
+        "Puerto Rico",
+        "Israel",
+        "France",
+        "China",
+        "North Macedonia",
+        "Mexico",
+        "Belgium"
+      ],
+      "status": "retired"
+    },
+    {
       "player": "Julius Hodge",
       "country_count": 13,
       "stint_count": 22,
@@ -4725,26 +4746,6 @@
         "Dominican Republic",
         "Uruguay",
         "Mongolia"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Darius Washington",
-      "country_count": 12,
-      "stint_count": 22,
-      "countries": [
-        "Greece",
-        "Czech Republic",
-        "USA",
-        "Russia",
-        "Turkey",
-        "Italy",
-        "Puerto Rico",
-        "Israel",
-        "France",
-        "China",
-        "Mexico",
-        "Belgium"
       ],
       "status": "retired"
     },
@@ -5189,12 +5190,16 @@
       "players": 60
     },
     {
+      "team": "Limoges CSP",
+      "players": 60
+    },
+    {
       "team": "Los Angeles D-Fenders",
       "players": 60
     },
     {
       "team": "Pallacanestro Cantù",
-      "players": 58
+      "players": 59
     },
     {
       "team": "Pau-Orthez",
@@ -5203,6 +5208,10 @@
     {
       "team": "Zaragoza",
       "players": 57
+    },
+    {
+      "team": "Beşiktaş",
+      "players": 56
     },
     {
       "team": "Unicaja",
@@ -5214,10 +5223,6 @@
     },
     {
       "team": "Benetton Treviso",
-      "players": 55
-    },
-    {
-      "team": "Beşiktaş",
       "players": 55
     },
     {
@@ -5289,6 +5294,10 @@
       "players": 48
     },
     {
+      "team": "Khimki",
+      "players": 48
+    },
+    {
       "team": "UNICS",
       "players": 48
     },
@@ -5313,12 +5322,12 @@
       "players": 45
     },
     {
-      "team": "Providence Steamrollers",
+      "team": "Estudiantes",
       "players": 44
     },
     {
-      "team": "Estudiantes",
-      "players": 43
+      "team": "Providence Steamrollers",
+      "players": 44
     },
     {
       "team": "Xinjiang",
@@ -5389,6 +5398,10 @@
       "players": 39
     },
     {
+      "team": "Brose Bamberg",
+      "players": 39
+    },
+    {
       "team": "Gigantes de Carolina",
       "players": 39
     },
@@ -5409,10 +5422,6 @@
       "players": 38
     },
     {
-      "team": "Khimki",
-      "players": 38
-    },
-    {
       "team": "Omaha Racers",
       "players": 38
     },
@@ -5421,7 +5430,7 @@
       "players": 38
     },
     {
-      "team": "Brose Bamberg",
+      "team": "Lietuvos rytas",
       "players": 37
     },
     {
@@ -5505,6 +5514,10 @@
       "players": 33
     },
     {
+      "team": "Darüşşafaka",
+      "players": 33
+    },
+    {
       "team": "Granada",
       "players": 32
     },
@@ -5525,19 +5538,19 @@
       "players": 32
     },
     {
-      "team": "CSP Limoges",
-      "players": 31
-    },
-    {
-      "team": "Darüşşafaka",
-      "players": 31
-    },
-    {
       "team": "NBA G League Ignite",
       "players": 31
     },
     {
+      "team": "Peristeri",
+      "players": 31
+    },
+    {
       "team": "Türk Telekom",
+      "players": 31
+    },
+    {
+      "team": "Union Olimpija",
       "players": 31
     },
     {
@@ -5558,10 +5571,6 @@
     },
     {
       "team": "Olympique Antibes",
-      "players": 30
-    },
-    {
-      "team": "Peristeri",
       "players": 30
     },
     {
@@ -5609,7 +5618,7 @@
       "players": 29
     },
     {
-      "team": "Limoges CSP",
+      "team": "Juvecaserta Basket",
       "players": 29
     },
     {
@@ -5634,6 +5643,10 @@
     },
     {
       "team": "New Zealand Breakers",
+      "players": 28
+    },
+    {
+      "team": "Pınar Karşıyaka",
       "players": 28
     },
     {
@@ -5721,10 +5734,6 @@
       "players": 25
     },
     {
-      "team": "Union Olimpija",
-      "players": 25
-    },
-    {
       "team": "Virginia Squires",
       "players": 25
     },
@@ -5750,10 +5759,6 @@
     },
     {
       "team": "Detroit Spirits",
-      "players": 24
-    },
-    {
-      "team": "Lietuvos rytas",
       "players": 24
     },
     {
@@ -5794,10 +5799,6 @@
     },
     {
       "team": "Miami Tropics",
-      "players": 23
-    },
-    {
-      "team": "Pınar Karşıyaka",
       "players": 23
     },
     {
@@ -6013,10 +6014,6 @@
       "players": 18
     },
     {
-      "team": "Juvecaserta Basket",
-      "players": 18
-    },
-    {
       "team": "Mahram Tehran",
       "players": 18
     },
@@ -6054,6 +6051,10 @@
     },
     {
       "team": "Maine Lumberjacks",
+      "players": 17
+    },
+    {
+      "team": "Mega Basket",
       "players": 17
     },
     {
@@ -6153,6 +6154,10 @@
       "players": 16
     },
     {
+      "team": "Split",
+      "players": 16
+    },
+    {
       "team": "Trenton Colonials",
       "players": 16
     },
@@ -6174,6 +6179,10 @@
     },
     {
       "team": "Bursaspor",
+      "players": 15
+    },
+    {
+      "team": "Dafni",
       "players": 15
     },
     {
@@ -6234,6 +6243,10 @@
     },
     {
       "team": "Andrea Costa Imola",
+      "players": 14
+    },
+    {
+      "team": "Anyang KGC",
       "players": 14
     },
     {
@@ -6321,10 +6334,6 @@
       "players": 14
     },
     {
-      "team": "Split",
-      "players": 14
-    },
-    {
       "team": "Topeka Sizzlers",
       "players": 14
     },
@@ -6409,10 +6418,6 @@
       "players": 13
     },
     {
-      "team": "Mega Basket",
-      "players": 13
-    },
-    {
       "team": "Memphis Tams",
       "players": 13
     },
@@ -6478,10 +6483,6 @@
     },
     {
       "team": "Criollos de Caguas",
-      "players": 12
-    },
-    {
-      "team": "Dafni",
       "players": 12
     },
     {
@@ -6613,15 +6614,15 @@
       "players": 11
     },
     {
+      "team": "Olympia Larissa",
+      "players": 11
+    },
+    {
       "team": "Pittsburgh Condors",
       "players": 11
     },
     {
       "team": "Rochester Flyers",
-      "players": 11
-    },
-    {
-      "team": "Rytas Vilnius",
       "players": 11
     },
     {
@@ -6713,15 +6714,15 @@
       "players": 10
     },
     {
+      "team": "Gymnastikos S. Larissas",
+      "players": 10
+    },
+    {
       "team": "Homenetmen Beirut",
       "players": 10
     },
     {
       "team": "Keravnos",
-      "players": 10
-    },
-    {
-      "team": "Khimki Moscow",
       "players": 10
     },
     {
@@ -6933,10 +6934,6 @@
       "players": 9
     },
     {
-      "team": "Olympia Larissa",
-      "players": 9
-    },
-    {
       "team": "Orléans Loiret Basket",
       "players": 9
     },
@@ -7082,10 +7079,6 @@
     },
     {
       "team": "Gladiadores de Anzoátegui",
-      "players": 8
-    },
-    {
-      "team": "Gymnastikos S. Larissas",
       "players": 8
     },
     {
@@ -7869,10 +7862,6 @@
       "players": 5
     },
     {
-      "team": "Anyang KGC",
-      "players": 5
-    },
-    {
       "team": "Argal Huesca",
       "players": 5
     },
@@ -8014,10 +8003,6 @@
     },
     {
       "team": "Jiangxi Ganchi",
-      "players": 5
-    },
-    {
-      "team": "Karşıyaka Basket",
       "players": 5
     },
     {
@@ -8345,10 +8330,6 @@
       "players": 4
     },
     {
-      "team": "Anyang Jung Kwan Jang Red Boosters",
-      "players": 4
-    },
-    {
       "team": "Avignon",
       "players": 4
     },
@@ -8653,10 +8634,6 @@
       "players": 4
     },
     {
-      "team": "Mega",
-      "players": 4
-    },
-    {
       "team": "Melilla",
       "players": 4
     },
@@ -8738,10 +8715,6 @@
     },
     {
       "team": "Philadelphia Tapers",
-      "players": 4
-    },
-    {
-      "team": "Phonola Caserta",
       "players": 4
     },
     {
@@ -8941,7 +8914,7 @@
       "players": 4
     },
     {
-      "team": "İTÜ",
+      "team": "İstanbul Teknik Üniversitesi",
       "players": 4
     },
     {
@@ -9518,10 +9491,6 @@
     },
     {
       "team": "Panteras de Aguascalientes",
-      "players": 3
-    },
-    {
-      "team": "Pepsi Caserta",
       "players": 3
     },
     {
@@ -10221,10 +10190,6 @@
       "players": 2
     },
     {
-      "team": "Darüşşafaka Tekfen",
-      "players": 2
-    },
-    {
       "team": "Dayton Wings",
       "players": 2
     },
@@ -10410,10 +10375,6 @@
     },
     {
       "team": "Guruyú Waston",
-      "players": 2
-    },
-    {
-      "team": "Gymnastikos Larissa",
       "players": 2
     },
     {
@@ -10618,10 +10579,6 @@
     },
     {
       "team": "Juarez Gallos de Pelea",
-      "players": 2
-    },
-    {
-      "team": "Jugoplastika",
       "players": 2
     },
     {
@@ -10945,23 +10902,11 @@
       "players": 2
     },
     {
-      "team": "Olimpia Larissa",
-      "players": 2
-    },
-    {
-      "team": "Olimpija Ljubljana",
-      "players": 2
-    },
-    {
       "team": "Olin Edirne",
       "players": 2
     },
     {
       "team": "Olympiada Patras",
-      "players": 2
-    },
-    {
-      "team": "Onyx Caserta",
       "players": 2
     },
     {
@@ -11050,10 +10995,6 @@
     },
     {
       "team": "Petrochimi Imam",
-      "players": 2
-    },
-    {
-      "team": "Petrol Olimpija",
       "players": 2
     },
     {
@@ -11166,10 +11107,6 @@
     },
     {
       "team": "Rotterdam-Zuid",
-      "players": 2
-    },
-    {
-      "team": "Rytas",
       "players": 2
     },
     {
@@ -11298,10 +11235,6 @@
     },
     {
       "team": "Sloga",
-      "players": 2
-    },
-    {
-      "team": "Snaidero Caserta",
       "players": 2
     },
     {
@@ -11641,10 +11574,6 @@
       "players": 1
     },
     {
-      "team": "AO Dafni",
-      "players": 1
-    },
-    {
       "team": "APOP Paphos B.C.",
       "players": 1
     },
@@ -11686,10 +11615,6 @@
     },
     {
       "team": "Acqua Fabia / Binova Rieti",
-      "players": 1
-    },
-    {
-      "team": "Acqua S.Bernardo Cantù",
       "players": 1
     },
     {
@@ -12005,30 +11930,6 @@
       "players": 1
     },
     {
-      "team": "Anyang KGC Pro Basketball Club",
-      "players": 1
-    },
-    {
-      "team": "Anyang KGCAnyang Jung Kwan Jang Red Boosters",
-      "players": 1
-    },
-    {
-      "team": "Anyang KT&G Kites",
-      "players": 1
-    },
-    {
-      "team": "Anyang SBS",
-      "players": 1
-    },
-    {
-      "team": "Anyang SBS Stars",
-      "players": 1
-    },
-    {
-      "team": "Anyang SBS Stars·KT&G Kites",
-      "players": 1
-    },
-    {
       "team": "Apaches de Chihuahua",
       "players": 1
     },
@@ -12265,10 +12166,6 @@
       "players": 1
     },
     {
-      "team": "Bamberg Baskets",
-      "players": 1
-    },
-    {
       "team": "Banca Nuova Trapani",
       "players": 1
     },
@@ -12398,10 +12295,6 @@
     },
     {
       "team": "Beverly Hills",
-      "players": 1
-    },
-    {
-      "team": "Beşiktaş Sompo Japan",
       "players": 1
     },
     {
@@ -13121,14 +13014,6 @@
       "players": 1
     },
     {
-      "team": "Dafni BC",
-      "players": 1
-    },
-    {
-      "team": "Dafnis B.C.",
-      "players": 1
-    },
-    {
       "team": "Daiwa",
       "players": 1
     },
@@ -13422,10 +13307,6 @@
     },
     {
       "team": "Estudiantes Concordia",
-      "players": 1
-    },
-    {
-      "team": "Estudiantes Mudespa",
       "players": 1
     },
     {
@@ -14226,10 +14107,6 @@
     },
     {
       "team": "Juan Pablo Duarte",
-      "players": 1
-    },
-    {
-      "team": "Jugoplastika / Pop 84 / Slobodna Dalmacija",
       "players": 1
     },
     {
@@ -15141,10 +15018,6 @@
       "players": 1
     },
     {
-      "team": "Nikas Peristeri",
-      "players": 1
-    },
-    {
       "team": "Ningxia Hanas",
       "players": 1
     },
@@ -15277,10 +15150,6 @@
       "players": 1
     },
     {
-      "team": "Olimpija",
-      "players": 1
-    },
-    {
       "team": "Oliveirense",
       "players": 1
     },
@@ -15350,10 +15219,6 @@
     },
     {
       "team": "Ostromecko Astoria Bydgoszcz",
-      "players": 1
-    },
-    {
-      "team": "Otto Caserta",
       "players": 1
     },
     {
@@ -16301,10 +16166,6 @@
       "players": 1
     },
     {
-      "team": "Smelt Olimpija",
-      "players": 1
-    },
-    {
       "team": "Snohomish County Explosion",
       "players": 1
     },
@@ -16586,10 +16447,6 @@
     },
     {
       "team": "TSG Ehingen",
-      "players": 1
-    },
-    {
-      "team": "TSK/GHP Bamberg",
       "players": 1
     },
     {
@@ -18589,14 +18446,6 @@
       ]
     },
     {
-      "team": "Karşıyaka Basket",
-      "count": 2,
-      "players": [
-        "Briante Weber",
-        "Xavier Munford"
-      ]
-    },
-    {
       "team": "Kožuv",
       "count": 2,
       "players": [
@@ -18730,6 +18579,14 @@
       "players": [
         "Emmanuel Mudiay",
         "Matt Mooney"
+      ]
+    },
+    {
+      "team": "Pınar Karşıyaka",
+      "count": 2,
+      "players": [
+        "Briante Weber",
+        "Xavier Munford"
       ]
     },
     {
@@ -18967,13 +18824,6 @@
       ]
     },
     {
-      "team": "Bamberg Baskets",
-      "count": 1,
-      "players": [
-        "Tre Scott"
-      ]
-    },
-    {
       "team": "Bambitious Nara",
       "count": 1,
       "players": [
@@ -19034,6 +18884,13 @@
       "count": 1,
       "players": [
         "Terry Taylor"
+      ]
+    },
+    {
+      "team": "Brose Bamberg",
+      "count": 1,
+      "players": [
+        "Tre Scott"
       ]
     },
     {
@@ -19436,6 +19293,13 @@
       ]
     },
     {
+      "team": "Lietuvos rytas",
+      "count": 1,
+      "players": [
+        "Cassius Winston"
+      ]
+    },
+    {
       "team": "Limoges CSP",
       "count": 1,
       "players": [
@@ -19720,13 +19584,6 @@
       "count": 1,
       "players": [
         "Daishen Nix"
-      ]
-    },
-    {
-      "team": "Rytas Vilnius",
-      "count": 1,
-      "players": [
-        "Cassius Winston"
       ]
     },
     {
@@ -20313,7 +20170,7 @@
     },
     {
       "country": "Turkey",
-      "players": 519
+      "players": 521
     },
     {
       "country": "Israel",
@@ -20361,7 +20218,7 @@
     },
     {
       "country": "Serbia",
-      "players": 150
+      "players": 152
     },
     {
       "country": "Poland",
@@ -20369,7 +20226,7 @@
     },
     {
       "country": "Lithuania",
-      "players": 131
+      "players": 132
     },
     {
       "country": "Lebanon",
@@ -20381,15 +20238,15 @@
     },
     {
       "country": "South Korea",
-      "players": 96
+      "players": 99
+    },
+    {
+      "country": "Croatia",
+      "players": 84
     },
     {
       "country": "Ukraine",
       "players": 84
-    },
-    {
-      "country": "Croatia",
-      "players": 83
     },
     {
       "country": "Taiwan",
@@ -20412,11 +20269,11 @@
       "players": 50
     },
     {
-      "country": "Brazil",
-      "players": 47
+      "country": "Slovenia",
+      "players": 50
     },
     {
-      "country": "Slovenia",
+      "country": "Brazil",
       "players": 47
     },
     {
@@ -20428,16 +20285,16 @@
       "players": 41
     },
     {
+      "country": "United Kingdom",
+      "players": 38
+    },
+    {
       "country": "Saudi Arabia",
       "players": 37
     },
     {
       "country": "UAE",
       "players": 36
-    },
-    {
-      "country": "United Kingdom",
-      "players": 35
     },
     {
       "country": "Monaco",
@@ -20544,6 +20401,10 @@
       "players": 9
     },
     {
+      "country": "North Macedonia",
+      "players": 9
+    },
+    {
       "country": "Denmark",
       "players": 7
     },
@@ -20572,20 +20433,12 @@
       "players": 6
     },
     {
-      "country": "North Macedonia",
-      "players": 6
-    },
-    {
       "country": "Iraq",
       "players": 5
     },
     {
       "country": "Vietnam",
       "players": 5
-    },
-    {
-      "country": "England",
-      "players": 4
     },
     {
       "country": "Iceland",
@@ -23827,26 +23680,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Karşıyaka Basket",
-      "players": [
-        "Briante Weber",
-        "Xavier Munford"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Briante Weber",
-            "Xavier Munford"
-          ],
-          "shared_nba_franchises": [
-            "Memphis Grizzlies"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Kožuv",
       "players": [
         "Brian Bowen",
@@ -23974,6 +23807,26 @@
         "Shabazz Muhammad"
       ],
       "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Pınar Karşıyaka",
+      "players": [
+        "Briante Weber",
+        "Xavier Munford"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Briante Weber",
+            "Xavier Munford"
+          ],
+          "shared_nba_franchises": [
+            "Memphis Grizzlies"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
       "latest_stint_year": 2026
     },
     {
@@ -25410,6 +25263,14 @@
             "2003",
             "2004",
             "2008"
+          ]
+        },
+        {
+          "team": "Anyang KGC",
+          "stints": 2,
+          "years": [
+            "2004-2005",
+            "2006-2007"
           ]
         },
         {
@@ -30253,7 +30114,7 @@
           ]
         },
         {
-          "team": "Khimki Moscow",
+          "team": "Khimki",
           "stints": 2,
           "years": [
             "2007",
@@ -32660,6 +32521,19 @@
           "years": [
             "1985-1988",
             "2001-2002"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Charles Shackleford",
+      "teams": [
+        {
+          "team": "Juvecaserta Basket",
+          "stints": 2,
+          "years": [
+            "1990-1991",
+            "1993-1994"
           ]
         }
       ]
@@ -35625,6 +35499,19 @@
           "years": [
             "1948-1949",
             "1950-1951"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Dino Radja",
+      "teams": [
+        {
+          "team": "Split",
+          "stints": 2,
+          "years": [
+            "1985-1990",
+            "2002-2003"
           ]
         }
       ]
@@ -39994,7 +39881,7 @@
           ]
         },
         {
-          "team": "Khimki Moscow",
+          "team": "Khimki",
           "stints": 2,
           "years": [
             "2016–2017",
@@ -41144,7 +41031,7 @@
       "player": "Jordan Mickey",
       "teams": [
         {
-          "team": "Khimki Moscow",
+          "team": "Khimki",
           "stints": 2,
           "years": [
             "2018–2019",
@@ -44303,7 +44190,7 @@
       "player": "Maurice Ndour",
       "teams": [
         {
-          "team": "Rytas Vilnius",
+          "team": "Lietuvos rytas",
           "stints": 2,
           "years": [
             "2020–2021",
@@ -49307,19 +49194,19 @@
       "player": "Tellis Frank",
       "teams": [
         {
+          "team": "Juvecaserta Basket",
+          "stints": 2,
+          "years": [
+            "1990-1991",
+            "1991-1993"
+          ]
+        },
+        {
           "team": "Minnesota Timberwolves",
           "stints": 2,
           "years": [
             "1991",
             "1993-1994"
-          ]
-        },
-        {
-          "team": "Phonola Caserta",
-          "stints": 2,
-          "years": [
-            "1990-1991",
-            "1991-1993"
           ]
         }
       ]
@@ -52019,8 +51906,8 @@
       },
       {
         "player": "Briante Weber",
-        "current_team": "Karşıyaka Basket",
-        "city": "İzmir",
+        "current_team": "Pınar Karşıyaka",
+        "city": "Izmir",
         "state": "",
         "country": "Turkey",
         "in_coords": true,
@@ -52145,7 +52032,7 @@
       },
       {
         "player": "Cassius Winston",
-        "current_team": "Rytas Vilnius",
+        "current_team": "Lietuvos rytas",
         "city": "Vilnius",
         "state": "",
         "country": "Lithuania",
@@ -56501,7 +56388,7 @@
       },
       {
         "player": "Tre Scott",
-        "current_team": "Bamberg Baskets",
+        "current_team": "Brose Bamberg",
         "city": "Bamberg",
         "state": "",
         "country": "Germany",
@@ -56879,8 +56766,8 @@
       },
       {
         "player": "Xavier Munford",
-        "current_team": "Karşıyaka Basket",
-        "city": "İzmir",
+        "current_team": "Pınar Karşıyaka",
+        "city": "Izmir",
         "state": "",
         "country": "Turkey",
         "in_coords": true,
