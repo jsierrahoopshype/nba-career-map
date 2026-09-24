@@ -1700,13 +1700,6 @@
     "country": "",
     "league": ""
   },
-  "Arecibo Captains": {
-    "team": "Arecibo Captains",
-    "city": "Arecibo",
-    "state": "",
-    "country": "Puerto Rico",
-    "league": ""
-  },
   "Arese Basket": {
     "team": "Arese Basket",
     "city": "",
@@ -2008,13 +2001,6 @@
     "country": "Lithuania",
     "league": ""
   },
-  "Atletico Madrid": {
-    "team": "Atletico Madrid",
-    "city": "Madrid",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
   "Atletico Queluz": {
     "team": "Atletico Queluz",
     "city": "Queluz",
@@ -2036,12 +2022,12 @@
     "country": "Argentina",
     "league": ""
   },
-  "Atlético Madrid Villalba": {
-    "team": "Atlético Madrid Villalba",
+  "Atlético Madrid": {
     "city": "Madrid",
     "state": "",
     "country": "Spain",
-    "league": ""
+    "league": "",
+    "team": "Atlético Madrid"
   },
   "Atlético San Isidro": {
     "team": "Atlético San Isidro",
@@ -3401,17 +3387,10 @@
     "country": "",
     "league": ""
   },
-  "Benetton Basket": {
-    "team": "Benetton Basket",
-    "city": "Treviso",
-    "state": "Veneto",
-    "country": "Italy",
-    "league": ""
-  },
   "Benetton Treviso": {
     "team": "Benetton Treviso",
     "city": "Treviso",
-    "state": "",
+    "state": "Veneto",
     "country": "Italy",
     "league": ""
   },
@@ -5872,13 +5851,6 @@
     "country": "France",
     "league": ""
   },
-  "Cholet Cedex Basket": {
-    "team": "Cholet Cedex Basket",
-    "city": "Cholet",
-    "state": "",
-    "country": "France",
-    "league": ""
-  },
   "Chongqing Fly Dragons": {
     "team": "Chongqing Fly Dragons",
     "city": "Chongqing",
@@ -6719,13 +6691,6 @@
     "country": "Greece",
     "league": ""
   },
-  "Dafni Athens": {
-    "team": "Dafni Athens",
-    "city": "Athens",
-    "state": "",
-    "country": "Greece",
-    "league": ""
-  },
   "Dafni BC": {
     "team": "Dafni BC",
     "city": "Dafni",
@@ -7391,13 +7356,6 @@
     "country": "Russia",
     "league": ""
   },
-  "Dynamo Moscow Region": {
-    "team": "Dynamo Moscow Region",
-    "city": "Moscow",
-    "state": "",
-    "country": "Russia",
-    "league": ""
-  },
   "Dynamo St. Petersburg": {
     "team": "Dynamo St. Petersburg",
     "city": "St. Petersburg",
@@ -7979,13 +7937,6 @@
     "country": "Spain",
     "league": ""
   },
-  "FC Barcelona B": {
-    "team": "FC Barcelona B",
-    "city": "Barcelona",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
   "FC Bayern Munich": {
     "team": "FC Bayern Munich",
     "city": "Munich",
@@ -8124,13 +8075,6 @@
     "city": "Istanbul",
     "state": "",
     "country": "Turkey",
-    "league": ""
-  },
-  "Fernet Tonic Bologna": {
-    "team": "Fernet Tonic Bologna",
-    "city": "Bologna",
-    "state": "",
-    "country": "Italy",
     "league": ""
   },
   "Ferrarelle Rieti": {
@@ -8756,27 +8700,6 @@
     "country": "Turkey",
     "league": ""
   },
-  "Galatasaray Doğa Sigorta": {
-    "team": "Galatasaray Doğa Sigorta",
-    "city": "",
-    "state": "",
-    "country": "",
-    "league": ""
-  },
-  "Galatasaray Liv Hospital": {
-    "team": "Galatasaray Liv Hospital",
-    "city": "",
-    "state": "",
-    "country": "",
-    "league": ""
-  },
-  "Galatasaray Nef": {
-    "team": "Galatasaray Nef",
-    "city": "",
-    "state": "",
-    "country": "",
-    "league": ""
-  },
   "Galgos de Tijuana": {
     "team": "Galgos de Tijuana",
     "city": "Tijuana",
@@ -9186,13 +9109,6 @@
   "Gran Canaria": {
     "team": "Gran Canaria",
     "city": "Las Palmas",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
-  "Gran Canaria B": {
-    "team": "Gran Canaria B",
-    "city": "Gran Canaria",
     "state": "",
     "country": "Spain",
     "league": ""
@@ -9848,13 +9764,6 @@
     "country": "Israel",
     "league": ""
   },
-  "Hapoel Migdal Jerusalem": {
-    "team": "Hapoel Migdal Jerusalem",
-    "city": "Jerusalem",
-    "state": "",
-    "country": "Israel",
-    "league": ""
-  },
   "Hapoel Ramat Gan": {
     "team": "Hapoel Ramat Gan",
     "city": "Ramat Gan",
@@ -10147,13 +10056,6 @@
     "city": "Nanyang",
     "state": "",
     "country": "China",
-    "league": ""
-  },
-  "Herbalife Gran Canaria": {
-    "team": "Herbalife Gran Canaria",
-    "city": "Gran Canaria",
-    "state": "",
-    "country": "Spain",
     "league": ""
   },
   "Herlev Wolfpack": {
@@ -11395,13 +11297,6 @@
     "country": "Dominican Republic",
     "league": ""
   },
-  "Joventut": {
-    "team": "Joventut",
-    "city": "Badalona",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
   "Joventut Alcalá": {
     "team": "Joventut Alcalá",
     "city": "",
@@ -12072,13 +11967,6 @@
     "city": "Klosterneuburg",
     "state": "",
     "country": "Austria",
-    "league": ""
-  },
-  "Knorr Bologna": {
-    "team": "Knorr Bologna",
-    "city": "Bologna",
-    "state": "",
-    "country": "Italy",
     "league": ""
   },
   "Knox Raiders": {
@@ -12949,13 +12837,6 @@
     "country": "Italy",
     "league": ""
   },
-  "Liberti / Benetton Treviso": {
-    "team": "Liberti / Benetton Treviso",
-    "city": "Treviso",
-    "state": "",
-    "country": "Italy",
-    "league": ""
-  },
   "Liberti Firenze": {
     "team": "Liberti Firenze",
     "city": "",
@@ -13565,13 +13446,6 @@
     "country": "Belgium",
     "league": ""
   },
-  "Maccabi Darom Tel Aviv": {
-    "team": "Maccabi Darom Tel Aviv",
-    "city": "Tel Aviv",
-    "state": "",
-    "country": "Israel",
-    "league": ""
-  },
   "Maccabi Giv'at Shmuel": {
     "team": "Maccabi Giv'at Shmuel",
     "city": "Giv'at Shmuel",
@@ -14155,20 +14029,6 @@
   },
   "Mega Bemax": {
     "team": "Mega Bemax",
-    "city": "Belgrade",
-    "state": "",
-    "country": "Serbia",
-    "league": ""
-  },
-  "Mega Leks": {
-    "team": "Mega Leks",
-    "city": "Belgrade",
-    "state": "",
-    "country": "Serbia",
-    "league": ""
-  },
-  "Mega Vizura": {
-    "team": "Mega Vizura",
     "city": "Belgrade",
     "state": "",
     "country": "Serbia",
@@ -16150,13 +16010,6 @@
   },
   "Olympiacos": {
     "team": "Olympiacos",
-    "city": "Piraeus",
-    "state": "",
-    "country": "Greece",
-    "league": ""
-  },
-  "Olympiacos B": {
-    "team": "Olympiacos B",
     "city": "Piraeus",
     "state": "",
     "country": "Greece",
@@ -18381,13 +18234,6 @@
     "country": "Spain",
     "league": ""
   },
-  "Real Madrid B": {
-    "team": "Real Madrid B",
-    "city": "Madrid",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
   "Reales de La Vega": {
     "team": "Reales de La Vega",
     "city": "La Vega",
@@ -19828,13 +19674,6 @@
     "city": "Toronto",
     "state": "",
     "country": "Canada",
-    "league": ""
-  },
-  "Scavolini Pesaro": {
-    "team": "Scavolini Pesaro",
-    "city": "Pesaro",
-    "state": "",
-    "country": "Italy",
     "league": ""
   },
   "Scavolini Spar Pesaro": {
@@ -21860,13 +21699,6 @@
     "country": "Australia",
     "league": ""
   },
-  "Taugrés/TAU Cerámica": {
-    "team": "Taugrés/TAU Cerámica",
-    "city": "",
-    "state": "",
-    "country": "",
-    "league": ""
-  },
   "Team Elite": {
     "team": "Team Elite",
     "city": "Northbrook",
@@ -21935,13 +21767,6 @@
     "city": "Bandırma",
     "state": "",
     "country": "Turkey",
-    "league": ""
-  },
-  "Telecom Gran Canaria": {
-    "team": "Telecom Gran Canaria",
-    "city": "Gran Canaria",
-    "state": "",
-    "country": "Spain",
     "league": ""
   },
   "Telekom Ankara": {
@@ -22700,13 +22525,6 @@
     "country": "",
     "league": ""
   },
-  "Trotamundos B.B.C.": {
-    "team": "Trotamundos B.B.C.",
-    "city": "Valencia",
-    "state": "",
-    "country": "Venezuela",
-    "league": ""
-  },
   "Trotamundos de Carabobo": {
     "team": "Trotamundos de Carabobo",
     "city": "Valencia",
@@ -23351,13 +23169,6 @@
     "country": "Georgia",
     "league": ""
   },
-  "VL Pesaro": {
-    "team": "VL Pesaro",
-    "city": "Pesaro",
-    "state": "",
-    "country": "Italy",
-    "league": ""
-  },
   "VVS Samara": {
     "team": "VVS Samara",
     "city": "Samara",
@@ -23367,13 +23178,6 @@
   },
   "Valencia": {
     "team": "Valencia",
-    "city": "Valencia",
-    "state": "",
-    "country": "Spain",
-    "league": ""
-  },
-  "Valencia B": {
-    "team": "Valencia B",
     "city": "Valencia",
     "state": "",
     "country": "Spain",
@@ -24688,27 +24492,6 @@
     "country": "France",
     "league": ""
   },
-  "Élan Béarnais": {
-    "team": "Élan Béarnais",
-    "city": "Pau",
-    "state": "",
-    "country": "France",
-    "league": ""
-  },
-  "Élan Béarnais Pau-Lacq-Orthez": {
-    "team": "Élan Béarnais Pau-Lacq-Orthez",
-    "city": "Pau",
-    "state": "",
-    "country": "France",
-    "league": ""
-  },
-  "Élan Béarnais Pau-Orthez": {
-    "team": "Élan Béarnais Pau-Orthez",
-    "city": "Pau",
-    "state": "",
-    "country": "France",
-    "league": ""
-  },
   "Élan Chalon": {
     "team": "Élan Chalon",
     "city": "Chalon-sur-Saône",
@@ -24758,13 +24541,6 @@
     "country": "Iceland",
     "league": ""
   },
-  "Ülker": {
-    "team": "Ülker",
-    "city": "Istanbul",
-    "state": "",
-    "country": "Turkey",
-    "league": ""
-  },
   "Ülkerspor": {
     "team": "Ülkerspor",
     "city": "Istanbul",
@@ -24802,20 +24578,6 @@
   },
   "İstanbul BB": {
     "team": "İstanbul BB",
-    "city": "Istanbul",
-    "state": "",
-    "country": "Turkey",
-    "league": ""
-  },
-  "İstanbul BŞB": {
-    "team": "İstanbul BŞB",
-    "city": "Istanbul",
-    "state": "",
-    "country": "Turkey",
-    "league": ""
-  },
-  "İstanbul Teknik Üniversitesi": {
-    "team": "İstanbul Teknik Üniversitesi",
     "city": "Istanbul",
     "state": "",
     "country": "Turkey",
@@ -24884,22 +24646,8 @@
     "country": "Lithuania",
     "league": ""
   },
-  "Žalgiris -Arvydas Sabonis School": {
-    "team": "Žalgiris -Arvydas Sabonis School",
-    "city": "",
-    "state": "",
-    "country": "",
-    "league": ""
-  },
   "Žalgiris -Arvydas Sabonis School Kaunas": {
     "team": "Žalgiris -Arvydas Sabonis School Kaunas",
-    "city": "Kaunas",
-    "state": "",
-    "country": "Lithuania",
-    "league": ""
-  },
-  "Žalgiris-2 Kaunas": {
-    "team": "Žalgiris-2 Kaunas",
     "city": "Kaunas",
     "state": "",
     "country": "Lithuania",

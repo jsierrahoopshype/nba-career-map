@@ -1,0 +1,12 @@
+{
+  "_comment": "Known exact start dates for career stints. Wikipedia career stints are year-granular ('2025-present'), which is all the signings guard (scripts/signing_guard.py) normally has to judge a move by. Where the real signing date is known it goes here, and scripts/update_careers.py re-applies it to the stint after every parse - so it survives the daily Wikipedia pass, which rebuilds career_history from scratch. Matched on player + team + the stint's start YEAR, so a span that later closes ('2025-present' -> '2025-2026') still matches. Display is unaffected: nothing renders start_date, the stint keeps showing its own years string.",
+  "overrides": [
+    {
+      "player": "Jalen Crutcher",
+      "team": "Iowa Wolves",
+      "start_year": 2025,
+      "start_date": "2025-12-24",
+      "note": "Signed with the Iowa Wolves on 2025-12-24; the ledger had booked it as a 2026-09-23 signing because that is when the pipeline first read the stint."
+    }
+  ]
+}

@@ -27,6 +27,7 @@ data/
     team_aliases.json          # historical/sponsored name -> current name
     team_locations.json        # canonical team -> city/state/country/league
     teams_needing_review.json  # teams with missing/uncertain location
+    stint_start_dates.json     # curated exact signing dates (see the ledger below)
 logs/
   update_log.json              # machine-readable history of runs
   changelog.md                 # human-readable change history
@@ -38,6 +39,9 @@ scripts/
   names.py                     # name normalization + canonical Wikipedia URL
   geo.py                       # region/US-state -> country resolution
   player_status.py             # tracking-status classification (see below)
+  signing_guard.py             # newly-DETECTED vs newly-STARTED stint (ledger)
+  merge_club_groups.py         # one-off: fold club-name variants into one club
+  prune_old_signings.py        # one-off: replay the guard over the old ledger
   seed_import.py               # one-time import of existing data into /data
   merge_migration.py           # one-time: merge duplicate player pairs
   update_careers.py            # main orchestrator (all modes)
@@ -54,6 +58,21 @@ college, and draft info. Career stints also carry normalized team name plus
 city/state/country for mapping.
 
 ## Tracking status
+
+## The transactions ledger
+
+`data/logs/transactions.json` records one entry per real club change and feeds
+the Latest Signings widget, `teams.html?view=signings` and the Slack
+`#signings` post. It only ever recorded a move the pipeline *detected*, so a
+Wikipedia edit that added or reordered an OLD stint booked a signing dated
+today — Lonnie Walker's 2025-26 season at Partizan surfaced as a September 2026
+signing. `scripts/signing_guard.py` now gates it: a detected move counts only
+when the destination stint STARTED on or after the day the ledger opened
+(2026-07-11). Wikipedia stints are year-granular, so the comparison normally
+runs at season granularity; where a real signing date is known it goes in
+`data/teams/stint_start_dates.json` and is re-stamped onto the stint after
+every parse. A move the guard cannot date still posts — losing a real signing
+is the worse failure — and is listed in the run summary.
 
 Every player record has a `status` field with one of three values (the parse
 outcome is stored separately in `parse_status` so the two never collide):
@@ -100,6 +119,15 @@ current canonical name, e.g. `Tau Cerámica → Baskonia`,
 `Charlotte Bobcats → Charlotte Hornets`. Teams that no longer exist (e.g.
 Virtus Roma) keep their historical name. Unknown teams are added to
 `teams_needing_review.json` for manual confirmation.
+
+**Club merges go in the alias table, not just in the data.** Rewriting the
+stored stints alone lasts one pipeline run: the daily pass re-parses each page
+and whatever spelling the article carries comes back. Every merge is therefore
+written into `team_aliases.json` (see `scripts/merge_club_groups.py`), which is
+what `TeamNormalizer` consults on the way in — so the club cannot split again,
+and the move detector stays quiet because `classify_move` normalizes both sides
+before comparing. An alias must never point at another alias: the normalizer
+follows exactly one hop.
 
 ## Deduplication
 

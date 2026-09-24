@@ -80,6 +80,77 @@ def country_url(name: str) -> str:
     return f"{SITE_BASE_URL}/country/{slug(name)}.html"
 
 
+# --- internal links from a career row --------------------------------------
+# The same destinations teams.html sends a click to, in the same URL forms:
+# a franchise and a country have a prerendered page and get it, a club and a
+# city have none and keep their query URL on teams.html. Franchise and era
+# names are read from data/nba_team_index.json (the file stint_order.py reads
+# for the same reason) rather than re-derived here, so there is one source of
+# truth and no import cycle with build_dashboard_data, which writes it.
+TEAM_INDEX = ROOT / "data" / "nba_team_index.json"
+_TEAM_IDX: dict | None = None
+
+
+def _team_index() -> dict:
+    """{eras, franchises, collisions}, read once, on first use.
+
+    Lazily rather than at import: build_dashboard_data imports this module at
+    the top and writes nba_team_index.json part-way through its run, so a
+    module-level read would see the previous run's file.
+    """
+    global _TEAM_IDX
+    if _TEAM_IDX is None:
+        try:
+            _TEAM_IDX = json.loads(TEAM_INDEX.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            _TEAM_IDX = {}
+    return _TEAM_IDX
+
+
+def _start_year(years) -> int | None:
+    m = re.search(r"\d{4}", str(years or ""))
+    return int(m.group()) if m else None
+
+
+def franchise_of(team: str, years=None) -> str | None:
+    """Current NBA franchise for a stint's team name, or None for a club.
+
+    A collision era name (the modern San Diego Clippers re-using the Clippers'
+    1978-84 name) resolves to None from its cutoff year on, so a G League
+    stint never links to the NBA franchise's page.
+    """
+    idx = _team_index()
+    cut = (idx.get("collisions") or {}).get(team)
+    year = _start_year(years)
+    if cut is not None and year is not None and year >= cut:
+        return None
+    if team in set(idx.get("franchises") or ()):
+        return team
+    return (idx.get("eras") or {}).get(team)
+
+
+def team_href(team: str, years=None, depth: str = "..") -> str:
+    fr = franchise_of(team, years)
+    if fr:
+        return f"{depth}/team/{slug(fr)}.html"
+    return f"{depth}/teams.html?club={quote(team)}"
+
+
+def city_href(city: str, country: str = "", depth: str = "..") -> str:
+    # city AND country: Valencia, Spain and Valencia, Venezuela are two places
+    # (see teams.html's cityHref, which builds the same URL).
+    q = f"{depth}/teams.html?city={quote(city)}"
+    return q + (f"&country={quote(country)}" if country else "")
+
+
+def country_href(country: str, depth: str = "..") -> str:
+    return f"{depth}/country/{slug(country)}.html"
+
+
+def link(href: str, text: str) -> str:
+    return f'<a class="link" href="{esc(href)}">{esc(text)}</a>'
+
+
 def esc(text) -> str:
     return (str(text if text is not None else "")
             .replace("&", "&amp;").replace("<", "&lt;")
@@ -187,11 +258,16 @@ def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{esc(image or OG_IMAGE)}">
 <meta name="twitter:image:alt" content="{esc(image_alt or OG_IMAGE_ALT)}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{depth}/assets/prerender.css">
 </head>
 <body>
-<header class="ph"><a class="brand" href="{depth}/index.html">NBA Career Map</a>
-<nav><a href="{depth}/teams.html">Teams</a><a href="{depth}/index.html?view=quiz">Quiz</a></nav></header>
+<header class="ph"><div class="ph-inner">
+<a class="brand" href="{depth}/index.html">NBA Career Map</a>
+<nav class="nav"><a href="{depth}/index.html">Map</a><a href="{depth}/teams.html">Teams</a><a href="{depth}/quiz.html">Quiz</a></nav>
+</div></header>
 <main>
 <h1>{esc(h1)}</h1>
 <p class="lede">{esc(lede)}</p>
@@ -214,22 +290,39 @@ def player_card(name: str) -> tuple[str, str]:
     return OG_IMAGE, OG_IMAGE_ALT
 
 
+def _career_row(s: dict) -> str:
+    """One career stop, with every entity in it linked to its own page.
+
+    A crawler that can only reach a player page from the sitemap gets nothing
+    from it beyond that player; linked out, each page feeds the club, city and
+    country pages it names. The cells themselves are unchanged -- same text,
+    same order -- so the page reads as it did.
+    """
+    team = (s.get("team") or "").strip()
+    city = (s.get("city") or "").strip()
+    country = (s.get("country") or "").strip()
+    team_cell = link(team_href(team, s.get("years")), team) if team else ""
+    city_cell = link(city_href(city, country), city) if city else ""
+    country_cell = link(country_href(country), country) if country else ""
+    return ("<tr>"
+            f"<td class=\"yr\">{esc(s.get('years'))}</td>"
+            f"<td class=\"wrap\">{team_cell}</td>"
+            f"<td>{city_cell}</td>"
+            f"<td>{country_cell}</td>"
+            "</tr>")
+
+
 def render(player: dict) -> str:
     name = player.get("display_name") or player.get("player") or ""
     key = player.get("player") or name
     hist = player.get("career_history", []) or []
 
     if hist:
-        rows = "\n".join(
-            "<tr>"
-            f"<td class=\"yr\">{esc(s.get('years'))}</td>"
-            f"<td>{esc(s.get('team'))}</td>"
-            f"<td>{esc(s.get('city'))}</td>"
-            f"<td>{esc(s.get('country'))}</td>"
-            "</tr>" for s in hist)
-        table = ('<table class="ct"><thead><tr><th>Years</th><th>Team</th>'
+        rows = "\n".join(_career_row(s) for s in hist)
+        table = ('<div class="table-wrap"><table class="ct">'
+                 '<thead><tr><th>Years</th><th>Team</th>'
                  '<th>City</th><th>Country</th></tr></thead>\n'
-                 f"<tbody>\n{rows}\n</tbody></table>")
+                 f"<tbody>\n{rows}\n</tbody></table></div>")
     else:
         table = '<p class="empty">No career history on record yet.</p>'
 
@@ -271,14 +364,15 @@ def render_team(franchise: str, team: dict) -> str:
     roster = team.get("roster") or []
     rows = "\n".join(
         "<tr>"
-        f"<td><a href=\"../player/{slug(r['player'])}.html\">{esc(r['player'])}</a></td>"
+        f"<td class=\"wrap\"><a class=\"link\" href=\"../player/{slug(r['player'])}.html\">{esc(r['player'])}</a></td>"
         f"<td class=\"yr\">{esc(r.get('years'))}</td>"
         f"<td>{esc(r.get('stint_team'))}</td>"
         f"<td>{esc(r.get('current_team'))}</td>"
         "</tr>" for r in roster if r.get("player"))
-    table = ('<table class="ct"><thead><tr><th>Player</th><th>Years</th>'
+    table = ('<div class="table-wrap"><table class="ct">'
+             '<thead><tr><th>Player</th><th>Years</th>'
              '<th>Era name</th><th>Now with</th></tr></thead>\n'
-             f"<tbody>\n{rows}\n</tbody></table>") if rows else \
+             f"<tbody>\n{rows}\n</tbody></table></div>") if rows else \
         '<p class="empty">No roster on record yet.</p>'
 
     eras = team.get("relocations") or []
@@ -323,9 +417,10 @@ def render_country(country: str, clubs: list, player_count: int) -> str:
         f"<td>{esc(c['club'])}</td><td>{esc(c.get('city'))}</td>"
         f"<td class=\"yr\">{c['players']}</td>"
         "</tr>" for c in shown)
-    table = ('<table class="ct"><thead><tr><th>Club</th><th>City</th>'
+    table = ('<div class="table-wrap"><table class="ct">'
+             '<thead><tr><th>Club</th><th>City</th>'
              '<th>NBA players</th></tr></thead>\n'
-             f"<tbody>\n{rows}\n</tbody></table>") if rows else \
+             f"<tbody>\n{rows}\n</tbody></table></div>") if rows else \
         '<p class="empty">No clubs on record yet.</p>'
     if len(clubs) > len(shown):
         table += (f'\n<p class="foot">Showing the {len(shown)} clubs with the '

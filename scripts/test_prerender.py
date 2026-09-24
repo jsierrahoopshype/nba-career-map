@@ -130,6 +130,65 @@ def test_page_is_usable_by_a_human():
     print("test_page_is_usable_by_a_human PASS")
 
 
+def test_page_wears_the_site_chrome():
+    """These pages are the site, not a stripped print view: same fonts, same
+    tokens, same sticky header and nav as index.html / teams.html."""
+    html = pr.render(SAMPLE)
+    assert "family=DM+Sans" in html and "family=JetBrains+Mono" in html
+    assert '<nav class="nav"><a href="../index.html">Map</a>' in html
+    assert '<a href="../teams.html">Teams</a>' in html
+    assert '<a href="../quiz.html">Quiz</a>' in html
+    assert "hoopshype" not in html.lower().split("</head>")[1].replace(
+        "hoopshype.com", ""), "no HoopsHype logo/brand in the page body"
+    css = (ROOT / "assets" / "prerender.css").read_text(encoding="utf-8")
+    for token in ("'DM Sans'", "'JetBrains Mono'", "--page:#f5f5f7",
+                  "html{font-size:115%}"):
+        assert token in css, f"{token} missing from the shared stylesheet"
+    print("test_page_wears_the_site_chrome PASS")
+
+
+def test_career_cells_link_to_their_pages():
+    """Team, city and country each point where teams.html sends a click: a
+    prerendered page where one exists, the query URL where none does."""
+    rich = json.loads(json.dumps(SAMPLE))
+    rich["career_history"] = [
+        {"years": "2012-2015", "team": "Mega Basket", "city": "Belgrade",
+         "country": "Serbia"},
+        {"years": "1995-1998", "team": "Vancouver Grizzlies", "city": "Vancouver",
+         "country": "Canada"},
+        {"years": "2024-2025", "team": "San Diego Clippers", "city": "San Diego",
+         "country": "USA"},
+    ]
+    html = pr.render(rich)
+    # a club has no static page -> query URL on teams.html
+    assert 'href="../teams.html?club=Mega%20Basket"' in html
+    # an ERA name resolves to its current franchise's page, not a dead slug
+    assert 'href="../team/memphis-grizzlies.html"' in html
+    assert "vancouver-grizzlies.html" not in html
+    # the modern G League club that re-used an NBA era name is a club page
+    assert 'href="../teams.html?club=San%20Diego%20Clippers"' in html
+    # cities carry their country; countries get their prerendered page
+    assert 'href="../teams.html?city=Belgrade&amp;country=Serbia"' in html
+    assert 'href="../country/serbia.html"' in html
+    assert "?player=" not in html.split("</head>")[1].replace(
+        '?player=Nikola%20Joki%C4%87', ''), "career cells must not use ?player="
+    print("test_career_cells_link_to_their_pages PASS")
+
+
+def test_head_block_is_untouched_by_the_restyle():
+    """The whole point of these pages is their head tags; a visual change
+    must not move them."""
+    html = pr.render(SAMPLE)
+    head = html.split("</head>")[0]
+    canon = f"{pr.SITE_BASE_URL}/player/nikola-jokic.html"
+    assert pr.build_title(SAMPLE) in head
+    assert f'<meta name="description" content="{pr.esc(pr.build_description(SAMPLE))}">' in head
+    assert f'<link rel="canonical" href="{canon}">' in head
+    assert f'<meta property="og:url" content="{canon}">' in head
+    assert "github.io" not in html, "canonical/og must point at hoopsmatic.com"
+    print("test_head_block_is_untouched_by_the_restyle PASS")
+
+
 def test_escaping():
     nasty = {"player": 'Bob "Tiny" O<br>Neal', "display_name": 'Bob "Tiny" O<br>Neal',
              "career_history": [{"years": "1970", "team": 'A & B <script>',
@@ -237,7 +296,10 @@ def test_internal_links_point_at_canonical_urls():
     assert "const countryHref = n => 'country/' + slugify(n) + '.html';" in tm
     # clubs and cities have no prerendered pages yet, so they keep query URLs
     assert "const clubHref    = n => '?club=' + encodeURIComponent(n);" in tm
-    assert "const cityHref    = n => '?city=' + encodeURIComponent(n);" in tm
+    # ...and a city URL carries its country, because two countries can hold a
+    # city of the same name (Valencia, Spain / Valencia, Venezuela).
+    assert "const cityHref    = (n, co) => '?city=' + encodeURIComponent(n) +" in tm
+    assert "(co ? '&country=' + encodeURIComponent(co) : '');" in tm
     # ...and the click path must resolve them back to the app
     assert "function appTarget(href)" in tm
     assert "const t = appTarget(a.getAttribute('href'));" in tm, \
@@ -274,6 +336,9 @@ if __name__ == "__main__":
     test_retired_players_are_not_described_as_active()
     test_every_description_fits_and_is_specific()
     test_page_is_usable_by_a_human()
+    test_page_wears_the_site_chrome()
+    test_career_cells_link_to_their_pages()
+    test_head_block_is_untouched_by_the_restyle()
     test_escaping()
     test_write_all_is_incremental_and_cleans_up()
     test_sitemap_lists_canonical_urls()
