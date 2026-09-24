@@ -1,39 +1,51 @@
-/* Styles for the generated player pages (scripts/prerender.py).
+/* Styles for the generated player / team / country pages (scripts/prerender.py).
 
    One shared file rather than inline CSS per page: 5,179 copies of this would
    be ~4 MB of duplicated bytes, and a cached stylesheet makes every page after
-   the first render immediately. Tokens mirror index.html so a prerendered page
-   and the app look like the same site. */
+   the first render immediately.
+
+   Tokens, fonts and type scale are the ones index.html and teams.html use --
+   DM Sans with JetBrains Mono for figures, the #f5f5f7 page, the 115% root
+   size and the same table treatment -- so a prerendered page and the app are
+   visibly one site rather than two. Anything here that differs from
+   teams.html is a real difference in the page: these are static, so there is
+   no search box in the header and no sortable table. */
 :root{
   --page:#f5f5f7; --surface:#fff; --surface-hover:#f0f0f2; --border:#d1d1d6;
   --text:#1d1d1f; --text-secondary:#6e6e73; --accent:#3b82f6;
   --accent-dim:rgba(59,130,246,.15);
   --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+/* Type scale matched to index.html / teams.html. */
+html{font-size:115%}
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-family:'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   background:var(--page); color:var(--text); line-height:1.5;
   -webkit-font-smoothing:antialiased;
 }
 a{color:inherit;text-decoration:none}
+
+/* header: same sticky white bar and pill nav as teams.html */
 .ph{
-  background:var(--surface); padding:14px 20px; display:flex; align-items:center;
-  gap:16px; box-shadow:0 2px 20px rgba(0,0,0,.08); position:sticky; top:0; z-index:10;
+  background:#fff; padding:14px 20px; position:sticky; top:0; z-index:100;
+  box-shadow:0 2px 20px rgba(0,0,0,.08);
 }
+.ph-inner{max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px}
 .ph .brand{font-weight:700; letter-spacing:-.3px}
-.ph nav{margin-left:auto; display:flex; gap:8px}
-.ph nav a{
+.ph .nav{margin-left:auto; display:flex; align-items:center; gap:8px}
+.ph .nav a{
   padding:8px 14px; border-radius:8px; font-size:14px; font-weight:600;
-  color:var(--text-secondary);
+  color:var(--text-secondary); transition:all .15s ease;
 }
-.ph nav a:hover{background:var(--surface-hover); color:var(--text)}
-main{max-width:860px; margin:0 auto; padding:28px 20px 56px}
-h1{font-size:1.75rem; line-height:1.2; letter-spacing:-.5px; margin-bottom:10px}
-.lede{color:var(--text-secondary); margin-bottom:18px}
+.ph .nav a:hover{background:var(--surface-hover); color:var(--text)}
+
+main{max-width:1200px; margin:0 auto; padding:24px 20px 64px}
+h1{font-size:1.6rem; font-weight:700; line-height:1.2; letter-spacing:-.5px; margin-bottom:4px}
+.lede{color:var(--text-secondary); font-size:.9rem; margin:2px 0 18px; max-width:70ch}
 .facts{
   display:flex; flex-wrap:wrap; gap:8px 22px; margin-bottom:20px;
-  font-size:14px; color:var(--text-secondary);
+  font-size:.86rem; color:var(--text-secondary);
 }
 .facts dt{font-weight:600; color:var(--text); display:inline}
 .facts dt::after{content:':'}
@@ -41,25 +53,35 @@ h1{font-size:1.75rem; line-height:1.2; letter-spacing:-.5px; margin-bottom:10px}
 .cta{margin:20px 0 26px}
 .btn{
   display:inline-block; padding:11px 20px; border-radius:10px; font-weight:600;
-  background:var(--accent); color:#fff; font-size:15px;
+  background:var(--accent); color:#fff; font-size:.92rem;
 }
 .btn:hover{filter:brightness(1.08)}
-.ct{width:100%; border-collapse:collapse; background:var(--surface);
-    border:1px solid var(--border); border-radius:10px; overflow:hidden; font-size:14px}
+
+/* table: same treatment as teams.html's data tables */
+.table-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;
+  border:1px solid var(--border); border-radius:12px; background:var(--surface)}
+.ct{width:100%; border-collapse:collapse; font-size:.86rem; min-width:460px}
+.ct th,.ct td{text-align:left; padding:10px 14px;
+  border-bottom:1px solid var(--border); white-space:nowrap}
+.ct td.wrap{white-space:normal}
 .ct th{
-  text-align:left; padding:10px 12px; background:var(--surface-hover);
-  font-size:12px; text-transform:uppercase; letter-spacing:.4px;
-  color:var(--text-secondary); border-bottom:1px solid var(--border);
+  background:var(--surface); font-family:var(--mono); font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.3px; color:var(--text-secondary);
+  font-weight:700;
 }
-.ct td{padding:10px 12px; border-bottom:1px solid var(--border)}
-.ct tr:last-child td{border-bottom:none}
-.ct .yr{font-family:var(--mono); white-space:nowrap; color:var(--text-secondary)}
+.ct tbody tr:last-child td{border-bottom:none}
+.ct tbody tr:hover{background:var(--surface-hover)}
+.ct .yr{font-family:var(--mono); color:var(--text-secondary)}
+/* Entity links inside data rows: neutral at rest, accent on hover only --
+   the same rule teams.html states, so table content carries no blue text. */
+.ct a.link{color:inherit; font-weight:600}
+.ct a.link:hover{color:var(--accent)}
 .empty{color:var(--text-secondary); font-style:italic}
-.foot{margin-top:26px; font-size:14px; color:var(--text-secondary)}
+.foot{margin-top:26px; font-size:.86rem; color:var(--text-secondary)}
 .foot a{color:var(--accent); font-weight:600}
 @media (max-width:560px){
   main{padding:20px 16px 44px}
-  h1{font-size:1.4rem}
-  .ct{font-size:13px}
-  .ct th,.ct td{padding:8px 9px}
+  h1{font-size:1.3rem}
+  .ct{font-size:.8rem}
+  .ct th,.ct td{padding:8px 10px}
 }

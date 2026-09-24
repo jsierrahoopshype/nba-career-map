@@ -47,6 +47,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+import signing_guard
 import split_combined_teams
 import stint_order
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
@@ -736,7 +737,7 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
     REFUSED_PLACE.clear()
     summary = {"date": today(), "mode": mode, "players_updated": [],
                "new_players": [], "new_teams": [], "team_moves": [],
-               "spelling_review": [],
+               "spelling_review": [], "old_stints": [],
                "status_changes": [], "newly_overseas": [], "newly_retired": [],
                "requests": 0, "budget_exhausted": False,
                "queue_size": 0, "queue_completed": False}
@@ -781,11 +782,29 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
                                          club_places=club_places,
                                          cities_by_country=cities_by_country)
             if is_move:
-                summary["team_moves"].append(
-                    {"player": key, "from": prev_current, "to": new_current})
+                # A stint the pipeline has only just SEEN is not a stint that
+                # has only just STARTED: an edit that adds or reorders an old
+                # stint moves current_team and would book a signing dated
+                # today. Only a destination stint that began on or after the
+                # ledger opened is news. See scripts/signing_guard.py -- an
+                # undetermined stint still posts, because losing a real
+                # signing is the worse failure.
+                fresh, why_fresh = signing_guard.is_new_signing(rec, new_current)
+                if fresh is False:
+                    is_move = False
+                    summary["old_stints"].append(
+                        {"player": key, "from": prev_current,
+                         "to": new_current, "reason": why_fresh})
+                    print(f"[ledger] {key}: {prev_current} -> {new_current} "
+                          f"not logged ({why_fresh})")
+                else:
+                    summary["team_moves"].append(
+                        {"player": key, "from": prev_current, "to": new_current})
             # A pair that looks like one club spelled two ways never reaches the
             # ledger, but it is not discarded either: it goes to the review file
-            # so the alias table can be taught the pair. "near-miss" DID post.
+            # so the alias table can be taught the pair. A "near-miss" normally
+            # DID post -- unless the signings guard above held it back, which is
+            # why `posted` records the final answer rather than the reason.
             if why in ("spelling-variant", "near-miss", "club-rename",
                        "rename-review"):
                 summary["spelling_review"].append(
@@ -856,6 +875,10 @@ def _persist(db: Database, summary: dict) -> None:
     # than depending on the order Wikipedia happened to list the stints in.
     # Like the split above, this runs every time: a re-fetch reintroduces
     # whatever order the source used.
+    # Known exact signing dates, re-stamped after the parse that just rebuilt
+    # career_history from the article; the guard above reads them.
+    summary["start_dates_stamped"] = signing_guard.apply_start_dates(players)
+
     ordered_n = stint_order.order_players(players)
     summary["stints_reordered"] = ordered_n
     if ordered_n:
@@ -1084,7 +1107,10 @@ def _notify_slack(db, summary: dict) -> None:
     Additive and non-blocking: reuses summary["team_moves"] (the same
     _is_real_move-gated list _append_transactions just wrote), so phantom
     club-renames never trigger an alert here either, and posts nothing when
-    a run finds no moves. SLACK_MARKER tracks how many ledger entries have
+    a run finds no moves. The signings guard (scripts/signing_guard.py) sits
+    on that same list and on the ledger this diffs, so a stint the pipeline
+    merely noticed late -- Lonnie Walker's 2025-26 season at Partizan -- is
+    never announced in #rumors either. SLACK_MARKER tracks how many ledger entries have
     been posted so far (a plain count, since TRANSACTIONS is append-only);
     diffing against that -- rather than just posting summary["team_moves"]
     directly -- means a failed post is retried (and only it, batched with
@@ -1136,6 +1162,8 @@ def _append_logs(summary: dict) -> None:
         f" ({len(summary['new_players'])} new)",
         f"- New teams discovered: **{len(summary['new_teams'])}**",
         f"- Team moves detected: **{len(summary['team_moves'])}**",
+        f"- Detected-but-not-new stints held back: "
+        f"**{len(summary.get('old_stints', []))}**",
         f"- Club-name pairs held for review: "
         f"**{len(summary.get('spelling_review', []))}**",
         f"- Status changes: **{len(summary.get('status_changes', []))}**"
