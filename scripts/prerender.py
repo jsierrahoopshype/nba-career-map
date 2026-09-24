@@ -80,58 +80,30 @@ def country_url(name: str) -> str:
     return f"{SITE_BASE_URL}/country/{slug(name)}.html"
 
 
-# --- birth and death --------------------------------------------------------
-# data/players/player_bio.json, written by scripts/fetch_bio_wikidata.py:
-# {player name: {birth_date, death_date, birth_place, death_place, ...}}.
-# The facts are not printed on the page any more; they feed the schema.org
-# Person block below and nothing else. Read lazily and tolerated when
-# absent -- a page with no Person dates is a page missing two keys, not a
-# broken build.
-BIO_FILE = ROOT / "data" / "players" / "player_bio.json"
-_BIO: dict | None = None
-
-
-def _bio_index() -> dict:
-    global _BIO
-    if _BIO is None:
-        try:
-            doc = json.loads(BIO_FILE.read_text(encoding="utf-8"))
-            _BIO = doc if isinstance(doc, dict) else {}
-        except (OSError, ValueError):
-            _BIO = {}
-    return _BIO
-
-
-def bio_of(player: dict) -> dict:
-    idx = _bio_index()
-    for name in (player.get("player"), player.get("display_name")):
-        rec = idx.get(name or "")
-        if isinstance(rec, dict):
-            return rec
-    return {}
+# --- birth and death: deliberately absent -----------------------------------
+# Nothing here reads them. data/players/player_bio.json (written by
+# scripts/fetch_bio_wikidata.py) is kept and kept current, but it belongs to a
+# separate section of the site, not to the Career Map: these pages publish no
+# birth or death facts, visibly or in their structured data, so this build has
+# no reason to open the file at all.
 
 
 def person_jsonld(player: dict) -> str:
     """A schema.org Person for the player page.
 
-    The pages carried no structured data at all, so this is the minimal block:
-    who the page is about, where it lives, and the birth/death facts when they
-    are known. Partial dates are valid ISO 8601, so a year-only birth date is
-    published as the year rather than padded to a day that is not a fact.
+    Who the page is about, where it lives, and the two facts the Career Map
+    itself holds: the player's nationality and his Wikipedia article.
+
+    NO BIRTH OR DEATH FACTS. birthDate, birthPlace, deathDate and deathPlace
+    were published here and have been removed: that data is for a separate
+    section of the site, and a Career Map page is not where it belongs. The
+    source file (data/players/player_bio.json) and the workflow that keeps it
+    current are untouched -- this build simply does not read them.
     """
     name = player.get("display_name") or player.get("player") or ""
     key = player.get("player") or name
-    rec = bio_of(player)
     data = {"@context": "https://schema.org", "@type": "Person",
             "name": name, "url": player_url(key)}
-    if rec.get("birth_date"):
-        data["birthDate"] = rec["birth_date"]
-    if (rec.get("birth_place") or "").strip():
-        data["birthPlace"] = {"@type": "Place", "name": rec["birth_place"]}
-    if rec.get("death_date"):
-        data["deathDate"] = rec["death_date"]
-    if (rec.get("death_place") or "").strip():
-        data["deathPlace"] = {"@type": "Place", "name": rec["death_place"]}
     if (player.get("nationality") or "").strip():
         data["nationality"] = player["nationality"]
     if (player.get("wikipedia_url") or "").strip():

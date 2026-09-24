@@ -7,6 +7,7 @@ Run:  python3 scripts/test_prerender.py
 """
 from __future__ import annotations
 
+import inspect
 import json
 import re
 import sys
@@ -360,26 +361,6 @@ def test_app_slug_matches_generator():
 
 
 # --- the Person JSON-LD -----------------------------------------------------
-BIO_SAMPLE = {
-    "Nikola Jokić": {"birth_date": "1995-02-19", "death_date": None,
-                     "birth_place": "Sombor", "death_place": ""},
-    "Kobe Bryant": {"birth_date": "1978-08-23", "death_date": "2020-01-26",
-                    "birth_place": "Philadelphia", "death_place": "Calabasas"},
-    "Early Player": {"birth_date": "1922", "death_date": "1994-06",
-                     "birth_place": "Windsor", "death_place": ""},
-}
-
-
-def _with_bio(fn):
-    """Run fn with a known bio index in place of the shipped file."""
-    saved = pr._BIO
-    pr._BIO = BIO_SAMPLE
-    try:
-        return fn()
-    finally:
-        pr._BIO = saved
-
-
 def _player(name, **over):
     rec = {"player": name, "display_name": name, "status": "retired",
            "career_history": [{"years": "2015-2020", "team": "Denver Nuggets",
@@ -389,60 +370,66 @@ def _player(name, **over):
 
 
 def test_the_page_prints_no_birth_line_and_loads_no_age_script():
-    """The dates live in the JSON-LD only. Nothing visible, and no inline
-    script -- a page that prints no age has nothing to keep current."""
-    def check():
-        for name in ("Nikola Jokić", "Kobe Bryant", "Early Player",
-                     "Nobody At All"):
-            html = pr.render(_player(name))
-            assert 'class="bio"' not in html, name
-            assert "Born:" not in html and "Died:" not in html, name
-            assert "data-born" not in html, name
-            assert "(age " not in html and "(aged " not in html, name
-    _with_bio(check)
+    """Nothing visible, and no inline script -- a page that prints no age has
+    nothing to keep current."""
+    for name in ("Nikola Jokić", "Kobe Bryant", "Early Player",
+                 "Nobody At All"):
+        html = pr.render(_player(name))
+        assert 'class="bio"' not in html, name
+        assert "Born:" not in html and "Died:" not in html, name
+        assert "data-born" not in html, name
+        assert "(age " not in html and "(aged " not in html, name
     print("test_the_page_prints_no_birth_line_and_loads_no_age_script PASS")
 
 
-def test_the_page_carries_a_person_block_with_the_dates():
-    def check():
-        html = pr.render(_player("Kobe Bryant", nationality="United States"))
-        raw = html.split('<script type="application/ld+json">')[1] \
-                  .split("</script>")[0]
-        data = json.loads(raw)
-        assert data["@type"] == "Person"
-        assert data["name"] == "Kobe Bryant"
-        assert data["url"] == f"{pr.SITE_BASE_URL}/player/kobe-bryant.html"
-        assert data["birthDate"] == "1978-08-23"
-        assert data["deathDate"] == "2020-01-26"
-        assert data["birthPlace"] == {"@type": "Place", "name": "Philadelphia"}
-        # A year-only birth date is published as the year: ISO 8601 allows it,
-        # and padding it to a day would be publishing a fact we do not have.
-        year_only = json.loads(
-            pr.person_jsonld(_player("Early Player"))
-            .split(">", 1)[1].rsplit("<", 1)[0])
-        assert year_only["birthDate"] == "1922"
-        assert year_only["deathDate"] == "1994-06"
-    _with_bio(check)
-    print("test_the_page_carries_a_person_block_with_the_dates PASS")
+def test_the_page_carries_a_person_block_with_no_bio_facts():
+    """The Person block stays -- name, url, nationality, the Wikipedia link --
+    but the birth and death facts it used to publish are gone. That data is for
+    a separate section of the site, not for a Career Map page."""
+    html = pr.render(_player("Kobe Bryant", nationality="United States",
+                             wikipedia_url="https://en.wikipedia.org/wiki/Kobe_Bryant"))
+    raw = html.split('<script type="application/ld+json">')[1] \
+              .split("</script>")[0]
+    data = json.loads(raw)
+    assert data["@type"] == "Person"
+    assert data["name"] == "Kobe Bryant"
+    assert data["url"] == f"{pr.SITE_BASE_URL}/player/kobe-bryant.html"
+    assert data["nationality"] == "United States"
+    assert data["sameAs"] == "https://en.wikipedia.org/wiki/Kobe_Bryant"
+    for gone in ("birthDate", "birthPlace", "deathDate", "deathPlace"):
+        assert gone not in data, f"{gone} is still published"
+        assert gone not in html, f"{gone} is still in the served bytes"
+    print("test_the_page_carries_a_person_block_with_no_bio_facts PASS")
+
+
+def test_the_build_does_not_read_the_bio_file():
+    """The guard behind the test above. Kobe Bryant HAS a birth date on file;
+    the only reason it cannot reach a page is that nothing in this module opens
+    the file, and a helper added back 'just to read one field' would undo the
+    whole change quietly."""
+    # Comments and the docstring name the file deliberately -- they explain why
+    # it is NOT read -- so what counts is a line that would actually reach it.
+    reads = [ln for ln in inspect.getsource(pr).splitlines()
+             if "player_bio" in ln
+             and any(op in ln for op in ("read_text", "open(", "ROOT /",
+                                         "Path("))]
+    assert not reads, f"prerender reads the bio file again: {reads}"
+    print("test_the_build_does_not_read_the_bio_file PASS")
 
 
 def test_the_person_block_survives_a_hostile_name():
-    def check():
-        nasty = _player('Bob "Tiny" O<br>Neal')
-        raw = pr.person_jsonld(nasty).split(">", 1)[1].rsplit("<", 1)[0]
-        assert "<br>" not in raw, raw
-        assert json.loads(raw)["name"] == 'Bob "Tiny" O<br>Neal'
-    _with_bio(check)
+    nasty = _player('Bob "Tiny" O<br>Neal')
+    raw = pr.person_jsonld(nasty).split(">", 1)[1].rsplit("<", 1)[0]
+    assert "<br>" not in raw, raw
+    assert json.loads(raw)["name"] == 'Bob "Tiny" O<br>Neal'
     print("test_the_person_block_survives_a_hostile_name PASS")
 
 
 def test_team_and_country_pages_are_untouched():
     """The shell gained two optional slots; the pages that do not use them
     must come out byte-identical."""
-    def check():
-        team = pr.render_team("Los Angeles Lakers", TEAM_FIX)
-        assert "ld+json" not in team and 'class="bio"' not in team
-    _with_bio(check)
+    team = pr.render_team("Los Angeles Lakers", TEAM_FIX)
+    assert "ld+json" not in team and 'class="bio"' not in team
     print("test_team_and_country_pages_are_untouched PASS")
 
 
@@ -462,7 +449,8 @@ if __name__ == "__main__":
     test_sitemap_lists_canonical_urls()
     test_app_slug_matches_generator()
     test_the_page_prints_no_birth_line_and_loads_no_age_script()
-    test_the_page_carries_a_person_block_with_the_dates()
+    test_the_page_carries_a_person_block_with_no_bio_facts()
+    test_the_build_does_not_read_the_bio_file()
     test_the_person_block_survives_a_hostile_name()
     test_team_and_country_pages_are_untouched()
     test_team_page()
