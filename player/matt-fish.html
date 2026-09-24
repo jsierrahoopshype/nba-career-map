@@ -36,7 +36,6 @@
 <main>
 <h1>Where has Matt Fish played?</h1>
 <p class="lede">Matt Fish played for 19 clubs in 5 countries: Philadelphia Spirit, Omaha Racers, Grand Rapids Hoops and more, last with Belgrano de San Nicolás.</p>
-<p class="bio">Born: November 18, 1969 in Washington <span class="age" data-born="1969-11-18">(age 56)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Belgrano de San Nicolás</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Matt%20Fish">Open Matt Fish's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -65,13 +64,5 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
-<script>
-(function(){try{var n=new Date();
-document.querySelectorAll('.age[data-born]').forEach(function(el){
-var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
-var a=n.getUTCFullYear()-(+b[1]);
-if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
-if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
-</script>
 </body>
 </html>

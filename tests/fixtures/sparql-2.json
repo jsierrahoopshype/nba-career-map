@@ -1,0 +1,92 @@
+{
+  "head": {
+    "vars": [
+      "name",
+      "item",
+      "itemLabel",
+      "itemDescription",
+      "birth",
+      "bprec",
+      "death",
+      "dprec",
+      "bplaceLabel",
+      "dplaceLabel"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q999005"
+        },
+        "name": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Namesake Player"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Namesake Player"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "American basketball player"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "2006-08-13T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Chattanooga"
+        }
+      },
+      {
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q999007"
+        },
+        "name": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Namesake Player"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Namesake Player"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Australian basketball player"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1968-02-02T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Perth"
+        }
+      }
+    ]
+  }
+}

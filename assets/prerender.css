@@ -43,11 +43,6 @@ a{color:inherit;text-decoration:none}
 main{max-width:1200px; margin:0 auto; padding:24px 20px 64px}
 h1{font-size:1.6rem; font-weight:700; line-height:1.2; letter-spacing:-.5px; margin-bottom:4px}
 .lede{color:var(--text-secondary); font-size:.9rem; margin:2px 0 18px; max-width:70ch}
-/* birth/death line (scripts/prerender.py), sits between the lede and the
-   facts list; .age is the span the inline script keeps current. */
-.bio{margin:0 0 14px; font-size:.86rem; color:var(--text-secondary);
-  max-width:70ch}
-.bio .age{color:var(--text-secondary); white-space:nowrap}
 .facts{
   display:flex; flex-wrap:wrap; gap:8px 22px; margin-bottom:20px;
   font-size:.86rem; color:var(--text-secondary);

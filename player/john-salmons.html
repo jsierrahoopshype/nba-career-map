@@ -36,7 +36,6 @@
 <main>
 <h1>Where has John Salmons played?</h1>
 <p class="lede">John Salmons played for 6 clubs in 2 countries: Philadelphia 76ers, Sacramento Kings, Chicago Bulls, Milwaukee Bucks and more, last with New Orleans Pelicans.</p>
-<p class="bio">Born: December 12, 1979 in Philadelphia <span class="age" data-born="1979-12-12">(age 46)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>New Orleans Pelicans</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=John%20Salmons">Open John Salmons's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -52,13 +51,5 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
-<script>
-(function(){try{var n=new Date();
-document.querySelectorAll('.age[data-born]').forEach(function(el){
-var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
-var a=n.getUTCFullYear()-(+b[1]);
-if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
-if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
-</script>
 </body>
 </html>

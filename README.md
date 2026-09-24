@@ -23,7 +23,7 @@ data/
     nba_players_careers.json   # canonical career database (source of truth)
     active_players.json        # {nba_active:[...], overseas_active:[...]}
     retired_players.json       # no longer playing anywhere
-    player_bio.json            # birth/death dates + places, from Wikidata
+    player_bio.json            # birth/death dates + places (Basketball-Reference + Wikidata)
     bio_needs_review.json      # birth dates that disagree with Basketball-Reference
   teams/
     team_aliases.json          # historical/sponsored name -> current name
@@ -153,45 +153,78 @@ the same player name the career database uses:
 "Kobe Bryant": {
   "birth_date": "1978-08-23", "death_date": "2020-01-26",
   "birth_place": "Philadelphia", "death_place": "Calabasas",
-  "wikidata_id": "Q41421", "source": "wikidata", "checked": "2026-09-24"
+  "wikidata_id": "Q25369", "source": "basketball-reference",
+  "checked": "2026-09-24"
 }
 ```
 
-Two batched hops: the Wikipedia `pageprops` API (50 titles a request) maps each
-article to its Wikidata item, then one SPARQL query per 250 items reads P569
-(birth date), P570 (death date), P19 (place of birth) and P20 (place of death).
-The dates come off the statement's value node, not the `wdt:` shortcut, because
-only the value node carries the **precision** — a date Wikidata knows only to
-the year stays `"1922"` rather than being padded to January 1st, on the page
-and in the JSON-LD alike.
+`source` names where `birth_date` came from and nothing else —
+`basketball-reference`, `wikidata`, or `unresolved`. `wikidata_id` is the item
+the places and the death date came from, empty when no item passed the identity
+gate. Two optional keys appear only when they have something to say:
+`wikidata_birth_date` (the value Basketball-Reference beat, kept so the review
+file can still report the disagreement) and `rejected_wikidata_id` (the
+namesake the gate turned down).
 
+Three batched hops: the Wikipedia `pageprops` API (50 titles a request) maps
+each article to its Wikidata item, then one SPARQL query per 250 items reads
+P569 (birth date), P570 (death date), P19 (place of birth), P20 (place of
+death) and the gate flag, and a third goes looking for replacements. The dates
+come off the statement's value node, not the `wdt:` shortcut, because only the
+value node carries the **precision** — a date Wikidata knows only to the year
+stays `"1922"` rather than being padded to January 1st, in the JSON-LD as well
+as the file. Statements Wikidata has marked *deprecated* (its way of saying a
+value is known to be wrong) are skipped.
+
+- **The identity gate.** A name like Ace Bailey, Michael Phelps or Reggie
+  Jackson resolves to a namesake: an ice hockey player who died in 1992, a
+  swimmer, a baseball Hall of Famer. An item is only believed when Wikidata
+  says P106 (occupation) = basketball player (`Q3665646`) or P641 (sport) =
+  basketball (`Q5372`). One that fails has **all** of its dates and places
+  discarded; the run then searches Wikidata for a basketball player of that
+  name born within a year of Basketball-Reference's date, and takes it only
+  when there is exactly one candidate.
+- **Source precedence.** Basketball-Reference
+  (`sumitrodatta/bball-reference-datasets`) is keyed to the actual NBA player,
+  so it decides the birth date whenever it has one; the gated Wikidata value is
+  the fallback. The death date and both places are Wikidata's alone, and only
+  from a gated item whose birth year is within a year of
+  Basketball-Reference's — a right-occupation item with the wrong birth year is
+  still likely a different basketball player, and his home town is not this
+  player's.
 - **Incremental.** A run resolves the players missing from the file, and
   re-checks living players whose record is over `--refresh-days` (7) old so a
   death is picked up within the week. `--refresh-limit` spreads that sweep over
-  several days instead of re-reading everyone at once.
-- **Nothing is overwritten silently.** A re-check fills blanks and takes a
-  death; it never replaces a birth date already on file. A disagreement goes to
-  `bio_needs_review.json` and the stored value stands. `--full` re-fetches
-  everyone and lets Wikidata's values win.
-- **Cross-checked.** Birth dates are compared against Basketball-Reference
-  (`sumitrodatta/bball-reference-datasets`). Mismatches and players with no
-  Wikidata birth date land in `data/players/bio_needs_review.json` for a human;
-  the cross-check never edits `player_bio.json`.
-- **Fails loudly.** If Wikidata or Wikipedia cannot be reached the run exits
-  non-zero and writes **nothing** — an empty file would strip the birth line
-  off every page on the site.
+  several days instead of re-reading everyone at once. `--full` re-reads
+  everyone and **rewrites every record from scratch** under the current rules,
+  which is what to run after the rules themselves change.
+- **Re-appliable offline.** `--reapply` re-runs the rules over the records
+  already on file without touching Wikipedia or Wikidata. It cannot consult
+  P106, so it stands in the strongest signal a stored record still carries: a
+  Wikidata birth year five or more years from Basketball-Reference's is a
+  namesake, not a disputed date. A later `--full` run re-checks all of it
+  against the real gate.
+- **Fails loudly.** If Wikidata, Wikipedia or the Basketball-Reference mirror
+  cannot be reached the run exits non-zero and writes **nothing** — an empty
+  file would strip the dates out of every player page's structured data.
 
-The facts surface as one line under the player's name (`Born: … in … (age N)`,
-or `Born: … / Died: … (aged N)`), on the prerendered pages and in the app's
-player view, and as a schema.org `Person` block in each player page's JSON-LD.
-The age is rendered at build time **and** recomputed by a ~250-byte inline
-script, so a page built in December does not still claim last year's age in
-February. A year-only date shows the year and no age.
+`data/players/bio_needs_review.json` is the human's queue, in three lists —
+`wrong_entity` (the gate failed: what it had resolved to, and whether a
+replacement was found), `date_disagreement` (the same person, different dates,
+and which one the record uses) and `still_missing` (no birth date from either
+source) — plus `wikipedia_url_wrong_person`, the wrong-entity players whose
+stored Wikipedia URL is the namesake's article, so their **club history** may
+be wrong too. Nothing in it edits the career database.
+
+The facts do not print on the page. They feed the schema.org `Person` block in
+each player page's JSON-LD, where a year-only date is published as the year
+rather than padded to a day that is not a fact.
 
 ```bash
 python3 scripts/fetch_bio_wikidata.py                   # incremental
 python3 scripts/fetch_bio_wikidata.py --limit 500       # bounded backfill
-python3 scripts/fetch_bio_wikidata.py --full            # re-fetch everyone
+python3 scripts/fetch_bio_wikidata.py --full            # rewrite everyone
+python3 scripts/fetch_bio_wikidata.py --reapply         # offline re-apply
 python3 scripts/fetch_bio_wikidata.py --fixtures tests/fixtures --dry-run
 python3 scripts/test_fetch_bio_wikidata.py              # offline, no network
 ```
@@ -296,7 +329,8 @@ the first full backfill, a re-run after an outage, or a `--full` re-fetch.
 | Input | Purpose |
 |-------|---------|
 | `mode = incremental` | players missing from `player_bio.json` + the weekly death re-checks (default) |
-| `mode = full` | re-fetch everyone; Wikidata's values overwrite what is on file |
+| `mode = full` | re-read everyone and rewrite every record from scratch under the current rules |
+| `mode = reapply` | offline: re-apply the rules to what is already on file, no Wikidata |
 | `limit` | cap how many players this run resolves (blank = all) |
 | `refresh_limit` | cap the living-player death sweep (default 1000) |
 | `rebuild_pages` | rebuild the prerendered pages afterwards (default true) |

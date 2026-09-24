@@ -1,14 +1,17 @@
 name: Player Birth/Death Facts
 
-# Wikidata birth and death facts for every player in the career database
+# Birth and death facts for every player in the career database
 # (scripts/fetch_bio_wikidata.py -> data/players/player_bio.json), plus the
-# Basketball-Reference cross-check that lands in
-# data/players/bio_needs_review.json.
+# human's queue that lands in data/players/bio_needs_review.json.
 #
 # The daily pipeline (update-careers.yml) already runs the incremental slice
 # of this. THIS workflow is the by-hand one: the first full backfill of all
-# ~5,200 players, a re-run after a Wikidata outage, or a --full re-fetch that
-# lets Wikidata's values overwrite what is on file.
+# ~5,200 players, a re-run after a Wikidata outage, or -- the reason to reach
+# for it after the rules themselves change -- a "full" run, which re-reads
+# every player and REWRITES every record from scratch under the current rules:
+# the P106/P641 identity gate that keeps a namesake's dates out, the search
+# that re-points a rejected player at the right item, and Basketball-Reference
+# deciding the birth date.
 #
 # Manual only, on purpose: a full backfill is a few hundred API requests and
 # wants a human deciding when it happens.
@@ -21,7 +24,8 @@ on:
         default: incremental
         options:
           - incremental   # players missing from player_bio.json + weekly death re-checks
-          - full          # re-fetch everyone; Wikidata's values win
+          - full          # re-read everyone and rewrite every record under the current rules
+          - reapply       # offline: re-apply the rules to what is on file, no Wikidata
       limit:
         description: "Max players to resolve this run (blank = all)"
         type: string
@@ -70,14 +74,40 @@ jobs:
         run: |
           ARGS="--refresh-limit ${IN_REFRESH:-1000} --delay 1.0"
           if [ "$IN_MODE" = "full" ]; then ARGS="$ARGS --full"; fi
+          if [ "$IN_MODE" = "reapply" ]; then ARGS="$ARGS --reapply"; fi
           if [ -n "$IN_LIMIT" ]; then ARGS="$ARGS --limit $IN_LIMIT"; fi
           echo "python3 scripts/fetch_bio_wikidata.py $ARGS"
           python3 scripts/fetch_bio_wikidata.py $ARGS
 
+      - name: Review summary
+        # The counts land in the run's summary page, so the wrong-entity and
+        # disagreement queues are visible without cloning the repo.
+        if: always()
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          p = pathlib.Path("data/players/bio_needs_review.json")
+          if not p.exists():
+              print("No review file was written.")
+              raise SystemExit
+          r = json.loads(p.read_text(encoding="utf-8"))
+          c = r.get("counts", {})
+          print("## Birth/death review\n")
+          for k in ("wrong_entity", "wrong_entity_replaced",
+                    "date_disagreement", "still_missing",
+                    "wikipedia_url_wrong_person"):
+              print(f"- **{k.replace('_', ' ')}**: {c.get(k, 0)}")
+          bad = r.get("wikipedia_url_wrong_person") or []
+          if bad:
+              print("\n### Wikipedia URLs pointing at the wrong person\n")
+              for row in bad:
+                  print(f"- {row['player']} — {row['wikipedia_url']}")
+          PY
+
       - name: Rebuild derived data and pages
-        # The birth line and the Person JSON-LD are baked into the
-        # prerendered pages, so the pages have to be rewritten for the new
-        # facts to reach a crawler.
+        # The Person JSON-LD on each player page is baked in at build time,
+        # so the pages have to be rewritten for the new facts to reach a
+        # crawler.
         if: ${{ github.event.inputs.rebuild_pages != 'false' }}
         run: python3 scripts/build_dashboard_data.py
 
