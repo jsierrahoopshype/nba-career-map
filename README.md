@@ -23,11 +23,14 @@ data/
     nba_players_careers.json   # canonical career database (source of truth)
     active_players.json        # {nba_active:[...], overseas_active:[...]}
     retired_players.json       # no longer playing anywhere
+    player_bio.json            # birth/death dates + places, from Wikidata
+    bio_needs_review.json      # birth dates that disagree with Basketball-Reference
   teams/
     team_aliases.json          # historical/sponsored name -> current name
     team_locations.json        # canonical team -> city/state/country/league
     teams_needing_review.json  # teams with missing/uncertain location
     stint_start_dates.json     # curated exact signing dates (see the ledger below)
+    stint_corrections.json     # stints the source lists that were never played
 logs/
   update_log.json              # machine-readable history of runs
   changelog.md                 # human-readable change history
@@ -40,6 +43,8 @@ scripts/
   geo.py                       # region/US-state -> country resolution
   player_status.py             # tracking-status classification (see below)
   signing_guard.py             # newly-DETECTED vs newly-STARTED stint (ledger)
+  stint_corrections.py         # re-applies stint_corrections.json after every parse
+  fetch_bio_wikidata.py        # birth/death facts from Wikidata (see below)
   merge_club_groups.py         # fold club-name variants into one club
   fix_club_countries.py        # curated place corrections + the UK label sweep
   audit_club_countries.py      # REPORT ONLY: clubs whose country looks wrong
@@ -48,8 +53,11 @@ scripts/
   merge_migration.py           # one-time: merge duplicate player pairs
   update_careers.py            # main orchestrator (all modes)
   test_sample.py               # 10-player end-to-end smoke test
+tests/
+  fixtures/                    # saved API responses (offline tests for the bio fetcher)
 nba_players_careers_READY.json # map data file (kept in sync by the updater)
 .github/workflows/update-careers.yml
+.github/workflows/player-bio.yml
 ```
 
 ## Data extracted per player
@@ -112,6 +120,81 @@ enter the overseas re-check queue rather than being stranded as `retired`;
 live runs apply the strict 2-year rule against fresh Wikipedia data. (Once a
 player is `retired` they are only revisited if they reappear on an NBA roster
 or via a manual `single`/`full` run — a documented limitation.)
+
+## Curated stint removals
+
+`career_history` is rebuilt from the Wikipedia article on every run, so a stint
+deleted by hand is back the next morning. Stints the source lists that the
+player never actually played are recorded in `data/teams/stint_corrections.json`
+instead and dropped again after every parse — the mirror image of the curated
+signing dates above.
+
+The case it was built for: Andrei Kirilenko's 2001 line at Partizan. He signed
+a contract with the club and left for the Utah Jazz before ever playing for
+them, so the map drew a stop in Belgrade he never made.
+
+```bash
+python3 scripts/stint_corrections.py           # report what the rules would drop
+python3 scripts/stint_corrections.py --apply   # apply to the DB + the map file
+```
+
+Matching is on player + team + start year, so an edit that reshapes the span
+(`2001` → `2001-2002`) does not quietly stop matching; leave `start_year` out
+to drop every stint the player has at that club. Every rule carries a `reason`,
+and `scripts/test_stint_corrections.py` fails if the shipped database has
+drifted back out of line with the rules.
+
+## Birth and death facts
+
+`scripts/fetch_bio_wikidata.py` writes `data/players/player_bio.json`, keyed by
+the same player name the career database uses:
+
+```json
+"Kobe Bryant": {
+  "birth_date": "1978-08-23", "death_date": "2020-01-26",
+  "birth_place": "Philadelphia", "death_place": "Calabasas",
+  "wikidata_id": "Q41421", "source": "wikidata", "checked": "2026-09-24"
+}
+```
+
+Two batched hops: the Wikipedia `pageprops` API (50 titles a request) maps each
+article to its Wikidata item, then one SPARQL query per 250 items reads P569
+(birth date), P570 (death date), P19 (place of birth) and P20 (place of death).
+The dates come off the statement's value node, not the `wdt:` shortcut, because
+only the value node carries the **precision** — a date Wikidata knows only to
+the year stays `"1922"` rather than being padded to January 1st, on the page
+and in the JSON-LD alike.
+
+- **Incremental.** A run resolves the players missing from the file, and
+  re-checks living players whose record is over `--refresh-days` (7) old so a
+  death is picked up within the week. `--refresh-limit` spreads that sweep over
+  several days instead of re-reading everyone at once.
+- **Nothing is overwritten silently.** A re-check fills blanks and takes a
+  death; it never replaces a birth date already on file. A disagreement goes to
+  `bio_needs_review.json` and the stored value stands. `--full` re-fetches
+  everyone and lets Wikidata's values win.
+- **Cross-checked.** Birth dates are compared against Basketball-Reference
+  (`sumitrodatta/bball-reference-datasets`). Mismatches and players with no
+  Wikidata birth date land in `data/players/bio_needs_review.json` for a human;
+  the cross-check never edits `player_bio.json`.
+- **Fails loudly.** If Wikidata or Wikipedia cannot be reached the run exits
+  non-zero and writes **nothing** — an empty file would strip the birth line
+  off every page on the site.
+
+The facts surface as one line under the player's name (`Born: … in … (age N)`,
+or `Born: … / Died: … (aged N)`), on the prerendered pages and in the app's
+player view, and as a schema.org `Person` block in each player page's JSON-LD.
+The age is rendered at build time **and** recomputed by a ~250-byte inline
+script, so a page built in December does not still claim last year's age in
+February. A year-only date shows the year and no age.
+
+```bash
+python3 scripts/fetch_bio_wikidata.py                   # incremental
+python3 scripts/fetch_bio_wikidata.py --limit 500       # bounded backfill
+python3 scripts/fetch_bio_wikidata.py --full            # re-fetch everyone
+python3 scripts/fetch_bio_wikidata.py --fixtures tests/fixtures --dry-run
+python3 scripts/test_fetch_bio_wikidata.py              # offline, no network
+```
 
 ## Team-name normalization
 
@@ -201,6 +284,22 @@ updates locations, re-classifies status, commits, and appends a changelog entry:
 ```
 Auto-update: YYYY-MM-DD - X players updated, Y new teams[, Z status changes]
 ```
+
+The daily run also refreshes player birth/death facts (see above) before the
+data rebuild. That step is `continue-on-error`: the fetcher writes nothing when
+Wikidata is unreachable, and a Wikidata outage must not throw away the career
+update the same run just did.
+
+`.github/workflows/player-bio.yml` is the by-hand one (Actions → Run workflow):
+the first full backfill, a re-run after an outage, or a `--full` re-fetch.
+
+| Input | Purpose |
+|-------|---------|
+| `mode = incremental` | players missing from `player_bio.json` + the weekly death re-checks (default) |
+| `mode = full` | re-fetch everyone; Wikidata's values overwrite what is on file |
+| `limit` | cap how many players this run resolves (blank = all) |
+| `refresh_limit` | cap the living-player death sweep (default 1000) |
+| `rebuild_pages` | rebuild the prerendered pages afterwards (default true) |
 
 ### Rate limiting
 

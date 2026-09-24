@@ -1,0 +1,22 @@
+{
+  "_comment": [
+    "Career stints Wikipedia lists that the player never actually played.",
+    "The daily pipeline rebuilds career_history from the article on every",
+    "run, so deleting a stint by hand lasts exactly until the next run. Each",
+    "removal is recorded here instead and re-applied after every parse, the",
+    "same way data/teams/stint_start_dates.json re-stamps known signing dates.",
+    "Matching is on player + team + start year, so a span that later changes",
+    "shape ('2001' -> '2001-2002') still matches. Written and applied by",
+    "scripts/stint_corrections.py."
+  ],
+  "removals": [
+    {
+      "player": "Andrei Kirilenko",
+      "team": "Partizan",
+      "start_year": 2001,
+      "reason": "Signed a contract with Partizan in 2001 but left for the Utah Jazz before playing a game for them.",
+      "source": "https://en.wikipedia.org/wiki/Andrei_Kirilenko",
+      "added": "2026-09-24"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+name: Player Birth/Death Facts
+
+# Wikidata birth and death facts for every player in the career database
+# (scripts/fetch_bio_wikidata.py -> data/players/player_bio.json), plus the
+# Basketball-Reference cross-check that lands in
+# data/players/bio_needs_review.json.
+#
+# The daily pipeline (update-careers.yml) already runs the incremental slice
+# of this. THIS workflow is the by-hand one: the first full backfill of all
+# ~5,200 players, a re-run after a Wikidata outage, or a --full re-fetch that
+# lets Wikidata's values overwrite what is on file.
+#
+# Manual only, on purpose: a full backfill is a few hundred API requests and
+# wants a human deciding when it happens.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Run mode"
+        type: choice
+        default: incremental
+        options:
+          - incremental   # players missing from player_bio.json + weekly death re-checks
+          - full          # re-fetch everyone; Wikidata's values win
+      limit:
+        description: "Max players to resolve this run (blank = all)"
+        type: string
+        required: false
+      refresh_limit:
+        description: "Max living players re-checked for a death"
+        type: string
+        default: "1000"
+      rebuild_pages:
+        description: "Rebuild the prerendered pages afterwards"
+        type: boolean
+        default: true
+
+# Shares the career pipeline's group: both commit to the same branch, so they
+# queue instead of racing each other's pushes.
+concurrency:
+  group: update-careers
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  bio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch birth/death facts
+        # No continue-on-error here, unlike the daily pipeline: this run has
+        # one job, so a Wikidata failure is the result and the run says so.
+        env:
+          IN_MODE: ${{ github.event.inputs.mode }}
+          IN_LIMIT: ${{ github.event.inputs.limit }}
+          IN_REFRESH: ${{ github.event.inputs.refresh_limit }}
+        run: |
+          ARGS="--refresh-limit ${IN_REFRESH:-1000} --delay 1.0"
+          if [ "$IN_MODE" = "full" ]; then ARGS="$ARGS --full"; fi
+          if [ -n "$IN_LIMIT" ]; then ARGS="$ARGS --limit $IN_LIMIT"; fi
+          echo "python3 scripts/fetch_bio_wikidata.py $ARGS"
+          python3 scripts/fetch_bio_wikidata.py $ARGS
+
+      - name: Rebuild derived data and pages
+        # The birth line and the Person JSON-LD are baked into the
+        # prerendered pages, so the pages have to be rewritten for the new
+        # facts to reach a crawler.
+        if: ${{ github.event.inputs.rebuild_pages != 'false' }}
+        run: python3 scripts/build_dashboard_data.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data sitemap.xml player team country assets
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          COUNT=$(python3 -c "import json,pathlib;d=json.loads(pathlib.Path('data/players/player_bio.json').read_text());print(sum(1 for r in d.values() if r.get('birth_date')))")
+          git commit -m "Update player birth/death facts (${COUNT} with a birth date)"
+          pushed=
+          for i in 1 2 3 4; do
+            if git push; then pushed=yes; break; fi
+            echo "push failed, retry $i"
+            git pull --rebase origin "${{ github.ref_name }}" || true
+            sleep $((2 ** i))
+          done
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push the bio update"
+            exit 1
+          fi

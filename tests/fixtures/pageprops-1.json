@@ -1,0 +1,21 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "redirects": [
+      {"from": "Redirected Player", "to": "Renamed Player"}
+    ],
+    "pages": [
+      {"pageid": 5046, "ns": 0, "title": "LeBron James",
+       "pageprops": {"wikibase_item": "Q36159"}},
+      {"pageid": 16899, "ns": 0, "title": "Kobe Bryant",
+       "pageprops": {"wikibase_item": "Q41421"}},
+      {"pageid": 33947, "ns": 0, "title": "Wilt Chamberlain",
+       "pageprops": {"wikibase_item": "Q193680"}},
+      {"pageid": 900001, "ns": 0, "title": "Early Player (basketball)",
+       "pageprops": {"wikibase_item": "Q999001"}},
+      {"pageid": 900002, "ns": 0, "title": "Renamed Player",
+       "pageprops": {"wikibase_item": "Q999002"}},
+      {"ns": 0, "title": "Unknown Player", "missing": true}
+    ]
+  }
+}
