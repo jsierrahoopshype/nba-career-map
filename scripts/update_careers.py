@@ -12,6 +12,8 @@ Modes (see --mode):
                   so long-time overseas players stay current even between the
                   daily incremental passes).
   single        : refresh one player by name (--player "First Last").
+  override      : re-scrape every player with a curated article in
+                  data/players/player_url_overrides.json (see player_urls.py).
   review        : try to resolve locations for teams in teams_needing_review.json
                   by reading their Wikipedia lead extract.
 
@@ -63,6 +65,7 @@ from player_status import (classify_status, last_active_year, PRESENT,
                            NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
+import player_urls
 from names import (normkey, url_key, canonical_url, title_from_url,
                    exact_article_key)
 from wiki_person import same_person, candidate_titles
@@ -509,6 +512,24 @@ def right_article(db: "Database", name: str,
     Returns (wikitext, canonical_title, refusal). A refusal means no record is
     written at all: stale data beats invented data.
     """
+    # A curated article (data/players/player_url_overrides.json) is the answer
+    # a human or scripts/resolve_player_urls.py already verified against
+    # Wikidata, so it is taken as given rather than re-judged: the whole point
+    # of the file is that asking Wikipedia this name returns the wrong man, and
+    # same_person() cannot tell "David Duke" from "David Duke". An override
+    # that cannot be fetched is a refusal, not a silent fall-through to the
+    # name -- falling through is how the namesake got in.
+    forced = player_urls.override_title(name)
+    if forced:
+        wt, title = client.get_wikitext_and_title(forced)
+        if wt:
+            return wt, title or forced, None
+        return None, title, {
+            "player": name, "resolved": title or "", "kind": "override-missing",
+            "reason": f"the curated article {forced!r} could not be fetched",
+            "tried": [{"title": forced, "resolved": title or ""}],
+            "date": today()}
+
     # The article this record was built from, when it has one and it is about
     # this person. Fourteen records are keyed on a name Wikipedia answers with
     # a disambiguation page -- "Joe Smith" is forty people -- so asking by name
@@ -560,6 +581,7 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     existing record (diacritics, suffix, nickname, redirect) is MERGED into it
     rather than inserted as a duplicate.
     """
+    override_url = player_urls.override_url(name)
     wt, canonical_title, refusal = right_article(db, name, client)
     if refusal:
         # Nothing to merge. A name Wikipedia simply does not have is the old,
@@ -595,6 +617,13 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
         prev_title = title_from_url(held.get("wikipedia_url", "")) or existing_name
         if not same_person(prev_title, canonical_title, strict_suffix=True)[0]:
             existing_name = None
+    if override_url and name in db.by_name:
+        # The override says THIS record's article is that one, so the identity
+        # checks above have nothing left to decide. Without this, an override
+        # that adds a suffix ("Michael Porter" -> "Michael Porter Jr.") reads as
+        # a different person and the repair lands in a second, duplicate record
+        # while the wrong one stays on the site.
+        existing_name = name
     is_new = existing_name is None
     base = db.by_name.get(existing_name, {}) if existing_name else {}
     prev_status = base.get("status")
@@ -603,8 +632,14 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     # Choose the history source: the freshly-fetched page when it parsed and is
     # at least as rich, otherwise the existing record (so a failed/empty parse
     # like the "A. J. Green" disambiguation page never clobbers real data).
-    use_fresh = fresh_valid and _richer(fresh.get("career_history"),
-                                        base.get("career_history"))
+    # An overridden record holds a career parsed off somebody else's article, so
+    # there is nothing in it worth protecting and _richer() must not protect it:
+    # the whole repair is replacing a longer wrong history with the right one.
+    # fresh_valid still gates it -- an article that parses to nothing is not an
+    # improvement on a career, even a wrong one.
+    use_fresh = fresh_valid and (bool(override_url)
+                                 or _richer(fresh.get("career_history"),
+                                            base.get("career_history")))
     primary = fresh if use_fresh else (base or fresh)
 
     rec = dict(base)  # start from existing to preserve fields we don't refresh
@@ -636,7 +671,10 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
             aliases.add(alt)
     if aliases:
         rec["aliases"] = sorted(aliases)
-    rec["wikipedia_url"] = curl or base.get("wikipedia_url", "")
+    # The override wins outright: if the daily run were allowed to write back
+    # whatever Wikipedia resolved to, the next run would ask for that instead
+    # and the fix would last exactly one day.
+    rec["wikipedia_url"] = override_url or curl or base.get("wikipedia_url", "")
 
     # locations
     new_teams = []
@@ -701,6 +739,11 @@ def build_queue(db: Database, mode: str, player: str | None,
                 roster_players: set[str]) -> list[str]:
     if mode == "single":
         return [player] if player else []
+
+    if mode == "override":
+        # Only the records with a curated article, so a repair run costs one
+        # request per repaired player instead of a sweep of the rotation.
+        return [n for n in player_urls.overridden_players() if n in db.by_name]
 
     overseas = _by_status(db, OVERSEAS_ACTIVE)
     if mode == "full_overseas":
@@ -1207,7 +1250,7 @@ def parse_args():
     ap = argparse.ArgumentParser(description="Update NBA career database.")
     ap.add_argument("--mode",
                     choices=["incremental", "full", "full_overseas", "single",
-                             "review"],
+                             "override", "review"],
                     default="incremental")
     ap.add_argument("--player", default=None, help="player name for --mode single")
     ap.add_argument("--delay", type=float, default=1.0)

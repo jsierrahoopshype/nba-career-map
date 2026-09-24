@@ -1,0 +1,173 @@
+name: Fix wrong-person Wikipedia URLs
+
+# Manual, and manual on purpose: this is the workflow that repairs the records
+# whose Wikipedia article is about somebody else entirely.
+#
+# THE PROBLEM IT FIXES. The scraper asks Wikipedia for a player's name and takes
+# the article it gets back. For "David Duke", "Jack White", "Ace Bailey",
+# "Michael Phelps" or "Mike Lynn" the article it gets back is the Klansman, the
+# guitarist, the ice hockey player, the swimmer and the Minnesota Vikings
+# general manager -- and the club history parsed off it became the NBA player's.
+# scripts/fetch_bio_wikidata.py detects it (the article's Wikidata item is not a
+# basketball player) and lists it in data/players/bio_needs_review.json under
+# `wikipedia_url_wrong_person`, but detecting it does not fix it: the next daily
+# run asks the same question and gets the same wrong article.
+#
+# WHAT THIS RUN DOES.
+#   1. audits what each flagged record shows today, so the damage is on the
+#      record before anything changes it
+#   2. searches Wikipedia for the article that IS his, and accepts one only
+#      when Wikidata vouches for it: P106 = Q3665646 (basketball player) AND a
+#      birth year within 1 of Basketball-Reference's. Exactly one accepted
+#      article is written to data/players/player_url_overrides.json; zero or
+#      several are LISTED in the run summary for a human. It never guesses.
+#   3. re-scrapes those players with the normal parser (update_careers.py
+#      --mode override), which now reads the curated article
+#   4. rebuilds the derived data and the prerendered pages, and commits
+#
+# The overrides file is what makes the fix stick: scripts/player_urls.py is
+# consulted by the career pipeline and the bio fetcher before either asks
+# Wikipedia anything, so the daily run cannot revert it.
+#
+# The unverified guesses pre-filled under `candidates` in the overrides file are
+# tried FIRST and still have to pass the same Wikidata test as anything else.
+# Nothing unverified reaches the site.
+#
+# AFTERWARDS: the repaired players keep their rejected-item note in
+# data/players/player_bio.json until their bio record is re-read, so
+# `wikipedia_url_wrong_person` only empties out once .github/workflows/
+# player-bio.yml has been run with mode=full.
+on:
+  workflow_dispatch:
+    inputs:
+      players:
+        description: "Only these players (comma-separated; default: all 39 flagged)"
+        type: string
+        required: false
+      dry_run:
+        description: "Resolve and report only -- write nothing, commit nothing"
+        type: boolean
+        default: false
+      rescrape:
+        description: "Re-scrape the repaired players' careers"
+        type: boolean
+        default: true
+      max_requests:
+        description: "Max Wikipedia requests for the re-scrape"
+        type: string
+        default: "200"
+      search_limit:
+        description: "Wikipedia search hits considered per player"
+        type: string
+        default: "8"
+
+# Shares the career pipeline's group: this commits to the same branch as
+# update-careers.yml and player-bio.yml, so they queue instead of racing each
+# other's pushes.
+concurrency:
+  group: update-careers
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Audit what the flagged records show now
+        # Offline, and first: once the careers are re-scraped there is no way
+        # back to what visitors were actually seeing.
+        env:
+          IN_PLAYERS: ${{ github.event.inputs.players }}
+        run: |
+          # pipefail, or `tee` swallows a non-zero exit and the run goes green
+          # on a step that failed.
+          set -o pipefail
+          python3 scripts/resolve_player_urls.py audit \
+            --players-csv "${IN_PLAYERS:-}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Resolve the real articles
+        # No continue-on-error: a Wikipedia or Wikidata failure IS the result of
+        # this run, and the run should say so rather than commit a half-fix.
+        env:
+          IN_PLAYERS: ${{ github.event.inputs.players }}
+          IN_DRY: ${{ github.event.inputs.dry_run }}
+          IN_SEARCH: ${{ github.event.inputs.search_limit }}
+        run: |
+          set -o pipefail
+          # An array, not a string: a player name has a space in it.
+          ARGS=(--delay 1.0 --search-limit "${IN_SEARCH:-8}")
+          if [ -n "$IN_PLAYERS" ]; then ARGS+=(--players-csv "$IN_PLAYERS"); fi
+          if [ "$IN_DRY" != "true" ]; then ARGS+=(--apply); fi
+          python3 scripts/resolve_player_urls.py resolve "${ARGS[@]}" \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Re-scrape the repaired players
+        # --mode override walks exactly the players with a verified article, so
+        # this costs a request or two each instead of a sweep of the rotation.
+        # A run that verified nothing has an empty queue and does nothing.
+        if: ${{ github.event.inputs.dry_run != 'true' && github.event.inputs.rescrape != 'false' }}
+        env:
+          IN_MAX: ${{ github.event.inputs.max_requests }}
+        run: |
+          python3 scripts/update_careers.py \
+            --mode override \
+            --max-requests "${IN_MAX:-200}" \
+            --delay 1.0
+
+      - name: Audit what they show after the repair
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        env:
+          IN_PLAYERS: ${{ github.event.inputs.players }}
+        run: |
+          set -o pipefail
+          echo "## After the repair" >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/resolve_player_urls.py audit \
+            --players-csv "${IN_PLAYERS:-}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Rebuild derived data and pages
+        # The career rows and the Person JSON-LD are baked into each player page
+        # at build time, so the pages have to be rewritten for a repaired career
+        # to reach a visitor or a crawler.
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: python3 scripts/build_dashboard_data.py
+
+      - name: Commit and push changes
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data logs nba_players_careers_READY.json sitemap.xml \
+                  player team country assets
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          COUNT=$(python3 -c "import json,pathlib;d=json.loads(pathlib.Path('data/players/player_url_overrides.json').read_text());print(len(d.get('overrides') or {}))")
+          git commit -m "Point ${COUNT} player record(s) at the right Wikipedia article"
+          # Same as the other workflows: a push that never lands is a failed
+          # run, not a quiet one.
+          pushed=
+          for i in 1 2 3 4; do
+            if git push; then pushed=yes; break; fi
+            echo "push failed, retry $i"
+            git pull --rebase origin "${{ github.ref_name }}" || true
+            sleep $((2 ** i))
+          done
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push the URL fixes"
+            exit 1
+          fi

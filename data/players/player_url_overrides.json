@@ -1,0 +1,128 @@
+{
+  "note": "Curated Wikipedia articles for players whose name resolves to a namesake. `overrides` is what the pipeline uses and is written only by scripts/resolve_player_urls.py after Wikidata confirmed the article (P106 = Q3665646 and a birth year within 1 of Basketball-Reference's). `candidates` are un-verified guesses from Wikipedia's naming conventions: the resolver tries them first, the pipeline ignores them. See scripts/player_urls.py.",
+  "verified_by": "scripts/resolve_player_urls.py",
+  "generated": null,
+  "overrides": {},
+  "candidates": {
+    "AJ Green": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/A._J._Green_(basketball)",
+      "note": "'A. J. Green' is the NFL receiver; the spaced initials are also not what the stored key would generate"
+    },
+    "Ace Bailey": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ace_Bailey_(basketball)",
+      "note": "'Ace Bailey' is the ice hockey player who died in 1992"
+    },
+    "Andre Jackson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Andre_Jackson_Jr.",
+      "note": "generational suffix"
+    },
+    "Billy Garrett": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Billy_Garrett_Jr.",
+      "note": "generational suffix; the stored article is his father's"
+    },
+    "Charlie Black": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Charlie_Black_(basketball)",
+      "note": "naming convention"
+    },
+    "Chris Youngblood": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Youngblood_(basketball)",
+      "note": "naming convention"
+    },
+    "David Duke": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/David_Duke_Jr.",
+      "note": "'David Duke' is the Klansman"
+    },
+    "Drew Peterson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Drew_Peterson_(basketball)",
+      "note": "'Drew Peterson' is the convicted murderer"
+    },
+    "Emanuel Miller": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Emanuel_Miller_(basketball)",
+      "note": "naming convention"
+    },
+    "Jack White": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jack_White_(basketball)",
+      "note": "'Jack White' is the guitarist"
+    },
+    "Johnny Simmons": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Johnny_Simmons_(basketball)",
+      "note": "'Johnny Simmons' is the actor"
+    },
+    "Kenny McIntosh": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Kenny_McIntosh_(basketball)",
+      "note": "'Kenny McIntosh' is the NFL running back"
+    },
+    "Louis King": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Louis_King_(basketball)",
+      "note": "naming convention"
+    },
+    "Mamadou N'diaye": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mamadou_N'Diaye",
+      "note": "the stored key lower-cases the D, which Wikipedia's title normalization will not fix"
+    },
+    "Michael Phelps": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Phelps_(basketball)",
+      "note": "'Michael Phelps' is the swimmer"
+    },
+    "Michael Porter": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Porter_Jr.",
+      "note": "the stored career (Denver 2018-2025, Brooklyn 2025-) is Porter Jr.'s"
+    },
+    "Mike Lynn": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Lynn_(basketball)",
+      "note": "'Mike Lynn' is the Minnesota Vikings general manager, which is where the NFL career in the record came from"
+    },
+    "Moses Brown": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Moses_Brown_(basketball)",
+      "note": "'Moses Brown' is the 18th-century abolitionist"
+    },
+    "Paul Watson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Paul_Watson_(basketball)",
+      "note": "'Paul Watson' is the Sea Shepherd founder"
+    },
+    "Phillip Wheeler": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Phillip_Wheeler_(basketball)",
+      "note": "'Phillip Wheeler' is the NFL linebacker"
+    },
+    "Ray McCallum": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ray_McCallum_Jr.",
+      "note": "generational suffix; the stored article is his father the coach's"
+    },
+    "Reggie Jackson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Reggie_Jackson_(basketball)",
+      "note": "'Reggie Jackson' is the baseball Hall of Famer"
+    },
+    "Ron Holland": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Holland_II",
+      "note": "suffix is II, which neither the '(basketball)' nor the 'Jr.' convention would generate"
+    },
+    "Ryan Dunn": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Dunn_(basketball)",
+      "note": "'Ryan Dunn' is the Jackass performer"
+    },
+    "Sam Vincent": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sam_Vincent_(basketball)",
+      "note": "naming convention"
+    },
+    "Sean McDermott": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sean_McDermott_(basketball)",
+      "note": "'Sean McDermott' is the Buffalo Bills head coach"
+    },
+    "Terry Taylor": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Terry_Taylor_(basketball)",
+      "note": "naming convention"
+    },
+    "Tre' Johnson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Tre_Johnson_(basketball)",
+      "note": "Wikipedia titles him without the apostrophe, so no convention built from the stored key reaches the article"
+    },
+    "Troy Brown": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Troy_Brown_Jr.",
+      "note": "generational suffix"
+    },
+    "Vernon Carey": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Vernon_Carey_Jr.",
+      "note": "'Vernon Carey' is his father, the NFL offensive tackle"
+    }
+  }
+}

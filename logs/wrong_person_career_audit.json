@@ -1,0 +1,1834 @@
+{
+  "generated": "2026-09-24",
+  "players": 39,
+  "counts": {
+    "frozen": 18,
+    "empty": 11,
+    "namesake_career": 10
+  },
+  "audit": [
+    {
+      "player": "AJ Green",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/A._J._Green",
+      "stored_wikipedia_title": "A. J. Green",
+      "rejected_wikidata_id": "Q2060485",
+      "status": "nba_active",
+      "current_team": "Milwaukee Bucks",
+      "stint_count": 2,
+      "nba_teams_shown": [
+        "Milwaukee Bucks"
+      ],
+      "teams_shown": "Milwaukee Bucks · Wisconsin Herd",
+      "career_history": [
+        {
+          "years": "2022-2026",
+          "team": "Milwaukee Bucks",
+          "city": "Milwaukee",
+          "country": "USA"
+        },
+        {
+          "years": "2022-2024",
+          "team": "Wisconsin Herd",
+          "city": "Oshkosh",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Ace Bailey",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Ace_Bailey",
+      "stored_wikipedia_title": "Ace Bailey",
+      "rejected_wikidata_id": "Q323039",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Andre Jackson",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Andre_Jackson",
+      "stored_wikipedia_title": "Andre Jackson",
+      "rejected_wikidata_id": "Q108266376",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Bill Jones",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Bill_Jones_(basketball,_born_1958)",
+      "stored_wikipedia_title": "Bill Jones (basketball, born 1958)",
+      "rejected_wikidata_id": "Q27909554",
+      "status": "retired",
+      "current_team": "Gippsland Lakers",
+      "stint_count": 5,
+      "nba_teams_shown": [],
+      "teams_shown": "Adelaide 36ers · Newcastle Falcons · Geelong Supercats · Bayside Blues · Gippsland Lakers",
+      "career_history": [
+        {
+          "years": "1985-1988",
+          "team": "Adelaide 36ers",
+          "city": "Adelaide",
+          "country": "Australia"
+        },
+        {
+          "years": "1989",
+          "team": "Newcastle Falcons",
+          "city": "Newcastle",
+          "country": "Australia"
+        },
+        {
+          "years": "1992",
+          "team": "Geelong Supercats",
+          "city": "Geelong",
+          "country": "Australia"
+        },
+        {
+          "years": "1992",
+          "team": "Bayside Blues",
+          "city": "Bayside",
+          "country": "USA"
+        },
+        {
+          "years": "1993-1994",
+          "team": "Gippsland Lakers",
+          "city": "Gippsland",
+          "country": "Australia"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Billy Garrett",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Bill_Garrett_(basketball)",
+      "stored_wikipedia_title": "Bill Garrett (basketball)",
+      "rejected_wikidata_id": "Q4909102",
+      "status": "retired",
+      "current_team": "Harlem Globetrotters",
+      "stint_count": 1,
+      "nba_teams_shown": [],
+      "teams_shown": "Harlem Globetrotters",
+      "career_history": [
+        {
+          "years": "1953-1956",
+          "team": "Harlem Globetrotters",
+          "city": "Chicago",
+          "country": "USA"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Brian Oliver",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Brian_Oliver_(basketball,_born_1990)",
+      "stored_wikipedia_title": "Brian Oliver (basketball, born 1990)",
+      "rejected_wikidata_id": "Q18045251",
+      "status": "retired",
+      "current_team": "Artland Dragons",
+      "stint_count": 5,
+      "nba_teams_shown": [],
+      "teams_shown": "Brampton A's · Mississauga Power · ABBR - Avenir Basket Berck Rang du Fliers · Kapfenberg Bulls · Artland Dragons",
+      "career_history": [
+        {
+          "years": "2014",
+          "team": "Brampton A's",
+          "city": "Orangeville",
+          "country": "Canada"
+        },
+        {
+          "years": "2015",
+          "team": "Mississauga Power",
+          "city": "Mississauga",
+          "country": "Canada"
+        },
+        {
+          "years": "2016",
+          "team": "ABBR - Avenir Basket Berck Rang du Fliers",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "2017",
+          "team": "Kapfenberg Bulls",
+          "city": "Kapfenberg",
+          "country": "Austria"
+        },
+        {
+          "years": "2018",
+          "team": "Artland Dragons",
+          "city": "Quakenbrück",
+          "country": "Germany"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Charlie Black",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Charlie_Black",
+      "stored_wikipedia_title": "Charlie Black",
+      "rejected_wikidata_id": "Q16135509",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Chris McNealy",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Chris_McNealy_(basketball,_born_1992)",
+      "stored_wikipedia_title": "Chris McNealy (basketball, born 1992)",
+      "rejected_wikidata_id": "Q44373217",
+      "status": "retired",
+      "current_team": "Ura Basket",
+      "stint_count": 3,
+      "nba_teams_shown": [],
+      "teams_shown": "Oberwart Gunners · Panionios · Ura Basket",
+      "career_history": [
+        {
+          "years": "2015-2017",
+          "team": "Oberwart Gunners",
+          "city": "Oberwart",
+          "country": "Austria"
+        },
+        {
+          "years": "2017-2018",
+          "team": "Panionios",
+          "city": "Athens",
+          "country": "Greece"
+        },
+        {
+          "years": "2018",
+          "team": "Ura Basket",
+          "city": "Kaarina",
+          "country": "Finland"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Chris Youngblood",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Youngblood",
+      "stored_wikipedia_title": "Chris Youngblood",
+      "rejected_wikidata_id": "Q5108551",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Corey Williams",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Corey_Williams_(basketball,_born_1977)",
+      "stored_wikipedia_title": "Corey Williams (basketball, born 1977)",
+      "rejected_wikidata_id": "Q5170464",
+      "status": "retired",
+      "current_team": "Tadamon Zouk",
+      "stint_count": 25,
+      "nba_teams_shown": [],
+      "teams_shown": "Dakota Wizards · Club San Carlos · Brooklyn Kings · Minas · Brooklyn Kings · 08 Stockholm · Yunnan Honghe · New Jersey Flyers · Westchester Wildfire · Sellbytel Baskets Nürnberg · Sioux Falls Skyforce · Guaiqueríes de Margarita · Cholet Basket · Sioux Falls Skyforce · Dakota Wizards · Townsville Crocodiles · Cibona · Trotamundos de Carabobo · Melbourne Tigers · Byblos Club · Piratas de Quebradillas · Bejje SC · Hoops Club · Al Mouttahed Tripoli · Tadamon Zouk",
+      "career_history": [
+        {
+          "years": "1999",
+          "team": "Dakota Wizards",
+          "city": "Bismarck",
+          "country": "USA"
+        },
+        {
+          "years": "2000-2001",
+          "team": "Club San Carlos",
+          "city": "San Carlos",
+          "country": "Dominican Republic"
+        },
+        {
+          "years": "2001",
+          "team": "Brooklyn Kings",
+          "city": "Brooklyn",
+          "country": "USA"
+        },
+        {
+          "years": "2001-2002",
+          "team": "Minas",
+          "city": "Belo Horizonte",
+          "country": "Brazil"
+        },
+        {
+          "years": "2003",
+          "team": "Brooklyn Kings",
+          "city": "Brooklyn",
+          "country": "USA"
+        },
+        {
+          "years": "2003-2004",
+          "team": "08 Stockholm",
+          "city": "Alvik",
+          "country": "Sweden"
+        },
+        {
+          "years": "2004-2005",
+          "team": "Yunnan Honghe",
+          "city": "Honghe",
+          "country": "China"
+        },
+        {
+          "years": "2005",
+          "team": "New Jersey Flyers",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "2005",
+          "team": "Westchester Wildfire",
+          "city": "Westchester",
+          "country": "USA"
+        },
+        {
+          "years": "2005",
+          "team": "Sellbytel Baskets Nürnberg",
+          "city": "Nuremberg",
+          "country": "Germany"
+        },
+        {
+          "years": "2006",
+          "team": "Sioux Falls Skyforce",
+          "city": "Sioux Falls",
+          "country": "USA"
+        },
+        {
+          "years": "2006",
+          "team": "Guaiqueríes de Margarita",
+          "city": "Porlamar",
+          "country": "Venezuela"
+        },
+        {
+          "years": "2006",
+          "team": "Cholet Basket",
+          "city": "Cholet",
+          "country": "France"
+        },
+        {
+          "years": "2007",
+          "team": "Sioux Falls Skyforce",
+          "city": "Sioux Falls",
+          "country": "USA"
+        },
+        {
+          "years": "2007",
+          "team": "Dakota Wizards",
+          "city": "Bismarck",
+          "country": "USA"
+        },
+        {
+          "years": "2007-2010",
+          "team": "Townsville Crocodiles",
+          "city": "Townsville",
+          "country": "Australia"
+        },
+        {
+          "years": "2008",
+          "team": "Cibona",
+          "city": "Zagreb",
+          "country": "Croatia"
+        },
+        {
+          "years": "2009",
+          "team": "Trotamundos de Carabobo",
+          "city": "Valencia",
+          "country": "Venezuela"
+        },
+        {
+          "years": "2010-2011",
+          "team": "Melbourne Tigers",
+          "city": "Melbourne",
+          "country": "Australia"
+        },
+        {
+          "years": "2012",
+          "team": "Byblos Club",
+          "city": "Byblos",
+          "country": "Lebanon"
+        },
+        {
+          "years": "2012",
+          "team": "Piratas de Quebradillas",
+          "city": "Quebradillas",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "2012-2013",
+          "team": "Bejje SC",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "2013",
+          "team": "Hoops Club",
+          "city": "Jdeihde",
+          "country": "Lebanon"
+        },
+        {
+          "years": "2014",
+          "team": "Al Mouttahed Tripoli",
+          "city": "Tripoli",
+          "country": "Lebanon"
+        },
+        {
+          "years": "2015-2016",
+          "team": "Tadamon Zouk",
+          "city": "Kesrouan",
+          "country": "Lebanon"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "David Duke",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/David_Duke",
+      "stored_wikipedia_title": "David Duke",
+      "rejected_wikidata_id": "Q163042",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Drew Peterson",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Drew_Peterson",
+      "stored_wikipedia_title": "Drew Peterson",
+      "rejected_wikidata_id": "Q5307267",
+      "status": "nba_active",
+      "current_team": "Charlotte Hornets",
+      "stint_count": 5,
+      "nba_teams_shown": [
+        "Boston Celtics",
+        "Charlotte Hornets"
+      ],
+      "teams_shown": "Sioux Falls Skyforce · Boston Celtics · Maine Celtics · Charlotte Hornets · Greensboro Swarm",
+      "career_history": [
+        {
+          "years": "2023",
+          "team": "Sioux Falls Skyforce",
+          "city": "Sioux Falls",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2025",
+          "team": "Boston Celtics",
+          "city": "Boston",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2025",
+          "team": "Maine Celtics",
+          "city": "Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Charlotte Hornets",
+          "city": "Charlotte",
+          "country": "USA"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Greensboro Swarm",
+          "city": "Greensboro",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Emanuel Miller",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Emanuel_Miller",
+      "stored_wikipedia_title": "Emanuel Miller",
+      "rejected_wikidata_id": "Q18576147",
+      "status": "nba_active",
+      "current_team": "Chicago Bulls",
+      "stint_count": 3,
+      "nba_teams_shown": [
+        "Chicago Bulls"
+      ],
+      "teams_shown": "Texas Legends · Chicago Bulls · Windy City Bulls",
+      "career_history": [
+        {
+          "years": "2024",
+          "team": "Texas Legends",
+          "city": "Frisco",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2026",
+          "team": "Chicago Bulls",
+          "city": "Chicago",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2026",
+          "team": "Windy City Bulls",
+          "city": "Hoffman Estates",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Eric Williams",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Eric_Williams_(basketball,_born_1984)",
+      "stored_wikipedia_title": "Eric Williams (basketball, born 1984)",
+      "rejected_wikidata_id": "Q3056437",
+      "status": "retired",
+      "current_team": "Lions de Genève",
+      "stint_count": 13,
+      "nba_teams_shown": [],
+      "teams_shown": "Pallacanestro Cantù · Sidigas Avellino · Victoria Libertas Pesaro · Juvecaserta Basket · BC Astana · Reyer Venezia · Guangzhou Liu Sui · Limoges CSP · Pallacanestro Cantù · MKS Dąbrowa Górnicza · Lugano Tigers · Hebraica y Macabi · Lions de Genève",
+      "career_history": [
+        {
+          "years": "2006-2007",
+          "team": "Pallacanestro Cantù",
+          "city": "Cantù",
+          "country": "Italy"
+        },
+        {
+          "years": "2007-2009",
+          "team": "Sidigas Avellino",
+          "city": "Avellino",
+          "country": "Italy"
+        },
+        {
+          "years": "2009-2010",
+          "team": "Victoria Libertas Pesaro",
+          "city": "Pesaro",
+          "country": "Italy"
+        },
+        {
+          "years": "2010-2011",
+          "team": "Juvecaserta Basket",
+          "city": "Caserta",
+          "country": "Italy"
+        },
+        {
+          "years": "2011-2012",
+          "team": "BC Astana",
+          "city": "Astana",
+          "country": "Kazakhstan"
+        },
+        {
+          "years": "2012",
+          "team": "Reyer Venezia",
+          "city": "Venezia",
+          "country": "Italy"
+        },
+        {
+          "years": "2013",
+          "team": "Guangzhou Liu Sui",
+          "city": "Guangzhou",
+          "country": "China"
+        },
+        {
+          "years": "2013-2014",
+          "team": "Limoges CSP",
+          "city": "Limoges",
+          "country": "France"
+        },
+        {
+          "years": "2014-2015",
+          "team": "Pallacanestro Cantù",
+          "city": "Cantù",
+          "country": "Italy"
+        },
+        {
+          "years": "2015-2016",
+          "team": "MKS Dąbrowa Górnicza",
+          "city": "Dąbrowa Górnicza",
+          "country": "Poland"
+        },
+        {
+          "years": "2016-2017",
+          "team": "Lugano Tigers",
+          "city": "Lugano",
+          "country": "Switzerland"
+        },
+        {
+          "years": "2017",
+          "team": "Hebraica y Macabi",
+          "city": "Montevideo",
+          "country": "Uruguay"
+        },
+        {
+          "years": "2017-2018",
+          "team": "Lions de Genève",
+          "city": "Geneva",
+          "country": "Switzerland"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Jack White",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Jack_White",
+      "stored_wikipedia_title": "Jack White",
+      "rejected_wikidata_id": "Q272031",
+      "status": "overseas_active",
+      "current_team": "Mersin MSK",
+      "stint_count": 11,
+      "nba_teams_shown": [
+        "Denver Nuggets",
+        "Memphis Grizzlies"
+      ],
+      "teams_shown": "BA Centre of Excellence · Cairns Taipans · Melbourne United · Geelong Supercats · Denver Nuggets · Grand Rapids Gold · South Bay Lakers · Memphis Grizzlies · Melbourne United · Bayern Munich · Mersin MSK",
+      "career_history": [
+        {
+          "years": "2014-2016",
+          "team": "BA Centre of Excellence",
+          "city": "Canberra",
+          "country": "Australia"
+        },
+        {
+          "years": "2016",
+          "team": "Cairns Taipans",
+          "city": "Cairns",
+          "country": "Australia"
+        },
+        {
+          "years": "2020-2022",
+          "team": "Melbourne United",
+          "city": "Melbourne",
+          "country": "Australia"
+        },
+        {
+          "years": "2022",
+          "team": "Geelong Supercats",
+          "city": "Geelong",
+          "country": "Australia"
+        },
+        {
+          "years": "2022-2023",
+          "team": "Denver Nuggets",
+          "city": "Denver",
+          "country": "USA"
+        },
+        {
+          "years": "2022-2023",
+          "team": "Grand Rapids Gold",
+          "city": "Grand Rapids",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "South Bay Lakers",
+          "city": "El Segundo",
+          "country": "USA"
+        },
+        {
+          "years": "2024",
+          "team": "Memphis Grizzlies",
+          "city": "Memphis",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Melbourne United",
+          "city": "Melbourne",
+          "country": "Australia"
+        },
+        {
+          "years": "2025",
+          "team": "Bayern Munich",
+          "city": "Munich",
+          "country": "Germany"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Mersin MSK",
+          "city": "Mersin",
+          "country": "Turkey"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "James Robinson",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/James_Robinson_(basketball,_born_1994)",
+      "stored_wikipedia_title": "James Robinson (basketball, born 1994)",
+      "rejected_wikidata_id": "Q28528705",
+      "status": "retired",
+      "current_team": "Igokea",
+      "stint_count": 6,
+      "nba_teams_shown": [],
+      "teams_shown": "Igokea · Medi Bayreuth · Bnei Herzliya · Medi Bayreuth · Löwen Braunschweig · Igokea",
+      "career_history": [
+        {
+          "years": "2016-2017",
+          "team": "Igokea",
+          "city": "Aleksandrovac",
+          "country": "Bosnia and Herzegovina"
+        },
+        {
+          "years": "2017-2018",
+          "team": "Medi Bayreuth",
+          "city": "Bayreuth",
+          "country": "Germany"
+        },
+        {
+          "years": "2018-2019",
+          "team": "Bnei Herzliya",
+          "city": "Herzliya",
+          "country": "Israel"
+        },
+        {
+          "years": "2019-2020",
+          "team": "Medi Bayreuth",
+          "city": "Bayreuth",
+          "country": "Germany"
+        },
+        {
+          "years": "2020-2021",
+          "team": "Löwen Braunschweig",
+          "city": "Braunschweig",
+          "country": "Germany"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Igokea",
+          "city": "Aleksandrovac",
+          "country": "Bosnia and Herzegovina"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Jay Miller",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Jay_Miller_(basketball)",
+      "stored_wikipedia_title": "Jay Miller (basketball)",
+      "rejected_wikidata_id": "Q518561",
+      "status": "retired",
+      "current_team": "Indiana Pacers",
+      "stint_count": 4,
+      "nba_teams_shown": [
+        "St. Louis Hawks",
+        "Milwaukee Bucks",
+        "Indiana Pacers"
+      ],
+      "teams_shown": "St. Louis Hawks · Milwaukee Bucks · Los Angeles Stars · Indiana Pacers",
+      "career_history": [
+        {
+          "years": "1967-1968",
+          "team": "St. Louis Hawks",
+          "city": "St. Louis",
+          "country": "USA"
+        },
+        {
+          "years": "1968",
+          "team": "Milwaukee Bucks",
+          "city": "Milwaukee",
+          "country": "USA"
+        },
+        {
+          "years": "1969",
+          "team": "Los Angeles Stars",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        {
+          "years": "1969-1970",
+          "team": "Indiana Pacers",
+          "city": "Indianapolis",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Johnny Simmons",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Johnny_Simmons",
+      "stored_wikipedia_title": "Johnny Simmons",
+      "rejected_wikidata_id": "Q116636",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Kenny McIntosh",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Kenny_McIntosh",
+      "stored_wikipedia_title": "Kenny McIntosh",
+      "rejected_wikidata_id": "Q110979398",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Louis King",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Louis_King",
+      "stored_wikipedia_title": "Louis King",
+      "rejected_wikidata_id": "Q11322",
+      "status": "overseas_active",
+      "current_team": "Xinjiang",
+      "stint_count": 15,
+      "nba_teams_shown": [
+        "Detroit Pistons",
+        "Sacramento Kings",
+        "Philadelphia 76ers"
+      ],
+      "teams_shown": "Detroit Pistons · Grand Rapids Drive · Westchester Knicks · Sacramento Kings · Stockton Kings · Westchester Knicks · Rio Grande Valley Vipers · Philadelphia 76ers · Delaware Blue Coats · South Bay Lakers · Mexico City Capitanes · Criollos de Caguas · Mexico City Capitanes · Fujian Sturgeons · Xinjiang",
+      "career_history": [
+        {
+          "years": "2019-2020",
+          "team": "Detroit Pistons",
+          "city": "Detroit",
+          "country": "USA"
+        },
+        {
+          "years": "2019-2020",
+          "team": "Grand Rapids Drive",
+          "city": "Grand Rapids",
+          "country": "USA"
+        },
+        {
+          "years": "2021",
+          "team": "Westchester Knicks",
+          "city": "White Plains",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Sacramento Kings",
+          "city": "Sacramento",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Stockton Kings",
+          "city": "Stockton",
+          "country": "USA"
+        },
+        {
+          "years": "2022",
+          "team": "Westchester Knicks",
+          "city": "White Plains",
+          "country": "USA"
+        },
+        {
+          "years": "2022",
+          "team": "Rio Grande Valley Vipers",
+          "city": "Edinburg",
+          "country": "USA"
+        },
+        {
+          "years": "2022-2023",
+          "team": "Philadelphia 76ers",
+          "city": "Philadelphia",
+          "country": "USA"
+        },
+        {
+          "years": "2022-2023",
+          "team": "Delaware Blue Coats",
+          "city": "Newark",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "South Bay Lakers",
+          "city": "El Segundo",
+          "country": "USA"
+        },
+        {
+          "years": "2024",
+          "team": "Mexico City Capitanes",
+          "city": "Mexico City",
+          "country": "Mexico"
+        },
+        {
+          "years": "2024",
+          "team": "Criollos de Caguas",
+          "city": "Caguas",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "2024",
+          "team": "Mexico City Capitanes",
+          "city": "Mexico City",
+          "country": "Mexico"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Fujian Sturgeons",
+          "city": "Jinjiang",
+          "country": "China"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Xinjiang",
+          "city": "Ürümqi",
+          "country": "China"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Mamadou N'diaye",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Mamadou_N%27Diaye_(basketball,_born_1993)",
+      "stored_wikipedia_title": "Mamadou N'Diaye (basketball, born 1993)",
+      "rejected_wikidata_id": "Q18154850",
+      "status": "retired",
+      "current_team": "Correcaminos UAT Victoria",
+      "stint_count": 2,
+      "nba_teams_shown": [],
+      "teams_shown": "Fuerza Regia · Correcaminos UAT Victoria",
+      "career_history": [
+        {
+          "years": "2018",
+          "team": "Fuerza Regia",
+          "city": "Monterrey",
+          "country": "Mexico"
+        },
+        {
+          "years": "2019-2020",
+          "team": "Correcaminos UAT Victoria",
+          "city": "Ciudad Victoria",
+          "country": "Mexico"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Michael Phelps",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Phelps",
+      "stored_wikipedia_title": "Michael Phelps",
+      "rejected_wikidata_id": "Q39562",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Michael Porter",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Porter",
+      "stored_wikipedia_title": "Michael Porter",
+      "rejected_wikidata_id": "Q272146",
+      "status": "nba_active",
+      "current_team": "Brooklyn Nets",
+      "stint_count": 2,
+      "nba_teams_shown": [
+        "Denver Nuggets",
+        "Brooklyn Nets"
+      ],
+      "teams_shown": "Denver Nuggets · Brooklyn Nets",
+      "career_history": [
+        {
+          "years": "2018-2025",
+          "team": "Denver Nuggets",
+          "city": "Denver",
+          "country": "USA"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Brooklyn Nets",
+          "city": "Brooklyn",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Mike Green",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Green_(basketball,_born_1985)",
+      "stored_wikipedia_title": "Mike Green (basketball, born 1985)",
+      "rejected_wikidata_id": "Q3308228",
+      "status": "retired",
+      "current_team": "Igokea",
+      "stint_count": 13,
+      "nba_teams_shown": [],
+      "teams_shown": "Antalya · Liège · Pallacanestro Cantù · Barcellona · Pallacanestro Varese · Khimki · Paris-Levallois · Reyer Venezia · Best Balıkesir · Pınar Karşıyaka · AEK Athens · SIG Strasbourg · Igokea",
+      "career_history": [
+        {
+          "years": "2008-2009",
+          "team": "Antalya",
+          "city": "Antalya",
+          "country": "Turkey"
+        },
+        {
+          "years": "2009-2010",
+          "team": "Liège",
+          "city": "Liège",
+          "country": "Belgium"
+        },
+        {
+          "years": "2010-2011",
+          "team": "Pallacanestro Cantù",
+          "city": "Cantù",
+          "country": "Italy"
+        },
+        {
+          "years": "2011-2012",
+          "team": "Barcellona",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "2012-2013",
+          "team": "Pallacanestro Varese",
+          "city": "Varese",
+          "country": "Italy"
+        },
+        {
+          "years": "2013-2014",
+          "team": "Khimki",
+          "city": "Khimki",
+          "country": "Russia"
+        },
+        {
+          "years": "2014-2015",
+          "team": "Paris-Levallois",
+          "city": "Paris",
+          "country": "France"
+        },
+        {
+          "years": "2015-2016",
+          "team": "Reyer Venezia",
+          "city": "Venezia",
+          "country": "Italy"
+        },
+        {
+          "years": "2016",
+          "team": "Best Balıkesir",
+          "city": "Balıkesir",
+          "country": "Turkey"
+        },
+        {
+          "years": "2016-2017",
+          "team": "Pınar Karşıyaka",
+          "city": "Izmir",
+          "country": "Turkey"
+        },
+        {
+          "years": "2017-2018",
+          "team": "AEK Athens",
+          "city": "Athens",
+          "country": "Greece"
+        },
+        {
+          "years": "2018-2019",
+          "team": "SIG Strasbourg",
+          "city": "Strasbourg",
+          "country": "France"
+        },
+        {
+          "years": "2019-2020",
+          "team": "Igokea",
+          "city": "Aleksandrovac",
+          "country": "Bosnia and Herzegovina"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Mike Lynn",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Lynn",
+      "stored_wikipedia_title": "Mike Lynn",
+      "rejected_wikidata_id": "Q6847735",
+      "status": "retired",
+      "current_team": "Minnesota Vikings",
+      "stint_count": 6,
+      "nba_teams_shown": [],
+      "teams_shown": "Memphis Pros · Minnesota Vikings · Minnesota Vikings · World League of American Football · Minnesota Vikings · Minnesota Vikings",
+      "career_history": [
+        {
+          "years": "1972",
+          "team": "Memphis Pros",
+          "city": "Memphis",
+          "country": "USA"
+        },
+        {
+          "years": "1974",
+          "team": "Minnesota Vikings",
+          "city": "Minneapolis",
+          "country": "USA"
+        },
+        {
+          "years": "1975-1990",
+          "team": "Minnesota Vikings",
+          "city": "Minneapolis",
+          "country": "USA"
+        },
+        {
+          "years": "1990-1991",
+          "team": "World League of American Football",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "1990-1992",
+          "team": "Minnesota Vikings",
+          "city": "Minneapolis",
+          "country": "USA"
+        },
+        {
+          "years": "1991-1992",
+          "team": "Minnesota Vikings",
+          "city": "Minneapolis",
+          "country": "USA"
+        }
+      ],
+      "kind": "namesake_career",
+      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+    },
+    {
+      "player": "Moses Brown",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Moses_Brown",
+      "stored_wikipedia_title": "Moses Brown",
+      "rejected_wikidata_id": "Q3324745",
+      "status": "overseas_active",
+      "current_team": "Grand Rapids Gold",
+      "stint_count": 17,
+      "nba_teams_shown": [
+        "Portland Trail Blazers",
+        "Oklahoma City Thunder",
+        "Dallas Mavericks",
+        "Cleveland Cavaliers",
+        "LA Clippers",
+        "Brooklyn Nets",
+        "Portland Trail Blazers",
+        "Indiana Pacers",
+        "Dallas Mavericks"
+      ],
+      "teams_shown": "Portland Trail Blazers · Texas Legends · Oklahoma City Thunder · Oklahoma City Blue · Dallas Mavericks · Texas Legends · Cleveland Cavaliers · LA Clippers · Ontario Clippers · Westchester Knicks · Brooklyn Nets · Portland Trail Blazers · Rip City Remix · Indiana Pacers · Westchester Knicks · Dallas Mavericks · Grand Rapids Gold",
+      "career_history": [
+        {
+          "years": "2019-2020",
+          "team": "Portland Trail Blazers",
+          "city": "Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2019-2020",
+          "team": "Texas Legends",
+          "city": "Frisco",
+          "country": "USA"
+        },
+        {
+          "years": "2020-2021",
+          "team": "Oklahoma City Thunder",
+          "city": "Oklahoma City",
+          "country": "USA"
+        },
+        {
+          "years": "2021",
+          "team": "Oklahoma City Blue",
+          "city": "Oklahoma City",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Dallas Mavericks",
+          "city": "Dallas",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Texas Legends",
+          "city": "Frisco",
+          "country": "USA"
+        },
+        {
+          "years": "2022",
+          "team": "Cleveland Cavaliers",
+          "city": "Cleveland",
+          "country": "USA"
+        },
+        {
+          "years": "2022-2023",
+          "team": "LA Clippers",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        {
+          "years": "2023",
+          "team": "Ontario Clippers",
+          "city": "Oceanside",
+          "country": "USA"
+        },
+        {
+          "years": "2023",
+          "team": "Westchester Knicks",
+          "city": "White Plains",
+          "country": "USA"
+        },
+        {
+          "years": "2023",
+          "team": "Brooklyn Nets",
+          "city": "Brooklyn",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Portland Trail Blazers",
+          "city": "Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Rip City Remix",
+          "city": "North Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2024",
+          "team": "Indiana Pacers",
+          "city": "Indianapolis",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Westchester Knicks",
+          "city": "White Plains",
+          "country": "USA"
+        },
+        {
+          "years": "2025",
+          "team": "Dallas Mavericks",
+          "city": "Dallas",
+          "country": "USA"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Grand Rapids Gold",
+          "city": "Grand Rapids",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Paul Watson",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Paul_Watson",
+      "stored_wikipedia_title": "Paul Watson",
+      "rejected_wikidata_id": "Q201670",
+      "status": "overseas_active",
+      "current_team": "Valley Suns",
+      "stint_count": 10,
+      "nba_teams_shown": [
+        "Atlanta Hawks",
+        "Toronto Raptors",
+        "Oklahoma City Thunder"
+      ],
+      "teams_shown": "BG Göttingen · Westchester Knicks · Raptors 905 · Atlanta Hawks · Raptors 905 · Toronto Raptors · Oklahoma City Thunder · Oklahoma City Blue · Austin Spurs · Valley Suns",
+      "career_history": [
+        {
+          "years": "2017",
+          "team": "BG Göttingen",
+          "city": "Göttingen",
+          "country": "Germany"
+        },
+        {
+          "years": "2017-2019",
+          "team": "Westchester Knicks",
+          "city": "White Plains",
+          "country": "USA"
+        },
+        {
+          "years": "2019-2020",
+          "team": "Raptors 905",
+          "city": "Mississauga",
+          "country": "Canada"
+        },
+        {
+          "years": "2020",
+          "team": "Atlanta Hawks",
+          "city": "Atlanta",
+          "country": "USA"
+        },
+        {
+          "years": "2020",
+          "team": "Raptors 905",
+          "city": "Mississauga",
+          "country": "Canada"
+        },
+        {
+          "years": "2020-2021",
+          "team": "Toronto Raptors",
+          "city": "Toronto",
+          "country": "Canada"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Oklahoma City Thunder",
+          "city": "Oklahoma City",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Oklahoma City Blue",
+          "city": "Oklahoma City",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Austin Spurs",
+          "city": "Austin",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Valley Suns",
+          "city": "Tempe",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Phillip Wheeler",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Phillip_Wheeler",
+      "stored_wikipedia_title": "Phillip Wheeler",
+      "rejected_wikidata_id": "Q110605307",
+      "status": "nba_active",
+      "current_team": "Philadelphia 76ers",
+      "stint_count": 7,
+      "nba_teams_shown": [
+        "Philadelphia 76ers"
+      ],
+      "teams_shown": "Rio Grande Valley Vipers · Iowa Wolves · Mexico City Capitanes · Texas Legends · Maine Celtics · Philadelphia 76ers · Piratas de Quebradillas",
+      "career_history": [
+        {
+          "years": "2021-2022",
+          "team": "Rio Grande Valley Vipers",
+          "city": "Edinburg",
+          "country": "USA"
+        },
+        {
+          "years": "2022-2023",
+          "team": "Iowa Wolves",
+          "city": "Des Moines",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Mexico City Capitanes",
+          "city": "Mexico City",
+          "country": "Mexico"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Texas Legends",
+          "city": "Frisco",
+          "country": "USA"
+        },
+        {
+          "years": "2025",
+          "team": "Maine Celtics",
+          "city": "Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2025",
+          "team": "Philadelphia 76ers",
+          "city": "Philadelphia",
+          "country": "USA"
+        },
+        {
+          "years": "2025",
+          "team": "Piratas de Quebradillas",
+          "city": "Quebradillas",
+          "country": "Puerto Rico"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Ray Ellefson",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Ray_Ellefson",
+      "stored_wikipedia_title": "Ray Ellefson",
+      "rejected_wikidata_id": "Q7297443",
+      "status": "retired",
+      "current_team": "Wilkes-Barre Barons",
+      "stint_count": 5,
+      "nba_teams_shown": [
+        "Minneapolis Lakers",
+        "New York Knicks"
+      ],
+      "teams_shown": "Waterloo Hawks · Minneapolis Lakers · New York Celtics · New York Knicks · Wilkes-Barre Barons",
+      "career_history": [
+        {
+          "years": "1948-1949",
+          "team": "Waterloo Hawks",
+          "city": "Waterloo",
+          "country": "USA"
+        },
+        {
+          "years": "1948-1949",
+          "team": "Minneapolis Lakers",
+          "city": "Minneapolis",
+          "country": "USA"
+        },
+        {
+          "years": "1949-1950",
+          "team": "New York Celtics",
+          "city": "New York",
+          "country": "USA"
+        },
+        {
+          "years": "1950",
+          "team": "New York Knicks",
+          "city": "New York",
+          "country": "USA"
+        },
+        {
+          "years": "1950-1951",
+          "team": "Wilkes-Barre Barons",
+          "city": "Wilkes-Barre",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Ray McCallum",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Ray_McCallum",
+      "stored_wikipedia_title": "Ray McCallum",
+      "rejected_wikidata_id": "Q7297803",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Reggie Jackson",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Reggie_Jackson",
+      "stored_wikipedia_title": "Reggie Jackson",
+      "rejected_wikidata_id": "Q959112",
+      "status": "nba_active",
+      "current_team": "Philadelphia 76ers",
+      "stint_count": 5,
+      "nba_teams_shown": [
+        "Oklahoma City Thunder",
+        "Detroit Pistons",
+        "LA Clippers",
+        "Denver Nuggets",
+        "Philadelphia 76ers"
+      ],
+      "teams_shown": "Oklahoma City Thunder · Detroit Pistons · LA Clippers · Denver Nuggets · Philadelphia 76ers",
+      "career_history": [
+        {
+          "years": "2011-2015",
+          "team": "Oklahoma City Thunder",
+          "city": "Oklahoma City",
+          "country": "USA"
+        },
+        {
+          "years": "2015-2020",
+          "team": "Detroit Pistons",
+          "city": "Detroit",
+          "country": "USA"
+        },
+        {
+          "years": "2020-2023",
+          "team": "LA Clippers",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Denver Nuggets",
+          "city": "Denver",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Philadelphia 76ers",
+          "city": "Philadelphia",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Ron Holland",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Holland",
+      "stored_wikipedia_title": "Ron Holland",
+      "rejected_wikidata_id": "Q5809981",
+      "status": "nba_active",
+      "current_team": "Detroit Pistons",
+      "stint_count": 2,
+      "nba_teams_shown": [
+        "Detroit Pistons"
+      ],
+      "teams_shown": "NBA G League Ignite · Detroit Pistons",
+      "career_history": [
+        {
+          "years": "2023-2024",
+          "team": "NBA G League Ignite",
+          "city": "Henderson",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2026",
+          "team": "Detroit Pistons",
+          "city": "Detroit",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Ryan Dunn",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Dunn",
+      "stored_wikipedia_title": "Ryan Dunn",
+      "rejected_wikidata_id": "Q316036",
+      "status": "nba_active",
+      "current_team": "Phoenix Suns",
+      "stint_count": 1,
+      "nba_teams_shown": [
+        "Phoenix Suns"
+      ],
+      "teams_shown": "Phoenix Suns",
+      "career_history": [
+        {
+          "years": "2024-2026",
+          "team": "Phoenix Suns",
+          "city": "Phoenix",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Sam Vincent",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Sam_Vincent",
+      "stored_wikipedia_title": "Sam Vincent",
+      "rejected_wikidata_id": "Q2572399",
+      "status": "retired",
+      "current_team": "Aris Thessaloniki",
+      "stint_count": 5,
+      "nba_teams_shown": [
+        "Boston Celtics",
+        "Seattle SuperSonics",
+        "Chicago Bulls",
+        "Orlando Magic"
+      ],
+      "teams_shown": "Boston Celtics · Seattle SuperSonics · Chicago Bulls · Orlando Magic · Aris Thessaloniki",
+      "career_history": [
+        {
+          "years": "1985-1987",
+          "team": "Boston Celtics",
+          "city": "Boston",
+          "country": "USA"
+        },
+        {
+          "years": "1987-1988",
+          "team": "Seattle SuperSonics",
+          "city": "Seattle",
+          "country": "USA"
+        },
+        {
+          "years": "1988-1989",
+          "team": "Chicago Bulls",
+          "city": "Chicago",
+          "country": "USA"
+        },
+        {
+          "years": "1989-1992",
+          "team": "Orlando Magic",
+          "city": "Orlando",
+          "country": "USA"
+        },
+        {
+          "years": "1993-1994",
+          "team": "Aris Thessaloniki",
+          "city": "Thessaloniki",
+          "country": "Greece"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Sean McDermott",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Sean_McDermott",
+      "stored_wikipedia_title": "Sean McDermott",
+      "rejected_wikidata_id": "Q7441226",
+      "status": "overseas_active",
+      "current_team": "Valley Suns",
+      "stint_count": 7,
+      "nba_teams_shown": [
+        "Memphis Grizzlies"
+      ],
+      "teams_shown": "Memphis Grizzlies · Memphis Hustle · Memphis Hustle · Pallacanestro Varese · Pınar Karşıyaka · Pallacanestro Trieste · Valley Suns",
+      "career_history": [
+        {
+          "years": "2020-2021",
+          "team": "Memphis Grizzlies",
+          "city": "Memphis",
+          "country": "USA"
+        },
+        {
+          "years": "2021",
+          "team": "Memphis Hustle",
+          "city": "Memphis",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2023",
+          "team": "Memphis Hustle",
+          "city": "Memphis",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Pallacanestro Varese",
+          "city": "Varese",
+          "country": "Italy"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Pınar Karşıyaka",
+          "city": "Izmir",
+          "country": "Turkey"
+        },
+        {
+          "years": "2025",
+          "team": "Pallacanestro Trieste",
+          "city": "Trieste",
+          "country": "Italy"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Valley Suns",
+          "city": "Tempe",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Terry Taylor",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Terry_Taylor",
+      "stored_wikipedia_title": "Terry Taylor",
+      "rejected_wikidata_id": "Q3898163",
+      "status": "overseas_active",
+      "current_team": "Brisbane Bullets",
+      "stint_count": 8,
+      "nba_teams_shown": [
+        "Indiana Pacers",
+        "Chicago Bulls",
+        "Sacramento Kings"
+      ],
+      "teams_shown": "Fort Wayne Mad Ants · Indiana Pacers · Fort Wayne Mad Ants · Windy City Bulls · Chicago Bulls · Stockton Kings · Sacramento Kings · Brisbane Bullets",
+      "career_history": [
+        {
+          "years": "2021",
+          "team": "Fort Wayne Mad Ants",
+          "city": "Fort Wayne",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2023",
+          "team": "Indiana Pacers",
+          "city": "Indianapolis",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2023",
+          "team": "Fort Wayne Mad Ants",
+          "city": "Fort Wayne",
+          "country": "USA"
+        },
+        {
+          "years": "2023",
+          "team": "Windy City Bulls",
+          "city": "Hoffman Estates",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Chicago Bulls",
+          "city": "Chicago",
+          "country": "USA"
+        },
+        {
+          "years": "2024-2025",
+          "team": "Stockton Kings",
+          "city": "Stockton",
+          "country": "USA"
+        },
+        {
+          "years": "2025",
+          "team": "Sacramento Kings",
+          "city": "Sacramento",
+          "country": "USA"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Brisbane Bullets",
+          "city": "Brisbane",
+          "country": "Australia"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Tre' Johnson",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Tre'_Johnson",
+      "stored_wikipedia_title": "Tre' Johnson",
+      "rejected_wikidata_id": "Q7836509",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    },
+    {
+      "player": "Troy Brown",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Troy_Brown",
+      "stored_wikipedia_title": "Troy Brown",
+      "rejected_wikidata_id": "Q332169",
+      "status": "overseas_active",
+      "current_team": "Adelaide 36ers",
+      "stint_count": 9,
+      "nba_teams_shown": [
+        "Washington Wizards",
+        "Chicago Bulls",
+        "Los Angeles Lakers",
+        "Minnesota Timberwolves",
+        "Detroit Pistons"
+      ],
+      "teams_shown": "Washington Wizards · Capital City Go-Go · Chicago Bulls · Los Angeles Lakers · Minnesota Timberwolves · Detroit Pistons · Manisa Basket · Cangrejeros de Santurce · Adelaide 36ers",
+      "career_history": [
+        {
+          "years": "2018-2021",
+          "team": "Washington Wizards",
+          "city": "Washington",
+          "country": "USA"
+        },
+        {
+          "years": "2018-2019",
+          "team": "Capital City Go-Go",
+          "city": "Washington",
+          "country": "USA"
+        },
+        {
+          "years": "2021-2022",
+          "team": "Chicago Bulls",
+          "city": "Chicago",
+          "country": "USA"
+        },
+        {
+          "years": "2022-2023",
+          "team": "Los Angeles Lakers",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        {
+          "years": "2023-2024",
+          "team": "Minnesota Timberwolves",
+          "city": "Minneapolis",
+          "country": "USA"
+        },
+        {
+          "years": "2024",
+          "team": "Detroit Pistons",
+          "city": "Detroit",
+          "country": "USA"
+        },
+        {
+          "years": "2024",
+          "team": "Manisa Basket",
+          "city": "Manisa",
+          "country": "Turkey"
+        },
+        {
+          "years": "2025",
+          "team": "Cangrejeros de Santurce",
+          "city": "San Juan",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "2025-2026",
+          "team": "Adelaide 36ers",
+          "city": "Adelaide",
+          "country": "Australia"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
+    },
+    {
+      "player": "Vernon Carey",
+      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Vernon_Carey",
+      "stored_wikipedia_title": "Vernon Carey",
+      "rejected_wikidata_id": "Q7922084",
+      "status": "retired",
+      "current_team": "",
+      "stint_count": 0,
+      "nba_teams_shown": [],
+      "teams_shown": "",
+      "career_history": [],
+      "kind": "empty",
+      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+    }
+  ]
+}
