@@ -36,7 +36,6 @@
 <main>
 <h1>Where has Tom Chambers played?</h1>
 <p class="lede">Tom Chambers played for 7 clubs in 2 countries: San Diego Clippers, Seattle SuperSonics, Phoenix Suns, Utah Jazz and more, last with Philadelphia 76ers.</p>
-<p class="bio">Born: June 21, 1959 in Ogden <span class="age" data-born="1959-06-21">(age 67)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Philadelphia 76ers</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Tom%20Chambers">Open Tom Chambers's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -52,13 +51,5 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
-<script>
-(function(){try{var n=new Date();
-document.querySelectorAll('.age[data-born]').forEach(function(el){
-var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
-var a=n.getUTCFullYear()-(+b[1]);
-if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
-if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
-</script>
 </body>
 </html>

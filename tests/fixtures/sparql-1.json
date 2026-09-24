@@ -1,65 +1,326 @@
 {
-  "head": {"vars": ["item", "birth", "bprec", "death", "dprec",
-                    "bplaceLabel", "dplaceLabel"]},
+  "head": {
+    "vars": [
+      "item",
+      "itemLabel",
+      "itemDescription",
+      "bball",
+      "birth",
+      "bprec",
+      "death",
+      "dprec",
+      "bplaceLabel",
+      "dplaceLabel"
+    ]
+  },
   "results": {
     "bindings": [
       {
-        "item": {"type": "uri", "value": "http://www.wikidata.org/entity/Q36159"},
-        "birth": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "1984-12-30T00:00:00Z"},
-        "bprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "11"},
-        "bplaceLabel": {"xml:lang": "en", "type": "literal", "value": "Akron"}
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q36159"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "LeBron James"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "American basketball player"
+        },
+        "bball": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "type": "literal",
+          "value": "true"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1984-12-30T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Akron"
+        }
       },
       {
-        "item": {"type": "uri", "value": "http://www.wikidata.org/entity/Q41421"},
-        "birth": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "1978-08-23T00:00:00Z"},
-        "bprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "11"},
-        "death": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "2020-01-26T00:00:00Z"},
-        "dprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "11"},
-        "bplaceLabel": {"xml:lang": "en", "type": "literal",
-                        "value": "Philadelphia"},
-        "dplaceLabel": {"xml:lang": "en", "type": "literal",
-                        "value": "Calabasas"}
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q41421"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Kobe Bryant"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "American basketball player"
+        },
+        "bball": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "type": "literal",
+          "value": "true"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1978-08-23T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "death": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "2020-01-26T00:00:00Z"
+        },
+        "dprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Philadelphia"
+        },
+        "dplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Calabasas"
+        }
       },
       {
-        "item": {"type": "uri", "value": "http://www.wikidata.org/entity/Q193680"},
-        "birth": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "1936-08-21T00:00:00Z"},
-        "bprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "11"},
-        "death": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "1999-10-12T00:00:00Z"},
-        "dprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "11"},
-        "bplaceLabel": {"xml:lang": "en", "type": "literal",
-                        "value": "Philadelphia"},
-        "dplaceLabel": {"xml:lang": "en", "type": "literal",
-                        "value": "Bel Air"}
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q193680"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Wilt Chamberlain"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "American basketball player"
+        },
+        "bball": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "type": "literal",
+          "value": "true"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1936-08-21T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "death": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1999-10-12T00:00:00Z"
+        },
+        "dprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Philadelphia"
+        },
+        "dplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bel Air"
+        }
       },
       {
-        "item": {"type": "uri", "value": "http://www.wikidata.org/entity/Q999001"},
-        "birth": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "1922-01-01T00:00:00Z"},
-        "bprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "9"},
-        "death": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "1994-06-01T00:00:00Z"},
-        "dprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "10"},
-        "bplaceLabel": {"xml:lang": "en", "type": "literal", "value": "Windsor"}
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q999001"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Early Player"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "American basketball player"
+        },
+        "bball": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "type": "literal",
+          "value": "true"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1922-01-01T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "9"
+        },
+        "death": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1994-06-01T00:00:00Z"
+        },
+        "dprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "10"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Windsor"
+        }
       },
       {
-        "item": {"type": "uri", "value": "http://www.wikidata.org/entity/Q999002"},
-        "birth": {"datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-                  "type": "literal", "value": "1991-07-04T00:00:00Z"},
-        "bprec": {"datatype": "http://www.w3.org/2001/XMLSchema#integer",
-                  "type": "literal", "value": "11"},
-        "bplaceLabel": {"type": "literal", "value": "Q7654321"}
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q999002"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Renamed Player"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "American basketball player"
+        },
+        "bball": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "type": "literal",
+          "value": "true"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1991-07-04T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Q7654321"
+        }
+      },
+      {
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q999004"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Namesake Player"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Canadian ice hockey player (1903-1992)"
+        },
+        "bball": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "type": "literal",
+          "value": "false"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1903-07-03T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "death": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1992-04-07T00:00:00Z"
+        },
+        "dprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bracebridge"
+        },
+        "dplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Toronto"
+        }
+      },
+      {
+        "item": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q999006"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Lost Player"
+        },
+        "itemDescription": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "English poet"
+        },
+        "bball": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "type": "literal",
+          "value": "false"
+        },
+        "birth": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1812-05-07T00:00:00Z"
+        },
+        "bprec": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "type": "literal",
+          "value": "11"
+        },
+        "bplaceLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Camberwell"
+        }
       }
     ]
   }

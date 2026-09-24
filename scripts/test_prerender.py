@@ -7,7 +7,6 @@ Run:  python3 scripts/test_prerender.py
 """
 from __future__ import annotations
 
-import datetime as dt
 import json
 import re
 import sys
@@ -360,7 +359,7 @@ def test_app_slug_matches_generator():
 
 
 
-# --- birth/death line, age and JSON-LD --------------------------------------
+# --- the Person JSON-LD -----------------------------------------------------
 BIO_SAMPLE = {
     "Nikola Jokić": {"birth_date": "1995-02-19", "death_date": None,
                      "birth_place": "Sombor", "death_place": ""},
@@ -389,59 +388,19 @@ def _player(name, **over):
     return rec
 
 
-def test_a_living_player_gets_a_born_line_with_an_age():
+def test_the_page_prints_no_birth_line_and_loads_no_age_script():
+    """The dates live in the JSON-LD only. Nothing visible, and no inline
+    script -- a page that prints no age has nothing to keep current."""
     def check():
-        html = pr.render(_player("Nikola Jokić", status="nba_active"))
-        line = [l for l in html.splitlines() if 'class="bio"' in l]
-        assert len(line) == 1, html
-        assert "Born: February 19, 1995 in Sombor" in line[0], line[0]
-        assert 'data-born="1995-02-19"' in line[0], line[0]
-        age = pr.age_between("1995-02-19",
-                             dt.datetime.now(dt.timezone.utc).date())
-        assert f"(age {age})" in line[0], line[0]
-        assert "Died" not in line[0]
-        # ... and the recompute rides along, so a page built in December does
-        # not still claim last year's age in February.
-        assert "data-born" in pr.AGE_SCRIPT or ".age[data-born]" in pr.AGE_SCRIPT
-        assert pr.AGE_SCRIPT in html
-        assert "src=" not in pr.AGE_SCRIPT, "no new external script"
+        for name in ("Nikola Jokić", "Kobe Bryant", "Early Player",
+                     "Nobody At All"):
+            html = pr.render(_player(name))
+            assert 'class="bio"' not in html, name
+            assert "Born:" not in html and "Died:" not in html, name
+            assert "data-born" not in html, name
+            assert "(age " not in html and "(aged " not in html, name
     _with_bio(check)
-    print("test_a_living_player_gets_a_born_line_with_an_age PASS")
-
-
-def test_a_dead_player_gets_both_dates_and_the_age_he_reached():
-    def check():
-        html = pr.render(_player("Kobe Bryant"))
-        line = [l for l in html.splitlines() if 'class="bio"' in l][0]
-        assert "Born: August 23, 1978 in Philadelphia" in line, line
-        assert "Died: January 26, 2020 in Calabasas" in line, line
-        assert "(aged 41)" in line, line
-        # A finished age cannot go stale, so the page does not recompute it.
-        assert "data-born" not in line, line
-        assert pr.AGE_SCRIPT not in html
-    _with_bio(check)
-    print("test_a_dead_player_gets_both_dates_and_the_age_he_reached PASS")
-
-
-def test_a_year_only_date_shows_the_year_and_no_age():
-    def check():
-        html = pr.render(_player("Early Player"))
-        line = [l for l in html.splitlines() if 'class="bio"' in l][0]
-        assert "Born: 1922 in Windsor" in line, line
-        assert "Died: June 1994" in line, line
-        assert "age" not in line, line
-        assert "1922-01-01" not in html, "a year-only date must stay year-only"
-    _with_bio(check)
-    print("test_a_year_only_date_shows_the_year_and_no_age PASS")
-
-
-def test_a_player_with_no_bio_record_gets_no_line():
-    def check():
-        html = pr.render(_player("Nobody At All"))
-        assert 'class="bio"' not in html
-        assert pr.AGE_SCRIPT not in html
-    _with_bio(check)
-    print("test_a_player_with_no_bio_record_gets_no_line PASS")
+    print("test_the_page_prints_no_birth_line_and_loads_no_age_script PASS")
 
 
 def test_the_page_carries_a_person_block_with_the_dates():
@@ -477,27 +436,12 @@ def test_the_person_block_survives_a_hostile_name():
     print("test_the_person_block_survives_a_hostile_name PASS")
 
 
-def test_the_age_is_computed_the_same_way_on_both_sides():
-    """The build-time age and the inline script must agree, or the number
-    would flicker when the page hydrates."""
-    today = dt.date(2026, 9, 24)
-    assert pr.age_between("1984-12-30", today) == 41   # birthday still ahead
-    assert pr.age_between("1984-09-24", today) == 42   # birthday today
-    assert pr.age_between("1984-09-25", today) == 41
-    assert pr.age_between("1922", today) is None       # year-only: no age
-    assert pr.age_between("1978-08", today) is None
-    assert pr.age_between("", today) is None
-    assert pr.age_between("1978-08-23", "2020-01-26") == 41
-    print("test_the_age_is_computed_the_same_way_on_both_sides PASS")
-
-
 def test_team_and_country_pages_are_untouched():
     """The shell gained two optional slots; the pages that do not use them
     must come out byte-identical."""
     def check():
         team = pr.render_team("Los Angeles Lakers", TEAM_FIX)
         assert "ld+json" not in team and 'class="bio"' not in team
-        assert pr.AGE_SCRIPT not in team
     _with_bio(check)
     print("test_team_and_country_pages_are_untouched PASS")
 
@@ -517,13 +461,9 @@ if __name__ == "__main__":
     test_write_all_is_incremental_and_cleans_up()
     test_sitemap_lists_canonical_urls()
     test_app_slug_matches_generator()
-    test_a_living_player_gets_a_born_line_with_an_age()
-    test_a_dead_player_gets_both_dates_and_the_age_he_reached()
-    test_a_year_only_date_shows_the_year_and_no_age()
-    test_a_player_with_no_bio_record_gets_no_line()
+    test_the_page_prints_no_birth_line_and_loads_no_age_script()
     test_the_page_carries_a_person_block_with_the_dates()
     test_the_person_block_survives_a_hostile_name()
-    test_the_age_is_computed_the_same_way_on_both_sides()
     test_team_and_country_pages_are_untouched()
     test_team_page()
     test_country_page()

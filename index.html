@@ -545,25 +545,12 @@
             vertical-align: super; margin-left: 1px;
         }
 
-        /* Birth/death line, from data/players/player_bio.json. Hidden until
-           there is something to say -- see renderBio(). */
-        .player-bio {
-            font-size: .8rem;
-            color: var(--text-secondary);
-            margin: 2px 0 4px;
-        }
-
+        /* The 16px the removed "Data as of" line used to contribute lives
+           here now, so the stats row sits where it always did. */
         .player-span {
             font-size: .78rem;
             color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .player-updated {
-            font-size: .72rem;
-            font-family: var(--mono);
-            color: var(--text-muted);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .stats {
@@ -2100,9 +2087,7 @@
                     <span id="pNatFlag"></span>
                     <span class="player-allstar" id="pAllStar" title="NBA All-Star">★</span>
                 </div>
-                <div class="player-bio" id="pBio" style="display:none"></div>
                 <div class="player-span" id="pSpan"></div>
-                <div class="player-updated" id="pUpdated"></div>
 
                 <div class="stats">
                     <div class="stat"><div class="stat-num" id="sTeams">-</div><div class="stat-lbl">Teams</div></div>
@@ -2527,7 +2512,6 @@
         // Lazily load the full career file (for the player map + quiz), once.
         function ensureCareers() {
             if (careersP) return careersP;
-            ensureBios();   // in parallel; the panel does not wait on it
             careersP = (async () => {
                 const cRes = await fetchData('nba_players_careers_READY.json');
                 (await cRes.json()).forEach(p=>{
@@ -2543,80 +2527,6 @@
                 showWelcome();
             })();
             return careersP;
-        }
-
-        // --- birth/death line ------------------------------------------
-        // data/players/player_bio.json is written by
-        // scripts/fetch_bio_wikidata.py and keyed by player name. It is
-        // optional: until the first bio run lands, and if the fetch fails,
-        // the line is simply not drawn. The age is computed HERE rather than
-        // baked in, so it is right on the day the page is read.
-        let bios = null, biosP = null;
-        const BIO_MONTHS = ['January','February','March','April','May','June',
-            'July','August','September','October','November','December'];
-
-        function ensureBios(){
-            if (biosP) return biosP;
-            biosP = (async () => {
-                try {
-                    const r = await fetchData('data/players/player_bio.json');
-                    if (r.ok) bios = await r.json();
-                } catch (e) { /* the panel reads fine without it */ }
-                if (current) renderBio(current);
-            })();
-            return biosP;
-        }
-
-        // '1995-02-19' -> 'February 19, 1995'. Precision is kept exactly as
-        // Wikidata stated it: '1978-08' stays a month, '1922' stays a year.
-        function fmtBioDate(v){
-            const s = String(v || '');
-            let m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
-            if (m) return BIO_MONTHS[(+m[2])-1] + ' ' + (+m[3]) + ', ' + m[1];
-            m = /^(\d{4})-(\d{2})$/.exec(s);
-            if (m) return BIO_MONTHS[(+m[2])-1] + ' ' + m[1];
-            return /^\d{4}$/.test(s) ? s : '';
-        }
-
-        // Whole years between two dates, and only when both are day-precise:
-        // a year-only birth date carries no age worth printing.
-        function bioAge(born, on){
-            const b = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(born || ''));
-            if (!b) return null;
-            let y, mo, d;
-            if (on instanceof Date) { y = on.getUTCFullYear(); mo = on.getUTCMonth()+1; d = on.getUTCDate(); }
-            else {
-                const e = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(on || ''));
-                if (!e) return null;
-                y = +e[1]; mo = +e[2]; d = +e[3];
-            }
-            let a = y - (+b[1]);
-            if (mo < (+b[2]) || (mo === (+b[2]) && d < (+b[3]))) a--;
-            return (a >= 0 && a < 130) ? a : null;
-        }
-
-        function renderBio(name){
-            const el = document.getElementById('pBio');
-            if (!el) return;
-            const rec = (bios && bios[name]) || null;
-            if (!rec || (!rec.birth_date && !rec.death_date)) {
-                el.textContent = ''; el.style.display = 'none'; return;
-            }
-            const bits = [];
-            if (rec.birth_date)
-                bits.push('Born: ' + fmtBioDate(rec.birth_date) +
-                          (rec.birth_place ? ' in ' + rec.birth_place : ''));
-            if (rec.death_date)
-                bits.push('Died: ' + fmtBioDate(rec.death_date) +
-                          (rec.death_place ? ' in ' + rec.death_place : ''));
-            let text = bits.join(' / ');
-            const age = rec.death_date ? bioAge(rec.birth_date, rec.death_date)
-                                       : bioAge(rec.birth_date, new Date());
-            if (age !== null) text += rec.death_date ? ' (aged ' + age + ')'
-                                                     : ' (age ' + age + ')';
-            // textContent, not innerHTML: place names come from a data file.
-            el.textContent = text;
-            el.style.display = '';
         }
 
         // Top-level router: ?player= -> map view; ?view=quiz -> quiz; else dashboard.
@@ -3304,9 +3214,6 @@
             setTitle('Where Has ' + name + ' Played? Every Team, City and Country | ' + TITLE_SUFFIX);
             document.getElementById('welcome').style.display = 'none';
             document.getElementById('playerSection').classList.add('active');
-            document.getElementById('pUpdated').textContent =
-                p.last_updated ? `Data as of ${_fmtDate(p.last_updated)}` : '';
-            renderBio(name);
             // silent no-op when nationality/all_star aren't known — no flag, no star
             document.getElementById('pNatFlag').innerHTML =
                 (p.nationality && window.nationalityFlag) ? nationalityFlag(p.nationality) : '';

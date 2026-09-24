@@ -36,7 +36,6 @@
 <main>
 <h1>Where has Pau Gasol played?</h1>
 <p class="lede">Pau Gasol played for 6 clubs in 2 countries: Memphis Grizzlies, Los Angeles Lakers, Chicago Bulls, San Antonio Spurs and more, last with FC Barcelona.</p>
-<p class="bio">Born: July 6, 1980 in Barcelona <span class="age" data-born="1980-07-06">(age 46)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Spain</dd><dt>Current team</dt><dd>FC Barcelona</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Pau%20Gasol">Open Pau Gasol's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -52,13 +51,5 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
-<script>
-(function(){try{var n=new Date();
-document.querySelectorAll('.age[data-born]').forEach(function(el){
-var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
-var a=n.getUTCFullYear()-(+b[1]);
-if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
-if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
-</script>
 </body>
 </html>

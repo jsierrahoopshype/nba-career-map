@@ -36,7 +36,6 @@
 <main>
 <h1>Where has Mel Counts played?</h1>
 <p class="lede">Mel Counts played for 6 clubs in the USA: Boston Celtics, Baltimore Bullets, Los Angeles Lakers, Phoenix Suns and more, last with New Orleans Jazz.</p>
-<p class="bio">Born: October 16, 1941 in Coos Bay <span class="age" data-born="1941-10-16">(age 84)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>New Orleans Jazz</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Mel%20Counts">Open Mel Counts's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -52,13 +51,5 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
-<script>
-(function(){try{var n=new Date();
-document.querySelectorAll('.age[data-born]').forEach(function(el){
-var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
-var a=n.getUTCFullYear()-(+b[1]);
-if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
-if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
-</script>
 </body>
 </html>
