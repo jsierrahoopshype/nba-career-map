@@ -49,6 +49,7 @@ from pathlib import Path
 
 import signing_guard
 import split_combined_teams
+import stint_corrections
 import stint_order
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import (TeamNormalizer, edit_distance,
@@ -878,6 +879,15 @@ def _persist(db: Database, summary: dict) -> None:
     # Known exact signing dates, re-stamped after the parse that just rebuilt
     # career_history from the article; the guard above reads them.
     summary["start_dates_stamped"] = signing_guard.apply_start_dates(players)
+
+    # Curated removals: stints the article lists that the player never played
+    # (a signed contract he left before appearing, say). The parse puts them
+    # back every run, so they come out again on the way to disk. See
+    # scripts/stint_corrections.py.
+    removed_n = stint_corrections.apply_removals(players)
+    summary["stints_removed"] = removed_n
+    if removed_n:
+        print(f"[corrections] removed {removed_n} curated phantom stint(s)")
 
     ordered_n = stint_order.order_players(players)
     summary["stints_reordered"] = ordered_n

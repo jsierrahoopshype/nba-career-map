@@ -84,6 +84,24 @@ jobs:
             --max-requests "${IN_MAX:-650}" \
             --delay 1.0
 
+      - name: Refresh player birth/death facts
+        # Incremental by design: the players missing from
+        # data/players/player_bio.json, plus a slice of the living ones whose
+        # record is over a week old so a death is picked up within the week.
+        # After the first backfill (run .github/workflows/player-bio.yml by
+        # hand once) that is a few hundred records and a handful of requests.
+        #
+        # continue-on-error: the script refuses to write anything when
+        # Wikidata cannot be reached (it exits 1 rather than emptying the
+        # file), and a Wikidata outage must not throw away the career update
+        # this run just did. The step still goes red, so the failure is
+        # visible in the run.
+        continue-on-error: true
+        run: |
+          python3 scripts/fetch_bio_wikidata.py \
+            --refresh-limit 1000 \
+            --delay 1.0
+
       - name: Rebuild dashboard data
         # Consolidated aggregation layer for the dashboard. Runs every pipeline
         # run so data/dashboard_data.json stays fresh; reads the just-updated

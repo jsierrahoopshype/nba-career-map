@@ -28,6 +28,7 @@ than all 5,179.
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
 import re
 import unicodedata
@@ -78,6 +79,161 @@ def team_url(name: str) -> str:
 
 def country_url(name: str) -> str:
     return f"{SITE_BASE_URL}/country/{slug(name)}.html"
+
+
+# --- birth and death --------------------------------------------------------
+# data/players/player_bio.json, written by scripts/fetch_bio_wikidata.py:
+# {player name: {birth_date, death_date, birth_place, death_place, ...}}.
+# Read lazily and tolerated when absent -- the file arrives with the first
+# bio run, and a page with no bio line is a page missing one line, not a
+# broken build.
+BIO_FILE = ROOT / "data" / "players" / "player_bio.json"
+_BIO: dict | None = None
+
+MONTHS = ("January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December")
+
+
+def _bio_index() -> dict:
+    global _BIO
+    if _BIO is None:
+        try:
+            doc = json.loads(BIO_FILE.read_text(encoding="utf-8"))
+            _BIO = doc if isinstance(doc, dict) else {}
+        except (OSError, ValueError):
+            _BIO = {}
+    return _BIO
+
+
+def bio_of(player: dict) -> dict:
+    idx = _bio_index()
+    for name in (player.get("player"), player.get("display_name")):
+        rec = idx.get(name or "")
+        if isinstance(rec, dict):
+            return rec
+    return {}
+
+
+def format_bio_date(value: str) -> str:
+    """'1984-12-30' -> 'December 30, 1984'. Precision is never invented:
+    '1978-08' stays 'August 1978' and '1922' stays '1922'."""
+    value = str(value or "").strip()
+    if re.fullmatch(r"\d{4}", value):
+        return value
+    m = re.fullmatch(r"(\d{4})-(\d{2})", value)
+    if m:
+        return f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}"
+    m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", value)
+    if m:
+        return f"{MONTHS[int(m.group(2)) - 1]} {int(m.group(3))}, {m.group(1)}"
+    return ""
+
+
+def _exact(value: str) -> dt.date | None:
+    """The date as a real date, or None when it is not day-precise."""
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(value or "").strip()):
+        return None
+    try:
+        return dt.date.fromisoformat(value)
+    except ValueError:
+        return None
+
+
+def age_between(born: str, on: str | dt.date) -> int | None:
+    """Whole years between two dates, or None unless BOTH are day-precise.
+
+    A year-only birth date carries no age anyone can stand behind, so the page
+    states the year and stops there rather than printing a number that is a
+    year out half the time.
+    """
+    b = _exact(born)
+    e = on if isinstance(on, dt.date) else _exact(on)
+    if not b or not e:
+        return None
+    years = e.year - b.year - ((e.month, e.day) < (b.month, b.day))
+    return years if 0 <= years < 130 else None
+
+
+def bio_line(player: dict, today: dt.date | None = None) -> str:
+    """The one-line birth/death summary, or '' when nothing is known.
+
+    The age is rendered here, at build time, AND carried on the element as
+    data-born so the inline script can recompute it in the reader's browser:
+    a page written in December must not still claim 'age 40' in February.
+    A dead player's age never moves, so it carries no data-born.
+    """
+    rec = bio_of(player)
+    born, died = rec.get("birth_date"), rec.get("death_date")
+    if not born and not died:
+        return ""
+    today = today or dt.datetime.now(dt.timezone.utc).date()
+
+    parts = []
+    if born:
+        where = (rec.get("birth_place") or "").strip()
+        parts.append("Born: " + esc(format_bio_date(born))
+                     + (f" in {esc(where)}" if where else ""))
+    if died:
+        where = (rec.get("death_place") or "").strip()
+        parts.append("Died: " + esc(format_bio_date(died))
+                     + (f" in {esc(where)}" if where else ""))
+    line = " / ".join(parts)
+
+    if died:
+        age = age_between(born, died)
+        if age is not None:
+            line += f' <span class="age">(aged {age})</span>'
+    else:
+        age = age_between(born, today)
+        shown = f"(age {age})" if age is not None else ""
+        if shown:
+            line += f' <span class="age" data-born="{esc(born)}">{shown}</span>'
+    return f'<p class="bio">{line}</p>'
+
+
+# The age recompute: ~250 bytes inline, no external script, no font, no
+# network. It only ever rewrites a span this file wrote, and only when the
+# element carries a day-precise birth date (living players).
+AGE_SCRIPT = """<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\\d{4})-(\\d{2})-(\\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>"""
+
+
+def person_jsonld(player: dict) -> str:
+    """A schema.org Person for the player page.
+
+    The pages carried no structured data at all, so this is the minimal block:
+    who the page is about, where it lives, and the birth/death facts when they
+    are known. Partial dates are valid ISO 8601, so a year-only birth date is
+    published as the year rather than padded to a day that is not a fact.
+    """
+    name = player.get("display_name") or player.get("player") or ""
+    key = player.get("player") or name
+    rec = bio_of(player)
+    data = {"@context": "https://schema.org", "@type": "Person",
+            "name": name, "url": player_url(key)}
+    if rec.get("birth_date"):
+        data["birthDate"] = rec["birth_date"]
+    if (rec.get("birth_place") or "").strip():
+        data["birthPlace"] = {"@type": "Place", "name": rec["birth_place"]}
+    if rec.get("death_date"):
+        data["deathDate"] = rec["death_date"]
+    if (rec.get("death_place") or "").strip():
+        data["deathPlace"] = {"@type": "Place", "name": rec["death_place"]}
+    if (player.get("nationality") or "").strip():
+        data["nationality"] = player["nationality"]
+    if (player.get("wikipedia_url") or "").strip():
+        data["sameAs"] = player["wikipedia_url"]
+    # A "</script>" inside a JSON string would end the block early; escaping
+    # the angle brackets is the standard fix and keeps the JSON valid.
+    body = (json.dumps(data, ensure_ascii=False, indent=None)
+            .replace("<", "\\u003c").replace(">", "\\u003e"))
+    return f'<script type="application/ld+json">{body}</script>'
 
 
 # --- internal links from a career row --------------------------------------
@@ -228,7 +384,7 @@ def build_title(player: dict) -> str:
 def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
            lede: str, extra: str, app_href: str, cta: str, pre_cta: str = "",
            image: str | None = None, image_alt: str | None = None,
-           depth: str = "..") -> str:
+           depth: str = "..", head_extra: str = "", tail: str = "") -> str:
     """The markup every prerendered page shares: head tags, header, lede, CTA.
 
     One shell rather than three templates -- the whole point of these pages is
@@ -262,7 +418,7 @@ def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{depth}/assets/prerender.css">
-</head>
+{head_extra}</head>
 <body>
 <header class="ph"><div class="ph-inner">
 <a class="brand" href="{depth}/index.html">NBA Career Map</a>
@@ -276,7 +432,7 @@ def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
 <p class="foot"><a href="{depth}/index.html">Every NBA player's career, mapped</a> ·
 <a href="{depth}/teams.html">Browse by team</a></p>
 </main>
-</body>
+{tail}</body>
 </html>
 """
 
@@ -335,13 +491,17 @@ def render(player: dict) -> str:
     dl = f'<dl class="facts">{"".join(facts)}</dl>' if facts else ""
 
     img, alt = player_card(name)
+    bio = bio_line(player)
     return _shell(
         title=build_title(player), desc=build_description(player),
         canon=player_url(key), og_type="profile", image=img, image_alt=alt,
         h1=f"Where has {name} played?", lede=build_description(player),
-        pre_cta=dl + "\n" if dl else "", extra=table,
+        pre_cta=(bio + "\n" if bio else "") + (dl + "\n" if dl else ""),
+        extra=table,
         app_href=f"../index.html?player={quote(key)}",
-        cta=f"Open {name}'s interactive career map")
+        cta=f"Open {name}'s interactive career map",
+        head_extra=person_jsonld(player) + "\n",
+        tail=(AGE_SCRIPT + "\n") if 'data-born' in bio else "")
 
 
 # --- team pages -------------------------------------------------------------
