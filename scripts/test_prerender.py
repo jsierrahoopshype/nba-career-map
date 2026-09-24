@@ -310,6 +310,36 @@ def test_internal_links_point_at_canonical_urls():
     print("test_internal_links_point_at_canonical_urls PASS")
 
 
+def test_a_retired_url_redirects_instead_of_404ing():
+    """country/england.html stopped generating when every UK club moved onto
+    the "United Kingdom" label. GitHub Pages has no server redirects, so the
+    URL keeps a real file -- and the stale sweep must not delete it again on
+    the next run."""
+    page = ROOT / "country" / "england.html"
+    assert page.exists(), "retired URL must not 404"
+    html = page.read_text(encoding="utf-8")
+    assert '<meta http-equiv="refresh" content="0; url=united-kingdom.html">' in html
+    assert (f'<link rel="canonical" href="{pr.SITE_BASE_URL}'
+            f'/country/united-kingdom.html">') in html
+    assert 'content="noindex, follow"' in html, "a stub must not be indexed"
+    assert (ROOT / "country" / "united-kingdom.html").exists(), "target missing"
+
+    # regeneration keeps it: _write_set counts stubs as expected
+    tmp = Path(tempfile.mkdtemp()) / "country"
+    stats = pr._write_set({"United Kingdom": "<html>uk</html>"}, tmp)
+    assert (tmp / "england.html").exists(), "stub not written"
+    assert stats["removed"] == 0
+    stats = pr._write_set({"United Kingdom": "<html>uk</html>"}, tmp)
+    assert stats["removed"] == 0 and (tmp / "england.html").exists(), \
+        "the stale sweep deleted the stub on the second run"
+
+    # ...and a redirect is never advertised as a destination
+    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+    assert "country/england.html" not in sm, "a stub must stay out of the sitemap"
+    assert "country/united-kingdom.html" in sm
+    print("test_a_retired_url_redirects_instead_of_404ing PASS")
+
+
 def test_sitemap_lists_teams_and_countries():
     sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     assert "/team/los-angeles-lakers.html" in sm
@@ -347,5 +377,6 @@ if __name__ == "__main__":
     test_country_page()
     test_country_club_cap()
     test_internal_links_point_at_canonical_urls()
+    test_a_retired_url_redirects_instead_of_404ing()
     test_sitemap_lists_teams_and_countries()
     print("\nall prerender tests PASS")

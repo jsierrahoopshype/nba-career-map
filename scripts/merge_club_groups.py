@@ -50,8 +50,9 @@ GROUPS: dict[str, tuple[tuple[str, ...], str]] = {
         "sponsor eras of the Vitoria club; 'Tau Cerámica' was already aliased here",
     ),
     "Dafni": (
-        ("Dafni Athens",),
-        "same Athens club; 'Dafni' is the higher-usage spelling (8 stints vs 4)",
+        ("Dafni Athens", "AO Dafni", "Dafni BC", "Dafnis B.C."),
+        "one Athens club under five spellings; Dafni is a suburb of Athens, so "
+        "the three variants filed under city 'Dafni' are the same club",
     ),
     "Maccabi Tel Aviv": (
         ("Maccabi Darom Tel Aviv",),
@@ -60,9 +61,13 @@ GROUPS: dict[str, tuple[tuple[str, ...], str]] = {
     "Olympiacos": (("Olympiacos B",), "reserve side folded into the first team"),
     "FC Barcelona": (("FC Barcelona B",), "reserve side folded into the first team"),
     "Real Madrid": (("Real Madrid B",), "reserve side folded into the first team"),
-    "İTÜ": (
-        ("İstanbul Teknik Üniversitesi",),
-        "same Istanbul university club; 'İTÜ' is the higher-usage spelling (3 vs 1)",
+    # REVERSED since the first pass, on request: the club now displays under
+    # its full name and every short/sponsored form is an alias of it. The
+    # alias table is rewritten accordingly -- see the flip handling in main().
+    "İstanbul Teknik Üniversitesi": (
+        ("İTÜ", "İTÜ BB", "Sigortam.net İTÜ BB"),
+        "the club's full name is the display name; İTÜ, İTÜ BB and the "
+        "sponsored Sigortam.net form are aliases of it",
     ),
     "Ülkerspor": (
         ("Ülker",),
@@ -94,8 +99,8 @@ GROUPS: dict[str, tuple[tuple[str, ...], str]] = {
         "named by the user: sponsor era folded into Virtus Bologna",
     ),
     "Mega Basket": (
-        ("Mega Leks", "Mega Vizura"),
-        "sponsor eras of the Belgrade club; 'Mega Basket' is higher-usage (7 vs 3, 3)",
+        ("Mega Leks", "Mega Vizura", "Mega"),
+        "sponsor eras and the bare short form of the Belgrade club",
     ),
     "Galatasaray": (
         ("Galatasaray Doğa Sigorta", "Galatasaray Liv Hospital", "Galatasaray Nef"),
@@ -141,6 +146,83 @@ GROUPS: dict[str, tuple[tuple[str, ...], str]] = {
     "Pau-Orthez": (
         ("Élan Béarnais", "Élan Béarnais Pau-Lacq-Orthez", "Élan Béarnais Pau-Orthez"),
         "named by the user: every Élan Béarnais form folded into Pau-Orthez",
+    ),
+
+    # --- second pass ------------------------------------------------------
+    "Beşiktaş": (
+        ("Beşiktaş Sompo Japan",),
+        "sponsor era, alongside the Gain and Icrypex forms already aliased",
+    ),
+    "Anyang KGC": (
+        ("Anyang SBS", "Anyang SBS Stars", "Anyang KT&G Kites",
+         "Anyang KGC Pro Basketball Club", "Anyang Jung Kwan Jang Red Boosters",
+         # The last two are not names anyone wrote: they are two club names
+         # that the infobox parser ran together. scripts/wiki_parser.py no
+         # longer produces either shape; these entries clear the ones already
+         # stored, and keep an old URL resolving.
+         "Anyang SBS Stars·KT&G Kites",
+         "Anyang KGCAnyang Jung Kwan Jang Red Boosters"),
+        "every name of the one Anyang club, through its SBS, KT&G and KGC eras",
+    ),
+    "Limoges CSP": (
+        ("CSP Limoges",),
+        "the club's name written both ways round",
+    ),
+    "Khimki": (
+        ("Khimki Moscow",),
+        "same club, written with the metropolitan area instead of the town",
+    ),
+    "Lietuvos rytas": (
+        ("Rytas Vilnius", "Rytas"),
+        "short forms of the Vilnius club",
+    ),
+    "Union Olimpija": (
+        ("Olimpija", "Olimpija Ljubljana", "Petrol Olimpija", "Smelt Olimpija"),
+        "sponsor eras and short forms of the Ljubljana club. Cedevita Olimpija "
+        "is deliberately NOT here: it is the 2019 merger with Cedevita Zagreb "
+        "and a different club record",
+    ),
+    "Juvecaserta Basket": (
+        ("Phonola Caserta", "Onyx Caserta", "Snaidero Caserta", "Pepsi Caserta",
+         "Otto Caserta"),
+        "five sponsor eras of the Caserta club",
+    ),
+    "Split": (
+        ("Jugoplastika", "Jugoplastika / Pop 84 / Slobodna Dalmacija"),
+        "the Yugoslav-era names of KK Split",
+    ),
+    "Brose Bamberg": (
+        ("Bamberg Baskets", "TSK/GHP Bamberg"),
+        "earlier names of the Bamberg club",
+    ),
+    "Pallacanestro Cantù": (
+        ("Acqua S.Bernardo Cantù",),
+        "sponsor era of the Cantù club",
+    ),
+    "Olympia Larissa": (
+        ("Olimpia Larissa",),
+        "one club, two transliterations",
+    ),
+    "Gymnastikos S. Larissas": (
+        ("Gymnastikos Larissa",),
+        "one club, two renderings of the same name",
+    ),
+    "Pınar Karşıyaka": (
+        ("Karşıyaka Basket",),
+        "same İzmir club; Pınar is the long-running sponsor",
+    ),
+    "Darüşşafaka": (
+        ("Darüşşafaka Tekfen",),
+        "sponsor era of the Istanbul club",
+    ),
+    "Peristeri": (
+        ("Nikas Peristeri",),
+        "sponsor era of the Athens club",
+    ),
+    "Estudiantes": (
+        ("Estudiantes Mudespa",),
+        "sponsor era of the MADRID club. The Argentine Estudiantes clubs "
+        "(Bahía Blanca, Olavarría, Concordia) are separate and untouched",
     ),
 }
 
@@ -277,6 +359,18 @@ def main() -> int:
         if target != v and k != target:
             aliases[k] = target
             rechained += 1
+    # Two shapes of dead alias, dropped after the re-chain so it can fix what
+    # it can first:
+    #   - a key that is now a SURVIVING canonical name. Flipping a merge's
+    #     direction leaves exactly this ("İstanbul Teknik Üniversitesi" ->
+    #     "İTÜ" after the pair was reversed), and it maps a club off its own
+    #     name -- the worst kind of alias, because normalize() applies it.
+    #   - a self-alias (k == v), which does nothing at all.
+    dead = 0
+    for k, v in list(aliases.items()):
+        if k == v or k in GROUPS:
+            del aliases[k]
+            dead += 1
     alias_doc["aliases"] = dict(sorted(aliases.items()))
     ALIASES.write_text(json.dumps(alias_doc, ensure_ascii=False, indent=2) + "\n",
                        encoding="utf-8")
@@ -302,7 +396,8 @@ def main() -> int:
     for path, db in dbs:
         path.write_text(json.dumps(db, ensure_ascii=False, indent=2) + "\n",
                         encoding="utf-8")
-    print(f"aliases: {len(VARIANT_TO_CANON)} written, {rechained} re-chained")
+    print(f"aliases: {len(VARIANT_TO_CANON)} written, {rechained} re-chained, "
+          f"{dead} dead entr(ies) dropped")
     print("written")
     return 0
 

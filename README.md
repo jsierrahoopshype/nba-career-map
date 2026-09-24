@@ -40,7 +40,9 @@ scripts/
   geo.py                       # region/US-state -> country resolution
   player_status.py             # tracking-status classification (see below)
   signing_guard.py             # newly-DETECTED vs newly-STARTED stint (ledger)
-  merge_club_groups.py         # one-off: fold club-name variants into one club
+  merge_club_groups.py         # fold club-name variants into one club
+  fix_club_countries.py        # curated place corrections + the UK label sweep
+  audit_club_countries.py      # REPORT ONLY: clubs whose country looks wrong
   prune_old_signings.py        # one-off: replay the guard over the old ledger
   seed_import.py               # one-time import of existing data into /data
   merge_migration.py           # one-time: merge duplicate player pairs
@@ -127,7 +129,32 @@ written into `team_aliases.json` (see `scripts/merge_club_groups.py`), which is
 what `TeamNormalizer` consults on the way in — so the club cannot split again,
 and the move detector stays quiet because `classify_move` normalizes both sides
 before comparing. An alias must never point at another alias: the normalizer
-follows exactly one hop.
+follows exactly one hop, and an alias may never be a club's own surviving
+name (flipping a merge's direction leaves exactly that, and it maps the club
+off its own name).
+
+**One field, two clubs.** A `teamN` field can name two clubs — a rename the
+player's spell ran through — written either with an interpunct
+(`[[Old]]·[[New]]`) or as two wikilinks side by side. The second shape used to
+run the names together into a club nobody could look up
+(`Anyang KGCAnyang Jung Kwan Jang Red Boosters`). `wiki_parser` now separates
+adjacent links before stripping the markup and stores the FIRST name, which is
+always complete where a later segment is often an abbreviated continuation;
+the whole field is kept in `team_raw`. Slash-joined names are deliberately
+left alone — `split_combined_teams.py` resolves those by year majority.
+
+**Country labels.** `geo.COUNTRY_ALIASES` folds England/Scotland/Wales/Northern
+Ireland into `United Kingdom`, so that is the one label UK clubs carry;
+`scripts/fix_club_countries.py` sweeps any stragglers and holds the curated
+place corrections. `scripts/audit_club_countries.py` reports — and never
+writes — clubs that share a city name but not a country, and clubs labelled
+`USA` whose city this project attests as non-US somewhere else.
+
+**Retired URLs.** A prerendered page whose subject legitimately disappears is
+deleted, but a URL that was published and whose subject MOVED gets a stub
+instead: `prerender.REDIRECTS` lists them, and each keeps a real file with a
+meta refresh and a canonical pointing at the survivor (GitHub Pages has no
+server redirects). Stubs are `noindex` and never enter `sitemap.xml`.
 
 ## Deduplication
 

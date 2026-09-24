@@ -28,9 +28,16 @@ CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
 
 # Every city name this dataset uses in more than one country. The list is the
 # point: it is what a name-only key silently merged.
+#
+# Four names left this list when the clubs behind them were corrected, and
+# they are the reason the audit exists: Anyang, Skopje and St. John's were
+# each ONE city with a club wrongly labelled "USA", and Newcastle upon Tyne
+# was one city under two spellings of the same country. None of them was ever
+# two places. See scripts/audit_club_countries.py, which finds that shape, and
+# scripts/fix_club_countries.py, which fixed these four.
 KNOWN_COLLISIONS = {
-    "Anyang", "León", "Lima", "Newcastle upon Tyne", "San Carlos", "Santiago",
-    "Skopje", "St. John's", "Tripoli", "Valencia", "Worcester",
+    "León", "Lima", "San Carlos", "Santiago", "Tripoli", "Valencia",
+    "Worcester",
 }
 
 

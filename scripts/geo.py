@@ -16,6 +16,7 @@ COUNTRY_ALIASES = {
     "uk": "United Kingdom", "u.k.": "United Kingdom",
     "united kingdom": "United Kingdom", "england": "United Kingdom",
     "scotland": "United Kingdom", "wales": "United Kingdom",
+    "northern ireland": "United Kingdom", "britain": "United Kingdom",
     "great britain": "United Kingdom",
 }
 COUNTRIES = {
