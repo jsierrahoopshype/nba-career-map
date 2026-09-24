@@ -257,6 +257,16 @@ revert it. Two tiers, and only one is live:
   are what the pipeline uses. A hand-written entry whose value is a bare URL
   string also counts as verified — a human typing an article in *is* the
   verification.
+- **`human_verified`** — a person's decision, staged. Each entry is
+  `{"wikipedia_url": ..., "verified_by": "jorge"}`. The resolver writes it
+  through to `overrides` **without** the P106 gate or the ambiguity check, once
+  Wikipedia confirms the article exists and is not (and does not redirect to) a
+  disambiguation page; otherwise the player is skipped, listed in the run
+  summary, and stays staged. The collision guard (an article another record
+  already holds) still applies. The Basketball-Reference birth year is compared
+  and reported as a warning, never a block. The written entry carries
+  `"human_verified": true`, which tells `fetch_bio_wikidata.py` to take the
+  article's Wikidata item as this player even when it lacks P106.
 - **`candidates`** — un-verified guesses from Wikipedia's naming conventions
   (`Ron Holland II`, `A. J. Green (basketball)`). The resolver tries them first;
   nothing here reaches the site.
@@ -277,20 +287,21 @@ false. `prerender.wikipedia_link()` decides it from the same two files:
    at all** — silence is a missing field, a namesake's URL is a false claim;
 3. otherwise, the record's `wikipedia_url`, as before.
 
-A player drops off that list once his record is re-read against the curated
-article, so the suppression lifts by itself as the repairs land.
+A player drops off that list as soon as his curated article is written, so the
+suppression lifts by itself as the repairs land.
 
 ```bash
 python3 scripts/resolve_player_urls.py audit      # offline: what the flagged records show
 python3 scripts/resolve_player_urls.py resolve    # dry run
 python3 scripts/resolve_player_urls.py resolve --apply
+python3 scripts/resolve_player_urls.py settle     # drop the repaired players from the wrong-person list
 python3 scripts/update_careers.py --mode override # re-scrape the repaired players
 python3 scripts/test_player_urls.py               # offline, no network
 ```
 
 `.github/workflows/fix-player-urls.yml` (Actions → Run workflow) does the whole
-sequence: audit, resolve, write the overrides, re-scrape, rebuild the pages,
-commit.
+sequence: audit, resolve, write the overrides, re-scrape, drop the repaired
+players from `wikipedia_url_wrong_person`, rebuild the pages, commit.
 
 | Input | Purpose |
 |-------|---------|
@@ -304,9 +315,10 @@ Players the resolver cannot settle — no candidate passes, or two basketball
 players of the name were born in the same year — are listed in the run summary
 and in `logs/player_url_resolution.json`. It never guesses.
 
-Repaired players keep their rejected-item note in `player_bio.json` until their
-bio record is re-read, so `wikipedia_url_wrong_person` only empties out after
-`player-bio.yml` has run with `mode = full`.
+A player with a verified override leaves `wikipedia_url_wrong_person` in the
+same run, and `fetch_bio_wikidata.py` keeps him off it. His `wrong_entity` row
+and the rejected-item note in `player_bio.json` stay until his bio record is
+re-read (`player-bio.yml` with `mode = full`).
 
 ## Team-name normalization
 

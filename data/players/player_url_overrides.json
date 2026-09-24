@@ -1,8 +1,72 @@
 {
-  "note": "Curated Wikipedia articles for players whose name resolves to a namesake. `overrides` is what the pipeline uses and is written only by scripts/resolve_player_urls.py after Wikidata confirmed the article (P106 = Q3665646 and a birth year within 1 of Basketball-Reference's). `candidates` are un-verified guesses from Wikipedia's naming conventions: the resolver tries them first, the pipeline ignores them. See scripts/player_urls.py.",
+  "note": "Curated Wikipedia articles for players whose name resolves to a namesake. `overrides` is what the pipeline uses and is written only by scripts/resolve_player_urls.py: either after Wikidata confirmed the article (P106 = Q3665646 and a birth year within 1 of Basketball-Reference's), or, for an entry staged under `human_verified`, after Wikipedia confirmed the article exists and is not a disambiguation page. `human_verified` entries are a person's decision (`verified_by` names who) and skip the Wikidata test; the pipeline ignores them until they are written through. `candidates` are un-verified guesses from Wikipedia's naming conventions: the resolver tries them first, the pipeline ignores them. See scripts/player_urls.py.",
   "verified_by": "scripts/resolve_player_urls.py",
   "generated": null,
   "overrides": {},
+  "human_verified": {
+    "Andre Jackson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Andre_Jackson_Jr.",
+      "verified_by": "jorge"
+    },
+    "Brian Oliver": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Brian_Oliver_(basketball,_born_1968)",
+      "verified_by": "jorge"
+    },
+    "Charlie Black": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Charlie_T._Black",
+      "verified_by": "jorge"
+    },
+    "Eric Williams": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Eric_Williams_(basketball,_born_1972)",
+      "verified_by": "jorge"
+    },
+    "Jack White": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jack_White_(basketball)",
+      "verified_by": "jorge"
+    },
+    "Jay Miller": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jay_Miller_(basketball)",
+      "verified_by": "jorge",
+      "note": "the stored article is correct; the flag came from a bad Wikidata birth year"
+    },
+    "Johnny Simmons": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Johnny_Simmons_(basketball)",
+      "verified_by": "jorge"
+    },
+    "Mamadou N'diaye": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mamadou_N%27Diaye_(basketball,_born_1975)",
+      "verified_by": "jorge"
+    },
+    "Michael Porter": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Porter_Jr.",
+      "verified_by": "jorge"
+    },
+    "Phillip Wheeler": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Phillip_Wheeler_(basketball)",
+      "verified_by": "jorge"
+    },
+    "Ray Ellefson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ray_Ellefson",
+      "verified_by": "jorge",
+      "note": "the stored article is correct; the Wikidata item lacks P106"
+    },
+    "Ron Holland": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Holland_II",
+      "verified_by": "jorge"
+    },
+    "Ryan Dunn": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Dunn_(basketball)",
+      "verified_by": "jorge"
+    },
+    "Terry Taylor": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Terry_Taylor_(basketball)",
+      "verified_by": "jorge"
+    },
+    "Vernon Carey": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Vernon_Carey_Jr.",
+      "verified_by": "jorge"
+    }
+  },
   "candidates": {
     "AJ Green": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/A._J._Green_(basketball)",

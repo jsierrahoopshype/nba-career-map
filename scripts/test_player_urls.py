@@ -303,6 +303,8 @@ def test_the_bio_fetcher_reads_the_override_not_the_stored_url():
 
 
 def test_the_review_file_stops_naming_a_repaired_player():
+    """A verified override is the repair: the player leaves the wrong-person
+    list as soon as it is written, not only once his bio is re-read."""
     import fetch_bio_wikidata as fb
     careers = [{"player": "Ace Bailey", "wikipedia_url": WIKI + "Ace_Bailey"}]
     bio = {"Ace Bailey": {"birth_date": "2006-08-13", "checked": "2026-09-24",
@@ -312,9 +314,14 @@ def test_the_review_file_stops_naming_a_repaired_player():
             "wikipedia_url": WIKI + "Ace_Bailey_(basketball)",
             "verified": True}}}):
         review = fb.build_review(bio, careers, {}, {})
-        urls = [r["wikipedia_url"]
-                for r in review["wikipedia_url_wrong_person"]]
-        assert urls == [WIKI + "Ace_Bailey_(basketball)"], urls
+        assert review["wikipedia_url_wrong_person"] == [], review
+        assert review["counts"]["wikipedia_url_wrong_person"] == 0
+        # still a wrong-entity row until the bio record is re-read
+        assert [r["player"] for r in review["wrong_entity"]] == ["Ace Bailey"]
+    with _Tmp({"overrides": {}}):
+        review = fb.build_review(bio, careers, {}, {})
+        assert [r["player"] for r in review["wikipedia_url_wrong_person"]] \
+            == ["Ace Bailey"]
     print("test_the_review_file_stops_naming_a_repaired_player PASS")
 
 
@@ -350,10 +357,13 @@ def test_the_acceptance_test_is_p106_plus_the_birth_year():
 class FakeTransport:
     """Canned Wikipedia/Wikidata answers for the resolver."""
 
-    def __init__(self, bref, search, titles, items):
+    def __init__(self, bref, search, titles, items, *, disambig=(),
+                 redirects=None):
         self.bref, self.search = bref, search
         self.titles, self.items = titles, items
+        self.disambig, self.redirects = set(disambig), redirects or {}
         self.requests = 0
+        self.searched = []
 
     def get_text(self, url):
         rows = ["player,birth_date"]
@@ -364,12 +374,24 @@ class FakeTransport:
         self.requests += 1
         if params.get("list") == "search":
             name = params["srsearch"].rsplit(" basketball", 1)[0]
+            self.searched.append(name)
             return {"query": {"search": [{"title": t}
                                          for t in self.search.get(name, [])]}}
         asked = params["titles"].split("|")
-        return {"query": {"pages": [
-            {"title": t, "pageprops": {"wikibase_item": self.titles[t]}}
-            for t in asked if t in self.titles]}}
+        hops = [{"from": t, "to": self.redirects[t]}
+                for t in asked if t in self.redirects]
+        landed = [self.redirects.get(t, t) for t in asked]
+        pages = []
+        for t in dict.fromkeys(landed):
+            if t in self.disambig:
+                pages.append({"title": t, "pageprops": {"disambiguation": ""}})
+            elif t in self.titles:
+                props = ({"wikibase_item": self.titles[t]}
+                         if self.titles[t] else {})
+                pages.append({"title": t, "pageprops": props})
+            else:
+                pages.append({"title": t, "missing": True})
+        return {"query": {"redirects": hops, "pages": pages}}
 
     def sparql(self, query):
         wanted = [q for q in self.items if f"wd:{q}" in query]
@@ -386,8 +408,8 @@ class FakeTransport:
         } for q in wanted]}}
 
 
-def _run(rows, players, transport, prefills=None):
-    return rpu.resolve(transport, rows, players, prefills or {})
+def _run(rows, players, transport, prefills=None, human=None):
+    return rpu.resolve(transport, rows, players, prefills or {}, human=human)
 
 
 def test_exactly_one_accepted_article_becomes_an_override():
@@ -406,7 +428,8 @@ def test_exactly_one_accepted_article_becomes_an_override():
                "Q272031": _item("Q272031", p106=False, birth="1975-07-09",
                                 article=WIKI + "Jack_White", label="Jack White")})
     report = _run(rows, players, t)
-    assert report["counts"] == {"flagged": 1, "verified": 1, "needs_a_human": 0}
+    assert report["counts"] == {"flagged": 1, "verified": 1, "needs_a_human": 0,
+                                "human_verified": 0, "human_skipped": 0}
     rec = report["verified"]["Jack White"]
     assert rec["wikipedia_url"] == WIKI + "Jack_White_(basketball)"
     assert rec["wikidata_id"] == "Q55123" and rec["verified"]
@@ -444,7 +467,8 @@ def test_nothing_acceptable_is_listed_with_the_reason_per_candidate():
         titles={"Ray Ellefson (basketball)": "Q1"},
         items={"Q1": _item("Q1", p106=False, birth="1925-04-14")})
     report = _run(rows, players, t)
-    assert report["counts"] == {"flagged": 1, "verified": 0, "needs_a_human": 1}
+    assert report["counts"] == {"flagged": 1, "verified": 0, "needs_a_human": 1,
+                                "human_verified": 0, "human_skipped": 0}
     cands = report["needs_a_human"][0]["candidates"]
     reasons = [c["why_not"] for c in cands if c["title"].endswith("(basketball)")]
     assert reasons and "not a basketball player" in reasons[0], cands
@@ -510,6 +534,216 @@ def test_the_audit_says_what_each_record_shows():
     print("test_the_audit_says_what_each_record_shows PASS")
 
 
+# --- human-verified overrides -----------------------------------------------
+def _flag(name, title, rejected="Q9"):
+    return {"player": name, "wikipedia_title": title,
+            "wikipedia_url": WIKI + title.replace(" ", "_"),
+            "rejected_wikidata_id": rejected}
+
+
+def test_a_human_verified_article_skips_the_gate_and_the_search():
+    """Ray Ellefson's item has no P106 and Jay Miller's has a bad birth year:
+    the Wikidata test would refuse both, and the human already answered it."""
+    rows = [_flag("Ray Ellefson", "Ray Ellefson", "Q7297443"),
+            _flag("Jay Miller", "Jay Miller (basketball)", "Q518561")]
+    players = [{"player": "Ray Ellefson", "wikipedia_url": WIKI + "Ray_Ellefson"},
+               {"player": "Jay Miller",
+                "wikipedia_url": WIKI + "Jay_Miller_(basketball)"}]
+    human = {"Ray Ellefson": {"wikipedia_url": WIKI + "Ray_Ellefson",
+                              "verified_by": "jorge"},
+             "Jay Miller": {"wikipedia_url": WIKI + "Jay_Miller_(basketball)",
+                            "verified_by": "jorge"}}
+    t = FakeTransport(
+        bref={"Ray Ellefson": "1922-11-18", "Jay Miller": "1943-07-19"},
+        search={},
+        titles={"Ray Ellefson": "Q7297443",
+                "Jay Miller (basketball)": "Q518561"},
+        items={"Q7297443": _item("Q7297443", p106=False, birth="1922-11-18"),
+               "Q518561": _item("Q518561", birth="1950-01-01")})
+    report = _run(rows, players, t, human=human)
+    c = report["counts"]
+    assert (c["human_verified"], c["human_skipped"], c["verified"],
+            c["needs_a_human"], c["flagged"]) == (2, 0, 0, 0, 2), c
+    assert t.searched == [], "a human-verified player is never searched"
+    ray = report["human_verified"]["Ray Ellefson"]
+    assert ray["wikipedia_url"] == WIKI + "Ray_Ellefson"
+    assert ray["wikidata_id"] == "Q7297443" and ray["human_verified"]
+    assert ray["verified_by"] == "jorge" and ray["verified"]
+    assert any("P106" in w for w in ray["warnings"]), ray["warnings"]
+    jay = report["human_verified"]["Jay Miller"]
+    # the birth year disagrees by seven years: a warning, not a block
+    assert any("born 1950" in w and "1943" in w for w in jay["warnings"]), \
+        jay["warnings"]
+    print("test_a_human_verified_article_skips_the_gate_and_the_search PASS")
+
+
+def test_a_missing_or_disambiguation_article_is_skipped_not_written():
+    rows = [_flag("Brian Oliver", "Brian Oliver"),
+            _flag("Eric Williams", "Eric Williams"),
+            _flag("Terry Taylor", "Terry Taylor")]
+    players = [{"player": r["player"], "wikipedia_url": r["wikipedia_url"]}
+               for r in rows]
+    human = {
+        "Brian Oliver": {"wikipedia_url":
+                         WIKI + "Brian_Oliver_(basketball,_born_1968)",
+                         "verified_by": "jorge"},
+        "Eric Williams": {"wikipedia_url":
+                          WIKI + "Eric_Williams_(basketball,_born_1972)",
+                          "verified_by": "jorge"},
+        "Terry Taylor": {"wikipedia_url": WIKI + "Terry_Taylor_(basketball)",
+                         "verified_by": "jorge"}}
+    t = FakeTransport(
+        bref={}, search={},
+        titles={"Terry Taylor (basketball)": "Q3"},
+        items={"Q3": _item("Q3")},
+        disambig={"Eric Williams (basketball)"},
+        redirects={"Eric Williams (basketball, born 1972)":
+                   "Eric Williams (basketball)"})
+    report = _run(rows, players, t, human=human)
+    assert list(report["human_verified"]) == ["Terry Taylor"]
+    why = {r["player"]: r["why"] for r in report["human_skipped"]}
+    assert "does not exist" in why["Brian Oliver"], why
+    assert "redirects to the disambiguation page" in why["Eric Williams"], why
+    with _Tmp({"overrides": {}, "human_verified": human}) as path:
+        out = rpu.apply_overrides(report, path)
+        assert list(out["overrides"]) == ["Terry Taylor"]
+        # the skipped ones stay staged, so the URL can be fixed and re-run
+        assert sorted(out["human_verified"]) == ["Brian Oliver", "Eric Williams"]
+        assert player_urls.override_url("Brian Oliver") == ""
+        assert player_urls.is_human_verified("Terry Taylor")
+    print("test_a_missing_or_disambiguation_article_is_skipped_not_written PASS")
+
+
+def test_a_redirect_to_a_real_article_is_written_as_its_target():
+    rows = [_flag("Charlie Black", "Charlie Black")]
+    players = [{"player": "Charlie Black",
+                "wikipedia_url": WIKI + "Charlie_Black"}]
+    human = {"Charlie Black": {"wikipedia_url": WIKI + "Charlie_Black_(x)",
+                               "verified_by": "jorge"}}
+    t = FakeTransport(bref={"Charlie Black": "1921-06-15"}, search={},
+                      titles={"Charlie T. Black": "Q5"},
+                      items={"Q5": _item("Q5", birth="1921-06-15")},
+                      redirects={"Charlie Black (x)": "Charlie T. Black"})
+    rec = _run(rows, players, t, human=human)["human_verified"]["Charlie Black"]
+    assert rec["wikipedia_url"] == WIKI + "Charlie_T._Black", rec
+    assert rec["requested_url"] == WIKI + "Charlie_Black_(x)"
+    print("test_a_redirect_to_a_real_article_is_written_as_its_target PASS")
+
+
+def test_human_and_machine_players_resolve_side_by_side():
+    """The search still runs for everyone the human did not decide."""
+    rows = [_flag("Jack White", "Jack White", "Q272031"),
+            _flag("Ron Holland", "Ron Holland")]
+    players = [{"player": "Jack White", "wikipedia_url": WIKI + "Jack_White"},
+               {"player": "Ron Holland", "wikipedia_url": WIKI + "Ron_Holland"}]
+    human = {"Ron Holland": {"wikipedia_url": WIKI + "Ron_Holland_II",
+                             "verified_by": "jorge"}}
+    t = FakeTransport(
+        bref={"Jack White": "1997-08-05", "Ron Holland": "2005-07-07"},
+        search={"Jack White": ["Jack White (basketball)"]},
+        titles={"Jack White (basketball)": "Q55", "Ron Holland II": "Q66"},
+        items={"Q55": _item("Q55", birth="1997-08-05",
+                            article=WIKI + "Jack_White_(basketball)"),
+               "Q66": _item("Q66", birth="2005-07-07")})
+    report = _run(rows, players, t, human=human)
+    assert list(report["verified"]) == ["Jack White"]
+    assert list(report["human_verified"]) == ["Ron Holland"]
+    assert report["human_verified"]["Ron Holland"]["warnings"] == []
+    assert t.searched == ["Jack White"], t.searched
+    print("test_human_and_machine_players_resolve_side_by_side PASS")
+
+
+def test_an_unsigned_human_entry_is_ignored():
+    with _Tmp({"overrides": {}, "human_verified": {
+            "Ryan Dunn": {"wikipedia_url": WIKI + "Ryan_Dunn_(basketball)"},
+            "Vernon Carey": {"wikipedia_url": WIKI + "Vernon_Carey_Jr.",
+                             "verified_by": "jorge"}}}):
+        assert list(player_urls.human_verified()) == ["Vernon Carey"]
+        # staged is not live
+        assert player_urls.override_url("Vernon Carey") == ""
+        assert player_urls.overridden_players() == []
+    print("test_an_unsigned_human_entry_is_ignored PASS")
+
+
+def test_settle_drops_the_overridden_players_from_the_review():
+    with tempfile.TemporaryDirectory() as d, _Tmp({"overrides": {
+            "Jack White": {"wikipedia_url": WIKI + "Jack_White_(basketball)",
+                           "verified": "2026-09-24"},
+            "Ray Ellefson": {"wikipedia_url": WIKI + "Ray_Ellefson",
+                             "verified": "2026-09-24", "verified_by": "jorge",
+                             "human_verified": True}}}):
+        path = Path(d) / "review.json"
+        path.write_text(json.dumps({
+            "counts": {"wikipedia_url_wrong_person": 3},
+            "wikipedia_url_wrong_person": [
+                {"player": "Jack White"}, {"player": "Ray Ellefson"},
+                {"player": "Mike Green"}]}), encoding="utf-8")
+        dropped, left = rpu.settle_review(path)
+        assert sorted(dropped) == ["Jack White", "Ray Ellefson"] and left == 1
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        assert [r["player"] for r in doc["wikipedia_url_wrong_person"]] == \
+            ["Mike Green"]
+        assert doc["counts"]["wikipedia_url_wrong_person"] == 1
+    print("test_settle_drops_the_overridden_players_from_the_review PASS")
+
+
+def test_the_bio_fetcher_trusts_a_human_verified_item_without_p106():
+    import fetch_bio_wikidata as fb
+
+    class T:
+        requests = 0
+
+        def get_json(self, url, params):
+            return {"query": {"pages": [{"title": "Ray Ellefson",
+                                         "pageprops": {"wikibase_item":
+                                                       "Q7297443"}}]}}
+
+        def sparql(self, query):
+            assert "wd:Q7297443" in query, "no replacement search expected"
+            return {"results": {"bindings": [{
+                "item": {"value": "http://www.wikidata.org/entity/Q7297443"},
+                "bball": {"value": "false"},
+                "birth": {"value": "1920-11-18T00:00:00Z"},
+                "bprec": {"value": "11"},
+                "bplaceLabel": {"value": "Fergus Falls"}}]}}
+
+    player = {"player": "Ray Ellefson", "wikipedia_url": WIKI + "Ray_Ellefson"}
+    # a stale item ID on file must not short-cut the human's article
+    bio = {"Ray Ellefson": {"wikidata_id": "Q1", "checked": "2026-01-01"}}
+    bref = {fb.normkey("Ray Ellefson"): "1922-11-18"}
+    with _Tmp({"overrides": {"Ray Ellefson": {
+            "wikipedia_url": WIKI + "Ray_Ellefson", "verified": "2026-09-24",
+            "verified_by": "jorge", "human_verified": True}}}):
+        items, details = fb.gather_items(T(), [player], bio, bref)
+        assert items["Ray Ellefson"]["qid"] == "Q7297443"
+        assert details == {}, details
+        rec = fb.compose(items["Ray Ellefson"], "1922-11-18",
+                         checked="2026-09-24", trusted=True)
+        # two years apart: reported, but the item keeps its places
+        assert rec["birth_date"] == "1922-11-18"
+        assert rec["birth_place"] == "Fergus Falls"
+        assert rec["wikidata_birth_date"] == "1920-11-18"
+        assert "rejected_wikidata_id" not in rec
+        review = fb.build_review({"Ray Ellefson": rec}, [player], bref, {})
+        row = review["date_disagreement"][0]
+        assert row["years_apart"] == 2 and row["places_kept"] is True
+        # --reapply does not throw the item away either
+        far = dict(rec, wikidata_birth_date="1900-01-01")
+        out, det = fb.reapply({"Ray Ellefson": far}, bref)
+        assert out["Ray Ellefson"]["wikidata_id"] == "Q7297443" and not det
+    # without the human flag, the same item is still refused
+    with _Tmp({"overrides": {"Ray Ellefson": {
+            "wikipedia_url": WIKI + "Ray_Ellefson", "verified": "2026-09-24"}}}):
+        class T2(T):
+            def sparql(self, query):
+                if "rdfs:label" in query:
+                    return {"results": {"bindings": []}}
+                return T.sparql(self, query)
+        items, details = fb.gather_items(T2(), [player], {}, bref)
+        assert items["Ray Ellefson"] is None and "Ray Ellefson" in details
+    print("test_the_bio_fetcher_trusts_a_human_verified_item_without_p106 PASS")
+
+
 if __name__ == "__main__":
     test_only_a_verified_entry_goes_live()
     test_a_hand_written_url_counts_as_verified()
@@ -530,4 +764,11 @@ if __name__ == "__main__":
     test_an_article_another_record_already_owns_is_refused()
     test_apply_promotes_the_candidate_it_verified()
     test_the_audit_says_what_each_record_shows()
+    test_a_human_verified_article_skips_the_gate_and_the_search()
+    test_a_missing_or_disambiguation_article_is_skipped_not_written()
+    test_a_redirect_to_a_real_article_is_written_as_its_target()
+    test_human_and_machine_players_resolve_side_by_side()
+    test_an_unsigned_human_entry_is_ignored()
+    test_settle_drops_the_overridden_players_from_the_review()
+    test_the_bio_fetcher_trusts_a_human_verified_item_without_p106()
     print("\nall player-URL override tests PASS")
