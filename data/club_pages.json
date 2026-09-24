@@ -10126,9 +10126,9 @@
         },
         {
           "player": "Ricky Council IV",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Rio Grande Valley Vipers",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -14448,7 +14448,7 @@
         },
         {
           "player": "Aleksej Pokusevski",
-          "years": "2019–2020",
+          "years": "2019–2020, 2019–2020",
           "status": "overseas_active",
           "last_team": "Lokomotiv Kuban",
           "nationality": "Serbian"
@@ -17143,7 +17143,7 @@
           "player": "Ricky Council IV",
           "years": "2023–2025",
           "status": "overseas_active",
-          "last_team": "Rio Grande Valley Vipers",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -62085,7 +62085,7 @@
         },
         {
           "player": "Rodions Kurucs",
-          "years": "2015–2018",
+          "years": "2015–2017, 2015–2018",
           "status": "overseas_active",
           "last_team": "Baskonia",
           "nationality": "Latvia"
@@ -79977,7 +79977,7 @@
         },
         {
           "player": "Usman Garuba",
-          "years": "2017–2021, 2024–present",
+          "years": "2017–2019, 2017–2021, 2024–present",
           "status": "overseas_active",
           "last_team": "Real Madrid",
           "nationality": "Spain"
@@ -118831,7 +118831,7 @@
         },
         {
           "player": "Arnoldas Kulboka",
-          "years": "2014–2015",
+          "years": "2014–2015, 2014-2015",
           "status": "overseas_active",
           "last_team": "Promitheas Patras",
           "nationality": "Lithuania"
@@ -118922,7 +118922,7 @@
         },
         {
           "player": "Donatas Motiejunas",
-          "years": "2005–2009",
+          "years": "2005–2008, 2005–2009",
           "status": "overseas_active",
           "last_team": "Crvena Zvezda",
           "nationality": "Lithuania"
@@ -155117,7 +155117,7 @@
       "city": "Kissimmee",
       "state": "Florida",
       "country": "USA",
-      "count": 26,
+      "count": 27,
       "roster": [
         {
           "player": "Alex Morales",
@@ -155287,6 +155287,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Ricky Council IV",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Osceola Magic",
+          "nationality": "United States"
+        },
+        {
           "player": "Tre Scott",
           "years": "2024",
           "status": "overseas_active",
@@ -155304,13 +155311,18 @@
       "related": [
         {
           "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
-          "shared": 5
+          "name": "Rio Grande Valley Vipers",
+          "shared": 4
         },
         {
           "type": "club",
@@ -155321,11 +155333,6 @@
           "type": "club",
           "name": "Birmingham Squadron",
           "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 3
         },
         {
           "type": "club",

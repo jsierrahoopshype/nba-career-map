@@ -1,3 +1,15 @@
+## 2026-09-24 — incremental run
+
+- Players updated: **480** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Ricky Council IV: Rio Grande Valley Vipers → Osceola Magic
+
 ## 2026-09-23 — incremental run
 
 - Players updated: **468** (1 new)
