@@ -224,9 +224,9 @@ The facts reach no Career Map page. They are not printed, and they are **not**
 in each page's schema.org `Person` block either: `birthDate`, `birthPlace`,
 `deathDate` and `deathPlace` were published there and have been removed, because
 that data belongs to a separate section of the site. The `Person` block keeps the
-player's name, page URL, nationality and Wikipedia link. `player_bio.json` and
-`.github/workflows/player-bio.yml` are unchanged and still kept current —
-`scripts/prerender.py` simply does not read them.
+player's name, page URL, nationality and (when it is his — see below) Wikipedia
+link. `player_bio.json` and `.github/workflows/player-bio.yml` are unchanged and
+still kept current — `scripts/prerender.py` simply does not read them.
 
 ```bash
 python3 scripts/fetch_bio_wikidata.py                   # incremental
@@ -264,6 +264,21 @@ revert it. Two tiers, and only one is live:
 An overridden record's career is **replaced**, not merged: `_richer()` exists to
 stop a thin parse clobbering good data, and would otherwise protect the wrong
 man's career. An article that parses to nothing is still refused.
+
+### `sameAs` on the player pages
+
+`sameAs` tells a crawler "this page and that page are about the same person", so
+it is the one field on a prerendered page that can actively assert something
+false. `prerender.wikipedia_link()` decides it from the same two files:
+
+1. a curated article in `player_url_overrides.json` **is** the link, whatever the
+   career record still says;
+2. otherwise, a player listed in `wikipedia_url_wrong_person` gets **no `sameAs`
+   at all** — silence is a missing field, a namesake's URL is a false claim;
+3. otherwise, the record's `wikipedia_url`, as before.
+
+A player drops off that list once his record is re-read against the curated
+article, so the suppression lifts by itself as the repairs land.
 
 ```bash
 python3 scripts/resolve_player_urls.py audit      # offline: what the flagged records show

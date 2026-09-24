@@ -30,9 +30,17 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 import unicodedata
 from pathlib import Path
 from urllib.parse import quote
+
+# This module is imported by build_dashboard_data.py and by the tests, both of
+# which put scripts/ on the path first -- but not by everything that might, so
+# the sibling imports below get their own guarantee.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import player_urls  # noqa: E402
+from names import normkey  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PLAYER_DIR = ROOT / "player"
@@ -80,6 +88,68 @@ def country_url(name: str) -> str:
     return f"{SITE_BASE_URL}/country/{slug(name)}.html"
 
 
+# --- the Wikipedia link -----------------------------------------------------
+# sameAs tells a crawler "this page and that page are about the same person", so
+# it is the one field on these pages that can actively assert something false.
+# For 39 records the stored article is a namesake's -- David Duke the Klansman,
+# Jack White the guitarist, Ace Bailey the ice hockey player -- and publishing
+# it would have Google believe the page is about them. Two files decide it, both
+# read lazily:
+#
+#   player_url_overrides.json   the curated article, verified against Wikidata.
+#                               When a player has one, it IS the link, whatever
+#                               the career record still says.
+#   bio_needs_review.json       `wikipedia_url_wrong_person`: the records known
+#                               to point at a namesake. No override yet means no
+#                               article we can stand behind, so the page gets NO
+#                               sameAs rather than a wrong one. Silence is a
+#                               missing field; a wrong sameAs is a false claim.
+#
+# A player drops off that list once his record is re-read against the curated
+# article, so this suppression lifts by itself as the repairs land.
+REVIEW_FILE = ROOT / "data" / "players" / "bio_needs_review.json"
+_WRONG_PERSON: frozenset | None = None
+
+
+def _wrong_person_names() -> frozenset:
+    """Names whose stored article is a namesake's, plus their normalized keys.
+
+    A missing or unreadable review file means no suppression -- the same
+    tolerance the rest of this module shows its inputs. It cannot publish a
+    wrong link on its own: every URL it lets through is one the career database
+    already holds.
+    """
+    global _WRONG_PERSON
+    if _WRONG_PERSON is None:
+        try:
+            doc = json.loads(REVIEW_FILE.read_text(encoding="utf-8"))
+            rows = doc.get("wikipedia_url_wrong_person") or []
+        except (OSError, ValueError, AttributeError):
+            rows = []
+        names = set()
+        for row in rows:
+            name = row.get("player") if isinstance(row, dict) else None
+            if name:
+                names.add(name)
+                names.add(normkey(name))
+        _WRONG_PERSON = frozenset(names)
+    return _WRONG_PERSON
+
+
+def wikipedia_link(player: dict) -> str:
+    """The article sameAs may name, or "" when there is none to stand behind."""
+    keys = [k for k in (player.get("player"), player.get("display_name")) if k]
+    for key in keys:
+        url = player_urls.override_url(key)
+        if url:
+            return url
+    suspect = _wrong_person_names()
+    for key in keys:
+        if key in suspect or normkey(key) in suspect:
+            return ""
+    return (player.get("wikipedia_url") or "").strip()
+
+
 # --- birth and death: deliberately absent -----------------------------------
 # Nothing here reads them. data/players/player_bio.json (written by
 # scripts/fetch_bio_wikidata.py) is kept and kept current, but it belongs to a
@@ -92,7 +162,8 @@ def person_jsonld(player: dict) -> str:
     """A schema.org Person for the player page.
 
     Who the page is about, where it lives, and the two facts the Career Map
-    itself holds: the player's nationality and his Wikipedia article.
+    itself holds: the player's nationality and his Wikipedia article -- the
+    latter only when it is his, see wikipedia_link.
 
     NO BIRTH OR DEATH FACTS. birthDate, birthPlace, deathDate and deathPlace
     were published here and have been removed: that data is for a separate
@@ -106,8 +177,9 @@ def person_jsonld(player: dict) -> str:
             "name": name, "url": player_url(key)}
     if (player.get("nationality") or "").strip():
         data["nationality"] = player["nationality"]
-    if (player.get("wikipedia_url") or "").strip():
-        data["sameAs"] = player["wikipedia_url"]
+    link = wikipedia_link(player)
+    if link:
+        data["sameAs"] = link
     # A "</script>" inside a JSON string would end the block early; escaping
     # the angle brackets is the standard fix and keeps the JSON valid.
     body = (json.dumps(data, ensure_ascii=False, indent=None)

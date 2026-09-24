@@ -417,6 +417,99 @@ def test_the_build_does_not_read_the_bio_file():
     print("test_the_build_does_not_read_the_bio_file PASS")
 
 
+def _with_wrong_person(names, fn):
+    """Run fn with a known wrong-person list in place of the shipped file."""
+    saved = pr._WRONG_PERSON
+    pr._WRONG_PERSON = frozenset(names)
+    try:
+        return fn()
+    finally:
+        pr._WRONG_PERSON = saved
+
+
+def test_a_flagged_player_with_no_override_gets_no_sameas():
+    """sameAs asserts "same person", so a namesake's article is not a missing
+    field, it is a false claim. No override yet -> no sameAs at all."""
+    def check():
+        duke = _player("David Duke",
+                       wikipedia_url="https://en.wikipedia.org/wiki/David_Duke")
+        data = json.loads(pr.person_jsonld(duke)
+                          .split(">", 1)[1].rsplit("<", 1)[0])
+        assert "sameAs" not in data, data
+        html = pr.render(duke)
+        assert "en.wikipedia.org" not in html, "the namesake is still linked"
+        # the rest of the block is untouched
+        assert data["name"] == "David Duke" and data["url"]
+    _with_wrong_person({"David Duke", "david duke"}, check)
+    print("test_a_flagged_player_with_no_override_gets_no_sameas PASS")
+
+
+def test_an_unflagged_player_keeps_his_article():
+    def check():
+        joker = _player("Nikola Jokić", nationality="Serbia",
+                        wikipedia_url="https://en.wikipedia.org/wiki/Nikola_Jokic")
+        data = json.loads(pr.person_jsonld(joker)
+                          .split(">", 1)[1].rsplit("<", 1)[0])
+        assert data["sameAs"] == "https://en.wikipedia.org/wiki/Nikola_Jokic"
+        assert data["nationality"] == "Serbia"
+    _with_wrong_person({"David Duke", "david duke"}, check)
+    print("test_an_unflagged_player_keeps_his_article PASS")
+
+
+def test_an_override_wins_over_the_stored_url_and_the_flag():
+    """Once the article is settled, sameAs is the OVERRIDE -- not the namesake's
+    URL the career record may still be carrying, and not silence either."""
+    import tempfile
+    import player_urls
+    right = "https://en.wikipedia.org/wiki/David_Duke_Jr."
+    with tempfile.TemporaryDirectory() as d:
+        path = Path(d) / "player_url_overrides.json"
+        path.write_text(json.dumps({"overrides": {
+            "David Duke": {"wikipedia_url": right, "verified": "2026-09-24"}}}),
+            encoding="utf-8")
+        saved = player_urls.OVERRIDES
+        player_urls.OVERRIDES = path
+        player_urls.reset_cache()
+        try:
+            def check():
+                duke = _player(
+                    "David Duke",
+                    wikipedia_url="https://en.wikipedia.org/wiki/David_Duke")
+                data = json.loads(pr.person_jsonld(duke)
+                                  .split(">", 1)[1].rsplit("<", 1)[0])
+                assert data["sameAs"] == right, data
+            _with_wrong_person({"David Duke", "david duke"}, check)
+        finally:
+            player_urls.OVERRIDES = saved
+            player_urls.reset_cache()
+    print("test_an_override_wins_over_the_stored_url_and_the_flag PASS")
+
+
+def test_no_shipped_page_links_to_a_flagged_namesake():
+    """The end-to-end guard, over the real review file and the shipped pages."""
+    import player_urls
+    doc = json.loads(pr.REVIEW_FILE.read_text(encoding="utf-8"))
+    rows = doc.get("wikipedia_url_wrong_person") or []
+    assert rows, "the review file lists no wrong-person records"
+    checked = 0
+    for row in rows:
+        name = row["player"]
+        page = pr.PLAYER_DIR / f"{pr.slug(name)}.html"
+        if not page.exists():
+            continue
+        checked += 1
+        html = page.read_text(encoding="utf-8")
+        override = player_urls.override_url(name)
+        if override:
+            assert override in html, f"{name}: the override is not on the page"
+        else:
+            assert "en.wikipedia.org" not in html, \
+                f"{name}: still links to a Wikipedia article"
+    assert checked == len(rows), \
+        f"only {checked} of {len(rows)} flagged players have a page"
+    print(f"test_no_shipped_page_links_to_a_flagged_namesake PASS ({checked} pages)")
+
+
 def test_the_person_block_survives_a_hostile_name():
     nasty = _player('Bob "Tiny" O<br>Neal')
     raw = pr.person_jsonld(nasty).split(">", 1)[1].rsplit("<", 1)[0]
@@ -451,6 +544,10 @@ if __name__ == "__main__":
     test_the_page_prints_no_birth_line_and_loads_no_age_script()
     test_the_page_carries_a_person_block_with_no_bio_facts()
     test_the_build_does_not_read_the_bio_file()
+    test_a_flagged_player_with_no_override_gets_no_sameas()
+    test_an_unflagged_player_keeps_his_article()
+    test_an_override_wins_over_the_stored_url_and_the_flag()
+    test_no_shipped_page_links_to_a_flagged_namesake()
     test_the_person_block_survives_a_hostile_name()
     test_team_and_country_pages_are_untouched()
     test_team_page()
