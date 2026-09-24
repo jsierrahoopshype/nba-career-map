@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinny Del Negro", "url": "https://hoopsmatic.com/nba-career-map/player/vinny-del-negro.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Vinny_Del_Negro"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vinny Del Negro", "url": "https://hoopsmatic.com/nba-career-map/player/vinny-del-negro.html", "birthDate": "1966-08-09", "birthPlace": {"@type": "Place", "name": "Springfield"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Vinny_Del_Negro"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Vinny Del Negro played?</h1>
 <p class="lede">Vinny Del Negro played for 7 clubs in 2 countries: Sacramento Kings, Benetton Treviso, San Antonio Spurs, Fortitudo Bologna and more, last with Phoenix Suns.</p>
+<p class="bio">Born: August 9, 1966 in Springfield <span class="age" data-born="1966-08-09">(age 60)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Phoenix Suns</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Vinny%20Del%20Negro">Open Vinny Del Negro's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -51,5 +52,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

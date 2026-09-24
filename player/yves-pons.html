@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Yves Pons", "url": "https://hoopsmatic.com/nba-career-map/player/yves-pons.html", "nationality": "Haitian / French", "sameAs": "https://en.wikipedia.org/wiki/Yves_Pons"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Yves Pons", "url": "https://hoopsmatic.com/nba-career-map/player/yves-pons.html", "birthDate": "1999-05-07", "birthPlace": {"@type": "Place", "name": "Port-au-Prince"}, "nationality": "Haitian / French", "sameAs": "https://en.wikipedia.org/wiki/Yves_Pons"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Yves Pons played?</h1>
 <p class="lede">Yves Pons has played for 5 clubs in 3 countries: Memphis Grizzlies, Memphis Hustle, Valvi Girona, Andorra, now with ASVEL.</p>
+<p class="bio">Born: May 7, 1999 in Port-au-Prince <span class="age" data-born="1999-05-07">(age 27)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Center / power forward</dd><dt>Nationality</dt><dd>Haitian / French</dd><dt>Current team</dt><dd>ASVEL</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Yves%20Pons">Open Yves Pons's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -50,5 +51,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

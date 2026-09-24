@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Mangok Mathiang", "url": "https://hoopsmatic.com/nba-career-map/player/mangok-mathiang.html", "nationality": "South Sudanese / Australian", "sameAs": "https://en.wikipedia.org/wiki/Mangok_Mathiang"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Mangok Mathiang", "url": "https://hoopsmatic.com/nba-career-map/player/mangok-mathiang.html", "birthDate": "1992-10-08", "birthPlace": {"@type": "Place", "name": "Juba"}, "nationality": "South Sudanese / Australian", "sameAs": "https://en.wikipedia.org/wiki/Mangok_Mathiang"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Mangok Mathiang played?</h1>
 <p class="lede">Mangok Mathiang has played for 13 clubs in 9 countries: Charlotte Hornets, Greensboro Swarm, Vanoli Cremona, Bahçeşehir Koleji and more, now with RSSB Tigers.</p>
+<p class="bio">Born: October 8, 1992 in Juba <span class="age" data-born="1992-10-08">(age 33)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Power forward / center</dd><dt>Nationality</dt><dd>South Sudanese / Australian</dd><dt>Current team</dt><dd>RSSB Tigers</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Mangok%20Mathiang">Open Mangok Mathiang's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -57,5 +58,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

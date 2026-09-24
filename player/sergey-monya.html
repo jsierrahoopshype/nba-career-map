@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Sergey Monya", "url": "https://hoopsmatic.com/nba-career-map/player/sergey-monya.html", "nationality": "Russia", "sameAs": "https://en.wikipedia.org/wiki/Sergey_Monya"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Sergey Monya", "url": "https://hoopsmatic.com/nba-career-map/player/sergey-monya.html", "birthDate": "1983-04-15", "birthPlace": {"@type": "Place", "name": "Saratov"}, "nationality": "Russia", "sameAs": "https://en.wikipedia.org/wiki/Sergey_Monya"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Sergey Monya played?</h1>
 <p class="lede">Sergey Monya played for 8 clubs in 2 countries: Avtodor Saratov, CSKA Moscow, Portland Trail Blazers and more, last with Zenit Saint Petersburg.</p>
+<p class="bio">Born: April 15, 1983 in Saratov <span class="age" data-born="1983-04-15">(age 43)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Russia</dd><dt>Current team</dt><dd>Zenit Saint Petersburg</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Sergey%20Monya">Open Sergey Monya's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -52,5 +53,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ulrich Chomche", "url": "https://hoopsmatic.com/nba-career-map/player/ulrich-chomche.html", "nationality": "Cameroon", "sameAs": "https://en.wikipedia.org/wiki/Ulrich_Chomche"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ulrich Chomche", "url": "https://hoopsmatic.com/nba-career-map/player/ulrich-chomche.html", "birthDate": "2005-12-30", "birthPlace": {"@type": "Place", "name": "Bafang"}, "nationality": "Cameroon", "sameAs": "https://en.wikipedia.org/wiki/Ulrich_Chomche"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Ulrich Chomche played?</h1>
 <p class="lede">Ulrich Chomche has played for 5 clubs in 2 countries: FAP, REG, Toronto Raptors, Raptors 905, now with Balkan Botevgrad.</p>
+<p class="bio">Born: December 30, 2005 in Bafang <span class="age" data-born="2005-12-30">(age 20)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Center</dd><dt>Nationality</dt><dd>Cameroon</dd><dt>Current team</dt><dd>Balkan Botevgrad</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Ulrich%20Chomche">Open Ulrich Chomche's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -49,5 +50,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

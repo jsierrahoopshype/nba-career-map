@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Martin Muursepp", "url": "https://hoopsmatic.com/nba-career-map/player/martin-muursepp.html", "nationality": "Estonia", "sameAs": "https://en.wikipedia.org/wiki/Martin_Muursepp"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Martin Muursepp", "url": "https://hoopsmatic.com/nba-career-map/player/martin-muursepp.html", "birthDate": "1974-09-26", "birthPlace": {"@type": "Place", "name": "Tallinn"}, "nationality": "Estonia", "sameAs": "https://en.wikipedia.org/wiki/Martin_Muursepp"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Martin Muursepp played?</h1>
 <p class="lede">Martin Muursepp played for 18 clubs in 7 countries: TPedI, Andris, Alvik BK, Maccabi Tel Aviv and more, last with BC Rakvere Tarvas.</p>
+<p class="bio">Born: September 26, 1974 in Tallinn <span class="age" data-born="1974-09-26">(age 51)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Estonia</dd><dt>Current team</dt><dd>BC Rakvere Tarvas</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Martin%20Muursepp">Open Martin Muursepp's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -65,5 +66,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

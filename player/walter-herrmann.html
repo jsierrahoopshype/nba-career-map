@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Walter Herrmann", "url": "https://hoopsmatic.com/nba-career-map/player/walter-herrmann.html", "nationality": "Argentina", "sameAs": "https://en.wikipedia.org/wiki/Walter_Herrmann"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Walter Herrmann", "url": "https://hoopsmatic.com/nba-career-map/player/walter-herrmann.html", "birthDate": "1979-06-26", "birthPlace": {"@type": "Place", "name": "Venado Tuerto"}, "nationality": "Argentina", "sameAs": "https://en.wikipedia.org/wiki/Walter_Herrmann"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Walter Herrmann played?</h1>
 <p class="lede">Walter Herrmann played for 11 clubs in 4 countries: Olimpia de Venado Tuerto, Fuenlabrada, Unicaja, Charlotte Bobcats and more, last with Atenas de Córdoba.</p>
+<p class="bio">Born: June 26, 1979 in Venado Tuerto <span class="age" data-born="1979-06-26">(age 47)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Argentina</dd><dt>Current team</dt><dd>Atenas de Córdoba</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Walter%20Herrmann">Open Walter Herrmann's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -57,5 +58,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

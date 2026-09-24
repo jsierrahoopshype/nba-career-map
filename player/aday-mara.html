@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Aday Mara", "url": "https://hoopsmatic.com/nba-career-map/player/aday-mara.html", "sameAs": "https://en.wikipedia.org/wiki/Aday_Mara"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Aday Mara", "url": "https://hoopsmatic.com/nba-career-map/player/aday-mara.html", "birthDate": "2005-04-07", "birthPlace": {"@type": "Place", "name": "Zaragoza"}, "sameAs": "https://en.wikipedia.org/wiki/Aday_Mara"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Aday Mara played?</h1>
 <p class="lede">Aday Mara has played for 4 clubs in 2 countries: CBP Huesca, Zaragoza, Anagan Olivar, now with Oklahoma City Thunder.</p>
+<p class="bio">Born: April 7, 2005 in Zaragoza <span class="age" data-born="2005-04-07">(age 21)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Center</dd><dt>Current team</dt><dd>Oklahoma City Thunder</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Aday%20Mara">Open Aday Mara's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -48,5 +49,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

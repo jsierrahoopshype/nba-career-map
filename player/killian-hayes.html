@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Killian Hayes", "url": "https://hoopsmatic.com/nba-career-map/player/killian-hayes.html", "nationality": "French / American", "sameAs": "https://en.wikipedia.org/wiki/Killian_Hayes"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Killian Hayes", "url": "https://hoopsmatic.com/nba-career-map/player/killian-hayes.html", "birthDate": "2001-07-27", "birthPlace": {"@type": "Place", "name": "Lakeland"}, "nationality": "French / American", "sameAs": "https://en.wikipedia.org/wiki/Killian_Hayes"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Killian Hayes played?</h1>
 <p class="lede">Killian Hayes has played for 7 clubs in 3 countries: Cholet Basket, ratiopharm Ulm, Detroit Pistons, Long Island Nets and more, now with Sacramento Kings.</p>
+<p class="bio">Born: July 27, 2001 in Lakeland <span class="age" data-born="2001-07-27">(age 25)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Point guard</dd><dt>Nationality</dt><dd>French / American</dd><dt>Current team</dt><dd>Sacramento Kings</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Killian%20Hayes">Open Killian Hayes's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -51,5 +52,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Mitch Creek", "url": "https://hoopsmatic.com/nba-career-map/player/mitch-creek.html", "nationality": "Australia", "sameAs": "https://en.wikipedia.org/wiki/Mitch_Creek"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Mitch Creek", "url": "https://hoopsmatic.com/nba-career-map/player/mitch-creek.html", "birthDate": "1992-04-27", "birthPlace": {"@type": "Place", "name": "Horsham"}, "nationality": "Australia", "sameAs": "https://en.wikipedia.org/wiki/Mitch_Creek"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Mitch Creek played?</h1>
 <p class="lede">Mitch Creek has played for 19 clubs in 9 countries: Australian Institute of Sport, Adelaide 36ers, South Adelaide Panthers and more, now with Al-Ula.</p>
+<p class="bio">Born: April 27, 1992 in Horsham <span class="age" data-born="1992-04-27">(age 34)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Power forward / small forward</dd><dt>Nationality</dt><dd>Australia</dd><dt>Current team</dt><dd>Al-Ula</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Mitch%20Creek">Open Mitch Creek's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -65,5 +66,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

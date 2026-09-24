@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Mike Brown (1963)", "url": "https://hoopsmatic.com/nba-career-map/player/mike-brown-1963.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Mike_Brown_(basketball_player)"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Mike Brown (1963)", "url": "https://hoopsmatic.com/nba-career-map/player/mike-brown-1963.html", "birthDate": "1963-07-19", "birthPlace": {"@type": "Place", "name": "Newark"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Mike_Brown_(basketball_player)"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Mike Brown (1963) played?</h1>
 <p class="lede">Mike Brown (1963) played for 11 clubs in 3 countries: Aurora Desio, Chicago Bulls, Utah Jazz and more, last with Club Ourense Baloncesto.</p>
+<p class="bio">Born: July 19, 1963 in Newark <span class="age" data-born="1963-07-19">(age 63)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Club Ourense Baloncesto</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Mike%20Brown%20%281963%29">Open Mike Brown (1963)'s interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -57,5 +58,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

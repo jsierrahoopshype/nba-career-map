@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Dee Brown (1968)", "url": "https://hoopsmatic.com/nba-career-map/player/dee-brown-1968.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Dee_Brown_%28basketball%2C_born_1968%29"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Dee Brown (1968)", "url": "https://hoopsmatic.com/nba-career-map/player/dee-brown-1968.html", "birthDate": "1968-11-29", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Dee_Brown_%28basketball%2C_born_1968%29"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Dee Brown (1968) played?</h1>
 <p class="lede">Dee Brown (1968) played for 3 clubs in 2 countries: Boston Celtics, Toronto Raptors, last with Orlando Magic.</p>
+<p class="bio">Born: November 29, 1968 <span class="age" data-born="1968-11-29">(age 57)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Orlando Magic</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Dee%20Brown%20%281968%29">Open Dee Brown (1968)'s interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -47,5 +48,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

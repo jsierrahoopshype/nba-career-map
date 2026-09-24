@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "DeAndre Liggins", "url": "https://hoopsmatic.com/nba-career-map/player/deandre-liggins.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/DeAndre_Liggins"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "DeAndre Liggins", "url": "https://hoopsmatic.com/nba-career-map/player/deandre-liggins.html", "birthDate": "1988-03-31", "birthPlace": {"@type": "Place", "name": "Chicago"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/DeAndre_Liggins"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has DeAndre Liggins played?</h1>
 <p class="lede">DeAndre Liggins has played for 17 clubs in 8 countries: Orlando Magic, Oklahoma City Thunder, Tulsa 66ers and more, now with Dijlah Al-Jamiea.</p>
+<p class="bio">Born: March 31, 1988 in Chicago <span class="age" data-born="1988-03-31">(age 38)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Shooting guard / small forward</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Dijlah Al-Jamiea</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=DeAndre%20Liggins">Open DeAndre Liggins's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -64,5 +65,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

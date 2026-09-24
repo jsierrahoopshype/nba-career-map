@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "C. J. Elleby", "url": "https://hoopsmatic.com/nba-career-map/player/cj-elleby.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/C._J._Elleby"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "C. J. Elleby", "url": "https://hoopsmatic.com/nba-career-map/player/cj-elleby.html", "birthDate": "2000-06-16", "birthPlace": {"@type": "Place", "name": "Federal Way"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/C._J._Elleby"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has C. J. Elleby played?</h1>
 <p class="lede">C. J. Elleby has played for 9 clubs in 4 countries: Portland Trail Blazers, Iowa Wolves, Salt Lake City Stars, Bnei Herzliya and more, now with Hapoel HaEmek.</p>
+<p class="bio">Born: June 16, 2000 in Federal Way <span class="age" data-born="2000-06-16">(age 26)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Small forward</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Hapoel HaEmek</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=CJ%20Elleby">Open C. J. Elleby's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -53,5 +54,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

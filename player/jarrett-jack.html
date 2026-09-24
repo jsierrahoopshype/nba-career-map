@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jarrett Jack", "url": "https://hoopsmatic.com/nba-career-map/player/jarrett-jack.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Jarrett_Jack"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jarrett Jack", "url": "https://hoopsmatic.com/nba-career-map/player/jarrett-jack.html", "birthDate": "1983-10-28", "birthPlace": {"@type": "Place", "name": "Fort Washington"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Jarrett_Jack"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Jarrett Jack played?</h1>
 <p class="lede">Jarrett Jack played for 11 clubs in 2 countries: Portland Trail Blazers, Indiana Pacers, Toronto Raptors and more, last with NBA G League Ignite.</p>
+<p class="bio">Born: October 28, 1983 in Fort Washington <span class="age" data-born="1983-10-28">(age 42)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>NBA G League Ignite</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Jarrett%20Jack">Open Jarrett Jack's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -55,5 +56,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

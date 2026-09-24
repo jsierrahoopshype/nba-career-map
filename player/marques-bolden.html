@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Marques Bolden", "url": "https://hoopsmatic.com/nba-career-map/player/marques-bolden.html", "nationality": "American / Indonesian", "sameAs": "https://en.wikipedia.org/wiki/Marques_Bolden"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Marques Bolden", "url": "https://hoopsmatic.com/nba-career-map/player/marques-bolden.html", "birthDate": "1998-04-17", "birthPlace": {"@type": "Place", "name": "Dallas"}, "nationality": "American / Indonesian", "sameAs": "https://en.wikipedia.org/wiki/Marques_Bolden"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Marques Bolden played?</h1>
 <p class="lede">Marques Bolden has played for 10 clubs in 3 countries: Canton Charge, Cleveland Cavaliers, Salt Lake City Stars and more, now with Levanga Hokkaido.</p>
+<p class="bio">Born: April 17, 1998 in Dallas <span class="age" data-born="1998-04-17">(age 28)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Center</dd><dt>Nationality</dt><dd>American / Indonesian</dd><dt>Current team</dt><dd>Levanga Hokkaido</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Marques%20Bolden">Open Marques Bolden's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -56,5 +57,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

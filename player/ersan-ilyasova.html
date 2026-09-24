@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ersan Ilyasova", "url": "https://hoopsmatic.com/nba-career-map/player/ersan-ilyasova.html", "nationality": "Turkey", "sameAs": "https://en.wikipedia.org/wiki/Ersan_Ilyasova"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ersan Ilyasova", "url": "https://hoopsmatic.com/nba-career-map/player/ersan-ilyasova.html", "birthDate": "1987-05-15", "birthPlace": {"@type": "Place", "name": "Eskişehir"}, "nationality": "Turkey", "sameAs": "https://en.wikipedia.org/wiki/Ersan_Ilyasova"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Ersan Ilyasova played?</h1>
 <p class="lede">Ersan Ilyasova played for 12 clubs in 3 countries: Yeşilyurt, Ülkerspor, Tulsa 66ers, Milwaukee Bucks and more, last with Utah Jazz.</p>
+<p class="bio">Born: May 15, 1987 in Eskişehir <span class="age" data-born="1987-05-15">(age 39)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Turkey</dd><dt>Current team</dt><dd>Utah Jazz</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Ersan%20Ilyasova">Open Ersan Ilyasova's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -59,5 +60,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

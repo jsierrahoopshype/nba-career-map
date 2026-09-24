@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Darnell Mee", "url": "https://hoopsmatic.com/nba-career-map/player/darnell-mee.html", "nationality": "Australia", "sameAs": "https://en.wikipedia.org/wiki/Darnell_Mee"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Darnell Mee", "url": "https://hoopsmatic.com/nba-career-map/player/darnell-mee.html", "birthDate": "1971-02-11", "birthPlace": {"@type": "Place", "name": "Cleveland"}, "nationality": "Australia", "sameAs": "https://en.wikipedia.org/wiki/Darnell_Mee"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Darnell Mee played?</h1>
 <p class="lede">Darnell Mee played for 12 clubs in 5 countries: Daytona Beach Hooters, Denver Nuggets, Tri-City Chinook, Yakima Sun Kings and more, last with Cairns Taipans.</p>
+<p class="bio">Born: February 11, 1971 in Cleveland <span class="age" data-born="1971-02-11">(age 55)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Australia</dd><dt>Current team</dt><dd>Cairns Taipans</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Darnell%20Mee">Open Darnell Mee's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -57,5 +58,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

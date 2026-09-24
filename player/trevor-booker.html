@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Trevor Booker", "url": "https://hoopsmatic.com/nba-career-map/player/trevor-booker.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Trevor_Booker"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Trevor Booker", "url": "https://hoopsmatic.com/nba-career-map/player/trevor-booker.html", "birthDate": "1987-11-25", "birthPlace": {"@type": "Place", "name": "Whitmire"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Trevor_Booker"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Trevor Booker played?</h1>
 <p class="lede">Trevor Booker played for 5 clubs in the USA: Washington Wizards, Utah Jazz, Brooklyn Nets, Philadelphia 76ers, last with Indiana Pacers.</p>
+<p class="bio">Born: November 25, 1987 in Whitmire <span class="age" data-born="1987-11-25">(age 38)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Indiana Pacers</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Trevor%20Booker">Open Trevor Booker's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -49,5 +50,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

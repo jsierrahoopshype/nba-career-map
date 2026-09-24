@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Kebu Stewart", "url": "https://hoopsmatic.com/nba-career-map/player/kebu-stewart.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Kebu_Stewart"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Kebu Stewart", "url": "https://hoopsmatic.com/nba-career-map/player/kebu-stewart.html", "birthDate": "1973-12-19", "birthPlace": {"@type": "Place", "name": "Brooklyn"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Kebu_Stewart"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Kebu Stewart played?</h1>
 <p class="lede">Kebu Stewart played for 14 clubs in 10 countries: Philadelphia 76ers, Sioux Falls Skyforce, Vaqueros de Bayamón and more, last with Barons/LMT Rīga.</p>
+<p class="bio">Born: December 19, 1973 in Brooklyn <span class="age" data-born="1973-12-19">(age 52)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Barons/LMT Rīga</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Kebu%20Stewart">Open Kebu Stewart's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -59,5 +60,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Paul Watson", "url": "https://hoopsmatic.com/nba-career-map/player/paul-watson.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Paul_Watson"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Paul Watson", "url": "https://hoopsmatic.com/nba-career-map/player/paul-watson.html", "birthDate": "1950-12-02", "birthPlace": {"@type": "Place", "name": "Toronto"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Paul_Watson"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Paul Watson played?</h1>
 <p class="lede">Paul Watson has played for 9 clubs in 3 countries: BG Göttingen, Westchester Knicks, Raptors 905, Atlanta Hawks and more, now with Valley Suns.</p>
+<p class="bio">Born: December 2, 1950 in Toronto <span class="age" data-born="1950-12-02">(age 75)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Valley Suns</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Paul%20Watson">Open Paul Watson's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -54,5 +55,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

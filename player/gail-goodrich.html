@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Gail Goodrich", "url": "https://hoopsmatic.com/nba-career-map/player/gail-goodrich.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Gail_Goodrich"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Gail Goodrich", "url": "https://hoopsmatic.com/nba-career-map/player/gail-goodrich.html", "birthDate": "1943-04-23", "birthPlace": {"@type": "Place", "name": "Los Angeles"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Gail_Goodrich"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Gail Goodrich played?</h1>
 <p class="lede">Gail Goodrich played for 3 clubs in the USA: Los Angeles Lakers, Phoenix Suns, last with New Orleans Jazz.</p>
+<p class="bio">Born: April 23, 1943 in Los Angeles <span class="age" data-born="1943-04-23">(age 83)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>New Orleans Jazz</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Gail%20Goodrich">Open Gail Goodrich's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -48,5 +49,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

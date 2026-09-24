@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Tony Mitchell (1992)", "url": "https://hoopsmatic.com/nba-career-map/player/tony-mitchell-1992.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Tony_Mitchell_%28basketball%2C_born_1992%29"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Tony Mitchell (1992)", "url": "https://hoopsmatic.com/nba-career-map/player/tony-mitchell-1992.html", "birthDate": "1992-04-07", "birthPlace": {"@type": "Place", "name": "Milwaukee"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Tony_Mitchell_%28basketball%2C_born_1992%29"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Tony Mitchell (1992) played?</h1>
 <p class="lede">Tony Mitchell (1992) played for 21 clubs in 10 countries: Detroit Pistons, Fort Wayne Mad Ants, Grand Rapids Drive and more, last with New Taipei Kings.</p>
+<p class="bio">Born: April 7, 1992 in Milwaukee <span class="age" data-born="1992-04-07">(age 34)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>New Taipei Kings</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Tony%20Mitchell%20%281992%29">Open Tony Mitchell (1992)'s interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -69,5 +70,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

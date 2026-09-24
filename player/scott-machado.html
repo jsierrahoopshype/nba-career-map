@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Scott Machado", "url": "https://hoopsmatic.com/nba-career-map/player/scott-machado.html", "nationality": "Brazilian / American", "sameAs": "https://en.wikipedia.org/wiki/Scott_Machado"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Scott Machado", "url": "https://hoopsmatic.com/nba-career-map/player/scott-machado.html", "birthDate": "1990-06-08", "birthPlace": {"@type": "Place", "name": "Queens"}, "nationality": "Brazilian / American", "sameAs": "https://en.wikipedia.org/wiki/Scott_Machado"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Scott Machado played?</h1>
 <p class="lede">Scott Machado has played for 18 clubs in 9 countries: Houston Rockets, Rio Grande Valley Vipers, Santa Cruz Warriors and more, now with Minas.</p>
+<p class="bio">Born: June 8, 1990 in Queens <span class="age" data-born="1990-06-08">(age 36)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Point guard</dd><dt>Nationality</dt><dd>Brazilian / American</dd><dt>Current team</dt><dd>Minas</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Scott%20Machado">Open Scott Machado's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -63,5 +64,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

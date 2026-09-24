@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Nicolas Batum", "url": "https://hoopsmatic.com/nba-career-map/player/nicolas-batum.html", "nationality": "France", "sameAs": "https://en.wikipedia.org/wiki/Nicolas_Batum"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Nicolas Batum", "url": "https://hoopsmatic.com/nba-career-map/player/nicolas-batum.html", "birthDate": "1988-12-14", "birthPlace": {"@type": "Place", "name": "Lisieux"}, "nationality": "France", "sameAs": "https://en.wikipedia.org/wiki/Nicolas_Batum"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Nicolas Batum played?</h1>
 <p class="lede">Nicolas Batum played for 6 clubs in 2 countries: Le Mans Sarthe, Portland Trail Blazers, SLUC Nancy, Charlotte Hornets and more, last with LA Clippers.</p>
+<p class="bio">Born: December 14, 1988 in Lisieux <span class="age" data-born="1988-12-14">(age 37)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Small forward / power forward</dd><dt>Nationality</dt><dd>France</dd><dt>Current team</dt><dd>LA Clippers</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Nicolas%20Batum">Open Nicolas Batum's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -51,5 +52,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

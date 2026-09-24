@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ben McLemore", "url": "https://hoopsmatic.com/nba-career-map/player/ben-mclemore.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Ben_McLemore"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Ben McLemore", "url": "https://hoopsmatic.com/nba-career-map/player/ben-mclemore.html", "birthDate": "1993-02-11", "birthPlace": {"@type": "Place", "name": "St. Louis"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Ben_McLemore"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Ben McLemore played?</h1>
 <p class="lede">Ben McLemore has played for 10 clubs in 5 countries: Sacramento Kings, Memphis Grizzlies, Memphis Hustle and more, now with Merkezefendi Belediyesi Denizli.</p>
+<p class="bio">Born: February 11, 1993 in St. Louis <span class="age" data-born="1993-02-11">(age 33)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Merkezefendi Belediyesi Denizli</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Ben%20McLemore">Open Ben McLemore's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -55,5 +56,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

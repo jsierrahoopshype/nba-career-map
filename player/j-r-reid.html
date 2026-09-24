@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "J.R. Reid", "url": "https://hoopsmatic.com/nba-career-map/player/j-r-reid.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/J.R._Reid"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "J.R. Reid", "url": "https://hoopsmatic.com/nba-career-map/player/j-r-reid.html", "birthDate": "1968-03-31", "birthPlace": {"@type": "Place", "name": "Virginia Beach"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/J.R._Reid"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has J.R. Reid played?</h1>
 <p class="lede">J.R. Reid played for 9 clubs in 3 countries: Charlotte Hornets, San Antonio Spurs, New York Knicks, Paris Basket Racing and more, last with Baloncesto León.</p>
+<p class="bio">Born: March 31, 1968 in Virginia Beach <span class="age" data-born="1968-03-31">(age 58)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Baloncesto León</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=J.R.%20Reid">Open J.R. Reid's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -54,5 +55,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

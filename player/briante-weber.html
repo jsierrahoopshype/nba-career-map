@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Brianté Weber", "url": "https://hoopsmatic.com/nba-career-map/player/briante-weber.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Briant%C3%A9_Weber"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Brianté Weber", "url": "https://hoopsmatic.com/nba-career-map/player/briante-weber.html", "birthDate": "1992-12-29", "birthPlace": {"@type": "Place", "name": "Chesapeake"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Briant%C3%A9_Weber"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Brianté Weber played?</h1>
 <p class="lede">Brianté Weber has played for 19 clubs in 9 countries: Sioux Falls Skyforce, Memphis Grizzlies, Miami Heat and more, now with Pınar Karşıyaka.</p>
+<p class="bio">Born: December 29, 1992 in Chesapeake <span class="age" data-born="1992-12-29">(age 33)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Point guard</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Pınar Karşıyaka</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Briante%20Weber">Open Brianté Weber's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -67,5 +68,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

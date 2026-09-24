@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Luguentz Dort", "url": "https://hoopsmatic.com/nba-career-map/player/luguentz-dort.html", "nationality": "Canada", "sameAs": "https://en.wikipedia.org/wiki/Luguentz_Dort"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Luguentz Dort", "url": "https://hoopsmatic.com/nba-career-map/player/luguentz-dort.html", "birthDate": "1999-04-19", "birthPlace": {"@type": "Place", "name": "Montreal"}, "nationality": "Canada", "sameAs": "https://en.wikipedia.org/wiki/Luguentz_Dort"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Luguentz Dort played?</h1>
 <p class="lede">Luguentz Dort has played for 3 clubs in the USA: Oklahoma City Thunder, Oklahoma City Blue, now with Atlanta Hawks.</p>
+<p class="bio">Born: April 19, 1999 in Montreal <span class="age" data-born="1999-04-19">(age 27)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Shooting guard</dd><dt>Nationality</dt><dd>Canada</dd><dt>Current team</dt><dd>Atlanta Hawks</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Luguentz%20Dort">Open Luguentz Dort's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -47,5 +48,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

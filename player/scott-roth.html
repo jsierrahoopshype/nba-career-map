@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Scott Roth", "url": "https://hoopsmatic.com/nba-career-map/player/scott-roth.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Scott_Roth"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Scott Roth", "url": "https://hoopsmatic.com/nba-career-map/player/scott-roth.html", "birthDate": "1963-06-03", "birthPlace": {"@type": "Place", "name": "Cleveland"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Scott_Roth"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Scott Roth played?</h1>
 <p class="lede">Scott Roth played for 9 clubs in 4 countries: Anadolu Efes, Albany Patroons, Utah Jazz, San Antonio Spurs and more, last with Muratpaşa Belediyespor.</p>
+<p class="bio">Born: June 3, 1963 in Cleveland <span class="age" data-born="1963-06-03">(age 63)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Muratpaşa Belediyespor</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Scott%20Roth">Open Scott Roth's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -53,5 +54,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

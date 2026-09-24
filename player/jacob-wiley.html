@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jacob Wiley", "url": "https://hoopsmatic.com/nba-career-map/player/jacob-wiley.html", "nationality": "American / Macedonian", "sameAs": "https://en.wikipedia.org/wiki/Jacob_Wiley"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jacob Wiley", "url": "https://hoopsmatic.com/nba-career-map/player/jacob-wiley.html", "birthDate": "1994-09-04", "birthPlace": {"@type": "Place", "name": "Long Beach"}, "nationality": "American / Macedonian", "sameAs": "https://en.wikipedia.org/wiki/Jacob_Wiley"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Jacob Wiley played?</h1>
 <p class="lede">Jacob Wiley has played for 16 clubs in 10 countries: Brooklyn Nets, Long Island Nets, Riesen Ludwigsburg, Adelaide 36ers and more, now with Ironi Ness Ziona.</p>
+<p class="bio">Born: September 4, 1994 in Long Beach <span class="age" data-born="1994-09-04">(age 32)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Power forward / center</dd><dt>Nationality</dt><dd>American / Macedonian</dd><dt>Current team</dt><dd>Ironi Ness Ziona</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Jacob%20Wiley">Open Jacob Wiley's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -62,5 +63,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

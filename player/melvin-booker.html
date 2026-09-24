@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Melvin Booker", "url": "https://hoopsmatic.com/nba-career-map/player/melvin-booker.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Melvin_Booker"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Melvin Booker", "url": "https://hoopsmatic.com/nba-career-map/player/melvin-booker.html", "birthDate": "1972-08-20", "birthPlace": {"@type": "Place", "name": "Pascagoula"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Melvin_Booker"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Melvin Booker played?</h1>
 <p class="lede">Melvin Booker played for 11 clubs in 4 countries: Hartford Hellcats, Pittsburgh Piranhas, Grand Rapids Mackers and more, last with Olimpia Milano.</p>
+<p class="bio">Born: August 20, 1972 in Pascagoula <span class="age" data-born="1972-08-20">(age 54)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Olimpia Milano</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Melvin%20Booker">Open Melvin Booker's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -56,5 +57,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

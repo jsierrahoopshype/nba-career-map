@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Buck Williams", "url": "https://hoopsmatic.com/nba-career-map/player/buck-williams.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Buck_Williams"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Buck Williams", "url": "https://hoopsmatic.com/nba-career-map/player/buck-williams.html", "birthDate": "1960-03-08", "birthPlace": {"@type": "Place", "name": "Rocky Mount"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Buck_Williams"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Buck Williams played?</h1>
 <p class="lede">Buck Williams played for 3 clubs in the USA: New Jersey Nets, Portland Trail Blazers, last with New York Knicks.</p>
+<p class="bio">Born: March 8, 1960 in Rocky Mount <span class="age" data-born="1960-03-08">(age 66)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>New York Knicks</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Buck%20Williams">Open Buck Williams's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -47,5 +48,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

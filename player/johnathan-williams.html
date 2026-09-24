@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Johnathan Williams", "url": "https://hoopsmatic.com/nba-career-map/player/johnathan-williams.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Johnathan_Williams"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Johnathan Williams", "url": "https://hoopsmatic.com/nba-career-map/player/johnathan-williams.html", "birthDate": "1995-05-22", "birthPlace": {"@type": "Place", "name": "Memphis"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Johnathan_Williams"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Johnathan Williams played?</h1>
 <p class="lede">Johnathan Williams has played for 16 clubs in 9 countries: Los Angeles Lakers, South Bay Lakers, Maccabi Rishon LeZion and more, now with Phoenix Fuel Masters.</p>
+<p class="bio">Born: May 22, 1995 in Memphis <span class="age" data-born="1995-05-22">(age 31)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Power forward / center</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Phoenix Fuel Masters</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Johnathan%20Williams">Open Johnathan Williams's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -61,5 +62,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

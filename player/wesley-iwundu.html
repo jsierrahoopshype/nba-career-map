@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Wes Iwundu", "url": "https://hoopsmatic.com/nba-career-map/player/wesley-iwundu.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Wes_Iwundu"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Wes Iwundu", "url": "https://hoopsmatic.com/nba-career-map/player/wesley-iwundu.html", "birthDate": "1994-12-20", "birthPlace": {"@type": "Place", "name": "Houston"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Wes_Iwundu"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Wes Iwundu played?</h1>
 <p class="lede">Wes Iwundu has played for 12 clubs in 6 countries: Orlando Magic, Lakeland Magic, Dallas Mavericks, New Orleans Pelicans and more, now with Andorra.</p>
+<p class="bio">Born: December 20, 1994 in Houston <span class="age" data-born="1994-12-20">(age 31)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Small forward / shooting guard</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Andorra</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Wesley%20Iwundu">Open Wes Iwundu's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -56,5 +57,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

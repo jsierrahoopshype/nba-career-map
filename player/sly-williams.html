@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Sly Williams", "url": "https://hoopsmatic.com/nba-career-map/player/sly-williams.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Sly_Williams"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Sly Williams", "url": "https://hoopsmatic.com/nba-career-map/player/sly-williams.html", "birthDate": "1958-01-26", "birthPlace": {"@type": "Place", "name": "New Haven"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Sly_Williams"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Sly Williams played?</h1>
 <p class="lede">Sly Williams played for 3 clubs in the USA: New York Knicks, Atlanta Hawks, last with Boston Celtics.</p>
+<p class="bio">Born: January 26, 1958 in New Haven <span class="age" data-born="1958-01-26">(age 68)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Boston Celtics</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Sly%20Williams">Open Sly Williams's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -47,5 +48,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

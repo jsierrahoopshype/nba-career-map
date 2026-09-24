@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vassilis Spanoulis", "url": "https://hoopsmatic.com/nba-career-map/player/vassilis-spanoulis.html", "nationality": "Greece", "sameAs": "https://en.wikipedia.org/wiki/Vassilis_Spanoulis"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Vassilis Spanoulis", "url": "https://hoopsmatic.com/nba-career-map/player/vassilis-spanoulis.html", "birthDate": "1982-08-07", "birthPlace": {"@type": "Place", "name": "Larissa"}, "nationality": "Greece", "sameAs": "https://en.wikipedia.org/wiki/Vassilis_Spanoulis"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Vassilis Spanoulis played?</h1>
 <p class="lede">Vassilis Spanoulis played for 5 clubs in 2 countries: Gymnastikos S. Larissas, Maroussi, Panathinaikos, Houston Rockets, last with Olympiacos.</p>
+<p class="bio">Born: August 7, 1982 in Larissa <span class="age" data-born="1982-08-07">(age 44)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Greece</dd><dt>Current team</dt><dd>Olympiacos</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Vassilis%20Spanoulis">Open Vassilis Spanoulis's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -50,5 +51,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

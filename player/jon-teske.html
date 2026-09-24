@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jon Teske", "url": "https://hoopsmatic.com/nba-career-map/player/jon-teske.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Jon_Teske"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jon Teske", "url": "https://hoopsmatic.com/nba-career-map/player/jon-teske.html", "birthDate": "1997-05-04", "birthPlace": {"@type": "Place", "name": "Indianapolis"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Jon_Teske"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Jon Teske played?</h1>
 <p class="lede">Jon Teske played for 2 clubs in the USA: Lakeland Magic, last with Memphis Grizzlies.</p>
+<p class="bio">Born: May 4, 1997 in Indianapolis <span class="age" data-born="1997-05-04">(age 29)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Memphis Grizzlies</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Jon%20Teske">Open Jon Teske's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -46,5 +47,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

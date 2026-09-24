@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Myles Powell", "url": "https://hoopsmatic.com/nba-career-map/player/myles-powell.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Myles_Powell"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Myles Powell", "url": "https://hoopsmatic.com/nba-career-map/player/myles-powell.html", "birthDate": "1997-07-07", "birthPlace": {"@type": "Place", "name": "Trenton"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Myles_Powell"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Myles Powell played?</h1>
 <p class="lede">Myles Powell has played for 7 clubs in 3 countries: Westchester Knicks, Philadelphia 76ers, Delaware Blue Coats and more, now with Scarborough Shooting Stars.</p>
+<p class="bio">Born: July 7, 1997 in Trenton <span class="age" data-born="1997-07-07">(age 29)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Shooting guard / point guard</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Scarborough Shooting Stars</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Myles%20Powell">Open Myles Powell's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -51,5 +52,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

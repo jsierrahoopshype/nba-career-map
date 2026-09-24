@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Kevin Salvadori", "url": "https://hoopsmatic.com/nba-career-map/player/kevin-salvadori.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Kevin_Salvadori"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Kevin Salvadori", "url": "https://hoopsmatic.com/nba-career-map/player/kevin-salvadori.html", "birthDate": "1970-12-30", "birthPlace": {"@type": "Place", "name": "Wheeling"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Kevin_Salvadori"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Kevin Salvadori played?</h1>
 <p class="lede">Kevin Salvadori played for 5 clubs in 2 countries: Florida Sharks, Florida Beach Dogs, Sacramento Kings, Rockford Lightning, last with Spirou Charleroi.</p>
+<p class="bio">Born: December 30, 1970 in Wheeling <span class="age" data-born="1970-12-30">(age 55)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Spirou Charleroi</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Kevin%20Salvadori">Open Kevin Salvadori's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -49,5 +50,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

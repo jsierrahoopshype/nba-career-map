@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Deng Adel", "url": "https://hoopsmatic.com/nba-career-map/player/deng-adel.html", "nationality": "South Sudanese / Australian", "sameAs": "https://en.wikipedia.org/wiki/Deng_Adel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Deng Adel", "url": "https://hoopsmatic.com/nba-career-map/player/deng-adel.html", "birthDate": "1996-02-01", "birthPlace": {"@type": "Place", "name": "South Sudan"}, "nationality": "South Sudanese / Australian", "sameAs": "https://en.wikipedia.org/wiki/Deng_Adel"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Deng Adel played?</h1>
 <p class="lede">Deng Adel has played for 12 clubs in 6 countries: Waverley Falcons, Raptors 905, Cleveland Cavaliers, Canton Charge and more, now with Ottawa BlackJacks.</p>
+<p class="bio">Born: February 1, 1996 in South Sudan <span class="age" data-born="1996-02-01">(age 30)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Small forward</dd><dt>Nationality</dt><dd>South Sudanese / Australian</dd><dt>Current team</dt><dd>Ottawa BlackJacks</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Deng%20Adel">Open Deng Adel's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -57,5 +58,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

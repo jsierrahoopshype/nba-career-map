@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Aleksandar Pavlovic", "url": "https://hoopsmatic.com/nba-career-map/player/aleksandar-pavlovic.html", "nationality": "Serbia", "sameAs": "https://en.wikipedia.org/wiki/Aleksandar_Pavlovi%C4%87_(basketball)"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Aleksandar Pavlovic", "url": "https://hoopsmatic.com/nba-career-map/player/aleksandar-pavlovic.html", "birthDate": "1983-11-15", "birthPlace": {"@type": "Place", "name": "Bar"}, "nationality": "Serbia", "sameAs": "https://en.wikipedia.org/wiki/Aleksandar_Pavlovi%C4%87_(basketball)"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Aleksandar Pavlovic played?</h1>
 <p class="lede">Aleksandar Pavlovic played for 10 clubs in 4 countries: Budućnost Podgorica, Utah Jazz, Cleveland Cavaliers and more, last with Panathinaikos.</p>
+<p class="bio">Born: November 15, 1983 in Bar <span class="age" data-born="1983-11-15">(age 42)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>Serbia</dd><dt>Current team</dt><dd>Panathinaikos</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Aleksandar%20Pavlovic">Open Aleksandar Pavlovic's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -54,5 +55,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Monté Morris", "url": "https://hoopsmatic.com/nba-career-map/player/monte-morris.html", "nationality": "Nigeria", "sameAs": "https://en.wikipedia.org/wiki/Mont%C3%A9_Morris"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Monté Morris", "url": "https://hoopsmatic.com/nba-career-map/player/monte-morris.html", "birthDate": "1995-06-27", "birthPlace": {"@type": "Place", "name": "Grand Rapids"}, "nationality": "Nigeria", "sameAs": "https://en.wikipedia.org/wiki/Mont%C3%A9_Morris"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Monté Morris played?</h1>
 <p class="lede">Monté Morris has played for 8 clubs in 2 countries: Rio Grande Valley Vipers, Denver Nuggets, Washington Wizards, Detroit Pistons and more, now with Olympiacos.</p>
+<p class="bio">Born: June 27, 1995 in Grand Rapids <span class="age" data-born="1995-06-27">(age 31)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Point guard</dd><dt>Nationality</dt><dd>Nigeria</dd><dt>Current team</dt><dd>Olympiacos</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Monte%20Morris">Open Monté Morris's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -52,5 +53,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Roshown McLeod", "url": "https://hoopsmatic.com/nba-career-map/player/roshown-mcleod.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Roshown_McLeod"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Roshown McLeod", "url": "https://hoopsmatic.com/nba-career-map/player/roshown-mcleod.html", "birthDate": "1975-11-17", "birthPlace": {"@type": "Place", "name": "Jersey City"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Roshown_McLeod"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Roshown McLeod played?</h1>
 <p class="lede">Roshown McLeod played for 2 clubs in the USA: Atlanta Hawks, last with Philadelphia 76ers.</p>
+<p class="bio">Born: November 17, 1975 in Jersey City <span class="age" data-born="1975-11-17">(age 50)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Philadelphia 76ers</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Roshown%20McLeod">Open Roshown McLeod's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -46,5 +47,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

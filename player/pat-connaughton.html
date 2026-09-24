@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Pat Connaughton", "url": "https://hoopsmatic.com/nba-career-map/player/pat-connaughton.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Pat_Connaughton"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Pat Connaughton", "url": "https://hoopsmatic.com/nba-career-map/player/pat-connaughton.html", "birthDate": "1993-01-06", "birthPlace": {"@type": "Place", "name": "Arlington"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Pat_Connaughton"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Pat Connaughton played?</h1>
 <p class="lede">Pat Connaughton has played for 3 clubs in the USA: Portland Trail Blazers, Milwaukee Bucks, now with Charlotte Hornets.</p>
+<p class="bio">Born: January 6, 1993 in Arlington <span class="age" data-born="1993-01-06">(age 33)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Shooting guard</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Charlotte Hornets</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Pat%20Connaughton">Open Pat Connaughton's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -47,5 +48,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "John Mengelt", "url": "https://hoopsmatic.com/nba-career-map/player/john-mengelt.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/John_Mengelt"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "John Mengelt", "url": "https://hoopsmatic.com/nba-career-map/player/john-mengelt.html", "birthDate": "1949-10-16", "birthPlace": {"@type": "Place", "name": "La Crosse"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/John_Mengelt"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has John Mengelt played?</h1>
 <p class="lede">John Mengelt played for 5 clubs in 2 countries: Cincinnati Royals, Detroit Pistons, Chicago Bulls, Latte Matese Caserta, last with Golden State Warriors.</p>
+<p class="bio">Born: October 16, 1949 in La Crosse <span class="age" data-born="1949-10-16">(age 76)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Golden State Warriors</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=John%20Mengelt">Open John Mengelt's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -49,5 +50,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Malcolm Lee", "url": "https://hoopsmatic.com/nba-career-map/player/malcolm-lee.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Malcolm_Lee_(basketball)"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Malcolm Lee", "url": "https://hoopsmatic.com/nba-career-map/player/malcolm-lee.html", "birthDate": "1990-05-22", "birthPlace": {"@type": "Place", "name": "Riverside"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Malcolm_Lee_(basketball)"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Malcolm Lee played?</h1>
 <p class="lede">Malcolm Lee played for 12 clubs in 7 countries: Minnesota Timberwolves, Sioux Falls Skyforce, Delaware 87ers and more, last with CSO Voluntari.</p>
+<p class="bio">Born: May 22, 1990 in Riverside <span class="age" data-born="1990-05-22">(age 36)</span></p>
 <dl class="facts"><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>CSO Voluntari</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Malcolm%20Lee">Open Malcolm Lee's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -57,5 +58,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

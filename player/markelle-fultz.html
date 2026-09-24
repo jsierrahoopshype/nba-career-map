@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Markelle Fultz", "url": "https://hoopsmatic.com/nba-career-map/player/markelle-fultz.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Markelle_Fultz"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Markelle Fultz", "url": "https://hoopsmatic.com/nba-career-map/player/markelle-fultz.html", "birthDate": "1998-05-29", "birthPlace": {"@type": "Place", "name": "Upper Marlboro"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Markelle_Fultz"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Markelle Fultz played?</h1>
 <p class="lede">Markelle Fultz has played for 5 clubs in 2 countries: Philadelphia 76ers, Orlando Magic, Sacramento Kings, Raptors 905, now with Toronto Raptors.</p>
+<p class="bio">Born: May 29, 1998 in Upper Marlboro <span class="age" data-born="1998-05-29">(age 28)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Point guard</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Toronto Raptors</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Markelle%20Fultz">Open Markelle Fultz's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -49,5 +50,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>

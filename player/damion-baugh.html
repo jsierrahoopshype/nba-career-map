@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/prerender.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Damion Baugh", "url": "https://hoopsmatic.com/nba-career-map/player/damion-baugh.html", "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Damion_Baugh"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Damion Baugh", "url": "https://hoopsmatic.com/nba-career-map/player/damion-baugh.html", "birthDate": "2000-08-03", "birthPlace": {"@type": "Place", "name": "Nashville"}, "nationality": "United States", "sameAs": "https://en.wikipedia.org/wiki/Damion_Baugh"}</script>
 </head>
 <body>
 <header class="ph"><div class="ph-inner">
@@ -36,6 +36,7 @@
 <main>
 <h1>Where has Damion Baugh played?</h1>
 <p class="lede">Damion Baugh has played for 8 clubs in 4 countries: South Bay Lakers, Westchester Knicks, Charlotte Hornets, Greensboro Swarm and more, now with Baskonia.</p>
+<p class="bio">Born: August 3, 2000 in Nashville <span class="age" data-born="2000-08-03">(age 26)</span></p>
 <dl class="facts"><dt>Position</dt><dd>Point guard</dd><dt>Nationality</dt><dd>United States</dd><dt>Current team</dt><dd>Baskonia</dd></dl>
 <p class="cta"><a class="btn" href="../index.html?player=Damion%20Baugh">Open Damion Baugh's interactive career map</a></p>
 <div class="table-wrap"><table class="ct"><thead><tr><th>Years</th><th>Team</th><th>City</th><th>Country</th></tr></thead>
@@ -52,5 +53,13 @@
 <p class="foot"><a href="../index.html">Every NBA player's career, mapped</a> ·
 <a href="../teams.html">Browse by team</a></p>
 </main>
+<script>
+(function(){try{var n=new Date();
+document.querySelectorAll('.age[data-born]').forEach(function(el){
+var b=/^(\d{4})-(\d{2})-(\d{2})$/.exec(el.getAttribute('data-born'));if(!b)return;
+var a=n.getUTCFullYear()-(+b[1]);
+if(n.getUTCMonth()+1<(+b[2])||(n.getUTCMonth()+1===(+b[2])&&n.getUTCDate()<(+b[3])))a--;
+if(a>=0&&a<130)el.textContent='(age '+a+')';});}catch(e){}})();
+</script>
 </body>
 </html>
