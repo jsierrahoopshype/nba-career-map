@@ -169,11 +169,39 @@ def _expand_nbay(text: str) -> str:
     return _NBAY_RE.sub(repl, text)
 
 
+# Two wikilinks sitting side by side are two entities, and stripping the
+# markup runs their display text together: [[Anyang KGC]][[Anyang Jung Kwan
+# Jang Red Boosters]] became the single "club" name
+# "Anyang KGCAnyang Jung Kwan Jang Red Boosters", which no alias, no
+# normalizer and no human could resolve. A separator goes in before the
+# markup comes out. The interpunct is used rather than a comma because that
+# is the character editors themselves reach for when they list two club names
+# in one field, so both shapes reach split_joined_name() looking identical.
+_ADJACENT_LINKS_RE = re.compile(r"\]\]\s*\[\[")
+
+# Separators that mean "this field holds more than one club name". The
+# interpunct family only: " / " is deliberately NOT here, because
+# split_combined_teams.py owns slash-joined names and resolves the NBA ones by
+# year majority -- splitting them here would take that decision away from it.
+JOINED_SEPARATORS = "\u00b7\u2027\u2219\u2022\u30fb"
+_JOINED_RE = re.compile(f"\\s*[{JOINED_SEPARATORS}]\\s*")
+
+
+def split_joined_name(name: str) -> list[str]:
+    """A field holding several club names, as a list. One name -> one item.
+
+    "Anyang SBS Stars\u00b7KT&G Kites" -> ["Anyang SBS Stars", "KT&G Kites"].
+    """
+    parts = [p.strip(" ,;-\u2013\u2014") for p in _JOINED_RE.split(name or "")]
+    return [p for p in parts if p]
+
+
 def _clean_text(val: str) -> str:
     if not val:
         return ""
     n = re.sub(r"<ref[^>]*>.*?</ref>", "", val, flags=re.DOTALL)
     n = re.sub(r"<ref[^>]*/>", "", n)
+    n = _ADJACENT_LINKS_RE.sub("]] \u00b7 [[", n)
     n = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", n)
     n = n.replace("'''", "").replace("''", "")
     n = re.sub(r"<br\s*/?>", ", ", n)
@@ -310,10 +338,22 @@ def _parse_career_history(fields: dict[str, str], normalizer: TeamNormalizer):
         team_clean = re.sub(r"\(loan\)", "", team_clean, flags=re.IGNORECASE).strip()
         if not team_clean:
             continue
+        # One teamN field can hold two club names -- a rename the player's
+        # spell straddled, written as "[[Old]]\u00b7[[New]]" or as two adjacent
+        # wikilinks. Storing the joined string makes a club nobody can look up
+        # (it was how "Anyang SBS Stars\u00b7KT&G Kites" became a club), so the
+        # FIRST name is what the stint records: it is always a complete,
+        # standalone name, where a later segment is often an abbreviated
+        # continuation ("KT&G Kites" with the city dropped) that would resolve
+        # to nothing. The alias table then maps it to the surviving club. The
+        # full field is kept in team_raw, so nothing is lost.
+        segments = split_joined_name(team_clean)
+        if len(segments) > 1:
+            team_clean = segments[0]
         raw_names.append(team_clean)
         entry = {
             "team": normalizer.normalize(team_clean),
-            "team_raw": team_clean,
+            "team_raw": " \u00b7 ".join(segments) if len(segments) > 1 else team_clean,
             "years": years,
         }
         if loan:
