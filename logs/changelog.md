@@ -1,3 +1,57 @@
+## 2026-09-25 — override run
+
+- Players updated: **142** (0 new)
+- New teams discovered: **14**
+- Team moves detected: **36**
+- Detected-but-not-new stints held back: **9**
+- Club-name pairs held for review: **0**
+- Status changes: **18** (3 → overseas, 8 → retired)
+- Wikipedia requests: 200  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: ADA Blois, Al-Najma, Cagiva Varese, Choriceros de Camargo, Dąbrowa Górnicza, Galatasaray Odeabank, Golden Eagle Ylli, Grifone Perugia, Halcones Córdoba, La Séguinière, Mens Sana Siena, Northside Wizards, Sokol Antofagasta, The Saitama Broncos
+  - AJ Johnson: Washington Wizards → New Orleans Pelicans
+  - Anthony Bennett: Formosa Dreamers → Al-Najma
+  - Anthony Lamb: Hapoel Jerusalem → Türk Telekom
+  - Archie Goodwin: Taipei Fubon Braves → Changwon LG Sakers
+  - BJ Johnson: Lokomotiv Kuban → Phoenix Fuel Masters
+  - Bogdan Bogdanovic: LA Clippers → Houston Rockets
+  - Brandon Knight: Capitanes de Arecibo → Perth Wildcats
+  - Bruce Brown: Denver Nuggets → New York Knicks
+  - Chris Clemons: EWE Baskets Oldenburg → Uralmash
+  - Chris Duarte: Unicaja → Baskonia
+  - Damian Jones: Zhejiang Golden Bulls → Real Madrid
+  - Dennis Smith: Wisconsin Herd → Sioux Falls Skyforce
+  - Deonte Burton: Osos de Manatí → NLEX Road Warriors
+  - Donovan Williams: New York Knicks → Al Riyadi Beirut
+  - Isaiah Jackson: Indiana Pacers → LA Clippers
+  - James Ennis: Formosa Dreamers → Piratas de La Guaira
+  - Jesse Edwards: Melbourne United → Baskonia
+  - John Butler: Wisconsin Herd → Milwaukee Bucks
+  - John Collins: LA Clippers → Detroit Pistons
+  - John Jenkins: Cangrejeros de Santurce → Adelaide 36ers
+  - Jordan Hall: Texas Legends → Dąbrowa Górnicza
+  - Jordan Hamilton: Al-Difaa Al-Jawi → The Saitama Broncos
+  - Jose Alvarado: New Orleans Pelicans → New York Knicks
+  - Josh Gray: Dorados de Chihuahua → Golden Eagle Ylli
+  - Josh Green: Charlotte Hornets → Utah Jazz
+  - Carter Bryant: [retired → nba_active]
+  - Chris Crawford: [overseas_active → retired]
+  - Curtis Jones: [retired → nba_active]
+  - Donovan Williams: [nba_active → overseas_active]
+  - Eric Anderson: [overseas_active → retired]
+  - Grant Nelson: [retired → nba_active]
+  - Guillermo Diaz: [overseas_active → retired]
+  - Herbert Jones: [retired → nba_active]
+  - Hugo González: [retired → nba_active]
+  - James Webb: [retired → overseas_active]
+  - John Brown: [overseas_active → retired]
+  - John Butler: [overseas_active → nba_active]
+  - Marcus Thornton: [overseas_active → retired]
+  - Mike Morrison: [overseas_active → retired]
+  - Mike Smith: [overseas_active → retired]
+  - Moussa Cissé: [retired → nba_active]
+  - Robert Woodard: [retired → overseas_active]
+  - Ron Anderson: [overseas_active → retired]
+
 ## 2026-09-25 — incremental run
 
 - Players updated: **478** (1 new)

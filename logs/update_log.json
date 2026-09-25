@@ -31049,6 +31049,589 @@
       "start_dates_stamped": 1,
       "stints_removed": 0,
       "stints_reordered": 51
+    },
+    {
+      "date": "2026-09-25",
+      "mode": "override",
+      "players_updated": [
+        "AJ Green",
+        "AJ Griffin",
+        "AJ Johnson",
+        "Aaron Henry",
+        "Ace Bailey",
+        "Alan Williams",
+        "Alex Garcia",
+        "Andre Jackson",
+        "Andrew Nicholson",
+        "Andrew White",
+        "Anthony Bennett",
+        "Anthony Black",
+        "Anthony Gill",
+        "Anthony Lamb",
+        "Archie Goodwin",
+        "BJ Johnson",
+        "Ben Moore",
+        "Bill Jones",
+        "Billy Garrett",
+        "Blake Wesley",
+        "Bogdan Bogdanovic",
+        "Brandon Armstrong",
+        "Brandon Goodwin",
+        "Brandon Knight",
+        "Brandon Miller",
+        "Brian Oliver",
+        "Bruce Brown",
+        "CJ Williams",
+        "Carter Bryant",
+        "Charlie Black",
+        "Chris Boucher",
+        "Chris Clemons",
+        "Chris Crawford",
+        "Chris Duarte",
+        "Chris McNealy",
+        "Chris Singleton",
+        "Chris Youngblood",
+        "Connie Norman",
+        "Corey Williams",
+        "Curtis Jones",
+        "Damian Jones",
+        "David Duke",
+        "David Johnson",
+        "Dennis Smith",
+        "Deonte Burton",
+        "Derrick Jones",
+        "Donovan Williams",
+        "Drew Peterson",
+        "Ed Davis",
+        "Emanuel Miller",
+        "Eric Anderson",
+        "Eric Williams",
+        "Frank Mason",
+        "Grant Nelson",
+        "Grant Williams",
+        "Greg Brown",
+        "Guillermo Diaz",
+        "Herbert Jones",
+        "Hugo González",
+        "Ian Clark",
+        "Isaiah Jackson",
+        "Isaiah Thomas",
+        "Jack White",
+        "James Ennis",
+        "James Robinson",
+        "James Webb",
+        "James Young",
+        "Jay Miller",
+        "Jaylin Williams",
+        "Jeff Green",
+        "Jesse Edwards",
+        "Jim Garvin",
+        "Joe Harris",
+        "John Brown",
+        "John Butler",
+        "John Collins",
+        "John Holland",
+        "John Jenkins",
+        "Johnny Simmons",
+        "Jonathan Gibson",
+        "Jordan Hall",
+        "Jordan Hamilton",
+        "Jordan Miller",
+        "Jorge Gutierrez",
+        "Jose Alvarado",
+        "Josh Gray",
+        "Josh Green",
+        "Julian Phillips",
+        "Justin Anderson",
+        "Justin Harper",
+        "Justin Jackson",
+        "Kendall Brown",
+        "Kenny McIntosh",
+        "Kevin Knox",
+        "Kevin Murphy",
+        "Larry Sanders",
+        "Louis King",
+        "Malcolm Hill",
+        "Malcolm Thomas",
+        "Mamadou N'diaye",
+        "Marcus Thornton",
+        "Marcus Vinicius",
+        "Marko Simonovic",
+        "Mason Jones",
+        "Matt Thomas",
+        "Michael Foster",
+        "Michael Phelps",
+        "Michael Porter",
+        "Mike Conley",
+        "Mike Green",
+        "Mike Lynn",
+        "Mike Morrison",
+        "Mike Scott",
+        "Mike Smith",
+        "Moritz Wagner",
+        "Moses Brown",
+        "Moussa Cissé",
+        "Patrick Williams",
+        "Paul Watson",
+        "Pepe Sanchez",
+        "Phillip Wheeler",
+        "Ray Ellefson",
+        "Ray McCallum",
+        "Reggie Jackson",
+        "Reggie Perry",
+        "Rob Edwards",
+        "Rob Rose",
+        "Robert Franks",
+        "Robert Woodard",
+        "Ron Anderson",
+        "Ron Holland",
+        "Rudy Fernandez",
+        "Russ Smith",
+        "Ryan Dunn",
+        "Ryan Kelly",
+        "Sam Vincent",
+        "Sean McDermott",
+        "Spencer Jones",
+        "Stanley Johnson",
+        "Sterling Brown",
+        "Steve Hamilton",
+        "Terry Taylor"
+      ],
+      "new_players": [],
+      "new_teams": [
+        "ADA Blois",
+        "Al-Najma",
+        "Cagiva Varese",
+        "Choriceros de Camargo",
+        "Dąbrowa Górnicza",
+        "Galatasaray Odeabank",
+        "Golden Eagle Ylli",
+        "Grifone Perugia",
+        "Halcones Córdoba",
+        "La Séguinière",
+        "Mens Sana Siena",
+        "Northside Wizards",
+        "Sokol Antofagasta",
+        "The Saitama Broncos"
+      ],
+      "team_moves": [
+        {
+          "player": "AJ Johnson",
+          "from": "Washington Wizards",
+          "to": "New Orleans Pelicans"
+        },
+        {
+          "player": "Anthony Bennett",
+          "from": "Formosa Dreamers",
+          "to": "Al-Najma"
+        },
+        {
+          "player": "Anthony Lamb",
+          "from": "Hapoel Jerusalem",
+          "to": "Türk Telekom"
+        },
+        {
+          "player": "Archie Goodwin",
+          "from": "Taipei Fubon Braves",
+          "to": "Changwon LG Sakers"
+        },
+        {
+          "player": "BJ Johnson",
+          "from": "Lokomotiv Kuban",
+          "to": "Phoenix Fuel Masters"
+        },
+        {
+          "player": "Bogdan Bogdanovic",
+          "from": "LA Clippers",
+          "to": "Houston Rockets"
+        },
+        {
+          "player": "Brandon Knight",
+          "from": "Capitanes de Arecibo",
+          "to": "Perth Wildcats"
+        },
+        {
+          "player": "Bruce Brown",
+          "from": "Denver Nuggets",
+          "to": "New York Knicks"
+        },
+        {
+          "player": "Chris Clemons",
+          "from": "EWE Baskets Oldenburg",
+          "to": "Uralmash"
+        },
+        {
+          "player": "Chris Duarte",
+          "from": "Unicaja",
+          "to": "Baskonia"
+        },
+        {
+          "player": "Damian Jones",
+          "from": "Zhejiang Golden Bulls",
+          "to": "Real Madrid"
+        },
+        {
+          "player": "Dennis Smith",
+          "from": "Wisconsin Herd",
+          "to": "Sioux Falls Skyforce"
+        },
+        {
+          "player": "Deonte Burton",
+          "from": "Osos de Manatí",
+          "to": "NLEX Road Warriors"
+        },
+        {
+          "player": "Donovan Williams",
+          "from": "New York Knicks",
+          "to": "Al Riyadi Beirut"
+        },
+        {
+          "player": "Isaiah Jackson",
+          "from": "Indiana Pacers",
+          "to": "LA Clippers"
+        },
+        {
+          "player": "James Ennis",
+          "from": "Formosa Dreamers",
+          "to": "Piratas de La Guaira"
+        },
+        {
+          "player": "Jesse Edwards",
+          "from": "Melbourne United",
+          "to": "Baskonia"
+        },
+        {
+          "player": "John Butler",
+          "from": "Wisconsin Herd",
+          "to": "Milwaukee Bucks"
+        },
+        {
+          "player": "John Collins",
+          "from": "LA Clippers",
+          "to": "Detroit Pistons"
+        },
+        {
+          "player": "John Jenkins",
+          "from": "Cangrejeros de Santurce",
+          "to": "Adelaide 36ers"
+        },
+        {
+          "player": "Jordan Hall",
+          "from": "Texas Legends",
+          "to": "Dąbrowa Górnicza"
+        },
+        {
+          "player": "Jordan Hamilton",
+          "from": "Al-Difaa Al-Jawi",
+          "to": "The Saitama Broncos"
+        },
+        {
+          "player": "Jose Alvarado",
+          "from": "New Orleans Pelicans",
+          "to": "New York Knicks"
+        },
+        {
+          "player": "Josh Gray",
+          "from": "Dorados de Chihuahua",
+          "to": "Golden Eagle Ylli"
+        },
+        {
+          "player": "Josh Green",
+          "from": "Charlotte Hornets",
+          "to": "Utah Jazz"
+        },
+        {
+          "player": "Julian Phillips",
+          "from": "Chicago Bulls",
+          "to": "Houston Rockets"
+        },
+        {
+          "player": "Kevin Murphy",
+          "from": "Sagesse Club",
+          "to": "Al Ahly Cairo"
+        },
+        {
+          "player": "Malcolm Hill",
+          "from": "Delaware Blue Coats",
+          "to": "U-BT Cluj-Napoca"
+        },
+        {
+          "player": "Marko Simonovic",
+          "from": "Türk Telekom",
+          "to": "BC Roma"
+        },
+        {
+          "player": "Matt Thomas",
+          "from": "Granada",
+          "to": "Beşiktaş"
+        },
+        {
+          "player": "Michael Foster",
+          "from": "Sioux Falls Skyforce",
+          "to": "Scarborough Shooting Stars"
+        },
+        {
+          "player": "Mike Conley",
+          "from": "Minnesota Timberwolves",
+          "to": "Boston Celtics"
+        },
+        {
+          "player": "Moritz Wagner",
+          "from": "Orlando Magic",
+          "to": "Brooklyn Nets"
+        },
+        {
+          "player": "Reggie Perry",
+          "from": "Greensboro Swarm",
+          "to": "Bosna"
+        },
+        {
+          "player": "Rob Edwards",
+          "from": "Xinjiang",
+          "to": "Reggiana"
+        },
+        {
+          "player": "Sterling Brown",
+          "from": "Partizan",
+          "to": "Žalgiris"
+        }
+      ],
+      "spelling_review": [],
+      "old_stints": [
+        {
+          "player": "Andrew Nicholson",
+          "from": "Daegu KOGAS Pegasus",
+          "to": "Seoul Samsung Thunders",
+          "reason": "stint starts 2025 ('2025–2026'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Chris Crawford",
+          "from": "Urunani",
+          "to": "Atlanta Hawks",
+          "reason": "stint starts 1997 ('1997–2005'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Eric Anderson",
+          "from": "Nacional",
+          "to": "Fort Wayne Fury",
+          "reason": "stint starts 1997 ('1997–1998'), before the ledger opened in 2026"
+        },
+        {
+          "player": "John Brown",
+          "from": "South East Melbourne Phoenix",
+          "to": "Grifone Perugia",
+          "reason": "stint starts 1982 ('1982–1983'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Jonathan Gibson",
+          "from": "Sagesse Club",
+          "to": "Al-Ula",
+          "reason": "stint starts 2024 ('2024–present'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Marcus Thornton",
+          "from": "Lavrio",
+          "to": "Motor City Cruise",
+          "reason": "stint starts 2022 ('2022'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Mike Morrison",
+          "from": "Keravnos",
+          "to": "Shell Rimula X",
+          "reason": "stint starts 1992 ('1992–1994'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Mike Smith",
+          "from": "ESSM Le Portel",
+          "to": "Choriceros de Camargo",
+          "reason": "stint starts 2013 ('2013'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Ron Anderson",
+          "from": "Poitiers",
+          "to": "La Séguinière",
+          "reason": "stint starts 1999 ('1999–2010'), before the ledger opened in 2026"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Carter Bryant",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Chris Crawford",
+          "from": "overseas_active",
+          "to": "retired"
+        },
+        {
+          "player": "Curtis Jones",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Donovan Williams",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Eric Anderson",
+          "from": "overseas_active",
+          "to": "retired"
+        },
+        {
+          "player": "Grant Nelson",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Guillermo Diaz",
+          "from": "overseas_active",
+          "to": "retired"
+        },
+        {
+          "player": "Herbert Jones",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Hugo González",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "James Webb",
+          "from": "retired",
+          "to": "overseas_active"
+        },
+        {
+          "player": "John Brown",
+          "from": "overseas_active",
+          "to": "retired"
+        },
+        {
+          "player": "John Butler",
+          "from": "overseas_active",
+          "to": "nba_active"
+        },
+        {
+          "player": "Marcus Thornton",
+          "from": "overseas_active",
+          "to": "retired"
+        },
+        {
+          "player": "Mike Morrison",
+          "from": "overseas_active",
+          "to": "retired"
+        },
+        {
+          "player": "Mike Smith",
+          "from": "overseas_active",
+          "to": "retired"
+        },
+        {
+          "player": "Moussa Cissé",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Robert Woodard",
+          "from": "retired",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Ron Anderson",
+          "from": "overseas_active",
+          "to": "retired"
+        }
+      ],
+      "newly_overseas": [
+        "Donovan Williams",
+        "James Webb",
+        "Robert Woodard"
+      ],
+      "newly_retired": [
+        "Chris Crawford",
+        "Eric Anderson",
+        "Guillermo Diaz",
+        "John Brown",
+        "Marcus Thornton",
+        "Mike Morrison",
+        "Mike Smith",
+        "Ron Anderson"
+      ],
+      "requests": 200,
+      "budget_exhausted": true,
+      "queue_size": 154,
+      "queue_completed": false,
+      "wrong_article": [],
+      "wrong_place": [
+        {
+          "team": "Al-Najma",
+          "date": "2026-09-25",
+          "reason": "the title redirected to another article",
+          "extract": "-> 'Al-Nejmeh'"
+        },
+        {
+          "team": "Parma",
+          "date": "2026-09-25",
+          "reason": "the article is not about a sports club",
+          "extract": "Parma (Italian: [ˈparma] ; Parmigiano: Pärma [ˈpɛːʁmɐ]) is a city in the region of Emilia-Romagna in northern Italy, known for its architecture, music, art, prosciutto (ham), chees"
+        },
+        {
+          "team": "Bodrumspor",
+          "date": "2026-09-25",
+          "reason": "the title redirected to another article",
+          "extract": "-> 'Bodrum F.K.'"
+        },
+        {
+          "team": "Upea Capo d'Orlando",
+          "date": "2026-09-25",
+          "reason": "the title redirected to another article",
+          "extract": "-> 'Orlandina Basket'"
+        },
+        {
+          "team": "Carifabriano",
+          "date": "2026-09-25",
+          "reason": "the title redirected to another article",
+          "extract": "-> 'Cassa di Risparmio di Fabriano e Cupramontana'"
+        },
+        {
+          "team": "Dąbrowa Górnicza",
+          "date": "2026-09-25",
+          "reason": "the article is not about a sports club",
+          "extract": "Dąbrowa Górnicza (Polish pronunciation: [dɔmˈbrɔva ɡurˈɲit͡ʂa] ) is a city in southern Poland, in the eastern part of the Katowice urban area, in the Silesian Voivodeship. It is lo"
+        },
+        {
+          "team": "Corinthians",
+          "date": "2026-09-25",
+          "reason": "the title redirected to another article",
+          "extract": "-> 'Corinthian'"
+        },
+        {
+          "team": "Vasco da Gama",
+          "date": "2026-09-25",
+          "reason": "the article is not about a sports club",
+          "extract": "Vasco da Gama ( VAS-koo də GA(H)M-ə, European Portuguese: [ˈvaʃku ðɐ ˈɣɐmɐ]; c. 1460s – 24 December 1524) was a Portuguese mariner, explorer and nobleman. His discovery of the firs"
+        },
+        {
+          "team": "Bosna",
+          "date": "2026-09-25",
+          "reason": "the article is not about a sports club",
+          "extract": "Bosna may refer to:"
+        },
+        {
+          "team": "La Séguinière",
+          "date": "2026-09-25",
+          "reason": "the article is not about a sports club",
+          "extract": "La Séguinière (French pronunciation: [la seɡinjɛʁ] ) is a commune in the Maine-et-Loire department in western France."
+        }
+      ],
+      "combined_names_split": 1,
+      "combined_names_left": 156,
+      "start_dates_stamped": 0,
+      "stints_removed": 0,
+      "stints_reordered": 22
     }
   ]
 }
