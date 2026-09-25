@@ -309,6 +309,12 @@
       "last_updated": "2026-09-24"
     },
     {
+      "player": "Billy Garrett",
+      "current_team": "Freseros de Irapuato",
+      "country": "Mexico",
+      "last_updated": "2026-09-25"
+    },
+    {
       "player": "Boban Marjanovic",
       "current_team": "Ilirija",
       "country": "",
@@ -759,6 +765,12 @@
       "last_updated": "2026-09-23"
     },
     {
+      "player": "David Duke",
+      "current_team": "Pallacanestro Varese",
+      "country": "Italy",
+      "last_updated": "2026-09-25"
+    },
+    {
       "player": "David Johnson",
       "current_team": "Tasmania JackJumpers",
       "country": "Australia",
@@ -945,6 +957,12 @@
       "last_updated": "2026-09-24"
     },
     {
+      "player": "Drew Peterson",
+      "current_team": "Windy City Bulls",
+      "country": "USA",
+      "last_updated": "2026-09-25"
+    },
+    {
       "player": "Drew Timme",
       "current_team": "South Bay Lakers",
       "country": "USA",
@@ -1033,6 +1051,12 @@
       "current_team": "Riesen Ludwigsburg",
       "country": "Germany",
       "last_updated": "2026-09-24"
+    },
+    {
+      "player": "Emanuel Miller",
+      "current_team": "Grand Rapids Gold",
+      "country": "USA",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Emanuel Terry",
@@ -1522,9 +1546,9 @@
     },
     {
       "player": "Jack White",
-      "current_team": "Mersin MSK",
-      "country": "Turkey",
-      "last_updated": "2026-09-23"
+      "current_team": "Napoli",
+      "country": "Italy",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Jackson Rowe",
@@ -2446,9 +2470,9 @@
     },
     {
       "player": "Louis King",
-      "current_team": "Xinjiang",
-      "country": "China",
-      "last_updated": "2026-09-23"
+      "current_team": "Criollos de Caguas",
+      "country": "Puerto Rico",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Luka Samanic",
@@ -2782,9 +2806,9 @@
     },
     {
       "player": "Moses Brown",
-      "current_team": "Grand Rapids Gold",
-      "country": "USA",
-      "last_updated": "2026-09-24"
+      "current_team": "Guangzhou Loong Lions",
+      "country": "China",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Moses Wright",
@@ -2997,6 +3021,12 @@
       "last_updated": "2026-09-24"
     },
     {
+      "player": "Paul Watson",
+      "current_team": "BC Roma",
+      "country": "Italy",
+      "last_updated": "2026-09-25"
+    },
+    {
       "player": "Paul Zipser",
       "current_team": "USC Heidelberg",
       "country": "Germany",
@@ -3013,6 +3043,12 @@
       "current_team": "Esenler Erokspor",
       "country": "Turkey",
       "last_updated": "2026-09-24"
+    },
+    {
+      "player": "Phillip Wheeler",
+      "current_team": "Rio Grande Valley Vipers",
+      "country": "USA",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Pierre Jackson",
@@ -3073,6 +3109,12 @@
       "current_team": "Hapoel Galil Elyon",
       "country": "Israel",
       "last_updated": "2026-09-24"
+    },
+    {
+      "player": "Ray McCallum",
+      "current_team": "Tainan TSG GhostHawks",
+      "country": "Taiwan",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Rayjon Tucker",
@@ -3204,7 +3246,7 @@
       "player": "Sean McDermott",
       "current_team": "Valley Suns",
       "country": "USA",
-      "last_updated": "2026-09-24"
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Sekou Doumbouya",
@@ -3400,9 +3442,9 @@
     },
     {
       "player": "Terry Taylor",
-      "current_team": "Brisbane Bullets",
-      "country": "Australia",
-      "last_updated": "2026-09-24"
+      "current_team": "Austin Spurs",
+      "country": "USA",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Thanasis Antetokounmpo",
@@ -3582,7 +3624,7 @@
       "player": "Troy Brown",
       "current_team": "Adelaide 36ers",
       "country": "Australia",
-      "last_updated": "2026-09-24"
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Troy Caupain",
@@ -3679,6 +3721,12 @@
       "current_team": "Hapoel Tel Aviv",
       "country": "Israel",
       "last_updated": "2026-09-24"
+    },
+    {
+      "player": "Vernon Carey",
+      "current_team": "Maxima Roma",
+      "country": "Italy",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Vic Law",
@@ -4670,26 +4718,6 @@
       "status": "overseas_active"
     },
     {
-      "player": "Corey Williams",
-      "country_count": 12,
-      "stint_count": 25,
-      "countries": [
-        "USA",
-        "Dominican Republic",
-        "Brazil",
-        "Sweden",
-        "China",
-        "Germany",
-        "Venezuela",
-        "France",
-        "Australia",
-        "Croatia",
-        "Lebanon",
-        "Puerto Rico"
-      ],
-      "status": "retired"
-    },
-    {
       "player": "Sean Colson",
       "country_count": 12,
       "stint_count": 25,
@@ -4946,16 +4974,35 @@
         "UAE"
       ],
       "status": "retired"
+    },
+    {
+      "player": "Junior Burrough",
+      "country_count": 11,
+      "stint_count": 27,
+      "countries": [
+        "USA",
+        "Italy",
+        "Argentina",
+        "Venezuela",
+        "Germany",
+        "Japan",
+        "France",
+        "Puerto Rico",
+        "Greece",
+        "South Korea",
+        "Mexico"
+      ],
+      "status": "retired"
     }
   ],
   "teams_by_alltime_nba_alumni": [
     {
       "team": "Sioux Falls Skyforce",
-      "players": 225
+      "players": 224
     },
     {
       "team": "Rio Grande Valley Vipers",
-      "players": 146
+      "players": 147
     },
     {
       "team": "Texas Legends",
@@ -4975,7 +5022,7 @@
     },
     {
       "team": "Rockford Lightning",
-      "players": 112
+      "players": 113
     },
     {
       "team": "Rapid City Thrillers",
@@ -4987,10 +5034,14 @@
     },
     {
       "team": "Olympiacos",
-      "players": 101
+      "players": 102
     },
     {
       "team": "Fort Wayne Mad Ants",
+      "players": 98
+    },
+    {
+      "team": "Quad City Thunder",
       "players": 98
     },
     {
@@ -5002,12 +5053,12 @@
       "players": 97
     },
     {
-      "team": "Quad City Thunder",
-      "players": 97
-    },
-    {
       "team": "FC Barcelona",
       "players": 96
+    },
+    {
+      "team": "Austin Spurs",
+      "players": 93
     },
     {
       "team": "Real Madrid",
@@ -5026,27 +5077,27 @@
       "players": 90
     },
     {
-      "team": "Austin Spurs",
-      "players": 89
+      "team": "Westchester Knicks",
+      "players": 88
     },
     {
-      "team": "Westchester Knicks",
-      "players": 87
+      "team": "Long Island Nets",
+      "players": 86
     },
     {
       "team": "Fenerbahçe",
       "players": 85
     },
     {
-      "team": "Long Island Nets",
+      "team": "Oklahoma City Blue",
       "players": 85
     },
     {
-      "team": "Oklahoma City Blue",
-      "players": 84
+      "team": "Maine Red Claws",
+      "players": 82
     },
     {
-      "team": "Maine Red Claws",
+      "team": "Wisconsin Herd",
       "players": 82
     },
     {
@@ -5054,8 +5105,16 @@
       "players": 81
     },
     {
-      "team": "Wisconsin Herd",
+      "team": "Windy City Bulls",
       "players": 81
+    },
+    {
+      "team": "Greensboro Swarm",
+      "players": 80
+    },
+    {
+      "team": "Memphis Hustle",
+      "players": 80
     },
     {
       "team": "Virtus Bologna",
@@ -5066,15 +5125,7 @@
       "players": 80
     },
     {
-      "team": "Windy City Bulls",
-      "players": 80
-    },
-    {
       "team": "Anadolu Efes",
-      "players": 79
-    },
-    {
-      "team": "Memphis Hustle",
       "players": 79
     },
     {
@@ -5082,19 +5133,19 @@
       "players": 79
     },
     {
-      "team": "Greensboro Swarm",
-      "players": 78
+      "team": "Hapoel Jerusalem",
+      "players": 75
     },
     {
       "team": "Joventut Badalona",
       "players": 75
     },
     {
-      "team": "Hapoel Jerusalem",
-      "players": 74
+      "team": "Reno Bighorns",
+      "players": 75
     },
     {
-      "team": "Reno Bighorns",
+      "team": "Delaware Blue Coats",
       "players": 74
     },
     {
@@ -5103,10 +5154,6 @@
     },
     {
       "team": "Canton Charge",
-      "players": 73
-    },
-    {
-      "team": "Delaware Blue Coats",
       "players": 73
     },
     {
@@ -5122,11 +5169,15 @@
       "players": 71
     },
     {
+      "team": "Iowa Wolves",
+      "players": 70
+    },
+    {
       "team": "South Bay Lakers",
       "players": 70
     },
     {
-      "team": "Iowa Wolves",
+      "team": "Capital City Go-Go",
       "players": 69
     },
     {
@@ -5138,16 +5189,12 @@
       "players": 69
     },
     {
-      "team": "AEK Athens",
-      "players": 68
-    },
-    {
-      "team": "Capital City Go-Go",
-      "players": 68
-    },
-    {
       "team": "Crvena Zvezda",
       "players": 68
+    },
+    {
+      "team": "AEK Athens",
+      "players": 67
     },
     {
       "team": "Fort Wayne Fury",
@@ -5158,16 +5205,20 @@
       "players": 65
     },
     {
-      "team": "Partizan",
-      "players": 63
+      "team": "Žalgiris",
+      "players": 64
     },
     {
-      "team": "Žalgiris",
+      "team": "Partizan",
       "players": 63
     },
     {
       "team": "Stockton Kings",
       "players": 62
+    },
+    {
+      "team": "Albany Patroons",
+      "players": 61
     },
     {
       "team": "Bakersfield Jam",
@@ -5182,15 +5233,7 @@
       "players": 61
     },
     {
-      "team": "Albany Patroons",
-      "players": 60
-    },
-    {
       "team": "Fortitudo Bologna",
-      "players": 60
-    },
-    {
-      "team": "Limoges CSP",
       "players": 60
     },
     {
@@ -5198,12 +5241,20 @@
       "players": 60
     },
     {
-      "team": "Pallacanestro Cantù",
+      "team": "Limoges CSP",
       "players": 59
     },
     {
       "team": "Pau-Orthez",
       "players": 58
+    },
+    {
+      "team": "Pallacanestro Cantù",
+      "players": 57
+    },
+    {
+      "team": "Unicaja",
+      "players": 57
     },
     {
       "team": "Zaragoza",
@@ -5214,7 +5265,7 @@
       "players": 56
     },
     {
-      "team": "Unicaja",
+      "team": "PAOK Thessaloniki",
       "players": 56
     },
     {
@@ -5230,10 +5281,6 @@
       "players": 55
     },
     {
-      "team": "PAOK Thessaloniki",
-      "players": 55
-    },
-    {
       "team": "Capitanes de Arecibo",
       "players": 54
     },
@@ -5244,6 +5291,10 @@
     {
       "team": "Montepaschi Siena",
       "players": 54
+    },
+    {
+      "team": "La Crosse Catbirds",
+      "players": 53
     },
     {
       "team": "Leones de Ponce",
@@ -5258,32 +5309,28 @@
       "players": 53
     },
     {
-      "team": "Cholet Basket",
-      "players": 52
-    },
-    {
-      "team": "Dakota Wizards",
-      "players": 52
-    },
-    {
-      "team": "La Crosse Catbirds",
-      "players": 52
-    },
-    {
       "team": "Tulsa 66ers",
       "players": 52
     },
     {
-      "team": "Hapoel Holon",
-      "players": 50
+      "team": "Cholet Basket",
+      "players": 51
+    },
+    {
+      "team": "Dakota Wizards",
+      "players": 51
     },
     {
       "team": "Oklahoma City Cavalry",
-      "players": 50
+      "players": 51
     },
     {
       "team": "Cleveland Charge",
-      "players": 49
+      "players": 50
+    },
+    {
+      "team": "Hapoel Holon",
+      "players": 50
     },
     {
       "team": "Lokomotiv Kuban",
@@ -5294,12 +5341,16 @@
       "players": 48
     },
     {
-      "team": "Khimki",
+      "team": "UNICS",
       "players": 48
     },
     {
-      "team": "UNICS",
-      "players": 48
+      "team": "BCM Gravelines",
+      "players": 47
+    },
+    {
+      "team": "Khimki",
+      "players": 47
     },
     {
       "team": "Cangrejeros de Santurce",
@@ -5314,10 +5365,6 @@
       "players": 46
     },
     {
-      "team": "BCM Gravelines",
-      "players": 45
-    },
-    {
       "team": "Mets de Guaynabo",
       "players": 45
     },
@@ -5330,6 +5377,10 @@
       "players": 44
     },
     {
+      "team": "Grand Rapids Drive",
+      "players": 43
+    },
+    {
       "team": "Xinjiang",
       "players": 43
     },
@@ -5338,11 +5389,7 @@
       "players": 42
     },
     {
-      "team": "Bnei Herzliya",
-      "players": 42
-    },
-    {
-      "team": "Grand Rapids Drive",
+      "team": "Grand Rapids Gold",
       "players": 42
     },
     {
@@ -5350,11 +5397,23 @@
       "players": 42
     },
     {
-      "team": "Chicago Stags",
+      "team": "Maccabi Rishon LeZion",
+      "players": 42
+    },
+    {
+      "team": "Motor City Cruise",
+      "players": 42
+    },
+    {
+      "team": "Pallacanestro Trieste",
+      "players": 42
+    },
+    {
+      "team": "Bnei Herzliya",
       "players": 41
     },
     {
-      "team": "Grand Rapids Gold",
+      "team": "Chicago Stags",
       "players": 41
     },
     {
@@ -5362,40 +5421,16 @@
       "players": 41
     },
     {
-      "team": "Maccabi Rishon LeZion",
-      "players": 41
-    },
-    {
-      "team": "Motor City Cruise",
-      "players": 41
-    },
-    {
-      "team": "Piratas de Quebradillas",
-      "players": 41
+      "team": "Agua Caliente Clippers",
+      "players": 40
     },
     {
       "team": "Napoli Basket",
       "players": 40
     },
     {
-      "team": "Pallacanestro Trieste",
+      "team": "Piratas de Quebradillas",
       "players": 40
-    },
-    {
-      "team": "Panionios",
-      "players": 40
-    },
-    {
-      "team": "Reyer Venezia",
-      "players": 40
-    },
-    {
-      "team": "Trotamundos de Carabobo",
-      "players": 40
-    },
-    {
-      "team": "Agua Caliente Clippers",
-      "players": 39
     },
     {
       "team": "Brose Bamberg",
@@ -5406,7 +5441,19 @@
       "players": 39
     },
     {
+      "team": "Panionios",
+      "players": 39
+    },
+    {
+      "team": "Shanghai Sharks",
+      "players": 39
+    },
+    {
       "team": "Sydney Kings",
+      "players": 39
+    },
+    {
+      "team": "Trotamundos de Carabobo",
       "players": 39
     },
     {
@@ -5426,11 +5473,23 @@
       "players": 38
     },
     {
-      "team": "Shanghai Sharks",
+      "team": "Reyer Venezia",
       "players": 38
     },
     {
+      "team": "Fuenlabrada",
+      "players": 37
+    },
+    {
+      "team": "Lakeland Magic",
+      "players": 37
+    },
+    {
       "team": "Lietuvos rytas",
+      "players": 37
+    },
+    {
+      "team": "Real Betis",
       "players": 37
     },
     {
@@ -5446,15 +5505,7 @@
       "players": 36
     },
     {
-      "team": "Fuenlabrada",
-      "players": 36
-    },
-    {
-      "team": "Lakeland Magic",
-      "players": 36
-    },
-    {
-      "team": "Real Betis",
+      "team": "Rip City Remix",
       "players": 36
     },
     {
@@ -5478,7 +5529,7 @@
       "players": 35
     },
     {
-      "team": "Rip City Remix",
+      "team": "Manresa",
       "players": 35
     },
     {
@@ -5494,11 +5545,7 @@
       "players": 34
     },
     {
-      "team": "Guaiqueríes de Margarita",
-      "players": 34
-    },
-    {
-      "team": "Manresa",
+      "team": "Darüşşafaka",
       "players": 34
     },
     {
@@ -5514,12 +5561,12 @@
       "players": 33
     },
     {
-      "team": "Darüşşafaka",
+      "team": "Granada",
       "players": 33
     },
     {
-      "team": "Granada",
-      "players": 32
+      "team": "Guaiqueríes de Margarita",
+      "players": 33
     },
     {
       "team": "Guaros de Lara",
@@ -5554,6 +5601,10 @@
       "players": 31
     },
     {
+      "team": "Viola Reggio Calabria",
+      "players": 31
+    },
+    {
       "team": "Al Riyadi Beirut",
       "players": 30
     },
@@ -5582,16 +5633,12 @@
       "players": 30
     },
     {
-      "team": "Viola Reggio Calabria",
+      "team": "San Miguel Beermen",
       "players": 30
     },
     {
       "team": "Zhejiang Golden Bulls",
       "players": 30
-    },
-    {
-      "team": "Adelaide 36ers",
-      "players": 29
     },
     {
       "team": "Avtodor Saratov",
@@ -5618,14 +5665,6 @@
       "players": 29
     },
     {
-      "team": "Juvecaserta Basket",
-      "players": 29
-    },
-    {
-      "team": "San Miguel Beermen",
-      "players": 29
-    },
-    {
       "team": "Zenit Saint Petersburg",
       "players": 29
     },
@@ -5638,6 +5677,14 @@
       "players": 29
     },
     {
+      "team": "Adelaide 36ers",
+      "players": 28
+    },
+    {
+      "team": "Juvecaserta Basket",
+      "players": 28
+    },
+    {
       "team": "Mexico City Capitanes",
       "players": 28
     },
@@ -5646,15 +5693,15 @@
       "players": 28
     },
     {
+      "team": "Osceola Magic",
+      "players": 28
+    },
+    {
       "team": "Pınar Karşıyaka",
       "players": 28
     },
     {
       "team": "Rochester Renegade",
-      "players": 28
-    },
-    {
-      "team": "SIG Strasbourg",
       "players": 28
     },
     {
@@ -5682,7 +5729,7 @@
       "players": 27
     },
     {
-      "team": "Osceola Magic",
+      "team": "SIG Strasbourg",
       "players": 27
     },
     {
@@ -5714,6 +5761,18 @@
       "players": 26
     },
     {
+      "team": "Virginia Squires",
+      "players": 26
+    },
+    {
+      "team": "Apollon Patras",
+      "players": 25
+    },
+    {
+      "team": "Breogán",
+      "players": 25
+    },
+    {
       "team": "Brujos de Guayama",
       "players": 25
     },
@@ -5734,10 +5793,6 @@
       "players": 25
     },
     {
-      "team": "Virginia Squires",
-      "players": 25
-    },
-    {
       "team": "Wilmington Blue Bombers",
       "players": 25
     },
@@ -5746,19 +5801,15 @@
       "players": 25
     },
     {
-      "team": "Apollon Patras",
-      "players": 24
-    },
-    {
-      "team": "Breogán",
-      "players": 24
-    },
-    {
       "team": "Club Ourense Baloncesto",
       "players": 24
     },
     {
       "team": "Detroit Spirits",
+      "players": 24
+    },
+    {
+      "team": "Maccabi Haifa",
       "players": 24
     },
     {
@@ -5786,15 +5837,15 @@
       "players": 23
     },
     {
+      "team": "Gaiteros del Zulia",
+      "players": 23
+    },
+    {
       "team": "Iraklis Thessaloniki",
       "players": 23
     },
     {
       "team": "Liaoning Flying Leopards",
-      "players": 23
-    },
-    {
-      "team": "Maccabi Haifa",
       "players": 23
     },
     {
@@ -5810,6 +5861,10 @@
       "players": 23
     },
     {
+      "team": "Élan Chalon",
+      "players": 23
+    },
+    {
       "team": "Auxilium Torino",
       "players": 22
     },
@@ -5819,10 +5874,6 @@
     },
     {
       "team": "Fabriano Basket",
-      "players": 22
-    },
-    {
-      "team": "Gaiteros del Zulia",
       "players": 22
     },
     {
@@ -5843,10 +5894,6 @@
     },
     {
       "team": "Tri-City Chinook",
-      "players": 22
-    },
-    {
-      "team": "Élan Chalon",
       "players": 22
     },
     {
@@ -5882,15 +5929,23 @@
       "players": 20
     },
     {
+      "team": "Andorra",
+      "players": 20
+    },
+    {
       "team": "Cedar Rapids Silver Bullets",
       "players": 20
     },
     {
-      "team": "Cibona",
+      "team": "Colorado 14ers",
       "players": 20
     },
     {
-      "team": "Colorado 14ers",
+      "team": "Guangzhou Loong Lions",
+      "players": 20
+    },
+    {
+      "team": "Perth Wildcats",
       "players": 20
     },
     {
@@ -5930,15 +5985,11 @@
       "players": 20
     },
     {
-      "team": "Andorra",
+      "team": "Cibona",
       "players": 19
     },
     {
       "team": "Fargo-Moorhead Fever",
-      "players": 19
-    },
-    {
-      "team": "Guangzhou Loong Lions",
       "players": 19
     },
     {
@@ -5959,10 +6010,6 @@
     },
     {
       "team": "Maroussi",
-      "players": 19
-    },
-    {
-      "team": "Perth Wildcats",
       "players": 19
     },
     {
@@ -5999,10 +6046,6 @@
     },
     {
       "team": "Cleveland Rebels",
-      "players": 18
-    },
-    {
-      "team": "Harlem Globetrotters",
       "players": 18
     },
     {
@@ -6050,11 +6093,19 @@
       "players": 17
     },
     {
+      "team": "Harlem Globetrotters",
+      "players": 17
+    },
+    {
       "team": "Maine Lumberjacks",
       "players": 17
     },
     {
       "team": "Mega Basket",
+      "players": 17
+    },
+    {
+      "team": "Panellinios",
       "players": 17
     },
     {
@@ -6102,10 +6153,6 @@
       "players": 16
     },
     {
-      "team": "Fuerza Regia",
-      "players": 16
-    },
-    {
       "team": "Hapoel Galil Elyon",
       "players": 16
     },
@@ -6126,7 +6173,7 @@
       "players": 16
     },
     {
-      "team": "Panellinios",
+      "team": "Nanterre 92",
       "players": 16
     },
     {
@@ -6138,15 +6185,15 @@
       "players": 16
     },
     {
+      "team": "Riesen Ludwigsburg",
+      "players": 16
+    },
+    {
       "team": "Seoul SK Knights",
       "players": 16
     },
     {
       "team": "Shenzhen Leopards",
-      "players": 16
-    },
-    {
-      "team": "Sidigas Avellino",
       "players": 16
     },
     {
@@ -6178,6 +6225,14 @@
       "players": 15
     },
     {
+      "team": "Andrea Costa Imola",
+      "players": 15
+    },
+    {
+      "team": "Asheville Altitude",
+      "players": 15
+    },
+    {
       "team": "Bursaspor",
       "players": 15
     },
@@ -6191,6 +6246,10 @@
     },
     {
       "team": "Detroit Falcons",
+      "players": 15
+    },
+    {
+      "team": "Fuerza Regia",
       "players": 15
     },
     {
@@ -6210,15 +6269,7 @@
       "players": 15
     },
     {
-      "team": "Nanterre 92",
-      "players": 15
-    },
-    {
       "team": "Obradoiro CAB",
-      "players": 15
-    },
-    {
-      "team": "Riesen Ludwigsburg",
       "players": 15
     },
     {
@@ -6227,6 +6278,10 @@
     },
     {
       "team": "San-en NeoPhoenix",
+      "players": 15
+    },
+    {
+      "team": "Sidigas Avellino",
       "players": 15
     },
     {
@@ -6242,19 +6297,15 @@
       "players": 14
     },
     {
-      "team": "Andrea Costa Imola",
-      "players": 14
-    },
-    {
       "team": "Anyang KGC",
       "players": 14
     },
     {
-      "team": "Asheville Altitude",
+      "team": "Astros de Jalisco",
       "players": 14
     },
     {
-      "team": "Astros de Jalisco",
+      "team": "Bay State Bombardiers",
       "players": 14
     },
     {
@@ -6350,10 +6401,6 @@
       "players": 13
     },
     {
-      "team": "Bay State Bombardiers",
-      "players": 13
-    },
-    {
       "team": "Bayer Giants Leverkusen",
       "players": 13
     },
@@ -6367,6 +6414,10 @@
     },
     {
       "team": "Charleston Gunners",
+      "players": 13
+    },
+    {
+      "team": "Criollos de Caguas",
       "players": 13
     },
     {
@@ -6426,19 +6477,11 @@
       "players": 13
     },
     {
-      "team": "Minas",
-      "players": 13
-    },
-    {
       "team": "Obras Sanitarias",
       "players": 13
     },
     {
       "team": "Pallacanestro Ferrara",
-      "players": 13
-    },
-    {
-      "team": "Paris-Levallois",
       "players": 13
     },
     {
@@ -6482,11 +6525,11 @@
       "players": 12
     },
     {
-      "team": "Criollos de Caguas",
+      "team": "Dnipro",
       "players": 12
     },
     {
-      "team": "Dnipro",
+      "team": "Grand Rapids Mackers",
       "players": 12
     },
     {
@@ -6506,11 +6549,19 @@
       "players": 12
     },
     {
+      "team": "Minas",
+      "players": 12
+    },
+    {
       "team": "NLEX Road Warriors",
       "players": 12
     },
     {
       "team": "Ohio Mixers",
+      "players": 12
+    },
+    {
+      "team": "Paris-Levallois",
       "players": 12
     },
     {
@@ -6582,23 +6633,11 @@
       "players": 11
     },
     {
-      "team": "Grand Rapids Mackers",
-      "players": 11
-    },
-    {
-      "team": "Igokea",
-      "players": 11
-    },
-    {
       "team": "Jeonju KCC Egis",
       "players": 11
     },
     {
       "team": "Kyoto Hannaryz",
-      "players": 11
-    },
-    {
-      "team": "Medi Bayreuth",
       "players": 11
     },
     {
@@ -6734,7 +6773,7 @@
       "players": 10
     },
     {
-      "team": "Melbourne Tigers",
+      "team": "Medi Bayreuth",
       "players": 10
     },
     {
@@ -6810,15 +6849,11 @@
       "players": 9
     },
     {
-      "team": "Artland Dragons",
+      "team": "Aurora Desio",
       "players": 9
     },
     {
       "team": "BA Centre of Excellence",
-      "players": 9
-    },
-    {
-      "team": "BC Astana",
       "players": 9
     },
     {
@@ -6878,6 +6913,10 @@
       "players": 9
     },
     {
+      "team": "Igokea",
+      "players": 9
+    },
+    {
       "team": "Indios de San Francisco de Macorís",
       "players": 9
     },
@@ -6911,6 +6950,10 @@
     },
     {
       "team": "Maratonistas de Coamo",
+      "players": 9
+    },
+    {
+      "team": "Melbourne Tigers",
       "players": 9
     },
     {
@@ -7030,15 +7073,19 @@
       "players": 8
     },
     {
+      "team": "Artland Dragons",
+      "players": 8
+    },
+    {
       "team": "Atlantic City Hi-Rollers",
       "players": 8
     },
     {
-      "team": "Aurora Desio",
+      "team": "Australian Institute of Sport",
       "players": 8
     },
     {
-      "team": "Australian Institute of Sport",
+      "team": "BC Astana",
       "players": 8
     },
     {
@@ -7071,10 +7118,6 @@
     },
     {
       "team": "Fulgor Libertas Forlì",
-      "players": 8
-    },
-    {
-      "team": "Geelong Supercats",
       "players": 8
     },
     {
@@ -7202,11 +7245,11 @@
       "players": 8
     },
     {
-      "team": "The Floridians",
+      "team": "Taipei Mars",
       "players": 8
     },
     {
-      "team": "Townsville Crocodiles",
+      "team": "The Floridians",
       "players": 8
     },
     {
@@ -7322,6 +7365,10 @@
       "players": 7
     },
     {
+      "team": "Geelong Supercats",
+      "players": 7
+    },
+    {
       "team": "Gipuzkoa",
       "players": 7
     },
@@ -7390,6 +7437,10 @@
       "players": 7
     },
     {
+      "team": "Legia Warsaw",
+      "players": 7
+    },
+    {
       "team": "Lehigh Valley Jets",
       "players": 7
     },
@@ -7399,10 +7450,6 @@
     },
     {
       "team": "León Caja España",
-      "players": 7
-    },
-    {
-      "team": "Liège",
       "players": 7
     },
     {
@@ -7431,6 +7478,10 @@
     },
     {
       "team": "Mineros de Zacatecas",
+      "players": 7
+    },
+    {
+      "team": "Napoli",
       "players": 7
     },
     {
@@ -7482,15 +7533,15 @@
       "players": 7
     },
     {
-      "team": "Taipei Mars",
-      "players": 7
-    },
-    {
       "team": "Tasmania JackJumpers",
       "players": 7
     },
     {
       "team": "Toledo Jeeps",
+      "players": 7
+    },
+    {
+      "team": "Townsville Crocodiles",
       "players": 7
     },
     {
@@ -7511,10 +7562,6 @@
     },
     {
       "team": "ASK Riga",
-      "players": 6
-    },
-    {
-      "team": "Al Mouttahed Tripoli",
       "players": 6
     },
     {
@@ -7678,6 +7725,14 @@
       "players": 6
     },
     {
+      "team": "Liège",
+      "players": 6
+    },
+    {
+      "team": "Lokomotiv Rostov",
+      "players": 6
+    },
+    {
       "team": "Los Angeles Jets",
       "players": 6
     },
@@ -7707,10 +7762,6 @@
     },
     {
       "team": "New Jersey Shorecats",
-      "players": 6
-    },
-    {
-      "team": "Newcastle Falcons",
       "players": 6
     },
     {
@@ -7842,6 +7893,10 @@
       "players": 5
     },
     {
+      "team": "Al Mouttahed Tripoli",
+      "players": 5
+    },
+    {
       "team": "Al Qadsia",
       "players": 5
     },
@@ -7902,15 +7957,7 @@
       "players": 5
     },
     {
-      "team": "Brooklyn Kings",
-      "players": 5
-    },
-    {
       "team": "Busan KCC Egis",
-      "players": 5
-    },
-    {
-      "team": "Byblos Club",
       "players": 5
     },
     {
@@ -7938,11 +7985,19 @@
       "players": 5
     },
     {
-      "team": "Club San Carlos",
+      "team": "Collado Villalba",
       "players": 5
     },
     {
-      "team": "Collado Villalba",
+      "team": "Czarni Słupsk",
+      "players": 5
+    },
+    {
+      "team": "Dacin Tigers",
+      "players": 5
+    },
+    {
+      "team": "Denver Rockets / Nuggets",
       "players": 5
     },
     {
@@ -7994,10 +8049,6 @@
       "players": 5
     },
     {
-      "team": "Hebraica y Macabi",
-      "players": 5
-    },
-    {
       "team": "Ilysiakos",
       "players": 5
     },
@@ -8006,15 +8057,15 @@
       "players": 5
     },
     {
+      "team": "Karditsa",
+      "players": 5
+    },
+    {
       "team": "Kazma",
       "players": 5
     },
     {
       "team": "La Palma",
-      "players": 5
-    },
-    {
-      "team": "Legia Warsaw",
       "players": 5
     },
     {
@@ -8031,10 +8082,6 @@
     },
     {
       "team": "Liaoning Dinosaurs",
-      "players": 5
-    },
-    {
-      "team": "Lokomotiv Rostov",
       "players": 5
     },
     {
@@ -8066,10 +8113,6 @@
       "players": 5
     },
     {
-      "team": "Memphis Pros",
-      "players": 5
-    },
-    {
       "team": "Menorca Bàsquet",
       "players": 5
     },
@@ -8082,15 +8125,15 @@
       "players": 5
     },
     {
-      "team": "Napoli",
-      "players": 5
-    },
-    {
       "team": "New Mexico Slam",
       "players": 5
     },
     {
       "team": "New York Jewels",
+      "players": 5
+    },
+    {
+      "team": "Newcastle Falcons",
       "players": 5
     },
     {
@@ -8191,10 +8234,6 @@
     },
     {
       "team": "TED Ankara Kolejliler",
-      "players": 5
-    },
-    {
-      "team": "Tadamon Zouk",
       "players": 5
     },
     {
@@ -8382,6 +8421,14 @@
       "players": 4
     },
     {
+      "team": "Brooklyn Kings",
+      "players": 4
+    },
+    {
+      "team": "Byblos Club",
+      "players": 4
+    },
+    {
       "team": "Büyükçekmece",
       "players": 4
     },
@@ -8454,19 +8501,11 @@
       "players": 4
     },
     {
-      "team": "Correcaminos UAT Victoria",
+      "team": "Club San Carlos",
       "players": 4
     },
     {
       "team": "Crailsheim Merlins",
-      "players": 4
-    },
-    {
-      "team": "Czarni Słupsk",
-      "players": 4
-    },
-    {
-      "team": "Dacin Tigers",
       "players": 4
     },
     {
@@ -8475,10 +8514,6 @@
     },
     {
       "team": "Defensor Sporting",
-      "players": 4
-    },
-    {
-      "team": "Denver Rockets / Nuggets",
       "players": 4
     },
     {
@@ -8554,6 +8589,10 @@
       "players": 4
     },
     {
+      "team": "Hebraica y Macabi",
+      "players": 4
+    },
+    {
       "team": "Huesca La Magia",
       "players": 4
     },
@@ -8579,10 +8618,6 @@
     },
     {
       "team": "KTP-Basket",
-      "players": 4
-    },
-    {
-      "team": "Karditsa",
       "players": 4
     },
     {
@@ -8622,10 +8657,6 @@
       "players": 4
     },
     {
-      "team": "Lugano Tigers",
-      "players": 4
-    },
-    {
       "team": "Manisa BB",
       "players": 4
     },
@@ -8634,7 +8665,15 @@
       "players": 4
     },
     {
+      "team": "Maxima Roma",
+      "players": 4
+    },
+    {
       "team": "Melilla",
+      "players": 4
+    },
+    {
+      "team": "Memphis Pros",
       "players": 4
     },
     {
@@ -8786,6 +8825,10 @@
       "players": 4
     },
     {
+      "team": "Serapide Pozzuoli",
+      "players": 4
+    },
+    {
       "team": "Shabab Al Ahli",
       "players": 4
     },
@@ -8823,6 +8866,14 @@
     },
     {
       "team": "TBB Trier",
+      "players": 4
+    },
+    {
+      "team": "Tadamon Zouk",
+      "players": 4
+    },
+    {
+      "team": "Tainan TSG GhostHawks",
       "players": 4
     },
     {
@@ -8883,10 +8934,6 @@
     },
     {
       "team": "West Virginia Wheels",
-      "players": 4
-    },
-    {
-      "team": "Westchester Wildfire",
       "players": 4
     },
     {
@@ -9030,6 +9077,10 @@
       "players": 3
     },
     {
+      "team": "BC Roma",
+      "players": 3
+    },
+    {
       "team": "BK Skonto",
       "players": 3
     },
@@ -9051,6 +9102,10 @@
     },
     {
       "team": "Basket Mestre",
+      "players": 3
+    },
+    {
+      "team": "Basket Rimini Crabs",
       "players": 3
     },
     {
@@ -9142,6 +9197,10 @@
       "players": 3
     },
     {
+      "team": "Cimberio Novara",
+      "players": 3
+    },
+    {
       "team": "Ciudad de Huelva",
       "players": 3
     },
@@ -9171,6 +9230,10 @@
     },
     {
       "team": "Correbasket UAT",
+      "players": 3
+    },
+    {
+      "team": "Correcaminos UAT Victoria",
       "players": 3
     },
     {
@@ -9262,11 +9325,11 @@
       "players": 3
     },
     {
-      "team": "Guangzhou Liu Sui",
+      "team": "Guelph Nighthawks",
       "players": 3
     },
     {
-      "team": "Guelph Nighthawks",
+      "team": "Hamburg Towers",
       "players": 3
     },
     {
@@ -9358,6 +9421,10 @@
       "players": 3
     },
     {
+      "team": "Larisa",
+      "players": 3
+    },
+    {
       "team": "Las Vegas Dealers",
       "players": 3
     },
@@ -9386,7 +9453,7 @@
       "players": 3
     },
     {
-      "team": "MKS Dąbrowa Górnicza",
+      "team": "Lugano Tigers",
       "players": 3
     },
     {
@@ -9410,10 +9477,6 @@
       "players": 3
     },
     {
-      "team": "Maxima Roma",
-      "players": 3
-    },
-    {
       "team": "Merkezefendi Belediyesi Denizli",
       "players": 3
     },
@@ -9431,6 +9494,10 @@
     },
     {
       "team": "Montana Sky",
+      "players": 3
+    },
+    {
+      "team": "Montpellier Paillade",
       "players": 3
     },
     {
@@ -9562,10 +9629,6 @@
       "players": 3
     },
     {
-      "team": "Serapide Pozzuoli",
-      "players": 3
-    },
-    {
       "team": "Shaanxi Wolves",
       "players": 3
     },
@@ -9635,10 +9698,6 @@
     },
     {
       "team": "TNT Tropang Giga",
-      "players": 3
-    },
-    {
-      "team": "Tainan TSG GhostHawks",
       "players": 3
     },
     {
@@ -9715,6 +9774,10 @@
     },
     {
       "team": "Washington Tapers",
+      "players": 3
+    },
+    {
+      "team": "Westchester Wildfire",
       "players": 3
     },
     {
@@ -9862,6 +9925,10 @@
       "players": 2
     },
     {
+      "team": "Arka Gdynia",
+      "players": 2
+    },
+    {
       "team": "Arkansas Aeros",
       "players": 2
     },
@@ -9891,10 +9958,6 @@
     },
     {
       "team": "BC Odesa",
-      "players": 2
-    },
-    {
-      "team": "BC Roma",
       "players": 2
     },
     {
@@ -9930,19 +9993,11 @@
       "players": 2
     },
     {
-      "team": "Barcellona",
-      "players": 2
-    },
-    {
       "team": "Barranquilla",
       "players": 2
     },
     {
       "team": "Barreteros de Zacatecas",
-      "players": 2
-    },
-    {
-      "team": "Basket Rimini Crabs",
       "players": 2
     },
     {
@@ -9974,7 +10029,7 @@
       "players": 2
     },
     {
-      "team": "Best Balıkesir",
+      "team": "Bialetti Montecatini",
       "players": 2
     },
     {
@@ -10115,10 +10170,6 @@
     },
     {
       "team": "Chongqing Flying Dragons",
-      "players": 2
-    },
-    {
-      "team": "Cimberio Novara",
       "players": 2
     },
     {
@@ -10322,6 +10373,10 @@
       "players": 2
     },
     {
+      "team": "Freseros de Irapuato",
+      "players": 2
+    },
+    {
       "team": "Fresno Flames",
       "players": 2
     },
@@ -10374,15 +10429,15 @@
       "players": 2
     },
     {
+      "team": "Guangzhou Liu Sui",
+      "players": 2
+    },
+    {
       "team": "Guruyú Waston",
       "players": 2
     },
     {
       "team": "HKK Široki",
-      "players": 2
-    },
-    {
-      "team": "Hamburg Towers",
       "players": 2
     },
     {
@@ -10422,6 +10477,10 @@
       "players": 2
     },
     {
+      "team": "Hefei Storm",
+      "players": 2
+    },
+    {
       "team": "Heilongjiang Zhaozhou Fengshen",
       "players": 2
     },
@@ -10443,10 +10502,6 @@
     },
     {
       "team": "Hollywood Fame",
-      "players": 2
-    },
-    {
-      "team": "Hoops Club",
       "players": 2
     },
     {
@@ -10650,11 +10705,11 @@
       "players": 2
     },
     {
-      "team": "Larisa",
+      "team": "Las Fieras de La Villa",
       "players": 2
     },
     {
-      "team": "Las Fieras de La Villa",
+      "team": "Las Vegas Rattlers",
       "players": 2
     },
     {
@@ -10687,10 +10742,6 @@
     },
     {
       "team": "Limburg United",
-      "players": 2
-    },
-    {
-      "team": "Lions de Genève",
       "players": 2
     },
     {
@@ -10727,6 +10778,10 @@
     },
     {
       "team": "MKE Ankaragücü",
+      "players": 2
+    },
+    {
+      "team": "MKS Dąbrowa Górnicza",
       "players": 2
     },
     {
@@ -10802,10 +10857,6 @@
       "players": 2
     },
     {
-      "team": "Montpellier Paillade",
-      "players": 2
-    },
-    {
       "team": "Montreal Alliance",
       "players": 2
     },
@@ -10851,10 +10902,6 @@
     },
     {
       "team": "New Hampshire Thunder Loons",
-      "players": 2
-    },
-    {
-      "team": "New Jersey Flyers",
       "players": 2
     },
     {
@@ -10935,6 +10982,10 @@
     },
     {
       "team": "Pallacanestro Firenze",
+      "players": 2
+    },
+    {
+      "team": "Pallacanestro Messina",
       "players": 2
     },
     {
@@ -11426,6 +11477,10 @@
       "players": 2
     },
     {
+      "team": "Upea Capo D'Orlando",
+      "players": 2
+    },
+    {
       "team": "Uralmash",
       "players": 2
     },
@@ -11526,10 +11581,6 @@
       "players": 1
     },
     {
-      "team": "08 Stockholm",
-      "players": 1
-    },
-    {
       "team": "1939 Canarias",
       "players": 1
     },
@@ -11551,10 +11602,6 @@
     },
     {
       "team": "AB Latina",
-      "players": 1
-    },
-    {
-      "team": "ABBR - Avenir Basket Berck Rang du Fliers",
       "players": 1
     },
     {
@@ -11914,10 +11961,6 @@
       "players": 1
     },
     {
-      "team": "Antalya",
-      "players": 1
-    },
-    {
       "team": "Antalya Büyükşehir Belediyesi",
       "players": 1
     },
@@ -11954,7 +11997,7 @@
       "players": 1
     },
     {
-      "team": "Arka Gdynia",
+      "team": "Arimo Bologna",
       "players": 1
     },
     {
@@ -12202,6 +12245,10 @@
       "players": 1
     },
     {
+      "team": "Barcellona",
+      "players": 1
+    },
+    {
       "team": "Barons LMT",
       "players": 1
     },
@@ -12250,10 +12297,6 @@
       "players": 1
     },
     {
-      "team": "Bayside Blues",
-      "players": 1
-    },
-    {
       "team": "Beijing Aoshen Olympians",
       "players": 1
     },
@@ -12263,10 +12306,6 @@
     },
     {
       "team": "Beitar Ramat Gan",
-      "players": 1
-    },
-    {
-      "team": "Bejje SC",
       "players": 1
     },
     {
@@ -12294,11 +12333,11 @@
       "players": 1
     },
     {
-      "team": "Beverly Hills",
+      "team": "Best Balıkesir",
       "players": 1
     },
     {
-      "team": "Bialetti Montecatini",
+      "team": "Beverly Hills",
       "players": 1
     },
     {
@@ -12383,10 +12422,6 @@
     },
     {
       "team": "Boulazac BD",
-      "players": 1
-    },
-    {
-      "team": "Brampton A's",
       "players": 1
     },
     {
@@ -12562,6 +12597,10 @@
       "players": 1
     },
     {
+      "team": "CB León",
+      "players": 1
+    },
+    {
       "team": "CB Mataró",
       "players": 1
     },
@@ -12711,6 +12750,10 @@
     },
     {
       "team": "Caribbean Storm Islands",
+      "players": 1
+    },
+    {
+      "team": "Carifabriano",
       "players": 1
     },
     {
@@ -13302,6 +13345,10 @@
       "players": 1
     },
     {
+      "team": "Estela",
+      "players": 1
+    },
+    {
       "team": "Estrelas da Avenida",
       "players": 1
     },
@@ -13446,10 +13493,6 @@
       "players": 1
     },
     {
-      "team": "Freseros de Irapuato",
-      "players": 1
-    },
-    {
       "team": "Fresno Heatwave",
       "players": 1
     },
@@ -13551,10 +13594,6 @@
     },
     {
       "team": "Gimnasia La Plata",
-      "players": 1
-    },
-    {
-      "team": "Gippsland Lakers",
       "players": 1
     },
     {
@@ -13762,10 +13801,6 @@
       "players": 1
     },
     {
-      "team": "Hefei Storm",
-      "players": 1
-    },
-    {
       "team": "Heilongjiang Fengshen",
       "players": 1
     },
@@ -13838,6 +13873,10 @@
       "players": 1
     },
     {
+      "team": "Hong Kong Canton Liberty",
+      "players": 1
+    },
+    {
       "team": "Hong Kong Eastern",
       "players": 1
     },
@@ -13847,6 +13886,10 @@
     },
     {
       "team": "Hong Kong Flying Dragons",
+      "players": 1
+    },
+    {
+      "team": "Hoops Club",
       "players": 1
     },
     {
@@ -14198,10 +14241,6 @@
       "players": 1
     },
     {
-      "team": "Kapfenberg Bulls",
-      "players": 1
-    },
-    {
       "team": "Karlovac",
       "players": 1
     },
@@ -14410,10 +14449,6 @@
       "players": 1
     },
     {
-      "team": "Las Vegas Rattlers",
-      "players": 1
-    },
-    {
       "team": "Las Vegas Venom",
       "players": 1
     },
@@ -14486,6 +14521,10 @@
       "players": 1
     },
     {
+      "team": "Lions de Genève",
+      "players": 1
+    },
+    {
       "team": "Lirija",
       "players": 1
     },
@@ -14542,6 +14581,10 @@
       "players": 1
     },
     {
+      "team": "Lotus Montecatini",
+      "players": 1
+    },
+    {
       "team": "Louaize",
       "players": 1
     },
@@ -14563,10 +14606,6 @@
     },
     {
       "team": "Luz y Fuerza",
-      "players": 1
-    },
-    {
-      "team": "Löwen Braunschweig",
       "players": 1
     },
     {
@@ -14778,15 +14817,7 @@
       "players": 1
     },
     {
-      "team": "Minnesota Vikings",
-      "players": 1
-    },
-    {
       "team": "Minorca",
-      "players": 1
-    },
-    {
-      "team": "Mississauga Power",
       "players": 1
     },
     {
@@ -14974,6 +15005,10 @@
       "players": 1
     },
     {
+      "team": "New Jersey Flyers",
+      "players": 1
+    },
+    {
       "team": "New Jersey Turnpike",
       "players": 1
     },
@@ -15099,10 +15134,6 @@
     },
     {
       "team": "Oakland Oaks / Washington Caps / Virginia Squires",
-      "players": 1
-    },
-    {
-      "team": "Oberwart Gunners",
       "players": 1
     },
     {
@@ -15286,10 +15317,6 @@
       "players": 1
     },
     {
-      "team": "Pallacanestro Messina",
-      "players": 1
-    },
-    {
       "team": "Pallacanestro Nardò",
       "players": 1
     },
@@ -15323,6 +15350,10 @@
     },
     {
       "team": "Pardis Mottahed Qazvin BC",
+      "players": 1
+    },
+    {
+      "team": "Paris Racing",
       "players": 1
     },
     {
@@ -15467,6 +15498,10 @@
     },
     {
       "team": "Polski Cukier Toruń",
+      "players": 1
+    },
+    {
+      "team": "Polti Cantù",
       "players": 1
     },
     {
@@ -16043,10 +16078,6 @@
     },
     {
       "team": "Select Avellino",
-      "players": 1
-    },
-    {
-      "team": "Sellbytel Baskets Nürnberg",
       "players": 1
     },
     {
@@ -16822,11 +16853,7 @@
       "players": 1
     },
     {
-      "team": "Upea Capo D'Orlando",
-      "players": 1
-    },
-    {
-      "team": "Ura Basket",
+      "team": "Upea Capo d'Orlando",
       "players": 1
     },
     {
@@ -17098,10 +17125,6 @@
       "players": 1
     },
     {
-      "team": "World League of American Football",
-      "players": 1
-    },
-    {
       "team": "Wuhan Kunpeng",
       "players": 1
     },
@@ -17139,10 +17162,6 @@
     },
     {
       "team": "Yulon Luxgen DinosYulon",
-      "players": 1
-    },
-    {
-      "team": "Yunnan Honghe",
       "players": 1
     },
     {
@@ -17478,19 +17497,6 @@
       ]
     },
     {
-      "team": "Valley Suns",
-      "count": 7,
-      "players": [
-        "David Stockton",
-        "Isaiah Livers",
-        "JaQuori McLaughlin",
-        "Kennedy Chandler",
-        "Paul Watson",
-        "RJ Nembhard",
-        "Sean McDermott"
-      ]
-    },
-    {
       "team": "Aris Thessaloniki",
       "count": 6,
       "players": [
@@ -17536,6 +17542,18 @@
         "Shaquille Harrison",
         "Troy Caupain",
         "Xavier Tillman"
+      ]
+    },
+    {
+      "team": "Valley Suns",
+      "count": 6,
+      "players": [
+        "David Stockton",
+        "Isaiah Livers",
+        "JaQuori McLaughlin",
+        "Kennedy Chandler",
+        "RJ Nembhard",
+        "Sean McDermott"
       ]
     },
     {
@@ -17677,6 +17695,16 @@
       ]
     },
     {
+      "team": "Guangzhou Loong Lions",
+      "count": 4,
+      "players": [
+        "George King",
+        "Justin Holiday",
+        "Keifer Sykes",
+        "Moses Brown"
+      ]
+    },
+    {
       "team": "Illawarra Hawks",
       "count": 4,
       "players": [
@@ -17694,6 +17722,16 @@
         "BJ Johnson",
         "Jeremiah Martin",
         "Trevelin Queen"
+      ]
+    },
+    {
+      "team": "Maxima Roma",
+      "count": 4,
+      "players": [
+        "Aaron Holiday",
+        "Hunter Tyson",
+        "Vernon Carey",
+        "Xavier Moon"
       ]
     },
     {
@@ -17843,6 +17881,15 @@
       ]
     },
     {
+      "team": "BC Roma",
+      "count": 3,
+      "players": [
+        "Nico Mannion",
+        "Paul Watson",
+        "Trentyn Flowers"
+      ]
+    },
+    {
       "team": "Bahçeşehir Koleji",
       "count": 3,
       "players": [
@@ -17915,15 +17962,6 @@
       ]
     },
     {
-      "team": "Guangzhou Loong Lions",
-      "count": 3,
-      "players": [
-        "George King",
-        "Justin Holiday",
-        "Keifer Sykes"
-      ]
-    },
-    {
       "team": "Leones de Ponce",
       "count": 3,
       "players": [
@@ -17960,21 +17998,21 @@
       ]
     },
     {
-      "team": "Maxima Roma",
-      "count": 3,
-      "players": [
-        "Aaron Holiday",
-        "Hunter Tyson",
-        "Xavier Moon"
-      ]
-    },
-    {
       "team": "Minas",
       "count": 3,
       "players": [
         "Luis Montero",
         "Scott Machado",
         "Tim Frazier"
+      ]
+    },
+    {
+      "team": "Napoli",
+      "count": 3,
+      "players": [
+        "Jack White",
+        "Jahmi'us Ramsey",
+        "Jeff Dowtin"
       ]
     },
     {
@@ -18140,15 +18178,6 @@
       ]
     },
     {
-      "team": "Xinjiang",
-      "count": 3,
-      "players": [
-        "Kevon Harris",
-        "Louis King",
-        "Rob Edwards"
-      ]
-    },
-    {
       "team": "Zhejiang Golden Bulls",
       "count": 3,
       "players": [
@@ -18198,11 +18227,11 @@
       ]
     },
     {
-      "team": "BC Roma",
+      "team": "Austin Spurs",
       "count": 2,
       "players": [
-        "Nico Mannion",
-        "Trentyn Flowers"
+        "Elfrid Payton",
+        "Terry Taylor"
       ]
     },
     {
@@ -18323,6 +18352,14 @@
       "players": [
         "Jamaal Franklin",
         "Kylor Kelley"
+      ]
+    },
+    {
+      "team": "Criollos de Caguas",
+      "count": 2,
+      "players": [
+        "Louis King",
+        "Moe Harkless"
       ]
     },
     {
@@ -18510,14 +18547,6 @@
       ]
     },
     {
-      "team": "Napoli",
-      "count": 2,
-      "players": [
-        "Jahmi'us Ramsey",
-        "Jeff Dowtin"
-      ]
-    },
-    {
       "team": "Noblesville Boom",
       "count": 2,
       "players": [
@@ -18558,6 +18587,14 @@
       ]
     },
     {
+      "team": "Pallacanestro Varese",
+      "count": 2,
+      "players": [
+        "David Duke",
+        "Isaiah Roby"
+      ]
+    },
+    {
       "team": "Peñarol",
       "count": 2,
       "players": [
@@ -18595,6 +18632,14 @@
       "players": [
         "Charlie Brown",
         "Patrick McCaw"
+      ]
+    },
+    {
+      "team": "Rio Grande Valley Vipers",
+      "count": 2,
+      "players": [
+        "Daishen Nix",
+        "Phillip Wheeler"
       ]
     },
     {
@@ -18702,6 +18747,22 @@
       ]
     },
     {
+      "team": "Windy City Bulls",
+      "count": 2,
+      "players": [
+        "Drew Peterson",
+        "Kevin Knox"
+      ]
+    },
+    {
+      "team": "Xinjiang",
+      "count": 2,
+      "players": [
+        "Kevon Harris",
+        "Rob Edwards"
+      ]
+    },
+    {
       "team": "Zaragoza",
       "count": 2,
       "players": [
@@ -18803,13 +18864,6 @@
       ]
     },
     {
-      "team": "Austin Spurs",
-      "count": 1,
-      "players": [
-        "Elfrid Payton"
-      ]
-    },
-    {
       "team": "Avtodor Saratov",
       "count": 1,
       "players": [
@@ -18880,13 +18934,6 @@
       ]
     },
     {
-      "team": "Brisbane Bullets",
-      "count": 1,
-      "players": [
-        "Terry Taylor"
-      ]
-    },
-    {
       "team": "Brose Bamberg",
       "count": 1,
       "players": [
@@ -18933,13 +18980,6 @@
       "count": 1,
       "players": [
         "Samardo Samuels"
-      ]
-    },
-    {
-      "team": "Criollos de Caguas",
-      "count": 1,
-      "players": [
-        "Moe Harkless"
       ]
     },
     {
@@ -19027,6 +19067,13 @@
       ]
     },
     {
+      "team": "Freseros de Irapuato",
+      "count": 1,
+      "players": [
+        "Billy Garrett"
+      ]
+    },
+    {
       "team": "Fuerza Regia",
       "count": 1,
       "players": [
@@ -19058,7 +19105,7 @@
       "team": "Grand Rapids Gold",
       "count": 1,
       "players": [
-        "Moses Brown"
+        "Emanuel Miller"
       ]
     },
     {
@@ -19398,13 +19445,6 @@
       ]
     },
     {
-      "team": "Mersin MSK",
-      "count": 1,
-      "players": [
-        "Jack White"
-      ]
-    },
-    {
       "team": "Mexico City Capitanes",
       "count": 1,
       "players": [
@@ -19489,13 +19529,6 @@
       ]
     },
     {
-      "team": "Pallacanestro Varese",
-      "count": 1,
-      "players": [
-        "Isaiah Roby"
-      ]
-    },
-    {
       "team": "Panionios",
       "count": 1,
       "players": [
@@ -19577,13 +19610,6 @@
       "count": 1,
       "players": [
         "Elijah Hughes"
-      ]
-    },
-    {
-      "team": "Rio Grande Valley Vipers",
-      "count": 1,
-      "players": [
-        "Daishen Nix"
       ]
     },
     {
@@ -19741,6 +19767,13 @@
       ]
     },
     {
+      "team": "Tainan TSG GhostHawks",
+      "count": 1,
+      "players": [
+        "Ray McCallum"
+      ]
+    },
+    {
       "team": "Taipei Fubon Braves",
       "count": 1,
       "players": [
@@ -19860,13 +19893,6 @@
       ]
     },
     {
-      "team": "Windy City Bulls",
-      "count": 1,
-      "players": [
-        "Kevin Knox"
-      ]
-    },
-    {
       "team": "Wonju DB Promy",
       "count": 1,
       "players": [
@@ -19912,11 +19938,11 @@
   "countries_live_snapshot": [
     {
       "country": "USA",
-      "count": 55
+      "count": 58
     },
     {
       "country": "Turkey",
-      "count": 53
+      "count": 52
     },
     {
       "country": "Spain",
@@ -19931,6 +19957,10 @@
       "count": 41
     },
     {
+      "country": "Italy",
+      "count": 41
+    },
+    {
       "country": "Greece",
       "count": 39
     },
@@ -19939,24 +19969,20 @@
       "count": 38
     },
     {
-      "country": "Italy",
-      "count": 37
-    },
-    {
       "country": "France",
       "count": 27
     },
     {
       "country": "Australia",
-      "count": 26
+      "count": 25
     },
     {
       "country": "Puerto Rico",
-      "count": 21
+      "count": 22
     },
     {
       "country": "Mexico",
-      "count": 18
+      "count": 19
     },
     {
       "country": "Germany",
@@ -19967,15 +19993,15 @@
       "count": 15
     },
     {
+      "country": "Taiwan",
+      "count": 14
+    },
+    {
       "country": "UAE",
       "count": 14
     },
     {
       "country": "Russia",
-      "count": 13
-    },
-    {
-      "country": "Taiwan",
       "count": 13
     },
     {
@@ -20146,15 +20172,15 @@
   "countries_alltime_alumni": [
     {
       "country": "USA",
-      "players": 5061
+      "players": 5076
     },
     {
       "country": "Italy",
-      "players": 936
+      "players": 943
     },
     {
       "country": "Spain",
-      "players": 820
+      "players": 823
     },
     {
       "country": "France",
@@ -20162,19 +20188,19 @@
     },
     {
       "country": "Greece",
-      "players": 533
+      "players": 536
     },
     {
       "country": "Canada",
-      "players": 525
+      "players": 527
     },
     {
       "country": "Turkey",
-      "players": 521
+      "players": 522
     },
     {
       "country": "Israel",
-      "players": 461
+      "players": 463
     },
     {
       "country": "China",
@@ -20186,7 +20212,7 @@
     },
     {
       "country": "Germany",
-      "players": 305
+      "players": 304
     },
     {
       "country": "Russia",
@@ -20198,7 +20224,7 @@
     },
     {
       "country": "Australia",
-      "players": 210
+      "players": 209
     },
     {
       "country": "Japan",
@@ -20210,7 +20236,7 @@
     },
     {
       "country": "Philippines",
-      "players": 175
+      "players": 176
     },
     {
       "country": "Argentina",
@@ -20222,26 +20248,26 @@
     },
     {
       "country": "Poland",
-      "players": 136
+      "players": 137
     },
     {
       "country": "Lithuania",
-      "players": 132
+      "players": 133
     },
     {
       "country": "Lebanon",
-      "players": 124
-    },
-    {
-      "country": "Belgium",
-      "players": 99
+      "players": 123
     },
     {
       "country": "South Korea",
       "players": 99
     },
     {
-      "country": "Croatia",
+      "country": "Belgium",
+      "players": 98
+    },
+    {
+      "country": "Taiwan",
       "players": 84
     },
     {
@@ -20249,12 +20275,12 @@
       "players": 84
     },
     {
-      "country": "Taiwan",
-      "players": 82
+      "country": "Croatia",
+      "players": 83
     },
     {
       "country": "Dominican Republic",
-      "players": 66
+      "players": 65
     },
     {
       "country": "Iran",
@@ -20274,7 +20300,7 @@
     },
     {
       "country": "Brazil",
-      "players": 47
+      "players": 46
     },
     {
       "country": "Portugal",
@@ -20282,7 +20308,7 @@
     },
     {
       "country": "Uruguay",
-      "players": 41
+      "players": 40
     },
     {
       "country": "Saudi Arabia",
@@ -20313,20 +20339,16 @@
       "players": 31
     },
     {
-      "country": "Sweden",
-      "players": 30
+      "country": "Qatar",
+      "players": 29
     },
     {
-      "country": "Qatar",
+      "country": "Sweden",
       "players": 29
     },
     {
       "country": "Latvia",
       "players": 27
-    },
-    {
-      "country": "Switzerland",
-      "players": 26
     },
     {
       "country": "Bulgaria",
@@ -20337,16 +20359,16 @@
       "players": 25
     },
     {
+      "country": "Switzerland",
+      "players": 25
+    },
+    {
       "country": "Kuwait",
       "players": 23
     },
     {
       "country": "Finland",
-      "players": 21
-    },
-    {
-      "country": "Bosnia and Herzegovina",
-      "players": 19
+      "players": 20
     },
     {
       "country": "Indonesia",
@@ -20361,6 +20383,10 @@
       "players": 18
     },
     {
+      "country": "Bosnia and Herzegovina",
+      "players": 17
+    },
+    {
       "country": "Czech Republic",
       "players": 17
     },
@@ -20373,16 +20399,16 @@
       "players": 13
     },
     {
-      "country": "Austria",
-      "players": 12
-    },
-    {
       "country": "Libya",
       "players": 11
     },
     {
       "country": "Mongolia",
       "players": 11
+    },
+    {
+      "country": "Austria",
+      "players": 10
     },
     {
       "country": "Colombia",
@@ -20393,16 +20419,16 @@
       "players": 10
     },
     {
-      "country": "Kazakhstan",
-      "players": 9
-    },
-    {
       "country": "Kosovo",
       "players": 9
     },
     {
       "country": "North Macedonia",
       "players": 9
+    },
+    {
+      "country": "Kazakhstan",
+      "players": 8
     },
     {
       "country": "Denmark",
@@ -22394,41 +22420,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Valley Suns",
-      "players": [
-        "David Stockton",
-        "Isaiah Livers",
-        "JaQuori McLaughlin",
-        "Kennedy Chandler",
-        "Paul Watson",
-        "RJ Nembhard",
-        "Sean McDermott"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "David Stockton",
-            "Kennedy Chandler"
-          ],
-          "shared_nba_franchises": [
-            "Utah Jazz"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Kennedy Chandler",
-            "Sean McDermott"
-          ],
-          "shared_nba_franchises": [
-            "Memphis Grizzlies"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Aris Thessaloniki",
       "players": [
         "Adam Mokoka",
@@ -22518,6 +22509,40 @@
           "players": [
             "Shaquille Harrison",
             "Xavier Tillman"
+          ],
+          "shared_nba_franchises": [
+            "Memphis Grizzlies"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Valley Suns",
+      "players": [
+        "David Stockton",
+        "Isaiah Livers",
+        "JaQuori McLaughlin",
+        "Kennedy Chandler",
+        "RJ Nembhard",
+        "Sean McDermott"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "David Stockton",
+            "Kennedy Chandler"
+          ],
+          "shared_nba_franchises": [
+            "Utah Jazz"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Kennedy Chandler",
+            "Sean McDermott"
           ],
           "shared_nba_franchises": [
             "Memphis Grizzlies"
@@ -22844,6 +22869,69 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Guangzhou Loong Lions",
+      "players": [
+        "George King",
+        "Justin Holiday",
+        "Keifer Sykes",
+        "Moses Brown"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "George King",
+            "Justin Holiday"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ],
+          "latest_stint_year": 2025
+        },
+        {
+          "players": [
+            "George King",
+            "Moses Brown"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Justin Holiday",
+            "Keifer Sykes"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Justin Holiday",
+            "Moses Brown"
+          ],
+          "shared_nba_franchises": [
+            "Dallas Mavericks",
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Keifer Sykes",
+            "Moses Brown"
+          ],
+          "shared_nba_franchises": [
+            "Indiana Pacers"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Illawarra Hawks",
       "players": [
         "Darius Days",
@@ -22870,6 +22958,28 @@
           ],
           "shared_nba_franchises": [
             "Orlando Magic"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Maxima Roma",
+      "players": [
+        "Aaron Holiday",
+        "Hunter Tyson",
+        "Vernon Carey",
+        "Xavier Moon"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Aaron Holiday",
+            "Vernon Carey"
+          ],
+          "shared_nba_franchises": [
+            "Washington Wizards"
           ],
           "latest_stint_year": 2026
         }
@@ -23060,6 +23170,16 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "BC Roma",
+      "players": [
+        "Nico Mannion",
+        "Paul Watson",
+        "Trentyn Flowers"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Bahçeşehir Koleji",
       "players": [
         "Damien Inglis",
@@ -23141,37 +23261,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Guangzhou Loong Lions",
-      "players": [
-        "George King",
-        "Justin Holiday",
-        "Keifer Sykes"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "George King",
-            "Justin Holiday"
-          ],
-          "shared_nba_franchises": [
-            "Dallas Mavericks"
-          ],
-          "latest_stint_year": 2025
-        },
-        {
-          "players": [
-            "Justin Holiday",
-            "Keifer Sykes"
-          ],
-          "shared_nba_franchises": [
-            "Indiana Pacers"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Leones de Ponce",
       "players": [
         "Aleem Ford",
@@ -23213,13 +23302,24 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Maxima Roma",
+      "team": "Napoli",
       "players": [
-        "Aaron Holiday",
-        "Hunter Tyson",
-        "Xavier Moon"
+        "Jack White",
+        "Jahmi'us Ramsey",
+        "Jeff Dowtin"
       ],
-      "shared_franchise_pairs": [],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Jahmi'us Ramsey",
+            "Jeff Dowtin"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
       "latest_stint_year": 2026
     },
     {
@@ -23455,10 +23555,10 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "BC Roma",
+      "team": "Austin Spurs",
       "players": [
-        "Nico Mannion",
-        "Trentyn Flowers"
+        "Elfrid Payton",
+        "Terry Taylor"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
@@ -23582,6 +23682,26 @@
         "Kylor Kelley"
       ],
       "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Criollos de Caguas",
+      "players": [
+        "Louis King",
+        "Moe Harkless"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Louis King",
+            "Moe Harkless"
+          ],
+          "shared_nba_franchises": [
+            "Sacramento Kings"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
       "latest_stint_year": 2026
     },
     {
@@ -23716,26 +23836,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Napoli",
-      "players": [
-        "Jahmi'us Ramsey",
-        "Jeff Dowtin"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Jahmi'us Ramsey",
-            "Jeff Dowtin"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Noblesville Boom",
       "players": [
         "Jordan Bell",
@@ -23792,6 +23892,26 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Pallacanestro Varese",
+      "players": [
+        "David Duke",
+        "Isaiah Roby"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "David Duke",
+            "Isaiah Roby"
+          ],
+          "shared_nba_franchises": [
+            "San Antonio Spurs"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Peñarol",
       "players": [
         "Charles Thomas",
@@ -23827,6 +23947,15 @@
           "latest_stint_year": 2026
         }
       ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Rio Grande Valley Vipers",
+      "players": [
+        "Daishen Nix",
+        "Phillip Wheeler"
+      ],
+      "shared_franchise_pairs": [],
       "latest_stint_year": 2026
     },
     {
@@ -23946,6 +24075,15 @@
       "players": [
         "Bobi Klintman",
         "Kessler Edwards"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Windy City Bulls",
+      "players": [
+        "Drew Peterson",
+        "Kevin Knox"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
@@ -24372,16 +24510,6 @@
       "latest_stint_year": 2025
     },
     {
-      "team": "Xinjiang",
-      "players": [
-        "Kevon Harris",
-        "Louis King",
-        "Rob Edwards"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2025
-    },
-    {
       "team": "Zhejiang Golden Bulls",
       "players": [
         "Dakari Johnson",
@@ -24609,6 +24737,15 @@
       "players": [
         "Anton Watson",
         "Drew Timme"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2025
+    },
+    {
+      "team": "Xinjiang",
+      "players": [
+        "Kevon Harris",
+        "Rob Edwards"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2025
@@ -26144,6 +26281,20 @@
             "1999",
             "2000",
             "2000-2001"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Bill Jones",
+      "teams": [
+        {
+          "team": "Quad City Thunder",
+          "stints": 3,
+          "years": [
+            "1988–1989",
+            "1989–1990",
+            "1994–1995"
           ]
         }
       ]
@@ -31802,6 +31953,19 @@
       ]
     },
     {
+      "player": "Brian Oliver",
+      "teams": [
+        {
+          "team": "Viola Reggio Calabria",
+          "stints": 2,
+          "years": [
+            "1996–1997",
+            "1999–2000"
+          ]
+        }
+      ]
+    },
+    {
       "player": "Brian Quinnett",
       "teams": [
         {
@@ -33391,35 +33555,6 @@
           "years": [
             "1990-1991",
             "1992-1993"
-          ]
-        }
-      ]
-    },
-    {
-      "player": "Corey Williams",
-      "teams": [
-        {
-          "team": "Brooklyn Kings",
-          "stints": 2,
-          "years": [
-            "2001",
-            "2003"
-          ]
-        },
-        {
-          "team": "Dakota Wizards",
-          "stints": 2,
-          "years": [
-            "1999",
-            "2007"
-          ]
-        },
-        {
-          "team": "Sioux Falls Skyforce",
-          "stints": 2,
-          "years": [
-            "2006",
-            "2007"
           ]
         }
       ]
@@ -36618,11 +36753,11 @@
       "player": "Eric Williams",
       "teams": [
         {
-          "team": "Pallacanestro Cantù",
+          "team": "Boston Celtics",
           "stints": 2,
           "years": [
-            "2006-2007",
-            "2014-2015"
+            "1995–1997",
+            "1999–2003"
           ]
         }
       ]
@@ -38666,8 +38801,8 @@
           "team": "Melbourne United",
           "stints": 2,
           "years": [
-            "2020-2022",
-            "2024-2025"
+            "2020–2022",
+            "2024–2025"
           ]
         }
       ]
@@ -39075,19 +39210,19 @@
       "player": "James Robinson",
       "teams": [
         {
-          "team": "Igokea",
+          "team": "Lokomotiv Rostov",
           "stints": 2,
           "years": [
-            "2016-2017",
-            "2021-2022"
+            "2001–2002",
+            "2003–2004"
           ]
         },
         {
-          "team": "Medi Bayreuth",
+          "team": "Minnesota Timberwolves",
           "stints": 2,
           "years": [
-            "2017-2018",
-            "2019-2020"
+            "1996–97",
+            "1999"
           ]
         }
       ]
@@ -43035,14 +43170,6 @@
       "player": "Louis King",
       "teams": [
         {
-          "team": "Mexico City Capitanes",
-          "stints": 2,
-          "years": [
-            "2024",
-            "2024"
-          ]
-        },
-        {
           "team": "Westchester Knicks",
           "stints": 2,
           "years": [
@@ -44579,21 +44706,6 @@
       ]
     },
     {
-      "player": "Mike Lynn",
-      "teams": [
-        {
-          "team": "Minnesota Vikings",
-          "stints": 2,
-          "years": [
-            "1974",
-            "1975-1990",
-            "1990-1992",
-            "1991-1992"
-          ]
-        }
-      ]
-    },
-    {
       "player": "Mike McCarron",
       "teams": [
         {
@@ -45048,7 +45160,7 @@
           "team": "Dallas Mavericks",
           "stints": 2,
           "years": [
-            "2021-2022",
+            "2021–22",
             "2025"
           ]
         },
@@ -45056,16 +45168,16 @@
           "team": "Portland Trail Blazers",
           "stints": 2,
           "years": [
-            "2019-2020",
-            "2023-2024"
+            "2019–20",
+            "2023–24"
           ]
         },
         {
           "team": "Texas Legends",
           "stints": 2,
           "years": [
-            "2019-2020",
-            "2021-2022"
+            "2019–2020",
+            "2021–2022"
           ]
         },
         {
@@ -45073,7 +45185,7 @@
           "stints": 2,
           "years": [
             "2023",
-            "2024-2025"
+            "2024–2025"
           ]
         }
       ]
@@ -45972,7 +46084,7 @@
           "team": "Raptors 905",
           "stints": 2,
           "years": [
-            "2019-2020",
+            "2019–2020",
             "2020"
           ]
         }
@@ -46223,6 +46335,19 @@
           "years": [
             "1956-1957",
             "1961-1962"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Phillip Wheeler",
+      "teams": [
+        {
+          "team": "Rio Grande Valley Vipers",
+          "stints": 2,
+          "years": [
+            "2021–2022",
+            "2026–present"
           ]
         }
       ]
@@ -49313,7 +49438,7 @@
           "stints": 2,
           "years": [
             "2021",
-            "2021-2023"
+            "2021–2023"
           ]
         }
       ]
@@ -51815,6 +51940,15 @@
         "last_updated": "2026-09-24"
       },
       {
+        "player": "Billy Garrett",
+        "current_team": "Freseros de Irapuato",
+        "city": "Irapuato",
+        "state": "",
+        "country": "Mexico",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
+      },
+      {
         "player": "BJ Boston",
         "current_team": "Fenerbahçe",
         "city": "Istanbul",
@@ -52472,6 +52606,15 @@
         "last_updated": "2026-09-23"
       },
       {
+        "player": "David Duke",
+        "current_team": "Pallacanestro Varese",
+        "city": "Varese",
+        "state": "",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
+      },
+      {
         "player": "David Johnson",
         "current_team": "Tasmania JackJumpers",
         "city": "Hobart",
@@ -52767,6 +52910,15 @@
         "country": "Japan",
         "in_coords": true,
         "last_updated": "2026-09-24"
+      },
+      {
+        "player": "Drew Peterson",
+        "current_team": "Windy City Bulls",
+        "city": "Hoffman Estates",
+        "state": "Illinois",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Duane Washington Jr",
@@ -53526,12 +53678,12 @@
       },
       {
         "player": "Jack White",
-        "current_team": "Mersin MSK",
-        "city": "Mersin",
+        "current_team": "Napoli",
+        "city": "Naples",
         "state": "",
-        "country": "Turkey",
+        "country": "Italy",
         "in_coords": true,
-        "last_updated": "2026-09-23"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Jacob Evans",
@@ -54858,12 +55010,12 @@
       },
       {
         "player": "Louis King",
-        "current_team": "Xinjiang",
-        "city": "Ürümqi",
+        "current_team": "Criollos de Caguas",
+        "city": "Caguas",
         "state": "",
-        "country": "China",
+        "country": "Puerto Rico",
         "in_coords": true,
-        "last_updated": "2026-09-23"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Luka Samanic",
@@ -55317,12 +55469,12 @@
       },
       {
         "player": "Moses Brown",
-        "current_team": "Grand Rapids Gold",
-        "city": "Grand Rapids",
-        "state": "Michigan",
-        "country": "USA",
+        "current_team": "Guangzhou Loong Lions",
+        "city": "Guangzhou",
+        "state": "",
+        "country": "China",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Moses Wright",
@@ -55631,6 +55783,15 @@
         "last_updated": "2026-09-24"
       },
       {
+        "player": "Paul Watson",
+        "current_team": "BC Roma",
+        "city": "Rome",
+        "state": "Lazio",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
+      },
+      {
         "player": "Paul Zipser",
         "current_team": "USC Heidelberg",
         "city": "Heidelberg",
@@ -55728,6 +55889,15 @@
         "country": "Israel",
         "in_coords": true,
         "last_updated": "2026-09-24"
+      },
+      {
+        "player": "Ray McCallum",
+        "current_team": "Tainan TSG GhostHawks",
+        "city": "Tainan City",
+        "state": "",
+        "country": "Taiwan",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Rayjon Tucker",
@@ -55934,7 +56104,7 @@
         "state": "Arizona",
         "country": "USA",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Sekou Doumbouya",
@@ -56208,12 +56378,12 @@
       },
       {
         "player": "Terry Taylor",
-        "current_team": "Brisbane Bullets",
-        "city": "Brisbane",
-        "state": "Queensland",
-        "country": "Australia",
+        "current_team": "Austin Spurs",
+        "city": "Austin",
+        "state": "Texas",
+        "country": "USA",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Thanasis Antetokounmpo",
@@ -56483,7 +56653,7 @@
         "state": "South Australia",
         "country": "Australia",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Troy Caupain",
@@ -56610,6 +56780,15 @@
         "country": "Israel",
         "in_coords": true,
         "last_updated": "2026-09-24"
+      },
+      {
+        "player": "Vernon Carey",
+        "current_team": "Maxima Roma",
+        "city": "Rome",
+        "state": "Lazio",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Vic Law",
@@ -56972,6 +57151,15 @@
         "last_updated": "2026-09-24"
       },
       {
+        "player": "Phillip Wheeler",
+        "current_team": "Rio Grande Valley Vipers",
+        "city": "Edinburg",
+        "state": "Texas",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
+      },
+      {
         "player": "Ulrich Chomche",
         "current_team": "Balkan Botevgrad",
         "city": "Botevgrad",
@@ -56988,6 +57176,15 @@
         "country": "USA",
         "in_coords": true,
         "last_updated": "2026-09-24"
+      },
+      {
+        "player": "Emanuel Miller",
+        "current_team": "Grand Rapids Gold",
+        "city": "Grand Rapids",
+        "state": "Michigan",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Luke Travers",
@@ -57225,8 +57422,8 @@
       }
     ],
     "coverage": {
-      "total": 646,
-      "in_coords": 588,
+      "total": 654,
+      "in_coords": 596,
       "missing_from_coords": 58,
       "missing_no_city": 22,
       "missing_city_absent_from_coords": 36,
@@ -57234,6 +57431,54 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Terry Taylor",
+      "from_team": "Brisbane Bullets",
+      "to_team": "Austin Spurs",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Phillip Wheeler",
+      "from_team": "Philadelphia 76ers",
+      "to_team": "Rio Grande Valley Vipers",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Paul Watson",
+      "from_team": "Valley Suns",
+      "to_team": "BC Roma",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Moses Brown",
+      "from_team": "Grand Rapids Gold",
+      "to_team": "Guangzhou Loong Lions",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Jack White",
+      "from_team": "Mersin MSK",
+      "to_team": "Napoli",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Emanuel Miller",
+      "from_team": "Chicago Bulls",
+      "to_team": "Grand Rapids Gold",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Drew Peterson",
+      "from_team": "Charlotte Hornets",
+      "to_team": "Windy City Bulls",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Billy Garrett",
+      "from_team": "Harlem Globetrotters",
+      "to_team": "Freseros de Irapuato",
+      "date": "2026-09-25"
+    },
     {
       "player": "Ricky Council IV",
       "from_team": "Rio Grande Valley Vipers",
@@ -57485,54 +57730,6 @@
       "from_team": "Boston Celtics",
       "to_team": "Shandong Hi-Speed Kirin",
       "date": "2026-09-09"
-    },
-    {
-      "player": "Elijah Hughes",
-      "from_team": "Gigantes de Carolina",
-      "to_team": "Riesen Ludwigsburg",
-      "date": "2026-09-07"
-    },
-    {
-      "player": "Amari Bailey",
-      "from_team": "Iowa Wolves",
-      "to_team": "Hapoel Jerusalem",
-      "date": "2026-09-07"
-    },
-    {
-      "player": "David Nwaba",
-      "from_team": "San-en NeoPhoenix",
-      "to_team": "Ryukyu Golden Kings",
-      "date": "2026-09-06"
-    },
-    {
-      "player": "Josh Reaves",
-      "from_team": "Rio Grande Valley Vipers",
-      "to_team": "Paisas",
-      "date": "2026-09-06"
-    },
-    {
-      "player": "Jabari Bird",
-      "from_team": "Oberá Tenis Club",
-      "to_team": "Johor Southern Tigers",
-      "date": "2026-09-06"
-    },
-    {
-      "player": "Grant Jerrett",
-      "from_team": "Utsunomiya Brex",
-      "to_team": "Ryukyu Golden Kings",
-      "date": "2026-09-06"
-    },
-    {
-      "player": "Bruno Caboclo",
-      "from_team": "Dubai Basketball",
-      "to_team": "Hapoel Tel Aviv",
-      "date": "2026-09-05"
-    },
-    {
-      "player": "Yuri Collins",
-      "from_team": "Ironi Ness Ziona",
-      "to_team": "Memphis Hustle",
-      "date": "2026-09-05"
     }
   ]
 }

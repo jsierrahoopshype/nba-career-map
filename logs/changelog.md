@@ -1,3 +1,34 @@
+## 2026-09-25 — override run
+
+- Players updated: **39** (0 new)
+- New teams discovered: **9**
+- Team moves detected: **8**
+- Detected-but-not-new stints held back: **10**
+- Club-name pairs held for review: **0**
+- Status changes: **12** (7 → overseas, 1 → retired)
+- Wikipedia requests: 55  ✅ queue complete (39 queued)
+- New teams: Arimo Bologna, CB León, Carifabriano, Estela, Hong Kong Canton Liberty, Lotus Montecatini, Paris Racing, Polti Cantù, Upea Capo d'Orlando
+  - Billy Garrett: Harlem Globetrotters → Freseros de Irapuato
+  - Drew Peterson: Charlotte Hornets → Windy City Bulls
+  - Emanuel Miller: Chicago Bulls → Grand Rapids Gold
+  - Jack White: Mersin MSK → Napoli
+  - Moses Brown: Grand Rapids Gold → Guangzhou Loong Lions
+  - Paul Watson: Valley Suns → BC Roma
+  - Phillip Wheeler: Philadelphia 76ers → Rio Grande Valley Vipers
+  - Terry Taylor: Brisbane Bullets → Austin Spurs
+  - Ace Bailey: [retired → nba_active]
+  - Andre Jackson: [retired → nba_active]
+  - Billy Garrett: [retired → overseas_active]
+  - Chris Youngblood: [retired → nba_active]
+  - David Duke: [retired → overseas_active]
+  - Drew Peterson: [nba_active → overseas_active]
+  - Emanuel Miller: [nba_active → overseas_active]
+  - Phillip Wheeler: [nba_active → overseas_active]
+  - Ray McCallum: [retired → overseas_active]
+  - Reggie Jackson: [nba_active → retired]
+  - Tre' Johnson: [retired → nba_active]
+  - Vernon Carey: [retired → overseas_active]
+
 ## 2026-09-24 — incremental run
 
 - Players updated: **480** (1 new)

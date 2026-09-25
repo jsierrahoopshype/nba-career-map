@@ -30079,6 +30079,266 @@
       "combined_names_left": 157,
       "start_dates_stamped": 0,
       "stints_reordered": 60
+    },
+    {
+      "date": "2026-09-25",
+      "mode": "override",
+      "players_updated": [
+        "AJ Green",
+        "Ace Bailey",
+        "Andre Jackson",
+        "Bill Jones",
+        "Billy Garrett",
+        "Brian Oliver",
+        "Charlie Black",
+        "Chris McNealy",
+        "Chris Youngblood",
+        "Corey Williams",
+        "David Duke",
+        "Drew Peterson",
+        "Emanuel Miller",
+        "Eric Williams",
+        "Jack White",
+        "James Robinson",
+        "Jay Miller",
+        "Johnny Simmons",
+        "Kenny McIntosh",
+        "Louis King",
+        "Mamadou N'diaye",
+        "Michael Phelps",
+        "Michael Porter",
+        "Mike Green",
+        "Mike Lynn",
+        "Moses Brown",
+        "Paul Watson",
+        "Phillip Wheeler",
+        "Ray Ellefson",
+        "Ray McCallum",
+        "Reggie Jackson",
+        "Ron Holland",
+        "Ryan Dunn",
+        "Sam Vincent",
+        "Sean McDermott",
+        "Terry Taylor",
+        "Tre' Johnson",
+        "Troy Brown",
+        "Vernon Carey"
+      ],
+      "new_players": [],
+      "new_teams": [
+        "Arimo Bologna",
+        "CB León",
+        "Carifabriano",
+        "Estela",
+        "Hong Kong Canton Liberty",
+        "Lotus Montecatini",
+        "Paris Racing",
+        "Polti Cantù",
+        "Upea Capo d'Orlando"
+      ],
+      "team_moves": [
+        {
+          "player": "Billy Garrett",
+          "from": "Harlem Globetrotters",
+          "to": "Freseros de Irapuato"
+        },
+        {
+          "player": "Drew Peterson",
+          "from": "Charlotte Hornets",
+          "to": "Windy City Bulls"
+        },
+        {
+          "player": "Emanuel Miller",
+          "from": "Chicago Bulls",
+          "to": "Grand Rapids Gold"
+        },
+        {
+          "player": "Jack White",
+          "from": "Mersin MSK",
+          "to": "Napoli"
+        },
+        {
+          "player": "Moses Brown",
+          "from": "Grand Rapids Gold",
+          "to": "Guangzhou Loong Lions"
+        },
+        {
+          "player": "Paul Watson",
+          "from": "Valley Suns",
+          "to": "BC Roma"
+        },
+        {
+          "player": "Phillip Wheeler",
+          "from": "Philadelphia 76ers",
+          "to": "Rio Grande Valley Vipers"
+        },
+        {
+          "player": "Terry Taylor",
+          "from": "Brisbane Bullets",
+          "to": "Austin Spurs"
+        }
+      ],
+      "spelling_review": [],
+      "old_stints": [
+        {
+          "player": "Bill Jones",
+          "from": "Gippsland Lakers",
+          "to": "Gaiteros del Zulia",
+          "reason": "stint starts 2000 ('2000–2001'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Brian Oliver",
+          "from": "Artland Dragons",
+          "to": "Cimberio Novara",
+          "reason": "stint starts 2007 ('2007'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Chris McNealy",
+          "from": "Ura Basket",
+          "to": "Granada",
+          "reason": "stint starts 1998 ('1998–1999'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Corey Williams",
+          "from": "Tadamon Zouk",
+          "to": "Dacin Tigers",
+          "reason": "stint starts 1995 ('1995–1998'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Eric Williams",
+          "from": "Lions de Genève",
+          "to": "Charlotte Bobcats",
+          "reason": "stint starts 2007 ('2007'), before the ledger opened in 2026"
+        },
+        {
+          "player": "James Robinson",
+          "from": "Igokea",
+          "to": "Las Vegas Rattlers",
+          "reason": "stint starts 2004 ('2004'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Louis King",
+          "from": "Xinjiang",
+          "to": "Criollos de Caguas",
+          "reason": "stint starts 2024 ('2024–present'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Mamadou N'diaye",
+          "from": "Correcaminos UAT Victoria",
+          "to": "Maccabi Haifa",
+          "reason": "stint starts 2010 ('2010'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Mike Green",
+          "from": "Igokea",
+          "to": "San Antonio Spurs",
+          "reason": "stint starts 1977 ('1977–1979'), before the ledger opened in 2026"
+        },
+        {
+          "player": "Mike Lynn",
+          "from": "Minnesota Vikings",
+          "to": "Buffalo Braves",
+          "reason": "stint starts 1970 ('1970–71'), before the ledger opened in 2026"
+        }
+      ],
+      "status_changes": [
+        {
+          "player": "Ace Bailey",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Andre Jackson",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Billy Garrett",
+          "from": "retired",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Chris Youngblood",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "David Duke",
+          "from": "retired",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Drew Peterson",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Emanuel Miller",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Phillip Wheeler",
+          "from": "nba_active",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Ray McCallum",
+          "from": "retired",
+          "to": "overseas_active"
+        },
+        {
+          "player": "Reggie Jackson",
+          "from": "nba_active",
+          "to": "retired"
+        },
+        {
+          "player": "Tre' Johnson",
+          "from": "retired",
+          "to": "nba_active"
+        },
+        {
+          "player": "Vernon Carey",
+          "from": "retired",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Billy Garrett",
+        "David Duke",
+        "Drew Peterson",
+        "Emanuel Miller",
+        "Phillip Wheeler",
+        "Ray McCallum",
+        "Vernon Carey"
+      ],
+      "newly_retired": [
+        "Reggie Jackson"
+      ],
+      "requests": 55,
+      "budget_exhausted": false,
+      "queue_size": 39,
+      "queue_completed": true,
+      "wrong_article": [],
+      "wrong_place": [
+        {
+          "team": "Upea Capo d'Orlando",
+          "date": "2026-09-25",
+          "reason": "the title redirected to another article",
+          "extract": "-> 'Orlandina Basket'"
+        },
+        {
+          "team": "Carifabriano",
+          "date": "2026-09-25",
+          "reason": "the title redirected to another article",
+          "extract": "-> 'Cassa di Risparmio di Fabriano e Cupramontana'"
+        }
+      ],
+      "combined_names_split": 0,
+      "combined_names_left": 156,
+      "start_dates_stamped": 0,
+      "stints_removed": 0,
+      "stints_reordered": 5
     }
   ]
 }
