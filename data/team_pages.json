@@ -5743,6 +5743,15 @@
           "nationality": "Croatia"
         },
         {
+          "player": "Tony Bradley",
+          "years": "2026",
+          "stint_team": "Atlanta Hawks",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Tony Delk",
           "years": "2004-2006",
           "stint_team": "Atlanta Hawks",
@@ -6851,8 +6860,8 @@
           "nationality": "French"
         }
       ],
-      "roster_count": 681,
-      "alumni_count": 634,
+      "roster_count": 682,
+      "alumni_count": 635,
       "related": [
         {
           "type": "club",
@@ -6862,7 +6871,7 @@
         {
           "type": "club",
           "name": "College Park Skyhawks",
-          "shared": 25
+          "shared": 26
         },
         {
           "type": "club",
@@ -6886,13 +6895,13 @@
         },
         {
           "type": "club",
-          "name": "Olimpia Milano",
+          "name": "Texas Legends",
           "shared": 13
         },
         {
           "type": "club",
-          "name": "Texas Legends",
-          "shared": 12
+          "name": "Olimpia Milano",
+          "shared": 13
         }
       ]
     },
@@ -17167,12 +17176,12 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2015-2016",
+          "years": "2015–16",
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "current_country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tim Bassett",
@@ -18318,9 +18327,9 @@
         {
           "player": "Thomas Robinson",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Timothe Luwawu",
@@ -21746,9 +21755,9 @@
           "player": "Wendell Moore",
           "years": "2025",
           "stint_team": "Charlotte Hornets",
-          "status": "nba_active",
-          "current_team": "Detroit Pistons",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Virtus Bologna",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -22285,9 +22294,9 @@
         },
         {
           "player": "Wendell Moore",
-          "status": "nba_active",
-          "current_team": "Detroit Pistons",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Virtus Bologna",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -26336,10 +26345,10 @@
         },
         {
           "player": "Tony Bradley",
-          "years": "2021-2023",
+          "years": "2021–2023",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -27152,7 +27161,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -36411,7 +36420,7 @@
         },
         {
           "player": "Walt Williams",
-          "years": "2002-2003",
+          "years": "2002–03",
           "stint_team": "Dallas Mavericks",
           "status": "retired",
           "current_team": "Dallas Mavericks",
@@ -40934,11 +40943,11 @@
         },
         {
           "player": "Thomas Welsh",
-          "years": "2018-2019",
+          "years": "2018–19",
           "stint_team": "Denver Nuggets",
           "status": "overseas_active",
-          "current_team": "Levanga Hokkaido",
-          "current_country": "Japan",
+          "current_team": "New Taipei Kings",
+          "current_country": "Taiwan",
           "nationality": "United States"
         },
         {
@@ -41812,8 +41821,8 @@
         {
           "player": "Thomas Welsh",
           "status": "overseas_active",
-          "current_team": "Levanga Hokkaido",
-          "country": "Japan",
+          "current_team": "New Taipei Kings",
+          "country": "Taiwan",
           "nationality": "United States"
         },
         {
@@ -47463,20 +47472,20 @@
         },
         {
           "player": "Wendell Moore",
-          "years": "2024-2025",
+          "years": "2024–25",
           "stint_team": "Detroit Pistons",
-          "status": "nba_active",
-          "current_team": "Detroit Pistons",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Virtus Bologna",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
           "player": "Wendell Moore",
-          "years": "2025-2026",
+          "years": "2025–26",
           "stint_team": "Detroit Pistons",
-          "status": "nba_active",
-          "current_team": "Detroit Pistons",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Virtus Bologna",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -48261,6 +48270,13 @@
           "status": "overseas_active",
           "current_team": "Yulon Luxgen DinosYulon",
           "country": "",
+          "nationality": "United States"
+        },
+        {
+          "player": "Wendell Moore",
+          "status": "overseas_active",
+          "current_team": "Virtus Bologna",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -51629,12 +51645,12 @@
         },
         {
           "player": "Kyle Anderson",
-          "years": "2024-2025",
+          "years": "2024–25",
           "stint_team": "Golden State Warriors",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "current_country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "LJ Cryer",
@@ -54179,9 +54195,9 @@
         {
           "player": "Kyle Anderson",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Lester Quinones",
@@ -58404,9 +58420,9 @@
           "years": "2013",
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "current_country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tierre Brown",
@@ -58663,7 +58679,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2016-2017",
+          "years": "2016–17",
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
           "current_team": "Hapoel Tel Aviv",
@@ -58784,7 +58800,7 @@
         },
         {
           "player": "Walt Williams",
-          "years": "1999-2002",
+          "years": "1999–2002",
           "stint_team": "Houston Rockets",
           "status": "retired",
           "current_team": "Dallas Mavericks",
@@ -58811,7 +58827,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2019-2020",
+          "years": "2019–20",
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
           "current_team": "Granada",
@@ -59424,9 +59440,9 @@
         {
           "player": "Thomas Robinson",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Toney Douglas",
@@ -62865,10 +62881,10 @@
         },
         {
           "player": "Tony Bradley",
-          "years": "2025-2026",
+          "years": "2025–2026",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -63112,7 +63128,7 @@
         },
         {
           "player": "Wil Jones",
-          "years": "1976-1977",
+          "years": "1976–77",
           "stint_team": "Indiana Pacers",
           "status": "retired",
           "current_team": "Buffalo Braves",
@@ -63595,6 +63611,13 @@
           "player": "Thomas Bryant",
           "status": "nba_active",
           "current_team": "Cleveland Cavaliers",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Tony Bradley",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -68515,7 +68538,7 @@
         },
         {
           "player": "Wil Jones",
-          "years": "1977-1978",
+          "years": "1977–78",
           "stint_team": "Buffalo Braves",
           "status": "retired",
           "current_team": "Buffalo Braves",
@@ -73969,12 +73992,12 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2016-2017",
+          "years": "2016–17",
           "stint_team": "Los Angeles Lakers",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "current_country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tierre Brown",
@@ -74194,7 +74217,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2017-2018",
+          "years": "2017–2018",
           "stint_team": "Los Angeles Lakers",
           "status": "overseas_active",
           "current_team": "Hapoel Tel Aviv",
@@ -75156,9 +75179,9 @@
         {
           "player": "Thomas Robinson",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Trey Jemison",
@@ -77040,12 +77063,21 @@
         },
         {
           "player": "Kyle Anderson",
-          "years": "2018-2022",
+          "years": "2018–2022",
           "stint_team": "Memphis Grizzlies",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "current_country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
+        },
+        {
+          "player": "Kyle Anderson",
+          "years": "2026",
+          "stint_team": "Memphis Grizzlies",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Kyle Lowry",
@@ -78685,9 +78717,9 @@
         {
           "player": "Kyle Anderson",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Lamar Stevens",
@@ -78992,7 +79024,7 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 335,
+      "roster_count": 336,
       "alumni_count": 324,
       "related": [
         {
@@ -80664,9 +80696,9 @@
           "years": "2025",
           "stint_team": "Miami Heat",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "current_country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Kyle Guy",
@@ -82343,9 +82375,9 @@
         {
           "player": "Kyle Anderson",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Kyle Guy",
@@ -87081,7 +87113,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2015-2016",
+          "years": "2015–2016",
           "stint_team": "Milwaukee Bucks",
           "status": "overseas_active",
           "current_team": "Hapoel Tel Aviv",
@@ -89509,12 +89541,21 @@
         },
         {
           "player": "Kyle Anderson",
-          "years": "2022-2024",
+          "years": "2022–2024",
           "stint_team": "Minnesota Timberwolves",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "current_country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
+        },
+        {
+          "player": "Kyle Anderson",
+          "years": "2026",
+          "stint_team": "Minnesota Timberwolves",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "LaMelo Ball",
@@ -90874,11 +90915,11 @@
         },
         {
           "player": "Wendell Moore",
-          "years": "2022-2024",
+          "years": "2022–2024",
           "stint_team": "Minnesota Timberwolves",
-          "status": "nba_active",
-          "current_team": "Detroit Pistons",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Virtus Bologna",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -91241,9 +91282,9 @@
         {
           "player": "Kyle Anderson",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Lance Stephenson",
@@ -91445,9 +91486,9 @@
         },
         {
           "player": "Wendell Moore",
-          "status": "nba_active",
-          "current_team": "Detroit Pistons",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Virtus Bologna",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -91460,7 +91501,7 @@
           "all_star_count": 2
         }
       ],
-      "roster_count": 333,
+      "roster_count": 334,
       "alumni_count": 316,
       "related": [
         {
@@ -104725,7 +104766,7 @@
           "years": "2021",
           "stint_team": "Oklahoma City Thunder",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -104760,10 +104801,10 @@
           "player": "Tyler Davis",
           "years": "2018",
           "stint_team": "Oklahoma City Thunder",
-          "status": "retired",
+          "status": "overseas_active",
           "current_team": "Osos de Manatí",
           "current_country": "Puerto Rico",
-          "nationality": "Puerto Rico"
+          "nationality": "American / Puerto Rican"
         },
         {
           "player": "Vasilije Micic",
@@ -105475,7 +105516,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -105492,6 +105533,13 @@
           "current_team": "Memphis Grizzlies",
           "country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Tyler Davis",
+          "status": "overseas_active",
+          "current_team": "Osos de Manatí",
+          "country": "Puerto Rico",
+          "nationality": "American / Puerto Rican"
         },
         {
           "player": "Vasilije Micic",
@@ -114474,9 +114522,9 @@
           "years": "2015",
           "stint_team": "Philadelphia 76ers",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "current_country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tiago Splitter",
@@ -114635,10 +114683,10 @@
         },
         {
           "player": "Tony Bradley",
-          "years": "2020-2021",
+          "years": "2020–21",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -115793,9 +115841,9 @@
         {
           "player": "Thomas Robinson",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tim Frazier",
@@ -115821,7 +115869,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -120137,7 +120185,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2014-2015",
+          "years": "2014–15",
           "stint_team": "Phoenix Suns",
           "status": "overseas_active",
           "current_team": "Hapoel Tel Aviv",
@@ -124677,12 +124725,12 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2013-2015",
+          "years": "2013–2015",
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "current_country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tim Frazier",
@@ -124893,7 +124941,7 @@
         },
         {
           "player": "Walt Williams",
-          "years": "1998-1999",
+          "years": "1998–1999",
           "stint_team": "Portland Trail Blazers",
           "status": "retired",
           "current_team": "Dallas Mavericks",
@@ -125541,9 +125589,9 @@
         {
           "player": "Thomas Robinson",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tim Frazier",
@@ -130712,12 +130760,12 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2012-2013",
+          "years": "2012–13",
           "stint_team": "Sacramento Kings",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "current_country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tiny Archibald",
@@ -131051,7 +131099,7 @@
         },
         {
           "player": "Walt Williams",
-          "years": "1992-1996",
+          "years": "1992–1996",
           "stint_team": "Sacramento Kings",
           "status": "retired",
           "current_team": "Dallas Mavericks",
@@ -131813,9 +131861,9 @@
         {
           "player": "Thomas Robinson",
           "status": "overseas_active",
-          "current_team": "Cangrejeros de Santurce",
+          "current_team": "Leones de Ponce",
           "country": "Puerto Rico",
-          "nationality": "United States"
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Toney Douglas",
@@ -134174,12 +134222,12 @@
         },
         {
           "player": "Kyle Anderson",
-          "years": "2014-2018",
+          "years": "2014–2018",
           "stint_team": "San Antonio Spurs",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "current_country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "LaMarcus Aldridge",
@@ -136166,9 +136214,9 @@
         {
           "player": "Kyle Anderson",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Lindy Waters III",
@@ -138059,6 +138107,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Kyle Anderson",
+          "years": "2026–present",
+          "stint_team": "Toronto Raptors",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
+        },
+        {
           "player": "Kyle Lowry",
           "years": "2012–2021",
           "stint_team": "Toronto Raptors",
@@ -139271,7 +139328,7 @@
         },
         {
           "player": "Walt Williams",
-          "years": "1996-1998",
+          "years": "1996–1998",
           "stint_team": "Toronto Raptors",
           "status": "retired",
           "current_team": "Dallas Mavericks",
@@ -139926,8 +139983,8 @@
           "nationality": "Japan"
         }
       ],
-      "roster_count": 326,
-      "alumni_count": 312,
+      "roster_count": 327,
+      "alumni_count": 313,
       "related": [
         {
           "type": "club",
@@ -142131,12 +142188,12 @@
         },
         {
           "player": "Kyle Anderson",
-          "years": "2025-2026",
+          "years": "2025–26",
           "stint_team": "Utah Jazz",
           "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "current_country": "USA",
-          "nationality": "China"
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Kyle Filipowski",
@@ -143372,10 +143429,10 @@
         },
         {
           "player": "Tony Bradley",
-          "years": "2017-2020",
+          "years": "2017–2020",
           "stint_team": "Utah Jazz",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -143968,6 +144025,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Kyle Anderson",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "country": "Canada",
+          "nationality": "American / Chinese"
+        },
+        {
           "player": "Leandro Bolmaro",
           "status": "overseas_active",
           "current_team": "Olimpia Milano",
@@ -144163,7 +144227,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Indiana Pacers",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },

@@ -2,7 +2,7 @@
   "counts": {
     "date_disagreement": 162,
     "still_missing": 10,
-    "wikipedia_url_wrong_person": 67,
+    "wikipedia_url_wrong_person": 66,
     "wrong_entity": 182,
     "wrong_entity_replaced": 138
   },
@@ -1988,13 +1988,6 @@
       "rejected_wikidata_id": "Q6396624",
       "wikipedia_title": "Kevin Jones",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Jones"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Kyle Anderson",
-      "rejected_wikidata_id": "Q6451038",
-      "wikipedia_title": "Kyle Anderson",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kyle_Anderson"
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",

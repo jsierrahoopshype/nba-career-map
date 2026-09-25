@@ -1,5 +1,22 @@
 ## 2026-09-25 — override run
 
+- Players updated: **155** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **5**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 203  ✅ queue complete (155 queued)
+  - Kyle Anderson: Utah Jazz → Toronto Raptors
+  - Thomas Robinson: Cangrejeros de Santurce → Leones de Ponce
+  - Thomas Welsh: Levanga Hokkaido → New Taipei Kings
+  - Tony Bradley: Indiana Pacers → Atlanta Hawks
+  - Wendell Moore: Detroit Pistons → Virtus Bologna
+  - Tyler Davis: [retired → overseas_active]
+  - Wendell Moore: [nba_active → overseas_active]
+
+## 2026-09-25 — override run
+
 - Players updated: **142** (0 new)
 - New teams discovered: **14**
 - Team moves detected: **36**

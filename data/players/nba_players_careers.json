@@ -193045,64 +193045,113 @@
   },
   {
     "player": "Kyle Anderson",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Kyle_Anderson",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kyle_Anderson_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2014-2018",
         "team": "San Antonio Spurs",
+        "team_raw": "San Antonio Spurs",
+        "years": "2014–2018",
         "city": "San Antonio",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2014-2015",
         "team": "Austin Spurs",
+        "team_raw": "Austin Spurs",
+        "years": "2014–2015",
+        "loan": true,
         "city": "Austin",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2018-2022",
         "team": "Memphis Grizzlies",
+        "team_raw": "Memphis Grizzlies",
+        "years": "2018–2022",
         "city": "Memphis",
         "state": "Tennessee",
         "country": "USA"
       },
       {
-        "years": "2022-2024",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2022–2024",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2024–25",
         "city": "San Francisco",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2025",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2025",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Utah Jazz",
+        "team_raw": "Utah Jazz",
+        "years": "2025–26",
         "city": "Salt Lake City",
         "state": "Utah",
         "country": "USA"
+      },
+      {
+        "team": "Memphis Grizzlies",
+        "team_raw": "Memphis Grizzlies",
+        "years": "2026",
+        "city": "Memphis",
+        "state": "Tennessee",
+        "country": "USA"
+      },
+      {
+        "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2026",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "USA"
+      },
+      {
+        "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "2026–present",
+        "city": "Toronto",
+        "state": "Ontario",
+        "country": "Canada"
       }
     ],
-    "current_team": "Utah Jazz",
+    "current_team": "Toronto Raptors",
     "status": "nba_active",
-    "display_name": "Kyle Anderson",
-    "last_updated": "2026-08-26",
-    "nationality": "China"
+    "display_name": "Kyle Anderson (basketball)",
+    "last_updated": "2026-09-25",
+    "nationality": "American / Chinese",
+    "position": "Power forward / small forward",
+    "number": [
+      "13"
+    ],
+    "birth_date": "1993-09-20",
+    "birth_place": "New York City, New York, U.S.",
+    "high_school": "* Paterson Catholic, (Paterson, New Jersey) * St. Anthony, (Jersey City, New Jersey)",
+    "college": "UCLA (2012–2014)",
+    "draft": {
+      "year": "2014",
+      "round": "1",
+      "pick": "30",
+      "team": "San Antonio Spurs"
+    },
+    "aliases": [
+      "Kyle Anderson (basketball)"
+    ]
   },
   {
     "player": "Kyle Collinsworth",
@@ -297476,272 +297525,376 @@
   },
   {
     "player": "Thomas Robinson",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_Robinson",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_Robinson_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2012-2013",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2012–13",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2013",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2013",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2013-2015",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "2013–2015",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "2015",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2015",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2015-2016",
         "team": "Brooklyn Nets",
+        "team_raw": "Brooklyn Nets",
+        "years": "2015–16",
         "city": "Brooklyn",
         "state": "New York",
         "country": "USA"
       },
       {
-        "years": "2016-2017",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2016–17",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2017-2018",
         "team": "Khimki",
+        "team_raw": "Khimki",
+        "years": "2017–2018",
         "city": "Khimki",
         "state": "",
         "country": "Russia"
       },
       {
-        "years": "2018-2019",
         "team": "Beikong Fly Dragons",
+        "team_raw": "Beikong Fly Dragons",
+        "years": "2018–2019",
         "city": "Beijing",
         "state": "",
         "country": "China"
       },
       {
-        "years": "2019",
         "team": "Maine Red Claws",
+        "team_raw": "Maine Red Claws",
+        "years": "2019",
         "city": "Portland",
         "state": "Maine",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Sichuan Blue Whales",
+        "team_raw": "Sichuan Blue Whales",
+        "years": "2019–2020",
         "city": "Chengdu",
         "state": "",
         "country": "China"
       },
       {
-        "years": "2020",
         "team": "Khimki",
+        "team_raw": "Khimki",
+        "years": "2020",
         "city": "Khimki",
         "state": "",
         "country": "Russia"
       },
       {
-        "years": "2020-2021",
         "team": "Bahçeşehir Koleji",
+        "team_raw": "Bahçeşehir Koleji",
+        "years": "2020–2021",
         "city": "Istanbul",
         "state": "",
         "country": "Turkey"
       },
       {
-        "years": "2021",
         "team": "Cangrejeros de Santurce",
+        "team_raw": "Cangrejeros de Santurce",
+        "years": "2021",
         "city": "San Juan",
         "state": "",
         "country": "Puerto Rico"
       },
       {
-        "years": "2021-2022",
         "team": "Seoul Samsung Thunders",
+        "team_raw": "Seoul Samsung Thunders",
+        "years": "2021–2022",
         "city": "Seoul",
         "state": "",
         "country": "South Korea"
       },
       {
-        "years": "2022",
         "team": "Piratas de Quebradillas",
+        "team_raw": "Piratas de Quebradillas",
+        "years": "2022",
         "city": "Quebradillas",
         "state": "",
         "country": "Puerto Rico"
       },
       {
-        "years": "2022-2023",
         "team": "Real Estelí",
+        "team_raw": "Real Estelí",
+        "years": "2022–2023",
         "city": "Estelí",
         "state": "",
         "country": "Nicaragua"
       },
       {
-        "years": "2023",
         "team": "Grises de Humacao",
+        "team_raw": "Grises de Humacao",
+        "years": "2023",
         "city": "Humacao",
         "state": "",
         "country": "Puerto Rico"
       },
       {
-        "years": "2023",
         "team": "Capitanes de Arecibo",
+        "team_raw": "Capitanes de Arecibo",
+        "years": "2023",
         "city": "Arecibo",
         "state": "",
         "country": "Puerto Rico"
       },
       {
-        "years": "2023",
         "team": "Cariduros de Fajardo",
+        "team_raw": "Cariduros de Fajardo",
+        "years": "2023",
         "city": "Fajardo",
         "state": "",
         "country": "Puerto Rico"
       },
       {
-        "years": "2023",
         "team": "Leones de Ponce",
+        "team_raw": "Leones de Ponce",
+        "years": "2023",
         "city": "Ponce",
         "state": "",
         "country": "Puerto Rico"
       },
       {
-        "years": "2023",
         "team": "NLEX Road Warriors",
+        "team_raw": "NLEX Road Warriors",
+        "years": "2023",
         "city": "Manila",
         "state": "",
         "country": "Philippines"
       },
       {
-        "years": "2024",
         "team": "Pelita Jaya",
+        "team_raw": "Pelita Jaya",
+        "years": "2024",
         "city": "Pamekasan",
         "state": "",
         "country": "Indonesia"
       },
       {
-        "years": "2024",
         "team": "Gigantes de Carolina",
+        "team_raw": "Gigantes de Carolina",
+        "years": "2024",
         "city": "Carolina",
         "state": "",
         "country": "Puerto Rico"
       },
       {
-        "years": "2024",
         "team": "Astros de Jalisco",
+        "team_raw": "Astros de Jalisco",
+        "years": "2024",
         "city": "Guadalajara",
         "state": "",
         "country": "Mexico"
       },
       {
-        "years": "2024-2025",
         "team": "Taipei Mars",
+        "team_raw": "Taipei Taishin Mars",
+        "years": "2024–2025",
         "city": "Taipei City",
         "state": "",
         "country": "Taiwan"
       },
       {
-        "years": "2025",
         "team": "Paisas",
+        "team_raw": "Paisas Basketball",
+        "years": "2025",
         "city": "",
         "state": "",
         "country": ""
       },
       {
-        "years": "2025-2026",
         "team": "Cangrejeros de Santurce",
+        "team_raw": "Cangrejeros de Santurce",
+        "years": "2025",
         "city": "San Juan",
+        "state": "",
+        "country": "Puerto Rico"
+      },
+      {
+        "team": "Piratas de Quebradillas",
+        "team_raw": "Piratas de Quebradillas",
+        "years": "2026",
+        "city": "Quebradillas",
+        "state": "",
+        "country": "Puerto Rico"
+      },
+      {
+        "team": "Indios de Mayagüez",
+        "team_raw": "Indios de Mayagüez",
+        "years": "2026",
+        "city": "Mayagüez",
+        "state": "",
+        "country": "Puerto Rico"
+      },
+      {
+        "team": "Leones de Ponce",
+        "team_raw": "Leones de Ponce",
+        "years": "2026–present",
+        "city": "Ponce",
         "state": "",
         "country": "Puerto Rico"
       }
     ],
-    "current_team": "Cangrejeros de Santurce",
+    "current_team": "Leones de Ponce",
     "status": "overseas_active",
-    "display_name": "Thomas Robinson",
-    "last_updated": "2026-09-24",
-    "nationality": "United States"
+    "display_name": "Thomas Robinson (basketball)",
+    "last_updated": "2026-09-25",
+    "nationality": "American / Lebanese",
+    "position": "Center / power forward",
+    "number": [
+      "36"
+    ],
+    "birth_date": "1991-03-17",
+    "birth_place": "Washington, D.C., U.S.",
+    "high_school": "Brewster Academy, (Wolfeboro, New Hampshire)",
+    "college": "Kansas (2009–2012)",
+    "draft": {
+      "year": "2012",
+      "round": "1",
+      "pick": "5",
+      "team": "Sacramento Kings"
+    },
+    "aliases": [
+      "Thomas Robinson (basketball)"
+    ]
   },
   {
     "player": "Thomas Welsh",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_Welsh",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_Welsh_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2018",
-        "team": "Capital City Go-Go",
-        "city": "Washington",
-        "state": "D.C.",
-        "country": "USA"
-      },
-      {
-        "years": "2018-2019",
         "team": "Denver Nuggets",
+        "team_raw": "Denver Nuggets",
+        "years": "2018–19",
         "city": "Denver",
         "state": "Colorado",
         "country": "USA"
       },
       {
-        "years": "2019",
+        "team": "Capital City Go-Go",
+        "team_raw": "Capital City Go-Go",
+        "years": "2018",
+        "loan": true,
+        "city": "Washington",
+        "state": "D.C.",
+        "country": "USA"
+      },
+      {
         "team": "Iowa Wolves",
+        "team_raw": "Iowa Wolves",
+        "years": "2019",
+        "loan": true,
         "city": "Des Moines",
         "state": "Iowa",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Greensboro Swarm",
+        "team_raw": "Greensboro Swarm",
+        "years": "2019–2020",
         "city": "Greensboro",
         "state": "North Carolina",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
         "team": "Oostende",
+        "team_raw": "Oostende",
+        "years": "2020–2021",
         "city": "Ostend",
         "state": "",
         "country": "Belgium"
       },
       {
-        "years": "2021-2022",
         "team": "New Taipei Kings",
+        "team_raw": "New Taipei Kings",
+        "years": "2021–2022",
         "city": "New Taipei City",
         "state": "",
         "country": "Taiwan"
       },
       {
-        "years": "2022-2023",
         "team": "Yamagata Wyverns",
+        "team_raw": "Passlab Yamagata Wyverns",
+        "years": "2022–2023",
         "city": "Tendo",
         "state": "",
         "country": "Japan"
       },
       {
-        "years": "2023-2026",
         "team": "Levanga Hokkaido",
+        "team_raw": "Levanga Hokkaido",
+        "years": "2023–2025",
         "city": "Sapporo",
         "state": "",
         "country": "Japan"
+      },
+      {
+        "team": "Sun Rockers Shibuya",
+        "team_raw": "Sun Rockers Shibuya",
+        "years": "2025–2026",
+        "city": "Shibuya",
+        "state": "",
+        "country": "Japan"
+      },
+      {
+        "team": "New Taipei Kings",
+        "team_raw": "New Taipei Kings",
+        "years": "2026–present",
+        "city": "New Taipei City",
+        "state": "",
+        "country": "Taiwan"
       }
     ],
-    "current_team": "Levanga Hokkaido",
+    "current_team": "New Taipei Kings",
     "status": "overseas_active",
-    "display_name": "Thomas Welsh",
-    "last_updated": "2026-09-24",
-    "nationality": "United States"
+    "display_name": "Thomas Welsh (basketball)",
+    "last_updated": "2026-09-25",
+    "nationality": "United States",
+    "position": "Center",
+    "number": [
+      "40"
+    ],
+    "birth_date": "1996-02-03",
+    "birth_place": "Torrance, California, U.S.",
+    "college": "UCLA (2014–2018)",
+    "aliases": [
+      "Thomas Welsh (basketball)"
+    ]
   },
   {
     "player": "Thon Maker",
@@ -303333,64 +303486,102 @@
   },
   {
     "player": "Tony Bradley",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Bradley",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Bradley_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2017-2020",
         "team": "Utah Jazz",
+        "team_raw": "Utah Jazz",
+        "years": "2017–2020",
         "city": "Salt Lake City",
         "state": "Utah",
         "country": "USA"
       },
       {
-        "years": "2017-2019",
         "team": "Salt Lake City Stars",
+        "team_raw": "Salt Lake City Stars",
+        "years": "2017–2019",
+        "loan": true,
         "city": "Salt Lake City",
         "state": "Utah",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
         "team": "Philadelphia 76ers",
+        "team_raw": "Philadelphia 76ers",
+        "years": "2020–21",
         "city": "Philadelphia",
         "state": "Pennsylvania",
         "country": "USA"
       },
       {
-        "years": "2021",
         "team": "Oklahoma City Thunder",
+        "team_raw": "Oklahoma City Thunder",
+        "years": "2021",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2021-2023",
         "team": "Chicago Bulls",
+        "team_raw": "Chicago Bulls",
+        "years": "2021–2023",
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
       },
       {
-        "years": "2023-2024",
         "team": "Texas Legends",
+        "team_raw": "Texas Legends",
+        "years": "2023–2024",
         "city": "Frisco",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "team": "College Park Skyhawks",
+        "team_raw": "College Park Skyhawks",
+        "years": "2024–2025",
+        "city": "College Park",
+        "state": "Georgia",
+        "country": "USA"
+      },
+      {
         "team": "Indiana Pacers",
+        "team_raw": "Indiana Pacers",
+        "years": "2025–2026",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
+      },
+      {
+        "team": "Atlanta Hawks",
+        "team_raw": "Atlanta Hawks",
+        "years": "2026",
+        "city": "Atlanta",
+        "state": "Georgia",
+        "country": "USA"
       }
     ],
-    "current_team": "Indiana Pacers",
+    "current_team": "Atlanta Hawks",
     "status": "nba_active",
-    "display_name": "Tony Bradley",
+    "display_name": "Tony Bradley (basketball)",
     "last_updated": "2026-09-25",
-    "nationality": "United States"
+    "nationality": "United States",
+    "position": "Center / power forward",
+    "birth_date": "1998-01-08",
+    "birth_place": "Bartow, Florida, U.S.",
+    "high_school": "Bartow (Bartow, Florida)",
+    "college": "North Carolina (2016–2017)",
+    "draft": {
+      "year": "2017",
+      "round": "1",
+      "pick": "28",
+      "team": "Los Angeles Lakers"
+    },
+    "aliases": [
+      "Tony Bradley (basketball)"
+    ]
   },
   {
     "player": "Tony Brown",
@@ -311492,64 +311683,86 @@
   },
   {
     "player": "Tyler Davis",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Davis",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Davis_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2018",
         "team": "Oklahoma City Thunder",
-        "city": "Oklahoma City",
-        "state": "Oklahoma",
-        "country": "USA"
-      },
-      {
+        "team_raw": "Oklahoma City Thunder",
         "years": "2018",
-        "team": "Oklahoma City Blue",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
+        "team": "Oklahoma City Blue",
+        "team_raw": "Oklahoma City Blue",
+        "years": "2018",
+        "loan": true,
+        "city": "Oklahoma City",
+        "state": "Oklahoma",
+        "country": "USA"
+      },
+      {
+        "team": "Oklahoma City Blue",
+        "team_raw": "Oklahoma City Blue",
         "years": "2020",
-        "team": "Oklahoma City Blue",
         "city": "Oklahoma City",
         "state": "Oklahoma",
         "country": "USA"
       },
       {
-        "years": "2020-2021",
         "team": "Jeonju KCC Egis",
+        "team_raw": "Jeonju KCC Egis",
+        "years": "2020–2021",
         "city": "Busan",
         "state": "",
         "country": "South Korea"
       },
       {
-        "years": "2021-2022",
         "team": "Mexico City Capitanes",
+        "team_raw": "Mexico City Capitanes",
+        "years": "2021–2022",
         "city": "Mexico City",
         "state": "",
         "country": "Mexico"
       },
       {
-        "years": "2022",
         "team": "Texas Legends",
+        "team_raw": "Texas Legends",
+        "years": "2022",
         "city": "Frisco",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2024",
         "team": "Osos de Manatí",
+        "team_raw": "Osos de Manatí",
+        "years": "2024–present",
         "city": "Manatí",
         "state": "",
         "country": "Puerto Rico"
       }
     ],
     "current_team": "Osos de Manatí",
-    "status": "retired",
-    "display_name": "Tyler Davis",
-    "last_updated": "2026-07-06",
-    "nationality": "Puerto Rico"
+    "status": "overseas_active",
+    "display_name": "Tyler Davis (basketball)",
+    "last_updated": "2026-09-25",
+    "nationality": "American / Puerto Rican",
+    "position": "Center",
+    "number": [
+      "34"
+    ],
+    "birth_date": "1997-05-22",
+    "birth_place": "San Jose, California, U.S.",
+    "high_school": "Plano West (Plano, Texas)",
+    "college": "Texas A&M (2015–2018)",
+    "draft": {
+      "year": "2018"
+    },
+    "aliases": [
+      "Tyler Davis (basketball)"
+    ]
   },
   {
     "player": "Tyler Dorsey",
@@ -311669,96 +311882,110 @@
   },
   {
     "player": "Tyler Ennis",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Ennis",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Ennis_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2014-2015",
         "team": "Phoenix Suns",
+        "team_raw": "Phoenix Suns",
+        "years": "2014–15",
         "city": "Phoenix",
         "state": "Arizona",
         "country": "USA"
       },
       {
-        "years": "2014-2015",
         "team": "Bakersfield Jam",
+        "team_raw": "Bakersfield Jam",
+        "years": "2014–2015",
+        "loan": true,
         "city": "Bakersfield",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2015-2016",
         "team": "Milwaukee Bucks",
+        "team_raw": "Milwaukee Bucks",
+        "years": "2015–2016",
         "city": "Milwaukee",
         "state": "Wisconsin",
         "country": "USA"
       },
       {
-        "years": "2016-2017",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2016–17",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2017-2018",
         "team": "Los Angeles Lakers",
+        "team_raw": "Los Angeles Lakers",
+        "years": "2017–2018",
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "2018-2019",
         "team": "Fenerbahçe",
+        "team_raw": "Fenerbahçe",
+        "years": "2018–2019",
         "city": "Istanbul",
         "state": "",
         "country": "Turkey"
       },
       {
-        "years": "2019-2020",
         "team": "Raptors 905",
+        "team_raw": "Raptors 905",
+        "years": "2019–2020",
         "city": "Mississauga",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "2020-2022",
         "team": "Türk Telekom",
+        "team_raw": "Türk Telekom",
+        "years": "2020–2022",
         "city": "Ankara",
         "state": "",
         "country": "Turkey"
       },
       {
-        "years": "2022-2023",
         "team": "Tofaş",
+        "team_raw": "Tofaş",
+        "years": "2022–2023",
         "city": "Bursa",
         "state": "",
         "country": "Turkey"
       },
       {
-        "years": "2023-2024",
         "team": "Napoli Basket",
+        "team_raw": "Napoli Basket",
+        "years": "2023–2024",
         "city": "Napoli",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2024",
         "team": "Hapoel Tel Aviv",
+        "team_raw": "Hapoel Tel Aviv",
+        "years": "2024",
         "city": "Tel Aviv",
         "state": "",
         "country": "Israel"
       },
       {
-        "years": "2024-2025",
         "team": "Reyer Venezia",
+        "team_raw": "Reyer Venezia",
+        "years": "2024–2025",
         "city": "Venezia",
         "state": "",
         "country": "Italy"
       },
       {
-        "years": "2025-2026",
         "team": "Hapoel Tel Aviv",
+        "team_raw": "Hapoel Tel Aviv",
+        "years": "2025–present",
         "city": "Tel Aviv",
         "state": "",
         "country": "Israel"
@@ -311766,9 +311993,26 @@
     ],
     "current_team": "Hapoel Tel Aviv",
     "status": "overseas_active",
-    "display_name": "Tyler Ennis",
-    "last_updated": "2026-09-24",
-    "nationality": "Canada"
+    "display_name": "Tyler Ennis (basketball)",
+    "last_updated": "2026-09-25",
+    "nationality": "Canada",
+    "position": "Point guard",
+    "number": [
+      "11"
+    ],
+    "birth_date": "1994-08-24",
+    "birth_place": "Toronto, Ontario, Canada",
+    "high_school": "* Father Henry Carr Catholic, (Toronto, Ontario) * St. Benedict's Prep, (Newark, New Jersey)",
+    "college": "Syracuse (2013–2014)",
+    "draft": {
+      "year": "2014",
+      "round": "1",
+      "pick": "18",
+      "team": "Phoenix Suns"
+    },
+    "aliases": [
+      "Tyler Ennis (basketball)"
+    ]
   },
   {
     "player": "Tyler Hall",
@@ -318263,47 +318507,53 @@
   },
   {
     "player": "Walt Williams",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Walt_Williams",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Walt_Williams_(basketball)",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1992-1996",
         "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "1992–1996",
         "city": "Sacramento",
         "state": "California",
         "country": "USA"
       },
       {
-        "years": "1996",
         "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "1996",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "1996-1998",
         "team": "Toronto Raptors",
+        "team_raw": "Toronto Raptors",
+        "years": "1996–1998",
         "city": "Toronto",
         "state": "Ontario",
         "country": "Canada"
       },
       {
-        "years": "1998-1999",
         "team": "Portland Trail Blazers",
+        "team_raw": "Portland Trail Blazers",
+        "years": "1998–1999",
         "city": "Portland",
         "state": "Oregon",
         "country": "USA"
       },
       {
-        "years": "1999-2002",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "1999–2002",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2002-2003",
         "team": "Dallas Mavericks",
+        "team_raw": "Dallas Mavericks",
+        "years": "2002–03",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
@@ -318311,7 +318561,21 @@
     ],
     "current_team": "Dallas Mavericks",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1970-04-16",
+    "birth_place": "Washington, D.C., U.S.",
+    "college": "Maryland (1988–1992)",
+    "draft": {
+      "year": "1992",
+      "round": "1",
+      "pick": "7",
+      "team": "Sacramento Kings"
+    },
+    "display_name": "Walt Williams (basketball)",
+    "aliases": [
+      "Walt Williams (basketball)"
+    ],
+    "last_updated": "2026-09-25"
   },
   {
     "player": "Walter Berry",
@@ -320562,71 +320826,107 @@
   },
   {
     "player": "Wendell Moore",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Wendell_Moore",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wendell_Moore_Jr.",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2022-2024",
         "team": "Minnesota Timberwolves",
+        "team_raw": "Minnesota Timberwolves",
+        "years": "2022–2024",
         "city": "Minneapolis",
         "state": "Minnesota",
         "country": "USA"
       },
       {
-        "years": "2022-2024",
         "team": "Iowa Wolves",
+        "team_raw": "Iowa Wolves",
+        "years": "2022–2024",
+        "loan": true,
         "city": "Des Moines",
         "state": "Iowa",
         "country": "USA"
       },
       {
-        "years": "2024-2025",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2024–25",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2025",
         "team": "Charlotte Hornets",
+        "team_raw": "Charlotte Hornets",
+        "years": "2025",
         "city": "Charlotte",
         "state": "North Carolina",
         "country": "USA"
       },
       {
-        "years": "2025",
         "team": "Greensboro Swarm",
+        "team_raw": "Greensboro Swarm",
+        "years": "2025",
+        "loan": true,
         "city": "Greensboro",
         "state": "North Carolina",
         "country": "USA"
       },
       {
-        "years": "2025",
         "team": "Maine Celtics",
+        "team_raw": "Maine Celtics",
+        "years": "2025",
         "city": "Portland",
         "state": "Maine",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Detroit Pistons",
+        "team_raw": "Detroit Pistons",
+        "years": "2025–26",
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
       },
       {
-        "years": "2025-2026",
         "team": "Motor City Cruise",
+        "team_raw": "Motor City Cruise",
+        "years": "2025–2026",
+        "loan": true,
         "city": "Detroit",
         "state": "Michigan",
         "country": "USA"
+      },
+      {
+        "team": "Virtus Bologna",
+        "team_raw": "Virtus Bologna",
+        "years": "2026–present",
+        "city": "Bologna",
+        "state": "",
+        "country": "Italy"
       }
     ],
-    "current_team": "Detroit Pistons",
-    "status": "nba_active",
-    "display_name": "Wendell Moore",
+    "current_team": "Virtus Bologna",
+    "status": "overseas_active",
+    "display_name": "Wendell Moore Jr.",
     "last_updated": "2026-09-25",
-    "nationality": "United States"
+    "nationality": "United States",
+    "position": "Shooting guard",
+    "number": [
+      "8"
+    ],
+    "birth_date": "2001-09-18",
+    "birth_place": "Richmond, Virginia, U.S.",
+    "high_school": "Cox Mill, (Concord, North Carolina)",
+    "college": "Duke (2019–2022)",
+    "draft": {
+      "year": "2022",
+      "round": "1",
+      "pick": "26",
+      "team": "Dallas Mavericks"
+    },
+    "aliases": [
+      "Wendell Moore Jr."
+    ]
   },
   {
     "player": "Wenyen Gabriel",
@@ -321429,40 +321729,45 @@
   },
   {
     "player": "Wil Jones",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Wil_Jones_(basketball)",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wil_Jones_(basketball,_born_1947)",
     "parse_status": "success",
     "career_history": [
       {
-        "years": "1969-1970",
         "team": "Miami Floridians",
+        "team_raw": "Miami Floridians",
+        "years": "1969–1970",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
       },
       {
-        "years": "1970-1974",
         "team": "Memphis Pros / Tams",
-        "city": "Memphis",
-        "state": "Tennessee",
-        "country": "USA"
+        "team_raw": "Memphis Pros / Tams",
+        "years": "1970–1974",
+        "city": "",
+        "state": "",
+        "country": ""
       },
       {
-        "years": "1974-1976",
         "team": "Kentucky Colonels",
+        "team_raw": "Kentucky Colonels",
+        "years": "1974–1976",
         "city": "Louisville",
         "state": "Kentucky",
         "country": "USA"
       },
       {
-        "years": "1976-1977",
         "team": "Indiana Pacers",
+        "team_raw": "Indiana Pacers",
+        "years": "1976–77",
         "city": "Indianapolis",
         "state": "Indiana",
         "country": "USA"
       },
       {
-        "years": "1977-1978",
         "team": "Buffalo Braves",
+        "team_raw": "Buffalo Braves",
+        "years": "1977–78",
         "city": "Buffalo",
         "state": "New York",
         "country": "USA"
@@ -321470,7 +321775,22 @@
     ],
     "current_team": "Buffalo Braves",
     "status": "retired",
-    "nationality": "United States"
+    "nationality": "United States",
+    "birth_date": "1947-02-27",
+    "birth_place": "McGehee, Arkansas, U.S.",
+    "high_school": "Desha Central (Rohwer, Arkansas)",
+    "college": "Albany State (1966–1969)",
+    "draft": {
+      "year": "1969",
+      "round": "5",
+      "pick": "69",
+      "team": "Los Angeles Lakers"
+    },
+    "display_name": "Wil Jones (basketball, born 1947)",
+    "aliases": [
+      "Wil Jones (basketball, born 1947)"
+    ],
+    "last_updated": "2026-09-25"
   },
   {
     "player": "Wilbert Kautz",
@@ -322467,96 +322787,110 @@
   },
   {
     "player": "William Howard",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/William_Howard",
-    "parse_status": "no_career_data",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/William_Howard_(basketball)",
+    "parse_status": "success",
     "career_history": [
       {
-        "years": "2012-2014",
         "team": "BCM Gravelines",
+        "team_raw": "Gravelines-Dunkerque",
+        "years": "2012–2014",
         "city": "Gravelines",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2014-2015",
         "team": "Denain Voltaire",
+        "team_raw": "Denain Voltaire",
+        "years": "2014–2015",
         "city": "Denain",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2015-2017",
         "team": "Hyères-Toulon",
+        "team_raw": "Hyères-Toulon",
+        "years": "2015–2017",
         "city": "HyèresandToulon",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2017-2019",
         "team": "Limoges CSP",
+        "team_raw": "Limoges",
+        "years": "2017–2019",
         "city": "Limoges",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2019",
         "team": "Salt Lake City Stars",
+        "team_raw": "Salt Lake City Stars",
+        "years": "2019",
         "city": "Salt Lake City",
         "state": "Utah",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Houston Rockets",
+        "team_raw": "Houston Rockets",
+        "years": "2019–20",
         "city": "Houston",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2019-2020",
         "team": "Rio Grande Valley Vipers",
+        "team_raw": "Rio Grande Valley Vipers",
+        "years": "2019–2020",
+        "loan": true,
         "city": "Edinburg",
         "state": "Texas",
         "country": "USA"
       },
       {
-        "years": "2020-2022",
         "team": "ASVEL",
+        "team_raw": "ASVEL",
+        "years": "2020–2022",
         "city": "Villeurbanne",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2022",
         "team": "Joventut Badalona",
+        "team_raw": "Joventut",
+        "years": "2022",
         "city": "Badalona",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2024",
         "team": "Le Mans Sarthe",
+        "team_raw": "Le Mans",
+        "years": "2024",
         "city": "Le Mans",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2024",
         "team": "Valvi Girona",
+        "team_raw": "Bàsquet Girona",
+        "years": "2024",
         "city": "Girona",
         "state": "",
         "country": "Spain"
       },
       {
-        "years": "2025",
         "team": "Nanterre 92",
+        "team_raw": "Nanterre 92",
+        "years": "2025",
         "city": "Nanterre",
         "state": "",
         "country": "France"
       },
       {
-        "years": "2025-2026",
         "team": "Granada",
+        "team_raw": "Covirán Granada",
+        "years": "2025–present",
         "city": "Granada",
         "state": "",
         "country": "Spain"
@@ -322564,9 +322898,21 @@
     ],
     "current_team": "Granada",
     "status": "overseas_active",
-    "display_name": "William Howard",
-    "last_updated": "2026-09-24",
-    "nationality": "France"
+    "display_name": "William Howard (basketball)",
+    "last_updated": "2026-09-25",
+    "nationality": "France",
+    "position": "Small forward / power forward",
+    "number": [
+      "25"
+    ],
+    "birth_date": "1993-10-25",
+    "birth_place": "Montbrison, France",
+    "draft": {
+      "year": "2015"
+    },
+    "aliases": [
+      "William Howard (basketball)"
+    ]
   },
   {
     "player": "Willie Anderson",

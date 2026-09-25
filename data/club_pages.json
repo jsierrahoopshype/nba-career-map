@@ -10420,7 +10420,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2019-2020",
+          "years": "2019–2020",
           "status": "overseas_active",
           "last_team": "Granada",
           "nationality": "France"
@@ -11646,9 +11646,9 @@
         {
           "player": "Tyler Davis",
           "years": "2018, 2020",
-          "status": "retired",
+          "status": "overseas_active",
           "last_team": "Osos de Manatí",
-          "nationality": "Puerto Rico"
+          "nationality": "American / Puerto Rican"
         },
         {
           "player": "Vincent Edwards",
@@ -12906,9 +12906,9 @@
         },
         {
           "player": "Thomas Welsh",
-          "years": "2019-2020",
+          "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
+          "last_team": "New Taipei Kings",
           "nationality": "United States"
         },
         {
@@ -12956,8 +12956,8 @@
         {
           "player": "Wendell Moore",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Detroit Pistons",
+          "status": "overseas_active",
+          "last_team": "Virtus Bologna",
           "nationality": "United States"
         },
         {
@@ -15515,7 +15515,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2020-2022",
+          "years": "2020–2022",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -16153,8 +16153,8 @@
           "player": "Thomas Robinson",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tony Massenburg",
@@ -16219,7 +16219,7 @@
       "city": "Mayagüez",
       "state": "",
       "country": "Puerto Rico",
-      "count": 41,
+      "count": 42,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -16474,6 +16474,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Thomas Robinson",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
+        },
+        {
           "player": "Tony Mitchell (1989)",
           "years": "2017",
           "status": "overseas_active",
@@ -16522,6 +16529,11 @@
         },
         {
           "type": "club",
+          "name": "Gigantes de Carolina",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 5
         },
@@ -16537,18 +16549,13 @@
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Capitanes de Arecibo",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Reno Bighorns",
-          "shared": 4
+          "name": "Leones de Ponce",
+          "shared": 5
         }
       ]
     },
@@ -16737,12 +16744,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -17893,12 +17900,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -17928,7 +17935,7 @@
       "city": "Bologna",
       "state": "",
       "country": "Italy",
-      "count": 80,
+      "count": 81,
       "roster": [
         {
           "player": "AJ Guyton",
@@ -18469,6 +18476,13 @@
           "years": "2019–2021",
           "status": "overseas_active",
           "last_team": "Tenerife",
+          "nationality": "United States"
+        },
+        {
+          "player": "Wendell Moore",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Virtus Bologna",
           "nationality": "United States"
         },
         {
@@ -22828,8 +22842,8 @@
         {
           "player": "Wendell Moore",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Detroit Pistons",
+          "status": "overseas_active",
+          "last_team": "Virtus Bologna",
           "nationality": "United States"
         }
       ],
@@ -26157,8 +26171,8 @@
           "player": "Thomas Robinson",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tim Frazier",
@@ -30532,10 +30546,10 @@
         },
         {
           "player": "Kyle Anderson",
-          "years": "2014-2015",
+          "years": "2014–2015",
           "status": "nba_active",
-          "last_team": "Utah Jazz",
-          "nationality": "China"
+          "last_team": "Toronto Raptors",
+          "nationality": "American / Chinese"
         },
         {
           "player": "Kyle Mangas",
@@ -33401,7 +33415,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2017-2019",
+          "years": "2017–2019",
           "status": "overseas_active",
           "last_team": "Granada",
           "nationality": "France"
@@ -34707,7 +34721,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2012-2014",
+          "years": "2012–2014",
           "status": "overseas_active",
           "last_team": "Granada",
           "nationality": "France"
@@ -35984,7 +35998,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2024-2025",
+          "years": "2024–2025",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -37841,7 +37855,7 @@
           "player": "Thomas Welsh",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
+          "last_team": "New Taipei Kings",
           "nationality": "United States"
         },
         {
@@ -37895,9 +37909,9 @@
         },
         {
           "player": "Wendell Moore",
-          "years": "2022-2024",
-          "status": "nba_active",
-          "last_team": "Detroit Pistons",
+          "years": "2022–2024",
+          "status": "overseas_active",
+          "last_team": "Virtus Bologna",
           "nationality": "United States"
         },
         {
@@ -39107,7 +39121,7 @@
           "player": "Thomas Welsh",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
+          "last_team": "New Taipei Kings",
           "nationality": "United States"
         },
         {
@@ -39987,7 +40001,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2020-2022",
+          "years": "2020–2022",
           "status": "overseas_active",
           "last_team": "Granada",
           "nationality": "France"
@@ -46713,7 +46727,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2018-2019",
+          "years": "2018–2019",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -49816,10 +49830,10 @@
         },
         {
           "player": "Tyler Davis",
-          "years": "2021-2022",
-          "status": "retired",
+          "years": "2021–2022",
+          "status": "overseas_active",
           "last_team": "Osos de Manatí",
-          "nationality": "Puerto Rico"
+          "nationality": "American / Puerto Rican"
         }
       ],
       "related": [
@@ -49984,7 +49998,7 @@
       "city": "College Park",
       "state": "Georgia",
       "country": "USA",
-      "count": 41,
+      "count": 42,
       "roster": [
         {
           "player": "AJ Griffin",
@@ -50235,6 +50249,13 @@
           "years": "2019–2020",
           "status": "overseas_active",
           "last_team": "Guangdong",
+          "nationality": "United States"
+        },
+        {
+          "player": "Tony Bradley",
+          "years": "2024–2025",
+          "status": "nba_active",
+          "last_team": "Atlanta Hawks",
           "nationality": "United States"
         },
         {
@@ -51298,7 +51319,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2024, 2025-2026",
+          "years": "2024, 2025–present",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -53060,9 +53081,9 @@
         },
         {
           "player": "Tony Bradley",
-          "years": "2023-2024",
+          "years": "2023–2024",
           "status": "nba_active",
-          "last_team": "Indiana Pacers",
+          "last_team": "Atlanta Hawks",
           "nationality": "United States"
         },
         {
@@ -53088,9 +53109,9 @@
         {
           "player": "Tyler Davis",
           "years": "2022",
-          "status": "retired",
+          "status": "overseas_active",
           "last_team": "Osos de Manatí",
-          "nationality": "Puerto Rico"
+          "nationality": "American / Puerto Rican"
         },
         {
           "player": "Tyler Dorsey",
@@ -54593,7 +54614,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2019-2020",
+          "years": "2019–2020",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -58981,8 +59002,8 @@
           "player": "Thomas Robinson",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tony Mitchell (1992)",
@@ -66629,12 +66650,12 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Indios de Mayagüez",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Indios de Mayagüez",
+          "name": "Bnei Herzliya",
           "shared": 2
         },
         {
@@ -68702,9 +68723,9 @@
         },
         {
           "player": "Tony Bradley",
-          "years": "2017-2019",
+          "years": "2017–2019",
           "status": "nba_active",
-          "last_team": "Indiana Pacers",
+          "last_team": "Atlanta Hawks",
           "nationality": "United States"
         },
         {
@@ -69785,10 +69806,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2023",
+          "years": "2023, 2026–present",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tony Mitchell (1992)",
@@ -75603,10 +75624,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2021, 2025-2026",
+          "years": "2021, 2025",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Torraye Braggs",
@@ -76511,8 +76532,8 @@
           "player": "Thomas Robinson",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Ty-Shon Alexander",
@@ -76555,12 +76576,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -81298,10 +81319,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2021-2022",
+          "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Vincent Edwards",
@@ -85018,10 +85039,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2017-2018, 2020",
+          "years": "2017–2018, 2020",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Timofey Mozgov",
@@ -85583,7 +85604,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2015-2017",
+          "years": "2015–2017",
           "status": "overseas_active",
           "last_team": "Granada",
           "nationality": "France"
@@ -89543,7 +89564,7 @@
         },
         {
           "player": "Wil Jones",
-          "years": "1974-1976",
+          "years": "1974–1976",
           "status": "retired",
           "last_team": "Buffalo Braves",
           "nationality": "United States"
@@ -89887,9 +89908,9 @@
         },
         {
           "player": "Wendell Moore",
-          "years": "2025-2026",
-          "status": "nba_active",
-          "last_team": "Detroit Pistons",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Virtus Bologna",
           "nationality": "United States"
         },
         {
@@ -94215,9 +94236,9 @@
         },
         {
           "player": "Thomas Welsh",
-          "years": "2020-2021",
+          "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
+          "last_team": "New Taipei Kings",
           "nationality": "United States"
         },
         {
@@ -95960,7 +95981,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2025-2026",
+          "years": "2025–present",
           "status": "overseas_active",
           "last_team": "Granada",
           "nationality": "France"
@@ -98093,7 +98114,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2014-2015",
+          "years": "2014–2015",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -101710,10 +101731,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2022",
+          "years": "2022, 2026",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Zhaire Smith",
@@ -101845,10 +101866,10 @@
         },
         {
           "player": "Tyler Davis",
-          "years": "2020-2021",
-          "status": "retired",
+          "years": "2020–2021",
+          "status": "overseas_active",
           "last_team": "Osos de Manatí",
-          "nationality": "Puerto Rico"
+          "nationality": "American / Puerto Rican"
         }
       ],
       "related": [
@@ -114301,8 +114322,8 @@
           "player": "Thomas Robinson",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tony Delk",
@@ -114334,17 +114355,17 @@
         },
         {
           "type": "club",
+          "name": "Indios de Mayagüez",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Wisconsin Herd",
           "shared": 5
         },
         {
           "type": "club",
           "name": "Atléticos de San Germán",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Indios de Mayagüez",
           "shared": 5
         },
         {
@@ -116223,10 +116244,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2020-2021",
+          "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tyler Cavanaugh",
@@ -126891,7 +126912,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2022-2023",
+          "years": "2022–2023",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -127365,8 +127386,8 @@
           "player": "Thomas Robinson",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         }
       ],
       "related": [
@@ -129568,7 +129589,7 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Rishon LeZion",
+          "name": "Indios de Mayagüez",
           "shared": 1
         }
       ]
@@ -131058,7 +131079,7 @@
         },
         {
           "player": "Wil Jones",
-          "years": "1969-1970",
+          "years": "1969–1970",
           "status": "retired",
           "last_team": "Buffalo Braves",
           "nationality": "United States"
@@ -133518,9 +133539,9 @@
         },
         {
           "player": "Thomas Welsh",
-          "years": "2021-2022",
+          "years": "2021–2022, 2026–present",
           "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
+          "last_team": "New Taipei Kings",
           "nationality": "United States"
         },
         {
@@ -135514,7 +135535,7 @@
         },
         {
           "player": "Tyler Ennis",
-          "years": "2023-2024",
+          "years": "2023–2024",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
           "nationality": "Canada"
@@ -154143,7 +154164,7 @@
       "city": "Shibuya",
       "state": "",
       "country": "Japan",
-      "count": 7,
+      "count": 8,
       "roster": [
         {
           "player": "Branden Dawson",
@@ -154193,6 +154214,13 @@
           "status": "overseas_active",
           "last_team": "Fukui Blowinds",
           "nationality": "United States"
+        },
+        {
+          "player": "Thomas Welsh",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "New Taipei Kings",
+          "nationality": "United States"
         }
       ],
       "related": [
@@ -154233,7 +154261,7 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -175170,10 +175198,10 @@
         },
         {
           "player": "Tyler Davis",
-          "years": "2024",
-          "status": "retired",
+          "years": "2024–present",
+          "status": "overseas_active",
           "last_team": "Osos de Manatí",
-          "nationality": "Puerto Rico"
+          "nationality": "American / Puerto Rican"
         }
       ],
       "related": [
@@ -175832,7 +175860,7 @@
         },
         {
           "player": "William Howard",
-          "years": "2014-2015",
+          "years": "2014–2015",
           "status": "overseas_active",
           "last_team": "Granada",
           "nationality": "France"
@@ -178639,14 +178667,19 @@
           "player": "Thomas Robinson",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Indios de Mayagüez",
           "shared": 2
         },
         {
@@ -178677,11 +178710,6 @@
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Erie BayHawks",
           "shared": 1
         }
       ]
@@ -181665,12 +181693,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -186253,10 +186281,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2019-2020",
+          "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Tyler Hansbrough",
@@ -187268,8 +187296,8 @@
           "player": "Thomas Robinson",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Toure Murry",
@@ -203235,12 +203263,12 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Indios de Mayagüez",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Indios de Mayagüez",
+          "name": "Bnei Herzliya",
           "shared": 1
         }
       ]
@@ -203840,12 +203868,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -204713,10 +204741,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2024-2025",
+          "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Zach Lofton",
@@ -205632,9 +205660,9 @@
         },
         {
           "player": "Thomas Welsh",
-          "years": "2023-2026",
+          "years": "2023–2025",
           "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
+          "last_team": "New Taipei Kings",
           "nationality": "United States"
         }
       ],
@@ -206563,10 +206591,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2022-2023",
+          "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         }
       ],
       "related": [
@@ -208708,10 +208736,10 @@
         },
         {
           "player": "Thomas Robinson",
-          "years": "2018-2019",
+          "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         }
       ],
       "related": [
@@ -221014,7 +221042,7 @@
         },
         {
           "player": "Wil Jones",
-          "years": "1970-1974",
+          "years": "1970–1974",
           "status": "retired",
           "last_team": "Buffalo Braves",
           "nationality": "United States"
@@ -231646,8 +231674,8 @@
           "player": "Thomas Robinson",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
-          "nationality": "United States"
+          "last_team": "Leones de Ponce",
+          "nationality": "American / Lebanese"
         },
         {
           "player": "Zavier Simpson",
@@ -237462,9 +237490,9 @@
         },
         {
           "player": "Thomas Welsh",
-          "years": "2022-2023",
+          "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Levanga Hokkaido",
+          "last_team": "New Taipei Kings",
           "nationality": "United States"
         }
       ],
@@ -293414,12 +293442,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -293472,12 +293500,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {

@@ -7,1505 +7,23 @@
     "human_verified": "written through without the P106 gate or the ambiguity check, once Wikipedia confirms the article exists and is not a disambiguation page; the birth year is a warning only"
   },
   "counts": {
-    "flagged": 182,
-    "verified": 115,
-    "needs_a_human": 67,
+    "flagged": 67,
+    "verified": 1,
+    "needs_a_human": 66,
     "human_verified": 0,
     "human_skipped": 0
   },
   "verified": {
-    "AJ Griffin": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/AJ_Griffin_(basketball)",
-      "wikidata_id": "Q107295154",
-      "wikidata_label": "AJ Griffin",
-      "wikidata_description": "American basketball player (born 2003)",
-      "wikidata_birth_date": "2003-08-25",
-      "basketball_reference_birth_date": "2003-08-25",
-      "replaces": "https://en.wikipedia.org/wiki/AJ_Griffin",
-      "replaces_wikidata_id": "Q126925690",
-      "matched_candidate": "AJ Griffin (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "AJ Johnson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/AJ_Johnson_(basketball)",
-      "wikidata_id": "Q126902785",
-      "wikidata_label": "AJ Johnson",
-      "wikidata_description": "American basketball player (born 2004)",
-      "wikidata_birth_date": "2004-12-01",
-      "basketball_reference_birth_date": "2004-12-01",
-      "replaces": "https://en.wikipedia.org/wiki/A._J._Johnson",
-      "replaces_wikidata_id": "Q4647932",
-      "matched_candidate": "AJ Johnson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Aaron Henry": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Aaron_Henry_(basketball)",
-      "wikidata_id": "Q77264849",
-      "wikidata_label": "Aaron Henry",
-      "wikidata_description": "American basketball player (born 1999)",
-      "wikidata_birth_date": "1999-08-30",
-      "basketball_reference_birth_date": "1999-08-30",
-      "replaces": "https://en.wikipedia.org/wiki/Aaron_Henry",
-      "replaces_wikidata_id": "Q115611118",
-      "matched_candidate": "Aaron Henry (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Alan Williams": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Alan_Williams_(basketball)",
-      "wikidata_id": "Q16235975",
-      "wikidata_label": "Alan Williams",
-      "wikidata_description": "American basketball player (born 1993)",
-      "wikidata_birth_date": "1993-01-28",
-      "basketball_reference_birth_date": "1993-01-28",
-      "replaces": "https://en.wikipedia.org/wiki/Alan_Williams",
-      "replaces_wikidata_id": "Q11787878",
-      "matched_candidate": "Alan Williams (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Alex Garcia": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Alex_Garcia_(basketball)",
-      "wikidata_id": "Q2565532",
-      "wikidata_label": "Alex Garcia",
-      "wikidata_description": "Brazilian basketball player (born 1980)",
-      "wikidata_birth_date": "1980-03-04",
-      "basketball_reference_birth_date": "1980-03-04",
-      "replaces": "https://en.wikipedia.org/wiki/Alex_Garc%C3%ADa",
-      "replaces_wikidata_id": "Q4717031",
-      "matched_candidate": "Alex Garcia (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Andrew Nicholson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Andrew_Nicholson_(basketball)",
-      "wikidata_id": "Q2755996",
-      "wikidata_label": "Andrew Nicholson",
-      "wikidata_description": "Canadian basketball player (born 1989)",
-      "wikidata_birth_date": "1989-12-08",
-      "basketball_reference_birth_date": "1989-12-08",
-      "replaces": "https://en.wikipedia.org/wiki/Andrew_Nicholson",
-      "replaces_wikidata_id": "Q441240",
-      "matched_candidate": "Andrew Nicholson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Andrew White": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Andrew_White_(basketball)",
-      "wikidata_id": "Q47339821",
-      "wikidata_label": "Andrew White",
-      "wikidata_description": "American basketball player (born 1993)",
-      "wikidata_birth_date": "1993-06-16",
-      "basketball_reference_birth_date": "1993-06-16",
-      "replaces": "https://en.wikipedia.org/wiki/Andrew_White",
-      "replaces_wikidata_id": "Q508687",
-      "matched_candidate": "Andrew White (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Anthony Bennett": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Bennett_(basketball)",
-      "wikidata_id": "Q4772101",
-      "wikidata_label": "Anthony Bennett",
-      "wikidata_description": "Canadian basketball player (born 1993)",
-      "wikidata_birth_date": "1993-03-14",
-      "basketball_reference_birth_date": "1993-03-14",
-      "replaces": "https://en.wikipedia.org/wiki/Anthony_Bennett",
-      "replaces_wikidata_id": "Q4772099",
-      "matched_candidate": "Anthony Bennett (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Anthony Black": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Black_(basketball)",
-      "wikidata_id": "Q115807227",
-      "wikidata_label": "Anthony Black",
-      "wikidata_description": "American basketball player (born 2004)",
-      "wikidata_birth_date": "2004-01-20",
-      "basketball_reference_birth_date": "2004-01-20",
-      "replaces": "https://en.wikipedia.org/wiki/Tony_Black",
-      "replaces_wikidata_id": "Q16158027",
-      "matched_candidate": "Anthony Black (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Anthony Gill": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Gill_(basketball)",
-      "wikidata_id": "Q21621362",
-      "wikidata_label": "",
-      "wikidata_description": "American basketball player (born 1992)",
-      "wikidata_birth_date": "1992-10-17",
-      "basketball_reference_birth_date": "1992-10-17",
-      "replaces": "https://en.wikipedia.org/wiki/Anthony_Gill",
-      "replaces_wikidata_id": "Q26777566",
-      "matched_candidate": "Anthony Gill (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Anthony Lamb": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Lamb_(basketball)",
-      "wikidata_id": "Q62894989",
-      "wikidata_label": "Anthony Lamb",
-      "wikidata_description": "American basketball player (born 1998)",
-      "wikidata_birth_date": "1998-01-20",
-      "basketball_reference_birth_date": "1998-01-20",
-      "replaces": "https://en.wikipedia.org/wiki/Anthony_Lamb",
-      "replaces_wikidata_id": "Q109699519",
-      "matched_candidate": "Anthony Lamb (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Archie Goodwin": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Archie_Goodwin_(basketball)",
-      "wikidata_id": "Q4786689",
-      "wikidata_label": "Archie Goodwin",
-      "wikidata_description": "American basketball player (born 1994)",
-      "wikidata_birth_date": "1994-08-17",
-      "basketball_reference_birth_date": "1994-08-17",
-      "replaces": "https://en.wikipedia.org/wiki/Archie_Goodwin",
-      "replaces_wikidata_id": "Q235393",
-      "matched_candidate": "Archie Goodwin (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "BJ Johnson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/B._J._Johnson_(basketball)",
-      "wikidata_id": "Q55604604",
-      "wikidata_label": "B.J. Johnson",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-12-21",
-      "basketball_reference_birth_date": "1995-12-21",
-      "replaces": "https://en.wikipedia.org/wiki/B._J._Johnson",
-      "replaces_wikidata_id": "Q139962715",
-      "matched_candidate": "B. J. Johnson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Ben Moore": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Moore_(basketball)",
-      "wikidata_id": "Q39073780",
-      "wikidata_label": "Ben Moore",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-05-13",
-      "basketball_reference_birth_date": "1995-05-13",
-      "replaces": "https://en.wikipedia.org/wiki/Ben_Moore",
-      "replaces_wikidata_id": "Q4886184",
-      "matched_candidate": "Ben Moore (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Blake Wesley": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Blake_Wesley_(basketball)",
-      "wikidata_id": "Q110888255",
-      "wikidata_label": "Blake Wesley",
-      "wikidata_description": "American basketball player (born 2003)",
-      "wikidata_birth_date": "2003-03-16",
-      "basketball_reference_birth_date": "2003-03-16",
-      "replaces": "https://en.wikipedia.org/wiki/Blake_Wesley",
-      "replaces_wikidata_id": "Q115943629",
-      "matched_candidate": "Blake Wesley (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Bogdan Bogdanovic": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Bogdan_Bogdanovi%C4%87_(basketball)",
-      "wikidata_id": "Q245990",
-      "wikidata_label": "Bogdan Bogdanović",
-      "wikidata_description": "Serbian basketball player (born 1992)",
-      "wikidata_birth_date": "1992-08-18",
-      "basketball_reference_birth_date": "1992-08-18",
-      "replaces": "https://en.wikipedia.org/wiki/Bogdan_Bogdanovi%C4%87",
-      "replaces_wikidata_id": "Q12749077",
-      "matched_candidate": "Bogdan Bogdanovic (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Brandon Armstrong": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Brandon_Armstrong_(basketball)",
-      "wikidata_id": "Q1617911",
-      "wikidata_label": "Brandon Armstrong",
-      "wikidata_description": "American basketball player (born 1980)",
-      "wikidata_birth_date": "1980-06-16",
-      "basketball_reference_birth_date": "1980-06-16",
-      "replaces": "https://en.wikipedia.org/wiki/Brandon_Armstrong",
-      "replaces_wikidata_id": "Q139962750",
-      "matched_candidate": "Brandon Armstrong (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Brandon Goodwin": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Brandon_Goodwin_(basketball)",
-      "wikidata_id": "Q50365734",
-      "wikidata_label": "Brandon Goodwin",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-10-02",
-      "basketball_reference_birth_date": "1995-10-02",
-      "replaces": "https://en.wikipedia.org/wiki/Brandon_Goodwin",
-      "replaces_wikidata_id": "Q98792757",
-      "matched_candidate": "Brandon Goodwin (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Brandon Knight": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Brandon_Knight_(basketball)",
-      "wikidata_id": "Q935879",
-      "wikidata_label": "Brandon Knight",
-      "wikidata_description": "American professional player",
-      "wikidata_birth_date": "1991-12-02",
-      "basketball_reference_birth_date": "1991-12-02",
-      "replaces": "https://en.wikipedia.org/wiki/Brandon_Knight",
-      "replaces_wikidata_id": "Q4956936",
-      "matched_candidate": "Brandon Knight (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Brandon Miller": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Brandon_Miller_(basketball,_born_2002)",
-      "wikidata_id": "Q115810482",
-      "wikidata_label": "Brandon Miller",
-      "wikidata_description": "American basketball player (born 2002)",
-      "wikidata_birth_date": "2002-11-22",
-      "basketball_reference_birth_date": "2002-11-22",
-      "replaces": "https://en.wikipedia.org/wiki/Brandon_Miller",
-      "replaces_wikidata_id": "Q4956979",
-      "matched_candidate": "Brandon Miller (basketball, born 2002)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Bruce Brown": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Bruce_Brown_(basketball)",
-      "wikidata_id": "Q51337587",
-      "wikidata_label": "Bruce Brown Jr.",
-      "wikidata_description": "American basketball player (born 1996)",
-      "wikidata_birth_date": "1996-08-15",
-      "basketball_reference_birth_date": "1996-08-15",
-      "replaces": "https://en.wikipedia.org/wiki/Bruce_Brown",
-      "replaces_wikidata_id": "Q51290827",
-      "matched_candidate": "Bruce Brown (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "CJ Williams": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/C._J._Williams_(basketball)",
-      "wikidata_id": "Q17623132",
-      "wikidata_label": "C. J. Williams",
-      "wikidata_description": "American basketball player (born 1990)",
-      "wikidata_birth_date": "1990-02-06",
-      "basketball_reference_birth_date": "1990-02-06",
-      "replaces": "https://en.wikipedia.org/wiki/C._J._Williams",
-      "replaces_wikidata_id": "Q139964783",
-      "matched_candidate": "C. J. Williams (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Carter Bryant": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Carter_Bryant_(basketball)",
-      "wikidata_id": "Q125030310",
-      "wikidata_label": "Carter Bryant",
-      "wikidata_description": "American basketball player",
-      "wikidata_birth_date": "2005-11-26",
-      "basketball_reference_birth_date": "2005-11-26",
-      "replaces": "https://en.wikipedia.org/wiki/Carter_Bryant",
-      "replaces_wikidata_id": "Q122346589",
-      "matched_candidate": "Carter Bryant (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Chris Boucher": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Boucher_(basketball)",
-      "wikidata_id": "Q30668441",
-      "wikidata_label": "Chris Boucher",
-      "wikidata_description": "Saint Lucia-born Canadian basketball player",
-      "wikidata_birth_date": "1993-01-11",
-      "basketball_reference_birth_date": "1993-01-11",
-      "replaces": "https://en.wikipedia.org/wiki/Chris_Boucher",
-      "replaces_wikidata_id": "Q104608461",
-      "matched_candidate": "Chris Boucher (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Chris Clemons": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Clemons_(basketball)",
-      "wikidata_id": "Q55013949",
-      "wikidata_label": "Chris Clemons",
-      "wikidata_description": "American basketball player (1997-)",
-      "wikidata_birth_date": "1997-07-23",
-      "basketball_reference_birth_date": "1997-07-23",
-      "replaces": "https://en.wikipedia.org/wiki/Chris_Clemons",
-      "replaces_wikidata_id": "Q5106195",
-      "matched_candidate": "Chris Clemons (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Chris Crawford": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Crawford_(basketball,_born_1975)",
-      "wikidata_id": "Q2913719",
-      "wikidata_label": "Chris Crawford",
-      "wikidata_description": "American basketball player (1975-)",
-      "wikidata_birth_date": "1975-05-13",
-      "basketball_reference_birth_date": "1975-05-13",
-      "replaces": "https://en.wikipedia.org/wiki/Chris_Crawford",
-      "replaces_wikidata_id": "Q5106300",
-      "matched_candidate": "Chris Crawford (basketball, born 1975)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Chris Duarte": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Duarte_(basketball)",
-      "wikidata_id": "Q91140197",
-      "wikidata_label": "Chris Duarte",
-      "wikidata_description": "Dominican basketball player",
-      "wikidata_birth_date": "1997-06-13",
-      "basketball_reference_birth_date": "1997-06-13",
-      "replaces": "https://en.wikipedia.org/wiki/Chris_Duarte",
-      "replaces_wikidata_id": "Q105855327",
-      "matched_candidate": "Chris Duarte (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Chris Singleton": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Singleton_(basketball,_born_1989)",
-      "wikidata_id": "Q2698421",
-      "wikidata_label": "Chris Singleton",
-      "wikidata_description": "American basketball player (born 1989)",
-      "wikidata_birth_date": "1989-11-21",
-      "basketball_reference_birth_date": "1989-11-21",
-      "replaces": "https://en.wikipedia.org/wiki/Chris_Singleton",
-      "replaces_wikidata_id": "Q5108070",
-      "matched_candidate": "Chris Singleton (basketball, born 1989)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Connie Norman": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Coniel_Norman",
-      "wikidata_id": "Q3687074",
-      "wikidata_label": "Connie Norman",
-      "wikidata_description": "American basketball player (1953–2022)",
-      "wikidata_birth_date": "1953-09-24",
-      "basketball_reference_birth_date": "1953-09-24",
-      "replaces": "https://en.wikipedia.org/wiki/Connie_Norman",
-      "replaces_wikidata_id": "Q106462945",
-      "matched_candidate": "Coniel Norman",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Curtis Jones": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Curtis_Jones_(basketball)",
-      "wikidata_id": "Q132304299",
-      "wikidata_label": "Curtis Jones",
-      "wikidata_description": "American basketball player (born 2001)",
-      "wikidata_birth_date": "2001-10-04",
-      "basketball_reference_birth_date": "2001-12-04",
-      "replaces": "https://en.wikipedia.org/wiki/Curtis_Jones",
-      "replaces_wikidata_id": "Q88391245",
-      "matched_candidate": "Curtis Jones (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Damian Jones": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Damian_Jones_(basketball)",
-      "wikidata_id": "Q22005682",
-      "wikidata_label": "Damian Jones",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-06-30",
-      "basketball_reference_birth_date": "1995-06-30",
-      "replaces": "https://en.wikipedia.org/wiki/Damian_Jones",
-      "replaces_wikidata_id": "Q62065469",
-      "matched_candidate": "Damian Jones (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "David Johnson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/David_Johnson_(basketball)",
-      "wikidata_id": "Q87972470",
-      "wikidata_label": "David Johnson",
-      "wikidata_description": "American basketball player (born 2001)",
-      "wikidata_birth_date": "2001-02-26",
-      "basketball_reference_birth_date": "2001-02-26",
-      "replaces": "https://en.wikipedia.org/wiki/David_Johnson",
-      "replaces_wikidata_id": "Q239537",
-      "matched_candidate": "David Johnson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Dennis Smith": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Dennis_Smith_Jr.",
-      "wikidata_id": "Q26704887",
-      "wikidata_label": "Dennis Smith Jr.",
-      "wikidata_description": "American basketball player (born 1997)",
-      "wikidata_birth_date": "1997-11-25",
-      "basketball_reference_birth_date": "1997-11-25",
-      "replaces": "https://en.wikipedia.org/wiki/Dennis_Smith",
-      "replaces_wikidata_id": "Q3705500",
-      "matched_candidate": "Dennis Smith (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Deonte Burton": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Deonte_Burton_(basketball,_born_1994)",
-      "wikidata_id": "Q39072464",
-      "wikidata_label": "Deonte Burton",
-      "wikidata_description": "American basketball player (born 1994)",
-      "wikidata_birth_date": "1994-01-31",
-      "basketball_reference_birth_date": "1994-01-31",
-      "replaces": "https://en.wikipedia.org/wiki/Deonte_Burton",
-      "replaces_wikidata_id": "Q54430480",
-      "matched_candidate": "Deonte Burton (basketball, born 1994)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Derrick Jones": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Derrick_Jones_Jr.",
-      "wikidata_id": "Q27048881",
-      "wikidata_label": "Derrick Jones Jr.",
-      "wikidata_description": "American basketball player (1993-)",
-      "wikidata_birth_date": "1997-02-15",
-      "basketball_reference_birth_date": "1997-02-15",
-      "replaces": "https://en.wikipedia.org/wiki/Derrick_Jones",
-      "replaces_wikidata_id": "Q29050659",
-      "matched_candidate": "Derrick Jones (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Donovan Williams": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Donovan_Williams_(basketball)",
-      "wikidata_id": "Q100957176",
-      "wikidata_label": "Donovan Williams",
-      "wikidata_description": "American basketball player (born 2000)",
-      "wikidata_birth_date": "2001-09-06",
-      "basketball_reference_birth_date": "2001-09-06",
-      "replaces": "https://en.wikipedia.org/wiki/Donovan_Williams",
-      "replaces_wikidata_id": "Q116685450",
-      "matched_candidate": "Donovan Williams (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Ed Davis": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Ed_Davis_(basketball)",
-      "wikidata_id": "Q1282320",
-      "wikidata_label": "Ed Davis",
-      "wikidata_description": "American basketball player (born 1989)",
-      "wikidata_birth_date": "1989-06-05",
-      "basketball_reference_birth_date": "1989-06-05",
-      "replaces": "https://en.wikipedia.org/wiki/Edward_Davis",
-      "replaces_wikidata_id": "Q1292022",
-      "matched_candidate": "Ed Davis (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Eric Anderson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Eric_Anderson_(basketball,_born_1970)",
-      "wikidata_id": "Q3731452",
-      "wikidata_label": "Eric Anderson",
-      "wikidata_description": "American basketball player (1970-2018)",
-      "wikidata_birth_date": "1970-05-26",
-      "basketball_reference_birth_date": "1970-05-26",
-      "replaces": "https://en.wikipedia.org/wiki/Eric_Anderson",
-      "replaces_wikidata_id": "Q5386018",
-      "matched_candidate": "Eric Anderson (basketball, born 1970)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Frank Mason": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Frank_Mason_III",
-      "wikidata_id": "Q21064045",
-      "wikidata_label": "Frank Mason III",
-      "wikidata_description": "American basketball player (born 1994)",
-      "wikidata_birth_date": "1994-04-03",
-      "basketball_reference_birth_date": "1994-04-03",
-      "replaces": "https://en.wikipedia.org/wiki/Frank_Mason",
-      "replaces_wikidata_id": "Q1443746",
-      "matched_candidate": "Frank Mason (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Grant Nelson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Grant_Nelson_(basketball)",
-      "wikidata_id": "Q116975156",
-      "wikidata_label": "Grant Nelson",
-      "wikidata_description": "American basketball player (born 2002)",
-      "wikidata_birth_date": "2002-03-18",
-      "basketball_reference_birth_date": "2002-03-18",
-      "replaces": "https://en.wikipedia.org/wiki/Grant_Nelson",
-      "replaces_wikidata_id": "Q117127752",
-      "matched_candidate": "Grant Nelson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Grant Williams": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Grant_Williams_(basketball)",
-      "wikidata_id": "Q50363033",
-      "wikidata_label": "Grant Williams",
-      "wikidata_description": "American basketball player (born 1998)",
-      "wikidata_birth_date": "1998-11-30",
-      "basketball_reference_birth_date": "1998-11-30",
-      "replaces": "https://en.wikipedia.org/wiki/Grant_Williams",
-      "replaces_wikidata_id": "Q53853034",
-      "matched_candidate": "Grant Williams (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Greg Brown": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Greg_Brown_III",
-      "wikidata_id": "Q90108668",
-      "wikidata_label": "Greg Brown III",
-      "wikidata_description": "American basketball player (born 2001)",
-      "wikidata_birth_date": "2001-09-01",
-      "basketball_reference_birth_date": "2001-09-01",
-      "replaces": "https://en.wikipedia.org/wiki/Greg_Brown",
-      "replaces_wikidata_id": "Q5605354",
-      "matched_candidate": "Greg Brown (basketball, born 2001)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Guillermo Diaz": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Guillermo_Diaz_(basketball)",
-      "wikidata_id": "Q2558920",
-      "wikidata_label": "Guillermo Diaz",
-      "wikidata_description": "Puerto Rican basketball player (born 1985)",
-      "wikidata_birth_date": "1985-03-04",
-      "basketball_reference_birth_date": "1985-03-04",
-      "replaces": "https://en.wikipedia.org/wiki/Guillermo_Diaz",
-      "replaces_wikidata_id": "Q359947",
-      "matched_candidate": "Guillermo Diaz (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Herbert Jones": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Herbert_Jones_(basketball)",
-      "wikidata_id": "Q100983694",
-      "wikidata_label": "Herbert Jones",
-      "wikidata_description": "American basketball player (born 1998)",
-      "wikidata_birth_date": "1998-10-06",
-      "basketball_reference_birth_date": "1998-10-06",
-      "replaces": "https://en.wikipedia.org/wiki/Herbert_Jones",
-      "replaces_wikidata_id": "Q3785137",
-      "matched_candidate": "Herbert Jones (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Hugo González": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Hugo_Gonz%C3%A1lez_(basketball)",
-      "wikidata_id": "Q114453793",
-      "wikidata_label": "Hugo González",
-      "wikidata_description": "Spanish basketball player (born 2006)",
-      "wikidata_birth_date": "2006-02-05",
-      "basketball_reference_birth_date": "2006-02-05",
-      "replaces": "https://en.wikipedia.org/wiki/Hugo_Gonz%C3%A1lez",
-      "replaces_wikidata_id": "Q38457406",
-      "matched_candidate": "Hugo González (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Ian Clark": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Ian_Clark_(basketball)",
-      "wikidata_id": "Q14474298",
-      "wikidata_label": "Ian Clark",
-      "wikidata_description": "American basketball player (born 1991)",
-      "wikidata_birth_date": "1991-03-07",
-      "basketball_reference_birth_date": "1991-03-07",
-      "replaces": "https://en.wikipedia.org/wiki/Ian_Clark",
-      "replaces_wikidata_id": "Q5981189",
-      "matched_candidate": "Ian Clark (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Isaiah Jackson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Isaiah_Jackson_(basketball)",
-      "wikidata_id": "Q106782830",
-      "wikidata_label": "Isaiah Jackson",
-      "wikidata_description": "American basketball player (born 2002)",
-      "wikidata_birth_date": "2002-01-10",
-      "basketball_reference_birth_date": "2002-01-10",
-      "replaces": "https://en.wikipedia.org/wiki/Isaiah_Jackson",
-      "replaces_wikidata_id": "Q126599810",
-      "matched_candidate": "Isaiah Jackson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Isaiah Thomas": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Isaiah_Thomas_(basketball)",
-      "wikidata_id": "Q336030",
-      "wikidata_label": "Isaiah Thomas",
-      "wikidata_description": "American basketball player (born 1989)",
-      "wikidata_birth_date": "1989-02-07",
-      "basketball_reference_birth_date": "1989-02-07",
-      "replaces": "https://en.wikipedia.org/wiki/Isaiah_Thomas",
-      "replaces_wikidata_id": "Q6080796",
-      "matched_candidate": "Isaiah Thomas (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "James Ennis": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/James_Ennis_III",
-      "wikidata_id": "Q13605936",
-      "wikidata_label": "James Ennis",
-      "wikidata_description": "American basketball player (born 1990)",
-      "wikidata_birth_date": "1990-07-01",
-      "basketball_reference_birth_date": "1990-07-01",
-      "replaces": "https://en.wikipedia.org/wiki/James_Ennis",
-      "replaces_wikidata_id": "Q19820582",
-      "matched_candidate": "James Ennis (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "James Webb": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/James_Webb_III",
-      "wikidata_id": "Q23887396",
-      "wikidata_label": "James Webb III",
-      "wikidata_description": "American basketball player (born 1993)",
-      "wikidata_birth_date": "1993-08-19",
-      "basketball_reference_birth_date": "1993-08-19",
-      "replaces": "https://en.wikipedia.org/wiki/James_Webb",
-      "replaces_wikidata_id": "Q240675",
-      "matched_candidate": "James Webb III",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "James Young": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/James_Young_(basketball)",
-      "wikidata_id": "Q6145960",
-      "wikidata_label": "James Young",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-08-16",
-      "basketball_reference_birth_date": "1995-08-16",
-      "replaces": "https://en.wikipedia.org/wiki/James_Young",
-      "replaces_wikidata_id": "Q1390257",
-      "matched_candidate": "James Young (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jaylin Williams": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jaylin_Williams_(basketball,_born_2002)",
-      "wikidata_id": "Q112687854",
-      "wikidata_label": "Jaylin Williams",
-      "wikidata_description": "American basketball player (born 2002)",
-      "wikidata_birth_date": "2002-06-29",
-      "basketball_reference_birth_date": "2002-06-29",
-      "replaces": "https://en.wikipedia.org/wiki/Jaylin_Williams",
-      "replaces_wikidata_id": "Q128753322",
-      "matched_candidate": "Jaylin Williams (basketball, born 2002)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jeff Green": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jeff_Green_(basketball)",
-      "wikidata_id": "Q358704",
-      "wikidata_label": "Jeff Green",
-      "wikidata_description": "American basketball player (born 1986)",
-      "wikidata_birth_date": "1986-08-28",
-      "basketball_reference_birth_date": "1986-08-28",
-      "replaces": "https://en.wikipedia.org/wiki/Jeff_Green",
-      "replaces_wikidata_id": "Q1208655",
-      "matched_candidate": "Jeff Green (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jesse Edwards": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jesse_Edwards_(basketball)",
-      "wikidata_id": "Q100785232",
-      "wikidata_label": "Jesse Edwards",
-      "wikidata_description": "Dutch basketball player (born 2000)",
-      "wikidata_birth_date": "2000-03-18",
-      "basketball_reference_birth_date": "2000-03-18",
-      "replaces": "https://en.wikipedia.org/wiki/Jesse_Edwards",
-      "replaces_wikidata_id": "Q57175600",
-      "matched_candidate": "Jesse Edwards (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jim Garvin": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/James_Garvin_(basketball)",
-      "wikidata_id": "Q8871685",
-      "wikidata_label": "James Garvin",
-      "wikidata_description": "American basketball player",
-      "wikidata_birth_date": "1950-02-05",
-      "basketball_reference_birth_date": "1950-02-05",
-      "replaces": "https://en.wikipedia.org/wiki/Jim_Garvin",
-      "replaces_wikidata_id": "Q6134524",
-      "matched_candidate": "James Garvin (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Joe Harris": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Joe_Harris_(basketball)",
-      "wikidata_id": "Q16227291",
-      "wikidata_label": "",
-      "wikidata_description": "American basketball player (born 1991)",
-      "wikidata_birth_date": "1991-09-06",
-      "basketball_reference_birth_date": "1991-09-06",
-      "replaces": "https://en.wikipedia.org/wiki/Joe_Harris",
-      "replaces_wikidata_id": "Q951304",
-      "matched_candidate": "Joe Harris (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "John Brown": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Brown_(basketball,_born_1951)",
-      "wikidata_id": "Q1468968",
-      "wikidata_label": "John Brown",
-      "wikidata_description": "American basketball player (born 1951)",
-      "wikidata_birth_date": "1951-12-14",
-      "basketball_reference_birth_date": "1951-12-14",
-      "replaces": "https://en.wikipedia.org/wiki/John_Brown",
-      "replaces_wikidata_id": "Q6217561",
-      "matched_candidate": "John Brown (basketball, born 1951)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "John Butler": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Butler_Jr.",
-      "wikidata_id": "Q112659357",
-      "wikidata_label": "John Butler",
-      "wikidata_description": "American basketball player (born 2002)",
-      "wikidata_birth_date": "2002-12-04",
-      "basketball_reference_birth_date": "2002-12-04",
-      "replaces": "https://en.wikipedia.org/wiki/John_Butler",
-      "replaces_wikidata_id": "Q418156",
-      "matched_candidate": "John Butler (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "John Collins": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Collins_(basketball)",
-      "wikidata_id": "Q28935742",
-      "wikidata_label": "John Collins",
-      "wikidata_description": "American basketball player (born 1997)",
-      "wikidata_birth_date": "1997-09-23",
-      "basketball_reference_birth_date": "1997-09-23",
-      "replaces": "https://en.wikipedia.org/wiki/John_Collins",
-      "replaces_wikidata_id": "Q248472",
-      "matched_candidate": "John Collins (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "John Holland": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Holland_(basketball)",
-      "wikidata_id": "Q2079108",
-      "wikidata_label": "John Holland",
-      "wikidata_description": "American basketball player (born 1988)",
-      "wikidata_birth_date": "1988-11-06",
-      "basketball_reference_birth_date": "1988-11-06",
-      "replaces": "https://en.wikipedia.org/wiki/John_Holland",
-      "replaces_wikidata_id": "Q376578",
-      "matched_candidate": "John Holland (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "John Jenkins": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Jenkins_(basketball)",
-      "wikidata_id": "Q1000791",
-      "wikidata_label": "John Jenkins",
-      "wikidata_description": "American basketball player (born 1991)",
-      "wikidata_birth_date": "1991-03-06",
-      "basketball_reference_birth_date": "1991-03-06",
-      "replaces": "https://en.wikipedia.org/wiki/John_Jenkins",
-      "replaces_wikidata_id": "Q1167112",
-      "matched_candidate": "John Jenkins (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jonathan Gibson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jonathan_Gibson_(basketball)",
-      "wikidata_id": "Q3809921",
-      "wikidata_label": "Jonathan Gibson",
-      "wikidata_description": "American basketball player (born 1987)",
-      "wikidata_birth_date": "1987-11-08",
-      "basketball_reference_birth_date": "1987-11-08",
-      "replaces": "https://en.wikipedia.org/wiki/Jonathan_Gibson",
-      "replaces_wikidata_id": "Q6273189",
-      "matched_candidate": "Jonathan Gibson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jordan Hall": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jordan_Hall_(basketball)",
-      "wikidata_id": "Q107354845",
-      "wikidata_label": "Jordan Hall",
-      "wikidata_description": "American basketball player (born 2002)",
-      "wikidata_birth_date": "2002-01-14",
-      "basketball_reference_birth_date": "2002-01-14",
-      "replaces": "https://en.wikipedia.org/wiki/Jordan_Hall",
-      "replaces_wikidata_id": "Q92774693",
-      "matched_candidate": "Jordan Hall (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jordan Hamilton": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jordan_Hamilton_(basketball)",
-      "wikidata_id": "Q1703620",
-      "wikidata_label": "Jordan Hamilton",
-      "wikidata_description": "American basketball player (born 1990)",
-      "wikidata_birth_date": "1990-10-06",
-      "basketball_reference_birth_date": "1990-10-06",
-      "replaces": "https://en.wikipedia.org/wiki/Jordan_Hamilton",
-      "replaces_wikidata_id": "Q16800315",
-      "matched_candidate": "Jordan Hamilton (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jordan Miller": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jordan_Miller_(basketball)",
-      "wikidata_id": "Q100884789",
-      "wikidata_label": "Jordan Miller",
-      "wikidata_description": "American basketball player (born 2000)",
-      "wikidata_birth_date": "2000-01-23",
-      "basketball_reference_birth_date": "2000-01-23",
-      "replaces": "https://en.wikipedia.org/wiki/Jordan_Miller",
-      "replaces_wikidata_id": "Q16230493",
-      "matched_candidate": "Jordan Miller (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jorge Gutierrez": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jorge_Guti%C3%A9rrez_(basketball)",
-      "wikidata_id": "Q1097123",
-      "wikidata_label": "Jorge Gutiérrez",
-      "wikidata_description": "Mexican basketball player (born 1988)",
-      "wikidata_birth_date": "1988-12-27",
-      "basketball_reference_birth_date": "1988-12-27",
-      "replaces": "https://en.wikipedia.org/wiki/Jorge_Gutierrez",
-      "replaces_wikidata_id": "Q6278089",
-      "matched_candidate": "Jorge Gutierrez (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Jose Alvarado": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jose_Alvarado_(basketball)",
-      "wikidata_id": "Q97185180",
-      "wikidata_label": "Jose Alvarado",
-      "wikidata_description": "Puerto Rican basketball player (born 1998)",
-      "wikidata_birth_date": "1998-04-12",
-      "basketball_reference_birth_date": "1998-04-12",
-      "replaces": "https://en.wikipedia.org/wiki/Jos%C3%A9_Alvarado",
-      "replaces_wikidata_id": "Q28943796",
-      "matched_candidate": "Jose Alvarado (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Josh Gray": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Josh_Gray_(basketball)",
-      "wikidata_id": "Q27924024",
-      "wikidata_label": "Josh Gray",
-      "wikidata_description": "American basketball player (born 1993)",
-      "wikidata_birth_date": "1993-09-09",
-      "basketball_reference_birth_date": "1993-09-09",
-      "replaces": "https://en.wikipedia.org/wiki/Josh_Gray",
-      "replaces_wikidata_id": "Q55078108",
-      "matched_candidate": "Josh Gray (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Josh Green": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Josh_Green_(basketball)",
-      "wikidata_id": "Q55102402",
-      "wikidata_label": "Josh Green",
-      "wikidata_description": "Australian basketball player (born 2000)",
-      "wikidata_birth_date": "2000-11-16",
-      "basketball_reference_birth_date": "2000-11-16",
-      "replaces": "https://en.wikipedia.org/wiki/Joshua_Green",
-      "replaces_wikidata_id": "Q16210086",
-      "matched_candidate": "Josh Green (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Julian Phillips": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Julian_Phillips_(basketball)",
-      "wikidata_id": "Q116279792",
-      "wikidata_label": "Julian Phillips",
-      "wikidata_description": "American basketball player (born 2003)",
-      "wikidata_birth_date": "2003-11-05",
-      "basketball_reference_birth_date": "2003-11-05",
-      "replaces": "https://en.wikipedia.org/wiki/Julian_Phillips",
-      "replaces_wikidata_id": "Q16212961",
-      "matched_candidate": "Julian Phillips (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Justin Anderson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Anderson_(basketball)",
-      "wikidata_id": "Q19864241",
-      "wikidata_label": "Justin Anderson",
-      "wikidata_description": "American basketball player (born 1993)",
-      "wikidata_birth_date": "1993-11-19",
-      "basketball_reference_birth_date": "1993-11-19",
-      "replaces": "https://en.wikipedia.org/wiki/Justin_Anderson",
-      "replaces_wikidata_id": "Q16155763",
-      "matched_candidate": "Justin Anderson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Justin Harper": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Harper_(basketball)",
-      "wikidata_id": "Q2486090",
-      "wikidata_label": "Justin Harper",
-      "wikidata_description": "American basketball player (born 1989)",
-      "wikidata_birth_date": "1989-08-30",
-      "basketball_reference_birth_date": "1989-08-30",
-      "replaces": "https://en.wikipedia.org/wiki/Justin_Harper",
-      "replaces_wikidata_id": "Q6317657",
-      "matched_candidate": "Justin Harper (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Justin Jackson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Jackson_(basketball,_born_1995)",
-      "wikidata_id": "Q17386097",
-      "wikidata_label": "Justin Jackson",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-03-28",
-      "basketball_reference_birth_date": "1995-03-28",
-      "replaces": "https://en.wikipedia.org/wiki/Justin_Jackson",
-      "replaces_wikidata_id": "Q19926720",
-      "matched_candidate": "Justin Jackson (basketball, born 1995)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Kendall Brown": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kendall_Brown_(basketball)",
-      "wikidata_id": "Q107287942",
-      "wikidata_label": "Kendall Brown",
-      "wikidata_description": "American basketball player (born 2003)",
-      "wikidata_birth_date": "2003-05-11",
-      "basketball_reference_birth_date": "2003-05-11",
-      "replaces": "https://en.wikipedia.org/wiki/Kendall_Brown",
-      "replaces_wikidata_id": "Q133756355",
-      "matched_candidate": "Kendall Brown (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Kevin Knox": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Knox_II",
-      "wikidata_id": "Q27919944",
-      "wikidata_label": "Kevin Knox II",
-      "wikidata_description": "American basketball player (born 1999)",
-      "wikidata_birth_date": "1999-08-11",
-      "basketball_reference_birth_date": "1999-08-11",
-      "replaces": "https://en.wikipedia.org/wiki/Kevin_Knox",
-      "replaces_wikidata_id": "Q55151703",
-      "matched_candidate": "Kevin Knox (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Kevin Murphy": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Murphy_(basketball)",
-      "wikidata_id": "Q2084533",
-      "wikidata_label": "Kevin Murphy",
-      "wikidata_description": "American basketball player",
-      "wikidata_birth_date": "1990-03-06",
-      "basketball_reference_birth_date": "1990-03-06",
-      "replaces": "https://en.wikipedia.org/wiki/Kevin_Murphy",
-      "replaces_wikidata_id": "Q363327",
-      "matched_candidate": "Kevin Murphy (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Larry Sanders": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Larry_Sanders_(basketball)",
-      "wikidata_id": "Q1034012",
-      "wikidata_label": "Larry Sanders",
-      "wikidata_description": "American basketball player (born 1988)",
-      "wikidata_birth_date": "1988-11-21",
-      "basketball_reference_birth_date": "1988-11-21",
-      "replaces": "https://en.wikipedia.org/wiki/Larry_Sanders",
-      "replaces_wikidata_id": "Q6491062",
-      "matched_candidate": "Larry Sanders (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Malcolm Hill": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Malcolm_Hill_(basketball)",
-      "wikidata_id": "Q16227375",
-      "wikidata_label": "Malcolm Hill",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-10-26",
-      "basketball_reference_birth_date": "1995-10-26",
-      "replaces": "https://en.wikipedia.org/wiki/Malcolm_Hill",
-      "replaces_wikidata_id": "Q17129569",
-      "matched_candidate": "Malcolm Hill (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Malcolm Thomas": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Malcolm_Thomas_(basketball,_born_1988)",
-      "wikidata_id": "Q2778084",
-      "wikidata_label": "Malcolm Thomas",
-      "wikidata_description": "American basketball player (born 1988)",
-      "wikidata_birth_date": "1988-11-08",
-      "basketball_reference_birth_date": "1988-11-08",
-      "replaces": "https://en.wikipedia.org/wiki/Malcolm_Thomas",
-      "replaces_wikidata_id": "Q11782880",
-      "matched_candidate": "Malcolm Thomas (basketball, born 1988)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Marcus Thornton": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Marcus_Thornton_(basketball,_born_1987)",
-      "wikidata_id": "Q1365204",
-      "wikidata_label": "Marcus Thornton",
-      "wikidata_description": "American basketball player (born 1987)",
-      "wikidata_birth_date": "1987-06-05",
-      "basketball_reference_birth_date": "1987-06-05",
-      "replaces": "https://en.wikipedia.org/wiki/Marcus_Thornton",
-      "replaces_wikidata_id": "Q6758486",
-      "matched_candidate": "Marcus Thornton (basketball, born 1987)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Marcus Vinicius": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Marquinhos_Vieira",
-      "wikidata_id": "Q2607044",
-      "wikidata_label": "Marcus Vinicius de Souza",
-      "wikidata_description": "Brazilian basketball player (born 1984)",
-      "wikidata_birth_date": "1984-05-31",
-      "basketball_reference_birth_date": "1984-05-31",
-      "replaces": "https://en.wikipedia.org/wiki/Marcus_Vinicius",
-      "replaces_wikidata_id": "Q787535",
-      "matched_candidate": "Marcus Vinicius (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Marko Simonovic": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Marko_Simonovi%C4%87_(basketball,_born_1999)",
-      "wikidata_id": "Q55622235",
-      "wikidata_label": "Marko Simonović",
-      "wikidata_description": "Montenegrin basketball player (born 1999)",
-      "wikidata_birth_date": "1999-10-15",
-      "basketball_reference_birth_date": "1999-10-15",
-      "replaces": "https://en.wikipedia.org/wiki/Marko_Simonovi%C4%87",
-      "replaces_wikidata_id": "Q66115435",
-      "matched_candidate": "Marko Simonović (basketball, born 1999)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Mason Jones": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mason_Jones_(basketball)",
-      "wikidata_id": "Q85784177",
-      "wikidata_label": "Mason Jones",
-      "wikidata_description": "American basketball player (born 1998)",
-      "wikidata_birth_date": "1998-07-21",
-      "basketball_reference_birth_date": "1998-07-21",
-      "replaces": "https://en.wikipedia.org/wiki/Mason_Jones",
-      "replaces_wikidata_id": "Q113125043",
-      "matched_candidate": "Mason Jones (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Matt Thomas": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Matt_Thomas_(basketball)",
-      "wikidata_id": "Q22096360",
-      "wikidata_label": "Matt Thomas",
-      "wikidata_description": "American basketball player (born 1994)",
-      "wikidata_birth_date": "1994-08-04",
-      "basketball_reference_birth_date": "1994-08-04",
-      "replaces": "https://en.wikipedia.org/wiki/Matthew_Thomas",
-      "replaces_wikidata_id": "Q6791313",
-      "matched_candidate": "Matt Thomas (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Michael Foster": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Foster_Jr.",
-      "wikidata_id": "Q106524904",
-      "wikidata_label": "Michael Foster",
-      "wikidata_description": "American basketball player (born 2003)",
-      "wikidata_birth_date": "2003-01-16",
-      "basketball_reference_birth_date": "2003-01-16",
-      "replaces": "https://en.wikipedia.org/wiki/Michael_Foster",
-      "replaces_wikidata_id": "Q6830376",
-      "matched_candidate": "Michael Foster (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Mike Conley": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Conley_(basketball)",
-      "wikidata_id": "Q921340",
-      "wikidata_label": "Mike Conley Jr.",
-      "wikidata_description": "American basketball player (born 1987)",
-      "wikidata_birth_date": "1987-10-11",
-      "basketball_reference_birth_date": "1987-10-11",
-      "replaces": "https://en.wikipedia.org/wiki/Mike_Conley",
-      "replaces_wikidata_id": "Q643259",
-      "matched_candidate": "Mike Conley (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Mike Morrison": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Morrison_(basketball,_born_1967)",
-      "wikidata_id": "Q3857427",
-      "wikidata_label": "Mike Morrison",
-      "wikidata_description": "American basketball player (born 1967)",
-      "wikidata_birth_date": "1967-08-16",
-      "basketball_reference_birth_date": "1967-08-16",
-      "replaces": "https://en.wikipedia.org/wiki/Michael_Morrison",
-      "replaces_wikidata_id": "Q6832914",
-      "matched_candidate": "Mike Morrison (basketball, born 1967)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Mike Scott": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Scott_(basketball,_born_1988)",
-      "wikidata_id": "Q582252",
-      "wikidata_label": "Mike Scott",
-      "wikidata_description": "American basketball player (born 1988)",
-      "wikidata_birth_date": "1988-07-16",
-      "basketball_reference_birth_date": "1988-07-16",
-      "replaces": "https://en.wikipedia.org/wiki/Michael_Scott",
-      "replaces_wikidata_id": "Q402418",
-      "matched_candidate": "Mike Scott (basketball, born 1988)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Mike Smith": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Smith_(basketball,_born_1976)",
-      "wikidata_id": "Q1635860",
-      "wikidata_label": "Mike Smith",
-      "wikidata_description": "American basketball player (born 1976)",
-      "wikidata_birth_date": "1976-04-15",
-      "basketball_reference_birth_date": "1976-04-15",
-      "replaces": "https://en.wikipedia.org/wiki/Michael_Smith",
-      "replaces_wikidata_id": "Q253404",
-      "matched_candidate": "Mike Smith (basketball, born 1976)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Moritz Wagner": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Moritz_Wagner_(basketball)",
-      "wikidata_id": "Q22999836",
-      "wikidata_label": "Moritz Wagner",
-      "wikidata_description": "German basketball player (born 1997)",
-      "wikidata_birth_date": "1997-04-26",
-      "basketball_reference_birth_date": "1997-04-26",
-      "replaces": "https://en.wikipedia.org/wiki/Moritz_Wagner",
-      "replaces_wikidata_id": "Q61429746",
-      "matched_candidate": "Moritz Wagner (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Moussa Cissé": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Moussa_Ciss%C3%A9_(basketball)",
-      "wikidata_id": "Q97411335",
-      "wikidata_label": "Moussa Cissé",
-      "wikidata_description": "Guinean basketball player (born 2002)",
-      "wikidata_birth_date": "2002-09-10",
-      "basketball_reference_birth_date": "2002-09-10",
-      "replaces": "https://en.wikipedia.org/wiki/Moussa_Ciss%C3%A9",
-      "replaces_wikidata_id": "Q128871630",
-      "matched_candidate": "Moussa Cissé (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Patrick Williams": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Patrick_Williams_(basketball)",
-      "wikidata_id": "Q85792426",
-      "wikidata_label": "Patrick Williams",
-      "wikidata_description": "American basketball player (born 2001)",
-      "wikidata_birth_date": "2001-08-26",
-      "basketball_reference_birth_date": "2001-08-26",
-      "replaces": "https://en.wikipedia.org/wiki/Patrick_Williams",
-      "replaces_wikidata_id": "Q7147848",
-      "matched_candidate": "Patrick Williams (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Pepe Sanchez": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Pepe_S%C3%A1nchez_(basketball)",
-      "wikidata_id": "Q556418",
-      "wikidata_label": "Juan Ignacio Sánchez",
-      "wikidata_description": "Argentine basketball player (born 1977)",
-      "wikidata_birth_date": "1977-05-08",
-      "basketball_reference_birth_date": "1977-05-08",
-      "replaces": "https://en.wikipedia.org/wiki/Pepe_Sanchez",
-      "replaces_wikidata_id": "Q3899355",
-      "matched_candidate": "Pepe Sánchez (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Reggie Perry": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Reggie_Perry_(basketball)",
-      "wikidata_id": "Q65553146",
-      "wikidata_label": "Reggie Perry",
-      "wikidata_description": "American basketball player (born 2000)",
-      "wikidata_birth_date": "2000-03-21",
-      "basketball_reference_birth_date": "2000-03-21",
-      "replaces": "https://en.wikipedia.org/wiki/Reggie_Perry",
-      "replaces_wikidata_id": "Q104519696",
-      "matched_candidate": "Reggie Perry (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Rob Edwards": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Rob_Edwards_(basketball)",
-      "wikidata_id": "Q100785303",
-      "wikidata_label": "Rob Edwards",
-      "wikidata_description": "American basketball player (born 1997)",
-      "wikidata_birth_date": "1997-01-20",
-      "basketball_reference_birth_date": "1997-01-20",
-      "replaces": "https://en.wikipedia.org/wiki/Robert_Edwards",
-      "replaces_wikidata_id": "Q418022",
-      "matched_candidate": "Rob Edwards (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Rob Rose": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Rose_(basketball)",
-      "wikidata_id": "Q953041",
-      "wikidata_label": "Robert Rose",
-      "wikidata_description": "American basketball player (born 1964)",
-      "wikidata_birth_date": "1964-12-27",
-      "basketball_reference_birth_date": "1964-12-27",
-      "replaces": "https://en.wikipedia.org/wiki/Rob_Rose",
-      "replaces_wikidata_id": "Q3263",
-      "matched_candidate": "Robert Rose (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Robert Franks": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Franks_(basketball)",
-      "wikidata_id": "Q65927096",
-      "wikidata_label": "Robert Franks",
-      "wikidata_description": "American basketball player (born 1996)",
-      "wikidata_birth_date": "1996-12-18",
-      "basketball_reference_birth_date": "1996-12-18",
-      "replaces": "https://en.wikipedia.org/wiki/Robert_Franks",
-      "replaces_wikidata_id": "Q7344504",
-      "matched_candidate": "Robert Franks (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Robert Woodard": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Woodard_II",
-      "wikidata_id": "Q80189131",
-      "wikidata_label": "Robert Woodard II",
-      "wikidata_description": "American basketball player (born 1999)",
-      "wikidata_birth_date": "1999-09-22",
-      "basketball_reference_birth_date": "1999-09-22",
-      "replaces": "https://en.wikipedia.org/wiki/Robert_Woodard",
-      "replaces_wikidata_id": "Q129275065",
-      "matched_candidate": "Robert Woodard II",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Ron Anderson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Anderson_(basketball,_born_1958)",
-      "wikidata_id": "Q1627976",
-      "wikidata_label": "Ron Anderson",
-      "wikidata_description": "American basketball player (born 1958)",
-      "wikidata_birth_date": "1958-10-15",
-      "basketball_reference_birth_date": "1958-10-15",
-      "replaces": "https://en.wikipedia.org/wiki/Ron_Anderson",
-      "replaces_wikidata_id": "Q3441361",
-      "matched_candidate": "Ron Anderson (basketball, born 1958)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Rudy Fernandez": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Rudy_Fern%C3%A1ndez_(basketball)",
-      "wikidata_id": "Q312651",
-      "wikidata_label": "Rudy Fernández",
-      "wikidata_description": "Spanish basketball player (born 1985)",
-      "wikidata_birth_date": "1985-04-04",
-      "basketball_reference_birth_date": "1985-04-04",
-      "replaces": "https://en.wikipedia.org/wiki/Rudy_Fernandez",
-      "replaces_wikidata_id": "Q1214001",
-      "matched_candidate": "Rudy Fernandez (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Russ Smith": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Russ_Smith_(basketball)",
-      "wikidata_id": "Q16204824",
-      "wikidata_label": "Russ Smith",
-      "wikidata_description": "American basketball player (born 1991)",
-      "wikidata_birth_date": "1991-04-19",
-      "basketball_reference_birth_date": "1991-04-19",
-      "replaces": "https://en.wikipedia.org/wiki/Russell_Smith",
-      "replaces_wikidata_id": "Q585934",
-      "matched_candidate": "Russ Smith (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Ryan Kelly": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Ryan_Kelly_(basketball)",
-      "wikidata_id": "Q13605944",
-      "wikidata_label": "Ryan Kelly",
-      "wikidata_description": "American basketball player (born 1991)",
-      "wikidata_birth_date": "1991-04-09",
-      "basketball_reference_birth_date": "1991-04-09",
-      "replaces": "https://en.wikipedia.org/wiki/Ryan_Kelly",
-      "replaces_wikidata_id": "Q7384211",
-      "matched_candidate": "Ryan Kelly (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Spencer Jones": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Spencer_Jones_(basketball)",
-      "wikidata_id": "Q100863058",
-      "wikidata_label": "Spencer Jones",
-      "wikidata_description": "American basketball player (born 2001)",
-      "wikidata_birth_date": "2001-06-14",
-      "basketball_reference_birth_date": "2001-06-14",
-      "replaces": "https://en.wikipedia.org/wiki/Spencer_Jones",
-      "replaces_wikidata_id": "Q7576098",
-      "matched_candidate": "Spencer Jones (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Stanley Johnson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Stanley_Johnson_(basketball)",
-      "wikidata_id": "Q16239572",
-      "wikidata_label": "Stanley Johnson",
-      "wikidata_description": "American basketball player (born 1996)",
-      "wikidata_birth_date": "1996-05-29",
-      "basketball_reference_birth_date": "1996-05-29",
-      "replaces": "https://en.wikipedia.org/wiki/Stanley_Johnson",
-      "replaces_wikidata_id": "Q7599709",
-      "matched_candidate": "Stanley Johnson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Sterling Brown": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Sterling_Brown_(basketball)",
-      "wikidata_id": "Q30322415",
-      "wikidata_label": "Sterling Brown",
-      "wikidata_description": "American basketball player (born 1995)",
-      "wikidata_birth_date": "1995-02-10",
-      "basketball_reference_birth_date": "1995-02-10",
-      "replaces": "https://en.wikipedia.org/wiki/Sterling_Brown",
-      "replaces_wikidata_id": "Q30704997",
-      "matched_candidate": "Sterling Brown (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Steve Hamilton": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Steve_Hamilton_(sportsman,_born_1934)",
-      "wikidata_id": "Q6932895",
-      "wikidata_label": "Steve Hamilton",
-      "wikidata_description": "American baseball player and coach",
-      "wikidata_birth_date": "1935-11-30",
-      "basketball_reference_birth_date": "1934-11-30",
-      "replaces": "https://en.wikipedia.org/wiki/Steve_Hamilton",
-      "replaces_wikidata_id": "Q1039444",
-      "matched_candidate": "Steve Hamilton (sportsman, born 1934)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Thomas Robinson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_Robinson_(basketball)",
-      "wikidata_id": "Q770894",
-      "wikidata_label": "Thomas Robinson",
-      "wikidata_description": "American basketball player (born 1991)",
-      "wikidata_birth_date": "1991-03-17",
-      "basketball_reference_birth_date": "1991-03-17",
-      "replaces": "https://en.wikipedia.org/wiki/Thomas_Robinson",
-      "replaces_wikidata_id": "Q135355",
-      "matched_candidate": "Thomas Robinson (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Thomas Welsh": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_Welsh_(basketball)",
-      "wikidata_id": "Q20652410",
-      "wikidata_label": "Thomas Welsh",
-      "wikidata_description": "American basketball player (born 1996)",
-      "wikidata_birth_date": "1996-02-03",
-      "basketball_reference_birth_date": "1996-02-03",
-      "replaces": "https://en.wikipedia.org/wiki/Thomas_Welsh",
-      "replaces_wikidata_id": "Q7794979",
-      "matched_candidate": "Thomas Welsh (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Tony Bradley": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Bradley_(basketball)",
-      "wikidata_id": "Q29438680",
-      "wikidata_label": "Tony Bradley",
-      "wikidata_description": "American basketball player (born 1998)",
-      "wikidata_birth_date": "1998-01-08",
-      "basketball_reference_birth_date": "1998-01-08",
-      "replaces": "https://en.wikipedia.org/wiki/Tony_Bradley",
-      "replaces_wikidata_id": "Q32998657",
-      "matched_candidate": "Tony Bradley (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Tyler Davis": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Davis_(basketball)",
-      "wikidata_id": "Q48977473",
-      "wikidata_label": "Tyler Davis",
-      "wikidata_description": "Puerto Rican basketball player (born 1997)",
-      "wikidata_birth_date": "1997-05-22",
-      "basketball_reference_birth_date": "1997-05-22",
-      "replaces": "https://en.wikipedia.org/wiki/Tyler_Davis",
-      "replaces_wikidata_id": "Q50242478",
-      "matched_candidate": "Tyler Davis (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Tyler Ennis": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Ennis_(basketball)",
-      "wikidata_id": "Q16227014",
-      "wikidata_label": "Tyler Ennis",
-      "wikidata_description": "Canadian basketball player (born 1994)",
-      "wikidata_birth_date": "1994-08-24",
-      "basketball_reference_birth_date": "1994-08-24",
-      "replaces": "https://en.wikipedia.org/wiki/Tyler_Ennis",
-      "replaces_wikidata_id": "Q19326932",
-      "matched_candidate": "Tyler Ennis (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Walt Williams": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Walt_Williams_(basketball)",
-      "wikidata_id": "Q1458276",
-      "wikidata_label": "Walt Williams",
-      "wikidata_description": "American basketball player (born 1970)",
-      "wikidata_birth_date": "1970-04-16",
-      "basketball_reference_birth_date": "1970-04-16",
-      "replaces": "https://en.wikipedia.org/wiki/Walt_Williams",
-      "replaces_wikidata_id": "Q7966429",
-      "matched_candidate": "Walt Williams (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Wendell Moore": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Wendell_Moore_Jr.",
-      "wikidata_id": "Q63199105",
-      "wikidata_label": "Wendell Moore Jr.",
-      "wikidata_description": "American basketball player (born 2001)",
-      "wikidata_birth_date": "2001-09-18",
-      "basketball_reference_birth_date": "2001-09-18",
-      "replaces": "https://en.wikipedia.org/wiki/Wendell_Moore",
-      "replaces_wikidata_id": "Q104603677",
-      "matched_candidate": "Wendell Moore (basketball)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "Wil Jones": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Wil_Jones_(basketball,_born_1947)",
-      "wikidata_id": "Q4019746",
-      "wikidata_label": "Wil Jones",
-      "wikidata_description": "American basketball player",
-      "wikidata_birth_date": "1947-02-27",
-      "basketball_reference_birth_date": "1947-02-27",
-      "replaces": "https://en.wikipedia.org/wiki/Wil_Jones_(basketball)",
-      "replaces_wikidata_id": "Q33129",
-      "matched_candidate": "Wil Jones (basketball, born 1947)",
-      "verified": "2026-09-25",
-      "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
-    },
-    "William Howard": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/William_Howard_(basketball)",
-      "wikidata_id": "Q20666676",
-      "wikidata_label": "William Howard",
-      "wikidata_description": "French basketball player (born 1993)",
-      "wikidata_birth_date": "1993-10-25",
-      "basketball_reference_birth_date": "1993-10-25",
-      "replaces": "https://en.wikipedia.org/wiki/William_Howard",
-      "replaces_wikidata_id": "Q363259",
-      "matched_candidate": "William Howard (basketball)",
+    "Kyle Anderson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Kyle_Anderson_(basketball)",
+      "wikidata_id": "Q6451040",
+      "wikidata_label": "Kyle Anderson",
+      "wikidata_description": "American-Chinese basketball player",
+      "wikidata_birth_date": "1993-09-20",
+      "basketball_reference_birth_date": "1993-09-20",
+      "replaces": "https://en.wikipedia.org/wiki/Kyle_Anderson",
+      "replaces_wikidata_id": "Q6451038",
+      "matched_candidate": "Kyle Anderson (basketball)",
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     }
@@ -1519,8 +37,8 @@
       "searched": [
         "Alpha Diallo (basketball, born 1997)",
         "Alpha Diallo",
-        "Alpha (given name)",
         "Diallo",
+        "Alpha (given name)",
         "Alfa Ntiallo",
         "Frederick Douglass Academy",
         "List of Fula people",
@@ -1558,16 +76,6 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "Alpha (given name)",
-          "wikidata_id": "Q28914205",
-          "label": "Alpha",
-          "description": "unisex given name",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (unisex given name)"
-        },
-        {
           "title": "Diallo",
           "wikidata_id": "Q21449270",
           "label": "Diallo",
@@ -1576,6 +84,16 @@
           "birth_date": "",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (family name)"
+        },
+        {
+          "title": "Alpha (given name)",
+          "wikidata_id": "Q28914205",
+          "label": "Alpha",
+          "description": "unisex given name",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (unisex given name)"
         },
         {
           "title": "Alfa Ntiallo",
@@ -1742,7 +260,7 @@
         "Swagger (TV series)",
         "List of NBA players (B)",
         "Chris Distefano",
-        "A House of Dynamite"
+        "Talleres de Perico"
       ],
       "candidates": [
         {
@@ -1836,14 +354,14 @@
           "why_not": "not a basketball player on Wikidata (American comedian)"
         },
         {
-          "title": "A House of Dynamite",
-          "wikidata_id": "Q131686066",
-          "label": "A House of Dynamite",
-          "description": "2025 film directed by Kathryn Bigelow",
+          "title": "Talleres de Perico",
+          "wikidata_id": "Q2979824",
+          "label": "Talleres de Perico",
+          "description": "Club Atlético Talleres",
           "p106_basketball_player": false,
           "birth_date": "",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (2025 film directed by Kathryn Bigelow)"
+          "why_not": "not a basketball player on Wikidata (Club Atlético Talleres)"
         }
       ],
       "why": "no candidate article is a basketball player born in the right year"
@@ -2075,11 +593,11 @@
         "List of NBA players (S)",
         "Alpha Dog",
         "2025 Los Angeles Sparks season",
+        "Southeastern Conference Men's Basketball Rookie of the Year",
+        "Charlie Kolar",
         "Presley",
         "Creighton Bluejays men's basketball",
-        "Charlie Kolar",
-        "Creighton Bluejays",
-        "Southeastern Conference Men's Basketball Rookie of the Year"
+        "2026–27 Stanford Cardinal women's basketball team"
       ],
       "candidates": [
         {
@@ -2133,6 +651,26 @@
           "why_not": "not a basketball player on Wikidata (29th season of the WNBA)"
         },
         {
+          "title": "Southeastern Conference Men's Basketball Rookie of the Year",
+          "wikidata_id": "Q7569435",
+          "label": "Southeastern Conference Men's Basketball Rookie of the Year",
+          "description": "",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (Southeastern Conference Men's Basketball Rookie of the Year)"
+        },
+        {
+          "title": "Charlie Kolar",
+          "wikidata_id": "Q95693718",
+          "label": "Charlie Kolar",
+          "description": "American football player (born 1999)",
+          "p106_basketball_player": false,
+          "birth_date": "1999-02-10",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (American football player (born 1999))"
+        },
+        {
           "title": "Presley",
           "wikidata_id": "Q31046554",
           "label": "Presley",
@@ -2153,34 +691,14 @@
           "why_not": "not a basketball player on Wikidata (men's college basketball team)"
         },
         {
-          "title": "Charlie Kolar",
-          "wikidata_id": "Q95693718",
-          "label": "Charlie Kolar",
-          "description": "American football player (born 1999)",
-          "p106_basketball_player": false,
-          "birth_date": "1999-02-10",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (American football player (born 1999))"
-        },
-        {
-          "title": "Creighton Bluejays",
-          "wikidata_id": "Q5184000",
-          "label": "Creighton Bluejays",
-          "description": "athletic program of Creighton University",
+          "title": "2026–27 Stanford Cardinal women's basketball team",
+          "wikidata_id": "Q141362105",
+          "label": "2026–27 Stanford Cardinal women's basketball team",
+          "description": "Intercollegiate basketball season",
           "p106_basketball_player": false,
           "birth_date": "",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (athletic program of Creighton University)"
-        },
-        {
-          "title": "Southeastern Conference Men's Basketball Rookie of the Year",
-          "wikidata_id": "Q7569435",
-          "label": "Southeastern Conference Men's Basketball Rookie of the Year",
-          "description": "",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (Southeastern Conference Men's Basketball Rookie of the Year)"
+          "why_not": "not a basketball player on Wikidata (Intercollegiate basketball season)"
         }
       ],
       "why": "no candidate article is a basketball player born in the right year"
@@ -2304,9 +822,9 @@
         "Braden Smith",
         "Braden (given name)",
         "List of people with surname Smith",
+        "2026 Big Ten men's basketball tournament",
         "Vic Braden",
         "2025–26 Purdue Boilermakers men's basketball team",
-        "2026 Big Ten men's basketball tournament",
         "Westfield High School (Westfield, Indiana)"
       ],
       "candidates": [
@@ -2351,6 +869,16 @@
           "why_not": "not a basketball player on Wikidata (list of persons by surname)"
         },
         {
+          "title": "2026 Big Ten men's basketball tournament",
+          "wikidata_id": "Q136645028",
+          "label": "2026 Big Ten men's basketball tournament",
+          "description": "American college basketball postseason tournament",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (American college basketball postseason tournament)"
+        },
+        {
           "title": "Vic Braden",
           "wikidata_id": "Q7924747",
           "label": "Vic Braden",
@@ -2369,16 +897,6 @@
           "birth_date": "",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (American college basketball season)"
-        },
-        {
-          "title": "2026 Big Ten men's basketball tournament",
-          "wikidata_id": "Q136645028",
-          "label": "2026 Big Ten men's basketball tournament",
-          "description": "American college basketball postseason tournament",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (American college basketball postseason tournament)"
         },
         {
           "title": "Westfield High School (Westfield, Indiana)",
@@ -2400,13 +918,13 @@
       "rejected_wikidata_id": "Q4957140",
       "searched": [
         "Brandon Williams (basketball, born 1999)",
-        "Brandon Williams (basketball, born 1975)",
         "Brandon Williams",
+        "Brandon Williams (basketball, born 1975)",
         "Brandon Knight (basketball)",
         "Brandon Miller (basketball, born 2002)",
         "Derrick Williams (basketball)",
         "Brandon Williams (tight end)",
-        "Brandon Gilbeck"
+        "Brandon Roy"
       ],
       "candidates": [
         {
@@ -2490,12 +1008,12 @@
           "why_not": "not a basketball player on Wikidata (American football player (born 1987))"
         },
         {
-          "title": "Brandon Gilbeck",
-          "wikidata_id": "Q90713996",
-          "label": "Brandon Gilbeck",
-          "description": "American basketball player",
+          "title": "Brandon Roy",
+          "wikidata_id": "Q313485",
+          "label": "Brandon Roy",
+          "description": "American basketball player and coach (born 1984)",
           "p106_basketball_player": true,
-          "birth_date": "1996-12-09",
+          "birth_date": "1984-07-23",
           "accepted": false,
           "why_not": "no Basketball-Reference birth date to check the item against"
         }
@@ -2612,8 +1130,8 @@
         "Cody Martin (basketball)",
         "Caleb Furst",
         "Caleb Malhotra",
-        "Caleb (given name)",
         "Caleb Murphy",
+        "Caleb (given name)",
         "List of North Carolina State University people"
       ],
       "candidates": [
@@ -2678,16 +1196,6 @@
           "why_not": "not a basketball player on Wikidata (Canadian ice hockey player)"
         },
         {
-          "title": "Caleb (given name)",
-          "wikidata_id": "Q3650584",
-          "label": "Caleb",
-          "description": "male given name",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (male given name)"
-        },
-        {
           "title": "Caleb Murphy",
           "wikidata_id": "Q120493478",
           "label": "Caleb Murphy",
@@ -2696,6 +1204,16 @@
           "birth_date": "1999-12-15",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (American football player (born 1999))"
+        },
+        {
+          "title": "Caleb (given name)",
+          "wikidata_id": "Q3650584",
+          "label": "Caleb",
+          "description": "male given name",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (male given name)"
         },
         {
           "title": "List of North Carolina State University people",
@@ -2929,9 +1447,9 @@
         "Tina Charles (basketball)",
         "Charles Thomas",
         "Charles Wolf (basketball)",
+        "Alyssa Thomas",
         "Charles Claxton (basketball)",
-        "Carl Thomas (basketball)",
-        "Alyssa Thomas"
+        "Carl Thomas (basketball)"
       ],
       "candidates": [
         {
@@ -2995,6 +1513,16 @@
           "why_not": "not a basketball player on Wikidata (American basketball coach (1926–2022))"
         },
         {
+          "title": "Alyssa Thomas",
+          "wikidata_id": "Q16762819",
+          "label": "Alyssa Thomas",
+          "description": "American basketball player (born 1992)",
+          "p106_basketball_player": true,
+          "birth_date": "1992-04-12",
+          "accepted": false,
+          "why_not": "born 1992, Basketball-Reference says 1969 (23 years apart)"
+        },
+        {
           "title": "Charles Claxton (basketball)",
           "wikidata_id": "Q1753506",
           "label": "Charles Claxton",
@@ -3013,16 +1541,6 @@
           "birth_date": "1969-10-03",
           "accepted": true,
           "why_not": ""
-        },
-        {
-          "title": "Alyssa Thomas",
-          "wikidata_id": "Q16762819",
-          "label": "Alyssa Thomas",
-          "description": "American basketball player (born 1992)",
-          "p106_basketball_player": true,
-          "birth_date": "1992-04-12",
-          "accepted": false,
-          "why_not": "born 1992, Basketball-Reference says 1969 (23 years apart)"
         }
       ],
       "why": "3 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
@@ -3037,8 +1555,8 @@
         "Charles Brown",
         "Charlie Brown (basketball, born 1936)",
         "Charlie Hall (actor, born 1997)",
-        "The Charlie Brown and Snoopy Show",
         "Charlie Ward",
+        "The Charlie Brown and Snoopy Show",
         "Charlie Scott (basketball)",
         "Larry Brown (basketball)"
       ],
@@ -3114,16 +1632,6 @@
           "why_not": ""
         },
         {
-          "title": "The Charlie Brown and Snoopy Show",
-          "wikidata_id": "Q717347",
-          "label": "The Charlie Brown and Snoopy Show",
-          "description": "American animated television series",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (American animated television series)"
-        },
-        {
           "title": "Charlie Ward",
           "wikidata_id": "Q71980",
           "label": "Charlie Ward",
@@ -3132,6 +1640,16 @@
           "birth_date": "1970-10-12",
           "accepted": false,
           "why_not": "born 1970, Basketball-Reference says 1997 (27 years apart)"
+        },
+        {
+          "title": "The Charlie Brown and Snoopy Show",
+          "wikidata_id": "Q717347",
+          "label": "The Charlie Brown and Snoopy Show",
+          "description": "American animated television series",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (American animated television series)"
         },
         {
           "title": "Charlie Scott (basketball)",
@@ -3165,8 +1683,8 @@
         "Chris Johnson (basketball, born 1985)",
         "Chris Johnson",
         "Chris Johnson (basketball, born 1990)",
-        "Flau'jae Johnson",
         "Magic Johnson",
+        "Flau'jae Johnson",
         "Raven Johnson",
         "Joe Johnson (basketball)",
         "Marques Johnson"
@@ -3213,22 +1731,22 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "Flau'jae Johnson",
-          "wikidata_id": "Q118132650",
-          "label": "Flau'jae Johnson",
-          "description": "American basketball player and rapper",
-          "p106_basketball_player": true,
-          "birth_date": "2003-11-03",
-          "accepted": false,
-          "why_not": "no Basketball-Reference birth date to check the item against"
-        },
-        {
           "title": "Magic Johnson",
           "wikidata_id": "Q134183",
           "label": "Magic Johnson",
           "description": "American basketball player and entrepreneur (born 1959)",
           "p106_basketball_player": true,
           "birth_date": "1959-08-14",
+          "accepted": false,
+          "why_not": "no Basketball-Reference birth date to check the item against"
+        },
+        {
+          "title": "Flau'jae Johnson",
+          "wikidata_id": "Q118132650",
+          "label": "Flau'jae Johnson",
+          "description": "American basketball player and rapper",
+          "p106_basketball_player": true,
+          "birth_date": "2003-11-03",
           "accepted": false,
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
@@ -3274,8 +1792,8 @@
         "Cody Martin (basketball)",
         "Cody Martin",
         "Caleb Martin (basketball)",
-        "The Suite Life of Zack & Cody",
         "List of people with surname Martin",
+        "The Suite Life of Zack & Cody",
         "Cody (given name)",
         "Cody Rhodes",
         "List of North Carolina State University people"
@@ -3322,16 +1840,6 @@
           "why_not": ""
         },
         {
-          "title": "The Suite Life of Zack & Cody",
-          "wikidata_id": "Q217246",
-          "label": "The Suite Life of Zack & Cody",
-          "description": "2005–2008 American sitcom",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (2005–2008 American sitcom)"
-        },
-        {
           "title": "List of people with surname Martin",
           "wikidata_id": "Q133321985",
           "label": "list of people with surname Martin",
@@ -3340,6 +1848,16 @@
           "birth_date": "",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (Wikimedia list article)"
+        },
+        {
+          "title": "The Suite Life of Zack & Cody",
+          "wikidata_id": "Q217246",
+          "label": "The Suite Life of Zack & Cody",
+          "description": "2005–2008 American sitcom",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (2005–2008 American sitcom)"
         },
         {
           "title": "Cody (given name)",
@@ -3494,9 +2012,9 @@
         "La Mirada, California",
         "Derrick Favors",
         "Bellflower, California",
-        "List of people from California",
+        "Derrick Henry",
         "Deron Williams",
-        "Derrick Coleman"
+        "List of people from California"
       ],
       "candidates": [
         {
@@ -3560,14 +2078,14 @@
           "why_not": "not a basketball player on Wikidata (city in Los Angeles County, California, United States)"
         },
         {
-          "title": "List of people from California",
-          "wikidata_id": "Q4386459",
-          "label": "list of people from California",
-          "description": "Wikimedia list article",
+          "title": "Derrick Henry",
+          "wikidata_id": "Q16729768",
+          "label": "Derrick Henry",
+          "description": "American football player (born 1994)",
           "p106_basketball_player": false,
-          "birth_date": "",
+          "birth_date": "1994-01-04",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (Wikimedia list article)"
+          "why_not": "not a basketball player on Wikidata (American football player (born 1994))"
         },
         {
           "title": "Deron Williams",
@@ -3580,14 +2098,14 @@
           "why_not": "born 1984, Basketball-Reference says 1991 (7 years apart)"
         },
         {
-          "title": "Derrick Coleman",
-          "wikidata_id": "Q929320",
-          "label": "Derrick Coleman",
-          "description": "American basketball player (born 1967)",
-          "p106_basketball_player": true,
-          "birth_date": "1967-06-21",
+          "title": "List of people from California",
+          "wikidata_id": "Q4386459",
+          "label": "list of people from California",
+          "description": "Wikimedia list article",
+          "p106_basketball_player": false,
+          "birth_date": "",
           "accepted": false,
-          "why_not": "born 1967, Basketball-Reference says 1991 (24 years apart)"
+          "why_not": "not a basketball player on Wikidata (Wikimedia list article)"
         }
       ],
       "why": "2 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
@@ -3704,7 +2222,7 @@
         "Emmett Davis (basketball)",
         "Lawrence High School (Kansas)",
         "Janice Lawrence Braxton",
-        "Sarah Lawrence College"
+        "Paul Evans (basketball)"
       ],
       "candidates": [
         {
@@ -3798,14 +2316,14 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "Sarah Lawrence College",
-          "wikidata_id": "Q1051840",
-          "label": "Sarah Lawrence College",
-          "description": "private liberal arts college in the United States",
+          "title": "Paul Evans (basketball)",
+          "wikidata_id": "Q7150538",
+          "label": "Paul Evans",
+          "description": "American basketball player-coach",
           "p106_basketball_player": false,
-          "birth_date": "",
+          "birth_date": "1945-01-31",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (private liberal arts college in the United States)"
+          "why_not": "not a basketball player on Wikidata (American basketball player-coach)"
         }
       ],
       "why": "no candidate article is a basketball player born in the right year"
@@ -4376,8 +2894,8 @@
         "Bill Walker",
         "Demarcus Henry",
         "Marcus Walker (basketball)",
-        "Walker (surname)",
         "Derrick Henry",
+        "Walker (surname)",
         "Stevens Tech Ducks"
       ],
       "candidates": [
@@ -4442,16 +2960,6 @@
           "why_not": ""
         },
         {
-          "title": "Walker (surname)",
-          "wikidata_id": "Q1158605",
-          "label": "Walker",
-          "description": "family name",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (family name)"
-        },
-        {
           "title": "Derrick Henry",
           "wikidata_id": "Q16729768",
           "label": "Derrick Henry",
@@ -4460,6 +2968,16 @@
           "birth_date": "1994-01-04",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (American football player (born 1994))"
+        },
+        {
+          "title": "Walker (surname)",
+          "wikidata_id": "Q1158605",
+          "label": "Walker",
+          "description": "family name",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (family name)"
         },
         {
           "title": "Stevens Tech Ducks",
@@ -4483,11 +3001,11 @@
         "Herbert Jones (basketball)",
         "Herbert Jones",
         "Byron Jones (basketball)",
-        "Hale County High School",
         "Donnie Jones (basketball)",
-        "Herb Magee",
+        "Hale County High School",
         "Larry Jones (basketball)",
-        "1992 NCAA Men's Basketball All-Americans"
+        "Herb Magee",
+        "Herb Juul"
       ],
       "candidates": [
         {
@@ -4541,16 +3059,6 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "Hale County High School",
-          "wikidata_id": "Q107583787",
-          "label": "Hale County High School",
-          "description": "school in Alabama, United States",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (school in Alabama, United States)"
-        },
-        {
           "title": "Donnie Jones (basketball)",
           "wikidata_id": "Q5296667",
           "label": "Donnie Jones",
@@ -4561,14 +3069,14 @@
           "why_not": "not a basketball player on Wikidata (American basketball player-coach)"
         },
         {
-          "title": "Herb Magee",
-          "wikidata_id": "Q3785127",
-          "label": "Herb Magee",
-          "description": "American basketball player and coach",
-          "p106_basketball_player": true,
-          "birth_date": "1941-06-20",
+          "title": "Hale County High School",
+          "wikidata_id": "Q107583787",
+          "label": "Hale County High School",
+          "description": "school in Alabama, United States",
+          "p106_basketball_player": false,
+          "birth_date": "",
           "accepted": false,
-          "why_not": "no Basketball-Reference birth date to check the item against"
+          "why_not": "not a basketball player on Wikidata (school in Alabama, United States)"
         },
         {
           "title": "Larry Jones (basketball)",
@@ -4581,14 +3089,24 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "1992 NCAA Men's Basketball All-Americans",
-          "wikidata_id": "Q4587793",
-          "label": "1992 NCAA Men's Basketball All-Americans",
-          "description": "",
-          "p106_basketball_player": false,
-          "birth_date": "",
+          "title": "Herb Magee",
+          "wikidata_id": "Q3785127",
+          "label": "Herb Magee",
+          "description": "American basketball player and coach",
+          "p106_basketball_player": true,
+          "birth_date": "1941-06-20",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (1992 NCAA Men's Basketball All-Americans)"
+          "why_not": "no Basketball-Reference birth date to check the item against"
+        },
+        {
+          "title": "Herb Juul",
+          "wikidata_id": "Q5733029",
+          "label": "Herb Juul",
+          "description": "American baseball player, basketball player and coach (1886–1928)",
+          "p106_basketball_player": false,
+          "birth_date": "1886-02-02",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (American baseball player, basketball player and coach (1886–1928))"
         }
       ],
       "why": "no candidate article is a basketball player born in the right year"
@@ -4604,8 +3122,8 @@
         "Curtis Jones (basketball)",
         "Isaac Bonga",
         "Donnie Jones (basketball)",
-        "Donald Jones",
         "Robert Jones",
+        "Donald Jones",
         "Isaac Go"
       ],
       "candidates": [
@@ -4670,9 +3188,9 @@
           "why_not": "not a basketball player on Wikidata (American basketball player-coach)"
         },
         {
-          "title": "Donald Jones",
-          "wikidata_id": "Q5294612",
-          "label": "Donald Jones",
+          "title": "Robert Jones",
+          "wikidata_id": "Q445641",
+          "label": "Robert Jones",
           "description": "Wikimedia disambiguation page",
           "p106_basketball_player": false,
           "birth_date": "",
@@ -4680,9 +3198,9 @@
           "why_not": "not a basketball player on Wikidata (Wikimedia disambiguation page)"
         },
         {
-          "title": "Robert Jones",
-          "wikidata_id": "Q445641",
-          "label": "Robert Jones",
+          "title": "Donald Jones",
+          "wikidata_id": "Q5294612",
+          "label": "Donald Jones",
           "description": "Wikimedia disambiguation page",
           "p106_basketball_player": false,
           "birth_date": "",
@@ -4713,9 +3231,9 @@
         "2020–21 VMI Keydets basketball team",
         "2021–22 VMI Keydets basketball team",
         "Jake Cohen",
-        "Davidson Wildcats men's basketball",
         "Jake Long",
-        "Jake Cousins"
+        "Davidson Wildcats men's basketball",
+        "Jaylen Brown (wheelchair basketball)"
       ],
       "candidates": [
         {
@@ -4789,16 +3307,6 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "Davidson Wildcats men's basketball",
-          "wikidata_id": "Q5241672",
-          "label": "Davidson Wildcats men's basketball",
-          "description": "men's basketball team that represents Davidson College in Davidson, North Carolina",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (men's basketball team that represents Davidson College in Davidson, North Carolina)"
-        },
-        {
           "title": "Jake Long",
           "wikidata_id": "Q728515",
           "label": "Jake Long",
@@ -4809,14 +3317,24 @@
           "why_not": "not a basketball player on Wikidata (American football player (born 1985))"
         },
         {
-          "title": "Jake Cousins",
-          "wikidata_id": "Q107315811",
-          "label": "Jake Cousins",
-          "description": "American baseball player",
+          "title": "Davidson Wildcats men's basketball",
+          "wikidata_id": "Q5241672",
+          "label": "Davidson Wildcats men's basketball",
+          "description": "men's basketball team that represents Davidson College in Davidson, North Carolina",
           "p106_basketball_player": false,
-          "birth_date": "1994-07-14",
+          "birth_date": "",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (American baseball player)"
+          "why_not": "not a basketball player on Wikidata (men's basketball team that represents Davidson College in Davidson, North Carolina)"
+        },
+        {
+          "title": "Jaylen Brown (wheelchair basketball)",
+          "wikidata_id": "Q127202841",
+          "label": "Jaylen Brown",
+          "description": "Australian wheelchair basketball player",
+          "p106_basketball_player": false,
+          "birth_date": "2004-12-22",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (Australian wheelchair basketball player)"
         }
       ],
       "why": "no candidate article is a basketball player born in the right year"
@@ -4939,8 +3457,8 @@
         "James Johnson (basketball, born 1987)",
         "James Johnson",
         "Tre Johnson (basketball)",
-        "James Johnson (basketball, born 1971)",
         "Magic Johnson",
+        "James Johnson (basketball, born 1971)",
         "Joe Johnson (basketball)",
         "Larry Johnson (basketball, born 1969)",
         "Wesley Johnson (basketball)"
@@ -4987,16 +3505,6 @@
           "why_not": "born 2006, Basketball-Reference says 1987 (19 years apart)"
         },
         {
-          "title": "James Johnson (basketball, born 1971)",
-          "wikidata_id": "Q6136897",
-          "label": "James Johnson",
-          "description": "American college basketball coach, born 1971",
-          "p106_basketball_player": false,
-          "birth_date": "1971-07-19",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (American college basketball coach, born 1971)"
-        },
-        {
           "title": "Magic Johnson",
           "wikidata_id": "Q134183",
           "label": "Magic Johnson",
@@ -5005,6 +3513,16 @@
           "birth_date": "1959-08-14",
           "accepted": false,
           "why_not": "born 1959, Basketball-Reference says 1987 (28 years apart)"
+        },
+        {
+          "title": "James Johnson (basketball, born 1971)",
+          "wikidata_id": "Q6136897",
+          "label": "James Johnson",
+          "description": "American college basketball coach, born 1971",
+          "p106_basketball_player": false,
+          "birth_date": "1971-07-19",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (American college basketball coach, born 1971)"
         },
         {
           "title": "Joe Johnson (basketball)",
@@ -5159,8 +3677,8 @@
         "John Lucas",
         "Jai Lucas",
         "Jerry Lucas",
-        "Washington DC Sports Hall of Fame",
         "Lucas Scott",
+        "Washington DC Sports Hall of Fame",
         "Lucas Oil Stadium"
       ],
       "candidates": [
@@ -5225,16 +3743,6 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "Washington DC Sports Hall of Fame",
-          "wikidata_id": "Q108760686",
-          "label": "Washington DC Sports Hall of Fame",
-          "description": "hall of fame",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (hall of fame)"
-        },
-        {
           "title": "Lucas Scott",
           "wikidata_id": "Q578613",
           "label": "Lucas Scott",
@@ -5243,6 +3751,16 @@
           "birth_date": "1988-03-28",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (fictional character from One Tree Hill)"
+        },
+        {
+          "title": "Washington DC Sports Hall of Fame",
+          "wikidata_id": "Q108760686",
+          "label": "Washington DC Sports Hall of Fame",
+          "description": "hall of fame",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (hall of fame)"
         },
         {
           "title": "Lucas Oil Stadium",
@@ -5265,8 +3783,8 @@
       "searched": [
         "Jordan Adams (basketball, born 1994)",
         "Jordan Adams (basketball, born 1981)",
-        "Jordan Adams",
         "Michael Jordan",
+        "Jordan Adams",
         "Air Jordan",
         "Adams (surname)",
         "Alvan Adams",
@@ -5379,7 +3897,7 @@
         "Sophie Cunningham",
         "Drew Starkey",
         "Joseph Baena",
-        "William Gates (basketball)"
+        "Garth Joseph"
       ],
       "candidates": [
         {
@@ -5473,12 +3991,12 @@
           "why_not": "not a basketball player on Wikidata (American actor and bodybuilder (born 1997))"
         },
         {
-          "title": "William Gates (basketball)",
-          "wikidata_id": "Q8009721",
-          "label": "William Gates",
-          "description": "American basketball player",
+          "title": "Garth Joseph",
+          "wikidata_id": "Q995468",
+          "label": "Garth Joseph",
+          "description": "Dominica basketball player",
           "p106_basketball_player": true,
-          "birth_date": "1971-12-28",
+          "birth_date": "1973-08-08",
           "accepted": false,
           "why_not": "no Basketball-Reference birth date to check the item against"
         }
@@ -5824,8 +4342,8 @@
         "Kenny Williams (basketball, born 1972)",
         "Kenny Anderson (basketball)",
         "Kenrich Williams",
-        "Kenny Walker (basketball)",
-        "Kenny Smith"
+        "Kenny Smith",
+        "Kenny Walker (basketball)"
       ],
       "candidates": [
         {
@@ -5899,16 +4417,6 @@
           "why_not": "born 1994, Basketball-Reference says 1969 (25 years apart)"
         },
         {
-          "title": "Kenny Walker (basketball)",
-          "wikidata_id": "Q2318756",
-          "label": "Kenny Walker",
-          "description": "American basketball player (born 1964)",
-          "p106_basketball_player": true,
-          "birth_date": "1964-08-18",
-          "accepted": false,
-          "why_not": "born 1964, Basketball-Reference says 1969 (5 years apart)"
-        },
-        {
           "title": "Kenny Smith",
           "wikidata_id": "Q1168929",
           "label": "Kenny Smith",
@@ -5917,6 +4425,16 @@
           "birth_date": "1965-03-08",
           "accepted": false,
           "why_not": "born 1965, Basketball-Reference says 1969 (4 years apart)"
+        },
+        {
+          "title": "Kenny Walker (basketball)",
+          "wikidata_id": "Q2318756",
+          "label": "Kenny Walker",
+          "description": "American basketball player (born 1964)",
+          "p106_basketball_player": true,
+          "birth_date": "1964-08-18",
+          "accepted": false,
+          "why_not": "born 1964, Basketball-Reference says 1969 (5 years apart)"
         }
       ],
       "why": "2 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
@@ -6041,8 +4559,8 @@
         "Kevin Johnson",
         "Tre Johnson (basketball)",
         "Marques Johnson",
-        "Stanley Johnson (basketball)",
         "Kevin Durant",
+        "Stanley Johnson (basketball)",
         "Kevin McHale (basketball)"
       ],
       "candidates": [
@@ -6117,16 +4635,6 @@
           "why_not": "born 1956, Basketball-Reference says 1966 (10 years apart)"
         },
         {
-          "title": "Stanley Johnson (basketball)",
-          "wikidata_id": "Q16239572",
-          "label": "Stanley Johnson",
-          "description": "American basketball player (born 1996)",
-          "p106_basketball_player": true,
-          "birth_date": "1996-05-29",
-          "accepted": false,
-          "why_not": "born 1996, Basketball-Reference says 1966 (30 years apart)"
-        },
-        {
           "title": "Kevin Durant",
           "wikidata_id": "Q29545",
           "label": "",
@@ -6135,6 +4643,16 @@
           "birth_date": "1988-09-29",
           "accepted": false,
           "why_not": "born 1988, Basketball-Reference says 1966 (22 years apart)"
+        },
+        {
+          "title": "Stanley Johnson (basketball)",
+          "wikidata_id": "Q16239572",
+          "label": "Stanley Johnson",
+          "description": "American basketball player (born 1996)",
+          "p106_basketball_player": true,
+          "birth_date": "1996-05-29",
+          "accepted": false,
+          "why_not": "born 1996, Basketball-Reference says 1966 (30 years apart)"
         },
         {
           "title": "Kevin McHale (basketball)",
@@ -6160,8 +4678,8 @@
         "Spencer Jones (basketball)",
         "Kevin McHale (basketball)",
         "Kevin Love",
-        "Kevin Durant",
         "Tre Jones",
+        "Kevin Durant",
         "Kevin Murphy (basketball)"
       ],
       "candidates": [
@@ -6226,16 +4744,6 @@
           "why_not": ""
         },
         {
-          "title": "Kevin Durant",
-          "wikidata_id": "Q29545",
-          "label": "",
-          "description": "American basketball player (born 1988)",
-          "p106_basketball_player": true,
-          "birth_date": "1988-09-29",
-          "accepted": true,
-          "why_not": ""
-        },
-        {
           "title": "Tre Jones",
           "wikidata_id": "Q61677596",
           "label": "Tre Jones",
@@ -6244,6 +4752,16 @@
           "birth_date": "2000-01-08",
           "accepted": false,
           "why_not": "born 2000, Basketball-Reference says 1989 (11 years apart)"
+        },
+        {
+          "title": "Kevin Durant",
+          "wikidata_id": "Q29545",
+          "label": "",
+          "description": "American basketball player (born 1988)",
+          "p106_basketball_player": true,
+          "birth_date": "1988-09-29",
+          "accepted": true,
+          "why_not": ""
         },
         {
           "title": "Kevin Murphy (basketball)",
@@ -6259,115 +4777,6 @@
       "why": "4 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
     },
     {
-      "player": "Kyle Anderson",
-      "basketball_reference_birth_date": "1993-09-20",
-      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Kyle_Anderson",
-      "rejected_wikidata_id": "Q6451038",
-      "searched": [
-        "Kyle Anderson (basketball)",
-        "Kyle Anderson",
-        "Anderson (surname)",
-        "Alan Anderson (basketball)",
-        "Kyle Smith (basketball)",
-        "List of Jamaican Americans",
-        "Kyle (given name)",
-        "Kyle Adnam"
-      ],
-      "candidates": [
-        {
-          "title": "Kyle Anderson (basketball)",
-          "wikidata_id": "Q6451040",
-          "label": "Kyle Anderson",
-          "description": "American-Chinese basketball player",
-          "p106_basketball_player": true,
-          "birth_date": "1993-09-20",
-          "accepted": true,
-          "why_not": ""
-        },
-        {
-          "title": "Kyle Anderson Jr.",
-          "wikidata_id": "",
-          "label": "",
-          "description": "",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "no article"
-        },
-        {
-          "title": "Kyle Anderson (basketball, born 1993)",
-          "wikidata_id": "",
-          "label": "",
-          "description": "",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "no article"
-        },
-        {
-          "title": "Anderson (surname)",
-          "wikidata_id": "Q1848748",
-          "label": "Anderson",
-          "description": "family name",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (family name)"
-        },
-        {
-          "title": "Alan Anderson (basketball)",
-          "wikidata_id": "Q1190955",
-          "label": "Alan Anderson",
-          "description": "American basketball player (born 1982)",
-          "p106_basketball_player": true,
-          "birth_date": "1982-10-16",
-          "accepted": false,
-          "why_not": "born 1982, Basketball-Reference says 1993 (11 years apart)"
-        },
-        {
-          "title": "Kyle Smith (basketball)",
-          "wikidata_id": "Q6451444",
-          "label": "Kyle Smith",
-          "description": "American basketball player-coach",
-          "p106_basketball_player": true,
-          "birth_date": "1969-06-15",
-          "accepted": false,
-          "why_not": "born 1969, Basketball-Reference says 1993 (24 years apart)"
-        },
-        {
-          "title": "List of Jamaican Americans",
-          "wikidata_id": "Q6574997",
-          "label": "list of Jamaican Americans",
-          "description": "Wikimedia list article",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (Wikimedia list article)"
-        },
-        {
-          "title": "Kyle (given name)",
-          "wikidata_id": "Q1326816",
-          "label": "Kyle",
-          "description": "unisex given name",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (unisex given name)"
-        },
-        {
-          "title": "Kyle Adnam",
-          "wikidata_id": "Q22276709",
-          "label": "Kyle Adnam",
-          "description": "Australian basketball player (born 1993)",
-          "p106_basketball_player": true,
-          "birth_date": "1993-11-18",
-          "accepted": true,
-          "why_not": ""
-        }
-      ],
-      "why": "2 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
-    },
-    {
       "player": "Leonard Miller",
       "basketball_reference_birth_date": "2003-11-26",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Leonard_Miller",
@@ -6380,7 +4789,7 @@
         "Baba Miller",
         "Denny Miller",
         "Leonard W. Miller",
-        "Los Angeles Clippers salary cap scandal"
+        "Miller School of Medicine"
       ],
       "candidates": [
         {
@@ -6464,14 +4873,14 @@
           "why_not": "not a basketball player on Wikidata (American racing driver)"
         },
         {
-          "title": "Los Angeles Clippers salary cap scandal",
-          "wikidata_id": "Q141474851",
-          "label": "Los Angeles Clippers salary cap scandal",
-          "description": "scandal",
+          "title": "Miller School of Medicine",
+          "wikidata_id": "Q6525526",
+          "label": "Leonard M. Miller School of Medicine",
+          "description": "medical school in Miami, Florida",
           "p106_basketball_player": false,
           "birth_date": "",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (scandal)"
+          "why_not": "not a basketball player on Wikidata (medical school in Miami, Florida)"
         }
       ],
       "why": "2 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
@@ -6810,8 +5219,8 @@
       "rejected_wikidata_id": "Q413057",
       "searched": [
         "Matt Ryan (basketball)",
-        "Matt Ryan (American football)",
         "Matthew Ryan",
+        "Matt Ryan (American football)",
         "Ryan Dunn (basketball)",
         "Matt Barnes",
         "Matt Morgan (basketball)",
@@ -7052,9 +5461,9 @@
         "1990 NCAA Division I men's basketball tournament",
         "Buster Douglas",
         "James Donaldson (basketball)",
+        "Mike Brown (basketball, born 1970)",
         "LeBron James",
-        "Mike D'Antoni",
-        "Mike Brown (basketball, born 1970)"
+        "Mike D'Antoni"
       ],
       "candidates": [
         {
@@ -7138,6 +5547,16 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
+          "title": "Mike Brown (basketball, born 1970)",
+          "wikidata_id": "Q458065",
+          "label": "Mike Brown",
+          "description": "American basketball head coach, born 1970",
+          "p106_basketball_player": true,
+          "birth_date": "1970-03-05",
+          "accepted": false,
+          "why_not": "no Basketball-Reference birth date to check the item against"
+        },
+        {
           "title": "LeBron James",
           "wikidata_id": "Q36159",
           "label": "",
@@ -7156,16 +5575,6 @@
           "birth_date": "1951-05-08",
           "accepted": false,
           "why_not": "no Basketball-Reference birth date to check the item against"
-        },
-        {
-          "title": "Mike Brown (basketball, born 1970)",
-          "wikidata_id": "Q458065",
-          "label": "Mike Brown",
-          "description": "American basketball head coach, born 1970",
-          "p106_basketball_player": true,
-          "birth_date": "1970-03-05",
-          "accepted": false,
-          "why_not": "no Basketball-Reference birth date to check the item against"
         }
       ],
       "why": "no candidate article is a basketball player born in the right year"
@@ -7180,9 +5589,9 @@
         "Nate Williams",
         "Nate Williams (basketball, born 1950)",
         "Nathaniel Williams",
-        "Jaylin Williams (basketball, born 2002)",
         "Nate Bargatze",
         "Nate Harris (basketball)",
+        "Jaylin Williams (basketball, born 2002)",
         "Buck Williams"
       ],
       "candidates": [
@@ -7237,16 +5646,6 @@
           "why_not": "not a basketball player on Wikidata (Wikimedia disambiguation page)"
         },
         {
-          "title": "Jaylin Williams (basketball, born 2002)",
-          "wikidata_id": "Q112687854",
-          "label": "Jaylin Williams",
-          "description": "American basketball player (born 2002)",
-          "p106_basketball_player": true,
-          "birth_date": "2002-06-29",
-          "accepted": false,
-          "why_not": "no Basketball-Reference birth date to check the item against"
-        },
-        {
           "title": "Nate Bargatze",
           "wikidata_id": "Q18704890",
           "label": "Nate Bargatze",
@@ -7263,6 +5662,16 @@
           "description": "American basketball player and coach",
           "p106_basketball_player": true,
           "birth_date": "",
+          "accepted": false,
+          "why_not": "no Basketball-Reference birth date to check the item against"
+        },
+        {
+          "title": "Jaylin Williams (basketball, born 2002)",
+          "wikidata_id": "Q112687854",
+          "label": "Jaylin Williams",
+          "description": "American basketball player (born 2002)",
+          "p106_basketball_player": true,
+          "birth_date": "2002-06-29",
           "accepted": false,
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
@@ -7397,10 +5806,10 @@
         "Nick Martinelli (basketball)",
         "Dominic Martinelli",
         "Big Ten Medal of Honor",
-        "Northwestern Wildcats men's basketball",
         "Stephen Curry",
-        "Jake West (basketball)",
+        "Northwestern Wildcats men's basketball",
         "2026 Big Ten men's basketball tournament",
+        "Jake West (basketball)",
         "Northwestern Wildcats men's basketball statistical leaders"
       ],
       "candidates": [
@@ -7445,16 +5854,6 @@
           "why_not": "not a basketball player on Wikidata (Big Ten Medal of Honor)"
         },
         {
-          "title": "Northwestern Wildcats men's basketball",
-          "wikidata_id": "Q7060415",
-          "label": "Northwestern Wildcats men's basketball",
-          "description": "men's basketball team of Northwestern University",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (men's basketball team of Northwestern University)"
-        },
-        {
           "title": "Stephen Curry",
           "wikidata_id": "Q352159",
           "label": "Stephen Curry",
@@ -7465,14 +5864,14 @@
           "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
-          "title": "Jake West (basketball)",
-          "wikidata_id": "Q137891928",
-          "label": "Jake West",
-          "description": "American basketball player (born 2006)",
-          "p106_basketball_player": true,
-          "birth_date": "2006-05-17",
+          "title": "Northwestern Wildcats men's basketball",
+          "wikidata_id": "Q7060415",
+          "label": "Northwestern Wildcats men's basketball",
+          "description": "men's basketball team of Northwestern University",
+          "p106_basketball_player": false,
+          "birth_date": "",
           "accepted": false,
-          "why_not": "no Basketball-Reference birth date to check the item against"
+          "why_not": "not a basketball player on Wikidata (men's basketball team of Northwestern University)"
         },
         {
           "title": "2026 Big Ten men's basketball tournament",
@@ -7483,6 +5882,16 @@
           "birth_date": "",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (American college basketball postseason tournament)"
+        },
+        {
+          "title": "Jake West (basketball)",
+          "wikidata_id": "Q137891928",
+          "label": "Jake West",
+          "description": "American basketball player (born 2006)",
+          "p106_basketball_player": true,
+          "birth_date": "2006-05-17",
+          "accepted": false,
+          "why_not": "no Basketball-Reference birth date to check the item against"
         },
         {
           "title": "Northwestern Wildcats men's basketball statistical leaders",
@@ -7507,8 +5916,8 @@
         "Nick Anderson (basketball)",
         "Nick Smith",
         "J. R. Smith",
-        "Nick King (basketball)",
         "Tolu Smith",
+        "Nick King (basketball)",
         "Tyler Smith (basketball, born 2004)",
         "Dennis Smith Jr."
       ],
@@ -7564,16 +5973,6 @@
           "why_not": "born 1985, Basketball-Reference says 2004 (19 years apart)"
         },
         {
-          "title": "Nick King (basketball)",
-          "wikidata_id": "Q55367808",
-          "label": "Nick King",
-          "description": "American basketball player (born 1995)",
-          "p106_basketball_player": true,
-          "birth_date": "1995-08-05",
-          "accepted": false,
-          "why_not": "born 1995, Basketball-Reference says 2004 (9 years apart)"
-        },
-        {
           "title": "Tolu Smith",
           "wikidata_id": "Q100924642",
           "label": "Tolu Smith",
@@ -7582,6 +5981,16 @@
           "birth_date": "2000-07-26",
           "accepted": false,
           "why_not": "born 2000, Basketball-Reference says 2004 (4 years apart)"
+        },
+        {
+          "title": "Nick King (basketball)",
+          "wikidata_id": "Q55367808",
+          "label": "Nick King",
+          "description": "American basketball player (born 1995)",
+          "p106_basketball_player": true,
+          "birth_date": "1995-08-05",
+          "accepted": false,
+          "why_not": "born 1995, Basketball-Reference says 2004 (9 years apart)"
         },
         {
           "title": "Tyler Smith (basketball, born 2004)",
@@ -7617,8 +6026,8 @@
         "Reed Sheppard",
         "Reed (surname)",
         "Brett Reed (basketball)",
-        "Jaxson Hayes",
         "Wekiva High School",
+        "Jaxson Hayes",
         "DePaul Blue Demons men's basketball"
       ],
       "candidates": [
@@ -7683,16 +6092,6 @@
           "why_not": "born 1972, Basketball-Reference says 1999 (27 years apart)"
         },
         {
-          "title": "Jaxson Hayes",
-          "wikidata_id": "Q60963199",
-          "label": "Jaxson Hayes",
-          "description": "American basketball player (born 2000)",
-          "p106_basketball_player": true,
-          "birth_date": "2000-05-23",
-          "accepted": true,
-          "why_not": ""
-        },
-        {
           "title": "Wekiva High School",
           "wikidata_id": "Q7980474",
           "label": "Wekiva High School",
@@ -7701,6 +6100,16 @@
           "birth_date": "",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (high school in Orange County)"
+        },
+        {
+          "title": "Jaxson Hayes",
+          "wikidata_id": "Q60963199",
+          "label": "Jaxson Hayes",
+          "description": "American basketball player (born 2000)",
+          "p106_basketball_player": true,
+          "birth_date": "2000-05-23",
+          "accepted": true,
+          "why_not": ""
         },
         {
           "title": "DePaul Blue Demons men's basketball",
@@ -7831,13 +6240,13 @@
       "rejected_wikidata_id": "Q1669753",
       "searched": [
         "Robert Wright",
-        "Pope Leo XIV",
         "Robert Hughes (basketball)",
+        "Pope Leo XIV",
         "Robert Jones",
-        "Bishop Kelley High School",
         "Robert Morse (disambiguation)",
-        "Robert Grove",
-        "Robert McIntyre"
+        "Bishop Kelley High School",
+        "Robert McIntyre",
+        "Robert Grove"
       ],
       "candidates": [
         {
@@ -7871,16 +6280,6 @@
           "why_not": "not a basketball player on Wikidata (Wikimedia disambiguation page)"
         },
         {
-          "title": "Pope Leo XIV",
-          "wikidata_id": "Q6109517",
-          "label": "Leo XIV",
-          "description": "267th Pope of the Catholic Church (2025–)",
-          "p106_basketball_player": false,
-          "birth_date": "1955-09-14",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (267th Pope of the Catholic Church (2025–))"
-        },
-        {
           "title": "Robert Hughes (basketball)",
           "wikidata_id": "Q7345681",
           "label": "Robert Hughes",
@@ -7891,9 +6290,29 @@
           "why_not": "not a basketball player on Wikidata (American basketball player-coach)"
         },
         {
+          "title": "Pope Leo XIV",
+          "wikidata_id": "Q6109517",
+          "label": "Leo XIV",
+          "description": "267th Pope of the Catholic Church (2025–)",
+          "p106_basketball_player": false,
+          "birth_date": "1955-09-14",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (267th Pope of the Catholic Church (2025–))"
+        },
+        {
           "title": "Robert Jones",
           "wikidata_id": "Q445641",
           "label": "Robert Jones",
+          "description": "Wikimedia disambiguation page",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (Wikimedia disambiguation page)"
+        },
+        {
+          "title": "Robert Morse (disambiguation)",
+          "wikidata_id": "Q7347834",
+          "label": "Robert Morse",
           "description": "Wikimedia disambiguation page",
           "p106_basketball_player": false,
           "birth_date": "",
@@ -7911,9 +6330,9 @@
           "why_not": "not a basketball player on Wikidata (high school in Oklahoma, United States)"
         },
         {
-          "title": "Robert Morse (disambiguation)",
-          "wikidata_id": "Q7347834",
-          "label": "Robert Morse",
+          "title": "Robert McIntyre",
+          "wikidata_id": "Q4933352",
+          "label": "Bob McIntyre",
           "description": "Wikimedia disambiguation page",
           "p106_basketball_player": false,
           "birth_date": "",
@@ -7924,16 +6343,6 @@
           "title": "Robert Grove",
           "wikidata_id": "Q7344987",
           "label": "Robert Grove",
-          "description": "Wikimedia disambiguation page",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (Wikimedia disambiguation page)"
-        },
-        {
-          "title": "Robert McIntyre",
-          "wikidata_id": "Q4933352",
-          "label": "Bob McIntyre",
           "description": "Wikimedia disambiguation page",
           "p106_basketball_player": false,
           "birth_date": "",
@@ -8191,10 +6600,10 @@
         "Tony Farmer",
         "Tony Farmer (basketball, born 1970)",
         "Tony Martin",
-        "Richie Farmer",
         "Bill Farmer",
+        "Richie Farmer",
         "List of NBA players (E–F)",
-        "Antonio"
+        "Tony Finau"
       ],
       "candidates": [
         {
@@ -8248,16 +6657,6 @@
           "why_not": "not a basketball player on Wikidata (Wikimedia human name disambiguation page)"
         },
         {
-          "title": "Richie Farmer",
-          "wikidata_id": "Q7330495",
-          "label": "Richie Farmer",
-          "description": "American politician and basketball player",
-          "p106_basketball_player": true,
-          "birth_date": "1969-08-25",
-          "accepted": true,
-          "why_not": ""
-        },
-        {
           "title": "Bill Farmer",
           "wikidata_id": "Q1364909",
           "label": "Bill Farmer",
@@ -8266,6 +6665,16 @@
           "birth_date": "1952-11-14",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (American voice actor)"
+        },
+        {
+          "title": "Richie Farmer",
+          "wikidata_id": "Q7330495",
+          "label": "Richie Farmer",
+          "description": "American politician and basketball player",
+          "p106_basketball_player": true,
+          "birth_date": "1969-08-25",
+          "accepted": true,
+          "why_not": ""
         },
         {
           "title": "List of NBA players (E–F)",
@@ -8278,14 +6687,14 @@
           "why_not": "not a basketball player on Wikidata (Wikimedia list article)"
         },
         {
-          "title": "Antonio",
-          "wikidata_id": "Q7141520",
-          "label": "Antonio",
-          "description": "male given name",
+          "title": "Tony Finau",
+          "wikidata_id": "Q17505091",
+          "label": "Tony Finau",
+          "description": "American professional golfer",
           "p106_basketball_player": false,
-          "birth_date": "",
+          "birth_date": "1989-09-14",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (male given name)"
+          "why_not": "not a basketball player on Wikidata (American professional golfer)"
         }
       ],
       "why": "2 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
@@ -8303,7 +6712,7 @@
         "1989–90 Minnesota Timberwolves season",
         "List of NBA players (M)",
         "Sarge (nickname)",
-        "2024–25 Missouri Tigers men's basketball team"
+        "1989 in the United States"
       ],
       "candidates": [
         {
@@ -8407,14 +6816,14 @@
           "why_not": "not a basketball player on Wikidata (nickname)"
         },
         {
-          "title": "2024–25 Missouri Tigers men's basketball team",
-          "wikidata_id": "Q126951328",
-          "label": "2024–25 Missouri Tigers men's basketball team",
-          "description": "American college basketball season",
+          "title": "1989 in the United States",
+          "wikidata_id": "Q2424030",
+          "label": "1989 in the United States",
+          "description": "overview of USA-related events during the year of 1989",
           "p106_basketball_player": false,
           "birth_date": "",
           "accepted": false,
-          "why_not": "not a basketball player on Wikidata (American college basketball season)"
+          "why_not": "not a basketball player on Wikidata (overview of USA-related events during the year of 1989)"
         }
       ],
       "why": "no candidate article is a basketball player born in the right year"
@@ -8546,12 +6955,12 @@
       "searched": [
         "Tyler Hall (basketball)",
         "Tyler Hall",
-        "Tyler Junior College",
         "Charlie Hall (actor, born 1997)",
+        "Tyler Junior College",
         "Terry Tyler",
         "Tyler (name)",
-        "Steven Tyler",
-        "Tyler Ulis"
+        "Tyler Ulis",
+        "Steven Tyler"
       ],
       "candidates": [
         {
@@ -8585,16 +6994,6 @@
           "why_not": "no article"
         },
         {
-          "title": "Tyler Junior College",
-          "wikidata_id": "Q7860053",
-          "label": "Tyler Junior College",
-          "description": "community college in Tyler, Texas, United States",
-          "p106_basketball_player": false,
-          "birth_date": "",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (community college in Tyler, Texas, United States)"
-        },
-        {
           "title": "Charlie Hall (actor, born 1997)",
           "wikidata_id": "Q107546161",
           "label": "Charlie Hall",
@@ -8603,6 +7002,16 @@
           "birth_date": "1997-05-30",
           "accepted": true,
           "why_not": ""
+        },
+        {
+          "title": "Tyler Junior College",
+          "wikidata_id": "Q7860053",
+          "label": "Tyler Junior College",
+          "description": "community college in Tyler, Texas, United States",
+          "p106_basketball_player": false,
+          "birth_date": "",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (community college in Tyler, Texas, United States)"
         },
         {
           "title": "Terry Tyler",
@@ -8625,16 +7034,6 @@
           "why_not": "not a basketball player on Wikidata (name)"
         },
         {
-          "title": "Steven Tyler",
-          "wikidata_id": "Q194045",
-          "label": "Steven Tyler",
-          "description": "American singer",
-          "p106_basketball_player": false,
-          "birth_date": "1948-03-26",
-          "accepted": false,
-          "why_not": "not a basketball player on Wikidata (American singer)"
-        },
-        {
           "title": "Tyler Ulis",
           "wikidata_id": "Q17038792",
           "label": "Tyler Ulis",
@@ -8643,6 +7042,16 @@
           "birth_date": "1996-01-05",
           "accepted": true,
           "why_not": ""
+        },
+        {
+          "title": "Steven Tyler",
+          "wikidata_id": "Q194045",
+          "label": "Steven Tyler",
+          "description": "American singer",
+          "p106_basketball_player": false,
+          "birth_date": "1948-03-26",
+          "accepted": false,
+          "why_not": "not a basketball player on Wikidata (American singer)"
         }
       ],
       "why": "3 different basketball players of this name were born in the right year, so the article cannot be chosen automatically"
@@ -8657,8 +7066,8 @@
         "Tyler Kolek",
         "Tyler (name)",
         "St. George's School (Rhode Island)",
-        "Oso Ighodaro",
         "2022–23 Big East Conference men's basketball season",
+        "Oso Ighodaro",
         "2024–25 Portland Trail Blazers season",
         "Joel Soriano"
       ],
@@ -8714,16 +7123,6 @@
           "why_not": "not a basketball player on Wikidata (private co-ed boarding school in Middletown, Rhode Island, United States)"
         },
         {
-          "title": "Oso Ighodaro",
-          "wikidata_id": "Q106818582",
-          "label": "Oso Ighodaro",
-          "description": "American basketball player",
-          "p106_basketball_player": true,
-          "birth_date": "2002-07-14",
-          "accepted": true,
-          "why_not": ""
-        },
-        {
           "title": "2022–23 Big East Conference men's basketball season",
           "wikidata_id": "Q124465905",
           "label": "2022–23 Big East Conference men's basketball season",
@@ -8732,6 +7131,16 @@
           "birth_date": "",
           "accepted": false,
           "why_not": "not a basketball player on Wikidata (sports season)"
+        },
+        {
+          "title": "Oso Ighodaro",
+          "wikidata_id": "Q106818582",
+          "label": "Oso Ighodaro",
+          "description": "American basketball player",
+          "p106_basketball_player": true,
+          "birth_date": "2002-07-14",
+          "accepted": true,
+          "why_not": ""
         },
         {
           "title": "2024–25 Portland Trail Blazers season",

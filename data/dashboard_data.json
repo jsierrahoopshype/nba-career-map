@@ -3454,15 +3454,15 @@
     },
     {
       "player": "Thomas Robinson",
-      "current_team": "Cangrejeros de Santurce",
+      "current_team": "Leones de Ponce",
       "country": "Puerto Rico",
-      "last_updated": "2026-09-24"
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Thomas Welsh",
-      "current_team": "Levanga Hokkaido",
-      "country": "Japan",
-      "last_updated": "2026-09-24"
+      "current_team": "New Taipei Kings",
+      "country": "Taiwan",
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Thon Maker",
@@ -3663,6 +3663,12 @@
       "last_updated": "2026-09-24"
     },
     {
+      "player": "Tyler Davis",
+      "current_team": "Osos de Manatí",
+      "country": "Puerto Rico",
+      "last_updated": "2026-09-25"
+    },
+    {
       "player": "Tyler Dorsey",
       "current_team": "Olympiacos",
       "country": "Greece",
@@ -3672,7 +3678,7 @@
       "player": "Tyler Ennis",
       "current_team": "Hapoel Tel Aviv",
       "country": "Israel",
-      "last_updated": "2026-09-24"
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Tyrese Martin",
@@ -3771,6 +3777,12 @@
       "last_updated": "2026-09-24"
     },
     {
+      "player": "Wendell Moore",
+      "current_team": "Virtus Bologna",
+      "country": "Italy",
+      "last_updated": "2026-09-25"
+    },
+    {
       "player": "Wenyen Gabriel",
       "current_team": "Beşiktaş",
       "country": "Turkey",
@@ -3798,7 +3810,7 @@
       "player": "William Howard",
       "current_team": "Granada",
       "country": "Spain",
-      "last_updated": "2026-09-24"
+      "last_updated": "2026-09-25"
     },
     {
       "player": "Willie Reed",
@@ -4952,6 +4964,25 @@
       "status": "overseas_active"
     },
     {
+      "player": "Thomas Robinson",
+      "country_count": 11,
+      "stint_count": 30,
+      "countries": [
+        "USA",
+        "Russia",
+        "China",
+        "Turkey",
+        "Puerto Rico",
+        "South Korea",
+        "Nicaragua",
+        "Philippines",
+        "Indonesia",
+        "Mexico",
+        "Taiwan"
+      ],
+      "status": "overseas_active"
+    },
+    {
       "player": "Luis Flores",
       "country_count": 11,
       "stint_count": 28,
@@ -4967,25 +4998,6 @@
         "Spain",
         "Finland",
         "Mexico"
-      ],
-      "status": "retired"
-    },
-    {
-      "player": "Mike Harris",
-      "country_count": 11,
-      "stint_count": 28,
-      "countries": [
-        "Ukraine",
-        "USA",
-        "China",
-        "Kuwait",
-        "Puerto Rico",
-        "Lebanon",
-        "Philippines",
-        "Bahrain",
-        "South Korea",
-        "Qatar",
-        "UAE"
       ],
       "status": "retired"
     }
@@ -5104,15 +5116,15 @@
       "players": 81
     },
     {
+      "team": "Virtus Bologna",
+      "players": 81
+    },
+    {
       "team": "Windy City Bulls",
       "players": 81
     },
     {
       "team": "Greensboro Swarm",
-      "players": 80
-    },
-    {
-      "team": "Virtus Bologna",
       "players": 80
     },
     {
@@ -5392,7 +5404,15 @@
       "players": 42
     },
     {
+      "team": "College Park Skyhawks",
+      "players": 42
+    },
+    {
       "team": "Guangdong",
+      "players": 42
+    },
+    {
+      "team": "Indios de Mayagüez",
       "players": 42
     },
     {
@@ -5409,14 +5429,6 @@
     },
     {
       "team": "Chicago Stags",
-      "players": 41
-    },
-    {
-      "team": "College Park Skyhawks",
-      "players": 41
-    },
-    {
-      "team": "Indios de Mayagüez",
       "players": 41
     },
     {
@@ -7240,6 +7252,10 @@
       "players": 8
     },
     {
+      "team": "Sun Rockers Shibuya",
+      "players": 8
+    },
+    {
       "team": "Taipei Mars",
       "players": 8
     },
@@ -7533,10 +7549,6 @@
     },
     {
       "team": "Spartak St. Petersburg",
-      "players": 7
-    },
-    {
-      "team": "Sun Rockers Shibuya",
       "players": 7
     },
     {
@@ -17585,6 +17597,17 @@
       ]
     },
     {
+      "team": "New Taipei Kings",
+      "count": 5,
+      "players": [
+        "Austin Daye",
+        "Chris Johnson",
+        "Craig Sword",
+        "Jalen Harris",
+        "Thomas Welsh"
+      ]
+    },
+    {
       "team": "Partizan",
       "count": 5,
       "players": [
@@ -17637,16 +17660,6 @@
       ]
     },
     {
-      "team": "Cangrejeros de Santurce",
-      "count": 4,
-      "players": [
-        "DJ Wilson",
-        "Ian Clark",
-        "Malik Beasley",
-        "Thomas Robinson"
-      ]
-    },
-    {
       "team": "Capital City Go-Go",
       "count": 4,
       "players": [
@@ -17687,6 +17700,16 @@
       ]
     },
     {
+      "team": "Leones de Ponce",
+      "count": 4,
+      "players": [
+        "Aleem Ford",
+        "Isaiah Hicks",
+        "Terence Davis",
+        "Thomas Robinson"
+      ]
+    },
+    {
       "team": "Maxima Roma",
       "count": 4,
       "players": [
@@ -17717,13 +17740,13 @@
       ]
     },
     {
-      "team": "New Taipei Kings",
+      "team": "Osos de Manatí",
       "count": 4,
       "players": [
-        "Austin Daye",
-        "Chris Johnson",
-        "Craig Sword",
-        "Jalen Harris"
+        "Jamil Wilson",
+        "Miye Oni",
+        "Tyler Cook",
+        "Tyler Davis"
       ]
     },
     {
@@ -17869,6 +17892,15 @@
       ]
     },
     {
+      "team": "Cangrejeros de Santurce",
+      "count": 3,
+      "players": [
+        "DJ Wilson",
+        "Ian Clark",
+        "Malik Beasley"
+      ]
+    },
+    {
       "team": "Dorados de Chihuahua",
       "count": 3,
       "players": [
@@ -17920,24 +17952,6 @@
         "Antonio Reeves",
         "Dereon Seabron",
         "Trevon Duval"
-      ]
-    },
-    {
-      "team": "Leones de Ponce",
-      "count": 3,
-      "players": [
-        "Aleem Ford",
-        "Isaiah Hicks",
-        "Terence Davis"
-      ]
-    },
-    {
-      "team": "Levanga Hokkaido",
-      "count": 3,
-      "players": [
-        "Jahlil Okafor",
-        "Marques Bolden",
-        "Thomas Welsh"
       ]
     },
     {
@@ -18001,15 +18015,6 @@
         "Buddy Boeheim",
         "Jazian Gortman",
         "Zhaire Smith"
-      ]
-    },
-    {
-      "team": "Osos de Manatí",
-      "count": 3,
-      "players": [
-        "Jamil Wilson",
-        "Miye Oni",
-        "Tyler Cook"
       ]
     },
     {
@@ -18172,6 +18177,15 @@
         "Armoni Brooks",
         "Mouhamadou Gueye",
         "Nikola Mirotic"
+      ]
+    },
+    {
+      "team": "Virtus Bologna",
+      "count": 3,
+      "players": [
+        "Bobi Klintman",
+        "Kessler Edwards",
+        "Wendell Moore"
       ]
     },
     {
@@ -18479,6 +18493,14 @@
       ]
     },
     {
+      "team": "Levanga Hokkaido",
+      "count": 2,
+      "players": [
+        "Jahlil Okafor",
+        "Marques Bolden"
+      ]
+    },
+    {
       "team": "Maccabi Ramat Gan",
       "count": 2,
       "players": [
@@ -18764,14 +18786,6 @@
       "players": [
         "Chris McCullough",
         "Renaldo Balkman"
-      ]
-    },
-    {
-      "team": "Virtus Bologna",
-      "count": 2,
-      "players": [
-        "Bobi Klintman",
-        "Kessler Edwards"
       ]
     },
     {
@@ -19928,11 +19942,11 @@
       "count": 50
     },
     {
-      "country": "China",
-      "count": 43
+      "country": "Italy",
+      "count": 44
     },
     {
-      "country": "Italy",
+      "country": "China",
       "count": 43
     },
     {
@@ -19945,7 +19959,7 @@
     },
     {
       "country": "Japan",
-      "count": 38
+      "count": 37
     },
     {
       "country": "Australia",
@@ -19957,7 +19971,7 @@
     },
     {
       "country": "Puerto Rico",
-      "count": 21
+      "count": 22
     },
     {
       "country": "Mexico",
@@ -19981,7 +19995,7 @@
     },
     {
       "country": "Taiwan",
-      "count": 12
+      "count": 13
     },
     {
       "country": "Lithuania",
@@ -20147,7 +20161,7 @@
     },
     {
       "country": "Italy",
-      "players": 944
+      "players": 945
     },
     {
       "country": "Spain",
@@ -20163,7 +20177,7 @@
     },
     {
       "country": "Canada",
-      "players": 528
+      "players": 529
     },
     {
       "country": "Turkey",
@@ -22743,60 +22757,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Cangrejeros de Santurce",
-      "players": [
-        "DJ Wilson",
-        "Ian Clark",
-        "Malik Beasley",
-        "Thomas Robinson"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "DJ Wilson",
-            "Malik Beasley"
-          ],
-          "shared_nba_franchises": [
-            "Milwaukee Bucks"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "DJ Wilson",
-            "Thomas Robinson"
-          ],
-          "shared_nba_franchises": [
-            "Houston Rockets",
-            "Philadelphia 76ers"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Ian Clark",
-            "Malik Beasley"
-          ],
-          "shared_nba_franchises": [
-            "Denver Nuggets",
-            "Utah Jazz"
-          ],
-          "latest_stint_year": 2026
-        },
-        {
-          "players": [
-            "Malik Beasley",
-            "Thomas Robinson"
-          ],
-          "shared_nba_franchises": [
-            "Los Angeles Lakers"
-          ],
-          "latest_stint_year": 2026
-        }
-      ],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Capital City Go-Go",
       "players": [
         "Chris Livingston",
@@ -22936,6 +22896,28 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Leones de Ponce",
+      "players": [
+        "Aleem Ford",
+        "Isaiah Hicks",
+        "Terence Davis",
+        "Thomas Robinson"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Terence Davis",
+            "Thomas Robinson"
+          ],
+          "shared_nba_franchises": [
+            "Sacramento Kings"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Maxima Roma",
       "players": [
         "Aaron Holiday",
@@ -23000,6 +22982,17 @@
           "latest_stint_year": 2026
         }
       ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Osos de Manatí",
+      "players": [
+        "Jamil Wilson",
+        "Miye Oni",
+        "Tyler Cook",
+        "Tyler Davis"
+      ],
+      "shared_franchise_pairs": [],
       "latest_stint_year": 2026
     },
     {
@@ -23171,6 +23164,38 @@
       "latest_stint_year": 2026
     },
     {
+      "team": "Cangrejeros de Santurce",
+      "players": [
+        "DJ Wilson",
+        "Ian Clark",
+        "Malik Beasley"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "DJ Wilson",
+            "Malik Beasley"
+          ],
+          "shared_nba_franchises": [
+            "Milwaukee Bucks"
+          ],
+          "latest_stint_year": 2026
+        },
+        {
+          "players": [
+            "Ian Clark",
+            "Malik Beasley"
+          ],
+          "shared_nba_franchises": [
+            "Denver Nuggets",
+            "Utah Jazz"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
       "team": "Dorados de Chihuahua",
       "players": [
         "Raymond Spalding",
@@ -23232,26 +23257,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Leones de Ponce",
-      "players": [
-        "Aleem Ford",
-        "Isaiah Hicks",
-        "Terence Davis"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Levanga Hokkaido",
-      "players": [
-        "Jahlil Okafor",
-        "Marques Bolden",
-        "Thomas Welsh"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Liaoning Flying Leopards",
       "players": [
         "Eric Moreland",
@@ -23309,16 +23314,6 @@
         "Buddy Boeheim",
         "Jazian Gortman",
         "Zhaire Smith"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
-      "team": "Osos de Manatí",
-      "players": [
-        "Jamil Wilson",
-        "Miye Oni",
-        "Tyler Cook"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
@@ -23556,6 +23551,27 @@
           ],
           "shared_nba_franchises": [
             "Chicago Bulls"
+          ],
+          "latest_stint_year": 2026
+        }
+      ],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Virtus Bologna",
+      "players": [
+        "Bobi Klintman",
+        "Kessler Edwards",
+        "Wendell Moore"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Wendell Moore",
+            "Bobi Klintman"
+          ],
+          "shared_nba_franchises": [
+            "Detroit Pistons"
           ],
           "latest_stint_year": 2026
         }
@@ -23839,6 +23855,15 @@
       "players": [
         "Brian Bowen",
         "Rodney Purvis"
+      ],
+      "shared_franchise_pairs": [],
+      "latest_stint_year": 2026
+    },
+    {
+      "team": "Levanga Hokkaido",
+      "players": [
+        "Jahlil Okafor",
+        "Marques Bolden"
       ],
       "shared_franchise_pairs": [],
       "latest_stint_year": 2026
@@ -24164,15 +24189,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Virtus Bologna",
-      "players": [
-        "Bobi Klintman",
-        "Kessler Edwards"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Windy City Bulls",
       "players": [
         "Drew Peterson",
@@ -24271,6 +24287,29 @@
       "latest_stint_year": 2025
     },
     {
+      "team": "New Taipei Kings",
+      "players": [
+        "Austin Daye",
+        "Chris Johnson",
+        "Craig Sword",
+        "Jalen Harris",
+        "Thomas Welsh"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Austin Daye",
+            "Jalen Harris"
+          ],
+          "shared_nba_franchises": [
+            "Toronto Raptors"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2025
+    },
+    {
       "team": "Zenit Saint Petersburg",
       "players": [
         "Alex Poythress",
@@ -24307,28 +24346,6 @@
           ],
           "shared_nba_franchises": [
             "Brooklyn Nets"
-          ],
-          "latest_stint_year": 2025
-        }
-      ],
-      "latest_stint_year": 2025
-    },
-    {
-      "team": "New Taipei Kings",
-      "players": [
-        "Austin Daye",
-        "Chris Johnson",
-        "Craig Sword",
-        "Jalen Harris"
-      ],
-      "shared_franchise_pairs": [
-        {
-          "players": [
-            "Austin Daye",
-            "Jalen Harris"
-          ],
-          "shared_nba_franchises": [
-            "Toronto Raptors"
           ],
           "latest_stint_year": 2025
         }
@@ -42590,6 +42607,27 @@
       ]
     },
     {
+      "player": "Kyle Anderson",
+      "teams": [
+        {
+          "team": "Memphis Grizzlies",
+          "stints": 2,
+          "years": [
+            "2018–2022",
+            "2026"
+          ]
+        },
+        {
+          "team": "Minnesota Timberwolves",
+          "stints": 2,
+          "years": [
+            "2022–2024",
+            "2026"
+          ]
+        }
+      ]
+    },
+    {
       "player": "Kyle Guy",
       "teams": [
         {
@@ -49608,15 +49646,44 @@
           "stints": 2,
           "years": [
             "2021",
-            "2025-2026"
+            "2025"
           ]
         },
         {
           "team": "Khimki",
           "stints": 2,
           "years": [
-            "2017-2018",
+            "2017–2018",
             "2020"
+          ]
+        },
+        {
+          "team": "Leones de Ponce",
+          "stints": 2,
+          "years": [
+            "2023",
+            "2026–present"
+          ]
+        },
+        {
+          "team": "Piratas de Quebradillas",
+          "stints": 2,
+          "years": [
+            "2022",
+            "2026"
+          ]
+        }
+      ]
+    },
+    {
+      "player": "Thomas Welsh",
+      "teams": [
+        {
+          "team": "New Taipei Kings",
+          "stints": 2,
+          "years": [
+            "2021–2022",
+            "2026–present"
           ]
         }
       ]
@@ -50515,7 +50582,7 @@
           "stints": 2,
           "years": [
             "2024",
-            "2025-2026"
+            "2025–present"
           ]
         }
       ]
@@ -51155,8 +51222,8 @@
           "team": "Detroit Pistons",
           "stints": 2,
           "years": [
-            "2024-2025",
-            "2025-2026"
+            "2024–25",
+            "2025–26"
           ]
         }
       ]
@@ -56474,21 +56541,21 @@
       },
       {
         "player": "Thomas Robinson",
-        "current_team": "Cangrejeros de Santurce",
-        "city": "San Juan",
+        "current_team": "Leones de Ponce",
+        "city": "Ponce",
         "state": "",
         "country": "Puerto Rico",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Thomas Welsh",
-        "current_team": "Levanga Hokkaido",
-        "city": "Sapporo",
+        "current_team": "New Taipei Kings",
+        "city": "New Taipei City",
         "state": "",
-        "country": "Japan",
+        "country": "Taiwan",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Thon Maker",
@@ -56779,6 +56846,15 @@
         "last_updated": "2026-09-24"
       },
       {
+        "player": "Tyler Davis",
+        "current_team": "Osos de Manatí",
+        "city": "Manatí",
+        "state": "",
+        "country": "Puerto Rico",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
+      },
+      {
         "player": "Tyler Dorsey",
         "current_team": "Olympiacos",
         "city": "Piraeus",
@@ -56794,7 +56870,7 @@
         "state": "",
         "country": "Israel",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Tyrese Martin",
@@ -56932,6 +57008,15 @@
         "last_updated": "2026-09-24"
       },
       {
+        "player": "Wendell Moore",
+        "current_team": "Virtus Bologna",
+        "city": "Bologna",
+        "state": "",
+        "country": "Italy",
+        "in_coords": true,
+        "last_updated": "2026-09-25"
+      },
+      {
         "player": "Wenyen Gabriel",
         "current_team": "Beşiktaş",
         "city": "Istanbul",
@@ -56974,7 +57059,7 @@
         "state": "",
         "country": "Spain",
         "in_coords": true,
-        "last_updated": "2026-09-24"
+        "last_updated": "2026-09-25"
       },
       {
         "player": "Willie Reed",
@@ -57491,8 +57576,8 @@
       }
     ],
     "coverage": {
-      "total": 653,
-      "in_coords": 590,
+      "total": 655,
+      "in_coords": 592,
       "missing_from_coords": 63,
       "missing_no_city": 25,
       "missing_city_absent_from_coords": 38,
@@ -57500,6 +57585,36 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Wendell Moore",
+      "from_team": "Detroit Pistons",
+      "to_team": "Virtus Bologna",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Tony Bradley",
+      "from_team": "Indiana Pacers",
+      "to_team": "Atlanta Hawks",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Thomas Welsh",
+      "from_team": "Levanga Hokkaido",
+      "to_team": "New Taipei Kings",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Thomas Robinson",
+      "from_team": "Cangrejeros de Santurce",
+      "to_team": "Leones de Ponce",
+      "date": "2026-09-25"
+    },
+    {
+      "player": "Kyle Anderson",
+      "from_team": "Utah Jazz",
+      "to_team": "Toronto Raptors",
+      "date": "2026-09-25"
+    },
     {
       "player": "Sterling Brown",
       "from_team": "Partizan",
@@ -57769,36 +57884,6 @@
       "from_team": "Charlotte Hornets",
       "to_team": "Windy City Bulls",
       "date": "2026-09-25"
-    },
-    {
-      "player": "Billy Garrett",
-      "from_team": "Harlem Globetrotters",
-      "to_team": "Freseros de Irapuato",
-      "date": "2026-09-25"
-    },
-    {
-      "player": "Ricky Council IV",
-      "from_team": "Rio Grande Valley Vipers",
-      "to_team": "Osceola Magic",
-      "date": "2026-09-24"
-    },
-    {
-      "player": "Keyontae Johnson",
-      "from_team": "Shandong Hi-Speed Kirin",
-      "to_team": "Alvark Tokyo",
-      "date": "2026-09-23"
-    },
-    {
-      "player": "Ike Anigbogu",
-      "from_team": "Vanoli Cremona",
-      "to_team": "Benetton Treviso",
-      "date": "2026-09-23"
-    },
-    {
-      "player": "Lajae Jones",
-      "from_team": "Golden State Warriors",
-      "to_team": "Pallacanestro Trieste",
-      "date": "2026-09-22"
     }
   ]
 }
