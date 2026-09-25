@@ -1,3 +1,16 @@
+## 2026-09-25 — incremental run
+
+- Players updated: **478** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Hayden Gray: Utah Jazz → Boston Celtics
+  - Daishen Nix: Rio Grande Valley Vipers → Beijing Royal Fighters
+
 ## 2026-09-25 — override run
 
 - Players updated: **39** (0 new)
