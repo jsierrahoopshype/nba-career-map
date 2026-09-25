@@ -744,6 +744,213 @@ def test_the_bio_fetcher_trusts_a_human_verified_item_without_p106():
     print("test_the_bio_fetcher_trusts_a_human_verified_item_without_p106 PASS")
 
 
+# --- tie-breaks -------------------------------------------------------------
+def _tie(name, bref, search, items, *, career=None, rejected="Q999",
+         display=""):
+    """Resolve one flagged player against canned candidates.
+
+    `items` is {title: (qid, birth, p106)}; titles sharing a qid are redirect
+    aliases of one item.
+    """
+    rows = [_flag(name, name, rejected)]
+    rec = {"player": name, "wikipedia_url": WIKI + name.replace(" ", "_")}
+    if career is not None:
+        rec["career_history"] = [{"years": y, "team": "T"} for y in career]
+    if display:
+        rec["display_name"] = display
+    t = FakeTransport(
+        bref={name: bref} if bref else {},
+        search={name: list(search)},
+        titles={title: q for title, (q, _, _) in items.items()},
+        items={q: _item(q, birth=b, p106=p,
+                        article=WIKI + title.replace(" ", "_"))
+               for title, (q, b, p) in items.items()})
+    return _run(rows, [rec], t)
+
+
+def test_rule1_name_key_strips_what_it_should():
+    k = rpu.name_key
+    assert k("Bill Hosket Jr.") == k("Bill Hosket")
+    assert k("Robert Williams III") == k("Robert Williams")
+    assert k("Ron Holland II") == k("Ron Holland")
+    assert k("Brandon Williams (basketball, born 1999)") == k("Brandon Williams")
+    assert k("Mike James (1990)") == k("Mike James (basketball, born 1990)")
+    assert k("Nikola Jokić") == k("Nikola Jokic")
+    assert k("Tre' Johnson") == k("Tre Johnson (basketball)")
+    assert k("A. J. Green (basketball)") == k("AJ Green")
+    for a, b in [("Aaron Harrison", "Andrew Harrison"),
+                 ("Jesse Edwards", "Anthony Edwards"),
+                 ("Don May", "Bill Hosket"),
+                 ("Anthony Bennett", "Anthony Brown")]:
+        assert k(a) != k(b), (a, b)
+    print("test_rule1_name_key_strips_what_it_should PASS")
+
+
+def test_rule1_a_different_name_is_never_a_second_match():
+    cases = [
+        # player, BR date, the right article, the other name born in range
+        ("Andrew Harrison", "1994-10-28",
+         ("Andrew Harrison (basketball)", "Q14469654", "1994-10-28"),
+         ("Aaron Harrison", "Q14469653", "1994-10-28")),
+        ("Anthony Edwards", "2001-08-05",
+         ("Anthony Edwards (basketball)", "Q60951627", "2001-08-05"),
+         ("Jesse Edwards (basketball)", "Q100785232", "2000-03-18")),
+        ("Bill Hosket", "1946-12-20",
+         ("Bill Hosket Jr.", "Q1463735", "1946-12-20"),
+         ("Don May (basketball)", "Q2736149", "1946-01-03")),
+        ("Anthony Brown", "1992-10-10",
+         ("Anthony Brown (basketball)", "Q20440606", "1992-10-10"),
+         ("Anthony Bennett (basketball)", "Q4772101", "1993-03-14")),
+    ]
+    for name, bref, right, other in cases:
+        report = _tie(name, bref, [right[0], other[0]],
+                      {right[0]: (right[1], right[2], True),
+                       other[0]: (other[1], other[2], True)})
+        assert list(report["verified"]) == [name], (name, report["needs_a_human"])
+        rec = report["verified"][name]
+        assert rec["wikidata_id"] == right[1], (name, rec)
+        assert rec["decided_by"] == "rule 1: exact name", (name, rec)
+    print("test_rule1_a_different_name_is_never_a_second_match PASS")
+
+
+def test_rule1_redirect_aliases_are_one_candidate():
+    """'Cat Barber' redirects to the same item as 'Anthony Barber
+    (basketball)': one player, not two, and the named title is kept."""
+    report = _tie("Anthony Barber", "", ["Cat Barber"],
+                  {"Anthony Barber (basketball)": ("Q16209351", "1994-07-25",
+                                                   True),
+                   "Cat Barber": ("Q16209351", "1994-07-25", True)},
+                  career=["2016-2017", "2017-2018"])
+    rec = report["verified"]["Anthony Barber"]
+    assert rec["wikidata_id"] == "Q16209351"
+    assert rec["matched_candidate"] == "Anthony Barber (basketball)", rec
+    print("test_rule1_redirect_aliases_are_one_candidate PASS")
+
+
+def test_rule1_a_redirect_with_another_name_alone_is_not_enough():
+    """An item reached only through a different name is not accepted."""
+    report = _tie("Anthony Barber", "", ["Cat Barber"],
+                  {"Cat Barber": ("Q16209351", "1994-07-25", True)},
+                  career=["2016-2017"])
+    assert report["verified"] == {}
+    cand = [c for c in report["needs_a_human"][0]["candidates"]
+            if c["title"] == "Cat Barber"][0]
+    assert "rule 1" in cand["why_not"], cand
+    print("test_rule1_a_redirect_with_another_name_alone_is_not_enough PASS")
+
+
+def test_rule2_the_career_stands_in_for_a_missing_birth_date():
+    """Brandon Williams has no Basketball-Reference row; his first stint is
+    2021, so the 1999 Brandon Williams fits (1997-2004) and the 1975 one
+    does not."""
+    report = _tie("Brandon Williams", "",
+                  ["Brandon Williams (basketball, born 1999)",
+                   "Brandon Williams (basketball, born 1975)"],
+                  {"Brandon Williams (basketball, born 1999)":
+                       ("Q100987066", "1999-11-22", True),
+                   "Brandon Williams (basketball, born 1975)":
+                       ("Q2923793", "1975-02-27", True)},
+                  career=["2022-2023", "2021-2022"])
+    rec = report["verified"]["Brandon Williams"]
+    assert rec["wikidata_id"] == "Q100987066", rec
+    assert "rule 2" in rec["decided_by"], rec
+    assert "1997-2004" in rec["decided_by"], rec
+    print("test_rule2_the_career_stands_in_for_a_missing_birth_date PASS")
+
+
+def test_rule2_window_edges_and_a_new_player():
+    # born 1997 or 2004 with a first stint in 2021: both edges are inside
+    for born in ("1997-01-01", "2004-12-31"):
+        report = _tie("Herb Jones", "", ["Herb Jones (basketball)"],
+                      {"Herb Jones (basketball)": ("Q1", born, True)},
+                      career=["2021-2025"])
+        assert list(report["verified"]) == ["Herb Jones"], born
+    # one year outside either edge is not
+    for born in ("1996-12-31", "2005-01-01"):
+        report = _tie("Herb Jones", "", ["Herb Jones (basketball)"],
+                      {"Herb Jones (basketball)": ("Q1", born, True)},
+                      career=["2021-2025"])
+        assert report["verified"] == {}, born
+        why = report["needs_a_human"][0]["candidates"][0]["why_not"]
+        assert "rule 2" in why, why
+    print("test_rule2_window_edges_and_a_new_player PASS")
+
+
+def test_rule2_no_date_and_no_career_is_still_a_human():
+    report = _tie("Braden Smith", "", ["Braden Smith (basketball)"],
+                  {"Braden Smith (basketball)": ("Q1", "2003-05-05", True)},
+                  career=[])
+    assert report["verified"] == {}
+    assert "no career on file" in report["needs_a_human"][0]["why"]
+    print("test_rule2_no_date_and_no_career_is_still_a_human PASS")
+
+
+def test_rule2_is_only_used_without_a_basketball_reference_date():
+    """A BR date decides even when the career would say otherwise."""
+    report = _tie("Brandon Williams", "1975-02-27",
+                  ["Brandon Williams (basketball, born 1999)",
+                   "Brandon Williams (basketball, born 1975)"],
+                  {"Brandon Williams (basketball, born 1999)":
+                       ("Q100987066", "1999-11-22", True),
+                   "Brandon Williams (basketball, born 1975)":
+                       ("Q2923793", "1975-02-27", True)},
+                  career=["2021-2022"])
+    rec = report["verified"]["Brandon Williams"]
+    assert rec["wikidata_id"] == "Q2923793"
+    assert rec["decided_by"] == "Basketball-Reference birth year", rec
+    print("test_rule2_is_only_used_without_a_basketball_reference_date PASS")
+
+
+def test_rule3_the_flagged_namesake_is_dropped_and_the_rest_decides():
+    """The flagged item passes P106, the name and the birth year -- it is
+    still never accepted back, and the other one wins."""
+    report = _tie("Jay Miller", "1943-07-19",
+                  ["Jay Miller (basketball)", "Jay Miller (basketball, born 1943)"],
+                  {"Jay Miller (basketball)": ("Q518561", "1943-01-01", True),
+                   "Jay Miller (basketball, born 1943)":
+                       ("Q777", "1943-07-19", True)},
+                  rejected="Q518561")
+    rec = report["verified"]["Jay Miller"]
+    assert rec["wikidata_id"] == "Q777", rec
+    assert rec["decided_by"] == "rule 3: namesake item dropped", rec
+    # the flagged one alone: nothing left, so a human
+    report = _tie("Jay Miller", "1943-07-19", ["Jay Miller (basketball)"],
+                  {"Jay Miller (basketball)": ("Q518561", "1943-01-01", True)},
+                  rejected="Q518561")
+    assert report["verified"] == {}
+    why = report["needs_a_human"][0]["candidates"][0]["why_not"]
+    assert "rule 3" in why, why
+    print("test_rule3_the_flagged_namesake_is_dropped_and_the_rest_decides PASS")
+
+
+def test_rule4_one_left_is_accepted_several_are_listed():
+    """Chris Johnson: two of the name, both born 17-24 years before a 2009
+    first stint. Still a coin toss, still a human."""
+    report = _tie("Chris Johnson", "",
+                  ["Chris Johnson (basketball, born 1985)",
+                   "Chris Johnson (basketball, born 1990)"],
+                  {"Chris Johnson (basketball, born 1985)":
+                       ("Q2455991", "1985-04-15", True),
+                   "Chris Johnson (basketball, born 1990)":
+                       ("Q3662449", "1990-09-29", True)},
+                  career=["2009-2010"])
+    assert report["verified"] == {}
+    assert "2 different basketball players" in report["needs_a_human"][0]["why"]
+    # one left -> accepted, and the summary names the rule
+    report = _tie("Andrew Harrison", "1994-10-28",
+                  ["Andrew Harrison (basketball)", "Aaron Harrison"],
+                  {"Andrew Harrison (basketball)": ("Q1", "1994-10-28", True),
+                   "Aaron Harrison": ("Q2", "1994-10-28", True)})
+    import contextlib
+    import io
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        rpu.print_resolution(report)
+    out = buf.getvalue()
+    assert "Decided by" in out and "rule 1: exact name" in out, out
+    print("test_rule4_one_left_is_accepted_several_are_listed PASS")
+
+
 if __name__ == "__main__":
     test_only_a_verified_entry_goes_live()
     test_a_hand_written_url_counts_as_verified()
@@ -771,4 +978,14 @@ if __name__ == "__main__":
     test_an_unsigned_human_entry_is_ignored()
     test_settle_drops_the_overridden_players_from_the_review()
     test_the_bio_fetcher_trusts_a_human_verified_item_without_p106()
+    test_rule1_name_key_strips_what_it_should()
+    test_rule1_a_different_name_is_never_a_second_match()
+    test_rule1_redirect_aliases_are_one_candidate()
+    test_rule1_a_redirect_with_another_name_alone_is_not_enough()
+    test_rule2_the_career_stands_in_for_a_missing_birth_date()
+    test_rule2_window_edges_and_a_new_player()
+    test_rule2_no_date_and_no_career_is_still_a_human()
+    test_rule2_is_only_used_without_a_basketball_reference_date()
+    test_rule3_the_flagged_namesake_is_dropped_and_the_rest_decides()
+    test_rule4_one_left_is_accepted_several_are_listed()
     print("\nall player-URL override tests PASS")

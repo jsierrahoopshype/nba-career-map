@@ -14,12 +14,26 @@ when Wikidata vouches for it:
     P106 (occupation) = Q3665646 (basketball player)
   AND a birth year within 1 of Basketball-Reference's for this player
 
-Exactly one accepted article -> it is written to
+Then the tie-breaks, in this order:
+
+  1. exact name   only an item with an article titled with the player's own
+                  name counts, once a parenthetical and a Jr./Sr./II/III/IV are
+                  stripped and accents folded on both sides. Aaron Harrison is
+                  not a second Andrew Harrison. Redirect aliases are the same
+                  item ("Cat Barber" and "Anthony Barber (basketball)" are both
+                  Q16209351), so one matching title is enough.
+  2. career window  with no Basketball-Reference birth date, the player's own
+                  career stands in for it: a candidate born between (first
+                  stint start - 24) and (first stint start - 17) passes.
+  3. namesake     the item the gate flagged for this record is never accepted
+                  back, whatever else it passes.
+
+Exactly one item left -> it is written to
 data/players/player_url_overrides.json, which the pipeline then uses forever
-(see scripts/player_urls.py). Zero, or more than one -> the player is LISTED
-for a human, with everything the run learned about each candidate. It never
-guesses: two basketball players of the same name born the same year is not an
-answer.
+(see scripts/player_urls.py), and the summary says which rule decided it.
+Zero, or more than one -> the player is LISTED for a human, with everything the
+run learned about each candidate. It never guesses: two basketball players of
+the same name born the same year is not an answer.
 
 WHERE THE CANDIDATES COME FROM.
   * the pre-filled guess in the `candidates` section of the overrides file,
@@ -77,6 +91,7 @@ import datetime as dt
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -100,6 +115,12 @@ RESOLUTION_OUT = ROOT / "logs" / "player_url_resolution.json"
 Q_BASKETBALL_PLAYER = "Q3665646"   # P106 occupation: basketball player
 BIRTH_YEAR_TOLERANCE = 1
 SEARCH_RESULTS = 8       # Wikipedia search hits considered per player
+# Rule 2: with no Basketball-Reference birth date, a candidate must have been
+# born this many years before the player's first stint (oldest, youngest).
+CAREER_WINDOW = (24, 17)
+# Rule 1: generational suffixes an article title may carry that a player key
+# may not, and the other way round.
+NAME_SUFFIXES = frozenset({"jr", "sr", "ii", "iii", "iv"})
 
 # Strict by design, and stricter than the bio fetcher's gate: that one accepts
 # P106 = basketball player OR P641 = basketball, which lets in a coach whose
@@ -374,6 +395,62 @@ def why_rejected(item: dict | None, bref_date: str) -> str:
             f"({abs(wd_year - bref_year)} years apart)")
 
 
+def name_key(text: str) -> str:
+    """A name reduced to what rule 1 compares.
+
+    Drops any parenthetical ("(basketball, born 1999)", and the "(1990)" some
+    player keys carry), the Jr./Sr./II/III/IV suffixes, accents, case and
+    punctuation, so "Bill Hosket Jr." is "Bill Hosket", "Tre' Johnson" is
+    "Tre Johnson" and "A. J. Green" is "AJ Green".
+    """
+    text = re.sub(r"\([^)]*\)", " ", text or "")
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(c for c in text if not unicodedata.combining(c))
+    text = text.casefold().replace(".", " ").replace(",", " ")
+    words = [re.sub(r"[^0-9a-z]", "", w) for w in text.split()]
+    return "".join(w for w in words if w and w not in NAME_SUFFIXES)
+
+
+def first_stint_year(career: dict | None) -> int | None:
+    """The year the player's first career stint started, from his record."""
+    years = [_year(s.get("years")) for s in (career or {}).get("career_history")
+             or [] if isinstance(s, dict)]
+    years = [y for y in years if y]
+    return min(years) if years else None
+
+
+def career_window(career: dict | None) -> tuple[int, int] | None:
+    """Rule 2: the birth years a player with this career could have."""
+    start = first_stint_year(career)
+    if start is None:
+        return None
+    return start - CAREER_WINDOW[0], start - CAREER_WINDOW[1]
+
+
+def born_right(item: dict | None, bref_date: str,
+               window: tuple[int, int] | None) -> tuple[bool, str]:
+    """(passes, why not) for the birth check.
+
+    Basketball-Reference's date when there is one (the original test); rule 2's
+    career window when there is not.
+    """
+    wd_year = _year((item or {}).get("birth_date"))
+    if bref_date:
+        if accepts(item, bref_date):
+            return True, ""
+        return False, why_rejected(item, bref_date)
+    if window is None:
+        return False, ("no Basketball-Reference birth date and no career on "
+                       "file to check the item against")
+    if wd_year is None:
+        return False, "the item has no birth date, so it cannot be checked"
+    lo, hi = window
+    if lo <= wd_year <= hi:
+        return True, ""
+    return False, (f"born {wd_year}, outside {lo}-{hi} (rule 2: 17-24 years "
+                   f"before his first stint)")
+
+
 def accepts(item: dict | None, bref_date: str) -> bool:
     """P106 = basketball player, and born when the NBA player was."""
     if not item or not item.get("p106"):
@@ -393,6 +470,26 @@ def _human_entry(human: dict[str, dict], name: str) -> dict | None:
         if normkey(other) == key:
             return rec
     return None
+
+
+def decided_by(flags: dict[str, dict], birth_rule: str) -> str:
+    """The rules the one accepted item needed.
+
+    `flags` is {item: {"named", "born", "fresh"}} over the P106 items: rule 1,
+    the birth check (Basketball-Reference's, or rule 2's window) and rule 3. A
+    rule is credited when dropping it would leave anything but exactly one
+    item. A P106 item with nobody to beat is credited to the birth check,
+    which it still had to pass.
+    """
+    rules = [("named", "rule 1: exact name"), ("born", birth_rule),
+             ("fresh", "rule 3: namesake item dropped")]
+    needed = []
+    for key, label in rules:
+        left = [q for q, f in flags.items()
+                if all(f[k] for k, _ in rules if k != key)]
+        if len(left) != 1:
+            needed.append(label)
+    return " + ".join(needed) or birth_rule
 
 
 def resolve(transport, rows: list[dict], players: list[dict],
@@ -449,11 +546,42 @@ def resolve(transport, rows: list[dict], players: list[dict],
     for name, info in per_player.items():
         row, bref_date = info["row"], info["bref_date"]
         rejected_qid = row.get("rejected_wikidata_id") or ""
-        considered, accepted = [], {}
+        career = by_name.get(name) or {}
+        names = {k for k in (name_key(name),
+                             name_key(career.get("display_name") or "")) if k}
+        window = None if bref_date else career_window(career)
+
+        # Rule 1 works per ITEM: a redirect alias is the same item, so one
+        # title with the player's name is enough for all of that item's titles.
+        titles_of: dict[str, list[str]] = {}
+        for title in info["titles"]:
+            qid = title_to_qid.get(title, "")
+            if qid:
+                titles_of.setdefault(qid, []).append(title)
+        named = {q for q, ts in titles_of.items()
+                 if any(name_key(t) in names for t in ts)}
+
+        considered, passed = [], {}
+        flags: dict[str, dict] = {}     # per P106 item, for decided_by
         for title in info["titles"]:
             qid = title_to_qid.get(title, "")
             item = items.get(qid) if qid else None
-            ok = bool(qid) and qid != rejected_qid and accepts(item, bref_date)
+            why = ""
+            if not qid:
+                why = "no article"
+            elif not (item or {}).get("p106"):
+                why = why_rejected(item, bref_date)
+            else:
+                born, why_born = born_right(item, bref_date, window)
+                flags[qid] = {"named": qid in named, "born": born,
+                              "fresh": qid != rejected_qid}
+                if qid not in named:
+                    why = "a different player's name (rule 1)"
+                elif not born:
+                    why = why_born
+                elif qid == rejected_qid:
+                    why = ("this is the namesake the record already pointed "
+                           "at (rule 3)")
             considered.append({
                 "title": title,
                 "wikidata_id": qid,
@@ -461,14 +589,14 @@ def resolve(transport, rows: list[dict], players: list[dict],
                 "description": (item or {}).get("description", ""),
                 "p106_basketball_player": bool((item or {}).get("p106")),
                 "birth_date": (item or {}).get("birth_date") or "",
-                "accepted": ok,
-                "why_not": "" if ok else (
-                    "no article" if not qid else
-                    "this is the namesake the record already pointed at"
-                    if qid == rejected_qid else why_rejected(item, bref_date)),
+                "accepted": not why,
+                "why_not": why,
             })
-            if ok:
-                accepted.setdefault(qid, title)
+            if not why:
+                # Prefer a title with the player's name over an alias.
+                if qid not in passed or (name_key(title) in names
+                                         and name_key(passed[qid]) not in names):
+                    passed[qid] = title
 
         base = {"player": name,
                 "basketball_reference_birth_date": bref_date,
@@ -476,18 +604,24 @@ def resolve(transport, rows: list[dict], players: list[dict],
                 "rejected_wikidata_id": rejected_qid,
                 "searched": info["searched"],
                 "candidates": considered}
+        if window:
+            base["career_window"] = list(window)
 
-        if len(accepted) != 1:
-            base["why"] = ("no candidate article is a basketball player born "
-                           "in the right year"
-                           if not accepted else
-                           f"{len(accepted)} different basketball players of "
-                           f"this name were born in the right year, so the "
-                           f"article cannot be chosen automatically")
+        if len(passed) != 1:
+            if passed:
+                base["why"] = (f"{len(passed)} different basketball players of "
+                               f"this name were born in the right year, so the "
+                               f"article cannot be chosen automatically")
+            elif not bref_date and window is None:
+                base["why"] = ("no Basketball-Reference birth date and no "
+                               "career on file, so no candidate can be checked")
+            else:
+                base["why"] = ("no candidate article is a basketball player of "
+                               "this name born in the right year")
             unresolved.append(base)
             continue
 
-        qid, title = next(iter(accepted.items()))
+        qid, title = next(iter(passed.items()))
         item = items[qid]
         url = _article_url(item, title)
         holder = owner_of.get((title_from_url(url) or "").casefold())
@@ -497,6 +631,9 @@ def resolve(transport, rows: list[dict], players: list[dict],
             unresolved.append(base)
             continue
 
+        birth_rule = ("Basketball-Reference birth year" if bref_date else
+                      f"rule 2: career window (born {window[0]}-{window[1]}, "
+                      f"first stint {window[1] + CAREER_WINDOW[1]})")
         resolved[name] = {
             "wikipedia_url": url,
             "wikidata_id": qid,
@@ -507,10 +644,15 @@ def resolve(transport, rows: list[dict], players: list[dict],
             "replaces": row.get("wikipedia_url", ""),
             "replaces_wikidata_id": rejected_qid,
             "matched_candidate": title,
+            "decided_by": decided_by(flags, birth_rule),
             "verified": _today(),
-            "verified_by": ("P106 = %s and a birth year within %d of "
-                            "Basketball-Reference's"
-                            % (Q_BASKETBALL_PLAYER, BIRTH_YEAR_TOLERANCE)),
+            "verified_by": (("P106 = %s and a birth year within %d of "
+                             "Basketball-Reference's"
+                             % (Q_BASKETBALL_PLAYER, BIRTH_YEAR_TOLERANCE))
+                            if bref_date else
+                            ("P106 = %s and born %d-%d, 17-24 years before "
+                             "his first stint (no Basketball-Reference date)"
+                             % (Q_BASKETBALL_PLAYER, window[0], window[1]))),
         }
 
     return {"generated": _today(),
@@ -518,6 +660,13 @@ def resolve(transport, rows: list[dict], players: list[dict],
                 "occupation": f"P106 = {Q_BASKETBALL_PLAYER} (basketball player)",
                 "birth_year_tolerance": BIRTH_YEAR_TOLERANCE,
                 "cross_check": "Basketball-Reference career info CSV",
+                "tie_breaks": [
+                    "rule 1: exact name (parenthetical and Jr./Sr./II/III/IV "
+                    "stripped, accents folded; redirect aliases are one item)",
+                    "rule 2: no Basketball-Reference date -> born %d-%d years "
+                    "before the first stint" % (CAREER_WINDOW[1],
+                                                CAREER_WINDOW[0]),
+                    "rule 3: never the item flagged as the namesake"],
                 "human_verified": "written through without the P106 gate or "
                                   "the ambiguity check, once Wikipedia confirms "
                                   "the article exists and is not a "
@@ -734,12 +883,13 @@ def print_resolution(report: dict) -> None:
     print(f"- **human-verified, skipped**: {c.get('human_skipped', 0)}\n")
     if report["verified"]:
         print("### Verified\n")
-        print("| Player | Article | Wikidata | Born (WD / BR) |")
-        print("| --- | --- | --- | --- |")
+        print("| Player | Article | Wikidata | Born (WD / BR) | Decided by |")
+        print("| --- | --- | --- | --- | --- |")
         for name, r in sorted(report["verified"].items()):
             print(f"| {name} | {title_from_url(r['wikipedia_url'])} | "
                   f"{r['wikidata_id']} | {r['wikidata_birth_date']} / "
-                  f"{r['basketball_reference_birth_date']} |")
+                  f"{r['basketball_reference_birth_date'] or '-'} | "
+                  f"{r.get('decided_by', '')} |")
         print()
     if report.get("human_verified"):
         print("### Human-verified (no P106 gate, no ambiguity check)\n")

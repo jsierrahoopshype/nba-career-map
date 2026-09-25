@@ -21,6 +21,10 @@ name: Fix wrong-person Wikipedia URLs
 #      birth year within 1 of Basketball-Reference's. Exactly one accepted
 #      article is written to data/players/player_url_overrides.json; zero or
 #      several are LISTED in the run summary for a human. It never guesses.
+#      Between the gate and that count, three tie-breaks: exact name (so Aaron
+#      Harrison is not a second Andrew Harrison), the player's own career
+#      standing in for a missing Basketball-Reference birth date (born 17-24
+#      years before his first stint), and never the flagged namesake item.
 #      Players a human already decided (the `human_verified` section of the
 #      overrides file, each entry signed with `verified_by`) skip the search
 #      and the Wikidata test: their article is written through as long as it
