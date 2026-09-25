@@ -30,6 +30,14 @@ then search Wikidata for a basketball player of the same name whose birth
 year is within a year of Basketball-Reference's, and take it only when the
 search comes back with exactly one candidate.
 
+HUMAN-VERIFIED ARTICLES. A player whose override a person signed off on
+(`"human_verified": true` in data/players/player_url_overrides.json, see
+player_urls.py) is always read through that article, and its item is taken as
+this player even when it lacks P106/P641 -- Ray Ellefson's item has no
+occupation at all. The birth-year comparison with Basketball-Reference still
+runs and still lands in `date_disagreement`, but as a warning: it does not
+cost the item its death date or places, and --reapply does not throw it away.
+
 SOURCE PRECEDENCE. Basketball-Reference is keyed to the actual NBA player, so
 it decides the birth date whenever it has one; the gated Wikidata value is the
 fallback. The death date and both places are Wikidata's alone, and are only
@@ -83,6 +91,8 @@ wrong too. Nothing in the review file edits the career database. The fix for
 that list is data/players/player_url_overrides.json -- a curated article per
 player, written by scripts/resolve_player_urls.py and consulted here (see
 _title_of) before the stored URL, so a run cannot resolve back to the namesake.
+A player with a verified override is left off `wikipedia_url_wrong_person`:
+the override is the repair, whether or not his bio record has been re-read.
 
 Run:
     python3 scripts/fetch_bio_wikidata.py                 # incremental
@@ -555,13 +565,15 @@ def pick_replacement(candidates: list[dict], bref_date: str) -> dict | None:
 
 
 def compose(item: dict | None, bref_date: str, *, checked: str,
-            rejected_qid: str = "") -> dict:
+            rejected_qid: str = "", trusted: bool = False) -> dict:
     """One player's record, built from the gated item and Basketball-Reference.
 
     birth_date is Basketball-Reference's whenever it has one, because that file
     is keyed to the NBA player and cannot be a namesake. The death date and
     both places are Wikidata's alone, and only from an item whose birth year
-    lands within BIRTH_YEAR_TOLERANCE of Basketball-Reference's.
+    lands within BIRTH_YEAR_TOLERANCE of Basketball-Reference's -- unless the
+    item is `trusted` (a human verified the article), where a disagreeing
+    year is left for the review file to report and blocks nothing.
     """
     wd_birth = (item or {}).get("birth_date")
     birth = bref_date or wd_birth or None
@@ -575,7 +587,7 @@ def compose(item: dict | None, bref_date: str, *, checked: str,
                    else ("wikidata" if wd_birth else "unresolved")),
         "checked": checked,
     }
-    if item and birth_years_agree(wd_birth, bref_date):
+    if item and (trusted or birth_years_agree(wd_birth, bref_date)):
         rec["death_date"] = item.get("death_date") or None
         rec["birth_place"] = item.get("birth_place") or ""
         rec["death_place"] = item.get("death_place") or ""
@@ -653,6 +665,11 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
               for p in careers}
     carried = {row.get("player"): row
                for row in ((previous or {}).get("wrong_entity") or [])}
+    # A verified override IS the repair: the pipeline reads that article before
+    # anything else, so the player stops counting as pointing at the namesake
+    # the moment it is written -- not only once his bio record is re-read.
+    repaired = {p.get("player") for p in careers
+                if player_urls.override_for(p.get("player") or "")}
 
     wrong, disagreement, missing, bad_url = [], [], [], []
     for name, rec in sorted(bio.items()):
@@ -699,7 +716,7 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
                 "wikipedia_url": url,
                 "note": note,
             })
-            if url:
+            if url and name not in repaired:
                 bad_url.append({
                     "player": name,
                     "wikipedia_url": url,
@@ -721,7 +738,8 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
                 "used": rec.get("birth_date") or "",
                 "used_source": rec.get("source") or "",
                 "years_apart": apart,
-                "places_kept": apart <= BIRTH_YEAR_TOLERANCE,
+                "places_kept": (apart <= BIRTH_YEAR_TOLERANCE
+                                or player_urls.is_human_verified(name)),
             })
 
         if not rec.get("birth_date"):
@@ -787,9 +805,15 @@ def gather_items(transport, targets: list, bio: dict,
     every item's facts and gate flag, then go looking for a replacement for
     each item the gate turned down.
     """
+    # A human-verified article is always re-read, never short-cut through the
+    # item ID on file: that ID may be a replacement the name search picked, and
+    # the person's choice of article is the one that decides.
+    trusted = {p["player"] for p in targets
+               if player_urls.is_human_verified(p["player"])}
     known = {p["player"]: bio[p["player"]]["wikidata_id"]
              for p in targets
-             if bio.get(p["player"], {}).get("wikidata_id")}
+             if p["player"] not in trusted
+             and bio.get(p["player"], {}).get("wikidata_id")}
     unknown = [p for p in targets if p["player"] not in known]
     title_of = {p["player"]: _title_of(p) for p in unknown}
     resolved = resolve_qids(transport, [t for t in title_of.values() if t])
@@ -812,7 +836,7 @@ def gather_items(transport, targets: list, bio: dict,
         name = p["player"]
         qid = known.get(name)
         item = facts.get(qid) if qid else None
-        if qid and not passes_gate(item):
+        if qid and not passes_gate(item) and name not in trusted:
             details[name] = {"rejected": item or _blank_item(qid),
                              "player": p}
             items[name] = None
@@ -873,15 +897,16 @@ def reapply(bio: dict, bref: dict[str, str]) -> tuple[dict, dict]:
         bref_date = bref.get(normkey(name), "")
         item = _stored_item(rec)
         rejected_qid = rec.get("rejected_wikidata_id") or ""
-        if item and not birth_years_agree(item["birth_date"], bref_date,
-                                          OFFLINE_REJECT_YEARS - 1):
+        trusted = player_urls.is_human_verified(name)
+        if item and not trusted and not birth_years_agree(
+                item["birth_date"], bref_date, OFFLINE_REJECT_YEARS - 1):
             details[name] = {"rejected": item, "replacement": None,
                              "candidates": 0, "detected_by": OFFLINE_CHECK}
             rejected_qid = item["qid"]
             item = None
         out[name] = compose(item, bref_date,
                             checked=rec.get("checked") or _today(),
-                            rejected_qid=rejected_qid)
+                            rejected_qid=rejected_qid, trusted=trusted)
     return out, details
 
 
@@ -938,7 +963,8 @@ def run(args, transport) -> dict:
                 rejected = ((details.get(name) or {}).get("rejected") or {})
                 bio[name] = compose(item, bref.get(normkey(name), ""),
                                     checked=_today(),
-                                    rejected_qid=rejected.get("qid") or "")
+                                    rejected_qid=rejected.get("qid") or "",
+                                    trusted=player_urls.is_human_verified(name))
             print(f"records written: {len(targets)}")
 
     review = build_review(bio, players, bref, details, previous)

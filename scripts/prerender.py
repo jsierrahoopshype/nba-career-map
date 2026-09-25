@@ -105,8 +105,8 @@ def country_url(name: str) -> str:
 #                               sameAs rather than a wrong one. Silence is a
 #                               missing field; a wrong sameAs is a false claim.
 #
-# A player drops off that list once his record is re-read against the curated
-# article, so this suppression lifts by itself as the repairs land.
+# A player drops off that list as soon as his curated article is written, so
+# this suppression lifts by itself as the repairs land.
 REVIEW_FILE = ROOT / "data" / "players" / "bio_needs_review.json"
 _WRONG_PERSON: frozenset | None = None
 

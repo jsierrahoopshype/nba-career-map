@@ -34,6 +34,19 @@ WHERE THE CANDIDATES COME FROM.
 
 The article the record already points at is excluded: it is the known-wrong one.
 
+HUMAN-VERIFIED ARTICLES. A player with an entry in the `human_verified`
+section of the overrides file is not searched at all: a person already chose
+the article, so it is written through WITHOUT the P106 gate and WITHOUT the
+ambiguity check. Two things are still checked, because a typo in a URL is not
+a decision:
+  * the article must exist, and must not be (or redirect to) a disambiguation
+    page -- otherwise the player is SKIPPED and listed in the summary
+  * it must not already be another record's article (the collision guard
+    below), for the same reason as everywhere else
+The Basketball-Reference birth year is compared against the article's
+Wikidata item and reported as a WARNING only; so are a missing item, an item
+without P106, and an item the gate had rejected. None of them blocks.
+
 A COLLISION IS NOT A FIX. An article that is already some other record's is
 refused and listed, because pointing two records at one article makes a
 duplicate instead of a repair.
@@ -45,12 +58,17 @@ Actions:
     resolve   the search above. Read-only unless --apply.
               -> logs/player_url_resolution.json (+ --apply writes the
                  overrides file)
+    settle    offline. Drops every player that now has a verified override
+              from `wikipedia_url_wrong_person` in the review file: the
+              override IS the fix, so the record no longer points at the
+              namesake as far as the pipeline is concerned.
 
 Run:
     python3 scripts/resolve_player_urls.py audit
     python3 scripts/resolve_player_urls.py resolve                  # dry run
     python3 scripts/resolve_player_urls.py resolve --apply
     python3 scripts/resolve_player_urls.py resolve --player "Jack White"
+    python3 scripts/resolve_player_urls.py settle
 """
 from __future__ import annotations
 
@@ -65,8 +83,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import player_urls  # noqa: E402
 from fetch_bio_wikidata import (BioFetchError, HttpTransport, WIKIPEDIA_API,  # noqa: E402
-                                _label, _row_qid, format_date, load_bref,
-                                resolve_qids, QID_CHUNK)
+                                TITLE_BATCH, _label, _row_qid, format_date,
+                                load_bref, resolve_qids, QID_CHUNK)
+from fetch_bio_wikidata import _write_json as _write_review  # noqa: E402
 from names import canonical_url, normkey, title_from_url  # noqa: E402
 from prerender import franchise_of  # noqa: E402
 
@@ -279,6 +298,55 @@ def fetch_strict(transport, qids: list[str],
     return out
 
 
+def check_articles(transport, titles: list[str],
+                   batch: int = TITLE_BATCH) -> dict[str, dict]:
+    """{requested title: what Wikipedia says about it}, redirects followed.
+
+    Each answer is {"exists", "disambiguation", "title" (where the redirects
+    land), "redirected" (bool), "wikidata_id"}. A title Wikipedia does not
+    have comes back with exists=False; one that is, or redirects to, a
+    disambiguation page carries disambiguation=True.
+    """
+    out: dict[str, dict] = {}
+    titles = [t for t in dict.fromkeys(titles) if t]
+    for i in range(0, len(titles), batch):
+        chunk = titles[i:i + batch]
+        data = transport.get_json(WIKIPEDIA_API, {
+            "action": "query", "prop": "pageprops",
+            "ppprop": "wikibase_item|disambiguation",
+            "titles": "|".join(chunk), "redirects": 1,
+            "format": "json", "formatversion": "2",
+        })
+        if "error" in data:
+            raise BioFetchError(f"wikipedia API: {data['error']}")
+        q = data.get("query", {})
+        hop: dict[str, str] = {}
+        redirected: set[str] = set()
+        for kind in ("normalized", "redirects"):
+            for h in q.get(kind, []) or []:
+                hop[h["from"]] = h["to"]
+                if kind == "redirects":
+                    redirected.add(h["from"])
+        pages = {p.get("title"): p for p in q.get("pages", []) or []}
+        for t in chunk:
+            cur, seen, moved = t, set(), False
+            while cur in hop and cur not in seen:
+                seen.add(cur)
+                moved = moved or cur in redirected
+                cur = hop[cur]
+            page = pages.get(cur) or {}
+            props = page.get("pageprops") or {}
+            exists = bool(page) and not page.get("missing") \
+                and not page.get("invalid")
+            out[t] = {"exists": exists,
+                      "disambiguation": exists and "disambiguation" in props,
+                      "title": cur if exists else "",
+                      "redirected": moved,
+                      "wikidata_id": (props.get("wikibase_item") or "")
+                      if exists else ""}
+    return out
+
+
 def _article_url(item: dict, fallback_title: str) -> str:
     """The canonical article URL for an accepted item.
 
@@ -316,10 +384,28 @@ def accepts(item: dict | None, bref_date: str) -> bool:
     return abs(wd_year - bref_year) <= BIRTH_YEAR_TOLERANCE
 
 
+def _human_entry(human: dict[str, dict], name: str) -> dict | None:
+    """The staged human decision for this player, under any spelling."""
+    if name in human:
+        return human[name]
+    key = normkey(name)
+    for other, rec in human.items():
+        if normkey(other) == key:
+            return rec
+    return None
+
+
 def resolve(transport, rows: list[dict], players: list[dict],
             prefills: dict[str, dict], *,
-            search_limit: int = SEARCH_RESULTS) -> dict:
-    """Work out each flagged player's real article. Writes nothing."""
+            search_limit: int = SEARCH_RESULTS,
+            human: dict[str, dict] | None = None) -> dict:
+    """Work out each flagged player's real article. Writes nothing.
+
+    `human` is the `human_verified` section of the overrides file. Those
+    players skip the search and the Wikidata test entirely (see
+    resolve_human); everyone else goes through the test below.
+    """
+    human = human or {}
     by_name = {p.get("player"): p for p in players}
     # Which record already owns which article -- the collision guard.
     owner_of = {}
@@ -329,6 +415,11 @@ def resolve(transport, rows: list[dict], players: list[dict],
             owner_of.setdefault(t.casefold(), p["player"])
 
     bref = load_bref(transport)
+
+    human_rows = [r for r in rows if _human_entry(human, r["player"])]
+    rows = [r for r in rows if not _human_entry(human, r["player"])]
+    human_done, human_skipped = resolve_human(
+        transport, human_rows, human, bref, owner_of)
 
     # One pass to collect every title, so the title -> item lookup is batched
     # across all players instead of per player.
@@ -426,11 +517,116 @@ def resolve(transport, rows: list[dict], players: list[dict],
             "acceptance_test": {
                 "occupation": f"P106 = {Q_BASKETBALL_PLAYER} (basketball player)",
                 "birth_year_tolerance": BIRTH_YEAR_TOLERANCE,
-                "cross_check": "Basketball-Reference career info CSV"},
-            "counts": {"flagged": len(rows), "verified": len(resolved),
-                       "needs_a_human": len(unresolved)},
+                "cross_check": "Basketball-Reference career info CSV",
+                "human_verified": "written through without the P106 gate or "
+                                  "the ambiguity check, once Wikipedia confirms "
+                                  "the article exists and is not a "
+                                  "disambiguation page; the birth year is a "
+                                  "warning only"},
+            "counts": {"flagged": len(rows) + len(human_rows),
+                       "verified": len(resolved),
+                       "needs_a_human": len(unresolved),
+                       "human_verified": len(human_done),
+                       "human_skipped": len(human_skipped)},
             "verified": resolved,
-            "needs_a_human": unresolved}
+            "needs_a_human": unresolved,
+            "human_verified": human_done,
+            "human_skipped": human_skipped}
+
+
+def resolve_human(transport, rows: list[dict], human: dict[str, dict],
+                  bref: dict[str, str], owner_of: dict[str, str]
+                  ) -> tuple[dict, list]:
+    """({player: override record}, [skipped]) for the human-verified players.
+
+    Blocks only on what a person cannot have meant: an article that does not
+    exist, a disambiguation page, or an article another record already holds.
+    Everything Wikidata says about the item is reported, never enforced.
+    """
+    if not rows:
+        return {}, []
+    staged = {r["player"]: _human_entry(human, r["player"]) for r in rows}
+    asked = {name: title_from_url(rec["wikipedia_url"])
+             for name, rec in staged.items()}
+    pages = check_articles(transport, [t for t in asked.values() if t])
+    qids = [p["wikidata_id"] for p in pages.values()
+            if p.get("exists") and not p.get("disambiguation")
+            and p.get("wikidata_id")]
+    items = fetch_strict(transport, qids) if qids else {}
+
+    done, skipped = {}, []
+    for row in rows:
+        name, rec = row["player"], staged[row["player"]]
+        title = asked[name]
+        page = pages.get(title) or {}
+        bref_date = bref.get(normkey(name), "")
+        base = {"player": name, "wikipedia_url": rec["wikipedia_url"],
+                "verified_by": rec["verified_by"]}
+        if not title or not page.get("exists"):
+            skipped.append({**base, "why": "the article does not exist on "
+                                           "Wikipedia"})
+            continue
+        if page.get("disambiguation"):
+            where = (f"redirects to the disambiguation page "
+                     f"'{page['title']}'" if page.get("redirected")
+                     else "is a disambiguation page")
+            skipped.append({**base, "why": f"the article {where}"})
+            continue
+        url = canonical_url(page["title"])
+        holder = owner_of.get(page["title"].casefold())
+        if holder and holder != name:
+            skipped.append({**base, "why": f"that article is already "
+                                           f"{holder}'s record; pointing both "
+                                           f"at it would make a duplicate"})
+            continue
+
+        qid = page.get("wikidata_id") or ""
+        item = items.get(qid) or {}
+        rejected_qid = row.get("rejected_wikidata_id") or ""
+        warnings = []
+        if not qid:
+            warnings.append("the article has no Wikidata item")
+        else:
+            if not item.get("p106"):
+                got = item.get("description") or item.get("label") \
+                    or "no description"
+                warnings.append(f"Wikidata does not list P106 = basketball "
+                                f"player ({got})")
+            if qid == rejected_qid:
+                warnings.append(f"{qid} is the item the identity gate "
+                                f"rejected; accepted on the human's word")
+            wd_year, bref_year = _year(item.get("birth_date")), _year(bref_date)
+            if bref_year is None:
+                warnings.append("no Basketball-Reference birth date to check "
+                                "the item against")
+            elif wd_year is None:
+                warnings.append("the item has no birth date to check")
+            elif abs(wd_year - bref_year) > BIRTH_YEAR_TOLERANCE:
+                warnings.append(f"Wikidata says born {wd_year}, "
+                                f"Basketball-Reference says {bref_year}")
+        if page.get("redirected"):
+            warnings.append(f"'{title}' redirects to '{page['title']}'; the "
+                            f"redirect target is what was written")
+
+        entry = {
+            "wikipedia_url": url,
+            "wikidata_id": qid,
+            "wikidata_label": item.get("label", ""),
+            "wikidata_description": item.get("description", ""),
+            "wikidata_birth_date": item.get("birth_date") or "",
+            "basketball_reference_birth_date": bref_date,
+            "replaces": row.get("wikipedia_url", ""),
+            "replaces_wikidata_id": rejected_qid,
+            "requested_url": rec["wikipedia_url"],
+            "verified": _today(),
+            "verified_by": rec["verified_by"],
+            "human_verified": True,
+            "warnings": warnings,
+        }
+        if rec.get("note"):
+            entry["note"] = rec["note"]
+        done[name] = entry
+    return done, skipped
 
 
 def apply_overrides(report: dict, path: Path = OVERRIDES) -> dict:
@@ -448,16 +644,57 @@ def apply_overrides(report: dict, path: Path = OVERRIDES) -> dict:
     cands = doc.get("candidates")
     if not isinstance(cands, dict):
         cands = {}
+    staged = doc.get(player_urls.HUMAN)
+    if not isinstance(staged, dict):
+        staged = {}
     for name, rec in report.get("verified", {}).items():
         overrides[name] = rec
         cands.pop(name, None)
+    # A human decision that made it through leaves the staging section the
+    # same way a verified candidate does; the written entry keeps who made it.
+    # A skipped one stays staged, so the URL can be corrected and re-run.
+    for name, rec in report.get("human_verified", {}).items():
+        overrides[name] = rec
+        cands.pop(name, None)
+        for key in [k for k in staged if normkey(k) == normkey(name)]:
+            staged.pop(key)
     doc["overrides"] = dict(sorted(overrides.items()))
+    if staged or player_urls.HUMAN in doc:
+        doc[player_urls.HUMAN] = dict(sorted(staged.items()))
     doc["candidates"] = dict(sorted(cands.items()))
     doc["generated"] = _today()
     doc.setdefault("verified_by", "scripts/resolve_player_urls.py")
     _write_json(path, doc)
     player_urls.reset_cache()
     return doc
+
+
+def settle_review(path: Path = REVIEW) -> tuple[list[str], int]:
+    """Drop the players with a verified override from the wrong-person list.
+
+    Returns (players dropped, rows left). The override is what every stage of
+    the pipeline reads first, so from the moment it is written the record no
+    longer points at the namesake; fetch_bio_wikidata.build_review applies the
+    same rule, so the next bio run does not put them back.
+    """
+    review = _read_json(path, None)
+    if not isinstance(review, dict):
+        return [], 0
+    rows = review.get("wikipedia_url_wrong_person") or []
+    keep, dropped = [], []
+    for row in rows:
+        name = row.get("player") if isinstance(row, dict) else None
+        if name and player_urls.override_for(name):
+            dropped.append(name)
+        else:
+            keep.append(row)
+    if dropped:
+        review["wikipedia_url_wrong_person"] = keep
+        counts = review.get("counts")
+        if isinstance(counts, dict):
+            counts["wikipedia_url_wrong_person"] = len(keep)
+        _write_review(path, review)
+    return dropped, len(keep)
 
 
 # --- reporting --------------------------------------------------------------
@@ -491,7 +728,10 @@ def print_resolution(report: dict) -> None:
     print("## Wikipedia URL overrides\n")
     print(f"- **flagged**: {c['flagged']}")
     print(f"- **verified**: {c['verified']}")
-    print(f"- **needs a human**: {c['needs_a_human']}\n")
+    print(f"- **needs a human**: {c['needs_a_human']}")
+    print(f"- **human-verified, written through**: "
+          f"{c.get('human_verified', 0)}")
+    print(f"- **human-verified, skipped**: {c.get('human_skipped', 0)}\n")
     if report["verified"]:
         print("### Verified\n")
         print("| Player | Article | Wikidata | Born (WD / BR) |")
@@ -500,6 +740,24 @@ def print_resolution(report: dict) -> None:
             print(f"| {name} | {title_from_url(r['wikipedia_url'])} | "
                   f"{r['wikidata_id']} | {r['wikidata_birth_date']} / "
                   f"{r['basketball_reference_birth_date']} |")
+        print()
+    if report.get("human_verified"):
+        print("### Human-verified (no P106 gate, no ambiguity check)\n")
+        print("| Player | Article | Wikidata | Born (WD / BR) | Verified by "
+              "| Warnings |")
+        print("| --- | --- | --- | --- | --- | --- |")
+        for name, r in sorted(report["human_verified"].items()):
+            warn = "; ".join(r.get("warnings") or []) or "none"
+            print(f"| {name} | {title_from_url(r['wikipedia_url'])} | "
+                  f"{r['wikidata_id'] or '(no item)'} | "
+                  f"{r['wikidata_birth_date'] or '?'} / "
+                  f"{r['basketball_reference_birth_date'] or '?'} | "
+                  f"{r['verified_by']} | {warn} |")
+        print()
+    if report.get("human_skipped"):
+        print("### Human-verified, SKIPPED (nothing written)\n")
+        for r in report["human_skipped"]:
+            print(f"- **{r['player']}** — `{r['wikipedia_url']}` — {r['why']}")
         print()
     if report["needs_a_human"]:
         print("### Needs a human\n")
@@ -516,7 +774,7 @@ def print_resolution(report: dict) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("action", choices=["audit", "resolve"])
+    ap.add_argument("action", choices=["audit", "resolve", "settle"])
     ap.add_argument("--player", action="append", default=[],
                     help="only these players (default: everything flagged)")
     ap.add_argument("--players-csv", default="",
@@ -526,6 +784,15 @@ def main() -> int:
     ap.add_argument("--delay", type=float, default=1.0)
     ap.add_argument("--search-limit", type=int, default=SEARCH_RESULTS)
     args = ap.parse_args()
+
+    if args.action == "settle":
+        dropped, left = settle_review()
+        print("## Wrong-person list after the repair\n")
+        print(f"- **dropped** (now have a verified override): {len(dropped)}")
+        print(f"- **still flagged**: {left}")
+        for name in sorted(dropped):
+            print(f"  - {name}")
+        return 0
 
     review = _read_json(REVIEW, {})
     players = _read_json(CAREERS, [])
@@ -554,16 +821,20 @@ def main() -> int:
     try:
         report = resolve(transport, rows, players,
                          player_urls.candidates(),
-                         search_limit=args.search_limit)
+                         search_limit=args.search_limit,
+                         human=player_urls.human_verified())
     except BioFetchError as exc:
         print(f"::error::{exc}", file=sys.stderr)
         return 1
     _write_json(RESOLUTION_OUT, report)
     print_resolution(report)
-    if args.apply and report["verified"]:
+    written = len(report["verified"]) + len(report["human_verified"])
+    if args.apply and written:
         apply_overrides(report)
-        print(f"\nwrote {len(report['verified'])} override(s) to "
-              f"{OVERRIDES.relative_to(ROOT)}")
+        print(f"\nwrote {written} override(s) to "
+              f"{OVERRIDES.relative_to(ROOT)} "
+              f"({len(report['verified'])} Wikidata-verified, "
+              f"{len(report['human_verified'])} human-verified)")
     elif args.apply:
         print("\nnothing verified, so the overrides file is unchanged")
     else:

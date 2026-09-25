@@ -33,6 +33,15 @@ human typing an article into this file IS the verification. Every machine-
 written entry is a dict and has to say `"verified": <date or true>` for the
 loader to hand it over.
 
+HUMAN-VERIFIED, STAGED. A third section, `human_verified`, holds articles a
+person has already decided are right ({"wikipedia_url": ..., "verified_by":
+"jorge"}). They are not live either: the resolver writes each one through to
+`overrides` WITHOUT the P106 gate or the ambiguity check -- the human answered
+both -- but only after Wikipedia confirms the article exists and is not a
+disambiguation page. The entry it writes carries `"human_verified": true`, and
+that flag is what tells the bio fetcher to take the article's Wikidata item as
+this player even when the item lacks P106.
+
 The file is also tolerated in its simplest possible shape -- a flat
 {player: url} mapping with no wrapper -- so it can be edited by hand without
 knowing any of the above.
@@ -46,6 +55,8 @@ from names import normkey, title_from_url
 
 ROOT = Path(__file__).resolve().parent.parent
 OVERRIDES = ROOT / "data" / "players" / "player_url_overrides.json"
+
+HUMAN = "human_verified"   # the staged section, and the flag on a written entry
 
 _CACHE: dict | None = None
 _CACHE_PATH: Path | None = None
@@ -92,7 +103,7 @@ def load(path: Path | None = None, *, refresh: bool = False) -> dict[str, dict]:
     except (OSError, ValueError):
         doc = {}
 
-    if "overrides" in doc or "candidates" in doc:
+    if "overrides" in doc or "candidates" in doc or HUMAN in doc:
         section = doc.get("overrides") or {}
     else:
         # the bare {player: url} shape -- everything that is not metadata
@@ -140,6 +151,19 @@ def override_title(name: str, path: Path | None = None) -> str:
     return title_from_url(override_url(name, path))
 
 
+def is_human_verified(name: str, path: Path | None = None) -> bool:
+    """Did a person, not the Wikidata test, vouch for this player's article?
+
+    True for an entry the resolver wrote through from `human_verified`, and for
+    a bare hand-typed URL. The bio fetcher uses it to trust the article's item
+    even when Wikidata does not call it a basketball player.
+    """
+    rec = override_for(name, path)
+    if not rec:
+        return False
+    return bool(rec.get(HUMAN)) or rec.get("verified") == "hand-written"
+
+
 def overridden_players(path: Path | None = None) -> list[str]:
     """The player keys with a verified override, as the file spells them."""
     idx = load(path)
@@ -166,4 +190,33 @@ def candidates(path: Path | None = None) -> dict[str, dict]:
             value = {"wikipedia_url": value}
         if isinstance(value, dict) and str(value.get("wikipedia_url") or "").strip():
             out[name] = value
+    return out
+
+
+def human_verified(path: Path | None = None) -> dict[str, dict]:
+    """{player: staged record} -- the articles a person has signed off on.
+
+    An entry needs a URL and a `verified_by` naming who decided it; one without
+    a signature is not a human decision and is ignored. Read straight off disk,
+    like `candidates`: the pipeline never uses these until the resolver has
+    written them through to `overrides`.
+    """
+    path = Path(path) if path else OVERRIDES
+    try:
+        doc = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    section = doc.get(HUMAN) if isinstance(doc, dict) else None
+    if not isinstance(section, dict):
+        return {}
+    out = {}
+    for name, value in section.items():
+        if not isinstance(value, dict):
+            continue
+        url = str(value.get("wikipedia_url") or "").strip()
+        who = str(value.get("verified_by") or "").strip()
+        if url and who and str(name).strip():
+            rec = dict(value)
+            rec["wikipedia_url"], rec["verified_by"] = url, who
+            out[name] = rec
     return out

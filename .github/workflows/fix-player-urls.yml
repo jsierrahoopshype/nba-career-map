@@ -21,9 +21,17 @@ name: Fix wrong-person Wikipedia URLs
 #      birth year within 1 of Basketball-Reference's. Exactly one accepted
 #      article is written to data/players/player_url_overrides.json; zero or
 #      several are LISTED in the run summary for a human. It never guesses.
+#      Players a human already decided (the `human_verified` section of the
+#      overrides file, each entry signed with `verified_by`) skip the search
+#      and the Wikidata test: their article is written through as long as it
+#      exists and is not a disambiguation page. One that fails that check is
+#      SKIPPED and listed in the summary, and stays staged. A Basketball-
+#      Reference birth year that disagrees with the item is a warning only.
 #   3. re-scrapes those players with the normal parser (update_careers.py
 #      --mode override), which now reads the curated article
-#   4. rebuilds the derived data and the prerendered pages, and commits
+#   4. drops every player that now has a verified override from
+#      `wikipedia_url_wrong_person` in data/players/bio_needs_review.json
+#   5. rebuilds the derived data and the prerendered pages, and commits
 #
 # The overrides file is what makes the fix stick: scripts/player_urls.py is
 # consulted by the career pipeline and the bio fetcher before either asks
@@ -33,10 +41,10 @@ name: Fix wrong-person Wikipedia URLs
 # tried FIRST and still have to pass the same Wikidata test as anything else.
 # Nothing unverified reaches the site.
 #
-# AFTERWARDS: the repaired players keep their rejected-item note in
-# data/players/player_bio.json until their bio record is re-read, so
-# `wikipedia_url_wrong_person` only empties out once .github/workflows/
-# player-bio.yml has been run with mode=full.
+# AFTERWARDS: the repaired players leave `wikipedia_url_wrong_person` in this
+# run, and fetch_bio_wikidata.py keeps them off it. Their `wrong_entity` row
+# and rejected-item note in data/players/player_bio.json stay until the bio
+# record is re-read (.github/workflows/player-bio.yml with mode=full).
 on:
   workflow_dispatch:
     inputs:
@@ -137,6 +145,15 @@ jobs:
           echo "## After the repair" >> "$GITHUB_STEP_SUMMARY"
           python3 scripts/resolve_player_urls.py audit \
             --players-csv "${IN_PLAYERS:-}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Take the repaired players off the wrong-person list
+        # After the audit above, which reads that list to know whom to show.
+        # Offline; it only removes players with a verified override.
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          set -o pipefail
+          python3 scripts/resolve_player_urls.py settle \
+            | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Rebuild derived data and pages
         # The career rows and the Person JSON-LD are baked into each player page
