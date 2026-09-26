@@ -311,9 +311,21 @@ players from `wikipedia_url_wrong_person`, rebuild the pages, commit.
 | `max_requests` | Wikipedia request budget for the re-scrape (default 200) |
 | `search_limit` | Wikipedia search hits considered per player (default 8) |
 
-Players the resolver cannot settle — no candidate passes, or two basketball
-players of the name were born in the same year — are listed in the run summary
-and in `logs/player_url_resolution.json`. It never guesses.
+After the P106 gate, three tie-breaks run in order:
+
+1. **Exact name** — only an item with an article titled with the player's own
+   name counts (parenthetical and `Jr.`/`Sr.`/`II`/`III`/`IV` stripped, accents
+   folded). Aaron Harrison is not a second Andrew Harrison. Redirect aliases are
+   one item: `Cat Barber` and `Anthony Barber (basketball)` are both Q16209351.
+2. **Career window** — with no Basketball-Reference birth date, a candidate
+   must be born 17–24 years before the player's first stint in
+   `nba_players_careers.json`.
+3. **Namesake** — the item flagged for this record is never accepted back.
+
+Exactly one item left is accepted, and the summary's **Decided by** column
+names the rules it needed. Players the resolver still cannot settle — nothing
+left, or two basketball players of the name in range — are listed in the run
+summary and in `logs/player_url_resolution.json`. It never guesses.
 
 A player with a verified override leaves `wikipedia_url_wrong_person` in the
 same run, and `fetch_bio_wikidata.py` keeps him off it. His `wrong_entity` row
