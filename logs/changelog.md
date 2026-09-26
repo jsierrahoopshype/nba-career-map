@@ -1,3 +1,14 @@
+## 2026-09-26 — incremental run
+
+- Players updated: **485** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+
 ## 2026-09-25 — override run
 
 - Players updated: **155** (0 new)
