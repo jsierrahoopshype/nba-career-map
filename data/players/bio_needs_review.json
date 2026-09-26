@@ -2,7 +2,7 @@
   "counts": {
     "date_disagreement": 162,
     "still_missing": 10,
-    "wikipedia_url_wrong_person": 66,
+    "wikipedia_url_wrong_person": 20,
     "wrong_entity": 182,
     "wrong_entity_replaced": 138
   },
@@ -1697,45 +1697,10 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Andrew Harrison",
-      "rejected_wikidata_id": "Q4757243",
-      "wikipedia_title": "Andrew Harrison",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Andrew_Harrison"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Anthony Barber",
-      "rejected_wikidata_id": "Q333193",
-      "wikipedia_title": "Anthony Barber",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Barber"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Anthony Brown",
-      "rejected_wikidata_id": "Q1205313",
-      "wikipedia_title": "Anthony Brown",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Brown"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Anthony Edwards",
-      "rejected_wikidata_id": "Q4772448",
-      "wikipedia_title": "Anthony Edwards",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Edwards"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Ben Swain",
       "rejected_wikidata_id": "Q816609",
       "wikipedia_title": "Ben Swain",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Swain"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Bill Hosket",
-      "rejected_wikidata_id": "Q3639980",
-      "wikipedia_title": "Bill Hosket",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Bill_Hosket"
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
@@ -1746,24 +1711,10 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Brandon Williams",
-      "rejected_wikidata_id": "Q4957140",
-      "wikipedia_title": "Brandon Williams",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Brandon_Williams"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Bruce Thornton",
       "rejected_wikidata_id": "Q4978361",
       "wikipedia_title": "Bruce Thornton",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Bruce_Thornton"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Caleb Martin",
-      "rejected_wikidata_id": "Q92778747",
-      "wikipedia_title": "Caleb Martin",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Caleb_Martin"
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
@@ -1781,45 +1732,10 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Charles Thomas",
-      "rejected_wikidata_id": "Q413475",
-      "wikipedia_title": "Charles Thomas",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Charles_Thomas"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Charlie Brown",
-      "rejected_wikidata_id": "Q1168491",
-      "wikipedia_title": "Charlie Brown",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Charlie_Brown"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Chris Johnson",
       "rejected_wikidata_id": "Q440005",
       "wikipedia_title": "Chris Johnson",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Johnson"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Cody Martin",
-      "rejected_wikidata_id": "Q20660629",
-      "wikipedia_title": "Cody Martin",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Cody_Martin"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Daniel Hamilton",
-      "rejected_wikidata_id": "Q5217415",
-      "wikipedia_title": "Daniel Hamilton",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Daniel_Hamilton"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Derrick Williams",
-      "rejected_wikidata_id": "Q5263123",
-      "wikipedia_title": "Derrick Williams",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Derrick_Williams"
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
@@ -1837,48 +1753,6 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Frank Jackson",
-      "rejected_wikidata_id": "Q1443494",
-      "wikipedia_title": "Frank Jackson",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Frank_Jackson"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Frank Johnson",
-      "rejected_wikidata_id": "Q5487560",
-      "wikipedia_title": "Frank Johnson (basketball)",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Frank_Johnson_(basketball)"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Gary Clark",
-      "rejected_wikidata_id": "Q5524846",
-      "wikipedia_title": "Gary Clark",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Gary_Clark"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "George King",
-      "rejected_wikidata_id": "Q440501",
-      "wikipedia_title": "George King",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/George_King"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Harry Giles",
-      "rejected_wikidata_id": "Q26991340",
-      "wikipedia_title": "Harry Giles",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Harry_Giles"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Henry Walker",
-      "rejected_wikidata_id": "Q5729768",
-      "wikipedia_title": "Henry Walker",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Henry_Walker"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Herb Jones",
       "rejected_wikidata_id": "Q3785137",
       "wikipedia_title": "Herbert Jones",
@@ -1886,31 +1760,10 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Isaac Jones",
-      "rejected_wikidata_id": "Q6076577",
-      "wikipedia_title": "Isaac Jones",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Isaac_Jones"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Jake Stephens",
       "rejected_wikidata_id": "Q6125019",
       "wikipedia_title": "Jake Stephens",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Jake_Stephens"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "James Anderson",
-      "rejected_wikidata_id": "Q402734",
-      "wikipedia_title": "James Anderson",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/James_Anderson"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "James Johnson",
-      "rejected_wikidata_id": "Q24987",
-      "wikipedia_title": "James Johnson",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/James_Johnson"
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
@@ -1928,52 +1781,10 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Jordan Adams",
-      "rejected_wikidata_id": "Q3810012",
-      "wikipedia_title": "Jordan Adams",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Jordan_Adams"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Joseph Young",
-      "rejected_wikidata_id": "Q14711662",
-      "wikipedia_title": "Joseph Young",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Joseph_Young"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Justin Edwards",
-      "rejected_wikidata_id": "Q16170744",
-      "wikipedia_title": "Justin Edwards",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Edwards"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Justin James",
-      "rejected_wikidata_id": "Q53327171",
-      "wikipedia_title": "Justin James",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_James"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Justin Robinson",
       "rejected_wikidata_id": "Q28874201",
       "wikipedia_title": "Justin Robinson",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Robinson"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Kenny Williams",
-      "rejected_wikidata_id": "Q6391251",
-      "wikipedia_title": "Kenny Williams",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kenny_Williams"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Keon Johnson",
-      "rejected_wikidata_id": "Q93400790",
-      "wikipedia_title": "Keon Johnson",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Keon_Johnson"
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
@@ -1984,48 +1795,6 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Kevin Jones",
-      "rejected_wikidata_id": "Q6396624",
-      "wikipedia_title": "Kevin Jones",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Jones"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Leonard Miller",
-      "rejected_wikidata_id": "Q16230497",
-      "wikipedia_title": "Leonard Miller",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Leonard_Miller"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Malachi Smith",
-      "rejected_wikidata_id": "Q111076327",
-      "wikipedia_title": "Malachi Smith",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Malachi_Smith"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Malcolm Miller",
-      "rejected_wikidata_id": "Q119661810",
-      "wikipedia_title": "Malcolm Miller",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Malcolm_Miller"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Mark Williams",
-      "rejected_wikidata_id": "Q257741",
-      "wikipedia_title": "Mark Williams",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mark_Williams"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Matt Ryan",
-      "rejected_wikidata_id": "Q413057",
-      "wikipedia_title": "Matthew Ryan",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Matthew_Ryan"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Mike Dunleavy",
       "rejected_wikidata_id": "Q1588701",
       "wikipedia_title": "Mike Dunleavy",
@@ -2033,45 +1802,10 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Mike James (1990)",
-      "rejected_wikidata_id": "Q374420",
-      "wikipedia_title": "Mike James",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_James"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Nate Williams",
-      "rejected_wikidata_id": "Q130526151",
-      "wikipedia_title": "Nate Williams",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Nate_Williams"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Nick Johnson",
-      "rejected_wikidata_id": "Q183486",
-      "wikipedia_title": "Nick Johnson",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Johnson"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Nick Martinelli",
       "rejected_wikidata_id": "Q7027512",
       "wikipedia_title": "Nick Martinelli",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Martinelli"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Nick Smith",
-      "rejected_wikidata_id": "Q1985528",
-      "wikipedia_title": "Nick Smith",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Smith"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Paul Reed",
-      "rejected_wikidata_id": "Q7153140",
-      "wikipedia_title": "Paul Reed",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Paul_Reed"
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
@@ -2089,66 +1823,10 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Robert Williams",
-      "rejected_wikidata_id": "Q453387",
-      "wikipedia_title": "Robert Williams",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Williams"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Samuel Williams",
       "rejected_wikidata_id": "Q7412941",
       "wikipedia_title": "Samuel Williams",
       "wikipedia_url": "https://en.wikipedia.org/wiki/Samuel_Williams"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Tony Farmer",
-      "rejected_wikidata_id": "Q114578171",
-      "wikipedia_title": "Tony Farmer",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Farmer"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Tony Mitchell (1989)",
-      "rejected_wikidata_id": "Q7822992",
-      "wikipedia_title": "Tony Mitchell",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Mitchell"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Travis Williams",
-      "rejected_wikidata_id": "Q11321810",
-      "wikipedia_title": "Travis Williams (basketball)",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Travis_Williams_(basketball)"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Tyler Hall",
-      "rejected_wikidata_id": "Q100233577",
-      "wikipedia_title": "Tyler Hall",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Hall"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Tyler Kolek",
-      "rejected_wikidata_id": "Q117289448",
-      "wikipedia_title": "Tyler Kolek",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Kolek"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Tyler Smith",
-      "rejected_wikidata_id": "Q11779483",
-      "wikipedia_title": "Tyler Smith",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Tyler_Smith"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Vincent Edwards",
-      "rejected_wikidata_id": "Q3815454",
-      "wikipedia_title": "Vince Edwards",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Vince_Edwards"
     }
   ],
   "wrong_entity": [

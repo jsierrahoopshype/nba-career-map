@@ -1,10 +1,9 @@
 {
-  "generated": "2026-09-25",
-  "players": 67,
+  "generated": "2026-09-26",
+  "players": 66,
   "counts": {
-    "empty": 18,
-    "frozen": 46,
-    "namesake_career": 3
+    "empty": 16,
+    "frozen": 50
   },
   "audit": [
     {
@@ -27,23 +26,23 @@
       "stored_wikipedia_title": "Andrew Harrison",
       "rejected_wikidata_id": "Q4757243",
       "status": "overseas_active",
-      "current_team": "Pioneros de Los Mochis",
-      "stint_count": 12,
+      "current_team": "Santos del Potosí",
+      "stint_count": 14,
       "nba_teams_shown": [
         "Memphis Grizzlies",
         "Cleveland Cavaliers",
         "New Orleans Pelicans"
       ],
-      "teams_shown": "Iowa Energy · Memphis Grizzlies · Cleveland Cavaliers · New Orleans Pelicans · Khimki · Santa Cruz Warriors · Beijing Royal Fighters · Windy City Bulls · Merkezefendi · PAOK Thessaloniki · Semt77 Yalovaspor · Pioneros de Los Mochis",
+      "teams_shown": "Iowa Energy · Memphis Grizzlies · Cleveland Cavaliers · New Orleans Pelicans · Khimki · Santa Cruz Warriors · Beijing Royal Fighters · Windy City Bulls · Merkezefendi · PAOK Thessaloniki · Semt77 Yalovaspor · Pioneros de Los Mochis · Mitteldeutscher BC · Santos del Potosí",
       "career_history": [
         {
-          "years": "2015-2016",
+          "years": "2015–2016",
           "team": "Iowa Energy",
           "city": "Des Moines",
           "country": "USA"
         },
         {
-          "years": "2016-2018",
+          "years": "2016–2018",
           "team": "Memphis Grizzlies",
           "city": "Memphis",
           "country": "USA"
@@ -55,7 +54,7 @@
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–19",
           "team": "New Orleans Pelicans",
           "city": "New Orleans",
           "country": "USA"
@@ -67,13 +66,13 @@
           "country": "Russia"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Santa Cruz Warriors",
           "city": "Santa Cruz",
           "country": "USA"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Beijing Royal Fighters",
           "city": "Beijing",
           "country": "China"
@@ -85,13 +84,13 @@
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Merkezefendi",
           "city": "Denizli",
           "country": "Turkey"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "PAOK Thessaloniki",
           "city": "Thessaloniki",
           "country": "Greece"
@@ -107,6 +106,18 @@
           "team": "Pioneros de Los Mochis",
           "city": "Los Mochis",
           "country": "Mexico"
+        },
+        {
+          "years": "2026",
+          "team": "Mitteldeutscher BC",
+          "city": "Weißenfels",
+          "country": "Germany"
+        },
+        {
+          "years": "2026–present",
+          "team": "Santos del Potosí",
+          "city": "San Luis Potosí City",
+          "country": "Mexico"
         }
       ],
       "kind": "frozen",
@@ -118,15 +129,15 @@
       "stored_wikipedia_title": "Anthony Barber",
       "rejected_wikidata_id": "Q333193",
       "status": "overseas_active",
-      "current_team": "El Calor de Cancún",
-      "stint_count": 20,
+      "current_team": "Scarborough Shooting Stars",
+      "stint_count": 21,
       "nba_teams_shown": [
         "Atlanta Hawks"
       ],
-      "teams_shown": "Delaware 87ers · Greensboro Swarm · Enel Brindisi · Greensboro Swarm · Ironi Nahariya · Greensboro Swarm · Erie BayHawks · Ironi Nahariya · Mitteldeutscher BC · Guelph Nighthawks · Atlanta Hawks · Guelph Nighthawks · Budivelnyk · Scarborough Shooting Stars · FC Porto · Scarborough Shooting Stars · Cibona · Sporting CP · Scarborough Shooting Stars · El Calor de Cancún",
+      "teams_shown": "Delaware 87ers · Greensboro Swarm · Enel Brindisi · Greensboro Swarm · Ironi Nahariya · Greensboro Swarm · Erie BayHawks · Ironi Nahariya · College Park Skyhawks · Mitteldeutscher BC · Atlanta Hawks · Guelph Nighthawks · College Park Skyhawks · Budivelnyk · College Park Skyhawks · Scarborough Shooting Stars · FC Porto · Cibona · Sporting CP · El Calor de Cancún · Scarborough Shooting Stars",
       "career_history": [
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Delaware 87ers",
           "city": "Newark",
           "country": "USA"
@@ -144,7 +155,7 @@
           "country": "Italy"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–2018",
           "team": "Greensboro Swarm",
           "city": "Greensboro",
           "country": "USA"
@@ -156,7 +167,7 @@
           "country": "Israel"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Greensboro Swarm",
           "city": "Greensboro",
           "country": "USA"
@@ -174,28 +185,34 @@
           "country": "Israel"
         },
         {
+          "years": "2019–2020",
+          "team": "College Park Skyhawks",
+          "city": "College Park",
+          "country": "USA"
+        },
+        {
           "years": "2021",
           "team": "Mitteldeutscher BC",
           "city": "Weißenfels",
           "country": "Germany"
         },
         {
-          "years": "2021",
-          "team": "Guelph Nighthawks",
-          "city": "Guelph",
-          "country": "Canada"
-        },
-        {
-          "years": "2021-2022",
+          "years": "2021–22",
           "team": "Atlanta Hawks",
           "city": "Atlanta",
           "country": "USA"
         },
         {
-          "years": "2022",
+          "years": "2021–2022",
           "team": "Guelph Nighthawks",
           "city": "Guelph",
           "country": "Canada"
+        },
+        {
+          "years": "2021–2022",
+          "team": "College Park Skyhawks",
+          "city": "College Park",
+          "country": "USA"
         },
         {
           "years": "2022",
@@ -204,22 +221,22 @@
           "country": "Ukraine"
         },
         {
+          "years": "2022–2023",
+          "team": "College Park Skyhawks",
+          "city": "College Park",
+          "country": "USA"
+        },
+        {
           "years": "2023",
           "team": "Scarborough Shooting Stars",
           "city": "Toronto",
           "country": "Canada"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "FC Porto",
           "city": "Porto",
           "country": "Portugal"
-        },
-        {
-          "years": "2024",
-          "team": "Scarborough Shooting Stars",
-          "city": "Toronto",
-          "country": "Canada"
         },
         {
           "years": "2024",
@@ -228,22 +245,22 @@
           "country": "Croatia"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Sporting CP",
           "city": "Lisbon",
           "country": "Portugal"
         },
         {
-          "years": "2025",
-          "team": "Scarborough Shooting Stars",
-          "city": "Toronto",
-          "country": "Canada"
-        },
-        {
-          "years": "2025",
+          "years": "2025–2026",
           "team": "El Calor de Cancún",
           "city": "Cancún",
           "country": "Mexico"
+        },
+        {
+          "years": "2026–present",
+          "team": "Scarborough Shooting Stars",
+          "city": "Toronto",
+          "country": "Canada"
         }
       ],
       "kind": "frozen",
@@ -266,13 +283,13 @@
       "teams_shown": "Los Angeles Lakers · Los Angeles D-Fenders · New Orleans Pelicans · Erie BayHawks · Orlando Magic · Minnesota Timberwolves · Iowa Wolves · Partizan · Lakeland Magic · Limoges CSP · Fuenlabrada · Metropolitans 92 · Bursaspor · Maccabi Rishon LeZion · UNICS · Bursaspor · Türk Telekom · Beşiktaş",
       "career_history": [
         {
-          "years": "2015-2016",
+          "years": "2015–16",
           "team": "Los Angeles Lakers",
           "city": "Los Angeles",
           "country": "USA"
         },
         {
-          "years": "2015-2016",
+          "years": "2015–2016",
           "team": "Los Angeles D-Fenders",
           "city": "Los Angeles",
           "country": "USA"
@@ -284,7 +301,7 @@
           "country": "USA"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Erie BayHawks",
           "city": "Erie",
           "country": "USA"
@@ -296,13 +313,13 @@
           "country": "USA"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–18",
           "team": "Minnesota Timberwolves",
           "city": "Minneapolis",
           "country": "USA"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–2018",
           "team": "Iowa Wolves",
           "city": "Des Moines",
           "country": "USA"
@@ -326,19 +343,19 @@
           "country": "France"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Fuenlabrada",
           "city": "Fuenlabrada",
           "country": "Spain"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Metropolitans 92",
           "city": "Levallois-Perret",
           "country": "France"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Bursaspor",
           "city": "Bursa",
           "country": "Turkey"
@@ -350,25 +367,25 @@
           "country": "Israel"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "UNICS",
           "city": "Kazan",
           "country": "Russia"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Bursaspor",
           "city": "Bursa",
           "country": "Turkey"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Türk Telekom",
           "city": "Ankara",
           "country": "Turkey"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Beşiktaş",
           "city": "Istanbul",
           "country": "Turkey"
@@ -391,7 +408,7 @@
       "teams_shown": "Minnesota Timberwolves",
       "career_history": [
         {
-          "years": "2020-2026",
+          "years": "2020–present",
           "team": "Minnesota Timberwolves",
           "city": "Minneapolis",
           "country": "USA"
@@ -420,13 +437,29 @@
       "stored_wikipedia_title": "Bill Hosket",
       "rejected_wikidata_id": "Q3639980",
       "status": "retired",
-      "current_team": "",
-      "stint_count": 0,
-      "nba_teams_shown": [],
-      "teams_shown": "",
-      "career_history": [],
-      "kind": "empty",
-      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+      "current_team": "Buffalo Braves",
+      "stint_count": 2,
+      "nba_teams_shown": [
+        "New York Knicks",
+        "Buffalo Braves"
+      ],
+      "teams_shown": "New York Knicks · Buffalo Braves",
+      "career_history": [
+        {
+          "years": "1968–1970",
+          "team": "New York Knicks",
+          "city": "New York",
+          "country": "USA"
+        },
+        {
+          "years": "1970–1972",
+          "team": "Buffalo Braves",
+          "city": "Buffalo",
+          "country": "USA"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
     },
     {
       "player": "Braden Smith",
@@ -448,24 +481,31 @@
       "stored_wikipedia_title": "Brandon Williams",
       "rejected_wikidata_id": "Q4957140",
       "status": "nba_active",
-      "current_team": "Dallas Mavericks",
-      "stint_count": 5,
+      "current_team": "Golden State Warriors",
+      "stint_count": 7,
       "nba_teams_shown": [
         "Portland Trail Blazers",
-        "Dallas Mavericks"
+        "Dallas Mavericks",
+        "Golden State Warriors"
       ],
-      "teams_shown": "Westchester Knicks · Portland Trail Blazers · Osceola Magic · Dallas Mavericks · Texas Legends",
+      "teams_shown": "Portland Trail Blazers · Westchester Knicks · College Park Skyhawks · Osceola Magic · Dallas Mavericks · Texas Legends · Golden State Warriors",
       "career_history": [
         {
-          "years": "2021-2022",
+          "years": "2021–22",
+          "team": "Portland Trail Blazers",
+          "city": "Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2021–2022",
           "team": "Westchester Knicks",
           "city": "White Plains",
           "country": "USA"
         },
         {
-          "years": "2021-2022",
-          "team": "Portland Trail Blazers",
-          "city": "Portland",
+          "years": "2022–2023",
+          "team": "College Park Skyhawks",
+          "city": "College Park",
           "country": "USA"
         },
         {
@@ -475,15 +515,21 @@
           "country": "USA"
         },
         {
-          "years": "2023-2026",
+          "years": "2023–2026",
           "team": "Dallas Mavericks",
           "city": "Dallas",
           "country": "USA"
         },
         {
-          "years": "2023-2025",
+          "years": "2023–2025",
           "team": "Texas Legends",
           "city": "Frisco",
+          "country": "USA"
+        },
+        {
+          "years": "2026–present",
+          "team": "Golden State Warriors",
+          "city": "San Francisco",
           "country": "USA"
         }
       ],
@@ -521,31 +567,31 @@
       "teams_shown": "Charlotte Hornets · Greensboro Swarm · Miami Heat · Philadelphia 76ers · Dallas Mavericks",
       "career_history": [
         {
-          "years": "2019-2021",
+          "years": "2019–2021",
           "team": "Charlotte Hornets",
           "city": "Charlotte",
           "country": "USA"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Greensboro Swarm",
           "city": "Greensboro",
           "country": "USA"
         },
         {
-          "years": "2021-2024",
+          "years": "2021–2024",
           "team": "Miami Heat",
           "city": "Miami",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–25",
           "team": "Philadelphia 76ers",
           "city": "Philadelphia",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Dallas Mavericks",
           "city": "Dallas",
           "country": "USA"
@@ -587,141 +633,113 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Charles_Thomas",
       "stored_wikipedia_title": "Charles Thomas",
       "rejected_wikidata_id": "Q413475",
-      "status": "overseas_active",
-      "current_team": "Peñarol",
-      "stint_count": 21,
-      "nba_teams_shown": [],
-      "teams_shown": "Atlético Biguá · Forssan Koripojat · Široki Eronet · Ferro-ZNTU · Azovmash Mariupol · Dnipro · Cherkaski Mavpy · Chorale Roanne · Sagesse Beirut · ASU Sports Club · Lukoil Academic · Sagesse · Maccabi Ashdod · Maccabi Rishon LeZion · Pallacanestro Cantù · Legnano Knights · Trotamundos de Carabobo · Ravenna · Scafati Basket · Hermine Nantes Basket · Peñarol",
+      "status": "retired",
+      "current_team": "Adelaide 36ers",
+      "stint_count": 16,
+      "nba_teams_shown": [
+        "Detroit Pistons"
+      ],
+      "teams_shown": "Detroit Pistons · Fort Wayne Fury · Columbus Horizon · Grand Rapids Hoops · La Crosse Catbirds · Hartford Hellcats · Fort Wayne Fury · Grand Rapids Mackers · Portland Mountain Cats · Grand Rapids Hoops · Atlantic City Seagulls · Fort Wayne Fury · Connecticut Pride · Baltimore Bayrunners · Wollongong Hawks · Adelaide 36ers",
       "career_history": [
         {
-          "years": "2008",
-          "team": "Atlético Biguá",
-          "city": "Gualala",
-          "country": "Honduras"
+          "years": "1991–92",
+          "team": "Detroit Pistons",
+          "city": "Detroit",
+          "country": "USA"
         },
         {
-          "years": "2008",
-          "team": "Forssan Koripojat",
-          "city": "",
-          "country": ""
+          "years": "1992",
+          "team": "Fort Wayne Fury",
+          "city": "Fort Wayne",
+          "country": "USA"
         },
         {
-          "years": "2008-2009",
-          "team": "Široki Eronet",
-          "city": "",
-          "country": ""
+          "years": "1992–1993",
+          "team": "Columbus Horizon",
+          "city": "Columbus",
+          "country": "USA"
         },
         {
-          "years": "2009-2010",
-          "team": "Ferro-ZNTU",
-          "city": "Zaporizhzhia",
-          "country": "Ukraine"
+          "years": "1993",
+          "team": "Grand Rapids Hoops",
+          "city": "Grand Rapids",
+          "country": "USA"
         },
         {
-          "years": "2010-2011",
-          "team": "Azovmash Mariupol",
-          "city": "Mariupol",
-          "country": "Ukraine"
+          "years": "1993",
+          "team": "La Crosse Catbirds",
+          "city": "La Crosse",
+          "country": "USA"
         },
         {
-          "years": "2011-2012",
-          "team": "Dnipro",
-          "city": "Dnipro",
-          "country": "Ukraine"
+          "years": "1994",
+          "team": "Hartford Hellcats",
+          "city": "Hartford",
+          "country": "USA"
         },
         {
-          "years": "2012-2013",
-          "team": "Cherkaski Mavpy",
-          "city": "Cherkasy",
-          "country": "Ukraine"
+          "years": "1994–1995",
+          "team": "Fort Wayne Fury",
+          "city": "Fort Wayne",
+          "country": "USA"
         },
         {
-          "years": "2013",
-          "team": "Chorale Roanne",
-          "city": "Roanne",
-          "country": "France"
+          "years": "1995–1996",
+          "team": "Grand Rapids Mackers",
+          "city": "Grand Rapids",
+          "country": "USA"
         },
         {
-          "years": "2013-2014",
-          "team": "Sagesse Beirut",
-          "city": "Beirut",
-          "country": "Lebanon"
+          "years": "1996",
+          "team": "Portland Mountain Cats",
+          "city": "Portland",
+          "country": "USA"
         },
         {
-          "years": "2014",
-          "team": "ASU Sports Club",
-          "city": "Guwahati",
-          "country": "India"
+          "years": "1996–1997",
+          "team": "Grand Rapids Hoops",
+          "city": "Grand Rapids",
+          "country": "USA"
         },
         {
-          "years": "2014",
-          "team": "Lukoil Academic",
-          "city": "Sofia",
-          "country": "Bulgaria"
+          "years": "1997–1998",
+          "team": "Atlantic City Seagulls",
+          "city": "Atlantic City",
+          "country": "USA"
         },
         {
-          "years": "2015",
-          "team": "Sagesse",
-          "city": "Beirut",
-          "country": "Lebanon"
+          "years": "1998",
+          "team": "Fort Wayne Fury",
+          "city": "Fort Wayne",
+          "country": "USA"
         },
         {
-          "years": "2015-2016",
-          "team": "Maccabi Ashdod",
-          "city": "Ashdod",
-          "country": "Israel"
+          "years": "1998–1999",
+          "team": "Connecticut Pride",
+          "city": "Hartford",
+          "country": "USA"
         },
         {
-          "years": "2016-2017",
-          "team": "Maccabi Rishon LeZion",
-          "city": "Rishon LeZion",
-          "country": "Israel"
+          "years": "1999–2000",
+          "team": "Baltimore Bayrunners",
+          "city": "Baltimore",
+          "country": "USA"
         },
         {
-          "years": "2017-2018",
-          "team": "Pallacanestro Cantù",
-          "city": "Cantù",
-          "country": "Italy"
+          "years": "2000–2002",
+          "team": "Wollongong Hawks",
+          "city": "Wollongong",
+          "country": "Australia"
         },
         {
-          "years": "2019",
-          "team": "Legnano Knights",
-          "city": "Legnano",
-          "country": "Italy"
-        },
-        {
-          "years": "2019",
-          "team": "Trotamundos de Carabobo",
-          "city": "Valencia",
-          "country": "Venezuela"
-        },
-        {
-          "years": "2019-2020",
-          "team": "Ravenna",
-          "city": "Ravenna",
-          "country": "Italy"
-        },
-        {
-          "years": "2020-2021",
-          "team": "Scafati Basket",
-          "city": "Scafati",
-          "country": "Italy"
-        },
-        {
-          "years": "2021-2022",
-          "team": "Hermine Nantes Basket",
-          "city": "Nantes",
-          "country": "France"
-        },
-        {
-          "years": "2022-2026",
-          "team": "Peñarol",
-          "city": "Montevideo",
-          "country": "Uruguay"
+          "years": "2002–2004",
+          "team": "Adelaide 36ers",
+          "city": "Adelaide",
+          "country": "Australia"
         }
       ],
-      "kind": "namesake_career",
-      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
     },
     {
       "player": "Charlie Brown",
@@ -729,8 +747,8 @@
       "stored_wikipedia_title": "Charlie Brown",
       "rejected_wikidata_id": "Q1168491",
       "status": "overseas_active",
-      "current_team": "Raptors 905",
-      "stint_count": 11,
+      "current_team": "Aquila Trento",
+      "stint_count": 14,
       "nba_teams_shown": [
         "Atlanta Hawks",
         "Oklahoma City Thunder",
@@ -738,12 +756,18 @@
         "Philadelphia 76ers",
         "New York Knicks"
       ],
-      "teams_shown": "Atlanta Hawks · Iowa Wolves · Oklahoma City Thunder · Delaware Blue Coats · Dallas Mavericks · Philadelphia 76ers · Delaware Blue Coats · Delaware Blue Coats · New York Knicks · Westchester Knicks · Raptors 905",
+      "teams_shown": "Atlanta Hawks · College Park Skyhawks · Iowa Wolves · Oklahoma City Thunder · Delaware Blue Coats · Dallas Mavericks · Philadelphia 76ers · Delaware Blue Coats · Delaware Blue Coats · New York Knicks · Westchester Knicks · Raptors 905 · Memphis Hustle · Aquila Trento",
       "career_history": [
         {
-          "years": "2019-2020",
+          "years": "2019–20",
           "team": "Atlanta Hawks",
           "city": "Atlanta",
+          "country": "USA"
+        },
+        {
+          "years": "2019–2020",
+          "team": "College Park Skyhawks",
+          "city": "College Park",
           "country": "USA"
         },
         {
@@ -765,7 +789,7 @@
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–22",
           "team": "Dallas Mavericks",
           "city": "Dallas",
           "country": "USA"
@@ -783,28 +807,40 @@
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Delaware Blue Coats",
           "city": "Newark",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–24",
           "team": "New York Knicks",
           "city": "New York",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Westchester Knicks",
           "city": "White Plains",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Raptors 905",
           "city": "Mississauga",
           "country": "Canada"
+        },
+        {
+          "years": "2025–2026",
+          "team": "Memphis Hustle",
+          "city": "Memphis",
+          "country": "USA"
+        },
+        {
+          "years": "2026–present",
+          "team": "Aquila Trento",
+          "city": "Trento",
+          "country": "Italy"
         }
       ],
       "kind": "frozen",
@@ -992,15 +1028,15 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Cody_Martin",
       "stored_wikipedia_title": "Cody Martin",
       "rejected_wikidata_id": "Q20660629",
-      "status": "nba_active",
-      "current_team": "Indiana Pacers",
-      "stint_count": 4,
+      "status": "overseas_active",
+      "current_team": "Mexico City Capitanes",
+      "stint_count": 6,
       "nba_teams_shown": [
         "Charlotte Hornets",
         "Phoenix Suns",
         "Indiana Pacers"
       ],
-      "teams_shown": "Greensboro Swarm · Charlotte Hornets · Phoenix Suns · Indiana Pacers",
+      "teams_shown": "Greensboro Swarm · Charlotte Hornets · Phoenix Suns · Indiana Pacers · Noblesville Boom · Mexico City Capitanes",
       "career_history": [
         {
           "years": "2019",
@@ -1009,7 +1045,7 @@
           "country": "USA"
         },
         {
-          "years": "2019-2025",
+          "years": "2019–2025",
           "team": "Charlotte Hornets",
           "city": "Charlotte",
           "country": "USA"
@@ -1025,6 +1061,18 @@
           "team": "Indiana Pacers",
           "city": "Indianapolis",
           "country": "USA"
+        },
+        {
+          "years": "2025-26",
+          "team": "Noblesville Boom",
+          "city": "Noblesville",
+          "country": "USA"
+        },
+        {
+          "years": "2026–present",
+          "team": "Mexico City Capitanes",
+          "city": "Mexico City",
+          "country": "Mexico"
         }
       ],
       "kind": "frozen",
@@ -1036,40 +1084,40 @@
       "stored_wikipedia_title": "Daniel Hamilton",
       "rejected_wikidata_id": "Q5217415",
       "status": "overseas_active",
-      "current_team": "Caballeros de Culiacán",
-      "stint_count": 19,
+      "current_team": "Al-Faisaly",
+      "stint_count": 21,
       "nba_teams_shown": [
         "Oklahoma City Thunder",
         "Atlanta Hawks"
       ],
-      "teams_shown": "Oklahoma City Blue · Oklahoma City Thunder · Oklahoma City Blue · Atlanta Hawks · Erie BayHawks · Rio Grande Valley Vipers · Mets de Guaynabo · Bursaspor · Agua Caliente Clippers · Petkim Spor · Ionikos Nikaias · VEF Rīga · Ionikos Nikaias · Club Malvín · Halcones de Xalapa · Club Malvín · Lobos Plateados de la BUAP · Soles de Mexicali · Caballeros de Culiacán",
+      "teams_shown": "Oklahoma City Blue · Oklahoma City Thunder · Oklahoma City Blue · Atlanta Hawks · Erie BayHawks · Rio Grande Valley Vipers · Mets de Guaynabo · Bursaspor · Agua Caliente Clippers · Petkim Spor · Ionikos Nikaias · VEF Rīga · Ionikos Nikaias · Club Malvín · Halcones de Xalapa · Club Malvín · Lobos Plateados de la BUAP · Soles de Mexicali · Caballeros de Culiacán · Beirut Club · Al-Faisaly",
       "career_history": [
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Oklahoma City Blue",
           "city": "Oklahoma City",
           "country": "USA"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–18",
           "team": "Oklahoma City Thunder",
           "city": "Oklahoma City",
           "country": "USA"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–2018",
           "team": "Oklahoma City Blue",
           "city": "Oklahoma City",
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–19",
           "team": "Atlanta Hawks",
           "city": "Atlanta",
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Erie BayHawks",
           "city": "Erie",
           "country": "USA"
@@ -1099,7 +1147,7 @@
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Petkim Spor",
           "city": "İzmir",
           "country": "Turkey"
@@ -1117,7 +1165,7 @@
           "country": "Latvia"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Ionikos Nikaias",
           "city": "Piraeus",
           "country": "Greece"
@@ -1157,6 +1205,18 @@
           "team": "Caballeros de Culiacán",
           "city": "Culiacán",
           "country": "Mexico"
+        },
+        {
+          "years": "2025–2026",
+          "team": "Beirut Club",
+          "city": "Beirut",
+          "country": "Lebanon"
+        },
+        {
+          "years": "2026–present",
+          "team": "Al-Faisaly",
+          "city": "Amman",
+          "country": ""
         }
       ],
       "kind": "frozen",
@@ -1168,8 +1228,8 @@
       "stored_wikipedia_title": "Derrick Williams",
       "rejected_wikidata_id": "Q5263123",
       "status": "overseas_active",
-      "current_team": "Suwon KT Sonicboom",
-      "stint_count": 14,
+      "current_team": "AEK Athens",
+      "stint_count": 15,
       "nba_teams_shown": [
         "Minnesota Timberwolves",
         "Sacramento Kings",
@@ -1178,28 +1238,28 @@
         "Cleveland Cavaliers",
         "Los Angeles Lakers"
       ],
-      "teams_shown": "Minnesota Timberwolves · Sacramento Kings · New York Knicks · Miami Heat · Cleveland Cavaliers · Tianjin Gold Lions · Los Angeles Lakers · Bayern Munich · Fenerbahçe · Valencia · Maccabi Tel Aviv · Panathinaikos · Mets de Guaynabo · Suwon KT Sonicboom",
+      "teams_shown": "Minnesota Timberwolves · Sacramento Kings · New York Knicks · Miami Heat · Cleveland Cavaliers · Tianjin Gold Lions · Los Angeles Lakers · Bayern Munich · Fenerbahçe · Valencia · Maccabi Tel Aviv · Panathinaikos · Mets de Guaynabo · Suwon KT Sonicboom · AEK Athens",
       "career_history": [
         {
-          "years": "2011-2013",
+          "years": "2011–2013",
           "team": "Minnesota Timberwolves",
           "city": "Minneapolis",
           "country": "USA"
         },
         {
-          "years": "2013-2015",
+          "years": "2013–2015",
           "team": "Sacramento Kings",
           "city": "Sacramento",
           "country": "USA"
         },
         {
-          "years": "2015-2016",
+          "years": "2015–16",
           "team": "New York Knicks",
           "city": "New York",
           "country": "USA"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–17",
           "team": "Miami Heat",
           "city": "Miami",
           "country": "USA"
@@ -1211,7 +1271,7 @@
           "country": "USA"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–2018",
           "team": "Tianjin Gold Lions",
           "city": "Tianjin",
           "country": "China"
@@ -1223,31 +1283,31 @@
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Bayern Munich",
           "city": "Munich",
           "country": "Germany"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Fenerbahçe",
           "city": "Istanbul",
           "country": "Turkey"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Valencia",
           "city": "Valencia",
           "country": "Spain"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Maccabi Tel Aviv",
           "city": "Tel Aviv",
           "country": "Israel"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Panathinaikos",
           "city": "Athens",
           "country": "Greece"
@@ -1259,10 +1319,16 @@
           "country": "Puerto Rico"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–2026",
           "team": "Suwon KT Sonicboom",
           "city": "Suwon",
           "country": "South Korea"
+        },
+        {
+          "years": "2026–present",
+          "team": "AEK Athens",
+          "city": "Athens",
+          "country": "Greece"
         }
       ],
       "kind": "frozen",
@@ -1312,25 +1378,25 @@
       "teams_shown": "New Orleans Pelicans · Texas Legends · Detroit Pistons · Salt Lake City Stars · Utah Jazz · ASVEL · Shanxi Loongs · Nanterre 92 · Jiangsu Dragons · Ningbo Rockets",
       "career_history": [
         {
-          "years": "2017-2020",
+          "years": "2017–2020",
           "team": "New Orleans Pelicans",
           "city": "New Orleans",
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Texas Legends",
           "city": "Frisco",
           "country": "USA"
         },
         {
-          "years": "2020-2022",
+          "years": "2020–2022",
           "team": "Detroit Pistons",
           "city": "Detroit",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Salt Lake City Stars",
           "city": "Salt Lake City",
           "country": "USA"
@@ -1348,7 +1414,7 @@
           "country": "France"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Shanxi Loongs",
           "city": "Taiyuan",
           "country": "China"
@@ -1360,13 +1426,13 @@
           "country": "France"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Jiangsu Dragons",
           "city": "Nanjing",
           "country": "China"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Ningbo Rockets",
           "city": "Ningbo",
           "country": "China"
@@ -1388,25 +1454,25 @@
         "Houston Rockets",
         "Phoenix Suns"
       ],
-      "teams_shown": "Washington Bullets · Houston Rockets · Pallacanestro Varese · Marr Rimini · Olympique Antibes · Phoenix Suns",
+      "teams_shown": "Washington Bullets · Houston Rockets · A. Ranger Varese · Marr Rimini · Olympique Antibes · Phoenix Suns",
       "career_history": [
         {
-          "years": "1981-1988",
+          "years": "1981–1988",
           "team": "Washington Bullets",
           "city": "Washington",
           "country": "USA"
         },
         {
-          "years": "1988-1989",
+          "years": "1988–89",
           "team": "Houston Rockets",
           "city": "Houston",
           "country": "USA"
         },
         {
-          "years": "1989-1991",
-          "team": "Pallacanestro Varese",
-          "city": "Varese",
-          "country": "Italy"
+          "years": "1989–1991",
+          "team": "A. Ranger Varese",
+          "city": "",
+          "country": ""
         },
         {
           "years": "1991",
@@ -1415,13 +1481,13 @@
           "country": "Italy"
         },
         {
-          "years": "1991-1992",
+          "years": "1991–1992",
           "team": "Olympique Antibes",
           "city": "Antibes",
           "country": "France"
         },
         {
-          "years": "1992-1994",
+          "years": "1992–1994",
           "team": "Phoenix Suns",
           "city": "Phoenix",
           "country": "USA"
@@ -1448,7 +1514,7 @@
       "teams_shown": "Houston Rockets · Rio Grande Valley Vipers · Orlando Magic · Denver Nuggets · Philadelphia 76ers · Mexico City Capitanes · New Orleans Pelicans · Mexico City Capitanes · Illawarra Hawks · Yokohama B-Corsairs",
       "career_history": [
         {
-          "years": "2018-2020",
+          "years": "2018–2020",
           "team": "Houston Rockets",
           "city": "Houston",
           "country": "USA"
@@ -1460,7 +1526,7 @@
           "country": "USA"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Orlando Magic",
           "city": "Orlando",
           "country": "USA"
@@ -1484,25 +1550,25 @@
           "country": "Mexico"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–22",
           "team": "New Orleans Pelicans",
           "city": "New Orleans",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Mexico City Capitanes",
           "city": "Mexico City",
           "country": "Mexico"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Illawarra Hawks",
           "city": "Wollongong",
           "country": "Australia"
         },
         {
-          "years": "2024-2026",
+          "years": "2024–present",
           "team": "Yokohama B-Corsairs",
           "city": "Yokohama",
           "country": "Japan"
@@ -1517,28 +1583,28 @@
       "stored_wikipedia_title": "George King",
       "rejected_wikidata_id": "Q440501",
       "status": "overseas_active",
-      "current_team": "Guangzhou Loong Lions",
-      "stint_count": 15,
+      "current_team": "San Miguel Beermen",
+      "stint_count": 17,
       "nba_teams_shown": [
         "Phoenix Suns",
         "Dallas Mavericks"
       ],
-      "teams_shown": "Phoenix Suns · Northern Arizona Suns · Aquila Trento · Zielona Góra · Chemnitz 99 · Agua Caliente Clippers · Dallas Mavericks · Illawarra Hawks · Ontario Clippers · Ironi Ness Ziona · Blackwater Bossing · Al Riyadi Beirut · Al Ittihad Alexandria · Dijlah Al-Jamiea · Guangzhou Loong Lions",
+      "teams_shown": "Phoenix Suns · Northern Arizona Suns · Aquila Trento · Zielona Góra · Chemnitz 99 · Dallas Mavericks · Agua Caliente Clippers · Illawarra Hawks · Ontario Clippers · Ironi Ness Ziona · Blackwater Bossing · Al Riyadi Beirut · Al Ittihad Alexandria · Dijlah Al-Jamiea · Yankey Ark · Gladiators Trier · San Miguel Beermen",
       "career_history": [
         {
-          "years": "2018-2019",
+          "years": "2018–19",
           "team": "Phoenix Suns",
           "city": "Phoenix",
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Northern Arizona Suns",
           "city": "Detroit",
           "country": "USA"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Aquila Trento",
           "city": "Trento",
           "country": "Italy"
@@ -1550,25 +1616,25 @@
           "country": "Poland"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Chemnitz 99",
           "city": "Chemnitz",
           "country": "Germany"
         },
         {
-          "years": "2021-2022",
-          "team": "Agua Caliente Clippers",
-          "city": "Ontario",
-          "country": "USA"
-        },
-        {
-          "years": "2021-2022",
+          "years": "2021–22",
           "team": "Dallas Mavericks",
           "city": "Dallas",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2021–2022",
+          "team": "Agua Caliente Clippers",
+          "city": "Ontario",
+          "country": "USA"
+        },
+        {
+          "years": "2022–2023",
           "team": "Illawarra Hawks",
           "city": "Wollongong",
           "country": "Australia"
@@ -1586,7 +1652,7 @@
           "country": "Israel"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Blackwater Bossing",
           "city": "Manila",
           "country": "Philippines"
@@ -1610,10 +1676,22 @@
           "country": ""
         },
         {
-          "years": "2025-2026",
-          "team": "Guangzhou Loong Lions",
-          "city": "Guangzhou",
-          "country": "China"
+          "years": "2025–2026",
+          "team": "Yankey Ark",
+          "city": "Hsinchu",
+          "country": "Taiwan"
+        },
+        {
+          "years": "2026",
+          "team": "Gladiators Trier",
+          "city": "Trier",
+          "country": "Germany"
+        },
+        {
+          "years": "2026–present",
+          "team": "San Miguel Beermen",
+          "city": "Manila",
+          "country": "Philippines"
         }
       ],
       "kind": "frozen",
@@ -1625,42 +1703,42 @@
       "stored_wikipedia_title": "Harry Giles",
       "rejected_wikidata_id": "Q26991340",
       "status": "overseas_active",
-      "current_team": "Jiangsu Dragons",
-      "stint_count": 9,
+      "current_team": "Beijing Royal Fighters",
+      "stint_count": 10,
       "nba_teams_shown": [
         "Sacramento Kings",
         "Portland Trail Blazers",
         "Brooklyn Nets",
         "Los Angeles Lakers"
       ],
-      "teams_shown": "Sacramento Kings · Stockton Kings · Portland Trail Blazers · Agua Caliente Clippers · Brooklyn Nets · Los Angeles Lakers · South Bay Lakers · Shanxi Loongs · Jiangsu Dragons",
+      "teams_shown": "Sacramento Kings · Stockton Kings · Portland Trail Blazers · Agua Caliente Clippers · Brooklyn Nets · Los Angeles Lakers · South Bay Lakers · Shanxi Loongs · Jiangsu Dragons · Beijing Royal Fighters",
       "career_history": [
         {
-          "years": "2017-2020",
+          "years": "2017–2020",
           "team": "Sacramento Kings",
           "city": "Sacramento",
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Stockton Kings",
           "city": "Stockton",
           "country": "USA"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–21",
           "team": "Portland Trail Blazers",
           "city": "Portland",
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Agua Caliente Clippers",
           "city": "Ontario",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–24",
           "team": "Brooklyn Nets",
           "city": "Brooklyn",
           "country": "USA"
@@ -1678,15 +1756,21 @@
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Shanxi Loongs",
           "city": "Taiyuan",
           "country": "China"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–2026",
           "team": "Jiangsu Dragons",
           "city": "Nanjing",
+          "country": "China"
+        },
+        {
+          "years": "2026–present",
+          "team": "Beijing Royal Fighters",
+          "city": "Beijing",
           "country": "China"
         }
       ],
@@ -1698,7 +1782,7 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Henry_Walker",
       "stored_wikipedia_title": "Henry Walker",
       "rejected_wikidata_id": "Q5729768",
-      "status": "overseas_active",
+      "status": "retired",
       "current_team": "Gladiadores de Anzoátegui",
       "stint_count": 21,
       "nba_teams_shown": [
@@ -1709,13 +1793,13 @@
       "teams_shown": "Utah Flash · Boston Celtics · Maine Red Claws · New York Knicks · Austin Toros · Trotamundos de Carabobo · Sioux Falls Skyforce · Alaska Aces · Sioux Falls Skyforce · Miami Heat · Cedevita · NLEX Road Warriors · Sioux Falls Skyforce · Blackwater Elite · Galatasaray · Defensor Sporting · Blackwater Elite · Shiga Lakestars · Club La Cancha · Rain or Shine Elasto Painters · Gladiadores de Anzoátegui",
       "career_history": [
         {
-          "years": "2008-2009",
+          "years": "2008–2009",
           "team": "Utah Flash",
           "city": "Wilmington",
           "country": "USA"
         },
         {
-          "years": "2008-2010",
+          "years": "2008–2010",
           "team": "Boston Celtics",
           "city": "Boston",
           "country": "USA"
@@ -1727,7 +1811,7 @@
           "country": "USA"
         },
         {
-          "years": "2010-2012",
+          "years": "2010–2012",
           "team": "New York Knicks",
           "city": "New York",
           "country": "USA"
@@ -1745,7 +1829,7 @@
           "country": "Venezuela"
         },
         {
-          "years": "2013-2014",
+          "years": "2013–2014",
           "team": "Sioux Falls Skyforce",
           "city": "Sioux Falls",
           "country": "USA"
@@ -1757,7 +1841,7 @@
           "country": "Philippines"
         },
         {
-          "years": "2014-2015",
+          "years": "2014–2015",
           "team": "Sioux Falls Skyforce",
           "city": "Sioux Falls",
           "country": "USA"
@@ -1769,7 +1853,7 @@
           "country": "USA"
         },
         {
-          "years": "2015-2016",
+          "years": "2015–2016",
           "team": "Cedevita",
           "city": "Zagreb",
           "country": "Croatia"
@@ -1781,7 +1865,7 @@
           "country": "Philippines"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Sioux Falls Skyforce",
           "city": "Sioux Falls",
           "country": "USA"
@@ -1811,7 +1895,7 @@
           "country": "Philippines"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Shiga Lakestars",
           "city": "Ōtsu",
           "country": "Japan"
@@ -1823,13 +1907,13 @@
           "country": ""
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Rain or Shine Elasto Painters",
           "city": "Manila",
           "country": "Philippines"
         },
         {
-          "years": "2023-2026",
+          "years": "2023",
           "team": "Gladiadores de Anzoátegui",
           "city": "Puerto La Cruz",
           "country": "Venezuela"
@@ -1876,25 +1960,25 @@
       "teams_shown": "Sacramento Kings · Stockton Kings · Detroit Pistons · Motor City Cruise",
       "career_history": [
         {
-          "years": "2024-2025",
+          "years": "2024–25",
           "team": "Sacramento Kings",
           "city": "Sacramento",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Stockton Kings",
           "city": "Stockton",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Detroit Pistons",
           "city": "Detroit",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Motor City Cruise",
           "city": "Detroit",
           "country": "USA"
@@ -1934,7 +2018,7 @@
       "teams_shown": "San Antonio Spurs · Austin Toros · Houston Rockets · Philadelphia 76ers · Žalgiris · Sacramento Kings · Darüşşafaka · Khimki · Anadolu Efes · Murcia · Manisa BB · Al-Ula",
       "career_history": [
         {
-          "years": "2010-2012",
+          "years": "2010–2012",
           "team": "San Antonio Spurs",
           "city": "San Antonio",
           "country": "USA"
@@ -1952,55 +2036,55 @@
           "country": "USA"
         },
         {
-          "years": "2013-2014",
+          "years": "2013–14",
           "team": "Philadelphia 76ers",
           "city": "Philadelphia",
           "country": "USA"
         },
         {
-          "years": "2014-2015",
+          "years": "2014–2015",
           "team": "Žalgiris",
           "city": "Kaunas",
           "country": "Lithuania"
         },
         {
-          "years": "2015-2016",
+          "years": "2015–16",
           "team": "Sacramento Kings",
           "city": "Sacramento",
           "country": "USA"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Darüşşafaka",
           "city": "Istanbul",
           "country": "Turkey"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–2018",
           "team": "Khimki",
           "city": "Khimki",
           "country": "Russia"
         },
         {
-          "years": "2018-2022",
+          "years": "2018–2022",
           "team": "Anadolu Efes",
           "city": "Istanbul",
           "country": "Turkey"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Murcia",
           "city": "Murcia",
           "country": "Spain"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Manisa BB",
           "city": "Manisa",
           "country": "Turkey"
         },
         {
-          "years": "2024-2026",
+          "years": "2024–2025",
           "team": "Al-Ula",
           "city": "Al-Ula",
           "country": "Saudi Arabia"
@@ -2033,7 +2117,7 @@
       "teams_shown": "Chicago Bulls · Iowa Energy · Toronto Raptors · Sacramento Kings · Rio Grande Valley Vipers · Memphis Grizzlies · Toronto Raptors · Miami Heat · Minnesota Timberwolves · Dallas Mavericks · New Orleans Pelicans · Brooklyn Nets · Indiana Pacers",
       "career_history": [
         {
-          "years": "2009-2011",
+          "years": "2009–2011",
           "team": "Chicago Bulls",
           "city": "Chicago",
           "country": "USA"
@@ -2045,13 +2129,13 @@
           "country": "USA"
         },
         {
-          "years": "2011-2012",
+          "years": "2011–2012",
           "team": "Toronto Raptors",
           "city": "Toronto",
           "country": "Canada"
         },
         {
-          "years": "2012-2013",
+          "years": "2012–13",
           "team": "Sacramento Kings",
           "city": "Sacramento",
           "country": "USA"
@@ -2063,19 +2147,19 @@
           "country": "USA"
         },
         {
-          "years": "2013-2014",
+          "years": "2013–14",
           "team": "Memphis Grizzlies",
           "city": "Memphis",
           "country": "USA"
         },
         {
-          "years": "2014-2016",
+          "years": "2014–2016",
           "team": "Toronto Raptors",
           "city": "Toronto",
           "country": "Canada"
         },
         {
-          "years": "2016-2020",
+          "years": "2016–2020",
           "team": "Miami Heat",
           "city": "Miami",
           "country": "USA"
@@ -2087,7 +2171,7 @@
           "country": "USA"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–21",
           "team": "Dallas Mavericks",
           "city": "Dallas",
           "country": "USA"
@@ -2099,13 +2183,13 @@
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–22",
           "team": "Brooklyn Nets",
           "city": "Brooklyn",
           "country": "USA"
         },
         {
-          "years": "2022-2025",
+          "years": "2022–2025",
           "team": "Indiana Pacers",
           "city": "Indianapolis",
           "country": "USA"
@@ -2156,13 +2240,13 @@
       "teams_shown": "Memphis Grizzlies · Iowa Energy · Al Wahda · Rio Grande Valley Vipers · Venados de Mazatlán · Libertadores de Querétaro · Club Comunicaciones · Libertadores de Querétaro · Club Atlético Aguada · Gladiadores de Anzoátegui · Dewa United Banten · San Miguel Beermen · Dewa United Banten",
       "career_history": [
         {
-          "years": "2014-2016",
+          "years": "2014–2016",
           "team": "Memphis Grizzlies",
           "city": "Memphis",
           "country": "USA"
         },
         {
-          "years": "2014-2015",
+          "years": "2014–2015",
           "team": "Iowa Energy",
           "city": "Des Moines",
           "country": "USA"
@@ -2192,7 +2276,7 @@
           "country": "Mexico"
         },
         {
-          "years": "2020-2022",
+          "years": "2020–2022",
           "team": "Club Comunicaciones",
           "city": "",
           "country": ""
@@ -2216,7 +2300,7 @@
           "country": "Venezuela"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Dewa United Banten",
           "city": "Serang",
           "country": "Indonesia"
@@ -2228,7 +2312,7 @@
           "country": "Philippines"
         },
         {
-          "years": "2024-2026",
+          "years": "2024–2026",
           "team": "Dewa United Banten",
           "city": "Serang",
           "country": "Indonesia"
@@ -2251,37 +2335,37 @@
       "teams_shown": "Indiana Pacers · Fort Wayne Mad Ants · Nanjing Monkey Kings · Beijing Royal Fighters · Birmingham Squadron · Promitheas Patras · Napoli Basket · Changsha Wantian Yongsheng · Fujian Sturgeons · Kuwait SC · Shahrdari Gorgan · Fujian Sturgeons · Atléticos de San Germán · Beirut Club · Qingdao Eagles",
       "career_history": [
         {
-          "years": "2015-2018",
+          "years": "2015–2018",
           "team": "Indiana Pacers",
           "city": "Indianapolis",
           "country": "USA"
         },
         {
-          "years": "2015-2017",
+          "years": "2015–2017",
           "team": "Fort Wayne Mad Ants",
           "city": "Fort Wayne",
           "country": "USA"
         },
         {
-          "years": "2018-2020",
+          "years": "2018–2020",
           "team": "Nanjing Monkey Kings",
           "city": "Nanjing",
           "country": "China"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Beijing Royal Fighters",
           "city": "Beijing",
           "country": "China"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Birmingham Squadron",
           "city": "Birmingham",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Promitheas Patras",
           "city": "Patras",
           "country": "Greece"
@@ -2299,7 +2383,7 @@
           "country": "China"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Fujian Sturgeons",
           "city": "Jinjiang",
           "country": "China"
@@ -2317,7 +2401,7 @@
           "country": "Iran"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Fujian Sturgeons",
           "city": "Jinjiang",
           "country": "China"
@@ -2335,7 +2419,7 @@
           "country": "Lebanon"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Qingdao Eagles",
           "city": "Qingdao",
           "country": "China"
@@ -2355,18 +2439,18 @@
       "nba_teams_shown": [
         "Philadelphia 76ers"
       ],
-      "teams_shown": "Philadelphia 76ers · Delaware Blue Coats",
+      "teams_shown": "Delaware Blue Coats · Philadelphia 76ers",
       "career_history": [
         {
-          "years": "2024-2026",
-          "team": "Philadelphia 76ers",
-          "city": "Philadelphia",
+          "years": "2024",
+          "team": "Delaware Blue Coats",
+          "city": "Newark",
           "country": "USA"
         },
         {
-          "years": "2024-2026",
-          "team": "Delaware Blue Coats",
-          "city": "Newark",
+          "years": "2024–present",
+          "team": "Philadelphia 76ers",
+          "city": "Philadelphia",
           "country": "USA"
         }
       ],
@@ -2379,33 +2463,33 @@
       "stored_wikipedia_title": "Justin James",
       "rejected_wikidata_id": "Q53327171",
       "status": "overseas_active",
-      "current_team": "Álftanes",
-      "stint_count": 6,
+      "current_team": "Ironi Ness Ziona",
+      "stint_count": 10,
       "nba_teams_shown": [
         "Sacramento Kings"
       ],
-      "teams_shown": "Sacramento Kings · Stockton Kings · Cleveland Charge · Metropolitans 92 · Cleveland Charge · Álftanes",
+      "teams_shown": "Sacramento Kings · Stockton Kings · Cleveland Charge · Metropolitans 92 · Cleveland Charge · Álftanes · Kaohsiung Aquas · Álftanes · Hapoel Galil Elyon · Ironi Ness Ziona",
       "career_history": [
         {
-          "years": "2019-2021",
+          "years": "2019–2021",
           "team": "Sacramento Kings",
           "city": "Sacramento",
           "country": "USA"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Stockton Kings",
           "city": "Stockton",
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Cleveland Charge",
           "city": "Cleveland",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Metropolitans 92",
           "city": "Levallois-Perret",
           "country": "France"
@@ -2417,10 +2501,34 @@
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Álftanes",
           "city": "Álftanes",
           "country": "Iceland"
+        },
+        {
+          "years": "2025",
+          "team": "Kaohsiung Aquas",
+          "city": "Kaohsiung",
+          "country": "Taiwan"
+        },
+        {
+          "years": "2026",
+          "team": "Álftanes",
+          "city": "Álftanes",
+          "country": "Iceland"
+        },
+        {
+          "years": "2026",
+          "team": "Hapoel Galil Elyon",
+          "city": "Kfar Blum",
+          "country": "Israel"
+        },
+        {
+          "years": "2026–present",
+          "team": "Ironi Ness Ziona",
+          "city": "Ness Ziona",
+          "country": "Israel"
         }
       ],
       "kind": "frozen",
@@ -2524,101 +2632,128 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Kenny_Williams",
       "stored_wikipedia_title": "Kenny Williams",
       "rejected_wikidata_id": "Q6391251",
-      "status": "overseas_active",
-      "current_team": "Promitheas Patras",
-      "stint_count": 6,
-      "nba_teams_shown": [],
-      "teams_shown": "Austin Spurs · Bnei Herzliya · Kolossos Rodou · AEK Athens · Peristeri · Promitheas Patras",
+      "status": "retired",
+      "current_team": "Maccabi Habik'a",
+      "stint_count": 9,
+      "nba_teams_shown": [
+        "Indiana Pacers"
+      ],
+      "teams_shown": "Indiana Pacers · Forlì · ASVEL · Carne Montana Forlì · Hapoel Jerusalem · Bnei HaSharon · Ironi Ramat Gan · Hapoel Tel Aviv · Maccabi Habik'a",
       "career_history": [
         {
-          "years": "2019-2021",
-          "team": "Austin Spurs",
-          "city": "Austin",
+          "years": "1990–1994",
+          "team": "Indiana Pacers",
+          "city": "Indianapolis",
           "country": "USA"
         },
         {
-          "years": "2021",
-          "team": "Bnei Herzliya",
+          "years": "1994–1995",
+          "team": "Forlì",
+          "city": "Forlì",
+          "country": "Italy"
+        },
+        {
+          "years": "1995",
+          "team": "ASVEL",
+          "city": "Villeurbanne",
+          "country": "France"
+        },
+        {
+          "years": "1995–1997",
+          "team": "Carne Montana Forlì",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "1997–2001",
+          "team": "Hapoel Jerusalem",
+          "city": "Jerusalem",
+          "country": "Israel"
+        },
+        {
+          "years": "2001–2002",
+          "team": "Bnei HaSharon",
           "city": "Herzliya",
           "country": "Israel"
         },
         {
-          "years": "2021-2022",
-          "team": "Kolossos Rodou",
-          "city": "Rhodes",
-          "country": "Greece"
+          "years": "2003–2004",
+          "team": "Ironi Ramat Gan",
+          "city": "Ramat Gan",
+          "country": "Israel"
         },
         {
-          "years": "2022-2023",
-          "team": "AEK Athens",
-          "city": "Athens",
-          "country": "Greece"
+          "years": "2004–2005",
+          "team": "Hapoel Tel Aviv",
+          "city": "Tel Aviv",
+          "country": "Israel"
         },
         {
-          "years": "2023-2024",
-          "team": "Peristeri",
-          "city": "Athens",
-          "country": "Greece"
-        },
-        {
-          "years": "2024-2026",
-          "team": "Promitheas Patras",
-          "city": "Patras",
-          "country": "Greece"
+          "years": "2005–2006",
+          "team": "Maccabi Habik'a",
+          "city": "Giv'at Shmuel",
+          "country": "Israel"
         }
       ],
-      "kind": "namesake_career",
-      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
     },
     {
       "player": "Keon Johnson",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Keon_Johnson",
       "stored_wikipedia_title": "Keon Johnson",
       "rejected_wikidata_id": "Q93400790",
-      "status": "overseas_active",
-      "current_team": "Maine Celtics",
-      "stint_count": 6,
+      "status": "nba_active",
+      "current_team": "Atlanta Hawks",
+      "stint_count": 7,
       "nba_teams_shown": [
         "LA Clippers",
         "Portland Trail Blazers",
-        "Brooklyn Nets"
+        "Brooklyn Nets",
+        "Atlanta Hawks"
       ],
-      "teams_shown": "LA Clippers · Agua Caliente Clippers · Portland Trail Blazers · Brooklyn Nets · Long Island Nets · Maine Celtics",
+      "teams_shown": "LA Clippers · Agua Caliente Clippers · Portland Trail Blazers · Brooklyn Nets · Long Island Nets · Maine Celtics · Atlanta Hawks",
       "career_history": [
         {
-          "years": "2021-2022",
+          "years": "2021–22",
           "team": "LA Clippers",
           "city": "Los Angeles",
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Agua Caliente Clippers",
           "city": "Ontario",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Portland Trail Blazers",
           "city": "Portland",
           "country": "USA"
         },
         {
-          "years": "2023-2025",
+          "years": "2023–2025",
           "team": "Brooklyn Nets",
           "city": "Brooklyn",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Long Island Nets",
           "city": "Uniondale",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–2026",
           "team": "Maine Celtics",
           "city": "Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2026–present",
+          "team": "Atlanta Hawks",
+          "city": "Atlanta",
           "country": "USA"
         }
       ],
@@ -2675,19 +2810,19 @@
           "country": "USA"
         },
         {
-          "years": "2012-2013",
+          "years": "2012–13",
           "team": "Cleveland Cavaliers",
           "city": "Cleveland",
           "country": "USA"
         },
         {
-          "years": "2012-2013",
+          "years": "2012–2013",
           "team": "Canton Charge",
           "city": "Canton",
           "country": "USA"
         },
         {
-          "years": "2013-2014",
+          "years": "2013–2014",
           "team": "Canton Charge",
           "city": "Canton",
           "country": "USA"
@@ -2705,19 +2840,19 @@
           "country": "France"
         },
         {
-          "years": "2015-2016",
+          "years": "2015–2016",
           "team": "Partizan",
           "city": "Belgrade",
           "country": "Serbia"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Lokomotiv Kuban",
           "city": "Krasnodar",
           "country": "Russia"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–2018",
           "team": "Baskonia",
           "city": "Vitoria",
           "country": "Spain"
@@ -2729,119 +2864,34 @@
           "country": "France"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Ryukyu Golden Kings",
           "city": "Okinawa",
           "country": "Japan"
         },
         {
-          "years": "2019-2021",
+          "years": "2019–2021",
           "team": "Alvark Tokyo",
           "city": "Tokyo",
           "country": "Japan"
         },
         {
-          "years": "2021-2023",
+          "years": "2021–2023",
           "team": "Sun Rockers Shibuya",
           "city": "Shibuya",
           "country": "Japan"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Kyoto Hannaryz",
           "city": "Kyoto",
           "country": "Japan"
         },
         {
-          "years": "2024-2026",
+          "years": "2024–present",
           "team": "Sun Rockers Shibuya",
           "city": "Shibuya",
           "country": "Japan"
-        }
-      ],
-      "kind": "frozen",
-      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
-    },
-    {
-      "player": "Kyle Anderson",
-      "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Kyle_Anderson",
-      "stored_wikipedia_title": "Kyle Anderson",
-      "rejected_wikidata_id": "Q6451038",
-      "status": "nba_active",
-      "current_team": "Toronto Raptors",
-      "stint_count": 10,
-      "nba_teams_shown": [
-        "San Antonio Spurs",
-        "Memphis Grizzlies",
-        "Minnesota Timberwolves",
-        "Golden State Warriors",
-        "Miami Heat",
-        "Utah Jazz",
-        "Memphis Grizzlies",
-        "Minnesota Timberwolves",
-        "Toronto Raptors"
-      ],
-      "teams_shown": "San Antonio Spurs · Austin Spurs · Memphis Grizzlies · Minnesota Timberwolves · Golden State Warriors · Miami Heat · Utah Jazz · Memphis Grizzlies · Minnesota Timberwolves · Toronto Raptors",
-      "career_history": [
-        {
-          "years": "2014–2018",
-          "team": "San Antonio Spurs",
-          "city": "San Antonio",
-          "country": "USA"
-        },
-        {
-          "years": "2014–2015",
-          "team": "Austin Spurs",
-          "city": "Austin",
-          "country": "USA"
-        },
-        {
-          "years": "2018–2022",
-          "team": "Memphis Grizzlies",
-          "city": "Memphis",
-          "country": "USA"
-        },
-        {
-          "years": "2022–2024",
-          "team": "Minnesota Timberwolves",
-          "city": "Minneapolis",
-          "country": "USA"
-        },
-        {
-          "years": "2024–25",
-          "team": "Golden State Warriors",
-          "city": "San Francisco",
-          "country": "USA"
-        },
-        {
-          "years": "2025",
-          "team": "Miami Heat",
-          "city": "Miami",
-          "country": "USA"
-        },
-        {
-          "years": "2025–26",
-          "team": "Utah Jazz",
-          "city": "Salt Lake City",
-          "country": "USA"
-        },
-        {
-          "years": "2026",
-          "team": "Memphis Grizzlies",
-          "city": "Memphis",
-          "country": "USA"
-        },
-        {
-          "years": "2026",
-          "team": "Minnesota Timberwolves",
-          "city": "Minneapolis",
-          "country": "USA"
-        },
-        {
-          "years": "2026–present",
-          "team": "Toronto Raptors",
-          "city": "Toronto",
-          "country": "Canada"
         }
       ],
       "kind": "frozen",
@@ -2853,29 +2903,42 @@
       "stored_wikipedia_title": "Leonard Miller",
       "rejected_wikidata_id": "Q16230497",
       "status": "nba_active",
-      "current_team": "Minnesota Timberwolves",
-      "stint_count": 3,
+      "current_team": "Chicago Bulls",
+      "stint_count": 5,
       "nba_teams_shown": [
-        "Minnesota Timberwolves"
+        "Minnesota Timberwolves",
+        "Chicago Bulls"
       ],
-      "teams_shown": "NBA G League Ignite · Minnesota Timberwolves · Iowa Wolves",
+      "teams_shown": "NBA G League Ignite · Minnesota Timberwolves · Iowa Wolves · Windy City Bulls · Chicago Bulls",
       "career_history": [
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "NBA G League Ignite",
           "city": "Henderson",
           "country": "USA"
         },
         {
-          "years": "2023-2026",
+          "years": "2023–2026",
           "team": "Minnesota Timberwolves",
           "city": "Minneapolis",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Iowa Wolves",
           "city": "Des Moines",
+          "country": "USA"
+        },
+        {
+          "years": "2026",
+          "team": "Windy City Bulls",
+          "city": "Hoffman Estates",
+          "country": "USA"
+        },
+        {
+          "years": "2026–present",
+          "team": "Chicago Bulls",
+          "city": "Chicago",
           "country": "USA"
         }
       ],
@@ -2887,14 +2950,60 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Malachi_Smith",
       "stored_wikipedia_title": "Malachi Smith",
       "rejected_wikidata_id": "Q111076327",
-      "status": "retired",
-      "current_team": "",
-      "stint_count": 0,
-      "nba_teams_shown": [],
-      "teams_shown": "",
-      "career_history": [],
-      "kind": "empty",
-      "verdict": "EMPTY -- the namesake's article has no club table, so the page shows this player no career at all"
+      "status": "nba_active",
+      "current_team": "Toronto Raptors",
+      "stint_count": 7,
+      "nba_teams_shown": [
+        "Brooklyn Nets",
+        "Toronto Raptors"
+      ],
+      "teams_shown": "Rip City Remix · Wisconsin Herd · Memphis Hustle · Long Island Nets · Brooklyn Nets · Toronto Raptors · Raptors 905",
+      "career_history": [
+        {
+          "years": "2023–2024",
+          "team": "Rip City Remix",
+          "city": "North Portland",
+          "country": "USA"
+        },
+        {
+          "years": "2024",
+          "team": "Wisconsin Herd",
+          "city": "Oshkosh",
+          "country": "USA"
+        },
+        {
+          "years": "2024–2025",
+          "team": "Memphis Hustle",
+          "city": "Memphis",
+          "country": "USA"
+        },
+        {
+          "years": "2025–2026",
+          "team": "Long Island Nets",
+          "city": "Uniondale",
+          "country": "USA"
+        },
+        {
+          "years": "2026",
+          "team": "Brooklyn Nets",
+          "city": "Brooklyn",
+          "country": "USA"
+        },
+        {
+          "years": "2026–present",
+          "team": "Toronto Raptors",
+          "city": "Toronto",
+          "country": "Canada"
+        },
+        {
+          "years": "2026–present",
+          "team": "Raptors 905",
+          "city": "Mississauga",
+          "country": "Canada"
+        }
+      ],
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
     },
     {
       "player": "Malcolm Miller",
@@ -2910,37 +3019,37 @@
       "teams_shown": "Maine Red Claws · Alba Berlin · Toronto Raptors · Raptors 905 · Salt Lake City Stars · Vanoli Cremona · Raptors 905 · Formosa Dreamers · Limoges CSP · Unione Cestistica Casalpusterlengo · Taipei Mars · Taoyuan Taiwan Beer Leopards",
       "career_history": [
         {
-          "years": "2015-2016",
+          "years": "2015–2016",
           "team": "Maine Red Claws",
           "city": "Portland",
           "country": "USA"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Alba Berlin",
           "city": "Berlin",
           "country": "Germany"
         },
         {
-          "years": "2017-2020",
+          "years": "2017–2020",
           "team": "Toronto Raptors",
           "city": "Toronto",
           "country": "Canada"
         },
         {
-          "years": "2017-2019",
+          "years": "2017–2019",
           "team": "Raptors 905",
           "city": "Mississauga",
           "country": "Canada"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Salt Lake City Stars",
           "city": "Salt Lake City",
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Vanoli Cremona",
           "city": "Cremona",
           "country": "Italy"
@@ -2964,19 +3073,19 @@
           "country": "France"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Unione Cestistica Casalpusterlengo",
           "city": "Piacenza",
           "country": "Italy"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Taipei Mars",
           "city": "Taipei City",
           "country": "Taiwan"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Taoyuan Taiwan Beer Leopards",
           "city": "Taoyuan City",
           "country": "Taiwan"
@@ -3006,13 +3115,13 @@
           "country": "USA"
         },
         {
-          "years": "2022-2025",
+          "years": "2022–2025",
           "team": "Charlotte Hornets",
           "city": "Charlotte",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Phoenix Suns",
           "city": "Phoenix",
           "country": "USA"
@@ -3027,8 +3136,8 @@
       "stored_wikipedia_title": "Matthew Ryan",
       "rejected_wikidata_id": "Q413057",
       "status": "overseas_active",
-      "current_team": "Dubai Basketball",
-      "stint_count": 11,
+      "current_team": "Maxima Roma",
+      "stint_count": 12,
       "nba_teams_shown": [
         "Boston Celtics",
         "Los Angeles Lakers",
@@ -3036,10 +3145,10 @@
         "New Orleans Pelicans",
         "New York Knicks"
       ],
-      "teams_shown": "Grand Rapids Gold · Boston Celtics · Maine Celtics · Los Angeles Lakers · Minnesota Timberwolves · Iowa Wolves · New Orleans Pelicans · Birmingham Squadron · New York Knicks · Westchester Knicks · Dubai Basketball",
+      "teams_shown": "Grand Rapids Gold · Boston Celtics · Maine Celtics · Los Angeles Lakers · Minnesota Timberwolves · Iowa Wolves · New Orleans Pelicans · Birmingham Squadron · New York Knicks · Westchester Knicks · Dubai Basketball · Maxima Roma",
       "career_history": [
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Grand Rapids Gold",
           "city": "Grand Rapids",
           "country": "USA"
@@ -3063,46 +3172,52 @@
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–23",
           "team": "Minnesota Timberwolves",
           "city": "Minneapolis",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Iowa Wolves",
           "city": "Des Moines",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–24",
           "team": "New Orleans Pelicans",
           "city": "New Orleans",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Birmingham Squadron",
           "city": "Birmingham",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–25",
           "team": "New York Knicks",
           "city": "New York",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Westchester Knicks",
           "city": "White Plains",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–2026",
           "team": "Dubai Basketball",
           "city": "Dubai",
           "country": "UAE"
+        },
+        {
+          "years": "2026–present",
+          "team": "Maxima Roma",
+          "city": "Rome",
+          "country": "Italy"
         }
       ],
       "kind": "frozen",
@@ -3128,14 +3243,14 @@
       "stored_wikipedia_title": "Mike James",
       "rejected_wikidata_id": "Q374420",
       "status": "overseas_active",
-      "current_team": "AS Monaco",
-      "stint_count": 13,
+      "current_team": "Anadolu Efes",
+      "stint_count": 14,
       "nba_teams_shown": [
         "Phoenix Suns",
         "New Orleans Pelicans",
         "Brooklyn Nets"
       ],
-      "teams_shown": "Cedevita Zagreb · Hapoel Galil Elyon · Paffoni Omegna · Kolossos Rodou · Baskonia · Panathinaikos · Phoenix Suns · New Orleans Pelicans · Panathinaikos · Olimpia Milano · CSKA Moscow · Brooklyn Nets · AS Monaco",
+      "teams_shown": "Cedevita Zagreb · Hapoel Galil Elyon · Paffoni Omegna · Kolossos Rodou · Baskonia · Panathinaikos · Phoenix Suns · New Orleans Pelicans · Panathinaikos · Olimpia Milano · CSKA Moscow · Brooklyn Nets · AS Monaco · Anadolu Efes",
       "career_history": [
         {
           "years": "2012",
@@ -3150,7 +3265,7 @@
           "country": "Israel"
         },
         {
-          "years": "2013-2014",
+          "years": "2013–2014",
           "team": "Paffoni Omegna",
           "city": "",
           "country": ""
@@ -3162,13 +3277,13 @@
           "country": "Greece"
         },
         {
-          "years": "2014-2016",
+          "years": "2014–2016",
           "team": "Baskonia",
           "city": "Vitoria",
           "country": "Spain"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Panathinaikos",
           "city": "Athens",
           "country": "Greece"
@@ -3192,13 +3307,13 @@
           "country": "Greece"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Olimpia Milano",
           "city": "Milan",
           "country": "Italy"
         },
         {
-          "years": "2019-2021",
+          "years": "2019–2021",
           "team": "CSKA Moscow",
           "city": "Moscow",
           "country": "Russia"
@@ -3210,10 +3325,16 @@
           "country": "USA"
         },
         {
-          "years": "2021-2026",
+          "years": "2021–2026",
           "team": "AS Monaco",
           "city": "Monaco",
           "country": "Monaco"
+        },
+        {
+          "years": "2026–present",
+          "team": "Anadolu Efes",
+          "city": "Istanbul",
+          "country": "Turkey"
         }
       ],
       "kind": "frozen",
@@ -3225,7 +3346,7 @@
       "stored_wikipedia_title": "Nate Williams",
       "rejected_wikidata_id": "Q130526151",
       "status": "overseas_active",
-      "current_team": "Long Island Nets",
+      "current_team": "Chiba Jets",
       "stint_count": 8,
       "nba_teams_shown": [
         "Portland Trail Blazers",
@@ -3235,7 +3356,7 @@
       "teams_shown": "Salt Lake City Stars · Portland Trail Blazers · Houston Rockets · Rio Grande Valley Vipers · Long Island Nets · Golden State Warriors · Santa Cruz Warriors · Chiba Jets",
       "career_history": [
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Salt Lake City Stars",
           "city": "Salt Lake City",
           "country": "USA"
@@ -3247,19 +3368,19 @@
           "country": "USA"
         },
         {
-          "years": "2023-2025",
+          "years": "2023–2025",
           "team": "Houston Rockets",
           "city": "Houston",
           "country": "USA"
         },
         {
-          "years": "2023-2025",
+          "years": "2023–2025",
           "team": "Rio Grande Valley Vipers",
           "city": "Edinburg",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–2026",
           "team": "Long Island Nets",
           "city": "Uniondale",
           "country": "USA"
@@ -3292,39 +3413,39 @@
       "stored_wikipedia_title": "Nick Johnson",
       "rejected_wikidata_id": "Q183486",
       "status": "overseas_active",
-      "current_team": "Saint-Quentin",
-      "stint_count": 14,
+      "current_team": "Split",
+      "stint_count": 15,
       "nba_teams_shown": [
         "Houston Rockets"
       ],
-      "teams_shown": "Houston Rockets · Rio Grande Valley Vipers · Austin Spurs · Bayern Munich · Austin Spurs · Wisconsin Herd · Nanterre 92 · Türk Telekom · Nanterre 92 · Beijing · Hapoel Holon · Cholet Basket · Trefl Sopot · Saint-Quentin",
+      "teams_shown": "Houston Rockets · Rio Grande Valley Vipers · Austin Spurs · Bayern Munich · Austin Spurs · Wisconsin Herd · Nanterre 92 · Türk Telekom · Nanterre 92 · Beijing Ducks · Hapoel Holon · Cholet Basket · Trefl Sopot · Saint-Quentin · Split",
       "career_history": [
         {
-          "years": "2014-2015",
+          "years": "2014–15",
           "team": "Houston Rockets",
           "city": "Houston",
           "country": "USA"
         },
         {
-          "years": "2014-2015",
+          "years": "2014–2015",
           "team": "Rio Grande Valley Vipers",
           "city": "Edinburg",
           "country": "USA"
         },
         {
-          "years": "2015-2016",
+          "years": "2015–2016",
           "team": "Austin Spurs",
           "city": "Austin",
           "country": "USA"
         },
         {
-          "years": "2016-2017",
+          "years": "2016–2017",
           "team": "Bayern Munich",
           "city": "Munich",
           "country": "Germany"
         },
         {
-          "years": "2017-2019",
+          "years": "2017–2019",
           "team": "Austin Spurs",
           "city": "Austin",
           "country": "USA"
@@ -3342,20 +3463,20 @@
           "country": "France"
         },
         {
-          "years": "2019-2021",
+          "years": "2019–2021",
           "team": "Türk Telekom",
           "city": "Ankara",
           "country": "Turkey"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Nanterre 92",
           "city": "Nanterre",
           "country": "France"
         },
         {
-          "years": "2022-2023",
-          "team": "Beijing",
+          "years": "2022–2023",
+          "team": "Beijing Ducks",
           "city": "Beijing",
           "country": "China"
         },
@@ -3372,16 +3493,22 @@
           "country": "France"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Trefl Sopot",
           "city": "Sopot",
           "country": "Poland"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–2026",
           "team": "Saint-Quentin",
           "city": "Saint-Quentin",
           "country": "France"
+        },
+        {
+          "years": "2026–present",
+          "team": "Split",
+          "city": "Split",
+          "country": "Croatia"
         }
       ],
       "kind": "frozen",
@@ -3406,38 +3533,44 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Smith",
       "stored_wikipedia_title": "Nick Smith",
       "rejected_wikidata_id": "Q1985528",
-      "status": "nba_active",
-      "current_team": "Los Angeles Lakers",
-      "stint_count": 4,
+      "status": "overseas_active",
+      "current_team": "Real Madrid",
+      "stint_count": 5,
       "nba_teams_shown": [
         "Charlotte Hornets",
         "Los Angeles Lakers"
       ],
-      "teams_shown": "Charlotte Hornets · Greensboro Swarm · Los Angeles Lakers · South Bay Lakers",
+      "teams_shown": "Charlotte Hornets · Greensboro Swarm · Los Angeles Lakers · South Bay Lakers · Real Madrid",
       "career_history": [
         {
-          "years": "2023-2025",
+          "years": "2023–2025",
           "team": "Charlotte Hornets",
           "city": "Charlotte",
           "country": "USA"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Greensboro Swarm",
           "city": "Greensboro",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–26",
           "team": "Los Angeles Lakers",
           "city": "Los Angeles",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–2026",
           "team": "South Bay Lakers",
           "city": "El Segundo",
           "country": "USA"
+        },
+        {
+          "years": "2026–present",
+          "team": "Real Madrid",
+          "city": "Madrid",
+          "country": "Spain"
         }
       ],
       "kind": "frozen",
@@ -3458,19 +3591,19 @@
       "teams_shown": "Philadelphia 76ers · Delaware Blue Coats · Detroit Pistons",
       "career_history": [
         {
-          "years": "2020-2024",
+          "years": "2020–2024",
           "team": "Philadelphia 76ers",
           "city": "Philadelphia",
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Delaware Blue Coats",
           "city": "Newark",
           "country": "USA"
         },
         {
-          "years": "2024-2026",
+          "years": "2024–present",
           "team": "Detroit Pistons",
           "city": "Detroit",
           "country": "USA"
@@ -3522,19 +3655,19 @@
       "teams_shown": "Boston Celtics · Maine Red Claws · Portland Trail Blazers",
       "career_history": [
         {
-          "years": "2018-2023",
+          "years": "2018–2023",
           "team": "Boston Celtics",
           "city": "Boston",
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Maine Red Claws",
           "city": "Portland",
           "country": "USA"
         },
         {
-          "years": "2023-2026",
+          "years": "2023–present",
           "team": "Portland Trail Blazers",
           "city": "Portland",
           "country": "USA"
@@ -3562,105 +3695,228 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Tony_Farmer",
       "stored_wikipedia_title": "Tony Farmer",
       "rejected_wikidata_id": "Q114578171",
-      "status": "overseas_active",
-      "current_team": "Marinos",
-      "stint_count": 15,
-      "nba_teams_shown": [],
-      "teams_shown": "Yakima Sun Kings · Al Rayyan · Halcones de Ciudad Obregón · Pichincha de Potosí · Riachuelo de La Rioja · Correcaminos UAT Victoria · Punto Rojo LR · Halcones de Ciudad Obregón · Al Salam · Manama · Al Nawair · Indios de San Francisco de Macorís · Olimpia Kings · Beirut Club · Marinos",
+      "status": "retired",
+      "current_team": "Los Angeles Slam",
+      "stint_count": 35,
+      "nba_teams_shown": [
+        "Charlotte Hornets",
+        "Golden State Warriors"
+      ],
+      "teams_shown": "Sioux Falls Skyforce · Columbus Horizon · Rochester Renegade · Breogán · Pau Orthez · Fort Wayne Fury · Dinamo Sassari · Sioux Falls Skyforce · Cholet Basket · Besançon BCD · Florida Beach Dogs · CB Murcia · Vaqueros de Bayamón · Charlotte Hornets · Criollos de Caguas · Atenas de Córdoba · Oostende · Leones de Ponce · Golden State Warriors · Leones de Ponce · Iraklis Thessaloniki · Los Angeles Stars · Besançon BCD · Criollos de Caguas · Lokomotiv Kuban · Maratonistas de Coamo · Utah Snowbears · Tijuana Dragons · Galgos de Tijuana · Las Vegas Aces · Orange County Gladiators · California Beach Ballers · Newport Beach Surf · Long Beach Rockets · Los Angeles Slam",
       "career_history": [
         {
-          "years": "2018-2019",
-          "team": "Yakima Sun Kings",
-          "city": "Yakima",
+          "years": "1991–1992",
+          "team": "Sioux Falls Skyforce",
+          "city": "Sioux Falls",
           "country": "USA"
         },
         {
-          "years": "2019-2020",
-          "team": "Al Rayyan",
-          "city": "Al Rayyan",
-          "country": "Qatar"
+          "years": "1992",
+          "team": "Columbus Horizon",
+          "city": "Columbus",
+          "country": "USA"
         },
         {
-          "years": "2020",
-          "team": "Halcones de Ciudad Obregón",
-          "city": "Ciudad Obregón",
-          "country": "Mexico"
+          "years": "1992–1993",
+          "team": "Rochester Renegade",
+          "city": "Rochester",
+          "country": "USA"
         },
         {
-          "years": "2021",
-          "team": "Pichincha de Potosí",
-          "city": "Potosí",
-          "country": "Bolivia"
+          "years": "1993",
+          "team": "Breogán",
+          "city": "Lugo",
+          "country": "Spain"
         },
         {
-          "years": "2021",
-          "team": "Riachuelo de La Rioja",
-          "city": "La Rioja",
+          "years": "1993",
+          "team": "Pau Orthez",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "1993",
+          "team": "Fort Wayne Fury",
+          "city": "Fort Wayne",
+          "country": "USA"
+        },
+        {
+          "years": "1993",
+          "team": "Dinamo Sassari",
+          "city": "Sassari",
+          "country": "Italy"
+        },
+        {
+          "years": "1994",
+          "team": "Sioux Falls Skyforce",
+          "city": "Sioux Falls",
+          "country": "USA"
+        },
+        {
+          "years": "1994–1995",
+          "team": "Cholet Basket",
+          "city": "Cholet",
+          "country": "France"
+        },
+        {
+          "years": "1995–1996",
+          "team": "Besançon BCD",
+          "city": "Besançon",
+          "country": "France"
+        },
+        {
+          "years": "1996–1997",
+          "team": "Florida Beach Dogs",
+          "city": "West Palm Beach",
+          "country": "USA"
+        },
+        {
+          "years": "1997",
+          "team": "CB Murcia",
+          "city": "Murcia",
+          "country": "Spain"
+        },
+        {
+          "years": "1997",
+          "team": "Vaqueros de Bayamón",
+          "city": "Bayamón",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "1997–98",
+          "team": "Charlotte Hornets",
+          "city": "Charlotte",
+          "country": "USA"
+        },
+        {
+          "years": "1998",
+          "team": "Criollos de Caguas",
+          "city": "Caguas",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "1998–1999",
+          "team": "Atenas de Córdoba",
+          "city": "Córdoba",
           "country": "Argentina"
         },
         {
-          "years": "2022",
-          "team": "Correcaminos UAT Victoria",
-          "city": "Ciudad Victoria",
-          "country": "Mexico"
+          "years": "1999",
+          "team": "Oostende",
+          "city": "Ostend",
+          "country": "Belgium"
         },
         {
-          "years": "2022",
-          "team": "Punto Rojo LR",
-          "city": "Ibarra",
-          "country": "Ecuador"
+          "years": "1999",
+          "team": "Leones de Ponce",
+          "city": "Ponce",
+          "country": "Puerto Rico"
         },
         {
-          "years": "2022-2024",
-          "team": "Halcones de Ciudad Obregón",
-          "city": "Ciudad Obregón",
-          "country": "Mexico"
-        },
-        {
-          "years": "2023",
-          "team": "Al Salam",
-          "city": "",
-          "country": ""
-        },
-        {
-          "years": "2023",
-          "team": "Manama",
-          "city": "Manama",
-          "country": "Bahrain"
-        },
-        {
-          "years": "2023-2024",
-          "team": "Al Nawair",
-          "city": "",
-          "country": ""
-        },
-        {
-          "years": "2024",
-          "team": "Indios de San Francisco de Macorís",
+          "years": "1999–00",
+          "team": "Golden State Warriors",
           "city": "San Francisco",
           "country": "USA"
         },
         {
-          "years": "2024",
-          "team": "Olimpia Kings",
+          "years": "2000",
+          "team": "Leones de Ponce",
+          "city": "Ponce",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "2000",
+          "team": "Iraklis Thessaloniki",
+          "city": "Thessaloniki",
+          "country": "Greece"
+        },
+        {
+          "years": "2000–2001",
+          "team": "Los Angeles Stars",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        {
+          "years": "2001",
+          "team": "Besançon BCD",
+          "city": "Besançon",
+          "country": "France"
+        },
+        {
+          "years": "2001",
+          "team": "Criollos de Caguas",
+          "city": "Caguas",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "2001–2002",
+          "team": "Lokomotiv Kuban",
+          "city": "Krasnodar",
+          "country": "Russia"
+        },
+        {
+          "years": "2003",
+          "team": "Maratonistas de Coamo",
+          "city": "Coamo",
+          "country": "Puerto Rico"
+        },
+        {
+          "years": "2004–2005",
+          "team": "Utah Snowbears",
+          "city": "Indianapolis",
+          "country": "USA"
+        },
+        {
+          "years": "2005–2007",
+          "team": "Tijuana Dragons",
           "city": "",
           "country": ""
         },
         {
-          "years": "2024-2025",
-          "team": "Beirut Club",
-          "city": "Beirut",
-          "country": "Lebanon"
+          "years": "2007–2009",
+          "team": "Galgos de Tijuana",
+          "city": "Tijuana",
+          "country": "Mexico"
         },
         {
-          "years": "2025",
-          "team": "Marinos",
+          "years": "2009–2010",
+          "team": "Las Vegas Aces",
+          "city": "Paradise",
+          "country": "USA"
+        },
+        {
+          "years": "2010",
+          "team": "Orange County Gladiators",
           "city": "",
           "country": ""
+        },
+        {
+          "years": "2010–2011",
+          "team": "California Beach Ballers",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "2011",
+          "team": "Newport Beach Surf",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "2012",
+          "team": "Long Beach Rockets",
+          "city": "",
+          "country": ""
+        },
+        {
+          "years": "2012–2013",
+          "team": "Los Angeles Slam",
+          "city": "Indianapolis",
+          "country": "USA"
         }
       ],
-      "kind": "namesake_career",
-      "verdict": "THE NAMESAKE'S CAREER -- no NBA franchise appears in it, so these teams are almost certainly another person's (Mike Lynn's are the Minnesota Vikings')"
+      "kind": "frozen",
+      "verdict": "FROZEN -- the seeded NBA career survived (it is richer than the namesake's article parses to), so the page looks right, but every run re-reads the wrong article and nothing new can reach it"
     },
     {
       "player": "Tony Mitchell (1989)",
@@ -3676,7 +3932,7 @@
       "teams_shown": "Fort Wayne Mad Ants · Talk 'N Text Tropang Texters · Jilin Northeast Tigers · Fort Wayne Mad Ants · Milwaukee Bucks · Dolomiti Energia Trento · Krasny Oktyabr · Estudiantes · Dinamo Sassari · Hebei Xianglan · Hapoel Eilat · Cairns Taipans · Indios de Mayagüez · Chongqing Sanhai Lanling · Sioux Falls Skyforce · Santeros de Aguada · Chongqing Sanhai Lanling · Pallacanestro Cantù · Kleenex Pistoia · Trotamundos de Carabobo · Santeros de Aguada · AS Salé · Peñarol de Mar del Plata · TaiwanBeer HeroBears · Soles de Santo Domingo Este · Al-Muharraq · Al-Bahrain · Beirut Club · Al Ahly Benghazi · Al Ahly · Unión de Santa Fe · Al-Muharraq · Beirut Club",
       "career_history": [
         {
-          "years": "2012-2013",
+          "years": "2012–2013",
           "team": "Fort Wayne Mad Ants",
           "city": "Fort Wayne",
           "country": "USA"
@@ -3706,7 +3962,7 @@
           "country": "USA"
         },
         {
-          "years": "2014-2015",
+          "years": "2014–2015",
           "team": "Dolomiti Energia Trento",
           "city": "Trento",
           "country": "Italy"
@@ -3760,7 +4016,7 @@
           "country": "China"
         },
         {
-          "years": "2017-2018",
+          "years": "2017–2018",
           "team": "Sioux Falls Skyforce",
           "city": "Sioux Falls",
           "country": "USA"
@@ -3778,7 +4034,7 @@
           "country": "China"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Pallacanestro Cantù",
           "city": "Cantù",
           "country": "Italy"
@@ -3808,13 +4064,13 @@
           "country": "Morocco"
         },
         {
-          "years": "2020-2021",
+          "years": "2020–2021",
           "team": "Peñarol de Mar del Plata",
           "city": "Mar del Plata",
           "country": "Argentina"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "TaiwanBeer HeroBears",
           "city": "Taipei City",
           "country": "Taiwan"
@@ -3826,7 +4082,7 @@
           "country": "Dominican Republic"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Al-Muharraq",
           "city": "Muharraq",
           "country": "Bahrain"
@@ -3862,13 +4118,13 @@
           "country": "Argentina"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Al-Muharraq",
           "city": "Muharraq",
           "country": "Bahrain"
         },
         {
-          "years": "2025-2026",
+          "years": "2025–present",
           "team": "Beirut Club",
           "city": "Beirut",
           "country": "Lebanon"
@@ -3883,22 +4139,22 @@
       "stored_wikipedia_title": "Travis Williams (basketball)",
       "rejected_wikidata_id": "Q11321810",
       "status": "retired",
-      "current_team": "Pallacanestro Cantù",
+      "current_team": "Poliform Cantù",
       "stint_count": 14,
       "nba_teams_shown": [
         "Charlotte Hornets",
         "Charlotte Hornets"
       ],
-      "teams_shown": "Fort Wayne Fury · Oklahoma City Cavalry · Florida Sharks · Oklahoma City Cavalry · Deportivo Roca · Rockford Lightning · Florida Beach Dogs · Tiburones de Aguadilla · Charlotte Hornets · Quad City Thunder · Charlotte Hornets · Maratonistas de Coamo · Kombassan Konya · Pallacanestro Cantù",
+      "teams_shown": "Fort Wayne Fury · Oklahoma City Cavalry · Florida Sharks · Oklahoma City Cavalry · Deportivo Roca · Rockford Lightning · Florida Beach Dogs · Tiburones de Aguadilla · Charlotte Hornets · Quad City Thunder · Charlotte Hornets · Maratonistas de Coamo · Kombassan Konya · Poliform Cantù",
       "career_history": [
         {
-          "years": "1991-1994",
+          "years": "1991–1994",
           "team": "Fort Wayne Fury",
           "city": "Fort Wayne",
           "country": "USA"
         },
         {
-          "years": "1994-1995",
+          "years": "1994–1995",
           "team": "Oklahoma City Cavalry",
           "city": "Oklahoma City",
           "country": "USA"
@@ -3910,7 +4166,7 @@
           "country": "USA"
         },
         {
-          "years": "1995-1996",
+          "years": "1995–1996",
           "team": "Oklahoma City Cavalry",
           "city": "Oklahoma City",
           "country": "USA"
@@ -3922,7 +4178,7 @@
           "country": "Argentina"
         },
         {
-          "years": "1996-1997",
+          "years": "1996–1997",
           "team": "Rockford Lightning",
           "city": "Rockford",
           "country": "USA"
@@ -3940,13 +4196,13 @@
           "country": "Puerto Rico"
         },
         {
-          "years": "1997-1998",
+          "years": "1997–98",
           "team": "Charlotte Hornets",
           "city": "Charlotte",
           "country": "USA"
         },
         {
-          "years": "1998-1999",
+          "years": "1998–1999",
           "team": "Quad City Thunder",
           "city": "Moline",
           "country": "USA"
@@ -3964,14 +4220,14 @@
           "country": "Puerto Rico"
         },
         {
-          "years": "1999-2000",
+          "years": "1999–2000",
           "team": "Kombassan Konya",
           "city": "Konya",
           "country": "Turkey"
         },
         {
-          "years": "2000-2001",
-          "team": "Pallacanestro Cantù",
+          "years": "2000–2001",
+          "team": "Poliform Cantù",
           "city": "Cantù",
           "country": "Italy"
         }
@@ -3993,7 +4249,7 @@
       "teams_shown": "Westchester Knicks · New York Knicks · Texas Legends",
       "career_history": [
         {
-          "years": "2019-2022",
+          "years": "2019–2022",
           "team": "Westchester Knicks",
           "city": "White Plains",
           "country": "USA"
@@ -4005,7 +4261,7 @@
           "country": "USA"
         },
         {
-          "years": "2022-2024",
+          "years": "2022–2024",
           "team": "Texas Legends",
           "city": "Frisco",
           "country": "USA"
@@ -4028,13 +4284,13 @@
       "teams_shown": "New York Knicks · Westchester Knicks",
       "career_history": [
         {
-          "years": "2024-2026",
+          "years": "2024–present",
           "team": "New York Knicks",
           "city": "New York",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Westchester Knicks",
           "city": "White Plains",
           "country": "USA"
@@ -4049,40 +4305,40 @@
       "stored_wikipedia_title": "Tyler Smith",
       "rejected_wikidata_id": "Q11779483",
       "status": "nba_active",
-      "current_team": "Houston Rockets",
-      "stint_count": 8,
+      "current_team": "Dallas Mavericks",
+      "stint_count": 9,
       "nba_teams_shown": [
         "Milwaukee Bucks",
-        "Houston Rockets"
+        "Dallas Mavericks"
       ],
-      "teams_shown": "Team Elite · Cold Hearts · NBA G League Ignite · Milwaukee Bucks · Wisconsin Herd · Capital City Go-Go · Houston Rockets · Rio Grande Valley Vipers",
+      "teams_shown": "Team Elite · Cold Hearts · NBA G League Ignite · Milwaukee Bucks · Wisconsin Herd · Capital City Go-Go · Rio Grande Valley Vipers · Dallas Mavericks · Texas Legends",
       "career_history": [
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Team Elite",
           "city": "Northbrook",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "Cold Hearts",
           "city": "",
           "country": ""
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "NBA G League Ignite",
           "city": "Henderson",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–25",
           "team": "Milwaukee Bucks",
           "city": "Milwaukee",
           "country": "USA"
         },
         {
-          "years": "2024-2025",
+          "years": "2024–2025",
           "team": "Wisconsin Herd",
           "city": "Oshkosh",
           "country": "USA"
@@ -4094,15 +4350,21 @@
           "country": "USA"
         },
         {
-          "years": "2025-2026",
-          "team": "Houston Rockets",
-          "city": "Houston",
+          "years": "2025–2026",
+          "team": "Rio Grande Valley Vipers",
+          "city": "Edinburg",
           "country": "USA"
         },
         {
-          "years": "2025-2026",
-          "team": "Rio Grande Valley Vipers",
-          "city": "Edinburg",
+          "years": "2026",
+          "team": "Dallas Mavericks",
+          "city": "Dallas",
+          "country": "USA"
+        },
+        {
+          "years": "2026",
+          "team": "Texas Legends",
+          "city": "Frisco",
           "country": "USA"
         }
       ],
@@ -4114,28 +4376,28 @@
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Vince_Edwards",
       "stored_wikipedia_title": "Vince Edwards",
       "rejected_wikidata_id": "Q3815454",
-      "status": "retired",
-      "current_team": "Seoul Samsung Thunders",
-      "stint_count": 10,
+      "status": "overseas_active",
+      "current_team": "Pioneros de Los Mochis",
+      "stint_count": 11,
       "nba_teams_shown": [
         "Houston Rockets"
       ],
-      "teams_shown": "Houston Rockets · Rio Grande Valley Vipers · Oklahoma City Blue · Canton Charge · Oklahoma City Blue · Iowa Wolves · BCM Gravelines · Ironi Ness Ziona · Mitteldeutscher BC · Seoul Samsung Thunders",
+      "teams_shown": "Houston Rockets · Rio Grande Valley Vipers · Oklahoma City Blue · Canton Charge · Oklahoma City Blue · Iowa Wolves · BCM Gravelines · Ironi Ness Ziona · Mitteldeutscher BC · Seoul Samsung Thunders · Pioneros de Los Mochis",
       "career_history": [
         {
-          "years": "2018-2019",
+          "years": "2018–19",
           "team": "Houston Rockets",
           "city": "Houston",
           "country": "USA"
         },
         {
-          "years": "2018-2019",
+          "years": "2018–2019",
           "team": "Rio Grande Valley Vipers",
           "city": "Edinburg",
           "country": "USA"
         },
         {
-          "years": "2019-2020",
+          "years": "2019–2020",
           "team": "Oklahoma City Blue",
           "city": "Oklahoma City",
           "country": "USA"
@@ -4153,13 +4415,13 @@
           "country": "USA"
         },
         {
-          "years": "2021-2022",
+          "years": "2021–2022",
           "team": "Iowa Wolves",
           "city": "Des Moines",
           "country": "USA"
         },
         {
-          "years": "2022-2023",
+          "years": "2022–2023",
           "team": "BCM Gravelines",
           "city": "Gravelines",
           "country": "France"
@@ -4171,7 +4433,7 @@
           "country": "Israel"
         },
         {
-          "years": "2023-2024",
+          "years": "2023–2024",
           "team": "Mitteldeutscher BC",
           "city": "Weißenfels",
           "country": "Germany"
@@ -4181,6 +4443,12 @@
           "team": "Seoul Samsung Thunders",
           "city": "Seoul",
           "country": "South Korea"
+        },
+        {
+          "years": "2026",
+          "team": "Pioneros de Los Mochis",
+          "city": "Los Mochis",
+          "country": "Mexico"
         }
       ],
       "kind": "frozen",

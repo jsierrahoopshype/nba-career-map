@@ -1,3 +1,44 @@
+## 2026-09-26 — override run
+
+- Players updated: **201** (0 new)
+- New teams discovered: **10**
+- Team moves detected: **21**
+- Detected-but-not-new stints held back: **4**
+- Club-name pairs held for review: **0**
+- Status changes: **9** (3 → overseas, 4 → retired)
+- Wikipedia requests: 277  ✅ queue complete (201 queued)
+- New teams: A. Ranger Varese, Al-Faisaly, CB Murcia, California Beach Ballers, Carne Montana Forlì, Long Beach Rockets, Newport Beach Surf, Orange County Gladiators, Pau Orthez, Poliform Cantù
+  - Andrew Harrison: Pioneros de Los Mochis → Santos del Potosí
+  - Anthony Barber: El Calor de Cancún → Scarborough Shooting Stars
+  - Brandon Williams: Dallas Mavericks → Golden State Warriors
+  - Charlie Brown: Raptors 905 → Aquila Trento
+  - Cody Martin: Indiana Pacers → Mexico City Capitanes
+  - Daniel Hamilton: Caballeros de Culiacán → Al-Faisaly
+  - Derrick Williams: Suwon KT Sonicboom → AEK Athens
+  - George King: Guangzhou Loong Lions → San Miguel Beermen
+  - Harry Giles: Jiangsu Dragons → Beijing Royal Fighters
+  - Justin James: Álftanes → Ironi Ness Ziona
+  - Keon Johnson: Maine Celtics → Atlanta Hawks
+  - Leonard Miller: Minnesota Timberwolves → Chicago Bulls
+  - Matt Ryan: Dubai Basketball → Maxima Roma
+  - Matt Thomas: Beşiktaş → Unicaja
+  - Mike James (1990): AS Monaco → Anadolu Efes
+  - Nate Williams: Long Island Nets → Chiba Jets
+  - Nick Johnson: Saint-Quentin → Split
+  - Nick Smith: Los Angeles Lakers → Real Madrid
+  - Sean McDermott: Valley Suns → Pallacanestro Trieste
+  - Tyler Smith: Houston Rockets → Dallas Mavericks
+  - Vincent Edwards: Seoul Samsung Thunders → Pioneros de Los Mochis
+  - Charles Thomas: [overseas_active → retired]
+  - Cody Martin: [nba_active → overseas_active]
+  - Henry Walker: [overseas_active → retired]
+  - Kenny Williams: [overseas_active → retired]
+  - Keon Johnson: [overseas_active → nba_active]
+  - Malachi Smith: [retired → nba_active]
+  - Nick Smith: [nba_active → overseas_active]
+  - Tony Farmer: [overseas_active → retired]
+  - Vincent Edwards: [retired → overseas_active]
+
 ## 2026-09-26 — incremental run
 
 - Players updated: **485** (1 new)

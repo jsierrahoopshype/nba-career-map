@@ -259,11 +259,11 @@
         },
         {
           "player": "Anthony Barber",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "Atlanta Hawks",
           "status": "overseas_active",
-          "current_team": "El Calor de Cancún",
-          "current_country": "Mexico",
+          "current_team": "Scarborough Shooting Stars",
+          "current_country": "Canada",
           "nationality": "United States"
         },
         {
@@ -976,11 +976,11 @@
         },
         {
           "player": "Charlie Brown",
-          "years": "2019-2020",
+          "years": "2019–20",
           "stint_team": "Atlanta Hawks",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "current_country": "Canada",
+          "current_team": "Aquila Trento",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -1279,11 +1279,11 @@
         },
         {
           "player": "Daniel Hamilton",
-          "years": "2018-2019",
+          "years": "2018–19",
           "stint_team": "Atlanta Hawks",
           "status": "overseas_active",
-          "current_team": "Caballeros de Culiacán",
-          "current_country": "Mexico",
+          "current_team": "Al-Faisaly",
+          "current_country": "",
           "nationality": "United States"
         },
         {
@@ -3722,6 +3722,15 @@
           "stint_team": "Atlanta Hawks",
           "status": "overseas_active",
           "current_team": "Capital City Go-Go",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Keon Johnson",
+          "years": "2026–present",
+          "stint_team": "Atlanta Hawks",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -6282,8 +6291,8 @@
         {
           "player": "Anthony Barber",
           "status": "overseas_active",
-          "current_team": "El Calor de Cancún",
-          "country": "Mexico",
+          "current_team": "Scarborough Shooting Stars",
+          "country": "Canada",
           "nationality": "United States"
         },
         {
@@ -6359,8 +6368,8 @@
         {
           "player": "Charlie Brown",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "country": "Canada",
+          "current_team": "Aquila Trento",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -6401,8 +6410,8 @@
         {
           "player": "Daniel Hamilton",
           "status": "overseas_active",
-          "current_team": "Caballeros de Culiacán",
-          "country": "Mexico",
+          "current_team": "Al-Faisaly",
+          "country": "",
           "nationality": "United States"
         },
         {
@@ -6860,18 +6869,18 @@
           "nationality": "French"
         }
       ],
-      "roster_count": 682,
-      "alumni_count": 635,
+      "roster_count": 683,
+      "alumni_count": 636,
       "related": [
+        {
+          "type": "club",
+          "name": "College Park Skyhawks",
+          "shared": 28
+        },
         {
           "type": "club",
           "name": "Erie BayHawks",
           "shared": 27
-        },
-        {
-          "type": "club",
-          "name": "College Park Skyhawks",
-          "shared": 26
         },
         {
           "type": "club",
@@ -8998,9 +9007,9 @@
         },
         {
           "player": "Henry Walker",
-          "years": "2008-2010",
+          "years": "2008–2010",
           "stint_team": "Boston Celtics",
-          "status": "overseas_active",
+          "status": "retired",
           "current_team": "Gladiadores de Anzoátegui",
           "current_country": "Venezuela",
           "nationality": "United States"
@@ -10368,8 +10377,8 @@
           "years": "2022",
           "stint_team": "Boston Celtics",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "current_country": "UAE",
+          "current_team": "Maxima Roma",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -11076,7 +11085,7 @@
         },
         {
           "player": "Robert Williams",
-          "years": "2018-2023",
+          "years": "2018–2023",
           "stint_team": "Boston Celtics",
           "status": "nba_active",
           "current_team": "Portland Trail Blazers",
@@ -12139,13 +12148,6 @@
           "nationality": "French / Congolese"
         },
         {
-          "player": "Henry Walker",
-          "status": "overseas_active",
-          "current_team": "Gladiadores de Anzoátegui",
-          "country": "Venezuela",
-          "nationality": "United States"
-        },
-        {
           "player": "Isaiah Thomas",
           "status": "overseas_active",
           "current_team": "Salt Lake City Stars",
@@ -12368,8 +12370,8 @@
         {
           "player": "Matt Ryan",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "country": "UAE",
+          "current_team": "Maxima Roma",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -14405,10 +14407,10 @@
         },
         {
           "player": "Harry Giles",
-          "years": "2023-2024",
+          "years": "2023–24",
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "current_country": "China",
           "nationality": "United States"
         },
@@ -14624,7 +14626,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "Brooklyn Nets",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -15301,10 +15303,10 @@
         },
         {
           "player": "Keon Johnson",
-          "years": "2023-2025",
+          "years": "2023–2025",
           "stint_team": "Brooklyn Nets",
-          "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -15667,6 +15669,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Malachi Smith",
+          "years": "2026",
+          "stint_team": "Brooklyn Nets",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "United States"
+        },
+        {
           "player": "Malik Allen",
           "years": "2007-2008",
           "stint_team": "New Jersey Nets",
@@ -15972,8 +15983,8 @@
           "years": "2021",
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
-          "current_team": "AS Monaco",
-          "current_country": "Monaco",
+          "current_team": "Anadolu Efes",
+          "current_country": "Turkey",
           "nationality": "United States"
         },
         {
@@ -17899,7 +17910,7 @@
         {
           "player": "Harry Giles",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "country": "China",
           "nationality": "United States"
         },
@@ -18049,8 +18060,8 @@
         },
         {
           "player": "Keon Johnson",
-          "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -18108,6 +18119,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Malachi Smith",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "country": "Canada",
+          "nationality": "United States"
+        },
+        {
           "player": "Markel Brown",
           "status": "overseas_active",
           "current_team": "Napoli Basket",
@@ -18145,8 +18163,8 @@
         {
           "player": "Mike James (1990)",
           "status": "overseas_active",
-          "current_team": "AS Monaco",
-          "country": "Monaco",
+          "current_team": "Anadolu Efes",
+          "country": "Turkey",
           "nationality": "United States"
         },
         {
@@ -18430,13 +18448,13 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 557,
-      "alumni_count": 528,
+      "roster_count": 558,
+      "alumni_count": 529,
       "related": [
         {
           "type": "club",
           "name": "Long Island Nets",
-          "shared": 52
+          "shared": 53
         },
         {
           "type": "club",
@@ -18856,7 +18874,7 @@
         },
         {
           "player": "Caleb Martin",
-          "years": "2019-2021",
+          "years": "2019–2021",
           "stint_team": "Charlotte Hornets",
           "status": "nba_active",
           "current_team": "Dallas Mavericks",
@@ -18955,11 +18973,11 @@
         },
         {
           "player": "Cody Martin",
-          "years": "2019-2025",
+          "years": "2019–2025",
           "stint_team": "Charlotte Hornets",
-          "status": "nba_active",
-          "current_team": "Indiana Pacers",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Mexico City Capitanes",
+          "current_country": "Mexico",
           "nationality": "United States"
         },
         {
@@ -20572,7 +20590,7 @@
         },
         {
           "player": "Mark Williams",
-          "years": "2022-2025",
+          "years": "2022–2025",
           "stint_team": "Charlotte Hornets",
           "status": "nba_active",
           "current_team": "Phoenix Suns",
@@ -20870,11 +20888,11 @@
         },
         {
           "player": "Nick Smith",
-          "years": "2023-2025",
+          "years": "2023–2025",
           "stint_team": "Charlotte Hornets",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Real Madrid",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -21588,6 +21606,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Tony Farmer",
+          "years": "1997–98",
+          "stint_team": "Charlotte Hornets",
+          "status": "retired",
+          "current_team": "Los Angeles Slam",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Tony Massenburg",
           "years": "1991-1992",
           "stint_team": "Charlotte Hornets",
@@ -21617,10 +21644,10 @@
         },
         {
           "player": "Travis Williams",
-          "years": "1997-1998",
+          "years": "1997–98",
           "stint_team": "Charlotte Hornets",
           "status": "retired",
-          "current_team": "Pallacanestro Cantù",
+          "current_team": "Poliform Cantù",
           "current_country": "Italy",
           "nationality": "United States"
         },
@@ -21629,7 +21656,7 @@
           "years": "1999",
           "stint_team": "Charlotte Hornets",
           "status": "retired",
-          "current_team": "Pallacanestro Cantù",
+          "current_team": "Poliform Cantù",
           "current_country": "Italy",
           "nationality": "United States"
         },
@@ -21870,9 +21897,9 @@
         },
         {
           "player": "Cody Martin",
-          "status": "nba_active",
-          "current_team": "Indiana Pacers",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Mexico City Capitanes",
+          "country": "Mexico",
           "nationality": "United States"
         },
         {
@@ -22203,9 +22230,9 @@
         },
         {
           "player": "Nick Smith",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Real Madrid",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -22321,8 +22348,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 363,
-      "alumni_count": 337,
+      "roster_count": 364,
+      "alumni_count": 338,
       "related": [
         {
           "type": "club",
@@ -22332,7 +22359,7 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 24
+          "shared": 25
         },
         {
           "type": "club",
@@ -24168,7 +24195,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2009-2011",
+          "years": "2009–2011",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -24907,6 +24934,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Leonard Miller",
+          "years": "2026–present",
+          "stint_team": "Chicago Bulls",
+          "status": "nba_active",
+          "current_team": "Chicago Bulls",
+          "current_country": "USA",
+          "nationality": "Canada"
+        },
+        {
           "player": "Lindsey Hunter",
           "years": "2008-2010",
           "stint_team": "Chicago Bulls",
@@ -25191,8 +25227,8 @@
           "years": "2021–22",
           "stint_team": "Chicago Bulls",
           "status": "overseas_active",
-          "current_team": "Beşiktaş",
-          "current_country": "Turkey",
+          "current_team": "Unicaja",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -27056,8 +27092,8 @@
         {
           "player": "Matt Thomas",
           "status": "overseas_active",
-          "current_team": "Beşiktaş",
-          "country": "Turkey",
+          "current_team": "Unicaja",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -27251,13 +27287,13 @@
           "all_star_count": 2
         }
       ],
-      "roster_count": 469,
-      "alumni_count": 438,
+      "roster_count": 470,
+      "alumni_count": 439,
       "related": [
         {
           "type": "club",
           "name": "Windy City Bulls",
-          "shared": 47
+          "shared": 48
         },
         {
           "type": "club",
@@ -27443,7 +27479,7 @@
           "years": "2018",
           "stint_team": "Cleveland Cavaliers",
           "status": "overseas_active",
-          "current_team": "Pioneros de Los Mochis",
+          "current_team": "Santos del Potosí",
           "current_country": "Mexico",
           "nationality": "United States"
         },
@@ -28559,8 +28595,8 @@
           "years": "2017",
           "stint_team": "Cleveland Cavaliers",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "current_country": "South Korea",
+          "current_team": "AEK Athens",
+          "current_country": "Greece",
           "nationality": "United States"
         },
         {
@@ -29872,7 +29908,7 @@
         },
         {
           "player": "Kevin Jones",
-          "years": "2012-2013",
+          "years": "2012–13",
           "stint_team": "Cleveland Cavaliers",
           "status": "overseas_active",
           "current_team": "Sun Rockers Shibuya",
@@ -31870,7 +31906,7 @@
         {
           "player": "Andrew Harrison",
           "status": "overseas_active",
-          "current_team": "Pioneros de Los Mochis",
+          "current_team": "Santos del Potosí",
           "country": "Mexico",
           "nationality": "United States"
         },
@@ -32047,8 +32083,8 @@
         {
           "player": "Derrick Williams",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "country": "South Korea",
+          "current_team": "AEK Athens",
+          "country": "Greece",
           "nationality": "United States"
         },
         {
@@ -33007,10 +33043,10 @@
         },
         {
           "player": "Brandon Williams",
-          "years": "2023-2026",
+          "years": "2023–2026",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Golden State Warriors",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -33070,7 +33106,7 @@
         },
         {
           "player": "Caleb Martin",
-          "years": "2025-2026",
+          "years": "2025–present",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
           "current_team": "Dallas Mavericks",
@@ -33153,11 +33189,11 @@
         },
         {
           "player": "Charlie Brown",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "Dallas Mavericks",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "current_country": "Canada",
+          "current_team": "Aquila Trento",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -34019,11 +34055,11 @@
         },
         {
           "player": "George King",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "Dallas Mavericks",
           "status": "overseas_active",
-          "current_team": "Guangzhou Loong Lions",
-          "current_country": "China",
+          "current_team": "San Miguel Beermen",
+          "current_country": "Philippines",
           "nationality": "United States"
         },
         {
@@ -34333,7 +34369,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2020-2021",
+          "years": "2020–21",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -36327,6 +36363,15 @@
           "nationality": "Greek / American"
         },
         {
+          "player": "Tyler Smith",
+          "years": "2026",
+          "stint_team": "Dallas Mavericks",
+          "status": "nba_active",
+          "current_team": "Dallas Mavericks",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Tyrell Terry",
           "years": "2020–21",
           "stint_team": "Dallas Mavericks",
@@ -36612,6 +36657,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Brandon Williams",
+          "status": "nba_active",
+          "current_team": "Golden State Warriors",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Carlik Jones",
           "status": "overseas_active",
           "current_team": "Partizan",
@@ -36621,8 +36673,8 @@
         {
           "player": "Charlie Brown",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "country": "Canada",
+          "current_team": "Aquila Trento",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -36751,8 +36803,8 @@
         {
           "player": "George King",
           "status": "overseas_active",
-          "current_team": "Guangzhou Loong Lions",
-          "country": "China",
+          "current_team": "San Miguel Beermen",
+          "country": "Philippines",
           "nationality": "United States"
         },
         {
@@ -37216,13 +37268,13 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 434,
-      "alumni_count": 405,
+      "roster_count": 435,
+      "alumni_count": 406,
       "related": [
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 63
+          "shared": 64
         },
         {
           "type": "club",
@@ -37246,6 +37298,11 @@
         },
         {
           "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 11
+        },
+        {
+          "type": "club",
           "name": "Rapid City Thrillers",
           "shared": 11
         },
@@ -37253,11 +37310,6 @@
           "type": "club",
           "name": "ASVEL",
           "shared": 11
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 10
         }
       ]
     },
@@ -42797,6 +42849,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Charles Thomas",
+          "years": "1991–92",
+          "stint_team": "Detroit Pistons",
+          "status": "retired",
+          "current_team": "Adelaide 36ers",
+          "current_country": "Australia",
+          "nationality": "United States"
+        },
+        {
           "player": "Charlie Share",
           "years": "1951-1953",
           "stint_team": "Fort Wayne Pistons",
@@ -43899,7 +43960,7 @@
         },
         {
           "player": "Frank Jackson",
-          "years": "2020-2022",
+          "years": "2020–2022",
           "stint_team": "Detroit Pistons",
           "status": "overseas_active",
           "current_team": "Ningbo Rockets",
@@ -44239,7 +44300,7 @@
         },
         {
           "player": "Isaac Jones",
-          "years": "2025-2026",
+          "years": "2025–present",
           "stint_team": "Detroit Pistons",
           "status": "nba_active",
           "current_team": "Detroit Pistons",
@@ -46144,7 +46205,7 @@
         },
         {
           "player": "Paul Reed",
-          "years": "2024-2026",
+          "years": "2024–present",
           "stint_team": "Detroit Pistons",
           "status": "nba_active",
           "current_team": "Detroit Pistons",
@@ -48294,8 +48355,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 619,
-      "alumni_count": 582,
+      "roster_count": 620,
+      "alumni_count": 583,
       "related": [
         {
           "type": "club",
@@ -49030,6 +49091,15 @@
           "status": "retired",
           "current_team": "Larisa",
           "current_country": "Greece",
+          "nationality": "United States"
+        },
+        {
+          "player": "Brandon Williams",
+          "years": "2026–present",
+          "stint_team": "Golden State Warriors",
+          "status": "nba_active",
+          "current_team": "Golden State Warriors",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -52287,9 +52357,12 @@
           "years": "2026",
           "stint_team": "Golden State Warriors",
           "status": "overseas_active",
-          "current_team": "Long Island Nets",
-          "current_country": "USA",
-          "nationality": "United States"
+          "current_team": "Chiba Jets",
+          "current_country": "Japan",
+          "nationality": "United States",
+          "all_star": [
+            2025
+          ]
         },
         {
           "player": "Neil Johnston",
@@ -53538,6 +53611,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Tony Farmer",
+          "years": "1999–00",
+          "stint_team": "Golden State Warriors",
+          "status": "retired",
+          "current_team": "Los Angeles Slam",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Tony Massenburg",
           "years": "1992",
           "stint_team": "Golden State Warriors",
@@ -54244,9 +54326,12 @@
         {
           "player": "Nate Williams",
           "status": "overseas_active",
-          "current_team": "Long Island Nets",
-          "country": "USA",
-          "nationality": "United States"
+          "current_team": "Chiba Jets",
+          "country": "Japan",
+          "nationality": "United States",
+          "all_star": [
+            2025
+          ]
         },
         {
           "player": "Nemanja Nedovic",
@@ -54375,8 +54460,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 604,
-      "alumni_count": 572,
+      "roster_count": 606,
+      "alumni_count": 574,
       "related": [
         {
           "type": "club",
@@ -54396,7 +54481,7 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 16
+          "shared": 17
         },
         {
           "type": "club",
@@ -55860,7 +55945,7 @@
         },
         {
           "player": "Frank Johnson",
-          "years": "1988-1989",
+          "years": "1988–89",
           "stint_team": "Houston Rockets",
           "status": "retired",
           "current_team": "Phoenix Suns",
@@ -55907,7 +55992,7 @@
         },
         {
           "player": "Gary Clark",
-          "years": "2018-2020",
+          "years": "2018–2020",
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
           "current_team": "Yokohama B-Corsairs",
@@ -57525,12 +57610,15 @@
         },
         {
           "player": "Nate Williams",
-          "years": "2023-2025",
+          "years": "2023–2025",
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
-          "current_team": "Long Island Nets",
-          "current_country": "USA",
-          "nationality": "United States"
+          "current_team": "Chiba Jets",
+          "current_country": "Japan",
+          "nationality": "United States",
+          "all_star": [
+            2025
+          ]
         },
         {
           "player": "Nenê",
@@ -57543,11 +57631,11 @@
         },
         {
           "player": "Nick Johnson",
-          "years": "2014-2015",
+          "years": "2014–15",
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
-          "current_team": "Saint-Quentin",
-          "current_country": "France",
+          "current_team": "Split",
+          "current_country": "Croatia",
           "nationality": "United States"
         },
         {
@@ -58687,15 +58775,6 @@
           "nationality": "Canada"
         },
         {
-          "player": "Tyler Smith",
-          "years": "2025-2026",
-          "stint_team": "Houston Rockets",
-          "status": "nba_active",
-          "current_team": "Houston Rockets",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "Tyrone Britt",
           "years": "1967-1968",
           "stint_team": "San Diego Rockets",
@@ -58773,11 +58852,11 @@
         },
         {
           "player": "Vincent Edwards",
-          "years": "2018-2019",
+          "years": "2018–19",
           "stint_team": "Houston Rockets",
-          "status": "retired",
-          "current_team": "Seoul Samsung Thunders",
-          "current_country": "South Korea",
+          "status": "overseas_active",
+          "current_team": "Pioneros de Los Mochis",
+          "current_country": "Mexico",
           "nationality": "United States"
         },
         {
@@ -59377,15 +59456,18 @@
         {
           "player": "Nate Williams",
           "status": "overseas_active",
-          "current_team": "Long Island Nets",
-          "country": "USA",
-          "nationality": "United States"
+          "current_team": "Chiba Jets",
+          "country": "Japan",
+          "nationality": "United States",
+          "all_star": [
+            2025
+          ]
         },
         {
           "player": "Nick Johnson",
           "status": "overseas_active",
-          "current_team": "Saint-Quentin",
-          "country": "France",
+          "current_team": "Split",
+          "country": "Croatia",
           "nationality": "United States"
         },
         {
@@ -59510,6 +59592,13 @@
           "all_star_count": 2
         },
         {
+          "player": "Vincent Edwards",
+          "status": "overseas_active",
+          "current_team": "Pioneros de Los Mochis",
+          "country": "Mexico",
+          "nationality": "United States"
+        },
+        {
           "player": "William Howard",
           "status": "overseas_active",
           "current_team": "Granada",
@@ -59524,13 +59613,13 @@
           "nationality": "China"
         }
       ],
-      "roster_count": 489,
-      "alumni_count": 450,
+      "roster_count": 488,
+      "alumni_count": 449,
       "related": [
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 79
+          "shared": 78
         },
         {
           "type": "club",
@@ -60216,9 +60305,9 @@
           "player": "Cody Martin",
           "years": "2025",
           "stint_team": "Indiana Pacers",
-          "status": "nba_active",
-          "current_team": "Indiana Pacers",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Mexico City Capitanes",
+          "current_country": "Mexico",
           "nationality": "United States"
         },
         {
@@ -61109,7 +61198,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2022-2025",
+          "years": "2022–2025",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -61480,7 +61569,7 @@
         },
         {
           "player": "Joseph Young",
-          "years": "2015-2018",
+          "years": "2015–2018",
           "stint_team": "Indiana Pacers",
           "status": "overseas_active",
           "current_team": "Qingdao Eagles",
@@ -61603,6 +61692,15 @@
           "status": "retired",
           "current_team": "Youngstown Pride",
           "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kenny Williams",
+          "years": "1990–1994",
+          "stint_team": "Indiana Pacers",
+          "status": "retired",
+          "current_team": "Maccabi Habik'a",
+          "current_country": "Israel",
           "nationality": "United States"
         },
         {
@@ -63247,6 +63345,13 @@
           "nationality": "Dominican / Canadian"
         },
         {
+          "player": "Cody Martin",
+          "status": "overseas_active",
+          "current_team": "Mexico City Capitanes",
+          "country": "Mexico",
+          "nationality": "United States"
+        },
+        {
           "player": "Cory Joseph",
           "status": "overseas_active",
           "current_team": "Olympiacos",
@@ -63666,8 +63771,8 @@
           "all_star_count": 2
         }
       ],
-      "roster_count": 393,
-      "alumni_count": 372,
+      "roster_count": 394,
+      "alumni_count": 373,
       "related": [
         {
           "type": "club",
@@ -64014,6 +64119,15 @@
           "stint_team": "Buffalo Braves",
           "status": "retired",
           "current_team": "Chicago Bulls",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Bill Hosket",
+          "years": "1970–1972",
+          "stint_team": "Buffalo Braves",
+          "status": "retired",
+          "current_team": "Buffalo Braves",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -66398,10 +66512,10 @@
         },
         {
           "player": "Keon Johnson",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "LA Clippers",
-          "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -68992,8 +69106,8 @@
         },
         {
           "player": "Keon Johnson",
-          "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -69273,8 +69387,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 543,
-      "alumni_count": 516,
+      "roster_count": 544,
+      "alumni_count": 517,
       "related": [
         {
           "type": "club",
@@ -69541,7 +69655,7 @@
         },
         {
           "player": "Anthony Brown",
-          "years": "2015-2016",
+          "years": "2015–16",
           "stint_team": "Los Angeles Lakers",
           "status": "overseas_active",
           "current_team": "Beşiktaş",
@@ -70626,8 +70740,8 @@
           "years": "2018",
           "stint_team": "Los Angeles Lakers",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "current_country": "South Korea",
+          "current_team": "AEK Athens",
+          "current_country": "Greece",
           "nationality": "United States"
         },
         {
@@ -71281,7 +71395,7 @@
           "years": "2024",
           "stint_team": "Los Angeles Lakers",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "current_country": "China",
           "nationality": "United States"
         },
@@ -72814,8 +72928,8 @@
           "years": "2022",
           "stint_team": "Los Angeles Lakers",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "current_country": "UAE",
+          "current_team": "Maxima Roma",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -73112,11 +73226,11 @@
         },
         {
           "player": "Nick Smith",
-          "years": "2025-2026",
+          "years": "2025–26",
           "stint_team": "Los Angeles Lakers",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Real Madrid",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -74676,8 +74790,8 @@
         {
           "player": "Derrick Williams",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "country": "South Korea",
+          "current_team": "AEK Athens",
+          "country": "Greece",
           "nationality": "United States"
         },
         {
@@ -74753,7 +74867,7 @@
         {
           "player": "Harry Giles",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "country": "China",
           "nationality": "United States"
         },
@@ -74990,8 +75104,8 @@
         {
           "player": "Matt Ryan",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "country": "UAE",
+          "current_team": "Maxima Roma",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -75035,6 +75149,13 @@
           "current_team": "Brooklyn Nets",
           "country": "USA",
           "nationality": "Germany"
+        },
+        {
+          "player": "Nick Smith",
+          "status": "overseas_active",
+          "current_team": "Real Madrid",
+          "country": "Spain",
+          "nationality": "United States"
         },
         {
           "player": "Nigel Hayes",
@@ -75363,10 +75484,10 @@
         },
         {
           "player": "Andrew Harrison",
-          "years": "2016-2018",
+          "years": "2016–2018",
           "stint_team": "Memphis Grizzlies",
           "status": "overseas_active",
-          "current_team": "Pioneros de Los Mochis",
+          "current_team": "Santos del Potosí",
           "current_country": "Mexico",
           "nationality": "United States"
         },
@@ -76557,7 +76678,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2013-2014",
+          "years": "2013–14",
           "stint_team": "Memphis Grizzlies",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -76839,7 +76960,7 @@
         },
         {
           "player": "Jordan Adams",
-          "years": "2014-2016",
+          "years": "2014–2016",
           "stint_team": "Memphis Grizzlies",
           "status": "overseas_active",
           "current_team": "Dewa United Banten",
@@ -77756,8 +77877,8 @@
           "years": "2020–21",
           "stint_team": "Memphis Grizzlies",
           "status": "overseas_active",
-          "current_team": "Valley Suns",
-          "current_country": "USA",
+          "current_team": "Pallacanestro Trieste",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -78335,7 +78456,7 @@
         {
           "player": "Andrew Harrison",
           "status": "overseas_active",
-          "current_team": "Pioneros de Los Mochis",
+          "current_team": "Santos del Potosí",
           "country": "Mexico",
           "nationality": "United States"
         },
@@ -78837,8 +78958,8 @@
         {
           "player": "Sean McDermott",
           "status": "overseas_active",
-          "current_team": "Valley Suns",
-          "country": "USA",
+          "current_team": "Pallacanestro Trieste",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -79064,7 +79185,7 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Raptors 905",
           "shared": 13
         }
       ]
@@ -79411,7 +79532,7 @@
         },
         {
           "player": "Caleb Martin",
-          "years": "2021-2024",
+          "years": "2021–2024",
           "stint_team": "Miami Heat",
           "status": "nba_active",
           "current_team": "Dallas Mavericks",
@@ -79689,11 +79810,11 @@
         },
         {
           "player": "Derrick Williams",
-          "years": "2016-2017",
+          "years": "2016–17",
           "stint_team": "Miami Heat",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "current_country": "South Korea",
+          "current_team": "AEK Athens",
+          "current_country": "Greece",
           "nationality": "United States"
         },
         {
@@ -80060,7 +80181,7 @@
           "player": "Henry Walker",
           "years": "2015",
           "stint_team": "Miami Heat",
-          "status": "overseas_active",
+          "status": "retired",
           "current_team": "Gladiadores de Anzoátegui",
           "current_country": "Venezuela",
           "nationality": "United States"
@@ -80186,7 +80307,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2016-2020",
+          "years": "2016–2020",
           "stint_team": "Miami Heat",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -82182,8 +82303,8 @@
         {
           "player": "Derrick Williams",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "country": "South Korea",
+          "current_team": "AEK Athens",
+          "country": "Greece",
           "nationality": "United States"
         },
         {
@@ -82219,13 +82340,6 @@
           "status": "nba_active",
           "current_team": "Phoenix Suns",
           "country": "USA",
-          "nationality": "United States"
-        },
-        {
-          "player": "Henry Walker",
-          "status": "overseas_active",
-          "current_team": "Gladiadores de Anzoátegui",
-          "country": "Venezuela",
           "nationality": "United States"
         },
         {
@@ -87064,7 +87178,7 @@
           "status": "overseas_active",
           "current_team": "Beirut Club",
           "current_country": "Lebanon",
-          "nationality": "United States"
+          "nationality": "Libyan / American"
         },
         {
           "player": "Tony Smith",
@@ -87133,10 +87247,10 @@
         },
         {
           "player": "Tyler Smith",
-          "years": "2024-2025",
+          "years": "2024–25",
           "stint_team": "Milwaukee Bucks",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Dallas Mavericks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -87831,7 +87945,7 @@
           "status": "overseas_active",
           "current_team": "Beirut Club",
           "country": "Lebanon",
-          "nationality": "United States"
+          "nationality": "Libyan / American"
         },
         {
           "player": "Tony Snell",
@@ -87871,7 +87985,7 @@
         {
           "player": "Tyler Smith",
           "status": "nba_active",
-          "current_team": "Houston Rockets",
+          "current_team": "Dallas Mavericks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -87909,7 +88023,7 @@
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 16
+          "shared": 17
         },
         {
           "type": "club",
@@ -88099,7 +88213,7 @@
         },
         {
           "player": "Anthony Brown",
-          "years": "2017-2018",
+          "years": "2017–18",
           "stint_team": "Minnesota Timberwolves",
           "status": "overseas_active",
           "current_team": "Beşiktaş",
@@ -88117,12 +88231,13 @@
         },
         {
           "player": "Anthony Edwards",
-          "years": "2020-2026",
+          "years": "2020–present",
           "stint_team": "Minnesota Timberwolves",
           "status": "nba_active",
           "current_team": "Minnesota Timberwolves",
           "current_country": "USA",
           "nationality": "United States",
+          "all_star": true,
           "all_star_count": 4
         },
         {
@@ -88720,11 +88835,11 @@
         },
         {
           "player": "Derrick Williams",
-          "years": "2011-2013",
+          "years": "2011–2013",
           "stint_team": "Minnesota Timberwolves",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "current_country": "South Korea",
+          "current_team": "AEK Athens",
+          "current_country": "Greece",
           "nationality": "United States"
         },
         {
@@ -89634,10 +89749,10 @@
         },
         {
           "player": "Leonard Miller",
-          "years": "2023-2026",
+          "years": "2023–2026",
           "stint_team": "Minnesota Timberwolves",
           "status": "nba_active",
-          "current_team": "Minnesota Timberwolves",
+          "current_team": "Chicago Bulls",
           "current_country": "USA",
           "nationality": "Canada"
         },
@@ -89842,11 +89957,11 @@
         },
         {
           "player": "Matt Ryan",
-          "years": "2022-2023",
+          "years": "2022–23",
           "stint_team": "Minnesota Timberwolves",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "current_country": "UAE",
+          "current_team": "Maxima Roma",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -91085,8 +91200,8 @@
         {
           "player": "Derrick Williams",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "country": "South Korea",
+          "current_team": "AEK Athens",
+          "country": "Greece",
           "nationality": "United States"
         },
         {
@@ -91301,6 +91416,13 @@
           "nationality": "Argentine / Italian"
         },
         {
+          "player": "Leonard Miller",
+          "status": "nba_active",
+          "current_team": "Chicago Bulls",
+          "country": "USA",
+          "nationality": "Canada"
+        },
+        {
           "player": "Lorenzo Brown",
           "status": "overseas_active",
           "current_team": "Olimpia Milano",
@@ -91331,8 +91453,8 @@
         {
           "player": "Matt Ryan",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "country": "UAE",
+          "current_team": "Maxima Roma",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -91646,10 +91768,10 @@
         },
         {
           "player": "Andrew Harrison",
-          "years": "2018-2019",
+          "years": "2018–19",
           "stint_team": "New Orleans Pelicans",
           "status": "overseas_active",
-          "current_team": "Pioneros de Los Mochis",
+          "current_team": "Santos del Potosí",
           "current_country": "Mexico",
           "nationality": "United States"
         },
@@ -92426,7 +92548,7 @@
         },
         {
           "player": "Frank Jackson",
-          "years": "2017-2020",
+          "years": "2017–2020",
           "stint_team": "New Orleans Pelicans",
           "status": "overseas_active",
           "current_team": "Ningbo Rockets",
@@ -92453,7 +92575,7 @@
         },
         {
           "player": "Gary Clark",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "New Orleans Pelicans",
           "status": "overseas_active",
           "current_team": "Yokohama B-Corsairs",
@@ -93387,11 +93509,11 @@
         },
         {
           "player": "Matt Ryan",
-          "years": "2023-2024",
+          "years": "2023–24",
           "stint_team": "New Orleans Pelicans",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "current_country": "UAE",
+          "current_team": "Maxima Roma",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -93444,8 +93566,8 @@
           "years": "2018",
           "stint_team": "New Orleans Pelicans",
           "status": "overseas_active",
-          "current_team": "AS Monaco",
-          "current_country": "Monaco",
+          "current_team": "Anadolu Efes",
+          "current_country": "Turkey",
           "nationality": "United States"
         },
         {
@@ -94138,7 +94260,7 @@
         {
           "player": "Andrew Harrison",
           "status": "overseas_active",
-          "current_team": "Pioneros de Los Mochis",
+          "current_team": "Santos del Potosí",
           "country": "Mexico",
           "nationality": "United States"
         },
@@ -94654,15 +94776,15 @@
         {
           "player": "Matt Ryan",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "country": "UAE",
+          "current_team": "Maxima Roma",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
           "player": "Mike James (1990)",
           "status": "overseas_active",
-          "current_team": "AS Monaco",
-          "country": "Monaco",
+          "current_team": "Anadolu Efes",
+          "country": "Turkey",
           "nationality": "United States"
         },
         {
@@ -95280,6 +95402,15 @@
           "all_star_count": 1
         },
         {
+          "player": "Bill Hosket",
+          "years": "1968–1970",
+          "stint_team": "New York Knicks",
+          "status": "retired",
+          "current_team": "Buffalo Braves",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Bill Martin",
           "years": "1987",
           "stint_team": "New York Knicks",
@@ -95723,11 +95854,11 @@
         },
         {
           "player": "Charlie Brown",
-          "years": "2023-2024",
+          "years": "2023–24",
           "stint_team": "New York Knicks",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "current_country": "Canada",
+          "current_team": "Aquila Trento",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -96244,11 +96375,11 @@
         },
         {
           "player": "Derrick Williams",
-          "years": "2015-2016",
+          "years": "2015–16",
           "stint_team": "New York Knicks",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "current_country": "South Korea",
+          "current_team": "AEK Athens",
+          "current_country": "Greece",
           "nationality": "United States"
         },
         {
@@ -97112,9 +97243,9 @@
         },
         {
           "player": "Henry Walker",
-          "years": "2010-2012",
+          "years": "2010–2012",
           "stint_team": "New York Knicks",
-          "status": "overseas_active",
+          "status": "retired",
           "current_team": "Gladiadores de Anzoátegui",
           "current_country": "Venezuela",
           "nationality": "United States"
@@ -98532,11 +98663,11 @@
         },
         {
           "player": "Matt Ryan",
-          "years": "2024-2025",
+          "years": "2024–25",
           "stint_team": "New York Knicks",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "current_country": "UAE",
+          "current_team": "Maxima Roma",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -100192,7 +100323,7 @@
         },
         {
           "player": "Tyler Kolek",
-          "years": "2024-2026",
+          "years": "2024–present",
           "stint_team": "New York Knicks",
           "status": "nba_active",
           "current_team": "New York Knicks",
@@ -100469,8 +100600,8 @@
         {
           "player": "Charlie Brown",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "country": "Canada",
+          "current_team": "Aquila Trento",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -100520,8 +100651,8 @@
         {
           "player": "Derrick Williams",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "country": "South Korea",
+          "current_team": "AEK Athens",
+          "country": "Greece",
           "nationality": "United States"
         },
         {
@@ -100613,13 +100744,6 @@
           "status": "overseas_active",
           "current_team": "Wonju DB Promy",
           "country": "South Korea",
-          "nationality": "United States"
-        },
-        {
-          "player": "Henry Walker",
-          "status": "overseas_active",
-          "current_team": "Gladiadores de Anzoátegui",
-          "country": "Venezuela",
           "nationality": "United States"
         },
         {
@@ -100797,8 +100921,8 @@
         {
           "player": "Matt Ryan",
           "status": "overseas_active",
-          "current_team": "Dubai Basketball",
-          "country": "UAE",
+          "current_team": "Maxima Roma",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -100977,8 +101101,8 @@
           "nationality": "Spain"
         }
       ],
-      "roster_count": 603,
-      "alumni_count": 567,
+      "roster_count": 604,
+      "alumni_count": 568,
       "related": [
         {
           "type": "club",
@@ -101647,8 +101771,8 @@
           "years": "2021",
           "stint_team": "Oklahoma City Thunder",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "current_country": "Canada",
+          "current_team": "Aquila Trento",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -101858,11 +101982,11 @@
         },
         {
           "player": "Daniel Hamilton",
-          "years": "2017-2018",
+          "years": "2017–18",
           "stint_team": "Oklahoma City Thunder",
           "status": "overseas_active",
-          "current_team": "Caballeros de Culiacán",
-          "current_country": "Mexico",
+          "current_team": "Al-Faisaly",
+          "current_country": "",
           "nationality": "United States"
         },
         {
@@ -105095,8 +105219,8 @@
         {
           "player": "Charlie Brown",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "country": "Canada",
+          "current_team": "Aquila Trento",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -105116,8 +105240,8 @@
         {
           "player": "Daniel Hamilton",
           "status": "overseas_active",
-          "current_team": "Caballeros de Culiacán",
-          "country": "Mexico",
+          "current_team": "Al-Faisaly",
+          "country": "",
           "nationality": "United States"
         },
         {
@@ -106664,7 +106788,7 @@
         },
         {
           "player": "Gary Clark",
-          "years": "2020-2021",
+          "years": "2020–2021",
           "stint_team": "Orlando Magic",
           "status": "overseas_active",
           "current_team": "Yokohama B-Corsairs",
@@ -109934,7 +110058,7 @@
         },
         {
           "player": "Caleb Martin",
-          "years": "2024-2025",
+          "years": "2024–25",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
           "current_team": "Dallas Mavericks",
@@ -110055,8 +110179,8 @@
           "years": "2022",
           "stint_team": "Philadelphia 76ers",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "current_country": "Canada",
+          "current_team": "Aquila Trento",
+          "current_country": "Italy",
           "nationality": "United States"
         },
         {
@@ -111758,7 +111882,7 @@
         },
         {
           "player": "James Anderson",
-          "years": "2013-2014",
+          "years": "2013–14",
           "stint_team": "Philadelphia 76ers",
           "status": "overseas_active",
           "current_team": "Al-Ula",
@@ -112433,7 +112557,7 @@
         },
         {
           "player": "Justin Edwards",
-          "years": "2024-2026",
+          "years": "2024–present",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
           "current_team": "Philadelphia 76ers",
@@ -113692,7 +113816,7 @@
         },
         {
           "player": "Paul Reed",
-          "years": "2020-2024",
+          "years": "2020–2024",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
           "current_team": "Detroit Pistons",
@@ -115173,8 +115297,8 @@
         {
           "player": "Charlie Brown",
           "status": "overseas_active",
-          "current_team": "Raptors 905",
-          "country": "Canada",
+          "current_team": "Aquila Trento",
+          "country": "Italy",
           "nationality": "United States"
         },
         {
@@ -116652,9 +116776,9 @@
           "player": "Cody Martin",
           "years": "2025",
           "stint_team": "Phoenix Suns",
-          "status": "nba_active",
-          "current_team": "Indiana Pacers",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Mexico City Capitanes",
+          "current_country": "Mexico",
           "nationality": "United States"
         },
         {
@@ -117362,7 +117486,7 @@
         },
         {
           "player": "Frank Johnson",
-          "years": "1992-1994",
+          "years": "1992–1994",
           "stint_team": "Phoenix Suns",
           "status": "retired",
           "current_team": "Phoenix Suns",
@@ -117462,11 +117586,11 @@
         },
         {
           "player": "George King",
-          "years": "2018-2019",
+          "years": "2018–19",
           "stint_team": "Phoenix Suns",
           "status": "overseas_active",
-          "current_team": "Guangzhou Loong Lions",
-          "current_country": "China",
+          "current_team": "San Miguel Beermen",
+          "current_country": "Philippines",
           "nationality": "United States"
         },
         {
@@ -118801,7 +118925,7 @@
         },
         {
           "player": "Mark Williams",
-          "years": "2025-2026",
+          "years": "2025–present",
           "stint_team": "Phoenix Suns",
           "status": "nba_active",
           "current_team": "Phoenix Suns",
@@ -119014,8 +119138,8 @@
           "years": "2017",
           "stint_team": "Phoenix Suns",
           "status": "overseas_active",
-          "current_team": "AS Monaco",
-          "current_country": "Monaco",
+          "current_team": "Anadolu Efes",
+          "current_country": "Turkey",
           "nationality": "United States"
         },
         {
@@ -120530,9 +120654,9 @@
         },
         {
           "player": "Cody Martin",
-          "status": "nba_active",
-          "current_team": "Indiana Pacers",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Mexico City Capitanes",
+          "country": "Mexico",
           "nationality": "United States"
         },
         {
@@ -120671,8 +120795,8 @@
         {
           "player": "George King",
           "status": "overseas_active",
-          "current_team": "Guangzhou Loong Lions",
-          "country": "China",
+          "current_team": "San Miguel Beermen",
+          "country": "Philippines",
           "nationality": "United States"
         },
         {
@@ -120899,8 +121023,8 @@
         {
           "player": "Mike James (1990)",
           "status": "overseas_active",
-          "current_team": "AS Monaco",
-          "country": "Monaco",
+          "current_team": "Anadolu Efes",
+          "country": "Turkey",
           "nationality": "United States"
         },
         {
@@ -121488,10 +121612,10 @@
         },
         {
           "player": "Brandon Williams",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "Portland Trail Blazers",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Golden State Warriors",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -122596,10 +122720,10 @@
         },
         {
           "player": "Harry Giles",
-          "years": "2020-2021",
+          "years": "2020–21",
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "current_country": "China",
           "nationality": "United States"
         },
@@ -123290,10 +123414,10 @@
         },
         {
           "player": "Keon Johnson",
-          "years": "2022-2023",
+          "years": "2022–2023",
           "stint_team": "Portland Trail Blazers",
-          "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -123797,9 +123921,12 @@
           "years": "2023",
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
-          "current_team": "Long Island Nets",
-          "current_country": "USA",
-          "nationality": "United States"
+          "current_team": "Chiba Jets",
+          "current_country": "Japan",
+          "nationality": "United States",
+          "all_star": [
+            2025
+          ]
         },
         {
           "player": "Negele Knight",
@@ -124132,7 +124259,7 @@
         },
         {
           "player": "Robert Williams",
-          "years": "2023-2026",
+          "years": "2023–present",
           "stint_team": "Portland Trail Blazers",
           "status": "nba_active",
           "current_team": "Portland Trail Blazers",
@@ -125111,7 +125238,7 @@
         {
           "player": "Brandon Williams",
           "status": "nba_active",
-          "current_team": "Dallas Mavericks",
+          "current_team": "Golden State Warriors",
           "country": "USA",
           "nationality": "United States"
         },
@@ -125251,7 +125378,7 @@
         {
           "player": "Harry Giles",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "country": "China",
           "nationality": "United States"
         },
@@ -125390,8 +125517,8 @@
         },
         {
           "player": "Keon Johnson",
-          "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "status": "nba_active",
+          "current_team": "Atlanta Hawks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -125475,9 +125602,12 @@
         {
           "player": "Nate Williams",
           "status": "overseas_active",
-          "current_team": "Long Island Nets",
-          "country": "USA",
-          "nationality": "United States"
+          "current_team": "Chiba Jets",
+          "country": "Japan",
+          "nationality": "United States",
+          "all_star": [
+            2025
+          ]
         },
         {
           "player": "Noah Vonleh",
@@ -127158,11 +127288,11 @@
         },
         {
           "player": "Derrick Williams",
-          "years": "2013-2015",
+          "years": "2013–2015",
           "stint_team": "Sacramento Kings",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "current_country": "South Korea",
+          "current_team": "AEK Athens",
+          "current_country": "Greece",
           "nationality": "United States"
         },
         {
@@ -127868,10 +127998,10 @@
         },
         {
           "player": "Harry Giles",
-          "years": "2017-2020",
+          "years": "2017–2020",
           "stint_team": "Sacramento Kings",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "current_country": "China",
           "nationality": "United States"
         },
@@ -128003,7 +128133,7 @@
         },
         {
           "player": "Isaac Jones",
-          "years": "2024-2025",
+          "years": "2024–25",
           "stint_team": "Sacramento Kings",
           "status": "nba_active",
           "current_team": "Detroit Pistons",
@@ -128205,7 +128335,7 @@
         },
         {
           "player": "James Anderson",
-          "years": "2015-2016",
+          "years": "2015–16",
           "stint_team": "Sacramento Kings",
           "status": "overseas_active",
           "current_team": "Al-Ula",
@@ -128214,7 +128344,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2012-2013",
+          "years": "2012–13",
           "stint_team": "Sacramento Kings",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -128724,11 +128854,11 @@
         },
         {
           "player": "Justin James",
-          "years": "2019-2021",
+          "years": "2019–2021",
           "stint_team": "Sacramento Kings",
           "status": "overseas_active",
-          "current_team": "Álftanes",
-          "current_country": "Iceland",
+          "current_team": "Ironi Ness Ziona",
+          "current_country": "Israel",
           "nationality": "United States"
         },
         {
@@ -131397,8 +131527,8 @@
         {
           "player": "Derrick Williams",
           "status": "overseas_active",
-          "current_team": "Suwon KT Sonicboom",
-          "country": "South Korea",
+          "current_team": "AEK Athens",
+          "country": "Greece",
           "nationality": "United States"
         },
         {
@@ -131488,7 +131618,7 @@
         {
           "player": "Harry Giles",
           "status": "overseas_active",
-          "current_team": "Jiangsu Dragons",
+          "current_team": "Beijing Royal Fighters",
           "country": "China",
           "nationality": "United States"
         },
@@ -131644,8 +131774,8 @@
         {
           "player": "Justin James",
           "status": "overseas_active",
-          "current_team": "Álftanes",
-          "country": "Iceland",
+          "current_team": "Ironi Ness Ziona",
+          "country": "Israel",
           "nationality": "United States"
         },
         {
@@ -133679,7 +133809,7 @@
         },
         {
           "player": "James Anderson",
-          "years": "2010-2012",
+          "years": "2010–2012",
           "stint_team": "San Antonio Spurs",
           "status": "overseas_active",
           "current_team": "Al-Ula",
@@ -137607,7 +137737,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2011-2012",
+          "years": "2011–2012",
           "stint_team": "Toronto Raptors",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -137616,7 +137746,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2014-2016",
+          "years": "2014–2016",
           "stint_team": "Toronto Raptors",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -138290,8 +138420,17 @@
           "nationality": "United States"
         },
         {
+          "player": "Malachi Smith",
+          "years": "2026–present",
+          "stint_team": "Toronto Raptors",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada",
+          "nationality": "United States"
+        },
+        {
           "player": "Malcolm Miller",
-          "years": "2017-2020",
+          "years": "2017–2020",
           "stint_team": "Toronto Raptors",
           "status": "overseas_active",
           "current_team": "Taoyuan Taiwan Beer Leopards",
@@ -138413,8 +138552,8 @@
           "years": "2019–2021",
           "stint_team": "Toronto Raptors",
           "status": "overseas_active",
-          "current_team": "Beşiktaş",
-          "current_country": "Turkey",
+          "current_team": "Unicaja",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -139792,8 +139931,8 @@
         {
           "player": "Matt Thomas",
           "status": "overseas_active",
-          "current_team": "Beşiktaş",
-          "country": "Turkey",
+          "current_team": "Unicaja",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -139983,13 +140122,13 @@
           "nationality": "Japan"
         }
       ],
-      "roster_count": 327,
-      "alumni_count": 313,
+      "roster_count": 328,
+      "alumni_count": 314,
       "related": [
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 58
+          "shared": 59
         },
         {
           "type": "club",
@@ -140023,7 +140162,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Wisconsin Herd",
           "shared": 12
         }
       ]
@@ -142422,8 +142561,8 @@
           "years": "2021",
           "stint_team": "Utah Jazz",
           "status": "overseas_active",
-          "current_team": "Beşiktaş",
-          "current_country": "Turkey",
+          "current_team": "Unicaja",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -144069,8 +144208,8 @@
         {
           "player": "Matt Thomas",
           "status": "overseas_active",
-          "current_team": "Beşiktaş",
-          "country": "Turkey",
+          "current_team": "Unicaja",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -146541,7 +146680,7 @@
         },
         {
           "player": "Frank Johnson",
-          "years": "1981-1988",
+          "years": "1981–1988",
           "stint_team": "Washington Bullets",
           "status": "retired",
           "current_team": "Phoenix Suns",
