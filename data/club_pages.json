@@ -1535,7 +1535,7 @@
         },
         {
           "player": "Juan Toscano-Anderson",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Pallacanestro Trieste",
           "nationality": "Mexican / American"
@@ -4162,7 +4162,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2021–2022, 2023",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -12771,8 +12771,8 @@
         {
           "player": "Leaky Black",
           "years": "2023–2024",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -13243,7 +13243,7 @@
           "player": "Lorenzo Brown",
           "years": "2013–2014",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -20133,7 +20133,7 @@
           "player": "Lorenzo Brown",
           "years": "2022–2024",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -20480,12 +20480,12 @@
         },
         {
           "type": "club",
-          "name": "Žalgiris",
+          "name": "Hapoel Jerusalem",
           "shared": 9
         },
         {
           "type": "club",
-          "name": "UNICS",
+          "name": "Žalgiris",
           "shared": 9
         }
       ]
@@ -22221,7 +22221,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2018–2019",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -28685,7 +28685,7 @@
           "player": "Lorenzo Brown",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -28890,13 +28890,13 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Hapoel Jerusalem",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 5
+          "name": "AEK Athens",
+          "shared": 6
         }
       ]
     },
@@ -29269,7 +29269,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2024",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -30873,7 +30873,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 63,
+      "count": 64,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -31156,6 +31156,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Leaky Black",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
+          "nationality": "United States"
+        },
+        {
           "player": "Louis King",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -31325,6 +31332,11 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Crvena Zvezda",
           "shared": 7
         },
@@ -31341,11 +31353,6 @@
         {
           "type": "club",
           "name": "South Bay Lakers",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
           "shared": 6
         },
         {
@@ -33575,7 +33582,7 @@
           "player": "Dominique Jones",
           "years": "2013",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -33631,7 +33638,7 @@
           "player": "Lorenzo Brown",
           "years": "2013, 2014",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -36708,7 +36715,7 @@
           "player": "Lorenzo Brown",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -38396,9 +38403,9 @@
         },
         {
           "player": "Kira Lewis",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "last_team": "Memphis Hustle",
           "nationality": "United States"
         },
         {
@@ -39046,7 +39053,7 @@
           "player": "Kira Lewis",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "last_team": "Memphis Hustle",
           "nationality": "United States"
         },
         {
@@ -39066,8 +39073,8 @@
         {
           "player": "Leaky Black",
           "years": "2024–2026, 2026",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -39246,17 +39253,17 @@
         },
         {
           "type": "club",
+          "name": "Stockton Kings",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 6
         },
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
           "shared": 6
         }
       ]
@@ -41301,7 +41308,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2019",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -41358,7 +41365,7 @@
           "player": "Lorenzo Brown",
           "years": "2014–2015, 2015–2016, 2016, 2017",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -42073,7 +42080,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2019",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -43969,7 +43976,7 @@
           "player": "Lorenzo Brown",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -46254,8 +46261,8 @@
         {
           "player": "BJ Boston",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Fenerbahçe",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -46542,7 +46549,7 @@
           "player": "Lorenzo Brown",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -48796,7 +48803,7 @@
       "city": "Memphis",
       "state": "Tennessee",
       "country": "USA",
-      "count": 84,
+      "count": 85,
       "roster": [
         {
           "player": "Ahmad Caver",
@@ -49127,6 +49134,13 @@
           "nationality": "France"
         },
         {
+          "player": "Kira Lewis",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Memphis Hustle",
+          "nationality": "United States"
+        },
+        {
           "player": "Kobi Simmons",
           "years": "2017–2018",
           "status": "overseas_active",
@@ -49389,7 +49403,7 @@
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 15
+          "shared": 16
         },
         {
           "type": "club",
@@ -49418,12 +49432,12 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Capital City Go-Go",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Iowa Energy",
+          "name": "Stockton Kings",
           "shared": 6
         }
       ]
@@ -52610,7 +52624,7 @@
           "player": "Dominique Jones",
           "years": "2010, 2012",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -53652,7 +53666,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2017–2018",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -54518,7 +54532,7 @@
           "player": "Kira Lewis",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "last_team": "Memphis Hustle",
           "nationality": "United States"
         },
         {
@@ -54546,7 +54560,7 @@
           "player": "Lorenzo Brown",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -54796,7 +54810,7 @@
         {
           "type": "club",
           "name": "Memphis Hustle",
-          "shared": 15
+          "shared": 16
         },
         {
           "type": "club",
@@ -57376,7 +57390,7 @@
           "player": "Dominique Jones",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -64843,7 +64857,7 @@
           "player": "Dominique Jones",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -67513,7 +67527,7 @@
           "player": "Lorenzo Brown",
           "years": "2025–present",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -79531,7 +79545,7 @@
           "player": "Lorenzo Brown",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -84715,7 +84729,7 @@
           "player": "Dominique Jones",
           "years": "2013–2014",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -93111,7 +93125,7 @@
       "city": "Jerusalem",
       "state": "",
       "country": "Israel",
-      "count": 76,
+      "count": 77,
       "roster": [
         {
           "player": "Amare Stoudemire",
@@ -93437,6 +93451,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Lorenzo Brown",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Hapoel Jerusalem",
+          "nationality": "American / Spanish"
+        },
+        {
           "player": "Luke Jackson",
           "years": "2011",
           "status": "retired",
@@ -93657,7 +93678,12 @@
         {
           "type": "club",
           "name": "Maccabi Tel Aviv",
-          "shared": 8
+          "shared": 9
+        },
+        {
+          "type": "club",
+          "name": "Fenerbahçe",
+          "shared": 6
         },
         {
           "type": "club",
@@ -93671,23 +93697,18 @@
         },
         {
           "type": "club",
+          "name": "Crvena Zvezda",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Beşiktaş",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Dinamo Sassari",
+          "name": "UNICS",
           "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Enel Brindisi",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 5
         }
       ]
     },
@@ -94556,7 +94577,7 @@
       "city": "Grand Rapids",
       "state": "Michigan",
       "country": "USA",
-      "count": 43,
+      "count": 44,
       "roster": [
         {
           "player": "Amida Brimah",
@@ -94634,6 +94655,12 @@
           "status": "overseas_active",
           "last_team": "Grand Rapids Gold",
           "nationality": "Canada"
+        },
+        {
+          "player": "Gabe McGlothan",
+          "years": "2024–2025",
+          "status": "nba_active",
+          "last_team": "Boston Celtics"
         },
         {
           "player": "Hunter Tyson",
@@ -99337,7 +99364,7 @@
           "player": "Lorenzo Brown",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Olimpia Milano",
+          "last_team": "Hapoel Jerusalem",
           "nationality": "American / Spanish"
         },
         {
@@ -125944,7 +125971,7 @@
           "player": "Dominique Jones",
           "years": "2017",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -129409,7 +129436,7 @@
           "player": "Dominique Jones",
           "years": "2015",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -144615,7 +144642,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2022–2023",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -146804,8 +146831,8 @@
         {
           "player": "BJ Boston",
           "years": "2021–2024",
-          "status": "overseas_active",
-          "last_team": "Fenerbahçe",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -152931,7 +152958,7 @@
           "player": "Dominique Jones",
           "years": "2015",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -162207,7 +162234,7 @@
           "player": "Kira Lewis",
           "years": "2022–2024",
           "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "last_team": "Memphis Hustle",
           "nationality": "United States"
         },
         {
@@ -164950,7 +164977,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2023–2024, 2025–2026",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
@@ -165207,7 +165234,7 @@
           "player": "Dominique Jones",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -166341,7 +166368,7 @@
           "player": "Dominique Jones",
           "years": "2014–2015, 2018–2023, 2024–2025",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -183372,7 +183399,7 @@
           "player": "Dominique Jones",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -184290,7 +184317,7 @@
       "city": "Noblesville",
       "state": "Indiana",
       "country": "USA",
-      "count": 12,
+      "count": 13,
       "roster": [
         {
           "player": "Braden Smith",
@@ -184318,6 +184345,12 @@
           "status": "overseas_active",
           "last_team": "Partizan",
           "nationality": "Puerto Rican"
+        },
+        {
+          "player": "Gabe McGlothan",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Boston Celtics"
         },
         {
           "player": "Jalen Slawson",
@@ -188502,7 +188535,7 @@
           "player": "Dominique Jones",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -190611,7 +190644,7 @@
           "player": "Dominique Jones",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         },
         {
@@ -206939,7 +206972,65 @@
           "player": "Dominique Jones",
           "years": "2017",
           "status": "overseas_active",
-          "last_team": "Changsha Yongsheng",
+          "last_team": "Indian Railways",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Xinjiang",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Qingdao Eagles",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Liaoning Flying Leopards",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Springfield Armor",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Jilin Northeast Tigers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Nanjing Monkey Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Petrochimi Bandar Imam",
+          "shared": 1
+        }
+      ]
+    },
+    "Indian Railways": {
+      "club": "Indian Railways",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Dominique Jones",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Indian Railways",
           "nationality": "United States"
         }
       ],
@@ -230456,7 +230547,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2024–2025",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         }
@@ -231136,7 +231227,7 @@
         {
           "player": "Isaiah Whitehead",
           "years": "2020–2021",
-          "status": "overseas_active",
+          "status": "retired",
           "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },

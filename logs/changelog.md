@@ -1,3 +1,23 @@
+## 2026-09-27 — incremental run
+
+- Players updated: **483** (2 new)
+- New teams discovered: **1**
+- Team moves detected: **5**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **3** (1 → overseas, 1 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Gabe McGlothan, Walt Lemon Jr.
+- New teams: Indian Railways
+  - Leaky Black: Washington Wizards → Stockton Kings
+  - Kira Lewis: Wisconsin Herd → Memphis Hustle
+  - Lorenzo Brown: Olimpia Milano → Hapoel Jerusalem
+  - BJ Boston: Fenerbahçe → Chicago Bulls
+  - Dominique Jones: Changsha Yongsheng → Indian Railways
+  - Leaky Black: [nba_active → overseas_active]
+  - Isaiah Whitehead: [overseas_active → retired]
+  - BJ Boston: [overseas_active → nba_active]
+
 ## 2026-09-27 — override run
 
 - Players updated: **155** (0 new)
