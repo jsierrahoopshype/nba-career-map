@@ -125814,28 +125814,6 @@
     "nationality": "United States"
   },
   {
-    "player": "Herb Jones",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Herbert_Jones",
-    "parse_status": "no_career_data",
-    "career_history": [
-      {
-        "years": "2021-2026",
-        "team": "New Orleans Pelicans",
-        "city": "New Orleans",
-        "state": "Louisiana",
-        "country": "USA"
-      }
-    ],
-    "current_team": "New Orleans Pelicans",
-    "status": "nba_active",
-    "display_name": "Herbert Jones",
-    "aliases": [
-      "Herbert Jones"
-    ],
-    "last_updated": "2026-08-26",
-    "nationality": "United States"
-  },
-  {
     "player": "Herb Krautblatt",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Herb_Krautblatt",
     "parse_status": "success",
@@ -338230,8 +338208,10 @@
       "team": "New Orleans Pelicans"
     },
     "aliases": [
+      "Herb Jones",
       "Herbert Jones (basketball)"
-    ]
+    ],
+    "nationality": "United States"
   },
   {
     "player": "Hugo González",

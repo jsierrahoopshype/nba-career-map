@@ -2,8 +2,8 @@
   "counts": {
     "date_disagreement": 162,
     "still_missing": 10,
-    "wikipedia_url_wrong_person": 20,
-    "wrong_entity": 182,
+    "wikipedia_url_wrong_person": 19,
+    "wrong_entity": 181,
     "wrong_entity_replaced": 138
   },
   "cross_check_source": "https://raw.githubusercontent.com/sumitrodatta/bball-reference-datasets/master/Data/Player%20Career%20Info.csv",
@@ -1753,13 +1753,6 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
-      "player": "Herb Jones",
-      "rejected_wikidata_id": "Q3785137",
-      "wikipedia_title": "Herbert Jones",
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Herbert_Jones"
-    },
-    {
-      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Jake Stephens",
       "rejected_wikidata_id": "Q6125019",
       "wikipedia_title": "Jake Stephens",
@@ -3401,24 +3394,6 @@
         "wikidata_id": "Q5729768"
       },
       "wikipedia_url": "https://en.wikipedia.org/wiki/Henry_Walker"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Herb Jones",
-      "rejected_wikidata_id": "Q3785137",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Herbert Jones",
-        "wikidata_id": "Q3785137"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Herbert_Jones"
     },
     {
       "basketball_reference": "1998-10-06",

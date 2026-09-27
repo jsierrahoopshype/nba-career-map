@@ -590,8 +590,14 @@ def write_all_countries(players: list, out_dir: Path = COUNTRY_DIR) -> dict:
 #   country/england.html: every UK club now carries "United Kingdom", the
 #   label geo.COUNTRY_ALIASES has always folded England into, so the country
 #   "England" no longer exists in the data and its page stopped generating.
+#
+#   player/herb-jones.html: "Herb Jones" was the same Pelicans forward as
+#   "Herbert Jones", under the roster's spelling (scripts/merge_herb_jones.py).
+#   The record was folded into "Herbert Jones", which keeps "Herb Jones" as an
+#   alias.
 REDIRECTS: dict[str, dict[str, str]] = {
     "country": {"england": "united-kingdom"},
+    "player": {"herb-jones": "herbert-jones"},
 }
 
 

@@ -132,6 +132,22 @@
         }
         
         #results.show { display: block; }
+        /* The dropdown lives inside the sticky header, and the header's
+           z-index (100) makes it a stacking context: #results' own z-index
+           only ranks it among the header's children. Leaflet's panes (400+)
+           and controls (1000) sit in the page's root context, so on a
+           scrolled page the map painted over the list. Lift the header above
+           them only while the list is open -- when it is closed the header
+           stays at 100, below the modal (1000) and the quiz overlays. */
+        header:has(#results.show) { z-index: 1001; }
+        /* Wide enough for "Michael Anderson  PLAYER" on one line even where
+           the search box itself is narrow (phones), never wider than the
+           screen. */
+        #results {
+            min-width: 100%;
+            width: max-content;
+            max-width: min(480px, calc(100vw - 40px));
+        }
         
         .result-item {
             padding: 8px 12px;
@@ -189,6 +205,8 @@
             z-index: 999; box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
         }
         #botResults.show { display: block; }
+        /* above Leaflet's map controls (z-index 1000) too */
+        #botResults.show { z-index: 1001; }
 
         main { display: block; }
         /* Mobile: natural document flow -- the panel (header, stats, full

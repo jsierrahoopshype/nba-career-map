@@ -205,10 +205,13 @@ def test_write_all_is_incremental_and_cleans_up():
     tmp = Path(tempfile.mkdtemp()) / "player"
     a = dict(SAMPLE)
     b = {"player": "Gone Soon", "career_history": []}
+    # redirect stubs for merged-away players are written alongside the pages
+    stubs = len(pr._redirect_pages(tmp))
     s1 = pr.write_all([a, b], out_dir=tmp)
-    assert s1["written"] == 2 and s1["total"] == 2, s1
+    assert s1["written"] == 2 + stubs and s1["total"] == 2 + stubs, s1
     s2 = pr.write_all([a, b], out_dir=tmp)
-    assert s2["written"] == 0 and s2["unchanged"] == 2, "must not rewrite unchanged pages"
+    assert s2["written"] == 0 and s2["unchanged"] == 2 + stubs, \
+        "must not rewrite unchanged pages"
     s3 = pr.write_all([a], out_dir=tmp)
     assert s3["removed"] == 1, "a page whose player left the DB must be deleted"
     assert not (tmp / "gone-soon.html").exists()
@@ -341,6 +344,39 @@ def test_a_retired_url_redirects_instead_of_404ing():
     print("test_a_retired_url_redirects_instead_of_404ing PASS")
 
 
+def test_a_merged_player_url_redirects():
+    """Herb Jones was folded into Herbert Jones; the old page must redirect
+    to the survivor, not 404, and stay out of the sitemap."""
+    page = pr.PLAYER_DIR / "herb-jones.html"
+    assert page.exists(), "retired player URL must not 404"
+    html = page.read_text(encoding="utf-8")
+    assert '<meta http-equiv="refresh" content="0; url=herbert-jones.html">' in html
+    assert (f'<link rel="canonical" href="{pr.SITE_BASE_URL}'
+            f'/player/herbert-jones.html">') in html
+    assert 'content="noindex, follow"' in html
+    assert (pr.PLAYER_DIR / "herbert-jones.html").exists(), "target missing"
+    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+    assert "player/herb-jones.html" not in sm
+    assert "player/herbert-jones.html" in sm
+    print("test_a_merged_player_url_redirects PASS")
+
+
+def test_search_dropdown_sits_above_the_map():
+    """The header's z-index makes it a stacking context, so the dropdown can
+    only clear Leaflet's panes (400+) and controls (1000) if the HEADER is
+    lifted while the list is open. Checked in a browser once; this keeps the
+    rule from being dropped in a restyle."""
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    m = re.search(r"header:has\(#results\.show\)\s*\{\s*z-index:\s*(\d+)", html)
+    assert m and int(m.group(1)) > 1000, "header not lifted over the map"
+    m = re.search(r"#botResults\.show\s*\{\s*z-index:\s*(\d+)", html)
+    assert m and int(m.group(1)) > 1000, "footer dropdown under the map"
+    # closed, the header stays below the modal (1000)
+    m = re.search(r"\n\s*header\s*\{[^}]*z-index:\s*(\d+)", html)
+    assert m and int(m.group(1)) < 1000
+    print("test_search_dropdown_sits_above_the_map PASS")
+
+
 def test_sitemap_lists_teams_and_countries():
     sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     assert "/team/los-angeles-lakers.html" in sm
@@ -427,21 +463,47 @@ def _with_wrong_person(names, fn):
         pr._WRONG_PERSON = saved
 
 
+def _flagged_without_override() -> list:
+    """The players the shipped review file flags whose article is NOT settled
+    by an override -- read live, because both files change as repairs land (a
+    hardcoded name goes stale the day its override is written)."""
+    import player_urls
+    player_urls.reset_cache()
+    doc = json.loads(pr.REVIEW_FILE.read_text(encoding="utf-8"))
+    names = [r["player"] for r in doc.get("wikipedia_url_wrong_person") or []
+             if isinstance(r, dict) and r.get("player")]
+    return [n for n in names if not player_urls.override_url(n)]
+
+
 def test_a_flagged_player_with_no_override_gets_no_sameas():
     """sameAs asserts "same person", so a namesake's article is not a missing
-    field, it is a false claim. No override yet -> no sameAs at all."""
+    field, it is a false claim. No override yet -> no sameAs at all.
+
+    Checked over every player the current review file flags without an
+    override. When the repairs have emptied that set, a made-up name stands in
+    so the rule itself is still exercised."""
+    import player_urls
+    names = _flagged_without_override()
+    if not names:
+        stand_in = "Flagged Namesake Test"
+        assert not player_urls.override_url(stand_in)
+        names = [stand_in]
+
     def check():
-        duke = _player("David Duke",
-                       wikipedia_url="https://en.wikipedia.org/wiki/David_Duke")
-        data = json.loads(pr.person_jsonld(duke)
-                          .split(">", 1)[1].rsplit("<", 1)[0])
-        assert "sameAs" not in data, data
-        html = pr.render(duke)
-        assert "en.wikipedia.org" not in html, "the namesake is still linked"
-        # the rest of the block is untouched
-        assert data["name"] == "David Duke" and data["url"]
-    _with_wrong_person({"David Duke", "david duke"}, check)
-    print("test_a_flagged_player_with_no_override_gets_no_sameas PASS")
+        for name in names:
+            rec = _player(name, wikipedia_url="https://en.wikipedia.org/wiki/"
+                          + name.replace(" ", "_"))
+            data = json.loads(pr.person_jsonld(rec)
+                              .split(">", 1)[1].rsplit("<", 1)[0])
+            assert "sameAs" not in data, data
+            html = pr.render(rec)
+            assert "en.wikipedia.org" not in html, \
+                f"{name}: the namesake is still linked"
+            # the rest of the block is untouched
+            assert data["name"] == name and data["url"]
+    _with_wrong_person(set(names) | {n.casefold() for n in names}, check)
+    print(f"test_a_flagged_player_with_no_override_gets_no_sameas PASS "
+          f"({len(names)} player(s))")
 
 
 def test_an_unflagged_player_keeps_his_article():
@@ -555,5 +617,7 @@ if __name__ == "__main__":
     test_country_club_cap()
     test_internal_links_point_at_canonical_urls()
     test_a_retired_url_redirects_instead_of_404ing()
+    test_a_merged_player_url_redirects()
+    test_search_dropdown_sits_above_the_map()
     test_sitemap_lists_teams_and_countries()
     print("\nall prerender tests PASS")
