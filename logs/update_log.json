@@ -34291,6 +34291,88 @@
       "start_dates_stamped": 0,
       "stints_removed": 0,
       "stints_reordered": 2
+    },
+    {
+      "date": "2026-09-27",
+      "mode": "single",
+      "players_updated": [
+        "Jontay Porter",
+        "Alondes Williams",
+        "Bismack Biyombo",
+        "Blake Wesley",
+        "Brandon Clarke",
+        "Cam Thomas",
+        "Cameron Payne",
+        "Chris Boucher",
+        "Christian Wood",
+        "Dante Exum",
+        "Dariq Whitehead",
+        "DeJon Jarreau",
+        "Delon Wright",
+        "Doug McDermott",
+        "Duop Reath",
+        "Emoni Bates",
+        "Eric Gordon",
+        "Gabe Vincent",
+        "Garrett Temple",
+        "Jaden Ivey",
+        "Jalen Duren",
+        "Jalen Hood-Schifino",
+        "James Johnson",
+        "Jeff Green",
+        "Kelly Olynyk",
+        "Kevin Love",
+        "Killian Hayes",
+        "Lonzo Ball",
+        "Markelle Fultz",
+        "Markieff Morris",
+        "Mason Plumlee",
+        "Omer Yurtseven",
+        "Seth Curry",
+        "Terry Rozier",
+        "Tony Bradley",
+        "Trevor Keels",
+        "Tristan Thompson",
+        "Vince Williams Jr",
+        "Kevin McCullar",
+        "Tyler Smith",
+        "Dillon Jones",
+        "N'Faly Dante"
+      ],
+      "new_players": [],
+      "new_teams": [],
+      "team_moves": [],
+      "spelling_review": [],
+      "old_stints": [],
+      "status_changes": [
+        {
+          "player": "Jontay Porter",
+          "from": "retired",
+          "to": "overseas_active"
+        }
+      ],
+      "newly_overseas": [
+        "Jontay Porter"
+      ],
+      "newly_retired": [],
+      "requests": 74,
+      "budget_exhausted": false,
+      "queue_size": 42,
+      "queue_completed": true,
+      "wrong_article": [],
+      "wrong_place": [
+        {
+          "team": "Cold Hearts",
+          "date": "2026-09-27",
+          "reason": "the article is not about a sports club",
+          "extract": "Cold Hearts is a 1999 American horror-thriller film written and directed by Robert A. Masciantonio.  It stars Marisa Ryan, Robert Floyd, and Amy Jo Johnson."
+        }
+      ],
+      "combined_names_split": 3,
+      "combined_names_left": 156,
+      "start_dates_stamped": 0,
+      "stints_removed": 0,
+      "stints_reordered": 2
     }
   ]
 }

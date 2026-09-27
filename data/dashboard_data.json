@@ -2031,6 +2031,12 @@
       "last_updated": "2026-09-27"
     },
     {
+      "player": "Jontay Porter",
+      "current_team": "Seattle Super Hawks",
+      "country": "USA",
+      "last_updated": "2026-09-27"
+    },
+    {
       "player": "Jordan Adams",
       "current_team": "Dewa United Banten",
       "country": "Indonesia",
@@ -19731,6 +19737,13 @@
       ]
     },
     {
+      "team": "Seattle Super Hawks",
+      "count": 1,
+      "players": [
+        "Jontay Porter"
+      ]
+    },
+    {
       "team": "Seoul SK Knights",
       "count": 1,
       "players": [
@@ -19966,7 +19979,7 @@
     },
     {
       "country": "USA",
-      "count": 52
+      "count": 53
     },
     {
       "country": "Italy",
@@ -54642,6 +54655,15 @@
         "last_updated": "2026-09-27"
       },
       {
+        "player": "Jontay Porter",
+        "current_team": "Seattle Super Hawks",
+        "city": "Seattle",
+        "state": "Washington",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-09-27"
+      },
+      {
         "player": "Jordan Adams",
         "current_team": "Dewa United Banten",
         "city": "Serang",
@@ -57730,8 +57752,8 @@
       }
     ],
     "coverage": {
-      "total": 660,
-      "in_coords": 596,
+      "total": 661,
+      "in_coords": 597,
       "missing_from_coords": 64,
       "missing_no_city": 26,
       "missing_city_absent_from_coords": 38,

@@ -1,5 +1,16 @@
 ## 2026-09-27 — single run
 
+- Players updated: **42** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 74  ✅ queue complete (42 queued)
+  - Jontay Porter: [retired → overseas_active]
+
+## 2026-09-27 — single run
+
 - Players updated: **56** (0 new)
 - New teams discovered: **0**
 - Team moves detected: **5**
