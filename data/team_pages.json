@@ -3726,15 +3726,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Keon Johnson",
-          "years": "2026–present",
-          "stint_team": "Atlanta Hawks",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "Keshon Gilbert",
           "years": "2026–present",
           "stint_team": "Atlanta Hawks",
@@ -4318,6 +4309,15 @@
           "stint_team": "Atlanta Hawks",
           "status": "retired",
           "current_team": "New York Knicks",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Mike Dunleavy",
+          "years": "2017",
+          "stint_team": "Atlanta Hawks",
+          "status": "retired",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -7815,8 +7815,8 @@
           "years": "2011",
           "stint_team": "Boston Celtics",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "current_country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "current_country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -8268,6 +8268,14 @@
           "current_team": "Paterson Crescents",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Dillon Mitchell",
+          "years": "2026–present",
+          "stint_team": "Boston Celtics",
+          "status": "nba_active",
+          "current_team": "Boston Celtics",
+          "current_country": "USA"
         },
         {
           "player": "Dino Radja",
@@ -12080,8 +12088,8 @@
         {
           "player": "Chris Johnson",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -12508,8 +12516,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 556,
-      "alumni_count": 532,
+      "roster_count": 557,
+      "alumni_count": 533,
       "related": [
         {
           "type": "club",
@@ -12519,7 +12527,7 @@
         {
           "type": "club",
           "name": "Maine Celtics",
-          "shared": 23
+          "shared": 24
         },
         {
           "type": "club",
@@ -15305,8 +15313,8 @@
           "player": "Keon Johnson",
           "years": "2023–2025",
           "stint_team": "Brooklyn Nets",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -18060,8 +18068,8 @@
         },
         {
           "player": "Keon Johnson",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "country": "USA",
           "nationality": "United States"
         },
@@ -25315,6 +25323,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Mike Dunleavy",
+          "years": "2013–2016",
+          "stint_team": "Chicago Bulls",
+          "status": "retired",
+          "current_team": "Atlanta Hawks",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Mike Holton",
           "years": "1986",
           "stint_team": "Chicago Bulls",
@@ -27287,8 +27304,8 @@
           "all_star_count": 2
         }
       ],
-      "roster_count": 470,
-      "alumni_count": 439,
+      "roster_count": 471,
+      "alumni_count": 440,
       "related": [
         {
           "type": "club",
@@ -29898,12 +29915,13 @@
         },
         {
           "player": "Kevin Johnson",
-          "years": "1987-1988",
+          "years": "1987–88",
           "stint_team": "Cleveland Cavaliers",
           "status": "retired",
           "current_team": "Phoenix Suns",
           "current_country": "USA",
           "nationality": "United States",
+          "all_star": true,
           "all_star_count": 3
         },
         {
@@ -30669,6 +30687,15 @@
           "stint_team": "Cleveland Cavaliers",
           "status": "retired",
           "current_team": "Sacramento Kings",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Mike Dunleavy",
+          "years": "2016–17",
+          "stint_team": "Cleveland Cavaliers",
+          "status": "retired",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -32560,8 +32587,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 498,
-      "alumni_count": 470,
+      "roster_count": 499,
+      "alumni_count": 471,
       "related": [
         {
           "type": "club",
@@ -37419,6 +37446,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Alpha Diallo",
+          "years": "2026–present",
+          "stint_team": "Denver Nuggets",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
+          "nationality": "American / Guinean"
+        },
+        {
           "player": "Andre Iguodala",
           "years": "2012-2013",
           "stint_team": "Denver Nuggets",
@@ -41920,8 +41956,8 @@
           "nationality": "Slovenia"
         }
       ],
-      "roster_count": 448,
-      "alumni_count": 421,
+      "roster_count": 449,
+      "alumni_count": 422,
       "related": [
         {
           "type": "club",
@@ -45175,11 +45211,11 @@
         },
         {
           "player": "Justin Robinson",
-          "years": "2021-2022",
+          "years": "2021–22",
           "stint_team": "Detroit Pistons",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "current_country": "France",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -47998,8 +48034,8 @@
         {
           "player": "Justin Robinson",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "country": "France",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -48390,12 +48426,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
-          "shared": 13
+          "name": "FC Barcelona",
+          "shared": 14
         },
         {
           "type": "club",
-          "name": "Raptors 905",
+          "name": "Maccabi Tel Aviv",
           "shared": 13
         }
       ]
@@ -51289,6 +51325,15 @@
           "nationality": "United States"
         },
         {
+          "player": "John Lucas",
+          "years": "1978–1981",
+          "stint_team": "Golden State Warriors",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "John Mengelt",
           "years": "1981",
           "stint_team": "Golden State Warriors",
@@ -52202,6 +52247,15 @@
           "stint_team": "Golden State Warriors",
           "status": "retired",
           "current_team": "Sacramento Kings",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Mike Dunleavy",
+          "years": "2002–2007",
+          "stint_team": "Golden State Warriors",
+          "status": "retired",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -54460,8 +54514,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 606,
-      "alumni_count": 574,
+      "roster_count": 608,
+      "alumni_count": 576,
       "related": [
         {
           "type": "club",
@@ -54983,6 +55037,14 @@
           "current_team": "Manisa Basket",
           "current_country": "Turkey",
           "nationality": "United States"
+        },
+        {
+          "player": "Bruce Thornton",
+          "years": "2026–present",
+          "stint_team": "Houston Rockets",
+          "status": "nba_active",
+          "current_team": "Houston Rockets",
+          "current_country": "USA"
         },
         {
           "player": "Bruno Caboclo",
@@ -56630,6 +56692,33 @@
           "current_country": "USA",
           "nationality": "United States",
           "all_star_count": 2
+        },
+        {
+          "player": "John Lucas",
+          "years": "1976–1978",
+          "stint_team": "Houston Rockets",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "John Lucas",
+          "years": "1984–1986",
+          "stint_team": "Houston Rockets",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "John Lucas",
+          "years": "1989–90",
+          "stint_team": "Houston Rockets",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
+          "nationality": "United States"
         },
         {
           "player": "John Lucas III",
@@ -59613,8 +59702,8 @@
           "nationality": "China"
         }
       ],
-      "roster_count": 488,
-      "alumni_count": 449,
+      "roster_count": 492,
+      "alumni_count": 451,
       "related": [
         {
           "type": "club",
@@ -60028,6 +60117,14 @@
           "current_team": "Washington Wizards",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Braden Smith",
+          "years": "2026–present",
+          "stint_team": "Indiana Pacers",
+          "status": "nba_active",
+          "current_team": "Indiana Pacers",
+          "current_country": "USA"
         },
         {
           "player": "Brandon Rush",
@@ -62148,6 +62245,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Mike Dunleavy",
+          "years": "2007–2011",
+          "stint_team": "Indiana Pacers",
+          "status": "retired",
+          "current_team": "Atlanta Hawks",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Mike Flynn",
           "years": "1975-1978",
           "stint_team": "Indiana Pacers",
@@ -63771,8 +63877,8 @@
           "all_star_count": 2
         }
       ],
-      "roster_count": 394,
-      "alumni_count": 373,
+      "roster_count": 396,
+      "alumni_count": 375,
       "related": [
         {
           "type": "club",
@@ -66514,8 +66620,8 @@
           "player": "Keon Johnson",
           "years": "2021–22",
           "stint_team": "LA Clippers",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -69106,8 +69212,8 @@
         },
         {
           "player": "Keon Johnson",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "country": "USA",
           "nationality": "United States"
         },
@@ -70132,6 +70238,14 @@
           "current_team": "San Diego Clippers",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Cameron Carr",
+          "years": "2026–present",
+          "stint_team": "Los Angeles Lakers",
+          "status": "nba_active",
+          "current_team": "Los Angeles Lakers",
+          "current_country": "USA"
         },
         {
           "player": "Carlos Boozer",
@@ -75347,8 +75461,8 @@
           "nationality": "South Sudanese / American"
         }
       ],
-      "roster_count": 560,
-      "alumni_count": 525,
+      "roster_count": 561,
+      "alumni_count": 526,
       "related": [
         {
           "type": "club",
@@ -75840,6 +75954,14 @@
           "current_team": "Deportivo Tachira",
           "current_country": "",
           "nationality": "Venezuela"
+        },
+        {
+          "player": "Carson Cooper",
+          "years": "2026–present",
+          "stint_team": "Memphis Grizzlies",
+          "status": "nba_active",
+          "current_team": "Memphis Grizzlies",
+          "current_country": "USA"
         },
         {
           "player": "Casey Jacobsen",
@@ -79145,13 +79267,13 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 336,
-      "alumni_count": 324,
+      "roster_count": 337,
+      "alumni_count": 325,
       "related": [
         {
           "type": "club",
           "name": "Memphis Hustle",
-          "shared": 57
+          "shared": 58
         },
         {
           "type": "club",
@@ -85247,6 +85369,15 @@
           "nationality": "United States"
         },
         {
+          "player": "John Lucas",
+          "years": "1986–1988",
+          "stint_team": "Milwaukee Bucks",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "John Salmons",
           "years": "2010-2011",
           "stint_team": "Milwaukee Bucks",
@@ -85398,8 +85529,8 @@
           "years": "2021",
           "stint_team": "Milwaukee Bucks",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "current_country": "France",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -86093,6 +86224,15 @@
           "stint_team": "Milwaukee Bucks",
           "status": "retired",
           "current_team": "New Jersey Nets",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Mike Dunleavy",
+          "years": "2011–2013",
+          "stint_team": "Milwaukee Bucks",
+          "status": "retired",
+          "current_team": "Atlanta Hawks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -87731,8 +87871,8 @@
         {
           "player": "Justin Robinson",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "country": "France",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -87997,8 +88137,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 513,
-      "alumni_count": 479,
+      "roster_count": 515,
+      "alumni_count": 481,
       "related": [
         {
           "type": "club",
@@ -88013,7 +88153,7 @@
         {
           "type": "club",
           "name": "FC Barcelona",
-          "shared": 20
+          "shared": 21
         },
         {
           "type": "club",
@@ -88582,8 +88722,8 @@
           "years": "2013",
           "stint_team": "Minnesota Timberwolves",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "current_country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "current_country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -91163,8 +91303,8 @@
         {
           "player": "Chris Johnson",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -92082,8 +92222,8 @@
           "years": "2012",
           "stint_team": "New Orleans Hornets",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "current_country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "current_country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -94340,8 +94480,8 @@
         {
           "player": "Chris Johnson",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -103243,6 +103383,15 @@
           "all_star_count": 2
         },
         {
+          "player": "John Lucas",
+          "years": "1988–89",
+          "stint_team": "Seattle SuperSonics",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "John Schweitz",
           "years": "1984-1985",
           "stint_team": "Seattle SuperSonics",
@@ -103345,8 +103494,8 @@
           "years": "2021",
           "stint_team": "Oklahoma City Thunder",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "current_country": "France",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -105453,8 +105602,8 @@
         {
           "player": "Justin Robinson",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "country": "France",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -105688,8 +105837,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 434,
-      "alumni_count": 411,
+      "roster_count": 435,
+      "alumni_count": 412,
       "related": [
         {
           "type": "club",
@@ -118601,12 +118750,13 @@
         },
         {
           "player": "Kevin Johnson",
-          "years": "1988-1998",
+          "years": "1988–1998; 2000",
           "stint_team": "Phoenix Suns",
           "status": "retired",
           "current_team": "Phoenix Suns",
           "current_country": "USA",
           "nationality": "United States",
+          "all_star": true,
           "all_star_count": 3
         },
         {
@@ -121880,17 +122030,17 @@
           "years": "2011",
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "current_country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "current_country": "New Zealand",
           "nationality": "United States"
         },
         {
           "player": "Chris Johnson",
-          "years": "2011-2012",
+          "years": "2011–2012",
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "current_country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "current_country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -123408,8 +123558,8 @@
           "player": "Keon Johnson",
           "years": "2022–2023",
           "stint_team": "Portland Trail Blazers",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -125279,8 +125429,8 @@
         {
           "player": "Chris Johnson",
           "status": "overseas_active",
-          "current_team": "New Taipei Kings",
-          "country": "Taiwan",
+          "current_team": "Auckland Tuatara",
+          "country": "New Zealand",
           "nationality": "United States"
         },
         {
@@ -125509,8 +125659,8 @@
         },
         {
           "player": "Keon Johnson",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "country": "USA",
           "nationality": "United States"
         },
@@ -128858,8 +129008,8 @@
           "years": "2021",
           "stint_team": "Sacramento Kings",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "current_country": "France",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -131773,8 +131923,8 @@
         {
           "player": "Justin Robinson",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "country": "France",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -134048,6 +134198,15 @@
           "status": "retired",
           "current_team": "Reyer Venezia",
           "current_country": "Italy",
+          "nationality": "United States"
+        },
+        {
+          "player": "John Lucas",
+          "years": "1983–84",
+          "stint_team": "San Antonio Spurs",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -136495,8 +136654,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 435,
-      "alumni_count": 410,
+      "roster_count": 436,
+      "alumni_count": 411,
       "related": [
         {
           "type": "club",
@@ -147917,6 +148076,15 @@
           "nationality": "United States"
         },
         {
+          "player": "John Lucas",
+          "years": "1981–1983",
+          "stint_team": "Washington Bullets",
+          "status": "retired",
+          "current_team": "Wichita Falls Texans",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "John Mahnken",
           "years": "1948",
           "stint_team": "Chicago Packers",
@@ -148173,11 +148341,11 @@
         },
         {
           "player": "Justin Robinson",
-          "years": "2019-2020",
+          "years": "2019–20",
           "stint_team": "Washington Wizards",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "current_country": "France",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "United States"
         },
         {
@@ -151274,8 +151442,8 @@
         {
           "player": "Justin Robinson",
           "status": "overseas_active",
-          "current_team": "Paris Basketball",
-          "country": "France",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "United States"
         },
         {
@@ -151533,8 +151701,8 @@
           "nationality": "Australia"
         }
       ],
-      "roster_count": 693,
-      "alumni_count": 656,
+      "roster_count": 694,
+      "alumni_count": 657,
       "related": [
         {
           "type": "club",

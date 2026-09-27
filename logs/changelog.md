@@ -1,3 +1,23 @@
+## 2026-09-27 — override run
+
+- Players updated: **155** (0 new)
+- New teams discovered: **1**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **7** (1 → overseas, 0 → retired)
+- Wikipedia requests: 200  ⚠️ budget exhausted — queue truncated, continues next run
+- New teams: Al-Nassr BC
+  - Chris Johnson: New Taipei Kings → Auckland Tuatara
+  - Justin Robinson: Paris Basketball → FC Barcelona
+  - Alpha Diallo: [retired → nba_active]
+  - Braden Smith: [retired → nba_active]
+  - Bruce Thornton: [retired → nba_active]
+  - Cameron Carr: [retired → nba_active]
+  - Carson Cooper: [retired → nba_active]
+  - Dillon Mitchell: [retired → nba_active]
+  - Keon Johnson: [nba_active → overseas_active]
+
 ## 2026-09-26 — override run
 
 - Players updated: **201** (0 new)

@@ -1,7 +1,7 @@
 {
   "note": "Curated Wikipedia articles for players whose name resolves to a namesake. `overrides` is what the pipeline uses and is written only by scripts/resolve_player_urls.py: either after Wikidata confirmed the article (P106 = Q3665646 and a birth year within 1 of Basketball-Reference's), or, for an entry staged under `human_verified`, after Wikipedia confirmed the article exists and is not a disambiguation page. `human_verified` entries are a person's decision (`verified_by` names who) and skip the Wikidata test; the pipeline ignores them until they are written through. `candidates` are un-verified guesses from Wikipedia's naming conventions: the resolver tries them first, the pipeline ignores them. See scripts/player_urls.py.",
   "verified_by": "scripts/resolve_player_urls.py",
-  "generated": "2026-09-26",
+  "generated": "2026-09-27",
   "overrides": {
     "AJ Green": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/A._J._Green_(basketball)",
@@ -93,6 +93,23 @@
       "matched_candidate": "Alex Garcia (basketball)",
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
+    },
+    "Alpha Diallo": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Alpha_Diallo_(basketball,_born_1997)",
+      "wikidata_id": "Q88518316",
+      "wikidata_label": "Alpha Diallo",
+      "wikidata_description": "Guinean basketball player (born 1997)",
+      "wikidata_birth_date": "1997-06-29",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Alpha_Diallo",
+      "replaces_wikidata_id": "Q92771790",
+      "requested_url": "https://en.wikipedia.org/wiki/Alpha_Diallo_(basketball,_born_1997)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
     },
     "Andre Jackson": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Andre_Jackson_Jr.",
@@ -348,6 +365,23 @@
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     },
+    "Braden Smith": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Braden_Smith_(basketball)",
+      "wikidata_id": "Q115522167",
+      "wikidata_label": "Braden Smith",
+      "wikidata_description": "American basketball player (born 2003)",
+      "wikidata_birth_date": "2003-07-25",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Braden_Smith",
+      "replaces_wikidata_id": "Q132579759",
+      "requested_url": "https://en.wikipedia.org/wiki/Braden_Smith_(basketball)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
+    },
     "Brandon Armstrong": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Brandon_Armstrong_(basketball)",
       "wikidata_id": "Q1617911",
@@ -442,6 +476,23 @@
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     },
+    "Bruce Thornton": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Bruce_Thornton_(basketball)",
+      "wikidata_id": "Q123467310",
+      "wikidata_label": "Bruce Thornton",
+      "wikidata_description": "American basketball player",
+      "wikidata_birth_date": "2003-09-14",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Bruce_Thornton",
+      "replaces_wikidata_id": "Q4978361",
+      "requested_url": "https://en.wikipedia.org/wiki/Bruce_Thornton_(basketball)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
+    },
     "CJ Williams": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/C._J._Williams_(basketball)",
       "wikidata_id": "Q17623132",
@@ -468,6 +519,40 @@
       "decided_by": "rule 1: exact name",
       "verified": "2026-09-26",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
+    },
+    "Cameron Carr": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cameron_Carr_(basketball)",
+      "wikidata_id": "Q136766193",
+      "wikidata_label": "Cameron Carr",
+      "wikidata_description": "American basketball player (born 2004)",
+      "wikidata_birth_date": "2004-11-21",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Cameron_Carr",
+      "replaces_wikidata_id": "Q5026199",
+      "requested_url": "https://en.wikipedia.org/wiki/Cameron_Carr_(basketball)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
+    },
+    "Carson Cooper": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Carson_Cooper_(basketball)",
+      "wikidata_id": "Q133698150",
+      "wikidata_label": "Carson Cooper",
+      "wikidata_description": "American basketball player",
+      "wikidata_birth_date": "2004-04-09",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Carson_Cooper",
+      "replaces_wikidata_id": "Q2940426",
+      "requested_url": "https://en.wikipedia.org/wiki/Carson_Cooper_(basketball)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
     },
     "Carter Bryant": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Carter_Bryant_(basketball)",
@@ -579,6 +664,23 @@
       "matched_candidate": "Chris Duarte (basketball)",
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
+    },
+    "Chris Johnson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Johnson_(basketball,_born_1985)",
+      "wikidata_id": "Q2455991",
+      "wikidata_label": "Chris Johnson",
+      "wikidata_description": "American basketball player (born 1985)",
+      "wikidata_birth_date": "1985-07-17",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Chris_Johnson",
+      "replaces_wikidata_id": "Q440005",
+      "requested_url": "https://en.wikipedia.org/wiki/Chris_Johnson_(basketball,_born_1985)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
     },
     "Chris McNealy": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_McNealy_(basketball,_born_1961)",
@@ -777,6 +879,23 @@
       "decided_by": "rule 1: exact name",
       "verified": "2026-09-26",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
+    },
+    "Dillon Mitchell": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Dillon_Mitchell_(basketball)",
+      "wikidata_id": "Q112118511",
+      "wikidata_label": "Dillon Mitchell",
+      "wikidata_description": "American basketball player (born 2003)",
+      "wikidata_birth_date": "2003-10-03",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Dillon_Mitchell",
+      "replaces_wikidata_id": "Q129166373",
+      "requested_url": "https://en.wikipedia.org/wiki/Dillon_Mitchell_(basketball)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
     },
     "Donovan Williams": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Donovan_Williams_(basketball)",
@@ -1330,6 +1449,24 @@
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     },
+    "John Lucas": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Lucas_II",
+      "wikidata_id": "Q2325022",
+      "wikidata_label": "John Lucas II",
+      "wikidata_description": "American basketball player (born 1953)",
+      "wikidata_birth_date": "1953-10-31",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/John_Lucas",
+      "replaces_wikidata_id": "Q359497",
+      "requested_url": "https://en.wikipedia.org/wiki/John_Lucas_II",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ],
+      "note": "a separate John Lucas III record exists, so this bare record is the father"
+    },
     "Johnny Simmons": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/John_Simmons_(baseball)",
       "wikidata_id": "Q3809751",
@@ -1559,6 +1696,21 @@
       "verified": "2026-09-26",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     },
+    "Justin Robinson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Robinson_(basketball,_born_1997)",
+      "wikidata_id": "Q65581020",
+      "wikidata_label": "Justin Robinson",
+      "wikidata_description": "American basketball player (born 1997)",
+      "wikidata_birth_date": "1997-10-17",
+      "basketball_reference_birth_date": "1997-10-12",
+      "replaces": "https://en.wikipedia.org/wiki/Justin_Robinson",
+      "replaces_wikidata_id": "Q28874201",
+      "requested_url": "https://en.wikipedia.org/wiki/Justin_Robinson_(basketball,_born_1997)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": []
+    },
     "Kendall Brown": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Kendall_Brown_(basketball)",
       "wikidata_id": "Q107287942",
@@ -1612,6 +1764,21 @@
       "decided_by": "rule 1: exact name + Basketball-Reference birth year",
       "verified": "2026-09-26",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
+    },
+    "Kevin Johnson": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Johnson_(basketball_player)",
+      "wikidata_id": "Q203286",
+      "wikidata_label": "Kevin Johnson",
+      "wikidata_description": "American basketball player and politician (born 1966)",
+      "wikidata_birth_date": "1966-03-04",
+      "basketball_reference_birth_date": "1966-03-04",
+      "replaces": "https://en.wikipedia.org/wiki/Kevin_Johnson_(basketball)",
+      "replaces_wikidata_id": "Q119932",
+      "requested_url": "https://en.wikipedia.org/wiki/Kevin_Johnson_(basketball_player)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": []
     },
     "Kevin Jones": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Jones_(basketball)",
@@ -1922,6 +2089,24 @@
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     },
+    "Mike Dunleavy": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Dunleavy_Jr.",
+      "wikidata_id": "Q967630",
+      "wikidata_label": "Mike Dunleavy Jr.",
+      "wikidata_description": "American basketball player (born 1980)",
+      "wikidata_birth_date": "1980-09-15",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Mike_Dunleavy",
+      "replaces_wikidata_id": "Q1588701",
+      "requested_url": "https://en.wikipedia.org/wiki/Mike_Dunleavy_Jr.",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ],
+      "note": "a separate Mike Dunleavy Sr record exists, so this bare record is the son"
+    },
     "Mike Green": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Green_(basketball,_born_1951)",
       "wikidata_id": "Q1612734",
@@ -2068,6 +2253,23 @@
       "verified": "2026-09-26",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     },
+    "Nick Martinelli": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Martinelli_(basketball)",
+      "wikidata_id": "Q131863928",
+      "wikidata_label": "Nick Martinelli",
+      "wikidata_description": "American basketball player",
+      "wikidata_birth_date": "2004-04-20",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Nick_Martinelli",
+      "replaces_wikidata_id": "Q7027512",
+      "requested_url": "https://en.wikipedia.org/wiki/Nick_Martinelli_(basketball)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
+    },
     "Nick Smith": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Smith_Jr.",
       "wikidata_id": "Q111942676",
@@ -2207,6 +2409,23 @@
       "matched_candidate": "Reggie Perry (basketball)",
       "verified": "2026-09-25",
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
+    },
+    "Richie Saunders": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Richie_Saunders_(basketball)",
+      "wikidata_id": "Q133278347",
+      "wikidata_label": "Richie Saunders",
+      "wikidata_description": "American basketball player (born 2001)",
+      "wikidata_birth_date": "2001-09-19",
+      "basketball_reference_birth_date": "",
+      "replaces": "https://en.wikipedia.org/wiki/Richie_Saunders",
+      "replaces_wikidata_id": "Q7330576",
+      "requested_url": "https://en.wikipedia.org/wiki/Richie_Saunders_(basketball)",
+      "verified": "2026-09-27",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [
+        "no Basketball-Reference birth date to check the item against"
+      ]
     },
     "Rob Edwards": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Rob_Edwards_(basketball)",
@@ -2708,61 +2927,6 @@
       "verified_by": "P106 = Q3665646 and a birth year within 1 of Basketball-Reference's"
     }
   },
-  "human_verified": {
-    "Alpha Diallo": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Alpha_Diallo_(basketball,_born_1997)",
-      "verified_by": "jorge"
-    },
-    "Braden Smith": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Braden_Smith_(basketball)",
-      "verified_by": "jorge"
-    },
-    "Bruce Thornton": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Bruce_Thornton_(basketball)",
-      "verified_by": "jorge"
-    },
-    "Cameron Carr": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Cameron_Carr_(basketball)",
-      "verified_by": "jorge"
-    },
-    "Carson Cooper": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Carson_Cooper_(basketball)",
-      "verified_by": "jorge"
-    },
-    "Chris Johnson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Johnson_(basketball,_born_1985)",
-      "verified_by": "jorge"
-    },
-    "Dillon Mitchell": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Dillon_Mitchell_(basketball)",
-      "verified_by": "jorge"
-    },
-    "John Lucas": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Lucas_II",
-      "verified_by": "jorge",
-      "note": "a separate John Lucas III record exists, so this bare record is the father"
-    },
-    "Justin Robinson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Robinson_(basketball,_born_1997)",
-      "verified_by": "jorge"
-    },
-    "Kevin Johnson": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Johnson_(basketball_player)",
-      "verified_by": "jorge"
-    },
-    "Mike Dunleavy": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Dunleavy_Jr.",
-      "verified_by": "jorge",
-      "note": "a separate Mike Dunleavy Sr record exists, so this bare record is the son"
-    },
-    "Nick Martinelli": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Martinelli_(basketball)",
-      "verified_by": "jorge"
-    },
-    "Richie Saunders": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Richie_Saunders_(basketball)",
-      "verified_by": "jorge"
-    }
-  },
+  "human_verified": {},
   "candidates": {}
 }
