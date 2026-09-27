@@ -52,7 +52,8 @@ def is_nba_team(team: str) -> bool:
 
 
 def classify_status(record: dict, on_nba_roster: bool, current_year: int,
-                    retire_gap: int = 2, retirement_announced: bool = False) -> str:
+                    retire_gap: int = 2, retirement_announced: bool = False,
+                    roster_team: str = "") -> str:
     """Classify a player record into one of the three tracking statuses.
 
     Roster membership (``on_nba_roster``) is only a *candidate* signal used to
@@ -82,7 +83,22 @@ def classify_status(record: dict, on_nba_roster: bool, current_year: int,
     seasons) from being wrongly retired when no explicit signal is available;
     ``retirement_announced`` is an additional signal layered on top, not a
     tightening of that timer.
+
+    ``roster_team`` is different from ``on_nba_roster``: it is the NBA team
+    whose roster template lists this player as UNDER CONTRACT (note=FA rows
+    and ambiguous names are already excluded -- see
+    rosters.roster_team_index), matched to a record the caller has checked is
+    the same, recently active person. That is direct evidence of being on an
+    NBA team right now, so it outranks both the retirement-prose signal (the
+    detector scans the whole page, so a retirement sentence that is not about
+    the subject -- no date, no nearby context -- retired Devin Booker in July
+    2026 while he was on the Suns with a 2015-present stint) and the recency
+    fallback. Empty (the default, and every offline caller) leaves
+    the rules below exactly as they were.
     """
+    if roster_team and is_nba_team(roster_team) and record.get("career_history"):
+        return NBA_ACTIVE
+
     if retirement_announced:
         return RETIRED
 
