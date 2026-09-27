@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import re
 
+from names import spelling_key
 from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 
 # Canonical current franchise names -> the Wikipedia roster-template title.
@@ -231,7 +232,48 @@ def extract_players_from_roster(wikitext: str) -> list[str]:
 
 def fetch_all_rosters(client: WikipediaClient) -> dict[str, list[str]]:
     """Return {canonical_team: [player names]} for every NBA team reachable."""
-    rosters: dict[str, list[str]] = {}
+    return {team: [e["name"] for e in entries]
+            for team, entries in fetch_all_roster_entries(client).items()}
+
+
+def _roster_key(name: str) -> str:
+    """Match key between a roster row and a DB record: accents, case and
+    punctuation fold away ("Nikola Vučević" == "Nikola Vucevic", "Vince
+    Williams Jr" == "Vince Williams Jr."), but a Jr./II suffix is KEPT, so a
+    son on a roster never matches his retired father's record."""
+    return spelling_key(name)
+
+
+def roster_team_index(entries_by_team: dict[str, list[dict]]) -> dict[str, str]:
+    """{roster match key: team} for every player UNDER CONTRACT on an NBA
+    roster template -- the authority for "is on an NBA team right now".
+
+    Left out, so they never count as evidence:
+      * note=FA rows (free agent / unsigned: listed, but not on the team);
+      * a name that appears on two templates (mid-trade edit, or two
+        same-name players) -- ambiguous, so no answer rather than a guess.
+    """
+    index: dict[str, str] = {}
+    clash: set[str] = set()
+    for team, entries in entries_by_team.items():
+        for e in entries:
+            if (e.get("note") or "").upper() == "FA":
+                continue
+            k = _roster_key(e.get("name", ""))
+            if not k:
+                continue
+            if k in index and index[k] != team:
+                clash.add(k)
+            index[k] = team
+    for k in clash:
+        index.pop(k, None)
+    return index
+
+
+def fetch_all_roster_entries(client: WikipediaClient) -> dict[str, list[dict]]:
+    """Return {canonical_team: [roster entries]} (see extract_roster_entries)
+    for every NBA team reachable."""
+    rosters: dict[str, list[dict]] = {}
     for team, template in NBA_TEAMS.items():
         try:
             wt = client.get_wikitext(f"Template:{template}")
@@ -244,7 +286,7 @@ def fetch_all_rosters(client: WikipediaClient) -> dict[str, list[str]]:
         if not wt:
             print(f"[rosters] {team}: roster template not found")
             continue
-        players = extract_players_from_roster(wt)
+        players = extract_roster_entries(wt)
         rosters[team] = players
         warn = "  ⚠️ no player rows parsed — template format may have changed" \
             if not players else ""

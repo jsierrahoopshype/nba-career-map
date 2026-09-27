@@ -449,10 +449,10 @@ the first full backfill, a re-run after an outage, or a `--full` re-fetch.
 
 | Input | Purpose |
 |-------|---------|
-| `mode = incremental` | roster newcomers + dropped players + all overseas + stale NBA (default) |
+| `mode = incremental` | roster newcomers + dropped players, then overseas and on-roster NBA players together, stalest first (default) |
 | `mode = full` | refresh all active players, NBA + overseas (bounded by budget) |
 | `mode = full_overseas` | re-check **all** `overseas_active` players (runs monthly on schedule) |
-| `mode = single` + `player` | refresh one player by name |
+| `mode = single` + `player` | refresh one player by name, or several separated by `;` (also reads the 30 roster templates, so the roster rules apply) |
 | `mode = override` | re-scrape only the players with a curated article in `player_url_overrides.json` |
 | `mode = review` | try to resolve locations for `teams_needing_review.json` |
 
@@ -470,6 +470,9 @@ python3 scripts/update_careers.py --mode incremental --max-requests 100
 python3 scripts/update_careers.py --mode full_overseas   # re-check all overseas
 python3 scripts/update_careers.py --mode single --player "LeBron James"
 python3 scripts/update_careers.py --mode review
+
+# List status / current-team contradictions (writes logs/status_contradictions.json)
+python3 scripts/audit_status_contradictions.py
 ```
 
 No third-party Python packages are required (standard library only).

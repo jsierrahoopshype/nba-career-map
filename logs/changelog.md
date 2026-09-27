@@ -1,3 +1,32 @@
+## 2026-09-27 — single run
+
+- Players updated: **42** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **0**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 74  ✅ queue complete (42 queued)
+  - Jontay Porter: [retired → overseas_active]
+
+## 2026-09-27 — single run
+
+- Players updated: **56** (0 new)
+- New teams discovered: **0**
+- Team moves detected: **5**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **3** (1 → overseas, 0 → retired)
+- Wikipedia requests: 88  ✅ queue complete (56 queued)
+  - Ben Simmons: LA Clippers → Sacramento Kings
+  - Bennedict Mathurin: LA Clippers → New Orleans Pelicans
+  - Dalen Terry: Philadelphia 76ers → Golden State Warriors
+  - Nick Richards: Chicago Bulls → Miami Heat
+  - Julian Reese: Washington Wizards → New Orleans Pelicans
+  - Devin Booker: [retired → nba_active]
+  - Nikola Vucevic: [retired → nba_active]
+  - Ricky Rubio: [retired → overseas_active]
+
 ## 2026-09-27 — incremental run
 
 - Players updated: **483** (2 new)

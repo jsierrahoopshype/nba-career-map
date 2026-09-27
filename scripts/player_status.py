@@ -18,7 +18,9 @@ than being stranded as ``retired`` and never re-checked).
 """
 from __future__ import annotations
 
+import json
 import re
+from pathlib import Path
 
 from rosters import NBA_TEAMS
 
@@ -47,12 +49,32 @@ def last_active_year(history: list[dict]) -> int:
     return latest
 
 
+STATUS_OVERRIDES = (Path(__file__).resolve().parent.parent
+                    / "data" / "players" / "status_overrides.json")
+_overrides: dict[str, str] | None = None
+
+
+def status_override(player: str) -> str:
+    """The hand-set status for this record, or "" (see status_overrides.json)."""
+    global _overrides
+    if _overrides is None:
+        try:
+            data = json.loads(STATUS_OVERRIDES.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            data = {}
+        _overrides = {o["player"]: o["status"] for o in data.get("overrides", [])
+                      if o.get("player") and o.get("status") in
+                      (NBA_ACTIVE, OVERSEAS_ACTIVE, RETIRED)}
+    return _overrides.get(player or "", "")
+
+
 def is_nba_team(team: str) -> bool:
     return team in _NBA_TEAM_SET
 
 
 def classify_status(record: dict, on_nba_roster: bool, current_year: int,
-                    retire_gap: int = 2, retirement_announced: bool = False) -> str:
+                    retire_gap: int = 2, retirement_announced: bool = False,
+                    roster_team: str = "") -> str:
     """Classify a player record into one of the three tracking statuses.
 
     Roster membership (``on_nba_roster``) is only a *candidate* signal used to
@@ -82,7 +104,27 @@ def classify_status(record: dict, on_nba_roster: bool, current_year: int,
     seasons) from being wrongly retired when no explicit signal is available;
     ``retirement_announced`` is an additional signal layered on top, not a
     tightening of that timer.
+
+    ``roster_team`` is different from ``on_nba_roster``: it is the NBA team
+    whose roster template lists this player as UNDER CONTRACT (note=FA rows
+    and ambiguous names are already excluded -- see
+    rosters.roster_team_index), matched to a record the caller has checked is
+    the same, recently active person. That is direct evidence of being on an
+    NBA team right now, so it outranks both the retirement-prose signal (the
+    detector scans the whole page, so a retirement sentence that is not about
+    the subject -- no date, no nearby context -- retired Devin Booker in July
+    2026 while he was on the Suns with a 2015-present stint) and the recency
+    fallback. Empty (the default, and every offline caller) leaves
+    the rules below exactly as they were.
     """
+    # A hand-set status (data/players/status_overrides.json) beats every rule.
+    forced = status_override(record.get("player", ""))
+    if forced:
+        return forced
+
+    if roster_team and is_nba_team(roster_team) and record.get("career_history"):
+        return NBA_ACTIVE
+
     if retirement_announced:
         return RETIRED
 

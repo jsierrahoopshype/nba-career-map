@@ -57,11 +57,13 @@ from wikipedia_api import WikipediaClient, RequestBudgetExceeded
 from team_normalizer import (TeamNormalizer, edit_distance,
                              is_spelling_variant, rename_containment,
                              spelling_key, spelling_tokens, strip_diacritics)
-from wiki_parser import parse_player
-from rosters import fetch_all_rosters, NBA_TEAMS
+from wiki_parser import parse_player, _stint_end_year
+from rosters import fetch_all_roster_entries, roster_team_index, NBA_TEAMS
+from rosters import _roster_key as roster_key
 from era_correct_teams import ERA_TABLE
 from sync_era_locations import LOC as ERA_LOCATIONS
-from player_status import (classify_status, last_active_year, PRESENT,
+from player_status import (classify_status, status_override,
+                           last_active_year, PRESENT,
                            NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
@@ -571,9 +573,45 @@ def right_article(db: "Database", name: str,
                          "reason": why, "tried": tried, "date": today()}
 
 
+def _is_open_stint(years: str) -> bool:
+    y = str(years or "")
+    return "present" in y.lower() or bool(re.search(r"[–\-]\s*$", y))
+
+
+def _stint_start_year(years: str) -> int:
+    m = re.search(r"\d{4}", str(years or ""))
+    return int(m.group()) if m else 0
+
+
+def roster_team_for(rec: dict, names: tuple, roster_index: dict | None,
+                    current_year: int) -> str:
+    """The NBA team whose roster template lists this record's player under
+    contract, or "".
+
+    Matched on the roster key (accents/punctuation folded, suffix kept) of
+    every name the record goes by, because an exact-string test missed
+    "Nikola Vučević" on the Magic template against the "Nikola Vucevic"
+    record. Only a recently active career can match (an open stint, or one
+    ending this year or last): a 1970s namesake never picks up a current
+    roster spot.
+    """
+    if not roster_index:
+        return ""
+    ly = last_active_year(rec.get("career_history") or [])
+    if not ly or (ly != PRESENT and ly < current_year - 1):
+        return ""
+    for n in (*names, rec.get("player", ""), rec.get("display_name", ""),
+              *rec.get("aliases", [])):
+        team = roster_index.get(roster_key(n or ""))
+        if team:
+            return team
+    return ""
+
+
 def merge_player(db: Database, name: str, client: WikipediaClient,
                  discovered: dict, roster_players: set[str],
-                 current_year: int) -> tuple[dict | None, list[str], bool]:
+                 current_year: int, roster_index: dict | None = None
+                 ) -> tuple[dict | None, list[str], bool]:
     """Fetch + parse a player, dedupe against existing records by canonical
     Wikipedia article, enrich locations, classify status, and upsert.
 
@@ -693,6 +731,30 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
             new_teams.append(stint["team"])
         db.enrich_stint(stint, client, discovered)
 
+    # Current NBA roster (under contract) -- see roster_team_for. Computed
+    # before the retirement block because it outranks it.
+    roster_team = roster_team_for(rec, (name, key, canonical_title or ""),
+                                  roster_index, current_year)
+    # The infobox can lag the roster template: a re-signed player's stint
+    # still reads "2022–2026" (Jalen Duren), a traded one "2026" (James
+    # Harden), and the map -- which only knows "current" as an open stint --
+    # shows him with no club. When NO stint is open and the player's latest
+    # stint IS with the team whose roster lists him under contract, that
+    # stint is still running: reopen it and make it current_team. Nothing is
+    # invented: an open stint always wins (the infobox has already moved, e.g.
+    # a trade the template has not caught up with), a roster team he has no
+    # latest stint with is left alone, and the next refresh re-derives it
+    # all from the page again.
+    hist = rec["career_history"]
+    if roster_team and hist and not any(_is_open_stint(st.get("years")) for st in hist):
+        top = max(_stint_end_year(st.get("years", "")) for st in hist)
+        own = [st for st in hist if st.get("team") == roster_team
+               and _stint_end_year(st.get("years", "")) == top]
+        start = _stint_start_year(own[-1].get("years")) if own else 0
+        if start:
+            own[-1]["years"] = f"{start}–present"
+            rec["current_team"] = roster_team
+
     # Explicit-retirement-announcement signal (bug fix): sticky once detected —
     # a transient regex miss on a later re-fetch (e.g. the prose gets copy-
     # edited) must not un-retire someone we already confirmed. The one
@@ -707,7 +769,27 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
         ly = last_active_year(rec["career_history"])
         if ret_year and ly and (ly == PRESENT or ly > int(ret_year.group())):
             comeback = True
-    if fresh_retired or (prev_retired and not comeback):
+    # The announcement stays on the page for good after a comeback (Ricky
+    # Rubio: "retired" 2023, Joventut 2025-present), so the check above --
+    # which needs the prose to have gone -- never fired for him. A stint that
+    # STARTED after the retirement year is a comeback whatever the prose says.
+    # Start, not end: an infobox still reading "2019-present" the week of the
+    # announcement (Abrines) began before it and is not one.
+    if fresh_retired or prev_retired:
+        ret_year = re.search(r"\d{4}", fresh.get("retirement_date")
+                             or base.get("retirement_date", "") or "")
+        if ret_year and any(_stint_start_year(st.get("years")) > int(ret_year.group())
+                            for st in rec["career_history"]):
+            comeback = True
+    # On an NBA roster under contract: whatever sentence matched, he is not
+    # retired, and the flag must not stay sticky. If he really did just
+    # retire, the next run after the template drops him re-detects it.
+    if roster_team:
+        comeback = True
+    # A hand-set status means the retirement match was already judged wrong.
+    if status_override(key):
+        comeback = True
+    if (fresh_retired or prev_retired) and not comeback:
         rec["retirement_announced"] = True
         rd = fresh.get("retirement_date") or base.get("retirement_date", "")
         if rd:
@@ -718,7 +800,8 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
 
     rec["status"] = classify_status(
         rec, on_nba_roster=name in roster_players or key in roster_players,
-        current_year=current_year, retirement_announced=rec.get("retirement_announced", False))
+        current_year=current_year, retirement_announced=rec.get("retirement_announced", False),
+        roster_team=roster_team)
     rec["last_updated"] = today()
 
     # upsert: if we merged into a different existing key, drop the queue name
@@ -748,7 +831,8 @@ def _by_status(db: Database, status: str) -> list[str]:
 def build_queue(db: Database, mode: str, player: str | None,
                 roster_players: set[str]) -> list[str]:
     if mode == "single":
-        return [player] if player else []
+        # "A; B; C" re-checks several named players in one run.
+        return _dedupe(p.strip() for p in (player or "").split(";") if p.strip())
 
     if mode == "override":
         # Only the records with a curated article, so a repair run costs one
@@ -779,7 +863,14 @@ def build_queue(db: Database, mode: str, player: str | None,
         # every active player (NBA + overseas) plus any roster newcomers
         pool = new_players + dropped + stale_nba + overseas
     else:  # incremental
-        pool = new_players + dropped + overseas + stale_nba
+        # Overseas and on-roster NBA players share ONE staleness order. Putting
+        # all of overseas (706 in Sep 2026) ahead of stale_nba spent the whole
+        # 650-request budget before any on-roster NBA player was reached: 458
+        # of them went unrefreshed from 26 Aug to 27 Sep (Jalen Duren, James
+        # Harden). Stable sort: on a tie, overseas still goes first.
+        rotation = sorted(overseas + stale_nba,
+                          key=lambda n: db.by_name[n].get("last_updated") or "0000-00-00")
+        pool = new_players + dropped + rotation
     return _dedupe(pool)
 
 
@@ -800,10 +891,14 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
         _run_review(db, client, summary)
     else:
         roster_players: set[str] = set()
-        if mode in ("incremental", "full"):
-            rosters = fetch_all_rosters(client)
-            for team_players in rosters.values():
-                roster_players.update(team_players)
+        roster_index: dict[str, str] = {}
+        # single fetches the rosters too (30 requests) so a hand re-check
+        # applies the same roster evidence as the daily run.
+        if mode in ("incremental", "full", "single"):
+            entries = fetch_all_roster_entries(client)
+            for team_entries in entries.values():
+                roster_players.update(e["name"] for e in team_entries)
+            roster_index = roster_team_index(entries)
         queue = build_queue(db, mode, player, roster_players)
         # Built once from the database as it stands: the rename guard needs to
         # know where a club plays and which cities a country is known to have.
@@ -815,7 +910,8 @@ def run(mode: str, player: str | None, delay: float, max_requests: int) -> dict:
         for name in queue:
             try:
                 rec, new_teams, is_new, prev_status, prev_current = merge_player(
-                    db, name, client, discovered, roster_players, current_year)
+                    db, name, client, discovered, roster_players, current_year,
+                    roster_index)
             except RequestBudgetExceeded:
                 summary["budget_exhausted"] = True
                 summary["queue_completed"] = False

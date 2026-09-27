@@ -2031,6 +2031,12 @@
       "last_updated": "2026-09-27"
     },
     {
+      "player": "Jontay Porter",
+      "current_team": "Seattle Super Hawks",
+      "country": "USA",
+      "last_updated": "2026-09-27"
+    },
+    {
       "player": "Jordan Adams",
       "current_team": "Dewa United Banten",
       "country": "Indonesia",
@@ -3175,6 +3181,12 @@
       "current_team": "Trotamundos de Carabobo",
       "country": "Venezuela",
       "last_updated": "2026-09-26"
+    },
+    {
+      "player": "Ricky Rubio",
+      "current_team": "Joventut Badalona",
+      "country": "Spain",
+      "last_updated": "2026-09-27"
     },
     {
       "player": "Rob Edwards",
@@ -9460,6 +9472,10 @@
       "players": 3
     },
     {
+      "team": "Laketown Squadron",
+      "players": 3
+    },
+    {
       "team": "Las Vegas Dealers",
       "players": 3
     },
@@ -10741,10 +10757,6 @@
     },
     {
       "team": "Kotwica Kołobrzeg",
-      "players": 2
-    },
-    {
-      "team": "Laketown Squadron",
       "players": 2
     },
     {
@@ -18001,6 +18013,15 @@
       ]
     },
     {
+      "team": "Joventut Badalona",
+      "count": 3,
+      "players": [
+        "Nicolas Laprovittola",
+        "Ricky Rubio",
+        "Sam Dekker"
+      ]
+    },
+    {
       "team": "Liaoning Flying Leopards",
       "count": 3,
       "players": [
@@ -18488,14 +18509,6 @@
       "players": [
         "Jabari Bird",
         "Scottie Lewis"
-      ]
-    },
-    {
-      "team": "Joventut Badalona",
-      "count": 2,
-      "players": [
-        "Nicolas Laprovittola",
-        "Sam Dekker"
       ]
     },
     {
@@ -19724,6 +19737,13 @@
       ]
     },
     {
+      "team": "Seattle Super Hawks",
+      "count": 1,
+      "players": [
+        "Jontay Porter"
+      ]
+    },
+    {
       "team": "Seoul SK Knights",
       "count": 1,
       "players": [
@@ -19951,7 +19971,7 @@
   "countries_live_snapshot": [
     {
       "country": "Spain",
-      "count": 53
+      "count": 54
     },
     {
       "country": "Turkey",
@@ -19959,7 +19979,7 @@
     },
     {
       "country": "USA",
-      "count": 52
+      "count": 53
     },
     {
       "country": "Italy",
@@ -23884,15 +23904,6 @@
       "latest_stint_year": 2026
     },
     {
-      "team": "Joventut Badalona",
-      "players": [
-        "Nicolas Laprovittola",
-        "Sam Dekker"
-      ],
-      "shared_franchise_pairs": [],
-      "latest_stint_year": 2026
-    },
-    {
       "team": "Kožuv",
       "players": [
         "Brian Bowen",
@@ -24439,6 +24450,27 @@
           ],
           "shared_nba_franchises": [
             "LA Clippers"
+          ],
+          "latest_stint_year": 2025
+        }
+      ],
+      "latest_stint_year": 2025
+    },
+    {
+      "team": "Joventut Badalona",
+      "players": [
+        "Nicolas Laprovittola",
+        "Ricky Rubio",
+        "Sam Dekker"
+      ],
+      "shared_franchise_pairs": [
+        {
+          "players": [
+            "Ricky Rubio",
+            "Sam Dekker"
+          ],
+          "shared_nba_franchises": [
+            "Cleveland Cavaliers"
           ],
           "latest_stint_year": 2025
         }
@@ -54623,6 +54655,15 @@
         "last_updated": "2026-09-27"
       },
       {
+        "player": "Jontay Porter",
+        "current_team": "Seattle Super Hawks",
+        "city": "Seattle",
+        "state": "Washington",
+        "country": "USA",
+        "in_coords": true,
+        "last_updated": "2026-09-27"
+      },
+      {
         "player": "Jordan Adams",
         "current_team": "Dewa United Banten",
         "city": "Serang",
@@ -56216,6 +56257,15 @@
         "last_updated": "2026-09-26"
       },
       {
+        "player": "Ricky Rubio",
+        "current_team": "Joventut Badalona",
+        "city": "Badalona",
+        "state": "",
+        "country": "Spain",
+        "in_coords": true,
+        "last_updated": "2026-09-27"
+      },
+      {
         "player": "RJ Hampton",
         "current_team": "Changsha Yongsheng",
         "city": "Changsha",
@@ -57702,8 +57752,8 @@
       }
     ],
     "coverage": {
-      "total": 659,
-      "in_coords": 595,
+      "total": 661,
+      "in_coords": 597,
       "missing_from_coords": 64,
       "missing_no_city": 26,
       "missing_city_absent_from_coords": 38,
@@ -57711,6 +57761,36 @@
     }
   },
   "latest_signings": [
+    {
+      "player": "Julian Reese",
+      "from_team": "Washington Wizards",
+      "to_team": "New Orleans Pelicans",
+      "date": "2026-09-27"
+    },
+    {
+      "player": "Nick Richards",
+      "from_team": "Chicago Bulls",
+      "to_team": "Miami Heat",
+      "date": "2026-09-27"
+    },
+    {
+      "player": "Dalen Terry",
+      "from_team": "Philadelphia 76ers",
+      "to_team": "Golden State Warriors",
+      "date": "2026-09-27"
+    },
+    {
+      "player": "Bennedict Mathurin",
+      "from_team": "LA Clippers",
+      "to_team": "New Orleans Pelicans",
+      "date": "2026-09-27"
+    },
+    {
+      "player": "Ben Simmons",
+      "from_team": "LA Clippers",
+      "to_team": "Sacramento Kings",
+      "date": "2026-09-27"
+    },
     {
       "player": "Dominique Jones",
       "from_team": "Changsha Yongsheng",
@@ -57979,36 +58059,6 @@
       "player": "Josh Green",
       "from_team": "Charlotte Hornets",
       "to_team": "Utah Jazz",
-      "date": "2026-09-25"
-    },
-    {
-      "player": "Josh Gray",
-      "from_team": "Dorados de Chihuahua",
-      "to_team": "Golden Eagle Ylli",
-      "date": "2026-09-25"
-    },
-    {
-      "player": "Jose Alvarado",
-      "from_team": "New Orleans Pelicans",
-      "to_team": "New York Knicks",
-      "date": "2026-09-25"
-    },
-    {
-      "player": "Jordan Hamilton",
-      "from_team": "Al-Difaa Al-Jawi",
-      "to_team": "The Saitama Broncos",
-      "date": "2026-09-25"
-    },
-    {
-      "player": "Jordan Hall",
-      "from_team": "Texas Legends",
-      "to_team": "Dąbrowa Górnicza",
-      "date": "2026-09-25"
-    },
-    {
-      "player": "John Jenkins",
-      "from_team": "Cangrejeros de Santurce",
-      "to_team": "Adelaide 36ers",
       "date": "2026-09-25"
     }
   ]
