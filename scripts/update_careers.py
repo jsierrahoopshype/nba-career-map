@@ -62,7 +62,8 @@ from rosters import fetch_all_roster_entries, roster_team_index, NBA_TEAMS
 from rosters import _roster_key as roster_key
 from era_correct_teams import ERA_TABLE
 from sync_era_locations import LOC as ERA_LOCATIONS
-from player_status import (classify_status, last_active_year, PRESENT,
+from player_status import (classify_status, status_override,
+                           last_active_year, PRESENT,
                            NBA_ACTIVE, OVERSEAS_ACTIVE,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
@@ -784,6 +785,9 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     # retired, and the flag must not stay sticky. If he really did just
     # retire, the next run after the template drops him re-detects it.
     if roster_team:
+        comeback = True
+    # A hand-set status means the retirement match was already judged wrong.
+    if status_override(key):
         comeback = True
     if (fresh_retired or prev_retired) and not comeback:
         rec["retirement_announced"] = True

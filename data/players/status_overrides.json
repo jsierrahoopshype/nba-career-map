@@ -1,0 +1,18 @@
+{
+  "_comment": [
+    "Hand-set tracking statuses the pipeline must not recompute.",
+    "classify_status() returns the status here for the named record before",
+    "any other rule runs, so the daily run cannot flip it back. current_team",
+    "is still derived from the player's own article, so a later club move",
+    "is followed. Remove an entry to hand the player back to the rules.",
+    "Read by scripts/player_status.py."
+  ],
+  "overrides": [
+    {
+      "player": "Jontay Porter",
+      "status": "overseas_active",
+      "reason": "Not in the NBA (banned 2024). Playing for the Seattle Super Hawks (2026-present); an undated retirement-sentence match had classified him retired.",
+      "set": "2026-09-27"
+    }
+  ]
+}

@@ -195,6 +195,31 @@ def test_queue_shares_one_staleness_order():
     print("test_queue_shares_one_staleness_order PASS")
 
 
+def test_status_override_beats_retirement():
+    import player_status
+    player_status._overrides = {"Jontay Porter": "overseas_active"}
+    try:
+        db = _mk_db(Path(tempfile.mkdtemp()), [])
+        _serve("{{Infobox basketball biography|name=Jontay Porter"
+               "|years1=2023–2024|team1=[[Toronto Raptors]]"
+               "|years2=2026–present|team2=[[Seattle Super Hawks]]}}\n\n"
+               "He later announced his retirement from professional basketball.",
+               "Jontay Porter")
+        rec, *_ = uc.merge_player(db, "Jontay Porter", _client(), {}, set(), 2026)
+        assert rec["status"] == "overseas_active", rec["status"]
+        assert rec["current_team"] == "Seattle Super Hawks"
+        assert not rec.get("retirement_announced")
+        # records without an override are untouched
+        assert classify_status({"player": "Someone Else", "career_history": [
+            {"team": "Phoenix Suns", "years": "2015–present"}]}, False, 2026,
+            retirement_announced=True) == "retired"
+    finally:
+        player_status._overrides = None
+    # the shipped file parses and holds Porter
+    assert player_status.status_override("Jontay Porter") == "overseas_active"
+    print("test_status_override_beats_retirement PASS")
+
+
 if __name__ == "__main__":
     test_roster_index()
     test_classify_roster_outranks_retirement()
@@ -203,4 +228,5 @@ if __name__ == "__main__":
     test_old_namesake_never_matches_roster()
     test_comeback_while_prose_remains()
     test_queue_shares_one_staleness_order()
+    test_status_override_beats_retirement()
     print("\nALL STATUS-CONTRADICTION TESTS PASS")

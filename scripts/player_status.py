@@ -18,7 +18,9 @@ than being stranded as ``retired`` and never re-checked).
 """
 from __future__ import annotations
 
+import json
 import re
+from pathlib import Path
 
 from rosters import NBA_TEAMS
 
@@ -45,6 +47,25 @@ def last_active_year(history: list[dict]) -> int:
         for y in re.findall(r"\d{4}", yrs):
             latest = max(latest, int(y))
     return latest
+
+
+STATUS_OVERRIDES = (Path(__file__).resolve().parent.parent
+                    / "data" / "players" / "status_overrides.json")
+_overrides: dict[str, str] | None = None
+
+
+def status_override(player: str) -> str:
+    """The hand-set status for this record, or "" (see status_overrides.json)."""
+    global _overrides
+    if _overrides is None:
+        try:
+            data = json.loads(STATUS_OVERRIDES.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            data = {}
+        _overrides = {o["player"]: o["status"] for o in data.get("overrides", [])
+                      if o.get("player") and o.get("status") in
+                      (NBA_ACTIVE, OVERSEAS_ACTIVE, RETIRED)}
+    return _overrides.get(player or "", "")
 
 
 def is_nba_team(team: str) -> bool:
@@ -96,6 +117,11 @@ def classify_status(record: dict, on_nba_roster: bool, current_year: int,
     fallback. Empty (the default, and every offline caller) leaves
     the rules below exactly as they were.
     """
+    # A hand-set status (data/players/status_overrides.json) beats every rule.
+    forced = status_override(record.get("player", ""))
+    if forced:
+        return forced
+
     if roster_team and is_nba_team(roster_team) and record.get("career_history"):
         return NBA_ACTIVE
 
