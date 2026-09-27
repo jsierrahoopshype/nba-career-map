@@ -23562,9 +23562,17 @@
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
+      },
+      {
+        "team": "Sacramento Kings",
+        "team_raw": "Sacramento Kings",
+        "years": "2026–present",
+        "city": "Sacramento",
+        "state": "California",
+        "country": "USA"
       }
     ],
-    "current_team": "LA Clippers",
+    "current_team": "Sacramento Kings",
     "status": "nba_active",
     "position": "Point guard",
     "birth_date": "1996-07-20",
@@ -23578,10 +23586,13 @@
       "team": "Philadelphia 76ers"
     },
     "display_name": "Ben Simmons",
-    "last_updated": "2026-09-08",
+    "last_updated": "2026-09-27",
     "all_star": true,
     "nationality": "Australia",
-    "all_star_count": 3
+    "all_star_count": 3,
+    "number": [
+      "25"
+    ]
   },
   {
     "player": "Ben Swain",
@@ -23882,9 +23893,17 @@
         "city": "Los Angeles",
         "state": "California",
         "country": "USA"
+      },
+      {
+        "team": "New Orleans Pelicans",
+        "team_raw": "New Orleans Pelicans",
+        "years": "2026–present",
+        "city": "New Orleans",
+        "state": "Louisiana",
+        "country": "USA"
       }
     ],
-    "current_team": "LA Clippers",
+    "current_team": "New Orleans Pelicans",
     "status": "nba_active",
     "position": "Shooting guard / small forward",
     "birth_date": "2002-06-19",
@@ -23897,8 +23916,11 @@
       "team": "Indiana Pacers"
     },
     "display_name": "Bennedict Mathurin",
-    "last_updated": "2026-08-26",
-    "nationality": "Canada"
+    "last_updated": "2026-09-27",
+    "nationality": "Canada",
+    "number": [
+      "24"
+    ]
   },
   {
     "player": "Beno Udrih",
@@ -64313,13 +64335,21 @@
         "city": "Newark",
         "state": "Delaware",
         "country": "USA"
+      },
+      {
+        "team": "Golden State Warriors",
+        "team_raw": "Golden State Warriors",
+        "years": "2026–present",
+        "city": "San Francisco",
+        "state": "California",
+        "country": "USA"
       }
     ],
-    "current_team": "Philadelphia 76ers",
+    "current_team": "Golden State Warriors",
     "status": "nba_active",
     "position": "Small forward",
     "number": [
-      "14"
+      "21"
     ],
     "birth_date": "2002-07-12",
     "birth_place": "Phoenix, Arizona, U.S.",
@@ -64332,7 +64362,7 @@
       "team": "Chicago Bulls"
     },
     "display_name": "Dalen Terry",
-    "last_updated": "2026-08-31",
+    "last_updated": "2026-09-27",
     "nationality": "United States"
   },
   {
@@ -77027,7 +77057,7 @@
         "country": "USA"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "New Orleans Pelicans",
         "city": "New Orleans",
         "state": "Louisiana",
@@ -77051,7 +77081,7 @@
       "team": "San Antonio Spurs"
     },
     "display_name": "Dejounte Murray",
-    "last_updated": "2026-08-26",
+    "last_updated": "2026-09-27",
     "all_star": true,
     "nationality": "United States",
     "all_star_count": 1
@@ -83074,7 +83104,7 @@
       }
     ],
     "current_team": "Phoenix Suns",
-    "status": "retired",
+    "status": "nba_active",
     "position": "Shooting guard",
     "number": [
       "15"
@@ -83090,9 +83120,8 @@
       "team": "Phoenix Suns"
     },
     "display_name": "Devin Booker",
-    "last_updated": "2026-07-13",
+    "last_updated": "2026-09-27",
     "all_star": true,
-    "retirement_announced": true,
     "nationality": "United States",
     "all_star_count": 5
   },
@@ -95498,7 +95527,7 @@
       {
         "team": "Dallas Mavericks",
         "team_raw": "Dallas Mavericks",
-        "years": "2014–2026",
+        "years": "2014–present",
         "city": "Dallas",
         "state": "Texas",
         "country": "USA"
@@ -95527,8 +95556,11 @@
       "team": "Charlotte Hornets"
     },
     "display_name": "Dwight Powell",
-    "last_updated": "2026-09-25",
-    "nationality": "Canada"
+    "last_updated": "2026-09-27",
+    "nationality": "Canada",
+    "number": [
+      "7"
+    ]
   },
   {
     "player": "Dwight Waller",
@@ -137031,7 +137063,7 @@
       "team": "Charlotte Hornets"
     },
     "display_name": "Jalen Duren",
-    "last_updated": "2026-08-26",
+    "last_updated": "2026-09-27",
     "all_star": true,
     "nationality": "United States",
     "all_star_count": 1
@@ -138723,7 +138755,7 @@
         "country": "USA"
       },
       {
-        "years": "2025-2026",
+        "years": "2025–present",
         "team": "Phoenix Suns",
         "city": "Phoenix",
         "state": "Arizona",
@@ -138751,7 +138783,7 @@
       "year": "2022"
     },
     "display_name": "Jamaree Bouyea",
-    "last_updated": "2026-08-26",
+    "last_updated": "2026-09-27",
     "nationality": "United States"
   },
   {
@@ -140374,7 +140406,7 @@
       {
         "team": "Cleveland Cavaliers",
         "team_raw": "Cleveland Cavaliers",
-        "years": "2026",
+        "years": "2026–present",
         "city": "Cleveland",
         "state": "Ohio",
         "country": "USA"
@@ -140384,7 +140416,7 @@
     "status": "nba_active",
     "position": "Point guard / shooting guard",
     "birth_date": "1989-08-26",
-    "birth_place": "Compton, California, U.S.",
+    "birth_place": "Los Angeles, California, U.S.",
     "high_school": "Artesia (Lakewood, California)",
     "college": "Arizona State (2007–2009)",
     "draft": {
@@ -140394,10 +140426,13 @@
       "team": "Oklahoma City Thunder"
     },
     "display_name": "James Harden",
-    "last_updated": "2026-08-26",
+    "last_updated": "2026-09-27",
     "all_star": true,
     "nationality": "United States",
-    "all_star_count": 11
+    "all_star_count": 11,
+    "number": [
+      "1"
+    ]
   },
   {
     "player": "James Hardy",
@@ -170403,7 +170438,7 @@
       "year": "2019"
     },
     "display_name": "Jontay Porter",
-    "last_updated": "2026-07-13",
+    "last_updated": "2026-09-27",
     "retirement_announced": true,
     "nationality": "United States"
   },
@@ -239254,9 +239289,17 @@
         "city": "Chicago",
         "state": "Illinois",
         "country": "USA"
+      },
+      {
+        "team": "Miami Heat",
+        "team_raw": "Miami Heat",
+        "years": "2026–present",
+        "city": "Miami",
+        "state": "Florida",
+        "country": "USA"
       }
     ],
-    "current_team": "Chicago Bulls",
+    "current_team": "Miami Heat",
     "status": "nba_active",
     "position": "Center",
     "birth_date": "1997-11-29",
@@ -239270,8 +239313,11 @@
       "team": "New Orleans Pelicans"
     },
     "display_name": "Nick Richards",
-    "last_updated": "2026-08-27",
-    "nationality": "Jamaica"
+    "last_updated": "2026-09-27",
+    "nationality": "Jamaica",
+    "number": [
+      "8"
+    ]
   },
   {
     "player": "Nick Shaback",
@@ -240856,7 +240902,7 @@
       }
     ],
     "current_team": "Orlando Magic",
-    "status": "retired",
+    "status": "nba_active",
     "position": "Center",
     "number": [
       "9"
@@ -240875,10 +240921,9 @@
     "aliases": [
       "Nikola Vučević"
     ],
-    "last_updated": "2026-07-13",
+    "last_updated": "2026-09-27",
     "nationality": "Montenegrin / Belgian / American",
     "all_star": true,
-    "retirement_announced": true,
     "all_star_count": 2
   },
   {
@@ -265947,7 +265992,7 @@
       }
     ],
     "current_team": "Joventut Badalona",
-    "status": "retired",
+    "status": "overseas_active",
     "position": "Point guard",
     "number": [
       "9"
@@ -265961,9 +266006,7 @@
       "team": "Minnesota Timberwolves"
     },
     "display_name": "Ricky Rubio",
-    "last_updated": "2026-07-13",
-    "retirement_announced": true,
-    "retirement_date": "2023-08-05",
+    "last_updated": "2026-09-27",
     "nationality": "Spain"
   },
   {
@@ -333241,7 +333284,7 @@
       {
         "team": "Miami Heat",
         "team_raw": "Miami Heat",
-        "years": "2024–2026",
+        "years": "2024–present",
         "city": "Miami",
         "state": "Florida",
         "country": "USA"
@@ -333249,7 +333292,7 @@
       {
         "team": "Sioux Falls Skyforce",
         "team_raw": "Sioux Falls Skyforce",
-        "years": "2024–2025",
+        "years": "2024–2025, 2026–present",
         "loan": true,
         "city": "Sioux Falls",
         "state": "South Dakota",
@@ -333262,13 +333305,16 @@
     "birth_date": "2001-06-23",
     "birth_place": "Oakland, California, U.S.",
     "high_school": "* Envision Academy, (Oakland, California) * San Leandro, (San Leandro, California)",
-    "college": "* San Diego State (2019–2023) * Arizona (2023–2024)",
+    "college": "* * Arizona (2023–2024)",
     "draft": {
       "year": "2024"
     },
     "display_name": "Keshad Johnson",
-    "last_updated": "2026-08-27",
-    "nationality": "United States"
+    "last_updated": "2026-09-27",
+    "nationality": "United States",
+    "number": [
+      "16"
+    ]
   },
   {
     "player": "Isaiah Stevens",
@@ -333923,7 +333969,7 @@
         "country": "Belgium"
       },
       {
-        "years": "2024-2026",
+        "years": "2024–present",
         "team": "Oklahoma City Thunder",
         "city": "Oklahoma City",
         "state": "Oklahoma",
@@ -333953,7 +333999,7 @@
       "team": "New York Knicks"
     },
     "display_name": "Ajay Mitchell",
-    "last_updated": "2026-08-26",
+    "last_updated": "2026-09-27",
     "nationality": "Belgium"
   },
   {
@@ -339552,12 +339598,29 @@
         "city": "Washington",
         "state": "D.C.",
         "country": "USA"
+      },
+      {
+        "team": "New Orleans Pelicans",
+        "team_raw": "New Orleans Pelicans",
+        "years": "2026–present",
+        "city": "New Orleans",
+        "state": "Louisiana",
+        "country": "USA"
+      },
+      {
+        "team": "Laketown Squadron",
+        "team_raw": "Laketown Squadron",
+        "years": "2026–present",
+        "loan": true,
+        "city": "Kenner",
+        "state": "Louisiana",
+        "country": "USA"
       }
     ],
-    "current_team": "Washington Wizards",
+    "current_team": "New Orleans Pelicans",
     "position": "Power forward",
     "number": [
-      "15"
+      "13"
     ],
     "birth_date": "2003-06-30",
     "birth_place": "Baltimore, Maryland, U.S.",
@@ -339571,7 +339634,7 @@
     "display_name": "Julian Reese",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Julian_Reese",
     "status": "nba_active",
-    "last_updated": "2026-09-24",
+    "last_updated": "2026-09-27",
     "nationality": "United States"
   },
   {

@@ -10674,7 +10674,7 @@
           "player": "Nikola Vucevic",
           "years": "2026",
           "stint_team": "Boston Celtics",
-          "status": "retired",
+          "status": "nba_active",
           "current_team": "Orlando Magic",
           "current_country": "USA",
           "nationality": "Montenegrin / Belgian / American",
@@ -12419,6 +12419,15 @@
           "nationality": "Germany"
         },
         {
+          "player": "Nikola Vucevic",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
+          "country": "USA",
+          "nationality": "Montenegrin / Belgian / American",
+          "all_star": true,
+          "all_star_count": 2
+        },
+        {
           "player": "Noah Vonleh",
           "status": "overseas_active",
           "current_team": "Zenit Saint Petersburg",
@@ -12899,7 +12908,7 @@
           "years": "2022–2025",
           "stint_team": "Brooklyn Nets",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "Australia",
           "all_star": true,
@@ -17750,7 +17759,7 @@
         {
           "player": "Ben Simmons",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "Sacramento Kings",
           "country": "USA",
           "nationality": "Australia",
           "all_star": true,
@@ -20891,7 +20900,7 @@
           "years": "2020–2025",
           "stint_team": "Charlotte Hornets",
           "status": "nba_active",
-          "current_team": "Chicago Bulls",
+          "current_team": "Miami Heat",
           "current_country": "USA",
           "nationality": "Jamaica"
         },
@@ -22233,7 +22242,7 @@
         {
           "player": "Nick Richards",
           "status": "nba_active",
-          "current_team": "Chicago Bulls",
+          "current_team": "Miami Heat",
           "country": "USA",
           "nationality": "Jamaica"
         },
@@ -23320,7 +23329,7 @@
           "years": "2022–2026",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "Golden State Warriors",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -25446,7 +25455,7 @@
           "years": "2026",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
-          "current_team": "Chicago Bulls",
+          "current_team": "Miami Heat",
           "current_country": "USA",
           "nationality": "Jamaica"
         },
@@ -25481,7 +25490,7 @@
           "player": "Nikola Vucevic",
           "years": "2021–2026",
           "stint_team": "Chicago Bulls",
-          "status": "retired",
+          "status": "nba_active",
           "current_team": "Orlando Magic",
           "current_country": "USA",
           "nationality": "Montenegrin / Belgian / American",
@@ -26847,7 +26856,7 @@
         {
           "player": "Dalen Terry",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "Golden State Warriors",
           "country": "USA",
           "nationality": "United States"
         },
@@ -27138,11 +27147,27 @@
           "nationality": "United States"
         },
         {
+          "player": "Nick Richards",
+          "status": "nba_active",
+          "current_team": "Miami Heat",
+          "country": "USA",
+          "nationality": "Jamaica"
+        },
+        {
           "player": "Nikola Mirotic",
           "status": "overseas_active",
           "current_team": "Valencia",
           "country": "Spain",
           "nationality": "Montenegrin / Spanish"
+        },
+        {
+          "player": "Nikola Vucevic",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
+          "country": "USA",
+          "nationality": "Montenegrin / Belgian / American",
+          "all_star": true,
+          "all_star_count": 2
         },
         {
           "player": "Noah Vonleh",
@@ -29299,7 +29324,7 @@
         },
         {
           "player": "James Harden",
-          "years": "2026",
+          "years": "2026–present",
           "stint_team": "Cleveland Cavaliers",
           "status": "nba_active",
           "current_team": "Cleveland Cavaliers",
@@ -31077,7 +31102,7 @@
           "player": "Ricky Rubio",
           "years": "2021–2024",
           "stint_team": "Cleveland Cavaliers",
-          "status": "retired",
+          "status": "overseas_active",
           "current_team": "Joventut Badalona",
           "current_country": "Spain",
           "nationality": "Spain"
@@ -32499,6 +32524,13 @@
           "nationality": "Brazilian / Italian"
         },
         {
+          "player": "Ricky Rubio",
+          "status": "overseas_active",
+          "current_team": "Joventut Badalona",
+          "country": "Spain",
+          "nationality": "Spain"
+        },
+        {
           "player": "Sam Dekker",
           "status": "overseas_active",
           "current_team": "Joventut Badalona",
@@ -33900,7 +33932,7 @@
         },
         {
           "player": "Dwight Powell",
-          "years": "2014–2026",
+          "years": "2014–present",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
           "current_team": "Dallas Mavericks",
@@ -49775,6 +49807,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Dalen Terry",
+          "years": "2026–present",
+          "stint_team": "Golden State Warriors",
+          "status": "nba_active",
+          "current_team": "Golden State Warriors",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Damian Jones",
           "years": "2016–2019",
           "stint_team": "Golden State Warriors",
@@ -54524,8 +54565,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 608,
-      "alumni_count": 576,
+      "roster_count": 609,
+      "alumni_count": 577,
       "related": [
         {
           "type": "club",
@@ -60004,7 +60045,7 @@
           "years": "2022–2026",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "New Orleans Pelicans",
           "current_country": "USA",
           "nationality": "Canada"
         },
@@ -63414,7 +63455,7 @@
         {
           "player": "Bennedict Mathurin",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "New Orleans Pelicans",
           "country": "USA",
           "nationality": "Canada"
         },
@@ -64196,7 +64237,7 @@
           "years": "2025",
           "stint_team": "LA Clippers",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "Australia",
           "all_star": true,
@@ -64207,7 +64248,7 @@
           "years": "2026",
           "stint_team": "LA Clippers",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "New Orleans Pelicans",
           "current_country": "USA",
           "nationality": "Canada"
         },
@@ -68959,6 +69000,22 @@
           "current_team": "Chicago Bulls",
           "country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Ben Simmons",
+          "status": "nba_active",
+          "current_team": "Sacramento Kings",
+          "country": "USA",
+          "nationality": "Australia",
+          "all_star": true,
+          "all_star_count": 3
+        },
+        {
+          "player": "Bennedict Mathurin",
+          "status": "nba_active",
+          "current_team": "New Orleans Pelicans",
+          "country": "USA",
+          "nationality": "Canada"
         },
         {
           "player": "Boban Marjanovic",
@@ -80833,7 +80890,7 @@
         },
         {
           "player": "Keshad Johnson",
-          "years": "2024–2026",
+          "years": "2024–present",
           "stint_team": "Miami Heat",
           "status": "nba_active",
           "current_team": "Miami Heat",
@@ -81372,6 +81429,15 @@
           "current_team": "Crvena Zvezda",
           "current_country": "Serbia",
           "nationality": "Serbia"
+        },
+        {
+          "player": "Nick Richards",
+          "years": "2026–present",
+          "stint_team": "Miami Heat",
+          "status": "nba_active",
+          "current_team": "Miami Heat",
+          "current_country": "USA",
+          "nationality": "Jamaica"
         },
         {
           "player": "Nik Stauskas",
@@ -82802,8 +82868,8 @@
           "nationality": "Slovenian"
         }
       ],
-      "roster_count": 330,
-      "alumni_count": 311,
+      "roster_count": 331,
+      "alumni_count": 312,
       "related": [
         {
           "type": "club",
@@ -90553,7 +90619,7 @@
           "player": "Ricky Rubio",
           "years": "2011–2017",
           "stint_team": "Minnesota Timberwolves",
-          "status": "retired",
+          "status": "overseas_active",
           "current_team": "Joventut Badalona",
           "current_country": "Spain",
           "nationality": "Spain"
@@ -90562,7 +90628,7 @@
           "player": "Ricky Rubio",
           "years": "2020–21",
           "stint_team": "Minnesota Timberwolves",
-          "status": "retired",
+          "status": "overseas_active",
           "current_team": "Joventut Badalona",
           "current_country": "Spain",
           "nationality": "Spain"
@@ -91687,6 +91753,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Ricky Rubio",
+          "status": "overseas_active",
+          "current_team": "Joventut Badalona",
+          "country": "Spain",
+          "nationality": "Spain"
+        },
+        {
           "player": "Rob Dillingham",
           "status": "nba_active",
           "current_team": "Chicago Bulls",
@@ -92035,6 +92108,15 @@
           "current_country": "USA",
           "nationality": "United States",
           "all_star_count": 2
+        },
+        {
+          "player": "Bennedict Mathurin",
+          "years": "2026–present",
+          "stint_team": "New Orleans Pelicans",
+          "status": "nba_active",
+          "current_team": "New Orleans Pelicans",
+          "current_country": "USA",
+          "nationality": "Canada"
         },
         {
           "player": "Bobby Brown",
@@ -92462,7 +92544,7 @@
         },
         {
           "player": "Dejounte Murray",
-          "years": "2024-2026",
+          "years": "2024–present",
           "stint_team": "New Orleans Pelicans",
           "status": "nba_active",
           "current_team": "New Orleans Pelicans",
@@ -93295,6 +93377,15 @@
           "nationality": "United States",
           "all_star": true,
           "all_star_count": 2
+        },
+        {
+          "player": "Julian Reese",
+          "years": "2026–present",
+          "stint_team": "New Orleans Pelicans",
+          "status": "nba_active",
+          "current_team": "New Orleans Pelicans",
+          "current_country": "USA",
+          "nationality": "United States"
         },
         {
           "player": "Julian Wright",
@@ -95104,8 +95195,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 280,
-      "alumni_count": 269,
+      "roster_count": 282,
+      "alumni_count": 271,
       "related": [
         {
           "type": "club",
@@ -101360,7 +101451,7 @@
         },
         {
           "player": "Ajay Mitchell",
-          "years": "2024-2026",
+          "years": "2024–present",
           "stint_team": "Oklahoma City Thunder",
           "status": "nba_active",
           "current_team": "Oklahoma City Thunder",
@@ -108045,7 +108136,7 @@
           "player": "Nikola Vucevic",
           "years": "2012–2021",
           "stint_team": "Orlando Magic",
-          "status": "retired",
+          "status": "nba_active",
           "current_team": "Orlando Magic",
           "current_country": "USA",
           "nationality": "Montenegrin / Belgian / American",
@@ -108056,7 +108147,7 @@
           "player": "Nikola Vucevic",
           "years": "2026–present",
           "stint_team": "Orlando Magic",
-          "status": "retired",
+          "status": "nba_active",
           "current_team": "Orlando Magic",
           "current_country": "USA",
           "nationality": "Montenegrin / Belgian / American",
@@ -109833,7 +109924,7 @@
           "years": "2016–2022",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "Australia",
           "all_star": true,
@@ -110612,7 +110703,7 @@
           "years": "2026",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
-          "current_team": "Philadelphia 76ers",
+          "current_team": "Golden State Warriors",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -113856,7 +113947,7 @@
           "player": "Nikola Vucevic",
           "years": "2011–12",
           "stint_team": "Philadelphia 76ers",
-          "status": "retired",
+          "status": "nba_active",
           "current_team": "Orlando Magic",
           "current_country": "USA",
           "nationality": "Montenegrin / Belgian / American",
@@ -115397,7 +115488,7 @@
         {
           "player": "Ben Simmons",
           "status": "nba_active",
-          "current_team": "LA Clippers",
+          "current_team": "Sacramento Kings",
           "country": "USA",
           "nationality": "Australia",
           "all_star": true,
@@ -115492,6 +115583,13 @@
           "status": "overseas_active",
           "current_team": "Tasmania JackJumpers",
           "country": "Australia",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dalen Terry",
+          "status": "nba_active",
+          "current_team": "Golden State Warriors",
+          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -115963,6 +116061,15 @@
           "current_team": "Scarborough Shooting Stars",
           "country": "Canada",
           "nationality": "United States"
+        },
+        {
+          "player": "Nikola Vucevic",
+          "status": "nba_active",
+          "current_team": "Orlando Magic",
+          "country": "USA",
+          "nationality": "Montenegrin / Belgian / American",
+          "all_star": true,
+          "all_star_count": 2
         },
         {
           "player": "Norvel Pelle",
@@ -117266,7 +117373,7 @@
           "player": "Devin Booker",
           "years": "2015–present",
           "stint_team": "Phoenix Suns",
-          "status": "retired",
+          "status": "nba_active",
           "current_team": "Phoenix Suns",
           "current_country": "USA",
           "nationality": "United States",
@@ -118159,7 +118266,7 @@
         },
         {
           "player": "Jamaree Bouyea",
-          "years": "2025-2026",
+          "years": "2025–present",
           "stint_team": "Phoenix Suns",
           "status": "nba_active",
           "current_team": "Phoenix Suns",
@@ -119434,7 +119541,7 @@
           "years": "2025–2026",
           "stint_team": "Phoenix Suns",
           "status": "nba_active",
-          "current_team": "Chicago Bulls",
+          "current_team": "Miami Heat",
           "current_country": "USA",
           "nationality": "Jamaica"
         },
@@ -119769,7 +119876,7 @@
           "player": "Ricky Rubio",
           "years": "2019–20",
           "stint_team": "Phoenix Suns",
-          "status": "retired",
+          "status": "overseas_active",
           "current_team": "Joventut Badalona",
           "current_country": "Spain",
           "nationality": "Spain"
@@ -121196,7 +121303,7 @@
         {
           "player": "Nick Richards",
           "status": "nba_active",
-          "current_team": "Chicago Bulls",
+          "current_team": "Miami Heat",
           "country": "USA",
           "nationality": "Jamaica"
         },
@@ -121227,6 +121334,13 @@
           "current_team": "Panathinaikos",
           "country": "Greece",
           "nationality": "United States"
+        },
+        {
+          "player": "Ricky Rubio",
+          "status": "overseas_active",
+          "current_team": "Joventut Badalona",
+          "country": "Spain",
+          "nationality": "Spain"
         },
         {
           "player": "Royce O'Neale",
@@ -126376,6 +126490,17 @@
           "current_team": "Merkezefendi Belediyesi Denizli",
           "current_country": "Turkey",
           "nationality": "United States"
+        },
+        {
+          "player": "Ben Simmons",
+          "years": "2026–present",
+          "stint_team": "Sacramento Kings",
+          "status": "nba_active",
+          "current_team": "Sacramento Kings",
+          "current_country": "USA",
+          "nationality": "Australia",
+          "all_star": true,
+          "all_star_count": 3
         },
         {
           "player": "Beno Udrih",
@@ -132199,8 +132324,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 604,
-      "alumni_count": 567,
+      "roster_count": 605,
+      "alumni_count": 568,
       "related": [
         {
           "type": "club",
@@ -143268,7 +143393,7 @@
           "player": "Ricky Rubio",
           "years": "2017–2019",
           "stint_team": "Utah Jazz",
-          "status": "retired",
+          "status": "overseas_active",
           "current_team": "Joventut Badalona",
           "current_country": "Spain",
           "nationality": "Spain"
@@ -144465,6 +144590,13 @@
           "current_team": "Zhejiang Lions",
           "country": "China",
           "nationality": "United States"
+        },
+        {
+          "player": "Ricky Rubio",
+          "status": "overseas_active",
+          "current_team": "Joventut Badalona",
+          "country": "Spain",
+          "nationality": "Spain"
         },
         {
           "player": "Royce O'Neale",
@@ -148336,7 +148468,7 @@
           "years": "2026",
           "stint_team": "Washington Wizards",
           "status": "nba_active",
-          "current_team": "Washington Wizards",
+          "current_team": "New Orleans Pelicans",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -151446,6 +151578,13 @@
           "player": "Jules Bernard",
           "status": "overseas_active",
           "current_team": "Iowa Wolves",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
+          "player": "Julian Reese",
+          "status": "nba_active",
+          "current_team": "New Orleans Pelicans",
           "country": "USA",
           "nationality": "United States"
         },

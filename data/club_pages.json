@@ -8726,7 +8726,7 @@
         },
         {
           "player": "Keshad Johnson",
-          "years": "2024–2025",
+          "years": "2024–2025, 2026–present",
           "status": "nba_active",
           "last_team": "Miami Heat",
           "nationality": "United States"
@@ -12862,7 +12862,7 @@
           "player": "Nick Richards",
           "years": "2021",
           "status": "nba_active",
-          "last_team": "Chicago Bulls",
+          "last_team": "Miami Heat",
           "nationality": "Jamaica"
         },
         {
@@ -16943,7 +16943,7 @@
           "player": "Dalen Terry",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "last_team": "Golden State Warriors",
           "nationality": "United States"
         },
         {
@@ -24031,7 +24031,7 @@
         {
           "player": "Ricky Rubio",
           "years": "2005–2009, 2025–present",
-          "status": "retired",
+          "status": "overseas_active",
           "last_team": "Joventut Badalona",
           "nationality": "Spain"
         },
@@ -35143,7 +35143,7 @@
           "player": "Dalen Terry",
           "years": "2022–2023",
           "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "last_team": "Golden State Warriors",
           "nationality": "United States"
         },
         {
@@ -39018,7 +39018,7 @@
           "player": "Julian Reese",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "last_team": "New Orleans Pelicans",
           "nationality": "United States"
         },
         {
@@ -54483,7 +54483,7 @@
           "player": "Julian Reese",
           "years": "2025–2026",
           "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "last_team": "New Orleans Pelicans",
           "nationality": "United States"
         },
         {
@@ -63038,7 +63038,7 @@
         {
           "player": "Ricky Rubio",
           "years": "2009–2011, 2024",
-          "status": "retired",
+          "status": "overseas_active",
           "last_team": "Joventut Badalona",
           "nationality": "Spain"
         },
@@ -156592,7 +156592,7 @@
         {
           "player": "Nikola Vucevic",
           "years": "2011",
-          "status": "retired",
+          "status": "nba_active",
           "last_team": "Orlando Magic",
           "nationality": "Montenegrin / Belgian / American",
           "all_star": true,
@@ -299093,6 +299093,76 @@
         }
       ]
     },
+    "Laketown Squadron": {
+      "club": "Laketown Squadron",
+      "city": "Kenner",
+      "state": "Louisiana",
+      "country": "USA",
+      "count": 3,
+      "roster": [
+        {
+          "player": "Jaron Pierre Jr.",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans"
+        },
+        {
+          "player": "Julian Reese",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
+          "nationality": "United States"
+        },
+        {
+          "player": "Malik Dia",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Raptors 905",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Idaho Stampede",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Rockford Lightning",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Rapid City Thrillers",
+          "shared": 0
+        }
+      ]
+    },
     "Cobra Sport": {
       "club": "Cobra Sport",
       "city": "Juba",
@@ -299630,69 +299700,6 @@
         {
           "type": "club",
           "name": "Čelik Zenica",
-          "shared": 0
-        }
-      ]
-    },
-    "Laketown Squadron": {
-      "club": "Laketown Squadron",
-      "city": "Kenner",
-      "state": "Louisiana",
-      "country": "USA",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Jaron Pierre Jr.",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans"
-        },
-        {
-          "player": "Malik Dia",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
           "shared": 0
         }
       ]
