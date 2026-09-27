@@ -66,8 +66,8 @@ from player_status import (classify_status, last_active_year, PRESENT,
                            RETIRED as RETIRED_STATUS)  # RETIRED name is the file path below
 from geo import resolve_location
 import player_urls
-from names import (normkey, url_key, canonical_url, title_from_url,
-                   exact_article_key)
+from names import (display_name_for, normkey, url_key, canonical_url,
+                   title_from_url, exact_article_key)
 from wiki_person import same_person, candidate_titles
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -664,7 +664,17 @@ def merge_player(db: Database, name: str, client: WikipediaClient,
     if not str(key or "").strip():
         return None, [], False, None, None
     rec["player"] = key
-    rec["display_name"] = canonical_title or rec.get("display_name") or key
+    # The display name is the record's own name; the article title is only
+    # the link. Writing the title here is how ~200 records came to read
+    # "Anthony Edwards (basketball)", "Harry Giles III" and "Cat Barber" after
+    # the override re-scrapes. So a clean display name already on the record
+    # is never replaced, and a missing one (a new record) or one carrying a
+    # disambiguator is derived from the key, taking the title's spelling only
+    # when it is the same name (accents, case, punctuation -- "Nikola Jokić").
+    current = rec.get("display_name") or ""
+    if not current or "(" in current:
+        rec["display_name"] = display_name_for(key, current,
+                                               canonical_title or "", name)
     aliases = set(base.get("aliases", []))
     for alt in (name, canonical_title, base.get("player")):
         if alt and alt != key:
