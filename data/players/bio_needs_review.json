@@ -1,9 +1,9 @@
 {
   "counts": {
-    "date_disagreement": 168,
+    "date_disagreement": 166,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 6,
-    "wrong_entity": 19,
+    "wrong_entity": 6,
     "wrong_entity_replaced": 0
   },
   "cross_check_source": "https://raw.githubusercontent.com/sumitrodatta/bball-reference-datasets/master/Data/Player%20Career%20Info.csv",
@@ -719,16 +719,6 @@
       "years_apart": 0
     },
     {
-      "basketball_reference": "1966-01-02",
-      "places_kept": true,
-      "player": "Irving Thomas",
-      "used": "1966-01-02",
-      "used_source": "basketball-reference",
-      "wikidata": "1966-01-03",
-      "wikidata_id": "Q3802162",
-      "years_apart": 0
-    },
-    {
       "basketball_reference": "1930-08-25",
       "places_kept": false,
       "player": "Isaac Walthour",
@@ -859,16 +849,6 @@
       "years_apart": 0
     },
     {
-      "basketball_reference": "1998-08-25",
-      "places_kept": true,
-      "player": "Jay Huff",
-      "used": "1998-08-25",
-      "used_source": "basketball-reference",
-      "wikidata": "1997-08-25",
-      "wikidata_id": "Q91330335",
-      "years_apart": 1
-    },
-    {
       "basketball_reference": "1943-07-19",
       "places_kept": true,
       "player": "Jay Miller",
@@ -979,16 +959,6 @@
       "years_apart": 0
     },
     {
-      "basketball_reference": "1974-06-06",
-      "places_kept": true,
-      "player": "Jonathan Kerner",
-      "used": "1974-06-06",
-      "used_source": "basketball-reference",
-      "wikidata": "1974-06-09",
-      "wikidata_id": "Q3809932",
-      "years_apart": 0
-    },
-    {
       "basketball_reference": "1971-05-01",
       "places_kept": true,
       "player": "Julius Nwosu",
@@ -996,6 +966,16 @@
       "used_source": "basketball-reference",
       "wikidata": "1971-01-05",
       "wikidata_id": "Q1659574",
+      "years_apart": 0
+    },
+    {
+      "basketball_reference": "1997-10-12",
+      "places_kept": true,
+      "player": "Justin Robinson",
+      "used": "1997-10-12",
+      "used_source": "basketball-reference",
+      "wikidata": "1997-10-17",
+      "wikidata_id": "Q65581020",
       "years_apart": 0
     },
     {
@@ -1797,24 +1777,6 @@
       "birth_date_used": "",
       "detected_by": "wikidata identity gate (P106/P641)",
       "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Alpha Diallo",
-      "rejected_wikidata_id": "Q92771790",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Alpha Diallo",
-        "wikidata_id": "Q92771790"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Alpha_Diallo"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
       "player": "Ben Swain",
       "rejected_wikidata_id": "Q816609",
       "replacement": null,
@@ -1827,114 +1789,6 @@
         "wikidata_id": "Q816609"
       },
       "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Swain"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Braden Smith",
-      "rejected_wikidata_id": "Q132579759",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Braden Smith",
-        "wikidata_id": "Q132579759"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Braden_Smith"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Bruce Thornton",
-      "rejected_wikidata_id": "Q4978361",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Bruce Thornton",
-        "wikidata_id": "Q4978361"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Bruce_Thornton"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Cameron Carr",
-      "rejected_wikidata_id": "Q5026199",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Cameron Carr",
-        "wikidata_id": "Q5026199"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Cameron_Carr"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Carson Cooper",
-      "rejected_wikidata_id": "Q2940426",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "1897-07-17",
-        "death_date": "1955-07-04",
-        "description": "Canadian ice hockey player",
-        "label": "Carson Cooper",
-        "wikidata_id": "Q2940426"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Carson_Cooper"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Chris Johnson",
-      "rejected_wikidata_id": "Q440005",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Chris Johnson",
-        "wikidata_id": "Q440005"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Johnson"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Dillon Mitchell",
-      "rejected_wikidata_id": "Q129166373",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Dillon Mitchell",
-        "wikidata_id": "Q129166373"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Dillon_Mitchell"
     },
     {
       "basketball_reference": "",
@@ -1989,114 +1843,6 @@
         "wikidata_id": "Q6141211"
       },
       "wikipedia_url": "https://en.wikipedia.org/wiki/James_Phelan"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "John Lucas",
-      "rejected_wikidata_id": "Q359497",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "John Lucas",
-        "wikidata_id": "Q359497"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Lucas"
-    },
-    {
-      "basketball_reference": "1997-10-12",
-      "birth_date_used": "1997-10-12",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Justin Robinson",
-      "rejected_wikidata_id": "Q28874201",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Justin Robinson",
-        "wikidata_id": "Q28874201"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Robinson"
-    },
-    {
-      "basketball_reference": "1966-03-04",
-      "birth_date_used": "1966-03-04",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Kevin Johnson",
-      "rejected_wikidata_id": "Q119932",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Kevin Johnson",
-        "wikidata_id": "Q119932"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Kevin_Johnson_(basketball)"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Mike Dunleavy",
-      "rejected_wikidata_id": "Q1588701",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "",
-        "death_date": "",
-        "description": "Wikimedia disambiguation page",
-        "label": "Mike Dunleavy",
-        "wikidata_id": "Q1588701"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Mike_Dunleavy"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Nick Martinelli",
-      "rejected_wikidata_id": "Q7027512",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "1952-07-05",
-        "death_date": "",
-        "description": "American musician",
-        "label": "Nick Martinelli",
-        "wikidata_id": "Q7027512"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Nick_Martinelli"
-    },
-    {
-      "basketball_reference": "",
-      "birth_date_used": "",
-      "detected_by": "wikidata identity gate (P106/P641)",
-      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
-      "player": "Richie Saunders",
-      "rejected_wikidata_id": "Q7330576",
-      "replacement": null,
-      "replacement_found": false,
-      "resolved_to": {
-        "birth_date": "1913-08-08",
-        "death_date": "1978-02-14",
-        "description": "Australian rules footballer (1913–1978)",
-        "label": "Richie Saunders",
-        "wikidata_id": "Q7330576"
-      },
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Richie_Saunders"
     },
     {
       "basketball_reference": "",
