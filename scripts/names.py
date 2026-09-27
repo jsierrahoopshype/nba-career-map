@@ -48,6 +48,49 @@ def normkey(name: str) -> str:
     return " ".join(tokens)
 
 
+_PAREN = re.compile(r"\s*\([^)]*\)")
+
+
+def strip_disambiguator(name: str) -> str:
+    """'Anthony Edwards (basketball)' -> 'Anthony Edwards'.
+
+    Removes every parenthetical, and nothing else: a Jr./II/III that belongs
+    to the name stays.
+    """
+    return re.sub(r"\s+", " ", _PAREN.sub("", name or "")).strip()
+
+
+def spelling_key(name: str) -> str:
+    """Compare two spellings of ONE name: accents, case and punctuation fold
+    away, a parenthetical is dropped, and -- unlike normkey -- a suffix is
+    kept. "Jorge Gutiérrez" matches "Jorge Gutierrez"; "Harry Giles III" does
+    not match "Harry Giles", and "Cat Barber" does not match "Anthony Barber".
+    """
+    return re.sub(r"[^a-z0-9]", "",
+                  strip_accents(strip_disambiguator(name)).casefold())
+
+
+def display_name_for(key: str, current: str = "", *spellings: str) -> str:
+    """The name a record is shown under.
+
+    It is the record's own name. The article title is only the link: it may
+    carry a disambiguator ("(basketball, born 1990)"), a suffix the record does
+    not ("Harry Giles III"), or a different name altogether ("Cat Barber"),
+    and none of that belongs on the page.
+
+    The first of `current`, then `spellings` (e.g. the article title), that is
+    the same name as the key -- up to accents, case and punctuation, so
+    "Dennis Schröder" and "Mamadou N'Diaye" survive -- is kept, with any
+    parenthetical removed. Otherwise the key itself, minus a parenthetical.
+    """
+    want = spelling_key(key)
+    for cand in (current, *spellings):
+        cand = strip_disambiguator(cand)
+        if cand and spelling_key(cand) == want:
+            return cand
+    return strip_disambiguator(key) or key
+
+
 def title_from_url(url: str) -> str:
     """Article title from a Wikipedia URL ('.../Alperen_Sengun' -> 'Alperen Sengun')."""
     if not url:
