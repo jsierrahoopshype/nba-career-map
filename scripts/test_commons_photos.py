@@ -1,9 +1,9 @@
 """Tests for the Commons photo gate.
 
 The whole point of this module is saying no, so that is what gets tested: real
-extmetadata shapes from Commons, and the ones that must be refused. A false
-positive here is a licensing problem on HoopsHype's accounts, not a rendering
-bug, so the gate is default-deny and the test asserts that directly.
+extmetadata shapes from Commons, and the ones that must be refused. Only use
+photos whose license allows reuse with attribution, so the gate is
+default-deny and the test asserts that directly.
 
 Run:  python3 scripts/test_commons_photos.py
 """

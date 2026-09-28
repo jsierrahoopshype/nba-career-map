@@ -2,10 +2,9 @@
 
 WHY. nba-headshots covers current NBA players, which is 29 of the ~1,300 who
 qualify for a clip -- the rest are retired or spent their careers overseas. The
-gap cannot be filled from a general image search: these clips get posted on
-HoopsHype's accounts, and Getty, AP and NBAE photos carry real licensing risk.
-Commons is the one large pool where the licence is machine-readable and where
-non-free content is not accepted at all.
+gap cannot be filled from a general image search. Only use photos whose
+license allows reuse with attribution. Commons is the one large pool where the
+licence is machine-readable and where non-free content is not accepted at all.
 
 TWO INDEPENDENT GATES, both of which a file has to pass.
 
