@@ -52,7 +52,7 @@ PAGES = {
         # would leave the page with two.
         "canonical": False,
         "path": "/",
-        "title": "NBA Career Map: where every NBA player is playing now | HoopsHype",
+        "title": "NBA Career Map: where every NBA player is playing now | HoopsMatic",
         "description": (
             "A live dashboard of where every NBA player is playing now \u2014 overseas "
             "signings, country hotspots, most-traveled journeymen, and club alumni."
@@ -60,7 +60,7 @@ PAGES = {
     },
     "teams.html": {
         "path": "/teams.html",
-        "title": "NBA Teams: all-time rosters for all 30 franchises | HoopsHype",
+        "title": "NBA Teams: all-time rosters for all 30 franchises | HoopsMatic",
         "description": (
             "Every player who ever suited up for each NBA franchise, across all "
             "name and city eras, plus the international and minor-league clubs "

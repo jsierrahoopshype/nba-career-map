@@ -287,7 +287,7 @@ def build_description(player: dict) -> str:
     current = (player.get("current_team") or "").strip()
 
     if not clubs:
-        return (f"{name}'s NBA career path on the HoopsHype Career Map: every "
+        return (f"{name}'s NBA career path on the HoopsMatic Career Map: every "
                 f"team, city and country, mapped stop by stop.")[:DESC_MAX]
 
     where = (f"{len(clubs)} clubs" if len(clubs) != 1 else "one club")
@@ -329,7 +329,7 @@ def build_description(player: dict) -> str:
 
 def build_title(player: dict) -> str:
     name = player.get("display_name") or player.get("player") or ""
-    return f"Where Has {name} Played? Every Team, City and Country | HoopsHype"
+    return f"{name} Teams: Every Team, City and Country | HoopsMatic"
 
 
 def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
@@ -455,7 +455,7 @@ def render(player: dict) -> str:
 
 # --- team pages -------------------------------------------------------------
 def build_team_title(franchise: str) -> str:
-    return (f"Every Player Who Has Played for the {franchise} | HoopsHype")
+    return (f"Every Player Who Has Played for the {franchise} | HoopsMatic")
 
 
 def build_team_description(franchise: str, team: dict) -> str:
@@ -510,7 +510,7 @@ def build_country_title(country: str) -> str:
     # Says clubs, because clubs are what the page lists. Promising "every
     # player" and then showing a club table is the kind of mismatch that gets
     # a click and loses it again.
-    return f"NBA Players in {country}: Every Club They Have Played For | HoopsHype"
+    return f"NBA Players in {country}: Every Club They Have Played For | HoopsMatic"
 
 
 def build_country_description(country: str, players: int, clubs: int) -> str:

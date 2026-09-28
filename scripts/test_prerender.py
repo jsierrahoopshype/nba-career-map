@@ -61,8 +61,8 @@ def test_slugs_unique_over_real_data():
 def test_head_tags_in_served_markup():
     html = pr.render(SAMPLE)
     canon = f"{pr.SITE_BASE_URL}/player/nikola-jokic.html"
-    assert "<title>Where Has Nikola Jokić Played? Every Team, City and Country " \
-           "| HoopsHype</title>" in html
+    assert "<title>Nikola Jokić Teams: Every Team, City and Country " \
+           "| HoopsMatic</title>" in html
     assert f'<link rel="canonical" href="{canon}">' in html
     assert f'<meta property="og:url" content="{canon}">' in html
     # A player with a generated card points at it; everyone else falls back to
@@ -197,7 +197,7 @@ def test_escaping():
     html = pr.render(nasty)
     assert "<script>" not in html.split("</head>")[1], "unescaped markup in body"
     assert "&amp;" in html and "&lt;" in html
-    assert 'content="Where Has Bob &quot;Tiny&quot;' in html
+    assert 'content="Bob &quot;Tiny&quot; O&lt;br&gt;Neal Teams:' in html
     print("test_escaping PASS")
 
 
@@ -250,7 +250,7 @@ def test_team_page():
     html = pr.render_team("Los Angeles Lakers", TEAM_FIX)
     canon = f"{pr.SITE_BASE_URL}/team/los-angeles-lakers.html"
     assert "<title>Every Player Who Has Played for the Los Angeles Lakers " \
-           "| HoopsHype</title>" in html
+           "| HoopsMatic</title>" in html
     assert f'<link rel="canonical" href="{canon}">' in html
     assert f'<meta property="og:url" content="{canon}">' in html
     assert "523 players" in html and "Minneapolis Lakers" in html
