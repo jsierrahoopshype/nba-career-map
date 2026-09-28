@@ -1,3 +1,27 @@
+## 2026-09-28 — incremental run
+
+- Players updated: **559** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **12**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - Blake Wesley: Portland Trail Blazers → LA Clippers
+  - Duop Reath: Portland Trail Blazers → Phoenix Suns
+  - Brandon Ingram: Toronto Raptors → LA Clippers
+  - Buddy Hield: Atlanta Hawks → Chicago Bulls
+  - Dorian Finney-Smith: Charlotte Hornets → Atlanta Hawks
+  - Gradey Dick: Toronto Raptors → LA Clippers
+  - Jordan Hawkins: New Orleans Pelicans → Memphis Grizzlies
+  - Rob Dillingham: Chicago Bulls → Charlotte Hornets
+  - Cody Williams: Utah Jazz → Minnesota Timberwolves
+  - Micah Peavy: New Orleans Pelicans → Memphis Grizzlies
+  - Rafael Castro: Milwaukee Bucks → Houston Rockets
+  - Bez Mbeng: Charlotte Hornets → Miami Heat
+
 ## 2026-09-27 — single run
 
 - Players updated: **42** (0 new)
