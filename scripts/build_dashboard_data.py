@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import hashlib
 import json
 import re
 import sys
@@ -51,6 +52,9 @@ NBA_TEAM_INDEX_OUT = ROOT / "data" / "nba_team_index.json"
 PLAYER_ALIASES_OUT = ROOT / "data" / "player_aliases.json"
 PLAYER_INDEX_OUT = ROOT / "data" / "player_index.json"  # all names, light homepage search
 SITEMAP_OUT = ROOT / "sitemap.xml"
+# url -> [content hash, lastmod date] for every sitemap entry. What lets
+# <lastmod> mean "this page last changed on" rather than "the pipeline ran on".
+SITEMAP_LASTMOD_OUT = ROOT / "data" / "sitemap_lastmod.json"
 
 # Absolute address the site is served from, used here for sitemap.xml. Owned
 # by scripts/site_config.py, which the prerendered pages and the share tags read too.
@@ -707,9 +711,8 @@ def w_player_aliases(players: list) -> dict:
     return out
 
 
-def build_sitemap(players: list) -> str:
-    """XML sitemap: team pages + player pages + country place-pages (query URLs)."""
-    from urllib.parse import quote
+def sitemap_urls(players: list) -> list:
+    """Every URL the sitemap lists: team pages + player pages + country pages."""
     urls = [f"{SITE_BASE_URL}/index.html"]
     urls += [f"{SITE_BASE_URL}/teams.html"]
     urls += [prerender.team_url(fr) for fr in sorted(NBA_TEAMS)]
@@ -723,10 +726,62 @@ def build_sitemap(players: list) -> str:
     # every existing share link; index.html points their canonical here.
     names = sorted({p["player"] for p in players if str(p.get("player") or "").strip()})
     urls += [prerender.player_url(n) for n in names]
-    body = "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls)
+    return urls
+
+
+def sitemap_lastmod(urls: list, prev: dict, today: datetime.date) -> dict:
+    """url -> [hash, date]. The date moves only when the page's bytes change.
+
+    Each URL maps to the file served for it (the part after SITE_BASE_URL), and
+    the file on disk is hashed. Same hash as last run -> keep the stored date;
+    new or different -> today. So a daily run that rewrites nothing leaves
+    every <lastmod> where it was, and one player's new signing moves only
+    that player's.
+    """
+    out = {}
+    for u in urls:
+        rel = u[len(SITE_BASE_URL) + 1:]
+        try:
+            h = hashlib.sha256((ROOT / rel).read_bytes()).hexdigest()[:16]
+        except OSError:
+            h = ""
+        old = prev.get(u)
+        out[u] = old if old and old[0] == h else [h, today.isoformat()]
+    return out
+
+
+def build_sitemap(players: list, lastmod: dict | None = None) -> str:
+    """XML sitemap, with a <lastmod> on every URL that has one in `lastmod`."""
+    def entry(u):
+        if lastmod and u in lastmod:
+            return f"  <url><loc>{u}</loc><lastmod>{lastmod[u][1]}</lastmod></url>"
+        return f"  <url><loc>{u}</loc></url>"
+    body = "\n".join(entry(u) for u in sitemap_urls(players))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             f"{body}\n</urlset>\n")
+
+
+def sitemap_files(players: list, today: datetime.date | None = None) -> dict:
+    """sitemap.xml and its lastmod state, as bytes.
+
+    Hashes the pages ON DISK, so it has to run after prerender has written
+    them (main() does); run before, it would date this run's changes a day
+    late.
+    """
+    if today is None:
+        # UTC, so the date does not depend on the runner's timezone.
+        today = datetime.datetime.now(datetime.timezone.utc).date()
+    try:
+        prev = json.loads(SITEMAP_LASTMOD_OUT.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        prev = {}
+    lastmod = sitemap_lastmod(sitemap_urls(players), prev, today)
+    # One entry per line keeps the daily diff to the pages that changed.
+    state = "{\n" + ",\n".join(
+        f"{json.dumps(u)}: {json.dumps(v)}" for u, v in lastmod.items()) + "\n}\n"
+    return {SITEMAP_OUT: build_sitemap(players, lastmod).encode(),
+            SITEMAP_LASTMOD_OUT: state.encode()}
 
 
 def build(players: list | None = None, today: datetime.date | None = None) -> dict:
@@ -782,7 +837,7 @@ def derived_files(players: list) -> dict:
              "affiliates": dict(sorted(AFFILIATE_PARENT.items()))}),
         PLAYER_ALIASES_OUT: js(w_player_aliases(players)),
         PLAYER_INDEX_OUT: js(names, indent=0),
-        SITEMAP_OUT: build_sitemap(players).encode(),
+        **sitemap_files(players),
     }
 
 
@@ -819,6 +874,9 @@ def main() -> None:
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     files = derived_files(players)
+    # The sitemap is written last, after the pages it dates (see sitemap_files).
+    for path in (SITEMAP_OUT, SITEMAP_LASTMOD_OUT):
+        files.pop(path)
     for path, body in files.items():
         path.write_bytes(body)
         print(f"wrote {path.relative_to(ROOT)}  ({len(body):,} bytes)")
@@ -845,6 +903,10 @@ def main() -> None:
                          ("country/", prerender.write_all_countries(players))):
         print(f"wrote {label}  ({stats['total']} pages: {stats['written']} written, "
               f"{stats['unchanged']} unchanged, {stats['removed']} removed)")
+
+    for path, body in sitemap_files(players).items():
+        path.write_bytes(body)
+        print(f"wrote {path.relative_to(ROOT)}  ({len(body):,} bytes)")
 
     if args.report:
         _report(data)
