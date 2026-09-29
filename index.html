@@ -23,11 +23,9 @@
     <!-- og:end -->
     <link rel="canonical" href="https://hoopsmatic.com/nba-career-map/">
     
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4/leaflet.css" />
+    <link rel="stylesheet" href="assets/vendor/maplibre-gl-5.24.0/maplibre-gl.css" />
+    <link rel="stylesheet" href="assets/fonts/web/fonts.css">
     
     <style>
         :root {
@@ -2152,7 +2150,7 @@
         </div>
     </div>
     
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/vendor/leaflet-1.9.4/leaflet.js"></script>
     <!-- Basemap renderer. OpenFreeMap serves VECTOR tiles, so Leaflet needs
          MapLibre GL to draw them; maplibre-gl-leaflet mounts that renderer as
          an ordinary Leaflet layer, which is what keeps every marker,
@@ -2162,8 +2160,8 @@
          window.maplibregl lookup can't see. If either file fails to load, or
          the device has no WebGL, addBaseLayer() falls back to raster tiles --
          see BASEMAP below. -->
-    <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-    <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js"></script>
+    <script src="assets/vendor/maplibre-gl-5.24.0/maplibre-gl.js"></script>
+    <script src="assets/vendor/maplibre-gl-leaflet-0.1.4/leaflet-maplibre-gl.js"></script>
     <script src="flags.js"></script>
     <script src="data-proxy.js"></script>
     <script>

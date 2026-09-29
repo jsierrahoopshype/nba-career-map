@@ -135,7 +135,15 @@ def test_page_wears_the_site_chrome():
     """These pages are the site, not a stripped print view: same fonts, same
     tokens, same sticky header and nav as index.html / teams.html."""
     html = pr.render(SAMPLE)
-    assert "family=DM+Sans" in html and "family=JetBrains+Mono" in html
+    # Fonts are self-hosted: the shared @font-face sheet, never Google's CDN.
+    assert '<link rel="stylesheet" href="../assets/fonts/web/fonts.css">' in html
+    assert "fonts.googleapis.com" not in html and "fonts.gstatic.com" not in html
+    font_dir = ROOT / "assets" / "fonts" / "web"
+    faces = (font_dir / "fonts.css").read_text(encoding="utf-8")
+    assert "font-family: 'DM Sans'" in faces
+    assert "font-family: 'JetBrains Mono'" in faces
+    for fn in set(re.findall(r"url\(([^)]+\.woff2)\)", faces)):
+        assert (font_dir / fn).exists(), f"fonts.css points at missing {fn}"
     assert '<nav class="nav"><a href="../index.html">Map</a>' in html
     assert '<a href="../teams.html">Teams</a>' in html
     assert '<a href="../quiz.html">Quiz</a>' in html
