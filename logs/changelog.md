@@ -1,3 +1,27 @@
+## 2026-09-29 — incremental run
+
+- Players updated: **481** (3 new)
+- New teams discovered: **2**
+- Team moves detected: **8**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **4** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Jon Elmore, R. J. Davis, Walt Lemon Jr.
+- New teams: NBA G League United, Sopron
+  - Orlando Robinson: Memphis Hustle → Chicago Bulls
+  - Drew Timme: South Bay Lakers → Minnesota Timberwolves
+  - Jahmir Young: Sioux Falls Skyforce → South Bay Lakers
+  - Isaiah Stevens: Stockton Kings → Windy City Bulls
+  - Kylor Kelley: Converge FiberXers → Sioux Falls Skyforce
+  - Antonio Reeves: Greensboro Swarm → Iowa Wolves
+  - Donatas Motiejunas: Crvena Zvezda → PAOK Thessaloniki
+  - Drew Peterson: Windy City Bulls → Chicago Bulls
+  - Orlando Robinson: [overseas_active → nba_active]
+  - Zhaire Smith: [overseas_active → nba_active]
+  - Drew Timme: [overseas_active → nba_active]
+  - Drew Peterson: [overseas_active → nba_active]
+
 ## 2026-09-28 — incremental run
 
 - Players updated: **559** (1 new)

@@ -1398,7 +1398,7 @@
       "city": "Trieste",
       "state": "",
       "country": "Italy",
-      "count": 42,
+      "count": 43,
       "roster": [
         {
           "player": "A.J. English",
@@ -1534,6 +1534,12 @@
           "nationality": "American / Montenegrin"
         },
         {
+          "player": "Jon Elmore",
+          "years": "2019–2020",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
+        },
+        {
           "player": "Juan Toscano-Anderson",
           "years": "2025–2026",
           "status": "overseas_active",
@@ -1551,7 +1557,7 @@
           "player": "Kylor Kelley",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -1698,7 +1704,7 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 4
+          "shared": 6
         },
         {
           "type": "club",
@@ -7811,7 +7817,7 @@
       "city": "Sioux Falls",
       "state": "South Dakota",
       "country": "USA",
-      "count": 225,
+      "count": 227,
       "roster": [
         {
           "player": "A.J. Wynder",
@@ -8300,8 +8306,8 @@
         {
           "player": "Drew Peterson",
           "years": "2023",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -8476,7 +8482,7 @@
           "player": "Isaiah Stevens",
           "years": "2024, 2024–2025",
           "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "last_team": "Windy City Bulls",
           "nationality": "United States"
         },
         {
@@ -8490,7 +8496,7 @@
           "player": "Jahmir Young",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "last_team": "South Bay Lakers",
           "nationality": "United States"
         },
         {
@@ -8625,6 +8631,12 @@
           "status": "retired",
           "last_team": "Toronto Raptors",
           "nationality": "United States"
+        },
+        {
+          "player": "Jon Elmore",
+          "years": "2022–2024",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         },
         {
           "player": "Jonathan Kerner",
@@ -8764,6 +8776,13 @@
           "years": "2022",
           "status": "overseas_active",
           "last_team": "Tenerife",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kylor Kelley",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -9014,8 +9033,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2022, 2022–2024",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -9716,7 +9735,7 @@
           "player": "Donatas Motiejunas",
           "years": "2012–2013;, 2016",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -11711,7 +11730,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2025–present",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -12486,7 +12505,7 @@
           "player": "Antonio Reeves",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Greensboro Swarm",
+          "last_team": "Iowa Wolves",
           "nationality": "United States"
         },
         {
@@ -12604,8 +12623,8 @@
         {
           "player": "Drew Peterson",
           "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -13018,6 +13037,11 @@
         },
         {
           "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Motor City Cruise",
           "shared": 7
         },
@@ -13034,11 +13058,6 @@
         {
           "type": "club",
           "name": "Wisconsin Herd",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Iowa Wolves",
           "shared": 6
         },
         {
@@ -13816,7 +13835,7 @@
         },
         {
           "player": "Quincy Miller",
-          "years": "2014-2015, 2015",
+          "years": "2014–2015, 2015",
           "status": "overseas_active",
           "last_team": "Beirut Club",
           "nationality": "United States"
@@ -17396,7 +17415,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2019–2020",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -20285,7 +20304,7 @@
         },
         {
           "player": "Quincy Miller",
-          "years": "2016-2017",
+          "years": "2016–2017",
           "status": "overseas_active",
           "last_team": "Beirut Club",
           "nationality": "United States"
@@ -22605,8 +22624,8 @@
         {
           "player": "Drew Peterson",
           "years": "2023–2025",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -22718,7 +22737,7 @@
           "player": "Kylor Kelley",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -22901,6 +22920,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 5
         },
@@ -22917,11 +22941,6 @@
         {
           "type": "club",
           "name": "Motor City Cruise",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Agua Caliente Clippers",
           "shared": 5
         }
       ]
@@ -30604,7 +30623,7 @@
           "player": "Kylor Kelley",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -30879,7 +30898,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 64,
+      "count": 65,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30982,8 +31001,8 @@
         {
           "player": "Drew Timme",
           "years": "2024",
-          "status": "overseas_active",
-          "last_team": "South Bay Lakers",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -31060,7 +31079,7 @@
           "player": "Isaiah Stevens",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "last_team": "Windy City Bulls",
           "nationality": "United States"
         },
         {
@@ -31097,6 +31116,12 @@
           "status": "nba_active",
           "last_team": "Milwaukee Bucks",
           "nationality": "United States"
+        },
+        {
+          "player": "Jon Elmore",
+          "years": "2024–2025, 2025–2026",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         },
         {
           "player": "Jonathan Mogbo",
@@ -31213,8 +31238,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -31334,7 +31359,7 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 7
+          "shared": 8
         },
         {
           "type": "club",
@@ -31344,6 +31369,11 @@
         {
           "type": "club",
           "name": "Crvena Zvezda",
+          "shared": 7
+        },
+        {
+          "type": "club",
+          "name": "Cleveland Charge",
           "shared": 7
         },
         {
@@ -31359,11 +31389,6 @@
         {
           "type": "club",
           "name": "South Bay Lakers",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Cleveland Charge",
           "shared": 6
         },
         {
@@ -35202,13 +35227,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Drew Peterson",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
-          "nationality": "United States"
-        },
-        {
           "player": "Duje Dukan",
           "years": "2017–2018",
           "status": "retired",
@@ -35251,6 +35269,13 @@
           "nationality": "Senegal"
         },
         {
+          "player": "Isaiah Stevens",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Windy City Bulls",
+          "nationality": "United States"
+        },
+        {
           "player": "JaKarr Sampson",
           "years": "2018, 2019",
           "status": "overseas_active",
@@ -35261,7 +35286,7 @@
           "player": "Jahmir Young",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "last_team": "South Bay Lakers",
           "nationality": "United States"
         },
         {
@@ -36553,7 +36578,7 @@
           "player": "Donatas Motiejunas",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -36867,7 +36892,7 @@
         },
         {
           "player": "Quincy Miller",
-          "years": "2015-2016",
+          "years": "2015–2016",
           "status": "overseas_active",
           "last_team": "Beirut Club",
           "nationality": "United States"
@@ -37493,7 +37518,7 @@
       "city": "Des Moines",
       "state": "Iowa",
       "country": "USA",
-      "count": 72,
+      "count": 73,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -37542,6 +37567,13 @@
           "years": "2017–2018",
           "status": "overseas_active",
           "last_team": "Beşiktaş",
+          "nationality": "United States"
+        },
+        {
+          "player": "Antonio Reeves",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Iowa Wolves",
           "nationality": "United States"
         },
         {
@@ -38038,7 +38070,7 @@
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
+          "name": "Greensboro Swarm",
           "shared": 7
         }
       ]
@@ -38200,8 +38232,8 @@
         {
           "player": "Drew Timme",
           "years": "2023–2024",
-          "status": "overseas_active",
-          "last_team": "South Bay Lakers",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -45187,7 +45219,7 @@
           "player": "Donatas Motiejunas",
           "years": "2021–2026",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -45838,7 +45870,7 @@
         },
         {
           "player": "Chris Chiozza",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
@@ -49233,9 +49265,9 @@
         },
         {
           "player": "Orlando Robinson",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -53306,7 +53338,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2025",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -53611,8 +53643,8 @@
         {
           "player": "Drew Timme",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "South Bay Lakers",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -54553,7 +54585,7 @@
           "player": "Kylor Kelley",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -54666,8 +54698,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -54951,7 +54983,7 @@
           "player": "Donatas Motiejunas",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -55207,7 +55239,7 @@
           "player": "Donatas Motiejunas",
           "years": "2017–2019",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -56913,7 +56945,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -57397,7 +57429,7 @@
           "player": "Donatas Motiejunas",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -64622,12 +64654,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -64794,12 +64826,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -65979,7 +66011,7 @@
         },
         {
           "player": "Quincy Miller",
-          "years": "2012-2013",
+          "years": "2012–2013",
           "status": "overseas_active",
           "last_team": "Beirut Club",
           "nationality": "United States"
@@ -70091,7 +70123,7 @@
       "city": "Cleveland",
       "state": "Ohio",
       "country": "USA",
-      "count": 50,
+      "count": 51,
       "roster": [
         {
           "player": "Aleem Ford",
@@ -70231,6 +70263,12 @@
           "status": "nba_active",
           "last_team": "Cleveland Cavaliers",
           "nationality": "United States"
+        },
+        {
+          "player": "Jon Elmore",
+          "years": "2024",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         },
         {
           "player": "Josh Huestis",
@@ -70438,7 +70476,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2023–2025",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -70456,6 +70494,11 @@
         },
         {
           "type": "club",
+          "name": "Stockton Kings",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Oklahoma City Blue",
           "shared": 6
         },
@@ -70466,8 +70509,8 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
-          "shared": 6
+          "name": "Sioux Falls Skyforce",
+          "shared": 5
         },
         {
           "type": "club",
@@ -70477,11 +70520,6 @@
         {
           "type": "club",
           "name": "Long Island Nets",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Wisconsin Herd",
           "shared": 5
         }
       ]
@@ -71547,7 +71585,7 @@
       "city": "Thessaloniki",
       "state": "",
       "country": "Greece",
-      "count": 56,
+      "count": 57,
       "roster": [
         {
           "player": "Aleksandar Radojevic",
@@ -71702,6 +71740,13 @@
           "status": "retired",
           "last_team": "Ciclista Olímpico",
           "nationality": "United States"
+        },
+        {
+          "player": "Donatas Motiejunas",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "PAOK Thessaloniki",
+          "nationality": "Lithuania"
         },
         {
           "player": "Efthimios Rentzias",
@@ -72011,11 +72056,16 @@
           "player": "Donatas Motiejunas",
           "years": "2011–2012",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "PAOK Thessaloniki",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
@@ -72034,11 +72084,6 @@
         {
           "type": "club",
           "name": "Žalgiris",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "PAOK Thessaloniki",
           "shared": 1
         },
         {
@@ -77693,7 +77738,7 @@
       "city": "El Segundo",
       "state": "California",
       "country": "USA",
-      "count": 70,
+      "count": 72,
       "roster": [
         {
           "player": "Adou Thiero",
@@ -77837,9 +77882,9 @@
         },
         {
           "player": "Drew Timme",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "South Bay Lakers",
+          "years": "2025, 2025–2026",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -77883,6 +77928,13 @@
           "status": "overseas_active",
           "last_team": "Napoli",
           "nationality": "Australia"
+        },
+        {
+          "player": "Jahmir Young",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "South Bay Lakers",
+          "nationality": "United States"
         },
         {
           "player": "Jalen Hood-Schifino",
@@ -77972,7 +78024,7 @@
           "player": "Kylor Kelley",
           "years": "2024–2025, 2025, 2025–2026",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -78058,6 +78110,12 @@
           "status": "overseas_active",
           "last_team": "Qingdao Eagles",
           "nationality": "United States"
+        },
+        {
+          "player": "R. J. Davis",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         },
         {
           "player": "Reggie Hearn",
@@ -78209,6 +78267,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Santa Cruz Warriors",
           "shared": 6
         },
@@ -78220,11 +78283,6 @@
         {
           "type": "club",
           "name": "Memphis Hustle",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Stockton Kings",
           "shared": 6
         }
       ]
@@ -84952,17 +85010,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -86165,12 +86223,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -89959,8 +90017,8 @@
         {
           "player": "Drew Peterson",
           "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -93861,6 +93919,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -93882,11 +93945,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -93931,6 +93989,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -93947,11 +94010,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -94695,7 +94753,7 @@
           "player": "Jahmir Young",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "last_team": "South Bay Lakers",
           "nationality": "United States"
         },
         {
@@ -101999,7 +102057,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2026",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -107887,7 +107945,7 @@
           "player": "Donatas Motiejunas",
           "years": "2009–2012",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -109829,7 +109887,7 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -113326,7 +113384,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -114398,6 +114456,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -114424,11 +114487,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -117128,6 +117186,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -117154,11 +117217,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -120285,7 +120343,7 @@
           "player": "Donatas Motiejunas",
           "years": "2005–2008, 2005–2009",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         },
         {
@@ -126223,17 +126281,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -126602,12 +126660,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -129260,17 +129318,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -130446,7 +130504,7 @@
       "city": "Capo d'Orlando",
       "state": "",
       "country": "Italy",
-      "count": 8,
+      "count": 9,
       "roster": [
         {
           "player": "Arnoldas Kulboka",
@@ -130475,6 +130533,12 @@
           "status": "retired",
           "last_team": "Orlandina",
           "nationality": "United States"
+        },
+        {
+          "player": "Jon Elmore",
+          "years": "2020",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         },
         {
           "player": "Jonny Flynn",
@@ -130508,6 +130572,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Hapoel Jerusalem",
           "shared": 2
         },
@@ -130525,11 +130594,6 @@
           "type": "club",
           "name": "Nizhny Novgorod",
           "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
         },
         {
           "type": "club",
@@ -130898,17 +130962,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -131392,12 +131456,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -136616,7 +136680,7 @@
         },
         {
           "player": "Quincy Miller",
-          "years": "2020-2021",
+          "years": "2020–2021",
           "status": "overseas_active",
           "last_team": "Beirut Club",
           "nationality": "United States"
@@ -136948,7 +137012,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -138701,12 +138765,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -139416,7 +139480,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -141145,6 +141209,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -141176,11 +141245,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -143049,6 +143113,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -143080,11 +143149,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -143233,17 +143297,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -145980,17 +146044,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -146038,17 +146102,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -146867,6 +146931,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -146883,11 +146952,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -147367,17 +147431,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -147417,6 +147481,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -147438,11 +147507,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -148520,6 +148584,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -148536,11 +148605,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -150169,6 +150233,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -150195,11 +150264,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -152385,6 +152449,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Perlas",
           "shared": 0
         },
@@ -152396,11 +152465,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -152565,7 +152629,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -152625,12 +152689,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -152883,7 +152947,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -152941,7 +153005,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -153395,6 +153459,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -153411,11 +153480,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -157025,8 +157089,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Memphis Hustle",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -157126,6 +157190,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -157157,11 +157226,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -158164,12 +158228,12 @@
         },
         {
           "type": "club",
-          "name": "Žalgiris",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Žalgiris",
           "shared": 1
         },
         {
@@ -159364,6 +159428,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -159380,11 +159449,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -159749,7 +159813,7 @@
         },
         {
           "player": "Quincy Miller",
-          "years": "2023-2024",
+          "years": "2023–2024",
           "status": "overseas_active",
           "last_team": "Beirut Club",
           "nationality": "United States"
@@ -159921,12 +159985,133 @@
         }
       ]
     },
+    "NBA G League United": {
+      "club": "NBA G League United",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 10,
+      "roster": [
+        {
+          "player": "Brodric Thomas",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "Manisa Basket",
+          "nationality": "United States"
+        },
+        {
+          "player": "Buddy Boeheim",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Oklahoma City Blue",
+          "nationality": "United States"
+        },
+        {
+          "player": "Charlie Brown",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "Aquila Trento",
+          "nationality": "United States"
+        },
+        {
+          "player": "Chasson Randle",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Kolossos Rodou",
+          "nationality": "United States"
+        },
+        {
+          "player": "Deonte Burton",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "NLEX Road Warriors",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dexter Dennis",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Shimane Susanoo Magic",
+          "nationality": "United States"
+        },
+        {
+          "player": "Feron Hunt",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Jiangsu Dragons",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kylor Kelley",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "United States"
+        },
+        {
+          "player": "Phillip Wheeler",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
+          "nationality": "Puerto Rico"
+        },
+        {
+          "player": "Yuri Collins",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Memphis Hustle",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Maine Celtics",
+          "shared": 4
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Westchester Knicks",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Oklahoma City Blue",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Stockton Kings",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Raptors 905",
+          "shared": 2
+        }
+      ]
+    },
     "Manisa Basket": {
       "club": "Manisa Basket",
       "city": "Manisa",
       "state": "",
       "country": "Turkey",
-      "count": 9,
+      "count": 10,
       "roster": [
         {
           "player": "Brodric Thomas",
@@ -159971,6 +160156,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Jon Elmore",
+          "years": "2025",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
+        },
+        {
           "player": "Maozinha Pereira",
           "years": "2025–2026",
           "status": "overseas_active",
@@ -160000,6 +160191,11 @@
         },
         {
           "type": "club",
+          "name": "Cleveland Charge",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 2
         },
@@ -160021,11 +160217,6 @@
         {
           "type": "club",
           "name": "Maine Celtics",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Cleveland Charge",
           "shared": 2
         },
         {
@@ -162058,7 +162249,7 @@
           "player": "Antonio Reeves",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Greensboro Swarm",
+          "last_team": "Iowa Wolves",
           "nationality": "United States"
         },
         {
@@ -162320,6 +162511,11 @@
         },
         {
           "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Fort Wayne Mad Ants",
           "shared": 4
         },
@@ -162336,11 +162532,6 @@
         {
           "type": "club",
           "name": "Delaware Blue Coats",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Iowa Wolves",
           "shared": 4
         },
         {
@@ -162742,6 +162933,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -162773,11 +162969,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -163339,6 +163530,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -163350,11 +163546,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -164290,7 +164481,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -164462,7 +164653,7 @@
       "city": "Šiauliai",
       "state": "",
       "country": "Lithuania",
-      "count": 5,
+      "count": 6,
       "roster": [
         {
           "player": "Cam Reddish",
@@ -164477,6 +164668,12 @@
           "status": "overseas_active",
           "last_team": "Šiauliai",
           "nationality": "United States"
+        },
+        {
+          "player": "Jon Elmore",
+          "years": "2021–2022",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         },
         {
           "player": "Mindaugas Kuzminskas",
@@ -164508,6 +164705,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 1
         },
@@ -164534,11 +164736,6 @@
         {
           "type": "club",
           "name": "ASVEL",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -166265,7 +166462,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -172990,6 +173187,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -173001,11 +173203,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -173968,6 +174165,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -173979,11 +174181,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -174168,17 +174365,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -174380,7 +174577,7 @@
           "player": "Kylor Kelley",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -174442,6 +174639,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Memphis Hustle",
           "shared": 2
         },
@@ -174453,11 +174655,6 @@
         {
           "type": "club",
           "name": "Capital City Go-Go",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Indios de Mayagüez",
           "shared": 2
         }
       ]
@@ -174915,7 +175112,7 @@
           "player": "Kylor Kelley",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -174937,7 +175134,7 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 2
+          "shared": 3
         },
         {
           "type": "club",
@@ -175019,17 +175216,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -175131,6 +175328,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -175162,11 +175364,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -176207,6 +176404,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -176218,11 +176420,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -181482,7 +181679,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -181527,12 +181724,12 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "ASVEL",
           "shared": 1
         },
         {
@@ -181874,12 +182071,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -183180,6 +183377,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -183206,11 +183408,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -183890,17 +184087,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -185298,6 +185495,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -185319,11 +185521,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -188276,7 +188473,7 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -188649,6 +188846,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -188665,11 +188867,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -189893,7 +190090,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -191327,7 +191524,7 @@
       "city": "Piraeus",
       "state": "",
       "country": "Greece",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "Daniel Hamilton",
@@ -191342,6 +191539,12 @@
           "status": "overseas_active",
           "last_team": "Al Wahda",
           "nationality": "United States"
+        },
+        {
+          "player": "Jon Elmore",
+          "years": "2020–2021",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         }
       ],
       "related": [
@@ -191349,6 +191552,11 @@
           "type": "club",
           "name": "Agua Caliente Clippers",
           "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
         },
         {
           "type": "club",
@@ -191367,22 +191575,17 @@
         },
         {
           "type": "club",
+          "name": "Stockton Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Cleveland Charge",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Mets de Guaynabo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Lakeland Magic",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Chorale Roanne",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Beirut Club",
           "shared": 1
         }
       ]
@@ -192421,6 +192624,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -192437,11 +192645,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -194089,6 +194292,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -194100,11 +194308,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -196851,6 +197054,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -196862,11 +197070,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -196982,7 +197185,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -197972,6 +198175,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -197988,11 +198196,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -199693,12 +199896,12 @@
         },
         {
           "type": "club",
-          "name": "Taoyuan Taiwan Beer Leopards",
+          "name": "Manisa Basket",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Manisa Basket",
+          "name": "Taoyuan Taiwan Beer Leopards",
           "shared": 1
         },
         {
@@ -199905,11 +200108,16 @@
           "player": "Kylor Kelley",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Raptors 905",
@@ -199924,11 +200132,6 @@
           "type": "club",
           "name": "Maine Celtics",
           "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
         },
         {
           "type": "club",
@@ -202805,7 +203008,7 @@
         },
         {
           "type": "club",
-          "name": "Zaragoza",
+          "name": "PAOK Thessaloniki",
           "shared": 1
         }
       ]
@@ -204489,12 +204692,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -204547,12 +204750,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -205486,6 +205689,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -205497,11 +205705,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -206537,6 +206740,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -206563,11 +206771,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -206947,6 +207150,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -206958,11 +207166,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -207304,6 +207507,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -207330,11 +207538,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -207647,7 +207850,7 @@
           "player": "Donatas Motiejunas",
           "years": "2008–2009",
           "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
+          "last_team": "PAOK Thessaloniki",
           "nationality": "Lithuania"
         }
       ],
@@ -207669,6 +207872,11 @@
         },
         {
           "type": "club",
+          "name": "PAOK Thessaloniki",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Benetton Treviso",
           "shared": 1
         },
@@ -207685,11 +207893,6 @@
         {
           "type": "club",
           "name": "AS Monaco",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Shandong Golden Stars",
           "shared": 1
         }
       ]
@@ -208027,6 +208230,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -208038,11 +208246,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -208150,6 +208353,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -208161,11 +208369,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -209333,6 +209536,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -209349,11 +209557,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -210209,12 +210412,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -210467,6 +210670,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -210498,11 +210706,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -210530,6 +210733,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -210556,11 +210764,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -210930,6 +211133,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -210946,11 +211154,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -211308,7 +211511,7 @@
         },
         {
           "player": "Raul Neto",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "San Pablo Burgos",
           "nationality": "Brazilian / Italian"
@@ -211568,7 +211771,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -212035,6 +212238,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -212061,11 +212269,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -212828,6 +213031,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -212839,11 +213047,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -212954,12 +213157,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -213388,12 +213591,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -214410,7 +214613,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -215154,6 +215357,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -215165,11 +215373,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -215285,7 +215488,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -215401,7 +215604,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -215459,7 +215662,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -215517,7 +215720,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -216724,12 +216927,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
+          "name": "NBA G League United",
+          "shared": 1
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -216755,6 +216958,11 @@
           "type": "club",
           "name": "San Diego Conquistadors",
           "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
         },
         {
           "type": "club",
@@ -216784,11 +216992,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -217364,6 +217567,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -217385,11 +217593,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -217821,6 +218024,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -217847,11 +218055,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -218910,6 +219113,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -218936,11 +219144,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -220001,17 +220204,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -221000,6 +221203,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -221011,11 +221219,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -221164,6 +221367,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -221185,11 +221393,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -221745,6 +221948,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -221771,11 +221979,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -221825,6 +222028,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -221836,11 +222044,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -221878,6 +222081,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -221894,11 +222102,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -222072,7 +222275,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -223236,6 +223439,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -223257,11 +223465,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -223304,6 +223507,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -223315,11 +223523,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -223918,7 +224121,7 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "South Bay Lakers",
           "shared": 1
         }
       ]
@@ -224014,7 +224217,7 @@
       "city": "Calgary",
       "state": "",
       "country": "Canada",
-      "count": 9,
+      "count": 10,
       "roster": [
         {
           "player": "Damion Baugh",
@@ -224036,6 +224239,12 @@
           "status": "overseas_active",
           "last_team": "Fighting Eagles Nagoya",
           "nationality": "United States"
+        },
+        {
+          "player": "Jon Elmore",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
         },
         {
           "player": "Kadeem Allen",
@@ -224062,7 +224271,7 @@
           "player": "Kylor Kelley",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -224088,6 +224297,16 @@
         },
         {
           "type": "club",
+          "name": "Cleveland Charge",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Raptors 905",
           "shared": 2
         },
@@ -224108,18 +224327,8 @@
         },
         {
           "type": "club",
-          "name": "Cleveland Charge",
+          "name": "Pallacanestro Trieste",
           "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Baskonia",
-          "shared": 1
         }
       ]
     },
@@ -224944,12 +225153,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -225428,6 +225637,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -225444,11 +225658,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -227158,6 +227367,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -227179,11 +227393,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -228169,17 +228378,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -228777,6 +228986,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -228788,11 +229002,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -228835,6 +229044,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -228846,11 +229060,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -229748,17 +229957,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -231949,17 +232158,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -233068,17 +233277,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -233280,7 +233489,7 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "South Bay Lakers",
           "shared": 1
         }
       ]
@@ -233391,12 +233600,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -233575,6 +233784,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -233601,11 +233815,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -233650,6 +233859,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -233666,11 +233880,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -234222,17 +234431,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -237806,6 +238015,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -237822,11 +238036,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -238651,6 +238860,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -238682,11 +238896,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -238768,6 +238977,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -238799,11 +239013,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -239272,7 +239481,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -240781,6 +240990,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -240812,11 +241026,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -241706,6 +241915,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -241717,11 +241931,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -241844,7 +242053,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -242012,6 +242221,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -242028,11 +242242,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -242070,6 +242279,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -242086,11 +242300,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -242186,6 +242395,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -242202,11 +242416,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -242776,6 +242985,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -242787,11 +243001,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -242967,12 +243176,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -243730,17 +243939,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -243833,6 +244042,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -243859,11 +244073,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -243954,6 +244163,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -243975,11 +244189,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -244979,12 +245188,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -245259,6 +245468,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -245285,11 +245499,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -245866,17 +246075,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -246143,6 +246352,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -246169,11 +246383,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -246529,6 +246738,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -246545,11 +246759,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -250949,6 +251158,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -250960,11 +251174,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -252347,7 +252556,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -252742,6 +252951,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -252763,11 +252977,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -252961,6 +253170,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -252972,11 +253186,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -253094,12 +253303,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -253485,6 +253694,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -253501,11 +253715,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -253563,7 +253772,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -253835,6 +254044,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -253856,11 +254070,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -254482,7 +254691,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -254902,7 +255111,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -255594,6 +255803,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -255610,11 +255824,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -256733,7 +256942,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -257760,17 +257969,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -258822,6 +259031,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -258843,11 +259057,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -260739,6 +260948,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -260755,11 +260969,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -260804,6 +261013,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -260820,11 +261034,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -260877,12 +261086,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -261028,6 +261237,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -261054,11 +261268,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -261612,17 +261821,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -261868,7 +262077,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -261986,12 +262195,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -262096,6 +262305,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -262117,11 +262331,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -263203,17 +263412,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -263362,6 +263571,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -263383,11 +263597,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -263853,12 +264062,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -265580,7 +265789,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -266449,6 +266658,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -266460,11 +266674,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -266686,17 +266895,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -269167,7 +269376,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -269321,6 +269530,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -269337,11 +269551,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -269747,7 +269956,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -270867,6 +271076,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -270883,11 +271097,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -270925,6 +271134,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -270941,11 +271155,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -271468,6 +271677,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -271484,11 +271698,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -271604,7 +271813,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -271700,6 +271909,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -271716,11 +271930,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -271758,6 +271967,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -271774,11 +271988,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -272207,6 +272416,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -272238,11 +272452,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -272348,17 +272557,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -272406,17 +272615,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -272464,17 +272673,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -272954,12 +273163,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -273753,6 +273962,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -273774,11 +273988,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -274518,12 +274727,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -274619,6 +274828,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -274635,11 +274849,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -274815,12 +275024,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -275589,6 +275798,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -275605,11 +275819,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -276196,7 +276405,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -276932,6 +277141,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -276953,11 +277167,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -277362,6 +277571,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -277388,11 +277602,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -277906,6 +278115,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -277917,11 +278131,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -277993,7 +278202,7 @@
       "roster": [
         {
           "player": "Quincy Miller",
-          "years": "2021-2022",
+          "years": "2021–2022",
           "status": "overseas_active",
           "last_team": "Beirut Club",
           "nationality": "United States"
@@ -278544,6 +278753,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -278570,11 +278784,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -279093,17 +279302,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -279209,17 +279418,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -279267,17 +279476,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -279615,17 +279824,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -280069,6 +280278,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -280085,11 +280299,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -280180,6 +280389,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -280201,11 +280415,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -281359,6 +281568,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -281375,11 +281589,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -281871,6 +282080,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -281897,11 +282111,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -282007,17 +282216,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -282340,6 +282549,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -282361,11 +282575,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -282461,6 +282670,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -282477,11 +282691,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -282587,17 +282796,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -282678,6 +282887,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -282709,11 +282923,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -282819,17 +283028,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -283415,6 +283624,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -283426,11 +283640,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -283763,6 +283972,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -283774,11 +283988,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -284942,17 +285151,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -286510,6 +286719,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -286521,11 +286735,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -286616,6 +286825,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -286637,11 +286851,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -286815,7 +287024,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -287687,12 +287896,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -287735,6 +287944,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -287746,11 +287960,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -287896,6 +288105,11 @@
       "related": [
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -287927,11 +288141,6 @@
         {
           "type": "club",
           "name": "Los Angeles / Utah Stars",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Metropolitanos de Mauricio Báez",
           "shared": 0
         }
       ]
@@ -288875,12 +289084,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -289689,17 +289898,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -290839,6 +291048,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -290855,11 +291069,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -290902,6 +291111,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -290913,11 +291127,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -290979,17 +291188,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -291212,6 +291421,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -291223,11 +291437,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -293309,6 +293518,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -293325,11 +293539,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -293922,7 +294131,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -293980,7 +294189,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -294646,6 +294855,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -294672,11 +294886,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -294729,12 +294938,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -295067,6 +295276,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -295078,11 +295292,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -295294,6 +295503,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -295310,11 +295524,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -295943,6 +296152,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -295954,11 +296168,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -296001,6 +296210,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -296012,11 +296226,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -296276,6 +296485,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -296302,11 +296516,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -296523,6 +296732,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -296534,11 +296748,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -296581,6 +296790,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -296592,11 +296806,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -296915,6 +297124,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -296941,11 +297155,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -297056,12 +297265,12 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -297225,17 +297434,17 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -297769,78 +297978,6 @@
         }
       ]
     },
-    "South Bay/Coachella Valley Lakers": {
-      "club": "South Bay/Coachella Valley Lakers",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 3,
-      "roster": [
-        {
-          "player": "Bronny James",
-          "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Chris Mañon",
-          "years": "2025–present",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Drew Timme",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "South Bay Lakers",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Long Island Nets",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Wisconsin Herd",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Stockton Kings",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
-          "shared": 0
-        }
-      ]
-    },
     "YNG Dreamerz": {
       "club": "YNG Dreamerz",
       "city": "Los Angeles",
@@ -297946,6 +298083,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -297962,11 +298104,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -298062,6 +298199,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -298078,11 +298220,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -298120,6 +298257,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -298136,11 +298278,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -298299,6 +298436,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -298310,11 +298452,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -298347,6 +298484,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -298368,11 +298510,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -298437,7 +298574,7 @@
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "NBA G League United",
           "shared": 0
         }
       ]
@@ -298623,6 +298760,71 @@
         }
       ]
     },
+    "South Bay/Coachella Valley Lakers": {
+      "club": "South Bay/Coachella Valley Lakers",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 2,
+      "roster": [
+        {
+          "player": "Bronny James",
+          "years": "2024–2026",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Chris Mañon",
+          "years": "2025–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Gharafa",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Bosna",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Donar",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Lakeland / Osceola Magic",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Los Angeles / Utah Stars",
+          "shared": 0
+        }
+      ]
+    },
     "Salem Capitals": {
       "club": "Salem Capitals",
       "city": "Salem",
@@ -298634,11 +298836,16 @@
           "player": "Kylor Kelley",
           "years": "2023, 2024",
           "status": "overseas_active",
-          "last_team": "Converge FiberXers",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
         {
           "type": "club",
           "name": "Raptors 905",
@@ -298672,11 +298879,6 @@
         {
           "type": "club",
           "name": "Calgary Surge",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Converge FiberXers",
           "shared": 1
         }
       ]
@@ -298830,6 +299032,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -298846,11 +299053,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299011,6 +299213,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -299032,11 +299239,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -299235,6 +299437,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -299251,11 +299458,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299331,6 +299533,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -299342,11 +299549,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -299384,6 +299586,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -299400,11 +299607,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299559,6 +299761,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -299585,11 +299792,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -299742,6 +299944,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -299758,11 +299965,6 @@
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299918,6 +300120,11 @@
         },
         {
           "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Manchester British-Americans",
           "shared": 0
         },
@@ -299930,11 +300137,63 @@
           "type": "club",
           "name": "Al Gharafa",
           "shared": 0
+        }
+      ]
+    },
+    "Sopron": {
+      "club": "Sopron",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Jon Elmore",
+          "years": "2021",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
         },
         {
           "type": "club",
-          "name": "Bosna",
-          "shared": 0
+          "name": "Stockton Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Cleveland Charge",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Pallacanestro Trieste",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Calgary Surge",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Manisa Basket",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Orlandina",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Šiauliai",
+          "shared": 1
         }
       ]
     }
