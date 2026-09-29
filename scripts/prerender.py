@@ -41,6 +41,7 @@ from urllib.parse import quote
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import player_urls  # noqa: E402
 from names import normkey  # noqa: E402
+from player_status import PRESENT, last_active_year  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PLAYER_DIR = ROOT / "player"
@@ -417,6 +418,18 @@ def _career_row(s: dict) -> str:
             "</tr>")
 
 
+def team_label(hist: list) -> str:
+    """"Current team" only while the latest stint is still open ("2021–present"
+    or "2026–"); a career whose stints have all ended shows "Last team".
+
+    current_team holds the LAST club for anyone no longer playing, so the value
+    is right either way -- it is the label that has to follow the data. An
+    open-ended stint ends "now", which makes it the latest one by definition;
+    last_active_year() is the same test the status classifier uses.
+    """
+    return "Current team" if last_active_year(hist) == PRESENT else "Last team"
+
+
 def render(player: dict) -> str:
     name = player.get("display_name") or player.get("player") or ""
     key = player.get("player") or name
@@ -434,7 +447,7 @@ def render(player: dict) -> str:
     facts = []
     for label, val in (("Position", player.get("position")),
                        ("Nationality", player.get("nationality")),
-                       ("Current team", player.get("current_team"))):
+                       (team_label(hist), player.get("current_team"))):
         if val:
             facts.append(f"<dt>{label}</dt><dd>{esc(val)}</dd>")
     dl = f'<dl class="facts">{"".join(facts)}</dl>' if facts else ""

@@ -50,6 +50,16 @@
             background:#fff; padding:14px 20px; position:sticky; top:0; z-index:100;
             box-shadow:0 2px 20px rgba(0,0,0,0.08);
         }
+        /* HOOPSMATIC SITE NAV. On hoopsmatic.com the Worker (hoopsmatic-worker,
+           navBar()/injectNav()) puts the site-wide nav (#hm-nav) first in the
+           page body; on github.io there is no nav and none of this applies. Above 760px
+           that nav is sticky at top:0 (41px tall), so this page's own sticky header
+           parks just below it instead of sliding underneath; at 760px and below the
+           nav scrolls away with the page and the header keeps top:0. 40px, not 41:
+           the header tucks under the nav's 1px border rather than leaving a gap. */
+        @media (min-width: 761px) {
+            body:has(#hm-nav) header { top: 40px; }
+        }
         .header-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:16px; }
         .nav { margin-left:auto; display:flex; align-items:center; gap:8px; }
         .nav a {

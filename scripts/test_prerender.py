@@ -90,6 +90,23 @@ def test_retired_players_are_not_described_as_active():
     print("test_retired_players_are_not_described_as_active PASS")
 
 
+def test_team_label_follows_the_latest_stint():
+    """"Current team" only while a stint is open-ended; otherwise "Last team"."""
+    html = pr.render(SAMPLE)
+    assert "<dt>Current team</dt><dd>Denver Nuggets</dd>" in html
+    ended = dict(SAMPLE, career_history=[
+        dict(SAMPLE["career_history"][0]),
+        dict(SAMPLE["career_history"][1], years="2015–2024")])
+    html = pr.render(ended)
+    assert "<dt>Last team</dt><dd>Denver Nuggets</dd>" in html
+    assert "Current team" not in html
+    # Trailing dash is open-ended too; a bare year is not.
+    assert pr.team_label([{"years": "2026–"}]) == "Current team"
+    assert pr.team_label([{"years": "2026"}]) == "Last team"
+    assert pr.team_label([]) == "Last team"
+    print("test_team_label_follows_the_latest_stint PASS")
+
+
 def test_description_names_real_teams_and_countries():
     d = pr.build_description(SAMPLE)
     assert "Mega Basket" in d, d
@@ -145,6 +162,17 @@ def test_page_wears_the_site_chrome():
     for fn in set(re.findall(r"url\(([^)]+\.woff2)\)", faces)):
         assert (font_dir / fn).exists(), f"fonts.css points at missing {fn}"
     assert '<nav class="nav"><a href="../index.html">Map</a>' in html
+    # The HoopsMatic Worker injects the site nav after the FIRST "<body" in the
+    # served HTML and skips any page that already contains id="hm-nav". So
+    # neither string may appear before the real body tag -- not even inside a
+    # comment -- or the nav lands in <head> or never lands at all.
+    for label, page in (("player page", html),
+                        ("index.html", (ROOT / "index.html").read_text(encoding="utf-8")),
+                        ("teams.html", (ROOT / "teams.html").read_text(encoding="utf-8")),
+                        ("quiz.html", (ROOT / "quiz.html").read_text(encoding="utf-8"))):
+        assert 'id="hm-nav"' not in page, f"{label} would block the nav injection"
+        first = page.find("<body")
+        assert first > page.find("</head>") > 0, f"{label}: first <body is not the body tag"
     assert '<a href="../teams.html">Teams</a>' in html
     assert '<a href="../quiz.html">Quiz</a>' in html
     assert "hoopshype" not in html.lower().split("</head>")[1].replace(
@@ -600,6 +628,7 @@ if __name__ == "__main__":
     test_slug()
     test_slugs_unique_over_real_data()
     test_head_tags_in_served_markup()
+    test_team_label_follows_the_latest_stint()
     test_description_names_real_teams_and_countries()
     test_retired_players_are_not_described_as_active()
     test_every_description_fits_and_is_specific()

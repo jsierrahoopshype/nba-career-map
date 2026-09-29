@@ -138,6 +138,16 @@
            them only while the list is open -- when it is closed the header
            stays at 100, below the modal (1000) and the quiz overlays. */
         header:has(#results.show) { z-index: 1001; }
+        /* HOOPSMATIC SITE NAV. On hoopsmatic.com the Worker (hoopsmatic-worker,
+           navBar()/injectNav()) puts the site-wide nav (#hm-nav) first in the
+           page body; on github.io there is no nav and none of this applies. Above 760px
+           that nav is sticky at top:0 (41px tall), so this page's own sticky header
+           parks just below it instead of sliding underneath; at 760px and below the
+           nav scrolls away with the page and the header keeps top:0. 40px, not 41:
+           the header tucks under the nav's 1px border rather than leaving a gap. */
+        @media (min-width: 761px) {
+            body:has(#hm-nav) header { top: 40px; }
+        }
         /* Wide enough for "Michael Anderson  PLAYER" on one line even where
            the search box itself is narrow (phones), never wider than the
            screen. */
@@ -420,6 +430,8 @@
             overflow-y: auto;
         }
         
+        /* Below the HoopsMatic nav (37px at this width) as well as the header. */
+        body:has(#hm-nav) .welcome { top: 87px; }
         @media (min-width: 768px) {
             .welcome {
                 position: static;
@@ -795,6 +807,11 @@
                    document flow instead -- see #mapView/.panel above). */
                 height: calc(100vh - 50px);
                 height: calc(100dvh - 50px);
+            }
+            /* Room for the HoopsMatic nav (41px) above the header. */
+            body:has(#hm-nav) #mapView {
+                height: calc(100vh - 91px);
+                height: calc(100dvh - 91px);
             }
 
             #map {
