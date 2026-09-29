@@ -2,8 +2,10 @@
  *
  * Maps each distinct country value stored in the dataset (names like "USA",
  * "United Kingdom", "Puerto Rico" — NOT ISO codes) to its ISO 3166-1 alpha-2
- * code for flagcdn.com raster flags. Raster images are used instead of emoji
- * flags because Windows browsers render flag emoji as bare letter pairs.
+ * code for the self-hosted flag images in assets/flags/ (4x3 SVGs from the
+ * MIT-licensed flag-icons package; licence in assets/flags/LICENSE). Images
+ * are used instead of emoji flags because Windows browsers render flag emoji
+ * as bare letter pairs.
  *
  * Built against the ~92 distinct country values actually present in the data
  * (plus a few historical aliases). Anything unmapped returns '' so callers
@@ -173,17 +175,25 @@
     "Norwegian":"Norway","Cape Verdean":"Cape Verde"
   };
 
+  // assets/flags/ resolved against this script's own URL, so the path is right
+  // whichever page (and directory depth) includes flags.js. Falls back to a
+  // page-relative path if currentScript is unavailable.
+  const FLAG_BASE = (() => {
+    try { return new URL("assets/flags/", document.currentScript.src).href; }
+    catch (e) { return "assets/flags/"; }
+  })();
+
   const esc = s => String(s == null ? "" : s)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
   // Returns an <img> flag for a country name, or '' if the country is unmapped
-  // (graceful fallback — the caller keeps its text label). Uses flagcdn's plain
-  // FLAT rectangular PNGs (the w20 variant, ~20px wide, crisp on hi-DPI) — not
+  // (graceful fallback — the caller keeps its text label). Uses flag-icons'
+  // plain FLAT rectangular 4x3 SVGs (vector, so crisp on hi-DPI) — not
   // waving/glossy flags.
   function flagImg(country) {
     const iso = ISO[country];
     if (!iso) return "";
-    return `<img class="flag" src="https://flagcdn.com/w20/${iso}.png" ` +
+    return `<img class="flag" src="${FLAG_BASE}${iso}.svg" ` +
            `width="16" height="12" loading="lazy" alt="${esc(country)} flag">`;
   }
 
