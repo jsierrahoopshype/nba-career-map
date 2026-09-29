@@ -41,7 +41,7 @@ from urllib.parse import quote
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import player_urls  # noqa: E402
 from names import normkey  # noqa: E402
-from player_status import PRESENT, last_active_year  # noqa: E402
+from player_status import NBA_ACTIVE, OVERSEAS_ACTIVE  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PLAYER_DIR = ROOT / "player"
@@ -302,10 +302,11 @@ def build_description(player: dict) -> str:
         span = f" in the {one}" if one in _article else f" in {one}"
     else:
         span = ""
-    # current_team holds the LAST club for a retired player, so "now with
-    # Detroit Pistons" would be wrong for someone who finished in 1977. Tense
-    # and tail both follow status.
-    retired = (player.get("status") or "") == "retired"
+    # current_team holds the LAST club for a player who is not active, so "now
+    # with Detroit Pistons" would be wrong for someone who finished in 1977.
+    # Tense and tail follow is_active() -- the same test as the page's "Current
+    # team" / "Last team" label, so the two can never disagree.
+    retired = not is_active(player)
     verb = "played for" if retired else "has played for"
     head = f"{name} {verb} {where}{span}"
     if not current:
@@ -418,16 +419,23 @@ def _career_row(s: dict) -> str:
             "</tr>")
 
 
-def team_label(hist: list) -> str:
-    """"Current team" only while the latest stint is still open ("2021–present"
-    or "2026–"); a career whose stints have all ended shows "Last team".
+def is_active(player: dict) -> bool:
+    """Active per the pipeline's player status: NBA-active or active overseas.
+
+    The single rule behind both the "Current team" / "Last team" label and the
+    "now with" / "last with" tail of the description.
+    """
+    return (player.get("status") or "") in (NBA_ACTIVE, OVERSEAS_ACTIVE)
+
+
+def team_label(player: dict) -> str:
+    """"Current team" for an active player, whatever his latest stint looks
+    like (a bare "2026" included); "Last team" for everyone else.
 
     current_team holds the LAST club for anyone no longer playing, so the value
-    is right either way -- it is the label that has to follow the data. An
-    open-ended stint ends "now", which makes it the latest one by definition;
-    last_active_year() is the same test the status classifier uses.
+    is right either way -- it is the label that has to follow the status.
     """
-    return "Current team" if last_active_year(hist) == PRESENT else "Last team"
+    return "Current team" if is_active(player) else "Last team"
 
 
 def render(player: dict) -> str:
@@ -447,7 +455,7 @@ def render(player: dict) -> str:
     facts = []
     for label, val in (("Position", player.get("position")),
                        ("Nationality", player.get("nationality")),
-                       (team_label(hist), player.get("current_team"))):
+                       (team_label(player), player.get("current_team"))):
         if val:
             facts.append(f"<dt>{label}</dt><dd>{esc(val)}</dd>")
     dl = f'<dl class="facts">{"".join(facts)}</dl>' if facts else ""

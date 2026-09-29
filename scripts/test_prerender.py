@@ -23,6 +23,7 @@ SAMPLE = {
     "player": "Nikola Jokić",
     "display_name": "Nikola Jokić",
     "current_team": "Denver Nuggets",
+    "status": "nba_active",
     "position": "Center",
     "nationality": "Serbia",
     "career_history": [
@@ -90,21 +91,22 @@ def test_retired_players_are_not_described_as_active():
     print("test_retired_players_are_not_described_as_active PASS")
 
 
-def test_team_label_follows_the_latest_stint():
-    """"Current team" only while a stint is open-ended; otherwise "Last team"."""
-    html = pr.render(SAMPLE)
-    assert "<dt>Current team</dt><dd>Denver Nuggets</dd>" in html
-    ended = dict(SAMPLE, career_history=[
-        dict(SAMPLE["career_history"][0]),
-        dict(SAMPLE["career_history"][1], years="2015–2024")])
-    html = pr.render(ended)
-    assert "<dt>Last team</dt><dd>Denver Nuggets</dd>" in html
-    assert "Current team" not in html
-    # Trailing dash is open-ended too; a bare year is not.
-    assert pr.team_label([{"years": "2026–"}]) == "Current team"
-    assert pr.team_label([{"years": "2026"}]) == "Last team"
-    assert pr.team_label([]) == "Last team"
-    print("test_team_label_follows_the_latest_stint PASS")
+def test_team_label_follows_status():
+    """Active players (NBA or overseas) show "Current team" even when the
+    latest stint is a bare year or a closed range; everyone else "Last team".
+    The description's "now with" / "last with" follows the same rule."""
+    for status, label, tail in (("nba_active", "Current team", "now with"),
+                                ("overseas_active", "Current team", "now with"),
+                                ("retired", "Last team", "last with"),
+                                ("", "Last team", "last with")):
+        for years in ("2015–present", "2015–2024", "2026"):
+            p = dict(SAMPLE, status=status, career_history=[
+                dict(SAMPLE["career_history"][0]),
+                dict(SAMPLE["career_history"][1], years=years)])
+            html = pr.render(p)
+            assert f"<dt>{label}</dt><dd>Denver Nuggets</dd>" in html, (status, years)
+            assert f"{tail} Denver Nuggets" in pr.build_description(p), (status, years)
+    print("test_team_label_follows_status PASS")
 
 
 def test_description_names_real_teams_and_countries():
@@ -628,7 +630,7 @@ if __name__ == "__main__":
     test_slug()
     test_slugs_unique_over_real_data()
     test_head_tags_in_served_markup()
-    test_team_label_follows_the_latest_stint()
+    test_team_label_follows_status()
     test_description_names_real_teams_and_countries()
     test_retired_players_are_not_described_as_active()
     test_every_description_fits_and_is_specific()
