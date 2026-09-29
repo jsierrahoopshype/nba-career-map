@@ -365,9 +365,7 @@ def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{esc(image or OG_IMAGE)}">
 <meta name="twitter:image:alt" content="{esc(image_alt or OG_IMAGE_ALT)}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{depth}/assets/fonts/web/fonts.css">
 <link rel="stylesheet" href="{depth}/assets/prerender.css">
 {head_extra}</head>
 <body>
