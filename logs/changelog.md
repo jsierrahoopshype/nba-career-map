@@ -1,3 +1,31 @@
+## 2026-09-30 — incremental run
+
+- Players updated: **499** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **11**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **5** (2 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Sabah
+  - D'Angelo Russell: Memphis Grizzlies → Shanghai Sharks
+  - N'Faly Dante: Atlanta Hawks → Westchester Knicks
+  - Hassani Gravett: Sabah BC → Pallacanestro Cantù
+  - Jermaine Samuels: San Pablo Burgos → Scaligera Verona
+  - Jordan Schakel: Niners Chemnitz → Valley Suns
+  - Josh Christopher: Shenzhen Leopards → Ironi Ness Ziona
+  - Kevin Knox: Windy City Bulls → Osceola Magic
+  - KJ Martin: Ningbo Rockets → Minnesota Timberwolves
+  - Lester Quinones: Osceola Magic → Sioux Falls Skyforce
+  - Malik Newman: Avtodor Saratov → Zenit Saint Petersburg
+  - Malik Williams: Mets de Guaynabo → San Antonio Spurs
+  - D'Angelo Russell: [nba_active → overseas_active]
+  - N'Faly Dante: [nba_active → overseas_active]
+  - Kevin Knox: [overseas_active → nba_active]
+  - KJ Martin: [overseas_active → nba_active]
+  - Malik Williams: [overseas_active → nba_active]
+
 ## 2026-09-29 — incremental run
 
 - Players updated: **481** (3 new)

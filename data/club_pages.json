@@ -7817,7 +7817,7 @@
       "city": "Sioux Falls",
       "state": "South Dakota",
       "country": "USA",
-      "count": 227,
+      "count": 228,
       "roster": [
         {
           "player": "A.J. Wynder",
@@ -8656,7 +8656,7 @@
           "player": "Josh Christopher",
           "years": "2024–2026",
           "status": "overseas_active",
-          "last_team": "Shenzhen Leopards",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -8814,6 +8814,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Lester Quinones",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "American / Dominican / Salvadoran"
+        },
+        {
           "player": "Lloyd Daniels",
           "years": "1999",
           "status": "retired",
@@ -8845,14 +8852,14 @@
           "player": "Malik Newman",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
           "player": "Malik Williams",
           "years": "2023–2024, 2024–2025",
-          "status": "overseas_active",
-          "last_team": "Mets de Guaynabo",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs",
           "nationality": "United States"
         },
         {
@@ -9959,7 +9966,7 @@
           "player": "Jermaine Samuels",
           "years": "2023–2024, 2024–2025",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Scaligera Verona",
           "nationality": "United States"
         },
         {
@@ -9994,7 +10001,7 @@
           "player": "Josh Christopher",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Shenzhen Leopards",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -10014,8 +10021,8 @@
         {
           "player": "KJ Martin",
           "years": "2021",
-          "status": "overseas_active",
-          "last_team": "Ningbo Rockets",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -10140,8 +10147,8 @@
         {
           "player": "N'Faly Dante",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "status": "overseas_active",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -17199,8 +17206,8 @@
           "player": "Lester Quinones",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Osceola Magic",
-          "nationality": "American / Salvadoran / Dominican"
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "American / Dominican / Salvadoran"
         },
         {
           "player": "Louis King",
@@ -19648,8 +19655,8 @@
         {
           "player": "Malik Williams",
           "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Mets de Guaynabo",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs",
           "nationality": "United States"
         },
         {
@@ -22693,9 +22700,9 @@
         },
         {
           "player": "Jordan Schakel",
-          "years": "2023–2024, 2024–2025",
+          "years": "2023–2025",
           "status": "overseas_active",
-          "last_team": "Niners Chemnitz",
+          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -28407,7 +28414,7 @@
           "player": "Malik Newman",
           "years": "2022–2023, 2023–2024, 2025–2026",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -28525,6 +28532,11 @@
         },
         {
           "type": "club",
+          "name": "Zenit Saint Petersburg",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 3
         },
@@ -28536,11 +28548,6 @@
         {
           "type": "club",
           "name": "Reno Bighorns",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Grand Rapids Hoops",
           "shared": 3
         }
       ]
@@ -29288,7 +29295,7 @@
           "player": "Hassani Gravett",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Sabah BC",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         },
         {
@@ -35395,9 +35402,9 @@
         },
         {
           "player": "Kevin Knox",
-          "years": "2025–present",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -39036,7 +39043,7 @@
           "player": "Jordan Schakel",
           "years": "2021–2022, 2022–2023",
           "status": "overseas_active",
-          "last_team": "Niners Chemnitz",
+          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -39395,7 +39402,7 @@
           "player": "Hassani Gravett",
           "years": "2019–2020, 2021, 2022",
           "status": "overseas_active",
-          "last_team": "Sabah BC",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         },
         {
@@ -43254,7 +43261,7 @@
           "player": "Jermaine Samuels",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Scaligera Verona",
           "nationality": "United States"
         },
         {
@@ -45831,7 +45838,7 @@
       "city": "Cantù",
       "state": "",
       "country": "Italy",
-      "count": 55,
+      "count": 56,
       "roster": [
         {
           "player": "Adrian Caldwell",
@@ -45950,6 +45957,13 @@
           "years": "1989",
           "status": "retired",
           "last_team": "Sioux Falls Skyforce",
+          "nationality": "United States"
+        },
+        {
+          "player": "Hassani Gravett",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         },
         {
@@ -49008,7 +49022,7 @@
           "player": "Hassani Gravett",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Sabah BC",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         },
         {
@@ -50343,8 +50357,8 @@
         {
           "player": "Malik Williams",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Mets de Guaynabo",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs",
           "nationality": "United States"
         },
         {
@@ -54342,7 +54356,7 @@
           "player": "Hassani Gravett",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Sabah BC",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         },
         {
@@ -54886,7 +54900,7 @@
       "city": "Shanghai",
       "state": "",
       "country": "China",
-      "count": 40,
+      "count": 41,
       "roster": [
         {
           "player": "AJ Price",
@@ -54922,6 +54936,15 @@
           "status": "overseas_active",
           "last_team": "Shanghai Sharks",
           "nationality": "American"
+        },
+        {
+          "player": "D'Angelo Russell",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Shanghai Sharks",
+          "nationality": "United States",
+          "all_star": true,
+          "all_star_count": 1
         },
         {
           "player": "DJ White",
@@ -56783,12 +56806,12 @@
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Shanghai Sharks",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Shanghai Sharks",
+          "name": "Piratas de Quebradillas",
           "shared": 4
         },
         {
@@ -63747,7 +63770,7 @@
           "player": "Malik Newman",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -68714,7 +68737,7 @@
           "player": "Josh Christopher",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Shenzhen Leopards",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -69066,12 +69089,12 @@
         },
         {
           "type": "club",
-          "name": "Texas Legends",
-          "shared": 5
+          "name": "Ironi Ness Ziona",
+          "shared": 6
         },
         {
           "type": "club",
-          "name": "Santa Cruz Warriors",
+          "name": "Texas Legends",
           "shared": 5
         }
       ]
@@ -69917,7 +69940,7 @@
           "player": "Jordan Schakel",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Niners Chemnitz",
+          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -70337,7 +70360,7 @@
           "player": "Malik Newman",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -70702,8 +70725,8 @@
         {
           "player": "Kevin Knox",
           "years": "2024",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -78044,8 +78067,8 @@
         {
           "player": "Malik Williams",
           "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Mets de Guaynabo",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs",
           "nationality": "United States"
         },
         {
@@ -80877,7 +80900,7 @@
       "city": "Saint Petersburg",
       "state": "",
       "country": "Russia",
-      "count": 29,
+      "count": 30,
       "roster": [
         {
           "player": "Alex Poythress",
@@ -80983,6 +81006,13 @@
           "status": "overseas_active",
           "last_team": "UNICS",
           "nationality": "Croatia"
+        },
+        {
+          "player": "Malik Newman",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Zenit Saint Petersburg",
+          "nationality": "United States"
         },
         {
           "player": "Mindaugas Kuzminskas",
@@ -87460,9 +87490,9 @@
         },
         {
           "player": "Josh Christopher",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
-          "last_team": "Shenzhen Leopards",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -88633,7 +88663,7 @@
       "city": "White Plains",
       "state": "New York",
       "country": "USA",
-      "count": 87,
+      "count": 88,
       "roster": [
         {
           "player": "Allen Crabbe",
@@ -88988,7 +89018,7 @@
         },
         {
           "player": "Kevin McCullar",
-          "years": "2024–2026",
+          "years": "2024–present",
           "status": "nba_active",
           "last_team": "New York Knicks",
           "nationality": "United States"
@@ -89103,6 +89133,13 @@
           "years": "2021",
           "status": "overseas_active",
           "last_team": "Scarborough Shooting Stars",
+          "nationality": "United States"
+        },
+        {
+          "player": "N'Faly Dante",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -91023,8 +91060,8 @@
         {
           "player": "Malik Williams",
           "years": "2023",
-          "status": "overseas_active",
-          "last_team": "Mets de Guaynabo",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs",
           "nationality": "United States"
         },
         {
@@ -94208,9 +94245,9 @@
         },
         {
           "player": "Malik Williams",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Mets de Guaynabo",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "San Antonio Spurs",
           "nationality": "United States"
         },
         {
@@ -94471,7 +94508,7 @@
           "player": "Jordan Schakel",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Niners Chemnitz",
+          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -95397,7 +95434,7 @@
           "player": "Jordan Schakel",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Niners Chemnitz",
+          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -95431,8 +95468,8 @@
         {
           "player": "Kevin Knox",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -95460,8 +95497,8 @@
           "player": "Lester Quinones",
           "years": "2022–2023, 2023–2024",
           "status": "overseas_active",
-          "last_team": "Osceola Magic",
-          "nationality": "American / Salvadoran / Dominican"
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "American / Dominican / Salvadoran"
         },
         {
           "player": "Luis Montero",
@@ -98782,7 +98819,7 @@
       "city": "San Francisco",
       "state": "California",
       "country": "USA",
-      "count": 8,
+      "count": 7,
       "roster": [
         {
           "player": "Andre Barrett",
@@ -98811,13 +98848,6 @@
           "status": "retired",
           "last_team": "Indios de San Francisco de Macorís",
           "nationality": "Dominican Republic"
-        },
-        {
-          "player": "Hassani Gravett",
-          "years": "2024",
-          "status": "overseas_active",
-          "last_team": "Sabah BC",
-          "nationality": "United States"
         },
         {
           "player": "Justin Patton",
@@ -99435,7 +99465,7 @@
           "player": "Malik Newman",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -112711,13 +112741,20 @@
       "city": "Denizli",
       "state": "",
       "country": "Turkey",
-      "count": 4,
+      "count": 5,
       "roster": [
         {
           "player": "Andrew Harrison",
           "years": "2022–2023",
           "status": "overseas_active",
           "last_team": "Santos del Potosí",
+          "nationality": "United States"
+        },
+        {
+          "player": "Malik Newman",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -112750,8 +112787,23 @@
         },
         {
           "type": "club",
+          "name": "Cleveland Charge",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Agua Caliente Clippers",
           "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Zhejiang Golden Bulls",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
         },
         {
           "type": "club",
@@ -112766,21 +112818,6 @@
         {
           "type": "club",
           "name": "Olympiacos",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Real Madrid",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -119168,7 +119205,7 @@
           "player": "Malik Newman",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -120929,7 +120966,7 @@
           "player": "Malik Newman",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -121916,7 +121953,7 @@
           "player": "Hassani Gravett",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Sabah BC",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         },
         {
@@ -128058,9 +128095,9 @@
         },
         {
           "player": "KJ Martin",
-          "years": "2025–present",
-          "status": "overseas_active",
-          "last_team": "Ningbo Rockets",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -132603,13 +132640,20 @@
       "city": "Mayagüez",
       "state": "",
       "country": "Puerto Rico",
-      "count": 1,
+      "count": 2,
       "roster": [
         {
           "player": "Art Long",
           "years": "2009-2010",
           "status": "retired",
           "last_team": "Unión Alética",
+          "nationality": "United States"
+        },
+        {
+          "player": "Hassani Gravett",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         }
       ],
@@ -132621,7 +132665,17 @@
         },
         {
           "type": "club",
+          "name": "Raptors 905",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Yakima Sun Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -132636,22 +132690,12 @@
         },
         {
           "type": "club",
+          "name": "Pallacanestro Cantù",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Trotamundos de Carabobo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "San Miguel Beermen",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Azovmash Mariupol",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Brujos de Guayama",
           "shared": 1
         }
       ]
@@ -135848,7 +135892,7 @@
           "player": "Malik Newman",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -137804,20 +137848,13 @@
       "city": "Denizli",
       "state": "",
       "country": "Turkey",
-      "count": 3,
+      "count": 2,
       "roster": [
         {
           "player": "Ben McLemore",
           "years": "2024–2025",
           "status": "overseas_active",
           "last_team": "Merkezefendi Belediyesi Denizli",
-          "nationality": "United States"
-        },
-        {
-          "player": "Malik Newman",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
           "nationality": "United States"
         },
         {
@@ -137829,16 +137866,6 @@
         }
       ],
       "related": [
-        {
-          "type": "club",
-          "name": "Canton Charge",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
         {
           "type": "club",
           "name": "Oklahoma City Blue",
@@ -137867,6 +137894,16 @@
         {
           "type": "club",
           "name": "Iowa Wolves",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Canton Charge",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -141595,7 +141632,7 @@
       "city": "Verona",
       "state": "",
       "country": "Italy",
-      "count": 37,
+      "count": 38,
       "roster": [
         {
           "player": "Bill Edwards",
@@ -141686,6 +141723,13 @@
           "years": "2001",
           "status": "retired",
           "last_team": "Maccabi Haifa",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jermaine Samuels",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Scaligera Verona",
           "nationality": "United States"
         },
         {
@@ -155194,7 +155238,7 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         }
       ]
@@ -156931,7 +156975,7 @@
       "city": "Kissimmee",
       "state": "Florida",
       "country": "USA",
-      "count": 28,
+      "count": 29,
       "roster": [
         {
           "player": "Alex Morales",
@@ -157052,11 +157096,18 @@
           "nationality": "American / Dominican"
         },
         {
-          "player": "Lester Quinones",
-          "years": "2025–present",
-          "status": "overseas_active",
+          "player": "Kevin Knox",
+          "years": "2026–present",
+          "status": "nba_active",
           "last_team": "Osceola Magic",
-          "nationality": "American / Salvadoran / Dominican"
+          "nationality": "United States"
+        },
+        {
+          "player": "Lester Quinones",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "American / Dominican / Salvadoran"
         },
         {
           "player": "Mac McClung",
@@ -157132,13 +157183,13 @@
       "related": [
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
+          "name": "Sioux Falls Skyforce",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 5
+          "name": "Delaware Blue Coats",
+          "shared": 6
         },
         {
           "type": "club",
@@ -157162,12 +157213,12 @@
         },
         {
           "type": "club",
-          "name": "Raptors 905",
+          "name": "Santa Cruz Warriors",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Raptors 905",
           "shared": 3
         }
       ]
@@ -159375,12 +159426,12 @@
         },
         {
           "type": "club",
-          "name": "La Crosse Bobcats",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "La Crosse Bobcats",
           "shared": 1
         },
         {
@@ -159990,7 +160041,7 @@
       "city": "",
       "state": "",
       "country": "",
-      "count": 10,
+      "count": 14,
       "roster": [
         {
           "player": "Brodric Thomas",
@@ -160042,10 +160093,38 @@
           "nationality": "United States"
         },
         {
+          "player": "James Bouknight",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Mexico City Capitanes",
+          "nationality": "United States"
+        },
+        {
+          "player": "Juan Toscano-Anderson",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "Pallacanestro Trieste",
+          "nationality": "Mexican / American"
+        },
+        {
           "player": "Kylor Kelley",
           "years": "2026",
           "status": "overseas_active",
           "last_team": "Sioux Falls Skyforce",
+          "nationality": "United States"
+        },
+        {
+          "player": "Lester Quinones",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "American / Dominican / Salvadoran"
+        },
+        {
+          "player": "Michael Foster",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "Scarborough Shooting Stars",
           "nationality": "United States"
         },
         {
@@ -160071,7 +160150,17 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Texas Legends",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
           "shared": 3
         },
         {
@@ -160086,23 +160175,13 @@
         },
         {
           "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Iowa Wolves",
           "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Stockton Kings",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Raptors 905",
-          "shared": 2
         }
       ]
     },
@@ -162101,12 +162180,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -162438,8 +162517,8 @@
           "player": "Lester Quinones",
           "years": "2024–2025, 2025",
           "status": "overseas_active",
-          "last_team": "Osceola Magic",
-          "nationality": "American / Salvadoran / Dominican"
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "American / Dominican / Salvadoran"
         },
         {
           "player": "Malcolm Hill",
@@ -165112,7 +165191,7 @@
       "city": "Ness Ziona",
       "state": "",
       "country": "Israel",
-      "count": 26,
+      "count": 27,
       "roster": [
         {
           "player": "CJ Williams",
@@ -165203,6 +165282,13 @@
           "years": "2019–2020",
           "status": "overseas_active",
           "last_team": "Pelita Jaya",
+          "nationality": "United States"
+        },
+        {
+          "player": "Josh Christopher",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Ironi Ness Ziona",
           "nationality": "United States"
         },
         {
@@ -165305,6 +165391,16 @@
         },
         {
           "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 6
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Long Island Nets",
           "shared": 5
         },
@@ -165312,16 +165408,6 @@
           "type": "club",
           "name": "Memphis Hustle",
           "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 4
         },
         {
           "type": "club",
@@ -166620,7 +166706,7 @@
           "player": "Malik Newman",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Avtodor Saratov",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -169520,7 +169606,7 @@
       "city": "Tempe",
       "state": "Arizona",
       "country": "USA",
-      "count": 20,
+      "count": 21,
       "roster": [
         {
           "player": "C. J. Huntley",
@@ -169583,6 +169669,13 @@
           "years": "2025-2026",
           "status": "nba_active",
           "last_team": "Phoenix Suns",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jordan Schakel",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -169671,12 +169764,22 @@
         },
         {
           "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Austin Spurs",
           "shared": 3
         },
         {
           "type": "club",
           "name": "Westchester Knicks",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
           "shared": 3
         },
         {
@@ -169692,16 +169795,6 @@
         {
           "type": "club",
           "name": "Baskonia",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Raptors 905",
           "shared": 2
         }
       ]
@@ -170917,12 +171010,12 @@
         },
         {
           "type": "club",
-          "name": "Austin Toros",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Austin Toros",
           "shared": 1
         },
         {
@@ -178117,17 +178210,17 @@
         },
         {
           "type": "club",
+          "name": "Pallacanestro Cantù",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
           "name": "La Crosse Bobcats",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
@@ -178175,17 +178268,17 @@
         },
         {
           "type": "club",
+          "name": "Pallacanestro Cantù",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
           "name": "La Crosse Bobcats",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
@@ -181797,12 +181890,12 @@
         },
         {
           "type": "club",
-          "name": "JDA Dijon",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Ironi Ness Ziona",
+          "name": "JDA Dijon",
           "shared": 1
         }
       ]
@@ -193756,17 +193849,17 @@
         },
         {
           "type": "club",
+          "name": "Pallacanestro Cantù",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Austin Toros",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Hapoel Tel Aviv",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
           "shared": 1
         }
       ]
@@ -196714,7 +196807,7 @@
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Shanghai Sharks",
           "shared": 1
         }
       ]
@@ -198811,7 +198904,7 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Shanghai Sharks",
           "shared": 2
         }
       ]
@@ -200786,7 +200879,7 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         }
       ]
@@ -211469,9 +211562,9 @@
         },
         {
           "player": "Jermaine Samuels",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Scaligera Verona",
           "nationality": "United States"
         },
         {
@@ -218869,7 +218962,7 @@
         },
         {
           "type": "club",
-          "name": "Austin Toros",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         }
       ]
@@ -222366,12 +222459,12 @@
         },
         {
           "type": "club",
-          "name": "Austin Toros",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Austin Toros",
           "shared": 1
         },
         {
@@ -227907,7 +228000,7 @@
           "player": "Hassani Gravett",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Sabah BC",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         }
       ],
@@ -227920,6 +228013,11 @@
         {
           "type": "club",
           "name": "Memphis Hustle",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
@@ -227939,49 +228037,32 @@
         },
         {
           "type": "club",
-          "name": "Indios de San Francisco de Macorís",
+          "name": "Indios",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Sabah BC",
+          "name": "Sabah",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Kožuv",
-          "shared": 0
         }
       ]
     },
-    "Sabah BC": {
-      "club": "Sabah BC",
-      "city": "Baku",
+    "Sabah": {
+      "club": "Sabah",
+      "city": "",
       "state": "",
-      "country": "Azerbaijan",
-      "count": 2,
+      "country": "",
+      "count": 1,
       "roster": [
         {
           "player": "Hassani Gravett",
-          "years": "2024–present",
+          "years": "2024–2026",
           "status": "overseas_active",
-          "last_team": "Sabah BC",
-          "nationality": "United States"
-        },
-        {
-          "player": "Trevon Duval",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Greensboro Swarm",
+          "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
         }
       ],
       "related": [
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 1
-        },
         {
           "type": "club",
           "name": "Raptors 905",
@@ -227994,27 +228075,32 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Iowa Wolves",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Grand Rapids Gold",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Lakeland Magic",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Śląsk Wrocław",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "EWE Baskets Oldenburg",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Indios",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "MZT Skopje",
           "shared": 1
         }
       ]
@@ -230805,7 +230891,7 @@
         },
         {
           "type": "club",
-          "name": "Fujian Sturgeons",
+          "name": "Ironi Ness Ziona",
           "shared": 1
         }
       ]
@@ -233229,7 +233315,7 @@
         },
         {
           "type": "club",
-          "name": "Zhejiang Golden Bulls",
+          "name": "Zenit Saint Petersburg",
           "shared": 1
         }
       ]
@@ -233438,9 +233524,9 @@
         },
         {
           "player": "Jordan Schakel",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Niners Chemnitz",
+          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -234792,12 +234878,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -237129,12 +237215,12 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Shanghai Sharks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Shanghai Sharks",
+          "name": "Bnei Herzliya",
           "shared": 1
         },
         {
@@ -237187,12 +237273,12 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Shanghai Sharks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Shanghai Sharks",
+          "name": "Bnei Herzliya",
           "shared": 1
         },
         {
@@ -255516,12 +255602,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Scaligera Verona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Scaligera Verona",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -265347,12 +265433,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Scaligera Verona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Scaligera Verona",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -267552,12 +267638,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Scaligera Verona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Scaligera Verona",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -267610,12 +267696,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Scaligera Verona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Scaligera Verona",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -267668,12 +267754,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Scaligera Verona",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Scaligera Verona",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -282312,12 +282398,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -282370,12 +282456,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -282428,12 +282514,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -282486,12 +282572,12 @@
         },
         {
           "type": "club",
-          "name": "Hapoel Tel Aviv",
+          "name": "Pallacanestro Cantù",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Pallacanestro Cantù",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
@@ -290483,12 +290569,12 @@
         },
         {
           "type": "club",
-          "name": "Avtodor Saratov",
+          "name": "Zenit Saint Petersburg",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Zenit Saint Petersburg",
+          "name": "Avtodor Saratov",
           "shared": 0
         }
       ]
@@ -293598,6 +293684,64 @@
           "type": "club",
           "name": "Quad City Thunder",
           "shared": 0
+        }
+      ]
+    },
+    "Sabah BC": {
+      "club": "Sabah BC",
+      "city": "Baku",
+      "state": "",
+      "country": "Azerbaijan",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Trevon Duval",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Wisconsin Herd",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Grand Rapids Gold",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Metros de Santiago",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Hamilton Honey Badgers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Manisa BB",
+          "shared": 1
         }
       ]
     },
@@ -298878,7 +299022,7 @@
         },
         {
           "type": "club",
-          "name": "Calgary Surge",
+          "name": "NBA G League United",
           "shared": 1
         }
       ]
