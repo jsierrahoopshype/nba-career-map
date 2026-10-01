@@ -1,3 +1,16 @@
+## 2026-10-01 — incremental run
+
+- Players updated: **547** (2 new)
+- New teams discovered: **3**
+- Team moves detected: **1**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Jaden Akins, Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Kk Zorka, Seattle SuperSonics / , Oklahoma City Thunder
+  - BJ Johnson: Phoenix Fuel Masters → Parma
+
 ## 2026-09-30 — incremental run
 
 - Players updated: **499** (1 new)
