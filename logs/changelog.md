@@ -1,3 +1,22 @@
+## 2026-10-01 — full_overseas run
+
+- Players updated: **495** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **6**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Palmer Basket
+  - D'Moi Hodge: Frayles de Guasave → Palmer Basket
+  - Daishen Nix: Beijing Royal Fighters → Tianjin Pioneers
+  - Elfrid Payton: Austin Spurs → Sacramento Kings
+  - Liam Robbins: Rip City Remix → Westchester Knicks
+  - Jalen Bridges: Maine Celtics → Windy City Bulls
+  - Keljin Blevins: Bima Perkasa Jogja → Sharjah SC
+  - Elfrid Payton: [overseas_active → nba_active]
+
 ## 2026-10-01 — incremental run
 
 - Players updated: **547** (2 new)
