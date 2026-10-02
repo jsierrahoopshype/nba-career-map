@@ -5160,15 +5160,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Ryan Nembhard",
-          "years": "2026–present",
-          "stint_team": "Atlanta Hawks",
-          "status": "nba_active",
-          "current_team": "Atlanta Hawks",
-          "current_country": "USA",
-          "nationality": "Canada"
-        },
-        {
           "player": "Saddiq Bey",
           "years": "2023–2024",
           "stint_team": "Atlanta Hawks",
@@ -5765,7 +5756,7 @@
           "years": "2026",
           "stint_team": "Atlanta Hawks",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -6806,6 +6797,13 @@
           "nationality": "France"
         },
         {
+          "player": "Tony Bradley",
+          "status": "nba_active",
+          "current_team": "New York Knicks",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Tony Snell",
           "status": "overseas_active",
           "current_team": "Cholet Basket",
@@ -6892,8 +6890,8 @@
           "nationality": "French"
         }
       ],
-      "roster_count": 684,
-      "alumni_count": 637,
+      "roster_count": 683,
+      "alumni_count": 636,
       "related": [
         {
           "type": "club",
@@ -6927,13 +6925,13 @@
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Olimpia Milano",
           "shared": 13
         },
         {
           "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 13
+          "name": "Texas Legends",
+          "shared": 12
         }
       ]
     },
@@ -15235,8 +15233,8 @@
           "years": "2017",
           "stint_team": "Brooklyn Nets",
           "status": "overseas_active",
-          "current_team": "Marinos de Anzoátegui",
-          "current_country": "Venezuela",
+          "current_team": "Erdenet Miners",
+          "current_country": "Mongolia",
           "nationality": "United States"
         },
         {
@@ -15666,9 +15664,9 @@
           "player": "Lonnie Walker",
           "years": "2023–24",
           "stint_team": "Brooklyn Nets",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "current_country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -18081,8 +18079,8 @@
         {
           "player": "KJ McDaniels",
           "status": "overseas_active",
-          "current_team": "Marinos de Anzoátegui",
-          "country": "Venezuela",
+          "current_team": "Erdenet Miners",
+          "country": "Mongolia",
           "nationality": "United States"
         },
         {
@@ -18154,9 +18152,9 @@
         },
         {
           "player": "Lonnie Walker",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -23835,7 +23833,7 @@
           "player": "Emanuel Miller",
           "years": "2024–2026",
           "stint_team": "Chicago Bulls",
-          "status": "overseas_active",
+          "status": "nba_active",
           "current_team": "Grand Rapids Gold",
           "current_country": "USA",
           "nationality": "Canada"
@@ -26461,7 +26459,7 @@
           "years": "2021–2023",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -26968,7 +26966,7 @@
         },
         {
           "player": "Emanuel Miller",
-          "status": "overseas_active",
+          "status": "nba_active",
           "current_team": "Grand Rapids Gold",
           "country": "USA",
           "nationality": "Canada"
@@ -27297,7 +27295,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -35943,7 +35941,7 @@
           "years": "2025–26",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "Canada"
         },
@@ -37303,7 +37301,7 @@
         {
           "player": "Ryan Nembhard",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "Canada"
         },
@@ -40018,6 +40016,15 @@
           "nationality": "Lithuania"
         },
         {
+          "player": "Lonnie Walker",
+          "years": "2026–present",
+          "stint_team": "Denver Nuggets",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Loren Meyer",
           "years": "1999",
           "stint_team": "Denver Nuggets",
@@ -40900,6 +40907,15 @@
           "current_team": "Oklahoma City Thunder",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Ryan Nembhard",
+          "years": "2026–present",
+          "stint_team": "Denver Nuggets",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
+          "nationality": "Canada"
         },
         {
           "player": "Sarunas Marciulionis",
@@ -42046,13 +42062,13 @@
           "nationality": "Slovenia"
         }
       ],
-      "roster_count": 449,
-      "alumni_count": 422,
+      "roster_count": 451,
+      "alumni_count": 424,
       "related": [
         {
           "type": "club",
           "name": "Grand Rapids Gold",
-          "shared": 23
+          "shared": 24
         },
         {
           "type": "club",
@@ -44599,7 +44615,7 @@
         },
         {
           "player": "Jalen Duren",
-          "years": "2022–2026",
+          "years": "2022–present",
           "stint_team": "Detroit Pistons",
           "status": "nba_active",
           "current_team": "Detroit Pistons",
@@ -57071,8 +57087,8 @@
           "years": "2015–2017",
           "stint_team": "Houston Rockets",
           "status": "overseas_active",
-          "current_team": "Marinos de Anzoátegui",
-          "current_country": "Venezuela",
+          "current_team": "Erdenet Miners",
+          "current_country": "Mongolia",
           "nationality": "United States"
         },
         {
@@ -59561,8 +59577,8 @@
         {
           "player": "KJ McDaniels",
           "status": "overseas_active",
-          "current_team": "Marinos de Anzoátegui",
-          "country": "Venezuela",
+          "current_team": "Erdenet Miners",
+          "country": "Mongolia",
           "nationality": "United States"
         },
         {
@@ -61402,7 +61418,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2022–2025",
+          "years": "2022–present",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -63195,7 +63211,7 @@
           "years": "2025–2026",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -63935,7 +63951,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -72917,9 +72933,9 @@
           "player": "Lonnie Walker",
           "years": "2022–23",
           "stint_team": "Los Angeles Lakers",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "current_country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -75306,9 +75322,9 @@
         },
         {
           "player": "Lonnie Walker",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -100558,6 +100574,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Tony Bradley",
+          "years": "2026–present",
+          "stint_team": "New York Knicks",
+          "status": "nba_active",
+          "current_team": "New York Knicks",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Tony Campbell",
           "years": "1992-1994",
           "stint_team": "New York Knicks",
@@ -101483,8 +101508,8 @@
           "nationality": "Spain"
         }
       ],
-      "roster_count": 605,
-      "alumni_count": 569,
+      "roster_count": 606,
+      "alumni_count": 570,
       "related": [
         {
           "type": "club",
@@ -105281,7 +105306,7 @@
           "years": "2021",
           "stint_team": "Oklahoma City Thunder",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -106031,7 +106056,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -112996,8 +113021,8 @@
           "years": "2014–15",
           "stint_team": "Philadelphia 76ers",
           "status": "overseas_active",
-          "current_team": "Marinos de Anzoátegui",
-          "current_country": "Venezuela",
+          "current_team": "Erdenet Miners",
+          "current_country": "Mongolia",
           "nationality": "United States"
         },
         {
@@ -113445,9 +113470,9 @@
           "player": "Lonnie Walker",
           "years": "2025",
           "stint_team": "Philadelphia 76ers",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "current_country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -115201,7 +115226,7 @@
           "years": "2020–21",
           "stint_team": "Philadelphia 76ers",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -116074,8 +116099,8 @@
         {
           "player": "KJ McDaniels",
           "status": "overseas_active",
-          "current_team": "Marinos de Anzoátegui",
-          "country": "Venezuela",
+          "current_team": "Erdenet Miners",
+          "country": "Mongolia",
           "nationality": "United States"
         },
         {
@@ -116108,9 +116133,9 @@
         },
         {
           "player": "Lonnie Walker",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -116400,7 +116425,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "country": "USA",
           "nationality": "United States"
         },
@@ -116451,7 +116476,7 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 34
+          "shared": 33
         },
         {
           "type": "club",
@@ -134930,9 +134955,9 @@
           "player": "Lonnie Walker",
           "years": "2018–2022",
           "stint_team": "San Antonio Spurs",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "current_country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -136849,9 +136874,9 @@
         },
         {
           "player": "Lonnie Walker",
-          "status": "overseas_active",
-          "current_team": "Maccabi Tel Aviv",
-          "country": "Israel",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -144086,7 +144111,7 @@
           "years": "2017–2020",
           "stint_team": "Utah Jazz",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -144895,7 +144920,7 @@
         {
           "player": "Tony Bradley",
           "status": "nba_active",
-          "current_team": "Atlanta Hawks",
+          "current_team": "New York Knicks",
           "country": "USA",
           "nationality": "United States"
         },

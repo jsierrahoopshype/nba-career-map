@@ -1,3 +1,20 @@
+## 2026-10-02 — incremental run
+
+- Players updated: **507** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - KJ McDaniels: Marinos de Anzoátegui → Erdenet Miners
+  - Lonnie Walker: Maccabi Tel Aviv → Denver Nuggets
+  - Tony Bradley: Atlanta Hawks → New York Knicks
+  - Ryan Nembhard: Atlanta Hawks → Denver Nuggets
+  - Lonnie Walker: [overseas_active → nba_active]
+  - Emanuel Miller: [overseas_active → nba_active]
+
 ## 2026-10-01 — full_overseas run
 
 - Players updated: **495** (1 new)

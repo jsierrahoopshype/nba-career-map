@@ -7817,7 +7817,7 @@
       "city": "Sioux Falls",
       "state": "South Dakota",
       "country": "USA",
-      "count": 228,
+      "count": 227,
       "roster": [
         {
           "player": "A.J. Wynder",
@@ -8940,13 +8940,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Michael Foster",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Scarborough Shooting Stars",
-          "nationality": "United States"
-        },
-        {
           "player": "Michael Hawkins",
           "years": "2001, 2003-2004",
           "status": "retired",
@@ -10029,7 +10022,7 @@
           "player": "KJ McDaniels",
           "years": "2015–2016",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -11480,7 +11473,7 @@
           "player": "KJ McDaniels",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -12749,7 +12742,7 @@
           "player": "KJ McDaniels",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -20157,8 +20150,8 @@
         {
           "player": "Lonnie Walker",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Maccabi Tel Aviv",
+          "status": "nba_active",
+          "last_team": "Denver Nuggets",
           "nationality": "United States"
         },
         {
@@ -30435,7 +30428,7 @@
         {
           "player": "Emanuel Miller",
           "years": "2026",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Grand Rapids Gold",
           "nationality": "Canada"
         },
@@ -30650,8 +30643,8 @@
         {
           "player": "Lonnie Walker",
           "years": "2018–2019",
-          "status": "overseas_active",
-          "last_team": "Maccabi Tel Aviv",
+          "status": "nba_active",
+          "last_team": "Denver Nuggets",
           "nationality": "United States"
         },
         {
@@ -35250,7 +35243,7 @@
         {
           "player": "Emanuel Miller",
           "years": "2024–2026",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Grand Rapids Gold",
           "nationality": "Canada"
         },
@@ -39304,12 +39297,12 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
+          "name": "Rio Grande Valley Vipers",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
+          "name": "Texas Legends",
           "shared": 6
         }
       ]
@@ -41376,7 +41369,7 @@
           "player": "KJ McDaniels",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -50442,7 +50435,7 @@
           "player": "Tony Bradley",
           "years": "2024–2025",
           "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "last_team": "New York Knicks",
           "nationality": "United States"
         },
         {
@@ -52704,7 +52697,7 @@
         {
           "player": "Emanuel Miller",
           "years": "2024",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Grand Rapids Gold",
           "nationality": "Canada"
         },
@@ -53187,7 +53180,7 @@
           "player": "Ryan Nembhard",
           "years": "2025–2026",
           "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "last_team": "Denver Nuggets",
           "nationality": "Canada"
         },
         {
@@ -53263,7 +53256,7 @@
           "player": "Tony Bradley",
           "years": "2023–2024",
           "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "last_team": "New York Knicks",
           "nationality": "United States"
         },
         {
@@ -59194,7 +59187,7 @@
           "player": "KJ McDaniels",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -68955,7 +68948,7 @@
           "player": "Tony Bradley",
           "years": "2017–2019",
           "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "last_team": "New York Knicks",
           "nationality": "United States"
         },
         {
@@ -70221,7 +70214,7 @@
         {
           "player": "Emanuel Miller",
           "years": "2026",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Grand Rapids Gold",
           "nationality": "Canada"
         },
@@ -75954,11 +75947,6 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 6
-        },
-        {
-          "type": "club",
           "name": "Piratas de Quebradillas",
           "shared": 6
         },
@@ -75971,6 +75959,11 @@
           "type": "club",
           "name": "Santeros de Aguada",
           "shared": 6
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 5
         },
         {
           "type": "club",
@@ -83179,7 +83172,7 @@
           "player": "KJ McDaniels",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -93883,7 +93876,7 @@
         },
         {
           "player": "Michael Foster",
-          "years": "2025–2026",
+          "years": "2025",
           "status": "overseas_active",
           "last_team": "Scarborough Shooting Stars",
           "nationality": "United States"
@@ -93923,11 +93916,6 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 2
         },
@@ -93949,6 +93937,11 @@
         {
           "type": "club",
           "name": "Galatasaray",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Santeros de Aguada",
           "shared": 2
         }
       ]
@@ -94697,7 +94690,7 @@
       "city": "Grand Rapids",
       "state": "Michigan",
       "country": "USA",
-      "count": 45,
+      "count": 46,
       "roster": [
         {
           "player": "Amida Brimah",
@@ -94778,7 +94771,7 @@
         {
           "player": "Emanuel Miller",
           "years": "2026–present",
-          "status": "overseas_active",
+          "status": "nba_active",
           "last_team": "Grand Rapids Gold",
           "nationality": "Canada"
         },
@@ -94959,6 +94952,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Ryan Nembhard",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Denver Nuggets",
+          "nationality": "Canada"
+        },
+        {
           "player": "Shabazz Muhammad",
           "years": "2021",
           "status": "overseas_active",
@@ -95032,6 +95032,11 @@
         },
         {
           "type": "club",
+          "name": "Texas Legends",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Oklahoma City Blue",
           "shared": 4
         },
@@ -95049,11 +95054,6 @@
           "type": "club",
           "name": "Birmingham Squadron",
           "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 3
         }
       ]
     },
@@ -97010,11 +97010,6 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 3
-        },
-        {
-          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 3
         },
@@ -97026,6 +97021,11 @@
         {
           "type": "club",
           "name": "Olympiacos",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
           "shared": 3
         }
       ]
@@ -101554,7 +101554,7 @@
           "player": "KJ McDaniels",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -119505,7 +119505,7 @@
         },
         {
           "player": "Michael Foster",
-          "years": "2026–present",
+          "years": "2025, 2026",
           "status": "overseas_active",
           "last_team": "Scarborough Shooting Stars",
           "nationality": "United States"
@@ -119557,11 +119557,6 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Austin Spurs",
           "shared": 2
         },
@@ -119578,6 +119573,11 @@
         {
           "type": "club",
           "name": "Ironi Ness Ziona",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "NBA G League United",
           "shared": 2
         }
       ]
@@ -120545,8 +120545,8 @@
         {
           "player": "Lonnie Walker",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Maccabi Tel Aviv",
+          "status": "nba_active",
+          "last_team": "Denver Nuggets",
           "nationality": "United States"
         },
         {
@@ -160175,11 +160175,6 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 3
-        },
-        {
-          "type": "club",
           "name": "Texas Legends",
           "shared": 3
         },
@@ -160206,6 +160201,11 @@
         {
           "type": "club",
           "name": "Iowa Wolves",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Stockton Kings",
           "shared": 3
         }
       ]
@@ -165027,7 +165027,7 @@
           "player": "KJ McDaniels",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -178720,7 +178720,7 @@
           "player": "KJ McDaniels",
           "years": "2023–2025",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -203488,7 +203488,7 @@
           "player": "KJ McDaniels",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -209136,7 +209136,7 @@
           "player": "KJ McDaniels",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -227824,7 +227824,7 @@
       "city": "Dar es Salaam",
       "state": "",
       "country": "Tanzania",
-      "count": 1,
+      "count": 2,
       "roster": [
         {
           "player": "Hasheem Thabeet",
@@ -227832,6 +227832,13 @@
           "status": "overseas_active",
           "last_team": "Dar City",
           "nationality": "Tanzania"
+        },
+        {
+          "player": "Michael Foster",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Scarborough Shooting Stars",
+          "nationality": "United States"
         }
       ],
       "related": [
@@ -227847,7 +227854,22 @@
         },
         {
           "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Dakota Wizards",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Cangrejeros de Santurce",
           "shared": 1
         },
         {
@@ -227857,22 +227879,7 @@
         },
         {
           "type": "club",
-          "name": "Sichuan Blue Whales",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hsinchu Lioneers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Kaohsiung Steelers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Yokohama B-Corsairs",
+          "name": "NBA G League Ignite",
           "shared": 1
         }
       ]
@@ -231192,12 +231199,12 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
+          "name": "Oklahoma City Blue",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Oklahoma City Blue",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -255243,9 +255250,9 @@
       "roster": [
         {
           "player": "KJ McDaniels",
-          "years": "2026",
+          "years": "2026, 2026–present",
           "status": "overseas_active",
-          "last_team": "Marinos de Anzoátegui",
+          "last_team": "Erdenet Miners",
           "nationality": "United States"
         },
         {
@@ -263600,12 +263607,12 @@
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Grand Rapids Gold",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Grand Rapids Gold",
+          "name": "Mets de Guaynabo",
           "shared": 1
         }
       ]
