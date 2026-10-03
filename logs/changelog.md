@@ -1,3 +1,22 @@
+## 2026-10-03 — incremental run
+
+- Players updated: **479** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **5**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **3** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Cameron Payne: Philadelphia 76ers → Anadolu Efes
+  - JaVale McGee: Beijing Ducks → Shanghai Sharks
+  - RJ Nembhard: Valley Suns → BCM Gravelines
+  - Isaiah Stevens: Windy City Bulls → Chicago Bulls
+  - Antonio Reeves: Iowa Wolves → Minnesota Timberwolves
+  - Cameron Payne: [nba_active → overseas_active]
+  - Isaiah Stevens: [overseas_active → nba_active]
+  - Antonio Reeves: [overseas_active → nba_active]
+
 ## 2026-10-02 — incremental run
 
 - Players updated: **507** (1 new)

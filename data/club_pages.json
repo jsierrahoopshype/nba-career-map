@@ -8481,8 +8481,8 @@
         {
           "player": "Isaiah Stevens",
           "years": "2024, 2024–2025",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -10994,7 +10994,7 @@
           "player": "JaVale McGee",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Beijing Ducks",
+          "last_team": "Shanghai Sharks",
           "nationality": "United States"
         },
         {
@@ -11228,8 +11228,8 @@
         {
           "player": "Cameron Payne",
           "years": "2015–2017",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
           "nationality": "United States"
         },
         {
@@ -12504,8 +12504,8 @@
         {
           "player": "Antonio Reeves",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Iowa Wolves",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -13037,11 +13037,6 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
-          "shared": 7
-        },
-        {
-          "type": "club",
           "name": "Motor City Cruise",
           "shared": 7
         },
@@ -13058,6 +13053,11 @@
         {
           "type": "club",
           "name": "Wisconsin Herd",
+          "shared": 6
+        },
+        {
+          "type": "club",
+          "name": "Iowa Wolves",
           "shared": 6
         },
         {
@@ -29766,8 +29766,8 @@
         {
           "player": "Cameron Payne",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
           "nationality": "United States"
         },
         {
@@ -30140,7 +30140,7 @@
         {
           "type": "club",
           "name": "Anadolu Efes",
-          "shared": 11
+          "shared": 12
         },
         {
           "type": "club",
@@ -31078,8 +31078,8 @@
         {
           "player": "Isaiah Stevens",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -34498,7 +34498,7 @@
       "city": "Gravelines",
       "state": "",
       "country": "France",
-      "count": 47,
+      "count": 48,
       "roster": [
         {
           "player": "Adam Mokoka",
@@ -34723,6 +34723,13 @@
           "status": "retired",
           "last_team": "BCM Gravelines",
           "nationality": "France"
+        },
+        {
+          "player": "RJ Nembhard",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "BCM Gravelines",
+          "nationality": "United States"
         },
         {
           "player": "Ray McCallum",
@@ -35049,7 +35056,7 @@
       "city": "Hoffman Estates",
       "state": "Illinois",
       "country": "USA",
-      "count": 83,
+      "count": 82,
       "roster": [
         {
           "player": "Adam Mokoka",
@@ -35124,8 +35131,8 @@
         {
           "player": "Cameron Payne",
           "years": "2017–2018",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
           "nationality": "United States"
         },
         {
@@ -35267,13 +35274,6 @@
           "status": "overseas_active",
           "last_team": "Shenzhen Leopards",
           "nationality": "Senegal"
-        },
-        {
-          "player": "Isaiah Stevens",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
-          "nationality": "United States"
         },
         {
           "player": "JaKarr Sampson",
@@ -35537,7 +35537,7 @@
           "player": "RJ Nembhard",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -35643,11 +35643,6 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 8
-        },
-        {
-          "type": "club",
           "name": "Austin Spurs",
           "shared": 8
         },
@@ -35655,6 +35650,11 @@
           "type": "club",
           "name": "Capital City Go-Go",
           "shared": 8
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 7
         },
         {
           "type": "club",
@@ -37525,7 +37525,7 @@
       "city": "Des Moines",
       "state": "Iowa",
       "country": "USA",
-      "count": 73,
+      "count": 72,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -37574,13 +37574,6 @@
           "years": "2017–2018",
           "status": "overseas_active",
           "last_team": "Beşiktaş",
-          "nationality": "United States"
-        },
-        {
-          "player": "Antonio Reeves",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Iowa Wolves",
           "nationality": "United States"
         },
         {
@@ -38077,7 +38070,7 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Delaware Blue Coats",
           "shared": 7
         }
       ]
@@ -39190,7 +39183,7 @@
           "player": "RJ Nembhard",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -43647,7 +43640,7 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Valencia",
           "shared": 7
         }
       ]
@@ -52550,8 +52543,8 @@
         {
           "player": "Cameron Payne",
           "years": "2020",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
           "nationality": "United States"
         },
         {
@@ -54893,7 +54886,7 @@
       "city": "Shanghai",
       "state": "",
       "country": "China",
-      "count": 41,
+      "count": 42,
       "roster": [
         {
           "player": "AJ Price",
@@ -55048,6 +55041,13 @@
         {
           "player": "Hassan Whiteside",
           "years": "2025–present",
+          "status": "overseas_active",
+          "last_team": "Shanghai Sharks",
+          "nationality": "United States"
+        },
+        {
+          "player": "JaVale McGee",
+          "years": "2026–present",
           "status": "overseas_active",
           "last_team": "Shanghai Sharks",
           "nationality": "United States"
@@ -69097,7 +69097,7 @@
       "city": "Istanbul",
       "state": "",
       "country": "Turkey",
-      "count": 80,
+      "count": 81,
       "roster": [
         {
           "player": "Alec Peters",
@@ -69162,6 +69162,13 @@
           "status": "overseas_active",
           "last_team": "Adelaide 36ers",
           "nationality": "American / Australian"
+        },
+        {
+          "player": "Cameron Payne",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
+          "nationality": "United States"
         },
         {
           "player": "Cedi Osman",
@@ -69671,7 +69678,7 @@
         {
           "type": "club",
           "name": "Partizan",
-          "shared": 11
+          "shared": 12
         },
         {
           "type": "club",
@@ -70402,7 +70409,7 @@
           "player": "RJ Nembhard",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -76456,7 +76463,7 @@
           "player": "JaVale McGee",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Beijing Ducks",
+          "last_team": "Shanghai Sharks",
           "nationality": "United States"
         },
         {
@@ -84371,12 +84378,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Anadolu Efes",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Virtus Bologna",
           "shared": 3
         },
         {
@@ -85423,7 +85430,7 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 4
         }
       ]
@@ -85657,8 +85664,8 @@
         {
           "player": "Cameron Payne",
           "years": "2019–2020",
-          "status": "nba_active",
-          "last_team": "Philadelphia 76ers",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
           "nationality": "United States"
         },
         {
@@ -85826,6 +85833,11 @@
         },
         {
           "type": "club",
+          "name": "Anadolu Efes",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 3
         },
@@ -85842,11 +85854,6 @@
         {
           "type": "club",
           "name": "Wisconsin Herd",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Anadolu Efes",
           "shared": 3
         }
       ]
@@ -90192,7 +90199,7 @@
           "player": "RJ Nembhard",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -90333,7 +90340,7 @@
           "player": "JaVale McGee",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Beijing Ducks",
+          "last_team": "Shanghai Sharks",
           "nationality": "United States"
         },
         {
@@ -94575,7 +94582,7 @@
           "player": "RJ Nembhard",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -99539,7 +99546,7 @@
           "player": "RJ Nembhard",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -109942,7 +109949,7 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "ASVEL",
           "shared": 1
         }
       ]
@@ -118595,12 +118602,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -123035,12 +123042,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -127758,12 +127765,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -146328,7 +146335,7 @@
       "city": "Fos-sur-mer",
       "state": "",
       "country": "France",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "Billy Reid",
@@ -146342,6 +146349,13 @@
           "years": "2019",
           "status": "retired",
           "last_team": "Piratas de La Guaira",
+          "nationality": "United States"
+        },
+        {
+          "player": "RJ Nembhard",
+          "years": "2023",
+          "status": "overseas_active",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         }
       ],
@@ -146358,6 +146372,11 @@
         },
         {
           "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Virtus Roma",
           "shared": 1
         },
@@ -146368,22 +146387,17 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Iowa Energy",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Los Angeles D-Fenders",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Zaragoza",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Piratas de Quebradillas",
           "shared": 1
         }
       ]
@@ -158664,7 +158678,7 @@
           "player": "RJ Nembhard",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -162352,8 +162366,8 @@
         {
           "player": "Antonio Reeves",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Iowa Wolves",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -162615,11 +162629,6 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
-          "shared": 5
-        },
-        {
-          "type": "club",
           "name": "Fort Wayne Mad Ants",
           "shared": 4
         },
@@ -162636,6 +162645,11 @@
         {
           "type": "club",
           "name": "Delaware Blue Coats",
+          "shared": 4
+        },
+        {
+          "type": "club",
+          "name": "Iowa Wolves",
           "shared": 4
         },
         {
@@ -167874,12 +167888,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Anadolu Efes",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Virtus Bologna",
           "shared": 2
         },
         {
@@ -169814,7 +169828,7 @@
           "player": "RJ Nembhard",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "BCM Gravelines",
           "nationality": "United States"
         },
         {
@@ -181317,7 +181331,7 @@
       "city": "Fos-sur-mer",
       "state": "",
       "country": "France",
-      "count": 5,
+      "count": 4,
       "roster": [
         {
           "player": "Christian Eyenga",
@@ -181331,13 +181345,6 @@
           "years": "2018-2019",
           "status": "retired",
           "last_team": "Fos Provence Basket",
-          "nationality": "United States"
-        },
-        {
-          "player": "RJ Nembhard",
-          "years": "2023",
-          "status": "overseas_active",
-          "last_team": "Valley Suns",
           "nationality": "United States"
         },
         {
@@ -181363,11 +181370,6 @@
         },
         {
           "type": "club",
-          "name": "Cleveland Charge",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Texas Legends",
           "shared": 1
         },
@@ -181383,17 +181385,22 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Salt Lake City Stars",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Hapoel Jerusalem",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Joventut Badalona",
           "shared": 1
         }
       ]
@@ -181907,12 +181914,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "ASVEL",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
@@ -188714,7 +188721,7 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -192216,7 +192223,7 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         }
       ]
@@ -208831,12 +208838,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -209501,12 +209508,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -210351,12 +210358,12 @@
         },
         {
           "type": "club",
-          "name": "Gran Canaria",
+          "name": "BCM Gravelines",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "BCM Gravelines",
+          "name": "Gran Canaria",
           "shared": 1
         },
         {
@@ -210715,12 +210722,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -211802,12 +211809,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Valencia",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Valencia",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
@@ -216272,7 +216279,7 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         }
       ]
@@ -220113,12 +220120,12 @@
         },
         {
           "type": "club",
-          "name": "Gran Canaria",
+          "name": "BCM Gravelines",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "BCM Gravelines",
+          "name": "Gran Canaria",
           "shared": 1
         },
         {
@@ -248772,12 +248779,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Maine Red Claws",
           "shared": 1
         }
       ]
@@ -262505,12 +262512,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -268109,12 +268116,12 @@
         },
         {
           "type": "club",
-          "name": "Gran Canaria",
+          "name": "BCM Gravelines",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "BCM Gravelines",
+          "name": "Gran Canaria",
           "shared": 1
         },
         {
@@ -268167,12 +268174,12 @@
         },
         {
           "type": "club",
-          "name": "Gran Canaria",
+          "name": "BCM Gravelines",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "BCM Gravelines",
+          "name": "Gran Canaria",
           "shared": 1
         },
         {
@@ -268242,12 +268249,12 @@
         },
         {
           "type": "club",
-          "name": "Gran Canaria",
+          "name": "BCM Gravelines",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "BCM Gravelines",
+          "name": "Gran Canaria",
           "shared": 1
         }
       ]
@@ -269556,12 +269563,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -287781,12 +287788,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
