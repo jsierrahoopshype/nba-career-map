@@ -1,3 +1,21 @@
+## 2026-10-04 — incremental run
+
+- Players updated: **547** (2 new)
+- New teams discovered: **2**
+- Team moves detected: **3**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **3** (3 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Ian Schieffelin, Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - Alondes Williams: Washington Wizards → Capital City Go-Go
+  - Kelly Olynyk: San Antonio Spurs → BC Roma
+  - Trevor Keels: Miami Heat → Capital City Go-Go
+  - Alondes Williams: [nba_active → overseas_active]
+  - Kelly Olynyk: [nba_active → overseas_active]
+  - Trevor Keels: [nba_active → overseas_active]
+
 ## 2026-10-03 — incremental run
 
 - Players updated: **479** (1 new)

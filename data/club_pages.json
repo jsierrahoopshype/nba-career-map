@@ -7878,8 +7878,8 @@
         {
           "player": "Alondes Williams",
           "years": "2023–2024, 2024, 2025",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -9333,8 +9333,8 @@
         {
           "player": "Trevor Keels",
           "years": "2025–2026, 2026",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -37964,8 +37964,8 @@
         {
           "player": "Trevor Keels",
           "years": "2023–2025",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -38772,7 +38772,7 @@
       "city": "Washington",
       "state": "D.C.",
       "country": "USA",
-      "count": 69,
+      "count": 70,
       "roster": [
         {
           "player": "AJ Johnson",
@@ -38790,9 +38790,9 @@
         },
         {
           "player": "Alondes Williams",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "years": "2025–2026, 2026–present",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -39222,6 +39222,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Trevor Keels",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
+          "nationality": "United States"
+        },
+        {
           "player": "Tristan Vukcevic",
           "years": "2024–2026",
           "status": "nba_active",
@@ -39290,12 +39297,12 @@
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
+          "name": "Sioux Falls Skyforce",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Rio Grande Valley Vipers",
           "shared": 6
         }
       ]
@@ -53482,8 +53489,8 @@
         {
           "player": "Alondes Williams",
           "years": "2022–2023, 2023",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -89242,8 +89249,8 @@
         {
           "player": "Trevor Keels",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -89968,8 +89975,8 @@
         {
           "player": "Alondes Williams",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -90325,8 +90332,8 @@
         {
           "player": "Alondes Williams",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -252519,6 +252526,92 @@
         }
       ]
     },
+    "BC Roma": {
+      "club": "BC Roma",
+      "city": "Rome",
+      "state": "Lazio",
+      "country": "Italy",
+      "count": 5,
+      "roster": [
+        {
+          "player": "Kelly Olynyk",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "Canada"
+        },
+        {
+          "player": "Marko Simonovic",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "Montenegrin"
+        },
+        {
+          "player": "Nico Mannion",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "Italian / American"
+        },
+        {
+          "player": "Paul Watson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "United States"
+        },
+        {
+          "player": "Trentyn Flowers",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Baskonia",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Olimpia Milano",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Raptors 905",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Westchester Knicks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Oklahoma City Blue",
+          "shared": 1
+        }
+      ]
+    },
     "Jacksonville/Mississippi Jets": {
       "club": "Jacksonville/Mississippi Jets",
       "city": "",
@@ -264743,85 +264836,6 @@
         {
           "type": "club",
           "name": "Mega Basket",
-          "shared": 1
-        }
-      ]
-    },
-    "BC Roma": {
-      "club": "BC Roma",
-      "city": "Rome",
-      "state": "Lazio",
-      "country": "Italy",
-      "count": 4,
-      "roster": [
-        {
-          "player": "Marko Simonovic",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "BC Roma",
-          "nationality": "Montenegrin"
-        },
-        {
-          "player": "Nico Mannion",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "BC Roma",
-          "nationality": "Italian / American"
-        },
-        {
-          "player": "Paul Watson",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "BC Roma",
-          "nationality": "United States"
-        },
-        {
-          "player": "Trentyn Flowers",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "BC Roma",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Baskonia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Raptors 905",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Oklahoma City Blue",
           "shared": 1
         }
       ]
