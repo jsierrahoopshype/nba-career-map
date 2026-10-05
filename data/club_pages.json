@@ -7817,7 +7817,7 @@
       "city": "Sioux Falls",
       "state": "South Dakota",
       "country": "USA",
-      "count": 227,
+      "count": 226,
       "roster": [
         {
           "player": "A.J. Wynder",
@@ -8812,13 +8812,6 @@
           "status": "retired",
           "last_team": "Estudiantes de Bahía Blanca",
           "nationality": "United States"
-        },
-        {
-          "player": "Lester Quinones",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
-          "nationality": "American / Dominican / Salvadoran"
         },
         {
           "player": "Lloyd Daniels",
@@ -11132,7 +11125,7 @@
       "city": "Oklahoma City",
       "state": "Oklahoma",
       "country": "USA",
-      "count": 86,
+      "count": 87,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -11719,6 +11712,12 @@
           "status": "retired",
           "last_team": "Oklahoma City Blue",
           "nationality": "Belgium"
+        },
+        {
+          "player": "Zack Austin",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
         },
         {
           "player": "Zavier Simpson",
@@ -17198,8 +17197,8 @@
         {
           "player": "Lester Quinones",
           "years": "2024",
-          "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "status": "nba_active",
+          "last_team": "Miami Heat",
           "nationality": "American / Dominican / Salvadoran"
         },
         {
@@ -18604,7 +18603,7 @@
       "city": "Bilbao",
       "state": "",
       "country": "Spain",
-      "count": 30,
+      "count": 31,
       "roster": [
         {
           "player": "Aaron Jackson",
@@ -18675,6 +18674,13 @@
           "status": "retired",
           "last_team": "Cedevita Zagreb",
           "nationality": "Croatia"
+        },
+        {
+          "player": "Darrun Hilliard",
+          "years": "2025–present",
+          "status": "overseas_active",
+          "last_team": "Bilbao Basket",
+          "nationality": "United States"
         },
         {
           "player": "Granville Waiters",
@@ -18820,6 +18826,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Maccabi Tel Aviv",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Valvi Girona",
           "shared": 5
         },
@@ -18830,12 +18841,12 @@
         },
         {
           "type": "club",
-          "name": "Olimpia Milano",
+          "name": "Baskonia",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Olimpia Milano",
           "shared": 4
         },
         {
@@ -18847,11 +18858,6 @@
           "type": "club",
           "name": "Khimki",
           "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Baskonia",
-          "shared": 3
         },
         {
           "type": "club",
@@ -18957,7 +18963,7 @@
           "player": "Darrun Hilliard",
           "years": "2019–2021",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -19890,7 +19896,7 @@
           "player": "Darrun Hilliard",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -26904,7 +26910,7 @@
           "player": "Darrun Hilliard",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -28612,7 +28618,7 @@
           "player": "Darrun Hilliard",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -30344,7 +30350,7 @@
           "player": "Darrun Hilliard",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -30429,7 +30435,7 @@
           "player": "Emanuel Miller",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "Grand Rapids Gold",
+          "last_team": "Denver Nuggets",
           "nationality": "Canada"
         },
         {
@@ -35251,7 +35257,7 @@
           "player": "Emanuel Miller",
           "years": "2024–2026",
           "status": "nba_active",
-          "last_team": "Grand Rapids Gold",
+          "last_team": "Denver Nuggets",
           "nationality": "Canada"
         },
         {
@@ -38772,7 +38778,7 @@
       "city": "Washington",
       "state": "D.C.",
       "country": "USA",
-      "count": 70,
+      "count": 71,
       "roster": [
         {
           "player": "AJ Johnson",
@@ -39066,6 +39072,12 @@
           "status": "overseas_active",
           "last_team": "FC Barcelona",
           "nationality": "United States"
+        },
+        {
+          "player": "Kadary Richmond",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
         },
         {
           "player": "Kent Bazemore",
@@ -41285,7 +41297,7 @@
           "player": "Darrun Hilliard",
           "years": "2015; 2017",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -52698,7 +52710,7 @@
           "player": "Emanuel Miller",
           "years": "2024",
           "status": "nba_active",
-          "last_team": "Grand Rapids Gold",
+          "last_team": "Denver Nuggets",
           "nationality": "Canada"
         },
         {
@@ -70229,7 +70241,7 @@
           "player": "Emanuel Miller",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "Grand Rapids Gold",
+          "last_team": "Denver Nuggets",
           "nationality": "Canada"
         },
         {
@@ -83638,7 +83650,7 @@
       "city": "Tenerife",
       "state": "",
       "country": "Spain",
-      "count": 21,
+      "count": 20,
       "roster": [
         {
           "player": "Alex Stivrins",
@@ -83753,13 +83765,6 @@
           "nationality": "Brazilian / Italian"
         },
         {
-          "player": "Mike Tobey",
-          "years": "2017–2018",
-          "status": "overseas_active",
-          "last_team": "Scaligera Verona",
-          "nationality": "American / Slovenian"
-        },
-        {
           "player": "Patrick Mills",
           "years": "2026",
           "status": "overseas_active",
@@ -83796,12 +83801,12 @@
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
-          "shared": 4
+          "name": "Baskonia",
+          "shared": 3
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "FC Barcelona",
           "shared": 3
         },
         {
@@ -83836,7 +83841,7 @@
       "city": "Las Palmas",
       "state": "",
       "country": "Spain",
-      "count": 6,
+      "count": 7,
       "roster": [
         {
           "player": "Alex Stivrins",
@@ -83858,6 +83863,13 @@
           "status": "retired",
           "last_team": "Virtus Roma",
           "nationality": "United States"
+        },
+        {
+          "player": "Mike Tobey",
+          "years": "2017–2018",
+          "status": "overseas_active",
+          "last_team": "Scaligera Verona",
+          "nationality": "American / Slovenian"
         },
         {
           "player": "Nicolas Brussino",
@@ -83884,7 +83896,17 @@
       "related": [
         {
           "type": "club",
+          "name": "Valencia",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Virtus Roma",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Gran Canaria",
           "shared": 2
         },
         {
@@ -83899,27 +83921,17 @@
         },
         {
           "type": "club",
+          "name": "FC Barcelona",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Erie BayHawks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valencia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Joventut Badalona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Zaragoza",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Holon",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -84227,7 +84239,7 @@
           "player": "Darrun Hilliard",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -94704,7 +94716,7 @@
       "city": "Grand Rapids",
       "state": "Michigan",
       "country": "USA",
-      "count": 46,
+      "count": 45,
       "roster": [
         {
           "player": "Amida Brimah",
@@ -94781,13 +94793,6 @@
           "status": "overseas_active",
           "last_team": "Santeros de Aguada",
           "nationality": "Puerto Rican"
-        },
-        {
-          "player": "Emanuel Miller",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "Grand Rapids Gold",
-          "nationality": "Canada"
         },
         {
           "player": "Gabe McGlothan",
@@ -95046,11 +95051,6 @@
         },
         {
           "type": "club",
-          "name": "Texas Legends",
-          "shared": 4
-        },
-        {
-          "type": "club",
           "name": "Oklahoma City Blue",
           "shared": 4
         },
@@ -95068,6 +95068,11 @@
           "type": "club",
           "name": "Birmingham Squadron",
           "shared": 4
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 3
         }
       ]
     },
@@ -95535,8 +95540,8 @@
         {
           "player": "Lester Quinones",
           "years": "2022–2023, 2023–2024",
-          "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "status": "nba_active",
+          "last_team": "Miami Heat",
           "nationality": "American / Dominican / Salvadoran"
         },
         {
@@ -111370,12 +111375,12 @@
         },
         {
           "type": "club",
-          "name": "Tenerife",
+          "name": "Maroussi",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Maroussi",
+          "name": "Tenerife",
           "shared": 1
         }
       ]
@@ -117508,7 +117513,7 @@
           "player": "Darrun Hilliard",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -137132,7 +137137,7 @@
           "player": "Darrun Hilliard",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
+          "last_team": "Bilbao Basket",
           "nationality": "United States"
         },
         {
@@ -142583,7 +142588,7 @@
       "city": "Naples",
       "state": "",
       "country": "Italy",
-      "count": 8,
+      "count": 9,
       "roster": [
         {
           "player": "Bill Jones",
@@ -142635,6 +142640,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Kevin Pangos",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "Esenler Erokspor",
+          "nationality": "Canadian / Slovenian"
+        },
+        {
           "player": "Milton Doyle",
           "years": "2026",
           "status": "overseas_active",
@@ -142650,7 +142662,17 @@
         },
         {
           "type": "club",
+          "name": "FC Barcelona",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Long Island Nets",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Valencia",
           "shared": 2
         },
         {
@@ -142671,16 +142693,6 @@
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olympiacos",
           "shared": 1
         }
       ]
@@ -157151,8 +157163,8 @@
         {
           "player": "Lester Quinones",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "status": "nba_active",
+          "last_team": "Miami Heat",
           "nationality": "American / Dominican / Salvadoran"
         },
         {
@@ -157229,13 +157241,13 @@
       "related": [
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
+          "name": "Delaware Blue Coats",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
-          "shared": 6
+          "name": "Sioux Falls Skyforce",
+          "shared": 5
         },
         {
           "type": "club",
@@ -160162,8 +160174,8 @@
         {
           "player": "Lester Quinones",
           "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "status": "nba_active",
+          "last_team": "Miami Heat",
           "nationality": "American / Dominican / Salvadoran"
         },
         {
@@ -162562,8 +162574,8 @@
         {
           "player": "Lester Quinones",
           "years": "2024–2025, 2025",
-          "status": "overseas_active",
-          "last_team": "Sioux Falls Skyforce",
+          "status": "nba_active",
+          "last_team": "Miami Heat",
           "nationality": "American / Dominican / Salvadoran"
         },
         {
@@ -189990,12 +190002,12 @@
         },
         {
           "type": "club",
-          "name": "Union Olimpija",
+          "name": "Bilbao Basket",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Bilbao Basket",
+          "name": "Union Olimpija",
           "shared": 1
         },
         {
@@ -195054,71 +195066,6 @@
           "type": "club",
           "name": "Fuerza Regia",
           "shared": 2
-        }
-      ]
-    },
-    "Surne Bilbao Basket": {
-      "club": "Surne Bilbao Basket",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Darrun Hilliard",
-          "years": "2025–present",
-          "status": "overseas_active",
-          "last_team": "Surne Bilbao Basket",
-          "nationality": "United States"
-        },
-        {
-          "player": "Khyri Thomas",
-          "years": "2021–2022",
-          "status": "overseas_active",
-          "last_team": "Petkim Spor",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Maccabi Tel Aviv",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Grand Rapids Drive",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Baskonia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "CSKA Moscow",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "UNICS",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Bayern Munich",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Pınar Karşıyaka",
-          "shared": 1
         }
       ]
     },
@@ -254552,64 +254499,6 @@
         }
       ]
     },
-    "GeVi Napoli": {
-      "club": "GeVi Napoli",
-      "city": "Napoli",
-      "state": "",
-      "country": "Italy",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Kevin Pangos",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Esenler Erokspor",
-          "nationality": "Canadian / Slovenian"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Olimpia Milano",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "FC Barcelona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Valencia",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Žalgiris",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cleveland Charge",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Gran Canaria",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Zenit Saint Petersburg",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Esenler Erokspor",
-          "shared": 1
-        }
-      ]
-    },
     "Washington Congressionals": {
       "club": "Washington Congressionals",
       "city": "Washington",
@@ -255041,6 +254930,64 @@
           "type": "club",
           "name": "NBA G League United",
           "shared": 0
+        }
+      ]
+    },
+    "Surne Bilbao Basket": {
+      "club": "Surne Bilbao Basket",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Khyri Thomas",
+          "years": "2021–2022",
+          "status": "overseas_active",
+          "last_team": "Petkim Spor",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Maccabi Tel Aviv",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Grand Rapids Drive",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Tofaş",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "San Pablo Burgos",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Calgary Surge",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Petkim Spor",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Mitteldeutscher BC",
+          "shared": 1
         }
       ]
     },
@@ -263707,12 +263654,12 @@
         },
         {
           "type": "club",
-          "name": "Grand Rapids Gold",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Grand Rapids Gold",
           "shared": 1
         }
       ]
@@ -272067,12 +272014,12 @@
         },
         {
           "type": "club",
-          "name": "Peñarol",
+          "name": "Canarias",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Canarias",
+          "name": "Peñarol",
           "shared": 1
         },
         {

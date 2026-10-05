@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 166,
+    "date_disagreement": 167,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 6,
     "wrong_entity": 6,
@@ -959,6 +959,16 @@
       "years_apart": 0
     },
     {
+      "basketball_reference": "1974-06-06",
+      "places_kept": true,
+      "player": "Jonathan Kerner",
+      "used": "1974-06-06",
+      "used_source": "basketball-reference",
+      "wikidata": "1974-06-09",
+      "wikidata_id": "Q3809932",
+      "years_apart": 0
+    },
+    {
       "basketball_reference": "1971-05-01",
       "places_kept": true,
       "player": "Julius Nwosu",
@@ -1669,7 +1679,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-04",
+  "generated": "2026-10-05",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",

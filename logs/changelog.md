@@ -1,3 +1,17 @@
+## 2026-10-05 — incremental run
+
+- Players updated: **493** (5 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **1**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Fletcher Loyer, Kadary Richmond, Rashaun Agee, Zack Austin, Walt Lemon Jr.
+  - Lester Quinones: Sioux Falls Skyforce → Miami Heat
+  - Emanuel Miller: Grand Rapids Gold → Denver Nuggets
+  - Lester Quinones: [overseas_active → nba_active]
+
 ## 2026-10-04 — incremental run
 
 - Players updated: **547** (2 new)
