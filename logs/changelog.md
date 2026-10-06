@@ -1,3 +1,20 @@
+## 2026-10-06 — incremental run
+
+- Players updated: **493** (3 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Isaac McKneely, Kobe Johnson, Walt Lemon Jr.
+  - Izaiah Brockington: New Zealand Breakers → Scaligera Verona
+  - Skal Labissiere: Capital City Go-Go → Washington Wizards
+  - Tyler Cook: Osos de Manatí → Jilin Northeast Tigers
+  - Jalen Bridges: Windy City Bulls → Chicago Bulls
+  - Skal Labissiere: [overseas_active → nba_active]
+  - Jalen Bridges: [overseas_active → nba_active]
+
 ## 2026-10-05 — incremental run
 
 - Players updated: **493** (5 new)

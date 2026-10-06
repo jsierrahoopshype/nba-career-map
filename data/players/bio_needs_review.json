@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 167,
+    "date_disagreement": 166,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 6,
     "wrong_entity": 6,
@@ -1279,16 +1279,6 @@
       "years_apart": 1
     },
     {
-      "basketball_reference": "1989-11-26",
-      "places_kept": true,
-      "player": "Omari Johnson",
-      "used": "1989-11-26",
-      "used_source": "basketball-reference",
-      "wikidata": "1989-05-26",
-      "wikidata_id": "Q20643185",
-      "years_apart": 0
-    },
-    {
       "basketball_reference": "1974-01-31",
       "places_kept": true,
       "player": "Othella Harrington",
@@ -1679,7 +1669,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-05",
+  "generated": "2026-10-06",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",
