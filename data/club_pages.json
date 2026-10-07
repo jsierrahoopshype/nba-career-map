@@ -12463,7 +12463,7 @@
       "city": "Greensboro",
       "state": "North Carolina",
       "country": "USA",
-      "count": 80,
+      "count": 81,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -12730,6 +12730,12 @@
           "status": "retired",
           "last_team": "Juventus Utena",
           "nationality": "United States"
+        },
+        {
+          "player": "Jonas Aidoo",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
         },
         {
           "player": "Josiah Allick",
@@ -16792,12 +16798,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -17689,12 +17695,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -22521,7 +22527,7 @@
       "city": "Portland",
       "state": "Maine",
       "country": "USA",
-      "count": 54,
+      "count": 55,
       "roster": [
         {
           "player": "Aaron Nesmith",
@@ -22864,6 +22870,12 @@
           "status": "retired",
           "last_team": "Converge FiberXers",
           "nationality": "United States"
+        },
+        {
+          "player": "Taylor Funk",
+          "years": "2023",
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
         },
         {
           "player": "Theo Pinson",
@@ -31112,8 +31124,8 @@
         {
           "player": "John Butler",
           "years": "2023",
-          "status": "nba_active",
-          "last_team": "Milwaukee Bucks",
+          "status": "overseas_active",
+          "last_team": "Wisconsin Herd",
           "nationality": "United States"
         },
         {
@@ -38113,7 +38125,7 @@
           "player": "Andre Jackson",
           "years": "2024",
           "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "last_team": "Milwaukee Bucks",
           "nationality": "United States"
         },
         {
@@ -38371,8 +38383,8 @@
         {
           "player": "John Butler",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Milwaukee Bucks",
+          "status": "overseas_active",
+          "last_team": "Wisconsin Herd",
           "nationality": "United States"
         },
         {
@@ -38764,7 +38776,7 @@
       "city": "Washington",
       "state": "D.C.",
       "country": "USA",
-      "count": 71,
+      "count": 72,
       "roster": [
         {
           "player": "AJ Johnson",
@@ -38992,8 +39004,8 @@
         {
           "player": "John Butler",
           "years": "2023–2025",
-          "status": "nba_active",
-          "last_team": "Milwaukee Bucks",
+          "status": "overseas_active",
+          "last_team": "Wisconsin Herd",
           "nationality": "United States"
         },
         {
@@ -39213,6 +39225,12 @@
           "nationality": "Haiti"
         },
         {
+          "player": "Taylor Funk",
+          "years": "2023–2025",
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
+        },
+        {
           "player": "Thomas Welsh",
           "years": "2018",
           "status": "overseas_active",
@@ -39270,12 +39288,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Greensboro Swarm",
           "shared": 8
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Windy City Bulls",
           "shared": 8
         },
         {
@@ -39585,12 +39603,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 5
         },
         {
@@ -49471,12 +49489,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Capital City Go-Go",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "South Bay Lakers",
           "shared": 6
         },
         {
@@ -65492,12 +65510,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Maine Red Claws",
           "shared": 1
         }
       ]
@@ -76867,17 +76885,17 @@
         },
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Maine Red Claws",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Virtus Bologna",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -90450,12 +90468,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Capital City Go-Go",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Canton Charge",
           "shared": 2
         },
         {
@@ -90697,17 +90715,17 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
           "name": "South Bay Lakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -112744,12 +112762,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Greensboro Swarm",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Windy City Bulls",
           "shared": 3
         },
         {
@@ -119718,12 +119736,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Maine Red Claws",
           "shared": 2
         },
         {
@@ -127215,12 +127233,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -127776,17 +127794,17 @@
         },
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Maine Red Claws",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Windy City Bulls",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -128178,12 +128196,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Maine Red Claws",
           "shared": 2
         },
         {
@@ -130544,12 +130562,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -154802,12 +154820,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Maine Red Claws",
           "shared": 1
         }
       ]
@@ -157350,7 +157368,7 @@
       "city": "San Diego",
       "state": "California",
       "country": "USA",
-      "count": 18,
+      "count": 19,
       "roster": [
         {
           "player": "Braxton Key",
@@ -157450,6 +157468,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Taylor Funk",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
+        },
+        {
           "player": "Tosan Evbuomwan",
           "years": "2024",
           "status": "overseas_active",
@@ -157516,7 +157540,7 @@
         },
         {
           "type": "club",
-          "name": "Grand Rapids Gold",
+          "name": "Capital City Go-Go",
           "shared": 2
         }
       ]
@@ -160105,7 +160129,7 @@
       "city": "",
       "state": "",
       "country": "",
-      "count": 14,
+      "count": 15,
       "roster": [
         {
           "player": "Brodric Thomas",
@@ -160199,6 +160223,12 @@
           "nationality": "Puerto Rico"
         },
         {
+          "player": "Taylor Funk",
+          "years": "2025",
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
+        },
+        {
           "player": "Yuri Collins",
           "years": "2026",
           "status": "overseas_active",
@@ -160210,7 +160240,7 @@
         {
           "type": "club",
           "name": "Maine Celtics",
-          "shared": 4
+          "shared": 5
         },
         {
           "type": "club",
@@ -160239,12 +160269,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Iowa Wolves",
           "shared": 3
         }
       ]
@@ -174669,7 +174699,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Capital City Go-Go",
           "shared": 1
         }
       ]
@@ -174923,12 +174953,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "South Bay Lakers",
           "shared": 1
         },
         {
@@ -175872,12 +175902,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -181813,12 +181843,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -182660,12 +182690,12 @@
         },
         {
           "type": "club",
-          "name": "Leones de Ponce",
+          "name": "Maine Celtics",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Maine Celtics",
+          "name": "Leones de Ponce",
           "shared": 1
         }
       ]
@@ -192040,12 +192070,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -204355,12 +204385,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -205099,12 +205129,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -230222,12 +230252,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -232722,12 +232752,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -234457,22 +234487,22 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
@@ -238365,12 +238395,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
@@ -245405,17 +245435,17 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
           "name": "South Bay Lakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -245438,17 +245468,17 @@
       "related": [
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
           "name": "South Bay Lakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -246509,12 +246539,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
@@ -246796,12 +246826,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
@@ -294383,12 +294413,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -294441,12 +294471,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -298841,12 +298871,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
@@ -299160,12 +299190,12 @@
         },
         {
           "type": "club",
-          "name": "London Lions",
+          "name": "NBA G League United",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "NBA G League United",
+          "name": "London Lions",
           "shared": 1
         }
       ]

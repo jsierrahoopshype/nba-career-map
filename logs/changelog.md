@@ -1,3 +1,16 @@
+## 2026-10-07 — incremental run
+
+- Players updated: **540** (4 new)
+- New teams discovered: **2**
+- Team moves detected: **0**
+- Detected-but-not-new stints held back: **2**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Anthony Pritchard, Jonas Aidoo, Taylor Funk, Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - John Butler: [nba_active → overseas_active]
+
 ## 2026-10-06 — incremental run
 
 - Players updated: **493** (3 new)
