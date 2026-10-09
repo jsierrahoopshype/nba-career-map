@@ -1,3 +1,16 @@
+## 2026-10-09 — incremental run
+
+- Players updated: **489** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Jordan Hawkins: Memphis Grizzlies → Chicago Bulls
+  - Johni Broome: LA Clippers → Milwaukee Bucks
+
 ## 2026-10-08 — incremental run
 
 - Players updated: **498** (1 new)
