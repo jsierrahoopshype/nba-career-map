@@ -1,3 +1,17 @@
+## 2026-10-10 — incremental run
+
+- Players updated: **547** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **1**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - Lester Quinones: Miami Heat → Sioux Falls Skyforce
+  - Lester Quinones: [nba_active → overseas_active]
+
 ## 2026-10-09 — incremental run
 
 - Players updated: **489** (1 new)
