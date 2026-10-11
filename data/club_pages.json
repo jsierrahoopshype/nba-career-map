@@ -10379,8 +10379,8 @@
         {
           "player": "Tristen Newton",
           "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
           "nationality": "United States"
         },
         {
@@ -12808,8 +12808,8 @@
         {
           "player": "Leaky Black",
           "years": "2023–2024",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
           "nationality": "United States"
         },
         {
@@ -30916,7 +30916,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 65,
+      "count": 63,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -31205,13 +31205,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Leaky Black",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
-          "nationality": "United States"
-        },
-        {
           "player": "Louis King",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -31338,13 +31331,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Tristen Newton",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
-          "nationality": "United States"
-        },
-        {
           "player": "Troy Williams",
           "years": "2018–2019",
           "status": "overseas_active",
@@ -31381,11 +31367,6 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
-          "shared": 7
-        },
-        {
-          "type": "club",
           "name": "Crvena Zvezda",
           "shared": 7
         },
@@ -31401,7 +31382,7 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 6
         },
         {
@@ -31411,7 +31392,12 @@
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
+          "name": "Austin Spurs",
+          "shared": 5
+        },
+        {
+          "type": "club",
+          "name": "Westchester Knicks",
           "shared": 5
         }
       ]
@@ -37989,8 +37975,8 @@
         {
           "player": "Tristen Newton",
           "years": "2025, 2025–2026",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
           "nationality": "United States"
         },
         {
@@ -39129,8 +39115,8 @@
         {
           "player": "Leaky Black",
           "years": "2024–2026, 2026",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
           "nationality": "United States"
         },
         {
@@ -39322,17 +39308,17 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
-          "shared": 7
-        },
-        {
-          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 6
         },
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
+          "shared": 6
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
           "shared": 6
         }
       ]
@@ -55083,7 +55069,7 @@
         },
         {
           "player": "Hassan Whiteside",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Shanghai Sharks",
           "nationality": "United States"
@@ -112457,7 +112443,7 @@
         },
         {
           "player": "Thanasis Antetokounmpo",
-          "years": "2016-2017",
+          "years": "2016–2017",
           "status": "overseas_active",
           "last_team": "Aris Thessaloniki",
           "nationality": "Greek / Nigerian"
@@ -138987,8 +138973,8 @@
         {
           "player": "Tristen Newton",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
           "nationality": "United States"
         }
       ],
@@ -158374,12 +158360,12 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Žalgiris",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Žalgiris",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {

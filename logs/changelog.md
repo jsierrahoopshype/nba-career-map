@@ -1,3 +1,18 @@
+## 2026-10-11 — incremental run
+
+- Players updated: **494** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Leaky Black: Stockton Kings → Sacramento Kings
+  - Tristen Newton: Stockton Kings → Sacramento Kings
+  - Leaky Black: [overseas_active → nba_active]
+  - Tristen Newton: [overseas_active → nba_active]
+
 ## 2026-10-10 — incremental run
 
 - Players updated: **547** (1 new)
