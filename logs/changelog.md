@@ -1,3 +1,23 @@
+## 2026-10-12 — incremental run
+
+- Players updated: **491** (2 new)
+- New teams discovered: **0**
+- Team moves detected: **8**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Brice Williams, Walt Lemon Jr.
+  - Andre Jackson: Milwaukee Bucks → Toronto Raptors
+  - JaKarr Sampson: Zhejiang Lions → Beijing Ducks
+  - Josh Harrellson: Saga Ballooners → San-en NeoPhoenix
+  - Petr Cornelie: Esenler Erokspor → Shanxi Loongs
+  - Zavier Simpson: Ningbo Rockets → Xinjiang
+  - Phillip Wheeler: Rio Grande Valley Vipers → Valley Suns
+  - Jahmir Young: South Bay Lakers → Coachella Valley Lakers
+  - Kylor Kelley: Sioux Falls Skyforce → Miami Heat
+  - Kylor Kelley: [overseas_active → nba_active]
+
 ## 2026-10-11 — incremental run
 
 - Players updated: **494** (1 new)
