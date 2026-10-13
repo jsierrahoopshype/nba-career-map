@@ -8242,7 +8242,7 @@
         },
         {
           "player": "Dennis Smith",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
@@ -11292,7 +11292,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -14201,7 +14201,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -17001,7 +17001,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -22210,7 +22210,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2022–2024",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -28637,7 +28637,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -30909,7 +30909,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 63,
+      "count": 64,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30987,6 +30987,12 @@
           "status": "nba_active",
           "last_team": "Sacramento Kings",
           "nationality": "United States"
+        },
+        {
+          "player": "Dane Goodwin",
+          "years": "2023–2024",
+          "status": "nba_active",
+          "last_team": "Denver Nuggets"
         },
         {
           "player": "Deonte Burton",
@@ -51306,7 +51312,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -52853,7 +52859,7 @@
           "player": "Jamarion Sharp",
           "years": "2024–2026",
           "status": "nba_active",
-          "last_team": "LA Clippers"
+          "last_team": "Toronto Raptors"
         },
         {
           "player": "Jameel Warney",
@@ -54248,9 +54254,9 @@
         },
         {
           "player": "Chucky Hepburn",
-          "years": "2025–present",
-          "status": "nba_active",
-          "last_team": "Toronto Raptors",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Raptors 905",
           "nationality": "United States"
         },
         {
@@ -68521,7 +68527,7 @@
       "city": "Salt Lake City",
       "state": "Utah",
       "country": "USA",
-      "count": 79,
+      "count": 80,
       "roster": [
         {
           "player": "Alec Burks",
@@ -68585,6 +68591,12 @@
           "status": "nba_active",
           "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
+        },
+        {
+          "player": "Dane Goodwin",
+          "years": "2024–2025",
+          "status": "nba_active",
+          "last_team": "Denver Nuggets"
         },
         {
           "player": "Darius Bazley",
@@ -76520,7 +76532,7 @@
           "player": "Jamarion Sharp",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "LA Clippers"
+          "last_team": "Toronto Raptors"
         },
         {
           "player": "Jamil Wilson",
@@ -94746,7 +94758,7 @@
       "city": "Grand Rapids",
       "state": "Michigan",
       "country": "USA",
-      "count": 45,
+      "count": 46,
       "roster": [
         {
           "player": "Amida Brimah",
@@ -94799,8 +94811,8 @@
         {
           "player": "Curtis Jones",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Cleveland Cavaliers",
+          "status": "overseas_active",
+          "last_team": "Grand Rapids Gold",
           "nationality": "United States"
         },
         {
@@ -94809,6 +94821,12 @@
           "status": "nba_active",
           "last_team": "Denver Nuggets",
           "nationality": "United States"
+        },
+        {
+          "player": "Dane Goodwin",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Denver Nuggets"
         },
         {
           "player": "David Roddy",
@@ -95066,6 +95084,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Iowa Wolves",
           "shared": 5
         },
@@ -95091,18 +95114,13 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Stockton Kings",
           "shared": 4
         },
         {
           "type": "club",
           "name": "Birmingham Squadron",
           "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 3
         }
       ]
     },
@@ -127309,7 +127327,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -137840,9 +137858,9 @@
         },
         {
           "player": "DeVaughn Akoon-Purcell",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -157374,7 +157392,7 @@
       "city": "San Diego",
       "state": "California",
       "country": "USA",
-      "count": 19,
+      "count": 18,
       "roster": [
         {
           "player": "Braxton Key",
@@ -157417,12 +157435,6 @@
           "status": "nba_active",
           "last_team": "LA Clippers",
           "nationality": "United States"
-        },
-        {
-          "player": "Jamarion Sharp",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "LA Clippers"
         },
         {
           "player": "Jason Preston",
@@ -157526,11 +157538,6 @@
         },
         {
           "type": "club",
-          "name": "Texas Legends",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Santa Cruz Warriors",
           "shared": 2
         },
@@ -157547,6 +157554,11 @@
         {
           "type": "club",
           "name": "Capital City Go-Go",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Maine Celtics",
           "shared": 2
         }
       ]
@@ -160135,7 +160147,7 @@
       "city": "",
       "state": "",
       "country": "",
-      "count": 15,
+      "count": 16,
       "roster": [
         {
           "player": "Brodric Thomas",
@@ -160185,6 +160197,12 @@
           "status": "overseas_active",
           "last_team": "Jiangsu Dragons",
           "nationality": "United States"
+        },
+        {
+          "player": "Jamarion Sharp",
+          "years": "2025",
+          "status": "nba_active",
+          "last_team": "Toronto Raptors"
         },
         {
           "player": "James Bouknight",
@@ -160251,7 +160269,7 @@
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 3
+          "shared": 4
         },
         {
           "type": "club",
@@ -166723,7 +166741,7 @@
       "city": "Changchun",
       "state": "",
       "country": "China",
-      "count": 19,
+      "count": 20,
       "roster": [
         {
           "player": "Carl Landry",
@@ -166752,6 +166770,13 @@
           "status": "retired",
           "last_team": "CSKA Moscow",
           "nationality": "United States"
+        },
+        {
+          "player": "DeVaughn Akoon-Purcell",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Jilin Northeast Tigers",
+          "nationality": "Trinidadian / American"
         },
         {
           "player": "Dominique Jones",
@@ -166867,6 +166892,11 @@
         },
         {
           "type": "club",
+          "name": "Oklahoma City Blue",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Canton Charge",
           "shared": 3
         },
@@ -166893,11 +166923,6 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Baskonia",
           "shared": 2
         }
       ]
@@ -169996,7 +170021,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -200345,7 +200370,7 @@
           "player": "DeVaughn Akoon-Purcell",
           "years": "2016–2018",
           "status": "overseas_active",
-          "last_team": "Shandong Hi-Speed Kirin",
+          "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
         },
         {
@@ -231759,12 +231784,12 @@
         },
         {
           "type": "club",
-          "name": "Śląsk Wrocław",
+          "name": "Jilin Northeast Tigers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Jilin Northeast Tigers",
+          "name": "Śląsk Wrocław",
           "shared": 1
         }
       ]
@@ -263717,12 +263742,12 @@
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Grand Rapids Gold",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Grand Rapids Gold",
+          "name": "Mets de Guaynabo",
           "shared": 1
         }
       ]

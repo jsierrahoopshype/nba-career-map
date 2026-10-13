@@ -1,3 +1,19 @@
+## 2026-10-13 — incremental run
+
+- Players updated: **541** (3 new)
+- New teams discovered: **2**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **2**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Coleman Hawkins, Dane Goodwin, Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - Jamarion Sharp: LA Clippers → Toronto Raptors
+  - DeVaughn Akoon-Purcell: Shandong Hi-Speed Kirin → Jilin Northeast Tigers
+  - Chucky Hepburn: [nba_active → overseas_active]
+  - Curtis Jones: [nba_active → overseas_active]
+
 ## 2026-10-12 — incremental run
 
 - Players updated: **491** (2 new)

@@ -28385,15 +28385,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Curtis Jones",
-          "years": "2026–present",
-          "stint_team": "Cleveland Cavaliers",
-          "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "DJ Kennedy",
           "years": "2012",
           "stint_team": "Cleveland Cavaliers",
@@ -32742,8 +32733,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 502,
-      "alumni_count": 474,
+      "roster_count": 501,
+      "alumni_count": 473,
       "related": [
         {
           "type": "club",
@@ -38334,8 +38325,8 @@
           "player": "Curtis Jones",
           "years": "2025–26",
           "stint_team": "Denver Nuggets",
-          "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "status": "overseas_active",
+          "current_team": "Grand Rapids Gold",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -38394,6 +38385,14 @@
           "current_team": "Arizona Scorpions",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Dane Goodwin",
+          "years": "2026–present",
+          "stint_team": "Denver Nuggets",
+          "status": "nba_active",
+          "current_team": "Denver Nuggets",
+          "current_country": "USA"
         },
         {
           "player": "Danilo Gallinari",
@@ -38587,7 +38586,7 @@
           "years": "2018",
           "stint_team": "Denver Nuggets",
           "status": "overseas_active",
-          "current_team": "Shandong Hi-Speed Kirin",
+          "current_team": "Jilin Northeast Tigers",
           "current_country": "China",
           "nationality": "Trinidadian / American"
         },
@@ -41685,8 +41684,8 @@
         },
         {
           "player": "Curtis Jones",
-          "status": "nba_active",
-          "current_team": "Cleveland Cavaliers",
+          "status": "overseas_active",
+          "current_team": "Grand Rapids Gold",
           "country": "USA",
           "nationality": "United States"
         },
@@ -41732,7 +41731,7 @@
         {
           "player": "DeVaughn Akoon-Purcell",
           "status": "overseas_active",
-          "current_team": "Shandong Hi-Speed Kirin",
+          "current_team": "Jilin Northeast Tigers",
           "country": "China",
           "nationality": "Trinidadian / American"
         },
@@ -42138,13 +42137,13 @@
           "nationality": "Slovenia"
         }
       ],
-      "roster_count": 452,
-      "alumni_count": 425,
+      "roster_count": 453,
+      "alumni_count": 426,
       "related": [
         {
           "type": "club",
           "name": "Grand Rapids Gold",
-          "shared": 24
+          "shared": 25
         },
         {
           "type": "club",
@@ -66169,14 +66168,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Jamarion Sharp",
-          "years": "2026–present",
-          "stint_team": "LA Clippers",
-          "status": "nba_active",
-          "current_team": "LA Clippers",
-          "current_country": "USA"
-        },
-        {
           "player": "James Collins",
           "years": "1997-1998",
           "stint_team": "LA Clippers",
@@ -69744,8 +69735,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 547,
-      "alumni_count": 520,
+      "roster_count": 546,
+      "alumni_count": 519,
       "related": [
         {
           "type": "club",
@@ -137686,10 +137677,10 @@
         },
         {
           "player": "Chucky Hepburn",
-          "years": "2025–present",
+          "years": "2025–26",
           "stint_team": "Toronto Raptors",
-          "status": "nba_active",
-          "current_team": "Toronto Raptors",
+          "status": "overseas_active",
+          "current_team": "Raptors 905",
           "current_country": "Canada",
           "nationality": "United States"
         },
@@ -138400,6 +138391,14 @@
           "current_team": "Albany Patroons",
           "current_country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Jamarion Sharp",
+          "years": "2026–present",
+          "stint_team": "Toronto Raptors",
+          "status": "nba_active",
+          "current_team": "Toronto Raptors",
+          "current_country": "Canada"
         },
         {
           "player": "James Johnson",
@@ -140292,6 +140291,13 @@
           "nationality": "Cameroon"
         },
         {
+          "player": "Chucky Hepburn",
+          "status": "overseas_active",
+          "current_team": "Raptors 905",
+          "country": "Canada",
+          "nationality": "United States"
+        },
+        {
           "player": "Cole Swider",
           "status": "overseas_active",
           "current_team": "Anadolu Efes",
@@ -140811,8 +140817,8 @@
           "nationality": "Japan"
         }
       ],
-      "roster_count": 328,
-      "alumni_count": 314,
+      "roster_count": 329,
+      "alumni_count": 315,
       "related": [
         {
           "type": "club",
