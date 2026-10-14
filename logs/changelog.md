@@ -1,3 +1,19 @@
+## 2026-10-14 — incremental run
+
+- Players updated: **499** (4 new)
+- New teams discovered: **0**
+- Team moves detected: **5**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Nimari Burnett, Tyreke Key, Tyson Degenhart, Walt Lemon Jr.
+  - Gabe York: Zhejiang Golden Bulls → Qingdao Eagles
+  - Ibou Badji: Shenzhen Leopards → Maine Celtics
+  - Isaiah Livers: Valley Suns → Yokohama B-Corsairs
+  - Kevon Harris: Xinjiang → Shinshu Brave Warriors
+  - Alex Fudge: Ottawa BlackJacks → Rio Grande Valley Vipers
+
 ## 2026-10-13 — incremental run
 
 - Players updated: **541** (3 new)
