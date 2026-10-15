@@ -1,9 +1,9 @@
 {
   "counts": {
-    "date_disagreement": 166,
+    "date_disagreement": 167,
     "still_missing": 10,
-    "wikipedia_url_wrong_person": 7,
-    "wrong_entity": 7,
+    "wikipedia_url_wrong_person": 8,
+    "wrong_entity": 8,
     "wrong_entity_replaced": 0
   },
   "cross_check_source": "https://raw.githubusercontent.com/sumitrodatta/bball-reference-datasets/master/Data/Player%20Career%20Info.csv",
@@ -1279,6 +1279,16 @@
       "years_apart": 1
     },
     {
+      "basketball_reference": "1989-11-26",
+      "places_kept": true,
+      "player": "Omari Johnson",
+      "used": "1989-11-26",
+      "used_source": "basketball-reference",
+      "wikidata": "1989-05-26",
+      "wikidata_id": "Q20643185",
+      "years_apart": 0
+    },
+    {
       "basketball_reference": "1974-01-31",
       "places_kept": true,
       "player": "Othella Harrington",
@@ -1669,7 +1679,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-12",
+  "generated": "2026-10-15",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",
@@ -1744,6 +1754,13 @@
     },
     {
       "note": "this article is the namesake's, so the club history scraped from it may be his too",
+      "player": "Coleman Hawkins",
+      "rejected_wikidata_id": "Q217812",
+      "wikipedia_title": "Coleman Hawkins",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Coleman_Hawkins"
+    },
+    {
+      "note": "this article is the namesake's, so the club history scraped from it may be his too",
       "player": "Ed Lawrence",
       "rejected_wikidata_id": "Q5335073",
       "wikipedia_title": "Ed Lawrence",
@@ -1814,6 +1831,24 @@
         "wikidata_id": "Q816609"
       },
       "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Swain"
+    },
+    {
+      "basketball_reference": "",
+      "birth_date_used": "",
+      "detected_by": "wikidata identity gate (P106/P641)",
+      "note": "no basketball player of this name was found on Wikidata; the dates and places that item carried were discarded",
+      "player": "Coleman Hawkins",
+      "rejected_wikidata_id": "Q217812",
+      "replacement": null,
+      "replacement_found": false,
+      "resolved_to": {
+        "birth_date": "1904-11-21",
+        "death_date": "1969-05-19",
+        "description": "American jazz saxophonist (1904–1969)",
+        "label": "Coleman Hawkins",
+        "wikidata_id": "Q217812"
+      },
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Coleman_Hawkins"
     },
     {
       "basketball_reference": "",

@@ -1,3 +1,31 @@
+## 2026-10-15 — incremental run
+
+- Players updated: **488** (2 new)
+- New teams discovered: **1**
+- Team moves detected: **10**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **6** (4 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Jahmyl Telfort, Walt Lemon Jr.
+- New teams: TNT Tropang Giga/5G
+  - Lonnie Walker: Denver Nuggets → Beşiktaş
+  - KJ Simpson: Denver Nuggets → Galatasaray
+  - Kylor Kelley: Miami Heat → Sioux Falls Skyforce
+  - R. J. Davis: San Antonio Spurs → Austin Spurs
+  - John Butler: Wisconsin Herd → Milwaukee Bucks
+  - Raul Neto: San Pablo Burgos → Brisbane Bullets
+  - Rondae Hollis-Jefferson: Meralco Bolts → TNT Tropang 5G
+  - Tahjere McCall: Guangdong → Guangzhou Loong Lions
+  - Trevor Keels: Capital City Go-Go → Washington Wizards
+  - Udoka Azubuike: Ironi Ness Ziona → Guangdong
+  - Lonnie Walker: [nba_active → overseas_active]
+  - KJ Simpson: [nba_active → overseas_active]
+  - Kylor Kelley: [nba_active → overseas_active]
+  - R. J. Davis: [nba_active → overseas_active]
+  - John Butler: [overseas_active → nba_active]
+  - Trevor Keels: [overseas_active → nba_active]
+
 ## 2026-10-14 — incremental run
 
 - Players updated: **499** (4 new)

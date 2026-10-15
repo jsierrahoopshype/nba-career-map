@@ -1556,8 +1556,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -1704,7 +1704,7 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 5
+          "shared": 6
         },
         {
           "type": "club",
@@ -3998,7 +3998,7 @@
       "city": "Istanbul",
       "state": "",
       "country": "Turkey",
-      "count": 57,
+      "count": 58,
       "roster": [
         {
           "player": "A.J. English",
@@ -4285,6 +4285,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Lonnie Walker",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Beşiktaş",
+          "nationality": "United States"
+        },
+        {
           "player": "Lonny Baxter",
           "years": "2009-2010",
           "status": "retired",
@@ -4372,7 +4379,7 @@
           "player": "Rondae Hollis-Jefferson",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Meralco Bolts",
+          "last_team": "TNT Tropang 5G",
           "nationality": "American / Jordanian"
         },
         {
@@ -4408,7 +4415,7 @@
         {
           "type": "club",
           "name": "Maccabi Tel Aviv",
-          "shared": 6
+          "shared": 7
         },
         {
           "type": "club",
@@ -7817,7 +7824,7 @@
       "city": "Sioux Falls",
       "state": "South Dakota",
       "country": "USA",
-      "count": 226,
+      "count": 227,
       "roster": [
         {
           "player": "A.J. Wynder",
@@ -8779,6 +8786,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Kylor Kelley",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
+          "nationality": "United States"
+        },
+        {
           "player": "Lancaster Gordon",
           "years": "1990-1991",
           "status": "retired",
@@ -9326,8 +9340,8 @@
         {
           "player": "Trevor Keels",
           "years": "2025–2026, 2026",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "last_team": "Washington Wizards",
           "nationality": "United States"
         },
         {
@@ -10544,7 +10558,7 @@
       "city": "Dongguan",
       "state": "",
       "country": "China",
-      "count": 42,
+      "count": 43,
       "roster": [
         {
           "player": "Aaron Brooks",
@@ -10780,9 +10794,9 @@
         },
         {
           "player": "Tahjere McCall",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -10812,6 +10826,13 @@
           "status": "overseas_active",
           "last_team": "Astros de Jalisco",
           "nationality": "United States"
+        },
+        {
+          "player": "Udoka Azubuike",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Guangdong",
+          "nationality": "Nigeria"
         },
         {
           "player": "Will Barton",
@@ -10875,12 +10896,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 3
         }
       ]
@@ -12760,8 +12781,8 @@
         {
           "player": "KJ Simpson",
           "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "Galatasaray",
           "nationality": "United States"
         },
         {
@@ -14041,7 +14062,7 @@
       "city": "Istanbul",
       "state": "",
       "country": "Turkey",
-      "count": 72,
+      "count": 73,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -14363,6 +14384,13 @@
           "years": "2016",
           "status": "retired",
           "last_team": "Halcones Rojos Veracruz",
+          "nationality": "United States"
+        },
+        {
+          "player": "KJ Simpson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Galatasaray",
           "nationality": "United States"
         },
         {
@@ -17697,17 +17725,17 @@
         },
         {
           "type": "club",
+          "name": "Galatasaray",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "ASVEL",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Capital City Go-Go",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -20162,8 +20190,8 @@
         {
           "player": "Lonnie Walker",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "Beşiktaş",
           "nationality": "United States"
         },
         {
@@ -22112,12 +22140,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         }
       ]
@@ -22448,7 +22476,7 @@
           "player": "Tahjere McCall",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -22755,8 +22783,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2023–2024",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -22945,6 +22973,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 5
         },
@@ -22961,11 +22994,6 @@
         {
           "type": "club",
           "name": "Cleveland Charge",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Motor City Cruise",
           "shared": 5
         }
       ]
@@ -30647,8 +30675,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -30668,8 +30696,8 @@
         {
           "player": "Lonnie Walker",
           "years": "2018–2019",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "Beşiktaş",
           "nationality": "United States"
         },
         {
@@ -30763,6 +30791,12 @@
           "nationality": "United States"
         },
         {
+          "player": "R. J. Davis",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
+        },
+        {
           "player": "RaiQuan Gray",
           "years": "2023–2024, 2024",
           "status": "overseas_active",
@@ -30833,13 +30867,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Terry Taylor",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Austin Spurs",
-          "nationality": "United States"
-        },
-        {
           "player": "Tim Hardaway Jr",
           "years": "2015–2016",
           "status": "nba_active",
@@ -30888,22 +30915,22 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
-          "shared": 8
-        },
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 8
-        },
-        {
-          "type": "club",
           "name": "Wisconsin Herd",
           "shared": 8
         },
         {
           "type": "club",
+          "name": "Fort Wayne Mad Ants",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Westchester Knicks",
+          "shared": 7
+        },
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
           "shared": 7
         },
         {
@@ -30913,8 +30940,8 @@
         },
         {
           "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 6
+          "name": "South Bay Lakers",
+          "shared": 7
         }
       ]
     },
@@ -31144,8 +31171,8 @@
         {
           "player": "John Butler",
           "years": "2023",
-          "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "status": "nba_active",
+          "last_team": "Milwaukee Bucks",
           "nationality": "United States"
         },
         {
@@ -31333,7 +31360,7 @@
           "player": "Terry Taylor",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Austin Spurs",
+          "last_team": "Brisbane Bullets",
           "nationality": "United States"
         },
         {
@@ -31405,12 +31432,12 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Westchester Knicks",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Oklahoma City Blue",
           "shared": 5
         }
       ]
@@ -35582,7 +35609,7 @@
           "player": "Terry Taylor",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Austin Spurs",
+          "last_team": "Brisbane Bullets",
           "nationality": "United States"
         },
         {
@@ -35655,12 +35682,7 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
-          "shared": 9
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
+          "name": "Texas Legends",
           "shared": 8
         },
         {
@@ -35670,17 +35692,22 @@
         },
         {
           "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 7
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Fort Wayne Mad Ants",
           "shared": 7
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 7
         },
         {
@@ -35840,12 +35867,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 2
         },
         {
@@ -37462,7 +37489,7 @@
           "player": "Tahjere McCall",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -37542,7 +37569,7 @@
       "city": "Des Moines",
       "state": "Iowa",
       "country": "USA",
-      "count": 72,
+      "count": 71,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -37958,13 +37985,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Terry Taylor",
-          "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Austin Spurs",
-          "nationality": "United States"
-        },
-        {
           "player": "Thomas Welsh",
           "years": "2019",
           "status": "overseas_active",
@@ -37981,8 +38001,8 @@
         {
           "player": "Trevor Keels",
           "years": "2023–2025",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "last_team": "Washington Wizards",
           "nationality": "United States"
         },
         {
@@ -38052,12 +38072,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 9
+          "name": "Rio Grande Valley Vipers",
+          "shared": 8
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
+          "name": "Windy City Bulls",
           "shared": 8
         },
         {
@@ -38396,8 +38416,8 @@
         {
           "player": "John Butler",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "status": "nba_active",
+          "last_team": "Milwaukee Bucks",
           "nationality": "United States"
         },
         {
@@ -38789,7 +38809,7 @@
       "city": "Washington",
       "state": "D.C.",
       "country": "USA",
-      "count": 72,
+      "count": 71,
       "roster": [
         {
           "player": "AJ Johnson",
@@ -39017,8 +39037,8 @@
         {
           "player": "John Butler",
           "years": "2023–2025",
-          "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "status": "nba_active",
+          "last_team": "Milwaukee Bucks",
           "nationality": "United States"
         },
         {
@@ -39251,13 +39271,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Trevor Keels",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
-          "nationality": "United States"
-        },
-        {
           "player": "Tristan Vukcevic",
           "years": "2024–2026",
           "status": "nba_active",
@@ -39321,17 +39334,17 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 6
-        },
-        {
-          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 6
         },
         {
           "type": "club",
           "name": "Texas Legends",
+          "shared": 6
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
           "shared": 6
         }
       ]
@@ -39571,7 +39584,7 @@
           "player": "Tahjere McCall",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -40326,7 +40339,7 @@
           "player": "Tahjere McCall",
           "years": "2021–2024",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -43558,7 +43571,7 @@
           "player": "Terry Taylor",
           "years": "2021, 2021–2023",
           "status": "overseas_active",
-          "last_team": "Austin Spurs",
+          "last_team": "Brisbane Bullets",
           "nationality": "United States"
         },
         {
@@ -43666,12 +43679,12 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 8
+          "name": "Texas Legends",
+          "shared": 7
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Austin Spurs",
           "shared": 7
         },
         {
@@ -44507,12 +44520,12 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "ASVEL",
           "shared": 1
         },
         {
@@ -45462,7 +45475,7 @@
       "city": "Brisbane",
       "state": "Queensland",
       "country": "Australia",
-      "count": 27,
+      "count": 28,
       "roster": [
         {
           "player": "Adrian Branch",
@@ -45591,6 +45604,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Raul Neto",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Brisbane Bullets",
+          "nationality": "Brazilian / Italian"
+        },
+        {
           "player": "Robert Franks",
           "years": "2021–2022",
           "status": "retired",
@@ -45615,7 +45635,7 @@
           "player": "Terry Taylor",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Austin Spurs",
+          "last_team": "Brisbane Bullets",
           "nationality": "United States"
         },
         {
@@ -45662,11 +45682,6 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 4
-        },
-        {
-          "type": "club",
           "name": "Sydney Kings",
           "shared": 4
         },
@@ -45679,6 +45694,11 @@
           "type": "club",
           "name": "Gold Coast Rollers",
           "shared": 4
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 3
         },
         {
           "type": "club",
@@ -50463,7 +50483,7 @@
           "player": "Tahjere McCall",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -52489,7 +52509,7 @@
       "city": "Frisco",
       "state": "Texas",
       "country": "USA",
-      "count": 128,
+      "count": 129,
       "roster": [
         {
           "player": "AJ Hammons",
@@ -52588,6 +52608,13 @@
           "status": "overseas_active",
           "last_team": "Anadolu Efes",
           "nationality": "United States"
+        },
+        {
+          "player": "Carlik Jones",
+          "years": "2021–2022",
+          "status": "overseas_active",
+          "last_team": "Partizan",
+          "nationality": "American / South Sudanese"
         },
         {
           "player": "Chris Douglas-Roberts",
@@ -53470,12 +53497,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -54017,7 +54044,7 @@
           "player": "Tahjere McCall",
           "years": "2017–2019",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -54626,8 +54653,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2023",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -63141,7 +63168,7 @@
           "player": "Raul Neto",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Brisbane Bullets",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -66386,12 +66413,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -66958,12 +66985,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         }
       ]
@@ -68960,7 +68987,7 @@
           "player": "Raul Neto",
           "years": "2017",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Brisbane Bullets",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -69077,7 +69104,7 @@
           "player": "Udoka Azubuike",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
+          "last_team": "Guangdong",
           "nationality": "Nigeria"
         },
         {
@@ -75563,7 +75590,7 @@
           "player": "Raul Neto",
           "years": "2014–2015",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Brisbane Bullets",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -78113,8 +78140,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2024–2025, 2025, 2025–2026",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -78204,8 +78231,8 @@
         {
           "player": "R. J. Davis",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Reggie Hearn",
@@ -78352,6 +78379,11 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Westchester Knicks",
           "shared": 7
         },
@@ -78363,11 +78395,6 @@
         {
           "type": "club",
           "name": "Santa Cruz Warriors",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 6
         },
         {
@@ -78816,7 +78843,7 @@
           "player": "Raul Neto",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Brisbane Bullets",
           "nationality": "Brazilian / Italian"
         }
       ],
@@ -79009,7 +79036,7 @@
           "player": "Raul Neto",
           "years": "2008–2011",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Brisbane Bullets",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -79670,7 +79697,7 @@
         },
         {
           "player": "Justin Holiday",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
@@ -79733,9 +79760,9 @@
         },
         {
           "player": "Tahjere McCall",
-          "years": "2024–2025",
+          "years": "2024–2025, 2026–present",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -82939,7 +82966,7 @@
           "player": "Rondae Hollis-Jefferson",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Meralco Bolts",
+          "last_team": "TNT Tropang 5G",
           "nationality": "American / Jordanian"
         },
         {
@@ -83260,7 +83287,7 @@
           "player": "Rondae Hollis-Jefferson",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Meralco Bolts",
+          "last_team": "TNT Tropang 5G",
           "nationality": "American / Jordanian"
         },
         {
@@ -86690,12 +86717,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 3
         },
         {
@@ -89330,8 +89357,8 @@
         {
           "player": "Trevor Keels",
           "years": "2022–2023",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "last_team": "Washington Wizards",
           "nationality": "United States"
         },
         {
@@ -90543,12 +90570,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Canton Charge",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Capital City Go-Go",
           "shared": 2
         },
         {
@@ -90780,12 +90807,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -94097,17 +94124,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -94167,12 +94194,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -94443,7 +94470,7 @@
           "player": "Rondae Hollis-Jefferson",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Meralco Bolts",
+          "last_team": "TNT Tropang 5G",
           "nationality": "American / Jordanian"
         },
         {
@@ -94963,8 +94990,8 @@
         {
           "player": "KJ Simpson",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "Galatasaray",
           "nationality": "United States"
         },
         {
@@ -99686,17 +99713,17 @@
         },
         {
           "type": "club",
+          "name": "Texas Legends",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Erie BayHawks",
           "shared": 5
         },
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
           "shared": 4
         },
         {
@@ -102334,7 +102361,7 @@
           "player": "Rondae Hollis-Jefferson",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Meralco Bolts",
+          "last_team": "TNT Tropang 5G",
           "nationality": "American / Jordanian"
         },
         {
@@ -110049,7 +110076,7 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -114640,6 +114667,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -114651,11 +114683,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -115109,7 +115136,7 @@
           "player": "Raul Neto",
           "years": "2011–2014",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Brisbane Bullets",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -117370,6 +117397,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -117381,11 +117413,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -120652,8 +120679,8 @@
         {
           "player": "Lonnie Walker",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "status": "overseas_active",
+          "last_team": "Beşiktaş",
           "nationality": "United States"
         },
         {
@@ -127310,12 +127337,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         }
       ]
@@ -129372,12 +129399,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
@@ -137485,12 +137512,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 3
         }
       ]
@@ -138031,12 +138058,12 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
@@ -141399,6 +141426,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -141415,11 +141447,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -143324,6 +143351,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -143340,11 +143372,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -147149,12 +147176,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -147699,17 +147726,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -148802,12 +148829,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -150451,6 +150478,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -150462,11 +150494,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -152662,12 +152689,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -153030,7 +153057,7 @@
       "city": "",
       "state": "",
       "country": "",
-      "count": 3,
+      "count": 4,
       "roster": [
         {
           "player": "Bol Bol",
@@ -153052,6 +153079,13 @@
           "status": "overseas_active",
           "last_team": "Illawarra Hawks",
           "nationality": "United States"
+        },
+        {
+          "player": "Rondae Hollis-Jefferson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "TNT Tropang 5G",
+          "nationality": "American / Jordanian"
         }
       ],
       "related": [
@@ -153082,17 +153116,17 @@
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Gigantes de Carolina",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lietuvos rytas",
+          "name": "Atléticos de San Germán",
           "shared": 1
         }
       ]
@@ -153677,12 +153711,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -155752,12 +155786,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         }
       ]
@@ -156910,7 +156944,7 @@
           "player": "Udoka Azubuike",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
+          "last_team": "Guangdong",
           "nationality": "Nigeria"
         },
         {
@@ -156980,7 +157014,7 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 2
         }
       ]
@@ -157408,6 +157442,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -157425,11 +157464,6 @@
           "type": "club",
           "name": "Lakeland / Osceola Magic",
           "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
-          "shared": 0
         }
       ]
     },
@@ -157438,7 +157472,7 @@
       "city": "San Diego",
       "state": "California",
       "country": "USA",
-      "count": 18,
+      "count": 19,
       "roster": [
         {
           "player": "Braxton Key",
@@ -157474,6 +157508,12 @@
           "status": "overseas_active",
           "last_team": "Scaligera Verona",
           "nationality": "United States"
+        },
+        {
+          "player": "Jahmyl Telfort",
+          "years": "2025",
+          "status": "nba_active",
+          "last_team": "LA Clippers"
         },
         {
           "player": "Jalen Pickett",
@@ -159646,12 +159686,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -160267,8 +160307,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -163191,6 +163231,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -163207,11 +163252,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -163788,7 +163828,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -165522,7 +165562,7 @@
           "player": "Udoka Azubuike",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Ironi Ness Ziona",
+          "last_team": "Guangdong",
           "nationality": "Nigeria"
         },
         {
@@ -165771,7 +165811,7 @@
         },
         {
           "player": "Cameron Oliver",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Elitzur Netanya",
           "nationality": "United States"
@@ -165845,6 +165885,106 @@
           "type": "club",
           "name": "Wisconsin Herd",
           "shared": 1
+        }
+      ]
+    },
+    "Rizing Zephyr Fukuoka": {
+      "club": "Rizing Zephyr Fukuoka",
+      "city": "Fukuoka",
+      "state": "",
+      "country": "Japan",
+      "count": 7,
+      "roster": [
+        {
+          "player": "Cameron Oliver",
+          "years": "",
+          "status": "overseas_active",
+          "last_team": "Elitzur Netanya",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dexter Pittman",
+          "years": "2018-2019",
+          "status": "retired",
+          "last_team": "Guaiqueríes de Margarita",
+          "nationality": "United States"
+        },
+        {
+          "player": "Drew Gordon",
+          "years": "2022-2023",
+          "status": "retired",
+          "last_team": "Rizing Zephyr Fukuoka",
+          "nationality": "United States"
+        },
+        {
+          "player": "Gani Lawal",
+          "years": "2020",
+          "status": "retired",
+          "last_team": "Plateros de Fresnillo",
+          "nationality": "Nigeria"
+        },
+        {
+          "player": "Jerome Jordan",
+          "years": "2021–2022",
+          "status": "retired",
+          "last_team": "RANS Simba Bogor",
+          "nationality": "Jamaica"
+        },
+        {
+          "player": "Kevinn Pinkney",
+          "years": "2019-2020",
+          "status": "retired",
+          "last_team": "Rizing Zephyr Fukuoka",
+          "nationality": "United States"
+        },
+        {
+          "player": "Stephen Zimmerman",
+          "years": "2023",
+          "status": "overseas_active",
+          "last_team": "Vancouver Bandits",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Westchester Knicks",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Erie BayHawks",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Virtus Bologna",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Reno Bighorns",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Pallacanestro Cantù",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Delaware 87ers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Dinamo Sassari",
+          "shared": 2
         }
       ]
     },
@@ -168299,64 +168439,6 @@
           "type": "club",
           "name": "Bravos de Piedras Negras",
           "shared": 1
-        }
-      ]
-    },
-    "Kk Zorka": {
-      "club": "Kk Zorka",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Carlik Jones",
-          "years": "2021–2022",
-          "status": "overseas_active",
-          "last_team": "Partizan",
-          "nationality": "American / South Sudanese"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Partizan",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Zhejiang Golden Bulls",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "NBA G League United",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
-          "shared": 0
         }
       ]
     },
@@ -173545,7 +173627,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -174523,7 +174605,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -174926,8 +175008,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2021–2022",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -174989,6 +175071,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Memphis Hustle",
           "shared": 2
         },
@@ -175000,11 +175087,6 @@
         {
           "type": "club",
           "name": "Capital City Go-Go",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Indios de Mayagüez",
           "shared": 2
         }
       ]
@@ -175262,7 +175344,7 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         }
       ]
@@ -175461,8 +175543,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -175484,16 +175566,16 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
           "shared": 2
         },
         {
           "type": "club",
           "name": "Baskonia",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
           "shared": 2
         },
         {
@@ -175693,6 +175775,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -175709,11 +175796,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -176203,7 +176285,7 @@
           "player": "Tahjere McCall",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -176769,7 +176851,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -180773,12 +180855,12 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "ASVEL",
           "shared": 1
         },
         {
@@ -180935,7 +181017,7 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -181504,7 +181586,7 @@
           "player": "Tahjere McCall",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         },
         {
@@ -183000,12 +183082,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -183735,6 +183817,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -183746,11 +183833,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -185853,17 +185935,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -189262,12 +189344,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -191116,12 +191198,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -192181,7 +192263,7 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -192356,12 +192438,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -193040,12 +193122,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -194708,7 +194790,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -197405,7 +197487,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -198526,12 +198608,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -200443,12 +200525,17 @@
         {
           "player": "Kylor Kelley",
           "years": "2022",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Raptors 905",
@@ -200463,11 +200550,6 @@
           "type": "club",
           "name": "Maine Celtics",
           "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
         },
         {
           "type": "club",
@@ -201265,12 +201347,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -201805,12 +201887,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -203660,7 +203742,7 @@
         },
         {
           "player": "Jeremy Evans",
-          "years": "2025–present",
+          "years": "2025",
           "status": "overseas_active",
           "last_team": "Mykonos",
           "nationality": "United States"
@@ -204817,101 +204899,8 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
-        }
-      ]
-    },
-    "Rizing Zephyr Fukuoka": {
-      "club": "Rizing Zephyr Fukuoka",
-      "city": "Fukuoka",
-      "state": "",
-      "country": "Japan",
-      "count": 6,
-      "roster": [
-        {
-          "player": "Dexter Pittman",
-          "years": "2018-2019",
-          "status": "retired",
-          "last_team": "Guaiqueríes de Margarita",
-          "nationality": "United States"
-        },
-        {
-          "player": "Drew Gordon",
-          "years": "2022-2023",
-          "status": "retired",
-          "last_team": "Rizing Zephyr Fukuoka",
-          "nationality": "United States"
-        },
-        {
-          "player": "Gani Lawal",
-          "years": "2020",
-          "status": "retired",
-          "last_team": "Plateros de Fresnillo",
-          "nationality": "Nigeria"
-        },
-        {
-          "player": "Jerome Jordan",
-          "years": "2021–2022",
-          "status": "retired",
-          "last_team": "RANS Simba Bogor",
-          "nationality": "Jamaica"
-        },
-        {
-          "player": "Kevinn Pinkney",
-          "years": "2019-2020",
-          "status": "retired",
-          "last_team": "Rizing Zephyr Fukuoka",
-          "nationality": "United States"
-        },
-        {
-          "player": "Stephen Zimmerman",
-          "years": "2023",
-          "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Erie BayHawks",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Virtus Bologna",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Reno Bighorns",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Pallacanestro Cantù",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Delaware 87ers",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Dinamo Sassari",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Trabzonspor",
-          "shared": 2
         }
       ]
     },
@@ -206040,7 +206029,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -207091,6 +207080,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -207102,11 +207096,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -207501,7 +207490,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -207858,6 +207847,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -207869,11 +207863,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -208581,7 +208570,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -208704,7 +208693,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -209887,12 +209876,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -211021,6 +211010,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -211037,11 +211031,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -211084,6 +211073,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -211095,11 +211089,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -211484,12 +211473,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -211849,7 +211838,7 @@
           "player": "Raul Neto",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "San Pablo Burgos",
+          "last_team": "Brisbane Bullets",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -212589,6 +212578,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -212600,11 +212594,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -213382,7 +213371,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -213874,7 +213863,7 @@
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -215708,7 +215697,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -217312,6 +217301,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -217323,11 +217317,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -217918,17 +217907,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -218375,6 +218364,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -218386,11 +218380,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -219464,6 +219453,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -219475,11 +219469,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -221554,7 +221543,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -221718,17 +221707,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -222299,6 +222288,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -222310,11 +222304,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -222379,7 +222368,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -222432,12 +222421,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -222776,12 +222765,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -223790,17 +223779,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -223858,7 +223847,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -224613,8 +224602,8 @@
         {
           "player": "Kylor Kelley",
           "years": "2023",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         },
         {
@@ -224645,6 +224634,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Raptors 905",
           "shared": 2
         },
@@ -224666,11 +224660,6 @@
         {
           "type": "club",
           "name": "Pallacanestro Trieste",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Manisa Basket",
           "shared": 2
         }
       ]
@@ -225995,12 +225984,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -227725,17 +227714,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -229344,7 +229333,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -229402,7 +229391,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -234142,6 +234131,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -234153,11 +234147,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -234217,12 +234206,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -234540,12 +234529,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         }
       ]
@@ -234568,12 +234557,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -234588,12 +234577,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -235351,12 +235340,12 @@
         },
         {
           "type": "club",
-          "name": "Pau-Orthez",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Pau-Orthez",
           "shared": 1
         },
         {
@@ -235811,12 +235800,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -237382,7 +237371,7 @@
           "player": "Tahjere McCall",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Guangdong",
+          "last_team": "Guangzhou Loong Lions",
           "nationality": "United States"
         }
       ],
@@ -237570,12 +237559,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -238373,12 +238362,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -239218,6 +239207,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -239234,11 +239228,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -239335,6 +239324,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -239351,11 +239345,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -241348,6 +241337,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -241364,11 +241358,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -242273,7 +242262,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -242579,12 +242568,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -242637,12 +242626,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -242753,12 +242742,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -243343,7 +243332,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -244040,12 +244029,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -244400,6 +244389,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -244411,11 +244405,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -244521,17 +244510,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -245526,17 +245515,17 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Canton Charge",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
           "shared": 1
         }
       ]
@@ -245559,12 +245548,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -245826,6 +245815,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -245837,11 +245831,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -246630,12 +246619,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -246710,6 +246699,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -246721,11 +246715,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -246917,12 +246906,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -247096,12 +247085,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -251516,7 +251505,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -253395,17 +253384,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -253614,7 +253603,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -254138,12 +254127,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -254488,17 +254477,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -254543,12 +254532,12 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -254678,12 +254667,12 @@
         },
         {
           "type": "club",
-          "name": "Pau-Orthez",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Pau-Orthez",
           "shared": 1
         },
         {
@@ -256319,12 +256308,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -256671,17 +256660,17 @@
         },
         {
           "type": "club",
+          "name": "Brisbane Bullets",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "New Zealand Breakers",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Tofaş",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Brisbane Bullets",
           "shared": 1
         },
         {
@@ -256811,12 +256800,12 @@
         },
         {
           "type": "club",
-          "name": "Atléticos de San Germán",
+          "name": "Guangdong",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Guangdong",
+          "name": "Atléticos de San Germán",
           "shared": 1
         }
       ]
@@ -256859,17 +256848,17 @@
         },
         {
           "type": "club",
+          "name": "Brisbane Bullets",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "New Zealand Breakers",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Tofaş",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Brisbane Bullets",
           "shared": 1
         },
         {
@@ -258583,12 +258572,12 @@
         },
         {
           "type": "club",
-          "name": "Pau-Orthez",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Pau-Orthez",
           "shared": 1
         },
         {
@@ -259547,17 +259536,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -259853,12 +259842,12 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "ASVEL",
           "shared": 1
         },
         {
@@ -261464,12 +261453,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -261529,12 +261518,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -261753,6 +261742,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -261764,11 +261758,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -262821,17 +262810,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -263589,12 +263578,12 @@
         },
         {
           "type": "club",
-          "name": "Pau-Orthez",
+          "name": "Beşiktaş",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Beşiktaş",
+          "name": "Pau-Orthez",
           "shared": 1
         },
         {
@@ -264022,17 +264011,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -267030,7 +267019,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -269902,12 +269891,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -269945,12 +269934,12 @@
         },
         {
           "type": "club",
-          "name": "Atléticos de San Germán",
+          "name": "Guangdong",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Guangdong",
+          "name": "Atléticos de San Germán",
           "shared": 1
         },
         {
@@ -270003,12 +269992,12 @@
         },
         {
           "type": "club",
-          "name": "Atléticos de San Germán",
+          "name": "Guangdong",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Guangdong",
+          "name": "Atléticos de San Germán",
           "shared": 1
         },
         {
@@ -270061,12 +270050,12 @@
         },
         {
           "type": "club",
-          "name": "Atléticos de San Germán",
+          "name": "Guangdong",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Guangdong",
+          "name": "Atléticos de San Germán",
           "shared": 1
         },
         {
@@ -271448,12 +271437,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -271506,12 +271495,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -272049,12 +272038,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -272281,12 +272270,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -272339,12 +272328,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -272788,6 +272777,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -272804,11 +272798,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -274334,17 +274323,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -275200,12 +275189,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -276170,12 +276159,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -277513,17 +277502,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -277943,6 +277932,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -277954,11 +277948,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -278487,7 +278476,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -279125,6 +279114,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -279136,11 +279130,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -280650,12 +280639,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -280761,17 +280750,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -281852,12 +281841,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Texas Legends",
+          "name": "Baskonia",
           "shared": 1
         },
         {
@@ -281940,12 +281929,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -282452,6 +282441,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -282463,11 +282457,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -282921,17 +282910,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -283042,12 +283031,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -283259,6 +283248,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -283275,11 +283269,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -283342,8 +283331,8 @@
         }
       ]
     },
-    "TNT Tropang Giga / 5G": {
-      "club": "TNT Tropang Giga / 5G",
+    "TNT Tropang Giga/5G": {
+      "club": "TNT Tropang Giga/5G",
       "city": "",
       "state": "",
       "country": "",
@@ -283353,7 +283342,7 @@
           "player": "Rondae Hollis-Jefferson",
           "years": "2023, 2024–2025",
           "status": "overseas_active",
-          "last_team": "Meralco Bolts",
+          "last_team": "TNT Tropang 5G",
           "nationality": "American / Jordanian"
         }
       ],
@@ -283385,17 +283374,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Perlas",
           "shared": 0
         }
       ]
@@ -283996,7 +283985,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -284344,7 +284333,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -287091,7 +287080,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -287197,17 +287186,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -288316,7 +288305,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -288477,6 +288466,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -288493,11 +288487,6 @@
         {
           "type": "club",
           "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
           "shared": 0
         }
       ]
@@ -291420,12 +291409,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -291483,7 +291472,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -291793,7 +291782,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -293890,12 +293879,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -295285,6 +295274,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -295296,11 +295290,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -295706,7 +295695,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -295933,12 +295922,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -296582,7 +296571,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -296640,7 +296629,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -296915,6 +296904,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -296926,11 +296920,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -297162,7 +297151,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -297220,7 +297209,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -297554,6 +297543,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -297565,11 +297559,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -298513,12 +298502,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -298629,12 +298618,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -298687,12 +298676,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -298943,7 +298932,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -298991,17 +298980,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299292,6 +299281,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -299309,11 +299303,6 @@
           "type": "club",
           "name": "Lakeland / Osceola Magic",
           "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Los Angeles / Utah Stars",
-          "shared": 0
         }
       ]
     },
@@ -299327,12 +299316,17 @@
         {
           "player": "Kylor Kelley",
           "years": "2023, 2024",
-          "status": "nba_active",
-          "last_team": "Miami Heat",
+          "status": "overseas_active",
+          "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
         {
           "type": "club",
           "name": "Raptors 905",
@@ -299366,11 +299360,6 @@
         {
           "type": "club",
           "name": "London Lions",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Calgary Surge",
           "shared": 1
         }
       ]
@@ -299539,12 +299528,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -299720,17 +299709,17 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
           "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
           "shared": 0
         }
       ]
@@ -299944,12 +299933,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -300040,7 +300029,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -300093,12 +300082,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -300198,6 +300187,11 @@
         },
         {
           "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
           "name": "Al Gharafa",
           "shared": 0
         },
@@ -300209,11 +300203,6 @@
         {
           "type": "club",
           "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
@@ -300381,12 +300370,12 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Al Gharafa",
           "shared": 0
         }
       ]
@@ -300557,7 +300546,7 @@
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
