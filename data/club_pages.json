@@ -8249,7 +8249,7 @@
         },
         {
           "player": "Dennis Smith",
-          "years": "2026",
+          "years": "2026–present",
           "status": "overseas_active",
           "last_team": "Sioux Falls Skyforce",
           "nationality": "United States"
@@ -8865,8 +8865,8 @@
         {
           "player": "Malik Williams",
           "years": "2023–2024, 2024–2025",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -16016,7 +16016,7 @@
         },
         {
           "player": "Derrick Walton",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Capitanes de Arecibo",
           "nationality": "United States"
@@ -19688,8 +19688,8 @@
         {
           "player": "Malik Williams",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -19769,6 +19769,11 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "CSKA Moscow",
           "shared": 4
         },
@@ -19790,11 +19795,6 @@
         {
           "type": "club",
           "name": "Fort Wayne Mad Ants",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 3
         }
       ]
@@ -22917,7 +22917,7 @@
           "player": "Taylor Funk",
           "years": "2023",
           "status": "nba_active",
-          "last_team": "Utah Jazz"
+          "last_team": "Salt Lake City Stars"
         },
         {
           "player": "Theo Pinson",
@@ -22993,7 +22993,7 @@
         },
         {
           "type": "club",
-          "name": "Cleveland Charge",
+          "name": "Salt Lake City Stars",
           "shared": 5
         }
       ]
@@ -30237,7 +30237,7 @@
       "city": "Austin",
       "state": "Texas",
       "country": "USA",
-      "count": 95,
+      "count": 97,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30722,6 +30722,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Malik Williams",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
+          "nationality": "United States"
+        },
+        {
           "player": "Maliq Brown",
           "years": "2026–present",
           "status": "nba_active",
@@ -30867,6 +30874,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Taelon Peter",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
+          "nationality": "United States"
+        },
+        {
           "player": "Tim Hardaway Jr",
           "years": "2015–2016",
           "status": "nba_active",
@@ -30920,6 +30934,11 @@
         },
         {
           "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Fort Wayne Mad Ants",
           "shared": 7
         },
@@ -30936,11 +30955,6 @@
         {
           "type": "club",
           "name": "Canton Charge",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
           "shared": 7
         }
       ]
@@ -35080,12 +35094,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Real Madrid",
           "shared": 2
         },
         {
@@ -39261,7 +39275,7 @@
           "player": "Taylor Funk",
           "years": "2023–2025",
           "status": "nba_active",
-          "last_team": "Utah Jazz"
+          "last_team": "Salt Lake City Stars"
         },
         {
           "player": "Thomas Welsh",
@@ -50267,8 +50281,8 @@
         {
           "player": "Caleb Houstan",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Rip City Remix",
           "nationality": "Canada"
         },
         {
@@ -50412,8 +50426,8 @@
         {
           "player": "Malik Williams",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -50557,17 +50571,17 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Erie BayHawks",
           "shared": 4
         },
         {
           "type": "club",
           "name": "Memphis Hustle",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
           "shared": 4
         }
       ]
@@ -52494,12 +52508,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Bologna",
           "shared": 1
         }
       ]
@@ -68587,7 +68601,7 @@
       "city": "Salt Lake City",
       "state": "Utah",
       "country": "USA",
-      "count": 80,
+      "count": 81,
       "roster": [
         {
           "player": "Alec Burks",
@@ -69037,6 +69051,12 @@
           "years": "2026–present",
           "status": "nba_active",
           "last_team": "Utah Jazz"
+        },
+        {
+          "player": "Taylor Funk",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Salt Lake City Stars"
         },
         {
           "player": "Taylor Hendricks",
@@ -70653,7 +70673,7 @@
       "city": "North Portland",
       "state": "Oregon",
       "country": "USA",
-      "count": 37,
+      "count": 38,
       "roster": [
         {
           "player": "Aleem Ford",
@@ -70689,6 +70709,13 @@
           "status": "nba_active",
           "last_team": "New Orleans Pelicans",
           "nationality": "United States"
+        },
+        {
+          "player": "Caleb Houstan",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Rip City Remix",
+          "nationality": "Canada"
         },
         {
           "player": "Caleb Love",
@@ -78161,8 +78188,8 @@
         {
           "player": "Malik Williams",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -78374,13 +78401,13 @@
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
+          "name": "Austin Spurs",
           "shared": 8
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 7
+          "name": "Delaware Blue Coats",
+          "shared": 8
         },
         {
           "type": "club",
@@ -91213,8 +91240,8 @@
         {
           "player": "Malik Williams",
           "years": "2023",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -94399,8 +94426,8 @@
         {
           "player": "Malik Williams",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -94575,7 +94602,7 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Austin Spurs",
           "shared": 5
         }
       ]
@@ -107887,12 +107914,12 @@
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "FC Barcelona",
           "shared": 1
         }
       ]
@@ -134813,12 +134840,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -151591,12 +151618,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -157575,7 +157602,7 @@
           "player": "Taylor Funk",
           "years": "2025–2026",
           "status": "nba_active",
-          "last_team": "Utah Jazz"
+          "last_team": "Salt Lake City Stars"
         },
         {
           "player": "Tosan Evbuomwan",
@@ -157610,7 +157637,7 @@
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 3
+          "shared": 4
         },
         {
           "type": "club",
@@ -160336,7 +160363,7 @@
           "player": "Taylor Funk",
           "years": "2025",
           "status": "nba_active",
-          "last_team": "Utah Jazz"
+          "last_team": "Salt Lake City Stars"
         },
         {
           "player": "Yuri Collins",
@@ -164714,8 +164741,8 @@
         {
           "player": "Caleb Houstan",
           "years": "2023, 2024",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Rip City Remix",
           "nationality": "Canada"
         },
         {
@@ -164749,6 +164776,11 @@
         },
         {
           "type": "club",
+          "name": "Rip City Remix",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Osceola Magic",
           "shared": 1
         },
@@ -164760,11 +164792,6 @@
         {
           "type": "club",
           "name": "Zadar",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Shinshu Brave Warriors",
           "shared": 1
         }
       ]
@@ -168374,12 +168401,12 @@
         },
         {
           "type": "club",
-          "name": "Lakeland Magic",
+          "name": "Rip City Remix",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Rip City Remix",
+          "name": "Lakeland Magic",
           "shared": 1
         }
       ]
@@ -174852,12 +174879,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -182021,12 +182048,12 @@
         },
         {
           "type": "club",
-          "name": "Virtus Bologna",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Virtus Bologna",
           "shared": 1
         },
         {
@@ -185032,8 +185059,8 @@
         {
           "player": "Taelon Peter",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         }
       ],
@@ -239836,12 +239863,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -239906,12 +239933,12 @@
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Real Madrid",
           "shared": 1
         },
         {
@@ -291573,12 +291600,12 @@
       "related": [
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "FC Barcelona",
           "shared": 1
         },
         {

@@ -1,3 +1,22 @@
+## 2026-10-16 — incremental run
+
+- Players updated: **544** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **4**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **3** (3 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - Caleb Houstan: New Orleans Pelicans → Rip City Remix
+  - Malik Williams: San Antonio Spurs → Austin Spurs
+  - Taelon Peter: San Antonio Spurs → Austin Spurs
+  - Taylor Funk: Utah Jazz → Salt Lake City Stars
+  - Caleb Houstan: [nba_active → overseas_active]
+  - Malik Williams: [nba_active → overseas_active]
+  - Taelon Peter: [nba_active → overseas_active]
+
 ## 2026-10-15 — incremental run
 
 - Players updated: **488** (2 new)
