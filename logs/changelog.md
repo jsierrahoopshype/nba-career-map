@@ -1,3 +1,30 @@
+## 2026-10-17 — incremental run
+
+- Players updated: **499** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **11**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **4** (4 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Gence, South Gobi Broncos
+  - Tony Bradley: New York Knicks → Atlanta Hawks
+  - Jon Elmore: San Antonio Spurs → Austin Spurs
+  - Earl Clark: Club Atlético Aguada → South Gobi Broncos
+  - Isaiah Todd: Kaohsiung Steelers → Gence
+  - Markus Howard: Baskonia → Zenit Saint Petersburg
+  - Miye Oni: Osos de Manatí → San Diego Clippers
+  - Nathan Mensah: Petkim Spor → San Diego Clippers
+  - Hunter Dickinson: Birmingham Squadron → Laketown Squadron
+  - Kevin Knox: Orlando Magic → Osceola Magic
+  - Fletcher Loyer: LA Clippers → San Diego Clippers
+  - Cole Swider: Anadolu Efes → Coachella Valley Lakers
+  - Zhaire Smith: [nba_active → overseas_active]
+  - Jon Elmore: [nba_active → overseas_active]
+  - Dariq Whitehead: [nba_active → overseas_active]
+  - Taylor Funk: [nba_active → overseas_active]
+
 ## 2026-10-16 — incremental run
 
 - Players updated: **544** (1 new)

@@ -1536,8 +1536,8 @@
         {
           "player": "Jon Elmore",
           "years": "2019–2020",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Juan Toscano-Anderson",
@@ -4120,7 +4120,7 @@
           "player": "Earl Clark",
           "years": "2016–2018",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -8153,7 +8153,7 @@
           "player": "Cole Swider",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Anadolu Efes",
+          "last_team": "Coachella Valley Lakers",
           "nationality": "United States"
         },
         {
@@ -8642,8 +8642,8 @@
         {
           "player": "Jon Elmore",
           "years": "2022–2024",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Jonathan Kerner",
@@ -9756,7 +9756,7 @@
           "player": "Earl Clark",
           "years": "2014",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -11311,9 +11311,9 @@
         },
         {
           "player": "Dariq Whitehead",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Memphis Grizzlies",
+          "years": "2025–present",
+          "status": "overseas_active",
+          "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         },
         {
@@ -11757,7 +11757,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2025–present",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -12913,7 +12913,7 @@
           "player": "Nathan Mensah",
           "years": "2023, 2023–2024",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "San Diego Clippers",
           "nationality": "Ghana"
         },
         {
@@ -13189,7 +13189,7 @@
           "player": "Earl Clark",
           "years": "2016",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -15127,7 +15127,7 @@
           "player": "Nathan Mensah",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "San Diego Clippers",
           "nationality": "Ghana"
         },
         {
@@ -15804,9 +15804,9 @@
         },
         {
           "player": "Isaiah Todd",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Kaohsiung Steelers",
+          "last_team": "Gence",
           "nationality": "United States"
         },
         {
@@ -16517,7 +16517,7 @@
           "player": "Miye Oni",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Osos de Manatí",
+          "last_team": "San Diego Clippers",
           "nationality": "American / Nigerian / British"
         },
         {
@@ -17455,7 +17455,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2019–2020",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -22916,7 +22916,7 @@
         {
           "player": "Taylor Funk",
           "years": "2023",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Salt Lake City Stars"
         },
         {
@@ -24026,7 +24026,7 @@
           "player": "Miye Oni",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Osos de Manatí",
+          "last_team": "San Diego Clippers",
           "nationality": "American / Nigerian / British"
         },
         {
@@ -27284,9 +27284,9 @@
         },
         {
           "player": "Markus Howard",
-          "years": "2022–present",
+          "years": "2022–2026",
           "status": "overseas_active",
-          "last_team": "Baskonia",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -30237,7 +30237,7 @@
       "city": "Austin",
       "state": "Texas",
       "country": "USA",
-      "count": 97,
+      "count": 98,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30576,6 +30576,12 @@
           "nationality": "Puerto Rican"
         },
         {
+          "player": "Jon Elmore",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
+        },
+        {
           "player": "Jonathon Simmons",
           "years": "2015–2016",
           "status": "retired",
@@ -30759,7 +30765,7 @@
           "player": "Nathan Mensah",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "San Diego Clippers",
           "nationality": "Ghana"
         },
         {
@@ -30939,6 +30945,11 @@
         },
         {
           "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Fort Wayne Mad Ants",
           "shared": 7
         },
@@ -30950,11 +30961,6 @@
         {
           "type": "club",
           "name": "Windy City Bulls",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Canton Charge",
           "shared": 7
         }
       ]
@@ -31192,8 +31198,8 @@
         {
           "player": "Jon Elmore",
           "years": "2024–2025, 2025–2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Jonathan Mogbo",
@@ -31446,12 +31452,12 @@
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Austin Spurs",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Oklahoma City Blue",
+          "name": "Westchester Knicks",
           "shared": 5
         }
       ]
@@ -31751,7 +31757,7 @@
           "player": "Earl Clark",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -35462,7 +35468,7 @@
           "player": "Kevin Knox",
           "years": "2025–2026",
           "status": "nba_active",
-          "last_team": "Orlando Magic",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -35716,12 +35722,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 7
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 7
         },
         {
@@ -36282,7 +36288,7 @@
           "player": "Nathan Mensah",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "San Diego Clippers",
           "nationality": "Ghana"
         },
         {
@@ -38968,7 +38974,7 @@
           "player": "Isaiah Todd",
           "years": "2021–2023",
           "status": "overseas_active",
-          "last_team": "Kaohsiung Steelers",
+          "last_team": "Gence",
           "nationality": "United States"
         },
         {
@@ -39274,7 +39280,7 @@
         {
           "player": "Taylor Funk",
           "years": "2023–2025",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Salt Lake City Stars"
         },
         {
@@ -44440,12 +44446,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -44609,12 +44615,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         },
         {
@@ -50504,7 +50510,7 @@
           "player": "Tony Bradley",
           "years": "2024–2025",
           "status": "nba_active",
-          "last_team": "New York Knicks",
+          "last_team": "Atlanta Hawks",
           "nationality": "United States"
         },
         {
@@ -53332,7 +53338,7 @@
           "player": "Tony Bradley",
           "years": "2023–2024",
           "status": "nba_active",
-          "last_team": "New York Knicks",
+          "last_team": "Atlanta Hawks",
           "nationality": "United States"
         },
         {
@@ -53421,7 +53427,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2025",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -53670,8 +53676,8 @@
         {
           "player": "Dariq Whitehead",
           "years": "2023–2025",
-          "status": "nba_active",
-          "last_team": "Memphis Grizzlies",
+          "status": "overseas_active",
+          "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         },
         {
@@ -55357,7 +55363,7 @@
           "player": "Earl Clark",
           "years": "2014–2015",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -59268,7 +59274,7 @@
           "player": "Earl Clark",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -59813,9 +59819,9 @@
         },
         {
           "player": "Earl Clark",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -65921,7 +65927,7 @@
           "player": "Earl Clark",
           "years": "2010",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -69055,7 +69061,7 @@
         {
           "player": "Taylor Funk",
           "years": "2026–present",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Salt Lake City Stars"
         },
         {
@@ -69069,7 +69075,7 @@
           "player": "Tony Bradley",
           "years": "2017–2019",
           "status": "nba_active",
-          "last_team": "New York Knicks",
+          "last_team": "Atlanta Hawks",
           "nationality": "United States"
         },
         {
@@ -69316,7 +69322,7 @@
           "player": "Cole Swider",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Anadolu Efes",
+          "last_team": "Coachella Valley Lakers",
           "nationality": "United States"
         },
         {
@@ -70411,8 +70417,8 @@
         {
           "player": "Jon Elmore",
           "years": "2024",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Josh Huestis",
@@ -70620,7 +70626,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2023–2025",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -70643,6 +70649,11 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Oklahoma City Blue",
           "shared": 6
         },
@@ -70654,11 +70665,6 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 5
         },
         {
@@ -70854,7 +70860,7 @@
           "player": "Kevin Knox",
           "years": "2024",
           "status": "nba_active",
-          "last_team": "Orlando Magic",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -74627,12 +74633,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 4
         },
         {
@@ -77958,7 +77964,7 @@
           "player": "Cole Swider",
           "years": "2022–2023, 2025",
           "status": "overseas_active",
-          "last_team": "Anadolu Efes",
+          "last_team": "Coachella Valley Lakers",
           "nationality": "United States"
         },
         {
@@ -80129,12 +80135,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         },
         {
@@ -81021,7 +81027,7 @@
       "city": "Saint Petersburg",
       "state": "",
       "country": "Russia",
-      "count": 30,
+      "count": 31,
       "roster": [
         {
           "player": "Alex Poythress",
@@ -81131,6 +81137,13 @@
         {
           "player": "Malik Newman",
           "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Zenit Saint Petersburg",
+          "nationality": "United States"
+        },
+        {
+          "player": "Markus Howard",
+          "years": "2026–present",
           "status": "overseas_active",
           "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
@@ -86820,12 +86833,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -90173,7 +90186,7 @@
           "player": "Cole Swider",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Anadolu Efes",
+          "last_team": "Coachella Valley Lakers",
           "nationality": "United States"
         },
         {
@@ -93306,7 +93319,7 @@
           "player": "Earl Clark",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -95060,7 +95073,7 @@
           "player": "Markus Howard",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Baskonia",
+          "last_team": "Zenit Saint Petersburg",
           "nationality": "United States"
         },
         {
@@ -95655,7 +95668,7 @@
           "player": "Kevin Knox",
           "years": "2024–2025",
           "status": "nba_active",
-          "last_team": "Orlando Magic",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -96997,7 +97010,7 @@
           "player": "Isaiah Todd",
           "years": "2020–2021, 2023–2024",
           "status": "overseas_active",
-          "last_team": "Kaohsiung Steelers",
+          "last_team": "Gence",
           "nationality": "United States"
         },
         {
@@ -98424,7 +98437,7 @@
           "player": "Earl Clark",
           "years": "2015–2016",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -100034,12 +100047,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         },
         {
@@ -102273,7 +102286,7 @@
         {
           "player": "Zhaire Smith",
           "years": "2026",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Oklahoma City Blue",
           "nationality": "United States"
         }
@@ -110240,7 +110253,7 @@
           "player": "Miye Oni",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Osos de Manatí",
+          "last_team": "San Diego Clippers",
           "nationality": "American / Nigerian / British"
         },
         {
@@ -113487,7 +113500,7 @@
       "city": "Büyükçekmece",
       "state": "",
       "country": "Turkey",
-      "count": 3,
+      "count": 2,
       "roster": [
         {
           "player": "Andrew White",
@@ -113502,21 +113515,9 @@
           "status": "overseas_active",
           "last_team": "Sagesse Club",
           "nationality": "United States"
-        },
-        {
-          "player": "Nathan Mensah",
-          "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Petkim Spor",
-          "nationality": "Ghana"
         }
       ],
       "related": [
-        {
-          "type": "club",
-          "name": "Petkim Spor",
-          "shared": 2
-        },
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
@@ -113529,17 +113530,7 @@
         },
         {
           "type": "club",
-          "name": "Olympiacos",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Maccabi Tel Aviv",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 1
         },
         {
@@ -113550,6 +113541,21 @@
         {
           "type": "club",
           "name": "Erie BayHawks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Fenerbahçe",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Maine Red Claws",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Los Angeles D-Fenders",
           "shared": 1
         }
       ]
@@ -114902,7 +114908,7 @@
           "player": "Earl Clark",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -119954,7 +119960,7 @@
           "player": "Earl Clark",
           "years": "2023–2025",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -127627,7 +127633,7 @@
       "city": "İzmir",
       "state": "",
       "country": "Turkey",
-      "count": 9,
+      "count": 8,
       "roster": [
         {
           "player": "Anzejs Pasecniks",
@@ -127684,21 +127690,9 @@
           "status": "overseas_active",
           "last_team": "Sagesse Club",
           "nationality": "United States"
-        },
-        {
-          "player": "Nathan Mensah",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Petkim Spor",
-          "nationality": "Ghana"
         }
       ],
       "related": [
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 3
-        },
         {
           "type": "club",
           "name": "Erie BayHawks",
@@ -127712,6 +127706,11 @@
         {
           "type": "club",
           "name": "Maccabi Tel Aviv",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
@@ -127977,7 +127976,7 @@
           "player": "Earl Clark",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -129860,12 +129859,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -130766,8 +130765,8 @@
         {
           "player": "Jon Elmore",
           "years": "2020",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Jonny Flynn",
@@ -130826,17 +130825,17 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Fenerbahçe",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
           "shared": 1
         }
       ]
@@ -137933,7 +137932,7 @@
       "city": "Shandong",
       "state": "",
       "country": "China",
-      "count": 8,
+      "count": 9,
       "roster": [
         {
           "player": "Ben McLemore",
@@ -137962,6 +137961,13 @@
           "status": "overseas_active",
           "last_team": "Jilin Northeast Tigers",
           "nationality": "Trinidadian / American"
+        },
+        {
+          "player": "Keyontae Johnson",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Alvark Tokyo",
+          "nationality": "United States"
         },
         {
           "player": "Lindell Wigginton",
@@ -138000,6 +138006,11 @@
         },
         {
           "type": "club",
+          "name": "Oklahoma City Blue",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Wisconsin Herd",
           "shared": 2
         },
@@ -138026,11 +138037,6 @@
         {
           "type": "club",
           "name": "Olympiacos",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Raptors 905",
           "shared": 1
         }
       ]
@@ -138118,12 +138124,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -139117,12 +139123,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         },
         {
@@ -145203,12 +145209,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         },
         {
@@ -154048,7 +154054,7 @@
       "city": "Istanbul",
       "state": "",
       "country": "Turkey",
-      "count": 4,
+      "count": 5,
       "roster": [
         {
           "player": "Bracey Wright",
@@ -154077,12 +154083,29 @@
           "status": "overseas_active",
           "last_team": "Iraklis Thessaloniki",
           "nationality": "United States"
+        },
+        {
+          "player": "Nathan Mensah",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "Ghana"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Olympiacos",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
@@ -154097,17 +154120,7 @@
         },
         {
           "type": "club",
-          "name": "Olympiacos",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Fort Wayne Mad Ants",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 1
         },
         {
@@ -156864,7 +156877,7 @@
           "player": "Earl Clark",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -157195,7 +157208,7 @@
       "city": "Kissimmee",
       "state": "Florida",
       "country": "USA",
-      "count": 28,
+      "count": 29,
       "roster": [
         {
           "player": "Alex Morales",
@@ -157316,6 +157329,13 @@
           "nationality": "American / Dominican"
         },
         {
+          "player": "Kevin Knox",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Osceola Magic",
+          "nationality": "United States"
+        },
+        {
           "player": "Lester Quinones",
           "years": "2025–2026",
           "status": "overseas_active",
@@ -157333,7 +157353,7 @@
           "player": "Miye Oni",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Osos de Manatí",
+          "last_team": "San Diego Clippers",
           "nationality": "American / Nigerian / British"
         },
         {
@@ -157426,12 +157446,12 @@
         },
         {
           "type": "club",
-          "name": "Raptors 905",
+          "name": "Santa Cruz Warriors",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Raptors 905",
           "shared": 3
         }
       ]
@@ -157499,7 +157519,7 @@
       "city": "San Diego",
       "state": "California",
       "country": "USA",
-      "count": 19,
+      "count": 22,
       "roster": [
         {
           "player": "Braxton Key",
@@ -157528,6 +157548,12 @@
           "status": "nba_active",
           "last_team": "Detroit Pistons",
           "nationality": "United States"
+        },
+        {
+          "player": "Fletcher Loyer",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "San Diego Clippers"
         },
         {
           "player": "Izaiah Brockington",
@@ -157571,11 +157597,25 @@
           "nationality": "Bahamas"
         },
         {
+          "player": "Miye Oni",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "American / Nigerian / British"
+        },
+        {
           "player": "Mo Bamba",
           "years": "2024",
           "status": "nba_active",
           "last_team": "Utah Jazz",
           "nationality": "American / Ivorian"
+        },
+        {
+          "player": "Nathan Mensah",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "Ghana"
         },
         {
           "player": "Patrick Baldwin",
@@ -157601,7 +157641,7 @@
         {
           "player": "Taylor Funk",
           "years": "2025–2026",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Salt Lake City Stars"
         },
         {
@@ -157641,6 +157681,11 @@
         },
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Motor City Cruise",
           "shared": 3
         },
@@ -157652,11 +157697,6 @@
         {
           "type": "club",
           "name": "Santa Cruz Warriors",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
@@ -160362,7 +160402,7 @@
         {
           "player": "Taylor Funk",
           "years": "2025",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Salt Lake City Stars"
         },
         {
@@ -160468,8 +160508,8 @@
         {
           "player": "Jon Elmore",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Maozinha Pereira",
@@ -162636,7 +162676,7 @@
           "player": "Hunter Dickinson",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Birmingham Squadron",
+          "last_team": "Laketown Squadron",
           "nationality": "United States"
         },
         {
@@ -164982,8 +165022,8 @@
         {
           "player": "Jon Elmore",
           "years": "2021–2022",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Mindaugas Kuzminskas",
@@ -165040,12 +165080,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Memphis Hustle",
           "shared": 1
         }
       ]
@@ -175057,7 +175097,7 @@
           "player": "Miye Oni",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Osos de Manatí",
+          "last_team": "San Diego Clippers",
           "nationality": "American / Nigerian / British"
         },
         {
@@ -175436,7 +175476,7 @@
           "player": "Miye Oni",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Osos de Manatí",
+          "last_team": "San Diego Clippers",
           "nationality": "American / Nigerian / British"
         },
         {
@@ -175607,12 +175647,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         },
         {
@@ -178854,7 +178894,7 @@
           "player": "Earl Clark",
           "years": "2020",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -183801,7 +183841,7 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         }
       ]
@@ -185104,6 +185144,90 @@
           "type": "club",
           "name": "Tenerife",
           "shared": 2
+        }
+      ]
+    },
+    "Coachella Valley Lakers": {
+      "club": "Coachella Valley Lakers",
+      "city": "Thousand Palms",
+      "state": "California",
+      "country": "USA",
+      "count": 5,
+      "roster": [
+        {
+          "player": "AK Okereke",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers"
+        },
+        {
+          "player": "Arthur Kaluma",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "Ugandan / American"
+        },
+        {
+          "player": "Cole Swider",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Coachella Valley Lakers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jahmir Young",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Coachella Valley Lakers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Peter Suder",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Anadolu Efes",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Grand Rapids Gold",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Motor City Cruise",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 0
         }
       ]
     },
@@ -192053,8 +192177,8 @@
         {
           "player": "Jon Elmore",
           "years": "2020–2021",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         }
       ],
       "related": [
@@ -192075,6 +192199,11 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Erie BayHawks",
           "shared": 1
         },
@@ -192091,11 +192220,6 @@
         {
           "type": "club",
           "name": "Cleveland Charge",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mets de Guaynabo",
           "shared": 1
         }
       ]
@@ -193960,7 +194084,7 @@
           "player": "Earl Clark",
           "years": "2016",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         }
       ],
@@ -204321,12 +204445,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -208788,7 +208912,7 @@
       "city": "Benghazi",
       "state": "",
       "country": "Libya",
-      "count": 3,
+      "count": 4,
       "roster": [
         {
           "player": "Donovan Williams",
@@ -208810,6 +208934,13 @@
           "status": "overseas_active",
           "last_team": "Jiangxi Ganchi",
           "nationality": "United States"
+        },
+        {
+          "player": "Miye Oni",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "American / Nigerian / British"
         }
       ],
       "related": [
@@ -211345,7 +211476,7 @@
       "roster": [
         {
           "player": "Dwight Buycks",
-          "years": "2024–present",
+          "years": "2024–2025",
           "status": "overseas_active",
           "last_team": "Kalleh Mazandaran",
           "nationality": "United States"
@@ -211809,7 +211940,7 @@
           "player": "Earl Clark",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -211903,12 +212034,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         },
         {
@@ -211944,7 +212075,7 @@
           "player": "Earl Clark",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Club Atlético Aguada",
+          "last_team": "South Gobi Broncos",
           "nationality": "United States"
         },
         {
@@ -211994,6 +212125,64 @@
         {
           "type": "club",
           "name": "Gigantes de Carolina",
+          "shared": 1
+        }
+      ]
+    },
+    "South Gobi Broncos": {
+      "club": "South Gobi Broncos",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Earl Clark",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "South Gobi Broncos",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Bakersfield Jam",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Iowa Energy",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Beşiktaş",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Gran Canaria",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Delaware 87ers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Gigantes de Carolina",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Budućnost",
           "shared": 1
         }
       ]
@@ -214726,12 +214915,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -224602,8 +224791,8 @@
         {
           "player": "Jon Elmore",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         },
         {
           "player": "Kadeem Allen",
@@ -224651,6 +224840,11 @@
       "related": [
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Greensboro Swarm",
           "shared": 3
         },
@@ -224667,11 +224861,6 @@
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 2
         },
         {
@@ -231744,7 +231933,7 @@
           "player": "Isaiah Todd",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Kaohsiung Steelers",
+          "last_team": "Gence",
           "nationality": "United States"
         }
       ],
@@ -231766,6 +231955,11 @@
         },
         {
           "type": "club",
+          "name": "Gence",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Žalgiris",
           "shared": 0
         },
@@ -231783,10 +231977,63 @@
           "type": "club",
           "name": "Juventus Utena",
           "shared": 0
+        }
+      ]
+    },
+    "Gence": {
+      "club": "Gence",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Isaiah Todd",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Gence",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
         },
         {
           "type": "club",
-          "name": "Šiauliai",
+          "name": "NBA G League Ignite",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Kaohsiung Steelers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Šiauliai–Casino Admiral",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
@@ -235842,12 +236089,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         }
       ]
@@ -237606,12 +237853,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -268113,12 +268360,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -274648,12 +274895,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -274706,12 +274953,12 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -298713,83 +298960,6 @@
         }
       ]
     },
-    "Coachella Valley Lakers": {
-      "club": "Coachella Valley Lakers",
-      "city": "Thousand Palms",
-      "state": "California",
-      "country": "USA",
-      "count": 4,
-      "roster": [
-        {
-          "player": "AK Okereke",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers"
-        },
-        {
-          "player": "Arthur Kaluma",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "Ugandan / American"
-        },
-        {
-          "player": "Jahmir Young",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Coachella Valley Lakers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Peter Suder",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Grand Rapids Gold",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
-          "shared": 0
-        }
-      ]
-    },
     "Rockingham Flames": {
       "club": "Rockingham Flames",
       "city": "Rockingham",
@@ -299814,8 +299984,15 @@
       "city": "Kenner",
       "state": "Louisiana",
       "country": "USA",
-      "count": 3,
+      "count": 4,
       "roster": [
+        {
+          "player": "Hunter Dickinson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Laketown Squadron",
+          "nationality": "United States"
+        },
         {
           "player": "Jaron Pierre Jr.",
           "years": "2026–present",
@@ -299849,6 +300026,11 @@
         },
         {
           "type": "club",
+          "name": "Birmingham Squadron",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 0
         },
@@ -299870,11 +300052,6 @@
         {
           "type": "club",
           "name": "Rockford Lightning",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rapid City Thrillers",
           "shared": 0
         }
       ]
@@ -300588,14 +300765,19 @@
         {
           "player": "Jon Elmore",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "San Antonio Spurs"
+          "status": "overseas_active",
+          "last_team": "Austin Spurs"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
@@ -300626,11 +300808,6 @@
         {
           "type": "club",
           "name": "Orlandina",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Šiauliai",
           "shared": 1
         }
       ]
