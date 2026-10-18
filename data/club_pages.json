@@ -9867,8 +9867,8 @@
         {
           "player": "JD Davison",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Orlando Magic",
+          "status": "overseas_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -9938,7 +9938,7 @@
           "player": "Jarron Cumberland",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -10345,7 +10345,7 @@
           "player": "Thon Maker",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Al-Ula",
+          "last_team": "Hong Kong Bulls",
           "nationality": "South Sudanese"
         },
         {
@@ -10393,8 +10393,8 @@
         {
           "player": "Tristen Newton",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -12762,8 +12762,8 @@
         {
           "player": "Jonas Aidoo",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Utah Jazz"
+          "status": "overseas_active",
+          "last_team": "Salt Lake City Stars"
         },
         {
           "player": "Josiah Allick",
@@ -13061,7 +13061,7 @@
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 11
+          "shared": 12
         },
         {
           "type": "club",
@@ -16932,7 +16932,7 @@
       "city": "Newark",
       "state": "Delaware",
       "country": "USA",
-      "count": 75,
+      "count": 76,
       "roster": [
         {
           "player": "Aaron Henry",
@@ -17127,7 +17127,7 @@
           "player": "Jarron Cumberland",
           "years": "2021–2022, 2023–2024, 2024–2025",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -17154,8 +17154,8 @@
         {
           "player": "Johni Broome",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Milwaukee Bucks",
+          "status": "overseas_active",
+          "last_team": "Wisconsin Herd",
           "nationality": "United States"
         },
         {
@@ -17425,6 +17425,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Tacko Fall",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Philadelphia 76ers",
+          "nationality": "Senegal"
+        },
+        {
           "player": "Terquavion Smith",
           "years": "2023–2024",
           "status": "overseas_active",
@@ -17464,7 +17471,7 @@
         {
           "type": "club",
           "name": "Wisconsin Herd",
-          "shared": 12
+          "shared": 13
         },
         {
           "type": "club",
@@ -17488,17 +17495,17 @@
         },
         {
           "type": "club",
+          "name": "Cleveland Charge",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 7
         },
         {
           "type": "club",
           "name": "Iowa Wolves",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Cleveland Charge",
           "shared": 7
         }
       ]
@@ -22685,8 +22692,8 @@
         {
           "player": "JD Davison",
           "years": "2022–2025",
-          "status": "nba_active",
-          "last_team": "Orlando Magic",
+          "status": "overseas_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -22770,7 +22777,7 @@
           "player": "Kendall Brown",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Maine Celtics",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -22983,12 +22990,12 @@
         },
         {
           "type": "club",
-          "name": "Oklahoma City Blue",
+          "name": "Austin Spurs",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Oklahoma City Blue",
           "shared": 5
         },
         {
@@ -26589,12 +26596,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 2
         }
       ]
@@ -30237,7 +30244,7 @@
       "city": "Austin",
       "state": "Texas",
       "country": "USA",
-      "count": 98,
+      "count": 99,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30375,8 +30382,8 @@
         {
           "player": "Christian Koloko",
           "years": "2025, 2026",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
           "nationality": "Cameroon"
         },
         {
@@ -30482,7 +30489,7 @@
           "player": "Emanuel Miller",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "last_team": "Chicago Bulls",
           "nationality": "Canada"
         },
         {
@@ -30645,6 +30652,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Kendall Brown",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
+          "nationality": "United States"
+        },
+        {
           "player": "Kenneth Faried",
           "years": "2022",
           "status": "overseas_active",
@@ -30723,8 +30737,8 @@
         {
           "player": "Malaki Branham",
           "years": "2022",
-          "status": "nba_active",
-          "last_team": "Orlando Magic",
+          "status": "overseas_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -30960,7 +30974,7 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Long Island Nets",
           "shared": 7
         }
       ]
@@ -30970,7 +30984,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 64,
+      "count": 66,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -31265,6 +31279,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Leaky Black",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
+          "nationality": "United States"
+        },
+        {
           "player": "Louis King",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -31391,6 +31412,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Tristen Newton",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
+          "nationality": "United States"
+        },
+        {
           "player": "Troy Williams",
           "years": "2018–2019",
           "status": "overseas_active",
@@ -31427,6 +31455,11 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Crvena Zvezda",
           "shared": 7
         },
@@ -31442,22 +31475,17 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
-          "shared": 6
-        },
-        {
-          "type": "club",
           "name": "South Bay Lakers",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Rio Grande Valley Vipers",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Austin Spurs",
           "shared": 5
         }
       ]
@@ -35315,7 +35343,7 @@
           "player": "Emanuel Miller",
           "years": "2024–2026",
           "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "last_team": "Chicago Bulls",
           "nationality": "Canada"
         },
         {
@@ -35467,7 +35495,7 @@
         {
           "player": "Kevin Knox",
           "years": "2025–2026",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Osceola Magic",
           "nationality": "United States"
         },
@@ -36559,7 +36587,7 @@
       "city": "Belgrade",
       "state": "",
       "country": "Serbia",
-      "count": 67,
+      "count": 68,
       "roster": [
         {
           "player": "Adam Morrison",
@@ -36623,6 +36651,13 @@
           "status": "overseas_active",
           "last_team": "Crvena Zvezda",
           "nationality": "Nigeria"
+        },
+        {
+          "player": "Christian Koloko",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
+          "nationality": "Cameroon"
         },
         {
           "player": "DeMarcus Nelson",
@@ -38028,8 +38063,8 @@
         {
           "player": "Tristen Newton",
           "years": "2025, 2025–2026",
-          "status": "nba_active",
-          "last_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -38137,7 +38172,7 @@
       "city": "Oshkosh",
       "state": "Wisconsin",
       "country": "USA",
-      "count": 82,
+      "count": 83,
       "roster": [
         {
           "player": "AJ Green",
@@ -38441,6 +38476,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Johni Broome",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Wisconsin Herd",
+          "nationality": "United States"
+        },
+        {
           "player": "Jontay Porter",
           "years": "2022–2023",
           "status": "overseas_active",
@@ -38720,7 +38762,7 @@
         {
           "type": "club",
           "name": "Delaware Blue Coats",
-          "shared": 12
+          "shared": 13
         },
         {
           "type": "club",
@@ -39252,8 +39294,8 @@
         {
           "player": "Reece Beekman",
           "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "last_team": "Washington Wizards",
           "nationality": "United States"
         },
         {
@@ -39329,12 +39371,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 8
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 8
         },
         {
@@ -39354,17 +39396,17 @@
         },
         {
           "type": "club",
+          "name": "Stockton Kings",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 6
         },
         {
           "type": "club",
           "name": "Texas Legends",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
           "shared": 6
         }
       ]
@@ -50102,7 +50144,7 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 3
         }
       ]
@@ -50308,8 +50350,8 @@
         {
           "player": "Christian Koloko",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
           "nationality": "Cameroon"
         },
         {
@@ -52509,12 +52551,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -52780,7 +52822,7 @@
           "player": "Emanuel Miller",
           "years": "2024",
           "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "last_team": "Chicago Bulls",
           "nationality": "Canada"
         },
         {
@@ -53008,7 +53050,7 @@
         },
         {
           "player": "John Poulakidas",
-          "years": "2026–present",
+          "years": "2026",
           "status": "nba_active",
           "last_team": "Dallas Mavericks",
           "nationality": "United States"
@@ -53907,7 +53949,7 @@
           "player": "Kendall Brown",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Maine Celtics",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -54042,8 +54084,8 @@
         {
           "player": "Reece Beekman",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "last_team": "Washington Wizards",
           "nationality": "United States"
         },
         {
@@ -54092,7 +54134,7 @@
           "player": "Thon Maker",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Al-Ula",
+          "last_team": "Hong Kong Bulls",
           "nationality": "South Sudanese"
         },
         {
@@ -54309,8 +54351,8 @@
         {
           "player": "Christian Koloko",
           "years": "2023",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
           "nationality": "Cameroon"
         },
         {
@@ -54527,7 +54569,7 @@
           "player": "Jarron Cumberland",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -54907,7 +54949,7 @@
         {
           "player": "Tyson Degenhart",
           "years": "2025–present",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Raptors 905"
         },
         {
@@ -56869,7 +56911,7 @@
           "player": "Thon Maker",
           "years": "2022–2024",
           "status": "overseas_active",
-          "last_team": "Al-Ula",
+          "last_team": "Hong Kong Bulls",
           "nationality": "South Sudanese"
         },
         {
@@ -65081,7 +65123,7 @@
         },
         {
           "player": "Joseph Young",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Qingdao Eagles",
           "nationality": "United States"
@@ -68607,7 +68649,7 @@
       "city": "Salt Lake City",
       "state": "Utah",
       "country": "USA",
-      "count": 81,
+      "count": 82,
       "roster": [
         {
           "player": "Alec Burks",
@@ -68839,6 +68881,12 @@
           "status": "overseas_active",
           "last_team": "Fenerbahçe",
           "nationality": "United States"
+        },
+        {
+          "player": "Jonas Aidoo",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Salt Lake City Stars"
         },
         {
           "player": "Jordan Nwora",
@@ -69180,7 +69228,7 @@
         {
           "type": "club",
           "name": "Greensboro Swarm",
-          "shared": 11
+          "shared": 12
         },
         {
           "type": "club",
@@ -70349,7 +70397,7 @@
           "player": "Emanuel Miller",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "Denver Nuggets",
+          "last_team": "Chicago Bulls",
           "nationality": "Canada"
         },
         {
@@ -70472,8 +70520,8 @@
         {
           "player": "Malaki Branham",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Orlando Magic",
+          "status": "overseas_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -70634,12 +70682,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Texas Legends",
-          "shared": 7
+          "name": "Delaware Blue Coats",
+          "shared": 8
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
+          "name": "Texas Legends",
           "shared": 7
         },
         {
@@ -70859,7 +70907,7 @@
         {
           "player": "Kevin Knox",
           "years": "2024",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Osceola Magic",
           "nationality": "United States"
         },
@@ -72695,7 +72743,7 @@
           "player": "Thon Maker",
           "years": "2024, 2025",
           "status": "overseas_active",
-          "last_team": "Al-Ula",
+          "last_team": "Hong Kong Bulls",
           "nationality": "South Sudanese"
         },
         {
@@ -75516,7 +75564,7 @@
         },
         {
           "player": "Kaiser Gates",
-          "years": "2025",
+          "years": "2025–present",
           "status": "overseas_active",
           "last_team": "Murcia",
           "nationality": "United States"
@@ -76685,7 +76733,7 @@
         },
         {
           "player": "Renaldo Balkman",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Vaqueros de Bayamón",
           "nationality": "Puerto Rican"
@@ -77956,8 +78004,8 @@
         {
           "player": "Christian Koloko",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
           "nationality": "Cameroon"
         },
         {
@@ -78104,7 +78152,7 @@
           "player": "Jarron Cumberland",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -84835,7 +84883,7 @@
         },
         {
           "player": "Jameel Warney",
-          "years": "2019–present",
+          "years": "2019–2026",
           "status": "overseas_active",
           "last_team": "Seoul SK Knights",
           "nationality": "United States"
@@ -86853,7 +86901,7 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         }
       ]
@@ -93918,7 +93966,7 @@
           "player": "Thon Maker",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Al-Ula",
+          "last_team": "Hong Kong Bulls",
           "nationality": "South Sudanese"
         },
         {
@@ -93980,12 +94028,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 6
         },
         {
@@ -95667,7 +95715,7 @@
         {
           "player": "Kevin Knox",
           "years": "2024–2025",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Osceola Magic",
           "nationality": "United States"
         },
@@ -95866,8 +95914,8 @@
         {
           "player": "Reece Beekman",
           "years": "2024",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "last_team": "Washington Wizards",
           "nationality": "United States"
         },
         {
@@ -109443,12 +109491,12 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Quad City Thunder",
           "shared": 3
         },
         {
@@ -113073,12 +113121,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -113326,12 +113374,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -123055,12 +123103,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 2
         },
         {
@@ -123777,7 +123825,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Delaware Blue Coats",
           "shared": 3
         }
       ]
@@ -128326,6 +128374,11 @@
         },
         {
           "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Greensboro Swarm",
           "shared": 2
         },
@@ -128336,7 +128389,7 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Delaware Blue Coats",
           "shared": 2
         },
         {
@@ -128347,11 +128400,6 @@
         {
           "type": "club",
           "name": "Jiangsu Dragons",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "New Zealand Breakers",
           "shared": 2
         }
       ]
@@ -129498,7 +129546,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -129958,12 +130006,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Maine Red Claws",
           "shared": 1
         }
       ]
@@ -137464,7 +137512,7 @@
         },
         {
           "player": "Spencer Dinwiddie",
-          "years": "2025",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Bayern Munich",
           "nationality": "United States"
@@ -138076,12 +138124,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -139110,8 +139158,8 @@
         {
           "player": "Tristen Newton",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         }
       ],
@@ -139334,7 +139382,7 @@
           "player": "Jarron Cumberland",
           "years": "2023, 2025",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -140838,12 +140886,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {
@@ -146667,12 +146715,12 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Quad City Thunder",
           "shared": 1
         },
         {
@@ -147827,7 +147875,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -147965,7 +148013,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -152349,12 +152397,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -153139,12 +153187,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -157082,12 +157130,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -157208,7 +157256,7 @@
       "city": "Kissimmee",
       "state": "Florida",
       "country": "USA",
-      "count": 29,
+      "count": 31,
       "roster": [
         {
           "player": "Alex Morales",
@@ -157259,6 +157307,13 @@
           "last_team": "Orlando Magic"
         },
         {
+          "player": "JD Davison",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Osceola Magic",
+          "nationality": "United States"
+        },
+        {
           "player": "Ja'Vonte Smart",
           "years": "2024–2026",
           "status": "overseas_active",
@@ -157295,9 +157350,9 @@
         },
         {
           "player": "Jarron Cumberland",
-          "years": "2025–2026",
+          "years": "2025–present",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -157331,7 +157386,7 @@
         {
           "player": "Kevin Knox",
           "years": "2026–present",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Osceola Magic",
           "nationality": "United States"
         },
@@ -157347,6 +157402,13 @@
           "years": "2023–2024, 2024–2025",
           "status": "overseas_active",
           "last_team": "Valvi Girona",
+          "nationality": "United States"
+        },
+        {
+          "player": "Malaki Branham",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -157387,8 +157449,8 @@
         {
           "player": "Reece Beekman",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "last_team": "Washington Wizards",
           "nationality": "United States"
         },
         {
@@ -157421,13 +157483,13 @@
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
+          "name": "Rio Grande Valley Vipers",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 5
+          "name": "Delaware Blue Coats",
+          "shared": 6
         },
         {
           "type": "club",
@@ -157530,7 +157592,7 @@
         },
         {
           "player": "Cam Christie",
-          "years": "2024–2025",
+          "years": "2024–present",
           "status": "nba_active",
           "last_team": "LA Clippers",
           "nationality": "United States"
@@ -157769,7 +157831,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -158538,12 +158600,12 @@
         },
         {
           "type": "club",
-          "name": "Žalgiris",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Žalgiris",
           "shared": 1
         },
         {
@@ -165220,12 +165282,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -165357,12 +165419,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -165734,12 +165796,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -165774,7 +165836,7 @@
       "city": "Wan Chai",
       "state": "",
       "country": "Hong Kong",
-      "count": 6,
+      "count": 7,
       "roster": [
         {
           "player": "Cameron Oliver",
@@ -165812,6 +165874,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Thon Maker",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Hong Kong Bulls",
+          "nationality": "South Sudanese"
+        },
+        {
           "player": "Wayne Selden",
           "years": "2023",
           "status": "retired",
@@ -165832,6 +165901,11 @@
         },
         {
           "type": "club",
+          "name": "Hapoel Jerusalem",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Liaoning Flying Leopards",
           "shared": 2
         },
@@ -165842,22 +165916,17 @@
         },
         {
           "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Texas Legends",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Wisconsin Herd",
           "shared": 1
         }
       ]
@@ -180106,12 +180175,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {
@@ -180259,7 +180328,7 @@
           "player": "Jarron Cumberland",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -180882,7 +180951,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -181687,12 +181756,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -182083,12 +182152,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -182136,12 +182205,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -185012,7 +185081,7 @@
       "city": "Noblesville",
       "state": "Indiana",
       "country": "USA",
-      "count": 13,
+      "count": 14,
       "roster": [
         {
           "player": "Braden Smith",
@@ -185097,6 +185166,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Rienk Mast",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Noblesville Boom"
+        },
+        {
           "player": "Taelon Peter",
           "years": "2025–2026",
           "status": "overseas_active",
@@ -185132,12 +185207,12 @@
         },
         {
           "type": "club",
-          "name": "Mexico City Capitanes",
+          "name": "Osceola Magic",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Osceola Magic",
+          "name": "Mexico City Capitanes",
           "shared": 2
         },
         {
@@ -188424,7 +188499,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -189135,7 +189210,7 @@
         },
         {
           "player": "James Ennis",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Piratas de La Guaira",
           "nationality": "United States"
@@ -190566,8 +190641,8 @@
         {
           "player": "Rienk Mast",
           "years": "2017–2019",
-          "status": "nba_active",
-          "last_team": "Indiana Pacers"
+          "status": "overseas_active",
+          "last_team": "Noblesville Boom"
         }
       ],
       "related": [
@@ -191379,7 +191454,7 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -192394,17 +192469,17 @@
         },
         {
           "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Maine Red Claws",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -192599,12 +192674,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -193777,7 +193852,7 @@
           "player": "Jarron Cumberland",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         },
         {
@@ -194188,12 +194263,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -205360,17 +205435,17 @@
         },
         {
           "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Greensboro Swarm",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -205408,12 +205483,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -210241,7 +210316,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -211578,7 +211653,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -225580,12 +225655,12 @@
         },
         {
           "type": "club",
-          "name": "Valencia",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Valencia",
           "shared": 1
         },
         {
@@ -227159,7 +227234,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -230543,12 +230618,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -231288,7 +231363,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -231834,12 +231909,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {
@@ -233106,17 +233181,17 @@
       "related": [
         {
           "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Maine Red Claws",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -235530,9 +235605,9 @@
         },
         {
           "player": "Thon Maker",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Al-Ula",
+          "last_team": "Hong Kong Bulls",
           "nationality": "South Sudanese"
         }
       ],
@@ -238058,12 +238133,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Anadolu Efes",
           "shared": 1
         }
       ]
@@ -238079,7 +238154,7 @@
           "player": "Jarron Cumberland",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Maccabi Ra'anana",
+          "last_team": "Osceola Magic",
           "nationality": "United States"
         }
       ],
@@ -240882,12 +240957,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -240964,12 +241039,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -241007,12 +241082,12 @@
         },
         {
           "type": "club",
-          "name": "Maine Red Claws",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Maine Red Claws",
           "shared": 1
         },
         {
@@ -243172,7 +243247,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -244902,12 +244977,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {
@@ -250308,12 +250383,12 @@
         },
         {
           "type": "club",
-          "name": "Valencia",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Valencia",
           "shared": 1
         },
         {
@@ -251132,12 +251207,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -253480,7 +253555,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -253626,11 +253701,16 @@
           "player": "Kendall Brown",
           "years": "2022–2024",
           "status": "overseas_active",
-          "last_team": "Maine Celtics",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 1
+        },
         {
           "type": "club",
           "name": "Long Island Nets",
@@ -253664,11 +253744,6 @@
         {
           "type": "club",
           "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
           "shared": 0
         }
       ]
@@ -253819,7 +253894,7 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -263613,12 +263688,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -269657,12 +269732,12 @@
       "related": [
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -279897,12 +279972,12 @@
       "related": [
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -279955,12 +280030,12 @@
       "related": [
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -280013,12 +280088,12 @@
       "related": [
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -280071,12 +280146,12 @@
       "related": [
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Crvena Zvezda",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Crvena Zvezda",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
@@ -284317,7 +284392,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -286015,12 +286090,12 @@
         },
         {
           "type": "club",
-          "name": "Al Rayyan",
+          "name": "Hong Kong Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Hong Kong Bulls",
+          "name": "Al Rayyan",
           "shared": 1
         }
       ]
@@ -294216,7 +294291,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]
@@ -296085,7 +296160,7 @@
         },
         {
           "type": "club",
-          "name": "Quad City Thunder",
+          "name": "Austin Spurs",
           "shared": 0
         }
       ]

@@ -1059,9 +1059,9 @@
           "player": "Christian Koloko",
           "years": "2026",
           "stint_team": "Atlanta Hawks",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "current_country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -3764,7 +3764,7 @@
           "player": "Kevin Knox",
           "years": "2022",
           "stint_team": "Atlanta Hawks",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
@@ -6404,9 +6404,9 @@
         },
         {
           "player": "Christian Koloko",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -6651,7 +6651,7 @@
         },
         {
           "player": "Kevin Knox",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
@@ -9102,8 +9102,8 @@
           "player": "JD Davison",
           "years": "2022–2025",
           "stint_team": "Boston Celtics",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -12204,8 +12204,8 @@
         },
         {
           "player": "JD Davison",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
         },
@@ -13244,7 +13244,7 @@
           "years": "2020–2022",
           "stint_team": "Brooklyn Nets",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -16472,8 +16472,8 @@
           "player": "Reece Beekman",
           "years": "2024–25",
           "stint_team": "Brooklyn Nets",
-          "status": "overseas_active",
-          "current_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "current_team": "Washington Wizards",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -17807,7 +17807,7 @@
         {
           "player": "Bruce Brown",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -18287,8 +18287,8 @@
         },
         {
           "player": "Reece Beekman",
-          "status": "overseas_active",
-          "current_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "current_team": "Washington Wizards",
           "country": "USA",
           "nationality": "United States"
         },
@@ -23843,7 +23843,7 @@
           "years": "2024–2026",
           "stint_team": "Chicago Bulls",
           "status": "nba_active",
-          "current_team": "Denver Nuggets",
+          "current_team": "Chicago Bulls",
           "current_country": "USA",
           "nationality": "Canada"
         },
@@ -26999,13 +26999,6 @@
           "current_team": "Aris Thessaloniki",
           "country": "Greece",
           "nationality": "United States"
-        },
-        {
-          "player": "Emanuel Miller",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "country": "USA",
-          "nationality": "Canada"
         },
         {
           "player": "Garrett Temple",
@@ -31702,8 +31695,8 @@
           "years": "2020–21",
           "stint_team": "Cleveland Cavaliers",
           "status": "overseas_active",
-          "current_team": "Al-Ula",
-          "current_country": "Saudi Arabia",
+          "current_team": "Hong Kong Bulls",
+          "current_country": "Hong Kong",
           "nationality": "South Sudanese"
         },
         {
@@ -32672,8 +32665,8 @@
         {
           "player": "Thon Maker",
           "status": "overseas_active",
-          "current_team": "Al-Ula",
-          "country": "Saudi Arabia",
+          "current_team": "Hong Kong Bulls",
+          "country": "Hong Kong",
           "nationality": "South Sudanese"
         },
         {
@@ -34754,7 +34747,7 @@
         },
         {
           "player": "John Poulakidas",
-          "years": "2026–present",
+          "years": "2026",
           "stint_team": "Dallas Mavericks",
           "status": "nba_active",
           "current_team": "Dallas Mavericks",
@@ -37990,7 +37983,7 @@
           "years": "2022–23",
           "stint_team": "Denver Nuggets",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -37999,7 +37992,7 @@
           "years": "2025–26",
           "stint_team": "Denver Nuggets",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -38809,15 +38802,6 @@
           "current_team": "Wichita Falls Texans/Chicago Rockers",
           "current_country": "USA",
           "nationality": "United States"
-        },
-        {
-          "player": "Emanuel Miller",
-          "years": "2026–present",
-          "stint_team": "Denver Nuggets",
-          "status": "nba_active",
-          "current_team": "Denver Nuggets",
-          "current_country": "USA",
-          "nationality": "Canada"
         },
         {
           "player": "Emmanuel Mudiay",
@@ -41639,13 +41623,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Bruce Brown",
-          "status": "nba_active",
-          "current_team": "New York Knicks",
-          "country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "Bryn Forbes",
           "status": "overseas_active",
           "current_team": "Râmnicu Vâlcea",
@@ -42128,8 +42105,8 @@
           "nationality": "Slovenia"
         }
       ],
-      "roster_count": 452,
-      "alumni_count": 425,
+      "roster_count": 451,
+      "alumni_count": 424,
       "related": [
         {
           "type": "club",
@@ -42921,7 +42898,7 @@
           "years": "2018–2020",
           "stint_team": "Detroit Pistons",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -45538,7 +45515,7 @@
           "player": "Kevin Knox",
           "years": "2022–23",
           "stint_team": "Detroit Pistons",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
@@ -45547,7 +45524,7 @@
           "player": "Kevin Knox",
           "years": "2023–24",
           "stint_team": "Detroit Pistons",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
@@ -47326,8 +47303,8 @@
           "years": "2019–2020",
           "stint_team": "Detroit Pistons",
           "status": "overseas_active",
-          "current_team": "Al-Ula",
-          "current_country": "Saudi Arabia",
+          "current_team": "Hong Kong Bulls",
+          "current_country": "Hong Kong",
           "nationality": "South Sudanese"
         },
         {
@@ -47920,7 +47897,7 @@
         {
           "player": "Bruce Brown",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -48241,7 +48218,7 @@
         },
         {
           "player": "Kevin Knox",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
@@ -48475,8 +48452,8 @@
         {
           "player": "Thon Maker",
           "status": "overseas_active",
-          "current_team": "Al-Ula",
-          "country": "Saudi Arabia",
+          "current_team": "Hong Kong Bulls",
+          "country": "Hong Kong",
           "nationality": "South Sudanese"
         },
         {
@@ -51865,7 +51842,7 @@
           "player": "Kevin Knox",
           "years": "2025",
           "stint_team": "Golden State Warriors",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
@@ -53150,8 +53127,8 @@
           "player": "Reece Beekman",
           "years": "2024",
           "stint_team": "Golden State Warriors",
-          "status": "overseas_active",
-          "current_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "current_team": "Washington Wizards",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -54489,7 +54466,7 @@
         },
         {
           "player": "Kevin Knox",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
@@ -54648,8 +54625,8 @@
         },
         {
           "player": "Reece Beekman",
-          "status": "overseas_active",
-          "current_team": "Capital City Go-Go",
+          "status": "nba_active",
+          "current_team": "Washington Wizards",
           "country": "USA",
           "nationality": "United States"
         },
@@ -56500,8 +56477,8 @@
           "player": "JD Davison",
           "years": "2025–26",
           "stint_team": "Houston Rockets",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -59010,8 +58987,8 @@
           "player": "Tristen Newton",
           "years": "2026",
           "stint_team": "Houston Rockets",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -59550,8 +59527,8 @@
         },
         {
           "player": "JD Davison",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
         },
@@ -59835,8 +59812,8 @@
         },
         {
           "player": "Tristen Newton",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
           "country": "USA",
           "nationality": "United States"
         },
@@ -60382,7 +60359,7 @@
           "years": "2023–24",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -61492,7 +61469,7 @@
         },
         {
           "player": "James Johnson",
-          "years": "2022–present",
+          "years": "2022–2025",
           "stint_team": "Indiana Pacers",
           "status": "nba_active",
           "current_team": "Indiana Pacers",
@@ -61965,7 +61942,7 @@
           "years": "2022–2024",
           "stint_team": "Indiana Pacers",
           "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "current_team": "Austin Spurs",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -62838,14 +62815,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Rienk Mast",
-          "years": "2026–present",
-          "stint_team": "Indiana Pacers",
-          "status": "nba_active",
-          "current_team": "Indiana Pacers",
-          "current_country": "USA"
-        },
-        {
           "player": "Rik Smits",
           "years": "1988-2000",
           "stint_team": "Indiana Pacers",
@@ -63401,8 +63370,8 @@
           "player": "Tristen Newton",
           "years": "2024–25",
           "stint_team": "Indiana Pacers",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -63615,7 +63584,7 @@
         {
           "player": "Bruce Brown",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -63883,7 +63852,7 @@
         {
           "player": "Kendall Brown",
           "status": "overseas_active",
-          "current_team": "Maine Celtics",
+          "current_team": "Austin Spurs",
           "country": "USA",
           "nationality": "United States"
         },
@@ -64059,8 +64028,8 @@
         },
         {
           "player": "Tristen Newton",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
           "country": "USA",
           "nationality": "United States"
         },
@@ -64074,8 +64043,8 @@
           "all_star_count": 2
         }
       ],
-      "roster_count": 396,
-      "alumni_count": 375,
+      "roster_count": 395,
+      "alumni_count": 374,
       "related": [
         {
           "type": "club",
@@ -64816,7 +64785,7 @@
         },
         {
           "player": "Cam Christie",
-          "years": "2024–2026",
+          "years": "2024–present",
           "stint_team": "LA Clippers",
           "status": "nba_active",
           "current_team": "LA Clippers",
@@ -70625,9 +70594,9 @@
           "player": "Christian Koloko",
           "years": "2024–2025",
           "stint_team": "Los Angeles Lakers",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "current_country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -75056,9 +75025,9 @@
         },
         {
           "player": "Christian Koloko",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -76307,9 +76276,9 @@
           "player": "Christian Koloko",
           "years": "2025–26",
           "stint_team": "Memphis Grizzlies",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "current_country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -78886,9 +78855,9 @@
         },
         {
           "player": "Christian Koloko",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -85682,15 +85651,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Johni Broome",
-          "years": "2026–present",
-          "stint_team": "Milwaukee Bucks",
-          "status": "nba_active",
-          "current_team": "Milwaukee Bucks",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "Johnny Newman",
           "years": "1994-1997",
           "stint_team": "Milwaukee Bucks",
@@ -86824,7 +86784,7 @@
         },
         {
           "player": "Pete Nance",
-          "years": "2025–present",
+          "years": "2025–2026",
           "stint_team": "Milwaukee Bucks",
           "status": "nba_active",
           "current_team": "Milwaukee Bucks",
@@ -87503,8 +87463,8 @@
           "years": "2016–2019",
           "stint_team": "Milwaukee Bucks",
           "status": "overseas_active",
-          "current_team": "Al-Ula",
-          "current_country": "Saudi Arabia",
+          "current_team": "Hong Kong Bulls",
+          "current_country": "Hong Kong",
           "nationality": "South Sudanese"
         },
         {
@@ -88349,8 +88309,8 @@
         {
           "player": "Thon Maker",
           "status": "overseas_active",
-          "current_team": "Al-Ula",
-          "country": "Saudi Arabia",
+          "current_team": "Hong Kong Bulls",
+          "country": "Hong Kong",
           "nationality": "South Sudanese"
         },
         {
@@ -88424,8 +88384,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 515,
-      "alumni_count": 481,
+      "roster_count": 514,
+      "alumni_count": 480,
       "related": [
         {
           "type": "club",
@@ -91422,8 +91382,8 @@
           "player": "Tristen Newton",
           "years": "2025",
           "stint_team": "Minnesota Timberwolves",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -92057,8 +92017,8 @@
         },
         {
           "player": "Tristen Newton",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
           "country": "USA",
           "nationality": "United States"
         },
@@ -92435,7 +92395,7 @@
           "years": "2025",
           "stint_team": "New Orleans Pelicans",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -92576,15 +92536,6 @@
           "nationality": "United States",
           "all_star": true,
           "all_star_count": 12
-        },
-        {
-          "player": "Christian Koloko",
-          "years": "2026–present",
-          "stint_team": "New Orleans Pelicans",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "current_country": "USA",
-          "nationality": "Cameroon"
         },
         {
           "player": "Christian Wood",
@@ -94791,7 +94742,7 @@
         {
           "player": "Bruce Brown",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -95447,8 +95398,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 281,
-      "alumni_count": 270,
+      "roster_count": 280,
+      "alumni_count": 269,
       "related": [
         {
           "type": "club",
@@ -96127,15 +96078,6 @@
           "years": "1998",
           "stint_team": "New York Knicks",
           "status": "retired",
-          "current_team": "New York Knicks",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
-          "player": "Bruce Brown",
-          "years": "2026–present",
-          "stint_team": "New York Knicks",
-          "status": "nba_active",
           "current_team": "New York Knicks",
           "current_country": "USA",
           "nationality": "United States"
@@ -98708,7 +98650,7 @@
           "player": "Kevin Knox",
           "years": "2018–2022",
           "stint_team": "New York Knicks",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
@@ -101348,7 +101290,7 @@
         },
         {
           "player": "Kevin Knox",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
@@ -101594,8 +101536,8 @@
           "nationality": "Spain"
         }
       ],
-      "roster_count": 605,
-      "alumni_count": 569,
+      "roster_count": 604,
+      "alumni_count": 568,
       "related": [
         {
           "type": "club",
@@ -107499,15 +107441,6 @@
           "current_country": "USA"
         },
         {
-          "player": "JD Davison",
-          "years": "2026–present",
-          "stint_team": "Orlando Magic",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "JJ Redick",
           "years": "2006-2013",
           "stint_team": "Orlando Magic",
@@ -108119,15 +108052,6 @@
           "status": "overseas_active",
           "current_team": "Valvi Girona",
           "current_country": "Spain",
-          "nationality": "United States"
-        },
-        {
-          "player": "Malaki Branham",
-          "years": "2026–present",
-          "stint_team": "Orlando Magic",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
-          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -109628,8 +109552,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 316,
-      "alumni_count": 299,
+      "roster_count": 314,
+      "alumni_count": 297,
       "related": [
         {
           "type": "club",
@@ -109653,11 +109577,6 @@
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 10
-        },
-        {
-          "type": "club",
           "name": "Olimpia Milano",
           "shared": 10
         },
@@ -109669,6 +109588,11 @@
         {
           "type": "club",
           "name": "Panathinaikos",
+          "shared": 10
+        },
+        {
+          "type": "club",
+          "name": "Aris Thessaloniki",
           "shared": 10
         }
       ]
@@ -112940,8 +112864,8 @@
           "player": "Johni Broome",
           "years": "2025–26",
           "stint_team": "Philadelphia 76ers",
-          "status": "nba_active",
-          "current_team": "Milwaukee Bucks",
+          "status": "overseas_active",
+          "current_team": "Wisconsin Herd",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -116133,8 +116057,8 @@
         },
         {
           "player": "Johni Broome",
-          "status": "nba_active",
-          "current_team": "Milwaukee Bucks",
+          "status": "overseas_active",
+          "current_team": "Wisconsin Herd",
           "country": "USA",
           "nationality": "United States"
         },
@@ -116564,7 +116488,7 @@
         {
           "type": "club",
           "name": "Delaware Blue Coats",
-          "shared": 45
+          "shared": 46
         },
         {
           "type": "club",
@@ -123511,8 +123435,8 @@
           "years": "2021–22",
           "stint_team": "Portland Trail Blazers",
           "status": "overseas_active",
-          "current_team": "Maccabi Ra'anana",
-          "current_country": "Israel",
+          "current_team": "Osceola Magic",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -123996,7 +123920,7 @@
           "player": "Kevin Knox",
           "years": "2023",
           "stint_team": "Portland Trail Blazers",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
@@ -125990,8 +125914,8 @@
         {
           "player": "Jarron Cumberland",
           "status": "overseas_active",
-          "current_team": "Maccabi Ra'anana",
-          "country": "Israel",
+          "current_team": "Osceola Magic",
+          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -126080,7 +126004,7 @@
         },
         {
           "player": "Kevin Knox",
-          "status": "nba_active",
+          "status": "overseas_active",
           "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
@@ -131647,15 +131571,6 @@
           "nationality": "Canadian / American"
         },
         {
-          "player": "Tristen Newton",
-          "years": "2026–present",
-          "stint_team": "Sacramento Kings",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "Troy Williams",
           "years": "2018–19",
           "stint_team": "Sacramento Kings",
@@ -132641,13 +132556,13 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 608,
-      "alumni_count": 571,
+      "roster_count": 607,
+      "alumni_count": 570,
       "related": [
         {
           "type": "club",
           "name": "Stockton Kings",
-          "shared": 39
+          "shared": 40
         },
         {
           "type": "club",
@@ -132662,7 +132577,7 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 16
+          "shared": 15
         },
         {
           "type": "club",
@@ -135112,8 +135027,8 @@
           "player": "Malaki Branham",
           "years": "2022–2025",
           "stint_team": "San Antonio Spurs",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -136973,8 +136888,8 @@
         },
         {
           "player": "Malaki Branham",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
         },
@@ -137469,7 +137384,7 @@
           "years": "2024–2025",
           "stint_team": "Toronto Raptors",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -137606,9 +137521,9 @@
           "player": "Christian Koloko",
           "years": "2022–2024",
           "stint_team": "Toronto Raptors",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "current_country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -140219,7 +140134,7 @@
         {
           "player": "Bruce Brown",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Denver Nuggets",
           "country": "USA",
           "nationality": "United States"
         },
@@ -140246,9 +140161,9 @@
         },
         {
           "player": "Christian Koloko",
-          "status": "nba_active",
-          "current_team": "New Orleans Pelicans",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Crvena Zvezda",
+          "country": "Serbia",
           "nationality": "Cameroon"
         },
         {
@@ -142698,14 +142613,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Jonas Aidoo",
-          "years": "2026–present",
-          "stint_team": "Utah Jazz",
-          "status": "nba_active",
-          "current_team": "Utah Jazz",
-          "current_country": "USA"
-        },
-        {
           "player": "Jonas Jerebko",
           "years": "2017–18",
           "stint_team": "Utah Jazz",
@@ -145112,8 +145019,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 398,
-      "alumni_count": 377,
+      "roster_count": 397,
+      "alumni_count": 376,
       "related": [
         {
           "type": "club",
@@ -149445,8 +149352,8 @@
           "player": "Malaki Branham",
           "years": "2025–26",
           "stint_team": "Washington Wizards",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -150474,6 +150381,15 @@
           "current_country": "USA",
           "nationality": "United States",
           "all_star_count": 2
+        },
+        {
+          "player": "Reece Beekman",
+          "years": "2026–present",
+          "stint_team": "Washington Wizards",
+          "status": "nba_active",
+          "current_team": "Washington Wizards",
+          "current_country": "USA",
+          "nationality": "United States"
         },
         {
           "player": "Reggie Jordan",
@@ -152070,8 +151986,8 @@
         },
         {
           "player": "Malaki Branham",
-          "status": "nba_active",
-          "current_team": "Orlando Magic",
+          "status": "overseas_active",
+          "current_team": "Osceola Magic",
           "country": "USA",
           "nationality": "United States"
         },
@@ -152265,13 +152181,13 @@
           "nationality": "Australia"
         }
       ],
-      "roster_count": 696,
-      "alumni_count": 659,
+      "roster_count": 697,
+      "alumni_count": 660,
       "related": [
         {
           "type": "club",
           "name": "Capital City Go-Go",
-          "shared": 48
+          "shared": 49
         },
         {
           "type": "club",

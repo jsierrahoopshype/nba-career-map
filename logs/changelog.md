@@ -1,3 +1,34 @@
+## 2026-10-18 — incremental run
+
+- Players updated: **497** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **10**
+- Detected-but-not-new stints held back: **3**
+- Club-name pairs held for review: **0**
+- Status changes: **10** (9 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Johni Broome: Milwaukee Bucks → Wisconsin Herd
+  - JD Davison: Orlando Magic → Osceola Magic
+  - Malaki Branham: Orlando Magic → Osceola Magic
+  - Rienk Mast: Indiana Pacers → Noblesville Boom
+  - Jonas Aidoo: Utah Jazz → Salt Lake City Stars
+  - Christian Koloko: New Orleans Pelicans → Crvena Zvezda
+  - Tristen Newton: Sacramento Kings → Stockton Kings
+  - Kendall Brown: Maine Celtics → Austin Spurs
+  - Thon Maker: Al-Ula → Hong Kong Bulls
+  - Reece Beekman: Capital City Go-Go → Washington Wizards
+  - Johni Broome: [nba_active → overseas_active]
+  - JD Davison: [nba_active → overseas_active]
+  - Malaki Branham: [nba_active → overseas_active]
+  - Rienk Mast: [nba_active → overseas_active]
+  - Jonas Aidoo: [nba_active → overseas_active]
+  - Christian Koloko: [nba_active → overseas_active]
+  - Kevin Knox: [nba_active → overseas_active]
+  - Tristen Newton: [nba_active → overseas_active]
+  - Tyson Degenhart: [nba_active → overseas_active]
+  - Reece Beekman: [overseas_active → nba_active]
+
 ## 2026-10-17 — incremental run
 
 - Players updated: **499** (1 new)
