@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 167,
+    "date_disagreement": 168,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -849,6 +849,16 @@
       "years_apart": 0
     },
     {
+      "basketball_reference": "1998-08-25",
+      "places_kept": true,
+      "player": "Jay Huff",
+      "used": "1998-08-25",
+      "used_source": "basketball-reference",
+      "wikidata": "1997-08-25",
+      "wikidata_id": "Q91330335",
+      "years_apart": 1
+    },
+    {
       "basketball_reference": "1943-07-19",
       "places_kept": true,
       "player": "Jay Miller",
@@ -1679,7 +1689,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-18",
+  "generated": "2026-10-19",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",

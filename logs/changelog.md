@@ -1,3 +1,34 @@
+## 2026-10-19 — incremental run
+
+- Players updated: **553** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **9**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **10** (10 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - Ian Schieffelin: Miami Heat → Sioux Falls Skyforce
+  - Dalen Terry: Golden State Warriors → Santa Cruz Warriors
+  - Gabe McGlothan: Boston Celtics → Maine Celtics
+  - Blake Wesley: LA Clippers → San Diego Clippers
+  - Elfrid Payton: Sacramento Kings → Stockton Kings
+  - Trevor Keels: Washington Wizards → Capital City Go-Go
+  - Emanuel Miller: Chicago Bulls → Grand Rapids Gold
+  - Dillon Jones: Philadelphia 76ers → Delaware Blue Coats
+  - Jahmyl Telfort: LA Clippers → San Diego Clippers
+  - Ian Schieffelin: [nba_active → overseas_active]
+  - Dalen Terry: [nba_active → overseas_active]
+  - Gabe McGlothan: [nba_active → overseas_active]
+  - Fletcher Loyer: [nba_active → overseas_active]
+  - Blake Wesley: [nba_active → overseas_active]
+  - Elfrid Payton: [nba_active → overseas_active]
+  - Trevor Keels: [nba_active → overseas_active]
+  - Emanuel Miller: [nba_active → overseas_active]
+  - Dillon Jones: [nba_active → overseas_active]
+  - Jahmyl Telfort: [nba_active → overseas_active]
+
 ## 2026-10-18 — incremental run
 
 - Players updated: **497** (1 new)
