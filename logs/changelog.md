@@ -1,3 +1,35 @@
+## 2026-10-20 — incremental run
+
+- Players updated: **504** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **12**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **8** (8 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: APR BBC
+  - BJ Boston: Chicago Bulls → Windy City Bulls
+  - Drew Peterson: Chicago Bulls → Windy City Bulls
+  - Orlando Robinson: Chicago Bulls → Windy City Bulls
+  - Isaiah Stevens: Chicago Bulls → Windy City Bulls
+  - Jalen Bridges: Chicago Bulls → Windy City Bulls
+  - Antonio Reeves: Minnesota Timberwolves → Iowa Wolves
+  - Jamarion Sharp: Toronto Raptors → Raptors 905
+  - Isaiah Wong: Gran Canaria → Long Island Nets
+  - Marcus Garrett: Skyliners Frankfurt → Wisconsin Herd
+  - Tony Bradley: Atlanta Hawks → Utah Jazz
+  - Rashaun Agee: Cleveland Cavaliers → Cleveland Charge
+  - Zack Austin: Cleveland Cavaliers → Cleveland Charge
+  - BJ Boston: [nba_active → overseas_active]
+  - Drew Peterson: [nba_active → overseas_active]
+  - Orlando Robinson: [nba_active → overseas_active]
+  - Isaiah Stevens: [nba_active → overseas_active]
+  - Jalen Bridges: [nba_active → overseas_active]
+  - Antonio Reeves: [nba_active → overseas_active]
+  - Koby Brea: [nba_active → overseas_active]
+  - Jamarion Sharp: [nba_active → overseas_active]
+
 ## 2026-10-19 — incremental run
 
 - Players updated: **553** (1 new)
