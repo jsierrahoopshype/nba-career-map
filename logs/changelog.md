@@ -1,3 +1,25 @@
+## 2026-10-21 — incremental run
+
+- Players updated: **501** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **6**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **4** (4 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Kigali Tigers
+  - Jarkel Joiner: Charlotte Hornets → Greensboro Swarm
+  - DeJon Jarreau: Memphis Grizzlies → Alvark Tokyo
+  - Johnathan Williams: Phoenix Fuel Masters → Cholet Basket
+  - Tyler Bey: Trotamundos de Carabobo → Kigali Tigers
+  - Jazian Gortman: Oklahoma City Blue → Capital City Go-Go
+  - Cameron Oliver: Elitzur Netanya → Rizing Zephyr Fukuoka
+  - Jarkel Joiner: [nba_active → overseas_active]
+  - DeJon Jarreau: [nba_active → overseas_active]
+  - Rashaun Agee: [nba_active → overseas_active]
+  - Zack Austin: [nba_active → overseas_active]
+
 ## 2026-10-20 — incremental run
 
 - Players updated: **504** (1 new)

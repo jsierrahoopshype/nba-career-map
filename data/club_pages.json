@@ -10435,7 +10435,7 @@
           "player": "Tyler Bey",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         },
         {
@@ -11466,7 +11466,7 @@
           "player": "Jazian Gortman",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Oklahoma City Blue",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -11757,7 +11757,7 @@
         {
           "player": "Zack Austin",
           "years": "2025–2026",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Cleveland Charge"
         },
         {
@@ -12504,7 +12504,7 @@
       "city": "Greensboro",
       "state": "North Carolina",
       "country": "USA",
-      "count": 81,
+      "count": 82,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -12743,6 +12743,12 @@
           "status": "overseas_active",
           "last_team": "Paris Basketball",
           "nationality": "United States"
+        },
+        {
+          "player": "Jarkel Joiner",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Jarrell Brantley",
@@ -13631,7 +13637,7 @@
           "player": "David Stockton",
           "years": "2014–2016, 2017–2018",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -14375,7 +14381,7 @@
           "player": "Johnathan Williams",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -16010,7 +16016,7 @@
           "player": "David Stockton",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -16291,17 +16297,17 @@
         },
         {
           "type": "club",
+          "name": "Piratas de Quebradillas",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Erie BayHawks",
           "shared": 6
         },
         {
           "type": "club",
           "name": "Leones de Ponce",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Piratas de Quebradillas",
           "shared": 6
         },
         {
@@ -16935,7 +16941,7 @@
         },
         {
           "type": "club",
-          "name": "Valencia",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -17654,12 +17660,12 @@
         },
         {
           "type": "club",
-          "name": "ASVEL",
+          "name": "Capital City Go-Go",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "ASVEL",
           "shared": 2
         },
         {
@@ -17699,7 +17705,7 @@
           "player": "Johnathan Williams",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -17752,17 +17758,17 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Galatasaray",
           "shared": 1
         },
         {
           "type": "club",
           "name": "ASVEL",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
           "shared": 1
         }
       ]
@@ -19604,7 +19610,7 @@
           "player": "Cameron Oliver",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -22326,7 +22332,7 @@
         },
         {
           "player": "Jeremiah Martin",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Lokomotiv Kuban",
           "nationality": "United States"
@@ -27962,7 +27968,7 @@
           "player": "Cameron Oliver",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -32250,12 +32256,12 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Piratas de Quebradillas",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Bnei Herzliya",
           "shared": 2
         },
         {
@@ -38330,7 +38336,7 @@
           "player": "Cameron Oliver",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -38512,7 +38518,7 @@
           "player": "Jazian Gortman",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Oklahoma City Blue",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -38865,6 +38871,11 @@
         },
         {
           "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 9
+        },
+        {
+          "type": "club",
           "name": "South Bay Lakers",
           "shared": 9
         },
@@ -38876,11 +38887,6 @@
         {
           "type": "club",
           "name": "Erie BayHawks",
-          "shared": 8
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
           "shared": 8
         },
         {
@@ -38960,7 +38966,7 @@
       "city": "Washington",
       "state": "D.C.",
       "country": "USA",
-      "count": 72,
+      "count": 73,
       "roster": [
         {
           "player": "AJ Johnson",
@@ -39035,8 +39041,8 @@
         {
           "player": "DeJon Jarreau",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Memphis Grizzlies",
+          "status": "overseas_active",
+          "last_team": "Alvark Tokyo",
           "nationality": "United States"
         },
         {
@@ -39172,6 +39178,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Jazian Gortman",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
+          "nationality": "United States"
+        },
+        {
           "player": "Jerian Grant",
           "years": "2019–2020",
           "status": "overseas_active",
@@ -39203,7 +39216,7 @@
           "player": "Johnathan Williams",
           "years": "2020",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -39467,18 +39480,23 @@
       "related": [
         {
           "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 8
+          "name": "Wisconsin Herd",
+          "shared": 9
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Windy City Bulls",
           "shared": 8
         },
         {
           "type": "club",
           "name": "Greensboro Swarm",
           "shared": 8
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 7
         },
         {
           "type": "club",
@@ -39498,11 +39516,6 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
           "shared": 6
         }
       ]
@@ -40407,7 +40420,7 @@
           "player": "Cameron Oliver",
           "years": "2019–2021",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -42079,7 +42092,7 @@
           "player": "David Stockton",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -43265,7 +43278,7 @@
           "player": "David Stockton",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -43278,8 +43291,8 @@
         {
           "player": "DeJon Jarreau",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "Memphis Grizzlies",
+          "status": "overseas_active",
+          "last_team": "Alvark Tokyo",
           "nationality": "United States"
         },
         {
@@ -44932,7 +44945,7 @@
           "player": "Cameron Oliver",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -49173,7 +49186,7 @@
           "player": "David Stockton",
           "years": "2021, 2021–2022",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -49193,8 +49206,8 @@
         {
           "player": "DeJon Jarreau",
           "years": "2024, 2025–2026",
-          "status": "nba_active",
-          "last_team": "Memphis Grizzlies",
+          "status": "overseas_active",
+          "last_team": "Alvark Tokyo",
           "nationality": "United States"
         },
         {
@@ -50509,8 +50522,8 @@
         {
           "player": "Jarkel Joiner",
           "years": "2023–2025",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Jarrett Culver",
@@ -52160,7 +52173,7 @@
           "player": "David Stockton",
           "years": "2016",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -52847,8 +52860,8 @@
         {
           "player": "DeJon Jarreau",
           "years": "2022",
-          "status": "nba_active",
-          "last_team": "Memphis Grizzlies",
+          "status": "overseas_active",
+          "last_team": "Alvark Tokyo",
           "nationality": "United States"
         },
         {
@@ -53106,7 +53119,7 @@
           "player": "Jazian Gortman",
           "years": "2024–2025, 2025",
           "status": "overseas_active",
-          "last_team": "Oklahoma City Blue",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -54279,7 +54292,7 @@
           "player": "Tyler Bey",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         },
         {
@@ -54664,8 +54677,8 @@
         {
           "player": "Jarkel Joiner",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Jarrod Uthoff",
@@ -59892,7 +59905,7 @@
           "player": "Johnathan Williams",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -60514,7 +60527,7 @@
           "player": "Tyler Bey",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         }
       ],
@@ -66538,12 +66551,12 @@
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Piratas de Quebradillas",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Vaqueros de Bayamón",
           "shared": 2
         },
         {
@@ -69272,7 +69285,7 @@
           "player": "Tyler Bey",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         },
         {
@@ -70062,7 +70075,7 @@
           "player": "Cameron Oliver",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -70719,7 +70732,7 @@
         {
           "player": "Rashaun Agee",
           "years": "2026–present",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Cleveland Charge"
         },
         {
@@ -70802,7 +70815,7 @@
         {
           "player": "Zack Austin",
           "years": "2026–present",
-          "status": "nba_active",
+          "status": "overseas_active",
           "last_team": "Cleveland Charge"
         },
         {
@@ -71021,7 +71034,7 @@
           "player": "Jazian Gortman",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Oklahoma City Blue",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         },
         {
@@ -76003,7 +76016,7 @@
           "player": "David Stockton",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -76271,7 +76284,7 @@
         {
           "type": "club",
           "name": "Piratas de Quebradillas",
-          "shared": 6
+          "shared": 7
         },
         {
           "type": "club",
@@ -78125,7 +78138,7 @@
           "player": "Cameron Oliver",
           "years": "2021–2022, 2022–2023",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -78188,7 +78201,7 @@
           "player": "David Stockton",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -78314,7 +78327,7 @@
           "player": "Johnathan Williams",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -80036,7 +80049,7 @@
       "city": "Tokyo",
       "state": "",
       "country": "Japan",
-      "count": 8,
+      "count": 9,
       "roster": [
         {
           "player": "Alex Kirk",
@@ -80051,6 +80064,13 @@
           "status": "retired",
           "last_team": "Alvark Tokyo",
           "nationality": "American / Ugandan"
+        },
+        {
+          "player": "DeJon Jarreau",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Alvark Tokyo",
+          "nationality": "United States"
         },
         {
           "player": "Diante Garrett",
@@ -80118,6 +80138,11 @@
         },
         {
           "type": "club",
+          "name": "Texas Legends",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Baskonia",
           "shared": 1
         },
@@ -80129,11 +80154,6 @@
         {
           "type": "club",
           "name": "Olimpia Milano",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Raptors 905",
           "shared": 1
         }
       ]
@@ -85126,7 +85146,7 @@
           "player": "Cameron Oliver",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -90995,7 +91015,7 @@
           "player": "Johnathan Williams",
           "years": "2023–2024, 2026",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -91029,12 +91049,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -94522,7 +94542,7 @@
           "player": "David Stockton",
           "years": "2020, 2021",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -97171,7 +97191,7 @@
           "player": "David Stockton",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -102204,7 +102224,7 @@
       "city": "Quebradillas",
       "state": "",
       "country": "Puerto Rico",
-      "count": 40,
+      "count": 41,
       "roster": [
         {
           "player": "Andre Emmett",
@@ -102267,6 +102287,13 @@
           "years": "2011, 2012",
           "status": "retired",
           "last_team": "Peja",
+          "nationality": "United States"
+        },
+        {
+          "player": "David Stockton",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -102490,17 +102517,22 @@
       "related": [
         {
           "type": "club",
+          "name": "Capitanes de Arecibo",
+          "shared": 7
+        },
+        {
+          "type": "club",
+          "name": "Cangrejeros de Santurce",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Rio Grande Valley Vipers",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Capitanes de Arecibo",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Reno Bighorns",
           "shared": 6
         },
         {
@@ -102510,7 +102542,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Fort Wayne Mad Ants",
           "shared": 5
         },
         {
@@ -102522,11 +102554,6 @@
           "type": "club",
           "name": "Khimki",
           "shared": 5
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 4
         }
       ]
     },
@@ -104229,7 +104256,7 @@
       "city": "Cholet",
       "state": "",
       "country": "France",
-      "count": 52,
+      "count": 53,
       "roster": [
         {
           "player": "Andre Roberson",
@@ -104362,6 +104389,13 @@
           "years": "1986-1987",
           "status": "retired",
           "last_team": "Joventut Badalona",
+          "nationality": "United States"
+        },
+        {
+          "player": "Johnathan Williams",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -105099,7 +105133,7 @@
           "player": "Johnathan Williams",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -123764,7 +123798,7 @@
           "player": "David Stockton",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
         },
         {
@@ -127559,12 +127593,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -128113,12 +128147,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -128668,7 +128702,7 @@
           "player": "Tyler Bey",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         },
         {
@@ -134719,7 +134753,7 @@
           "player": "Tyler Bey",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         },
         {
@@ -158800,7 +158834,7 @@
           "player": "Johnathan Williams",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -160328,7 +160362,7 @@
           "player": "Johnathan Williams",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -165613,7 +165647,7 @@
           "player": "Cameron Oliver",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -165685,7 +165719,7 @@
           "player": "Cameron Oliver",
           "years": "2020",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -165825,7 +165859,7 @@
           "player": "Tyler Bey",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         },
         {
@@ -165918,7 +165952,7 @@
           "player": "Cameron Oliver",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -165990,7 +166024,7 @@
           "player": "Cameron Oliver",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -166097,7 +166131,7 @@
           "player": "Cameron Oliver",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -166181,9 +166215,9 @@
       "roster": [
         {
           "player": "Cameron Oliver",
-          "years": "",
+          "years": "2026–present",
           "status": "overseas_active",
-          "last_team": "Elitzur Netanya",
+          "last_team": "Rizing Zephyr Fukuoka",
           "nationality": "United States"
         },
         {
@@ -170215,7 +170249,7 @@
       "city": "Tempe",
       "state": "Arizona",
       "country": "USA",
-      "count": 22,
+      "count": 23,
       "roster": [
         {
           "player": "C. J. Huntley",
@@ -170249,8 +170283,15 @@
           "player": "David Stockton",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Valley Suns",
+          "last_team": "Piratas de Quebradillas",
           "nationality": "United States"
+        },
+        {
+          "player": "Duop Reath",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Phoenix Suns",
+          "nationality": "Australian / South Sudanese"
         },
         {
           "player": "Isaiah Livers",
@@ -175272,7 +175313,7 @@
           "player": "Johnathan Williams",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -177901,12 +177942,12 @@
         },
         {
           "type": "club",
-          "name": "Montepaschi Siena",
+          "name": "Cholet Basket",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Cholet Basket",
+          "name": "Montepaschi Siena",
           "shared": 1
         }
       ]
@@ -186485,12 +186526,12 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Piratas de Quebradillas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Bnei Herzliya",
           "shared": 1
         },
         {
@@ -201673,7 +201714,7 @@
           "player": "Johnathan Williams",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -204085,12 +204126,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -209354,12 +209395,12 @@
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Piratas de Quebradillas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
@@ -209448,7 +209489,7 @@
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Piratas de Quebradillas",
           "shared": 1
         }
       ]
@@ -209491,12 +209532,12 @@
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Piratas de Quebradillas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Vaqueros de Bayamón",
           "shared": 1
         },
         {
@@ -211113,17 +211154,17 @@
         },
         {
           "type": "club",
+          "name": "Valley Suns",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "FMP",
           "shared": 1
         },
         {
           "type": "club",
           "name": "NBA G League United",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -214287,12 +214328,12 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Anadolu Efes",
           "shared": 1
         },
         {
@@ -215841,7 +215882,7 @@
           "player": "Tyler Bey",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         },
         {
@@ -232863,8 +232904,8 @@
         {
           "player": "Jarkel Joiner",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Kyle Mangas",
@@ -234262,7 +234303,7 @@
           "player": "Johnathan Williams",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -234989,7 +235030,7 @@
           "player": "Tyler Bey",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Trotamundos de Carabobo",
+          "last_team": "Kigali Tigers",
           "nationality": "United States"
         }
       ],
@@ -238286,7 +238327,7 @@
         },
         {
           "type": "club",
-          "name": "Anadolu Efes",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -244064,12 +244105,12 @@
         },
         {
           "type": "club",
-          "name": "Vaqueros de Bayamón",
+          "name": "Piratas de Quebradillas",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Vaqueros de Bayamón",
           "shared": 0
         }
       ]
@@ -245966,7 +246007,7 @@
           "player": "Johnathan Williams",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         },
         {
@@ -246012,12 +246053,12 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Galatasaray",
           "shared": 1
         },
         {
@@ -246038,16 +246079,11 @@
           "player": "Johnathan Williams",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Phoenix Fuel Masters",
+          "last_team": "Cholet Basket",
           "nationality": "United States"
         }
       ],
       "related": [
-        {
-          "type": "club",
-          "name": "Galatasaray",
-          "shared": 1
-        },
         {
           "type": "club",
           "name": "Capital City Go-Go",
@@ -246055,7 +246091,17 @@
         },
         {
           "type": "club",
+          "name": "Galatasaray",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "South Bay Lakers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Cholet Basket",
           "shared": 1
         },
         {
@@ -246076,11 +246122,6 @@
         {
           "type": "club",
           "name": "Fighting Eagles Nagoya",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Suwon KT Sonicboom",
           "shared": 1
         }
       ]
@@ -270257,12 +270298,12 @@
         },
         {
           "type": "club",
-          "name": "Bnei Herzliya",
+          "name": "Piratas de Quebradillas",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Piratas de Quebradillas",
+          "name": "Bnei Herzliya",
           "shared": 1
         },
         {
@@ -295153,6 +295194,64 @@
         }
       ]
     },
+    "Kigali Tigers": {
+      "club": "Kigali Tigers",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Tyler Bey",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Kigali Tigers",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Long Island Nets",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Trotamundos de Carabobo",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Ironi Ness Ziona",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Taipei Fubon Braves",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Homenetmen Beirut",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Hapoel Haifa",
+          "shared": 1
+        }
+      ]
+    },
     "Reflex Belgrade": {
       "club": "Reflex Belgrade",
       "city": "Belgrade",
@@ -298962,11 +299061,16 @@
           "player": "Jazian Gortman",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Oklahoma City Blue",
+          "last_team": "Capital City Go-Go",
           "nationality": "United States"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Rip City Remix",
@@ -299000,11 +299104,6 @@
         {
           "type": "club",
           "name": "Delaware Blue Coats",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
           "shared": 1
         }
       ]
