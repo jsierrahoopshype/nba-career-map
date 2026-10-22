@@ -1,3 +1,21 @@
+## 2026-10-22 — incremental run
+
+- Players updated: **555** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **4**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Cedevita / Cedevita Olimpija, Seattle SuperSonics / , Oklahoma City Thunder
+  - Kadary Richmond: Cleveland Cavaliers → Cleveland Charge
+  - Davon Reed: Santeros de Aguada → Anyang KGC
+  - Curtis Jones: Grand Rapids Gold → Cleveland Charge
+  - Drew Timme: Minnesota Timberwolves → Phoenix Suns
+  - John Butler: [nba_active → overseas_active]
+  - Kadary Richmond: [nba_active → overseas_active]
+
 ## 2026-10-21 — incremental run
 
 - Players updated: **501** (1 new)

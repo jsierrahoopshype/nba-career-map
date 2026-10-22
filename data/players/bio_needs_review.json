@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 168,
+    "date_disagreement": 169,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -1069,6 +1069,16 @@
       "years_apart": 0
     },
     {
+      "basketball_reference": "1983-10-20",
+      "places_kept": true,
+      "player": "Kevinn Pinkney",
+      "used": "1983-10-20",
+      "used_source": "basketball-reference",
+      "wikidata": "1983-10-10",
+      "wikidata_id": "Q2897346",
+      "years_apart": 0
+    },
+    {
       "basketball_reference": "1997-06-16",
       "places_kept": true,
       "player": "Ky Bowman",
@@ -1096,6 +1106,16 @@
       "used_source": "basketball-reference",
       "wikidata": "1954-09-27",
       "wikidata_id": "Q1635555",
+      "years_apart": 0
+    },
+    {
+      "basketball_reference": "1966-11-24",
+      "places_kept": true,
+      "player": "Ledell Eackles",
+      "used": "1966-11-24",
+      "used_source": "basketball-reference",
+      "wikidata": "1966-10-24",
+      "wikidata_id": "Q3829349",
       "years_apart": 0
     },
     {
@@ -1287,16 +1307,6 @@
       "wikidata": "1925-06-26",
       "wikidata_id": "Q3880868",
       "years_apart": 1
-    },
-    {
-      "basketball_reference": "1989-11-26",
-      "places_kept": true,
-      "player": "Omari Johnson",
-      "used": "1989-11-26",
-      "used_source": "basketball-reference",
-      "wikidata": "1989-05-26",
-      "wikidata_id": "Q20643185",
-      "years_apart": 0
     },
     {
       "basketball_reference": "1974-01-31",
@@ -1689,7 +1699,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-21",
+  "generated": "2026-10-22",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",
