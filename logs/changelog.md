@@ -1,3 +1,28 @@
+## 2026-10-23 — incremental run
+
+- Players updated: **506** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **9**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **5** (5 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - John Konchar: New York Knicks → Olympiacos
+  - Kobe Bufkin: New Orleans Pelicans → Laketown Squadron
+  - Yuki Kawamura: LA Clippers → San Diego Clippers
+  - Isaac McKneely: Atlanta Hawks → College Park Skyhawks
+  - Nimari Burnett: Toronto Raptors → Raptors 905
+  - Louis King: Criollos de Caguas → Busan KCC Egis
+  - Mangok Mathiang: RSSB Tigers → Adelaide 36ers
+  - Antonio Reeves: Iowa Wolves → Partizan
+  - Chris McCullough: Vaqueros de Bayamón → Seoul Samsung Thunders
+  - John Konchar: [nba_active → overseas_active]
+  - Kobe Bufkin: [nba_active → overseas_active]
+  - Yuki Kawamura: [nba_active → overseas_active]
+  - Isaac McKneely: [nba_active → overseas_active]
+  - Nimari Burnett: [nba_active → overseas_active]
+
 ## 2026-10-22 — incremental run
 
 - Players updated: **555** (1 new)
