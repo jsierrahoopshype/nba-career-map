@@ -1,3 +1,22 @@
+## 2026-10-24 — incremental run
+
+- Players updated: **498** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **8**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Sean Pedulla: Houston Rockets → Sacramento Kings
+  - Jamorko Pickett: Fighting Eagles Nagoya → Taipei Fubon Braves
+  - Johnny O'Bryant: Sagesse SC → Goyang Sono Skygunners
+  - Keon Johnson: Maine Celtics → College Park Skyhawks
+  - Paris Bass: Sagesse Club → Suwon KT Sonicboom
+  - Terry Taylor: Brisbane Bullets → Austin Spurs
+  - Vic Law: Ryukyu Golden Kings → Ibaraki Robots
+  - Walter Clayton Jr.: Memphis Grizzlies → Dallas Mavericks
+
 ## 2026-10-23 — incremental run
 
 - Players updated: **506** (1 new)

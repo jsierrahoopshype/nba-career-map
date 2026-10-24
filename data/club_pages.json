@@ -1383,12 +1383,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         }
       ]
@@ -9469,7 +9469,7 @@
       "city": "Edinburg",
       "state": "Texas",
       "country": "USA",
-      "count": 151,
+      "count": 150,
       "roster": [
         {
           "player": "Aaron Brooks",
@@ -10304,13 +10304,6 @@
           "status": "overseas_active",
           "last_team": "Minas",
           "nationality": "Brazilian / American"
-        },
-        {
-          "player": "Sean Pedulla",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "Houston Rockets",
-          "nationality": "United States"
         },
         {
           "player": "Shannon Brown",
@@ -12326,7 +12319,7 @@
           "player": "Paris Bass",
           "years": "2017",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -15519,7 +15512,7 @@
           "player": "Johnny O'Bryant",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -16191,7 +16184,7 @@
           "player": "Paris Bass",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -17710,9 +17703,9 @@
         },
         {
           "player": "Jamorko Pickett",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Fighting Eagles Nagoya",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -20166,9 +20159,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2018-2019",
+          "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -22367,9 +22360,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2019-2020",
+          "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -22837,7 +22830,7 @@
           "player": "Keon Johnson",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Maine Celtics",
+          "last_team": "College Park Skyhawks",
           "nationality": "United States"
         },
         {
@@ -30304,7 +30297,7 @@
       "city": "Austin",
       "state": "Texas",
       "country": "USA",
-      "count": 99,
+      "count": 100,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30961,6 +30954,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Terry Taylor",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
+          "nationality": "United States"
+        },
+        {
           "player": "Tim Hardaway Jr",
           "years": "2015–2016",
           "status": "nba_active",
@@ -31009,6 +31009,16 @@
         },
         {
           "type": "club",
+          "name": "Fort Wayne Mad Ants",
+          "shared": 8
+        },
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Wisconsin Herd",
           "shared": 8
         },
@@ -31024,17 +31034,7 @@
         },
         {
           "type": "club",
-          "name": "Fort Wayne Mad Ants",
-          "shared": 7
-        },
-        {
-          "type": "club",
           "name": "Westchester Knicks",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Long Island Nets",
           "shared": 7
         }
       ]
@@ -31044,7 +31044,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 67,
+      "count": 68,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -31437,6 +31437,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Sean Pedulla",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
+          "nationality": "United States"
+        },
+        {
           "player": "Shabazz Muhammad",
           "years": "2024",
           "status": "overseas_active",
@@ -31468,7 +31475,7 @@
           "player": "Terry Taylor",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Brisbane Bullets",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -31522,6 +31529,11 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 7
+        },
+        {
+          "type": "club",
           "name": "Capital City Go-Go",
           "shared": 7
         },
@@ -31534,11 +31546,6 @@
           "type": "club",
           "name": "Cleveland Charge",
           "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 6
         },
         {
           "type": "club",
@@ -35759,7 +35766,7 @@
           "player": "Terry Taylor",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Brisbane Bullets",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -35842,6 +35849,11 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Capital City Go-Go",
           "shared": 8
         },
@@ -35858,11 +35870,6 @@
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
           "shared": 7
         }
       ]
@@ -36910,9 +36917,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2020-2021",
+          "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -38714,7 +38721,7 @@
           "player": "Paris Bass",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -39783,7 +39790,7 @@
           "player": "Vic Law",
           "years": "2019–2020, 2020",
           "status": "overseas_active",
-          "last_team": "Ryukyu Golden Kings",
+          "last_team": "Ibaraki Robots",
           "nationality": "United States"
         },
         {
@@ -43756,7 +43763,7 @@
           "player": "Terry Taylor",
           "years": "2021, 2021–2023",
           "status": "overseas_active",
-          "last_team": "Brisbane Bullets",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -43864,12 +43871,12 @@
         },
         {
           "type": "club",
-          "name": "Texas Legends",
-          "shared": 7
+          "name": "Austin Spurs",
+          "shared": 8
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Texas Legends",
           "shared": 7
         },
         {
@@ -44606,12 +44613,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         },
         {
@@ -45820,7 +45827,7 @@
           "player": "Terry Taylor",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Brisbane Bullets",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -45841,7 +45848,7 @@
           "player": "Vic Law",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Ryukyu Golden Kings",
+          "last_team": "Ibaraki Robots",
           "nationality": "United States"
         },
         {
@@ -45867,6 +45874,11 @@
         },
         {
           "type": "club",
+          "name": "Austin Spurs",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Sydney Kings",
           "shared": 4
         },
@@ -45879,11 +45891,6 @@
           "type": "club",
           "name": "Gold Coast Rollers",
           "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 3
         },
         {
           "type": "club",
@@ -50391,7 +50398,7 @@
       "city": "College Park",
       "state": "Georgia",
       "country": "USA",
-      "count": 47,
+      "count": 48,
       "roster": [
         {
           "player": "AJ Griffin",
@@ -50567,6 +50574,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Keon Johnson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "College Park Skyhawks",
+          "nationality": "United States"
+        },
+        {
           "player": "Keshon Gilbert",
           "years": "2026–present",
           "status": "nba_active",
@@ -50724,7 +50738,7 @@
         {
           "type": "club",
           "name": "Long Island Nets",
-          "shared": 9
+          "shared": 10
         },
         {
           "type": "club",
@@ -52700,7 +52714,7 @@
       "city": "Frisco",
       "state": "Texas",
       "country": "USA",
-      "count": 129,
+      "count": 130,
       "roster": [
         {
           "player": "AJ Hammons",
@@ -53575,6 +53589,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Walter Clayton Jr.",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Dallas Mavericks",
+          "nationality": "United States"
+        },
+        {
           "player": "Willie Warren",
           "years": "2018",
           "status": "retired",
@@ -54099,7 +54120,7 @@
           "player": "Keon Johnson",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Maine Celtics",
+          "last_team": "College Park Skyhawks",
           "nationality": "United States"
         },
         {
@@ -54365,17 +54386,17 @@
         },
         {
           "type": "club",
+          "name": "College Park Skyhawks",
+          "shared": 10
+        },
+        {
+          "type": "club",
           "name": "Windy City Bulls",
           "shared": 9
         },
         {
           "type": "club",
           "name": "Lokomotiv Kuban",
-          "shared": 9
-        },
-        {
-          "type": "club",
-          "name": "College Park Skyhawks",
           "shared": 9
         },
         {
@@ -55386,9 +55407,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2022-2023",
+          "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -59929,9 +59950,9 @@
         },
         {
           "player": "Paris Bass",
-          "years": "2023–2024",
+          "years": "2023–2024, 2026–present",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         }
       ],
@@ -65546,9 +65567,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2016-2017",
+          "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -65714,7 +65735,7 @@
       "city": "Goyang",
       "state": "",
       "country": "South Korea",
-      "count": 5,
+      "count": 6,
       "roster": [
         {
           "player": "Alan Williams",
@@ -65745,6 +65766,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Johnny O'Bryant",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Goyang Sono Skygunners",
+          "nationality": "United States"
+        },
+        {
           "player": "Nathan Knight",
           "years": "2025–2026",
           "status": "overseas_active",
@@ -65755,7 +65783,22 @@
       "related": [
         {
           "type": "club",
+          "name": "Lokomotiv Kuban",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Bnei Herzliya",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Northern Arizona Suns",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Wonju DB Promy",
           "shared": 2
         },
         {
@@ -65770,27 +65813,12 @@
         },
         {
           "type": "club",
+          "name": "Maccabi Tel Aviv",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Westchester Knicks",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Long Island Nets",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Maine Red Claws",
           "shared": 1
         }
       ]
@@ -69202,7 +69230,7 @@
           "player": "Paris Bass",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -69339,7 +69367,7 @@
           "player": "Walter Clayton Jr.",
           "years": "2025",
           "status": "nba_active",
-          "last_team": "Memphis Grizzlies",
+          "last_team": "Dallas Mavericks",
           "nationality": "United States"
         },
         {
@@ -69396,6 +69424,11 @@
         },
         {
           "type": "club",
+          "name": "Texas Legends",
+          "shared": 6
+        },
+        {
+          "type": "club",
           "name": "Erie BayHawks",
           "shared": 6
         },
@@ -69412,11 +69445,6 @@
         {
           "type": "club",
           "name": "Leones de Ponce",
-          "shared": 6
-        },
-        {
-          "type": "club",
-          "name": "Ironi Ness Ziona",
           "shared": 6
         }
       ]
@@ -70339,7 +70367,7 @@
           "player": "Paris Bass",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -70606,7 +70634,7 @@
           "player": "Jamorko Pickett",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Fighting Eagles Nagoya",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -71143,7 +71171,7 @@
           "player": "Sean Pedulla",
           "years": "2025–2026",
           "status": "nba_active",
-          "last_team": "Houston Rockets",
+          "last_team": "Sacramento Kings",
           "nationality": "United States"
         },
         {
@@ -77926,7 +77954,7 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         }
       ]
@@ -78457,7 +78485,7 @@
           "player": "Paris Bass",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -80241,9 +80269,9 @@
         },
         {
           "player": "Vic Law",
-          "years": "2023–present",
+          "years": "2023–2026",
           "status": "overseas_active",
-          "last_team": "Ryukyu Golden Kings",
+          "last_team": "Ibaraki Robots",
           "nationality": "United States"
         }
       ],
@@ -83086,7 +83114,7 @@
           "player": "Jamorko Pickett",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Fighting Eagles Nagoya",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -83212,7 +83240,7 @@
           "player": "Paris Bass",
           "years": "2020, 2021",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -83309,12 +83337,12 @@
         },
         {
           "type": "club",
-          "name": "Capitanes de Arecibo",
-          "shared": 4
+          "name": "Taipei Fubon Braves",
+          "shared": 5
         },
         {
           "type": "club",
-          "name": "Taipei Fubon Braves",
+          "name": "Capitanes de Arecibo",
           "shared": 4
         },
         {
@@ -83540,7 +83568,7 @@
           "player": "Johnny O'Bryant",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -84785,7 +84813,7 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 2
         }
       ]
@@ -90531,7 +90559,7 @@
           "player": "Jamorko Pickett",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Fighting Eagles Nagoya",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -95251,7 +95279,7 @@
           "player": "Jamorko Pickett",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Fighting Eagles Nagoya",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -97046,7 +97074,7 @@
           "player": "Keon Johnson",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Maine Celtics",
+          "last_team": "College Park Skyhawks",
           "nationality": "United States"
         },
         {
@@ -99328,7 +99356,7 @@
           "player": "Paris Bass",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         }
       ],
@@ -99961,7 +99989,7 @@
           "player": "Paris Bass",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -100280,7 +100308,7 @@
           "player": "Vic Law",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Ryukyu Golden Kings",
+          "last_team": "Ibaraki Robots",
           "nationality": "United States"
         },
         {
@@ -115087,7 +115115,7 @@
       "city": "Carolina",
       "state": "",
       "country": "Puerto Rico",
-      "count": 39,
+      "count": 40,
       "roster": [
         {
           "player": "Andy Panko",
@@ -115240,7 +115268,7 @@
           "player": "Johnny O'Bryant",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -115297,6 +115325,13 @@
           "years": "2024",
           "status": "overseas_active",
           "last_team": "Qingdao Eagles",
+          "nationality": "United States"
+        },
+        {
+          "player": "Reggie Perry",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Bosna",
           "nationality": "United States"
         },
         {
@@ -115396,12 +115431,12 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Long Island Nets",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "South Bay Lakers",
           "shared": 4
         }
       ]
@@ -127981,12 +128016,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 2
         },
         {
@@ -128637,7 +128672,7 @@
       "city": "Taipei",
       "state": "",
       "country": "Taiwan",
-      "count": 18,
+      "count": 19,
       "roster": [
         {
           "player": "Archie Goodwin",
@@ -128686,6 +128721,13 @@
           "years": "2025",
           "status": "overseas_active",
           "last_team": "Johor Southern Tigers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jamorko Pickett",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -128774,12 +128816,12 @@
         },
         {
           "type": "club",
-          "name": "Capitanes de Arecibo",
-          "shared": 4
+          "name": "Atléticos de San Germán",
+          "shared": 5
         },
         {
           "type": "club",
-          "name": "Atléticos de San Germán",
+          "name": "Capitanes de Arecibo",
           "shared": 4
         },
         {
@@ -138524,12 +138566,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 2
         },
         {
@@ -146938,12 +146980,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         },
         {
@@ -147799,7 +147841,7 @@
           "player": "Sean Pedulla",
           "years": "2026",
           "status": "nba_active",
-          "last_team": "Houston Rockets",
+          "last_team": "Sacramento Kings",
           "nationality": "United States"
         },
         {
@@ -147862,11 +147904,6 @@
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Santa Cruz Warriors",
           "shared": 2
         },
@@ -147883,6 +147920,11 @@
         {
           "type": "club",
           "name": "Memphis Hustle",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Delaware Blue Coats",
           "shared": 2
         }
       ]
@@ -151860,12 +151902,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         },
         {
@@ -156346,7 +156388,7 @@
           "player": "Paris Bass",
           "years": "2019, 2021",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -156425,7 +156467,7 @@
           "player": "Paris Bass",
           "years": "2019, 2020, 2021",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         }
       ],
@@ -158932,7 +158974,7 @@
           "player": "Vic Law",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Ryukyu Golden Kings",
+          "last_team": "Ibaraki Robots",
           "nationality": "United States"
         },
         {
@@ -160792,7 +160834,7 @@
           "player": "Jamorko Pickett",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Fighting Eagles Nagoya",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -175331,12 +175373,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -176782,9 +176824,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2021-2022",
+          "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -177487,9 +177529,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2024-2025",
+          "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         }
       ],
@@ -179259,9 +179301,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2025",
+          "years": "2025, 2025–2026",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -183139,12 +183181,12 @@
         },
         {
           "type": "club",
-          "name": "Sagesse Club",
+          "name": "Al-Ahli Jeddah",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al-Ahli Jeddah",
+          "name": "Cape Town Tigers",
           "shared": 1
         }
       ]
@@ -183197,12 +183239,12 @@
         },
         {
           "type": "club",
-          "name": "Sagesse Club",
+          "name": "Al-Ahli Jeddah",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al-Ahli Jeddah",
+          "name": "Cape Town Tigers",
           "shared": 1
         }
       ]
@@ -183571,12 +183613,12 @@
         },
         {
           "type": "club",
-          "name": "Sagesse Club",
+          "name": "Al-Ahli Jeddah",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al-Ahli Jeddah",
+          "name": "Cape Town Tigers",
           "shared": 1
         }
       ]
@@ -183873,12 +183915,12 @@
         },
         {
           "type": "club",
-          "name": "Sagesse Club",
+          "name": "Al-Ahli Jeddah",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al-Ahli Jeddah",
+          "name": "Cape Town Tigers",
           "shared": 1
         }
       ]
@@ -183888,7 +183930,7 @@
       "city": "Beirut",
       "state": "",
       "country": "Lebanon",
-      "count": 7,
+      "count": 6,
       "roster": [
         {
           "player": "Cleanthony Early",
@@ -183919,13 +183961,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Paris Bass",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Sagesse Club",
-          "nationality": "American"
-        },
-        {
           "player": "Shabazz Muhammad",
           "years": "2024–2025",
           "status": "overseas_active",
@@ -183953,17 +183988,7 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Long Island Nets",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Wisconsin Herd",
           "shared": 2
         },
         {
@@ -183979,6 +184004,16 @@
         {
           "type": "club",
           "name": "Westchester Knicks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Erie BayHawks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Fenerbahçe",
           "shared": 1
         }
       ]
@@ -184096,12 +184131,12 @@
         },
         {
           "type": "club",
-          "name": "Sagesse Club",
+          "name": "Al-Ahli Jeddah",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Al-Ahli Jeddah",
+          "name": "Cape Town Tigers",
           "shared": 1
         }
       ]
@@ -192697,7 +192732,7 @@
       "city": "Mito",
       "state": "",
       "country": "Japan",
-      "count": 4,
+      "count": 5,
       "roster": [
         {
           "player": "Daniel Ochefu",
@@ -192708,9 +192743,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2023-2024",
+          "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -192726,12 +192761,29 @@
           "status": "overseas_active",
           "last_team": "Jilin Northeast Tigers",
           "nationality": "United States"
+        },
+        {
+          "player": "Vic Law",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Ibaraki Robots",
+          "nationality": "United States"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Windy City Bulls",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Lakeland Magic",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Brisbane Bullets",
           "shared": 2
         },
         {
@@ -192757,16 +192809,6 @@
         {
           "type": "club",
           "name": "Maine Red Claws",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Joventut Badalona",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -220175,7 +220217,7 @@
           "player": "Paris Bass",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -225137,7 +225179,7 @@
           "player": "Jamorko Pickett",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "Fighting Eagles Nagoya",
+          "last_team": "Taipei Fubon Braves",
           "nationality": "United States"
         },
         {
@@ -226313,12 +226355,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         }
       ]
@@ -236436,12 +236478,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         },
         {
@@ -237045,7 +237087,7 @@
           "player": "Paris Bass",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         },
         {
@@ -243383,7 +243425,7 @@
       "city": "Beirut",
       "state": "",
       "country": "Lebanon",
-      "count": 6,
+      "count": 7,
       "roster": [
         {
           "player": "Jimmer Fredette",
@@ -243394,9 +243436,9 @@
         },
         {
           "player": "Johnny O'Bryant",
-          "years": "2025-2026",
+          "years": "2025",
           "status": "overseas_active",
-          "last_team": "Sagesse SC",
+          "last_team": "Goyang Sono Skygunners",
           "nationality": "United States"
         },
         {
@@ -243412,6 +243454,13 @@
           "status": "overseas_active",
           "last_team": "Beijing Ducks",
           "nationality": "American / Lebanese"
+        },
+        {
+          "player": "Paris Bass",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Suwon KT Sonicboom",
+          "nationality": "American"
         },
         {
           "player": "Sekou Doumbouya",
@@ -243433,6 +243482,16 @@
           "type": "club",
           "name": "Grand Rapids Drive",
           "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Erie BayHawks",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 2
         },
         {
           "type": "club",
@@ -243458,16 +243517,6 @@
           "type": "club",
           "name": "Kazma",
           "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Al Ahly Cairo",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
         }
       ]
     },
@@ -250241,7 +250290,7 @@
           "player": "Paris Bass",
           "years": "2018, 2019",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         }
       ],
@@ -250650,12 +250699,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         },
         {
@@ -252549,12 +252598,12 @@
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         },
         {
@@ -255772,12 +255821,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Austin Spurs",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Maccabi Tel Aviv",
           "shared": 1
         },
         {
@@ -276391,7 +276440,7 @@
           "player": "Paris Bass",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         }
       ],
@@ -276449,7 +276498,7 @@
           "player": "Paris Bass",
           "years": "2020",
           "status": "overseas_active",
-          "last_team": "Sagesse Club",
+          "last_team": "Suwon KT Sonicboom",
           "nationality": "American"
         }
       ],
@@ -276785,12 +276834,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {
