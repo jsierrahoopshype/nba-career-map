@@ -10041,8 +10041,8 @@
         {
           "player": "KJ Martin",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "Minnesota Timberwolves",
+          "status": "overseas_active",
+          "last_team": "Iowa Wolves",
           "nationality": "United States"
         },
         {
@@ -10454,9 +10454,9 @@
         },
         {
           "player": "Tyler Smith",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "years": "2025–2026, 2026–present",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "United States"
         },
         {
@@ -10556,12 +10556,12 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
-          "shared": 9
+          "name": "Iowa Wolves",
+          "shared": 10
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Wisconsin Herd",
           "shared": 9
         }
       ]
@@ -13965,8 +13965,8 @@
         {
           "player": "Skal Labissiere",
           "years": "2016–2017",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "Haiti"
         },
         {
@@ -15691,7 +15691,7 @@
       "city": "Ljubljana",
       "state": "",
       "country": "Slovenia",
-      "count": 8,
+      "count": 9,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -15720,6 +15720,13 @@
           "status": "nba_active",
           "last_team": "Minnesota Timberwolves",
           "nationality": "French / Beninese"
+        },
+        {
+          "player": "Karlo Matkovic",
+          "years": "2019–2024",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
+          "nationality": "Croatian / Bosnian"
         },
         {
           "player": "Matthew Hurt",
@@ -15758,6 +15765,11 @@
         },
         {
           "type": "club",
+          "name": "Cedevita",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Baskonia",
           "shared": 2
         },
@@ -15784,11 +15796,6 @@
         {
           "type": "club",
           "name": "Split",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Cedevita",
           "shared": 2
         }
       ]
@@ -30535,7 +30542,7 @@
           "player": "Elfrid Payton",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -31014,6 +31021,11 @@
         },
         {
           "type": "club",
+          "name": "Westchester Knicks",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Windy City Bulls",
           "shared": 8
         },
@@ -31031,11 +31043,6 @@
           "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 7
         }
       ]
     },
@@ -31044,7 +31051,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 68,
+      "count": 67,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -31162,13 +31169,6 @@
           "years": "2025–2026",
           "status": "nba_active",
           "last_team": "Sacramento Kings",
-          "nationality": "United States"
-        },
-        {
-          "player": "Elfrid Payton",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -31460,8 +31460,8 @@
         {
           "player": "Skal Labissiere",
           "years": "2023–2025",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "Haiti"
         },
         {
@@ -31529,11 +31529,6 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 7
-        },
-        {
-          "type": "club",
           "name": "Capital City Go-Go",
           "shared": 7
         },
@@ -31546,6 +31541,11 @@
           "type": "club",
           "name": "Cleveland Charge",
           "shared": 7
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 6
         },
         {
           "type": "club",
@@ -32686,7 +32686,7 @@
       "city": "Zagreb",
       "state": "",
       "country": "Croatia",
-      "count": 16,
+      "count": 17,
       "roster": [
         {
           "player": "Adam Harrington",
@@ -32750,6 +32750,13 @@
           "status": "nba_active",
           "last_team": "Utah Jazz",
           "nationality": "Bosnia"
+        },
+        {
+          "player": "Karlo Matkovic",
+          "years": "2018–2019",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
+          "nationality": "Croatian / Bosnian"
         },
         {
           "player": "Kevin Murphy",
@@ -32829,17 +32836,17 @@
         },
         {
           "type": "club",
+          "name": "Cedevita Olimpija",
+          "shared": 3
+        },
+        {
+          "type": "club",
           "name": "Sioux Falls Skyforce",
           "shared": 2
         },
         {
           "type": "club",
           "name": "Baskonia",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Maccabi Tel Aviv",
           "shared": 2
         }
       ]
@@ -37733,7 +37740,7 @@
       "city": "Des Moines",
       "state": "Iowa",
       "country": "USA",
-      "count": 71,
+      "count": 72,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -38009,6 +38016,13 @@
           "nationality": "United States"
         },
         {
+          "player": "KJ Martin",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Iowa Wolves",
+          "nationality": "United States"
+        },
+        {
           "player": "Keita Bates-Diop",
           "years": "2018–2019",
           "status": "overseas_active",
@@ -38237,7 +38251,7 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 9
+          "shared": 10
         },
         {
           "type": "club",
@@ -38579,7 +38593,7 @@
         },
         {
           "player": "John Butler",
-          "years": "2025–2026",
+          "years": "2025–present",
           "status": "overseas_active",
           "last_team": "Wisconsin Herd",
           "nationality": "United States"
@@ -38832,8 +38846,8 @@
         {
           "player": "Tyler Smith",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "United States"
         },
         {
@@ -39437,9 +39451,9 @@
         },
         {
           "player": "Skal Labissiere",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "years": "2025–present",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "Haiti"
         },
         {
@@ -39486,8 +39500,8 @@
         {
           "player": "Tyler Smith",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "United States"
         },
         {
@@ -43369,7 +43383,7 @@
           "player": "Elfrid Payton",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -50210,8 +50224,8 @@
         {
           "player": "Skal Labissiere",
           "years": "2023",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "Haiti"
         },
         {
@@ -52714,7 +52728,7 @@
       "city": "Frisco",
       "state": "Texas",
       "country": "USA",
-      "count": 130,
+      "count": 131,
       "roster": [
         {
           "player": "AJ Hammons",
@@ -53171,6 +53185,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Jeremy Sochan",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Texas Legends",
+          "nationality": "Polish / American"
+        },
+        {
           "player": "Jett Howard",
           "years": "2026–present",
           "status": "nba_active",
@@ -53570,8 +53591,8 @@
         {
           "player": "Tyler Smith",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "United States"
         },
         {
@@ -62782,7 +62803,7 @@
         },
         {
           "type": "club",
-          "name": "Split",
+          "name": "Cedevita",
           "shared": 3
         }
       ]
@@ -76271,8 +76292,8 @@
         {
           "player": "Skal Labissiere",
           "years": "2022",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "Haiti"
         },
         {
@@ -89094,7 +89115,7 @@
       "city": "White Plains",
       "state": "New York",
       "country": "USA",
-      "count": 91,
+      "count": 92,
       "roster": [
         {
           "player": "Allen Crabbe",
@@ -89286,6 +89307,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Elfrid Payton",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Westchester Knicks",
+          "nationality": "United States"
+        },
+        {
           "player": "Feron Hunt",
           "years": "2022, 2022",
           "status": "overseas_active",
@@ -89455,7 +89483,7 @@
         },
         {
           "player": "Kevin McCullar",
-          "years": "2024–present",
+          "years": "2024–2026",
           "status": "nba_active",
           "last_team": "New York Knicks",
           "nationality": "United States"
@@ -89631,8 +89659,8 @@
         {
           "player": "Skal Labissiere",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "Washington Wizards",
+          "status": "overseas_active",
+          "last_team": "Capital City Go-Go",
           "nationality": "Haiti"
         },
         {
@@ -89752,7 +89780,7 @@
         {
           "type": "club",
           "name": "Austin Spurs",
-          "shared": 7
+          "shared": 8
         },
         {
           "type": "club",
@@ -97446,8 +97474,8 @@
         {
           "player": "Tyler Smith",
           "years": "2023–2024",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "United States"
         }
       ],
@@ -128598,8 +128626,8 @@
         {
           "player": "KJ Martin",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Minnesota Timberwolves",
+          "status": "overseas_active",
+          "last_team": "Iowa Wolves",
           "nationality": "United States"
         },
         {
@@ -129743,12 +129771,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
@@ -134310,8 +134338,8 @@
         {
           "player": "Tyler Smith",
           "years": "2021–2022",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "United States"
         }
       ],
@@ -138409,12 +138437,12 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Canton Charge",
           "shared": 1
         },
         {
@@ -139367,7 +139395,7 @@
           "player": "Elfrid Payton",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -162939,7 +162967,7 @@
       "city": "Birmingham",
       "state": "Alabama",
       "country": "USA",
-      "count": 36,
+      "count": 37,
       "roster": [
         {
           "player": "Antonio Reeves",
@@ -163008,7 +163036,7 @@
           "player": "Elfrid Payton",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -163068,6 +163096,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Jaxson Hayes",
+          "years": "2021",
+          "status": "nba_active",
+          "last_team": "Utah Jazz",
+          "nationality": "American / Slovenian"
+        },
+        {
           "player": "Jordan Hawkins",
           "years": "2023–2024",
           "status": "nba_active",
@@ -163104,7 +163139,7 @@
         },
         {
           "player": "Karlo Matkovic",
-          "years": "2024, 2024",
+          "years": "2024, 2024–2025",
           "status": "nba_active",
           "last_team": "New Orleans Pelicans",
           "nationality": "Croatian / Bosnian"
@@ -163198,7 +163233,7 @@
         {
           "type": "club",
           "name": "Westchester Knicks",
-          "shared": 5
+          "shared": 6
         },
         {
           "type": "club",
@@ -175373,12 +175408,12 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "AEK Athens",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Stockton Kings",
           "shared": 1
         }
       ]
@@ -175822,7 +175857,7 @@
           "player": "Elfrid Payton",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Stockton Kings",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -175926,11 +175961,6 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
-          "shared": 3
-        },
-        {
-          "type": "club",
           "name": "Maine Celtics",
           "shared": 3
         },
@@ -175942,6 +175972,11 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Fort Wayne Mad Ants",
           "shared": 2
         }
       ]
@@ -210673,12 +210708,12 @@
         },
         {
           "type": "club",
-          "name": "Split",
+          "name": "Cedevita",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Cedevita",
+          "name": "Split",
           "shared": 0
         },
         {
@@ -214473,7 +214508,7 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -226355,12 +226390,12 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Stockton Kings",
           "shared": 1
         }
       ]
@@ -241036,9 +241071,9 @@
       "roster": [
         {
           "player": "Jeremy Sochan",
-          "years": "2020–2021",
-          "status": "nba_active",
-          "last_team": "Portland Trail Blazers",
+          "years": "2020–2022",
+          "status": "overseas_active",
+          "last_team": "Texas Legends",
           "nationality": "Polish / American"
         },
         {
@@ -241061,6 +241096,11 @@
           "type": "club",
           "name": "ratiopharm Ulm",
           "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 1
         },
         {
           "type": "club",
@@ -241090,11 +241130,6 @@
         {
           "type": "club",
           "name": "Alba Berlin",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bayern Munich",
           "shared": 0
         }
       ]
@@ -276834,12 +276869,12 @@
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
@@ -299810,8 +299845,8 @@
         {
           "player": "Tyler Smith",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "United States"
         }
       ],
@@ -300278,64 +300313,6 @@
         }
       ]
     },
-    "Cedevita / Cedevita Olimpija": {
-      "club": "Cedevita / Cedevita Olimpija",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Karlo Matkovic",
-          "years": "2018–2024",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
-          "nationality": "Croatian / Bosnian"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Birmingham Squadron",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Mega Basket",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "OKK Beograd",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "NBA G League United",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "TNT Tropang 5G",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
-          "shared": 0
-        }
-      ]
-    },
     "OKK Beograd": {
       "club": "OKK Beograd",
       "city": "Belgrade",
@@ -300388,7 +300365,12 @@
         },
         {
           "type": "club",
-          "name": "Cedevita / Cedevita Olimpija",
+          "name": "Cedevita",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Cedevita Olimpija",
           "shared": 1
         },
         {
@@ -300399,11 +300381,6 @@
         {
           "type": "club",
           "name": "Partizan",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "FMP",
           "shared": 0
         }
       ]

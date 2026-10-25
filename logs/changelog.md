@@ -1,3 +1,23 @@
+## 2026-10-25 — incremental run
+
+- Players updated: **552** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **4**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **4** (4 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Seattle SuperSonics / , Oklahoma City Thunder
+  - Jeremy Sochan: Portland Trail Blazers → Texas Legends
+  - KJ Martin: Minnesota Timberwolves → Iowa Wolves
+  - Tyler Smith: Dallas Mavericks → Rio Grande Valley Vipers
+  - Elfrid Payton: Stockton Kings → Westchester Knicks
+  - Jeremy Sochan: [nba_active → overseas_active]
+  - KJ Martin: [nba_active → overseas_active]
+  - Skal Labissiere: [nba_active → overseas_active]
+  - Tyler Smith: [nba_active → overseas_active]
+
 ## 2026-10-24 — incremental run
 
 - Players updated: **498** (1 new)
