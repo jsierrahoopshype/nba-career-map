@@ -1,3 +1,18 @@
+## 2026-10-26 — incremental run
+
+- Players updated: **504** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Jabari Parker: Partizan → Joventut Badalona
+  - Kobe Bufkin: Laketown Squadron → Utah Jazz
+  - Enrique Freeman: [nba_active → overseas_active]
+  - Kobe Bufkin: [overseas_active → nba_active]
+
 ## 2026-10-25 — incremental run
 
 - Players updated: **552** (1 new)

@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 169,
+    "date_disagreement": 170,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -556,6 +556,16 @@
       "used_source": "basketball-reference",
       "wikidata": "1949-10-11",
       "wikidata_id": "Q2326383",
+      "years_apart": 0
+    },
+    {
+      "basketball_reference": "1951-03-24",
+      "places_kept": true,
+      "player": "Earl Williams",
+      "used": "1951-03-24",
+      "used_source": "basketball-reference",
+      "wikidata": "1951-03-28",
+      "wikidata_id": "Q1634959",
       "years_apart": 0
     },
     {
@@ -1699,7 +1709,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-25",
+  "generated": "2026-10-26",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",
