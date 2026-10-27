@@ -1,3 +1,23 @@
+## 2026-10-27 — incremental run
+
+- Players updated: **500** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **6**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **1**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Shandong Honey Badger
+  - Markquis Nowell: New Orleans Pelicans → Laketown Squadron
+  - Omer Yurtseven: Golden State Warriors → Rio Grande Valley Vipers
+  - Rakeem Christmas: Amartha Hangtuah → Manama Club
+  - Stephen Zimmerman: Vancouver Bandits → Shandong Honey Badger
+  - Dalton Knecht: Los Angeles Lakers → New York Knicks
+  - Micah Peavy: Memphis Grizzlies → Oklahoma City Thunder
+  - Markquis Nowell: [nba_active → overseas_active]
+  - Omer Yurtseven: [nba_active → overseas_active]
+
 ## 2026-10-26 — incremental run
 
 - Players updated: **504** (1 new)

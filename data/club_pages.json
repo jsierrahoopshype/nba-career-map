@@ -994,7 +994,7 @@
       "city": "Seville",
       "state": "",
       "country": "Spain",
-      "count": 37,
+      "count": 38,
       "roster": [
         {
           "player": "A.J. Bramlett",
@@ -1236,6 +1236,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Tomas Satoransky",
+          "years": "2009–2014",
+          "status": "overseas_active",
+          "last_team": "Hapoel Tel Aviv",
+          "nationality": "Czech Republic"
+        },
+        {
           "player": "Travis Leslie",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -1270,6 +1277,11 @@
         },
         {
           "type": "club",
+          "name": "FC Barcelona",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Long Island Nets",
           "shared": 4
         },
@@ -1291,11 +1303,6 @@
         {
           "type": "club",
           "name": "Baskonia",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
           "shared": 3
         }
       ]
@@ -9039,8 +9046,8 @@
         {
           "player": "Omer Yurtseven",
           "years": "2023",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "Turkish"
         },
         {
@@ -10007,7 +10014,7 @@
           "player": "Jordan Hamilton",
           "years": "2016",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -10111,8 +10118,8 @@
         {
           "player": "Markquis Nowell",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Laketown Squadron",
           "nationality": "United States"
         },
         {
@@ -10197,9 +10204,9 @@
         },
         {
           "player": "Omer Yurtseven",
-          "years": "2026",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "years": "2026, 2026–present",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "Turkish"
         },
         {
@@ -11166,7 +11173,7 @@
       "city": "Oklahoma City",
       "state": "Oklahoma",
       "country": "USA",
-      "count": 87,
+      "count": 88,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -11567,6 +11574,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Micah Peavy",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Oklahoma City Thunder",
+          "nationality": "United States"
+        },
+        {
           "player": "Michael Gbinije",
           "years": "2021–2022",
           "status": "retired",
@@ -11618,8 +11632,8 @@
         {
           "player": "Omer Yurtseven",
           "years": "2021",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "Turkish"
         },
         {
@@ -12396,7 +12410,7 @@
           "player": "Stephen Zimmerman",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -13460,12 +13474,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 6
         },
         {
@@ -13777,7 +13791,7 @@
           "player": "Jordan Hamilton",
           "years": "2014–2015",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -14514,7 +14528,7 @@
           "player": "Rakeem Christmas",
           "years": "2017",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -16219,7 +16233,7 @@
           "player": "Rakeem Christmas",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -16268,7 +16282,7 @@
           "player": "Stephen Zimmerman",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -27338,8 +27352,8 @@
         {
           "player": "Markquis Nowell",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Laketown Squadron",
           "nationality": "United States"
         },
         {
@@ -29685,7 +29699,7 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         }
       ]
@@ -30950,7 +30964,7 @@
           "player": "Stephen Zimmerman",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -37324,12 +37338,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         }
       ]
@@ -37541,7 +37555,7 @@
           "player": "Jordan Hamilton",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -40538,7 +40552,7 @@
           "player": "Stephen Zimmerman",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -40838,7 +40852,7 @@
           "player": "Jordan Hamilton",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -40866,7 +40880,7 @@
           "player": "Rakeem Christmas",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -43728,7 +43742,7 @@
           "player": "Rakeem Christmas",
           "years": "2015–2017",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -44367,8 +44381,8 @@
         {
           "player": "Omer Yurtseven",
           "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "Turkish"
         },
         {
@@ -44687,7 +44701,7 @@
           "player": "Rakeem Christmas",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -46954,8 +46968,8 @@
         {
           "player": "Omer Yurtseven",
           "years": "2013–2016",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "Turkish"
         },
         {
@@ -51670,7 +51684,7 @@
           "player": "Jordan Hamilton",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -54955,8 +54969,8 @@
         {
           "player": "Markquis Nowell",
           "years": "2023–2024, 2024",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
+          "status": "overseas_active",
+          "last_team": "Laketown Squadron",
           "nationality": "United States"
         },
         {
@@ -60005,12 +60019,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -62049,7 +62063,7 @@
           "player": "Jordan Hamilton",
           "years": "2012",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -66284,7 +66298,7 @@
           "player": "Jordan Hamilton",
           "years": "2014",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -71938,7 +71952,7 @@
           "player": "Stephen Zimmerman",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -76293,7 +76307,7 @@
           "player": "Rakeem Christmas",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -78261,7 +78275,7 @@
           "player": "Dalton Knecht",
           "years": "2025",
           "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
+          "last_team": "New York Knicks",
           "nationality": "United States"
         },
         {
@@ -78603,7 +78617,7 @@
           "player": "Stephen Zimmerman",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -78688,13 +78702,13 @@
         },
         {
           "type": "club",
-          "name": "Delaware Blue Coats",
+          "name": "Westchester Knicks",
           "shared": 8
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 7
+          "name": "Delaware Blue Coats",
+          "shared": 8
         },
         {
           "type": "club",
@@ -81047,8 +81061,8 @@
         {
           "player": "Omer Yurtseven",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Golden State Warriors",
+          "status": "overseas_active",
+          "last_team": "Rio Grande Valley Vipers",
           "nationality": "Turkish"
         },
         {
@@ -89122,7 +89136,7 @@
       "city": "White Plains",
       "state": "New York",
       "country": "USA",
-      "count": 92,
+      "count": 93,
       "roster": [
         {
           "player": "Allen Crabbe",
@@ -89227,6 +89241,13 @@
           "years": "2022–2023, 2024",
           "status": "overseas_active",
           "last_team": "Beşiktaş",
+          "nationality": "United States"
+        },
+        {
+          "player": "Dalton Knecht",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New York Knicks",
           "nationality": "United States"
         },
         {
@@ -89674,7 +89695,7 @@
           "player": "Stephen Zimmerman",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -89791,17 +89812,17 @@
         },
         {
           "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Oklahoma City Blue",
           "shared": 7
         },
         {
           "type": "club",
           "name": "Iowa Wolves",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "South Bay Lakers",
           "shared": 7
         },
         {
@@ -94800,7 +94821,7 @@
           "player": "Rakeem Christmas",
           "years": "2020",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -102910,7 +102931,7 @@
           "player": "Jordan Hamilton",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -107581,7 +107602,7 @@
       "city": "Sevilla",
       "state": "",
       "country": "Spain",
-      "count": 14,
+      "count": 13,
       "roster": [
         {
           "player": "Andre Turner",
@@ -107663,13 +107684,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Tomas Satoransky",
-          "years": "2009–2014",
-          "status": "overseas_active",
-          "last_team": "Hapoel Tel Aviv",
-          "nationality": "Czech Republic"
-        },
-        {
           "player": "Uros Slokar",
           "years": "2015-2016",
           "status": "retired",
@@ -107687,13 +107701,13 @@
       "related": [
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Joventut Badalona",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Joventut Badalona",
-          "shared": 4
+          "name": "FC Barcelona",
+          "shared": 3
         },
         {
           "type": "club",
@@ -113113,7 +113127,7 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 2
         }
       ]
@@ -124032,7 +124046,7 @@
           "player": "Rakeem Christmas",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -127807,7 +127821,7 @@
           "player": "Jordan Hamilton",
           "years": "2016",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -128776,7 +128790,7 @@
           "player": "Jordan Hamilton",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -128818,7 +128832,7 @@
           "player": "Stephen Zimmerman",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -130783,12 +130797,12 @@
         },
         {
           "type": "club",
-          "name": "Lakeland Magic",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Lakeland Magic",
           "shared": 1
         }
       ]
@@ -140536,7 +140550,7 @@
           "player": "Jordan Hamilton",
           "years": "2017, 2019",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -145592,7 +145606,7 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         }
       ]
@@ -153074,7 +153088,7 @@
           "player": "Jordan Hamilton",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         }
       ],
@@ -154771,7 +154785,7 @@
           "player": "Stephen Zimmerman",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         }
       ],
@@ -156128,7 +156142,7 @@
           "player": "Rakeem Christmas",
           "years": "2022",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         }
       ],
@@ -162901,7 +162915,7 @@
           "player": "Jordan Hamilton",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -166410,7 +166424,7 @@
           "player": "Stephen Zimmerman",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         }
       ],
@@ -176210,12 +176224,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -179145,7 +179159,7 @@
           "player": "Rakeem Christmas",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -182812,7 +182826,7 @@
           "player": "Jordan Hamilton",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -187972,7 +187986,7 @@
           "player": "Jordan Hamilton",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -189200,12 +189214,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -189487,7 +189501,7 @@
           "player": "Jordan Hamilton",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         }
       ],
@@ -189573,7 +189587,7 @@
           "player": "Jordan Hamilton",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -189822,7 +189836,7 @@
           "player": "Stephen Zimmerman",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         }
       ],
@@ -191176,7 +191190,7 @@
           "player": "Jordan Hamilton",
           "years": "2016",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -191786,12 +191800,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -193453,12 +193467,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -193491,7 +193505,7 @@
           "player": "Jordan Hamilton",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         }
       ],
@@ -197729,12 +197743,19 @@
       "city": "Saitama",
       "state": "",
       "country": "Japan",
-      "count": 2,
+      "count": 3,
       "roster": [
         {
           "player": "David Benoit",
           "years": "2005-2007",
           "status": "retired",
+          "last_team": "Saitama Broncos",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jordan Hamilton",
+          "years": "2026–present",
+          "status": "overseas_active",
           "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
@@ -197749,7 +197770,27 @@
       "related": [
         {
           "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Idaho Stampede",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Maccabi Tel Aviv",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Reno Bighorns",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Iowa Energy",
           "shared": 1
         },
         {
@@ -197764,27 +197805,7 @@
         },
         {
           "type": "club",
-          "name": "Shanghai Sharks",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaiqueríes de Margarita",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fayetteville Patriots",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Olympia Larissa",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hitachi SunRockers",
+          "name": "Hapoel Tel Aviv",
           "shared": 1
         }
       ]
@@ -199244,7 +199265,7 @@
           "player": "Jordan Hamilton",
           "years": "2015",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -201742,7 +201763,7 @@
           "player": "Jordan Hamilton",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         },
         {
@@ -201821,7 +201842,7 @@
           "player": "Jordan Hamilton",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
+          "last_team": "Saitama Broncos",
           "nationality": "United States"
         }
       ],
@@ -204555,7 +204576,7 @@
       "city": "Manama",
       "state": "",
       "country": "Bahrain",
-      "count": 3,
+      "count": 4,
       "roster": [
         {
           "player": "Devin Ebanks",
@@ -204577,6 +204598,13 @@
           "status": "retired",
           "last_team": "Sichuan Blue Whales",
           "nationality": "United States"
+        },
+        {
+          "player": "Rakeem Christmas",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Manama Club",
+          "nationality": "United States"
         }
       ],
       "related": [
@@ -204587,17 +204615,22 @@
         },
         {
           "type": "club",
+          "name": "Fort Wayne Mad Ants",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Galatasaray",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Grand Rapids Drive",
           "shared": 2
         },
         {
           "type": "club",
           "name": "Olimpia Milano",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Fort Wayne Mad Ants",
           "shared": 1
         },
         {
@@ -204613,11 +204646,6 @@
         {
           "type": "club",
           "name": "Long Island Nets",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Galatasaray",
           "shared": 1
         }
       ]
@@ -205704,7 +205732,7 @@
           "player": "Rakeem Christmas",
           "years": "2023, 2024",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         }
       ],
@@ -214842,7 +214870,7 @@
           "player": "Rakeem Christmas",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -215404,7 +215432,7 @@
           "player": "Stephen Zimmerman",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         }
       ],
@@ -216047,7 +216075,7 @@
           "player": "Rakeem Christmas",
           "years": "2019",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         },
         {
@@ -219442,7 +219470,7 @@
           "player": "Rakeem Christmas",
           "years": "2023, 2023",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         }
       ],
@@ -219751,12 +219779,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -219821,12 +219849,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -219891,12 +219919,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -219953,12 +219981,12 @@
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -223993,12 +224021,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
+          "name": "Panathinaikos",
           "shared": 1
         },
         {
@@ -227409,12 +227437,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         }
       ]
@@ -233101,9 +233129,9 @@
         },
         {
           "player": "Stephen Zimmerman",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         },
         {
@@ -241064,7 +241092,7 @@
         },
         {
           "type": "club",
-          "name": "Reyer Venezia",
+          "name": "Real Betis",
           "shared": 1
         }
       ]
@@ -247139,64 +247167,6 @@
         }
       ]
     },
-    "The Saitama Broncos": {
-      "club": "The Saitama Broncos",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Jordan Hamilton",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "The Saitama Broncos",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Reno Bighorns",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Iowa Energy",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Tel Aviv",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Hapoel Holon",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Guaros de Lara",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Cocodrilos de Caracas",
-          "shared": 1
-        }
-      ]
-    },
     "Nevada Desert Dogs": {
       "club": "Nevada Desert Dogs",
       "city": "Mesquite",
@@ -248206,7 +248176,7 @@
           "player": "Rakeem Christmas",
           "years": "2018",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         }
       ],
@@ -265692,6 +265662,90 @@
         }
       ]
     },
+    "Laketown Squadron": {
+      "club": "Laketown Squadron",
+      "city": "Kenner",
+      "state": "Louisiana",
+      "country": "USA",
+      "count": 5,
+      "roster": [
+        {
+          "player": "Hunter Dickinson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Laketown Squadron",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jaron Pierre Jr.",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans"
+        },
+        {
+          "player": "Julian Reese",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans",
+          "nationality": "United States"
+        },
+        {
+          "player": "Malik Dia",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "New Orleans Pelicans"
+        },
+        {
+          "player": "Markquis Nowell",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Laketown Squadron",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Raptors 905",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Rio Grande Valley Vipers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Baskonia",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Birmingham Squadron",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Texas Legends",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Idaho Stampede",
+          "shared": 0
+        }
+      ]
+    },
     "Sicilia Messina": {
       "club": "Sicilia Messina",
       "city": "Messina",
@@ -273141,12 +273195,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -273199,12 +273253,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -273257,12 +273311,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -279678,9 +279732,9 @@
       "roster": [
         {
           "player": "Rakeem Christmas",
-          "years": "2024–present",
+          "years": "2024–2026",
           "status": "overseas_active",
-          "last_team": "Amartha Hangtuah",
+          "last_team": "Manama Club",
           "nationality": "United States"
         }
       ],
@@ -288690,7 +288744,65 @@
           "player": "Stephen Zimmerman",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Vancouver Bandits",
+          "last_team": "Shandong Honey Badger",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Westchester Knicks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Erie BayHawks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "South Bay Lakers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capitanes de Arecibo",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Cairns Taipans",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Taipei Fubon Braves",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Telekom Baskets Bonn",
+          "shared": 1
+        }
+      ]
+    },
+    "Shandong Honey Badger": {
+      "club": "Shandong Honey Badger",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Stephen Zimmerman",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Shandong Honey Badger",
           "nationality": "United States"
         }
       ],
@@ -292363,12 +292475,12 @@
         },
         {
           "type": "club",
-          "name": "Indiana Mad Ants",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Sevilla",
+          "name": "Indiana Mad Ants",
           "shared": 1
         },
         {
@@ -300476,83 +300588,6 @@
         {
           "type": "club",
           "name": "Maccabi Rishon LeZion",
-          "shared": 0
-        }
-      ]
-    },
-    "Laketown Squadron": {
-      "club": "Laketown Squadron",
-      "city": "Kenner",
-      "state": "Louisiana",
-      "country": "USA",
-      "count": 4,
-      "roster": [
-        {
-          "player": "Hunter Dickinson",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Laketown Squadron",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jaron Pierre Jr.",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans"
-        },
-        {
-          "player": "Julian Reese",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans",
-          "nationality": "United States"
-        },
-        {
-          "player": "Malik Dia",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "New Orleans Pelicans"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Raptors 905",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Birmingham Squadron",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Idaho Stampede",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Rockford Lightning",
           "shared": 0
         }
       ]
