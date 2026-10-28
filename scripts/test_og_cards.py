@@ -123,7 +123,7 @@ def test_card_renders_without_a_headshot():
     assert shots.face("Anyone") is None, "must not reach the network when off"
     im = oc.render_card(GLOBETROTTER, rings, oc.Coords(), shots)
     assert im.size == (oc.W, oc.H)
-    # the silhouette sits inside its circle, so the card's corner is panel white
+    # the initials sit inside their circle, so the card's corner is panel white
     assert im.getpixel((oc.W - 4, oc.H - 4))[0] > 200
     print("test_card_renders_without_a_headshot PASS")
 
