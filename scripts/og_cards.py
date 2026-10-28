@@ -17,9 +17,9 @@ Daily cost is small either way: a card is rewritten only when its bytes change,
 and the fields it draws from move for 3 to 8 players a day.
 
 HEADSHOTS come from the nba-headshots repo, which holds the ~570 current
-players. That covers around 545 of ours, so most cards fall back to a drawn
-silhouette -- deliberately in the same frame and position, so a card with a
-face and a card without read as the same design.
+players. That covers around 545 of ours. The cards draw its face-fill files
+(the one HoopsMatic headshot: the face fills the circle, on light grey); a
+player without one gets his initials in the same circle.
 
 Run:  python3 scripts/og_cards.py            # generate
       python3 scripts/og_cards.py --refresh-world   # re-download the outlines
@@ -82,6 +82,15 @@ HEADSHOT_INDEX_ALL = ("https://raw.githubusercontent.com/jsierrahoopshype/"
                       "nba-headshots/main/players/metadata/players_all.json")
 HEADSHOT_FACE = ("https://raw.githubusercontent.com/jsierrahoopshype/"
                  "nba-headshots/main/players/headshots/face/")
+# The site's cards use face-fill (320px WebP, same file stems as face/). Its
+# .hashes.json lists the players that have one. quiz_clips.py and
+# commons_photos.py keep the face/ cut-outs their masking is built around.
+HEADSHOT_FACE_FILL = ("https://raw.githubusercontent.com/jsierrahoopshype/"
+                      "nba-headshots/main/players/headshots/face-fill-320/")
+FACE_FILL_LIST = ("https://raw.githubusercontent.com/jsierrahoopshype/"
+                  "nba-headshots/main/players/headshots/face-fill/.hashes.json")
+CIRCLE = (232, 232, 237)      # #e8e8ed, behind every portrait
+INITIALS = (142, 142, 147)    # #8e8e93
 
 WATER = (214, 232, 247)
 LAND = (247, 246, 243)
@@ -257,11 +266,15 @@ def _norm(name: str) -> str:
 class Headshots:
     """Lazy, failure-tolerant access to the nba-headshots repo."""
 
-    def __init__(self, enabled: bool = True, index_url: str = HEADSHOT_INDEX):
+    def __init__(self, enabled: bool = True, index_url: str = HEADSHOT_INDEX,
+                 face_fill: bool = False):
         self.by_name: dict[str, str] = {}
         self.cache: dict[str, object] = {}
         self.enabled = enabled
         self.index_url = index_url
+        # face_fill: by_name maps to "<stem>.webp" in face-fill-320/, and only
+        # for players face-fill has (the rest get initials).
+        self.face_fill = face_fill
         if not enabled:
             return
         try:
@@ -272,9 +285,21 @@ class Headshots:
                 if shot.get("face") and shot.get("filename"):
                     self.by_name[_norm(rec.get("full_name", ""))] = shot["filename"]
         except Exception as exc:  # noqa: BLE001
-            # Never fail a build over portraits: every card has a silhouette.
-            print(f"  [headshots] index unavailable ({exc}); using silhouettes")
+            # Never fail a build over portraits: every card has a fallback.
+            print(f"  [headshots] index unavailable ({exc}); no portraits")
             self.enabled = False
+            return
+        if face_fill:
+            try:
+                with urllib.request.urlopen(FACE_FILL_LIST, timeout=60) as r:
+                    stems = set(json.loads(r.read().decode("utf-8"))["files"])
+            except Exception as exc:  # noqa: BLE001
+                print(f"  [headshots] face-fill list unavailable ({exc}); no portraits")
+                self.enabled = False
+                return
+            self.by_name = {k: v.rsplit(".", 1)[0] + ".webp"
+                            for k, v in self.by_name.items()
+                            if v.rsplit(".", 1)[0] in stems}
 
     def face(self, name: str):
         if not self.enabled:
@@ -285,7 +310,8 @@ class Headshots:
         if fn in self.cache:
             return self.cache[fn]
         try:
-            with urllib.request.urlopen(HEADSHOT_FACE + fn, timeout=60) as r:
+            base = HEADSHOT_FACE_FILL if self.face_fill else HEADSHOT_FACE
+            with urllib.request.urlopen(base + fn, timeout=60) as r:
                 im = Image.open(io.BytesIO(r.read())).convert("RGBA")
         except Exception:  # noqa: BLE001
             im = None
@@ -293,7 +319,8 @@ class Headshots:
         return im
 
 
-# How a portrait is fitted into its frame. Shared with scripts/quiz_clips.py.
+# How quiz_clips.py fits a face/ cut-out into its frame (the cards draw
+# face-fill files as they are).
 PORTRAIT_PAD = 0.08    # breathing room around the subject, as a share of it
 HEAD_BIAS = 0.08       # where in the vertical overflow the square crop starts
 
@@ -335,27 +362,23 @@ def cover_square(im, size: int, *, pad: float = PORTRAIT_PAD,
     return im.crop((left, top, left + size, top + size))
 
 
-def _draw_silhouette(im, box):
-    """A plain head-and-shoulders mark, drawn rather than fetched.
+def initials(name: str) -> str:
+    """First letters of the first and last name (suffixes like Jr. skipped)."""
+    w = [x for x in re.sub(r"[.,]", "", name or "").split()
+         if x.lower() not in ("jr", "sr", "ii", "iii", "iv")]
+    return (w[0][0] + (w[-1][0] if len(w) > 1 else "")).upper() if w else ""
 
-    The headshots repo ships an SVG silhouette, but rasterising SVG would add a
-    dependency for a shape this simple. Same frame and position as a real
-    portrait, so the two card variants read identically.
-    """
+
+def _draw_initials(im, box, name: str):
+    """No portrait: the player's initials in the same grey circle."""
     x, y, size = box
-    # Drawn on its own layer and masked to the circle, so the shoulders end at
-    # the frame instead of running off the bottom of the card.
-    layer = Image.new("RGBA", (size, size), (226, 228, 232, 255))
-    ld = ImageDraw.Draw(layer)
-    hr = size * 0.30
-    hx, hy = size / 2, size * 0.36
-    ld.ellipse([hx - hr, hy - hr, hx + hr, hy + hr], fill=(196, 200, 208, 255))
-    br = size * 0.44
-    ld.ellipse([hx - br, size * 0.66, hx + br, size * 1.55],
-               fill=(196, 200, 208, 255))
-    mask = Image.new("L", (size, size), 0)
-    ImageDraw.Draw(mask).ellipse([0, 0, size - 1, size - 1], fill=255)
-    im.paste(layer, (x, y), mask)
+    d = ImageDraw.Draw(im)
+    d.ellipse([x, y, x + size - 1, y + size - 1], fill=CIRCLE)
+    ini = initials(name)
+    if ini:
+        d.text((x + size / 2, y + size / 2), ini,
+               font=_font("DejaVuSans-Bold.ttf", int(size * 0.36)),
+               fill=INITIALS, anchor="mm")
 
 
 def _arc(p0, p1, lift=0.26, n=30):
@@ -410,21 +433,17 @@ def render_card(player: dict, rings: list, coords: Coords, shots: Headshots):
     px, py = W - portrait - 48, H - PANEL_H + (PANEL_H - portrait) // 2
     face = shots.face(player.get("display_name") or player.get("player") or "")
     if face is not None:
-        cut = cover_square(face, portrait)
-        # The same light frame the drawn silhouette sits on, so a card with a
-        # portrait and a card without read as one design. It shows only where
-        # the cut-out is transparent, which on a circular crop is the corners.
-        tile = Image.new("RGB", (portrait, portrait), (226, 228, 232))
+        # face-fill is already framed (the face fills the square), so it is
+        # scaled to the circle as is, on the same grey the initials use.
+        cut = face.resize((portrait, portrait), Image.LANCZOS)
+        tile = Image.new("RGB", (portrait, portrait), CIRCLE)
         tile.paste(cut, (0, 0), cut if cut.mode == "RGBA" else None)
         mask = Image.new("L", (portrait, portrait), 0)
         ImageDraw.Draw(mask).ellipse([0, 0, portrait, portrait], fill=255)
         im.paste(tile, (px, py), mask)
-        d.ellipse([px, py, px + portrait, py + portrait],
-                  outline=(226, 228, 232), width=3)
     else:
-        _draw_silhouette(im, (px, py, portrait))
-        d.ellipse([px, py, px + portrait, py + portrait],
-                  outline=(226, 228, 232), width=3)
+        _draw_initials(im, (px, py, portrait),
+                       player.get("display_name") or player.get("player") or "")
 
     name = player.get("display_name") or player.get("player") or ""
     size = 54 if len(name) <= 22 else (44 if len(name) <= 30 else 36)
@@ -446,7 +465,8 @@ def render_card(player: dict, rings: list, coords: Coords, shots: Headshots):
 
 # Bumped whenever render_card's output changes for unchanged inputs.
 # 2: portraits cover-crop to the subject instead of scaling the whole image.
-CARD_VERSION = 2
+# 3: face-fill portraits on a grey circle; initials instead of a silhouette.
+CARD_VERSION = 3
 
 
 def card_signature(player: dict, face_file: str | None) -> str:
@@ -494,7 +514,7 @@ def write_all(players: list, out_dir: Path = CARD_DIR,
         old_sigs = {}
     new_sigs: dict[str, str] = {}
 
-    coords, shots = Coords(), Headshots(enabled=headshots)
+    coords, shots = Coords(), Headshots(enabled=headshots, face_fill=True)
     rings = None          # geometry is only loaded if something needs drawing
     expected, written, unchanged, faces = set(), 0, 0, 0
 
@@ -521,9 +541,12 @@ def write_all(players: list, out_dir: Path = CARD_DIR,
             rings = load_rings()
         im = render_card(p, rings, coords, shots)
         # Flattened to a fixed palette: with a vector map the card is a handful
-        # of flat colours plus a portrait, so this costs nothing visible.
+        # of flat colours plus a portrait. A face-fill portrait is big enough
+        # that 32 colours posterise it (skin borrows the route's red), so cards
+        # with one get 64; about 2.5 KB more each.
         buf = io.BytesIO()
-        im.quantize(colors=32, dither=Image.NONE).save(buf, "PNG", optimize=True)
+        im.quantize(colors=64 if face_file else 32,
+                    dither=Image.NONE).save(buf, "PNG", optimize=True)
         body = buf.getvalue()
         if path.exists() and path.read_bytes() == body:
             unchanged += 1
@@ -551,7 +574,7 @@ def main() -> None:
     ap.add_argument("--refresh-world", action="store_true",
                     help="re-download assets/world.geo.json and exit")
     ap.add_argument("--no-headshots", action="store_true",
-                    help="skip the portrait fetch (silhouettes everywhere)")
+                    help="skip the portrait fetch (initials everywhere)")
     ap.add_argument("--limit", type=int, help="only the first N, for a quick look")
     ap.add_argument("--force", action="store_true",
                     help="ignore the signatures and redraw every card")
