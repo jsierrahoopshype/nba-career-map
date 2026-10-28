@@ -1,3 +1,18 @@
+## 2026-10-28 — incremental run
+
+- Players updated: **553** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Baloncesto Sevilla B, Seattle SuperSonics / , Oklahoma City Thunder
+  - John Poulakidas: Dallas Mavericks → San Diego Clippers
+  - BJ Boston: Windy City Bulls → Trabzonspor
+  - John Poulakidas: [nba_active → overseas_active]
+
 ## 2026-10-27 — incremental run
 
 - Players updated: **500** (1 new)

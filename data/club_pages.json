@@ -35243,7 +35243,7 @@
       "city": "Hoffman Estates",
       "state": "Illinois",
       "country": "USA",
-      "count": 87,
+      "count": 86,
       "roster": [
         {
           "player": "Adam Mokoka",
@@ -35292,13 +35292,6 @@
           "years": "2017–2018",
           "status": "overseas_active",
           "last_team": "Hapoel Tel Aviv",
-          "nationality": "United States"
-        },
-        {
-          "player": "BJ Boston",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
           "nationality": "United States"
         },
         {
@@ -46577,7 +46570,7 @@
           "player": "BJ Boston",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "last_team": "Trabzonspor",
           "nationality": "United States"
         },
         {
@@ -50689,7 +50682,7 @@
           "years": "2025–present",
           "status": "nba_active",
           "last_team": "Atlanta Hawks",
-          "nationality": "United States"
+          "nationality": "American"
         },
         {
           "player": "Seth Lundy",
@@ -53229,8 +53222,8 @@
         {
           "player": "John Poulakidas",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
           "nationality": "United States"
         },
         {
@@ -74501,7 +74494,7 @@
       "city": "Trabzon",
       "state": "",
       "country": "Turkey",
-      "count": 20,
+      "count": 21,
       "roster": [
         {
           "player": "Alex Blackwell",
@@ -74516,6 +74509,13 @@
           "status": "overseas_active",
           "last_team": "Trabzonspor",
           "nationality": "Dominican Republic"
+        },
+        {
+          "player": "BJ Boston",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Trabzonspor",
+          "nationality": "United States"
         },
         {
           "player": "Darius Johnson-Odom",
@@ -78185,7 +78185,7 @@
       "city": "El Segundo",
       "state": "California",
       "country": "USA",
-      "count": 71,
+      "count": 72,
       "roster": [
         {
           "player": "Adou Thiero",
@@ -78228,6 +78228,13 @@
           "status": "nba_active",
           "last_team": "Los Angeles Lakers",
           "nationality": "Ugandan / American"
+        },
+        {
+          "player": "Bronny James",
+          "years": "2024–2026",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "United States"
         },
         {
           "player": "Cameron Oliver",
@@ -147532,7 +147539,7 @@
           "player": "BJ Boston",
           "years": "2021–2024",
           "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "last_team": "Trabzonspor",
           "nationality": "United States"
         },
         {
@@ -147551,17 +147558,17 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Fenerbahçe",
           "shared": 1
         },
         {
           "type": "club",
           "name": "College Park Skyhawks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Trabzonspor",
           "shared": 1
         },
         {
@@ -147839,9 +147846,9 @@
         },
         {
           "player": "John Poulakidas",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "years": "2025–2026, 2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
           "nationality": "United States"
         },
         {
@@ -147884,7 +147891,7 @@
           "years": "2024–2025, 2025",
           "status": "nba_active",
           "last_team": "Atlanta Hawks",
-          "nationality": "United States"
+          "nationality": "American"
         },
         {
           "player": "Sean Pedulla",
@@ -225133,7 +225140,7 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "South Bay Lakers",
           "shared": 1
         }
       ]
@@ -227803,12 +227810,12 @@
         },
         {
           "type": "club",
-          "name": "Scafati Basket",
+          "name": "Trabzonspor",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Trabzonspor",
+          "name": "Scafati Basket",
           "shared": 1
         },
         {
@@ -227861,12 +227868,12 @@
         },
         {
           "type": "club",
-          "name": "Scafati Basket",
+          "name": "Trabzonspor",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Trabzonspor",
+          "name": "Scafati Basket",
           "shared": 1
         },
         {
@@ -227951,12 +227958,12 @@
         },
         {
           "type": "club",
-          "name": "Scafati Basket",
+          "name": "Trabzonspor",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Trabzonspor",
+          "name": "Scafati Basket",
           "shared": 1
         }
       ]
@@ -234559,7 +234566,7 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "South Bay Lakers",
           "shared": 1
         }
       ]
@@ -246270,7 +246277,7 @@
         },
         {
           "type": "club",
-          "name": "Canton Charge",
+          "name": "South Bay Lakers",
           "shared": 1
         }
       ]
@@ -256713,11 +256720,11 @@
         }
       ]
     },
-    "Sevilla B": {
-      "club": "Sevilla B",
-      "city": "Sevilla",
+    "Baloncesto Sevilla B": {
+      "club": "Baloncesto Sevilla B",
+      "city": "",
       "state": "",
-      "country": "Spain",
+      "country": "",
       "count": 1,
       "roster": [
         {
@@ -256738,37 +256745,37 @@
         },
         {
           "type": "club",
-          "name": "Baskonia",
+          "name": "NBA G League United",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Manchester British-Americans",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Real Madrid",
+          "name": "Perlas",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Valencia",
+          "name": "TNT Tropang 5G",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Joventut Badalona",
+          "name": "Al Gharafa",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Unicaja",
+          "name": "Bosna",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Zaragoza",
+          "name": "Donar",
           "shared": 0
         }
       ]
@@ -279264,7 +279271,7 @@
           "years": "2025",
           "status": "nba_active",
           "last_team": "Atlanta Hawks",
-          "nationality": "United States"
+          "nationality": "American"
         }
       ],
       "related": [
@@ -295364,7 +295371,7 @@
         },
         {
           "type": "club",
-          "name": "Reggio Emilia",
+          "name": "Trabzonspor",
           "shared": 1
         }
       ]
@@ -300109,71 +300116,6 @@
         }
       ]
     },
-    "South Bay/Coachella Valley Lakers": {
-      "club": "South Bay/Coachella Valley Lakers",
-      "city": "",
-      "state": "",
-      "country": "",
-      "count": 2,
-      "roster": [
-        {
-          "player": "Bronny James",
-          "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Chris Mañon",
-          "years": "2025–present",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "NBA G League United",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Manchester British-Americans",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "TNT Tropang 5G",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Al Gharafa",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Bosna",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Lakeland / Osceola Magic",
-          "shared": 0
-        }
-      ]
-    },
     "Salem Capitals": {
       "club": "Salem Capitals",
       "city": "Salem",
@@ -300588,6 +300530,64 @@
         {
           "type": "club",
           "name": "Maccabi Rishon LeZion",
+          "shared": 0
+        }
+      ]
+    },
+    "South Bay/Coachella Valley Lakers": {
+      "club": "South Bay/Coachella Valley Lakers",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Chris Mañon",
+          "years": "2025–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Gharafa",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Bosna",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Donar",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Lakeland / Osceola Magic",
           "shared": 0
         }
       ]
