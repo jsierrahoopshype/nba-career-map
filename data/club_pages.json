@@ -8865,7 +8865,7 @@
           "player": "Malik Beasley",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
+          "last_team": "Santurce Crabbers",
           "nationality": "United States"
         },
         {
@@ -37898,9 +37898,9 @@
         },
         {
           "player": "Enrique Freeman",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Iowa Wolves",
+          "years": "2025–present",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -76035,7 +76035,7 @@
       "city": "San Juan",
       "state": "",
       "country": "Puerto Rico",
-      "count": 46,
+      "count": 45,
       "roster": [
         {
           "player": "Alex Blackwell",
@@ -76165,7 +76165,7 @@
         },
         {
           "player": "Ian Clark",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Cangrejeros de Santurce",
           "nationality": "United States"
@@ -76259,13 +76259,6 @@
           "years": "2023, 2025, 2026",
           "status": "overseas_active",
           "last_team": "Baskonia",
-          "nationality": "United States"
-        },
-        {
-          "player": "Malik Beasley",
-          "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Cangrejeros de Santurce",
           "nationality": "United States"
         },
         {
@@ -76393,12 +76386,12 @@
         },
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
+          "name": "Idaho Stampede",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Idaho Stampede",
+          "name": "Fort Wayne Mad Ants",
           "shared": 5
         }
       ]
@@ -77544,12 +77537,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 2
         },
         {
@@ -114210,12 +114203,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 1
         }
       ]
@@ -139429,8 +139422,8 @@
         {
           "player": "Enrique Freeman",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Iowa Wolves",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -148481,12 +148474,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 0
         },
         {
@@ -164596,12 +164589,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 0
         },
         {
@@ -219514,12 +219507,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 1
         }
       ]
@@ -244299,12 +244292,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 0
         },
         {
@@ -248225,7 +248218,7 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 1
         }
       ]
@@ -262959,6 +262952,71 @@
           "type": "club",
           "name": "Leones de Ponce",
           "shared": 1
+        }
+      ]
+    },
+    "Santurce Crabbers": {
+      "club": "Santurce Crabbers",
+      "city": "Santurce",
+      "state": "",
+      "country": "Puerto Rico",
+      "count": 2,
+      "roster": [
+        {
+          "player": "Malik Beasley",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Santurce Crabbers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Robert Traylor",
+          "years": "2007-2008",
+          "status": "retired",
+          "last_team": "Vaqueros de Bayamón",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Vaqueros de Bayamón",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Napoli Basket",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Halcones UV Xalapa",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Antalya Kepez Belediyesi",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Gestibérica Vigo",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capitanes de Arecibo",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Leones de Ponce",
+          "shared": 0
         }
       ]
     },
@@ -279763,12 +279821,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 1
         },
         {
@@ -282982,12 +283040,12 @@
         },
         {
           "type": "club",
-          "name": "Antalya Kepez Belediyesi",
+          "name": "Santurce Crabbers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Santurce Crabbers",
+          "name": "Antalya Kepez Belediyesi",
           "shared": 1
         },
         {
@@ -283003,64 +283061,6 @@
         {
           "type": "club",
           "name": "Real Madrid",
-          "shared": 0
-        }
-      ]
-    },
-    "Santurce Crabbers": {
-      "club": "Santurce Crabbers",
-      "city": "Santurce",
-      "state": "",
-      "country": "Puerto Rico",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Robert Traylor",
-          "years": "2007-2008",
-          "status": "retired",
-          "last_team": "Vaqueros de Bayamón",
-          "nationality": "United States"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Vaqueros de Bayamón",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Napoli Basket",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Halcones UV Xalapa",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Antalya Kepez Belediyesi",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Gestibérica Vigo",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Capitanes de Arecibo",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Leones de Ponce",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Cangrejeros de Santurce",
           "shared": 0
         }
       ]
@@ -283098,12 +283098,12 @@
         },
         {
           "type": "club",
-          "name": "Gestibérica Vigo",
+          "name": "Santurce Crabbers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Santurce Crabbers",
+          "name": "Gestibérica Vigo",
           "shared": 1
         },
         {
@@ -290836,12 +290836,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 1
         },
         {
@@ -290894,12 +290894,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 1
         },
         {
@@ -290939,12 +290939,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 2
         },
         {
@@ -291017,12 +291017,12 @@
         },
         {
           "type": "club",
-          "name": "Cangrejeros de Santurce",
+          "name": "Mets de Guaynabo",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Mets de Guaynabo",
+          "name": "Cangrejeros de Santurce",
           "shared": 1
         },
         {

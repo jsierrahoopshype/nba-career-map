@@ -1119,16 +1119,6 @@
       "years_apart": 0
     },
     {
-      "basketball_reference": "1966-11-24",
-      "places_kept": true,
-      "player": "Ledell Eackles",
-      "used": "1966-11-24",
-      "used_source": "basketball-reference",
-      "wikidata": "1966-10-24",
-      "wikidata_id": "Q3829349",
-      "years_apart": 0
-    },
-    {
       "basketball_reference": "1926-12-25",
       "places_kept": true,
       "player": "Leo Kubiak",
@@ -1307,6 +1297,16 @@
       "wikidata": "1951-01-19",
       "wikidata_id": "Q3870713",
       "years_apart": 1
+    },
+    {
+      "basketball_reference": "1979-07-24",
+      "places_kept": false,
+      "player": "Norm Richardson",
+      "used": "1979-07-24",
+      "used_source": "basketball-reference",
+      "wikidata": "1977-07-24",
+      "wikidata_id": "Q683843",
+      "years_apart": 2
     },
     {
       "basketball_reference": "1924-06-17",
@@ -1709,7 +1709,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",

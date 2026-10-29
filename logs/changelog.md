@@ -1,3 +1,16 @@
+## 2026-10-29 — incremental run
+
+- Players updated: **503** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Malik Beasley: Cangrejeros de Santurce → Santurce Crabbers
+  - Enrique Freeman: [overseas_active → nba_active]
+
 ## 2026-10-28 — incremental run
 
 - Players updated: **553** (1 new)
