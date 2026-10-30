@@ -994,7 +994,7 @@
       "city": "Seville",
       "state": "",
       "country": "Spain",
-      "count": 38,
+      "count": 37,
       "roster": [
         {
           "player": "A.J. Bramlett",
@@ -1236,13 +1236,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Tomas Satoransky",
-          "years": "2009–2014",
-          "status": "overseas_active",
-          "last_team": "Hapoel Tel Aviv",
-          "nationality": "Czech Republic"
-        },
-        {
           "player": "Travis Leslie",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -1277,11 +1270,6 @@
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
-          "shared": 4
-        },
-        {
-          "type": "club",
           "name": "Long Island Nets",
           "shared": 4
         },
@@ -1303,6 +1291,11 @@
         {
           "type": "club",
           "name": "Baskonia",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Quad City Thunder",
           "shared": 3
         }
       ]
@@ -12518,7 +12511,7 @@
       "city": "Greensboro",
       "state": "North Carolina",
       "country": "USA",
-      "count": 82,
+      "count": 84,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -12860,6 +12853,12 @@
           "last_team": "Charlotte Hornets"
         },
         {
+          "player": "Kyle Mangas",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
+        },
+        {
           "player": "Leaky Black",
           "years": "2023–2024",
           "status": "nba_active",
@@ -13055,6 +13054,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Trey Townsend",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
+        },
+        {
           "player": "Ty-Shon Alexander",
           "years": "2022–2023",
           "status": "overseas_active",
@@ -13094,7 +13099,7 @@
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 12
+          "shared": 13
         },
         {
           "type": "club",
@@ -26658,12 +26663,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
@@ -30763,8 +30768,8 @@
         {
           "player": "Kyle Mangas",
           "years": "2025, 2025–2026",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Kylor Kelley",
@@ -35612,7 +35617,7 @@
           "player": "Kevin Knox",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Osceola Magic",
+          "last_team": "Unicaja",
           "nationality": "United States"
         },
         {
@@ -37306,12 +37311,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
@@ -44914,12 +44919,12 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Unicaja",
+          "name": "Limoges CSP",
           "shared": 1
         },
         {
@@ -44939,7 +44944,7 @@
       "city": "Malaga",
       "state": "",
       "country": "Spain",
-      "count": 59,
+      "count": 60,
       "roster": [
         {
           "player": "Adrian Branch",
@@ -45123,6 +45128,13 @@
           "years": "2009-2010",
           "status": "retired",
           "last_team": "Banvit",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kevin Knox",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Unicaja",
           "nationality": "United States"
         },
         {
@@ -49111,7 +49123,7 @@
       "city": "Memphis",
       "state": "Tennessee",
       "country": "USA",
-      "count": 85,
+      "count": 86,
       "roster": [
         {
           "player": "Ahmad Caver",
@@ -49454,6 +49466,12 @@
           "status": "overseas_active",
           "last_team": "Baskonia",
           "nationality": "United States"
+        },
+        {
+          "player": "Lawson Lovering",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers"
         },
         {
           "player": "Malachi Smith",
@@ -50295,7 +50313,7 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 3
         }
       ]
@@ -53571,8 +53589,8 @@
         {
           "player": "Trey Townsend",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Tyler Davis",
@@ -69360,8 +69378,8 @@
         {
           "player": "Trey Townsend",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Tyler Bey",
@@ -69445,7 +69463,7 @@
         {
           "type": "club",
           "name": "Greensboro Swarm",
-          "shared": 12
+          "shared": 13
         },
         {
           "type": "club",
@@ -71150,7 +71168,7 @@
           "player": "Kevin Knox",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "Osceola Magic",
+          "last_team": "Unicaja",
           "nationality": "United States"
         },
         {
@@ -86817,7 +86835,7 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         }
       ]
@@ -96014,7 +96032,7 @@
           "player": "Kevin Knox",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Osceola Magic",
+          "last_team": "Unicaja",
           "nationality": "United States"
         },
         {
@@ -98499,7 +98517,7 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         }
       ]
@@ -107602,7 +107620,7 @@
       "city": "Sevilla",
       "state": "",
       "country": "Spain",
-      "count": 13,
+      "count": 14,
       "roster": [
         {
           "player": "Andre Turner",
@@ -107684,6 +107702,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Tomas Satoransky",
+          "years": "2009–2014",
+          "status": "overseas_active",
+          "last_team": "Hapoel Tel Aviv",
+          "nationality": "Czech Republic"
+        },
+        {
           "player": "Uros Slokar",
           "years": "2015-2016",
           "status": "retired",
@@ -107701,13 +107726,13 @@
       "related": [
         {
           "type": "club",
-          "name": "Joventut Badalona",
+          "name": "FC Barcelona",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "FC Barcelona",
-          "shared": 3
+          "name": "Joventut Badalona",
+          "shared": 4
         },
         {
           "type": "club",
@@ -108849,7 +108874,7 @@
         },
         {
           "type": "club",
-          "name": "Fortitudo Bologna",
+          "name": "Unicaja",
           "shared": 4
         }
       ]
@@ -113773,12 +113798,12 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Wisconsin Herd",
           "shared": 1
         }
       ]
@@ -128686,12 +128711,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 2
         },
         {
@@ -130246,12 +130271,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -130797,12 +130822,12 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Lakeland Magic",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Lakeland Magic",
+          "name": "Real Betis",
           "shared": 1
         }
       ]
@@ -131202,7 +131227,7 @@
         },
         {
           "type": "club",
-          "name": "Fenerbahçe",
+          "name": "Memphis Hustle",
           "shared": 1
         }
       ]
@@ -131330,12 +131355,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Wisconsin Herd",
           "shared": 3
         },
         {
@@ -138438,12 +138463,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -139464,8 +139489,8 @@
         {
           "player": "Kyle Mangas",
           "years": "2023–2025",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Oscar Tshiebwe",
@@ -139483,6 +139508,11 @@
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 3
+        },
         {
           "type": "club",
           "name": "Salt Lake City Stars",
@@ -139511,11 +139541,6 @@
         {
           "type": "club",
           "name": "Memphis Hustle",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
@@ -146914,12 +146939,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -147963,12 +147988,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
@@ -149334,7 +149359,7 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         }
       ]
@@ -154713,7 +154738,7 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -157791,7 +157816,7 @@
       "city": "Kissimmee",
       "state": "Florida",
       "country": "USA",
-      "count": 31,
+      "count": 30,
       "roster": [
         {
           "player": "Alex Morales",
@@ -157919,13 +157944,6 @@
           "nationality": "American / Dominican"
         },
         {
-          "player": "Kevin Knox",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Osceola Magic",
-          "nationality": "United States"
-        },
-        {
           "player": "Lester Quinones",
           "years": "2025–2026",
           "status": "overseas_active",
@@ -158028,11 +158046,6 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 4
-        },
-        {
-          "type": "club",
           "name": "South Bay Lakers",
           "shared": 4
         },
@@ -158048,7 +158061,12 @@
         },
         {
           "type": "club",
-          "name": "Santa Cruz Warriors",
+          "name": "Raptors 905",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
           "shared": 3
         }
       ]
@@ -160337,12 +160355,12 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Wisconsin Herd",
           "shared": 2
         },
         {
@@ -165622,12 +165640,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -165759,12 +165777,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -166208,7 +166226,7 @@
         },
         {
           "player": "Shamorie Ponds",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Hong Kong Bulls",
           "nationality": "United States"
@@ -182124,12 +182142,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -182520,12 +182538,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -182573,12 +182591,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -185588,7 +185606,7 @@
       "city": "Thousand Palms",
       "state": "California",
       "country": "USA",
-      "count": 5,
+      "count": 6,
       "roster": [
         {
           "player": "AK Okereke",
@@ -185618,6 +185636,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Lawson Lovering",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers"
+        },
+        {
           "player": "Peter Suder",
           "years": "2026–present",
           "status": "nba_active",
@@ -185634,6 +185658,11 @@
           "type": "club",
           "name": "South Bay Lakers",
           "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
+          "shared": 1
         },
         {
           "type": "club",
@@ -185658,11 +185687,6 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
           "shared": 0
         }
       ]
@@ -189214,12 +189238,12 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -192854,12 +192878,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -197795,12 +197819,12 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Unicaja",
+          "name": "Limoges CSP",
           "shared": 1
         },
         {
@@ -198616,12 +198640,12 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Unicaja",
+          "name": "Limoges CSP",
           "shared": 1
         },
         {
@@ -204024,12 +204048,12 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Unicaja",
+          "name": "Limoges CSP",
           "shared": 1
         },
         {
@@ -205829,12 +205853,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -214523,12 +214547,12 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
@@ -227437,12 +227461,12 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         }
       ]
@@ -231012,12 +231036,12 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
@@ -233110,8 +233134,8 @@
         {
           "player": "Kyle Mangas",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Mitch Creek",
@@ -233155,6 +233179,11 @@
         },
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "U-BT Cluj-Napoca",
           "shared": 2
         },
@@ -233176,11 +233205,6 @@
         {
           "type": "club",
           "name": "Raptors 905",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Westchester Knicks",
           "shared": 1
         }
       ]
@@ -233570,12 +233594,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -238522,12 +238546,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -238947,12 +238971,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Wisconsin Herd",
           "shared": 2
         },
         {
@@ -241092,7 +241116,7 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Reyer Venezia",
           "shared": 1
         }
       ]
@@ -249295,7 +249319,7 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         }
       ]
@@ -251528,11 +251552,16 @@
         {
           "player": "Trey Townsend",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         }
       ],
       "related": [
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 2
+        },
         {
           "type": "club",
           "name": "Texas Legends",
@@ -251546,11 +251575,6 @@
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -254232,7 +254256,7 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -264149,12 +264173,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -273260,12 +273284,12 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -273318,12 +273342,12 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -273376,12 +273400,12 @@
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
@@ -278700,12 +278724,12 @@
         },
         {
           "type": "club",
-          "name": "Limoges CSP",
+          "name": "Unicaja",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Unicaja",
+          "name": "Limoges CSP",
           "shared": 1
         },
         {
@@ -292453,8 +292477,8 @@
         {
           "player": "Kyle Mangas",
           "years": "2021–2022",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         },
         {
           "player": "Tomas Satoransky",
@@ -292477,17 +292501,22 @@
         },
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Hapoel Tel Aviv",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Indiana Mad Ants",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Indiana Mad Ants",
+          "name": "Sevilla",
           "shared": 1
         },
         {
@@ -292499,11 +292528,6 @@
           "type": "club",
           "name": "Šiauliai-7bet",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "ČEZ Nymburk",
-          "shared": 0
         }
       ]
     },
@@ -294864,12 +294888,12 @@
         },
         {
           "type": "club",
-          "name": "Wisconsin Herd",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Wisconsin Herd",
           "shared": 1
         },
         {
@@ -301187,14 +301211,19 @@
         {
           "player": "Trey Townsend",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Texas Legends",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -301226,11 +301255,6 @@
           "type": "club",
           "name": "Borås Basket",
           "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Sundsvall Dragons",
-          "shared": 0
         }
       ]
     },
@@ -301244,14 +301268,19 @@
         {
           "player": "Kyle Mangas",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
+          "status": "overseas_active",
+          "last_team": "Greensboro Swarm"
         }
       ],
       "related": [
         {
           "type": "club",
           "name": "Austin Spurs",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -301282,11 +301311,6 @@
         {
           "type": "club",
           "name": "Perlas",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "TNT Tropang 5G",
           "shared": 0
         }
       ]
