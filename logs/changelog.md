@@ -1,3 +1,24 @@
+## 2026-10-31 — incremental run
+
+- Players updated: **556** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **5**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **4** (3 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Seattle SuperSonics / , Oklahoma City Thunder
+  - Dwight Powell: Dallas Mavericks → Fenerbahçe
+  - Ochai Agbaji: New York Knicks → Oklahoma City Thunder
+  - Blake Hinson: Utah Jazz → Stockton Kings
+  - Hayden Gray: Boston Celtics → Maine Celtics
+  - Blake Wesley: San Diego Clippers → LA Clippers
+  - Dwight Powell: [nba_active → overseas_active]
+  - Blake Hinson: [nba_active → overseas_active]
+  - Hayden Gray: [nba_active → overseas_active]
+  - Blake Wesley: [overseas_active → nba_active]
+
 ## 2026-10-30 — incremental run
 
 - Players updated: **498** (2 new)

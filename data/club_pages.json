@@ -22749,9 +22749,9 @@
         },
         {
           "player": "Hayden Gray",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Boston Celtics",
+          "years": "2025–2026, 2026–present",
+          "status": "overseas_active",
+          "last_team": "Maine Celtics",
           "nationality": "United States"
         },
         {
@@ -26063,8 +26063,8 @@
         {
           "player": "Dwight Powell",
           "years": "2014",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Fenerbahçe",
           "nationality": "Canada"
         },
         {
@@ -30377,8 +30377,8 @@
         {
           "player": "Blake Wesley",
           "years": "2022–2023",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
           "nationality": "United States"
         },
         {
@@ -31070,7 +31070,7 @@
       "city": "Stockton",
       "state": "California",
       "country": "USA",
-      "count": 67,
+      "count": 68,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -31084,6 +31084,13 @@
           "years": "2021, 2022",
           "status": "overseas_active",
           "last_team": "Álftanes",
+          "nationality": "United States"
+        },
+        {
+          "player": "Blake Hinson",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -46555,7 +46562,7 @@
       "city": "Istanbul",
       "state": "",
       "country": "Turkey",
-      "count": 85,
+      "count": 86,
       "roster": [
         {
           "player": "Adrian Caldwell",
@@ -46696,6 +46703,13 @@
           "status": "overseas_active",
           "last_team": "Olimpia Milano",
           "nationality": "United States"
+        },
+        {
+          "player": "Dwight Powell",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Fenerbahçe",
+          "nationality": "Canada"
         },
         {
           "player": "Eddie Basden",
@@ -47171,6 +47185,11 @@
         },
         {
           "type": "club",
+          "name": "Texas Legends",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Olympiacos",
           "shared": 8
         },
@@ -47178,11 +47197,6 @@
           "type": "club",
           "name": "Anadolu Efes",
           "shared": 8
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
-          "shared": 7
         },
         {
           "type": "club",
@@ -52996,8 +53010,8 @@
         {
           "player": "Dwight Powell",
           "years": "2014–2015",
-          "status": "nba_active",
-          "last_team": "Dallas Mavericks",
+          "status": "overseas_active",
+          "last_team": "Fenerbahçe",
           "nationality": "Canada"
         },
         {
@@ -68882,8 +68896,8 @@
         {
           "player": "Blake Hinson",
           "years": "2026",
-          "status": "nba_active",
-          "last_team": "Utah Jazz",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -69269,7 +69283,7 @@
           "player": "Ochai Agbaji",
           "years": "2022",
           "status": "nba_active",
-          "last_team": "New York Knicks",
+          "last_team": "Oklahoma City Thunder",
           "nationality": "United States"
         },
         {
@@ -70556,7 +70570,7 @@
       "city": "Cleveland",
       "state": "Ohio",
       "country": "USA",
-      "count": 55,
+      "count": 56,
       "roster": [
         {
           "player": "Aleem Ford",
@@ -70743,6 +70757,12 @@
           "status": "overseas_active",
           "last_team": "Esenler Erokspor",
           "nationality": "Canadian / Slovenian"
+        },
+        {
+          "player": "Khalifa Diop",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
         },
         {
           "player": "Killian Hayes",
@@ -71013,8 +71033,8 @@
         {
           "player": "Blake Hinson",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Utah Jazz",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -95640,8 +95660,8 @@
         {
           "player": "Blake Hinson",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Utah Jazz",
+          "status": "overseas_active",
+          "last_team": "Stockton Kings",
           "nationality": "United States"
         },
         {
@@ -121592,12 +121612,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Fenerbahçe",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Fenerbahçe",
+          "name": "Windy City Bulls",
           "shared": 3
         },
         {
@@ -131227,7 +131247,7 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Fenerbahçe",
           "shared": 1
         }
       ]
@@ -147787,222 +147807,6 @@
         }
       ]
     },
-    "San Diego Clippers": {
-      "club": "San Diego Clippers",
-      "city": "San Diego",
-      "state": "California",
-      "country": "USA",
-      "count": 24,
-      "roster": [
-        {
-          "player": "Blake Wesley",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Braxton Key",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Fenerbahçe",
-          "nationality": "United States"
-        },
-        {
-          "player": "Cam Christie",
-          "years": "2024–present",
-          "status": "nba_active",
-          "last_team": "LA Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Cam Reddish",
-          "years": "2026",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Elijah Harkless",
-          "years": "2024",
-          "status": "nba_active",
-          "last_team": "Detroit Pistons",
-          "nationality": "United States"
-        },
-        {
-          "player": "Fletcher Loyer",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers"
-        },
-        {
-          "player": "Izaiah Brockington",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Scaligera Verona",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jahmyl Telfort",
-          "years": "2025, 2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers"
-        },
-        {
-          "player": "Jalen Pickett",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "LA Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jason Preston",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "John Poulakidas",
-          "years": "2025–2026, 2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Kai Jones",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Anadolu Efes",
-          "nationality": "Bahamas"
-        },
-        {
-          "player": "Miye Oni",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "American / Nigerian / British"
-        },
-        {
-          "player": "Mo Bamba",
-          "years": "2024",
-          "status": "nba_active",
-          "last_team": "Utah Jazz",
-          "nationality": "American / Ivorian"
-        },
-        {
-          "player": "Nathan Mensah",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "Ghana"
-        },
-        {
-          "player": "Patrick Baldwin",
-          "years": "2025, 2025, 2026",
-          "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
-          "nationality": "United States"
-        },
-        {
-          "player": "RayJ Dennis",
-          "years": "2024–2025, 2025",
-          "status": "nba_active",
-          "last_team": "Atlanta Hawks",
-          "nationality": "American"
-        },
-        {
-          "player": "Sean Pedulla",
-          "years": "2026",
-          "status": "nba_active",
-          "last_team": "Sacramento Kings",
-          "nationality": "United States"
-        },
-        {
-          "player": "Taylor Funk",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Salt Lake City Stars"
-        },
-        {
-          "player": "Tosan Evbuomwan",
-          "years": "2024",
-          "status": "overseas_active",
-          "last_team": "FC Barcelona",
-          "nationality": "Great Britain"
-        },
-        {
-          "player": "Trentyn Flowers",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "BC Roma",
-          "nationality": "United States"
-        },
-        {
-          "player": "TyTy Washington",
-          "years": "2025, 2025–2026",
-          "status": "overseas_active",
-          "last_team": "ASVEL",
-          "nationality": "United States"
-        },
-        {
-          "player": "Yanic Konan Niederhäuser",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "LA Clippers",
-          "nationality": "Switzerland"
-        },
-        {
-          "player": "Yuki Kawamura",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "Japan"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Motor City Cruise",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Austin Spurs",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Delaware Blue Coats",
-          "shared": 2
-        }
-      ]
-    },
     "Sarasota Stingers": {
       "club": "Sarasota Stingers",
       "city": "Columbus",
@@ -158126,6 +157930,215 @@
           "type": "club",
           "name": "Lakeland / Osceola Magic",
           "shared": 0
+        }
+      ]
+    },
+    "San Diego Clippers": {
+      "club": "San Diego Clippers",
+      "city": "San Diego",
+      "state": "California",
+      "country": "USA",
+      "count": 23,
+      "roster": [
+        {
+          "player": "Braxton Key",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "Fenerbahçe",
+          "nationality": "United States"
+        },
+        {
+          "player": "Cam Christie",
+          "years": "2024–present",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Cam Reddish",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Elijah Harkless",
+          "years": "2024",
+          "status": "nba_active",
+          "last_team": "Detroit Pistons",
+          "nationality": "United States"
+        },
+        {
+          "player": "Fletcher Loyer",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers"
+        },
+        {
+          "player": "Izaiah Brockington",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Scaligera Verona",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jahmyl Telfort",
+          "years": "2025, 2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers"
+        },
+        {
+          "player": "Jalen Pickett",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jason Preston",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "John Poulakidas",
+          "years": "2025–2026, 2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kai Jones",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
+          "nationality": "Bahamas"
+        },
+        {
+          "player": "Miye Oni",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "American / Nigerian / British"
+        },
+        {
+          "player": "Mo Bamba",
+          "years": "2024",
+          "status": "nba_active",
+          "last_team": "Utah Jazz",
+          "nationality": "American / Ivorian"
+        },
+        {
+          "player": "Nathan Mensah",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "Ghana"
+        },
+        {
+          "player": "Patrick Baldwin",
+          "years": "2025, 2025, 2026",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
+          "nationality": "United States"
+        },
+        {
+          "player": "RayJ Dennis",
+          "years": "2024–2025, 2025",
+          "status": "nba_active",
+          "last_team": "Atlanta Hawks",
+          "nationality": "American"
+        },
+        {
+          "player": "Sean Pedulla",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
+          "nationality": "United States"
+        },
+        {
+          "player": "Taylor Funk",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Salt Lake City Stars"
+        },
+        {
+          "player": "Tosan Evbuomwan",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "FC Barcelona",
+          "nationality": "Great Britain"
+        },
+        {
+          "player": "Trentyn Flowers",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "United States"
+        },
+        {
+          "player": "TyTy Washington",
+          "years": "2025, 2025–2026",
+          "status": "overseas_active",
+          "last_team": "ASVEL",
+          "nationality": "United States"
+        },
+        {
+          "player": "Yanic Konan Niederhäuser",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
+          "nationality": "Switzerland"
+        },
+        {
+          "player": "Yuki Kawamura",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "Japan"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 4
+        },
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Motor City Cruise",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Capital City Go-Go",
+          "shared": 2
         }
       ]
     },
@@ -175447,12 +175460,12 @@
         },
         {
           "type": "club",
-          "name": "AEK Athens",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "AEK Athens",
           "shared": 1
         }
       ]
@@ -226449,12 +226462,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         }
       ]
@@ -238384,12 +238397,12 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Fenerbahçe",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Fenerbahçe",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
@@ -256737,11 +256750,11 @@
         }
       ]
     },
-    "Baloncesto Sevilla B": {
-      "club": "Baloncesto Sevilla B",
-      "city": "",
+    "Sevilla B": {
+      "club": "Sevilla B",
+      "city": "Sevilla",
       "state": "",
-      "country": "",
+      "country": "Spain",
       "count": 1,
       "roster": [
         {
@@ -256762,37 +256775,37 @@
         },
         {
           "type": "club",
-          "name": "NBA G League United",
+          "name": "Baskonia",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "FC Barcelona",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Real Madrid",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "TNT Tropang 5G",
+          "name": "Valencia",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "Joventut Badalona",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Unicaja",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Donar",
+          "name": "Zaragoza",
           "shared": 0
         }
       ]
@@ -276935,12 +276948,12 @@
         },
         {
           "type": "club",
-          "name": "Victoria Libertas Pesaro",
+          "name": "Stockton Kings",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Stockton Kings",
+          "name": "Victoria Libertas Pesaro",
           "shared": 1
         },
         {

@@ -8438,9 +8438,9 @@
           "player": "Dwight Powell",
           "years": "2014",
           "stint_team": "Boston Celtics",
-          "status": "nba_active",
-          "current_team": "Dallas Mavericks",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Fenerbahçe",
+          "current_country": "Turkey",
           "nationality": "Canada"
         },
         {
@@ -9029,15 +9029,6 @@
           "years": "1950-1951",
           "stint_team": "Boston Celtics",
           "status": "retired",
-          "current_team": "Boston Celtics",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
-          "player": "Hayden Gray",
-          "years": "2026–present",
-          "stint_team": "Boston Celtics",
-          "status": "nba_active",
           "current_team": "Boston Celtics",
           "current_country": "USA",
           "nationality": "United States"
@@ -12158,9 +12149,9 @@
         },
         {
           "player": "Dwight Powell",
-          "status": "nba_active",
-          "current_team": "Dallas Mavericks",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "Fenerbahçe",
+          "country": "Turkey",
           "nationality": "Canada"
         },
         {
@@ -12554,8 +12545,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 557,
-      "alumni_count": 533,
+      "roster_count": 556,
+      "alumni_count": 532,
       "related": [
         {
           "type": "club",
@@ -12565,7 +12556,7 @@
         {
           "type": "club",
           "name": "Maine Celtics",
-          "shared": 25
+          "shared": 24
         },
         {
           "type": "club",
@@ -16236,7 +16227,7 @@
           "years": "2026",
           "stint_team": "Brooklyn Nets",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Oklahoma City Thunder",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -18251,7 +18242,7 @@
         {
           "player": "Ochai Agbaji",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Oklahoma City Thunder",
           "country": "USA",
           "nationality": "United States"
         },
@@ -32635,7 +32626,7 @@
         {
           "type": "club",
           "name": "Cleveland Charge",
-          "shared": 23
+          "shared": 24
         },
         {
           "type": "club",
@@ -33929,9 +33920,9 @@
           "player": "Dwight Powell",
           "years": "2014–2026",
           "stint_team": "Dallas Mavericks",
-          "status": "nba_active",
-          "current_team": "Dallas Mavericks",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "Fenerbahçe",
+          "current_country": "Turkey",
           "nationality": "Canada"
         },
         {
@@ -36853,6 +36844,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Dwight Powell",
+          "status": "overseas_active",
+          "current_team": "Fenerbahçe",
+          "country": "Turkey",
+          "nationality": "Canada"
+        },
+        {
           "player": "Eugene Omoruyi",
           "status": "overseas_active",
           "current_team": "Beşiktaş",
@@ -37376,7 +37374,7 @@
         {
           "type": "club",
           "name": "Fenerbahçe",
-          "shared": 13
+          "shared": 14
         },
         {
           "type": "club",
@@ -64405,6 +64403,15 @@
           "all_star_count": 6
         },
         {
+          "player": "Blake Wesley",
+          "years": "2026–present",
+          "stint_team": "LA Clippers",
+          "status": "nba_active",
+          "current_team": "LA Clippers",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Bo Kimble",
           "years": "1990-1992",
           "stint_team": "LA Clippers",
@@ -69600,8 +69607,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 544,
-      "alumni_count": 517,
+      "roster_count": 545,
+      "alumni_count": 518,
       "related": [
         {
           "type": "club",
@@ -99389,15 +99396,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Ochai Agbaji",
-          "years": "2026–present",
-          "stint_team": "New York Knicks",
-          "status": "nba_active",
-          "current_team": "New York Knicks",
-          "current_country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "Ossie Schectman",
           "years": "1946-1947",
           "stint_team": "New York Knicks",
@@ -101398,8 +101396,8 @@
           "nationality": "Spain"
         }
       ],
-      "roster_count": 604,
-      "alumni_count": 568,
+      "roster_count": 603,
+      "alumni_count": 567,
       "related": [
         {
           "type": "club",
@@ -104300,6 +104298,15 @@
           "nationality": "United States"
         },
         {
+          "player": "Ochai Agbaji",
+          "years": "2026–present",
+          "stint_team": "Oklahoma City Thunder",
+          "status": "nba_active",
+          "current_team": "Oklahoma City Thunder",
+          "current_country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Olden Polynice",
           "years": "1987-1991",
           "stint_team": "Seattle SuperSonics",
@@ -106011,8 +106018,8 @@
           "nationality": "United States"
         }
       ],
-      "roster_count": 436,
-      "alumni_count": 413,
+      "roster_count": 437,
+      "alumni_count": 414,
       "related": [
         {
           "type": "club",
@@ -121903,8 +121910,8 @@
           "player": "Blake Wesley",
           "years": "2025–26",
           "stint_team": "Portland Trail Blazers",
-          "status": "overseas_active",
-          "current_team": "San Diego Clippers",
+          "status": "nba_active",
+          "current_team": "LA Clippers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -125581,8 +125588,8 @@
         },
         {
           "player": "Blake Wesley",
-          "status": "overseas_active",
-          "current_team": "San Diego Clippers",
+          "status": "nba_active",
+          "current_team": "LA Clippers",
           "country": "USA",
           "nationality": "United States"
         },
@@ -132806,8 +132813,8 @@
           "player": "Blake Wesley",
           "years": "2022–2025",
           "stint_team": "San Antonio Spurs",
-          "status": "overseas_active",
-          "current_team": "San Diego Clippers",
+          "status": "nba_active",
+          "current_team": "LA Clippers",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -136473,8 +136480,8 @@
         },
         {
           "player": "Blake Wesley",
-          "status": "overseas_active",
-          "current_team": "San Diego Clippers",
+          "status": "nba_active",
+          "current_team": "LA Clippers",
           "country": "USA",
           "nationality": "United States"
         },
@@ -139128,7 +139135,7 @@
           "years": "2024–2026",
           "stint_team": "Toronto Raptors",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Oklahoma City Thunder",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -140406,7 +140413,7 @@
         {
           "player": "Ochai Agbaji",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Oklahoma City Thunder",
           "country": "USA",
           "nationality": "United States"
         },
@@ -140885,8 +140892,8 @@
           "player": "Blake Hinson",
           "years": "2026",
           "stint_team": "Utah Jazz",
-          "status": "nba_active",
-          "current_team": "Utah Jazz",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -141873,8 +141880,8 @@
           "player": "Hayden Gray",
           "years": "2026",
           "stint_team": "Utah Jazz",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -143223,7 +143230,7 @@
           "years": "2022–2024",
           "stint_team": "Utah Jazz",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Oklahoma City Thunder",
           "current_country": "USA",
           "nationality": "United States"
         },
@@ -144245,6 +144252,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Blake Hinson",
+          "status": "overseas_active",
+          "current_team": "Stockton Kings",
+          "country": "USA",
+          "nationality": "United States"
+        },
+        {
           "player": "Bryce Cotton",
           "status": "overseas_active",
           "current_team": "Adelaide 36ers",
@@ -144395,8 +144409,8 @@
         },
         {
           "player": "Hayden Gray",
-          "status": "nba_active",
-          "current_team": "Boston Celtics",
+          "status": "overseas_active",
+          "current_team": "Maine Celtics",
           "country": "USA",
           "nationality": "United States"
         },
@@ -144699,7 +144713,7 @@
         {
           "player": "Ochai Agbaji",
           "status": "nba_active",
-          "current_team": "New York Knicks",
+          "current_team": "Oklahoma City Thunder",
           "country": "USA",
           "nationality": "United States"
         },
