@@ -1,3 +1,17 @@
+## 2026-11-01 — full_overseas run
+
+- Players updated: **514** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **3**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - JP Macura: Benetton Treviso → Treviso Basket
+  - Perry Jones: Tijuana Zonkeys → Johor Southern Tigers
+  - Vander Blue: Hangtuah Jakarta → Grand Rapids Gold
+
 ## 2026-11-01 — incremental run
 
 - Players updated: **501** (1 new)
