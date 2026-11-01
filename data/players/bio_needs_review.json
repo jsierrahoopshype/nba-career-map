@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 170,
+    "date_disagreement": 171,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -437,6 +437,16 @@
       "wikidata": "1928-04-12",
       "wikidata_id": "Q1647863",
       "years_apart": 0
+    },
+    {
+      "basketball_reference": "1967-07-03",
+      "places_kept": true,
+      "player": "Derrick Chievous",
+      "used": "1967-07-03",
+      "used_source": "basketball-reference",
+      "wikidata": "1966-07-03",
+      "wikidata_id": "Q3705888",
+      "years_apart": 1
     },
     {
       "basketball_reference": "1972-05-31",
@@ -1709,7 +1719,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-10-31",
+  "generated": "2026-11-01",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",

@@ -1,3 +1,15 @@
+## 2026-11-01 — incremental run
+
+- Players updated: **501** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **1**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Ike Anigbogu: Benetton Treviso → Treviso Basket
+
 ## 2026-10-31 — incremental run
 
 - Players updated: **556** (1 new)
