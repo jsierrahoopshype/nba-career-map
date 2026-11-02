@@ -1,3 +1,15 @@
+## 2026-11-02 — incremental run
+
+- Players updated: **555** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **0**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Seattle SuperSonics / , Oklahoma City Thunder
+
 ## 2026-11-01 — full_overseas run
 
 - Players updated: **514** (1 new)

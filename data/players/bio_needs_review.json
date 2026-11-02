@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 171,
+    "date_disagreement": 167,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -96,16 +96,6 @@
       "used_source": "basketball-reference",
       "wikidata": "1966-03-23",
       "wikidata_id": "Q3618531",
-      "years_apart": 0
-    },
-    {
-      "basketball_reference": "2002-04-11",
-      "places_kept": true,
-      "player": "Ariel Hukporti",
-      "used": "2002-04-11",
-      "used_source": "basketball-reference",
-      "wikidata": "2002-04-12",
-      "wikidata_id": "Q61020557",
       "years_apart": 0
     },
     {
@@ -379,16 +369,6 @@
       "years_apart": 0
     },
     {
-      "basketball_reference": "1938-05-24",
-      "places_kept": true,
-      "player": "Cleo Hill",
-      "used": "1938-05-24",
-      "used_source": "basketball-reference",
-      "wikidata": "1938-04-24",
-      "wikidata_id": "Q2919387",
-      "years_apart": 0
-    },
-    {
       "basketball_reference": "1983-03-06",
       "places_kept": true,
       "player": "Coby Karl",
@@ -519,14 +499,14 @@
       "years_apart": 2
     },
     {
-      "basketball_reference": "1929-11-08",
+      "basketball_reference": "1928-11-08",
       "places_kept": true,
       "player": "Don Lofgran",
       "used": "1929-11-08",
       "used_source": "basketball-reference",
       "wikidata": "1928-11-18",
       "wikidata_id": "Q3713560",
-      "years_apart": 1
+      "years_apart": 0
     },
     {
       "basketball_reference": "1921-02-09",
@@ -566,16 +546,6 @@
       "used_source": "basketball-reference",
       "wikidata": "1949-10-11",
       "wikidata_id": "Q2326383",
-      "years_apart": 0
-    },
-    {
-      "basketball_reference": "1951-03-24",
-      "places_kept": true,
-      "player": "Earl Williams",
-      "used": "1951-03-24",
-      "used_source": "basketball-reference",
-      "wikidata": "1951-03-28",
-      "wikidata_id": "Q1634959",
       "years_apart": 0
     },
     {
@@ -786,16 +756,6 @@
       "used_source": "basketball-reference",
       "wikidata": "1925-10-19",
       "wikidata_id": "Q446086",
-      "years_apart": 0
-    },
-    {
-      "basketball_reference": "1934-05-11",
-      "places_kept": true,
-      "player": "Jack Twyman",
-      "used": "1934-05-11",
-      "used_source": "basketball-reference",
-      "wikidata": "1934-05-21",
-      "wikidata_id": "Q1433254",
       "years_apart": 0
     },
     {
@@ -1719,7 +1679,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",
