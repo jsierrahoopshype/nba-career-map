@@ -1,3 +1,16 @@
+## 2026-11-03 — incremental run
+
+- Players updated: **486** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - DJ Wilson: Cangrejeros de Santurce → Jilin Northeast Tigers
+  - London Perrantes: Maroussi → Science City Jena
+
 ## 2026-11-02 — incremental run
 
 - Players updated: **555** (1 new)
