@@ -62,7 +62,7 @@ def test_slugs_unique_over_real_data():
 def test_head_tags_in_served_markup():
     html = pr.render(SAMPLE)
     canon = f"{pr.SITE_BASE_URL}/player/nikola-jokic.html"
-    assert "<title>Nikola Jokić Teams: Every Team, City and Country " \
+    assert "<title>Nikola Jokić teams: every team he has played for, in order " \
            "| HoopsMatic</title>" in html
     assert f'<link rel="canonical" href="{canon}">' in html
     assert f'<meta property="og:url" content="{canon}">' in html
@@ -221,7 +221,7 @@ def test_head_block_is_untouched_by_the_restyle():
     head = html.split("</head>")[0]
     canon = f"{pr.SITE_BASE_URL}/player/nikola-jokic.html"
     assert pr.build_title(SAMPLE) in head
-    assert f'<meta name="description" content="{pr.esc(pr.build_description(SAMPLE))}">' in head
+    assert f'<meta name="description" content="{pr.esc(pr.build_meta_description(SAMPLE))}">' in head
     assert f'<link rel="canonical" href="{canon}">' in head
     assert f'<meta property="og:url" content="{canon}">' in head
     assert "github.io" not in html, "canonical/og must point at hoopsmatic.com"
@@ -235,7 +235,7 @@ def test_escaping():
     html = pr.render(nasty)
     assert "<script>" not in html.split("</head>")[1], "unescaped markup in body"
     assert "&amp;" in html and "&lt;" in html
-    assert 'content="Bob &quot;Tiny&quot; O&lt;br&gt;Neal Teams:' in html
+    assert 'content="Bob &quot;Tiny&quot; O&lt;br&gt;Neal teams:' in html
     print("test_escaping PASS")
 
 
@@ -626,6 +626,85 @@ def test_team_and_country_pages_are_untouched():
     print("test_team_and_country_pages_are_untouched PASS")
 
 
+# --- "<player> teams" title + meta description ------------------------------
+
+def _p(n, status="nba_active", college=""):
+    hist = [{"years": f"{2000 + i}", "team": f"Team {i + 1}", "country": "USA"}
+            for i in range(n)]
+    return {"player": "Test Player", "status": status, "college": college,
+            "current_team": hist[-1]["team"] if hist else "",
+            "career_history": hist}
+
+
+def test_title_tense_follows_status():
+    assert pr.build_title(SAMPLE) == ("Nikola Jokić teams: every team he has "
+                                      "played for, in order | HoopsMatic")
+    retired = dict(SAMPLE, status="retired")
+    assert pr.build_title(retired) == ("Nikola Jokić teams: every team he "
+                                       "played for, in order | HoopsMatic")
+    print("test_title_tense_follows_status PASS")
+
+
+def test_meta_description_shape():
+    d = pr.build_meta_description(SAMPLE)
+    assert d == ("Nikola Jokić has played for 2 teams: Mega Basket and Denver "
+                 "Nuggets. Every stop on one map, from Mega Basket to Denver "
+                 "Nuggets."), d
+    d = pr.build_meta_description(_p(3, "retired", "Oregon (2018–2019)"))
+    assert d == ("Test Player played for 3 teams: Team 1, Team 2 and Team 3. "
+                 "Every stop on one map, from Oregon to Team 3."), d
+    # Multi-school value: first school, years stripped.
+    d = pr.build_meta_description(
+        _p(2, college="* Lee College (2014–2016) * LSU (2016–2018)"))
+    assert d.endswith("from Lee College to Team 2."), d
+    d = pr.build_meta_description(_p(1))
+    assert d == "Test Player has played for one team: Team 1. Every stop on one map.", d
+    print("test_meta_description_shape PASS")
+
+
+def test_meta_description_caps_long_lists():
+    d = pr.build_meta_description(_p(8))
+    assert "Team 7 and Team 8." in d and "more" not in d, d
+    d = pr.build_meta_description(_p(12))
+    assert ("12 teams: Team 1, Team 2, Team 3, Team 4, Team 5, Team 6 and 6 "
+            "more.") in d, d
+    assert "Team 7," not in d
+    print("test_meta_description_caps_long_lists PASS")
+
+
+def test_meta_description_uses_no_birth_place():
+    p = dict(_p(2), birth_place="Khartoum, Sudan")
+    assert "Khartoum" not in pr.build_meta_description(p)
+    print("test_meta_description_uses_no_birth_place PASS")
+
+
+def test_page_body_is_unchanged_by_the_meta_description():
+    """New data (college) goes in the head only; the visible lede is the
+    pre-existing build_description()."""
+    p = dict(SAMPLE, college="Oregon (2018–2019)")
+    html = pr.render(p)
+    head, body = html.split("</head>")
+    assert f'<p class="lede">{pr.esc(pr.build_description(p))}</p>' in body
+    assert "Oregon" not in body
+    meta = pr.esc(pr.build_meta_description(p))
+    title = pr.esc(pr.build_title(p))
+    for tag in (f'<meta name="description" content="{meta}">',
+                f'<meta property="og:description" content="{meta}">',
+                f'<meta property="og:title" content="{title}">',
+                f'<meta name="twitter:title" content="{title}">'):
+        assert tag in head, tag
+    print("test_page_body_is_unchanged_by_the_meta_description PASS")
+
+
+def test_meta_description_over_real_data():
+    db = json.loads((ROOT / "data" / "players" / "nba_players_careers.json")
+                    .read_text(encoding="utf-8"))
+    for p in db:
+        d = pr.build_meta_description(p)
+        assert d and "  " not in d and "()" not in d and "*" not in d, (p["player"], d)
+    print(f"test_meta_description_over_real_data PASS ({len(db)} players)")
+
+
 if __name__ == "__main__":
     test_slug()
     test_slugs_unique_over_real_data()
@@ -659,4 +738,10 @@ if __name__ == "__main__":
     test_a_merged_player_url_redirects()
     test_search_dropdown_sits_above_the_map()
     test_sitemap_lists_teams_and_countries()
+    test_title_tense_follows_status()
+    test_meta_description_shape()
+    test_meta_description_caps_long_lists()
+    test_meta_description_uses_no_birth_place()
+    test_page_body_is_unchanged_by_the_meta_description()
+    test_meta_description_over_real_data()
     print("\nall prerender tests PASS")
