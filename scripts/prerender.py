@@ -330,8 +330,76 @@ def build_description(player: dict) -> str:
 
 
 def build_title(player: dict) -> str:
+    """Head title aimed at "<player> teams" / "teams played for" searches.
+
+    Tense follows is_active(), the same rule as the description and the
+    "Current team" / "Last team" label.
+    """
     name = player.get("display_name") or player.get("player") or ""
-    return f"{name} Teams: Every Team, City and Country | HoopsMatic"
+    verb = "has played for" if is_active(player) else "played for"
+    return f"{name} teams: every team he {verb}, in order | HoopsMatic"
+
+
+# Above this many clubs the meta description names the first META_LIST_HEAD and
+# counts the rest ("and 4 more"), so a 15-stop journeyman stays readable.
+META_LIST_MAX = 8
+META_LIST_HEAD = 6
+
+
+def _college(player: dict) -> str:
+    """First college as stored, without its years: "Arizona State (2007–2009)"
+    -> "Arizona State". Multi-school values are "*A (..) *B (..)" lists; the
+    first one is where the path starts."""
+    raw = (player.get("college") or "").strip()
+    parts = [x.strip() for x in raw.split("*") if x.strip()]
+    first = parts[0] if parts else ""
+    return re.sub(r"\s*\([^)]*\)", "", first).strip(" ,;")
+
+
+def _join(items: list[str]) -> str:
+    """"A", "A and B", "A, B and C" (house style: no serial comma)."""
+    if len(items) <= 1:
+        return "".join(items)
+    return ", ".join(items[:-1]) + " and " + items[-1]
+
+
+def build_meta_description(player: dict) -> str:
+    """The <meta name="description"> / og:description for a player page.
+
+    Built from stored data only: the clubs in career order (era-accurate names
+    as the database holds them), the count, and the start and end of the path.
+    Head tags only -- the visible lede stays build_description(), so the page
+    itself shows nothing new.
+
+    The start of the path is the player's college when one is stored. Birth
+    place is deliberately NOT used: person_jsonld() documents that birth facts
+    were taken off Career Map pages. Without a college the path starts at the
+    first club instead.
+    """
+    name = player.get("display_name") or player.get("player") or ""
+    hist = player.get("career_history", []) or []
+    clubs = _clubs(hist)
+    if not clubs:
+        return build_description(player)
+
+    verb = "has played for" if is_active(player) else "played for"
+    count = f"{len(clubs)} teams" if len(clubs) != 1 else "one team"
+    if len(clubs) > META_LIST_MAX:
+        rest = len(clubs) - META_LIST_HEAD
+        listed = ", ".join(clubs[:META_LIST_HEAD]) + f" and {rest} more"
+    else:
+        listed = _join(clubs)
+    out = f"{name} {verb} {count}: {listed}."
+
+    # current_team is the last club for a retired player, so "to" reads right
+    # in both tenses.
+    end = (player.get("current_team") or "").strip() or clubs[-1]
+    start = _college(player) or clubs[0]
+    if start and start != end:
+        out += f" Every stop on one map, from {start} to {end}."
+    else:
+        out += " Every stop on one map."
+    return out
 
 
 def _shell(*, title: str, desc: str, canon: str, og_type: str, h1: str,
@@ -462,7 +530,7 @@ def render(player: dict) -> str:
 
     img, alt = player_card(name)
     return _shell(
-        title=build_title(player), desc=build_description(player),
+        title=build_title(player), desc=build_meta_description(player),
         canon=player_url(key), og_type="profile", image=img, image_alt=alt,
         h1=f"Where has {name} played?", lede=build_description(player),
         pre_cta=(dl + "\n" if dl else ""),
