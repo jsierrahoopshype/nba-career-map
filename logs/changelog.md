@@ -1,3 +1,21 @@
+## 2026-11-04 — incremental run
+
+- Players updated: **515** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **4**
+- Detected-but-not-new stints held back: **1**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Leonessa Brescia
+  - Andre Jackson: Milwaukee Bucks → Raptors 905
+  - C. J. Huntley: Phoenix Suns → Valley Suns
+  - Troy Caupain: Trabzonspor → Reggio Emilia
+  - Zach Lofton: Al Riyadi Beirut → Al Wahda
+  - Andre Jackson: [nba_active → overseas_active]
+  - C. J. Huntley: [nba_active → overseas_active]
+
 ## 2026-11-03 — incremental run
 
 - Players updated: **486** (1 new)
