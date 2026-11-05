@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 167,
+    "date_disagreement": 166,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -1269,16 +1269,6 @@
       "years_apart": 1
     },
     {
-      "basketball_reference": "1979-07-24",
-      "places_kept": false,
-      "player": "Norm Richardson",
-      "used": "1979-07-24",
-      "used_source": "basketball-reference",
-      "wikidata": "1977-07-24",
-      "wikidata_id": "Q683843",
-      "years_apart": 2
-    },
-    {
       "basketball_reference": "1924-06-17",
       "places_kept": true,
       "player": "Odie Spears",
@@ -1679,7 +1669,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-11-04",
+  "generated": "2026-11-05",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",

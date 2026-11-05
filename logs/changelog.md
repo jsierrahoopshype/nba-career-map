@@ -1,3 +1,19 @@
+## 2026-11-05 — incremental run
+
+- Players updated: **548** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Seattle SuperSonics / , Oklahoma City Thunder
+  - Chris Boucher: Boston Celtics → Shanghai Sharks
+  - Dalen Terry: Santa Cruz Warriors → Oklahoma City Thunder
+  - Chris Boucher: [nba_active → overseas_active]
+  - Dalen Terry: [overseas_active → nba_active]
+
 ## 2026-11-04 — incremental run
 
 - Players updated: **515** (1 new)
