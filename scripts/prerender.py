@@ -371,10 +371,10 @@ def build_meta_description(player: dict) -> str:
     Head tags only -- the visible lede stays build_description(), so the page
     itself shows nothing new.
 
-    The start of the path is the player's college when one is stored. Birth
-    place is deliberately NOT used: person_jsonld() documents that birth facts
-    were taken off Career Map pages. Without a college the path starts at the
-    first club instead.
+    When a college is stored the sentence closes "from <college> to <last
+    team>". Without one there is no "from ... to ..." at all, just "Every stop
+    on one map." Birth place is deliberately NOT used: person_jsonld()
+    documents that birth facts were taken off Career Map pages.
     """
     name = player.get("display_name") or player.get("player") or ""
     hist = player.get("career_history", []) or []
@@ -394,7 +394,7 @@ def build_meta_description(player: dict) -> str:
     # current_team is the last club for a retired player, so "to" reads right
     # in both tenses.
     end = (player.get("current_team") or "").strip() or clubs[-1]
-    start = _college(player) or clubs[0]
+    start = _college(player)
     if start and start != end:
         out += f" Every stop on one map, from {start} to {end}."
     else:
