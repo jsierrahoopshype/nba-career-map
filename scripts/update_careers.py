@@ -1082,6 +1082,11 @@ def _persist(db: Database, summary: dict) -> None:
         map_players.append(mp)
     write_json(ROOT_MAP_FILE, map_players)
 
+    # Before this run's moves are appended (and before the summary is logged):
+    # drop ledger rows the article has since retracted. See prune_ledger in
+    # scripts/signing_guard.py -- Phillip Wheeler's 2026-09-25 "signing" with
+    # the RGV Vipers outlived the stint it was based on.
+    _reconcile_ledger(players, summary)
     _append_logs(summary)
     _append_transactions(summary)
     _append_spelling_review(summary)
@@ -1111,6 +1116,35 @@ def _append_transactions(summary: dict) -> None:
             "date": date,
         })
     write_json(TRANSACTIONS, ledger)
+
+
+def _reconcile_ledger(players: list, summary: dict) -> None:
+    """Re-run the signings guard over every ledger row; drop the ones the
+    current career data says are not new signings (a stint the source has
+    since retracted or re-dated). Adjusts the Slack cursor to match."""
+    if not TRANSACTIONS.exists():
+        summary["retracted_signings"] = []
+        return
+    ledger = load_json(TRANSACTIONS, {"transactions": []})
+    if isinstance(ledger, list):
+        ledger = {"transactions": ledger}
+    marker = load_json(SLACK_MARKER, None)
+    posted = int((marker or {}).get("posted_count", 0))
+    kept, dropped, new_posted = signing_guard.prune_ledger(
+        ledger["transactions"], players, posted)
+    summary["retracted_signings"] = [
+        {"player": tx.get("player"), "from": tx.get("from_team"),
+         "to": tx.get("to_team"), "date": tx.get("date"), "reason": why}
+        for tx, why in dropped]
+    if not dropped:
+        return
+    for tx, why in dropped:
+        print(f"[ledger] retracted {tx.get('date')} {tx.get('player')}: "
+              f"{tx.get('from_team')} -> {tx.get('to_team')} ({why})")
+    ledger["transactions"] = kept
+    write_json(TRANSACTIONS, ledger)
+    if marker is not None:
+        write_json(SLACK_MARKER, {**marker, "posted_count": new_posted})
 
 
 def _append_place_review(summary: dict) -> None:
@@ -1323,6 +1357,8 @@ def _append_logs(summary: dict) -> None:
         f"- Team moves detected: **{len(summary['team_moves'])}**",
         f"- Detected-but-not-new stints held back: "
         f"**{len(summary.get('old_stints', []))}**",
+        f"- Logged signings retracted by the source: "
+        f"**{len(summary.get('retracted_signings', []))}**",
         f"- Club-name pairs held for review: "
         f"**{len(summary.get('spelling_review', []))}**",
         f"- Status changes: **{len(summary.get('status_changes', []))}**"
