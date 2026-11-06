@@ -647,9 +647,9 @@ def test_title_tense_follows_status():
 
 def test_meta_description_shape():
     d = pr.build_meta_description(SAMPLE)
+    # No college stored: no "from ... to ..." clause.
     assert d == ("Nikola Jokić has played for 2 teams: Mega Basket and Denver "
-                 "Nuggets. Every stop on one map, from Mega Basket to Denver "
-                 "Nuggets."), d
+                 "Nuggets. Every stop on one map."), d
     d = pr.build_meta_description(_p(3, "retired", "Oregon (2018–2019)"))
     assert d == ("Test Player played for 3 teams: Team 1, Team 2 and Team 3. "
                  "Every stop on one map, from Oregon to Team 3."), d
