@@ -157,6 +157,54 @@ def test_ledger_start_is_the_ledgers_first_day():
     print("test_ledger_start_is_the_ledgers_first_day PASS")
 
 
+def test_a_signing_the_source_later_retracted_is_pruned_by_the_nightly():
+    """Phillip Wheeler, replayed. 09-25: the article lists RGV 2026-present and
+    the move is logged (correctly, on that day). 10-10: the same row is
+    overwritten with the Valley Suns. The nightly's reconcile step must drop
+    the RGV row and pull the Slack cursor back, and leave undated rows alone."""
+    import update_careers as uc
+    seen_0925 = {"player": "Phillip Wheeler", "career_history": [
+        {"team": "Rio Grande Valley Vipers", "years": "2021–2022"},
+        {"team": "Philadelphia 76ers", "years": "2025"},
+        {"team": "Rio Grande Valley Vipers", "years": "2026–present"}]}
+    assert sg.is_new_signing(seen_0925, "Rio Grande Valley Vipers")[0] is True
+    seen_1012 = {"player": "Phillip Wheeler", "career_history": [
+        {"team": "Rio Grande Valley Vipers", "years": "2021–2022"},
+        {"team": "Philadelphia 76ers", "years": "2025"},
+        {"team": "Valley Suns", "years": "2026–present"}]}
+    ledger = [
+        {"player": "Phillip Wheeler", "from_team": "Philadelphia 76ers",
+         "to_team": "Rio Grande Valley Vipers", "date": "2026-09-25"},
+        {"player": "Somebody Undated", "from_team": "A", "to_team": "B",
+         "date": "2026-09-30"},
+        {"player": "Phillip Wheeler", "from_team": "Philadelphia 76ers",
+         "to_team": "Valley Suns", "date": "2026-10-12"},
+    ]
+    kept, dropped, posted = sg.prune_ledger(ledger, [seen_1012], posted_count=3)
+    assert [t["to_team"] for t, _ in dropped] == ["Rio Grande Valley Vipers"]
+    assert [t["to_team"] for t in kept] == ["B", "Valley Suns"]
+    assert posted == 2, posted
+
+    # ...and through the real nightly hook, on temp files.
+    tmp = Path(tempfile.mkdtemp())
+    tx_path, marker_path = tmp / "transactions.json", tmp / "marker.json"
+    tx_path.write_text(json.dumps({"transactions": ledger}), encoding="utf-8")
+    marker_path.write_text(json.dumps({"posted_count": 3}), encoding="utf-8")
+    saved = uc.TRANSACTIONS, uc.SLACK_MARKER
+    uc.TRANSACTIONS, uc.SLACK_MARKER = tx_path, marker_path
+    try:
+        summary = {}
+        uc._reconcile_ledger([seen_1012], summary)
+    finally:
+        uc.TRANSACTIONS, uc.SLACK_MARKER = saved
+    after = json.loads(tx_path.read_text(encoding="utf-8"))["transactions"]
+    assert len(after) == 2 and all(t["to_team"] != "Rio Grande Valley Vipers"
+                                   for t in after), after
+    assert json.loads(marker_path.read_text())["posted_count"] == 2
+    assert len(summary["retracted_signings"]) == 1, summary
+    print("test_a_signing_the_source_later_retracted_is_pruned_by_the_nightly PASS")
+
+
 if __name__ == "__main__":
     test_a_stint_that_started_before_the_ledger_is_not_a_signing()
     test_an_exact_signing_date_beats_the_year_span()
@@ -168,4 +216,5 @@ if __name__ == "__main__":
     test_the_shipped_overrides_load_and_apply()
     test_the_shipped_ledger_is_clean()
     test_ledger_start_is_the_ledgers_first_day()
+    test_a_signing_the_source_later_retracted_is_pruned_by_the_nightly()
     print("\nall signing-guard tests PASS")

@@ -155,3 +155,52 @@ def apply_start_dates(players, path: Path = START_DATES) -> int:
                         stamped += 1
                     break
     return stamped
+
+
+# --- ledger reconciliation ---------------------------------------------------
+# THE SECOND HALF OF THE BUG. The guard above judges a move on the day it is
+# detected, against the article as it reads THAT day. But the article can
+# change its mind afterwards. Phillip Wheeler: on 2026-09-23 an editor added
+# "Rio Grande Valley Vipers, 2026-present"; the 2026-09-25 run saw a stint that
+# started in 2026, the guard correctly passed it, and the move was logged. On
+# 2026-10-10 the same editor overwrote that row with "Valley Suns" -- the RGV
+# 2026 stint was retracted, not ended -- and from then on the only RGV stint on
+# file was 2021-22. The ledger is append-only, so the row stayed, and the guard
+# now (correctly) says it is not a 2026 signing.
+#
+# So the nightly replays the guard over the whole ledger after every parse and
+# drops entries it is now SURE are not new signings. Same rule as the live
+# check and as prune_old_signings.py: only a False verdict removes a row;
+# undetermined (None) rows are kept, because losing a real signing is worse.
+
+def _index_by_name(players) -> dict:
+    by_name: dict[str, dict] = {}
+    for p in players or []:
+        for key in (p.get("player"), p.get("display_name"), *(p.get("aliases") or [])):
+            if key:
+                by_name.setdefault(key, p)
+    return by_name
+
+
+def prune_ledger(ledger: list, players, posted_count: int = 0,
+                 ledger_start: dt.date = LEDGER_START):
+    """Split `ledger` into (kept, dropped, new_posted_count).
+
+    dropped is a list of (entry, reason). new_posted_count is the Slack cursor
+    rewritten to the number of KEPT entries that sat inside the posted range,
+    so removing rows from underneath it never re-posts what slid into the gap.
+    """
+    by_name = _index_by_name(players)
+    kept, dropped = [], []
+    posted_kept = 0
+    for i, tx in enumerate(ledger or []):
+        rec = by_name.get(tx.get("player", ""))
+        if rec is not None:
+            verdict, why = is_new_signing(rec, tx.get("to_team", ""), ledger_start)
+            if verdict is False:
+                dropped.append((tx, why))
+                continue
+        kept.append(tx)
+        if i < posted_count:
+            posted_kept += 1
+    return kept, dropped, posted_kept
