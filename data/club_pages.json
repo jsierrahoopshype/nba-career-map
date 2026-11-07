@@ -994,7 +994,7 @@
       "city": "Seville",
       "state": "",
       "country": "Spain",
-      "count": 37,
+      "count": 38,
       "roster": [
         {
           "player": "A.J. Bramlett",
@@ -1236,6 +1236,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Tomas Satoransky",
+          "years": "2009–2014",
+          "status": "overseas_active",
+          "last_team": "Hapoel Tel Aviv",
+          "nationality": "Czech Republic"
+        },
+        {
           "player": "Travis Leslie",
           "years": "2021–2022",
           "status": "overseas_active",
@@ -1270,6 +1277,11 @@
         },
         {
           "type": "club",
+          "name": "FC Barcelona",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Long Island Nets",
           "shared": 4
         },
@@ -1291,11 +1303,6 @@
         {
           "type": "club",
           "name": "Baskonia",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Quad City Thunder",
           "shared": 3
         }
       ]
@@ -30323,7 +30330,7 @@
       "city": "Austin",
       "state": "Texas",
       "country": "USA",
-      "count": 100,
+      "count": 101,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30866,6 +30873,13 @@
           "years": "2015–2016, 2017–2019",
           "status": "overseas_active",
           "last_team": "Split",
+          "nationality": "United States"
+        },
+        {
+          "player": "Ochai Agbaji",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -37911,8 +37925,8 @@
         {
           "player": "Enrique Freeman",
           "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "Iowa Wolves",
+          "status": "overseas_active",
+          "last_team": "Salt Lake City Stars",
           "nationality": "United States"
         },
         {
@@ -46431,7 +46445,7 @@
         },
         {
           "player": "Semaj Christon",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Pallacanestro Cantù",
           "nationality": "United States"
@@ -50327,7 +50341,7 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 3
         }
       ]
@@ -54587,7 +54601,7 @@
         },
         {
           "player": "Chucky Hepburn",
-          "years": "2025–2026",
+          "years": "2025–2026, 2026–present",
           "status": "overseas_active",
           "last_team": "Raptors 905",
           "nationality": "United States"
@@ -68911,7 +68925,7 @@
       "city": "Salt Lake City",
       "state": "Utah",
       "country": "USA",
-      "count": 84,
+      "count": 85,
       "roster": [
         {
           "player": "Alec Burks",
@@ -69028,6 +69042,13 @@
           "years": "2021",
           "status": "overseas_active",
           "last_team": "Riesen Ludwigsburg",
+          "nationality": "United States"
+        },
+        {
+          "player": "Enrique Freeman",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Salt Lake City Stars",
           "nationality": "United States"
         },
         {
@@ -69309,8 +69330,8 @@
         {
           "player": "Ochai Agbaji",
           "years": "2022",
-          "status": "nba_active",
-          "last_team": "Oklahoma City Thunder",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
           "nationality": "United States"
         },
         {
@@ -69538,7 +69559,7 @@
         },
         {
           "type": "club",
-          "name": "Leones de Ponce",
+          "name": "Iowa Wolves",
           "shared": 6
         }
       ]
@@ -70597,7 +70618,7 @@
       "city": "Cleveland",
       "state": "Ohio",
       "country": "USA",
-      "count": 56,
+      "count": 57,
       "roster": [
         {
           "player": "Aleem Ford",
@@ -70855,6 +70876,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Norchad Omier",
+          "years": "2025–2026, 2026–present",
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
+        },
+        {
           "player": "Norvel Pelle",
           "years": "2021–2022, 2022",
           "status": "overseas_active",
@@ -70897,7 +70924,7 @@
         },
         {
           "player": "Riley Minix",
-          "years": "2026, 2026–present",
+          "years": "2026, 2026",
           "status": "nba_active",
           "last_team": "Cleveland Cavaliers",
           "nationality": "United States"
@@ -107681,7 +107708,7 @@
       "city": "Sevilla",
       "state": "",
       "country": "Spain",
-      "count": 14,
+      "count": 13,
       "roster": [
         {
           "player": "Andre Turner",
@@ -107763,13 +107790,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Tomas Satoransky",
-          "years": "2009–2014",
-          "status": "overseas_active",
-          "last_team": "Hapoel Tel Aviv",
-          "nationality": "Czech Republic"
-        },
-        {
           "player": "Uros Slokar",
           "years": "2015-2016",
           "status": "retired",
@@ -107787,13 +107807,13 @@
       "related": [
         {
           "type": "club",
-          "name": "FC Barcelona",
+          "name": "Joventut Badalona",
           "shared": 4
         },
         {
           "type": "club",
-          "name": "Joventut Badalona",
-          "shared": 4
+          "name": "FC Barcelona",
+          "shared": 3
         },
         {
           "type": "club",
@@ -128765,12 +128785,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
@@ -130876,12 +130896,12 @@
         },
         {
           "type": "club",
-          "name": "Lakeland Magic",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Lakeland Magic",
           "shared": 1
         }
       ]
@@ -139501,8 +139521,8 @@
         {
           "player": "Enrique Freeman",
           "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Iowa Wolves",
+          "status": "overseas_active",
+          "last_team": "Salt Lake City Stars",
           "nationality": "United States"
         },
         {
@@ -139564,12 +139584,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Greensboro Swarm",
-          "shared": 3
+          "name": "Salt Lake City Stars",
+          "shared": 4
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 3
         },
         {
@@ -157965,7 +157985,7 @@
       "city": "San Diego",
       "state": "California",
       "country": "USA",
-      "count": 23,
+      "count": 24,
       "roster": [
         {
           "player": "Braxton Key",
@@ -158062,6 +158082,12 @@
           "status": "overseas_active",
           "last_team": "San Diego Clippers",
           "nationality": "Ghana"
+        },
+        {
+          "player": "Norchad Omier",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
         },
         {
           "player": "Patrick Baldwin",
@@ -165680,12 +165706,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -165817,12 +165843,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -182182,12 +182208,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -182578,12 +182604,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -182631,12 +182657,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -189278,12 +189304,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -192918,12 +192944,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -205893,12 +205919,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -227522,12 +227548,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         }
       ]
@@ -233653,7 +233679,7 @@
         },
         {
           "player": "Scottie Lewis",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Johor Southern Tigers",
           "nationality": "United States"
@@ -233672,12 +233698,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -238621,12 +238647,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -241191,7 +241217,7 @@
         },
         {
           "type": "club",
-          "name": "Reyer Venezia",
+          "name": "Real Betis",
           "shared": 1
         }
       ]
@@ -254338,7 +254364,7 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -264255,12 +264281,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -273366,12 +273392,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -273424,12 +273450,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -273482,12 +273508,12 @@
         },
         {
           "type": "club",
-          "name": "Fuenlabrada",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Real Betis",
+          "name": "Fuenlabrada",
           "shared": 1
         },
         {
@@ -292593,12 +292619,12 @@
         },
         {
           "type": "club",
-          "name": "Indiana Mad Ants",
+          "name": "Real Betis",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Sevilla",
+          "name": "Indiana Mad Ants",
           "shared": 1
         },
         {
@@ -301305,12 +301331,12 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {

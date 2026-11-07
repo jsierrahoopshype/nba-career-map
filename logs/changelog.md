@@ -1,3 +1,19 @@
+## 2026-11-07 — incremental run
+
+- Players updated: **510** (2 new)
+- New teams discovered: **0**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (2 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Norchad Omier, Walt Lemon Jr.
+  - Enrique Freeman: Iowa Wolves → Salt Lake City Stars
+  - Ochai Agbaji: Oklahoma City Thunder → Austin Spurs
+  - Enrique Freeman: [nba_active → overseas_active]
+  - Ochai Agbaji: [nba_active → overseas_active]
+
 ## 2026-11-06 — incremental run
 
 - Players updated: **488** (1 new)
