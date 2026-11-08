@@ -12518,7 +12518,7 @@
       "city": "Greensboro",
       "state": "North Carolina",
       "country": "USA",
-      "count": 84,
+      "count": 86,
       "roster": [
         {
           "player": "Aaron Harrison",
@@ -12633,6 +12633,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Christian Anderson Jr.",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Charlotte Hornets",
+          "nationality": "German / American"
+        },
+        {
           "player": "Christian Wood",
           "years": "2016–2017",
           "status": "nba_active",
@@ -12694,6 +12701,12 @@
           "status": "overseas_active",
           "last_team": "Beijing Royal Fighters",
           "nationality": "United States"
+        },
+        {
+          "player": "Hannes Steinbach",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Charlotte Hornets"
         },
         {
           "player": "Ibou Badji",
@@ -26670,12 +26683,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
@@ -35269,7 +35282,7 @@
       "city": "Hoffman Estates",
       "state": "Illinois",
       "country": "USA",
-      "count": 86,
+      "count": 87,
       "roster": [
         {
           "player": "Adam Mokoka",
@@ -35389,6 +35402,12 @@
           "status": "overseas_active",
           "last_team": "Sendai 89ers",
           "nationality": "Brazil"
+        },
+        {
+          "player": "Dailyn Swain",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls"
         },
         {
           "player": "Dalen Terry",
@@ -37332,12 +37351,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 2
         },
         {
@@ -38328,7 +38347,7 @@
       "city": "Oshkosh",
       "state": "Wisconsin",
       "country": "USA",
-      "count": 84,
+      "count": 85,
       "roster": [
         {
           "player": "AJ Green",
@@ -38371,6 +38390,13 @@
           "status": "overseas_active",
           "last_team": "Raptors 905",
           "nationality": "United States"
+        },
+        {
+          "player": "Bogoljub Marković",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Milwaukee Bucks",
+          "nationality": "Serbian"
         },
         {
           "player": "Bonzie Colson",
@@ -49151,7 +49177,7 @@
       "city": "Memphis",
       "state": "Tennessee",
       "country": "USA",
-      "count": 86,
+      "count": 85,
       "roster": [
         {
           "player": "Ahmad Caver",
@@ -49208,12 +49234,6 @@
           "status": "overseas_active",
           "last_team": "Andorra",
           "nationality": "United States"
-        },
-        {
-          "player": "Carson Cooper",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "Memphis Grizzlies"
         },
         {
           "player": "Chance Comanche",
@@ -50341,7 +50361,7 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 3
         }
       ]
@@ -50839,7 +50859,7 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Greensboro Swarm",
           "shared": 4
         }
       ]
@@ -70980,7 +71000,7 @@
         },
         {
           "player": "Tristan Enaruna",
-          "years": "2025–2026, 2026–present",
+          "years": "2025–2026, 2026",
           "status": "nba_active",
           "last_team": "Cleveland Cavaliers",
           "nationality": "Netherlands"
@@ -78270,7 +78290,7 @@
       "city": "El Segundo",
       "state": "California",
       "country": "USA",
-      "count": 72,
+      "count": 71,
       "roster": [
         {
           "player": "Adou Thiero",
@@ -78313,13 +78333,6 @@
           "status": "nba_active",
           "last_team": "Los Angeles Lakers",
           "nationality": "Ugandan / American"
-        },
-        {
-          "player": "Bronny James",
-          "years": "2024–2026",
-          "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "United States"
         },
         {
           "player": "Cameron Oliver",
@@ -86916,7 +86929,7 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         }
       ]
@@ -121666,12 +121679,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Fenerbahçe",
+          "name": "Windy City Bulls",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Fenerbahçe",
           "shared": 3
         },
         {
@@ -128785,12 +128798,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 2
         },
         {
@@ -130345,12 +130358,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         }
       ]
@@ -131550,7 +131563,7 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -138537,12 +138550,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -147006,12 +147019,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -147851,6 +147864,228 @@
           "type": "club",
           "name": "Yakima Sun Kings",
           "shared": 1
+        }
+      ]
+    },
+    "San Diego Clippers": {
+      "club": "San Diego Clippers",
+      "city": "San Diego",
+      "state": "California",
+      "country": "USA",
+      "count": 25,
+      "roster": [
+        {
+          "player": "Blake Wesley",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Braxton Key",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "Fenerbahçe",
+          "nationality": "United States"
+        },
+        {
+          "player": "Cam Christie",
+          "years": "2024–present",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Cam Reddish",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Elijah Harkless",
+          "years": "2024",
+          "status": "nba_active",
+          "last_team": "Detroit Pistons",
+          "nationality": "United States"
+        },
+        {
+          "player": "Fletcher Loyer",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers"
+        },
+        {
+          "player": "Izaiah Brockington",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Scaligera Verona",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jahmyl Telfort",
+          "years": "2025, 2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers"
+        },
+        {
+          "player": "Jalen Pickett",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jason Preston",
+          "years": "2025–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "John Poulakidas",
+          "years": "2025–2026, 2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Kai Jones",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "Anadolu Efes",
+          "nationality": "Bahamas"
+        },
+        {
+          "player": "Miye Oni",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "American / Nigerian / British"
+        },
+        {
+          "player": "Mo Bamba",
+          "years": "2024",
+          "status": "nba_active",
+          "last_team": "Utah Jazz",
+          "nationality": "American / Ivorian"
+        },
+        {
+          "player": "Nathan Mensah",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "Ghana"
+        },
+        {
+          "player": "Norchad Omier",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
+        },
+        {
+          "player": "Patrick Baldwin",
+          "years": "2025, 2025, 2026",
+          "status": "overseas_active",
+          "last_team": "Crvena Zvezda",
+          "nationality": "United States"
+        },
+        {
+          "player": "RayJ Dennis",
+          "years": "2024–2025, 2025",
+          "status": "nba_active",
+          "last_team": "Atlanta Hawks",
+          "nationality": "American"
+        },
+        {
+          "player": "Sean Pedulla",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Sacramento Kings",
+          "nationality": "United States"
+        },
+        {
+          "player": "Taylor Funk",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Salt Lake City Stars"
+        },
+        {
+          "player": "Tosan Evbuomwan",
+          "years": "2024",
+          "status": "overseas_active",
+          "last_team": "FC Barcelona",
+          "nationality": "Great Britain"
+        },
+        {
+          "player": "Trentyn Flowers",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "BC Roma",
+          "nationality": "United States"
+        },
+        {
+          "player": "TyTy Washington",
+          "years": "2025, 2025–2026",
+          "status": "overseas_active",
+          "last_team": "ASVEL",
+          "nationality": "United States"
+        },
+        {
+          "player": "Yanic Konan Niederhäuser",
+          "years": "2025–2026",
+          "status": "nba_active",
+          "last_team": "LA Clippers",
+          "nationality": "Switzerland"
+        },
+        {
+          "player": "Yuki Kawamura",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "San Diego Clippers",
+          "nationality": "Japan"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Salt Lake City Stars",
+          "shared": 4
+        },
+        {
+          "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Motor City Cruise",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Santa Cruz Warriors",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Memphis Hustle",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 2
         }
       ]
     },
@@ -157917,7 +158152,7 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 3
         }
       ]
@@ -157977,221 +158212,6 @@
           "type": "club",
           "name": "Johor Southern Tigers",
           "shared": 0
-        }
-      ]
-    },
-    "San Diego Clippers": {
-      "club": "San Diego Clippers",
-      "city": "San Diego",
-      "state": "California",
-      "country": "USA",
-      "count": 24,
-      "roster": [
-        {
-          "player": "Braxton Key",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Fenerbahçe",
-          "nationality": "United States"
-        },
-        {
-          "player": "Cam Christie",
-          "years": "2024–present",
-          "status": "nba_active",
-          "last_team": "LA Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Cam Reddish",
-          "years": "2026",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Elijah Harkless",
-          "years": "2024",
-          "status": "nba_active",
-          "last_team": "Detroit Pistons",
-          "nationality": "United States"
-        },
-        {
-          "player": "Fletcher Loyer",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers"
-        },
-        {
-          "player": "Izaiah Brockington",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Scaligera Verona",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jahmyl Telfort",
-          "years": "2025, 2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers"
-        },
-        {
-          "player": "Jalen Pickett",
-          "years": "2026–present",
-          "status": "nba_active",
-          "last_team": "LA Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Jason Preston",
-          "years": "2025–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "John Poulakidas",
-          "years": "2025–2026, 2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "United States"
-        },
-        {
-          "player": "Kai Jones",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Anadolu Efes",
-          "nationality": "Bahamas"
-        },
-        {
-          "player": "Miye Oni",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "American / Nigerian / British"
-        },
-        {
-          "player": "Mo Bamba",
-          "years": "2024",
-          "status": "nba_active",
-          "last_team": "Utah Jazz",
-          "nationality": "American / Ivorian"
-        },
-        {
-          "player": "Nathan Mensah",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "Ghana"
-        },
-        {
-          "player": "Norchad Omier",
-          "years": "2026",
-          "status": "nba_active",
-          "last_team": "Cleveland Cavaliers"
-        },
-        {
-          "player": "Patrick Baldwin",
-          "years": "2025, 2025, 2026",
-          "status": "overseas_active",
-          "last_team": "Crvena Zvezda",
-          "nationality": "United States"
-        },
-        {
-          "player": "RayJ Dennis",
-          "years": "2024–2025, 2025",
-          "status": "nba_active",
-          "last_team": "Atlanta Hawks",
-          "nationality": "American"
-        },
-        {
-          "player": "Sean Pedulla",
-          "years": "2026",
-          "status": "nba_active",
-          "last_team": "Sacramento Kings",
-          "nationality": "United States"
-        },
-        {
-          "player": "Taylor Funk",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Salt Lake City Stars"
-        },
-        {
-          "player": "Tosan Evbuomwan",
-          "years": "2024",
-          "status": "overseas_active",
-          "last_team": "FC Barcelona",
-          "nationality": "Great Britain"
-        },
-        {
-          "player": "Trentyn Flowers",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "BC Roma",
-          "nationality": "United States"
-        },
-        {
-          "player": "TyTy Washington",
-          "years": "2025, 2025–2026",
-          "status": "overseas_active",
-          "last_team": "ASVEL",
-          "nationality": "United States"
-        },
-        {
-          "player": "Yanic Konan Niederhäuser",
-          "years": "2025–2026",
-          "status": "nba_active",
-          "last_team": "LA Clippers",
-          "nationality": "Switzerland"
-        },
-        {
-          "player": "Yuki Kawamura",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "San Diego Clippers",
-          "nationality": "Japan"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Salt Lake City Stars",
-          "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Motor City Cruise",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Santa Cruz Warriors",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Memphis Hustle",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Delaware Blue Coats",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Capital City Go-Go",
-          "shared": 2
         }
       ]
     },
@@ -165701,17 +165721,17 @@
       "related": [
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -165838,17 +165858,17 @@
       "related": [
         {
           "type": "club",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Memphis Hustle",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Salt Lake City Stars",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
@@ -176651,12 +176671,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -182208,12 +182228,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -182604,12 +182624,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -182657,12 +182677,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -185727,12 +185747,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -192944,12 +192964,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -205919,12 +205939,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -207376,7 +207396,7 @@
       "city": "Würzburg",
       "state": "",
       "country": "Germany",
-      "count": 8,
+      "count": 7,
       "roster": [
         {
           "player": "Dirk Nowitzki",
@@ -207385,12 +207405,6 @@
           "last_team": "Dallas Mavericks",
           "nationality": "Germany",
           "all_star_count": 14
-        },
-        {
-          "player": "Hannes Steinbach",
-          "years": "2024–2025",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets"
         },
         {
           "player": "James Southerland",
@@ -214629,12 +214643,12 @@
         },
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -225244,7 +225258,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -233698,12 +233712,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -234677,7 +234691,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -238485,12 +238499,12 @@
         },
         {
           "type": "club",
-          "name": "Fenerbahçe",
+          "name": "Windy City Bulls",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Fenerbahçe",
           "shared": 1
         },
         {
@@ -238647,12 +238661,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         }
       ]
@@ -246402,7 +246416,7 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Canton Charge",
           "shared": 1
         }
       ]
@@ -251545,12 +251559,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -251603,12 +251617,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Memphis Hustle",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Memphis Hustle",
           "shared": 1
         },
         {
@@ -254364,7 +254378,7 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         }
       ]
@@ -264281,12 +264295,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
@@ -300306,6 +300320,71 @@
         }
       ]
     },
+    "South Bay/Coachella Valley Lakers": {
+      "club": "South Bay/Coachella Valley Lakers",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 2,
+      "roster": [
+        {
+          "player": "Bronny James",
+          "years": "2024–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "United States"
+        },
+        {
+          "player": "Chris Mañon",
+          "years": "2025–present",
+          "status": "nba_active",
+          "last_team": "Los Angeles Lakers",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "TNT Tropang 5G",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Al Gharafa",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Bosna",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Donar",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Johor Southern Tigers",
+          "shared": 0
+        }
+      ]
+    },
     "Salem Capitals": {
       "club": "Salem Capitals",
       "city": "Salem",
@@ -300522,6 +300601,11 @@
         },
         {
           "type": "club",
+          "name": "Wisconsin Herd",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Crvena Zvezda",
           "shared": 1
         },
@@ -300544,11 +300628,6 @@
           "type": "club",
           "name": "Slodes",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Partizan",
-          "shared": 0
         }
       ]
     },
@@ -300666,60 +300745,59 @@
         }
       ]
     },
-    "South Bay/Coachella Valley Lakers": {
-      "club": "South Bay/Coachella Valley Lakers",
-      "city": "",
+    "Würzburg Baskets": {
+      "club": "Würzburg Baskets",
+      "city": "Würzburg",
       "state": "",
-      "country": "",
+      "country": "Germany",
       "count": 1,
       "roster": [
         {
-          "player": "Chris Mañon",
-          "years": "2025–present",
+          "player": "Hannes Steinbach",
+          "years": "2024–2025",
           "status": "nba_active",
-          "last_team": "Los Angeles Lakers",
-          "nationality": "United States"
+          "last_team": "Charlotte Hornets"
         }
       ],
       "related": [
         {
           "type": "club",
-          "name": "NBA G League United",
+          "name": "Greensboro Swarm",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Brose Bamberg",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Manchester British-Americans",
+          "name": "Alba Berlin",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Perlas",
+          "name": "Bayern Munich",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "TNT Tropang 5G",
+          "name": "ratiopharm Ulm",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Al Gharafa",
+          "name": "EWE Baskets Oldenburg",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Bosna",
+          "name": "Riesen Ludwigsburg",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Donar",
-          "shared": 0
-        },
-        {
-          "type": "club",
-          "name": "Johor Southern Tigers",
+          "name": "Telekom Baskets Bonn",
           "shared": 0
         }
       ]
@@ -301331,12 +301409,12 @@
         },
         {
           "type": "club",
-          "name": "Salt Lake City Stars",
+          "name": "Greensboro Swarm",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
+          "name": "Salt Lake City Stars",
           "shared": 1
         },
         {
