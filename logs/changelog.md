@@ -1,3 +1,18 @@
+## 2026-11-11 — incremental run
+
+- Players updated: **548** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **2**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Seattle SuperSonics / , Oklahoma City Thunder, South Bay Lakers / Coachella Valley Lakers
+  - Nique Clifford: Sacramento Kings → Oklahoma City Thunder
+  - Emmanuel Mudiay: Piratas de Quebradillas → Gigantes de Carolina
+
 ## 2026-11-10 — incremental run
 
 - Players updated: **515** (1 new)
