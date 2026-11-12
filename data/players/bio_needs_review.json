@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 165,
+    "date_disagreement": 166,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -1079,6 +1079,16 @@
       "years_apart": 0
     },
     {
+      "basketball_reference": "1966-11-24",
+      "places_kept": true,
+      "player": "Ledell Eackles",
+      "used": "1966-11-24",
+      "used_source": "basketball-reference",
+      "wikidata": "1966-10-24",
+      "wikidata_id": "Q3829349",
+      "years_apart": 0
+    },
+    {
       "basketball_reference": "1926-12-25",
       "places_kept": true,
       "player": "Leo Kubiak",
@@ -1659,7 +1669,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-11-11",
+  "generated": "2026-11-12",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",
