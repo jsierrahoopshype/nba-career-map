@@ -1,3 +1,20 @@
+## 2026-11-13 — incremental run
+
+- Players updated: **510** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **4**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Dalen Terry: Oklahoma City Thunder → Santa Cruz Warriors
+  - Enrique Freeman: Salt Lake City Stars → Iowa Wolves
+  - Carson Cooper: Memphis Grizzlies → Los Angeles Lakers
+  - Erick Green: Reyer Venezia → Pallacanestro Cantù
+  - Dalen Terry: [nba_active → overseas_active]
+
 ## 2026-11-12 — incremental run
 
 - Players updated: **490** (1 new)
