@@ -23618,7 +23618,7 @@
           "player": "Doug McDermott",
           "years": "2014–2017",
           "stint_team": "Chicago Bulls",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -26897,13 +26897,6 @@
           "status": "overseas_active",
           "current_team": "Beşiktaş",
           "country": "Turkey",
-          "nationality": "United States"
-        },
-        {
-          "player": "Doug McDermott",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -33329,8 +33322,8 @@
           "years": "2023",
           "stint_team": "Dallas Mavericks",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "current_country": "Turkey",
+          "current_team": "Partizan",
+          "current_country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -33901,7 +33894,7 @@
           "player": "Doug McDermott",
           "years": "2018",
           "stint_team": "Dallas Mavericks",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -36752,8 +36745,8 @@
         {
           "player": "Chris Silva",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "country": "Turkey",
+          "current_team": "Partizan",
+          "country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -36841,13 +36834,6 @@
           "player": "Dorian Finney-Smith",
           "status": "nba_active",
           "current_team": "Atlanta Hawks",
-          "country": "USA",
-          "nationality": "United States"
-        },
-        {
-          "player": "Doug McDermott",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
           "country": "USA",
           "nationality": "United States"
         },
@@ -42943,8 +42929,8 @@
           "years": "2021–22",
           "stint_team": "Detroit Pistons",
           "status": "overseas_active",
-          "current_team": "Šiauliai",
-          "current_country": "Lithuania",
+          "current_team": "Kapfenberg Bulls",
+          "current_country": "Austria",
           "nationality": "United States"
         },
         {
@@ -47859,8 +47845,8 @@
         {
           "player": "Cassius Stanley",
           "status": "overseas_active",
-          "current_team": "Šiauliai",
-          "country": "Lithuania",
+          "current_team": "Kapfenberg Bulls",
+          "country": "Austria",
           "nationality": "United States"
         },
         {
@@ -48487,12 +48473,12 @@
       "related": [
         {
           "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 27
+          "name": "Motor City Cruise",
+          "shared": 28
         },
         {
           "type": "club",
-          "name": "Motor City Cruise",
+          "name": "Sioux Falls Skyforce",
           "shared": 27
         },
         {
@@ -60400,8 +60386,8 @@
           "years": "2020–21",
           "stint_team": "Indiana Pacers",
           "status": "overseas_active",
-          "current_team": "Šiauliai",
-          "current_country": "Lithuania",
+          "current_team": "Kapfenberg Bulls",
+          "current_country": "Austria",
           "nationality": "United States"
         },
         {
@@ -60824,7 +60810,7 @@
           "player": "Doug McDermott",
           "years": "2018–2021",
           "stint_team": "Indiana Pacers",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -60833,7 +60819,7 @@
           "player": "Doug McDermott",
           "years": "2024",
           "stint_team": "Indiana Pacers",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -63528,8 +63514,8 @@
         {
           "player": "Cassius Stanley",
           "status": "overseas_active",
-          "current_team": "Šiauliai",
-          "country": "Lithuania",
+          "current_team": "Kapfenberg Bulls",
+          "country": "Austria",
           "nationality": "United States"
         },
         {
@@ -63582,13 +63568,6 @@
           "nationality": "Lithuanian / American",
           "all_star": true,
           "all_star_count": 3
-        },
-        {
-          "player": "Doug McDermott",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA",
-          "nationality": "United States"
         },
         {
           "player": "Duane Washington Jr",
@@ -72840,10 +72819,10 @@
         },
         {
           "player": "Lawson Lovering",
-          "years": "2026–present",
+          "years": "2026",
           "stint_team": "Los Angeles Lakers",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "status": "overseas_active",
+          "current_team": "Memphis Hustle",
           "current_country": "USA"
         },
         {
@@ -75310,6 +75289,12 @@
           "nationality": "United States"
         },
         {
+          "player": "Lawson Lovering",
+          "status": "overseas_active",
+          "current_team": "Memphis Hustle",
+          "country": "USA"
+        },
+        {
           "player": "LeBron James",
           "status": "nba_active",
           "current_team": "Philadelphia 76ers",
@@ -77546,8 +77531,8 @@
           "player": "Lawson Lovering",
           "years": "2026",
           "stint_team": "Memphis Grizzlies",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "status": "overseas_active",
+          "current_team": "Memphis Hustle",
           "current_country": "USA"
         },
         {
@@ -79170,8 +79155,8 @@
         },
         {
           "player": "Lawson Lovering",
-          "status": "nba_active",
-          "current_team": "Los Angeles Lakers",
+          "status": "overseas_active",
+          "current_team": "Memphis Hustle",
           "country": "USA"
         },
         {
@@ -79955,8 +79940,8 @@
           "years": "2019–2021",
           "stint_team": "Miami Heat",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "current_country": "Turkey",
+          "current_team": "Partizan",
+          "current_country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -79964,8 +79949,8 @@
           "years": "2021–22",
           "stint_team": "Miami Heat",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "current_country": "Turkey",
+          "current_team": "Partizan",
+          "current_country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -82597,8 +82582,8 @@
         {
           "player": "Chris Silva",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "country": "Turkey",
+          "current_team": "Partizan",
+          "country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -88951,8 +88936,8 @@
           "years": "2021",
           "stint_team": "Minnesota Timberwolves",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "current_country": "Turkey",
+          "current_team": "Partizan",
+          "current_country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -91530,8 +91515,8 @@
         {
           "player": "Chris Silva",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "country": "Turkey",
+          "current_team": "Partizan",
+          "country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -92003,7 +91988,7 @@
         {
           "type": "club",
           "name": "Iowa Wolves",
-          "shared": 35
+          "shared": 36
         },
         {
           "type": "club",
@@ -96952,7 +96937,7 @@
           "player": "Doug McDermott",
           "years": "2017–18",
           "stint_team": "New York Knicks",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -101029,13 +101014,6 @@
           "nationality": "American"
         },
         {
-          "player": "Doug McDermott",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA",
-          "nationality": "United States"
-        },
-        {
           "player": "Dylan Windler",
           "status": "overseas_active",
           "current_team": "Perth Wildcats",
@@ -102781,7 +102759,7 @@
           "player": "Doug McDermott",
           "years": "2017",
           "stint_team": "Oklahoma City Thunder",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -105724,13 +105702,6 @@
           "current_team": "Sun Rockers Shibuya",
           "country": "Japan",
           "nationality": "American / Qatari"
-        },
-        {
-          "player": "Doug McDermott",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA",
-          "nationality": "United States"
         },
         {
           "player": "Eugene Omoruyi",
@@ -127241,8 +127212,8 @@
           "years": "2021",
           "stint_team": "Sacramento Kings",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "current_country": "Turkey",
+          "current_team": "Partizan",
+          "current_country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -127901,7 +127872,7 @@
           "player": "Doug McDermott",
           "years": "2024–2026",
           "stint_team": "Sacramento Kings",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -131913,8 +131884,8 @@
         {
           "player": "Chris Silva",
           "status": "overseas_active",
-          "current_team": "Fenerbahçe",
-          "country": "Turkey",
+          "current_team": "Partizan",
+          "country": "Serbia",
           "nationality": "Gabon"
         },
         {
@@ -132550,7 +132521,7 @@
         {
           "type": "club",
           "name": "Stockton Kings",
-          "shared": 41
+          "shared": 42
         },
         {
           "type": "club",
@@ -133795,7 +133766,7 @@
           "player": "Doug McDermott",
           "years": "2021–2024",
           "stint_team": "San Antonio Spurs",
-          "status": "nba_active",
+          "status": "retired",
           "current_team": "Sacramento Kings",
           "current_country": "USA",
           "nationality": "United States"
@@ -136717,13 +136688,6 @@
           "current_team": "PAOK Thessaloniki",
           "country": "Greece",
           "nationality": "Lithuania"
-        },
-        {
-          "player": "Doug McDermott",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA",
-          "nationality": "United States"
         },
         {
           "player": "Drew Eubanks",

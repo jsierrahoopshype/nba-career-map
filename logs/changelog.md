@@ -1,3 +1,21 @@
+## 2026-11-14 — incremental run
+
+- Players updated: **551** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **3**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (1 → overseas, 1 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Seattle SuperSonics / , Oklahoma City Thunder, South Bay Lakers / Coachella Valley Lakers
+  - Lawson Lovering: Los Angeles Lakers → Memphis Hustle
+  - Cassius Stanley: Šiauliai → Kapfenberg Bulls
+  - Chris Silva: Fenerbahçe → Partizan
+  - Doug McDermott: [nba_active → retired]
+  - Lawson Lovering: [nba_active → overseas_active]
+
 ## 2026-11-13 — incremental run
 
 - Players updated: **510** (1 new)
