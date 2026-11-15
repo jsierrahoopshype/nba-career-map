@@ -1,3 +1,23 @@
+## 2026-11-15 — incremental run
+
+- Players updated: **484** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **5**
+- Detected-but-not-new stints held back: **1**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Coviran Granada, Zenit St. Petersburg
+  - Rob Dillingham: Charlotte Hornets → Westchester Knicks
+  - Jarrod Uthoff: Petkim Spor → Maroussi
+  - Matt Thomas: Unicaja → Lietuvos rytas
+  - Omari Spellman: Beijing Ducks → Ulsan Hyundai Mobis Phoebus
+  - Orlando Robinson: Windy City Bulls → Chicago Bulls
+  - Rob Dillingham: [nba_active → overseas_active]
+  - Orlando Robinson: [overseas_active → nba_active]
+
 ## 2026-11-14 — incremental run
 
 - Players updated: **551** (1 new)

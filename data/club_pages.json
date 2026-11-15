@@ -1530,7 +1530,7 @@
           "player": "Jarrod Uthoff",
           "years": "2024–2026",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -4337,7 +4337,7 @@
           "player": "Matt Thomas",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Unicaja",
+          "last_team": "Lietuvos rytas",
           "nationality": "United States"
         },
         {
@@ -9053,8 +9053,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2022, 2022–2024",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -12129,7 +12129,7 @@
           "player": "Jarrod Uthoff",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -12332,7 +12332,7 @@
           "player": "Omari Spellman",
           "years": "2018–2019, 2021",
           "status": "overseas_active",
-          "last_team": "Beijing Ducks",
+          "last_team": "Ulsan Hyundai Mobis Phoebus",
           "nationality": "American / Lebanese"
         },
         {
@@ -23528,7 +23528,7 @@
           "player": "Matt Thomas",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Unicaja",
+          "last_team": "Lietuvos rytas",
           "nationality": "United States"
         },
         {
@@ -23577,7 +23577,7 @@
           "player": "Nemanja Nedovic",
           "years": "2014–2015",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -31475,8 +31475,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -35778,9 +35778,9 @@
         },
         {
           "player": "Orlando Robinson",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -37127,9 +37127,9 @@
         },
         {
           "player": "Nemanja Nedovic",
-          "years": "2008–2012, 2022–2026",
+          "years": "2008–2012, 2022–present",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -38193,7 +38193,7 @@
           "player": "Omari Spellman",
           "years": "2020",
           "status": "overseas_active",
-          "last_team": "Beijing Ducks",
+          "last_team": "Ulsan Hyundai Mobis Phoebus",
           "nationality": "American / Lebanese"
         },
         {
@@ -38213,8 +38213,8 @@
         {
           "player": "Rob Dillingham",
           "years": "2025",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets",
+          "status": "overseas_active",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -38338,6 +38338,11 @@
         },
         {
           "type": "club",
+          "name": "Westchester Knicks",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "Windy City Bulls",
           "shared": 8
         },
@@ -38345,11 +38350,6 @@
           "type": "club",
           "name": "College Park Skyhawks",
           "shared": 8
-        },
-        {
-          "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 7
         },
         {
           "type": "club",
@@ -43585,7 +43585,7 @@
           "player": "Jarrod Uthoff",
           "years": "2017, 2017–2018",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -44381,7 +44381,7 @@
           "player": "Matt Thomas",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "Unicaja",
+          "last_team": "Lietuvos rytas",
           "nationality": "United States"
         },
         {
@@ -44416,7 +44416,7 @@
           "player": "Nemanja Nedovic",
           "years": "2020–2022",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -45280,9 +45280,9 @@
         },
         {
           "player": "Matt Thomas",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
-          "last_team": "Unicaja",
+          "last_team": "Lietuvos rytas",
           "nationality": "United States"
         },
         {
@@ -45296,7 +45296,7 @@
           "player": "Nemanja Nedovic",
           "years": "2015–2018",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -45670,7 +45670,7 @@
           "player": "Nemanja Nedovic",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -49431,7 +49431,7 @@
           "player": "Jarrod Uthoff",
           "years": "2019–2020, 2020",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -49645,8 +49645,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2026",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -53256,7 +53256,7 @@
           "player": "Jarrod Uthoff",
           "years": "2017",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -54862,7 +54862,7 @@
           "player": "Jarrod Uthoff",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -55148,8 +55148,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -68198,7 +68198,7 @@
           "player": "Nemanja Nedovic",
           "years": "2018–2020",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -81438,7 +81438,7 @@
       "city": "Saint Petersburg",
       "state": "",
       "country": "Russia",
-      "count": 31,
+      "count": 30,
       "roster": [
         {
           "player": "Alex Poythress",
@@ -81500,7 +81500,7 @@
           "player": "Jarrod Uthoff",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -81586,13 +81586,6 @@
           "status": "overseas_active",
           "last_team": "Zenit Saint Petersburg",
           "nationality": "American / Jamaican"
-        },
-        {
-          "player": "Omari Spellman",
-          "years": "2024–2025",
-          "status": "overseas_active",
-          "last_team": "Beijing Ducks",
-          "nationality": "American / Lebanese"
         },
         {
           "player": "Sergey Karasev",
@@ -83866,7 +83859,7 @@
           "player": "Jarrod Uthoff",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -89257,7 +89250,7 @@
       "city": "White Plains",
       "state": "New York",
       "country": "USA",
-      "count": 93,
+      "count": 94,
       "roster": [
         {
           "player": "Allen Crabbe",
@@ -89799,6 +89792,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Rob Dillingham",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Westchester Knicks",
+          "nationality": "United States"
+        },
+        {
           "player": "Ron Baker",
           "years": "2016-2017",
           "status": "retired",
@@ -89933,17 +89933,17 @@
         },
         {
           "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "South Bay Lakers",
           "shared": 8
         },
         {
           "type": "club",
           "name": "Oklahoma City Blue",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Iowa Wolves",
           "shared": 7
         },
         {
@@ -91021,9 +91021,9 @@
         },
         {
           "player": "Omari Spellman",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Beijing Ducks",
+          "last_team": "Ulsan Hyundai Mobis Phoebus",
           "nationality": "American / Lebanese"
         },
         {
@@ -93751,7 +93751,7 @@
       "city": "Ulsan",
       "state": "",
       "country": "South Korea",
-      "count": 10,
+      "count": 11,
       "roster": [
         {
           "player": "Amal McCaskill",
@@ -93803,6 +93803,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Omari Spellman",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Ulsan Hyundai Mobis Phoebus",
+          "nationality": "American / Lebanese"
+        },
+        {
           "player": "Reggie Williams (1986)",
           "years": "2020",
           "status": "retired",
@@ -93837,6 +93844,11 @@
         },
         {
           "type": "club",
+          "name": "Erie BayHawks",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Salt Lake City Stars",
           "shared": 2
         },
@@ -93857,13 +93869,8 @@
         },
         {
           "type": "club",
-          "name": "Goyang Orions",
+          "name": "Anyang KGC",
           "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
         }
       ]
     },
@@ -96277,7 +96284,7 @@
           "player": "Nemanja Nedovic",
           "years": "2013–2014",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -96815,7 +96822,7 @@
       "city": "Granada",
       "state": "",
       "country": "Spain",
-      "count": 33,
+      "count": 32,
       "roster": [
         {
           "player": "Amida Brimah",
@@ -96979,13 +96986,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Matt Thomas",
-          "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Unicaja",
-          "nationality": "United States"
-        },
-        {
           "player": "Michael Bradley",
           "years": "2007",
           "status": "retired",
@@ -97067,11 +97067,6 @@
         },
         {
           "type": "club",
-          "name": "Alba Berlin",
-          "shared": 4
-        },
-        {
-          "type": "club",
           "name": "Manresa",
           "shared": 4
         },
@@ -97088,6 +97083,11 @@
         {
           "type": "club",
           "name": "Joventut Badalona",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Galatasaray",
           "shared": 3
         }
       ]
@@ -101251,7 +101251,7 @@
       "city": "Vilnius",
       "state": "",
       "country": "Lithuania",
-      "count": 37,
+      "count": 38,
       "roster": [
         {
           "player": "Andre Emmett",
@@ -101436,6 +101436,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Matt Thomas",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Lietuvos rytas",
+          "nationality": "United States"
+        },
+        {
           "player": "Maurice Baker",
           "years": "2006",
           "status": "retired",
@@ -101460,7 +101467,7 @@
           "player": "Nemanja Nedovic",
           "years": "2012–2013",
           "status": "overseas_active",
-          "last_team": "AS Monaco",
+          "last_team": "Crvena Zvezda",
           "nationality": "Serbian"
         },
         {
@@ -101521,12 +101528,17 @@
         },
         {
           "type": "club",
+          "name": "Panathinaikos",
+          "shared": 5
+        },
+        {
+          "type": "club",
           "name": "Gran Canaria",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Panathinaikos",
+          "name": "Valencia",
           "shared": 4
         },
         {
@@ -101548,11 +101560,6 @@
           "type": "club",
           "name": "Los Angeles D-Fenders",
           "shared": 4
-        },
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 3
         }
       ]
     },
@@ -109769,7 +109776,7 @@
       "city": "Athens",
       "state": "",
       "country": "Greece",
-      "count": 20,
+      "count": 21,
       "roster": [
         {
           "player": "Andreas Glyniadakis",
@@ -109853,6 +109860,13 @@
           "years": "2023–2024",
           "status": "overseas_active",
           "last_team": "APR",
+          "nationality": "United States"
+        },
+        {
+          "player": "Jarrod Uthoff",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -110129,7 +110143,7 @@
         },
         {
           "type": "club",
-          "name": "Albuquerque Thunderbirds",
+          "name": "Maroussi",
           "shared": 1
         }
       ]
@@ -110187,7 +110201,7 @@
         },
         {
           "type": "club",
-          "name": "Albuquerque Thunderbirds",
+          "name": "Maroussi",
           "shared": 1
         }
       ]
@@ -118897,7 +118911,7 @@
           "player": "Matt Thomas",
           "years": "2023–2025",
           "status": "overseas_active",
-          "last_team": "Unicaja",
+          "last_team": "Lietuvos rytas",
           "nationality": "United States"
         },
         {
@@ -119029,11 +119043,6 @@
         },
         {
           "type": "club",
-          "name": "Granada",
-          "shared": 4
-        },
-        {
-          "type": "club",
           "name": "Azovmash Mariupol",
           "shared": 4
         },
@@ -119045,6 +119054,11 @@
         {
           "type": "club",
           "name": "Rockford Lightning",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Raptors 905",
           "shared": 3
         }
       ]
@@ -128168,7 +128182,7 @@
           "player": "Jarrod Uthoff",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -158103,8 +158117,8 @@
         {
           "player": "Orlando Robinson",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Windy City Bulls",
+          "status": "nba_active",
+          "last_team": "Chicago Bulls",
           "nationality": "United States"
         },
         {
@@ -165987,7 +166001,7 @@
         },
         {
           "type": "club",
-          "name": "Sydney Kings",
+          "name": "Lietuvos rytas",
           "shared": 1
         }
       ]
@@ -172115,7 +172129,7 @@
           "player": "Jarrod Uthoff",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -175948,7 +175962,7 @@
           "player": "Jarrod Uthoff",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "Petkim Spor",
+          "last_team": "Maroussi",
           "nationality": "United States"
         },
         {
@@ -176017,6 +176031,11 @@
         },
         {
           "type": "club",
+          "name": "Maroussi",
+          "shared": 2
+        },
+        {
+          "type": "club",
           "name": "Caciques de Humacao",
           "shared": 2
         },
@@ -176028,11 +176047,6 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Texas Legends",
           "shared": 1
         }
       ]
@@ -177032,7 +177046,7 @@
       "city": "Wonju",
       "state": "",
       "country": "South Korea",
-      "count": 8,
+      "count": 9,
       "roster": [
         {
           "player": "Chinanu Onuaku",
@@ -177084,6 +177098,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Omari Spellman",
+          "years": "2025",
+          "status": "overseas_active",
+          "last_team": "Ulsan Hyundai Mobis Phoebus",
+          "nationality": "American / Lebanese"
+        },
+        {
           "player": "Yante Maten",
           "years": "2020–2021",
           "status": "overseas_active",
@@ -177100,6 +177121,11 @@
         {
           "type": "club",
           "name": "Hapoel Tel Aviv",
+          "shared": 3
+        },
+        {
+          "type": "club",
+          "name": "Anyang KGC",
           "shared": 3
         },
         {
@@ -177124,12 +177150,7 @@
         },
         {
           "type": "club",
-          "name": "Anyang KGC",
-          "shared": 2
-        },
-        {
-          "type": "club",
-          "name": "Busan KCC Egis",
+          "name": "Ulsan Hyundai Mobis Phoebus",
           "shared": 2
         }
       ]
@@ -179578,7 +179599,7 @@
           "player": "Omari Spellman",
           "years": "2021–2023",
           "status": "overseas_active",
-          "last_team": "Beijing Ducks",
+          "last_team": "Ulsan Hyundai Mobis Phoebus",
           "nationality": "American / Lebanese"
         },
         {
@@ -179622,12 +179643,12 @@
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 2
+          "name": "Wonju DB Promy",
+          "shared": 3
         },
         {
           "type": "club",
-          "name": "Maccabi Tel Aviv",
+          "name": "Rio Grande Valley Vipers",
           "shared": 2
         }
       ]
@@ -185613,12 +185634,12 @@
         },
         {
           "type": "club",
-          "name": "Granada",
+          "name": "Reggiana",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Reggiana",
+          "name": "Granada",
           "shared": 1
         },
         {
@@ -204804,7 +204825,7 @@
         },
         {
           "player": "Rakeem Christmas",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Manama Club",
           "nationality": "United States"
@@ -205238,7 +205259,7 @@
           "player": "Matt Thomas",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "Unicaja",
+          "last_team": "Lietuvos rytas",
           "nationality": "United States"
         },
         {
@@ -232671,7 +232692,7 @@
       "roster": [
         {
           "player": "Isaiah Todd",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Gence",
           "nationality": "United States"
@@ -235511,7 +235532,7 @@
       "roster": [
         {
           "player": "Jalen Jones",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Satria Muda Bandung",
           "nationality": "United States"
@@ -243727,7 +243748,7 @@
       "city": "Beirut",
       "state": "",
       "country": "Lebanon",
-      "count": 7,
+      "count": 6,
       "roster": [
         {
           "player": "Jimmer Fredette",
@@ -243749,13 +243770,6 @@
           "status": "overseas_active",
           "last_team": "Al Ahly Cairo",
           "nationality": "United States"
-        },
-        {
-          "player": "Omari Spellman",
-          "years": "2025",
-          "status": "overseas_active",
-          "last_team": "Beijing Ducks",
-          "nationality": "American / Lebanese"
         },
         {
           "player": "Paris Bass",
@@ -243787,11 +243801,6 @@
         },
         {
           "type": "club",
-          "name": "Erie BayHawks",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "South Bay Lakers",
           "shared": 2
         },
@@ -243807,11 +243816,6 @@
         },
         {
           "type": "club",
-          "name": "Anyang KGC",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Meralco Bolts",
           "shared": 2
         },
@@ -243819,6 +243823,16 @@
           "type": "club",
           "name": "Kazma",
           "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Al Ahly Cairo",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Idaho Stampede",
+          "shared": 1
         }
       ]
     },
@@ -267229,6 +267243,64 @@
         }
       ]
     },
+    "Coviran Granada": {
+      "club": "Coviran Granada",
+      "city": "Granada",
+      "state": "",
+      "country": "Spain",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Matt Thomas",
+          "years": "2025–2026",
+          "status": "overseas_active",
+          "last_team": "Lietuvos rytas",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Panathinaikos",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Valencia",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Unicaja",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Beşiktaş",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Alba Berlin",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Lietuvos rytas",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Obradoiro CAB",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Baskonia",
+          "shared": 0
+        }
+      ]
+    },
     "Cimarrones Caribbean Storm": {
       "club": "Cimarrones Caribbean Storm",
       "city": "",
@@ -275423,6 +275495,64 @@
         {
           "type": "club",
           "name": "Toronto Huskies",
+          "shared": 0
+        }
+      ]
+    },
+    "Zenit St. Petersburg": {
+      "club": "Zenit St. Petersburg",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Omari Spellman",
+          "years": "2024–2025",
+          "status": "overseas_active",
+          "last_team": "Ulsan Hyundai Mobis Phoebus",
+          "nationality": "American / Lebanese"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Erie BayHawks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Anyang KGC",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Beijing Ducks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Ulsan Hyundai Mobis Phoebus",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Wonju DB Promy",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
           "shared": 0
         }
       ]
@@ -300191,8 +300321,8 @@
         {
           "player": "Rob Dillingham",
           "years": "2022–2023",
-          "status": "nba_active",
-          "last_team": "Charlotte Hornets",
+          "status": "overseas_active",
+          "last_team": "Westchester Knicks",
           "nationality": "United States"
         },
         {
@@ -300212,6 +300342,11 @@
         {
           "type": "club",
           "name": "Texas Legends",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Westchester Knicks",
           "shared": 1
         },
         {
@@ -300238,11 +300373,6 @@
           "type": "club",
           "name": "Team Elite",
           "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "NBA G League United",
-          "shared": 0
         }
       ]
     },
