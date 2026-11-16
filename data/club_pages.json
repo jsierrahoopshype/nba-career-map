@@ -17239,8 +17239,8 @@
         {
           "player": "Johni Broome",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -17506,7 +17506,7 @@
           "player": "Skylar Mays",
           "years": "2022–2023",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -17575,6 +17575,11 @@
         },
         {
           "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "South Bay Lakers",
           "shared": 8
         },
@@ -17586,11 +17591,6 @@
         {
           "type": "club",
           "name": "Rio Grande Valley Vipers",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Oklahoma City Blue",
           "shared": 7
         }
       ]
@@ -26635,7 +26635,7 @@
           "player": "Skylar Mays",
           "years": "2026",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -31129,7 +31129,7 @@
           "player": "Ade Murkey",
           "years": "2021, 2022",
           "status": "overseas_active",
-          "last_team": "Álftanes",
+          "last_team": "Tindastóll",
           "nationality": "United States"
         },
         {
@@ -35938,12 +35938,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 8
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 8
         },
         {
@@ -37817,7 +37817,7 @@
       "city": "Des Moines",
       "state": "Iowa",
       "country": "USA",
-      "count": 73,
+      "count": 74,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -37830,7 +37830,7 @@
           "player": "Ade Murkey",
           "years": "2021",
           "status": "overseas_active",
-          "last_team": "Álftanes",
+          "last_team": "Tindastóll",
           "nationality": "United States"
         },
         {
@@ -38064,6 +38064,13 @@
           "nationality": "French / Beninese"
         },
         {
+          "player": "Johni Broome",
+          "years": "2026–present",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
+          "nationality": "United States"
+        },
+        {
           "player": "Jordan McLaughlin",
           "years": "2019–2020",
           "status": "nba_active",
@@ -38235,7 +38242,7 @@
           "player": "Skylar Mays",
           "years": "2025",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -38348,6 +38355,16 @@
         },
         {
           "type": "club",
+          "name": "Wisconsin Herd",
+          "shared": 8
+        },
+        {
+          "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 8
+        },
+        {
+          "type": "club",
           "name": "College Park Skyhawks",
           "shared": 8
         },
@@ -38359,16 +38376,6 @@
         {
           "type": "club",
           "name": "Oklahoma City Blue",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Wisconsin Herd",
-          "shared": 7
-        },
-        {
-          "type": "club",
-          "name": "Delaware Blue Coats",
           "shared": 7
         }
       ]
@@ -38398,7 +38405,7 @@
           "player": "Ade Murkey",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "Álftanes",
+          "last_team": "Tindastóll",
           "nationality": "United States"
         },
         {
@@ -38690,9 +38697,9 @@
         },
         {
           "player": "Johni Broome",
-          "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Wisconsin Herd",
+          "years": "2026",
+          "status": "nba_active",
+          "last_team": "Minnesota Timberwolves",
           "nationality": "United States"
         },
         {
@@ -39016,8 +39023,8 @@
         },
         {
           "type": "club",
-          "name": "Greensboro Swarm",
-          "shared": 7
+          "name": "Iowa Wolves",
+          "shared": 8
         }
       ]
     },
@@ -39032,7 +39039,7 @@
           "player": "Ade Murkey",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "Álftanes",
+          "last_team": "Tindastóll",
           "nationality": "United States"
         },
         {
@@ -39082,6 +39089,71 @@
         {
           "type": "club",
           "name": "Kaohsiung Aquas",
+          "shared": 1
+        }
+      ]
+    },
+    "Tindastóll": {
+      "club": "Tindastóll",
+      "city": "Sauðárkrókur",
+      "state": "",
+      "country": "Iceland",
+      "count": 2,
+      "roster": [
+        {
+          "player": "Ade Murkey",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Tindastóll",
+          "nationality": "United States"
+        },
+        {
+          "player": "Petur Gudmundsson",
+          "years": "1990-1991, 1991-1992",
+          "status": "retired",
+          "last_team": "Breiðablik",
+          "nationality": "Iceland"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Sioux Falls Skyforce",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Wisconsin Herd",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Stockton Kings",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Tampa Bay Thrillers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Kansas City Sizzlers",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "New Haven Skyhawks",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Álftanes",
           "shared": 1
         }
       ]
@@ -39925,12 +39997,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 5
         },
         {
@@ -47143,7 +47215,7 @@
           "player": "Skylar Mays",
           "years": "2024–2025",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -50335,7 +50407,7 @@
           "player": "Skylar Mays",
           "years": "2023",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -50798,7 +50870,7 @@
           "player": "Skylar Mays",
           "years": "2021–2022",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -78710,7 +78782,7 @@
           "player": "Skylar Mays",
           "years": "2024",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -110617,7 +110689,7 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -124049,7 +124121,7 @@
       "city": "Auckland",
       "state": "",
       "country": "New Zealand",
-      "count": 28,
+      "count": 29,
       "roster": [
         {
           "player": "Anthony Lamb",
@@ -124226,6 +124298,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Skylar Mays",
+          "years": "2026–present",
+          "status": "overseas_active",
+          "last_team": "New Zealand Breakers",
+          "nationality": "United States"
+        },
+        {
           "player": "Tacko Fall",
           "years": "2024–2025",
           "status": "nba_active",
@@ -124270,6 +124349,11 @@
         },
         {
           "type": "club",
+          "name": "Delaware Blue Coats",
+          "shared": 4
+        },
+        {
+          "type": "club",
           "name": "Canton Charge",
           "shared": 4
         },
@@ -124281,11 +124365,6 @@
         {
           "type": "club",
           "name": "Oklahoma City Blue",
-          "shared": 3
-        },
-        {
-          "type": "club",
-          "name": "Delaware Blue Coats",
           "shared": 3
         }
       ]
@@ -154217,12 +154296,12 @@
         },
         {
           "type": "club",
-          "name": "Chorale Roanne",
+          "name": "New Zealand Breakers",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "New Zealand Breakers",
+          "name": "Chorale Roanne",
           "shared": 2
         },
         {
@@ -157714,7 +157793,7 @@
           "player": "Skylar Mays",
           "years": "2025–2026",
           "status": "overseas_active",
-          "last_team": "South East Melbourne Phoenix",
+          "last_team": "New Zealand Breakers",
           "nationality": "United States"
         },
         {
@@ -160993,7 +161072,7 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 3
         }
       ]
@@ -176158,7 +176237,7 @@
         },
         {
           "player": "Tyler Davis",
-          "years": "2024–present",
+          "years": "2024–2026",
           "status": "overseas_active",
           "last_team": "Osos de Manatí",
           "nationality": "American / Puerto Rican"
@@ -179477,12 +179556,12 @@
         },
         {
           "type": "club",
-          "name": "Aris Thessaloniki",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Aris Thessaloniki",
           "shared": 1
         },
         {
@@ -189767,7 +189846,7 @@
         },
         {
           "type": "club",
-          "name": "Galatasaray",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -239466,12 +239545,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {
@@ -257153,12 +257232,12 @@
         },
         {
           "type": "club",
-          "name": "Álftanes",
+          "name": "Tindastóll",
           "shared": 0
         },
         {
           "type": "club",
-          "name": "Tindastóll",
+          "name": "Álftanes",
           "shared": 0
         }
       ]
@@ -257679,12 +257758,12 @@
         },
         {
           "type": "club",
-          "name": "Brisbane Bullets",
+          "name": "New Zealand Breakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "New Zealand Breakers",
+          "name": "Brisbane Bullets",
           "shared": 1
         },
         {
@@ -257867,12 +257946,12 @@
         },
         {
           "type": "club",
-          "name": "Brisbane Bullets",
+          "name": "New Zealand Breakers",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "New Zealand Breakers",
+          "name": "Brisbane Bullets",
           "shared": 1
         },
         {
@@ -278426,17 +278505,17 @@
         },
         {
           "type": "club",
+          "name": "Tindastóll",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Breiðablik",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Sunderland Maestros",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tindastóll",
           "shared": 1
         },
         {
@@ -278484,6 +278563,11 @@
         },
         {
           "type": "club",
+          "name": "Tindastóll",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Breiðablik",
           "shared": 1
         },
@@ -278495,11 +278579,6 @@
         {
           "type": "club",
           "name": "Sunderland Maestros",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tindastóll",
           "shared": 1
         }
       ]
@@ -278542,6 +278621,11 @@
         },
         {
           "type": "club",
+          "name": "Tindastóll",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Breiðablik",
           "shared": 1
         },
@@ -278553,11 +278637,6 @@
         {
           "type": "club",
           "name": "Sunderland Maestros",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tindastóll",
           "shared": 1
         }
       ]
@@ -278600,75 +278679,17 @@
         },
         {
           "type": "club",
-          "name": "Breiðablik",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Club Atlético River Plate",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Tindastóll",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Valur",
-          "shared": 1
-        }
-      ]
-    },
-    "Tindastóll": {
-      "club": "Tindastóll",
-      "city": "Sauðárkrókur",
-      "state": "",
-      "country": "Iceland",
-      "count": 1,
-      "roster": [
-        {
-          "player": "Petur Gudmundsson",
-          "years": "1990-1991, 1991-1992",
-          "status": "retired",
-          "last_team": "Breiðablik",
-          "nationality": "Iceland"
-        }
-      ],
-      "related": [
-        {
-          "type": "club",
-          "name": "Sioux Falls Skyforce",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tampa Bay Thrillers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Kansas City Sizzlers",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "New Haven Skyhawks",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Breiðablik",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Club Atlético River Plate",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Sunderland Maestros",
           "shared": 1
         },
         {
@@ -278716,17 +278737,17 @@
         },
         {
           "type": "club",
+          "name": "Tindastóll",
+          "shared": 1
+        },
+        {
+          "type": "club",
           "name": "Club Atlético River Plate",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Sunderland Maestros",
-          "shared": 1
-        },
-        {
-          "type": "club",
-          "name": "Tindastóll",
           "shared": 1
         },
         {
@@ -300356,12 +300377,12 @@
         },
         {
           "type": "club",
-          "name": "Capital City Go-Go",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Capital City Go-Go",
           "shared": 1
         },
         {

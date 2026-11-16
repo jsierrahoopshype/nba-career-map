@@ -1,3 +1,19 @@
+## 2026-11-16 — incremental run
+
+- Players updated: **513** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **3**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **1** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Skylar Mays: South East Melbourne Phoenix → New Zealand Breakers
+  - Johni Broome: Wisconsin Herd → Minnesota Timberwolves
+  - Ade Murkey: Álftanes → Tindastóll
+  - Johni Broome: [overseas_active → nba_active]
+
 ## 2026-11-15 — incremental run
 
 - Players updated: **484** (1 new)
