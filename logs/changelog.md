@@ -1,3 +1,17 @@
+## 2026-11-17 — incremental run
+
+- Players updated: **546** (1 new)
+- New teams discovered: **2**
+- Team moves detected: **1**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Seattle SuperSonics / , Oklahoma City Thunder, South Bay Lakers / Coachella Valley Lakers
+  - Rafael Castro: Houston Rockets → Atlanta Hawks
+
 ## 2026-11-16 — incremental run
 
 - Players updated: **513** (1 new)
