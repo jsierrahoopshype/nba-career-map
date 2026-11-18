@@ -420,7 +420,41 @@ def test_sitemap():
     # the address the section is SERVED at, not the GitHub copy of the files
     assert f"{b.SITE_BASE_URL}/" in xml
     assert "github.io" not in xml, "the sitemap is advertising the GitHub copy"
+    # The root is listed as the bare directory (index.html's canonical), never
+    # as /index.html, and nothing in it is a query URL or the old /career-maps/.
+    assert f"<loc>{b.SITE_BASE_URL}/</loc>" in xml
+    assert "/index.html<" not in xml
+    assert "?" not in xml.split("?>", 1)[1]
+    assert "/career-maps/" not in xml
     print("test_sitemap PASS")
+
+
+def test_sitemap_root_keeps_its_old_lastmod():
+    """Renaming the root entry from /index.html to / keeps its stored date
+    while index.html's bytes are unchanged, and moves it when they change."""
+    real = b.sitemap_urls([])[0]
+    assert real == f"{b.SITE_BASE_URL}/"
+    h = b.hashlib.sha256((b.ROOT / "index.html").read_bytes()).hexdigest()[:16]
+    old_key = f"{b.SITE_BASE_URL}/index.html"
+    today = datetime.date(2030, 1, 1)
+    out = b.sitemap_lastmod([real], {old_key: [h, "2026-01-02"]}, today)
+    assert out[real] == [h, "2026-01-02"], out
+    out = b.sitemap_lastmod([real], {old_key: ["different", "2026-01-02"]}, today)
+    assert out[real] == [h, "2030-01-01"], out
+    print("test_sitemap_root_keeps_its_old_lastmod PASS")
+
+
+def test_dashboard_team_and_country_links_are_clean():
+    """index.html's dashboard links point at the prerendered team/country
+    pages (their canonical URLs), and a click still opens teams.html."""
+    html = (b.ROOT / "index.html").read_text(encoding="utf-8")
+    assert 'href="teams.html?team=' not in html
+    assert 'href="teams.html?country=' not in html
+    assert 'href="team/${playerSlug(NBA_ERAS[n]||n)}.html" data-dteam=' in html
+    assert 'href="country/${playerSlug(n)}.html" data-dcountry=' in html
+    assert "'teams.html?team=' + _enc(dt.dataset.dteam)" in html
+    assert "'teams.html?country=' + _enc(dt.dataset.dcountry)" in html
+    print("test_dashboard_team_and_country_links_are_clean PASS")
 
 
 def test_every_page_points_at_the_address_it_is_served_from():
@@ -551,6 +585,8 @@ if __name__ == "__main__":
     test_era_gleague_collision()
     test_collision_team_vs_club()
     test_sitemap()
+    test_sitemap_root_keeps_its_old_lastmod()
+    test_dashboard_team_and_country_links_are_clean()
     test_every_page_points_at_the_address_it_is_served_from()
     test_relocation_timeline()
     print("\nALL DASHBOARD TESTS PASS")

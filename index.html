@@ -2624,11 +2624,14 @@
         // data-dplayer, so behaviour is unchanged.
         const dPlayer = n => `<a class="dlink" href="player/${playerSlug(n)}.html" data-dplayer="${_escH(n)}">${_escH(n)}</a>`;
         const dClub = n => `<a class="dlink" href="teams.html?club=${_enc(n)}">${_escH(n)}</a>`;
-        const dCountry = n => `<a class="dlink" href="teams.html?country=${_enc(n)}">${getFlag(n)}${_escH(n)}</a>`;
+        // Franchises and countries link to their prerendered pages (the canonical
+        // URLs, like dPlayer); the click handler below still opens the
+        // interactive teams.html view via data-dteam / data-dcountry.
+        const dCountry = n => `<a class="dlink" href="country/${playerSlug(n)}.html" data-dcountry="${_escH(n)}">${getFlag(n)}${_escH(n)}</a>`;
         const dCity = (n, co) => `<a class="dlink" href="teams.html?city=${_enc(n)}${co?'&country='+_enc(co):''}">${_escH(n)}</a>`;
         const _isNba = n => !!NBA_ERAS[n] || NBA_FRANCHISES.includes(n);
         const dTeam = n => _isNba(n)
-            ? `<a class="dlink" href="teams.html?team=${_enc(NBA_ERAS[n]||n)}">${_escH(n)}</a>` : dClub(n);
+            ? `<a class="dlink" href="team/${playerSlug(NBA_ERAS[n]||n)}.html" data-dteam="${_escH(NBA_ERAS[n]||n)}">${_escH(n)}</a>` : dClub(n);
         let CLUB_ALIASES = {};   // old/sponsor club name -> surviving club
         let TEAM_COUNTRY = {};
         const teamCountry = n => TEAM_COUNTRY[n] || (_isNba(n) ? (n==='Toronto Raptors'?'Canada':'USA') : '');
@@ -2742,7 +2745,7 @@
             const chosen = el.dataset.country || (pool.length ? pool[Math.floor(_rng(seed)()*pool.length)] : all[0]);
             const list = (DASH.where_are_they_now||[]).filter(p=>p.country===chosen);
             const asOf = _oldest(list);
-            el.innerHTML = `<div class="card-h">Who's Playing In… <a class="see-all" href="teams.html?country=${_enc(chosen)}">full page →</a></div>
+            el.innerHTML = `<div class="card-h">Who's Playing In… <a class="see-all" href="country/${playerSlug(chosen)}.html" data-dcountry="${_escH(chosen)}">full page →</a></div>
               <div class="spot-controls">
                 <strong>${getFlag(chosen)} ${_escH(chosen)}</strong>
                 <span class="rank">${list.length} active${asOf?` · as of ${_fmtDate(asOf)}`:''}</span>
@@ -3086,7 +3089,16 @@
             const chip = e.target.closest('a.chip[data-player]');
             if(chip){ e.preventDefault(); goPlayer(chip.dataset.player); return; }
             const dp = e.target.closest('a[data-dplayer]');
-            if(dp){ e.preventDefault(); goPlayer(dp.dataset.dplayer); }
+            if(dp){ e.preventDefault(); goPlayer(dp.dataset.dplayer); return; }
+            // Dashboard franchise / country links: same interactive destination
+            // as before (teams.html?team= / ?country=); the href is the clean page.
+            const dt = e.target.closest('a[data-dteam],a[data-dcountry]');
+            if(dt){
+                e.preventDefault();
+                location.href = dt.dataset.dteam != null
+                    ? 'teams.html?team=' + _enc(dt.dataset.dteam)
+                    : 'teams.html?country=' + _enc(dt.dataset.dcountry);
+            }
         });
         
         function showWelcome() {

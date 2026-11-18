@@ -713,7 +713,10 @@ def w_player_aliases(players: list) -> dict:
 
 def sitemap_urls(players: list) -> list:
     """Every URL the sitemap lists: team pages + player pages + country pages."""
-    urls = [f"{SITE_BASE_URL}/index.html"]
+    # The map's root, not /index.html: index.html canonicals to the bare
+    # directory, so that is the URL to list (sitemap_lastmod() still hashes
+    # index.html for it).
+    urls = [f"{SITE_BASE_URL}/"]
     urls += [f"{SITE_BASE_URL}/teams.html"]
     urls += [prerender.team_url(fr) for fr in sorted(NBA_TEAMS)]
     countries = sorted({(s.get("country") or "").strip()
@@ -740,12 +743,15 @@ def sitemap_lastmod(urls: list, prev: dict, today: datetime.date) -> dict:
     """
     out = {}
     for u in urls:
-        rel = u[len(SITE_BASE_URL) + 1:]
+        rel = u[len(SITE_BASE_URL) + 1:] or "index.html"
         try:
             h = hashlib.sha256((ROOT / rel).read_bytes()).hexdigest()[:16]
         except OSError:
             h = ""
         old = prev.get(u)
+        if old is None and rel == "index.html":
+            # The root used to be listed as .../index.html: carry its date over.
+            old = prev.get(f"{SITE_BASE_URL}/index.html")
         out[u] = old if old and old[0] == h else [h, today.isoformat()]
     return out
 
