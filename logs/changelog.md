@@ -1,3 +1,20 @@
+## 2026-11-18 — incremental run
+
+- Players updated: **490** (1 new)
+- New teams discovered: **0**
+- Team moves detected: **3**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (1 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+  - Killian Hayes: Sacramento Kings → FC Barcelona
+  - John Konchar: Olympiacos → Utah Jazz
+  - Marcelo Huertas: Tenerife → Dubai Basketball
+  - Killian Hayes: [nba_active → overseas_active]
+  - John Konchar: [overseas_active → nba_active]
+
 ## 2026-11-17 — incremental run
 
 - Players updated: **546** (1 new)

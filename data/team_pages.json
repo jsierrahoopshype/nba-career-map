@@ -3736,7 +3736,7 @@
         },
         {
           "player": "Keshon Gilbert",
-          "years": "2026–present",
+          "years": "2026",
           "stint_team": "Atlanta Hawks",
           "status": "nba_active",
           "current_team": "Atlanta Hawks",
@@ -15470,9 +15470,9 @@
           "player": "Killian Hayes",
           "years": "2025",
           "stint_team": "Brooklyn Nets",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "French / American"
         },
         {
@@ -18121,9 +18121,9 @@
         },
         {
           "player": "Killian Hayes",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "French / American"
         },
         {
@@ -45517,9 +45517,9 @@
           "player": "Killian Hayes",
           "years": "2020–2024",
           "stint_team": "Detroit Pistons",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "French / American"
         },
         {
@@ -48169,9 +48169,9 @@
         },
         {
           "player": "Killian Hayes",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
           "nationality": "French / American"
         },
         {
@@ -48501,17 +48501,17 @@
         },
         {
           "type": "club",
+          "name": "FC Barcelona",
+          "shared": 15
+        },
+        {
+          "type": "club",
           "name": "Virtus Roma",
           "shared": 15
         },
         {
           "type": "club",
           "name": "Fort Wayne Mad Ants",
-          "shared": 14
-        },
-        {
-          "type": "club",
-          "name": "FC Barcelona",
           "shared": 14
         },
         {
@@ -73063,8 +73063,8 @@
           "years": "2015–2017",
           "stint_team": "Los Angeles Lakers",
           "status": "overseas_active",
-          "current_team": "Tenerife",
-          "current_country": "Spain",
+          "current_team": "Dubai Basketball",
+          "current_country": "UAE",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -75348,8 +75348,8 @@
         {
           "player": "Marcelo Huertas",
           "status": "overseas_active",
-          "current_team": "Tenerife",
-          "country": "Spain",
+          "current_team": "Dubai Basketball",
+          "country": "UAE",
           "nationality": "Brazilian / Italian"
         },
         {
@@ -77170,9 +77170,9 @@
           "player": "John Konchar",
           "years": "2019–2026",
           "stint_team": "Memphis Grizzlies",
-          "status": "overseas_active",
-          "current_team": "Olympiacos",
-          "current_country": "Greece",
+          "status": "nba_active",
+          "current_team": "Utah Jazz",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -79043,9 +79043,9 @@
         },
         {
           "player": "John Konchar",
-          "status": "overseas_active",
-          "current_team": "Olympiacos",
-          "country": "Greece",
+          "status": "nba_active",
+          "current_team": "Utah Jazz",
+          "country": "USA",
           "nationality": "United States"
         },
         {
@@ -129497,9 +129497,9 @@
           "player": "Killian Hayes",
           "years": "2026",
           "stint_team": "Sacramento Kings",
-          "status": "nba_active",
-          "current_team": "Sacramento Kings",
-          "current_country": "USA",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "current_country": "Spain",
           "nationality": "French / American"
         },
         {
@@ -132282,6 +132282,13 @@
           "current_team": "Detroit Pistons",
           "country": "USA",
           "nationality": "United States"
+        },
+        {
+          "player": "Killian Hayes",
+          "status": "overseas_active",
+          "current_team": "FC Barcelona",
+          "country": "Spain",
+          "nationality": "French / American"
         },
         {
           "player": "Kyle Guy",
@@ -142512,9 +142519,9 @@
           "player": "John Konchar",
           "years": "2026",
           "stint_team": "Utah Jazz",
-          "status": "overseas_active",
-          "current_team": "Olympiacos",
-          "current_country": "Greece",
+          "status": "nba_active",
+          "current_team": "Utah Jazz",
+          "current_country": "USA",
           "nationality": "United States"
         },
         {
@@ -144602,13 +144609,6 @@
           "status": "nba_active",
           "current_team": "Detroit Pistons",
           "country": "USA",
-          "nationality": "United States"
-        },
-        {
-          "player": "John Konchar",
-          "status": "overseas_active",
-          "current_team": "Olympiacos",
-          "country": "Greece",
           "nationality": "United States"
         },
         {
