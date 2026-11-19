@@ -1,3 +1,21 @@
+## 2026-11-19 — incremental run
+
+- Players updated: **508** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **3**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **2** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Caimito, Minao
+  - Zack Austin: Cleveland Charge → Cleveland Cavaliers
+  - Jonas Aidoo: Salt Lake City Stars → Utah Jazz
+  - Coty Clarke: Shimane Susanoo Magic → Caimito, Minao
+  - Zack Austin: [overseas_active → nba_active]
+  - Jonas Aidoo: [overseas_active → nba_active]
+
 ## 2026-11-18 — incremental run
 
 - Players updated: **490** (1 new)

@@ -11771,8 +11771,8 @@
         {
           "player": "Zack Austin",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Cleveland Charge"
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
         },
         {
           "player": "Zavier Simpson",
@@ -12808,8 +12808,8 @@
         {
           "player": "Jonas Aidoo",
           "years": "2025–2026",
-          "status": "overseas_active",
-          "last_team": "Salt Lake City Stars"
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
         },
         {
           "player": "Josiah Allick",
@@ -16034,7 +16034,7 @@
           "player": "Coty Clarke",
           "years": "2016, 2017",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -17851,7 +17851,7 @@
           "player": "Coty Clarke",
           "years": "2021–2023",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -26041,7 +26041,7 @@
           "player": "Coty Clarke",
           "years": "2015–2016, 2016",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -28481,7 +28481,7 @@
           "player": "Coty Clarke",
           "years": "2017–2018",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -28763,7 +28763,7 @@
           "player": "Coty Clarke",
           "years": "2016–2017",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -31626,13 +31626,13 @@
         },
         {
           "type": "club",
-          "name": "South Bay Lakers",
+          "name": "Iowa Wolves",
           "shared": 6
         },
         {
           "type": "club",
-          "name": "Rio Grande Valley Vipers",
-          "shared": 5
+          "name": "South Bay Lakers",
+          "shared": 6
         }
       ]
     },
@@ -35922,17 +35922,17 @@
         },
         {
           "type": "club",
+          "name": "Iowa Wolves",
+          "shared": 9
+        },
+        {
+          "type": "club",
           "name": "Texas Legends",
           "shared": 8
         },
         {
           "type": "club",
           "name": "Austin Spurs",
-          "shared": 8
-        },
-        {
-          "type": "club",
-          "name": "Iowa Wolves",
           "shared": 8
         },
         {
@@ -37811,7 +37811,7 @@
       "city": "Des Moines",
       "state": "Iowa",
       "country": "USA",
-      "count": 74,
+      "count": 75,
       "roster": [
         {
           "player": "AJ Lawson",
@@ -38247,6 +38247,13 @@
           "nationality": "United States"
         },
         {
+          "player": "Terry Taylor",
+          "years": "2026",
+          "status": "overseas_active",
+          "last_team": "Austin Spurs",
+          "nationality": "United States"
+        },
+        {
           "player": "Thomas Welsh",
           "years": "2019",
           "status": "overseas_active",
@@ -38339,12 +38346,12 @@
         },
         {
           "type": "club",
-          "name": "Westchester Knicks",
-          "shared": 8
+          "name": "Windy City Bulls",
+          "shared": 9
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
+          "name": "Westchester Knicks",
           "shared": 8
         },
         {
@@ -42510,7 +42517,7 @@
           "player": "Coty Clarke",
           "years": "2019–2020",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -42859,7 +42866,7 @@
           "player": "Coty Clarke",
           "years": "2020–2021",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -60046,7 +60053,7 @@
           "player": "Coty Clarke",
           "years": "2024–2026",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -69303,8 +69310,8 @@
         {
           "player": "Jonas Aidoo",
           "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Salt Lake City Stars"
+          "status": "nba_active",
+          "last_team": "Utah Jazz"
         },
         {
           "player": "Jordan Nwora",
@@ -71052,7 +71059,7 @@
         },
         {
           "player": "Riley Minix",
-          "years": "2026, 2026–present",
+          "years": "2026, 2026",
           "status": "nba_active",
           "last_team": "Cleveland Cavaliers",
           "nationality": "United States"
@@ -71130,8 +71137,8 @@
         {
           "player": "Zack Austin",
           "years": "2026–present",
-          "status": "overseas_active",
-          "last_team": "Cleveland Charge"
+          "status": "nba_active",
+          "last_team": "Cleveland Cavaliers"
         },
         {
           "player": "Zhaire Smith",
@@ -72237,12 +72244,12 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Iowa Wolves",
           "shared": 2
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Reno Bighorns",
           "shared": 2
         }
       ]
@@ -79071,7 +79078,7 @@
         },
         {
           "player": "Deng Adel",
-          "years": "2022–2024, 2025–present",
+          "years": "2022–2024, 2025–2026",
           "status": "overseas_active",
           "last_team": "Ottawa BlackJacks",
           "nationality": "South Sudanese / Australian"
@@ -79570,7 +79577,7 @@
         },
         {
           "player": "Tim Frazier",
-          "years": "2025–present",
+          "years": "2025–2026",
           "status": "overseas_active",
           "last_team": "Minas",
           "nationality": "United States"
@@ -102628,7 +102635,7 @@
           "player": "Coty Clarke",
           "years": "2020",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -113674,7 +113681,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -126754,7 +126761,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
@@ -138700,12 +138707,12 @@
         },
         {
           "type": "club",
-          "name": "Joventut Badalona",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Joventut Badalona",
           "shared": 1
         },
         {
@@ -157699,7 +157706,7 @@
           "player": "Coty Clarke",
           "years": "2018–2019",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -166335,12 +166342,12 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Iowa Wolves",
           "shared": 3
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Reno Bighorns",
           "shared": 3
         }
       ]
@@ -169945,7 +169952,7 @@
           "player": "Coty Clarke",
           "years": "2023–2024",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         },
         {
@@ -186999,7 +187006,65 @@
           "player": "Coty Clarke",
           "years": "2014–2015",
           "status": "overseas_active",
-          "last_team": "Shimane Susanoo Magic",
+          "last_team": "Caimito, Minao",
+          "nationality": "American"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Maine Red Claws",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Capitanes de Arecibo",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "UNICS",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Piratas de Quebradillas",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Bnei Herzliya",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Avtodor Saratov",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Budućnost",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "San-en NeoPhoenix",
+          "shared": 1
+        }
+      ]
+    },
+    "Caimito, Minao": {
+      "club": "Caimito, Minao",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Coty Clarke",
+          "years": "2026-2026",
+          "status": "overseas_active",
+          "last_team": "Caimito, Minao",
           "nationality": "American"
         }
       ],
@@ -189861,12 +189926,12 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Reno Bighorns",
           "shared": 1
         }
       ]
@@ -220132,12 +220197,12 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Iowa Wolves",
           "shared": 1
         },
         {
           "type": "club",
-          "name": "Iowa Wolves",
+          "name": "Reno Bighorns",
           "shared": 1
         },
         {
@@ -227158,7 +227223,7 @@
         },
         {
           "type": "club",
-          "name": "Reno Bighorns",
+          "name": "Iowa Wolves",
           "shared": 1
         }
       ]
