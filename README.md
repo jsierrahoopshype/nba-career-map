@@ -1,5 +1,7 @@
 # NBA Career Database
 
+Live on HoopsMatic: https://hoopsmatic.com/nba-career-map/
+
 An automated, self-updating database of NBA player career histories — active
 players, rookies/newcomers, and former NBA players still active overseas or in
 the G League. Career data is sourced from Wikipedia via the **MediaWiki API**
