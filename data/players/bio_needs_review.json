@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 166,
+    "date_disagreement": 167,
     "still_missing": 10,
     "wikipedia_url_wrong_person": 8,
     "wrong_entity": 8,
@@ -1129,6 +1129,16 @@
       "years_apart": 0
     },
     {
+      "basketball_reference": "2003-11-16",
+      "places_kept": true,
+      "player": "Maliq Brown",
+      "used": "2003-11-16",
+      "used_source": "basketball-reference",
+      "wikidata": "2003-11-15",
+      "wikidata_id": "Q123248782",
+      "years_apart": 0
+    },
+    {
       "basketball_reference": "1992-07-14",
       "places_kept": true,
       "player": "Marshall Plumlee",
@@ -1669,7 +1679,7 @@
       "years_apart": 1
     }
   ],
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "identity_gate": {
     "birth_year_tolerance": 1,
     "occupation": "P106 = Q3665646 (basketball player)",
