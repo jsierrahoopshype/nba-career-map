@@ -2080,7 +2080,10 @@
     </header>
     
     <main>
-      <div id="dashboardView"></div>
+      <div id="dashboardView"><div class="dash"><div class="dash-hero">
+        <h1>Where every NBA player is playing now</h1>
+        <p>Updated signings, overseas hotspots and the journeys behind the league.</p>
+      </div></div></div>
       <div id="mapView">
         <div id="map">
             <div class="legend">
@@ -2177,8 +2180,23 @@
          window.maplibregl lookup can't see. If either file fails to load, or
          the device has no WebGL, addBaseLayer() falls back to raster tiles --
          see BASEMAP below. -->
-    <script src="assets/vendor/maplibre-gl-5.24.0/maplibre-gl.js"></script>
-    <script src="assets/vendor/maplibre-gl-leaflet-0.1.4/leaflet-maplibre-gl.js"></script>
+    <!-- Both files are inserted from script (not plain <script src> tags) so the
+         1 MB library downloads alongside the page data instead of holding up
+         the rest of the page and boot(). async=false keeps them in order
+         (library, then plugin). addBaseLayer() waits on __maplibreReady, so
+         every map still gets the same vector basemap once it is in. -->
+    <script>
+        window.__maplibreReady = new Promise(function (resolve) {
+            function done() { window.__maplibreSettled = true; resolve(); }
+            var lib = document.createElement('script'), plug = document.createElement('script');
+            lib.src = 'assets/vendor/maplibre-gl-5.24.0/maplibre-gl.js';
+            plug.src = 'assets/vendor/maplibre-gl-leaflet-0.1.4/leaflet-maplibre-gl.js';
+            lib.async = plug.async = false;
+            plug.onload = plug.onerror = done;
+            document.head.appendChild(lib);
+            document.head.appendChild(plug);
+        });
+    </script>
     <script src="flags.js"></script>
     <script src="data-proxy.js"></script>
     <script>
@@ -2264,6 +2282,14 @@
         // Leaflet's own attribution control renders it small and out of the
         // way, including on the quiz map (which previously showed none).
         function addBaseLayer(map) {
+            // Map library still downloading: add the basemap once it lands
+            // (or fails, which then takes the raster fallback below), unless
+            // the map was torn down in the meantime (Leaflet's remove()
+            // deletes _mapPane).
+            if (!window.__maplibreSettled && window.__maplibreReady) {
+                window.__maplibreReady.then(() => { if (map._mapPane) addBaseLayer(map); });
+                return;
+            }
             const vector = window.L && L.maplibreGL && window.maplibregl && _webglAvailable();
             const credit = vector ? BASEMAP.attribution : BASEMAP.raster.attribution;
             // Added to the control directly rather than passed as a layer
@@ -3616,7 +3642,7 @@
             // would call showView('dashboard') itself). A direct quiz URL
             // never rendered the dashboard, so build it now.
             document.getElementById('dashboardView').style.display = 'block';
-            if(!document.getElementById('dashboardView').textContent.trim()) renderDashboard();
+            if(!document.getElementById('w-signings')) renderDashboard();
             history.replaceState({}, '', 'index.html');
         }
         
@@ -4511,7 +4537,6 @@
                     percentileEl.style.background = 'rgba(255,255,255,0.1)';
                 }
             } catch (error) {
-                console.log('Score submission error:', error);
                 document.getElementById('quizPercentile').textContent = '';
                 document.getElementById('quizPercentile').classList.remove('loading');
             }
@@ -4883,7 +4908,6 @@
                 } catch(e) {
                     // A network failure says nothing about the deployment's
                     // capabilities, so this case is deliberately NOT cached.
-                    console.log('Leaderboard batch fetch failed, falling back:', e);
                     if(seq !== _lbFetchSeq) return;
                 }
             }
@@ -4902,8 +4926,7 @@
                     renderLeaderboardSection(data.entries, w.rowsEl, w.sectionEl);
                     any = true;
                     _lbFinish(true);                     // show what we have, now
-                }).catch(e => {
-                    console.log('Leaderboard fetch error (' + w.key + '):', e);
+                }).catch(() => {
                 }).finally(() => {
                     if(--pending === 0 && seq === _lbFetchSeq) _lbFinish(any);
                 });
@@ -5370,7 +5393,7 @@ document.addEventListener('DOMContentLoaded', boot);
 
             <canvas id="shareCanvas" style="display:none"></canvas>
             <div id="shareImageContainer">
-                <img id="shareImage">
+                <img id="shareImage" alt="">
 
                 <div class="quiz-copy-row">
                     <input type="text" id="quizShareUrlInput" class="quiz-copy-input" readonly>

@@ -18,7 +18,14 @@
   // prints the exact *.workers.dev URL assigned to your account.
   const DATA_PROXY_BASE = "https://nba-career-map-data-proxy.thejorgesierra.workers.dev";
 
+  // The Worker only answers the github.io origin (its ALLOWED_ORIGIN). From
+  // hoopsmatic.com every call is refused, which printed a CORS error per file
+  // in the console before falling back, so there go straight to the
+  // same-origin file (what visitors were already getting).
+  const PROXY_ORIGIN = "https://jsierrahoopshype.github.io";
+
   async function fetchData(path) {
+    if (location.origin !== PROXY_ORIGIN) return fetch(path);
     try {
       const r = await fetch(DATA_PROXY_BASE + "/" + path);
       if (r.ok) return r;
