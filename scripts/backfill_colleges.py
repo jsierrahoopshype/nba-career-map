@@ -32,7 +32,16 @@ A record that already has a college is never touched, and the nightly keeps a
 stored college when a fresh Wikipedia parse has none (merge_player in
 update_careers.py), so this does not get undone.
 
+THE LOG. logs/college_backfill.json keeps `removed` (the colleges an earlier
+backfill took from a third-party export, removed on 2026-11-25) and, derived
+from it, `removed_not_refilled_yet`, `removed_counts` and
+`removed_not_refilled_note`. Those three are recomputed from the current
+careers data every time the log is written (refresh_removed), so they never go
+stale when the nightly parse or a later run fills a college. --refresh-log
+rewrites them offline, without asking Wikipedia anything.
+
 Run:  python3 scripts/backfill_colleges.py [--apply] [--max-requests N]
+      python3 scripts/backfill_colleges.py --refresh-log   # offline recount
 """
 from __future__ import annotations
 
@@ -177,11 +186,46 @@ def backfill(players: list[dict], bio: dict, wrong_person: set[str],
                                    if t in waiting_set)}
 
 
+def refresh_removed(log: dict, players: list[dict]) -> dict:
+    """Recompute the log's view of `removed` against the careers data.
+
+    `removed` is the fixed record of what was taken out; whether each of those
+    players has a college again is read off `players` (the current
+    nba_players_careers.json), never carried over from an earlier log.
+    """
+    has = {p.get("player"): has_college(p) for p in players}
+    removed = [r.get("player") for r in (log.get("removed") or [])
+               if r.get("player")]
+    waiting = sorted({n for n in removed if not has.get(n)})
+    gone = sorted({n for n in removed if n not in has})
+    total = len(set(removed))
+    log["removed_not_refilled_yet"] = waiting
+    log["removed_counts"] = {
+        "removed": total,
+        "refilled": total - len(waiting),
+        "not_refilled_yet": len(waiting),
+        "no_longer_in_the_database": len(gone),
+        "recounted": dt.date.today().isoformat(),
+    }
+    log["removed_not_refilled_note"] = (
+        f"{len(waiting)} of the {total} removed colleges are still empty in "
+        f"data/players/nba_players_careers.json (recounted "
+        f"{log['removed_counts']['recounted']}, every time this log is "
+        f"written); run .github/workflows/backfill-colleges.yml to read the "
+        f"rest from Wikipedia")
+    return log
+
+
 def _read_json(path: Path, default):
     try:
         return json.loads(Path(path).read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return default
+
+
+def _write_log(log: dict) -> None:
+    LOG.write_text(json.dumps(log, indent=2, ensure_ascii=False) + "\n",
+                   encoding="utf-8")
 
 
 def main() -> int:
@@ -191,9 +235,17 @@ def main() -> int:
     ap.add_argument("--max-requests", type=int, default=200,
                     help="Wikipedia request budget (50 articles a request)")
     ap.add_argument("--delay", type=float, default=1.0)
+    ap.add_argument("--refresh-log", action="store_true",
+                    help="offline: recount the removed colleges against the "
+                         "careers data and rewrite the log, nothing fetched")
     args = ap.parse_args()
 
     players = json.loads(CAREERS.read_text(encoding="utf-8"))
+    if args.refresh_log:
+        log = refresh_removed(_read_json(LOG, {}), players)
+        _write_log(log)
+        print(log["removed_not_refilled_note"])
+        return 0
     bio = _read_json(BIO, {})
     review = _read_json(REVIEW, {})
     wrong_person = {r.get("player") for r in
@@ -235,8 +287,7 @@ def main() -> int:
                       "scripts/wiki_parser.py)",
             "generated": dt.date.today().isoformat(),
             "before": before, "after": after, **result})
-        LOG.write_text(json.dumps(log, indent=2, ensure_ascii=False) + "\n",
-                       encoding="utf-8")
+        _write_log(refresh_removed(log, players))
         print(f"written: {CAREERS.relative_to(ROOT)}, {LOG.relative_to(ROOT)}")
     return 0
 

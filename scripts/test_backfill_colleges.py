@@ -84,6 +84,40 @@ def test_a_spent_budget_leaves_the_rest_for_next_time():
     print("test_a_spent_budget_leaves_the_rest_for_next_time PASS")
 
 
+def test_removed_list_is_recounted_from_the_careers_data():
+    # A stale log: three removed, all still listed as waiting.
+    log = {"removed": [{"player": "A", "college": "X"},
+                       {"player": "B", "college": "Y"},
+                       {"player": "C", "college": "Z"}],
+           "removed_not_refilled_yet": ["A", "B", "C"],
+           "removed_not_refilled_note": "stale"}
+    players = [{"player": "A", "college": "X (1990–1994)"},
+               {"player": "B", "college": ""},
+               {"player": "D", "college": ""}]
+    out = bc.refresh_removed(log, players)
+    assert out["removed_not_refilled_yet"] == ["B", "C"], out
+    c = out["removed_counts"]
+    assert (c["removed"], c["refilled"], c["not_refilled_yet"],
+            c["no_longer_in_the_database"]) == (3, 1, 2, 1), c
+    assert out["removed_not_refilled_note"].startswith("2 of the 3 "), out
+    print("test_removed_list_is_recounted_from_the_careers_data PASS")
+
+
+def test_shipped_log_is_consistent():
+    # Internal consistency only: the nightly parse can fill a college after
+    # the log was written, so the exact list is refresh_removed's job.
+    log = json.loads((ROOT / "logs" / "college_backfill.json")
+                     .read_text(encoding="utf-8"))
+    removed = {r["player"] for r in log["removed"]}
+    waiting = log["removed_not_refilled_yet"]
+    c = log["removed_counts"]
+    assert set(waiting) <= removed
+    assert c["not_refilled_yet"] == len(waiting)
+    assert c["removed"] == len(removed) == c["refilled"] + c["not_refilled_yet"]
+    assert log["removed_not_refilled_note"].startswith(f"{len(waiting)} of the ")
+    print("test_shipped_log_is_consistent PASS")
+
+
 def test_shipped_data_has_iverson_college():
     db = json.loads((ROOT / "data" / "players" / "nba_players_careers.json")
                     .read_text(encoding="utf-8"))
@@ -95,5 +129,7 @@ def test_shipped_data_has_iverson_college():
 if __name__ == "__main__":
     test_college_comes_from_the_infobox()
     test_a_spent_budget_leaves_the_rest_for_next_time()
+    test_removed_list_is_recounted_from_the_careers_data()
+    test_shipped_log_is_consistent()
     test_shipped_data_has_iverson_college()
     print("\nall college-backfill tests PASS")
