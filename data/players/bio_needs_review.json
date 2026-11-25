@@ -1,6 +1,8 @@
 {
   "counts": {
-    "date_disagreement": 164,
+    "date_disagreement": 115,
+    "nba_placeholder": 19,
+    "nba_placeholder_replaced": 0,
     "nba_row_rejected": 15,
     "still_missing": 1,
     "wikipedia_url_wrong_person": 8,
@@ -20,54 +22,6 @@
       "wikidata": "1927-11-18",
       "wikidata_id": "Q7297443",
       "years_apart": 5
-    },
-    {
-      "days_apart": 1527,
-      "nba_birth_date": "1921-09-16",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Charlie Hoefer",
-      "used": "1921-09-16",
-      "used_source": "nba-player-data",
-      "wikidata": "1917-07-12",
-      "wikidata_id": "Q3666663",
-      "years_apart": 4
-    },
-    {
-      "days_apart": 1461,
-      "nba_birth_date": "1921-02-09",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Doug Holcomb",
-      "used": "1921-02-09",
-      "used_source": "nba-player-data",
-      "wikidata": "1925-02-09",
-      "wikidata_id": "Q5300575",
-      "years_apart": 4
-    },
-    {
-      "days_apart": 1349,
-      "nba_birth_date": "1917-05-15",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Joe Fabel",
-      "used": "1917-05-15",
-      "used_source": "nba-player-data",
-      "wikidata": "1913-09-04",
-      "wikidata_id": "Q2889515",
-      "years_apart": 4
-    },
-    {
-      "days_apart": 1106,
-      "nba_birth_date": "1922-09-09",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Fran Curran",
-      "used": "1922-09-09",
-      "used_source": "nba-player-data",
-      "wikidata": "1925-09-19",
-      "wikidata_id": "Q3749269",
-      "years_apart": 3
     },
     {
       "days_apart": 1096,
@@ -95,18 +49,6 @@
     },
     {
       "days_apart": 731,
-      "nba_birth_date": "1918-10-17",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Art Spector",
-      "used": "1918-10-17",
-      "used_source": "nba-player-data",
-      "wikidata": "1920-10-17",
-      "wikidata_id": "Q3624026",
-      "years_apart": 2
-    },
-    {
-      "days_apart": 731,
       "nba_birth_date": "1919-03-22",
       "nba_source": "nba-player-data",
       "places_kept": false,
@@ -115,18 +57,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1921-03-22",
       "wikidata_id": "Q1634810",
-      "years_apart": 2
-    },
-    {
-      "days_apart": 731,
-      "nba_birth_date": "1915-07-11",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Ed Sadowski",
-      "used": "1915-07-11",
-      "used_source": "nba-player-data",
-      "wikidata": "1917-07-11",
-      "wikidata_id": "Q1452898",
       "years_apart": 2
     },
     {
@@ -140,6 +70,18 @@
       "used_source": "nba-player-data",
       "wikidata": "1921-02-22",
       "wikidata_id": "Q6707436",
+      "years_apart": 2
+    },
+    {
+      "days_apart": 731,
+      "nba_birth_date": "1995-02-07",
+      "nba_source": "nba-player-data",
+      "places_kept": false,
+      "player": "Matt Mooney",
+      "used": "1995-02-07",
+      "used_source": "nba-player-data",
+      "wikidata": "1997-02-07",
+      "wikidata_id": "Q62752685",
       "years_apart": 2
     },
     {
@@ -179,54 +121,6 @@
       "years_apart": 2
     },
     {
-      "days_apart": 730,
-      "nba_birth_date": "1922-02-02",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Warren Perkins",
-      "used": "1922-02-02",
-      "used_source": "nba-player-data",
-      "wikidata": "1924-02-02",
-      "wikidata_id": "Q3534528",
-      "years_apart": 2
-    },
-    {
-      "days_apart": 635,
-      "nba_birth_date": "1925-08-09",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Gene Stump",
-      "used": "1925-08-09",
-      "used_source": "nba-player-data",
-      "wikidata": "1923-11-13",
-      "wikidata_id": "Q3759443",
-      "years_apart": 2
-    },
-    {
-      "days_apart": 575,
-      "nba_birth_date": "1923-07-30",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ray Wertis",
-      "used": "1923-07-30",
-      "used_source": "nba-player-data",
-      "wikidata": "1922-01-01",
-      "wikidata_id": "Q2157569",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 374,
-      "nba_birth_date": "1924-06-17",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Odie Spears",
-      "used": "1924-06-17",
-      "used_source": "nba-player-data",
-      "wikidata": "1925-06-26",
-      "wikidata_id": "Q3880868",
-      "years_apart": 1
-    },
-    {
       "days_apart": 369,
       "nba_birth_date": "1950-01-15",
       "nba_source": "nba-player-data",
@@ -239,42 +133,6 @@
       "years_apart": 1
     },
     {
-      "days_apart": 368,
-      "nba_birth_date": "1928-06-23",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Sam Ranzino",
-      "used": "1928-06-23",
-      "used_source": "nba-player-data",
-      "wikidata": "1927-06-21",
-      "wikidata_id": "Q3946349",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 366,
-      "nba_birth_date": "1952-06-10",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ben Clyde",
-      "used": "1952-06-10",
-      "used_source": "nba-player-data",
-      "wikidata": "1951-06-10",
-      "wikidata_id": "Q3637929",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 366,
-      "nba_birth_date": "1923-07-04",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Chink Crossin",
-      "used": "1923-07-04",
-      "used_source": "nba-player-data",
-      "wikidata": "1924-07-04",
-      "wikidata_id": "Q3675009",
-      "years_apart": 1
-    },
-    {
       "days_apart": 366,
       "nba_birth_date": "1997-02-01",
       "nba_source": "nba-player-data",
@@ -284,30 +142,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1996-02-01",
       "wikidata_id": "Q21004725",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 366,
-      "nba_birth_date": "1975-05-29",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Maceo Baston",
-      "used": "1975-05-29",
-      "used_source": "nba-player-data",
-      "wikidata": "1976-05-29",
-      "wikidata_id": "Q2714920",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 366,
-      "nba_birth_date": "1996-02-07",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Matt Mooney",
-      "used": "1996-02-07",
-      "used_source": "nba-player-data",
-      "wikidata": "1997-02-07",
-      "wikidata_id": "Q62752685",
       "years_apart": 1
     },
     {
@@ -360,18 +194,6 @@
     },
     {
       "days_apart": 365,
-      "nba_birth_date": "1926-05-28",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Bob Brannum",
-      "used": "1926-05-28",
-      "used_source": "nba-player-data",
-      "wikidata": "1925-05-28",
-      "wikidata_id": "Q964594",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 365,
       "nba_birth_date": "1930-07-13",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -380,18 +202,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1929-07-13",
       "wikidata_id": "Q3706938",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 365,
-      "nba_birth_date": "1918-06-07",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "George Glamack",
-      "used": "1918-06-07",
-      "used_source": "nba-player-data",
-      "wikidata": "1919-06-07",
-      "wikidata_id": "Q1644826",
       "years_apart": 1
     },
     {
@@ -420,30 +230,6 @@
     },
     {
       "days_apart": 365,
-      "nba_birth_date": "1945-04-29",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Jake Ford",
-      "used": "1945-04-29",
-      "used_source": "nba-player-data",
-      "wikidata": "1946-04-29",
-      "wikidata_id": "Q3806279",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 365,
-      "nba_birth_date": "1920-05-10",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ken Corley",
-      "used": "1920-05-10",
-      "used_source": "nba-player-data",
-      "wikidata": "1921-05-10",
-      "wikidata_id": "Q6387482",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 365,
       "nba_birth_date": "1926-12-25",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -452,18 +238,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1927-12-25",
       "wikidata_id": "Q3329090",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 365,
-      "nba_birth_date": "1922-09-18",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Les Pugh",
-      "used": "1922-09-18",
-      "used_source": "nba-player-data",
-      "wikidata": "1923-09-18",
-      "wikidata_id": "Q2110888",
       "years_apart": 1
     },
     {
@@ -504,18 +278,6 @@
     },
     {
       "days_apart": 365,
-      "nba_birth_date": "1934-11-30",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Steve Hamilton",
-      "used": "1934-11-30",
-      "used_source": "nba-player-data",
-      "wikidata": "1935-11-30",
-      "wikidata_id": "Q6932895",
-      "years_apart": 1
-    },
-    {
-      "days_apart": 365,
       "nba_birth_date": "1962-02-04",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -539,18 +301,6 @@
       "years_apart": 1
     },
     {
-      "days_apart": 355,
-      "nba_birth_date": "1929-11-08",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Don Lofgran",
-      "used": "1929-11-08",
-      "used_source": "nba-player-data",
-      "wikidata": "1928-11-18",
-      "wikidata_id": "Q3713560",
-      "years_apart": 1
-    },
-    {
       "days_apart": 334,
       "nba_birth_date": "1914-12-17",
       "nba_source": "nba-player-data",
@@ -561,18 +311,6 @@
       "wikidata": "1914-01-17",
       "wikidata_id": "Q513749",
       "years_apart": 0
-    },
-    {
-      "days_apart": 324,
-      "nba_birth_date": "1923-09-19",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Stan Miasek",
-      "used": "1923-09-19",
-      "used_source": "nba-player-data",
-      "wikidata": "1924-08-08",
-      "wikidata_id": "Q642992",
-      "years_apart": 1
     },
     {
       "days_apart": 275,
@@ -596,54 +334,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1982-09-09",
       "wikidata_id": "Q326355",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 227,
-      "nba_birth_date": "1922-08-16",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ken Keller",
-      "used": "1922-08-16",
-      "used_source": "nba-player-data",
-      "wikidata": "1922-01-01",
-      "wikidata_id": "Q372803",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 208,
-      "nba_birth_date": "2006-01-01",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Allen Graves",
-      "used": "2006-01-01",
-      "used_source": "nba-player-data",
-      "wikidata": "2006-07-28",
-      "wikidata_id": "Q137888885",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 184,
-      "nba_birth_date": "1989-11-26",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Omari Johnson",
-      "used": "1989-11-26",
-      "used_source": "nba-player-data",
-      "wikidata": "1989-05-26",
-      "wikidata_id": "Q20643185",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 178,
-      "nba_birth_date": "1977-03-09",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Boniface N'Dong",
-      "used": "1977-03-09",
-      "used_source": "nba-player-data",
-      "wikidata": "1977-09-03",
-      "wikidata_id": "Q65594",
       "years_apart": 0
     },
     {
@@ -683,18 +373,6 @@
       "years_apart": 0
     },
     {
-      "days_apart": 145,
-      "nba_birth_date": "1999-02-07",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Didi Louzada",
-      "used": "1999-02-07",
-      "used_source": "nba-player-data",
-      "wikidata": "1999-07-02",
-      "wikidata_id": "Q64009610",
-      "years_apart": 0
-    },
-    {
       "days_apart": 122,
       "nba_birth_date": "1935-08-16",
       "nba_source": "nba-player-data",
@@ -704,18 +382,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1935-12-16",
       "wikidata_id": "Q3666683",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 122,
-      "nba_birth_date": "1915-04-04",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Hal Tidrick",
-      "used": "1915-04-04",
-      "used_source": "nba-player-data",
-      "wikidata": "1915-08-04",
-      "wikidata_id": "Q3782509",
       "years_apart": 0
     },
     {
@@ -803,18 +469,6 @@
       "years_apart": 0
     },
     {
-      "days_apart": 62,
-      "nba_birth_date": "1955-07-16",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ron Brewer",
-      "used": "1955-07-16",
-      "used_source": "nba-player-data",
-      "wikidata": "1955-09-16",
-      "wikidata_id": "Q671268",
-      "years_apart": 0
-    },
-    {
       "days_apart": 61,
       "nba_birth_date": "1967-03-19",
       "nba_source": "nba-player-data",
@@ -824,18 +478,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1967-05-19",
       "wikidata_id": "Q3618485",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 61,
-      "nba_birth_date": "2001-12-04",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Curtis Jones",
-      "used": "2001-12-04",
-      "used_source": "nba-player-data",
-      "wikidata": "2001-10-04",
-      "wikidata_id": "Q132304299",
       "years_apart": 0
     },
     {
@@ -864,18 +506,6 @@
     },
     {
       "days_apart": 61,
-      "nba_birth_date": "1929-05-23",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ken McBride",
-      "used": "1929-05-23",
-      "used_source": "nba-player-data",
-      "wikidata": "1929-03-23",
-      "wikidata_id": "Q4505416",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 61,
       "nba_birth_date": "1977-05-17",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -899,15 +529,15 @@
       "years_apart": 0
     },
     {
-      "days_apart": 32,
-      "nba_birth_date": "1927-06-06",
+      "days_apart": 51,
+      "nba_birth_date": "1915-06-14",
       "nba_source": "nba-player-data",
       "places_kept": true,
-      "player": "Cal Christensen",
-      "used": "1927-06-06",
+      "player": "Hal Tidrick",
+      "used": "1915-06-14",
       "used_source": "nba-player-data",
-      "wikidata": "1927-07-08",
-      "wikidata_id": "Q3649982",
+      "wikidata": "1915-08-04",
+      "wikidata_id": "Q3782509",
       "years_apart": 0
     },
     {
@@ -960,6 +590,19 @@
     },
     {
       "days_apart": 31,
+      "nba_birth_date": "1934-09-21",
+      "nba_source": "nba-player-data",
+      "places_kept": true,
+      "player": "Ron Sobiezczyk",
+      "settled_by_override": "His Wikidata item carries two death dates, 2009-10-23 and 2009-10-24, and the fetcher keeps whichever the query returns first; Wikipedia's lead and infobox both say October 23, 2009.",
+      "used": "1934-09-21",
+      "used_source": "nba-player-data",
+      "wikidata": "1934-08-21",
+      "wikidata_id": "Q3940992",
+      "years_apart": 0
+    },
+    {
+      "days_apart": 31,
       "nba_birth_date": "1975-03-21",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -980,6 +623,18 @@
       "used_source": "nba-player-data",
       "wikidata": "1962-06-10",
       "wikidata_id": "Q3641347",
+      "years_apart": 0
+    },
+    {
+      "days_apart": 30,
+      "nba_birth_date": "1927-06-08",
+      "nba_source": "nba-player-data",
+      "places_kept": true,
+      "player": "Cal Christensen",
+      "used": "1927-06-08",
+      "used_source": "nba-player-data",
+      "wikidata": "1927-07-08",
+      "wikidata_id": "Q3649982",
       "years_apart": 0
     },
     {
@@ -1008,18 +663,6 @@
     },
     {
       "days_apart": 30,
-      "nba_birth_date": "2002-06-24",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Jamal Shead",
-      "used": "2002-06-24",
-      "used_source": "nba-player-data",
-      "wikidata": "2002-07-24",
-      "wikidata_id": "Q106818507",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 30,
       "nba_birth_date": "1979-07-24",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -1028,18 +671,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1979-06-24",
       "wikidata_id": "Q1618767",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 28,
-      "nba_birth_date": "1983-02-23",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Dijon Thompson",
-      "used": "1983-02-23",
-      "used_source": "nba-player-data",
-      "wikidata": "1983-03-23",
-      "wikidata_id": "Q963977",
       "years_apart": 0
     },
     {
@@ -1187,18 +818,6 @@
       "years_apart": 0
     },
     {
-      "days_apart": 12,
-      "nba_birth_date": "1984-11-11",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Hilton Armstrong",
-      "used": "1984-11-11",
-      "used_source": "nba-player-data",
-      "wikidata": "1984-11-23",
-      "wikidata_id": "Q1618940",
-      "years_apart": 0
-    },
-    {
       "days_apart": 11,
       "nba_birth_date": "1964-08-08",
       "nba_source": "nba-player-data",
@@ -1248,18 +867,6 @@
     },
     {
       "days_apart": 10,
-      "nba_birth_date": "1953-01-26",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "C.J. Kupec",
-      "used": "1953-01-26",
-      "used_source": "nba-player-data",
-      "wikidata": "1953-01-16",
-      "wikidata_id": "Q3666431",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 10,
       "nba_birth_date": "1916-05-18",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -1280,18 +887,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1968-01-05",
       "wikidata_id": "Q1424165",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 10,
-      "nba_birth_date": "1924-10-25",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Jack Cotton",
-      "used": "1924-10-25",
-      "used_source": "nba-player-data",
-      "wikidata": "1924-10-15",
-      "wikidata_id": "Q3805566",
       "years_apart": 0
     },
     {
@@ -1368,18 +963,6 @@
     },
     {
       "days_apart": 10,
-      "nba_birth_date": "1985-05-13",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Peter John Ramos",
-      "used": "1985-05-13",
-      "used_source": "nba-player-data",
-      "wikidata": "1985-05-23",
-      "wikidata_id": "Q2317038",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 10,
       "nba_birth_date": "1918-04-07",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -1388,18 +971,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1918-04-17",
       "wikidata_id": "Q2370513",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 10,
-      "nba_birth_date": "1984-04-15",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Rodney Carney",
-      "used": "1984-04-15",
-      "used_source": "nba-player-data",
-      "wikidata": "1984-04-05",
-      "wikidata_id": "Q2733947",
       "years_apart": 0
     },
     {
@@ -1424,18 +995,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1920-09-19",
       "wikidata_id": "Q3968109",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 10,
-      "nba_birth_date": "1915-07-20",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Walt Miller",
-      "used": "1915-07-20",
-      "used_source": "nba-player-data",
-      "wikidata": "1915-07-30",
-      "wikidata_id": "Q4400987",
       "years_apart": 0
     },
     {
@@ -1487,18 +1046,6 @@
       "years_apart": 0
     },
     {
-      "days_apart": 9,
-      "nba_birth_date": "1990-05-20",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Trey Thompkins",
-      "used": "1990-05-20",
-      "used_source": "nba-player-data",
-      "wikidata": "1990-05-29",
-      "wikidata_id": "Q2486104",
-      "years_apart": 0
-    },
-    {
       "days_apart": 8,
       "nba_birth_date": "1991-04-12",
       "nba_source": "nba-player-data",
@@ -1508,30 +1055,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1991-04-04",
       "wikidata_id": "Q6111803",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 5,
-      "nba_birth_date": "1981-08-21",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Andreas Glyniadakis",
-      "used": "1981-08-21",
-      "used_source": "nba-player-data",
-      "wikidata": "1981-08-26",
-      "wikidata_id": "Q497515",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 5,
-      "nba_birth_date": "1927-05-16",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ed Gayda",
-      "used": "1927-05-16",
-      "used_source": "nba-player-data",
-      "wikidata": "1927-05-11",
-      "wikidata_id": "Q3718845",
       "years_apart": 0
     },
     {
@@ -1556,18 +1079,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1992-07-22",
       "wikidata_id": "Q14473981",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 5,
-      "nba_birth_date": "1986-09-20",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Vernon Macklin",
-      "used": "1986-09-20",
-      "used_source": "nba-player-data",
-      "wikidata": "1986-09-25",
-      "wikidata_id": "Q1669202",
       "years_apart": 0
     },
     {
@@ -1596,18 +1107,6 @@
     },
     {
       "days_apart": 3,
-      "nba_birth_date": "1945-01-01",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Jimmy Jones",
-      "used": "1945-01-01",
-      "used_source": "nba-player-data",
-      "wikidata": "1945-01-04",
-      "wikidata_id": "Q663453",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 3,
       "nba_birth_date": "1954-11-19",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -1628,18 +1127,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1973-04-26",
       "wikidata_id": "Q3900815",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 2,
-      "nba_birth_date": "1977-11-27",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Andy Panko",
-      "used": "1977-11-27",
-      "used_source": "nba-player-data",
-      "wikidata": "1977-11-29",
-      "wikidata_id": "Q24002",
       "years_apart": 0
     },
     {
@@ -1691,30 +1178,6 @@
       "years_apart": 0
     },
     {
-      "days_apart": 2,
-      "nba_birth_date": "1981-05-15",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Hiram Fuller",
-      "used": "1981-05-15",
-      "used_source": "nba-player-data",
-      "wikidata": "1981-05-13",
-      "wikidata_id": "Q3136207",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 1,
-      "nba_birth_date": "2002-04-11",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ariel Hukporti",
-      "used": "2002-04-11",
-      "used_source": "nba-player-data",
-      "wikidata": "2002-04-12",
-      "wikidata_id": "Q61020557",
-      "years_apart": 0
-    },
-    {
       "days_apart": 1,
       "nba_birth_date": "1956-10-02",
       "nba_source": "nba-player-data",
@@ -1724,18 +1187,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1956-10-03",
       "wikidata_id": "Q503448",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 1,
-      "nba_birth_date": "1988-03-19",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ben Uzoh",
-      "used": "1988-03-19",
-      "used_source": "nba-player-data",
-      "wikidata": "1988-03-18",
-      "wikidata_id": "Q2631957",
       "years_apart": 0
     },
     {
@@ -1800,18 +1251,6 @@
     },
     {
       "days_apart": 1,
-      "nba_birth_date": "1998-10-17",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Ike Anigbogu",
-      "used": "1998-10-17",
-      "used_source": "nba-player-data",
-      "wikidata": "1998-10-16",
-      "wikidata_id": "Q29269186",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 1,
       "nba_birth_date": "2004-12-08",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -1856,18 +1295,6 @@
       "used_source": "nba-player-data",
       "wikidata": "1997-06-17",
       "wikidata_id": "Q63119820",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 1,
-      "nba_birth_date": "1998-05-10",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Malachi Flynn",
-      "used": "1998-05-10",
-      "used_source": "nba-player-data",
-      "wikidata": "1998-05-09",
-      "wikidata_id": "Q80713297",
       "years_apart": 0
     },
     {
@@ -1932,18 +1359,6 @@
     },
     {
       "days_apart": 1,
-      "nba_birth_date": "1985-09-18",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Mirza Teletovic",
-      "used": "1985-09-18",
-      "used_source": "nba-player-data",
-      "wikidata": "1985-09-17",
-      "wikidata_id": "Q470698",
-      "years_apart": 0
-    },
-    {
-      "days_apart": 1,
       "nba_birth_date": "1974-01-31",
       "nba_source": "nba-player-data",
       "places_kept": true,
@@ -1985,6 +1400,199 @@
     "occupation": "P106 = Q3665646 (basketball player)",
     "sport": "P641 = Q5372 (basketball)"
   },
+  "nba_placeholder": [
+    {
+      "nba_birth_date": "1928-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Alan Sawyer",
+      "used": "1928-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q3607773"
+    },
+    {
+      "nba_birth_date": "1919-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Bones McKinney",
+      "used": "1919-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q1450542"
+    },
+    {
+      "nba_birth_date": "1975-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Chris Anstey",
+      "used": "1975-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q1076942"
+    },
+    {
+      "nba_birth_date": "1951-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Dan Anderson",
+      "used": "1951-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q3701346"
+    },
+    {
+      "nba_birth_date": "1986-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Glen Davis",
+      "used": "1986-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q337729"
+    },
+    {
+      "nba_birth_date": "1991-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Glen Rice Jr",
+      "used": "1991-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q4811246"
+    },
+    {
+      "nba_birth_date": "1960-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Jeff Taylor",
+      "used": "1960-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q3807796"
+    },
+    {
+      "nba_birth_date": "1930-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Jim Browne",
+      "used": "1930-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q3808314"
+    },
+    {
+      "nba_birth_date": "1921-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Johnny Logan",
+      "used": "1921-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q2320891"
+    },
+    {
+      "nba_birth_date": "1922-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Ken Keller",
+      "used": "1922-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q372803"
+    },
+    {
+      "nba_birth_date": "2000-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Kobe Brown",
+      "used": "2000-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q100762367"
+    },
+    {
+      "nba_birth_date": "1993-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Larry Nance Jr",
+      "used": "1993-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q19605398"
+    },
+    {
+      "nba_birth_date": "1961-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Leroy Combs",
+      "used": "1961-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q3830796"
+    },
+    {
+      "nba_birth_date": "1956-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Mike Mitchell",
+      "used": "1956-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q2731961"
+    },
+    {
+      "nba_birth_date": "1922-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Ray Wertis",
+      "used": "1922-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q2157569"
+    },
+    {
+      "nba_birth_date": "1959-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Ronnie Lester",
+      "used": "1959-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q2328853"
+    },
+    {
+      "nba_birth_date": "1985-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Tiago Splitter",
+      "used": "1985-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q352168"
+    },
+    {
+      "nba_birth_date": "1956-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Tony Robertson",
+      "used": "1956-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q3993296"
+    },
+    {
+      "nba_birth_date": "1950-01-01",
+      "nba_source": "nba-player-data",
+      "note": "the NBA date is a placeholder, kept: the gated Wikidata item has no single different full date",
+      "player": "Travis Grant",
+      "used": "1950-01-01",
+      "used_source": "nba-player-data",
+      "wikidata_birth_dates": [],
+      "wikidata_id": "Q3998036"
+    }
+  ],
+  "nba_placeholder_replaced": [],
   "nba_row_rejected": [
     {
       "first_stint": 1966,

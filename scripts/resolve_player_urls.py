@@ -50,7 +50,8 @@ WHERE THE CANDIDATES COME FROM.
 The article the record already points at is excluded: it is the known-wrong one.
 
 HUMAN-VERIFIED ARTICLES. A player with an entry in the `human_verified`
-section of the overrides file is not searched at all: a person already chose
+section of the overrides file -- flagged or not: a stored article that does
+not exist has no item for the gate to flag -- is not searched at all: a person already chose
 the article, so it is written through WITHOUT the P106 gate and WITHOUT the
 ambiguity check. Two things are still checked, because a typo in a URL is not
 a decision:
@@ -168,6 +169,28 @@ def flagged_players(review: dict) -> list[dict]:
     """The `wikipedia_url_wrong_person` rows, as they stand in the review file."""
     rows = review.get("wikipedia_url_wrong_person") or []
     return [r for r in rows if isinstance(r, dict) and r.get("player")]
+
+
+def staged_unflagged(review: dict, players: list[dict]) -> list[dict]:
+    """Rows for the `human_verified` players the review file does not flag.
+
+    The gate only flags an article whose Wikidata item is somebody else. A
+    stored article that does not exist at all (Ron Sobiezczyk's, a misspelt
+    title) has no item to fail it, so a person's staged fix for it would
+    otherwise never be written through.
+    """
+    flagged = {normkey(r["player"]) for r in flagged_players(review)}
+    by_name = {p.get("player"): p for p in players}
+    out = []
+    for name in sorted(player_urls.human_verified()):
+        rec = by_name.get(name)
+        if rec is None or normkey(name) in flagged:
+            continue
+        url = rec.get("wikipedia_url") or ""
+        out.append({"player": name, "wikipedia_url": url,
+                    "wikipedia_title": title_from_url(url) or "",
+                    "rejected_wikidata_id": ""})
+    return out
 
 
 # --- the offline audit ------------------------------------------------------
@@ -955,7 +978,7 @@ def main() -> int:
     if not isinstance(players, list):
         print("data/players/nba_players_careers.json is not a list", file=sys.stderr)
         return 1
-    rows = flagged_players(review)
+    rows = flagged_players(review) + staged_unflagged(review, players)
     wanted = [n.strip() for n in
               (args.player + args.players_csv.split(",")) if n.strip()]
     if wanted:
@@ -963,7 +986,8 @@ def main() -> int:
         rows = [r for r in rows if normkey(r["player"]) in keys]
     if not rows:
         print("nothing flagged in data/players/bio_needs_review.json "
-              "under wikipedia_url_wrong_person")
+              "under wikipedia_url_wrong_person, and nothing staged under "
+              "human_verified")
         return 0
 
     if args.action == "audit":

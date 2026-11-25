@@ -1,7 +1,7 @@
 {
   "note": "Curated Wikipedia articles for players whose name resolves to a namesake. `overrides` is what the pipeline uses and is written only by scripts/resolve_player_urls.py: either after Wikidata confirmed the article (P106 = Q3665646 and a birth year within 1 of the NBA birth date), or, for an entry staged under `human_verified`, after Wikipedia confirmed the article exists and is not a disambiguation page. `human_verified` entries are a person's decision (`verified_by` names who) and skip the Wikidata test; the pipeline ignores them until they are written through. `candidates` are un-verified guesses from Wikipedia's naming conventions: the resolver tries them first, the pipeline ignores them. See scripts/player_urls.py.",
   "verified_by": "scripts/resolve_player_urls.py",
-  "generated": "2026-09-27",
+  "generated": "2026-11-25",
   "overrides": {
     "AJ Green": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/A._J._Green_(basketball)",
@@ -2650,6 +2650,22 @@
       "warnings": [
         "'Ron Holland II' redirects to 'Ron Holland (basketball)'; the redirect target is what was written"
       ]
+    },
+    "Ron Sobiezczyk": {
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ron_Sobieszczyk",
+      "wikidata_id": "Q3940992",
+      "wikidata_label": "Ron Sobieszczyk",
+      "wikidata_description": "American basketball player (1934–2009)",
+      "wikidata_birth_date": "1934-08-21",
+      "nba_birth_date": "1934-09-21",
+      "replaces": "https://en.wikipedia.org/wiki/Ron_Sobiezczyk",
+      "replaces_wikidata_id": "",
+      "requested_url": "https://en.wikipedia.org/wiki/Ron_Sobieszczyk",
+      "verified": "2026-11-25",
+      "verified_by": "jorge",
+      "human_verified": true,
+      "warnings": [],
+      "note": "The stored article 'Ron Sobiezczyk' does not exist; 'Ron Sobieszczyk' is his (Wikidata Q3940992: New York Knicks, DePaul, NBA.com ID 78216, died 2009-10-23)."
     },
     "Rudy Fernandez": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Rudy_Fern%C3%A1ndez_(basketball)",
