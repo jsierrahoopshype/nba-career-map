@@ -1,3 +1,17 @@
+## 2026-11-25 — incremental run
+
+- Players updated: **508** (1 new)
+- New teams discovered: **1**
+- Team moves detected: **1**
+- Detected-but-not-new stints held back: **0**
+- Logged signings retracted by the source: **0**
+- Club-name pairs held for review: **0**
+- Status changes: **0** (0 → overseas, 0 → retired)
+- Wikipedia requests: 650  ⚠️ budget exhausted — queue truncated, continues next run
+- New players: Walt Lemon Jr.
+- New teams: Austin Spurs G League
+  - Gabe Vincent: Atlanta Hawks → Sacramento Kings
+
 ## 2026-11-24 — incremental run
 
 - Players updated: **490** (1 new)

@@ -8412,7 +8412,7 @@
           "player": "Gabe Vincent",
           "years": "2020–2021",
           "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "last_team": "Sacramento Kings",
           "nationality": "American / Nigerian"
         },
         {
@@ -23100,12 +23100,12 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
+          "name": "Oklahoma City Blue",
           "shared": 5
         },
         {
           "type": "club",
-          "name": "Oklahoma City Blue",
+          "name": "Greensboro Swarm",
           "shared": 5
         }
       ]
@@ -30363,7 +30363,7 @@
       "city": "Austin",
       "state": "Texas",
       "country": "USA",
-      "count": 101,
+      "count": 100,
       "roster": [
         {
           "player": "Adam Flagler",
@@ -30978,13 +30978,6 @@
           "nationality": "United States"
         },
         {
-          "player": "Ryan Arcidiacono",
-          "years": "2016–2017",
-          "status": "overseas_active",
-          "last_team": "Skyliners Frankfurt",
-          "nationality": "United States"
-        },
-        {
           "player": "Saer Sene",
           "years": "2015-2016",
           "status": "retired",
@@ -31092,11 +31085,6 @@
         },
         {
           "type": "club",
-          "name": "Windy City Bulls",
-          "shared": 8
-        },
-        {
-          "type": "club",
           "name": "Wisconsin Herd",
           "shared": 8
         },
@@ -31108,6 +31096,11 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
+          "shared": 7
+        },
+        {
+          "type": "club",
+          "name": "Long Island Nets",
           "shared": 7
         }
       ]
@@ -31275,7 +31268,7 @@
           "player": "Gabe Vincent",
           "years": "2018–2020",
           "status": "nba_active",
-          "last_team": "Atlanta Hawks",
+          "last_team": "Sacramento Kings",
           "nationality": "American / Nigerian"
         },
         {
@@ -35939,11 +35932,6 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 8
-        },
-        {
-          "type": "club",
           "name": "Capital City Go-Go",
           "shared": 8
         },
@@ -35955,6 +35943,11 @@
         {
           "type": "club",
           "name": "Raptors 905",
+          "shared": 7
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
           "shared": 7
         }
       ]
@@ -37397,17 +37390,17 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 1
-        },
-        {
-          "type": "club",
           "name": "Westchester Knicks",
           "shared": 1
         },
         {
           "type": "club",
           "name": "Panathinaikos",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Wisconsin Herd",
           "shared": 1
         }
       ]
@@ -116928,11 +116921,6 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 2
-        },
-        {
-          "type": "club",
           "name": "Panathinaikos",
           "shared": 2
         },
@@ -116959,6 +116947,11 @@
         {
           "type": "club",
           "name": "Cedevita Zagreb",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Reggiana",
           "shared": 2
         }
       ]
@@ -176297,11 +176290,6 @@
         },
         {
           "type": "club",
-          "name": "Austin Spurs",
-          "shared": 3
-        },
-        {
-          "type": "club",
           "name": "Windy City Bulls",
           "shared": 3
         },
@@ -176318,6 +176306,11 @@
         {
           "type": "club",
           "name": "Sioux Falls Skyforce",
+          "shared": 2
+        },
+        {
+          "type": "club",
+          "name": "Austin Spurs",
           "shared": 2
         },
         {
@@ -285677,6 +285670,64 @@
         }
       ]
     },
+    "Austin Spurs G League": {
+      "club": "Austin Spurs G League",
+      "city": "",
+      "state": "",
+      "country": "",
+      "count": 1,
+      "roster": [
+        {
+          "player": "Ryan Arcidiacono",
+          "years": "2016–2017",
+          "status": "overseas_active",
+          "last_team": "Skyliners Frankfurt",
+          "nationality": "United States"
+        }
+      ],
+      "related": [
+        {
+          "type": "club",
+          "name": "Windy City Bulls",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Maine Celtics",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Osos de Manatí",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Skyliners Frankfurt",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "Trapani Shark",
+          "shared": 1
+        },
+        {
+          "type": "club",
+          "name": "NBA G League United",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Manchester British-Americans",
+          "shared": 0
+        },
+        {
+          "type": "club",
+          "name": "Perlas",
+          "shared": 0
+        }
+      ]
+    },
     "Club Biguá de Villa Biarritz": {
       "club": "Club Biguá de Villa Biarritz",
       "city": "Montevideo",
@@ -287969,7 +288020,7 @@
       "roster": [
         {
           "player": "Sonny Weems",
-          "years": "2026–present",
+          "years": "2026",
           "status": "overseas_active",
           "last_team": "Jiaozuo Cultural Tourism",
           "nationality": "United States"
