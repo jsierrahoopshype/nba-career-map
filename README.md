@@ -174,9 +174,11 @@ the same player name the career database uses:
 `nba-player-data` (its `bio.json`), `nba.com`, `wikidata`, or `unresolved`.
 `wikidata_id` is the item
 the places and the death date came from, empty when no item passed the identity
-gate. Two optional keys appear only when they have something to say:
+gate. Optional keys appear only when they have something to say:
 `wikidata_birth_date` (the value the NBA date beat, kept so the review
-file can still report the disagreement) and `rejected_wikidata_id` (the
+file can still report the disagreement), `wikidata_birth_dates` (every P569
+of an item that has several), `nba_placeholder` (the NBA date was a
+January 1 / 1905 placeholder, see below) and `rejected_wikidata_id` (the
 namesake the gate turned down).
 
 Three batched hops: the Wikipedia `pageprops` API (50 titles a request) maps
@@ -216,6 +218,16 @@ value is known to be wrong) are skipped.
   several days instead of re-reading everyone at once. `--full` re-reads
   everyone and **rewrites every record from scratch** under the current rules,
   which is what to run after the rules themselves change.
+- **Placeholders.** NBA.com fills an unknown birth date with January 1, or a
+  date in 1905 (`nba_birthdates.is_placeholder`; bio.json's January 1 dates
+  are NBA.com's too). When the gated Wikidata item has one different full
+  date (in the same year, for a January 1st), that date is used and the
+  record's `source` is `wikidata` (Ray Corley: 1928-01-01 → 1928-01-14);
+  otherwise the NBA date is kept. Either way the record carries
+  `nba_placeholder` (the NBA date) and the review file lists it, under
+  `nba_placeholder` (kept) or `nba_placeholder_replaced`. An item with several
+  P569 statements keeps them all in `wikidata_birth_dates`, so `--reapply`
+  can apply this offline. nba-player-data applies the same rule.
 - **Re-appliable offline.** `--reapply` re-runs the rules over the records
   already on file without touching Wikipedia or Wikidata. It cannot consult
   P106, so it stands in the strongest signal a stored record still carries: a
@@ -239,7 +251,7 @@ value is known to be wrong) are skipped.
 replacement was found), `date_disagreement` (every player whose NBA birth date
 and Wikidata birth date differ: both values, `nba_source`, `years_apart`,
 `days_apart`, and which one the record uses — biggest gaps first, so nothing
-is picked silently) and `still_missing` (no birth date from any source) — plus `wikipedia_url_wrong_person`, the wrong-entity players whose
+is picked silently) and `still_missing` (no birth date from any source) — plus `nba_placeholder` and `nba_placeholder_replaced` (see the placeholder rule above) and `wikipedia_url_wrong_person`, the wrong-entity players whose
 stored Wikipedia URL is the namesake's article, so their **club history** may
 be wrong too. Nothing in it edits the career database.
 
@@ -281,7 +293,9 @@ revert it. Two tiers, and only one is live:
   string also counts as verified — a human typing an article in *is* the
   verification.
 - **`human_verified`** — a person's decision, staged. Each entry is
-  `{"wikipedia_url": ..., "verified_by": "jorge"}`. The resolver writes it
+  `{"wikipedia_url": ..., "verified_by": "jorge"}`, for a flagged player or
+  for one whose stored article does not exist at all, which the gate cannot
+  flag (Ron Sobiezczyk → "Ron Sobieszczyk"). The resolver writes it
   through to `overrides` **without** the P106 gate or the ambiguity check, once
   Wikipedia confirms the article exists and is not (and does not redirect to) a
   disambiguation page; otherwise the player is skipped, listed in the run

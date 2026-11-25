@@ -44,7 +44,11 @@ SOURCE PRECEDENCE. The NBA birth date (nba-player-data's bio.json, then
 NBA.com) is keyed to the actual NBA player, so it decides the birth date
 whenever it has one; the gated Wikidata value is the fallback. A full date is
 never given up for a less precise one: a Wikidata day that falls inside a
-year- or month-only NBA date is used instead. The death date and both places
+year- or month-only NBA date is used instead. An NBA date on January 1, or in
+1905, is NBA.com's placeholder for an unknown date (nba_birthdates.is_placeholder):
+when the gated item has one different full date (in the same year, for a
+January 1st), that date is used, and otherwise the placeholder is kept and
+listed under `nba_placeholder` in the review file. The death date and both places
 are Wikidata's alone, and are only taken from a gated item whose birth year is
 within a year of the NBA birth date -- a right-occupation item with the wrong
 birth year is still likely to be a different basketball player, and his home
@@ -97,7 +101,10 @@ with both values, how far apart they are and which one the record uses; the
 NBA date is never picked silently), and `still_missing` (no birth date from
 any source).
 It also carries `nba_row_rejected` (nba-player-data rows with the player's
-name but a birth date his own career rules out -- not used) and
+name but a birth date his own career rules out -- not used),
+`nba_placeholder` (NBA birth dates on January 1 or in 1905 that were kept, for
+want of a different full date on Wikidata), `nba_placeholder_replaced` (the
+ones Wikidata's date replaced) and
 `wikipedia_url_wrong_person`: the wrong-entity players whose
 stored Wikipedia URL is the namesake's article, so their CLUB HISTORY may be
 wrong too. Nothing in the review file edits the career database. The fix for
@@ -583,6 +590,25 @@ def pick_replacement(candidates: list[dict], nba_date: str) -> dict | None:
     return hits[0] if len(hits) == 1 else None
 
 
+def placeholder_alternative(item: dict | None, nba_date: str) -> str:
+    """The item's full birth date to use instead of an NBA placeholder, or "".
+
+    Only when `nba_date` is a placeholder (January 1, or in 1905) and the item
+    has exactly one full date other than it. For a January 1st that date must
+    also fall within BIRTH_YEAR_TOLERANCE of the NBA year -- the year is real,
+    only the day is missing; a 1905 date carries no year either, so the gate
+    alone vouches for the item. Ray Corley: NBA 1928-01-01, his item carries
+    1928-01-01 and 1928-01-14 -> 1928-01-14.
+    """
+    if not item or not nba_birthdates.is_placeholder(nba_date):
+        return ""
+    dates = item.get("birth_dates") or [item.get("birth_date")]
+    other = {d for d in dates if d and len(d) == 10 and d != nba_date}
+    if not nba_date.startswith(str(nba_birthdates.PLACEHOLDER_YEAR)):
+        other = {d for d in other if birth_years_agree(d, nba_date)}
+    return next(iter(other)) if len(other) == 1 else ""
+
+
 def item_birth_date(item: dict | None, nba_date: str = ""):
     """The item's birth date to measure against the NBA one.
 
@@ -610,7 +636,10 @@ def compose(item: dict | None, nba_date: str, *, checked: str,
     birth_date is the NBA source's whenever it has one, because that is keyed
     to the NBA player and cannot be a namesake -- except that a fuller
     Wikidata date inside it (a day within an NBA year-only date) is kept, so a
-    full date is never traded for a coarser one. The death date and both
+    full date is never traded for a coarser one -- and that an NBA placeholder
+    (January 1, or 1905) gives way to the item's one different full date
+    (placeholder_alternative); the record then carries `nba_placeholder`, as
+    it does when the placeholder is kept. The death date and both
     places are Wikidata's alone, and only from an item whose birth year lands
     within BIRTH_YEAR_TOLERANCE of the NBA date -- unless the item is
     `trusted` (a human verified the article), where a disagreeing year is
@@ -622,6 +651,13 @@ def compose(item: dict | None, nba_date: str, *, checked: str,
     if (nba_date and wd_birth and len(wd_birth) > len(nba_date)
             and same_date(nba_date, wd_birth)):
         birth, source = wd_birth, "wikidata"
+    placeholder = nba_date if nba_birthdates.is_placeholder(nba_date) else ""
+    replacement = placeholder_alternative(item, nba_date)
+    if replacement:
+        # The NBA date was a stand-in, so it is no longer what the item is
+        # measured against: the date that replaced it is.
+        birth, source, wd_birth = replacement, "wikidata", replacement
+    anchor = replacement or nba_date
     rec = {
         "birth_date": birth,
         "death_date": None,
@@ -631,15 +667,22 @@ def compose(item: dict | None, nba_date: str, *, checked: str,
         "source": source,
         "checked": checked,
     }
-    if item and (trusted or birth_years_agree(wd_birth, nba_date)):
+    if item and (trusted or birth_years_agree(wd_birth, anchor)):
         rec["death_date"] = item.get("death_date") or None
         rec["birth_place"] = item.get("birth_place") or ""
         rec["death_place"] = item.get("death_place") or ""
     # The NBA date wins, but the value it beat is kept so the review file can
     # still report the disagreement on a later, incremental run -- by then the
     # Wikidata value is no longer in birth_date to compare.
-    if wd_birth and nba_date and not same_date(wd_birth, nba_date):
+    if wd_birth and nba_date and not replacement and not same_date(wd_birth, nba_date):
         rec["wikidata_birth_date"] = wd_birth
+    # Every P569 the item carries, when it carries several, so --reapply can
+    # still choose between them offline (the placeholder rule needs them all).
+    dates = [d for d in dict.fromkeys((item or {}).get("birth_dates") or []) if d]
+    if len(dates) > 1:
+        rec["wikidata_birth_dates"] = sorted(dates)
+    if placeholder:
+        rec["nba_placeholder"] = placeholder
     if rejected_qid:
         rec["rejected_wikidata_id"] = rejected_qid
     return rec
@@ -720,6 +763,7 @@ def build_review(bio: dict, careers: list, nba,
                 if player_urls.override_for(p.get("player") or "")}
 
     wrong, disagreement, missing, bad_url = [], [], [], []
+    placeholder_kept, placeholder_replaced = [], []
     for name, rec in sorted(bio.items()):
         nba_date, nba_source = nba.date(name), nba.source(name)
         if not nba_date and rec.get("source") in nba_birthdates.NBA_SOURCES:
@@ -798,6 +842,25 @@ def build_review(bio: dict, careers: list, nba,
                 # bio_overrides.json settled this one by hand; say so.
                 disagreement[-1]["settled_by_override"] = rec["override"]["reason"]
 
+        ph = rec.get("nba_placeholder") or ""
+        if ph:
+            replaced = rec.get("source") == "wikidata"
+            wd_dates = (rec.get("wikidata_birth_dates")
+                        or [d for d in (rec.get("wikidata_birth_date"),) if d])
+            (placeholder_replaced if replaced else placeholder_kept).append({
+                "player": name,
+                "nba_birth_date": ph,
+                "nba_source": nba.source(name) or nba_source,
+                "wikidata_birth_dates": wd_dates,
+                "wikidata_id": rec.get("wikidata_id") or "",
+                "used": rec.get("birth_date") or "",
+                "used_source": rec.get("source") or "",
+                "note": ("the NBA date is a placeholder; the gated Wikidata "
+                         "item's one different full date is used" if replaced
+                         else "the NBA date is a placeholder, kept: the gated "
+                              "Wikidata item has no single different full date"),
+            })
+
         if not rec.get("birth_date"):
             missing.append({"player": name,
                             "wikidata_id": rec.get("wikidata_id") or "",
@@ -819,6 +882,8 @@ def build_review(bio: dict, careers: list, nba,
                                                 if r["replacement_found"]),
                    "date_disagreement": len(disagreement),
                    "still_missing": len(missing),
+                   "nba_placeholder": len(placeholder_kept),
+                   "nba_placeholder_replaced": len(placeholder_replaced),
                    "wikipedia_url_wrong_person": len(bad_url),
                    "nba_row_rejected": sum(
                        1 for r in nba.rejected
@@ -827,6 +892,10 @@ def build_review(bio: dict, careers: list, nba,
         "wrong_entity": wrong,
         "date_disagreement": disagreement,
         "still_missing": missing,
+        # NBA birth dates on January 1 or in 1905 (NBA.com's placeholder):
+        # kept for want of a better one, and replaced by Wikidata's.
+        "nba_placeholder": placeholder_kept,
+        "nba_placeholder_replaced": placeholder_replaced,
         "wikipedia_url_wrong_person": bad_url,
         # nba-player-data rows that carry this player's name but a birth date
         # his own career rules out (a father's or son's row, a namesake's):
@@ -1011,13 +1080,24 @@ def reapply(bio: dict, nba) -> tuple[dict, dict]:
         item = _stored_item(rec)
         rejected_qid = rec.get("rejected_wikidata_id") or ""
         trusted = player_urls.is_human_verified(name)
+        # A 1905 placeholder says nothing about the year, so it cannot call
+        # the item a namesake; the item's own replacement date stands in.
+        year_of = placeholder_alternative(item, nba_date) or nba_date
         if item and not trusted and not birth_years_agree(
-                item["birth_date"], nba_date, OFFLINE_REJECT_YEARS - 1):
+                item["birth_date"], year_of, OFFLINE_REJECT_YEARS - 1):
             details[name] = {"rejected": item, "replacement": None,
                              "candidates": 0, "detected_by": OFFLINE_CHECK}
             rejected_qid = item["qid"]
             item = None
         nba_date, nba_source = nba_date_for(nba, name, item)
+        if (not nba_date and item and nba.suspect(name)
+                and rec.get("birth_date") == nba.suspect(name)
+                and rec.get("source") in nba_birthdates.NBA_SOURCES):
+            # A suspect row (a youth club before 14) that a live run already
+            # took because his own item agreed: the stored record cannot show
+            # that agreement (an agreeing Wikidata date is not kept), but the
+            # record itself is the evidence. Isaiah Hartenstein, Neemias Queta.
+            nba_date, nba_source = rec["birth_date"], rec["source"]
         out[name] = compose(item, nba_date, nba_source=nba_source,
                             checked=rec.get("checked") or _today(),
                             rejected_qid=rejected_qid, trusted=trusted)
@@ -1037,7 +1117,10 @@ def _stored_item(rec: dict) -> dict | None:
     wd_birth = rec.get("wikidata_birth_date")
     if wd_birth is None and rec.get("source") == "wikidata":
         wd_birth = rec.get("birth_date")
-    return {"qid": qid, "birth_date": wd_birth,
+    dates = [d for d in (rec.get("wikidata_birth_dates") or []) if d]
+    if wd_birth and wd_birth not in dates:
+        dates.insert(0, wd_birth)
+    return {"qid": qid, "birth_date": wd_birth, "birth_dates": dates,
             "death_date": rec.get("death_date"),
             "birth_place": rec.get("birth_place") or "",
             "death_place": rec.get("death_place") or "",
@@ -1127,6 +1210,8 @@ def run(args, transport) -> dict:
           f"({c['wrong_entity_replaced']} re-pointed at the right player), "
           f"{c['date_disagreement']} date disagreement(s), "
           f"{c['still_missing']} still missing, "
+          f"{c['nba_placeholder']} NBA placeholder date(s) kept, "
+          f"{c['nba_placeholder_replaced']} replaced by Wikidata, "
           f"{c['wikipedia_url_wrong_person']} Wikipedia URL(s) on the wrong "
           f"person")
     for row in review["date_disagreement"][:10]:

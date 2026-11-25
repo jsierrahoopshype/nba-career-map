@@ -12,6 +12,26 @@
         "Wikidata Q6707436 (basketball player; BAA, Saint Mary's): P569 1921-02-22 (same day and month, a year two off both other sources), P570 1976-11-19"
       ],
       "checked": "2026-11-25"
+    },
+    "Herm Hedderick": {
+      "birth_date": "1930-01-10",
+      "reason": "No NBA birth date reaches the rules for him (he is not in nba-player-data's bio.json sheet), so Wikidata alone decides, and his item carries two full birth dates, 1930-01-01 and 1930-01-10. NBA.com's 1930-01-01 is its January 1 placeholder, so by the placeholder rule the other date is his; nba-player-data's bio_birthdate_overrides.json says 1/10/1930 for the same reason.",
+      "evidence": [
+        "NBA.com player 76986 (www.nba.com/player/76986, Herm Hedderick, 1954-55): BIRTHDATE 1930-01-01, a placeholder",
+        "Wikidata Q4456405 (basketball player; NBA.com ID P3647 = 76986): P569 1930-01-01 and 1930-01-10, both day precision",
+        "nba-player-data data/bio_birthdate_overrides.json: Herm Hedderick 1/10/1930, source wikidata"
+      ],
+      "checked": "2026-11-25"
+    },
+    "Ron Sobiezczyk": {
+      "death_date": "2009-10-23",
+      "reason": "His Wikidata item carries two death dates, 2009-10-23 and 2009-10-24, and the fetcher keeps whichever the query returns first; Wikipedia's lead and infobox both say October 23, 2009.",
+      "evidence": [
+        "Wikipedia 'Ron Sobieszczyk' (the stored article 'Ron Sobiezczyk' does not exist; see player_url_overrides.json): born September 21, 1934 in Chicago, died October 23, 2009 in Chicago; New York Knicks 1956-1959, DePaul",
+        "Wikidata Q3940992 (basketball player, NBA.com ID 78216, New York Knicks, DePaul University): P570 2009-10-23 (two references) and 2009-10-24 (imported from English Wikipedia), P569 1934-08-21",
+        "NBA.com player 78216 ('Ron Sobie', 1956-59): BIRTHDATE 1934-09-21, as nba-player-data's bio.json"
+      ],
+      "checked": "2026-11-25"
     }
   }
 }

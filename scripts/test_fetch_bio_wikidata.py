@@ -511,6 +511,126 @@ def test_the_shipped_bio_overrides_all_carry_a_reason():
     print("test_the_shipped_bio_overrides_all_carry_a_reason PASS")
 
 
+# --- NBA.com placeholders ---------------------------------------------------
+def _item(qid, *births, death="2007-02-05", place="New York City"):
+    item = fb._blank_item(qid)
+    item["basketball"] = True
+    for born in births:
+        fb._absorb(item, {"birth": {"value": born + "T00:00:00Z"},
+                          "bprec": {"value": "11"},
+                          "death": {"value": death + "T00:00:00Z"},
+                          "dprec": {"value": "11"},
+                          "bplaceLabel": {"value": place}})
+    return item
+
+
+def test_january_first_and_1905_are_placeholders():
+    nb = fb.nba_birthdates
+    for d in ("1928-01-01", "2000-01-01", "1905-04-05", "1905-12-31"):
+        assert nb.is_placeholder(d), d
+    for d in ("1928-01-14", "1928-01", "1928", "", "1904-01-02", "1906-02-01"):
+        assert not nb.is_placeholder(d), d
+    print("test_january_first_and_1905_are_placeholders PASS")
+
+
+def test_a_placeholder_gives_way_to_the_one_other_wikidata_date():
+    """Ray Corley: NBA 1928-01-01, his item carries 1928-01-01 and 1928-01-14."""
+    item = _item("Q3930616", "1928-01-01", "1928-01-14")
+    rec = fb.compose(item, "1928-01-01", checked="2026-11-25")
+    assert rec["birth_date"] == "1928-01-14" and rec["source"] == "wikidata", rec
+    assert rec["nba_placeholder"] == "1928-01-01"
+    assert rec["wikidata_birth_dates"] == ["1928-01-01", "1928-01-14"]
+    assert rec["death_date"] == "2007-02-05" and rec["birth_place"] == "New York City"
+    assert "wikidata_birth_date" not in rec
+    # A 1905 date says nothing about the year either: Ken Keller.
+    rec = fb.compose(_item("Q372803", "1922-01-01"), "1905-04-05",
+                     checked="2026-11-25", nba_source="nba.com")
+    assert rec["birth_date"] == "1922-01-01" and rec["source"] == "wikidata", rec
+    assert rec["nba_placeholder"] == "1905-04-05" and rec["death_date"], rec
+    print("test_a_placeholder_gives_way_to_the_one_other_wikidata_date PASS")
+
+
+def test_a_placeholder_is_kept_when_wikidata_has_no_single_other_date():
+    # Wikidata agrees (Glen Davis): kept, and flagged.
+    rec = fb.compose(_item("Q337729", "1986-01-01"), "1986-01-01", checked="x")
+    assert rec["birth_date"] == "1986-01-01" and rec["source"] == "nba-player-data"
+    assert rec["nba_placeholder"] == "1986-01-01"
+    # No item at all.
+    rec = fb.compose(None, "1956-01-01", checked="x")
+    assert rec["birth_date"] == "1956-01-01" and rec["nba_placeholder"] == "1956-01-01"
+    # Two different days: no pick.
+    rec = fb.compose(_item("Q1", "1950-03-03", "1950-04-04"), "1950-01-01", checked="x")
+    assert rec["birth_date"] == "1950-01-01", rec
+    # A January 1st's year is real: an item born years away is not used for it.
+    rec = fb.compose(_item("Q2", "1931-06-06"), "1925-01-01", checked="x")
+    assert rec["birth_date"] == "1925-01-01" and rec["wikidata_birth_date"] == "1931-06-06"
+    # Not a placeholder: the NBA date decides, as ever.
+    rec = fb.compose(_item("Q3", "1928-01-01", "1928-01-14"), "1928-01-14", checked="x")
+    assert rec["birth_date"] == "1928-01-14" and rec["source"] == "nba-player-data"
+    assert "nba_placeholder" not in rec and "wikidata_birth_date" not in rec
+    print("test_a_placeholder_is_kept_when_wikidata_has_no_single_other_date PASS")
+
+
+def test_reapply_applies_the_placeholder_rule_offline_and_is_stable():
+    nba = fb.nba_birthdates.coerce({"Ray Corley": "1928-01-01",
+                                    "Glen Davis": "1986-01-01"})
+    bio = {"Ray Corley": fb.compose(_item("Q3930616", "1928-01-01", "1928-01-14"),
+                                    "1928-01-01", checked="2026-11-25"),
+           "Glen Davis": fb.compose(_item("Q337729", "1986-01-01"), "1986-01-01",
+                                    checked="2026-11-25")}
+    once, _ = fb.reapply(bio, nba)
+    twice, _ = fb.reapply(once, nba)
+    assert once == bio and twice == bio, (once, bio)
+    # A record written before the rule (one stored Wikidata date, NBA date
+    # agreeing with it) is kept, not invented: the next live run reads the rest.
+    old = {"Ray Corley": {"birth_date": "1928-01-01", "source": "nba-player-data",
+                          "wikidata_id": "Q3930616", "death_date": "2007-02-05",
+                          "birth_place": "", "death_place": "", "checked": "x"}}
+    out, _ = fb.reapply(old, nba)
+    assert out["Ray Corley"]["birth_date"] == "1928-01-01"
+    assert out["Ray Corley"]["nba_placeholder"] == "1928-01-01"
+    print("test_reapply_applies_the_placeholder_rule_offline_and_is_stable PASS")
+
+
+def test_the_review_lists_placeholders_kept_and_replaced():
+    nba = fb.nba_birthdates.coerce({"Ray Corley": "1928-01-01",
+                                    "Glen Davis": "1986-01-01"})
+    bio = {"Ray Corley": fb.compose(_item("Q3930616", "1928-01-01", "1928-01-14"),
+                                    "1928-01-01", checked="x"),
+           "Glen Davis": fb.compose(_item("Q337729", "1986-01-01"), "1986-01-01",
+                                    checked="x")}
+    review = fb.build_review(bio, [], nba, {})
+    kept = {r["player"]: r for r in review["nba_placeholder"]}
+    swapped = {r["player"]: r for r in review["nba_placeholder_replaced"]}
+    assert set(kept) == {"Glen Davis"} and set(swapped) == {"Ray Corley"}
+    assert swapped["Ray Corley"]["used"] == "1928-01-14"
+    assert swapped["Ray Corley"]["nba_source"] == "nba-player-data"
+    assert review["counts"]["nba_placeholder"] == 1
+    assert review["counts"]["nba_placeholder_replaced"] == 1
+    assert review["date_disagreement"] == []
+    print("test_the_review_lists_placeholders_kept_and_replaced PASS")
+
+
+def test_reapply_keeps_a_suspect_date_a_live_run_already_accepted():
+    """Isaiah Hartenstein's career starts with a youth club at 11, so his
+    bio.json row is a suspect; a live run took it because his item agreed.
+    --reapply cannot see that agreement, but must not drop the date."""
+    nba = fb.nba_birthdates.NbaBirthDates(
+        {}, rejected=[{"player": "Isaiah Hartenstein", "nba_birth_date": "1998-05-05"}])
+    bio = {"Isaiah Hartenstein": {"birth_date": "1998-05-05", "source": "nba-player-data",
+                                  "wikidata_id": "Q23756208", "death_date": None,
+                                  "birth_place": "Eugene", "death_place": "", "checked": "x"},
+           # never accepted by a live run: stays out
+           "Nobody": {"birth_date": None, "source": "unresolved", "wikidata_id": "Q1",
+                      "death_date": None, "birth_place": "", "death_place": "", "checked": "x"}}
+    nba.rejected.append({"player": "Nobody", "nba_birth_date": "1990-02-02"})
+    out, _ = fb.reapply(bio, nba)
+    assert out["Isaiah Hartenstein"]["birth_date"] == "1998-05-05", out
+    assert out["Isaiah Hartenstein"]["birth_place"] == "Eugene"
+    assert out["Nobody"]["birth_date"] is None
+    print("test_reapply_keeps_a_suspect_date_a_live_run_already_accepted PASS")
+
+
 # --- incremental ------------------------------------------------------------
 def test_a_second_run_fetches_nobody():
     """FixtureTransport raises when a run asks for a response that was never
@@ -671,6 +791,12 @@ if __name__ == "__main__":
     test_the_birth_statement_that_agrees_with_the_nba_date_is_used()
     test_a_curated_bio_override_survives_every_run()
     test_the_shipped_bio_overrides_all_carry_a_reason()
+    test_january_first_and_1905_are_placeholders()
+    test_a_placeholder_gives_way_to_the_one_other_wikidata_date()
+    test_a_placeholder_is_kept_when_wikidata_has_no_single_other_date()
+    test_reapply_applies_the_placeholder_rule_offline_and_is_stable()
+    test_the_review_lists_placeholders_kept_and_replaced()
+    test_reapply_keeps_a_suspect_date_a_live_run_already_accepted()
     test_a_second_run_fetches_nobody()
     test_a_second_run_keeps_the_wrong_entity_list_whole()
     test_a_stale_living_record_comes_back_for_a_death_check()

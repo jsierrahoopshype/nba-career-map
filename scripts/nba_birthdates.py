@@ -20,6 +20,14 @@ WHERE IT COMES FROM, in order:
 
 Wikidata is the fallback after both, and it lives in fetch_bio_wikidata.py.
 
+PLACEHOLDERS. NBA.com fills an unknown birth date with January 1 of a year, or
+with a date in 1905 (is_placeholder). Such a date is not evidence: when the
+player's gated Wikidata item has one different full date, fetch_bio_wikidata.py
+uses that one instead (source "wikidata"); otherwise the NBA date is kept and
+listed under `nba_placeholder` in bio_needs_review.json. It applies to both NBA
+sources above, because bio.json's January 1 dates are NBA.com's too.
+nba-player-data applies the same rule (its scripts/birthdate_rules.py).
+
 MATCHING. A career record is matched to a bio.json row by its exact player key
 first ("Charles Smith (1975)" is a bio.json key too), then by the normalized
 name of its key, display name or aliases (names.normkey) -- but only when that
@@ -77,6 +85,9 @@ NBA_COM_TIMEOUT = 20
 NBA_COM_LIMIT = 40          # live NBA.com requests per run
 NBA_COM_GIVE_UP = 2         # consecutive failures before the run stops asking
 
+# NBA.com's stand-in for an unknown birth date: January 1, or any day in 1905.
+PLACEHOLDER_YEAR = 1905
+
 # A row's birth date must put the player this many years old (youngest,
 # oldest) at the start of his first stint in the career database.
 CAREER_AGE = (14, 40)
@@ -100,6 +111,17 @@ def parse_birthday(value) -> str:
         return dt.date(y, mo, d).isoformat()
     except ValueError:
         return ""
+
+
+def is_placeholder(date: str) -> bool:
+    """Is this full ISO date NBA.com's placeholder (January 1, or in 1905)?
+
+    A year- or month-only date is not a placeholder, it is just less precise.
+    """
+    s = str(date or "")
+    if len(s) != 10 or not _ISO.match(s):
+        return False
+    return s[5:] == "01-01" or s[:4] == str(PLACEHOLDER_YEAR)
 
 
 def _names(player: dict) -> list[str]:

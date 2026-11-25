@@ -681,6 +681,30 @@ def test_an_unsigned_human_entry_is_ignored():
     print("test_an_unsigned_human_entry_is_ignored PASS")
 
 
+def test_a_staged_article_for_an_unflagged_player_is_picked_up():
+    """Ron Sobiezczyk's stored article does not exist, so there is no item for
+    the gate to flag; a person's staged fix must still reach the resolver."""
+    players = [{"player": "Ron Sobiezczyk", "wikipedia_url": WIKI + "Ron_Sobiezczyk"},
+               {"player": "Ace Bailey", "wikipedia_url": WIKI + "Ace_Bailey"}]
+    review = {"wikipedia_url_wrong_person": [
+        {"player": "Ace Bailey", "wikipedia_url": WIKI + "Ace_Bailey",
+         "rejected_wikidata_id": "Q1"}]}
+    with _Tmp({"overrides": {}, "human_verified": {
+            "Ron Sobiezczyk": {"wikipedia_url": WIKI + "Ron_Sobieszczyk",
+                               "verified_by": "jorge"},
+            # already flagged: not listed twice
+            "Ace Bailey": {"wikipedia_url": WIKI + "Ace_Bailey_(basketball)",
+                           "verified_by": "jorge"},
+            # not in the career database: nothing to repair
+            "Nobody Here": {"wikipedia_url": WIKI + "Nobody", "verified_by": "jorge"}}}):
+        rows = rpu.staged_unflagged(review, players)
+    assert rows == [{"player": "Ron Sobiezczyk",
+                     "wikipedia_url": WIKI + "Ron_Sobiezczyk",
+                     "wikipedia_title": "Ron Sobiezczyk",
+                     "rejected_wikidata_id": ""}], rows
+    print("test_a_staged_article_for_an_unflagged_player_is_picked_up PASS")
+
+
 def test_settle_drops_the_overridden_players_from_the_review():
     with tempfile.TemporaryDirectory() as d, _Tmp({"overrides": {
             "Jack White": {"wikipedia_url": WIKI + "Jack_White_(basketball)",
@@ -1003,6 +1027,7 @@ if __name__ == "__main__":
     test_a_redirect_to_a_real_article_is_written_as_its_target()
     test_human_and_machine_players_resolve_side_by_side()
     test_an_unsigned_human_entry_is_ignored()
+    test_a_staged_article_for_an_unflagged_player_is_picked_up()
     test_settle_drops_the_overridden_players_from_the_review()
     test_the_bio_fetcher_trusts_a_human_verified_item_without_p106()
     test_rule1_name_key_strips_what_it_should()
