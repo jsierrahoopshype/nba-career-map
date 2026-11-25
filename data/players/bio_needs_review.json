@@ -1,6 +1,6 @@
 {
   "counts": {
-    "date_disagreement": 167,
+    "date_disagreement": 164,
     "nba_row_rejected": 15,
     "still_missing": 1,
     "wikipedia_url_wrong_person": 8,
@@ -9,30 +9,6 @@
   },
   "cross_check_source": "nba-player-data bio.json (5117 players), then nba.com commonplayerinfo (0)",
   "date_disagreement": [
-    {
-      "days_apart": 18770,
-      "nba_birth_date": "1943-07-19",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Jay Miller",
-      "used": "1943-07-19",
-      "used_source": "nba-player-data",
-      "wikidata": "1994-12-08",
-      "wikidata_id": "Q518561",
-      "years_apart": 51
-    },
-    {
-      "days_apart": 7466,
-      "nba_birth_date": "1921-06-15",
-      "nba_source": "nba-player-data",
-      "places_kept": true,
-      "player": "Charlie Black",
-      "used": "1921-06-15",
-      "used_source": "nba-player-data",
-      "wikidata": "1901-01-05",
-      "wikidata_id": "Q5085586",
-      "years_apart": 20
-    },
     {
       "days_apart": 1826,
       "nba_birth_date": "1922-11-18",
@@ -118,18 +94,6 @@
       "years_apart": 3
     },
     {
-      "days_apart": 1096,
-      "nba_birth_date": "1966-11-15",
-      "nba_source": "nba-player-data",
-      "places_kept": false,
-      "player": "Joao Vianna",
-      "used": "1966-11-15",
-      "used_source": "nba-player-data",
-      "wikidata": "1963-11-15",
-      "wikidata_id": "Q3810734",
-      "years_apart": 3
-    },
-    {
       "days_apart": 731,
       "nba_birth_date": "1918-10-17",
       "nba_source": "nba-player-data",
@@ -171,6 +135,7 @@
       "nba_source": "nba-player-data",
       "places_kept": false,
       "player": "Gene Gillette",
+      "settled_by_override": "Wikidata's item (Q6707436) has the wrong birth year, 1921, so the birth-year rule dropped its death date; NBA data and Wikipedia agree on 1919-02-22, and Wikidata and Wikipedia agree he died 1976-11-19 (aged 57).",
       "used": "1919-02-22",
       "used_source": "nba-player-data",
       "wikidata": "1921-02-22",

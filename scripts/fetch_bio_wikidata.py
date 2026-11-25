@@ -84,6 +84,11 @@ several days instead of re-reading five thousand records every Monday.
 --full re-reads and REWRITES every record from scratch under the rules above,
 which is what to run after the rules themselves change.
 
+CURATED OVERRIDES. data/players/bio_overrides.json sets a fact by hand, with
+the reason and the evidence, for a player whose sources disagree in a way the
+rules cannot settle. It is applied after the rules on every run (--full and
+--reapply too) and marks the record with `override`; see apply_bio_overrides.
+
 THE REVIEW FILE. data/players/bio_needs_review.json is the human's queue, in
 three lists: `wrong_entity` (the gate failed -- what it had resolved to, and
 whether a replacement was found), `date_disagreement` (the same person, but
@@ -133,6 +138,9 @@ ROOT = Path(__file__).resolve().parent.parent
 CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
 BIO = ROOT / "data" / "players" / "player_bio.json"
 REVIEW = ROOT / "data" / "players" / "bio_needs_review.json"
+BIO_OVERRIDES = ROOT / "data" / "players" / "bio_overrides.json"
+# The facts a curated bio override may set (see apply_bio_overrides).
+OVERRIDE_FIELDS = ("birth_date", "death_date", "birth_place", "death_place")
 
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
@@ -392,14 +400,19 @@ def _absorb(rec: dict, row: dict) -> None:
     """Fold one results row into an item record.
 
     An item can carry several statements for the same property (disputed
-    dates, several citizenships). First non-empty wins; the comparison with
-    the NBA birth date below is what catches a wrong one.
+    dates, several citizenships). First non-empty wins, except for the birth
+    date: every non-deprecated P569 is kept in `birth_dates`, and
+    item_birth_date() picks the one the NBA birth date agrees with -- Jay
+    Miller's item carries his 1943 birth and a stray 1994 one. The comparison
+    with the NBA birth date below is what catches a wrong one.
     """
     birth = format_date((row.get("birth") or {}).get("value"),
                         (row.get("bprec") or {}).get("value"))
     death = format_date((row.get("death") or {}).get("value"),
                         (row.get("dprec") or {}).get("value"))
     rec["birth_date"] = rec["birth_date"] or birth
+    if birth and birth not in rec.setdefault("birth_dates", []):
+        rec["birth_dates"].append(birth)
     rec["death_date"] = rec["death_date"] or death
     rec["birth_place"] = rec["birth_place"] or _label(row, "bplaceLabel")
     rec["death_place"] = rec["death_place"] or _label(row, "dplaceLabel")
@@ -565,9 +578,28 @@ def pick_replacement(candidates: list[dict], nba_date: str) -> dict | None:
     if not nba_date:
         return None        # nothing to disambiguate against
     hits = [c for c in candidates
-            if _year(c.get("birth_date")) is not None
-            and birth_years_agree(c.get("birth_date"), nba_date)]
+            if _year(item_birth_date(c, nba_date)) is not None
+            and birth_years_agree(item_birth_date(c, nba_date), nba_date)]
     return hits[0] if len(hits) == 1 else None
+
+
+def item_birth_date(item: dict | None, nba_date: str = ""):
+    """The item's birth date to measure against the NBA one.
+
+    With several P569 statements, the one that agrees with the NBA date
+    (same_date), then one within BIRTH_YEAR_TOLERANCE of it, then the first.
+    """
+    if not item:
+        return None
+    first = item.get("birth_date")
+    dates = [d for d in (item.get("birth_dates") or []) if d]
+    if not nba_date or len(dates) < 2:
+        return first
+    for test in (same_date, birth_years_agree):
+        for d in dates:
+            if test(nba_date, d):
+                return d
+    return first
 
 
 def compose(item: dict | None, nba_date: str, *, checked: str,
@@ -584,7 +616,7 @@ def compose(item: dict | None, nba_date: str, *, checked: str,
     `trusted` (a human verified the article), where a disagreeing year is
     left for the review file to report and blocks nothing.
     """
-    wd_birth = (item or {}).get("birth_date")
+    wd_birth = item_birth_date(item, nba_date)
     birth, source = (nba_date, nba_source) if nba_date else (
         (wd_birth, "wikidata") if wd_birth else (None, "unresolved"))
     if (nba_date and wd_birth and len(wd_birth) > len(nba_date)
@@ -624,7 +656,7 @@ def nba_date_for(nba, name: str, item: dict | None) -> tuple[str, str]:
     if date:
         return date, nba.source(name)
     sus = nba.suspect(name)
-    wd = (item or {}).get("birth_date")
+    wd = item_birth_date(item, sus)
     if sus and wd and birth_years_agree(wd, sus):
         return sus, nba_birthdates.SRC_NPD
     return "", ""
@@ -762,6 +794,9 @@ def build_review(bio: dict, careers: list, nba,
                 "places_kept": (apart <= BIRTH_YEAR_TOLERANCE
                                 or player_urls.is_human_verified(name)),
             })
+            if rec.get("override"):
+                # bio_overrides.json settled this one by hand; say so.
+                disagreement[-1]["settled_by_override"] = rec["override"]["reason"]
 
         if not rec.get("birth_date"):
             missing.append({"player": name,
@@ -815,6 +850,44 @@ def _write_json(path: Path, obj) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(path).write_text(json.dumps(obj, ensure_ascii=False, indent=2,
                                      sort_keys=True) + "\n", encoding="utf-8")
+
+
+def load_bio_overrides(path: Path) -> dict[str, dict]:
+    """{player: override} from data/players/bio_overrides.json.
+
+    An entry is only used when it carries a `reason`: an override with no
+    evidence behind it is a guess, and is ignored.
+    """
+    doc = _read_json(path, {})
+    section = doc.get("overrides") if isinstance(doc, dict) else None
+    out = {}
+    for name, ov in (section or {}).items():
+        if isinstance(ov, dict) and str(ov.get("reason") or "").strip():
+            out[name] = ov
+    return out
+
+
+def apply_bio_overrides(bio: dict, overrides: dict[str, dict]) -> list[str]:
+    """Set the curated facts on the records they name, after the rules ran.
+
+    For a player whose sources disagree in a way the rules cannot settle (Gene
+    Gillette: NBA data and Wikipedia say born 1919, Wikidata 1921, so the
+    birth-year rule drops the item's death date), a person weighed the
+    evidence and wrote the answer in bio_overrides.json with the reason. It is
+    re-applied on every run, --full and --reapply included, so a later run
+    cannot walk it back. Returns the players it changed.
+    """
+    changed = []
+    for name, ov in sorted(overrides.items()):
+        rec = bio.get(name)
+        if rec is None:
+            continue
+        fields = [f for f in OVERRIDE_FIELDS if f in ov]
+        for f in fields:
+            rec[f] = ov[f] or (None if f.endswith("_date") else "")
+        rec["override"] = {"fields": fields, "reason": ov["reason"]}
+        changed.append(name)
+    return changed
 
 
 def coverage(bio: dict) -> dict:
@@ -1031,6 +1104,10 @@ def run(args, transport) -> dict:
                                     trusted=player_urls.is_human_verified(name))
             print(f"records written: {len(targets)}")
 
+    overridden = apply_bio_overrides(
+        bio, load_bio_overrides(getattr(args, "bio_overrides", BIO_OVERRIDES)))
+    if overridden:
+        print(f"curated bio overrides applied: {', '.join(overridden)}")
     review = build_review(bio, players, nba, details, previous)
     cov = coverage(bio)
 
@@ -1101,6 +1178,7 @@ def main() -> None:
     ap.add_argument("--careers", type=Path, default=CAREERS)
     ap.add_argument("--out", type=Path, default=BIO)
     ap.add_argument("--review", type=Path, default=REVIEW)
+    ap.add_argument("--bio-overrides", type=Path, default=BIO_OVERRIDES)
     args = ap.parse_args()
 
     if args.reapply and args.full:
