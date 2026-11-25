@@ -7306,13 +7306,12 @@
   },
   "Charlie Black": {
     "birth_date": "1921-06-15",
-    "birth_place": "Alton",
+    "birth_place": "Arco",
     "checked": "2026-11-25",
-    "death_date": "1988-12-14",
-    "death_place": "Citrus Heights",
+    "death_date": "1992-12-22",
+    "death_place": "Rogers",
     "source": "nba-player-data",
-    "wikidata_birth_date": "1901-01-05",
-    "wikidata_id": "Q5085586"
+    "wikidata_id": "Q3666649"
   },
   "Charlie Brown": {
     "birth_date": "1997-02-02",
@@ -16493,10 +16492,18 @@
   },
   "Gene Gillette": {
     "birth_date": "1919-02-22",
-    "birth_place": "",
+    "birth_place": "San Francisco",
     "checked": "2026-11-25",
-    "death_date": null,
-    "death_place": "",
+    "death_date": "1976-11-19",
+    "death_place": "San Francisco",
+    "override": {
+      "fields": [
+        "death_date",
+        "birth_place",
+        "death_place"
+      ],
+      "reason": "Wikidata's item (Q6707436) has the wrong birth year, 1921, so the birth-year rule dropped its death date; NBA data and Wikipedia agree on 1919-02-22, and Wikidata and Wikipedia agree he died 1976-11-19 (aged 57)."
+    },
     "source": "nba-player-data",
     "wikidata_birth_date": "1921-02-22",
     "wikidata_id": "Q6707436"
@@ -21688,7 +21695,6 @@
     "death_date": "2001-04-05",
     "death_place": "Tempe",
     "source": "nba-player-data",
-    "wikidata_birth_date": "1994-12-08",
     "wikidata_id": "Q518561"
   },
   "Jay Murphy": {
@@ -23469,12 +23475,11 @@
   },
   "Joao Vianna": {
     "birth_date": "1966-11-15",
-    "birth_place": "",
+    "birth_place": "Brasília",
     "checked": "2026-11-25",
     "death_date": null,
     "death_place": "",
     "source": "nba-player-data",
-    "wikidata_birth_date": "1963-11-15",
     "wikidata_id": "Q3810734"
   },
   "Joby Wright": {

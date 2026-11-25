@@ -1,0 +1,17 @@
+{
+  "note": "Curated birth/death facts for players whose sources disagree in a way the rules in scripts/fetch_bio_wikidata.py cannot settle. Each entry needs a `reason`; `evidence` lists what was checked. Applied after the rules on every run (--full and --reapply included) by apply_bio_overrides. Allowed fields: birth_date, death_date, birth_place, death_place.",
+  "overrides": {
+    "Gene Gillette": {
+      "death_date": "1976-11-19",
+      "birth_place": "San Francisco",
+      "death_place": "San Francisco",
+      "reason": "Wikidata's item (Q6707436) has the wrong birth year, 1921, so the birth-year rule dropped its death date; NBA data and Wikipedia agree on 1919-02-22, and Wikidata and Wikipedia agree he died 1976-11-19 (aged 57).",
+      "evidence": [
+        "nba-player-data bio.json: born 1919-02-22",
+        "Wikipedia 'Gene Gallette' (the article 'Gene Gillette' redirects to; it notes 'Gillette' is a long-standing misspelling): born February 22, 1919 in San Francisco, died November 19, 1976 in San Francisco; categories 1919 births, 1976 deaths. Its infobox death template says 1976-11-29, against its own lead.",
+        "Wikidata Q6707436 (basketball player; BAA, Saint Mary's): P569 1921-02-22 (same day and month, a year two off both other sources), P570 1976-11-19"
+      ],
+      "checked": "2026-11-25"
+    }
+  }
+}

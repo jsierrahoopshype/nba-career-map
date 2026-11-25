@@ -27,7 +27,8 @@ def _args(tmp: Path, **over) -> argparse.Namespace:
                 npd_bio=None, no_nba_com=True,
                 nba_com_cache=tmp / "nba_com_birthdates.json",
                 careers=FIXTURES / "careers.json",
-                out=tmp / "player_bio.json", review=tmp / "bio_needs_review.json")
+                out=tmp / "player_bio.json", review=tmp / "bio_needs_review.json",
+                bio_overrides=tmp / "bio_overrides.json")
     base.update(over)
     return argparse.Namespace(**base)
 
@@ -455,6 +456,61 @@ def test_reapply_re_runs_the_rules_without_the_network():
     print("test_reapply_re_runs_the_rules_without_the_network PASS")
 
 
+def test_the_birth_statement_that_agrees_with_the_nba_date_is_used():
+    """Jay Miller's item carries his 1943 birth and a stray 1994 one: the one
+    the NBA date agrees with is used, so he keeps his death date and places
+    and is not reported as a 51-year disagreement."""
+    item = fb._blank_item("Q518561")
+    item["basketball"] = True
+    for born in ("1994-12-08T00:00:00Z", "1943-07-19T00:00:00Z"):
+        fb._absorb(item, {"birth": {"value": born}, "bprec": {"value": "11"},
+                          "death": {"value": "2001-04-05T00:00:00Z"},
+                          "dprec": {"value": "11"},
+                          "bplaceLabel": {"value": "St. Louis"}})
+    assert item["birth_dates"] == ["1994-12-08", "1943-07-19"]
+    assert fb.item_birth_date(item, "1943-07-19") == "1943-07-19"
+    rec = fb.compose(item, "1943-07-19", checked="2026-11-25")
+    assert rec["death_date"] == "2001-04-05" and rec["birth_place"] == "St. Louis"
+    assert "wikidata_birth_date" not in rec
+    # One statement, or no NBA date: the first statement, as before.
+    assert fb.item_birth_date(item, "") == "1994-12-08"
+    assert fb.item_birth_date({"birth_date": "1950"}, "1960") == "1950"
+    print("test_the_birth_statement_that_agrees_with_the_nba_date_is_used PASS")
+
+
+def test_a_curated_bio_override_survives_every_run():
+    with tempfile.TemporaryDirectory() as d:
+        tmp = Path(d)
+        (tmp / "bio_overrides.json").write_text(json.dumps({"overrides": {
+            "Wilt Chamberlain": {"death_date": "1999-10-13",
+                                 "death_place": "Bel Air",
+                                 "reason": "checked by hand"},
+            # no reason: ignored
+            "LeBron James": {"death_date": "2001-01-01"}}}), encoding="utf-8")
+        for over in ({}, {"full": True}, {"reapply": True}):
+            args, res = _run(tmp, **over)
+            wilt = res["bio"]["Wilt Chamberlain"]
+            assert wilt["death_date"] == "1999-10-13", (over, wilt)
+            assert wilt["death_place"] == "Bel Air"
+            assert wilt["override"]["fields"] == ["death_date", "death_place"]
+            assert res["bio"]["LeBron James"]["death_date"] is None
+            assert "override" not in res["bio"]["LeBron James"]
+    print("test_a_curated_bio_override_survives_every_run PASS")
+
+
+def test_the_shipped_bio_overrides_all_carry_a_reason():
+    doc = json.loads((ROOT / "data" / "players" / "bio_overrides.json")
+                     .read_text(encoding="utf-8"))
+    bio = json.loads((ROOT / "data" / "players" / "player_bio.json")
+                     .read_text(encoding="utf-8"))
+    for name, ov in doc["overrides"].items():
+        assert ov.get("reason") and ov.get("evidence"), name
+        for f in fb.OVERRIDE_FIELDS:
+            if f in ov:
+                assert bio[name][f] == ov[f], (name, f)
+    print("test_the_shipped_bio_overrides_all_carry_a_reason PASS")
+
+
 # --- incremental ------------------------------------------------------------
 def test_a_second_run_fetches_nobody():
     """FixtureTransport raises when a run asks for a response that was never
@@ -612,6 +668,9 @@ if __name__ == "__main__":
     test_an_empty_birthday_is_not_a_date()
     test_a_year_only_date_agrees_with_a_full_date_in_that_year()
     test_reapply_re_runs_the_rules_without_the_network()
+    test_the_birth_statement_that_agrees_with_the_nba_date_is_used()
+    test_a_curated_bio_override_survives_every_run()
+    test_the_shipped_bio_overrides_all_carry_a_reason()
     test_a_second_run_fetches_nobody()
     test_a_second_run_keeps_the_wrong_entity_list_whole()
     test_a_stale_living_record_comes_back_for_a_death_check()

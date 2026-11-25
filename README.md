@@ -27,6 +27,7 @@ data/
     retired_players.json       # no longer playing anywhere
     player_bio.json            # birth/death dates + places (NBA birth dates + Wikidata)
     bio_needs_review.json      # birth dates where NBA data and Wikidata disagree
+    bio_overrides.json         # curated birth/death facts, each with its reason and evidence
     nba_com_birthdates.json    # NBA.com answers saved for players nba-player-data has no date for
     player_url_overrides.json  # curated Wikipedia article per player (see below)
   teams/
@@ -221,6 +222,14 @@ value is known to be wrong) are skipped.
   Wikidata birth year five or more years from the NBA birth date is a
   namesake, not a disputed date. A later `--full` run re-checks all of it
   against the real gate.
+- **Several birth statements.** An item can carry more than one P569 (Jay
+  Miller's has his 1943 birth and a stray 1994 one); the one the NBA birth date
+  agrees with is the one compared and kept.
+- **Curated overrides.** `data/players/bio_overrides.json` sets a birth or
+  death fact by hand, with a `reason` and the `evidence`, for a player whose
+  sources disagree in a way the rules cannot settle (Gene Gillette: Wikidata
+  has his birth year wrong, which cost him his death date). It is applied after
+  the rules on every run, `--full` and `--reapply` included.
 - **Fails loudly.** If Wikidata, Wikipedia or nba-player-data's `bio.json`
   cannot be reached the run exits non-zero and writes **nothing** — an empty
   file would strip the dates out of every player page's structured data.

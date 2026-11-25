@@ -605,22 +605,17 @@
       "rechecked": "2026-11-25"
     },
     "Charlie Black": {
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Charlie_T._Black",
-      "wikidata_id": "Q5085586",
-      "wikidata_label": "Charlie T. Black",
-      "wikidata_description": "American college basketball player and coach",
-      "wikidata_birth_date": "1901-01-05",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Charles_B._Black",
+      "wikidata_id": "Q3666649",
+      "wikidata_label": "Charles B. Black",
+      "wikidata_description": "American basketball player (1921–1992)",
+      "wikidata_birth_date": "1921-06-15",
       "nba_birth_date": "1921-06-15",
-      "replaces": "https://en.wikipedia.org/wiki/Charlie_Black",
-      "replaces_wikidata_id": "Q16135509",
-      "requested_url": "https://en.wikipedia.org/wiki/Charlie_T._Black",
-      "verified": "2026-09-25",
-      "verified_by": "jorge",
-      "human_verified": true,
-      "warnings": [
-        "Wikidata does not list P106 = basketball player (American college basketball player and coach)",
-        "Wikidata says born 1901, the NBA date says 1921"
-      ]
+      "replaces": "https://en.wikipedia.org/wiki/Charlie_T._Black",
+      "replaces_wikidata_id": "Q5085586",
+      "verified": "2026-11-25",
+      "verified_by": "P106 = Q3665646 and a birth year within 1 of the NBA birth date",
+      "note": "the earlier article, Charlie T. Black (Q5085586, born 1901, a Kansas player and coach of the 1920s), is a different man: 20 years off the NBA birth date. Q3666649 (Anderson Packers) has the NBA birth date exactly."
     },
     "Charlie Brown": {
       "wikipedia_url": "https://en.wikipedia.org/wiki/Charlie_Brown_Jr._(basketball)",
