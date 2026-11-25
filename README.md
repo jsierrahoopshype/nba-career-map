@@ -25,8 +25,9 @@ data/
     nba_players_careers.json   # canonical career database (source of truth)
     active_players.json        # {nba_active:[...], overseas_active:[...]}
     retired_players.json       # no longer playing anywhere
-    player_bio.json            # birth/death dates + places (Basketball-Reference + Wikidata)
-    bio_needs_review.json      # birth dates that disagree with Basketball-Reference
+    player_bio.json            # birth/death dates + places (NBA birth dates + Wikidata)
+    bio_needs_review.json      # birth dates where NBA data and Wikidata disagree
+    nba_com_birthdates.json    # NBA.com answers saved for players nba-player-data has no date for
     player_url_overrides.json  # curated Wikipedia article per player (see below)
   teams/
     team_aliases.json          # historical/sponsored name -> current name
@@ -47,7 +48,10 @@ scripts/
   player_status.py             # tracking-status classification (see below)
   signing_guard.py             # newly-DETECTED vs newly-STARTED stint (ledger)
   stint_corrections.py         # re-applies stint_corrections.json after every parse
-  fetch_bio_wikidata.py        # birth/death facts from Wikidata (see below)
+  fetch_bio_wikidata.py        # birth/death facts from NBA data + Wikidata (see below)
+  nba_birthdates.py            # NBA birth dates: nba-player-data bio.json, then NBA.com
+  backfill_colleges.py         # empty `college` fields from the player's own infobox
+  ingest_nationalities.py      # nationality from nba-player-data bio.json
   player_urls.py               # reads player_url_overrides.json (curated articles)
   resolve_player_urls.py       # finds the real article for a wrong-person record
   merge_club_groups.py         # fold club-name variants into one club
@@ -64,6 +68,7 @@ nba_players_careers_READY.json # map data file (kept in sync by the updater)
 .github/workflows/update-careers.yml
 .github/workflows/player-bio.yml
 .github/workflows/fix-player-urls.yml
+.github/workflows/backfill-colleges.yml
 ```
 
 ## Data extracted per player
@@ -159,16 +164,17 @@ the same player name the career database uses:
 "Kobe Bryant": {
   "birth_date": "1978-08-23", "death_date": "2020-01-26",
   "birth_place": "Philadelphia", "death_place": "Calabasas",
-  "wikidata_id": "Q25369", "source": "basketball-reference",
+  "wikidata_id": "Q25369", "source": "nba-player-data",
   "checked": "2026-09-24"
 }
 ```
 
 `source` names where `birth_date` came from and nothing else —
-`basketball-reference`, `wikidata`, or `unresolved`. `wikidata_id` is the item
+`nba-player-data` (its `bio.json`), `nba.com`, `wikidata`, or `unresolved`.
+`wikidata_id` is the item
 the places and the death date came from, empty when no item passed the identity
 gate. Two optional keys appear only when they have something to say:
-`wikidata_birth_date` (the value Basketball-Reference beat, kept so the review
+`wikidata_birth_date` (the value the NBA date beat, kept so the review
 file can still report the disagreement) and `rejected_wikidata_id` (the
 namesake the gate turned down).
 
@@ -188,15 +194,20 @@ value is known to be wrong) are skipped.
   says P106 (occupation) = basketball player (`Q3665646`) or P641 (sport) =
   basketball (`Q5372`). One that fails has **all** of its dates and places
   discarded; the run then searches Wikidata for a basketball player of that
-  name born within a year of Basketball-Reference's date, and takes it only
-  when there is exactly one candidate.
-- **Source precedence.** Basketball-Reference
-  (`sumitrodatta/bball-reference-datasets`) is keyed to the actual NBA player,
+  name born within a year of the NBA birth date, and takes it only when there
+  is exactly one candidate.
+- **Source precedence.** The NBA birth date is keyed to the actual NBA player,
   so it decides the birth date whenever it has one; the gated Wikidata value is
-  the fallback. The death date and both places are Wikidata's alone, and only
-  from a gated item whose birth year is within a year of
-  Basketball-Reference's — a right-occupation item with the wrong birth year is
-  still likely a different basketball player, and his home town is not this
+  the fallback. The NBA date comes from `scripts/nba_birthdates.py`:
+  nba-player-data's `bio.json` first (the bio data HoopsMatic already keeps),
+  then NBA.com (`stats.nba.com` commonplayerinfo) for players `bio.json` has no
+  date for. NBA.com often refuses cloud runners, so a refusal is a warning and
+  the player falls back to Wikidata; every answer it gives is saved in
+  `data/players/nba_com_birthdates.json` and never asked for again. A full date
+  is never traded for a coarser one. The death date and both places are
+  Wikidata's alone, and only from a gated item whose birth year is within a
+  year of the NBA birth date — a right-occupation item with the wrong birth year
+  is still likely a different basketball player, and his home town is not this
   player's.
 - **Incremental.** A run resolves the players missing from the file, and
   re-checks living players whose record is over `--refresh-days` (7) old so a
@@ -207,18 +218,19 @@ value is known to be wrong) are skipped.
 - **Re-appliable offline.** `--reapply` re-runs the rules over the records
   already on file without touching Wikipedia or Wikidata. It cannot consult
   P106, so it stands in the strongest signal a stored record still carries: a
-  Wikidata birth year five or more years from Basketball-Reference's is a
+  Wikidata birth year five or more years from the NBA birth date is a
   namesake, not a disputed date. A later `--full` run re-checks all of it
   against the real gate.
-- **Fails loudly.** If Wikidata, Wikipedia or the Basketball-Reference mirror
+- **Fails loudly.** If Wikidata, Wikipedia or nba-player-data's `bio.json`
   cannot be reached the run exits non-zero and writes **nothing** — an empty
   file would strip the dates out of every player page's structured data.
 
 `data/players/bio_needs_review.json` is the human's queue, in three lists —
 `wrong_entity` (the gate failed: what it had resolved to, and whether a
-replacement was found), `date_disagreement` (the same person, different dates,
-and which one the record uses) and `still_missing` (no birth date from either
-source) — plus `wikipedia_url_wrong_person`, the wrong-entity players whose
+replacement was found), `date_disagreement` (every player whose NBA birth date
+and Wikidata birth date differ: both values, `nba_source`, `years_apart`,
+`days_apart`, and which one the record uses — biggest gaps first, so nothing
+is picked silently) and `still_missing` (no birth date from any source) — plus `wikipedia_url_wrong_person`, the wrong-entity players whose
 stored Wikipedia URL is the namesake's article, so their **club history** may
 be wrong too. Nothing in it edits the career database.
 
@@ -255,7 +267,7 @@ revert it. Two tiers, and only one is live:
 
 - **`overrides`** — verified. Written by `scripts/resolve_player_urls.py` only
   after Wikidata vouched for the article: `P106 = Q3665646` (basketball player)
-  **and** a birth year within 1 of Basketball-Reference's for this player. These
+  **and** a birth year within 1 of the NBA birth date for this player. These
   are what the pipeline uses. A hand-written entry whose value is a bare URL
   string also counts as verified — a human typing an article in *is* the
   verification.
@@ -265,7 +277,7 @@ revert it. Two tiers, and only one is live:
   Wikipedia confirms the article exists and is not (and does not redirect to) a
   disambiguation page; otherwise the player is skipped, listed in the run
   summary, and stays staged. The collision guard (an article another record
-  already holds) still applies. The Basketball-Reference birth year is compared
+  already holds) still applies. The NBA birth year is compared
   and reported as a warning, never a block. The written entry carries
   `"human_verified": true`, which tells `fetch_bio_wikidata.py` to take the
   article's Wikidata item as this player even when it lacks P106.
@@ -319,7 +331,7 @@ After the P106 gate, three tie-breaks run in order:
    name counts (parenthetical and `Jr.`/`Sr.`/`II`/`III`/`IV` stripped, accents
    folded). Aaron Harrison is not a second Andrew Harrison. Redirect aliases are
    one item: `Cat Barber` and `Anthony Barber (basketball)` are both Q16209351.
-2. **Career window** — with no Basketball-Reference birth date, a candidate
+2. **Career window** — with no NBA birth date, a candidate
    must be born 17–24 years before the player's first stint in
    `nba_players_careers.json`.
 3. **Namesake** — the item flagged for this record is never accepted back.
@@ -439,6 +451,13 @@ the first full backfill, a re-run after an outage, or a `--full` re-fetch.
 | `limit` | cap how many players this run resolves (blank = all) |
 | `refresh_limit` | cap the living-player death sweep (default 1000) |
 | `rebuild_pages` | rebuild the prerendered pages afterwards (default true) |
+
+`.github/workflows/backfill-colleges.yml` (by hand) fills empty `college`
+fields from each player's own Wikipedia infobox (`scripts/backfill_colleges.py`:
+the curated article first, then the stored one; never a known wrong-person
+article; the infobox birth year must be within one of the NBA birth date), then
+rebuilds the pages. A stored college is never overwritten. nba-player-data has
+no college field, so Wikipedia is the only source.
 
 ### Rate limiting
 

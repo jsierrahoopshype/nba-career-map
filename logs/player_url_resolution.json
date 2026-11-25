@@ -3,10 +3,10 @@
   "acceptance_test": {
     "occupation": "P106 = Q3665646 (basketball player)",
     "birth_year_tolerance": 1,
-    "cross_check": "Basketball-Reference career info CSV",
+    "cross_check": "the birth dates on file at the time of this run (a third-party export, no longer used; the resolver now checks against the NBA birth date)",
     "tie_breaks": [
       "rule 1: exact name (parenthetical and Jr./Sr./II/III/IV stripped, accents folded; redirect aliases are one item)",
-      "rule 2: no Basketball-Reference date -> born 17-24 years before the first stint",
+      "rule 2: no birth date -> born 17-24 years before the first stint",
       "rule 3: never the item flagged as the namesake"
     ],
     "human_verified": "written through without the P106 gate or the ambiguity check, once Wikipedia confirms the article exists and is not a disambiguation page; the birth year is a warning only"
@@ -22,7 +22,7 @@
   "needs_a_human": [
     {
       "player": "Ben Swain",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Ben_Swain",
       "rejected_wikidata_id": "Q816609",
       "searched": [
@@ -137,11 +137,11 @@
           "why_not": "not a basketball player on Wikidata (athletic program of Creighton University)"
         }
       ],
-      "why": "no Basketball-Reference birth date and no career on file, so no candidate can be checked"
+      "why": "no birth date and no career on file, so no candidate can be checked"
     },
     {
       "player": "Ed Lawrence",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Ed_Lawrence",
       "rejected_wikidata_id": "Q5335073",
       "searched": [
@@ -256,11 +256,11 @@
           "why_not": "not a basketball player on Wikidata (American basketball player-coach)"
         }
       ],
-      "why": "no Basketball-Reference birth date and no career on file, so no candidate can be checked"
+      "why": "no birth date and no career on file, so no candidate can be checked"
     },
     {
       "player": "Jake Stephens",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Jake_Stephens",
       "rejected_wikidata_id": "Q6125019",
       "searched": [
@@ -375,11 +375,11 @@
           "why_not": "not a basketball player on Wikidata (American sports journalist)"
         }
       ],
-      "why": "no Basketball-Reference birth date and no career on file, so no candidate can be checked"
+      "why": "no birth date and no career on file, so no candidate can be checked"
     },
     {
       "player": "James Phelan",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/James_Phelan",
       "rejected_wikidata_id": "Q6141211",
       "searched": [
@@ -484,11 +484,11 @@
           "why_not": "a different player's name (rule 1)"
         }
       ],
-      "why": "no Basketball-Reference birth date and no career on file, so no candidate can be checked"
+      "why": "no birth date and no career on file, so no candidate can be checked"
     },
     {
       "player": "Robert Bishop",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Bishop",
       "rejected_wikidata_id": "Q1669753",
       "searched": [
@@ -603,11 +603,11 @@
           "why_not": "not a basketball player on Wikidata (Wikimedia disambiguation page)"
         }
       ],
-      "why": "no Basketball-Reference birth date and no career on file, so no candidate can be checked"
+      "why": "no birth date and no career on file, so no candidate can be checked"
     },
     {
       "player": "Samuel Williams",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "stored_wikipedia_url": "https://en.wikipedia.org/wiki/Samuel_Williams",
       "rejected_wikidata_id": "Q7412941",
       "searched": [
@@ -722,7 +722,7 @@
           "why_not": "a different player's name (rule 1)"
         }
       ],
-      "why": "no Basketball-Reference birth date and no career on file, so no candidate can be checked"
+      "why": "no birth date and no career on file, so no candidate can be checked"
     }
   ],
   "human_verified": {
@@ -732,7 +732,7 @@
       "wikidata_label": "Alpha Diallo",
       "wikidata_description": "Guinean basketball player (born 1997)",
       "wikidata_birth_date": "1997-06-29",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Alpha_Diallo",
       "replaces_wikidata_id": "Q92771790",
       "requested_url": "https://en.wikipedia.org/wiki/Alpha_Diallo_(basketball,_born_1997)",
@@ -740,7 +740,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "Braden Smith": {
@@ -749,7 +749,7 @@
       "wikidata_label": "Braden Smith",
       "wikidata_description": "American basketball player (born 2003)",
       "wikidata_birth_date": "2003-07-25",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Braden_Smith",
       "replaces_wikidata_id": "Q132579759",
       "requested_url": "https://en.wikipedia.org/wiki/Braden_Smith_(basketball)",
@@ -757,7 +757,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "Bruce Thornton": {
@@ -766,7 +766,7 @@
       "wikidata_label": "Bruce Thornton",
       "wikidata_description": "American basketball player",
       "wikidata_birth_date": "2003-09-14",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Bruce_Thornton",
       "replaces_wikidata_id": "Q4978361",
       "requested_url": "https://en.wikipedia.org/wiki/Bruce_Thornton_(basketball)",
@@ -774,7 +774,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "Cameron Carr": {
@@ -783,7 +783,7 @@
       "wikidata_label": "Cameron Carr",
       "wikidata_description": "American basketball player (born 2004)",
       "wikidata_birth_date": "2004-11-21",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Cameron_Carr",
       "replaces_wikidata_id": "Q5026199",
       "requested_url": "https://en.wikipedia.org/wiki/Cameron_Carr_(basketball)",
@@ -791,7 +791,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "Carson Cooper": {
@@ -800,7 +800,7 @@
       "wikidata_label": "Carson Cooper",
       "wikidata_description": "American basketball player",
       "wikidata_birth_date": "2004-04-09",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Carson_Cooper",
       "replaces_wikidata_id": "Q2940426",
       "requested_url": "https://en.wikipedia.org/wiki/Carson_Cooper_(basketball)",
@@ -808,7 +808,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "Chris Johnson": {
@@ -817,7 +817,7 @@
       "wikidata_label": "Chris Johnson",
       "wikidata_description": "American basketball player (born 1985)",
       "wikidata_birth_date": "1985-07-17",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Chris_Johnson",
       "replaces_wikidata_id": "Q440005",
       "requested_url": "https://en.wikipedia.org/wiki/Chris_Johnson_(basketball,_born_1985)",
@@ -825,7 +825,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "Dillon Mitchell": {
@@ -834,7 +834,7 @@
       "wikidata_label": "Dillon Mitchell",
       "wikidata_description": "American basketball player (born 2003)",
       "wikidata_birth_date": "2003-10-03",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Dillon_Mitchell",
       "replaces_wikidata_id": "Q129166373",
       "requested_url": "https://en.wikipedia.org/wiki/Dillon_Mitchell_(basketball)",
@@ -842,7 +842,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "John Lucas": {
@@ -851,7 +851,7 @@
       "wikidata_label": "John Lucas II",
       "wikidata_description": "American basketball player (born 1953)",
       "wikidata_birth_date": "1953-10-31",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/John_Lucas",
       "replaces_wikidata_id": "Q359497",
       "requested_url": "https://en.wikipedia.org/wiki/John_Lucas_II",
@@ -859,7 +859,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ],
       "note": "a separate John Lucas III record exists, so this bare record is the father"
     },
@@ -869,7 +869,7 @@
       "wikidata_label": "Justin Robinson",
       "wikidata_description": "American basketball player (born 1997)",
       "wikidata_birth_date": "1997-10-17",
-      "basketball_reference_birth_date": "1997-10-12",
+      "birth_date_checked_against": "1997-10-12",
       "replaces": "https://en.wikipedia.org/wiki/Justin_Robinson",
       "replaces_wikidata_id": "Q28874201",
       "requested_url": "https://en.wikipedia.org/wiki/Justin_Robinson_(basketball,_born_1997)",
@@ -884,7 +884,7 @@
       "wikidata_label": "Kevin Johnson",
       "wikidata_description": "American basketball player and politician (born 1966)",
       "wikidata_birth_date": "1966-03-04",
-      "basketball_reference_birth_date": "1966-03-04",
+      "birth_date_checked_against": "1966-03-04",
       "replaces": "https://en.wikipedia.org/wiki/Kevin_Johnson_(basketball)",
       "replaces_wikidata_id": "Q119932",
       "requested_url": "https://en.wikipedia.org/wiki/Kevin_Johnson_(basketball_player)",
@@ -899,7 +899,7 @@
       "wikidata_label": "Mike Dunleavy Jr.",
       "wikidata_description": "American basketball player (born 1980)",
       "wikidata_birth_date": "1980-09-15",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Mike_Dunleavy",
       "replaces_wikidata_id": "Q1588701",
       "requested_url": "https://en.wikipedia.org/wiki/Mike_Dunleavy_Jr.",
@@ -907,7 +907,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ],
       "note": "a separate Mike Dunleavy Sr record exists, so this bare record is the son"
     },
@@ -917,7 +917,7 @@
       "wikidata_label": "Nick Martinelli",
       "wikidata_description": "American basketball player",
       "wikidata_birth_date": "2004-04-20",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Nick_Martinelli",
       "replaces_wikidata_id": "Q7027512",
       "requested_url": "https://en.wikipedia.org/wiki/Nick_Martinelli_(basketball)",
@@ -925,7 +925,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     },
     "Richie Saunders": {
@@ -934,7 +934,7 @@
       "wikidata_label": "Richie Saunders",
       "wikidata_description": "American basketball player (born 2001)",
       "wikidata_birth_date": "2001-09-19",
-      "basketball_reference_birth_date": "",
+      "birth_date_checked_against": "",
       "replaces": "https://en.wikipedia.org/wiki/Richie_Saunders",
       "replaces_wikidata_id": "Q7330576",
       "requested_url": "https://en.wikipedia.org/wiki/Richie_Saunders_(basketball)",
@@ -942,7 +942,7 @@
       "verified_by": "jorge",
       "human_verified": true,
       "warnings": [
-        "no Basketball-Reference birth date to check the item against"
+        "no birth date on file to check the item against"
       ]
     }
   },

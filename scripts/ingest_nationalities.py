@@ -1,7 +1,12 @@
-"""One-time ingest: nationality (and, if enabled, bonus fields) from a
-basketball-reference-style CSV export into nba_players_careers.json.
+"""Ingest: nationality (and, if enabled, bonus fields) from nba-player-data's
+bio.json -- the HoopsMatic Bio Data sheet, PLAYER / NATIONALITY / POS / HEIGHT
+/ WEIGHT / DRAFT -- into nba_players_careers.json. A CSV export of the same
+sheet (same column names) is read too.
 
-The CSV's NATIONALITY column is already a country name (not a demonym, unlike
+With no argument it reads bio.json from the nba-player-data repo on GitHub;
+pass a local bio.json or CSV path to use that instead.
+
+The sheet's NATIONALITY column is already a country name (not a demonym, unlike
 the live-fetch parser's |nationality= extraction) and correctly distinguishes
 nationality from birthplace (e.g. Al-Farouq Aminu: born Georgia, USA;
 nationality Nigeria). Both representations are stored as given by their
@@ -33,7 +38,7 @@ Idempotent: re-running with the same CSV changes nothing further (matched
 players already carrying the same CSV-sourced value are left as-is; the
 conflict log is rewritten fresh each run, not appended).
 
-Run:  python3 scripts/ingest_nationalities.py <path-to-csv>
+Run:  python3 scripts/ingest_nationalities.py [path-to-bio.json-or-csv]
 """
 from __future__ import annotations
 
@@ -41,6 +46,7 @@ import csv
 import json
 import re
 import sys
+import urllib.request
 from pathlib import Path
 
 from names import normkey
@@ -49,6 +55,8 @@ ROOT = Path(__file__).resolve().parent.parent
 CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
 CONFLICTS_OUT = ROOT / "logs" / "nationality_conflicts.json"
 UNMATCHED_OUT = ROOT / "logs" / "nationality_unmatched.json"
+NPD_BIO_URL = ("https://raw.githubusercontent.com/jsierrahoopshype/"
+               "nba-player-data/main/bio.json")
 
 # Gate for the bonus fields (POS/HEIGHT/WEIGHT/DRAFT year/PICK/COLLEGE) —
 # only ingested when explicitly confirmed. Nationality ingestion (this
@@ -136,24 +144,42 @@ def _resolve_countries(value: str) -> set[str]:
     return {_resolve_one(p) for p in parts if p.strip()}
 
 
+def load_rows(source: str | None = None) -> list[dict]:
+    """bio.json (a local path, or nba-player-data on GitHub when None) or a
+    CSV export of the same sheet, as the rows load_csv returns."""
+    if source is None:
+        req = urllib.request.Request(NPD_BIO_URL, headers={
+            "User-Agent": "nba-career-map/1.0 (nationality ingest)"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            text = resp.read().decode("utf-8")
+        return _rows(json.loads(text))
+    path = Path(source)
+    if path.suffix.lower() == ".json":
+        return _rows(json.loads(path.read_text(encoding="utf-8-sig")))
+    return load_csv(path)
+
+
 def load_csv(path: Path) -> list[dict]:
     with path.open(encoding="utf-8-sig", newline="") as f:
-        reader = csv.DictReader(f)
-        rows = []
-        for row in reader:
-            name = (row.get("PLAYER") or "").strip()
-            if not name:
-                continue
-            rows.append({
-                "player": name,
-                "nationality": (row.get("NATIONALITY") or "").strip(),
-                "pos": (row.get("POS") or "").strip(),
-                "height": (row.get("HEIGHT") or "").strip(),
-                "weight": (row.get("WEIGHT") or "").strip(),
-                "draft_year": (row.get("DRAFT") or "").strip(),
-                "pick": (row.get("PICK") or "").strip(),
-                "college": (row.get("COLLEGE / TEAM") or "").strip(),
-            })
+        return _rows(csv.DictReader(f))
+
+
+def _rows(reader) -> list[dict]:
+    rows = []
+    for row in reader:
+        name = (row.get("PLAYER") or "").strip()
+        if not name:
+            continue
+        rows.append({
+            "player": name,
+            "nationality": (row.get("NATIONALITY") or "").strip(),
+            "pos": (row.get("POS") or "").strip(),
+            "height": (row.get("HEIGHT") or "").strip(),
+            "weight": (row.get("WEIGHT") or "").strip(),
+            "draft_year": (row.get("DRAFT") or "").strip(),
+            "pick": (row.get("PICK") or "").strip(),
+            "college": (row.get("COLLEGE / TEAM") or "").strip(),
+        })
     return rows
 
 
@@ -247,11 +273,7 @@ def apply_bonus_fields(rec: dict, row: dict, conflicts: list[dict]) -> None:
 
 
 def main() -> None:
-    if len(sys.argv) < 2:
-        print("usage: python3 scripts/ingest_nationalities.py <path-to-csv>")
-        sys.exit(1)
-    csv_path = Path(sys.argv[1])
-    csv_rows = load_csv(csv_path)
+    csv_rows = load_rows(sys.argv[1] if len(sys.argv) > 1 else None)
     players = json.loads(CAREERS.read_text(encoding="utf-8"))
 
     exact, via_normkey, ambiguous, unmatched = match_players(csv_rows, players)

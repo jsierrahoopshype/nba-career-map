@@ -1,0 +1,78 @@
+name: Backfill colleges
+
+# Fills the empty `college` fields from each player's own Wikipedia infobox
+# (scripts/backfill_colleges.py), then rebuilds the prerendered pages, whose
+# meta descriptions close "from <college> to <last team>".
+#
+# Manual, and safe to re-run: a record that already has a college is never
+# touched, and a run that spends its request budget leaves the rest for the
+# next one (listed under `not_read_yet` in logs/college_backfill.json).
+on:
+  workflow_dispatch:
+    inputs:
+      max_requests:
+        description: "Wikipedia request budget (50 articles a request)"
+        type: string
+        default: "200"
+      dry_run:
+        description: "Report only -- write nothing, commit nothing"
+        type: boolean
+        default: false
+
+# Shares the career pipeline's group: both commit to the same branch, so they
+# queue instead of racing each other's pushes.
+concurrency:
+  group: update-careers
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  colleges:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Backfill colleges
+        env:
+          IN_MAX: ${{ github.event.inputs.max_requests }}
+          IN_DRY: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS="--max-requests ${IN_MAX:-200} --delay 1.0"
+          if [ "$IN_DRY" != "true" ]; then ARGS="$ARGS --apply"; fi
+          python3 scripts/backfill_colleges.py $ARGS
+
+      - name: Rebuild derived data and pages
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: python3 scripts/build_dashboard_data.py
+
+      - name: Commit and push changes
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data logs nba_players_careers_READY.json sitemap.xml player team country assets
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Backfill colleges from Wikipedia infoboxes"
+          for i in 1 2 3 4; do
+            if git push; then exit 0; fi
+            echo "push failed, retry $i"
+            git pull --rebase origin "${{ github.ref_name }}" || true
+            sleep $((2 ** i))
+          done
+          echo "::error::could not push the college backfill"
+          exit 1
