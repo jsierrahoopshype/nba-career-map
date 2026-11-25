@@ -10,8 +10,9 @@ name: Player Birth/Death Facts
 # for it after the rules themselves change -- a "full" run, which re-reads
 # every player and REWRITES every record from scratch under the current rules:
 # the P106/P641 identity gate that keeps a namesake's dates out, the search
-# that re-points a rejected player at the right item, and Basketball-Reference
-# deciding the birth date.
+# that re-points a rejected player at the right item, and the NBA birth date
+# (nba-player-data's bio.json, then NBA.com for the gaps; see
+# scripts/nba_birthdates.py) deciding the birth date.
 #
 # Manual only, on purpose: a full backfill is a few hundred API requests and
 # wants a human deciding when it happens.

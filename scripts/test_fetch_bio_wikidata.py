@@ -23,7 +23,9 @@ FIXTURES = ROOT / "tests" / "fixtures"
 def _args(tmp: Path, **over) -> argparse.Namespace:
     base = dict(limit=None, refresh_days=fb.REFRESH_DAYS,
                 refresh_limit=fb.REFRESH_LIMIT, full=False, reapply=False,
-                delay=0.0, fixtures=FIXTURES, skip_bref=False, dry_run=False,
+                delay=0.0, fixtures=FIXTURES, skip_nba=False, dry_run=False,
+                npd_bio=None, no_nba_com=True,
+                nba_com_cache=tmp / "nba_com_birthdates.json",
                 careers=FIXTURES / "careers.json",
                 out=tmp / "player_bio.json", review=tmp / "bio_needs_review.json")
     base.update(over)
@@ -47,7 +49,7 @@ def test_date_precision_is_kept():
 
 
 def test_a_year_only_date_never_becomes_january_first():
-    """Early Player has no Basketball-Reference row, so Wikidata's year-only
+    """Early Player has no nba-player-data row, so Wikidata's year-only
     date stands -- and stays a year."""
     with tempfile.TemporaryDirectory() as d:
         _args_, res = _run(Path(d))
@@ -109,12 +111,12 @@ def test_a_namesake_loses_his_dates_and_the_right_item_is_found():
     print("test_a_namesake_loses_his_dates_and_the_right_item_is_found PASS")
 
 
-def test_a_namesake_with_no_replacement_keeps_nothing_but_the_bref_date():
+def test_a_namesake_with_no_replacement_keeps_nothing_but_the_nba_date():
     with tempfile.TemporaryDirectory() as d:
         args, res = _run(Path(d))
         rec = res["bio"]["Lost Player"]
-        assert rec["birth_date"] == "1949-01-21", rec   # Basketball-Reference
-        assert rec["source"] == "basketball-reference", rec
+        assert rec["birth_date"] == "1949-01-21", rec   # nba-player-data
+        assert rec["source"] == "nba-player-data", rec
         assert rec["wikidata_id"] == "", rec
         assert rec["rejected_wikidata_id"] == "Q999006", rec
         assert rec["birth_place"] == "" and rec["death_date"] is None, rec
@@ -124,7 +126,7 @@ def test_a_namesake_with_no_replacement_keeps_nothing_but_the_bref_date():
                if r["player"] == "Lost Player"][0]
         assert row["replacement_found"] is False
         assert row["replacement"] is None
-    print("test_a_namesake_with_no_replacement_keeps_nothing_but_the_bref_date PASS")
+    print("test_a_namesake_with_no_replacement_keeps_nothing_but_the_nba_date PASS")
 
 
 def test_an_ambiguous_search_is_refused():
@@ -137,7 +139,7 @@ def test_an_ambiguous_search_is_refused():
     # ... and a candidate born in the wrong decade is not the man either.
     assert fb.pick_replacement([{"qid": "Q3", "birth_date": "1968-02-02"}],
                                "2006-08-13") is None
-    # With no Basketball-Reference date there is nothing to disambiguate on.
+    # With no NBA birth date there is nothing to disambiguate on.
     assert fb.pick_replacement(twins[:1], "") is None
     print("test_an_ambiguous_search_is_refused PASS")
 
@@ -182,14 +184,90 @@ def test_a_failed_search_costs_the_replacements_not_the_run():
 
 
 # --- source precedence ------------------------------------------------------
-def test_basketball_reference_decides_the_birth_date():
+def test_the_nba_date_decides_the_birth_date():
     with tempfile.TemporaryDirectory() as d:
         _args_, res = _run(Path(d))
         rec = res["bio"]["Redirected Player"]
-        assert rec["birth_date"] == "1990-07-04"       # bref, not 1991-07-04
+        assert rec["birth_date"] == "1990-07-04"       # NBA, not 1991-07-04
         assert rec["wikidata_birth_date"] == "1991-07-04"
-        assert rec["source"] == "basketball-reference"
-    print("test_basketball_reference_decides_the_birth_date PASS")
+        assert rec["source"] == "nba-player-data"
+    print("test_the_nba_date_decides_the_birth_date PASS")
+
+
+def test_a_full_date_is_never_traded_for_a_coarser_one():
+    """A Wikidata day inside a year-only NBA date is the better answer; a
+    Wikidata year-only date never replaces a full NBA date."""
+    item = {"qid": "Q1", "birth_date": "1950-03-04", "death_date": None,
+            "birth_place": "Here", "death_place": ""}
+    rec = fb.compose(item, "1950", checked="2026-11-25")
+    assert rec["birth_date"] == "1950-03-04" and rec["source"] == "wikidata"
+    rec = fb.compose(dict(item, birth_date="1950"), "1950-03-04",
+                     checked="2026-11-25", nba_source="nba.com")
+    assert rec["birth_date"] == "1950-03-04" and rec["source"] == "nba.com"
+    assert "wikidata_birth_date" not in rec
+    print("test_a_full_date_is_never_traded_for_a_coarser_one PASS")
+
+
+def test_nba_com_fills_what_bio_json_lacks_and_a_refusal_is_not_fatal():
+    import nba_birthdates as nb
+    players = [{"player": "Has Row"}, {"player": "No Row"},
+               {"player": "Blocked Guy"}, {"player": "No Id"}]
+    rows = [{"PLAYER": "Has Row", "BIRTHDAY": "1/2/2000"}]
+    ids = {"no row": "11", "blocked guy": "22"}
+
+    def fetch(pid):
+        if pid == "22":
+            raise OSError("timed out")
+        return "2001-05-06"
+    dates, cache = nb.build(players, rows, ids=ids, fetch=fetch,
+                            today="2026-11-25")
+    assert dates.date("Has Row") == "2000-01-02"
+    assert dates.source("Has Row") == "nba-player-data"
+    assert dates.date("No Row") == "2001-05-06"
+    assert dates.source("No Row") == "nba.com"
+    assert dates.date("Blocked Guy") == "" and "Blocked Guy" in dates.not_fetched
+    assert dates.date("No Id") == ""
+    assert cache["No Row"] == {"person_id": "11", "birth_date": "2001-05-06",
+                               "checked": "2026-11-25"}
+    # The saved answer is used next time without asking again.
+    again, _ = nb.build(players, rows, cache=cache, ids={}, fetch=None)
+    assert again.source("No Row") == "nba.com"
+    print("test_nba_com_fills_what_bio_json_lacks_and_a_refusal_is_not_fatal PASS")
+
+
+def test_bio_json_names_match_strictly():
+    import nba_birthdates as nb
+    rows = [{"PLAYER": "Bobby Jones", "BIRTHDAY": "12/18/1951"},
+            {"PLAYER": "Bobby Jones (1984)", "BIRTHDAY": "1/9/1984"},
+            {"PLAYER": "A.J. Green", "BIRTHDAY": "9/27/1999"},
+            {"PLAYER": "Bad Date", "BIRTHDAY": "13/45/1999"}]
+    players = [{"player": "Bobby Jones"}, {"player": "Bobby Jones (1984)"},
+               {"player": "AJ Green"}, {"player": "Bad Date"},
+               {"player": "Bobby Jones Jr."}]
+    got = nb.match_npd(players, rows)
+    assert got == {"Bobby Jones": "1951-12-18",
+                   "Bobby Jones (1984)": "1984-01-09",
+                   "AJ Green": "1999-09-27"}, got
+    # The same name with a birth date his career rules out is a namesake's row.
+    rejected = []
+    got = nb.match_npd([{"player": "Old Guard",
+                         "career_history": [{"years": "1972-1975"}]}],
+                       [{"PLAYER": "Old Guard", "BIRTHDAY": "5/4/2000"}], rejected)
+    assert got == {} and rejected[0]["nba_birth_date"] == "2000-05-04", rejected
+    # ... unless his own Wikidata item agrees on the year (a youth club at the
+    # top of his career, not a namesake).
+    nba = nb.NbaBirthDates({}, rejected=rejected)
+    assert fb.nba_date_for(nba, "Old Guard", {"birth_date": "2000-05-04"}) == \
+        ("2000-05-04", "nba-player-data")
+    assert fb.nba_date_for(nba, "Old Guard", {"birth_date": "1950-04-17"}) == ("", "")
+    assert fb.nba_date_for(nba, "Old Guard", None) == ("", "")
+    # His article's title names a birth year: a row years off it is not his.
+    rejected = []
+    got = nb.match_npd([{"player": "Titled Guy", "wikipedia_url":
+                         "https://en.wikipedia.org/wiki/Titled_Guy_(basketball,_born_1942)"}],
+                       [{"PLAYER": "Titled Guy", "BIRTHDAY": "2/23/1950"}], rejected)
+    assert got == {} and "title says born 1942" in rejected[0]["why"], rejected
+    print("test_bio_json_names_match_strictly PASS")
 
 
 def test_a_wrong_year_costs_the_item_its_places():
@@ -231,20 +309,20 @@ def test_a_full_run_writes_the_expected_records():
         assert kobe["birth_place"] == "Philadelphia"
         assert kobe["death_place"] == "Calabasas"
         assert kobe["wikidata_id"] == "Q41421"
-        assert kobe["source"] == "basketball-reference"
+        assert kobe["source"] == "nba-player-data"
         assert kobe["checked"]
         assert bio["LeBron James"]["death_date"] is None
         cov = res["coverage"]
         assert cov == {"players": 8, "with_birth_date": 8,
                        "with_death_date": 3, "with_birth_place": 5,
                        "with_death_place": 2, "year_only_birth_date": 1,
-                       "from_basketball_reference": 7,
+                       "from_nba_player_data": 7, "from_nba_com": 0,
                        "rejected_wikidata_item": 2}, cov
     print("test_a_full_run_writes_the_expected_records PASS")
 
 
 def test_a_player_with_no_wikidata_item_is_recorded_not_invented():
-    """No item means no places -- but Basketball-Reference still has his
+    """No item means no places -- but nba-player-data still has his
     birth date, and he still gets a record, or every run from here pays to
     look him up again."""
     with tempfile.TemporaryDirectory() as d:
@@ -252,7 +330,7 @@ def test_a_player_with_no_wikidata_item_is_recorded_not_invented():
         rec = res["bio"]["Unknown Player"]
         assert rec["wikidata_id"] == ""
         assert rec["birth_date"] == "1995-03-03"
-        assert rec["source"] == "basketball-reference"
+        assert rec["source"] == "nba-player-data"
         review = json.loads(args.review.read_text(encoding="utf-8"))
         assert [r["player"] for r in review["still_missing"]] == [], review
     print("test_a_player_with_no_wikidata_item_is_recorded_not_invented PASS")
@@ -283,25 +361,27 @@ def test_the_review_reports_a_real_disagreement_and_what_was_used():
         assert names == ["Redirected Player"], review["date_disagreement"]
         row = review["date_disagreement"][0]
         assert row["wikidata"] == "1991-07-04"
-        assert row["basketball_reference"] == "1990-07-04"
+        assert row["nba_birth_date"] == "1990-07-04"
+        assert row["nba_source"] == "nba-player-data"
         assert row["used"] == "1990-07-04"
-        assert row["used_source"] == "basketball-reference"
+        assert row["used_source"] == "nba-player-data"
+        assert row["days_apart"] == 365
         assert row["places_kept"] is True
         assert review["counts"]["date_disagreement"] == 1
-        assert res["review"]["cross_check_source"].startswith("https://raw.")
+        assert res["review"]["cross_check_source"].startswith("nba-player-data")
     print("test_the_review_reports_a_real_disagreement_and_what_was_used PASS")
 
 
-def test_an_unknown_bbref_birth_date_is_not_a_date():
-    """The CSV writes an unknown date as 'NA'; comparing a real date against
-    that string would report every one of them as a disagreement."""
-    class T:
-        def get_text(self, url):
-            return (FIXTURES / "bref.csv").read_text(encoding="utf-8")
-    bref = fb.load_bref(T())
-    assert "na player" not in bref, bref
-    assert bref[fb.normkey("Kobe Bryant")] == "1978-08-23"
-    print("test_an_unknown_bbref_birth_date_is_not_a_date PASS")
+def test_an_empty_birthday_is_not_a_date():
+    """bio.json leaves an unknown BIRTHDAY empty; that is no date at all,
+    not one to compare a real date against."""
+    import nba_birthdates as nb
+    rows = json.loads((FIXTURES / "npd_bio.json").read_text(encoding="utf-8"))
+    got = nb.match_npd([{"player": "NA Player"}, {"player": "Kobe Bryant"}], rows)
+    assert "NA Player" not in got, got
+    assert got["Kobe Bryant"] == "1978-08-23"
+    assert nb.parse_birthday("") == "" and nb.parse_birthday("2/30/1990") == ""
+    print("test_an_empty_birthday_is_not_a_date PASS")
 
 
 def test_a_year_only_date_agrees_with_a_full_date_in_that_year():
@@ -316,12 +396,12 @@ def test_a_year_only_date_agrees_with_a_full_date_in_that_year():
 # --- offline re-apply -------------------------------------------------------
 def test_reapply_re_runs_the_rules_without_the_network():
     """The strongest signal a stored record still carries is its birth year.
-    Years off Basketball-Reference's means the item was a namesake, so its
-    places go and the Basketball-Reference date stands."""
-    bref = {fb.normkey("Ace Bailey"): "2006-08-13",
-            fb.normkey("Alfredrick Hughes"): "1962-07-19",
-            fb.normkey("Disputed Player"): "1918-10-17",
-            fb.normkey("No Bref Player"): ""}
+    Years off the NBA date means the item was a namesake, so its places go
+    and the NBA date stands."""
+    import nba_birthdates as nb
+    nba = nb.NbaBirthDates({"Ace Bailey": ("2006-08-13", nb.SRC_NPD),
+                            "Alfredrick Hughes": ("1962-07-19", nb.SRC_NPD),
+                            "Disputed Player": ("1918-10-17", nb.SRC_NPD)})
     bio = {
         "Ace Bailey": {"birth_date": "1903-07-03", "death_date": "1992-04-07",
                        "birth_place": "Bracebridge", "death_place": "Toronto",
@@ -337,12 +417,12 @@ def test_reapply_re_runs_the_rules_without_the_network():
                             "birth_place": "Boston", "death_place": "",
                             "wikidata_id": "Q3624026", "source": "wikidata",
                             "checked": "2026-09-01"},
-        "No Bref Player": {"birth_date": "1955", "death_date": None,
+        "No Nba Player": {"birth_date": "1955", "death_date": None,
                            "birth_place": "Riga", "death_place": "",
                            "wikidata_id": "Q123", "source": "wikidata",
                            "checked": "2026-09-01"},
     }
-    out, details = fb.reapply(bio, bref)
+    out, details = fb.reapply(bio, nba)
 
     ace = out["Ace Bailey"]
     assert ace["birth_date"] == "2006-08-13"
@@ -360,15 +440,15 @@ def test_reapply_re_runs_the_rules_without_the_network():
     dp = out["Disputed Player"]
     assert dp["wikidata_id"] == "Q3624026", dp
     assert "rejected_wikidata_id" not in dp, dp
-    assert dp["birth_date"] == "1918-10-17"           # bref still decides
+    assert dp["birth_date"] == "1918-10-17"           # NBA still decides
     assert dp["wikidata_birth_date"] == "1920-10-17"
     assert dp["birth_place"] == "", dp                # ... but not his town
     assert "Disputed Player" not in details
 
     # Nothing to compare against leaves the record as it was.
-    nb = out["No Bref Player"]
-    assert nb["birth_date"] == "1955" and nb["birth_place"] == "Riga"
-    assert nb["source"] == "wikidata"
+    nn = out["No Nba Player"]
+    assert nn["birth_date"] == "1955" and nn["birth_place"] == "Riga"
+    assert nn["source"] == "wikidata"
 
     # The death sweep is not reset: the stamps the records came with survive.
     assert {r["checked"] for r in out.values()} == {"2026-09-01"}
@@ -515,18 +595,21 @@ if __name__ == "__main__":
     test_a_bare_item_id_is_not_a_place_name()
     test_the_gate_reads_occupation_and_sport()
     test_a_namesake_loses_his_dates_and_the_right_item_is_found()
-    test_a_namesake_with_no_replacement_keeps_nothing_but_the_bref_date()
+    test_a_namesake_with_no_replacement_keeps_nothing_but_the_nba_date()
     test_an_ambiguous_search_is_refused()
     test_the_wikipedia_url_of_a_namesake_is_reported()
     test_a_failed_search_costs_the_replacements_not_the_run()
-    test_basketball_reference_decides_the_birth_date()
+    test_the_nba_date_decides_the_birth_date()
+    test_a_full_date_is_never_traded_for_a_coarser_one()
+    test_nba_com_fills_what_bio_json_lacks_and_a_refusal_is_not_fatal()
+    test_bio_json_names_match_strictly()
     test_a_wrong_year_costs_the_item_its_places()
     test_a_birth_year_within_a_year_is_the_same_man()
     test_a_full_run_writes_the_expected_records()
     test_a_player_with_no_wikidata_item_is_recorded_not_invented()
     test_a_player_neither_source_knows_lands_in_still_missing()
     test_the_review_reports_a_real_disagreement_and_what_was_used()
-    test_an_unknown_bbref_birth_date_is_not_a_date()
+    test_an_empty_birthday_is_not_a_date()
     test_a_year_only_date_agrees_with_a_full_date_in_that_year()
     test_reapply_re_runs_the_rules_without_the_network()
     test_a_second_run_fetches_nobody()

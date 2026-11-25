@@ -19,8 +19,8 @@ TWO TIERS, AND ONLY ONE OF THEM IS LIVE.
 
   overrides   verified. Each entry was accepted by scripts/resolve_player_urls.py
               against Wikidata: the article's item carries P106 = Q3665646
-              (basketball player) and a birth year within a year of
-              Basketball-Reference's for this player. These are the ones the
+              (basketball player) and a birth year within a year of the
+              NBA birth date for this player. These are the ones the
               pipeline uses.
   candidates  guesses from Wikipedia's naming conventions ("<name>
               (basketball)", "<name> Jr."), pre-filled so the resolver tries
@@ -49,6 +49,7 @@ knowing any of the above.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from names import normkey, title_from_url
@@ -132,12 +133,37 @@ def reset_cache() -> None:
     _CACHE, _CACHE_PATH = None, None
 
 
+_GENERATION = re.compile(r"\b(jr|sr|ii|iii|iv)\b\.?", re.I)
+
+
+_YEAR_TAG = re.compile(r"\((\d{4})\)")
+
+
+def _generation(name: str) -> set[str]:
+    """What tells two same-named players apart and normkey folds away: a
+    Jr./Sr./II/III/IV, or a "(1975)" birth-year tag on the key."""
+    return ({m.lower() for m in _GENERATION.findall(name or "")}
+            | set(_YEAR_TAG.findall(name or "")))
+
+
 def override_for(name: str, path: Path | None = None) -> dict | None:
-    """The verified entry for this player, or None."""
+    """The verified entry for this player, or None.
+
+    The normalized-name fallback never crosses a generation: "John Lucas III",
+    "Mike Dunleavy Sr" and "Brandon Williams (1975)" are not the "John Lucas",
+    "Mike Dunleavy" and "Brandon Williams" whose articles are curated, even
+    though normkey reads them as the same name.
+    """
     if not name:
         return None
     idx = load(path)
-    return idx.get(name) or idx.get(normkey(name))
+    rec = idx.get(name)
+    if rec:
+        return rec
+    rec = idx.get(normkey(name))
+    if rec and _generation(rec.get("player") or "") != _generation(name):
+        return None
+    return rec
 
 
 def override_url(name: str, path: Path | None = None) -> str:

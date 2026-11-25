@@ -2,15 +2,15 @@
 
 Responses captured from the shapes the live APIs return, so
 `scripts/fetch_bio_wikidata.py` can be exercised without reaching
-Wikipedia, Wikidata or GitHub.
+Wikipedia, Wikidata, NBA.com or GitHub.
 
 | file | stands in for |
 | --- | --- |
 | `careers.json` | an eight-player slice of `data/players/nba_players_careers.json` |
 | `pageprops-1.json` | `en.wikipedia.org/w/api.php?action=query&prop=pageprops` — includes a redirect (`Redirected Player` → `Renamed Player`) and an article that does not exist |
 | `sparql-1.json` | `query.wikidata.org/sparql` — day-, month- and year-precision dates, a living player, two dead ones, a place whose label service falls back to a bare item ID, and two items the identity gate turns down (`?bball` false) |
-| `sparql-2.json` | the replacement search that follows a rejection — the basketball player of that name born the year Basketball-Reference says, plus a decoy born decades earlier |
-| `bref.csv` | the Basketball-Reference career CSV, with one row that disagrees with Wikidata, one player Wikidata has no item for, and one player (`Early Player`) it has no row for at all |
+| `sparql-2.json` | the replacement search that follows a rejection — the basketball player of that name born the year the NBA birth date says, plus a decoy born decades earlier |
+| `npd_bio.json` | nba-player-data's `bio.json` (BIRTHDAY in M/D/YYYY), with one row that disagrees with Wikidata, one player Wikidata has no item for, one row with no BIRTHDAY, and one player (`Early Player`) it has no row for at all |
 
 `FixtureTransport` reads `pageprops-N.json` / `sparql-N.json` in call order and
 raises if a run asks for one that was never saved, so a test cannot pass by

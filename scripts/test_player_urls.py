@@ -43,6 +43,19 @@ class _Tmp:
 
 
 # --- the loader -------------------------------------------------------------
+def test_a_curated_article_never_crosses_a_generation():
+    """normkey folds "III", "Sr" and "(1975)" away; the override must not."""
+    with _Tmp({"John Lucas": WIKI + "John_Lucas_II",
+               "Brandon Williams": WIKI + "Brandon_Williams_(basketball,_born_1999)",
+               "AJ Green": WIKI + "A._J._Green_(basketball)"}):
+        assert player_urls.override_title("John Lucas III") == ""
+        assert player_urls.override_title("Brandon Williams (1975)") == ""
+        assert player_urls.override_title("John Lucas") == "John Lucas II"
+        # a spelling of the same name still finds it
+        assert player_urls.override_title("A. J. Green") == "A. J. Green (basketball)"
+    print("test_a_curated_article_never_crosses_a_generation PASS")
+
+
 def test_only_a_verified_entry_goes_live():
     """The gate the whole design rests on: a guess in the file is not a fix."""
     doc = {
@@ -357,18 +370,20 @@ def test_the_acceptance_test_is_p106_plus_the_birth_year():
 class FakeTransport:
     """Canned Wikipedia/Wikidata answers for the resolver."""
 
-    def __init__(self, bref, search, titles, items, *, disambig=(),
+    def __init__(self, nba, search, titles, items, *, disambig=(),
                  redirects=None):
-        self.bref, self.search = bref, search
+        self.nba, self.search = nba, search
         self.titles, self.items = titles, items
         self.disambig, self.redirects = set(disambig), redirects or {}
         self.requests = 0
         self.searched = []
 
     def get_text(self, url):
-        rows = ["player,birth_date"]
-        rows += [f"{name},{date}" for name, date in self.bref.items()]
-        return "\n".join(rows) + "\n"
+        # nba-player-data's bio.json; an ISO BIRTHDAY reads the same as M/D/YYYY.
+        # An empty file is a broken source, so one dateless row is always there.
+        return json.dumps([{"PLAYER": "Dateless Row", "BIRTHDAY": ""}]
+                          + [{"PLAYER": name, "BIRTHDAY": date}
+                             for name, date in self.nba.items()])
 
     def get_json(self, url, params):
         self.requests += 1
@@ -418,7 +433,7 @@ def test_exactly_one_accepted_article_becomes_an_override():
              "rejected_wikidata_id": "Q272031"}]
     players = [{"player": "Jack White", "wikipedia_url": WIKI + "Jack_White"}]
     t = FakeTransport(
-        bref={"Jack White": "1997-11-24"},
+        nba={"Jack White": "1997-11-24"},
         search={"Jack White": ["Jack White", "Jack White (basketball)"]},
         titles={"Jack White (basketball)": "Q55123",
                 "Jack White": "Q272031"},
@@ -437,16 +452,17 @@ def test_exactly_one_accepted_article_becomes_an_override():
 
 
 def test_two_candidates_born_the_same_year_are_listed_not_guessed():
-    rows = [{"player": "Mike Green", "wikipedia_title": "Mike Green",
-             "wikipedia_url": WIKI + "Mike_Green",
+    # (an invented name: the real Mike Green has a curated article)
+    rows = [{"player": "Mikel Greenway", "wikipedia_title": "Mikel Greenway",
+             "wikipedia_url": WIKI + "Mikel_Greenway",
              "rejected_wikidata_id": "Q999"}]
-    players = [{"player": "Mike Green", "wikipedia_url": WIKI + "Mike_Green"}]
+    players = [{"player": "Mikel Greenway", "wikipedia_url": WIKI + "Mikel_Greenway"}]
     t = FakeTransport(
-        bref={"Mike Green": "1985-01-01"},
-        search={"Mike Green": ["Mike Green (basketball, born 1985)",
-                              "Mike Green (basketball)"]},
-        titles={"Mike Green (basketball, born 1985)": "Q1",
-                "Mike Green (basketball)": "Q2"},
+        nba={"Mikel Greenway": "1985-01-01"},
+        search={"Mikel Greenway": ["Mikel Greenway (basketball, born 1985)",
+                              "Mikel Greenway (basketball)"]},
+        titles={"Mikel Greenway (basketball, born 1985)": "Q1",
+                "Mikel Greenway (basketball)": "Q2"},
         items={"Q1": _item("Q1", birth="1985-02-02"),
                "Q2": _item("Q2", birth="1985-06-06")})
     report = _run(rows, players, t)
@@ -462,7 +478,7 @@ def test_nothing_acceptable_is_listed_with_the_reason_per_candidate():
              "rejected_wikidata_id": "Q7297443"}]
     players = [{"player": "Ray Ellefson", "wikipedia_url": WIKI + "Ray_Ellefson"}]
     t = FakeTransport(
-        bref={"Ray Ellefson": "1925-04-14"},
+        nba={"Ray Ellefson": "1925-04-14"},
         search={"Ray Ellefson": ["Ray Ellefson"]},
         titles={"Ray Ellefson (basketball)": "Q1"},
         items={"Q1": _item("Q1", p106=False, birth="1925-04-14")})
@@ -484,7 +500,7 @@ def test_an_article_another_record_already_owns_is_refused():
                {"player": "Michael Porter Jr.",
                 "wikipedia_url": WIKI + "Michael_Porter_Jr."}]
     t = FakeTransport(
-        bref={"Michael Porter": "1998-06-29"},
+        nba={"Michael Porter": "1998-06-29"},
         search={"Michael Porter": ["Michael Porter Jr."]},
         titles={"Michael Porter Jr.": "Q1"},
         items={"Q1": _item("Q1", birth="1998-06-29",
@@ -554,7 +570,7 @@ def test_a_human_verified_article_skips_the_gate_and_the_search():
              "Jay Miller": {"wikipedia_url": WIKI + "Jay_Miller_(basketball)",
                             "verified_by": "jorge"}}
     t = FakeTransport(
-        bref={"Ray Ellefson": "1922-11-18", "Jay Miller": "1943-07-19"},
+        nba={"Ray Ellefson": "1922-11-18", "Jay Miller": "1943-07-19"},
         search={},
         titles={"Ray Ellefson": "Q7297443",
                 "Jay Miller (basketball)": "Q518561"},
@@ -593,7 +609,7 @@ def test_a_missing_or_disambiguation_article_is_skipped_not_written():
         "Terry Taylor": {"wikipedia_url": WIKI + "Terry_Taylor_(basketball)",
                          "verified_by": "jorge"}}
     t = FakeTransport(
-        bref={}, search={},
+        nba={}, search={},
         titles={"Terry Taylor (basketball)": "Q3"},
         items={"Q3": _item("Q3")},
         disambig={"Eric Williams (basketball)"},
@@ -620,7 +636,7 @@ def test_a_redirect_to_a_real_article_is_written_as_its_target():
                 "wikipedia_url": WIKI + "Charlie_Black"}]
     human = {"Charlie Black": {"wikipedia_url": WIKI + "Charlie_Black_(x)",
                                "verified_by": "jorge"}}
-    t = FakeTransport(bref={"Charlie Black": "1921-06-15"}, search={},
+    t = FakeTransport(nba={"Charlie Black": "1921-06-15"}, search={},
                       titles={"Charlie T. Black": "Q5"},
                       items={"Q5": _item("Q5", birth="1921-06-15")},
                       redirects={"Charlie Black (x)": "Charlie T. Black"})
@@ -639,7 +655,7 @@ def test_human_and_machine_players_resolve_side_by_side():
     human = {"Ron Holland": {"wikipedia_url": WIKI + "Ron_Holland_II",
                              "verified_by": "jorge"}}
     t = FakeTransport(
-        bref={"Jack White": "1997-08-05", "Ron Holland": "2005-07-07"},
+        nba={"Jack White": "1997-08-05", "Ron Holland": "2005-07-07"},
         search={"Jack White": ["Jack White (basketball)"]},
         titles={"Jack White (basketball)": "Q55", "Ron Holland II": "Q66"},
         items={"Q55": _item("Q55", birth="1997-08-05",
@@ -710,11 +726,11 @@ def test_the_bio_fetcher_trusts_a_human_verified_item_without_p106():
     player = {"player": "Ray Ellefson", "wikipedia_url": WIKI + "Ray_Ellefson"}
     # a stale item ID on file must not short-cut the human's article
     bio = {"Ray Ellefson": {"wikidata_id": "Q1", "checked": "2026-01-01"}}
-    bref = {fb.normkey("Ray Ellefson"): "1922-11-18"}
+    nba = {"Ray Ellefson": "1922-11-18"}
     with _Tmp({"overrides": {"Ray Ellefson": {
             "wikipedia_url": WIKI + "Ray_Ellefson", "verified": "2026-09-24",
             "verified_by": "jorge", "human_verified": True}}}):
-        items, details = fb.gather_items(T(), [player], bio, bref)
+        items, details = fb.gather_items(T(), [player], bio, nba)
         assert items["Ray Ellefson"]["qid"] == "Q7297443"
         assert details == {}, details
         rec = fb.compose(items["Ray Ellefson"], "1922-11-18",
@@ -724,12 +740,12 @@ def test_the_bio_fetcher_trusts_a_human_verified_item_without_p106():
         assert rec["birth_place"] == "Fergus Falls"
         assert rec["wikidata_birth_date"] == "1920-11-18"
         assert "rejected_wikidata_id" not in rec
-        review = fb.build_review({"Ray Ellefson": rec}, [player], bref, {})
+        review = fb.build_review({"Ray Ellefson": rec}, [player], nba, {})
         row = review["date_disagreement"][0]
         assert row["years_apart"] == 2 and row["places_kept"] is True
         # --reapply does not throw the item away either
         far = dict(rec, wikidata_birth_date="1900-01-01")
-        out, det = fb.reapply({"Ray Ellefson": far}, bref)
+        out, det = fb.reapply({"Ray Ellefson": far}, nba)
         assert out["Ray Ellefson"]["wikidata_id"] == "Q7297443" and not det
     # without the human flag, the same item is still refused
     with _Tmp({"overrides": {"Ray Ellefson": {
@@ -739,13 +755,13 @@ def test_the_bio_fetcher_trusts_a_human_verified_item_without_p106():
                 if "rdfs:label" in query:
                     return {"results": {"bindings": []}}
                 return T.sparql(self, query)
-        items, details = fb.gather_items(T2(), [player], {}, bref)
+        items, details = fb.gather_items(T2(), [player], {}, nba)
         assert items["Ray Ellefson"] is None and "Ray Ellefson" in details
     print("test_the_bio_fetcher_trusts_a_human_verified_item_without_p106 PASS")
 
 
 # --- tie-breaks -------------------------------------------------------------
-def _tie(name, bref, search, items, *, career=None, rejected="Q999",
+def _tie(name, nba_date, search, items, *, career=None, rejected="Q999",
          display=""):
     """Resolve one flagged player against canned candidates.
 
@@ -759,7 +775,7 @@ def _tie(name, bref, search, items, *, career=None, rejected="Q999",
     if display:
         rec["display_name"] = display
     t = FakeTransport(
-        bref={name: bref} if bref else {},
+        nba={name: nba_date} if nba_date else {},
         search={name: list(search)},
         titles={title: q for title, (q, _, _) in items.items()},
         items={q: _item(q, birth=b, p106=p,
@@ -802,8 +818,8 @@ def test_rule1_a_different_name_is_never_a_second_match():
          ("Anthony Brown (basketball)", "Q20440606", "1992-10-10"),
          ("Anthony Bennett (basketball)", "Q4772101", "1993-03-14")),
     ]
-    for name, bref, right, other in cases:
-        report = _tie(name, bref, [right[0], other[0]],
+    for name, nba_date, right, other in cases:
+        report = _tie(name, nba_date, [right[0], other[0]],
                       {right[0]: (right[1], right[2], True),
                        other[0]: (other[1], other[2], True)})
         assert list(report["verified"]) == [name], (name, report["needs_a_human"])
@@ -840,7 +856,7 @@ def test_rule1_a_redirect_with_another_name_alone_is_not_enough():
 
 
 def test_rule2_the_career_stands_in_for_a_missing_birth_date():
-    """Brandon Williams has no Basketball-Reference row; his first stint is
+    """Brandon Williams has no nba-player-data row; his first stint is
     2021, so the 1999 Brandon Williams fits (1997-2004) and the 1975 one
     does not."""
     report = _tie("Brandon Williams", "",
@@ -885,20 +901,30 @@ def test_rule2_no_date_and_no_career_is_still_a_human():
     print("test_rule2_no_date_and_no_career_is_still_a_human PASS")
 
 
-def test_rule2_is_only_used_without_a_basketball_reference_date():
-    """A BR date decides even when the career would say otherwise."""
-    report = _tie("Brandon Williams", "1975-02-27",
-                  ["Brandon Williams (basketball, born 1999)",
-                   "Brandon Williams (basketball, born 1975)"],
-                  {"Brandon Williams (basketball, born 1999)":
-                       ("Q100987066", "1999-11-22", True),
-                   "Brandon Williams (basketball, born 1975)":
-                       ("Q2923793", "1975-02-27", True)},
+def test_rule2_is_only_used_without_an_nba_date():
+    """An NBA date decides even when rule 2's window would say otherwise --
+    as long as his career does not rule that date out."""
+    items = {"Brendan Willard (basketball, born 1999)":
+                 ("Q100987066", "1999-11-22", True),
+             "Brendan Willard (basketball, born 1990)":
+                 ("Q2923793", "1990-02-27", True)}
+    report = _tie("Brendan Willard", "1990-02-27", list(items), items,
                   career=["2021-2022"])
-    rec = report["verified"]["Brandon Williams"]
+    rec = report["verified"]["Brendan Willard"]
     assert rec["wikidata_id"] == "Q2923793"
-    assert rec["decided_by"] == "Basketball-Reference birth year", rec
-    print("test_rule2_is_only_used_without_a_basketball_reference_date PASS")
+    assert rec["decided_by"] == "NBA birth year", rec
+    # A date 46 years before his first stint is a namesake's row, not his:
+    # it is set aside and rule 2 decides.
+    items = {"Brendan Willard (basketball, born 1999)":
+                 ("Q100987066", "1999-11-22", True),
+             "Brendan Willard (basketball, born 1975)":
+                 ("Q2923794", "1975-02-27", True)}
+    report = _tie("Brendan Willard", "1975-02-27", list(items), items,
+                  career=["2021-2022"])
+    rec = report["verified"]["Brendan Willard"]
+    assert rec["wikidata_id"] == "Q100987066", rec
+    assert rec["decided_by"].startswith("rule 2"), rec
+    print("test_rule2_is_only_used_without_an_nba_date PASS")
 
 
 def test_rule3_the_flagged_namesake_is_dropped_and_the_rest_decides():
@@ -952,6 +978,7 @@ def test_rule4_one_left_is_accepted_several_are_listed():
 
 
 if __name__ == "__main__":
+    test_a_curated_article_never_crosses_a_generation()
     test_only_a_verified_entry_goes_live()
     test_a_hand_written_url_counts_as_verified()
     test_lookup_folds_the_spelling()
@@ -985,7 +1012,7 @@ if __name__ == "__main__":
     test_rule2_the_career_stands_in_for_a_missing_birth_date()
     test_rule2_window_edges_and_a_new_player()
     test_rule2_no_date_and_no_career_is_still_a_human()
-    test_rule2_is_only_used_without_a_basketball_reference_date()
+    test_rule2_is_only_used_without_an_nba_date()
     test_rule3_the_flagged_namesake_is_dropped_and_the_rest_decides()
     test_rule4_one_left_is_accepted_several_are_listed()
     print("\nall player-URL override tests PASS")

@@ -18,19 +18,19 @@ name: Fix wrong-person Wikipedia URLs
 #      record before anything changes it
 #   2. searches Wikipedia for the article that IS his, and accepts one only
 #      when Wikidata vouches for it: P106 = Q3665646 (basketball player) AND a
-#      birth year within 1 of Basketball-Reference's. Exactly one accepted
+#      birth year within 1 of the NBA birth date. Exactly one accepted
 #      article is written to data/players/player_url_overrides.json; zero or
 #      several are LISTED in the run summary for a human. It never guesses.
 #      Between the gate and that count, three tie-breaks: exact name (so Aaron
 #      Harrison is not a second Andrew Harrison), the player's own career
-#      standing in for a missing Basketball-Reference birth date (born 17-24
+#      standing in for a missing NBA birth date (born 17-24
 #      years before his first stint), and never the flagged namesake item.
 #      Players a human already decided (the `human_verified` section of the
 #      overrides file, each entry signed with `verified_by`) skip the search
 #      and the Wikidata test: their article is written through as long as it
 #      exists and is not a disambiguation page. One that fails that check is
-#      SKIPPED and listed in the summary, and stays staged. A Basketball-
-#      Reference birth year that disagrees with the item is a warning only.
+#      SKIPPED and listed in the summary, and stays staged. An NBA birth
+#      year that disagrees with the item is a warning only.
 #   3. re-scrapes those players with the normal parser (update_careers.py
 #      --mode override), which now reads the curated article
 #   4. drops every player that now has a verified override from

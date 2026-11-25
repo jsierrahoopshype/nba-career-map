@@ -1,4 +1,4 @@
-"""Birth and death facts for every player, from Wikidata and Basketball-Reference.
+"""Birth and death facts for every player, from NBA data and Wikidata.
 
 WHAT IT WRITES. data/players/player_bio.json, keyed by the player name the
 career database uses:
@@ -9,12 +9,14 @@ career database uses:
       "birth_place": "Philadelphia",    # becomes "1947-01-01"
       "death_place": "Calabasas",
       "wikidata_id": "Q41421",
-      "source": "basketball-reference", # where birth_date came from
+      "source": "nba-player-data",      # where birth_date came from
       "checked": "2026-09-24"
     }
 
 `source` names the origin of `birth_date` and nothing else:
-"basketball-reference", "wikidata", or "unresolved" when neither had one.
+"nba-player-data" (its bio.json), "nba.com" (stats.nba.com, for players
+bio.json has no date for), "wikidata", or "unresolved" when none had one. See
+scripts/nba_birthdates.py for the NBA side.
 `wikidata_id` is the item the places and the death date came from -- empty
 when no item passed the identity gate below. A record that failed the gate
 also carries `rejected_wikidata_id`, so a later run (and a human) can see
@@ -27,24 +29,26 @@ swimmer, a baseball Hall of Famer. An item is only believed when it carries
 P106 (occupation) = basketball player (Q3665646) or P641 (sport) = basketball
 (Q5372). An item that fails has ALL of its dates and places discarded; we
 then search Wikidata for a basketball player of the same name whose birth
-year is within a year of Basketball-Reference's, and take it only when the
+year is within a year of the NBA birth date, and take it only when the
 search comes back with exactly one candidate.
 
 HUMAN-VERIFIED ARTICLES. A player whose override a person signed off on
 (`"human_verified": true` in data/players/player_url_overrides.json, see
 player_urls.py) is always read through that article, and its item is taken as
 this player even when it lacks P106/P641 -- Ray Ellefson's item has no
-occupation at all. The birth-year comparison with Basketball-Reference still
+occupation at all. The birth-year comparison with the NBA birth date still
 runs and still lands in `date_disagreement`, but as a warning: it does not
 cost the item its death date or places, and --reapply does not throw it away.
 
-SOURCE PRECEDENCE. Basketball-Reference is keyed to the actual NBA player, so
-it decides the birth date whenever it has one; the gated Wikidata value is the
-fallback. The death date and both places are Wikidata's alone, and are only
-taken from a gated item whose birth year is within a year of
-Basketball-Reference's -- a right-occupation item with the wrong birth year is
-still likely to be a different basketball player, and his home town is not
-this player's.
+SOURCE PRECEDENCE. The NBA birth date (nba-player-data's bio.json, then
+NBA.com) is keyed to the actual NBA player, so it decides the birth date
+whenever it has one; the gated Wikidata value is the fallback. A full date is
+never given up for a less precise one: a Wikidata day that falls inside a
+year- or month-only NBA date is used instead. The death date and both places
+are Wikidata's alone, and are only taken from a gated item whose birth year is
+within a year of the NBA birth date -- a right-occupation item with the wrong
+birth year is still likely to be a different basketball player, and his home
+town is not this player's.
 
 HOW IT GETS THERE. Three batched hops:
 
@@ -83,9 +87,13 @@ which is what to run after the rules themselves change.
 THE REVIEW FILE. data/players/bio_needs_review.json is the human's queue, in
 three lists: `wrong_entity` (the gate failed -- what it had resolved to, and
 whether a replacement was found), `date_disagreement` (the same person, but
-Wikidata and Basketball-Reference state different birth dates -- and which
-one the record uses), and `still_missing` (no birth date from either source).
-It also carries `wikipedia_url_wrong_person`: the wrong-entity players whose
+Wikidata and the NBA source state different birth dates -- every one of them,
+with both values, how far apart they are and which one the record uses; the
+NBA date is never picked silently), and `still_missing` (no birth date from
+any source).
+It also carries `nba_row_rejected` (nba-player-data rows with the player's
+name but a birth date his own career rules out -- not used) and
+`wikipedia_url_wrong_person`: the wrong-entity players whose
 stored Wikipedia URL is the namesake's article, so their CLUB HISTORY may be
 wrong too. Nothing in the review file edits the career database. The fix for
 that list is data/players/player_url_overrides.json -- a curated article per
@@ -106,9 +114,7 @@ Run:
 from __future__ import annotations
 
 import argparse
-import csv
 import datetime as dt
-import io
 import json
 import re
 import sys
@@ -119,8 +125,9 @@ import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import nba_birthdates  # noqa: E402
 import player_urls  # noqa: E402
-from names import normkey, title_from_url  # noqa: E402
+from names import title_from_url  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CAREERS = ROOT / "data" / "players" / "nba_players_careers.json"
@@ -129,10 +136,6 @@ REVIEW = ROOT / "data" / "players" / "bio_needs_review.json"
 
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
-# Basketball-Reference career info, mirrored as a CSV. One row per player,
-# with the birth date that decides ours.
-BREF_CSV = ("https://raw.githubusercontent.com/sumitrodatta/"
-            "bball-reference-datasets/master/Data/Player%20Career%20Info.csv")
 
 # Wikimedia's User-Agent policy (https://foundation.wikimedia.org/wiki/
 # Policy:Wikimedia_Foundation_User-Agent_Policy) wants a descriptive agent
@@ -153,7 +156,7 @@ REFRESH_LIMIT = 1200  # living players re-checked for a death per run
 # sport; everything else with the name is a namesake.
 Q_BASKETBALL_PLAYER = "Q3665646"   # P106 occupation: basketball player
 Q_BASKETBALL = "Q5372"             # P641 sport: basketball
-# How far a gated item's birth year may sit from Basketball-Reference's before
+# How far a gated item's birth year may sit from the NBA birth date before
 # its places and death date stop being this player's. One year absorbs the
 # genuine off-by-one records without absorbing a different man.
 BIRTH_YEAR_TOLERANCE = 1
@@ -164,7 +167,7 @@ OFFLINE_CHECK = ("offline birth-year check -- the real P106/P641 gate runs on "
                  "the next live --full run, which can hand the item back")
 # --reapply has no gate to consult, so it goes on the birth year alone, and it
 # is deliberately more forgiving than BIRTH_YEAR_TOLERANCE about it: two or
-# three years between Wikidata and Basketball-Reference is an ordinary dispute
+# three years between Wikidata and the NBA birth date is an ordinary dispute
 # over a player born in the 1920s, while five is a different man. The item
 # still loses its places at BIRTH_YEAR_TOLERANCE either way -- what this
 # decides is whether the item ID is thrown away with them.
@@ -235,9 +238,9 @@ class FixtureTransport:
     """Saved responses, for tests and offline dry runs.
 
     Reads <dir>/pageprops-1.json, pageprops-2.json ... in call order, the
-    same for sparql-N.json, and <dir>/bref.csv for the cross-check. Running
-    past the saved responses is an error rather than an empty answer, so a
-    test cannot pass by accident.
+    same for sparql-N.json, and <dir>/npd_bio.json for nba-player-data's
+    bio.json. Running past the saved responses is an error rather than an
+    empty answer, so a test cannot pass by accident.
     """
 
     def __init__(self, directory: Path):
@@ -260,9 +263,12 @@ class FixtureTransport:
         return self._next("sparql")
 
     def get_text(self, url: str) -> str:
-        path = self.dir / "bref.csv"
+        name = {nba_birthdates.NPD_BIO_URL: "npd_bio.json",
+                nba_birthdates.NPD_IDS_URL: "npd_player_ids.json",
+                nba_birthdates.NPD_SEASON_URL: "npd_season.json"}.get(url, url)
+        path = self.dir / name
         if not path.exists():
-            raise BioFetchError(f"no fixture {path} for the cross-check")
+            raise BioFetchError(f"no fixture {name} in {self.dir}")
         return path.read_text(encoding="utf-8")
 
 
@@ -386,8 +392,8 @@ def _absorb(rec: dict, row: dict) -> None:
     """Fold one results row into an item record.
 
     An item can carry several statements for the same property (disputed
-    dates, several citizenships). First non-empty wins; the Basketball-
-    Reference comparison below is what catches a wrong one.
+    dates, several citizenships). First non-empty wins; the comparison with
+    the NBA birth date below is what catches a wrong one.
     """
     birth = format_date((row.get("birth") or {}).get("value"),
                         (row.get("bprec") or {}).get("value"))
@@ -550,78 +556,86 @@ def birth_years_agree(a, b, tolerance: int = BIRTH_YEAR_TOLERANCE) -> bool:
     return abs(ya - yb) <= tolerance
 
 
-def pick_replacement(candidates: list[dict], bref_date: str) -> dict | None:
+def pick_replacement(candidates: list[dict], nba_date: str) -> dict | None:
     """The one basketball player of this name born when the NBA player was.
 
     Only a single unambiguous hit is accepted: two "Michael Porter"s both born
     in 1998 is not an answer, it is a coin toss.
     """
-    if not bref_date:
+    if not nba_date:
         return None        # nothing to disambiguate against
     hits = [c for c in candidates
             if _year(c.get("birth_date")) is not None
-            and birth_years_agree(c.get("birth_date"), bref_date)]
+            and birth_years_agree(c.get("birth_date"), nba_date)]
     return hits[0] if len(hits) == 1 else None
 
 
-def compose(item: dict | None, bref_date: str, *, checked: str,
+def compose(item: dict | None, nba_date: str, *, checked: str,
+            nba_source: str = nba_birthdates.SRC_NPD,
             rejected_qid: str = "", trusted: bool = False) -> dict:
-    """One player's record, built from the gated item and Basketball-Reference.
+    """One player's record, built from the gated item and the NBA birth date.
 
-    birth_date is Basketball-Reference's whenever it has one, because that file
-    is keyed to the NBA player and cannot be a namesake. The death date and
-    both places are Wikidata's alone, and only from an item whose birth year
-    lands within BIRTH_YEAR_TOLERANCE of Basketball-Reference's -- unless the
-    item is `trusted` (a human verified the article), where a disagreeing
-    year is left for the review file to report and blocks nothing.
+    birth_date is the NBA source's whenever it has one, because that is keyed
+    to the NBA player and cannot be a namesake -- except that a fuller
+    Wikidata date inside it (a day within an NBA year-only date) is kept, so a
+    full date is never traded for a coarser one. The death date and both
+    places are Wikidata's alone, and only from an item whose birth year lands
+    within BIRTH_YEAR_TOLERANCE of the NBA date -- unless the item is
+    `trusted` (a human verified the article), where a disagreeing year is
+    left for the review file to report and blocks nothing.
     """
     wd_birth = (item or {}).get("birth_date")
-    birth = bref_date or wd_birth or None
+    birth, source = (nba_date, nba_source) if nba_date else (
+        (wd_birth, "wikidata") if wd_birth else (None, "unresolved"))
+    if (nba_date and wd_birth and len(wd_birth) > len(nba_date)
+            and same_date(nba_date, wd_birth)):
+        birth, source = wd_birth, "wikidata"
     rec = {
         "birth_date": birth,
         "death_date": None,
         "birth_place": "",
         "death_place": "",
         "wikidata_id": (item or {}).get("qid", "") or "",
-        "source": ("basketball-reference" if bref_date
-                   else ("wikidata" if wd_birth else "unresolved")),
+        "source": source,
         "checked": checked,
     }
-    if item and (trusted or birth_years_agree(wd_birth, bref_date)):
+    if item and (trusted or birth_years_agree(wd_birth, nba_date)):
         rec["death_date"] = item.get("death_date") or None
         rec["birth_place"] = item.get("birth_place") or ""
         rec["death_place"] = item.get("death_place") or ""
-    # Basketball-Reference wins, but the value it beat is kept so the review
-    # file can still report the disagreement on a later, incremental run --
-    # by then the Wikidata value is no longer in birth_date to compare.
-    if wd_birth and bref_date and not same_date(wd_birth, bref_date):
+    # The NBA date wins, but the value it beat is kept so the review file can
+    # still report the disagreement on a later, incremental run -- by then the
+    # Wikidata value is no longer in birth_date to compare.
+    if wd_birth and nba_date and not same_date(wd_birth, nba_date):
         rec["wikidata_birth_date"] = wd_birth
     if rejected_qid:
         rec["rejected_wikidata_id"] = rejected_qid
     return rec
-# --- basketball-reference ---------------------------------------------------
-# The CSV writes an unknown birth date as R's "NA", which is not a date and
-# must never be compared against one.
-_ISO_DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
 
 
-def load_bref(transport) -> dict[str, str]:
-    """{normalized player name: birth date} from Basketball-Reference."""
-    text = transport.get_text(BREF_CSV)
-    out: dict[str, str] = {}
-    for row in csv.DictReader(io.StringIO(text)):
-        name = (row.get("player") or "").strip()
-        born = (row.get("birth_date") or "").strip()
-        if not name or not _ISO_DATE.fullmatch(born):
-            continue
-        # Two players can share a normalized name; a row that disagrees with
-        # one already seen is dropped rather than guessed at.
-        key = normkey(name)
-        if key in out and out[key] != born:
-            out[key] = ""
-        else:
-            out.setdefault(key, born)
-    return {k: v for k, v in out.items() if v}
+def nba_date_for(nba, name: str, item: dict | None) -> tuple[str, str]:
+    """(date, source) the record uses from the NBA side.
+
+    A bio.json date his career seemed to rule out (nba_birthdates: a suspect)
+    is still his when his own gated Wikidata item agrees on the year: a youth
+    club at the top of a career is not a namesake.
+    """
+    date = nba.date(name)
+    if date:
+        return date, nba.source(name)
+    sus = nba.suspect(name)
+    wd = (item or {}).get("birth_date")
+    if sus and wd and birth_years_agree(wd, sus):
+        return sus, nba_birthdates.SRC_NPD
+    return "", ""
+
+
+def days_apart(a: str, b: str) -> int | None:
+    """Days between two full dates; None when either is not a full date."""
+    try:
+        return abs((dt.date.fromisoformat(a) - dt.date.fromisoformat(b)).days)
+    except (TypeError, ValueError):
+        return None
 
 
 def same_date(ours: str, theirs: str) -> bool:
@@ -647,7 +661,7 @@ def _item_summary(item: dict | None) -> dict | None:
             "death_date": item.get("death_date") or ""}
 
 
-def build_review(bio: dict, careers: list, bref: dict[str, str],
+def build_review(bio: dict, careers: list, nba,
                  details: dict, previous: dict | None = None) -> dict:
     """The human's queue, in three lists plus the Wikipedia-URL warning.
 
@@ -655,8 +669,10 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
     ({player: {"rejected": item, "replacement": item|None, "candidates": n}}).
     A player rejected by an EARLIER run and not re-read this time keeps the
     description the previous review file recorded, so an incremental run never
-    silently shortens the list.
+    silently shortens the list. `nba` is the run's NBA birth dates
+    (nba_birthdates.NbaBirthDates).
     """
+    nba = nba_birthdates.coerce(nba)
     # The override, when there is one, is the article this player is actually
     # read from -- so a repaired player stops being reported as pointing at the
     # namesake even before the career pipeline has written the new URL back.
@@ -673,7 +689,9 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
 
     wrong, disagreement, missing, bad_url = [], [], [], []
     for name, rec in sorted(bio.items()):
-        bref_date = bref.get(normkey(name), "")
+        nba_date, nba_source = nba.date(name), nba.source(name)
+        if not nba_date and rec.get("source") in nba_birthdates.NBA_SOURCES:
+            nba_date, nba_source = rec.get("birth_date") or "", rec["source"]
         detail = details.get(name) or {}
         rejected_qid = rec.get("rejected_wikidata_id") or ""
 
@@ -711,7 +729,8 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
                 "resolved_to": resolved,
                 "replacement_found": bool(rec.get("wikidata_id")),
                 "replacement": replacement,
-                "basketball_reference": bref_date,
+                "nba_birth_date": nba_date,
+                "nba_source": nba_source,
                 "birth_date_used": rec.get("birth_date") or "",
                 "wikipedia_url": url,
                 "note": note,
@@ -728,16 +747,18 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
             continue
 
         wd_birth = rec.get("wikidata_birth_date") or ""
-        if wd_birth and bref_date and not same_date(wd_birth, bref_date):
-            apart = abs((_year(wd_birth) or 0) - (_year(bref_date) or 0))
+        if wd_birth and nba_date and not same_date(wd_birth, nba_date):
+            apart = abs((_year(wd_birth) or 0) - (_year(nba_date) or 0))
             disagreement.append({
                 "player": name,
                 "wikidata": wd_birth,
-                "basketball_reference": bref_date,
+                "nba_birth_date": nba_date,
+                "nba_source": nba_source,
                 "wikidata_id": rec.get("wikidata_id") or "",
                 "used": rec.get("birth_date") or "",
                 "used_source": rec.get("source") or "",
                 "years_apart": apart,
+                "days_apart": days_apart(wd_birth, nba_date),
                 "places_kept": (apart <= BIRTH_YEAR_TOLERANCE
                                 or player_urls.is_human_verified(name)),
             })
@@ -745,11 +766,14 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
         if not rec.get("birth_date"):
             missing.append({"player": name,
                             "wikidata_id": rec.get("wikidata_id") or "",
-                            "basketball_reference": bref_date})
+                            "nba_birth_date": nba_date})
 
+    # Biggest gaps first, so the rows a human most needs to look at lead.
+    disagreement.sort(key=lambda r: (-(r["days_apart"] if r["days_apart"] is not None
+                                       else 366 * r["years_apart"]), r["player"]))
     return {
         "generated": _today(),
-        "cross_check_source": BREF_CSV,
+        "cross_check_source": getattr(nba, "note", ""),
         "identity_gate": {
             "occupation": f"P106 = {Q_BASKETBALL_PLAYER} (basketball player)",
             "sport": f"P641 = {Q_BASKETBALL} (basketball)",
@@ -760,11 +784,24 @@ def build_review(bio: dict, careers: list, bref: dict[str, str],
                                                 if r["replacement_found"]),
                    "date_disagreement": len(disagreement),
                    "still_missing": len(missing),
-                   "wikipedia_url_wrong_person": len(bad_url)},
+                   "wikipedia_url_wrong_person": len(bad_url),
+                   "nba_row_rejected": sum(
+                       1 for r in nba.rejected
+                       if (bio.get(r["player"]) or {}).get("source")
+                       not in nba_birthdates.NBA_SOURCES)},
         "wrong_entity": wrong,
         "date_disagreement": disagreement,
         "still_missing": missing,
         "wikipedia_url_wrong_person": bad_url,
+        # nba-player-data rows that carry this player's name but a birth date
+        # his own career rules out (a father's or son's row, a namesake's):
+        # not used, so Wikidata decided these players' dates.
+        "nba_row_rejected": sorted(
+            ({**r, "wikidata": (bio.get(r["player"]) or {}).get("birth_date") or ""}
+             for r in nba.rejected
+             if (bio.get(r["player"]) or {}).get("source")
+             not in nba_birthdates.NBA_SOURCES),
+            key=lambda r: r["player"]),
     }
 # --- io ---------------------------------------------------------------------
 def _read_json(path: Path, default):
@@ -789,8 +826,10 @@ def coverage(bio: dict) -> dict:
         "with_death_place": sum(1 for r in bio.values() if r.get("death_place")),
         "year_only_birth_date": sum(1 for r in bio.values()
                                     if len(str(r.get("birth_date") or "")) == 4),
-        "from_basketball_reference": sum(
-            1 for r in bio.values() if r.get("source") == "basketball-reference"),
+        "from_nba_player_data": sum(
+            1 for r in bio.values() if r.get("source") == nba_birthdates.SRC_NPD),
+        "from_nba_com": sum(
+            1 for r in bio.values() if r.get("source") == nba_birthdates.SRC_NBA_COM),
         "rejected_wikidata_item": sum(
             1 for r in bio.values() if r.get("rejected_wikidata_id")),
     }
@@ -798,13 +837,14 @@ def coverage(bio: dict) -> dict:
 
 # --- gathering --------------------------------------------------------------
 def gather_items(transport, targets: list, bio: dict,
-                 bref: dict[str, str]) -> tuple[dict, dict]:
+                 nba) -> tuple[dict, dict]:
     """({player: gated item or None}, {player: what this run learned}).
 
     Three steps: map the ones with no item ID on file through Wikipedia, read
     every item's facts and gate flag, then go looking for a replacement for
     each item the gate turned down.
     """
+    nba = nba_birthdates.coerce(nba)
     # A human-verified article is always re-read, never short-cut through the
     # item ID on file: that ID may be a replacement the name search picked, and
     # the person's choice of article is the one that decides.
@@ -848,7 +888,7 @@ def gather_items(transport, targets: list, bio: dict,
             detail["detected_by"] = GATE_CHECK
         wanted: dict[str, list[str]] = {}
         for name, detail in details.items():
-            if bref.get(normkey(name)):
+            if nba.date(name):
                 wanted[name] = search_names(detail["player"])
         print(f"identity gate: {len(details)} item(s) are not basketball "
               f"players; searching for {len(wanted)} replacement(s)")
@@ -868,8 +908,7 @@ def gather_items(transport, targets: list, bio: dict,
             for alias in aliases:
                 for cand in found.get(alias, []):
                     candidates[cand["qid"]] = cand
-            pick = pick_replacement(list(candidates.values()),
-                                    bref.get(normkey(name), ""))
+            pick = pick_replacement(list(candidates.values()), nba.date(name))
             details[name]["replacement"] = pick
             details[name]["candidates"] = len(candidates)
             if pick:
@@ -880,43 +919,50 @@ def gather_items(transport, targets: list, bio: dict,
     return items, details
 
 
-def reapply(bio: dict, bref: dict[str, str]) -> tuple[dict, dict]:
+def reapply(bio: dict, nba) -> tuple[dict, dict]:
     """Re-run the rules over what is already on file, without the network.
 
     The P106/P641 gate cannot be checked offline, so this uses the strongest
     signal the stored record still carries: a Wikidata birth year
-    OFFLINE_REJECT_YEARS or more away from Basketball-Reference's is a
-    namesake, not a disputed date. Everything else the rules say --
-    Basketball-Reference deciding the birth date, places surviving only an
-    item within BIRTH_YEAR_TOLERANCE -- applies exactly as it does online.
+    OFFLINE_REJECT_YEARS or more away from the NBA birth date is a namesake,
+    not a disputed date. Everything else the rules say -- the NBA date
+    deciding the birth date, places surviving only an item within
+    BIRTH_YEAR_TOLERANCE -- applies exactly as it does online.
     A live --full run re-checks all of it against the real gate, and can hand
     an item back that this threw away.
     """
+    nba = nba_birthdates.coerce(nba)
     out, details = {}, {}
     for name, rec in bio.items():
-        bref_date = bref.get(normkey(name), "")
+        nba_date = nba.date(name)
         item = _stored_item(rec)
         rejected_qid = rec.get("rejected_wikidata_id") or ""
         trusted = player_urls.is_human_verified(name)
         if item and not trusted and not birth_years_agree(
-                item["birth_date"], bref_date, OFFLINE_REJECT_YEARS - 1):
+                item["birth_date"], nba_date, OFFLINE_REJECT_YEARS - 1):
             details[name] = {"rejected": item, "replacement": None,
                              "candidates": 0, "detected_by": OFFLINE_CHECK}
             rejected_qid = item["qid"]
             item = None
-        out[name] = compose(item, bref_date,
+        nba_date, nba_source = nba_date_for(nba, name, item)
+        out[name] = compose(item, nba_date, nba_source=nba_source,
                             checked=rec.get("checked") or _today(),
                             rejected_qid=rejected_qid, trusted=trusted)
     return out, details
 
 
 def _stored_item(rec: dict) -> dict | None:
-    """The Wikidata item a stored record still describes, or None."""
+    """The Wikidata item a stored record still describes, or None.
+
+    Its birth date is the record's own only when Wikidata supplied it; any
+    other source's date says nothing about what the item holds, beyond the
+    `wikidata_birth_date` a disagreement leaves behind.
+    """
     qid = rec.get("wikidata_id") or ""
     if not qid:
         return None
     wd_birth = rec.get("wikidata_birth_date")
-    if wd_birth is None and rec.get("source") != "basketball-reference":
+    if wd_birth is None and rec.get("source") == "wikidata":
         wd_birth = rec.get("birth_date")
     return {"qid": qid, "birth_date": wd_birth,
             "death_date": rec.get("death_date"),
@@ -934,14 +980,31 @@ def run(args, transport) -> dict:
         raise BioFetchError(f"{args.out}: expected an object keyed by player name")
     previous = _read_json(args.review, {})
 
-    # Basketball-Reference first: it decides the birth dates and it is what
+    # The NBA birth dates first: they decide the birth dates and they are what
     # the identity gate measures a candidate item against, so a run cannot
-    # compose a single record without it.
-    bref = {} if args.skip_bref else load_bref(transport)
+    # compose a single record without them. nba-player-data's bio.json must be
+    # readable (a failure stops the run); NBA.com is asked only for the gaps,
+    # and a refusal there is a warning (see nba_birthdates.py).
+    if args.skip_nba:
+        nba, nba_cache = nba_birthdates.NbaBirthDates({}), None
+    else:
+        try:
+            nba, nba_cache = nba_birthdates.load(
+                players, get_text=transport.get_text, npd_bio=args.npd_bio,
+                live_nba_com=not (args.no_nba_com or args.reapply
+                                  or args.fixtures),
+                cache_path=args.nba_com_cache)
+        except (ValueError, OSError) as exc:
+            raise BioFetchError(str(exc)) from exc
+        print(f"NBA birth dates: {nba.note}")
+        if nba.not_fetched:
+            print(f"::warning::NBA.com not reached for {len(nba.not_fetched)} "
+                  f"player(s) bio.json has no date for; Wikidata decides "
+                  f"theirs this run", file=sys.stderr)
 
     if args.reapply:
         print(f"re-applying the rules to {len(bio)} record(s) already on file")
-        bio, details = reapply(bio, bref)
+        bio, details = reapply(bio, nba)
         print(f"records rewritten: {len(bio)}")
     else:
         new, due = select_targets(players, bio, full=args.full, limit=args.limit,
@@ -956,19 +1019,19 @@ def run(args, transport) -> dict:
         if not targets:
             print("nothing to fetch this run")
         else:
-            items, details = gather_items(transport, targets, bio, bref)
+            items, details = gather_items(transport, targets, bio, nba)
             for p in targets:
                 name = p["player"]
                 item = items.get(name)
                 rejected = ((details.get(name) or {}).get("rejected") or {})
-                bio[name] = compose(item, bref.get(normkey(name), ""),
+                nba_date, nba_source = nba_date_for(nba, name, item)
+                bio[name] = compose(item, nba_date, nba_source=nba_source,
                                     checked=_today(),
                                     rejected_qid=rejected.get("qid") or "",
                                     trusted=player_urls.is_human_verified(name))
             print(f"records written: {len(targets)}")
 
-    review = build_review(bio, players, bref, details, previous)
-    review["cross_check_source"] = "" if args.skip_bref else BREF_CSV
+    review = build_review(bio, players, nba, details, previous)
     cov = coverage(bio)
 
     if args.dry_run:
@@ -976,6 +1039,8 @@ def run(args, transport) -> dict:
     else:
         _write_json(args.out, bio)
         _write_json(args.review, review)
+        if nba_cache is not None and not args.fixtures:
+            nba_birthdates.save_cache(nba_cache, args.nba_com_cache)
         print(f"wrote {args.out}")
         print(f"wrote {args.review}")
 
@@ -987,6 +1052,9 @@ def run(args, transport) -> dict:
           f"{c['still_missing']} still missing, "
           f"{c['wikipedia_url_wrong_person']} Wikipedia URL(s) on the wrong "
           f"person")
+    for row in review["date_disagreement"][:10]:
+        print(f"  DATE {row['player']}: NBA ({row['nba_source']}) "
+              f"{row['nba_birth_date']} vs Wikidata {row['wikidata']}")
     for row in review["wrong_entity"][:10]:
         got = row["resolved_to"]
         print(f"  WRONG ENTITY {row['player']}: {row['rejected_wikidata_id']} "
@@ -1018,8 +1086,16 @@ def main() -> None:
     ap.add_argument("--fixtures", type=Path, default=None,
                     help="read saved responses from this directory instead of "
                          "the network (offline testing)")
-    ap.add_argument("--skip-bref", action="store_true",
-                    help="skip the Basketball-Reference cross-check")
+    ap.add_argument("--skip-nba", action="store_true",
+                    help="skip the NBA birth dates (Wikidata alone decides)")
+    ap.add_argument("--npd-bio", type=Path, default=None,
+                    help="local copy of nba-player-data's bio.json "
+                         "(default: read it from GitHub)")
+    ap.add_argument("--no-nba-com", action="store_true",
+                    help="do not ask NBA.com for the players bio.json has no "
+                         "date for (the saved answers are still used)")
+    ap.add_argument("--nba-com-cache", type=Path,
+                    default=nba_birthdates.NBA_COM_CACHE)
     ap.add_argument("--dry-run", action="store_true",
                     help="fetch and report, write nothing")
     ap.add_argument("--careers", type=Path, default=CAREERS)
